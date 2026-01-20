@@ -2,13 +2,17 @@
 
 import { useState } from "react"
 import { useRouter } from "next/navigation"
-import { useForm } from "react-hook-form"
-import { zodResolver } from "@hookform/resolvers/zod"
-import * as z from "zod"
+import { createClient, ClientType } from "@/lib/mock/clients"
+import { initializeKycForClient, updateKycDocument } from "@/lib/mock/kyc"
+import { getRequiredKycDocsForClientType, KycDocType } from "@/lib/types/kyc"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { KycUploadTable } from "@/components/dashboard/kyc-upload-table"
+import { ArrowLeft, ArrowRight, Save } from "lucide-react"
+import Link from "next/link"
 import {
   Select,
   SelectContent,
@@ -16,79 +20,67 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select"
-import { Switch } from "@/components/ui/switch"
-import { clientsApi } from "@/lib/mock-api"
-import type { ClientType } from "@/lib/types"
-import { ArrowLeft } from "lucide-react"
-import Link from "next/link"
-
-const clientSchema = z.object({
-  name: z.string().min(1, "Name is required"),
-  type: z.enum(["INDIVIDUAL", "COMPANY", "NGO", "PARTNERSHIP"]),
-  email: z.string().email("Invalid email address"),
-  phone: z.string().optional(),
-  street: z.string().optional(),
-  city: z.string().optional(),
-  state: z.string().optional(),
-  country: z.string().optional(),
-  zipCode: z.string().optional(),
-  portalEnabled: z.boolean().default(false),
-  notificationsEnabled: z.boolean().default(true),
-})
-
-type ClientForm = z.infer<typeof clientSchema>
 
 export default function NewClientPage() {
   const router = useRouter()
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const {
-    register,
-    handleSubmit,
-    setValue,
-    watch,
-    formState: { errors },
-  } = useForm<ClientForm>({
-    resolver: zodResolver(clientSchema),
-    defaultValues: {
-      type: "INDIVIDUAL",
-      portalEnabled: false,
-      notificationsEnabled: true,
-    },
+  const [step, setStep] = useState(1)
+  const [clientType, setClientType] = useState<ClientType>("Individual")
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    address: "",
+    country: "Kenya",
   })
+  const [kycChecklist, setKycChecklist] = useState<ReturnType<typeof initializeKycForClient> | null>(null)
 
-  const portalEnabled = watch("portalEnabled")
-  const notificationsEnabled = watch("notificationsEnabled")
-
-  const onSubmit = async (data: ClientForm) => {
-    setIsSubmitting(true)
-    try {
-      await clientsApi.createClient({
-        name: data.name,
-        type: data.type as ClientType,
-        email: data.email,
-        phone: data.phone,
-        address: data.street
-          ? {
-              street: data.street,
-              city: data.city || "",
-              state: data.state || "",
-              country: data.country || "",
-              zipCode: data.zipCode || "",
-            }
-          : undefined,
-        portalEnabled: data.portalEnabled,
-        notificationsEnabled: data.notificationsEnabled,
-      })
-      router.push("/app/clients")
-    } catch (error) {
-      console.error("Failed to create client:", error)
-    } finally {
-      setIsSubmitting(false)
-    }
+  const handleClientTypeChange = (type: ClientType) => {
+    setClientType(type)
+    // Initialize KYC checklist when type changes
+    const tempClientId = "temp"
+    const checklist = initializeKycForClient(tempClientId, type)
+    setKycChecklist(checklist)
   }
 
+  const handleKycUpdate = (docId: string, updates: Partial<import("@/lib/types/kyc").KycDocument>) => {
+    if (!kycChecklist) return
+    const tempClientId = "temp"
+    updateKycDocument(tempClientId, docId, updates)
+    const updated = initializeKycForClient(tempClientId, clientType)
+    setKycChecklist(updated)
+  }
+
+  const handleSubmit = () => {
+    // Create client
+    const newClient = createClient({
+      ...formData,
+      type: clientType,
+    })
+
+    // Initialize KYC for the new client
+    initializeKycForClient(newClient.id, clientType)
+    
+    // Copy KYC documents from temp checklist if any were uploaded
+    if (kycChecklist) {
+      kycChecklist.documents.forEach((doc) => {
+        if (doc.status !== "MISSING") {
+          updateKycDocument(newClient.id, doc.id.replace("temp", newClient.id), {
+            docType: doc.docType,
+            fileName: doc.fileName,
+            uploadedAt: doc.uploadedAt,
+            status: doc.status,
+          })
+        }
+      })
+    }
+
+    router.push(`/app/clients/${newClient.id}`)
+  }
+
+  const canProceedToKyc = formData.name.trim() !== ""
+
   return (
-    <div className="p-6 max-w-3xl mx-auto space-y-6">
+    <div className="space-y-6 p-6 max-w-4xl mx-auto">
       <div className="flex items-center gap-4">
         <Link href="/app/clients">
           <Button variant="ghost" size="icon">
@@ -96,131 +88,157 @@ export default function NewClientPage() {
           </Button>
         </Link>
         <div>
-          <h1 className="text-3xl font-bold">New Client</h1>
-          <p className="text-muted-foreground">Add a new client to your system</p>
+          <h1 className="text-3xl font-bold mb-2">Add New Client</h1>
+          <p className="text-muted-foreground">Create a new client profile with mandatory KYC</p>
         </div>
       </div>
 
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <Card>
-          <CardHeader>
-            <CardTitle>Client Information</CardTitle>
-            <CardDescription>Enter the client's basic information</CardDescription>
-          </CardHeader>
-          <CardContent className="space-y-6">
-            <div className="grid md:grid-cols-2 gap-4">
-              <div className="space-y-2">
-                <Label htmlFor="name">Client Name *</Label>
-                <Input id="name" {...register("name")} />
-                {errors.name && (
-                  <p className="text-sm text-destructive">{errors.name.message}</p>
-                )}
-              </div>
+      <Tabs value={step.toString()} onValueChange={(v) => setStep(parseInt(v))} className="w-full">
+        <TabsList className="grid w-full grid-cols-3">
+          <TabsTrigger value="1" disabled={step < 1}>Client Details</TabsTrigger>
+          <TabsTrigger value="2" disabled={step < 2 || !canProceedToKyc}>Contacts</TabsTrigger>
+          <TabsTrigger value="3" disabled={step < 3 || !canProceedToKyc}>KYC Checklist</TabsTrigger>
+        </TabsList>
 
+        <TabsContent value="1" className="mt-6">
+          <Card>
+            <CardHeader>
+              <CardTitle>Client Information</CardTitle>
+              <CardDescription>Basic client details</CardDescription>
+            </CardHeader>
+            <CardContent className="space-y-4">
               <div className="space-y-2">
-                <Label htmlFor="type">Client Type *</Label>
-                <Select
-                  onValueChange={(value) => setValue("type", value as ClientType)}
-                  defaultValue="INDIVIDUAL"
-                >
-                  <SelectTrigger>
+                <Label htmlFor="client-type">Client Type *</Label>
+                <Select value={clientType} onValueChange={(value) => handleClientTypeChange(value as ClientType)}>
+                  <SelectTrigger id="client-type">
                     <SelectValue />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="INDIVIDUAL">Individual</SelectItem>
-                    <SelectItem value="COMPANY">Company</SelectItem>
+                    <SelectItem value="Individual">Individual</SelectItem>
+                    <SelectItem value="Company">Company</SelectItem>
                     <SelectItem value="NGO">NGO</SelectItem>
-                    <SelectItem value="PARTNERSHIP">Partnership</SelectItem>
+                    <SelectItem value="Partnership">Partnership</SelectItem>
+                    <SelectItem value="Other">Other</SelectItem>
                   </SelectContent>
                 </Select>
               </div>
-            </div>
 
-            <div className="grid md:grid-cols-2 gap-4">
               <div className="space-y-2">
-                <Label htmlFor="email">Email *</Label>
-                <Input id="email" type="email" {...register("email")} />
-                {errors.email && (
-                  <p className="text-sm text-destructive">{errors.email.message}</p>
-                )}
+                <Label htmlFor="name">Client Name *</Label>
+                <Input
+                  id="name"
+                  placeholder="Enter client name"
+                  value={formData.name}
+                  onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                  required
+                />
+              </div>
+
+              <div className="flex justify-end">
+                <Button onClick={() => setStep(2)} disabled={!canProceedToKyc}>
+                  Next: Contacts
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Button>
+              </div>
+            </CardContent>
+          </Card>
+        </TabsContent>
+
+        <TabsContent value="2" className="mt-6">
+          <Card>
+            <CardHeader>
+              <CardTitle>Contact Information</CardTitle>
+              <CardDescription>Client contact details</CardDescription>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              <div className="space-y-2">
+                <Label htmlFor="email">Email</Label>
+                <Input
+                  id="email"
+                  type="email"
+                  placeholder="client@example.com"
+                  value={formData.email}
+                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                />
               </div>
 
               <div className="space-y-2">
                 <Label htmlFor="phone">Phone</Label>
-                <Input id="phone" {...register("phone")} />
+                <Input
+                  id="phone"
+                  placeholder="+254 700 000 000"
+                  value={formData.phone}
+                  onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                />
               </div>
-            </div>
 
-            <div className="space-y-4">
-              <h3 className="font-semibold">Address (Optional)</h3>
               <div className="space-y-2">
-                <Label htmlFor="street">Street</Label>
-                <Input id="street" {...register("street")} />
-              </div>
-              <div className="grid md:grid-cols-2 gap-4">
-                <div className="space-y-2">
-                  <Label htmlFor="city">City</Label>
-                  <Input id="city" {...register("city")} />
-                </div>
-                <div className="space-y-2">
-                  <Label htmlFor="state">State</Label>
-                  <Input id="state" {...register("state")} />
-                </div>
-              </div>
-              <div className="grid md:grid-cols-2 gap-4">
-                <div className="space-y-2">
-                  <Label htmlFor="country">Country</Label>
-                  <Input id="country" {...register("country")} />
-                </div>
-                <div className="space-y-2">
-                  <Label htmlFor="zipCode">Zip Code</Label>
-                  <Input id="zipCode" {...register("zipCode")} />
-                </div>
-              </div>
-            </div>
-
-            <div className="space-y-4 pt-4 border-t">
-              <div className="flex items-center justify-between">
-                <div className="space-y-0.5">
-                  <Label htmlFor="portalEnabled">Enable Client Portal</Label>
-                  <p className="text-sm text-muted-foreground">
-                    Allow client to access their portal
-                  </p>
-                </div>
-                <Switch
-                  id="portalEnabled"
-                  checked={portalEnabled}
-                  onCheckedChange={(checked) => setValue("portalEnabled", checked)}
+                <Label htmlFor="address">Address</Label>
+                <Input
+                  id="address"
+                  placeholder="Street address"
+                  value={formData.address}
+                  onChange={(e) => setFormData({ ...formData, address: e.target.value })}
                 />
               </div>
 
-              <div className="flex items-center justify-between">
-                <div className="space-y-0.5">
-                  <Label htmlFor="notificationsEnabled">Email/SMS Notifications</Label>
-                  <p className="text-sm text-muted-foreground">
-                    Send notifications to client
-                  </p>
-                </div>
-                <Switch
-                  id="notificationsEnabled"
-                  checked={notificationsEnabled}
-                  onCheckedChange={(checked) => setValue("notificationsEnabled", checked)}
+              <div className="space-y-2">
+                <Label htmlFor="country">Country</Label>
+                <Input
+                  id="country"
+                  value={formData.country}
+                  onChange={(e) => setFormData({ ...formData, country: e.target.value })}
                 />
               </div>
-            </div>
 
-            <div className="flex justify-end gap-4 pt-4">
-              <Link href="/app/clients">
-                <Button type="button" variant="outline">Cancel</Button>
-              </Link>
-              <Button type="submit" disabled={isSubmitting}>
-                {isSubmitting ? "Creating..." : "Create Client"}
-              </Button>
-            </div>
-          </CardContent>
-        </Card>
-      </form>
+              <div className="flex justify-between">
+                <Button variant="outline" onClick={() => setStep(1)}>
+                  <ArrowLeft className="mr-2 h-4 w-4" />
+                  Back
+                </Button>
+                <Button onClick={() => setStep(3)}>
+                  Next: KYC Checklist
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Button>
+              </div>
+            </CardContent>
+          </Card>
+        </TabsContent>
+
+        <TabsContent value="3" className="mt-6">
+          <Card>
+            <CardHeader>
+              <CardTitle>KYC Checklist (Required)</CardTitle>
+              <CardDescription>
+                Upload required KYC documents for {clientType} client type
+              </CardDescription>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              {kycChecklist ? (
+                <KycUploadTable
+                  documents={kycChecklist.documents}
+                  onUpdate={handleKycUpdate}
+                />
+              ) : (
+                <div className="text-center py-8 text-muted-foreground">
+                  Please select a client type first
+                </div>
+              )}
+
+              <div className="flex justify-between pt-4 border-t">
+                <Button variant="outline" onClick={() => setStep(2)}>
+                  <ArrowLeft className="mr-2 h-4 w-4" />
+                  Back
+                </Button>
+                <Button onClick={handleSubmit}>
+                  <Save className="mr-2 h-4 w-4" />
+                  Create Client
+                </Button>
+              </div>
+            </CardContent>
+          </Card>
+        </TabsContent>
+      </Tabs>
     </div>
   )
 }
-

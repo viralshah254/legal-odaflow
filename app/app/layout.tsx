@@ -1,31 +1,25 @@
 "use client"
 
 import { useEffect } from "react"
-import { useRouter } from "next/navigation"
 import { AppSidebar } from "@/components/app-sidebar"
 import { AppTopbar } from "@/components/app-topbar"
-import { useAuthStore } from "@/lib/store"
+import { useRole } from "@/lib/contexts/role-context"
+import { mockUsers } from "@/lib/mock/users"
 
 export default function AppLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
-  const router = useRouter()
-  const { user, setUser } = useAuthStore()
+  const { currentUser, setCurrentUser, currentRole } = useRole()
 
   useEffect(() => {
-    // Initialize mock user if not set
-    if (!user) {
-      setUser({
-        id: "user-1",
-        email: "john.doe@lawfirm.com",
-        name: "John Doe",
-        role: "FIRM_OWNER",
-        firmId: "firm-1",
-      })
+    // Initialize mock user based on current role if not set
+    if (!currentUser) {
+      const user = mockUsers.find((u) => u.role === currentRole) || mockUsers[0]
+      setCurrentUser(user)
     }
-  }, [user, setUser])
+  }, [currentUser, currentRole, setCurrentUser])
 
   return (
     <div className="flex h-screen overflow-hidden">

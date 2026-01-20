@@ -1,11 +1,12 @@
 "use client"
 
 import { useState } from "react"
-import Link from "next/link"
-import { useRouter } from "next/navigation"
-import { Search, Plus, Bell, User, Menu, X, LogOut } from "lucide-react"
+import { Search, Bell, User, Menu } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
+import { Badge } from "@/components/ui/badge"
+import { useRole } from "@/lib/contexts/role-context"
+import { useUIStore } from "@/lib/store"
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -14,130 +15,99 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
-import { useAuthStore, useUIStore } from "@/lib/store"
-import { CommandPalette } from "./command-palette"
+import { mockUsers } from "@/lib/mock/users"
+import { format } from "date-fns"
 
 export function AppTopbar() {
-  const router = useRouter()
-  const { user, logout } = useAuthStore()
-  const { sidebarOpen, toggleSidebar, commandPaletteOpen, setCommandPaletteOpen } = useUIStore()
-  const [searchQuery, setSearchQuery] = useState("")
-
-  const handleNewClick = (type: string) => {
-    const routes: Record<string, string> = {
-      client: "/app/clients/new",
-      matter: "/app/matters/new",
-      task: "/app/tasks/new",
-      invoice: "/app/accounting/invoices/new",
-      trust: "/app/trust/new",
-      document: "/app/documents/new",
-    }
-    router.push(routes[type] || "/app")
-  }
-
-  const handleLogout = async () => {
-    await logout()
-    router.push("/auth/sign-in")
+  const { currentRole, currentUser } = useRole()
+  const setSidebarOpen = useUIStore((state) => state.setSidebarOpen)
+  const sidebarOpen = useUIStore((state) => state.sidebarOpen)
+  
+  const user = currentUser || mockUsers.find((u) => u.role === currentRole) || mockUsers[0]
+  
+  const roleDisplayNames: Record<string, string> = {
+    PARTNER_ADMIN: "Partner (Admin)",
+    JUNIOR_PARTNER: "Junior Partner",
+    ASSOCIATE: "Associate",
+    PARALEGAL: "Paralegal",
+    FINANCE: "Finance",
+    INTAKE: "Intake",
+    OPS_HR: "Ops/HR",
+    RECEPTION: "Reception",
+    READ_ONLY: "Read-Only",
   }
 
   return (
-    <>
-      <div className="h-16 border-b bg-background/95 backdrop-blur-sm sticky top-0 z-40">
-        <div className="flex items-center justify-between h-full px-4 sm:px-6">
-          <div className="flex items-center gap-3 sm:gap-4">
-            <Button
-              variant="ghost"
-              size="icon"
-              onClick={toggleSidebar}
-              className="lg:hidden"
-            >
-              {sidebarOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-            </Button>
-            <div className="relative w-64 hidden md:block">
-              <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
-              <Input
-                placeholder="Search clients, matters, tasks..."
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                onFocus={() => setCommandPaletteOpen(true)}
-                className="pl-9 border-2 focus:border-primary/50 transition-colors"
-              />
-            </div>
-            <Button
-              variant="ghost"
-              size="icon"
-              onClick={() => setCommandPaletteOpen(true)}
-              className="md:hidden"
-            >
-              <Search className="h-5 w-5" />
-            </Button>
-          </div>
+    <header className="sticky top-0 z-40 border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+      <div className="flex h-16 items-center gap-4 px-4 sm:px-6 lg:px-8">
+        <Button
+          variant="ghost"
+          size="icon"
+          className="lg:hidden"
+          onClick={() => setSidebarOpen(!sidebarOpen)}
+        >
+          <Menu className="h-5 w-5" />
+        </Button>
 
-          <div className="flex items-center gap-2">
-            <DropdownMenu>
-              <DropdownMenuTrigger asChild>
-                <Button variant="ghost" size="sm" className="gap-2">
-                  <Plus className="h-4 w-4" />
-                  <span className="hidden sm:inline">New</span>
-                </Button>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent align="end" className="w-48">
-                <DropdownMenuItem onClick={() => handleNewClick("client")}>
-                  Client
-                </DropdownMenuItem>
-                <DropdownMenuItem onClick={() => handleNewClick("matter")}>
-                  Matter
-                </DropdownMenuItem>
-                <DropdownMenuItem onClick={() => handleNewClick("task")}>
-                  Task
-                </DropdownMenuItem>
-                <DropdownMenuItem onClick={() => handleNewClick("invoice")}>
-                  Invoice
-                </DropdownMenuItem>
-                <DropdownMenuItem onClick={() => handleNewClick("trust")}>
-                  Trust Transaction
-                </DropdownMenuItem>
-                <DropdownMenuItem onClick={() => handleNewClick("document")}>
-                  Document
-                </DropdownMenuItem>
-              </DropdownMenuContent>
-            </DropdownMenu>
-
-            <Button variant="ghost" size="icon" className="relative">
-              <Bell className="h-5 w-5" />
-              <span className="absolute top-1.5 right-1.5 h-2 w-2 bg-destructive rounded-full ring-2 ring-background" />
-            </Button>
-
-            <DropdownMenu>
-              <DropdownMenuTrigger asChild>
-                <Button variant="ghost" size="icon" className="rounded-full">
-                  <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center">
-                    <User className="h-4 w-4 text-primary" />
-                  </div>
-                </Button>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent align="end" className="w-56">
-                <DropdownMenuLabel>
-                  <div className="flex flex-col">
-                    <span className="font-semibold">{user?.name}</span>
-                    <span className="text-xs text-muted-foreground">{user?.email}</span>
-                  </div>
-                </DropdownMenuLabel>
-                <DropdownMenuSeparator />
-                <DropdownMenuItem onClick={() => router.push("/app/settings")}>
-                  Settings
-                </DropdownMenuItem>
-                <DropdownMenuItem onClick={handleLogout}>
-                  <LogOut className="h-4 w-4 mr-2" />
-                  Sign Out
-                </DropdownMenuItem>
-              </DropdownMenuContent>
-            </DropdownMenu>
+        {/* Global Search */}
+        <div className="flex-1 max-w-md">
+          <div className="relative">
+            <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
+            <Input
+              placeholder="Search matters, clients, tasks..."
+              className="pl-9 w-full"
+            />
           </div>
         </div>
+
+        {/* Date Selector */}
+        <div className="hidden md:flex items-center gap-2">
+          <select className="text-sm border border-border rounded-md px-3 py-1.5 bg-background">
+            <option>Today</option>
+            <option>This Week</option>
+            <option>This Month</option>
+          </select>
+        </div>
+
+        {/* Notifications */}
+        <Button variant="ghost" size="icon" className="relative">
+          <Bell className="h-5 w-5" />
+          <Badge className="absolute top-1 right-1 h-5 w-5 p-0 flex items-center justify-center text-xs bg-red-500">
+            3
+          </Badge>
+        </Button>
+
+        {/* Profile Menu */}
+        <DropdownMenu>
+          <DropdownMenuTrigger asChild>
+            <Button variant="ghost" className="flex items-center gap-2">
+              <div className="h-8 w-8 rounded-full bg-primary/10 flex items-center justify-center">
+                <User className="h-4 w-4 text-primary" />
+              </div>
+              <div className="hidden md:block text-left">
+                <div className="text-sm font-medium">{user.name}</div>
+                <div className="text-xs text-muted-foreground">{roleDisplayNames[currentRole]}</div>
+              </div>
+            </Button>
+          </DropdownMenuTrigger>
+          <DropdownMenuContent align="end" className="w-56">
+            <DropdownMenuLabel>
+              <div className="flex flex-col space-y-1">
+                <p className="text-sm font-medium leading-none">{user.name}</p>
+                <p className="text-xs leading-none text-muted-foreground">{user.email}</p>
+                <Badge variant="outline" className="mt-2 w-fit text-xs">
+                  {roleDisplayNames[currentRole]}
+                </Badge>
+              </div>
+            </DropdownMenuLabel>
+            <DropdownMenuSeparator />
+            <DropdownMenuItem>Profile</DropdownMenuItem>
+            <DropdownMenuItem>Settings</DropdownMenuItem>
+            <DropdownMenuSeparator />
+            <DropdownMenuItem>Sign out</DropdownMenuItem>
+          </DropdownMenuContent>
+        </DropdownMenu>
       </div>
-      <CommandPalette />
-    </>
+    </header>
   )
 }
-

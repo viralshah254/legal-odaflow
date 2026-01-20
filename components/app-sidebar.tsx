@@ -17,34 +17,53 @@ import {
   Settings,
   ListChecks,
   Bell,
+  DollarSign,
+  UserCog,
 } from "lucide-react"
 import { useUIStore } from "@/lib/store"
+import { useRole } from "@/lib/contexts/role-context"
+import { RoleGate } from "@/components/dashboard/role-gate"
 
-const navigation = [
-  { name: "Dashboard", href: "/app", icon: LayoutDashboard },
+const baseNavigation = [
+  { name: "Dashboard", href: "/app/dashboard", icon: LayoutDashboard },
   { name: "Clients", href: "/app/clients", icon: Users },
   { name: "Matters", href: "/app/matters", icon: FileText },
   { name: "Tasks", href: "/app/tasks", icon: CheckSquare },
   { name: "Calendar", href: "/app/calendar", icon: Calendar },
-  { name: "Documents", href: "/app/documents", icon: Folder },
-  { name: "Invoices", href: "/app/accounting/invoices", icon: Receipt },
-  { name: "Trust", href: "/app/trust", icon: Shield },
-  { name: "Reports", href: "/app/reports", icon: BarChart3 },
-  { name: "Queues", href: "/app/queues", icon: ListChecks },
-  { name: "Automations", href: "/app/automations", icon: Zap },
-  { name: "Settings", href: "/app/settings", icon: Settings },
+  { name: "Alerts", href: "/app/alerts", icon: Bell },
+]
+
+const conditionalNavigation = [
+  { name: "Finance", href: "/app/finance", icon: DollarSign, roles: ["PARTNER_ADMIN", "FINANCE"] as const },
+  { name: "Team", href: "/app/team", icon: UserCog, roles: ["PARTNER_ADMIN", "JUNIOR_PARTNER"] as const },
+  { name: "Settings", href: "/app/settings", icon: Settings, roles: ["PARTNER_ADMIN"] as const },
 ]
 
 export function AppSidebar() {
   const pathname = usePathname()
   const sidebarOpen = useUIStore((state) => state.sidebarOpen)
+  const { currentRole } = useRole()
 
   if (!sidebarOpen) return null
+
+  const getNavigation = () => {
+    const nav = [...baseNavigation]
+    
+    conditionalNavigation.forEach((item) => {
+      if (item.roles.includes(currentRole as any)) {
+        nav.push(item)
+      }
+    })
+    
+    return nav
+  }
+
+  const navigation = getNavigation()
 
   return (
     <div className="w-64 border-r bg-background/95 backdrop-blur-sm h-screen sticky top-0 overflow-y-auto">
       <div className="p-6">
-        <Link href="/app" className="flex items-center gap-2.5 mb-8 group">
+        <Link href="/app/dashboard" className="flex items-center gap-2.5 mb-8 group">
           <div className="w-9 h-9 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
             <Shield className="h-5 w-5 text-primary" />
           </div>
