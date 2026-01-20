@@ -167,7 +167,7 @@ export default function HomePage() {
                         <BarChart3 className="h-4 w-4 text-primary group-hover:scale-110 transition-transform" />
                         <span className="text-xs text-muted-foreground font-medium">Revenue</span>
                       </div>
-                      <div className="text-2xl font-bold text-foreground">₦2.4M</div>
+                      <div className="text-2xl font-bold text-foreground">KSH 2.4M</div>
                     </div>
                   </div>
 

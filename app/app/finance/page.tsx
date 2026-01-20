@@ -42,13 +42,13 @@ export default function FinancePage() {
         <KpiCard
           icon={DollarSign}
           label="Collections This Month"
-          value={`₦${(collectionsThisMonth / 1000).toFixed(0)}K`}
+          value={`KSH ${(collectionsThisMonth / 1000).toFixed(0)}K`}
           delta={{ value: 15, positive: true }}
         />
         <KpiCard
           icon={TrendingUp}
           label="Outstanding Invoices"
-          value={`₦${(outstandingInvoices.reduce((sum, inv) => sum + inv.amount, 0) / 1000).toFixed(0)}K`}
+          value={`KSH ${(outstandingInvoices.reduce((sum, inv) => sum + inv.amount, 0) / 1000).toFixed(0)}K`}
         />
         <KpiCard
           icon={AlertTriangle}
@@ -88,10 +88,10 @@ export default function FinancePage() {
                   </div>
                 </div>
                 <div className="text-right">
-                  <div className="font-bold text-lg">₦{(stat.collectedAmount / 1000).toFixed(0)}K</div>
+                  <div className="font-bold text-lg">KSH {(stat.collectedAmount / 1000).toFixed(0)}K</div>
                   <div className="text-xs text-muted-foreground">Collected</div>
                   <div className="text-xs text-muted-foreground mt-1">
-                    ₦{(stat.invoicedAmount / 1000).toFixed(0)}K invoiced
+                    KSH {(stat.invoicedAmount / 1000).toFixed(0)}K invoiced
                   </div>
                 </div>
               </div>
@@ -110,23 +110,23 @@ export default function FinancePage() {
           <div className="space-y-3">
             <div className="flex items-center justify-between p-4 rounded-lg border border-border/50">
               <span className="text-sm font-medium">Current (Not Due)</span>
-              <span className="font-bold">₦{(invoiceAging.current / 1000).toFixed(0)}K</span>
+              <span className="font-bold">KSH {(invoiceAging.current / 1000).toFixed(0)}K</span>
             </div>
             <div className="flex items-center justify-between p-4 rounded-lg border border-border/50">
               <span className="text-sm font-medium">1-30 Days</span>
-              <span className="font-bold">₦{(invoiceAging.days30 / 1000).toFixed(0)}K</span>
+              <span className="font-bold">KSH {(invoiceAging.days30 / 1000).toFixed(0)}K</span>
             </div>
             <div className="flex items-center justify-between p-4 rounded-lg border border-border/50">
               <span className="text-sm font-medium">31-60 Days</span>
-              <span className="font-bold">₦{(invoiceAging.days60 / 1000).toFixed(0)}K</span>
+              <span className="font-bold">KSH {(invoiceAging.days60 / 1000).toFixed(0)}K</span>
             </div>
             <div className="flex items-center justify-between p-4 rounded-lg border border-border/50">
               <span className="text-sm font-medium">61-90 Days</span>
-              <span className="font-bold">₦{(invoiceAging.days90 / 1000).toFixed(0)}K</span>
+              <span className="font-bold">KSH {(invoiceAging.days90 / 1000).toFixed(0)}K</span>
             </div>
             <div className="flex items-center justify-between p-4 rounded-lg border border-red-500/20 bg-red-500/5">
               <span className="text-sm font-medium">Over 90 Days</span>
-              <span className="font-bold text-red-600 dark:text-red-400">₦{(invoiceAging.over90 / 1000).toFixed(0)}K</span>
+              <span className="font-bold text-red-600 dark:text-red-400">KSH {(invoiceAging.over90 / 1000).toFixed(0)}K</span>
             </div>
           </div>
         </CardContent>
@@ -166,7 +166,7 @@ export default function FinancePage() {
                   </div>
                 </div>
                 <div className="text-right">
-                  <div className="font-bold">₦{(invoice.amount / 1000).toFixed(0)}K</div>
+                  <div className="font-bold">KSH {(invoice.amount / 1000).toFixed(0)}K</div>
                   <div className="text-xs text-muted-foreground">Originator: {invoice.originatorName}</div>
                 </div>
               </div>

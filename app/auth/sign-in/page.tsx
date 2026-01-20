@@ -11,23 +11,26 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { useAuthStore } from "@/lib/store"
-import { Shield } from "lucide-react"
+import { Shield, Mail } from "lucide-react"
 
 const signInSchema = z.object({
   email: z.string().email("Invalid email address"),
-  password: z.string().min(1, "Password is required"),
+  password: z.string().min(1, "Password is required").optional(),
+  otp: z.string().min(6, "OTP must be 6 digits").max(6, "OTP must be 6 digits").optional(),
 })
 
 type SignInForm = z.infer<typeof signInSchema>
 
 export default function SignInPage() {
   const router = useRouter()
-  const { login } = useAuthStore()
+  const { login, loginWithOTP } = useAuthStore()
   const [error, setError] = useState<string | null>(null)
+  const [useOTP, setUseOTP] = useState(false)
   const {
     register,
     handleSubmit,
     formState: { errors, isSubmitting },
+    reset,
   } = useForm<SignInForm>({
     resolver: zodResolver(signInSchema),
   })
@@ -35,11 +38,29 @@ export default function SignInPage() {
   const onSubmit = async (data: SignInForm) => {
     try {
       setError(null)
-      await login(data.email, data.password)
+      if (useOTP) {
+        if (!data.otp) {
+          setError("OTP is required")
+          return
+        }
+        await loginWithOTP(data.email, data.otp)
+      } else {
+        if (!data.password) {
+          setError("Password is required")
+          return
+        }
+        await login(data.email, data.password)
+      }
       router.push("/app")
     } catch (err) {
-      setError("Invalid email or password")
+      setError(useOTP ? "Invalid email or OTP code" : "Invalid email or password")
     }
+  }
+
+  const toggleAuthMethod = () => {
+    setUseOTP(!useOTP)
+    reset()
+    setError(null)
   }
 
   return (
@@ -51,7 +72,7 @@ export default function SignInPage() {
           </div>
           <CardTitle className="text-2xl">Sign In</CardTitle>
           <CardDescription>
-            Enter your credentials to access your account
+            {useOTP ? "Enter your email and OTP code" : "Enter your credentials to access your account"}
           </CardDescription>
         </CardHeader>
         <CardContent>
@@ -73,22 +94,50 @@ export default function SignInPage() {
                 <p className="text-sm text-destructive">{errors.email.message}</p>
               )}
             </div>
-            <div className="space-y-2">
-              <Label htmlFor="password">Password</Label>
-              <Input
-                id="password"
-                type="password"
-                placeholder="••••••••"
-                {...register("password")}
-              />
-              {errors.password && (
-                <p className="text-sm text-destructive">{errors.password.message}</p>
-              )}
-            </div>
+            {useOTP ? (
+              <div className="space-y-2">
+                <Label htmlFor="otp">OTP Code</Label>
+                <Input
+                  id="otp"
+                  type="text"
+                  placeholder="111111"
+                  maxLength={6}
+                  {...register("otp")}
+                />
+                {errors.otp && (
+                  <p className="text-sm text-destructive">{errors.otp.message}</p>
+                )}
+                <p className="text-xs text-muted-foreground">
+                  Demo OTP code: <span className="font-mono font-semibold">111111</span>
+                </p>
+              </div>
+            ) : (
+              <div className="space-y-2">
+                <Label htmlFor="password">Password</Label>
+                <Input
+                  id="password"
+                  type="password"
+                  placeholder="••••••••"
+                  {...register("password")}
+                />
+                {errors.password && (
+                  <p className="text-sm text-destructive">{errors.password.message}</p>
+                )}
+              </div>
+            )}
             <div className="flex items-center justify-between">
-              <Link href="/auth/forgot-password" className="text-sm text-primary hover:underline">
-                Forgot password?
-              </Link>
+              {!useOTP && (
+                <Link href="/auth/forgot-password" className="text-sm text-primary hover:underline">
+                  Forgot password?
+                </Link>
+              )}
+              <button
+                type="button"
+                onClick={toggleAuthMethod}
+                className="text-sm text-primary hover:underline"
+              >
+                {useOTP ? "Use password instead" : "Use OTP instead"}
+              </button>
             </div>
             <Button type="submit" className="w-full" disabled={isSubmitting}>
               {isSubmitting ? "Signing in..." : "Sign In"}
@@ -105,7 +154,11 @@ export default function SignInPage() {
               </p>
               <p className="text-xs text-center text-muted-foreground">
                 Email: john.doe@lawfirm.com<br />
-                Password: password
+                {useOTP ? (
+                  <>OTP: <span className="font-mono font-semibold">111111</span></>
+                ) : (
+                  <>Password: password</>
+                )}
               </p>
             </div>
           </form>

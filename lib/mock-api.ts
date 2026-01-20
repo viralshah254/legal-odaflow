@@ -37,6 +37,19 @@ export const authApi = {
     return user
   },
 
+  async loginWithOTP(email: string, otp: string): Promise<User> {
+    await apiDelay()
+    const user = mockUsers.find(u => u.email === email)
+    if (!user) {
+      throw new Error('User not found')
+    }
+    // Demo OTP code is 111111
+    if (otp !== '111111') {
+      throw new Error('Invalid OTP code')
+    }
+    return user
+  },
+
   async getCurrentUser(): Promise<User | null> {
     await apiDelay()
     return mockUsers[0] // Return first user as current

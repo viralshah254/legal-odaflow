@@ -6,10 +6,17 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 export function formatCurrency(amount: number): string {
-  return new Intl.NumberFormat('en-US', {
-    style: 'currency',
-    currency: 'USD',
+  // Format as Kenyan Shillings with KSH prefix
+  const formatted = new Intl.NumberFormat('en-KE', {
+    minimumFractionDigits: 0,
+    maximumFractionDigits: 0,
   }).format(amount)
+  return `KSH ${formatted}`
+}
+
+export function formatKSH(amount: number): string {
+  const formatted = (amount / 1000).toFixed(0)
+  return `KSH ${formatted}K`
 }
 
 export function formatDate(date: Date | string): string {

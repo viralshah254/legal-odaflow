@@ -6,6 +6,7 @@ interface AuthState {
   user: User | null
   loading: boolean
   login: (email: string, password: string) => Promise<void>
+  loginWithOTP: (email: string, otp: string) => Promise<void>
   logout: () => Promise<void>
   setUser: (user: User | null) => void
 }
@@ -17,6 +18,16 @@ export const useAuthStore = create<AuthState>((set) => ({
     set({ loading: true })
     try {
       const user = await authApi.login(email, password)
+      set({ user, loading: false })
+    } catch (error) {
+      set({ loading: false })
+      throw error
+    }
+  },
+  loginWithOTP: async (email: string, otp: string) => {
+    set({ loading: true })
+    try {
+      const user = await authApi.loginWithOTP(email, otp)
       set({ user, loading: false })
     } catch (error) {
       set({ loading: false })
