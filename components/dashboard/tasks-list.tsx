@@ -7,6 +7,7 @@ import { Badge } from "@/components/ui/badge"
 import { Clock, CheckCircle2, AlertCircle } from "lucide-react"
 import { format } from "date-fns"
 import Link from "next/link"
+import { cn } from "@/lib/utils"
 
 interface TasksListProps {
   tasksDueToday: Task[]

@@ -169,7 +169,7 @@ export function RequestAssistanceDialog({
 
           <div className="space-y-2">
             <Label>Access Scope</Label>
-            <RadioGroup value={accessScope} onValueChange={(value) => setAccessScope(value as AssistanceAccessScope)}>
+            <RadioGroup value={accessScope} onValueChange={(value: string) => setAccessScope(value as AssistanceAccessScope)}>
               {(["MATTER_ONLY", "MATTER_CLIENT_DOCS", "FULL_CASE_SUPPORT"] as AssistanceAccessScope[]).map((scope) => (
                 <div key={scope} className="flex items-center space-x-2">
                   <RadioGroupItem value={scope} id={scope} />

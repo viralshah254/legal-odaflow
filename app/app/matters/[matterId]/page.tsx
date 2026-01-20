@@ -3,7 +3,7 @@
 import { useState } from "react"
 import { use } from "react"
 import { useRole } from "@/lib/contexts/role-context"
-import { getMatterById, mockMatters } from "@/lib/mock/matters"
+import { getMatterById, mockMatters, Matter } from "@/lib/mock/matters"
 import { getTimelineEventsByMatter } from "@/lib/mock/timeline"
 import { getAssistanceRequestsByMatter } from "@/lib/mock/assistance"
 import { TransferCaseDialog } from "@/components/matters/transfer-case-dialog"

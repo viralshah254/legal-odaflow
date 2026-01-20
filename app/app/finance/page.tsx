@@ -9,6 +9,8 @@ import { Button } from "@/components/ui/button"
 import { DollarSign, TrendingUp, AlertTriangle, FileText, Plus, ArrowRight } from "lucide-react"
 import Link from "next/link"
 import { format } from "date-fns"
+import { RoleGate } from "@/components/dashboard/role-gate"
+import { cn } from "@/lib/utils"
 
 export default function FinancePage() {
   const { currentRole } = useRole()

@@ -77,7 +77,7 @@ export const mockClients: Client[] = [
 ]
 
 export function getClientById(id: string): Client | undefined {
-  return mockClients.find((c) => id === id)
+  return mockClients.find((c) => c.id === id)
 }
 
 export function createClient(client: Omit<Client, "id" | "createdAt" | "updatedAt" | "kycStatus">): Client {

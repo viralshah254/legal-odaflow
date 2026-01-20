@@ -2,6 +2,7 @@
 
 import { useRole } from "@/lib/contexts/role-context"
 import { mockUsers } from "@/lib/mock/users"
+import { User } from "@/lib/types/roles"
 import { getMattersByOwner, getMattersByTeam } from "@/lib/mock/matters"
 import { getTasksByAssignee, getOverdueTasks } from "@/lib/mock/tasks"
 import { getEventsByAttendee, getUpcomingEvents } from "@/lib/mock/calendar"
@@ -29,7 +30,7 @@ export default function TeamPage() {
   const user = currentUser || mockUsers.find((u) => u.role === currentRole) || mockUsers[0]
   
   // Get team members based on role
-  let teamMembers = []
+  let teamMembers: User[] = []
   if (currentRole === "PARTNER_ADMIN") {
     teamMembers = mockUsers.filter((u) => u.role !== "PARTNER_ADMIN")
   } else if (currentRole === "JUNIOR_PARTNER") {

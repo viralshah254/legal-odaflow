@@ -214,7 +214,7 @@ export const mockTasks: Task[] = [
     matter: mockMatters[0],
     dueDate: new Date('2024-02-19'),
     priority: 'CRITICAL',
-    status: 'OVERDUE',
+    status: 'PENDING',
     assigneeId: 'user-2',
     assignee: mockUsers[1],
     watcherIds: ['user-1'],

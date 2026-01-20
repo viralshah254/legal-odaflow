@@ -1,7 +1,7 @@
 "use client"
 
 import { use } from "react"
-import { getClientById } from "@/lib/mock/clients"
+import { getClientById, mockClients, Client } from "@/lib/mock/clients"
 import { getKycChecklist, updateKycDocument } from "@/lib/mock/kyc"
 import { getMattersByOwner, mockMatters } from "@/lib/mock/matters"
 import { KycChecklistCard } from "@/components/dashboard/kyc-checklist-card"
@@ -16,7 +16,7 @@ import { notFound } from "next/navigation"
 
 export default function ClientDetailPage({ params }: { params: Promise<{ clientId: string }> }) {
   const { clientId } = use(params)
-  const client = getClientById(clientId) || mockClients.find((c) => c.id === clientId)
+  const client = getClientById(clientId)
   
   if (!client) {
     notFound()
