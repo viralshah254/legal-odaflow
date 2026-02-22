@@ -18,10 +18,11 @@ function BillingPageContent() {
   const router = useRouter()
   const searchParams = useSearchParams()
   const upgradeTo = searchParams.get("upgrade")
-  const { pricing } = usePricing()
+  const { pricing, getProfessionalPricePerUser } = usePricing()
   const subscription = getCurrentSubscription()
   const [showUpgradeDialog, setShowUpgradeDialog] = useState(false)
   const [selectedPlan, setSelectedPlan] = useState<PlanTier | null>(null)
+  const professionalPrice = getProfessionalPricePerUser()
 
   useEffect(() => {
     if (upgradeTo === "professional" && subscription?.plan === "STARTER") {
@@ -58,7 +59,6 @@ function BillingPageContent() {
     )
   }
 
-  const professionalPrice = pricing.pricePerUser * 1.5
   const currentPrice = subscription.pricePerUser
   const upgradeCost = (professionalPrice - currentPrice) * subscription.userCount
 

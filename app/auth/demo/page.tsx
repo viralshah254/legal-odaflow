@@ -86,7 +86,7 @@ export default function DemoSignInPage() {
   const router = useRouter()
   const { loginWithOTP, setUser } = useAuthStore()
   const { setCurrentRole, setCurrentUser } = useRole()
-  const { pricing } = usePricing()
+  const { pricing, getProfessionalPricePerUser } = usePricing()
   const [loading, setLoading] = useState<string | null>(null)
 
   const handleDemoLogin = async (role: UserRole, plan: "STARTER" | "PROFESSIONAL") => {
@@ -96,7 +96,7 @@ export default function DemoSignInPage() {
       const user = mockUsers.find((u) => u.role === role) || mockUsers[0]
       
       // Set up subscription
-      const monthlyPrice = plan === "PROFESSIONAL" ? pricing.pricePerUser * 1.5 : pricing.pricePerUser
+      const monthlyPrice = plan === "PROFESSIONAL" ? getProfessionalPricePerUser() : pricing.pricePerUser
       createSubscription(
         plan,
         "monthly",

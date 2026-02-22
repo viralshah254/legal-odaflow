@@ -13,7 +13,8 @@ export interface LocationPricing {
   countryName: string
   currency: string
   currencySymbol: string
-  pricePerUser: number // Per month
+  pricePerUser: number // Starter: per seat/month
+  professionalPricePerUser?: number // Professional plan per seat/month (defaults to pricePerUser * 1.5 if unset)
   annualDiscount: number // Percentage discount for annual (e.g., 20)
 }
 
@@ -62,6 +63,7 @@ export const LOCATION_PRICING: Record<string, LocationPricing> = {
     currency: "USD",
     currencySymbol: "$",
     pricePerUser: 20,
+    professionalPricePerUser: 25,
     annualDiscount: 20,
   },
   CA: {
@@ -70,6 +72,7 @@ export const LOCATION_PRICING: Record<string, LocationPricing> = {
     currency: "USD",
     currencySymbol: "$",
     pricePerUser: 20,
+    professionalPricePerUser: 25,
     annualDiscount: 20,
   },
   // UK
@@ -358,7 +361,13 @@ export const DEFAULT_PRICING: LocationPricing = {
   currency: "USD",
   currencySymbol: "$",
   pricePerUser: 20,
+  professionalPricePerUser: 25,
   annualDiscount: 20,
+}
+
+/** Professional plan price per seat/month (defaults to Starter * 1.5 if not set). */
+export function getProfessionalPricePerUser(pricing: LocationPricing): number {
+  return pricing.professionalPricePerUser ?? pricing.pricePerUser * 1.5
 }
 
 // Get pricing for a country code

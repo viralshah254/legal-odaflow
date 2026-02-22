@@ -4,6 +4,7 @@ import React, { createContext, useContext, useState, useEffect } from "react"
 import {
   LocationPricing,
   getPricingForCountry,
+  getProfessionalPricePerUser as getProPrice,
   DEFAULT_PRICING,
   calculateAnnualPrice,
 } from "@/lib/types/pricing"
@@ -16,6 +17,7 @@ interface PricingContextType {
   billingCycle: "monthly" | "annual"
   setBillingCycle: (cycle: "monthly" | "annual") => void
   getPricePerUser: () => number
+  getProfessionalPricePerUser: () => number
   getAnnualPricePerUser: () => number
 }
 
@@ -117,6 +119,10 @@ export function PricingProvider({ children }: { children: React.ReactNode }) {
     return pricing.pricePerUser
   }
 
+  const getProfessionalPricePerUser = (): number => {
+    return getProPrice(pricing)
+  }
+
   const getAnnualPricePerUser = (): number => {
     return calculateAnnualPrice(pricing.pricePerUser, pricing.annualDiscount)
   }
@@ -131,6 +137,7 @@ export function PricingProvider({ children }: { children: React.ReactNode }) {
         billingCycle,
         setBillingCycle: handleSetBillingCycle,
         getPricePerUser,
+        getProfessionalPricePerUser,
         getAnnualPricePerUser,
       }}
     >

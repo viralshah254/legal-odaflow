@@ -10,7 +10,7 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Check, Shield, Users } from "lucide-react"
 import { usePricing } from "@/lib/contexts/pricing-context"
-import { PRICING_TIERS } from "@/lib/types/pricing"
+import { PRICING_TIERS, calculateAnnualPrice } from "@/lib/types/pricing"
 import { cn } from "@/lib/utils"
 import { Switch } from "@/components/ui/switch"
 import { createSubscription } from "@/lib/mock/subscription"
@@ -24,6 +24,7 @@ export default function PricingPage() {
     billingCycle,
     setBillingCycle,
     getPricePerUser,
+    getProfessionalPricePerUser,
     getAnnualPricePerUser,
     isLoading,
   } = usePricing()
@@ -33,9 +34,9 @@ export default function PricingPage() {
   const [showSignupDialog, setShowSignupDialog] = useState(false)
 
   const monthlyPrice = getPricePerUser()
-  const professionalMonthlyPrice = monthlyPrice * 1.5 // 50% higher
+  const professionalMonthlyPrice = getProfessionalPricePerUser()
   const annualPrice = getAnnualPricePerUser()
-  const professionalAnnualPrice = annualPrice * 1.5 // 50% higher
+  const professionalAnnualPrice = calculateAnnualPrice(professionalMonthlyPrice, pricing.annualDiscount)
   const displayPrice = billingCycle === "monthly" ? monthlyPrice : annualPrice / 12
   const professionalDisplayPrice = billingCycle === "monthly" ? professionalMonthlyPrice : professionalAnnualPrice / 12
   const savings = billingCycle === "annual" ? pricing.annualDiscount : 0

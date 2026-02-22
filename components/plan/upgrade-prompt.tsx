@@ -38,7 +38,7 @@ function UpgradeDialogContent({
   onUpgrade: () => void
 }) {
   const subscription = getCurrentSubscription()
-  const { pricing } = usePricing()
+  const { pricing, getProfessionalPricePerUser } = usePricing()
   if (!subscription) {
     return (
       <div className="space-y-4">
@@ -51,7 +51,7 @@ function UpgradeDialogContent({
     )
   }
 
-  const professionalPrice = pricing.pricePerUser * 1.5
+  const professionalPrice = getProfessionalPricePerUser()
   const currentPrice = pricing.pricePerUser
   const upgradePrice = professionalPrice - currentPrice
 
