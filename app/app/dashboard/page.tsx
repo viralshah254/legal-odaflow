@@ -2,6 +2,8 @@
 
 import { useEffect } from "react"
 import { useRole } from "@/lib/contexts/role-context"
+import { hasMeetingPermission } from "@/lib/types/roles"
+import { useUIStore } from "@/lib/store"
 import { mockUsers } from "@/lib/mock/users"
 import { getAllUrgentAlerts, getCriticalAlerts, getHighAlerts, mockAlerts } from "@/lib/mock/alerts"
 import { getMissingKycDocs, getExpiredKycDocs, initializeKycForClient } from "@/lib/mock/kyc"
@@ -26,17 +28,23 @@ import {
   CheckCircle2, 
   DollarSign, 
   TrendingUp,
-  Users,
   FileText,
-  Clock,
   Plus,
-  ArrowRight
+  ArrowRight,
+  Mic,
 } from "lucide-react"
 import Link from "next/link"
+import { useCurrency } from "@/lib/contexts/currency-context"
+import { formatCurrencyShort, formatCurrencyWithSymbol } from "@/lib/utils"
+import { PlanGate } from "@/components/plan/plan-gate"
 
 export default function DashboardPage() {
   const { currentRole, currentUser } = useRole()
+  const { currency } = useCurrency()
+  const setRecordMeetingOpen = useUIStore((s) => s.setRecordMeetingOpen)
   const user = currentUser || mockUsers.find((u) => u.role === currentRole) || mockUsers[0]
+
+  const canRecordMeetings = hasMeetingPermission(currentRole, "meetingsRecord")
   
   // Initialize KYC for existing clients (one-time)
   useEffect(() => {
@@ -152,66 +160,78 @@ export default function DashboardPage() {
             <KpiCard
               icon={DollarSign}
               label="Outstanding Invoices"
-              value={`KSH ${(outstandingInvoices.reduce((sum, inv) => sum + inv.amount, 0) / 1000).toFixed(0)}K`}
+              value={formatCurrencyShort(outstandingInvoices.reduce((sum, inv) => sum + inv.amount, 0), currency)}
             />
           </div>
 
-          {/* Team Workload & Monitoring */}
-          <Card>
-            <CardHeader>
-              <div className="flex items-center justify-between">
-                <CardTitle>Team Workload & Monitoring</CardTitle>
-                <Link href="/app/team">
-                  <Button variant="outline" size="sm">
-                    View All <ArrowRight className="ml-2 h-4 w-4" />
-                  </Button>
-                </Link>
-              </div>
-            </CardHeader>
-            <CardContent>
-              <p className="text-sm text-muted-foreground">Team monitoring table would be displayed here. See /app/team for full view.</p>
-            </CardContent>
-          </Card>
-
-          {/* Finance Performance */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+          {/* Team Workload & Monitoring - Available in Professional */}
+          <PlanGate
+            requiredPlan="PROFESSIONAL"
+            feature="Team Analytics"
+            description="Monitor team performance and workload with the Professional plan"
+          >
             <Card>
               <CardHeader>
-                <CardTitle>Top Originators</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="space-y-3">
-                  {originatorStats.slice(0, 5).map((stat, index) => (
-                    <div key={stat.userId} className="flex items-center justify-between p-3 rounded-lg border border-border/50">
-                      <div className="flex items-center gap-3">
-                        <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center font-bold text-sm">
-                          {index + 1}
-                        </div>
-                        <div>
-                          <div className="font-medium">{stat.userName}</div>
-                          <div className="text-xs text-muted-foreground">{stat.invoiceCount} invoices</div>
-                        </div>
-                      </div>
-                      <div className="text-right">
-                        <div className="font-bold">KSH {(stat.collectedAmount / 1000).toFixed(0)}K</div>
-                        <div className="text-xs text-muted-foreground">Collected</div>
-                      </div>
-                    </div>
-                  ))}
+                <div className="flex items-center justify-between">
+                  <CardTitle>Team Workload & Monitoring</CardTitle>
+                  <Link href="/app/team">
+                    <Button variant="outline" size="sm">
+                      View All <ArrowRight className="ml-2 h-4 w-4" />
+                    </Button>
+                  </Link>
                 </div>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <CardTitle>Collections This Month</CardTitle>
               </CardHeader>
               <CardContent>
-                <div className="text-3xl font-bold mb-2">KSH {(collectionsThisMonth / 1000).toFixed(0)}K</div>
-                <p className="text-sm text-muted-foreground">Total collections this month</p>
+                <p className="text-sm text-muted-foreground">Team monitoring table would be displayed here. See /app/team for full view.</p>
               </CardContent>
             </Card>
-          </div>
+          </PlanGate>
+
+          {/* Finance Performance - Advanced Reporting Features */}
+          <PlanGate
+            requiredPlan="PROFESSIONAL"
+            feature="Advanced Reporting"
+            description="Get detailed analytics and insights with the Professional plan"
+          >
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+              <Card>
+                <CardHeader>
+                  <CardTitle>Top Originators</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-3">
+                    {originatorStats.slice(0, 5).map((stat, index) => (
+                      <div key={stat.userId} className="flex items-center justify-between p-3 rounded-lg border border-border/50">
+                        <div className="flex items-center gap-3">
+                          <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center font-bold text-sm">
+                            {index + 1}
+                          </div>
+                          <div>
+                            <div className="font-medium">{stat.userName}</div>
+                            <div className="text-xs text-muted-foreground">{stat.invoiceCount} invoices</div>
+                          </div>
+                        </div>
+                        <div className="text-right">
+                          <div className="font-bold">{formatCurrencyShort(stat.collectedAmount, currency)}</div>
+                          <div className="text-xs text-muted-foreground">Collected</div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card>
+                <CardHeader>
+                  <CardTitle>Collections This Month</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="text-3xl font-bold mb-2">{formatCurrencyShort(collectionsThisMonth, currency)}</div>
+                  <p className="text-sm text-muted-foreground">Total collections this month</p>
+                </CardContent>
+              </Card>
+            </div>
+          </PlanGate>
 
           {/* Urgent Watchlist */}
           <Card>
@@ -258,13 +278,13 @@ export default function DashboardPage() {
             <KpiCard
               icon={DollarSign}
               label="Collections This Month"
-              value={`KSH ${(collectionsThisMonth / 1000).toFixed(0)}K`}
+              value={formatCurrencyShort(collectionsThisMonth, currency)}
               delta={{ value: 15, positive: true }}
             />
             <KpiCard
               icon={TrendingUp}
               label="Outstanding Invoices"
-              value={`KSH ${(outstandingInvoices.reduce((sum, inv) => sum + inv.amount, 0) / 1000).toFixed(0)}K`}
+              value={formatCurrencyShort(outstandingInvoices.reduce((sum, inv) => sum + inv.amount, 0), currency)}
             />
             <KpiCard
               icon={AlertTriangle}
@@ -278,64 +298,76 @@ export default function DashboardPage() {
             />
           </div>
 
-          {/* Top Originators */}
-          <Card>
-            <CardHeader>
-              <CardTitle>Top Originators</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="space-y-3">
-                {originatorStats.slice(0, 5).map((stat, index) => (
-                  <div key={stat.userId} className="flex items-center justify-between p-3 rounded-lg border border-border/50">
-                    <div className="flex items-center gap-3">
-                      <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center font-bold text-sm">
-                        {index + 1}
+          {/* Top Originators - Advanced Reporting Feature */}
+          <PlanGate
+            requiredPlan="PROFESSIONAL"
+            feature="Advanced Reporting"
+            description="Get detailed analytics and insights with the Professional plan"
+          >
+            <Card>
+              <CardHeader>
+                <CardTitle>Top Originators</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-3">
+                  {originatorStats.slice(0, 5).map((stat, index) => (
+                    <div key={stat.userId} className="flex items-center justify-between p-3 rounded-lg border border-border/50">
+                      <div className="flex items-center gap-3">
+                        <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center font-bold text-sm">
+                          {index + 1}
+                        </div>
+                        <div>
+                          <div className="font-medium">{stat.userName}</div>
+                          <div className="text-xs text-muted-foreground">{stat.invoiceCount} invoices</div>
+                        </div>
                       </div>
-                      <div>
-                        <div className="font-medium">{stat.userName}</div>
-                        <div className="text-xs text-muted-foreground">{stat.invoiceCount} invoices</div>
+                      <div className="text-right">
+                        <div className="font-bold">{formatCurrencyShort(stat.collectedAmount, currency)}</div>
+                        <div className="text-xs text-muted-foreground">Collected</div>
                       </div>
                     </div>
-                    <div className="text-right">
-                      <div className="font-bold">KSH {(stat.collectedAmount / 1000).toFixed(0)}K</div>
-                      <div className="text-xs text-muted-foreground">Collected</div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </CardContent>
-          </Card>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+          </PlanGate>
 
-          {/* Invoice Aging */}
-          <Card>
-            <CardHeader>
-              <CardTitle>Invoice Aging</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="space-y-3">
-                <div className="flex items-center justify-between p-3 rounded-lg border border-border/50">
-                  <span className="text-sm font-medium">Current</span>
-                  <span className="font-bold">KSH {(invoiceAging.current / 1000).toFixed(0)}K</span>
+          {/* Invoice Aging - Advanced Reporting Feature */}
+          <PlanGate
+            requiredPlan="PROFESSIONAL"
+            feature="Invoice Aging Analysis"
+            description="View detailed invoice aging breakdown with the Professional plan"
+          >
+            <Card>
+              <CardHeader>
+                <CardTitle>Invoice Aging</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-3">
+                  <div className="flex items-center justify-between p-3 rounded-lg border border-border/50">
+                    <span className="text-sm font-medium">Current</span>
+                    <span className="font-bold">{formatCurrencyShort(invoiceAging.current, currency)}</span>
+                  </div>
+                  <div className="flex items-center justify-between p-3 rounded-lg border border-border/50">
+                    <span className="text-sm font-medium">1-30 Days</span>
+                    <span className="font-bold">{formatCurrencyShort(invoiceAging.days30, currency)}</span>
+                  </div>
+                  <div className="flex items-center justify-between p-3 rounded-lg border border-border/50">
+                    <span className="text-sm font-medium">31-60 Days</span>
+                    <span className="font-bold">{formatCurrencyShort(invoiceAging.days60, currency)}</span>
+                  </div>
+                  <div className="flex items-center justify-between p-3 rounded-lg border border-border/50">
+                    <span className="text-sm font-medium">61-90 Days</span>
+                    <span className="font-bold">{formatCurrencyShort(invoiceAging.days90, currency)}</span>
+                  </div>
+                  <div className="flex items-center justify-between p-3 rounded-lg border border-red-500/20 bg-red-500/5">
+                    <span className="text-sm font-medium">Over 90 Days</span>
+                    <span className="font-bold text-red-600 dark:text-red-400">{formatCurrencyShort(invoiceAging.over90, currency)}</span>
+                  </div>
                 </div>
-                <div className="flex items-center justify-between p-3 rounded-lg border border-border/50">
-                  <span className="text-sm font-medium">1-30 Days</span>
-                  <span className="font-bold">KSH {(invoiceAging.days30 / 1000).toFixed(0)}K</span>
-                </div>
-                <div className="flex items-center justify-between p-3 rounded-lg border border-border/50">
-                  <span className="text-sm font-medium">31-60 Days</span>
-                  <span className="font-bold">KSH {(invoiceAging.days60 / 1000).toFixed(0)}K</span>
-                </div>
-                <div className="flex items-center justify-between p-3 rounded-lg border border-border/50">
-                  <span className="text-sm font-medium">61-90 Days</span>
-                  <span className="font-bold">KSH {(invoiceAging.days90 / 1000).toFixed(0)}K</span>
-                </div>
-                <div className="flex items-center justify-between p-3 rounded-lg border border-red-500/20 bg-red-500/5">
-                  <span className="text-sm font-medium">Over 90 Days</span>
-                  <span className="font-bold text-red-600 dark:text-red-400">KSH {(invoiceAging.over90 / 1000).toFixed(0)}K</span>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
+              </CardContent>
+            </Card>
+          </PlanGate>
         </>
       )}
 
@@ -393,6 +425,12 @@ export default function DashboardPage() {
                 </Button>
               </Link>
             </RoleGate>
+            {canRecordMeetings && (
+              <Button variant="outline" onClick={() => setRecordMeetingOpen(true)}>
+                <Mic className="mr-2 h-4 w-4" />
+                Record meeting
+              </Button>
+            )}
           </div>
         </CardContent>
       </Card>

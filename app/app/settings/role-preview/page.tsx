@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import { useRole } from "@/lib/contexts/role-context"
-import { UserRole } from "@/lib/types/roles"
+import { UserRole, ROLE_PERMISSIONS } from "@/lib/types/roles"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
@@ -129,7 +129,30 @@ export default function RolePreviewPage() {
           </div>
         </CardContent>
       </Card>
+
+      <Card>
+        <CardHeader>
+          <CardTitle>Copilot capabilities</CardTitle>
+          <CardDescription>This role can use the following Copilot features:</CardDescription>
+        </CardHeader>
+        <CardContent>
+          <div className="flex flex-wrap gap-2">
+            {ROLE_PERMISSIONS[currentRole].copilotPermissions.length === 0 ? (
+              <span className="text-sm text-muted-foreground">None</span>
+            ) : (
+              ROLE_PERMISSIONS[currentRole].copilotPermissions.map((p) => (
+                <Badge key={p} variant="secondary" className="text-xs">
+                  {p.replace("canUse", "").replace("canApprove", "Approve ").replace(/([A-Z])/g, " $1").trim()}
+                </Badge>
+              ))
+            )}
+          </div>
+        </CardContent>
+      </Card>
     </div>
   )
 }
+
+
+
 

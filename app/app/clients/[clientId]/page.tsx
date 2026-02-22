@@ -1,23 +1,56 @@
 "use client"
 
-import { use } from "react"
-import { getClientById, mockClients, Client } from "@/lib/mock/clients"
+import { use, useEffect, useState } from "react"
+import { useRouter } from "next/navigation"
+import { getClientById, mockClients } from "@/lib/mock/clients"
+import { useCopilotContext } from "@/lib/contexts/copilot-context"
+import { OpenCopilotButton } from "@/components/copilot/open-copilot-button"
 import { getKycChecklist, updateKycDocument } from "@/lib/mock/kyc"
-import { getMattersByOwner, mockMatters } from "@/lib/mock/matters"
+import { mockMatters } from "@/lib/mock/matters"
+import { getMeetingsByClient } from "@/lib/mock/meetings"
 import { KycChecklistCard } from "@/components/dashboard/kyc-checklist-card"
 import { KycUploadTable } from "@/components/dashboard/kyc-upload-table"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { MattersTableMini } from "@/components/dashboard/matters-table-mini"
-import { Building2, User, Mail, Phone, MapPin, FileText } from "lucide-react"
-import Link from "next/link"
+import { Building2, Mail, Phone, MapPin, FileText, Mic } from "lucide-react"
 import { notFound } from "next/navigation"
+import type { Meeting } from "@/lib/types/meetings"
+import { useRole } from "@/lib/contexts/role-context"
+import { hasMeetingPermission } from "@/lib/types/roles"
+import { MeetingGate } from "@/components/meetings/meeting-gate"
+import { MeetingsList } from "@/components/meetings/meetings-list"
+import { NewMeetingModal } from "@/components/meetings/new-meeting-modal"
+import { RecorderPanel } from "@/components/meetings/recorder-panel"
+import { UploadMeetingModal } from "@/components/meetings/upload-meeting-modal"
+import { ImportMeetingModal } from "@/components/meetings/import-meeting-modal"
 
-export default function ClientDetailPage({ params }: { params: Promise<{ clientId: string }> }) {
-  const { clientId } = use(params)
+export default function ClientDetailPage({ params }: { params: Promise<{ clientId: string }> | { clientId: string } }) {
+  let clientId: string
+  if (params instanceof Promise) {
+    const resolvedParams = use(params)
+    clientId = resolvedParams.clientId
+  } else {
+    clientId = params.clientId
+  }
+
+  const router = useRouter()
   const client = getClientById(clientId)
-  
+  const { setClientId } = useCopilotContext()
+  const { currentRole } = useRole()
+
+  const [newMeetingOpen, setNewMeetingOpen] = useState(false)
+  const [uploadOpen, setUploadOpen] = useState(false)
+  const [importOpen, setImportOpen] = useState(false)
+  const [recordingMeeting, setRecordingMeeting] = useState<Meeting | null>(null)
+
+  const clientMeetings = getMeetingsByClient(clientId)
+
+  useEffect(() => {
+    if (clientId) setClientId(clientId)
+    return () => setClientId(undefined)
+  }, [clientId, setClientId])
+
   if (!client) {
     notFound()
   }
@@ -33,9 +66,12 @@ export default function ClientDetailPage({ params }: { params: Promise<{ clientI
 
   return (
     <div className="space-y-6 p-6">
-      <div>
-        <h1 className="text-3xl font-bold mb-2">{client.name}</h1>
-        <p className="text-muted-foreground">{client.type} Client</p>
+      <div className="flex items-start justify-between gap-4">
+        <div>
+          <h1 className="text-3xl font-bold mb-2">{client.name}</h1>
+          <p className="text-muted-foreground">{client.type} Client</p>
+        </div>
+        <OpenCopilotButton />
       </div>
 
       <Tabs defaultValue="overview" className="w-full">
@@ -43,6 +79,7 @@ export default function ClientDetailPage({ params }: { params: Promise<{ clientI
           <TabsTrigger value="overview">Overview</TabsTrigger>
           <TabsTrigger value="kyc">KYC & Compliance</TabsTrigger>
           <TabsTrigger value="matters">Matters</TabsTrigger>
+          <TabsTrigger value="meetings">Meetings</TabsTrigger>
         </TabsList>
 
         <TabsContent value="overview" className="mt-6 space-y-6">
@@ -134,6 +171,51 @@ export default function ClientDetailPage({ params }: { params: Promise<{ clientI
               )}
             </CardContent>
           </Card>
+        </TabsContent>
+
+        <TabsContent value="meetings" className="mt-6 space-y-6">
+          {recordingMeeting && (
+            <RecorderPanel
+              meeting={recordingMeeting}
+              onClose={() => setRecordingMeeting(null)}
+              onNavigateToMeeting={(id) => {
+                setRecordingMeeting(null)
+                router.push(`/app/meetings/${id}`)
+              }}
+            />
+          )}
+          <MeetingGate permission="meetingsRead">
+            <MeetingsList
+              meetings={clientMeetings}
+              clientId={clientId}
+              showActions={true}
+              onRecordClick={hasMeetingPermission(currentRole, "meetingsRecord") ? () => setNewMeetingOpen(true) : undefined}
+              onUploadClick={hasMeetingPermission(currentRole, "meetingsUpload") ? () => setUploadOpen(true) : undefined}
+              onImportClick={() => setImportOpen(true)}
+            />
+          </MeetingGate>
+          <MeetingGate permission="meetingsRecord">
+            <NewMeetingModal
+              open={newMeetingOpen}
+              onOpenChange={setNewMeetingOpen}
+              initialClientId={clientId}
+              requireClientSelection={false}
+              onStartRecording={(meeting) => {
+                setNewMeetingOpen(false)
+                setRecordingMeeting(meeting)
+              }}
+            />
+          </MeetingGate>
+          <MeetingGate permission="meetingsUpload">
+            <UploadMeetingModal
+              open={uploadOpen}
+              onOpenChange={setUploadOpen}
+              initialClientId={clientId}
+              requireClientSelection={false}
+              onUploadComplete={(id) => router.push(`/app/meetings/${id}`)}
+            />
+          </MeetingGate>
+          <ImportMeetingModal open={importOpen} onOpenChange={setImportOpen} />
         </TabsContent>
       </Tabs>
     </div>

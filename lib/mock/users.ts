@@ -91,6 +91,16 @@ export const mockUsers: User[] = [
     avatar: "/avatars/jennifer.jpg",
     lastActivity: new Date(Date.now() - 3 * 60 * 1000),
   },
+  {
+    id: "10",
+    name: "Auditor Smith",
+    email: "auditor@lawfirm.com",
+    role: "READ_ONLY",
+    teamId: undefined,
+    teamName: undefined,
+    avatar: "/avatars/auditor.jpg",
+    lastActivity: new Date(Date.now() - 1 * 24 * 60 * 60 * 1000),
+  },
 ]
 
 export function getUserById(id: string): User | undefined {

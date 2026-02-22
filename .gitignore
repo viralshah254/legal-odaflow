@@ -14,6 +14,7 @@
 
 # production
 /build
+/dist
 
 # misc
 .DS_Store
@@ -34,3 +35,10 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
+# Electron
+/electron/dist
+/electron/main.js.map
+*.log
+/dist
+/out
+.electron-builder.env

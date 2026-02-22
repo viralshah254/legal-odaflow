@@ -113,6 +113,14 @@ export function getInvoiceById(id: string): Invoice | undefined {
   return mockInvoices.find((inv) => inv.id === id)
 }
 
+export function getInvoicesByClient(clientId: string): Invoice[] {
+  return mockInvoices.filter((inv) => inv.clientId === clientId)
+}
+
+export function getInvoicesByMatter(matterId: string): Invoice[] {
+  return mockInvoices.filter((inv) => inv.matterId === matterId)
+}
+
 export function getOverdueInvoices(): Invoice[] {
   const now = new Date()
   return mockInvoices.filter((inv) => inv.dueDate < now && inv.status !== "Paid" && inv.status !== "Cancelled")
@@ -193,5 +201,17 @@ export function getInvoiceAging(): {
       })
       .reduce((sum, inv) => sum + inv.amount, 0),
   }
+}
+
+export function createInvoice(invoiceData: Omit<Invoice, "id" | "invoiceNumber" | "createdAt">): Invoice {
+  const invoiceNumber = `INV-${new Date().getFullYear()}-${String(mockInvoices.length + 1).padStart(3, "0")}`
+  const newInvoice: Invoice = {
+    ...invoiceData,
+    id: `inv${Date.now()}`,
+    invoiceNumber,
+    createdAt: new Date(),
+  }
+  mockInvoices.push(newInvoice)
+  return newInvoice
 }
 

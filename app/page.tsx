@@ -1,10 +1,15 @@
+"use client"
+
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { ThemeToggle } from "@/components/theme-toggle"
 import { ArrowRight, CheckCircle, Shield, Zap, Users, FileText, Clock, TrendingUp, Lock, BarChart3, Globe, Award, Star, Play, Sparkles, Target, Rocket, Briefcase } from "lucide-react"
+import { useCurrency } from "@/lib/contexts/currency-context"
+import { formatCurrencyShort } from "@/lib/utils"
 
 export default function HomePage() {
+  const { currency } = useCurrency()
   return (
     <div className="min-h-screen bg-gradient-to-b from-background via-background to-muted/5 w-full">
       {/* Header */}
@@ -33,6 +38,12 @@ export default function HomePage() {
                 Features
               </Link>
               <ThemeToggle />
+              <Link href="/auth/demo">
+                <Button variant="outline" className="hidden md:flex h-9 px-4">
+                  <Zap className="mr-2 h-4 w-4" />
+                  Demo
+                </Button>
+              </Link>
               <Link href="/auth/sign-in">
                 <Button variant="ghost" className="hidden sm:flex h-9 px-4">
                   Sign In
@@ -91,6 +102,12 @@ export default function HomePage() {
                   <Button size="lg" className="text-lg px-8 py-7 h-auto shadow-xl shadow-primary/30 hover:shadow-2xl hover:shadow-primary/40 transition-all duration-300 group hover:scale-105 w-full sm:w-auto bg-gradient-to-r from-primary to-primary/90">
                     Start Free Trial
                     <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
+                  </Button>
+                </Link>
+                <Link href="/auth/demo">
+                  <Button size="lg" variant="outline" className="text-lg px-8 py-7 h-auto w-full sm:w-auto">
+                    <Zap className="mr-2 h-5 w-5" />
+                    Try Demo
                   </Button>
                 </Link>
                 <Link href="/pricing">
@@ -167,7 +184,7 @@ export default function HomePage() {
                         <BarChart3 className="h-4 w-4 text-primary group-hover:scale-110 transition-transform" />
                         <span className="text-xs text-muted-foreground font-medium">Revenue</span>
                       </div>
-                      <div className="text-2xl font-bold text-foreground">KSH 2.4M</div>
+                      <div className="text-2xl font-bold text-foreground">{formatCurrencyShort(2400000, currency)}</div>
                     </div>
                   </div>
 

@@ -93,3 +93,6 @@ export function KycChecklistCard({ checklist, clientName, className }: KycCheckl
   )
 }
 
+
+
+

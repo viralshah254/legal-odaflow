@@ -1,12 +1,13 @@
 "use client"
 
 import { useState } from "react"
-import { Search, Bell, User, Menu } from "lucide-react"
+import { useRouter } from "next/navigation"
+import { Search, Bell, User, Menu, LogOut, Settings, UserCircle, Sparkles } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Badge } from "@/components/ui/badge"
 import { useRole } from "@/lib/contexts/role-context"
-import { useUIStore } from "@/lib/store"
+import { useUIStore, useAuthStore } from "@/lib/store"
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -17,11 +18,18 @@ import {
 } from "@/components/ui/dropdown-menu"
 import { mockUsers } from "@/lib/mock/users"
 import { format } from "date-fns"
+import Link from "next/link"
+import { NotificationsDropdown } from "@/components/notifications/notifications-dropdown"
+import { useCopilotContext } from "@/lib/contexts/copilot-context"
 
 export function AppTopbar() {
+  const router = useRouter()
   const { currentRole, currentUser } = useRole()
   const setSidebarOpen = useUIStore((state) => state.setSidebarOpen)
   const sidebarOpen = useUIStore((state) => state.sidebarOpen)
+  const setCopilotDrawerOpen = useUIStore((state) => state.setCopilotDrawerOpen)
+  const { canUseCopilot } = useCopilotContext()
+  const logout = useAuthStore((state) => state.logout)
   
   const user = currentUser || mockUsers.find((u) => u.role === currentRole) || mockUsers[0]
   
@@ -35,6 +43,11 @@ export function AppTopbar() {
     OPS_HR: "Ops/HR",
     RECEPTION: "Reception",
     READ_ONLY: "Read-Only",
+  }
+
+  const handleSignOut = async () => {
+    await logout()
+    router.push("/auth/sign-in")
   }
 
   return (
@@ -69,13 +82,20 @@ export function AppTopbar() {
           </select>
         </div>
 
+        {/* Copilot */}
+        {canUseCopilot && (
+          <Button
+            variant="ghost"
+            size="icon"
+            onClick={() => setCopilotDrawerOpen(true)}
+            title="Open Copilot (Shift+Cmd+K)"
+          >
+            <Sparkles className="h-5 w-5 text-primary" />
+          </Button>
+        )}
+
         {/* Notifications */}
-        <Button variant="ghost" size="icon" className="relative">
-          <Bell className="h-5 w-5" />
-          <Badge className="absolute top-1 right-1 h-5 w-5 p-0 flex items-center justify-center text-xs bg-red-500">
-            3
-          </Badge>
-        </Button>
+        <NotificationsDropdown />
 
         {/* Profile Menu */}
         <DropdownMenu>
@@ -101,10 +121,23 @@ export function AppTopbar() {
               </div>
             </DropdownMenuLabel>
             <DropdownMenuSeparator />
-            <DropdownMenuItem>Profile</DropdownMenuItem>
-            <DropdownMenuItem>Settings</DropdownMenuItem>
+            <DropdownMenuItem asChild>
+              <Link href="/app/profile" className="flex items-center gap-2 cursor-pointer">
+                <UserCircle className="h-4 w-4" />
+                Profile
+              </Link>
+            </DropdownMenuItem>
+            <DropdownMenuItem asChild>
+              <Link href="/app/settings" className="flex items-center gap-2 cursor-pointer">
+                <Settings className="h-4 w-4" />
+                Settings
+              </Link>
+            </DropdownMenuItem>
             <DropdownMenuSeparator />
-            <DropdownMenuItem>Sign out</DropdownMenuItem>
+            <DropdownMenuItem onClick={handleSignOut} className="cursor-pointer text-destructive focus:text-destructive">
+              <LogOut className="h-4 w-4 mr-2" />
+              Sign out
+            </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
       </div>

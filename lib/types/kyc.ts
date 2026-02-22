@@ -63,3 +63,6 @@ export const getRequiredKycDocsForClientType = (clientType: string): KycDocType[
   }
 }
 
+
+
+

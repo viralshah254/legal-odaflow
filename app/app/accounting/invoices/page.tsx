@@ -1,15 +1,18 @@
 "use client"
 
 import { useEffect, useState } from "react"
+import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Card, CardContent } from "@/components/ui/card"
 import { invoicesApi } from "@/lib/mock-api"
-import { formatCurrency, formatDate } from "@/lib/utils"
+import { formatCurrencyWithSymbol, formatDate } from "@/lib/utils"
+import { useCurrency } from "@/lib/contexts/currency-context"
 import type { Invoice } from "@/lib/types"
 import { Plus } from "lucide-react"
 
 export default function InvoicesPage() {
+  const { currency } = useCurrency()
   const [invoices, setInvoices] = useState<Invoice[]>([])
 
   useEffect(() => {
@@ -27,10 +30,12 @@ export default function InvoicesPage() {
           <h1 className="text-3xl font-bold">Invoices</h1>
           <p className="text-muted-foreground">Manage client invoices</p>
         </div>
-        <Button>
-          <Plus className="mr-2 h-4 w-4" />
-          New Invoice
-        </Button>
+        <Link href="/app/accounting/invoices/new">
+          <Button>
+            <Plus className="mr-2 h-4 w-4" />
+            New Invoice
+          </Button>
+        </Link>
       </div>
 
       {invoices.length === 0 ? (
@@ -58,10 +63,10 @@ export default function InvoicesPage() {
                     </p>
                   </div>
                   <div className="text-right">
-                    <div className="text-lg font-semibold">{formatCurrency(invoice.total)}</div>
+                    <div className="text-lg font-semibold">{formatCurrencyWithSymbol(invoice.total, currency)}</div>
                     {invoice.paidAmount > 0 && (
                       <div className="text-sm text-muted-foreground">
-                        Paid: {formatCurrency(invoice.paidAmount)}
+                        Paid: {formatCurrencyWithSymbol(invoice.paidAmount, currency)}
                       </div>
                     )}
                   </div>

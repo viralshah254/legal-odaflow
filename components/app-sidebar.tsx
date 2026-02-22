@@ -19,25 +19,98 @@ import {
   Bell,
   DollarSign,
   UserCog,
+  FileEdit,
+  Mic,
 } from "lucide-react"
 import { useUIStore } from "@/lib/store"
 import { useRole } from "@/lib/contexts/role-context"
 import { RoleGate } from "@/components/dashboard/role-gate"
 
-const baseNavigation = [
-  { name: "Dashboard", href: "/app/dashboard", icon: LayoutDashboard },
-  { name: "Clients", href: "/app/clients", icon: Users },
-  { name: "Matters", href: "/app/matters", icon: FileText },
-  { name: "Tasks", href: "/app/tasks", icon: CheckSquare },
-  { name: "Calendar", href: "/app/calendar", icon: Calendar },
-  { name: "Alerts", href: "/app/alerts", icon: Bell },
-]
-
-const conditionalNavigation = [
-  { name: "Finance", href: "/app/finance", icon: DollarSign, roles: ["PARTNER_ADMIN", "FINANCE"] as const },
-  { name: "Team", href: "/app/team", icon: UserCog, roles: ["PARTNER_ADMIN", "JUNIOR_PARTNER"] as const },
-  { name: "Settings", href: "/app/settings", icon: Settings, roles: ["PARTNER_ADMIN"] as const },
-]
+// Role-specific navigation items
+const roleNavigation: Record<string, Array<{ name: string; href: string; icon: any }>> = {
+  PARTNER_ADMIN: [
+    { name: "Dashboard", href: "/app/dashboard", icon: LayoutDashboard },
+    { name: "Clients", href: "/app/clients", icon: Users },
+    { name: "Matters", href: "/app/matters", icon: FileText },
+    { name: "Tasks", href: "/app/tasks", icon: CheckSquare },
+    { name: "Calendar", href: "/app/calendar", icon: Calendar },
+    { name: "Meetings", href: "/app/meetings", icon: Mic },
+    { name: "Alerts", href: "/app/alerts", icon: Bell },
+    { name: "Finance", href: "/app/finance", icon: DollarSign },
+    { name: "Team", href: "/app/team", icon: UserCog },
+    { name: "Templates", href: "/app/templates", icon: FileEdit },
+    { name: "Settings", href: "/app/settings", icon: Settings },
+  ],
+  JUNIOR_PARTNER: [
+    { name: "Dashboard", href: "/app/dashboard", icon: LayoutDashboard },
+    { name: "Clients", href: "/app/clients", icon: Users },
+    { name: "Matters", href: "/app/matters", icon: FileText },
+    { name: "Tasks", href: "/app/tasks", icon: CheckSquare },
+    { name: "Calendar", href: "/app/calendar", icon: Calendar },
+    { name: "Meetings", href: "/app/meetings", icon: Mic },
+    { name: "Alerts", href: "/app/alerts", icon: Bell },
+    { name: "Team", href: "/app/team", icon: UserCog },
+    { name: "Templates", href: "/app/templates", icon: FileEdit },
+  ],
+  ASSOCIATE: [
+    { name: "Dashboard", href: "/app/dashboard", icon: LayoutDashboard },
+    { name: "Clients", href: "/app/clients", icon: Users },
+    { name: "Matters", href: "/app/matters", icon: FileText },
+    { name: "Tasks", href: "/app/tasks", icon: CheckSquare },
+    { name: "Calendar", href: "/app/calendar", icon: Calendar },
+    { name: "Meetings", href: "/app/meetings", icon: Mic },
+    { name: "Alerts", href: "/app/alerts", icon: Bell },
+    { name: "Templates", href: "/app/templates", icon: FileEdit },
+  ],
+  PARALEGAL: [
+    { name: "Dashboard", href: "/app/dashboard", icon: LayoutDashboard },
+    { name: "Matters", href: "/app/matters", icon: FileText },
+    { name: "Tasks", href: "/app/tasks", icon: CheckSquare },
+    { name: "Calendar", href: "/app/calendar", icon: Calendar },
+    { name: "Meetings", href: "/app/meetings", icon: Mic },
+    { name: "Alerts", href: "/app/alerts", icon: Bell },
+    { name: "Templates", href: "/app/templates", icon: FileEdit },
+  ],
+  FINANCE: [
+    { name: "Dashboard", href: "/app/dashboard", icon: LayoutDashboard },
+    { name: "Clients", href: "/app/clients", icon: Users },
+    { name: "Matters", href: "/app/matters", icon: FileText },
+    { name: "Meetings", href: "/app/meetings", icon: Mic },
+    { name: "Finance", href: "/app/finance", icon: DollarSign },
+    { name: "Templates", href: "/app/templates", icon: FileEdit },
+  ],
+  INTAKE: [
+    { name: "Dashboard", href: "/app/dashboard", icon: LayoutDashboard },
+    { name: "Clients", href: "/app/clients", icon: Users },
+    { name: "Matters", href: "/app/matters", icon: FileText },
+    { name: "Tasks", href: "/app/tasks", icon: CheckSquare },
+    { name: "Meetings", href: "/app/meetings", icon: Mic },
+    { name: "Alerts", href: "/app/alerts", icon: Bell },
+    { name: "Templates", href: "/app/templates", icon: FileEdit },
+  ],
+  OPS_HR: [
+    { name: "Dashboard", href: "/app/dashboard", icon: LayoutDashboard },
+    { name: "Team", href: "/app/team", icon: UserCog },
+    { name: "Calendar", href: "/app/calendar", icon: Calendar },
+    { name: "Templates", href: "/app/templates", icon: FileEdit },
+  ],
+  RECEPTION: [
+    { name: "Dashboard", href: "/app/dashboard", icon: LayoutDashboard },
+    { name: "Clients", href: "/app/clients", icon: Users },
+    { name: "Calendar", href: "/app/calendar", icon: Calendar },
+    { name: "Templates", href: "/app/templates", icon: FileEdit },
+  ],
+  READ_ONLY: [
+    { name: "Dashboard", href: "/app/dashboard", icon: LayoutDashboard },
+    { name: "Clients", href: "/app/clients", icon: Users },
+    { name: "Matters", href: "/app/matters", icon: FileText },
+    { name: "Tasks", href: "/app/tasks", icon: CheckSquare },
+    { name: "Calendar", href: "/app/calendar", icon: Calendar },
+    { name: "Meetings", href: "/app/meetings", icon: Mic },
+    { name: "Finance", href: "/app/finance", icon: DollarSign },
+    { name: "Templates", href: "/app/templates", icon: FileEdit },
+  ],
+}
 
 export function AppSidebar() {
   const pathname = usePathname()
@@ -46,19 +119,7 @@ export function AppSidebar() {
 
   if (!sidebarOpen) return null
 
-  const getNavigation = () => {
-    const nav = [...baseNavigation]
-    
-    conditionalNavigation.forEach((item) => {
-      if (item.roles.includes(currentRole as any)) {
-        nav.push(item)
-      }
-    })
-    
-    return nav
-  }
-
-  const navigation = getNavigation()
+  const navigation = roleNavigation[currentRole] || roleNavigation.PARTNER_ADMIN
 
   return (
     <div className="w-64 border-r bg-background/95 backdrop-blur-sm h-screen sticky top-0 overflow-y-auto">

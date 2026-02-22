@@ -4,6 +4,8 @@ export interface CalendarEvent {
   description?: string
   startAt: Date
   endAt: Date
+  clientId?: string
+  clientName?: string
   matterId?: string
   matterTitle?: string
   attendeeIds: string[]
@@ -19,6 +21,8 @@ export const mockCalendarEvents: CalendarEvent[] = [
     description: "M&A transaction discussion",
     startAt: new Date(Date.now() + 1 * 24 * 60 * 60 * 1000 + 10 * 60 * 60 * 1000),
     endAt: new Date(Date.now() + 1 * 24 * 60 * 60 * 1000 + 11 * 60 * 60 * 1000),
+    clientId: "c1",
+    clientName: "Acme Corporation",
     matterId: "m1",
     matterTitle: "Acme Corp - M&A Transaction",
     attendeeIds: ["1", "3"],
@@ -32,6 +36,8 @@ export const mockCalendarEvents: CalendarEvent[] = [
     description: "Motion hearing",
     startAt: new Date(Date.now() + 3 * 24 * 60 * 60 * 1000 + 14 * 60 * 60 * 1000),
     endAt: new Date(Date.now() + 3 * 24 * 60 * 60 * 1000 + 16 * 60 * 60 * 1000),
+    clientId: "c2",
+    clientName: "Smith Industries",
     matterId: "m2",
     matterTitle: "Smith vs. Jones - Contract Dispute",
     attendeeIds: ["4"],
@@ -68,6 +74,8 @@ export const mockCalendarEvents: CalendarEvent[] = [
     description: "Series B funding discussion",
     startAt: new Date(Date.now() + 5 * 24 * 60 * 60 * 1000 + 11 * 60 * 60 * 1000),
     endAt: new Date(Date.now() + 5 * 24 * 60 * 60 * 1000 + 12 * 60 * 60 * 1000),
+    clientId: "c3",
+    clientName: "TechStart Inc",
     matterId: "m3",
     matterTitle: "TechStart Inc - Series B Funding",
     attendeeIds: ["2"],
@@ -96,5 +104,20 @@ export function getUpcomingEvents(days: number = 7): CalendarEvent[] {
 
 export function getNext3Events(): CalendarEvent[] {
   return getUpcomingEvents(7).slice(0, 3)
+}
+
+export function createEvent(event: Omit<CalendarEvent, "id">): CalendarEvent {
+  const newEvent: CalendarEvent = {
+    ...event,
+    id: `e-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`,
+  }
+  mockCalendarEvents.push(newEvent)
+  return newEvent
+}
+
+export function getEventsByDateRange(startDate: Date, endDate: Date): CalendarEvent[] {
+  return mockCalendarEvents
+    .filter((e) => e.startAt >= startDate && e.startAt <= endDate)
+    .sort((a, b) => a.startAt.getTime() - b.startAt.getTime())
 }
 

@@ -44,18 +44,32 @@ export const useAuthStore = create<AuthState>((set) => ({
 interface UIState {
   sidebarOpen: boolean
   commandPaletteOpen: boolean
+  copilotDrawerOpen: boolean
+  recordMeetingOpen: boolean
+  recordingMeetingId: string | null
   setSidebarOpen: (open: boolean) => void
   setCommandPaletteOpen: (open: boolean) => void
+  setCopilotDrawerOpen: (open: boolean) => void
+  setRecordMeetingOpen: (open: boolean) => void
+  setRecordingMeetingId: (id: string | null) => void
   toggleSidebar: () => void
   toggleCommandPalette: () => void
+  toggleCopilotDrawer: () => void
 }
 
 export const useUIStore = create<UIState>((set) => ({
   sidebarOpen: true,
   commandPaletteOpen: false,
+  copilotDrawerOpen: false,
+  recordMeetingOpen: false,
+  recordingMeetingId: null,
   setSidebarOpen: (open: boolean) => set({ sidebarOpen: open }),
   setCommandPaletteOpen: (open: boolean) => set({ commandPaletteOpen: open }),
+  setCopilotDrawerOpen: (open: boolean) => set({ copilotDrawerOpen: open }),
+  setRecordMeetingOpen: (open: boolean) => set({ recordMeetingOpen: open }),
+  setRecordingMeetingId: (id: string | null) => set({ recordingMeetingId: id }),
   toggleSidebar: () => set((state) => ({ sidebarOpen: !state.sidebarOpen })),
   toggleCommandPalette: () => set((state) => ({ commandPaletteOpen: !state.commandPaletteOpen })),
+  toggleCopilotDrawer: () => set((state) => ({ copilotDrawerOpen: !state.copilotDrawerOpen })),
 }))
 

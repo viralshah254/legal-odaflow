@@ -114,14 +114,64 @@ export const mockTasks: Task[] = [
     createdAt: new Date(Date.now() - 7 * 24 * 60 * 60 * 1000),
     updatedAt: new Date(Date.now() - 3 * 24 * 60 * 60 * 1000),
   },
+  {
+    id: "t8",
+    title: "Review client contract",
+    matterId: "m1",
+    matterTitle: "Acme Corp - M&A Transaction",
+    assignedToId: "1",
+    assignedToName: "Sarah Johnson",
+    dueAt: new Date(Date.now() - 5 * 24 * 60 * 60 * 1000),
+    priority: "High",
+    status: "Done",
+    category: "STANDARD",
+    createdAt: new Date(Date.now() - 10 * 24 * 60 * 60 * 1000),
+    updatedAt: new Date(Date.now() - 4 * 24 * 60 * 60 * 1000),
+  },
+  {
+    id: "t9",
+    title: "File incorporation documents",
+    matterId: "m3",
+    matterTitle: "TechStart Inc - Series B Funding",
+    assignedToId: "2",
+    assignedToName: "Michael Chen",
+    dueAt: new Date(Date.now() - 8 * 24 * 60 * 60 * 1000),
+    priority: "Normal",
+    status: "Done",
+    category: "STANDARD",
+    createdAt: new Date(Date.now() - 15 * 24 * 60 * 60 * 1000),
+    updatedAt: new Date(Date.now() - 7 * 24 * 60 * 60 * 1000),
+  },
+  {
+    id: "t10",
+    title: "Prepare settlement agreement",
+    matterId: "m5",
+    matterTitle: "Employment Dispute - ABC Corp",
+    assignedToId: "5",
+    assignedToName: "Lisa Wang",
+    dueAt: new Date(Date.now() - 3 * 24 * 60 * 60 * 1000),
+    priority: "High",
+    status: "Done",
+    category: "STANDARD",
+    createdAt: new Date(Date.now() - 12 * 24 * 60 * 60 * 1000),
+    updatedAt: new Date(Date.now() - 2 * 24 * 60 * 60 * 1000),
+  },
 ]
 
+export function getCompletedTasks(): Task[] {
+  return mockTasks.filter((t) => t.status === "Done")
+}
+
 export function getTaskById(id: string): Task | undefined {
-  return mockTasks.find((t) => id === id)
+  return mockTasks.find((t) => t.id === id)
 }
 
 export function getTasksByAssignee(assigneeId: string): Task[] {
   return mockTasks.filter((t) => t.assignedToId === assigneeId)
+}
+
+export function getTasksByMatter(matterId: string): Task[] {
+  return mockTasks.filter((t) => t.matterId === matterId)
 }
 
 export function getTasksDueToday(): Task[] {
@@ -150,5 +200,16 @@ export function getTasksNext7Days(): Task[] {
     const dueDate = new Date(t.dueAt)
     return dueDate >= today && dueDate <= nextWeek && t.status !== "Done"
   })
+}
+
+export function createTask(taskData: Omit<Task, "id" | "createdAt" | "updatedAt">): Task {
+  const newTask: Task = {
+    ...taskData,
+    id: `t${Date.now()}`,
+    createdAt: new Date(),
+    updatedAt: new Date(),
+  }
+  mockTasks.push(newTask)
+  return newTask
 }
 

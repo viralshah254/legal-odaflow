@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { use } from "react"
 import { useRole } from "@/lib/contexts/role-context"
 import { getMatterById, mockMatters, Matter } from "@/lib/mock/matters"
@@ -19,14 +19,40 @@ import Link from "next/link"
 import { format } from "date-fns"
 import { RoleGate } from "@/components/dashboard/role-gate"
 import { cn } from "@/lib/utils"
+import { notFound } from "next/navigation"
+import { ShareMatterDialog } from "@/components/matters/share-matter-dialog"
+import { getUserAccessibleMatters, hasMatterAccess, getMatterAccessLevel } from "@/lib/mock/matter-sharing"
+import { useCopilotContext } from "@/lib/contexts/copilot-context"
+import { OpenCopilotButton } from "@/components/copilot/open-copilot-button"
 
-export default function MatterDetailPage({ params }: { params: Promise<{ matterId: string }> }) {
-  const { matterId } = use(params)
+export default function MatterDetailPage({ params }: { params: Promise<{ matterId: string }> | { matterId: string } }) {
+  // In Next.js 14 client components, params might already be resolved as an object
+  // Check if it's a Promise, otherwise use directly
+  let matterId: string
+  if (params instanceof Promise) {
+    const resolvedParams = use(params)
+    matterId = resolvedParams.matterId
+  } else {
+    matterId = params.matterId
+  }
   const { currentUser, currentRole } = useRole()
   const [transferDialogOpen, setTransferDialogOpen] = useState(false)
   const [assistanceDialogOpen, setAssistanceDialogOpen] = useState(false)
+  const [shareDialogOpen, setShareDialogOpen] = useState(false)
+  const { setMatterId, setClientId } = useCopilotContext()
 
   const matter = getMatterById(matterId)
+
+  useEffect(() => {
+    if (matter) {
+      setMatterId(matter.id)
+      setClientId(matter.clientId)
+    }
+    return () => {
+      setMatterId(undefined)
+      setClientId(undefined)
+    }
+  }, [matter?.id, matter?.clientId, setMatterId, setClientId])
   if (!matter) {
     return (
       <div className="p-6">
@@ -48,6 +74,9 @@ export default function MatterDetailPage({ params }: { params: Promise<{ matterI
   const assistanceRequests = getAssistanceRequestsByMatter(matterId)
   const isOwner = matter.ownerId === currentUser?.id
   const canTransfer = currentRole === "PARTNER_ADMIN" || (currentRole === "ASSOCIATE" && isOwner)
+  const accessLevel = currentUser ? getMatterAccessLevel(currentUser.id, matterId) : null
+  const canEdit = isOwner || accessLevel === "WRITE" || currentRole === "PARTNER_ADMIN"
+  const canShare = isOwner || currentRole === "PARTNER_ADMIN"
 
   const getRiskColor = (risk: Matter["risk"]) => {
     switch (risk) {
@@ -88,6 +117,13 @@ export default function MatterDetailPage({ params }: { params: Promise<{ matterI
           </div>
         </div>
         <div className="flex items-center gap-2">
+          <OpenCopilotButton />
+          {canShare && (
+            <Button variant="outline" onClick={() => setShareDialogOpen(true)}>
+              <Users className="mr-2 h-4 w-4" />
+              Share Matter
+            </Button>
+          )}
           <RoleGate allowedRoles={["PARTNER_ADMIN", "JUNIOR_PARTNER", "ASSOCIATE"]}>
             {canTransfer && (
               <Button
@@ -106,14 +142,18 @@ export default function MatterDetailPage({ params }: { params: Promise<{ matterI
               Request Assistance
             </Button>
           </RoleGate>
-          <Button variant="outline" size="sm">
-            <Plus className="mr-2 h-4 w-4" />
-            Add Task
-          </Button>
-          <Button variant="outline" size="sm">
-            <Plus className="mr-2 h-4 w-4" />
-            Upload Doc
-          </Button>
+          {canEdit && (
+            <>
+              <Button variant="outline" size="sm">
+                <Plus className="mr-2 h-4 w-4" />
+                Add Task
+              </Button>
+              <Button variant="outline" size="sm">
+                <Plus className="mr-2 h-4 w-4" />
+                Upload Doc
+              </Button>
+            </>
+          )}
         </div>
       </div>
 
@@ -302,6 +342,12 @@ export default function MatterDetailPage({ params }: { params: Promise<{ matterI
           // Refresh page data
           window.location.reload()
         }}
+      />
+      <ShareMatterDialog
+        matterId={matterId}
+        open={shareDialogOpen}
+        onOpenChange={setShareDialogOpen}
+        onShareComplete={() => {}}
       />
     </div>
   )

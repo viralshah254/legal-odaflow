@@ -11,7 +11,7 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { useAuthStore } from "@/lib/store"
-import { Shield, Mail } from "lucide-react"
+import { Shield, Mail, Zap } from "lucide-react"
 
 const signInSchema = z.object({
   email: z.string().email("Invalid email address"),
@@ -146,6 +146,14 @@ export default function SignInPage() {
               Don't have an account?{" "}
               <Link href="/auth/sign-up" className="text-primary hover:underline">
                 Sign up
+              </Link>
+            </div>
+            <div className="pt-4 border-t">
+              <Link href="/auth/demo">
+                <Button variant="outline" className="w-full">
+                  <Zap className="mr-2 h-4 w-4" />
+                  Quick Demo Access (No Password)
+                </Button>
               </Link>
             </div>
             <div className="pt-4 border-t">

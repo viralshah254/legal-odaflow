@@ -86,3 +86,6 @@ export function KycUploadTable({ documents, onUpdate, className }: KycUploadTabl
   )
 }
 
+
+
+

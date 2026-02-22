@@ -22,6 +22,7 @@ import {
 import { MattersTableMini } from "@/components/dashboard/matters-table-mini"
 import { TasksList } from "@/components/dashboard/tasks-list"
 import { CalendarMini } from "@/components/dashboard/calendar-mini"
+import { PlanGate } from "@/components/plan/plan-gate"
 
 export default function TeamPage() {
   const { currentRole, currentUser } = useRole()
@@ -54,15 +55,20 @@ export default function TeamPage() {
   }
 
   return (
-    <div className="space-y-6 p-6">
-      <div>
-        <h1 className="text-3xl font-bold mb-2">Team Workload & Monitoring</h1>
-        <p className="text-muted-foreground">
-          {currentRole === "PARTNER_ADMIN" 
-            ? "Monitor firm-wide workload and team performance"
-            : "Monitor your team's workload and performance"}
-        </p>
-      </div>
+    <PlanGate
+      requiredPlan="PROFESSIONAL"
+      feature="Team Analytics"
+      description="Monitor team performance and workload with the Professional plan"
+    >
+      <div className="space-y-6 p-6">
+        <div>
+          <h1 className="text-3xl font-bold mb-2">Team Workload & Monitoring</h1>
+          <p className="text-muted-foreground">
+            {currentRole === "PARTNER_ADMIN" 
+              ? "Monitor firm-wide workload and team performance"
+              : "Monitor your team's workload and performance"}
+          </p>
+        </div>
 
       <Card>
         <CardHeader>
@@ -164,7 +170,8 @@ export default function TeamPage() {
           </SheetContent>
         </Sheet>
       )}
-    </div>
+      </div>
+    </PlanGate>
   )
 }
 

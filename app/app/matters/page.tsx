@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react"
 import { useRouter } from "next/navigation"
+import { useRole } from "@/lib/contexts/role-context"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Card, CardContent } from "@/components/ui/card"
@@ -9,21 +10,34 @@ import { mattersApi } from "@/lib/mock-api"
 import { formatDate } from "@/lib/utils"
 import type { Matter } from "@/lib/types"
 import { Plus } from "lucide-react"
+import { mockUsers } from "@/lib/mock/users"
+import { getMattersByOwner } from "@/lib/mock/matters"
+import { RoleGate } from "@/components/dashboard/role-gate"
+import { getUserAccessibleMatters, hasMatterAccess } from "@/lib/mock/matter-sharing"
 
 export default function MattersPage() {
   const router = useRouter()
+  const { currentRole, currentUser } = useRole()
+  const user = currentUser || mockUsers.find((u) => u.role === currentRole) || mockUsers[0]
   const [matters, setMatters] = useState<Matter[]>([])
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
     async function loadMatters() {
       setLoading(true)
-      const data = await mattersApi.listMatters()
+      let data = await mattersApi.listMatters()
+      
+      // Filter by role - non-admins only see their own matters and shared matters
+      if (currentRole !== "PARTNER_ADMIN" && currentRole !== "FINANCE") {
+        const accessibleMatterIds = getUserAccessibleMatters(user.id)
+        data = data.filter((m) => accessibleMatterIds.includes(m.id))
+      }
+      
       setMatters(data)
       setLoading(false)
     }
     loadMatters()
-  }, [])
+  }, [currentRole, user.id])
 
   return (
     <div className="p-6 space-y-6">
@@ -32,10 +46,12 @@ export default function MattersPage() {
           <h1 className="text-3xl font-bold">Matters</h1>
           <p className="text-muted-foreground">Manage your legal matters</p>
         </div>
-        <Button onClick={() => router.push("/app/matters/new")}>
-          <Plus className="mr-2 h-4 w-4" />
-          New Matter
-        </Button>
+        <RoleGate allowedRoles={["PARTNER_ADMIN", "JUNIOR_PARTNER", "ASSOCIATE", "INTAKE"]}>
+          <Button onClick={() => router.push("/app/matters/new")}>
+            <Plus className="mr-2 h-4 w-4" />
+            New Matter
+          </Button>
+        </RoleGate>
       </div>
 
       {loading ? (

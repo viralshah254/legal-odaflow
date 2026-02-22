@@ -31,10 +31,16 @@ export function UrgentAlertStrip({ alerts, showAssignee = false, className }: Ur
               title={alert.title}
               description={alert.description}
               severity={alert.severity}
+              type={alert.type}
+              matterId={alert.matterId}
               matterTitle={alert.matterTitle}
+              taskId={alert.taskId}
               taskTitle={alert.taskTitle}
+              clientId={alert.clientId}
+              clientName={alert.clientName}
               dueAt={alert.dueAt}
               assignedToName={showAssignee ? alert.assignedToName : undefined}
+              acknowledged={alert.acknowledged}
             />
           </div>
         ))}

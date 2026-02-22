@@ -3,14 +3,15 @@
 import { useEffect } from "react"
 import { AppSidebar } from "@/components/app-sidebar"
 import { AppTopbar } from "@/components/app-topbar"
-import { useRole } from "@/lib/contexts/role-context"
+import { CommandPalette } from "@/components/command-palette"
+import { CopilotDrawer } from "@/components/copilot/copilot-drawer"
+import { CopilotContextSyncer } from "@/components/copilot/copilot-context-syncer"
+import { GlobalRecordMeeting } from "@/components/meetings/global-record-meeting"
+import { RoleProvider, useRole } from "@/lib/contexts/role-context"
+import { CopilotProvider } from "@/lib/contexts/copilot-context"
 import { mockUsers } from "@/lib/mock/users"
 
-export default function AppLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+function AppLayoutContent({ children }: { children: React.ReactNode }) {
   const { currentUser, setCurrentUser, currentRole } = useRole()
 
   useEffect(() => {
@@ -23,6 +24,7 @@ export default function AppLayout({
 
   return (
     <div className="flex h-screen overflow-hidden">
+      <CopilotContextSyncer />
       <AppSidebar />
       <div className="flex-1 flex flex-col overflow-hidden">
         <AppTopbar />
@@ -30,7 +32,25 @@ export default function AppLayout({
           {children}
         </main>
       </div>
+      <CommandPalette />
+      <CopilotDrawer />
+      <GlobalRecordMeeting />
     </div>
+  )
+}
+
+export default function AppLayout({
+  children,
+}: {
+  children: React.ReactNode
+}) {
+  // CurrencyProvider is already in root Providers, so we don't need it here
+  return (
+    <RoleProvider>
+      <CopilotProvider>
+        <AppLayoutContent>{children}</AppLayoutContent>
+      </CopilotProvider>
+    </RoleProvider>
   )
 }
 

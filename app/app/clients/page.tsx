@@ -3,6 +3,7 @@
 import { useState } from "react"
 import { useRole } from "@/lib/contexts/role-context"
 import { mockClients, Client } from "@/lib/mock/clients"
+import { mockUsers } from "@/lib/mock/users"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -13,10 +14,20 @@ import { getKycChecklist } from "@/lib/mock/kyc"
 import { cn } from "@/lib/utils"
 
 export default function ClientsPage() {
-  const { currentRole } = useRole()
+  const { currentRole, currentUser } = useRole()
   const [searchQuery, setSearchQuery] = useState("")
+  const user = currentUser || mockUsers.find((u) => u.role === currentRole) || mockUsers[0]
 
-  const filteredClients = mockClients.filter((client) =>
+  // Filter clients by role - non-admins only see clients from their matters
+  let visibleClients = mockClients
+  if (currentRole !== "PARTNER_ADMIN" && currentRole !== "FINANCE" && currentRole !== "INTAKE") {
+    const { getMattersByOwner } = require("@/lib/mock/matters")
+    const userMatters = getMattersByOwner(user.id)
+    const userClientIds = new Set(userMatters.map((m: any) => m.clientId))
+    visibleClients = mockClients.filter((c) => userClientIds.has(c.id))
+  }
+
+  const filteredClients = visibleClients.filter((client) =>
     client.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
     client.email?.toLowerCase().includes(searchQuery.toLowerCase())
   )

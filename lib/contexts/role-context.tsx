@@ -20,8 +20,19 @@ export function RoleProvider({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     // Load from localStorage if available (for dev role switcher)
     const savedRole = localStorage.getItem("dev-current-role") as UserRole
+    const savedUser = localStorage.getItem("dev-current-user")
+    
     if (savedRole && Object.values(["PARTNER_ADMIN", "JUNIOR_PARTNER", "ASSOCIATE", "PARALEGAL", "FINANCE", "INTAKE", "OPS_HR", "RECEPTION", "READ_ONLY"]).includes(savedRole)) {
       setCurrentRole(savedRole)
+    }
+    
+    if (savedUser) {
+      try {
+        const user = JSON.parse(savedUser)
+        setCurrentUser(user)
+      } catch (e) {
+        // Invalid JSON
+      }
     }
   }, [])
 

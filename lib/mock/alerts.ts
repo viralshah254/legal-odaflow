@@ -159,3 +159,18 @@ export function getAllUrgentAlerts(): Alert[] {
   return mockAlerts.filter((a) => (a.severity === "Critical" || a.severity === "High") && !a.acknowledged)
 }
 
+export function acknowledgeAlert(id: string): void {
+  const alert = mockAlerts.find((a) => a.id === id)
+  if (alert) {
+    alert.acknowledged = true
+  }
+}
+
+export function completeAlert(id: string): void {
+  acknowledgeAlert(id)
+}
+
+export function skipAlert(id: string): void {
+  acknowledgeAlert(id)
+}
+
