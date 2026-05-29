@@ -1,0 +1,48 @@
+import { AI_TASK_TYPES, type AiTaskType } from './task-types';
+
+/**
+ * AI credit costs — Production Spec §15.3 / Model Router Spec §5.5
+ */
+export const AI_CREDIT_COSTS: Record<AiTaskType, number> = {
+  [AI_TASK_TYPES.ISSUE_CHECKER]: 1,
+  [AI_TASK_TYPES.CONSUMER_ISSUE_TRIAGE]: 2,
+  [AI_TASK_TYPES.CONSUMER_FULL_REPORT]: 20,
+  [AI_TASK_TYPES.DOCUMENT_EXPLAINER]: 15,
+  [AI_TASK_TYPES.LAWYER_MATTER_QA]: 3,
+  [AI_TASK_TYPES.LEGAL_RESEARCH]: 30,
+  [AI_TASK_TYPES.STRATEGY_MEMO]: 40,
+  [AI_TASK_TYPES.DOCUMENT_DRAFT]: 10,
+  [AI_TASK_TYPES.MATTER_SUMMARY]: 5,
+  [AI_TASK_TYPES.OPPONENT_ANALYZER]: 40,
+  [AI_TASK_TYPES.OPPONENT_FILING_ANALYSIS]: 40,
+  [AI_TASK_TYPES.EVIDENCE_GAP]: 25,
+  [AI_TASK_TYPES.DEADLINE_AGENT]: 5,
+  [AI_TASK_TYPES.BILLING_RECOVERY]: 10,
+  [AI_TASK_TYPES.DOCUMENT_CLASSIFICATION]: 1,
+  [AI_TASK_TYPES.CITATION_CHECK]: 10,
+  [AI_TASK_TYPES.DOCUMENT_SUMMARY]: 5,
+  [AI_TASK_TYPES.MATTER_KICKOFF]: 5,
+  [AI_TASK_TYPES.CASE_OUTCOME_ANALYSIS]: 50,
+};
+
+export type AiCreditTaskType = AiTaskType;
+
+export function getCreditCost(taskType: string): number {
+  return AI_CREDIT_COSTS[taskType as AiTaskType] ?? 1;
+}
+
+/** Tasks that should show pre-run confirmation in UI */
+export const HEAVY_CREDIT_TASKS = new Set<string>([
+  AI_TASK_TYPES.CONSUMER_FULL_REPORT,
+  AI_TASK_TYPES.LEGAL_RESEARCH,
+  AI_TASK_TYPES.STRATEGY_MEMO,
+  AI_TASK_TYPES.OPPONENT_ANALYZER,
+  AI_TASK_TYPES.OPPONENT_FILING_ANALYSIS,
+  AI_TASK_TYPES.EVIDENCE_GAP,
+  AI_TASK_TYPES.DOCUMENT_EXPLAINER,
+  AI_TASK_TYPES.CASE_OUTCOME_ANALYSIS,
+]);
+
+export function requiresCreditConfirmation(taskType: string): boolean {
+  return HEAVY_CREDIT_TASKS.has(taskType) || getCreditCost(taskType) >= 15;
+}

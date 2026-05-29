@@ -1,0 +1,2068 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id           String   @id @default(cuid())
+  email        String   @unique
+  firebaseUid  String?  @unique
+  phone        String?
+  name         String?
+  passwordHash String?
+  userType     String   @default("CONSUMER")
+  countryCode  String?
+  jurisdiction String?
+  isActive     Boolean  @default(true)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  consumerProfile   ConsumerProfile?
+  tenantUsers       TenantUser[]
+  refreshTokens     RefreshToken[]
+  auditLogs         AuditLog[]
+  consumerCases     ConsumerCase[]
+  consumerDocuments ConsumerDocument[]
+  consumerReports   ConsumerLegalReport[]
+  lawyerProfile     LawyerProfile?
+  aiOutputs         AIOutput[]
+  aiUsageLogs       AIUsageLog[]
+  matterAccess      MatterAccess[]
+  copilotSessions   CopilotSession[]
+  uploadedDocuments Document[]       @relation("DocumentUploader")
+  portalDocumentRequests PortalDocumentRequest[] @relation("PortalRequestRequester")
+  portalMessages         PortalMessage[]         @relation("PortalMessageSender")
+  notifications     Notification[]
+  deviceTokens      DeviceToken[]
+  trainingConsents  TrainingConsent[]
+  documentTrainingPermissions DocumentTrainingPermission[]
+  aiCreditLedger    AICreditLedger[]
+  aiBudgetPolicies  AIBudgetPolicy[]
+  lawyerLeads       LawyerLead[]
+  preferences       UserPreferences?
+}
+
+model RefreshToken {
+  id        String   @id @default(cuid())
+  userId    String
+  token     String   @unique
+  expiresAt DateTime
+  createdAt DateTime @default(now())
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+}
+
+model Tenant {
+  id              String   @id @default(cuid())
+  name            String
+  type            String   @default("LAW_FIRM")
+  primaryCountry  String
+  defaultCurrency String
+  billingPlan     String?
+  aiCreditsRemaining Int @default(0)
+  aiModelMode     String   @default("AUTO")
+  premiumModelId  String   @default("gpt-4.1")
+  autoTopUpEnabled Boolean @default(false)
+  autoTopUpThresholdCredits Int @default(10)
+  autoTopUpPackId String   @default("pack_25")
+  stripeCustomerId String?
+  stripePaymentMethodId String?
+  autoTopUpLastTriggeredAt DateTime?
+  dataRegion      String?
+  ssoConfig       Json?
+  isActive        Boolean  @default(true)
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  tenantUsers TenantUser[]
+  clients     Client[]
+  matters     Matter[]
+  documents   Document[]
+  timeEntries TimeEntry[]
+  invoices    Invoice[]
+  trustAccounts TrustAccount[]
+  tasks       Task[]
+  calendarEvents CalendarEvent[]
+  auditLogs   AuditLog[]
+  subscriptions Subscription[]
+  payments    Payment[]
+  aiOutputs          AIOutput[]
+  aiUsageLogs        AIUsageLog[]
+  meetings           Meeting[]
+  alerts             Alert[]
+  documentTemplates  DocumentTemplate[]
+  expenses           Expense[]
+  claims             Claim[]
+  fixedCosts         FixedCost[]
+  automationRules    AutomationRule[]
+  notifications      Notification[]
+  timelineEvents     TimelineEvent[]
+  assistanceRequests AssistanceRequest[]
+  documentFolders    DocumentFolder[]
+  documentVersions   DocumentVersion[]
+  documentAccessRules DocumentAccessRule[]
+  firmProfile        FirmProfile?
+  documentPolicies   DocumentPolicy[]
+  accessPolicies     AccessPolicy[]
+  portalDocumentRequests PortalDocumentRequest[]
+  portalMessages         PortalMessage[]
+  matterPlaybooks       MatterPlaybook[]
+  trainingConsents      TrainingConsent[]
+  documentTrainingPermissions DocumentTrainingPermission[]
+  aiCreditLedger        AICreditLedger[]
+  aiBudgetPolicies      AIBudgetPolicy[]
+  lawyerLeads           LawyerLead[]
+  caseAnalysisRuns      CaseAnalysisRun[]
+  matterIssues          MatterIssue[]
+  matterArguments       MatterArgument[]
+  matterStrategyMemos   MatterStrategyMemo[]
+  matterParties         MatterParty[]
+  conflictChecks        ConflictCheck[]
+  matterOutcomeAnalyses MatterOutcomeAnalysis[]
+  courtCases            CourtCase[]
+  integrationConnections IntegrationConnection[]
+  rateTables            RateTable[]
+  preBillSessions       PreBillSession[]
+  trustReconciliations  TrustReconciliation[]
+  suggestedTimeEntries  SuggestedTimeEntry[]
+  marketplaceRevenue    MarketplaceRevenueEntry[]
+  evidenceItems         EvidenceItem[]
+  ethicalWallGroups     EthicalWallGroup[]
+  webhookSubscriptions  WebhookSubscription[]
+  publicApiKeys         PublicApiKey[]
+  bulkDocReviewJobs     BulkDocumentReviewJob[]
+  integrationSyncLogs   IntegrationSyncLog[]
+  unifiedInboxThreads   UnifiedInboxThread[]
+}
+
+model TenantUser {
+  id        String   @id @default(cuid())
+  tenantId  String
+  userId    String
+  role      String
+  status    String   @default("ACTIVE")
+  createdAt DateTime @default(now())
+  tenant    Tenant   @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([tenantId, userId])
+  @@index([tenantId])
+  @@index([userId])
+}
+
+model ConsumerProfile {
+  id                 String   @id @default(cuid())
+  userId             String   @unique
+  countryCode        String
+  stateOrCounty      String?
+  preferredLanguage  String   @default("en")
+  subscriptionStatus String   @default("FREE")
+  aiCreditsRemaining Int      @default(3)
+  aiModelMode     String   @default("AUTO")
+  premiumModelId  String   @default("gpt-4.1")
+  autoTopUpEnabled Boolean @default(false)
+  autoTopUpThresholdCredits Int @default(10)
+  autoTopUpPackId String   @default("pack_25")
+  stripeCustomerId String?
+  stripePaymentMethodId String?
+  autoTopUpLastTriggeredAt DateTime?
+  governanceSettings Json?
+  createdAt          DateTime @default(now())
+  updatedAt          DateTime @updatedAt
+  user               User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model ConsumerCase {
+  id              String   @id @default(cuid())
+  userId          String
+  countryCode     String
+  jurisdiction    String?
+  issueType       String
+  title           String
+  facts           String?
+  desiredOutcome  String?
+  urgencyLevel    String   @default("LOW")
+  riskScore       Float?
+  status          String   @default("DRAFT")
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+  user            User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  documents       ConsumerDocument[]
+  reports         ConsumerLegalReport[]
+  reviewRequests  LawyerReviewRequest[]
+
+  @@index([userId])
+  @@index([countryCode, issueType])
+}
+
+model ConsumerDocument {
+  id             String   @id @default(cuid())
+  userId         String
+  consumerCaseId String
+  fileName       String
+  fileUrl        String
+  mimeType       String?
+  fileSizeBytes  Int?
+  documentType   String?
+  extractedText  String?
+  aiSummary      String?
+  ocrStatus      String   @default("PENDING")
+  createdAt      DateTime @default(now())
+  user           User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  consumerCase   ConsumerCase @relation(fields: [consumerCaseId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@index([consumerCaseId])
+}
+
+model ConsumerLegalReport {
+  id                 String   @id @default(cuid())
+  userId             String
+  consumerCaseId     String
+  countryCode        String
+  reportType         String
+  title              String
+  contentMarkdown    String
+  citations          Json?
+  riskLevel          String?
+  requiresLawyer     Boolean  @default(false)
+  lawyerReviewStatus String   @default("NOT_REQUESTED")
+  reviewedByLawyerId String?
+  isPreview          Boolean  @default(false)
+  createdAt          DateTime @default(now())
+  user               User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  consumerCase       ConsumerCase @relation(fields: [consumerCaseId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@index([consumerCaseId])
+}
+
+model LawyerProfile {
+  id                 String   @id @default(cuid())
+  userId             String   @unique
+  tenantId           String?
+  countryCode        String
+  barNumber          String?
+  verified           Boolean  @default(false)
+  verificationStatus String   @default("PENDING")
+  practiceAreas      Json
+  jurisdictions      Json
+  languages          Json
+  consultationFee    Decimal? @db.Decimal(10, 2)
+  currency           String
+  acceptsLeads       Boolean  @default(true)
+  createdAt          DateTime @default(now())
+  updatedAt          DateTime @updatedAt
+  user               User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model LawyerReviewRequest {
+  id               String   @id @default(cuid())
+  consumerCaseId   String
+  consumerReportId String?
+  userId           String
+  countryCode      String
+  jurisdiction     String?
+  issueType        String
+  status           String   @default("OPEN")
+  assignedLawyerId String?
+  assignedTenantId String?
+  price            Decimal  @db.Decimal(10, 2)
+  currency         String
+  createdAt        DateTime @default(now())
+  completedAt      DateTime?
+  consumerCase     ConsumerCase @relation(fields: [consumerCaseId], references: [id], onDelete: Cascade)
+
+  @@index([countryCode, issueType, status])
+}
+
+model Client {
+  id          String   @id @default(cuid())
+  tenantId    String
+  name        String
+  email       String?
+  phone       String?
+  type        String   @default("INDIVIDUAL")
+  countryCode String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  tenant        Tenant         @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+  matters       Matter[]
+  documents     Document[]
+  kycChecklists KycChecklist[]
+  kycDocuments  KycDocument[]
+  documentFolders DocumentFolder[]
+  portalDocumentRequests PortalDocumentRequest[]
+  portalMessages         PortalMessage[]
+
+  @@index([tenantId])
+}
+
+model Matter {
+  id                String   @id @default(cuid())
+  tenantId          String
+  clientId          String?
+  title             String
+  countryCode       String
+  jurisdiction      String?
+  courtName         String?
+  courtLevel        String?
+  caseNumber        String?
+  practiceArea      String
+  matterType        String
+  status            String   @default("OPEN")
+  stage             String?
+  factsSummary      String?
+  legalIssues       Json?
+  desiredOutcome    String?
+  opposingParty     String?
+  riskScore         Float?
+  aiConfidenceScore Float?
+  retainerBalance   Decimal? @db.Decimal(12, 2)
+  retainerCurrency  String?
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+  tenant            Tenant   @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+  client            Client?  @relation(fields: [clientId], references: [id])
+  facts             MatterFact[]
+  documents         Document[]
+  timeEntries       TimeEntry[]
+  tasks             Task[]
+  calendarEvents     CalendarEvent[]
+  matterAccess       MatterAccess[]
+  meetings           Meeting[]
+  expenses           Expense[]
+  claims             Claim[]
+  timelineEvents     TimelineEvent[]
+  assistanceRequests AssistanceRequest[]
+  documentFolders    DocumentFolder[]
+  portalDocumentRequests PortalDocumentRequest[]
+  portalMessages         PortalMessage[]
+  matterIssues           MatterIssue[]
+  matterArguments        MatterArgument[]
+  matterStrategyMemos    MatterStrategyMemo[]
+  matterParties          MatterParty[]
+  outcomeAnalyses        MatterOutcomeAnalysis[]
+  courtCases             CourtCase[]
+  evidenceItems          EvidenceItem[]
+  bulkDocReviewJobs      BulkDocumentReviewJob[]
+
+  @@index([tenantId])
+  @@index([tenantId, status])
+}
+
+model MatterPlaybook {
+  id          String   @id @default(cuid())
+  tenantId    String
+  name        String
+  description String?
+  matterType  String?
+  countryCode String?
+  jurisdiction String?
+  practiceArea String?
+  taskTemplates Json
+  isEnabled   Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  tenant      Tenant   @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+
+  @@index([tenantId, isEnabled])
+  @@index([tenantId, matterType, countryCode])
+}
+
+model MatterAccess {
+  id          String   @id @default(cuid())
+  tenantId    String
+  matterId    String
+  userId      String
+  accessLevel String   @default("READ_ONLY")
+  grantedBy   String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  matter      Matter   @relation(fields: [matterId], references: [id], onDelete: Cascade)
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([matterId, userId])
+  @@index([tenantId, userId])
+  @@index([matterId])
+}
+
+model MatterFact {
+  id               String   @id @default(cuid())
+  tenantId         String
+  matterId         String
+  factText         String
+  sourceType       String
+  sourceId         String?
+  confidence       Float    @default(0.5)
+  isDisputed       Boolean  @default(false)
+  approvedByLawyer Boolean  @default(false)
+  createdAt        DateTime @default(now())
+  matter           Matter   @relation(fields: [matterId], references: [id], onDelete: Cascade)
+
+  @@index([tenantId, matterId])
+}
+
+model Document {
+  id             String    @id @default(cuid())
+  tenantId       String
+  matterId       String?
+  clientId       String?
+  folderId       String?
+  documentCode   String    @unique @default(cuid())
+  fileName       String
+  fileUrl        String
+  mimeType       String?
+  visibility     String    @default("PRIVATE")
+  uploadedById   String?
+  retentionUntil DateTime?
+  version        Int       @default(1)
+  createdAt      DateTime  @default(now())
+  updatedAt      DateTime  @updatedAt
+  tenant         Tenant    @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+  matter         Matter?   @relation(fields: [matterId], references: [id])
+  client         Client?   @relation(fields: [clientId], references: [id])
+  folder         DocumentFolder? @relation(fields: [folderId], references: [id])
+  uploadedBy     User?     @relation("DocumentUploader", fields: [uploadedById], references: [id])
+  versions       DocumentVersion[]
+  accessRules    DocumentAccessRule[]
+
+  @@index([tenantId])
+  @@index([matterId])
+  @@index([clientId])
+  @@index([folderId])
+}
+
+model TimeEntry {
+  id          String   @id @default(cuid())
+  tenantId    String
+  matterId    String?
+  userId      String
+  date        DateTime
+  minutes     Int
+  narrative   String?
+  billable    Boolean  @default(true)
+  rate        Decimal? @db.Decimal(10, 2)
+  status      String   @default("DRAFT")
+  createdAt   DateTime @default(now())
+  tenant      Tenant   @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+  matter      Matter?  @relation(fields: [matterId], references: [id])
+
+  @@index([tenantId])
+}
+
+model Invoice {
+  id            String   @id @default(cuid())
+  tenantId      String
+  clientId      String?
+  invoiceNumber String
+  amount        Decimal  @db.Decimal(10, 2)
+  currency      String
+  status        String   @default("DRAFT")
+  dueDate       DateTime?
+  createdAt     DateTime @default(now())
+  tenant        Tenant   @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+
+  @@index([tenantId])
+}
+
+model TrustAccount {
+  id        String   @id @default(cuid())
+  tenantId  String
+  name      String
+  balance   Decimal  @default(0) @db.Decimal(12, 2)
+  currency  String
+  createdAt DateTime @default(now())
+  tenant    Tenant   @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+  entries   TrustLedgerEntry[]
+
+  @@index([tenantId])
+}
+
+model TrustLedgerEntry {
+  id          String   @id @default(cuid())
+  accountId   String
+  matterId    String?
+  type        String
+  amount      Decimal  @db.Decimal(12, 2)
+  description String?
+  status      String   @default("COMPLETED")
+  reviewedById String?
+  reviewedAt  DateTime?
+  reviewNote  String?
+  createdAt   DateTime @default(now())
+  account     TrustAccount @relation(fields: [accountId], references: [id], onDelete: Cascade)
+
+  @@index([accountId])
+  @@index([matterId])
+}
+
+model Task {
+  id        String   @id @default(cuid())
+  tenantId  String
+  matterId  String?
+  title     String
+  status    String   @default("TODO")
+  priority  String   @default("MEDIUM")
+  dueDate   DateTime?
+  assigneeId String?
+  createdAt DateTime @default(now())
+  tenant    Tenant   @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+  matter    Matter?  @relation(fields: [matterId], references: [id])
+
+  @@index([tenantId])
+}
+
+model CalendarEvent {
+  id        String   @id @default(cuid())
+  tenantId  String
+  matterId  String?
+  title     String
+  startAt   DateTime
+  endAt     DateTime
+  createdAt DateTime @default(now())
+  tenant    Tenant   @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+  matter    Matter?  @relation(fields: [matterId], references: [id])
+
+  @@index([tenantId])
+}
+
+model LegalAuthority {
+  id              String   @id @default(cuid())
+  countryCode     String
+  jurisdiction    String?
+  authorityType   String
+  title           String
+  citation        String?
+  court           String?
+  courtLevel      String?
+  decisionDate    DateTime?
+  sourceUrl       String?
+  sourceName      String
+  sourceLicense   String?
+  fullText        String?
+  summary         String?
+  holding         String?
+  topics          Json
+  practiceAreas   Json
+  embeddingStatus String   @default("PENDING")
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+  citations       AICitation[]
+
+  @@index([countryCode, jurisdiction])
+  @@index([citation])
+}
+
+model AIOutput {
+  id                   String   @id @default(cuid())
+  userId               String?
+  tenantId             String?
+  consumerCaseId       String?
+  matterId             String?
+  mode                 String
+  taskType             String
+  promptHash           String?
+  outputMarkdown       String
+  citations            Json?
+  confidenceScore      Float?
+  riskLevel            String?
+  requiresLawyerReview Boolean  @default(false)
+  approvedByLawyerId   String?
+  createdAt            DateTime @default(now())
+  user                 User?    @relation(fields: [userId], references: [id])
+  tenant               Tenant?  @relation(fields: [tenantId], references: [id])
+  aiCitations          AICitation[]
+
+  @@index([tenantId])
+  @@index([userId])
+}
+
+model AIUsageLog {
+  id             String   @id @default(cuid())
+  userId         String?
+  tenantId       String?
+  consumerCaseId String?
+  matterId       String?
+  taskType       String
+  mode           String
+  modelProvider  String
+  modelName      String
+  modelTier      String?
+  inputTokens    Int      @default(0)
+  outputTokens   Int      @default(0)
+  retrievalCount Int      @default(0)
+  costUsd        Decimal? @db.Decimal(10, 4)
+  estimatedCostUsd Decimal? @db.Decimal(10, 6)
+  chargedCredits Int      @default(0)
+  creditValueUsd Decimal? @db.Decimal(10, 6)
+  platformMarginUsd Decimal? @db.Decimal(10, 6)
+  latencyMs      Int?
+  status         String
+  error          String?
+  createdAt      DateTime @default(now())
+  user           User?    @relation(fields: [userId], references: [id])
+  tenant         Tenant?  @relation(fields: [tenantId], references: [id])
+
+  @@index([tenantId])
+  @@index([userId])
+  @@index([createdAt])
+}
+
+model AICitation {
+  id           String   @id @default(cuid())
+  userId       String?
+  tenantId     String?
+  aiOutputId   String
+  authorityId  String?
+  documentId   String?
+  sourceUrl    String?
+  quotedText   String?
+  paragraphRef String?
+  confidence   Float    @default(0.5)
+  createdAt    DateTime @default(now())
+  aiOutput     AIOutput @relation(fields: [aiOutputId], references: [id], onDelete: Cascade)
+  authority    LegalAuthority? @relation(fields: [authorityId], references: [id])
+
+  @@index([aiOutputId])
+}
+
+model Subscription {
+  id                     String   @id @default(cuid())
+  userId                 String?
+  tenantId               String?
+  userType               String
+  countryCode            String
+  currency               String
+  planId                 String
+  status                 String
+  currentPeriodStart     DateTime?
+  currentPeriodEnd       DateTime?
+  cancelAtPeriodEnd      Boolean  @default(false)
+  paymentProvider        String
+  providerCustomerId     String?
+  providerSubscriptionId String?
+  createdAt              DateTime @default(now())
+  updatedAt              DateTime @updatedAt
+  tenant                 Tenant?  @relation(fields: [tenantId], references: [id])
+
+  @@index([userId])
+  @@index([tenantId])
+}
+
+model Payment {
+  id                String   @id @default(cuid())
+  userId            String?
+  tenantId          String?
+  countryCode       String
+  currency          String
+  amount            Decimal  @db.Decimal(10, 2)
+  paymentProvider   String
+  providerPaymentId String?
+  status            String
+  purpose           String
+  metadata          Json?
+  createdAt         DateTime @default(now())
+  tenant            Tenant?  @relation(fields: [tenantId], references: [id])
+
+  @@index([userId])
+  @@index([tenantId])
+}
+
+model Receipt {
+  id           String   @id @default(cuid())
+  paymentId    String   @unique
+  tenantId     String?
+  invoiceId    String?
+  receiptNumber String
+  amount       Decimal  @db.Decimal(10, 2)
+  currency     String
+  issuedAt     DateTime @default(now())
+  metadata     Json?
+  createdAt    DateTime @default(now())
+
+  @@index([tenantId])
+  @@index([invoiceId])
+  @@index([issuedAt])
+}
+
+model CountryPricing {
+  id          String   @id @default(cuid())
+  countryCode String
+  userType    String
+  planId      String
+  currency    String
+  amount      Decimal  @db.Decimal(10, 2)
+  aiCredits   Int      @default(0)
+  features    Json?
+  isActive    Boolean  @default(true)
+  createdAt   DateTime @default(now())
+
+  @@unique([countryCode, userType, planId])
+}
+
+model AuditLog {
+  id         String   @id @default(cuid())
+  userId     String?
+  tenantId   String?
+  action     String
+  entityType String
+  entityId   String?
+  ipAddress  String?
+  userAgent  String?
+  metadata   Json?
+  createdAt  DateTime @default(now())
+  user       User?    @relation(fields: [userId], references: [id])
+  tenant     Tenant?  @relation(fields: [tenantId], references: [id])
+
+  @@index([tenantId])
+  @@index([userId])
+  @@index([createdAt])
+}
+
+model AgentJob {
+  id          String   @id @default(cuid())
+  queue       String
+  jobType     String
+  status      String   @default("QUEUED")
+  userId      String?
+  tenantId    String?
+  payload     Json?
+  result      Json?
+  error       String?
+  attempts    Int      @default(0)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  completedAt DateTime?
+
+  @@index([status])
+  @@index([queue])
+}
+
+model CopilotSession {
+  id        String   @id @default(cuid())
+  tenantId  String
+  userId    String
+  userRole  String?
+  context   Json?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  messages  CopilotMessage[]
+  auditLogs CopilotAuditLog[]
+
+  @@index([tenantId, userId])
+}
+
+model CopilotMessage {
+  id        String   @id @default(cuid())
+  sessionId String
+  role      String
+  content   String
+  toolCalls Json?
+  citations Json?
+  createdAt DateTime @default(now())
+  session   CopilotSession @relation(fields: [sessionId], references: [id], onDelete: Cascade)
+
+  @@index([sessionId])
+}
+
+model CopilotAuditLog {
+  id        String   @id @default(cuid())
+  tenantId  String
+  userId    String
+  userRole  String?
+  sessionId String?
+  action    String
+  toolName  String?
+  payload   Json?
+  result    Json?
+  error     String?
+  createdAt DateTime @default(now())
+  session   CopilotSession? @relation(fields: [sessionId], references: [id], onDelete: SetNull)
+
+  @@index([tenantId])
+  @@index([userId])
+  @@index([sessionId])
+}
+
+model Meeting {
+  id          String   @id @default(cuid())
+  tenantId    String
+  matterId    String?
+  title       String
+  status      String   @default("SCHEDULED")
+  scheduledAt DateTime?
+  durationMin Int?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  tenant      Tenant   @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+  matter      Matter?  @relation(fields: [matterId], references: [id])
+  transcripts MeetingTranscript[]
+  notes       MeetingNote[]
+
+  @@index([tenantId])
+  @@index([matterId])
+}
+
+model MeetingTranscript {
+  id        String   @id @default(cuid())
+  tenantId  String
+  meetingId String
+  content   String
+  source    String?
+  createdAt DateTime @default(now())
+  meeting   Meeting  @relation(fields: [meetingId], references: [id], onDelete: Cascade)
+
+  @@index([tenantId])
+  @@index([meetingId])
+}
+
+model MeetingNote {
+  id          String   @id @default(cuid())
+  tenantId    String
+  meetingId   String
+  content     String
+  createdById String?
+  createdAt   DateTime @default(now())
+  meeting     Meeting  @relation(fields: [meetingId], references: [id], onDelete: Cascade)
+
+  @@index([tenantId])
+  @@index([meetingId])
+}
+
+model KycChecklist {
+  id        String   @id @default(cuid())
+  tenantId  String
+  clientId  String
+  name      String
+  status    String   @default("PENDING")
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  client    Client   @relation(fields: [clientId], references: [id], onDelete: Cascade)
+  documents KycDocument[]
+
+  @@index([tenantId])
+  @@index([clientId])
+}
+
+model KycDocument {
+  id           String        @id @default(cuid())
+  tenantId     String
+  clientId     String
+  checklistId  String?
+  documentType String
+  fileName     String?
+  fileUrl      String?
+  status       String        @default("PENDING")
+  createdAt    DateTime      @default(now())
+  client       Client        @relation(fields: [clientId], references: [id], onDelete: Cascade)
+  checklist    KycChecklist? @relation(fields: [checklistId], references: [id])
+
+  @@index([tenantId])
+  @@index([clientId])
+  @@index([checklistId])
+}
+
+model Alert {
+  id        String   @id @default(cuid())
+  tenantId  String
+  matterId  String?
+  title     String
+  message   String?
+  severity  String   @default("INFO")
+  status    String   @default("ACTIVE")
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  tenant    Tenant   @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+  actions   AlertAction[]
+
+  @@index([tenantId])
+  @@index([matterId])
+}
+
+model AlertAction {
+  id          String   @id @default(cuid())
+  tenantId    String
+  alertId     String
+  action      String
+  performedBy String?
+  metadata    Json?
+  createdAt   DateTime @default(now())
+  alert       Alert    @relation(fields: [alertId], references: [id], onDelete: Cascade)
+
+  @@index([tenantId])
+  @@index([alertId])
+}
+
+model DocumentTemplate {
+  id         String   @id @default(cuid())
+  tenantId   String
+  name       String
+  category   String?
+  content    String
+  matterType String?
+  isActive   Boolean  @default(true)
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+  tenant     Tenant   @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+
+  @@index([tenantId])
+}
+
+model Expense {
+  id          String   @id @default(cuid())
+  tenantId    String
+  matterId    String?
+  description String
+  amount      Decimal  @db.Decimal(10, 2)
+  currency    String
+  status      String   @default("DRAFT")
+  expenseDate DateTime
+  createdAt   DateTime @default(now())
+  tenant      Tenant   @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+  matter      Matter?  @relation(fields: [matterId], references: [id])
+
+  @@index([tenantId])
+  @@index([matterId])
+}
+
+model Claim {
+  id          String   @id @default(cuid())
+  tenantId    String
+  matterId    String?
+  submitterId String?
+  description String
+  amount      Decimal  @db.Decimal(10, 2)
+  currency    String
+  status      String   @default("SUBMITTED")
+  createdAt   DateTime @default(now())
+  tenant      Tenant   @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+  matter      Matter?  @relation(fields: [matterId], references: [id])
+
+  @@index([tenantId])
+  @@index([matterId])
+}
+
+model FixedCost {
+  id        String   @id @default(cuid())
+  tenantId  String
+  name      String
+  amount    Decimal  @db.Decimal(10, 2)
+  currency  String
+  frequency String   @default("MONTHLY")
+  isActive  Boolean  @default(true)
+  createdAt DateTime @default(now())
+  tenant    Tenant   @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+
+  @@index([tenantId])
+}
+
+model AutomationRule {
+  id         String   @id @default(cuid())
+  tenantId   String
+  name       String
+  trigger    String
+  conditions Json?
+  actions    Json?
+  isEnabled          Boolean  @default(true)
+  requiresApproval   Boolean  @default(false)
+  slaMinutes         Int?
+  escalationAction   Json?
+  createdAt          DateTime @default(now())
+  updatedAt          DateTime @updatedAt
+  tenant             Tenant   @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+  runs               AutomationRun[]
+
+  @@index([tenantId])
+}
+
+model AutomationRun {
+  id          String   @id @default(cuid())
+  tenantId    String
+  ruleId      String
+  status      String   @default("PENDING")
+  result      Json?
+  error       String?
+  startedAt   DateTime @default(now())
+  completedAt DateTime?
+  rule        AutomationRule @relation(fields: [ruleId], references: [id], onDelete: Cascade)
+
+  @@index([tenantId])
+  @@index([ruleId])
+}
+
+model Notification {
+  id        String   @id @default(cuid())
+  tenantId  String
+  userId    String
+  title     String
+  body      String?
+  type      String   @default("INFO")
+  isRead    Boolean  @default(false)
+  metadata  Json?
+  createdAt DateTime @default(now())
+  tenant    Tenant   @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([tenantId])
+  @@index([userId])
+}
+
+model DeviceToken {
+  id        String   @id @default(cuid())
+  tenantId  String?
+  userId    String
+  token     String   @unique
+  platform  String?
+  createdAt DateTime @default(now())
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@index([tenantId])
+}
+
+model TimelineEvent {
+  id          String   @id @default(cuid())
+  tenantId    String
+  matterId    String
+  eventType   String
+  title       String
+  description String?
+  metadata    Json?
+  occurredAt  DateTime @default(now())
+  createdAt   DateTime @default(now())
+  tenant      Tenant   @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+  matter      Matter   @relation(fields: [matterId], references: [id], onDelete: Cascade)
+
+  @@index([tenantId])
+  @@index([matterId])
+}
+
+model AssistanceRequest {
+  id          String   @id @default(cuid())
+  tenantId    String
+  matterId    String
+  requesterId String
+  subject     String
+  description String?
+  status      String   @default("OPEN")
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  tenant      Tenant   @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+  matter      Matter   @relation(fields: [matterId], references: [id], onDelete: Cascade)
+
+  @@index([tenantId])
+  @@index([matterId])
+}
+
+model DocumentFolder {
+  id        String   @id @default(cuid())
+  tenantId  String
+  clientId  String?
+  matterId  String?
+  parentId  String?
+  name      String
+  createdAt DateTime @default(now())
+  tenant    Tenant   @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+  client    Client?  @relation(fields: [clientId], references: [id])
+  matter    Matter?  @relation(fields: [matterId], references: [id])
+  parent    DocumentFolder?  @relation("FolderHierarchy", fields: [parentId], references: [id])
+  children  DocumentFolder[] @relation("FolderHierarchy")
+  documents Document[]
+
+  @@index([tenantId])
+  @@index([clientId])
+  @@index([matterId])
+}
+
+model DocumentVersion {
+  id           String   @id @default(cuid())
+  tenantId     String
+  documentId   String
+  version      Int
+  fileName     String
+  fileUrl      String
+  uploadedById String?
+  createdAt    DateTime @default(now())
+  tenant       Tenant   @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+  document     Document @relation(fields: [documentId], references: [id], onDelete: Cascade)
+
+  @@index([tenantId])
+  @@index([documentId])
+}
+
+model DocumentAccessRule {
+  id          String   @id @default(cuid())
+  tenantId    String
+  documentId  String?
+  folderId    String?
+  userId      String?
+  role        String?
+  accessLevel String   @default("READ")
+  createdAt   DateTime @default(now())
+  tenant      Tenant   @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+  document    Document? @relation(fields: [documentId], references: [id], onDelete: Cascade)
+
+  @@index([tenantId])
+  @@index([documentId])
+}
+
+model FirmProfile {
+  id          String   @id @default(cuid())
+  tenantId    String   @unique
+  displayName String?
+  logoUrl     String?
+  address     String?
+  settings    Json?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  tenant      Tenant   @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+}
+
+model DocumentPolicy {
+  id                String   @id @default(cuid())
+  tenantId          String
+  name              String
+  retentionDays     Int?
+  defaultVisibility String   @default("PRIVATE")
+  rules             Json?
+  isActive          Boolean  @default(true)
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+  tenant            Tenant   @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+
+  @@index([tenantId])
+}
+
+model AccessPolicy {
+  id          String   @id @default(cuid())
+  tenantId    String
+  name        String
+  description String?
+  rules       Json?
+  isActive    Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  tenant      Tenant   @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+
+  @@index([tenantId])
+}
+
+model PortalDocumentRequest {
+  id               String   @id @default(cuid())
+  tenantId         String
+  clientId         String
+  matterId         String?
+  title            String
+  description      String?
+  dueDate          DateTime?
+  status           String   @default("pending")
+  requestedById    String?
+  requestedAt      DateTime @default(now())
+  uploadedAt       DateTime?
+  uploadedFileName String?
+  uploadedFileUrl  String?
+  uploadedMimeType String?
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+  tenant           Tenant   @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+  client           Client   @relation(fields: [clientId], references: [id], onDelete: Cascade)
+  matter           Matter?  @relation(fields: [matterId], references: [id], onDelete: SetNull)
+  requestedBy      User?    @relation("PortalRequestRequester", fields: [requestedById], references: [id], onDelete: SetNull)
+
+  @@index([tenantId])
+  @@index([clientId])
+  @@index([matterId])
+  @@index([status])
+  @@index([dueDate])
+}
+
+model PortalMessage {
+  id        String   @id @default(cuid())
+  tenantId  String
+  clientId  String
+  matterId  String?
+  subject   String
+  body      String
+  fromFirm  Boolean  @default(true)
+  sentById  String?
+  readAt    DateTime?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  tenant    Tenant   @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+  client    Client   @relation(fields: [clientId], references: [id], onDelete: Cascade)
+  matter    Matter?  @relation(fields: [matterId], references: [id], onDelete: SetNull)
+  sentBy    User?    @relation("PortalMessageSender", fields: [sentById], references: [id], onDelete: SetNull)
+
+  @@index([tenantId])
+  @@index([clientId])
+  @@index([matterId])
+  @@index([createdAt])
+}
+
+// --- Transformation Spec: Compliance & Training Governance ---
+
+model CountryCompliancePolicy {
+  id                              String   @id @default(cuid())
+  countryCode                     String   @unique
+  countryName                     String
+  allowConsumerGuidance           Boolean  @default(true)
+  allowDocumentGeneration         Boolean  @default(true)
+  allowLawyerMarketplace          Boolean  @default(true)
+  requireLawyerReviewForAdvice    Boolean  @default(true)
+  requireDisclaimerOnEveryOutput  Boolean  @default(true)
+  allowTrainingOptIn              Boolean  @default(true)
+  requireExplicitTrainingConsent  Boolean  @default(true)
+  allowAutomatedDecisioning       Boolean  @default(false)
+  restrictedPhrases               Json?
+  approvedProductLabels           Json?
+  dataResidencyRequired           Boolean  @default(false)
+  defaultDataRegion               String?
+  notes                           String?
+  createdAt                       DateTime @default(now())
+  updatedAt                       DateTime @updatedAt
+}
+
+model TrainingConsent {
+  id                      String   @id @default(cuid())
+  userId                  String?
+  tenantId                String?
+  scope                   String
+  consentStatus           String   @default("DENIED")
+  consentTextVersion      String   @default("1.0")
+  jurisdictionCountryCode String
+  canUseForPromptImprove  Boolean  @default(false)
+  canUseForEvaluation     Boolean  @default(false)
+  canUseForFineTuning     Boolean  @default(false)
+  requiresAnonymization   Boolean  @default(true)
+  grantedAt               DateTime?
+  withdrawnAt             DateTime?
+  ipAddress               String?
+  userAgent               String?
+  createdAt               DateTime @default(now())
+  updatedAt               DateTime @updatedAt
+  user                    User?    @relation(fields: [userId], references: [id], onDelete: SetNull)
+  tenant                  Tenant?  @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+  auditLogs               TrainingConsentAuditLog[]
+  datasetItems            TrainingDatasetItem[]
+
+  @@index([userId])
+  @@index([tenantId])
+  @@index([consentStatus])
+}
+
+model TrainingConsentAuditLog {
+  id          String   @id @default(cuid())
+  consentId   String
+  action      String
+  actorUserId String?
+  metadata    Json?
+  createdAt   DateTime @default(now())
+  consent     TrainingConsent @relation(fields: [consentId], references: [id], onDelete: Cascade)
+
+  @@index([consentId])
+}
+
+model DocumentTrainingPermission {
+  id                            String   @id @default(cuid())
+  documentId                    String
+  userId                        String?
+  tenantId                      String?
+  allowedForTraining            Boolean  @default(false)
+  allowedForEvaluation          Boolean  @default(false)
+  allowedForAnonymizedAnalytics Boolean  @default(false)
+  consentId                     String?
+  anonymizationStatus           String   @default("NOT_STARTED")
+  redactionStatus               String   @default("NOT_STARTED")
+  approvedForDataset            Boolean  @default(false)
+  approvedByAdminId             String?
+  createdAt                     DateTime @default(now())
+  updatedAt                     DateTime @updatedAt
+  user                          User?    @relation(fields: [userId], references: [id], onDelete: SetNull)
+  tenant                        Tenant?  @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+
+  @@index([documentId])
+  @@index([tenantId])
+}
+
+model AnonymizationJob {
+  id          String    @id @default(cuid())
+  sourceType  String
+  sourceId    String
+  status      String    @default("QUEUED")
+  piiDetected Json?
+  redactionMap Json?
+  outputText  String?
+  error       String?
+  createdAt   DateTime  @default(now())
+  completedAt DateTime?
+
+  @@index([sourceType, sourceId])
+  @@index([status])
+}
+
+model TrainingDataset {
+  id           String   @id @default(cuid())
+  name         String
+  datasetType  String
+  countryCode  String?
+  practiceArea String?
+  issueType    String?
+  version      String   @default("1.0")
+  sourcePolicy String?
+  createdById  String?
+  status       String   @default("DRAFT")
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+  items        TrainingDatasetItem[]
+
+  @@index([datasetType])
+  @@index([countryCode])
+}
+
+model TrainingDatasetItem {
+  id             String   @id @default(cuid())
+  datasetId      String
+  sourceType     String
+  sourceId       String?
+  inputText      String
+  expectedOutput String?
+  metadata       Json?
+  consentId      String?
+  riskLevel      String   @default("LOW")
+  approved       Boolean  @default(false)
+  revoked        Boolean  @default(false)
+  createdAt      DateTime @default(now())
+  dataset        TrainingDataset @relation(fields: [datasetId], references: [id], onDelete: Cascade)
+  consent        TrainingConsent? @relation(fields: [consentId], references: [id], onDelete: SetNull)
+
+  @@index([datasetId])
+  @@index([consentId])
+}
+
+model LegalSource {
+  id               String   @id @default(cuid())
+  countryCode      String
+  name             String
+  sourceType       String
+  baseUrl          String?
+  apiAvailable     Boolean  @default(false)
+  scrapingAllowed  Boolean  @default(false)
+  licenseTerms     String?
+  refreshFrequency String?
+  enabled          Boolean  @default(true)
+  lastSyncedAt     DateTime?
+  chunkCount       Int      @default(0)
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+
+  @@index([countryCode])
+  @@index([enabled])
+}
+
+model ContentHash {
+  id         String   @id @default(cuid())
+  hash       String   @unique
+  sourceType String
+  sourceId   String
+  modelName  String
+  createdAt  DateTime @default(now())
+
+  @@index([sourceType, sourceId])
+}
+
+model EmbeddingChunk {
+  id           String                       @id @default(cuid())
+  sourceType   String
+  sourceId     String
+  chunkIndex   Int
+  content      String
+  contentHash  String
+  countryCode  String?
+  jurisdiction String?
+  modelName    String
+  metadata     Json?
+  embedding    Unsupported("vector(1536)")?
+  createdAt    DateTime                     @default(now())
+
+  @@unique([sourceType, sourceId, chunkIndex, modelName])
+  @@index([countryCode])
+  @@index([contentHash])
+}
+
+model AICreditLedger {
+  id        String   @id @default(cuid())
+  userId    String?
+  tenantId  String?
+  eventType String
+  taskType  String
+  credits   Int
+  costUsd   Decimal? @db.Decimal(10, 4)
+  metadata  Json?
+  createdAt DateTime @default(now())
+  user      User?    @relation(fields: [userId], references: [id], onDelete: SetNull)
+  tenant    Tenant?  @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@index([tenantId])
+  @@index([createdAt])
+}
+
+model AIBudgetPolicy {
+  id                String   @id @default(cuid())
+  userId            String?
+  tenantId          String?
+  monthlyBudgetUsd  Decimal? @db.Decimal(10, 2)
+  dailyBudgetUsd    Decimal? @db.Decimal(10, 2)
+  maxCostPerTaskUsd Decimal? @db.Decimal(10, 4)
+  alertAtPercent    Int      @default(80)
+  hardStopAtPercent Int      @default(100)
+  mrrUsd            Decimal? @db.Decimal(10, 2)
+  targetNetMargin   Decimal  @default(0.40) @db.Decimal(4, 2)
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+  user              User?    @relation(fields: [userId], references: [id], onDelete: SetNull)
+  tenant            Tenant?  @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+
+  @@index([tenantId])
+  @@index([userId])
+}
+
+model UnitEconomicsSnapshot {
+  id             String   @id @default(cuid())
+  countryCode    String
+  planKey        String
+  avgRevenue     Decimal  @db.Decimal(10, 2)
+  avgAiCost      Decimal  @db.Decimal(10, 4)
+  avgServerCost  Decimal  @db.Decimal(10, 4)
+  avgPaymentFee  Decimal  @db.Decimal(10, 4)
+  avgGrossMargin Decimal  @db.Decimal(10, 4)
+  avgNetMargin   Decimal  @db.Decimal(10, 4)
+  periodStart    DateTime
+  periodEnd      DateTime
+  createdAt      DateTime @default(now())
+
+  @@index([countryCode, planKey])
+  @@index([periodStart])
+}
+
+model LawyerLead {
+  id              String   @id @default(cuid())
+  userId          String?
+  tenantId        String?
+  consumerCaseId  String?
+  lawyerProfileId String?
+  issueType       String
+  countryCode     String
+  jurisdiction    String?
+  urgency         String   @default("MEDIUM")
+  summary         String?
+  budget          String?
+  status          String   @default("NEW")
+  intakeStage     String   @default("NEW")
+  reviewFeePaid   Boolean  @default(false)
+  convertedMatterId String?
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+  user            User?    @relation(fields: [userId], references: [id], onDelete: SetNull)
+  tenant          Tenant?  @relation(fields: [tenantId], references: [id], onDelete: SetNull)
+  analysisRuns    CaseAnalysisRun[]
+
+  @@index([userId])
+  @@index([tenantId])
+  @@index([status])
+  @@index([intakeStage])
+  @@index([countryCode])
+}
+
+model CaseAnalysisRun {
+  id               String   @id @default(cuid())
+  tenantId         String?
+  consumerCaseId   String
+  lawyerLeadId     String?
+  runType          String
+  trigger          String   @default("manual")
+  inputHash        String?
+  structuredOutput Json?
+  contentMarkdown  String?
+  citations        Json?
+  status           String   @default("COMPLETED")
+  createdByUserId  String?
+  createdAt        DateTime @default(now())
+  tenant           Tenant?  @relation(fields: [tenantId], references: [id], onDelete: SetNull)
+  lawyerLead       LawyerLead? @relation(fields: [lawyerLeadId], references: [id], onDelete: SetNull)
+
+  @@index([tenantId])
+  @@index([consumerCaseId])
+  @@index([lawyerLeadId])
+  @@index([runType])
+  @@index([createdAt])
+}
+
+model MatterIssue {
+  id          String   @id @default(cuid())
+  tenantId    String
+  matterId    String
+  title       String
+  description String?
+  status      String   @default("OPEN")
+  priority    String   @default("MEDIUM")
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  tenant      Tenant   @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+  matter      Matter   @relation(fields: [matterId], references: [id], onDelete: Cascade)
+
+  @@index([matterId])
+  @@index([tenantId])
+}
+
+model MatterArgument {
+  id          String   @id @default(cuid())
+  tenantId    String
+  matterId    String
+  side        String   @default("CLIENT")
+  title       String
+  content     String?
+  strength    String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  tenant      Tenant   @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+  matter      Matter   @relation(fields: [matterId], references: [id], onDelete: Cascade)
+
+  @@index([matterId])
+}
+
+model MatterStrategyMemo {
+  id        String   @id @default(cuid())
+  tenantId  String
+  matterId  String
+  title     String
+  content   String
+  status    String   @default("DRAFT")
+  createdBy String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  tenant    Tenant   @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+  matter    Matter   @relation(fields: [matterId], references: [id], onDelete: Cascade)
+
+  @@index([matterId])
+}
+
+model AIAgent {
+  id               String   @id @default(cuid())
+  key              String   @unique
+  name             String
+  description      String?
+  userType         String   @default("BOTH")
+  riskLevel        String   @default("MEDIUM")
+  requiresApproval Boolean  @default(true)
+  enabled          Boolean  @default(true)
+  allowedTools     Json?
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+}
+
+model AIModelCostConfig {
+  id                   String   @id @default(cuid())
+  provider             String
+  modelName            String
+  modelTier            String
+  inputCostPer1M       Decimal  @db.Decimal(10, 6)
+  outputCostPer1M      Decimal  @db.Decimal(10, 6)
+  cachedInputCostPer1M Decimal? @db.Decimal(10, 6)
+  currency             String   @default("USD")
+  isActive             Boolean  @default(true)
+  createdAt            DateTime @default(now())
+  updatedAt            DateTime @updatedAt
+
+  @@unique([provider, modelName])
+}
+
+model AICreditRate {
+  id               String   @id @default(cuid())
+  taskType         String
+  countryCode      String?
+  userSegment      String
+  baseCredits      Int
+  minCredits       Int      @default(1)
+  maxCredits       Int      @default(500)
+  modelTier        String
+  markupMultiplier Decimal  @default(1.0) @db.Decimal(8, 2)
+  enabled          Boolean  @default(true)
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+
+  @@index([taskType, userSegment])
+}
+
+model CreditPack {
+  id           String   @id @default(cuid())
+  packId       String
+  countryCode  String
+  currency     String
+  credits      Int
+  bonusCredits Int      @default(0)
+  price        Decimal  @db.Decimal(10, 2)
+  userSegment  String
+  label        String?
+  description  String?
+  enabled      Boolean  @default(true)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  @@unique([packId, countryCode, userSegment])
+}
+
+model AIPromptTemplate {
+  id           String   @id @default(cuid())
+  key          String
+  version      Int
+  title        String
+  description  String?
+  systemPrompt String
+  userTemplate String
+  outputSchema Json?
+  modelTier    String
+  isActive     Boolean  @default(true)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  @@unique([key, version])
+}
+
+model CreditReservation {
+  id         String   @id @default(cuid())
+  userId     String?
+  tenantId   String?
+  taskType   String
+  credits    Int
+  status     String   @default("HELD")
+  expiresAt  DateTime
+  metadata   Json?
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  @@index([userId])
+  @@index([tenantId])
+  @@index([status])
+}
+
+model UserPreferences {
+  id                        String   @id @default(cuid())
+  userId                    String   @unique
+  emailNotifications        Boolean  @default(true)
+  pushNotifications         Boolean  @default(true)
+  taskReminders             Boolean  @default(true)
+  billingAlerts             Boolean  @default(true)
+  trustApprovalAlerts       Boolean  @default(true)
+  aiModelMode               String   @default("AUTO")
+  premiumModelId            String   @default("gpt-4.1")
+  autoTopUpEnabled          Boolean  @default(false)
+  autoTopUpThresholdCredits Int      @default(10)
+  autoTopUpPackId           String   @default("pack_25")
+  createdAt                 DateTime @default(now())
+  updatedAt                 DateTime @updatedAt
+  user                      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model MatterParty {
+  id           String   @id @default(cuid())
+  tenantId     String
+  matterId     String
+  role         String
+  name         String
+  organization String?
+  email        String?
+  phone        String?
+  notes        String?
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+  tenant       Tenant   @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+  matter       Matter   @relation(fields: [matterId], references: [id], onDelete: Cascade)
+
+  @@index([matterId])
+  @@index([tenantId])
+}
+
+model ConflictCheck {
+  id        String   @id @default(cuid())
+  tenantId  String
+  clientId  String?
+  matterId  String?
+  leadId    String?
+  status    String   @default("PENDING")
+  parties   Json?
+  result    Json?
+  checkedBy String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  tenant    Tenant   @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+
+  @@index([tenantId])
+  @@index([status])
+}
+
+model MatterOutcomeAnalysis {
+  id                    String    @id @default(cuid())
+  tenantId              String
+  matterId              String
+  version               Int       @default(1)
+  status                String    @default("NEEDS_REVIEW")
+  portalVisible         Boolean   @default(false)
+  portalSummary         String?
+  portalOutlookLabel    String?
+  overallBand           String    @default("INSUFFICIENT_DATA")
+  confidence            String    @default("LOW")
+  winProbability        Json?
+  lossProbability       Json?
+  settlementProbability Json?
+  scenarios             Json?
+  factorsFor            Json?
+  factorsAgainst        Json?
+  solutions             Json?
+  missingEvidence       Json?
+  citations             Json?
+  disclaimers           Json?
+  aiOutputId            String?
+  createdBy             String?
+  reviewedBy            String?
+  reviewedAt            DateTime?
+  createdAt             DateTime  @default(now())
+  updatedAt             DateTime  @updatedAt
+  tenant                Tenant    @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+  matter                Matter    @relation(fields: [matterId], references: [id], onDelete: Cascade)
+
+  @@index([matterId])
+  @@index([tenantId, status])
+}
+
+model RateTable {
+  id        String   @id @default(cuid())
+  tenantId  String
+  name      String
+  currency  String   @default("USD")
+  rates     Json
+  isDefault Boolean  @default(false)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  tenant    Tenant   @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+
+  @@index([tenantId])
+}
+
+model CourtCase {
+  id            String   @id @default(cuid())
+  tenantId      String
+  matterId      String
+  countryCode   String
+  courtName     String?
+  caseNumber    String?
+  cnrNumber     String?
+  externalId    String?
+  status        String   @default("ACTIVE")
+  metadata      Json?
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+  tenant        Tenant   @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+  matter        Matter   @relation(fields: [matterId], references: [id], onDelete: Cascade)
+  hearings      CourtHearing[]
+  filings       CourtFiling[]
+  docketEntries DocketEntry[]
+
+  @@index([matterId])
+  @@index([tenantId])
+}
+
+model CourtHearing {
+  id          String    @id @default(cuid())
+  courtCaseId String
+  scheduledAt DateTime
+  hearingType String?
+  location    String?
+  notes       String?
+  status      String    @default("SCHEDULED")
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+  courtCase   CourtCase @relation(fields: [courtCaseId], references: [id], onDelete: Cascade)
+
+  @@index([courtCaseId])
+}
+
+model CourtFiling {
+  id          String    @id @default(cuid())
+  courtCaseId String
+  filedAt     DateTime?
+  filingType  String
+  title       String
+  documentId  String?
+  status      String    @default("DRAFT")
+  metadata    Json?
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+  courtCase   CourtCase @relation(fields: [courtCaseId], references: [id], onDelete: Cascade)
+
+  @@index([courtCaseId])
+}
+
+model DocketEntry {
+  id          String    @id @default(cuid())
+  courtCaseId String
+  entryDate   DateTime
+  description String
+  source      String?
+  externalId  String?
+  createdAt   DateTime  @default(now())
+  courtCase   CourtCase @relation(fields: [courtCaseId], references: [id], onDelete: Cascade)
+
+  @@index([courtCaseId])
+}
+
+model IntegrationConnection {
+  id         String    @id @default(cuid())
+  tenantId   String
+  provider   String
+  status     String    @default("DISCONNECTED")
+  scopes     Json?
+  config     Json?
+  lastSyncAt DateTime?
+  lastError  String?
+  createdAt  DateTime  @default(now())
+  updatedAt  DateTime  @updatedAt
+  tenant     Tenant    @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+
+  @@unique([tenantId, provider])
+  @@index([tenantId])
+}
+
+model DocumentShareLink {
+  id         String    @id @default(cuid())
+  tenantId   String
+  documentId String
+  token      String    @unique
+  expiresAt  DateTime?
+  createdBy  String?
+  createdAt  DateTime  @default(now())
+
+  @@index([documentId])
+  @@index([tenantId])
+}
+
+model PreBillSession {
+  id               String   @id @default(cuid())
+  tenantId         String
+  matterId         String?
+  status           String   @default("DRAFT")
+  writeDownPercent Decimal? @db.Decimal(5, 2)
+  notes            String?
+  createdBy        String?
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+  tenant           Tenant   @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+  adjustments      PreBillLineAdjustment[]
+
+  @@index([tenantId])
+}
+
+model PreBillLineAdjustment {
+  id                String   @id @default(cuid())
+  sessionId         String
+  timeEntryId       String
+  adjustedMinutes   Int?
+  writeDownPercent  Decimal? @db.Decimal(5, 2)
+  notes             String?
+  session           PreBillSession @relation(fields: [sessionId], references: [id], onDelete: Cascade)
+
+  @@index([sessionId])
+}
+
+model TrustReconciliation {
+  id             String    @id @default(cuid())
+  tenantId       String
+  accountId      String
+  periodStart    DateTime
+  periodEnd      DateTime
+  openingBalance Decimal   @db.Decimal(12, 2)
+  closingBalance Decimal   @db.Decimal(12, 2)
+  status         String    @default("OPEN")
+  reconciledBy   String?
+  reconciledAt   DateTime?
+  notes          String?
+  createdAt      DateTime  @default(now())
+  tenant         Tenant    @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+
+  @@index([tenantId])
+  @@index([accountId])
+}
+
+model SuggestedTimeEntry {
+  id        String   @id @default(cuid())
+  tenantId  String
+  userId    String
+  matterId  String?
+  source    String
+  minutes   Int
+  narrative String?
+  metadata  Json?
+  status    String   @default("PENDING")
+  createdAt DateTime @default(now())
+  tenant    Tenant   @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+
+  @@index([tenantId, userId])
+}
+
+model MarketplaceRevenueEntry {
+  id                String   @id @default(cuid())
+  tenantId          String?
+  leadId            String?
+  reviewRequestId   String?
+  grossAmount       Decimal  @db.Decimal(10, 2)
+  platformFee       Decimal  @db.Decimal(10, 2)
+  lawyerPayout      Decimal  @db.Decimal(10, 2)
+  currency          String
+  providerPaymentId String?
+  status            String   @default("PENDING")
+  createdAt         DateTime @default(now())
+  tenant            Tenant?  @relation(fields: [tenantId], references: [id], onDelete: SetNull)
+
+  @@index([tenantId])
+  @@index([leadId])
+}
+
+model EvidenceItem {
+  id             String   @id @default(cuid())
+  tenantId       String
+  matterId       String
+  title          String
+  description    String?
+  documentId     String?
+  chainOfCustody Json?
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+  tenant         Tenant   @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+  matter         Matter   @relation(fields: [matterId], references: [id], onDelete: Cascade)
+  custodyLogs    EvidenceCustodyLog[]
+
+  @@index([matterId])
+  @@index([tenantId])
+}
+
+model EvidenceCustodyLog {
+  id         String   @id @default(cuid())
+  evidenceId String
+  action     String
+  actorId    String?
+  metadata   Json?
+  createdAt  DateTime @default(now())
+  evidence   EvidenceItem @relation(fields: [evidenceId], references: [id], onDelete: Cascade)
+
+  @@index([evidenceId])
+}
+
+model EthicalWallGroup {
+  id        String   @id @default(cuid())
+  tenantId  String
+  name      String
+  matterIds Json
+  userIds   Json
+  isActive  Boolean  @default(true)
+  createdAt DateTime @default(now())
+  tenant    Tenant   @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+
+  @@index([tenantId])
+}
+
+model WebhookSubscription {
+  id        String   @id @default(cuid())
+  tenantId  String
+  url       String
+  secret    String
+  events    Json
+  isActive  Boolean  @default(true)
+  createdAt DateTime @default(now())
+  tenant    Tenant   @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+
+  @@index([tenantId])
+}
+
+model PublicApiKey {
+  id         String    @id @default(cuid())
+  tenantId   String
+  name       String
+  keyHash    String
+  scopes     Json
+  lastUsedAt DateTime?
+  expiresAt  DateTime?
+  createdAt  DateTime  @default(now())
+  tenant     Tenant    @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+
+  @@index([tenantId])
+}
+
+model BulkDocumentReviewJob {
+  id            String    @id @default(cuid())
+  tenantId      String
+  matterId      String
+  status        String    @default("QUEUED")
+  documentIds   Json
+  summaryMatrix Json?
+  aiOutputId    String?
+  createdBy     String?
+  createdAt     DateTime  @default(now())
+  completedAt   DateTime?
+  tenant        Tenant    @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+  matter        Matter    @relation(fields: [matterId], references: [id], onDelete: Cascade)
+
+  @@index([matterId])
+  @@index([tenantId])
+}
+
+model IntegrationSyncLog {
+  id               String    @id @default(cuid())
+  tenantId         String
+  provider         String
+  direction        String
+  status           String
+  recordsProcessed Int       @default(0)
+  error            String?
+  startedAt        DateTime  @default(now())
+  completedAt      DateTime?
+  tenant           Tenant    @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+
+  @@index([tenantId])
+  @@index([provider])
+}
+
+model UnifiedInboxThread {
+  id            String   @id @default(cuid())
+  tenantId      String
+  clientId      String?
+  matterId      String?
+  channel       String
+  subject       String?
+  lastMessageAt DateTime @default(now())
+  metadata      Json?
+  tenant        Tenant   @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+  messages      UnifiedInboxMessage[]
+
+  @@index([tenantId])
+  @@index([matterId])
+}
+
+model UnifiedInboxMessage {
+  id         String   @id @default(cuid())
+  threadId   String
+  direction  String
+  body       String
+  senderId   String?
+  externalId String?
+  createdAt  DateTime @default(now())
+  thread     UnifiedInboxThread @relation(fields: [threadId], references: [id], onDelete: Cascade)
+
+  @@index([threadId])
+}

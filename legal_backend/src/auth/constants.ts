@@ -1,0 +1,21 @@
+export const JWT_SECRET = 'JWT_SECRET';
+export const JWT_EXPIRES_IN = 'JWT_EXPIRES_IN';
+export const REFRESH_TOKEN_SECRET = 'REFRESH_TOKEN_SECRET';
+export const REFRESH_TOKEN_EXPIRES_IN = 'REFRESH_TOKEN_EXPIRES_IN';
+
+export const USER_TYPES = {
+  CONSUMER: 'CONSUMER',
+  LAWYER: 'LAWYER',
+} as const;
+
+export const TENANT_TYPES = {
+  LAW_FIRM: 'LAW_FIRM',
+} as const;
+
+export const TENANT_ROLES = {
+  FIRM_ADMIN: 'FIRM_ADMIN',
+  PARTNER: 'PARTNER',
+  ASSOCIATE: 'ASSOCIATE',
+  FINANCE: 'FINANCE',
+  INTAKE: 'INTAKE',
+} as const;

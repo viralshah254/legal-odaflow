@@ -1,0 +1,38 @@
+export const QUEUE_NAMES = {
+  OCR: 'ocr-processing',
+  AI_HIGH: 'ai.high_priority',
+  AI_LOW: 'ai.low_priority',
+  NOTIFICATIONS: 'notifications.dispatch',
+  AUTOMATIONS: 'automations.execute',
+  ANONYMIZATION: 'anonymization.process',
+  LEGAL_INGEST: 'legal.ingest',
+} as const;
+
+export const AI_JOB_TYPES = {
+  OUTCOME_REFRESH: 'OUTCOME_REFRESH',
+  SUMMARIZE_MATTER: 'SUMMARIZE_MATTER',
+  LEGAL_RESEARCH_MEMO: 'LEGAL_RESEARCH_MEMO',
+  DRAFT_DOCUMENT: 'DRAFT_DOCUMENT',
+  SUGGEST_NEXT_STEPS: 'SUGGEST_NEXT_STEPS',
+  DOCUMENT_EXPLAINER: 'DOCUMENT_EXPLAINER',
+  OPPONENT_ANALYZER: 'OPPONENT_ANALYZER',
+  EVIDENCE_GAP: 'EVIDENCE_GAP',
+  DEADLINE_AGENT: 'DEADLINE_AGENT',
+  BILLING_RECOVERY: 'BILLING_RECOVERY',
+} as const;
+
+export const ANONYMIZATION_JOB_TYPES = {
+  PROCESS: 'ANONYMIZATION_PROCESS',
+} as const;
+
+export const LEGAL_INGEST_JOB_TYPES = {
+  COURTLISTENER_SYNC: 'COURTLISTENER_SYNC',
+} as const;
+
+export const NOTIFICATION_JOB_TYPES = {
+  DISPATCH: 'DISPATCH',
+} as const;
+
+export const AUTOMATION_JOB_TYPES = {
+  EXECUTE: 'EXECUTE',
+} as const;
