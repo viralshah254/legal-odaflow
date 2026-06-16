@@ -1,0 +1,609 @@
+{
+  "4565": "45–65%",
+  "heroTitle": "ಎಲ್ಲರಿಗೂ ಕಾನೂನು ಸ್ಪಷ್ಟತೆ",
+  "heroSubtitle": "ನಿಮ್ಮ ಕಾನೂನು ಪರಿಸ್ಥಿತಿಯನ್ನು ಅರ್ಥಮಾಡಿಕೊಳ್ಳಿ, ವಕೀಲರೊಂದಿಗೆ ಸಂಪರ್ಕ ಸಾಧಿಸಿ ಮತ್ತು ನಿಮ್ಮ ಪ್ರಕರಣವನ್ನು ನಿರ್ವಹಿಸಿ — ಎಲ್ಲವೂ ಒಂದೇ ಸ್ಥಳದಲ್ಲಿ.",
+  "getStarted": "ಪ್ರಾರಂಭಿಸಿ",
+  "forLawyers": "ವಕೀಲರಿಗೆ",
+  "forConsumers": "ಗ್ರಾಹಕರಿಗೆ",
+  "pricing": "ಬೆಲೆ ನಿಗದಿ",
+  "features": "ವೈಶಿಷ್ಟ್ಯಗಳು",
+  "testimonials": "ಪ್ರಶಂಸಾಪತ್ರಗಳು",
+  "faq": "ಪದೇ ಪದೇ ಕೇಳಲಾಗುವ ಪ್ರಶ್ನೆಗಳು",
+  "header": {
+    "issueChecker": "ಸಂಚಿಕೆ ಪರೀಕ್ಷಕ",
+    "forLawyers": "ವಕೀಲರಿಗೆ",
+    "pricing": "ಬೆಲೆ ನಿಗದಿ",
+    "demo": "ಡೆಮೊ",
+    "dashboard": "ಡ್ಯಾಶ್‌ಬೋರ್ಡ್",
+    "settings": "ಸೆಟ್ಟಿಂಗ್‌ಗಳು",
+    "signOut": "ಸೈನ್ ಔಟ್ ಮಾಡಿ",
+    "signIn": "ಸೈನ್ ಇನ್ ಮಾಡಿ",
+    "getStarted": "ಪ್ರಾರಂಭಿಸಿ",
+    "start": "ಪ್ರಾರಂಭಿಸಿ",
+    "free": "ಉಚಿತ",
+    "account": "ಖಾತೆ"
+  },
+  "footer": {
+    "tagline": "ನೀವು ವಕೀಲರಿಗೆ ಸಾವಿರಾರು ಖರ್ಚು ಮಾಡುವ ಮೊದಲು ನಿಮ್ಮ ಕಾನೂನು ಸಮಸ್ಯೆಯನ್ನು ಅರ್ಥಮಾಡಿಕೊಳ್ಳಿ.",
+    "forConsumers": "ಗ್ರಾಹಕರಿಗಾಗಿ",
+    "legalIssueChecker": "ಕಾನೂನು ಸಮಸ್ಯೆ ಪರೀಕ್ಷಕ",
+    "uploadDocument": "ಡಾಕ್ಯುಮೆಂಟ್ ಅನ್ನು ಅಪ್ಲೋಡ್ ಮಾಡಿ",
+    "findLawyer": "ವಕೀಲರನ್ನು ಹುಡುಕಿ",
+    "forLawyers": "ವಕೀಲರಿಗೆ",
+    "lawyerPlatform": "ವಕೀಲರ ವೇದಿಕೆ",
+    "pricing": "ಬೆಲೆ ನಿಗದಿ",
+    "startFreeTrial": "ಉಚಿತ ಪ್ರಯೋಗವನ್ನು ಪ್ರಾರಂಭಿಸಿ",
+    "legal": "ಕಾನೂನುಬದ್ಧ",
+    "privacy": "ಗೌಪ್ಯತೆ",
+    "terms": "ನಿಯಮಗಳು",
+    "dataConsent": "ಡೇಟಾ ಮತ್ತು AI ಸಮ್ಮತಿ",
+    "legalDisclaimer": "ಕಾನೂನು ಹಕ್ಕು ನಿರಾಕರಣೆ",
+    "copyright": "© {year} ಅಂಬ್ರೆಲಾ. ಎಲ್ಲಾ ಹಕ್ಕುಗಳನ್ನು ಕಾಯ್ದಿರಿಸಲಾಗಿದೆ.",
+    "signIn": "ಸೈನ್ ಇನ್ ಮಾಡಿ"
+  },
+  "pricingPage": {
+    "title": "ಬೆಲೆ ನಿಗದಿ",
+    "yourPlan": "ನಿಮ್ಮ ಯೋಜನೆ:",
+    "subtitle": "ಉಚಿತ ಗ್ರಾಹಕ ಮಾರ್ಗದರ್ಶನದಿಂದ ಫರ್ಮ್-ವೈಡ್ AI ವರೆಗೆ — ಸ್ವತಂತ್ರ ವಕೀಲರಿಗಾಗಿ <strong>Solo</strong> ಬಂಡಲ್ ಸೇರಿದಂತೆ.",
+    "geoDenied": "<strong>{currency}</strong> ಬೆಲೆಯನ್ನು ತೋರಿಸಲಾಗುತ್ತಿದೆ (ಸ್ಥಳ ಪ್ರವೇಶವನ್ನು ಅನುಮತಿಸಲಾಗುವುದಿಲ್ಲ).",
+    "pricesIn": "<strong>{currency}</strong> ನಲ್ಲಿ ಬೆಲೆಗಳು.",
+    "viewUsPricing": "US ({currency}) ಬೆಲೆಯನ್ನು ವೀಕ್ಷಿಸಿ",
+    "indiaPricing": "ಭಾರತ (INR)",
+    "soloPractitioner": "ಏಕವ್ಯಕ್ತಿ ಅಭ್ಯಾಸಿ",
+    "new": "ಹೊಸದು",
+    "soloDescription": "<strong>SOLO</strong> ಬಂಡಲ್ ಅನ್ನು ಒಬ್ಬ ವಕೀಲರಿಗಾಗಿ ನಿರ್ಮಿಸಲಾಗಿದೆ: ಮ್ಯಾಟರ್ ವರ್ಕ್‌ಸ್ಪೇಸ್, ​​AI ಕಾಪಿಲಟ್ ಮತ್ತು ಮಾಸಿಕ AI ಕ್ರೆಡಿಟ್‌ಗಳು — ಬಳಕೆಯಾಗದ ಸೀಟ್‌ಗಳಿಗೆ ಪಾವತಿಸದೆ.",
+    "perMonth": "/ತಿಂಗಳು",
+    "lawFirmsPerSeat": "ಕಾನೂನು ಸಂಸ್ಥೆಗಳು - ಪ್ರತಿ ಸೀಟು/ತಿಂಗಳು ({currency})",
+    "perSeatMonth": "/ಆಸನ/ಮೊ",
+    "forConsumers": "ಗ್ರಾಹಕರಿಗೆ ({currency})",
+    "consumerDescription": "ಸ್ವಯಂ ಸೇವಾ ಕಾನೂನು ಮಾರ್ಗದರ್ಶನ ಮತ್ತು ಐಚ್ಛಿಕ ವಕೀಲ ವಿಮರ್ಶೆ — ಯಾವುದೇ ಸಂಸ್ಥೆಯ ಖಾತೆಯ ಅಗತ್ಯವಿಲ್ಲ.",
+    "currentPlan": "ಪ್ರಸ್ತುತ ಯೋಜನೆ",
+    "aiCreditsTitle": "AI ಕ್ರೆಡಿಟ್‌ಗಳ ಬಗ್ಗೆ:",
+    "aiCreditsBody": "AI ಮಾದರಿಯ ಬಳಕೆಯೊಂದಿಗೆ ಕ್ರೆಡಿಟ್‌ಗಳ ಪ್ರಮಾಣ - ಕರ್ಸರ್‌ನಂತೆ. ಸ್ವಯಂ ಕಾರ್ಯಗಳು (ಕಾಪಿಲೋಟ್, ಡ್ರಾಫ್ಟ್‌ಗಳು) ಪರಿಣಾಮಕಾರಿಯಾಗಿರುತ್ತವೆ ಮತ್ತು ಕಡಿಮೆ ಕ್ರೆಡಿಟ್‌ಗಳನ್ನು ಬಳಸುತ್ತವೆ. ಪ್ರೀಮಿಯಂ ಆಳವಾದ ವಿಶ್ಲೇಷಣೆ (ಇದೇ ರೀತಿಯ ಪ್ರಕರಣಗಳು, ಎದುರಾಳಿ ತಂತ್ರ, ಸ್ಟ್ರಾಟಜಿ ಮೆಮೊ) ನಿಮ್ಮ ಆಯ್ಕೆಮಾಡಿದ ಪ್ರೀಮಿಯಂ ಮಾದರಿಯನ್ನು ಬಳಸುತ್ತದೆ ಮತ್ತು ಟೋಕನ್ ಬಳಕೆಯ ಮೂಲಕ ಬಿಲ್ ಮಾಡಲಾಗುತ್ತದೆ.",
+    "deepAnalysisNote": "ಡೀಪ್ ಕೇಸ್ ವಿಶ್ಲೇಷಣೆಗೆ <strong>ವೃತ್ತಿಪರ</strong> ಯೋಜನೆ ಅಥವಾ ಹೆಚ್ಚಿನ ಅಗತ್ಯವಿದೆ.",
+    "enterprisePrompt": "ಎಂಟರ್‌ಪ್ರೈಸ್ SSO, ಡೇಟಾ ರೆಸಿಡೆನ್ಸಿ ಅಥವಾ SCIM ಬೇಕೇ?",
+    "enterpriseSettings": "ಎಂಟರ್‌ಪ್ರೈಸ್ ಸೆಟ್ಟಿಂಗ್‌ಗಳು"
+  },
+  "home": {
+    "audienceItems": [
+      "Individuals",
+      "Law Firms",
+      "Solo Advocates",
+      "In-House Counsel",
+      "Litigation Teams",
+      "Corporate Legal Depts",
+      "Compliance Officers",
+      "Legal Researchers",
+      "Law Students",
+      "SMBs",
+      "Startups",
+      "HR & Employment",
+      "Landlords & Tenants",
+      "Entrepreneurs",
+      "Magistrates",
+      "Contract Teams"
+    ],
+    "hero": {
+      "badge": "AI-ಆಧಾರಿತ ಕಾನೂನು ಬುದ್ಧಿಮತ್ತೆ - ಯಾರಿಗಾದರೂ",
+      "title": "ಕಾನೂನು ಬುದ್ಧಿವಂತಿಕೆ.",
+      "titleHighlight": "ಯಾರಿಗಾದರೂ. ಎಲ್ಲಿಯಾದರೂ.",
+      "subtitle": "ನಿಮ್ಮ ಪರಿಸ್ಥಿತಿಯನ್ನು ಸರಳ ಭಾಷೆಯಲ್ಲಿ ವಿವರಿಸಿ. ನಾವು ನಿಜವಾದ ಕಾನೂನನ್ನು ಓದುತ್ತೇವೆ, ನೈಜ ಕಾನೂನುಗಳು ಮತ್ತು ಪ್ರಕರಣಗಳನ್ನು ಉಲ್ಲೇಖಿಸುತ್ತೇವೆ ಮತ್ತು ನೀವು ಎಲ್ಲಿ ನಿಂತಿದ್ದೀರಿ ಎಂಬುದನ್ನು ನಿಖರವಾಗಿ ಹೇಳುತ್ತೇವೆ - ಪ್ರಾರಂಭಿಸಲು ಉಚಿತ, ಯಾವುದೇ ಕ್ರೆಡಿಟ್ ಕಾರ್ಡ್ ಅಗತ್ಯವಿಲ್ಲ.",
+      "bullet1": "ಕೀವರ್ಡ್‌ಗಳಷ್ಟೇ ಅಲ್ಲ, ನಿಮ್ಮ ಪರಿಸ್ಥಿತಿಯನ್ನು ಓದುತ್ತದೆ",
+      "bullet2": "ನೈಜ ಕಾನೂನುಗಳು ಮತ್ತು ಪ್ರಕರಣದ ಕಾನೂನು - ಉಲ್ಲೇಖಿಸಲಾಗಿದೆ, ಎಂದಿಗೂ ನಿರ್ಮಿಸಲಾಗಿಲ್ಲ",
+      "bullet3": "ಒಂದೇ ವೇದಿಕೆಯಲ್ಲಿ ವ್ಯಕ್ತಿಗಳು ಮತ್ತು ಕಾನೂನು ಸಂಸ್ಥೆಗಳು",
+      "bullet4": "ನಿಮ್ಮ ಅಧಿಕಾರ ವ್ಯಾಪ್ತಿಯನ್ನು ಸ್ವಯಂ ಪತ್ತೆ ಮಾಡುತ್ತದೆ, ಯಾವಾಗಲೂ ಸ್ಥಳೀಯ ಕಾನೂನನ್ನು ಅನ್ವಯಿಸುತ್ತದೆ",
+      "ctaPrimary": "ಉಚಿತವಾಗಿ ಪ್ರಾರಂಭಿಸಿ - ಕ್ರೆಡಿಟ್ ಕಾರ್ಡ್ ಇಲ್ಲ",
+      "ctaSecondary": "ಅದನ್ನು ಕ್ರಿಯೆಯಲ್ಲಿ ನೋಡಿ",
+      "trust1": "ಉಚಿತ ಪೂರ್ವವೀಕ್ಷಣೆ ಯಾವಾಗಲೂ ಒಳಗೊಂಡಿರುತ್ತದೆ",
+      "trust2": "AI ಗೆ ತರಬೇತಿ ನೀಡಲು ಎಂದಿಗೂ ಬಳಸಿಲ್ಲ",
+      "trust3": "ನಿಮ್ಮ ಖಾತೆಗೆ ಖಾಸಗಿ",
+      "howItWorksLink": "ಇದು ಹೇಗೆ ಕೆಲಸ ಮಾಡುತ್ತದೆ"
+    },
+    "coverage": {
+      "india": "ಭಾರತ",
+      "us": "US",
+      "uk": "ಯುಕೆ",
+      "kenya": "ಕೀನ್ಯಾ",
+      "under2Min": "2 ನಿಮಿಷಗಳ ಅಡಿಯಲ್ಲಿ ವಿಶ್ಲೇಷಣೆ",
+      "freeToStart": "ಪ್ರಾರಂಭಿಸಲು ಉಚಿತ",
+      "citizensAndFirms": "ನಾಗರಿಕರು + ಕಾನೂನು ಸಂಸ್ಥೆಗಳು",
+      "dataNeverTraining": "ಡೇಟಾ ಎಂದಿಗೂ ತರಬೇತಿಗಾಗಿ"
+    },
+    "howItWorks": {
+      "badge": "ಇದು ಹೇಗೆ ಕೆಲಸ ಮಾಡುತ್ತದೆ",
+      "title": "2 ನಿಮಿಷಗಳಲ್ಲಿ ಪರಿಸ್ಥಿತಿಯಿಂದ ಸ್ಪಷ್ಟತೆಗೆ",
+      "subtitle": "ಯಾವುದೇ ರೂಪಗಳಿಲ್ಲ. ಪರಿಭಾಷೆ ಇಲ್ಲ. ಏನಾಗುತ್ತಿದೆ ಎಂಬುದನ್ನು ವಿವರಿಸಿ.",
+      "step1Title": "ನಿಮ್ಮ ಸಮಸ್ಯೆಯನ್ನು ವಿವರಿಸಿ",
+      "step1Desc": "ನಿಮ್ಮ ಪರಿಸ್ಥಿತಿಯನ್ನು ಸರಳ ಭಾಷೆಯಲ್ಲಿ ಟೈಪ್ ಮಾಡಿ - ಒಂದು ಸಂದೇಶವನ್ನು ಇದು ತೆಗೆದುಕೊಳ್ಳುತ್ತದೆ.",
+      "step2Title": "AI ಫಾಲೋ-ಅಪ್‌ಗಳನ್ನು ಕೇಳುತ್ತದೆ",
+      "step2Desc": "ನಾವು ಅದನ್ನು ಚಲಾಯಿಸುವ ಮೊದಲು 2-3 ಉದ್ದೇಶಿತ ಪ್ರಶ್ನೆಗಳು ವಿಶ್ಲೇಷಣೆಯನ್ನು ಚುರುಕುಗೊಳಿಸುತ್ತವೆ.",
+      "step3Title": "ನಾವು ಕಾನೂನನ್ನು ಓದುತ್ತೇವೆ",
+      "step3Desc": "ನೈಜ ಕಾನೂನುಗಳು ಮತ್ತು ಕೇಸ್ ಕಾನೂನನ್ನು ಹಿಂಪಡೆಯಲಾಗುತ್ತದೆ ಮತ್ತು ನಿಮ್ಮ ನಿರ್ದಿಷ್ಟ ಸಂಗತಿಗಳಿಗೆ ಅನ್ವಯಿಸಲಾಗುತ್ತದೆ.",
+      "step4Title": "ನಿಮ್ಮ ಉಚಿತ ಪೂರ್ವವೀಕ್ಷಣೆ ಪಡೆಯಿರಿ",
+      "step4Desc": "ಅಪಾಯದ ಮಟ್ಟ, ಉಲ್ಲೇಖಿಸಿದ ಕಾನೂನು, ಫಲಿತಾಂಶದ ಸಂಭವನೀಯತೆ ಮತ್ತು ಮುಂದಿನ ಹಂತಗಳು - ಉಚಿತ."
+    },
+    "example": {
+      "badge": "ಉದಾಹರಣೆ ಔಟ್ಪುಟ್",
+      "title": "ನಿಮ್ಮ AI ಪೂರ್ವವೀಕ್ಷಣೆ ಹೇಗಿರುತ್ತದೆ",
+      "subtitle": "ನಿಜವಾದ ವಿಶ್ಲೇಷಣೆ. ಉಲ್ಲೇಖಿಸಿದ ಕಾನೂನು. ಫಲಿತಾಂಶದ ಸಂಭವನೀಯತೆ. ಸರಳ ಭಾಷೆ.",
+      "aiPreview": "AI ಪೂರ್ವವೀಕ್ಷಣೆ",
+      "mediumRisk": "⚠ ಮಧ್ಯಮ ಅಪಾಯ",
+      "jurisdiction": "ಜಮೀನುದಾರ ಮತ್ತು ಬಾಡಿಗೆದಾರ",
+      "caseTitle": "ಭೂಮಾಲೀಕರಿಂದ ಕಾನೂನುಬಾಹಿರ ಬಾಡಿಗೆ ಹೆಚ್ಚಳ",
+      "caseSubtitle": "ಬಾಡಿಗೆ ನಿರ್ಬಂಧ ಕಾಯಿದೆ (ಕ್ಯಾಪ್ 296) ಮತ್ತು ಕಾಂಟ್ರ್ಯಾಕ್ಟ್ ಆಕ್ಟ್ ಕಾನೂನು ಆಧರಿಸಿ",
+      "outcomeLabel": "ಅಂದಾಜು ಫಲಿತಾಂಶದ ಶಕ್ತಿ",
+      "outcomeValue": "45–65%",
+      "outcomeDisclaimer": "ಹೇಳಲಾದ ಸತ್ಯಗಳ ಆಧಾರದ ಮೇಲೆ ವಿವರಣಾತ್ಮಕ ಅಂದಾಜು. ಕಾನೂನು ಭವಿಷ್ಯವಲ್ಲ.",
+      "point1": "ನಿಮ್ಮ 5-ವರ್ಷದ ಲೀಸ್ ಕ್ಯಾಪ್ 7% ವಾರ್ಷಿಕ ಹೆಚ್ಚಳವು ಜಮೀನುದಾರನ 30% ಬೇಡಿಕೆಗೆ ವಿರುದ್ಧವಾಗಿದೆ.",
+      "point2": "ಟ್ರಿಬ್ಯೂನಲ್ ಅನುಮೋದನೆಯಿಲ್ಲದೆ ನಿಯಂತ್ರಿತ ಆವರಣದಲ್ಲಿ ಬಾಡಿಗೆ ನಿರ್ಬಂಧ ಕಾಯಿದೆ ಮಿತಿಗಳನ್ನು ಹೆಚ್ಚಿಸುತ್ತದೆ.",
+      "point3": "ಲಿಖಿತ ಪುರಾವೆಗಳು (ಒಪ್ಪಂದ, ಬ್ಯಾಂಕ್ ದಾಖಲೆಗಳು) ನಿಮ್ಮ ಸ್ಥಾನವನ್ನು ಗಮನಾರ್ಹವಾಗಿ ಬಲಪಡಿಸುತ್ತದೆ.",
+      "cta": "ನನ್ನ ಉಚಿತ ಪೂರ್ವವೀಕ್ಷಣೆ ಪಡೆಯಿರಿ"
+    },
+    "platform": {
+      "badge": "ವೇದಿಕೆ",
+      "title": "ಪ್ರತಿ ಚಲನೆ. ಪ್ರತಿ ಷರತ್ತು.",
+      "titleHighlight": "ಪ್ರತಿ ನ್ಯಾಯವ್ಯಾಪ್ತಿ.",
+      "subtitle": "ಚಾಟ್‌ಬಾಟ್ ಅಲ್ಲ. ರಚನಾತ್ಮಕ ಕಾನೂನು ಗುಪ್ತಚರ ಎಂಜಿನ್ - ನಾಗರಿಕರು ಮತ್ತು ಕಾನೂನು ಸಂಸ್ಥೆಗಳಿಗೆ, ನಿಮ್ಮ ಅಧಿಕಾರ ವ್ಯಾಪ್ತಿಗಾಗಿ ನಿರ್ಮಿಸಲಾಗಿದೆ.",
+      "features": [
+        {
+          "num": "01",
+          "label": "ANALYZE",
+          "title": "Contextual Issue Analysis",
+          "desc": "Describe your situation in plain language. Our AI reads the legal context — not just the keywords — and maps it to real statutes and case law.",
+          "cta": "Try it free"
+        },
+        {
+          "num": "02",
+          "label": "RESEARCH",
+          "title": "Jurisdiction-Grounded Law",
+          "desc": "Every answer is grounded in the actual laws of your jurisdiction. Auto-detected, always applied. No generic templates.",
+          "cta": "Try it free"
+        },
+        {
+          "num": "03",
+          "label": "DRAFT",
+          "title": "Document Generation",
+          "desc": "Demand letters, contracts, notices, and pleadings — drafted with AI, cited from real statutes, ready to send or file.",
+          "cta": "Start drafting"
+        },
+        {
+          "num": "04",
+          "label": "MANAGE",
+          "title": "Full Practice OS for Firms",
+          "desc": "Matter management, billing, trust accounting, client intake — one platform for your entire firm. The AI Copilot knows every case.",
+          "cta": "ಕಾನೂನು ಸಂಸ್ಥೆಗಳಿಗೆ"
+        },
+        {
+          "num": "05",
+          "label": "CONNECT",
+          "title": "Lawyer Marketplace",
+          "desc": "When you need a professional, connect directly with vetted lawyers in your jurisdiction. Warm handoff from AI analysis to real counsel.",
+          "cta": "Find a lawyer"
+        },
+        {
+          "num": "06",
+          "label": "TRANSCRIBE",
+          "title": "Native Meeting Intelligence",
+          "desc": "Record, transcribe, and summarize client meetings automatically. AI extracts action items, links them to matters, and drafts follow-up notes.",
+          "cta": "For firms"
+        }
+      ]
+    },
+    "difference": {
+      "badge": "ವ್ಯತ್ಯಾಸ",
+      "title": "ಒಂದು ChatGPT ಪ್ರಾಂಪ್ಟ್, ಮೂರು ಭ್ರಮೆಯ ಪ್ರಕರಣಗಳು,",
+      "titleItalic": "ಒಂದು ಅತ್ಯಂತ ದುಬಾರಿ ತಪ್ಪು.",
+      "subtitle": "ಇತರ ಪ್ಲಾಟ್‌ಫಾರ್ಮ್‌ಗಳು ನಿಮ್ಮನ್ನು ಒಂದು ಕಡೆ ಆಯ್ಕೆ ಮಾಡಲು ಒತ್ತಾಯಿಸುತ್ತವೆ - ನಾಗರಿಕ ಅಥವಾ ವಕೀಲರು, ಒಂದು ಸಾಧನ, ಒಂದು ಬಳಕೆಯ ಪ್ರಕರಣ. ಅಂಬ್ರೆಲಾ ಎಲ್ಲವನ್ನೂ ಸಂಪರ್ಕಿಸುತ್ತದೆ.",
+      "beforeLabel": "ಅಂಬ್ರೆಲಾ ಮೊದಲು",
+      "beforeItems": [
+        "Ask ChatGPT. Get confident, fabricated case citations.",
+        "Pay a lawyer $300 just to learn if you might have a case.",
+        "Juggle billing in one app, matters in another, transcripts in a third.",
+        "Your client portal is literally email.",
+        "No outcome probability. No risk level. Just a wall of text."
+      ],
+      "afterLabel": "ಛತ್ರಿಯೊಂದಿಗೆ",
+      "afterItems": [
+        "Auto-detected jurisdiction — we know where you are and apply your actual laws.",
+        "Every citation is grounded in real, indexed statutes and case law. Verifiable in one click.",
+        "Free preview shows risk level and outcome probability — before you spend a cent.",
+        "Matter management, billing, AI Copilot, and meeting transcripts — one platform.",
+        "Built-in client portal. Not email. Not a PDF."
+      ],
+      "cta": "ಉಚಿತವಾಗಿ ಪ್ರಾರಂಭಿಸಿ - ಕ್ರೆಡಿಟ್ ಕಾರ್ಡ್ ಇಲ್ಲ"
+    },
+    "whyNot": {
+      "badge": "ಏಕೆ ಛತ್ರಿ",
+      "title": "ಸುಮ್ಮನೆ ಏಕೆ ಬಳಸಬಾರದು",
+      "titleHighlight": "ಬೇರೆ ಏನಾದರೂ?",
+      "subtitle": "ಪ್ರತಿಯೊಂದು ಸಾಧನವನ್ನು ಒಬ್ಬ ಪ್ರೇಕ್ಷಕರಿಗಾಗಿ ನಿರ್ಮಿಸಲಾಗಿದೆ. ಕಾನೂನಿನ ಸಂದರ್ಭಕ್ಕಾಗಿ ಛತ್ರಿ ನಿರ್ಮಿಸಲಾಗಿದೆ.",
+      "vsLabel": "ವಿರುದ್ಧ {name}",
+      "items": [
+        {
+          "name": "ChatGPT",
+          "problem": "Confident answers with fabricated citations. No jurisdiction awareness. No outcome probability.",
+          "solution": "Umbrella reads your facts, retrieves real statutes and case law, and cites sources you can open in one click."
+        },
+        {
+          "name": "LegalZoom",
+          "problem": "Document templates with no context. No analysis of your specific situation. No firm tools.",
+          "solution": "Umbrella analyzes your situation first, then drafts documents grounded in applicable law — plus a full firm OS."
+        },
+        {
+          "name": "Clio",
+          "problem": "Practice management only. No AI analysis for clients. No issue checker. No outcome intelligence.",
+          "solution": "Umbrella is the only platform where citizens get AI legal analysis and firms get a matter-aware Copilot — connected."
+        }
+      ]
+    },
+    "stats": {
+      "badge": "ಸಂಖ್ಯೆಗಳು",
+      "title": "ಪ್ರಮಾಣಕ್ಕಾಗಿ ನಿರ್ಮಿಸಲಾಗಿದೆ. ಉಚಿತವಾಗಿ ಪ್ರಾರಂಭಿಸಲಾಗುತ್ತಿದೆ.",
+      "countriesValue": "10K+",
+      "countriesLabel": "ಕಾನೂನು ಪ್ರಶ್ನೆಗಳಿಗೆ ಉತ್ತರಿಸಲಾಗಿದೆ",
+      "countriesSub": "ಮತ್ತು ಪ್ರತಿದಿನ ಬೆಳೆಯುತ್ತಿದೆ",
+      "timeValue": "< 2 ನಿಮಿಷ",
+      "timeLabel": "ನಿಮ್ಮ ಮೊದಲ ವಿಶ್ಲೇಷಣೆಗೆ",
+      "timeSub": "ವಿವರಣೆಯಿಂದ ಉಲ್ಲೇಖಿತ ಔಟ್‌ಪುಟ್‌ವರೆಗೆ",
+      "costValue": "$0",
+      "costLabel": "ಪ್ರಾರಂಭಿಸಲು",
+      "costSub": "ಉಚಿತ ಪೂರ್ವವೀಕ್ಷಣೆ, ಯಾವಾಗಲೂ ಒಳಗೊಂಡಿರುತ್ತದೆ",
+      "platformValue": "2-ಇನ್-1",
+      "platformLabel": "ಒಂದರಲ್ಲಿ ವೇದಿಕೆಗಳು",
+      "platformSub": "ಗ್ರಾಹಕ ಮಾರ್ಗದರ್ಶನ + ಸಂಸ್ಥೆಯ ಓಎಸ್"
+    },
+    "jurisdictions": {
+      "badge": "ಜಾಗತಿಕ ವ್ಯಾಪ್ತಿ",
+      "title": "ನಿಮ್ಮ ಅಧಿಕಾರ ವ್ಯಾಪ್ತಿ. ನಿಮ್ಮ ಕಾನೂನು.",
+      "subtitle": "ಸಾಮಾನ್ಯ ಟೆಂಪ್ಲೇಟ್‌ಗಳಲ್ಲ. ನೈಜ, ಸೂಚ್ಯಂಕ ಕಾನೂನುಗಳು ಮತ್ತು ಕೇಸ್ ಕಾನೂನು - ನಿಮ್ಮ ನಿರ್ದಿಷ್ಟ ದೇಶ ಮತ್ತು ಪರಿಸ್ಥಿತಿಗೆ ಅನ್ವಯಿಸುತ್ತದೆ.",
+      "items": [
+        {
+          "flag": "🇮🇳",
+          "country": "ಭಾರತ",
+          "coverage": [
+            "IPC & CrPC",
+            "Consumer Protection Act",
+            "Companies Act",
+            "Labour Laws",
+            "RTI & POCSO"
+          ]
+        },
+        {
+          "flag": "🇺🇸",
+          "country": "ಯುನೈಟೆಡ್ ಸ್ಟೇಟ್ಸ್",
+          "coverage": [
+            "Federal statutes",
+            "State-specific law",
+            "Employment law",
+            "Contract law",
+            "Civil litigation"
+          ]
+        },
+        {
+          "flag": "🇬🇧",
+          "country": "ಯುನೈಟೆಡ್ ಕಿಂಗ್ಡಮ್",
+          "coverage": [
+            "Common law",
+            "Employment Rights Act",
+            "Companies Act",
+            "Housing law",
+            "GDPR & data law"
+          ]
+        },
+        {
+          "flag": "🇰🇪",
+          "country": "ಕೀನ್ಯಾ",
+          "coverage": [
+            "Kenyan case law",
+            "High Court to Supreme Court",
+            "Tribunals",
+            "Land law",
+            "Constitutional law"
+          ]
+        }
+      ]
+    },
+    "twoSides": {
+      "badge": "ಒಂದು ವೇದಿಕೆ",
+      "title": "ಎರಡು ಕಡೆ. ಒಂದು ವೇದಿಕೆ.",
+      "subtitle": "ನಾಗರಿಕರು ಕಾನೂನು ಮಾರ್ಗದರ್ಶನ ಪಡೆಯುತ್ತಾರೆ. ಕಾನೂನು ಸಂಸ್ಥೆಗಳು ಪೂರ್ಣ AI-ಸ್ಥಳೀಯ OS ಅನ್ನು ಪಡೆಯುತ್ತವೆ. ಬೇರೆ ಯಾವುದೇ ವೇದಿಕೆ ಎರಡನ್ನೂ ಮಾಡುವುದಿಲ್ಲ.",
+      "individualsTitle": "ವ್ಯಕ್ತಿಗಳಿಗೆ",
+      "individualsDesc": "ನಿಮ್ಮ ಹಕ್ಕುಗಳನ್ನು ಅರ್ಥಮಾಡಿಕೊಳ್ಳಿ, ಅಪಾಯವನ್ನು ವಿಶ್ಲೇಷಿಸಿ ಮತ್ತು ವಕೀಲರನ್ನು ಹುಡುಕಿ - ಎಲ್ಲವೂ ಒಂದೇ ಸ್ಥಳದಲ್ಲಿ.",
+      "individualsFeatures": [
+        "Free AI issue preview — always",
+        "Jurisdiction-aware legal guidance",
+        "Outcome probability estimate",
+        "ಡಾಕ್ಯುಮೆಂಟ್ ಅಪ್ಲೋಡ್ ಮತ್ತು ವಿಶ್ಲೇಷಣೆ",
+        "Lawyer marketplace access"
+      ],
+      "individualsCta": "ನನ್ನ ಕಾನೂನು ಸಮಸ್ಯೆಯನ್ನು ಪರಿಶೀಲಿಸಿ",
+      "uploadDocument": "ಡಾಕ್ಯುಮೆಂಟ್ ಅನ್ನು ಅಪ್‌ಲೋಡ್ ಮಾಡಿ",
+      "firmsTitle": "ಕಾನೂನು ಸಂಸ್ಥೆಗಳಿಗೆ",
+      "firmsDesc": "AI-ಸ್ಥಳೀಯ ಕಾನೂನು OS — ಪೂರ್ಣ ಅಭ್ಯಾಸ ನಿರ್ವಹಣೆ, ಬಿಲ್ಲಿಂಗ್, AI ಕಾಪಿಲಟ್ ಮತ್ತು ಸ್ಥಳೀಯ ಸಭೆಯ ಪ್ರತಿಗಳು.",
+      "firmsFeatures": [
+        "Matter & client management",
+        "AI Copilot with firm memory",
+        "Billing, time tracking & trust",
+        "Native meeting transcripts + AI notes",
+        "Secure client intake portal"
+      ],
+      "firmsCta": "ವಕೀಲರ ವೇದಿಕೆಯನ್ನು ಅನ್ವೇಷಿಸಿ",
+      "startFreeTrial": "ಉಚಿತ ಪ್ರಯೋಗವನ್ನು ಪ್ರಾರಂಭಿಸಿ"
+    },
+    "testimonials": {
+      "badge": "ಕ್ಷೇತ್ರದಿಂದ",
+      "title": "ವಕೀಲರಿಂದ ವಿಶ್ವಾಸಾರ್ಹ ಮತ್ತು",
+      "titleHighlight": "ಪ್ರಪಂಚದಾದ್ಯಂತದ ವ್ಯಕ್ತಿಗಳು.",
+      "subtitle": "ಏಕವ್ಯಕ್ತಿ ವಕೀಲರಿಂದ ಕಾನೂನು ಸಂಸ್ಥೆಯ ಪಾಲುದಾರರವರೆಗೆ. ನಿಜವಾದ ಬಳಕೆದಾರರು, ನೈಜ ಪ್ರಕರಣಗಳು.",
+      "items": [
+        {
+          "quote": "I described my landlord dispute and within two minutes I had the exact section of the law cited, with an outcome probability. I didn't even know that was possible.",
+          "name": "Priya M.",
+          "role": "Tenant",
+          "flag": ""
+        },
+        {
+          "quote": "We switched from three separate tools — billing, matter management, and a generic chatbot — to just Umbrella. The AI Copilot alone saves my associates two hours a day.",
+          "name": "Daniel R.",
+          "role": "Partner, Law Firm",
+          "flag": ""
+        },
+        {
+          "quote": "The citations are what won me over. Every analysis references a real statute or case I can open in one click. No hallucinations, no guessing.",
+          "name": "Aisha N.",
+          "role": "Advocate",
+          "flag": ""
+        },
+        {
+          "quote": "As a solo practitioner, I never had access to tools like this. Umbrella gave me the same firepower as a big firm at a fraction of the cost.",
+          "name": "Marcus T.",
+          "role": "Attorney",
+          "flag": ""
+        }
+      ]
+    },
+    "pricingPreview": {
+      "badge": "ಬೆಲೆ ನಿಗದಿ",
+      "title": "ಒಂದು ವೇದಿಕೆ. ಸರಳ ಬೆಲೆ.",
+      "subtitle": "ಉಚಿತವಾಗಿ ಪ್ರಾರಂಭಿಸಿ. ನಿಮಗೆ ಹೆಚ್ಚಿನ ಅಗತ್ಯವಿರುವಾಗ ಅಪ್‌ಗ್ರೇಡ್ ಮಾಡಿ. ಯಾವಾಗ ಬೇಕಾದರೂ ರದ್ದುಮಾಡಿ.",
+      "mostPopular": "ಅತ್ಯಂತ ಜನಪ್ರಿಯ",
+      "seeFullPricing": "ಸಂಪೂರ್ಣ ಬೆಲೆ ವಿವರಗಳನ್ನು ನೋಡಿ",
+      "tiers": [
+        {
+          "label": "ಉಚಿತ",
+          "price": "$0",
+          "per": "forever",
+          "desc": "3 AI credits. See what the law says about your situation.",
+          "features": [
+            "AI issue preview",
+            "3 free credits",
+            "Jurisdiction detection",
+            "Plain-language guidance"
+          ],
+          "cta": "Start Free"
+        },
+        {
+          "label": "ಜೊತೆಗೆ",
+          "price": "$15",
+          "per": "/ month",
+          "desc": "Full reports, cited law, and direct access to lawyers.",
+          "features": [
+            "25 AI credits/month",
+            "Full legal report",
+            "Cited statutes & cases",
+            "Lawyer marketplace access",
+            "Document analysis"
+          ],
+          "cta": "Get Plus"
+        },
+        {
+          "label": "ಸಂಸ್ಥೆ",
+          "price": "From $40",
+          "per": "/ seat / month",
+          "desc": "Full Legal OS — matter management, AI Copilot, billing, transcripts.",
+          "features": [
+            "Unlimited AI Copilot",
+            "Matter & client management",
+            "Billing & trust accounting",
+            "Meeting transcripts",
+            "Secure client intake portal"
+          ],
+          "cta": "Explore Firm Plans"
+        }
+      ]
+    },
+    "trust": {
+      "title": "ಟ್ರಸ್ಟ್‌ಗಾಗಿ ನಿರ್ಮಿಸಲಾಗಿದೆ",
+      "subtitle": "ನಿಮ್ಮ ಪ್ರಕರಣ, ನಿಮ್ಮ ಡೇಟಾ, ನಿಮ್ಮ ಗೌಪ್ಯತೆ. ಯಾವಾಗಲೂ.",
+      "items": [
+        {
+          "title": "Not Legal Advice",
+          "desc": "Clear disclaimers on every output. Lawyer review available when needed."
+        },
+        {
+          "title": "Private to Your Account",
+          "desc": "Cases are private. Other users never see your data."
+        },
+        {
+          "title": "Jurisdiction-Grounded",
+          "desc": "Guidance grounded in your jurisdiction's actual laws and case law — not generic templates."
+        },
+        {
+          "title": "Cited Sources",
+          "desc": "Every output references real statutes, case law, and official guidance."
+        }
+      ]
+    },
+    "faq": {
+      "title": "ಪದೇ ಪದೇ ಕೇಳಲಾಗುವ ಪ್ರಶ್ನೆಗಳು",
+      "items": [
+        {
+          "question": "Is this legal advice?",
+          "answer": "No. Umbrella provides legal information and guidance to help you understand your situation. For formal legal advice, connect with a licensed lawyer through our platform."
+        },
+        {
+          "question": "How much does the free preview cost?",
+          "answer": "The legal issue checker preview is free for registered users, with a limited number of AI credits included. Full reports and lawyer review are paid upgrades."
+        },
+        {
+          "question": "Which jurisdictions are fully supported?",
+          "answer": "We have full legal database coverage with jurisdiction-specific laws and a local lawyer marketplace. We accept issues from all locations and provide best-effort guidance where full coverage isn't yet available."
+        },
+        {
+          "question": "Can lawyers use this platform too?",
+          "answer": "Yes. Umbrella is built for both sides. Individuals get guided legal analysis and document support. Law firms get a full practice management workspace — matter tracking, billing, meeting transcripts, an AI Copilot, and a client intake pipeline — all in one place."
+        },
+        {
+          "question": "What happens to my data?",
+          "answer": "Your data is private to your account. Other users and firms cannot access it. We never use your data to train AI models without explicit consent, and your data stays in your region."
+        },
+        {
+          "question": "How is Umbrella different from other legal tools?",
+          "answer": "Most legal software was built for one audience — either large firm billing or generic document storage. Umbrella is built from the ground up to understand legal context: it reads your situation, maps it to applicable law, and helps you act. It works for individuals and firms, with everything connected in one platform."
+        }
+      ]
+    },
+    "finalCta": {
+      "badge": "ಪ್ರಾರಂಭಿಸಲು ಉಚಿತ",
+      "title": "ನಿಮ್ಮ ಕಾನೂನು ಮೆದುಳು.",
+      "titleItalic": "ಪ್ರಾರಂಭಿಸಲು ಉಚಿತ.",
+      "subtitle": "ನಿಮ್ಮ ಪರಿಸ್ಥಿತಿಯನ್ನು ವಿವರಿಸಿ. 2 ನಿಮಿಷಗಳಲ್ಲಿ ಉಲ್ಲೇಖಿತ ವಿಶ್ಲೇಷಣೆಯನ್ನು ಪಡೆಯಿರಿ. ಯಾವುದೇ ಕ್ರೆಡಿಟ್ ಕಾರ್ಡ್ ಇಲ್ಲ, ಯಾವುದೇ ವಕೀಲರು ಪ್ರಾರಂಭಿಸಲು ಅಗತ್ಯವಿಲ್ಲ.",
+      "ctaPrimary": "ಪ್ರಾರಂಭಿಸಿ - ಇದು ಉಚಿತವಾಗಿದೆ",
+      "ctaSecondary": "ಕಾನೂನು ಸಂಸ್ಥೆಗಳಿಗೆ →",
+      "footnote": "ಕ್ರೆಡಿಟ್ ಕಾರ್ಡ್ ಇಲ್ಲ · 2 ನಿಮಿಷದಲ್ಲಿ ಫಲಿತಾಂಶಗಳು · ಉಚಿತ ಪೂರ್ವವೀಕ್ಷಣೆ ಯಾವಾಗಲೂ ಒಳಗೊಂಡಿರುತ್ತದೆ"
+    },
+    "landingIssueBoard": {
+      "title": "ನಿಮ್ಮ ಕಾನೂನು ಪರಿಸ್ಥಿತಿ ಏನು?",
+      "subtitle": "ಅದನ್ನು ಸರಳ ಭಾಷೆಯಲ್ಲಿ ವಿವರಿಸಿ - ನಮ್ಮ AI ಸತ್ಯಗಳನ್ನು ಓದುತ್ತದೆ, ಕಾನೂನನ್ನು ಉಲ್ಲೇಖಿಸುತ್ತದೆ ಮತ್ತು ನೀವು ಎಲ್ಲಿ ನಿಂತಿದ್ದೀರಿ ಎಂಬುದನ್ನು ನಿಖರವಾಗಿ ಹೇಳುತ್ತದೆ.",
+      "freePreview": "ಉಚಿತ ಪೂರ್ವವೀಕ್ಷಣೆ",
+      "noCreditCard": "ಕ್ರೆಡಿಟ್ ಕಾರ್ಡ್ ಇಲ್ಲ",
+      "resultsIn2Min": "<2 ನಿಮಿಷಗಳಲ್ಲಿ ಫಲಿತಾಂಶಗಳು",
+      "otherLanguages": "Other languages",
+      "otherLanguagesPlaceholder": "Select a language",
+      "languageSubtitleIndia": "We'll deliver your legal analysis in the language you choose.",
+      "languageTitle": "Which language do you prefer?",
+      "languageSubtitle": "We'll deliver your legal analysis in the language you choose."
+    }
+  },
+  "siteName": "Umbrella",
+  "siteTagline": "ನಿಮ್ಮ ಕಾನೂನು ಸಮಸ್ಯೆಯನ್ನು ಅರ್ಥಮಾಡಿಕೊಳ್ಳಿ. AI ನೊಂದಿಗೆ ನಿಮ್ಮ ಸಂಸ್ಥೆಯನ್ನು ಚಲಾಯಿಸಿ.",
+  "siteDescription": "IN, US, KE & UK ನಲ್ಲಿ ನಿಮ್ಮ ಕಾನೂನು ಸಮಸ್ಯೆಯನ್ನು ಉಚಿತವಾಗಿ ಪರಿಶೀಲಿಸಿ. ಕಾನೂನು ಸಂಸ್ಥೆಗಳು ವಿಷಯ-ಅರಿವು AI Copilot, ಸಂಶೋಧನೆ, ಬಿಲ್ಲಿಂಗ್ ಮತ್ತು ಅಭ್ಯಾಸ ಯಾಂತ್ರೀಕೃತಗೊಂಡ.",
+  "siteTitle": "ಅಂಬ್ರೆಲಾ — AI ಕಾನೂನು ಮಾರ್ಗದರ್ಶನ ಮತ್ತು ಸಂಸ್ಥೆಯ OS",
+  "issueCheckerMetaTitle": "ಉಚಿತ ಕಾನೂನು ಸಮಸ್ಯೆ ಪರೀಕ್ಷಕ",
+  "issueCheckerMetaDescription": "ನಿಮ್ಮ ಕಾನೂನು ಸಮಸ್ಯೆಯನ್ನು ವಿವರಿಸಿ ಮತ್ತು ಭಾರತ, US, ಕೀನ್ಯಾ ಮತ್ತು UK ಗಾಗಿ ದೇಶ-ನಿರ್ದಿಷ್ಟ ಮಾರ್ಗದರ್ಶನದೊಂದಿಗೆ ಉಚಿತ AI ಪೂರ್ವವೀಕ್ಷಣೆ ಪಡೆಯಿರಿ.",
+  "forLawyersMetaTitle": "ಕಾನೂನು ಸಂಸ್ಥೆಗಳಿಗೆ AI-ಸ್ಥಳೀಯ ಕಾನೂನು OS",
+  "forLawyersMetaDescription": "ಮ್ಯಾಟರ್-ಅವೇರ್ ಎಐ ಕಾಪಿಲಟ್, ಕಾನೂನು ಸಂಶೋಧನೆ, ಬಿಲ್ಲಿಂಗ್, ಟ್ರಸ್ಟ್ ಅಕೌಂಟಿಂಗ್ ಮತ್ತು ಆಟೋಮೇಷನ್ - ಆಧುನಿಕ ಕಾನೂನು ಸಂಸ್ಥೆಗಳಿಗಾಗಿ ನಿರ್ಮಿಸಲಾಗಿದೆ.",
+  "welcomeSubtext": "ನಿಮಿಷಗಳಲ್ಲಿ ಕಾನೂನು ಸಮಸ್ಯೆಯನ್ನು ಪರಿಶೀಲಿಸಿ. ವಿಷಯಗಳನ್ನು ನಿರ್ವಹಿಸಿ ಮತ್ತು ನಿಮ್ಮ ಸಂಸ್ಥೆಯನ್ನು ಚಲಾಯಿಸಿ — ಖಾಸಗಿ ಮತ್ತು ಸುರಕ್ಷಿತ.",
+  "welcomeHeadline": "ಕಾನೂನು ಸ್ಪಷ್ಟತೆ\nಎಲ್ಲರಿಗೂ.",
+  "instantAnswers": "ತ್ವರಿತ ಉತ್ತರಗಳು",
+  "private": "ಖಾಸಗಿ",
+  "forLawyersChip": "ವಕೀಲರಿಗೆ",
+  "createAccountCta": "ಖಾತೆಯನ್ನು ರಚಿಸಿ",
+  "tryForFree": "ಉಚಿತವಾಗಿ ಪ್ರಯತ್ನಿಸಿ - ಯಾವುದೇ ಖಾತೆಯ ಅಗತ್ಯವಿಲ್ಲ",
+  "builtForEveryone": "ವ್ಯಕ್ತಿಗಳು, ವಕೀಲರು ಮತ್ತು ಕಾನೂನು ಸಂಸ್ಥೆಗಳಿಗಾಗಿ ನಿರ್ಮಿಸಲಾಗಿದೆ.",
+  "splashForIndividuals": "ವ್ಯಕ್ತಿಗಳಿಗೆ.",
+  "splashForLawyers": "ವಕೀಲರಿಗೆ.",
+  "splashForLawFirms": "ಕಾನೂನು ಸಂಸ್ಥೆಗಳಿಗೆ.",
+  "splashForEveryone": "ಎಲ್ಲರಿಗೂ.",
+  "ai_legal_analysis": "AI ಕಾನೂನು ವಿಶ್ಲೇಷಣೆ",
+  "based_on_rent_restriction_act_cap_296_and_law_of_contract_ac": "ಬಾಡಿಗೆ ನಿರ್ಬಂಧ ಕಾಯಿದೆ (ಕ್ಯಾಪ್ 296) ಮತ್ತು ಕಾಂಟ್ರ್ಯಾಕ್ಟ್ ಆಕ್ಟ್ ಕಾನೂನು ಆಧರಿಸಿ",
+  "before_umbrella": "ಅಂಬ್ರೆಲಾ ಮೊದಲು",
+  "built_for_trust": "ಟ್ರಸ್ಟ್‌ಗಾಗಿ ನಿರ್ಮಿಸಲಾಗಿದೆ",
+  "built_for_scale_starting_free": "ಪ್ರಮಾಣಕ್ಕಾಗಿ ನಿರ್ಮಿಸಲಾಗಿದೆ. ಉಚಿತವಾಗಿ ಪ್ರಾರಂಭಿಸಲಾಗುತ್ತಿದೆ.",
+  "data_ai_consent": "ಡೇಟಾ ಮತ್ತು AI ಸಮ್ಮತಿ",
+  "estimated_outcome_strength": "ಅಂದಾಜು ಫಲಿತಾಂಶದ ಶಕ್ತಿ",
+  "every_jurisdiction": "ಪ್ರತಿ ನ್ಯಾಯವ್ಯಾಪ್ತಿ.",
+  "example_output": "ಉದಾಹರಣೆ ಔಟ್ಪುಟ್",
+  "free": "ಉಚಿತ",
+  "for_consumers": "ಗ್ರಾಹಕರಿಗಾಗಿ",
+  "for_individuals": "ವ್ಯಕ್ತಿಗಳಿಗೆ",
+  "for_law_firms": "ಕಾನೂನು ಸಂಸ್ಥೆಗಳಿಗೆ",
+  "for_lawyers": "ವಕೀಲರಿಗೆ",
+  "for_anyone_anywhere": "ಯಾರಿಗಾದರೂ. ಎಲ್ಲಿಯಾದರೂ.",
+  "free_to_start": "ಪ್ರಾರಂಭಿಸಲು ಉಚಿತ.",
+  "frequently_asked_questions": "ಪದೇ ಪದೇ ಕೇಳಲಾಗುವ ಪ್ರಶ್ನೆಗಳು",
+  "from_situation_to_clarity_in_under_2_minutes": "2 ನಿಮಿಷಗಳಲ್ಲಿ ಪರಿಸ್ಥಿತಿಯಿಂದ ಸ್ಪಷ್ಟತೆಗೆ",
+  "from_the_field": "ಕ್ಷೇತ್ರದಿಂದ",
+  "get_started": "ಪ್ರಾರಂಭಿಸಿ",
+  "get_my_free_preview": "ನನ್ನ ಉಚಿತ ಪೂರ್ವವೀಕ್ಷಣೆ ಪಡೆಯಿರಿ",
+  "global_coverage": "ಜಾಗತಿಕ ವ್ಯಾಪ್ತಿ",
+  "how_it_works": "ಇದು ಹೇಗೆ ಕೆಲಸ ಮಾಡುತ್ತದೆ",
+  "illustrative_estimate_based_on_stated_facts_not_a_legal_pred": "ಹೇಳಲಾದ ಸತ್ಯಗಳ ಆಧಾರದ ಮೇಲೆ ವಿವರಣಾತ್ಮಕ ಅಂದಾಜು. ಕಾನೂನು ಭವಿಷ್ಯವಲ್ಲ.",
+  "india_us_uk_kenya_and_growing": "ಭಾರತ · US · UK · ಕೀನ್ಯಾ — ಮತ್ತು ಬೆಳೆಯುತ್ತಿದೆ",
+  "legal": "ಕಾನೂನುಬದ್ಧ",
+  "legal_disclaimer": "ಕಾನೂನು ಹಕ್ಕು ನಿರಾಕರಣೆ",
+  "live": "ಲೈವ್",
+  "most_popular": "ಅತ್ಯಂತ ಜನಪ್ರಿಯ",
+  "one_platform": "ಒಂದು ವೇದಿಕೆ",
+  "one_platform_simple_pricing": "ಒಂದು ವೇದಿಕೆ. ಸರಳ ಬೆಲೆ.",
+  "privacy": "ಗೌಪ್ಯತೆ",
+  "start": "ಪ್ರಾರಂಭಿಸಿ",
+  "start_free_trial": "ಉಚಿತ ಪ್ರಯೋಗವನ್ನು ಪ್ರಾರಂಭಿಸಿ",
+  "terms": "ನಿಯಮಗಳು",
+  "the_difference": "ವ್ಯತ್ಯಾಸ",
+  "the_numbers": "ಸಂಖ್ಯೆಗಳು",
+  "the_platform": "ವೇದಿಕೆ",
+  "two_sides_one_platform": "ಎರಡು ಕಡೆ. ಒಂದು ವೇದಿಕೆ.",
+  "unlawful_rent_increase_by_landlord": "ಭೂಮಾಲೀಕರಿಂದ ಕಾನೂನುಬಾಹಿರ ಬಾಡಿಗೆ ಹೆಚ್ಚಳ",
+  "what_your_ai_preview_looks_like": "ನಿಮ್ಮ AI ಪೂರ್ವವೀಕ್ಷಣೆ ಹೇಗಿರುತ್ತದೆ",
+  "with_umbrella": "ಛತ್ರಿಯೊಂದಿಗೆ",
+  "your_case_your_data_your_privacy_always": "ನಿಮ್ಮ ಪ್ರಕರಣ, ನಿಮ್ಮ ಡೇಟಾ, ನಿಮ್ಮ ಗೌಪ್ಯತೆ. ಯಾವಾಗಲೂ.",
+  "your_jurisdiction_your_law": "ನಿಮ್ಮ ಅಧಿಕಾರ ವ್ಯಾಪ್ತಿ. ನಿಮ್ಮ ಕಾನೂನು.",
+  "four_countries": "ನಾಲ್ಕು ದೇಶಗಳು.",
+  "one_afternoon_wasted": "ಒಂದು ಮಧ್ಯಾಹ್ನ ವ್ಯರ್ಥವಾಯಿತು.",
+  "to_continue": "⌘↵ ಮುಂದುವರೆಯಲು",
+  "kenya_landlord_amp_tenant": "🇰🇪 ಕೀನ್ಯಾ · ಭೂಮಾಲೀಕ ಮತ್ತು ಬಾಡಿಗೆದಾರ",
+  "forLawyersBadge": "AI-ಸ್ಥಳೀಯ ಕಾನೂನು ಆಪರೇಟಿಂಗ್ ಸಿಸ್ಟಮ್",
+  "forLawyersHeadline1": "ವಿಷಯಗಳನ್ನು ನಿರ್ವಹಿಸಿ",
+  "forLawyersHeadline2": "ಸಮರ್ಥವಾಗಿ.",
+  "forLawyersHeadline3": "ನಿಮ್ಮ ಅಭ್ಯಾಸವನ್ನು ಬೆಳೆಸಿಕೊಳ್ಳಿ.",
+  "forLawyersSubhead": "ಆಲ್ ಇನ್ ಒನ್ ಲೀಗಲ್ ಪ್ರಾಕ್ಟೀಸ್ ಮ್ಯಾನೇಜ್‌ಮೆಂಟ್ ಪ್ಲಾಟ್‌ಫಾರ್ಮ್ - ಸ್ಥಳೀಯ ಪ್ರತಿಲೇಖನಗಳು, ಮ್ಯಾಟರ್-ಅವೇರ್ ಕಾಪಿಲೋಟ್, ಟ್ರಸ್ಟ್ ಅಕೌಂಟಿಂಗ್ ಮತ್ತು ಆಟೋಮೇಷನ್-ಮೊದಲ ಕೆಲಸದ ಹರಿವುಗಳು.",
+  "forLawyersTryDemo": "ಡೆಮೊ ಪ್ರಯತ್ನಿಸಿ",
+  "forLawyersNoCreditCard": "ಕ್ರೆಡಿಟ್ ಕಾರ್ಡ್ ಇಲ್ಲ",
+  "forLawyersTrialDays": "30 ದಿನಗಳ ಪ್ರಯೋಗ",
+  "forLawyersSetupMinutes": "5 ನಿಮಿಷಗಳಲ್ಲಿ ಹೊಂದಿಸಿ",
+  "forLawyersStatActiveMatters": "ಸಕ್ರಿಯ ವಿಷಯಗಳು",
+  "forLawyersStatDueToday": "ಇಂದು ಬಾಕಿಯಿದೆ",
+  "forLawyersStatClients": "ಗ್ರಾಹಕರು",
+  "forLawyersStatRevenue": "ಆದಾಯ",
+  "forLawyersCardCaption": "ಸ್ಥಳೀಯ ಸಭೆಯ ಸೆರೆಹಿಡಿಯುವಿಕೆ → ಪ್ರತಿಲೇಖನ → AI ಟಿಪ್ಪಣಿಗಳು → ಸ್ವಯಂ ಟೈಮ್‌ಲೈನ್ ನವೀಕರಣಗಳು.",
+  "forLawyersFeaturesTitle1": "ನಿಮಗೆ ಬೇಕಾಗಿರುವ ಎಲ್ಲವೂ",
+  "forLawyersFeaturesTitle2": "ನಿಮ್ಮ ಅಭ್ಯಾಸವನ್ನು ಚಲಾಯಿಸಿ",
+  "forLawyersFeatureDeadlines": "ಡೆಡ್‌ಲೈನ್‌ಗಳನ್ನು ಎಂದಿಗೂ ಕಳೆದುಕೊಳ್ಳಬೇಡಿ",
+  "forLawyersFeatureDeadlinesDesc": "ಬುದ್ಧಿವಂತ ಎಚ್ಚರಿಕೆಗಳೊಂದಿಗೆ ಸ್ವಯಂಚಾಲಿತ ಗಡುವು ಟ್ರ್ಯಾಕಿಂಗ್.",
+  "forLawyersFeatureMatters": "ಮ್ಯಾಟರ್ ಮ್ಯಾನೇಜ್ಮೆಂಟ್",
+  "forLawyersFeatureMattersDesc": "ಸೇವನೆಯ ಕೆಲಸದ ಹರಿವುಗಳು, ಸಂಘರ್ಷ ತಪಾಸಣೆಗಳು ಮತ್ತು ಹಂತದ ಪೈಪ್‌ಲೈನ್‌ಗಳು.",
+  "forLawyersFeatureTrust": "ಟ್ರಸ್ಟ್ ಅಕೌಂಟಿಂಗ್",
+  "forLawyersFeatureTrustDesc": "ಅನುಮೋದನೆ ವರ್ಕ್‌ಫ್ಲೋಗಳೊಂದಿಗೆ ಅಂತರ್ನಿರ್ಮಿತ ಟ್ರಸ್ಟ್ ಲೆಡ್ಜರ್.",
+  "forLawyersFeaturePortal": "ಕ್ಲೈಂಟ್ ಪೋರ್ಟಲ್",
+  "forLawyersFeaturePortalDesc": "ಡಾಕ್ಯುಮೆಂಟ್‌ಗಳು, ಇನ್‌ವಾಯ್ಸ್‌ಗಳು ಮತ್ತು ಸಂದೇಶಗಳಿಗಾಗಿ ಸುರಕ್ಷಿತ ಪೋರ್ಟಲ್.",
+  "forLawyersFeatureAutomation": "ಆಟೋಮೇಷನ್ ಎಂಜಿನ್",
+  "forLawyersFeatureAutomationDesc": "ಅನುಮೋದನೆಗಳು ಮತ್ತು SLAಗಳೊಂದಿಗೆ ವರ್ಕ್‌ಫ್ಲೋಗಳು ಇದ್ದರೆ/ನಂತರ.",
+  "forLawyersFeatureCopilot": "AI ಕಾಪಿಲಟ್",
+  "forLawyersFeatureCopilotDesc": "ಮ್ಯಾಟರ್-ಅವೇರ್ ಡ್ರಾಫ್ಟ್‌ಗಳು, ಸಂಶೋಧನೆ ಮತ್ತು ತಂತ್ರದ ಮೆಮೊಗಳು.",
+  "forLawyersCtaTitle": "ನಿಮ್ಮ ಅಭ್ಯಾಸವನ್ನು ಪರಿವರ್ತಿಸಲು ಸಿದ್ಧರಿದ್ದೀರಾ?",
+  "forLawyersCtaSubtitle": "ಅಂಬ್ರೆಲಾವನ್ನು ಬಳಸಿಕೊಂಡು ಫಾರ್ವರ್ಡ್-ಥಿಂಕಿಂಗ್ ಕಾನೂನು ಸಂಸ್ಥೆಗಳಿಗೆ ಸೇರಿ.",
+  "forLawyersCtaTrial": "ನಿಮ್ಮ ಉಚಿತ ಪ್ರಯೋಗವನ್ನು ಪ್ರಾರಂಭಿಸಿ",
+  "forLawyersViewPricing": "ಬೆಲೆಯನ್ನು ವೀಕ್ಷಿಸಿ",
+  "developersBadge": "ಸಾರ್ವಜನಿಕ API",
+  "developersTitle": "ಡೆವಲಪರ್ ದಸ್ತಾವೇಜನ್ನು",
+  "developersIntro": "API ಕೀಗಳು ಮತ್ತು ಸಹಿ ಮಾಡಿದ ವೆಬ್‌ಹೂಕ್‌ಗಳನ್ನು ಬಳಸಿಕೊಂಡು ನಿಮ್ಮ ಸಂಸ್ಥೆಯ ವ್ಯವಸ್ಥೆಗಳೊಂದಿಗೆ ಅಂಬ್ರೆಲಾವನ್ನು ಸಂಯೋಜಿಸಿ. ಒಮ್ಮೆ ಸೈನ್ ಇನ್ ಮಾಡಿದ ನಂತರ ಸೆಟ್ಟಿಂಗ್‌ಗಳಿಂದ ಕೀಗಳು ಮತ್ತು ಚಂದಾದಾರಿಕೆಗಳನ್ನು ನಿರ್ವಹಿಸಿ.",
+  "developersApiKeys": "API ಕೀಗಳು",
+  "developersAuthTitle": "ದೃಢೀಕರಣ",
+  "developersAuthDesc": "ಸಂಸ್ಥೆಯ ನಿರ್ವಾಹಕರು ದೃಢೀಕೃತ API ಮೂಲಕ ಕೀಗಳನ್ನು ರಚಿಸುತ್ತಾರೆ. ಪ್ರತಿ ವಿನಂತಿಯ ಮೇಲೆ ಕೀಲಿಯನ್ನು ರವಾನಿಸಿ.",
+  "developersListKeys": "ಪಟ್ಟಿ ಕೀಗಳು:",
+  "developersWebhooks": "ವೆಬ್‌ಹೂಕ್ಸ್",
+  "developersSubscriptionsTitle": "ಚಂದಾದಾರಿಕೆಗಳು",
+  "developersSubscriptionsDesc": "HMAC-SHA256 ನೊಂದಿಗೆ ಸಹಿ ಮಾಡಿದ ಈವೆಂಟ್ ಪೇಲೋಡ್‌ಗಳನ್ನು ಸ್ವೀಕರಿಸಲು HTTPS ಅಂತಿಮ ಬಿಂದುಗಳನ್ನು ನೋಂದಾಯಿಸಿ.",
+  "developersVerifyDeliveries": "ಎಕ್ಸ್-ಲೀಗಲ್-ಸಿಗ್ನೇಚರ್ ಹೆಡರ್ ಬಳಸಿ ವಿತರಣೆಗಳನ್ನು ಪರಿಶೀಲಿಸಿ. POST/webhooks/test ಜೊತೆಗೆ ಸಂಪರ್ಕವನ್ನು ಪರೀಕ್ಷಿಸಿ.",
+  "developersSecurity": "ಭದ್ರತೆ",
+  "developersSecurityRotate": "ನಿಯತಕಾಲಿಕವಾಗಿ API ಕೀಗಳನ್ನು ತಿರುಗಿಸಿ ಮತ್ತು ಅಗತ್ಯವಿರುವ ಕನಿಷ್ಠ ಅನುಮತಿಗಳಿಗೆ ಅವುಗಳನ್ನು ಸ್ಕೋಪ್ ಮಾಡಿ.",
+  "developersSecurityWebhook": "ವೆಬ್‌ಹೂಕ್ ರಹಸ್ಯಗಳನ್ನು ಸುರಕ್ಷಿತವಾಗಿ ಸಂಗ್ರಹಿಸಬೇಕು; ಅವುಗಳನ್ನು ಎಂದಿಗೂ ಮೂಲ ನಿಯಂತ್ರಣಕ್ಕೆ ಒಪ್ಪಿಸಬೇಡಿ.",
+  "developersSecurityTls": "ಎಲ್ಲಾ API ಟ್ರಾಫಿಕ್‌ಗೆ TLS ಅಗತ್ಯವಿದೆ. ಟೆನೆಂಟ್ ಐಸೋಲೇಶನ್ ಅನ್ನು ಎಕ್ಸ್-ಟೆನೆಂಟ್-ಐಡಿ ಮೂಲಕ ಫರ್ಮ್-ಸ್ಕೋಪ್ಡ್ ರೂಟ್‌ಗಳಲ್ಲಿ ಜಾರಿಗೊಳಿಸಲಾಗುತ್ತದೆ.",
+  "subscriptionCancelTitle": "ಚೆಕ್ಔಟ್ ರದ್ದುಗೊಳಿಸಲಾಗಿದೆ",
+  "subscriptionCancelBody": "ಯಾವುದೇ ಆರೋಪ ಮಾಡಿಲ್ಲ. ಯಾವುದೇ ಸಮಯದಲ್ಲಿ ಯೋಜನೆಯನ್ನು ಆಯ್ಕೆ ಮಾಡಲು ನೀವು ಬೆಲೆಗೆ ಹಿಂತಿರುಗಬಹುದು.",
+  "subscriptionBackToPricing": "ಬೆಲೆಗೆ ಹಿಂತಿರುಗಿ",
+  "subscriptionSuccessTitle": "ಚಂದಾದಾರಿಕೆಯನ್ನು ದೃಢೀಕರಿಸಲಾಗಿದೆ",
+  "subscriptionGoToDashboard": "ಡ್ಯಾಶ್‌ಬೋರ್ಡ್‌ಗೆ ಹೋಗಿ",
+  "subscriptionPlanUsage": "ಯೋಜನೆ ಮತ್ತು ಬಳಕೆ"
+}

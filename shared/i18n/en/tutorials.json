@@ -1,0 +1,535 @@
+{
+  "controls": {
+    "next": "Next",
+    "back": "Back",
+    "done": "Done",
+    "progress": "{current} of {total}",
+    "skipTour": "Skip tour"
+  },
+  "welcome": {
+    "title": "Welcome to Umbrella",
+    "body": "Take a quick tour to learn how to navigate your firm workspace.",
+    "b1": "Find clients, matters, and billing in seconds",
+    "b2": "Use AI Copilot for context-aware help",
+    "b3": "Replay tours anytime from Help",
+    "start": "Start tour",
+    "skip": "Skip for now"
+  },
+  "help": {
+    "pageHelp": "Page help",
+    "replayTour": "Replay tour",
+    "replayShell": "Replay platform tour",
+    "dismiss": "Dismiss help",
+    "sheetTitle": "Help & tours",
+    "thisPage": "This page",
+    "progress": "{completed} of {total} pages explored",
+    "hideTips": "Hide tips",
+    "openTips": "Show page tips",
+    "noPageTour": "No guided tour is available on this page yet.",
+    "actions": "Actions"
+  },
+  "labels": {
+    "page": "Page tour",
+    "shell": "Platform tour",
+    "dashboard": "Dashboard",
+    "clients": "Clients",
+    "clients_new": "New client",
+    "clients_detail": "Client profile",
+    "matters": "Matters",
+    "matters_new": "New matter",
+    "matters_detail": "Matter workspace",
+    "tasks": "Tasks",
+    "meetings": "Meetings",
+    "calendar": "Calendar",
+    "time": "Time tracking",
+    "documents": "Documents",
+    "law_library": "Law library",
+    "vault": "Vault",
+    "esign": "E-sign",
+    "billing": "Billing",
+    "trust": "Trust accounting",
+    "finance": "Finance",
+    "expenses": "Expenses",
+    "leads": "Leads",
+    "inbox": "Inbox",
+    "alerts": "Alerts",
+    "intake": "Intake",
+    "research": "Research",
+    "team": "Team",
+    "templates": "Templates",
+    "settings": "Settings",
+    "consumer_dashboard": "Consumer home",
+    "consumer_cases": "My cases",
+    "consumer_case_detail": "Case details",
+    "consumer_subscription": "Subscription",
+    "consumer_settings": "Account settings"
+  },
+  "shell": {
+    "sidebar": {
+      "title": "Your firm workspace",
+      "body": "Use the sidebar to move between clients, matters, billing, documents, and more. Sections collapse to keep navigation tidy."
+    },
+    "search": {
+      "title": "Global search",
+      "body": "Search clients, matters, documents, and tasks from anywhere in the app."
+    },
+    "commandPalette": {
+      "title": "Command palette",
+      "body": "Press ⌘K (or Ctrl+K) to jump to any page, open Copilot, or start common actions like creating a matter."
+    },
+    "copilot": {
+      "title": "AI Copilot",
+      "body": "Ask Copilot questions in the context of your current page or matter. Use the sparkle button in the top bar or this floating button."
+    },
+    "notifications": {
+      "title": "Notifications & alerts",
+      "body": "Urgent deadlines, KYC items, billing alerts, and system messages appear here."
+    },
+    "profile": {
+      "title": "Your account",
+      "body": "Open your profile menu to manage settings, view your role, and sign out."
+    },
+    "help": {
+      "title": "Getting around",
+      "b1": "Use the sidebar for main workflows and ⌘K for quick jumps.",
+      "b2": "Copilot understands the page you are on—open it anytime you need guidance.",
+      "b3": "Replay this tour from the Help menu in the top bar."
+    }
+  },
+  "dashboard": {
+    "kpis": {
+      "title": "Firm snapshot",
+      "body": "These cards summarize active matters, overdue tasks, leads, and revenue for the selected time window."
+    },
+    "alerts": {
+      "title": "Urgent items",
+      "body": "Review KYC gaps, trust approvals, and deadline risks that need attention today."
+    },
+    "tasks": {
+      "title": "Your tasks",
+      "body": "Tasks assigned to you appear here. Click through to update status or open the linked matter."
+    },
+    "onboarding": {
+      "title": "Getting started checklist",
+      "body": "Complete these real setup steps—run AI search, add a client, open a matter—to activate your workspace."
+    },
+    "help": {
+      "title": "Dashboard",
+      "b1": "Switch Today / Week / Month to change KPI and task windows.",
+      "b2": "Use Next Best Actions for AI-suggested priorities.",
+      "b3": "Open any card to drill into matters, billing, or alerts."
+    }
+  },
+  "clients": {
+    "search": {
+      "title": "Find clients",
+      "body": "Search by name, email, or company. KYC badges show missing or expired documents."
+    },
+    "create": {
+      "title": "Add a client",
+      "body": "Create individual or company profiles. You can link matters after the client is saved."
+    },
+    "list": {
+      "title": "Client directory",
+      "body": "Click a row to open the client record, view matters, and manage portal access."
+    },
+    "help": {
+      "title": "Clients",
+      "b1": "Complete KYC before billing or trust transactions where required.",
+      "b2": "Use Copilot on this page to draft intake notes or summarize client history.",
+      "b3": "New clients can be converted from intake leads automatically."
+    }
+  },
+  "clientsNew": {
+    "form": {
+      "title": "Client details",
+      "body": "Enter contact information and client type. Conflict checks run when you save."
+    },
+    "submit": {
+      "title": "Save & continue",
+      "body": "After saving, open a matter or upload KYC documents from the client profile."
+    },
+    "help": {
+      "title": "New client",
+      "b1": "Individual vs company affects required fields and billing setup.",
+      "b2": "You can invite the client to the portal after the profile is created."
+    }
+  },
+  "clientsDetail": {
+    "header": {
+      "title": "Client profile",
+      "body": "Contact details, KYC status, and quick actions live at the top of the record."
+    },
+    "matters": {
+      "title": "Linked matters",
+      "body": "All cases for this client appear here. Open a matter to manage tasks, documents, and billing."
+    },
+    "help": {
+      "title": "Client record",
+      "b1": "Upload KYC documents and track expiry dates.",
+      "b2": "Enable client portal access for secure messaging and document sharing.",
+      "b3": "Create a new matter directly from this profile."
+    }
+  },
+  "matters": {
+    "create": {
+      "title": "Open a matter",
+      "body": "Start a new case, link it to a client, and assign team members."
+    },
+    "filter": {
+      "title": "Filter & search",
+      "body": "Narrow by status, practice area, or assignee to find active work quickly."
+    },
+    "list": {
+      "title": "Matter pipeline",
+      "body": "Each row shows stage, deadline, and owner. Click to open the matter hub."
+    },
+    "help": {
+      "title": "Matters",
+      "b1": "Use playbooks to auto-generate tasks when a matter opens.",
+      "b2": "Open the AI workbench from a matter for drafting and research.",
+      "b3": "Track court deadlines and outcomes from matter sub-pages."
+    }
+  },
+  "mattersNew": {
+    "form": {
+      "title": "Matter setup",
+      "body": "Link a client, choose practice area, and set the matter title and key dates."
+    },
+    "submit": {
+      "title": "Create matter",
+      "body": "Saving creates the matter timeline and optional playbook tasks."
+    },
+    "help": {
+      "title": "New matter",
+      "b1": "Assign collaborators so they see tasks and documents immediately.",
+      "b2": "Practice area drives templates, forms, and AI suggestions."
+    }
+  },
+  "mattersDetail": {
+    "header": {
+      "title": "Matter hub",
+      "body": "Overview of status, parties, key dates, and quick actions for this case."
+    },
+    "tabs": {
+      "title": "Matter sections",
+      "body": "Switch between timeline, documents, tasks, billing, and specialized tools."
+    },
+    "workbench": {
+      "title": "AI workbench",
+      "body": "Open the workbench for matter-scoped AI chat, drafting, and suggested next steps."
+    },
+    "help": {
+      "title": "Matter detail",
+      "b1": "Log time and expenses from the matter for accurate billing.",
+      "b2": "Upload evidence and documents to the matter vault.",
+      "b3": "Share read-only access with clients via the portal when ready."
+    }
+  },
+  "tasks": {
+    "create": {
+      "title": "Create tasks",
+      "body": "Add deadlines, assign owners, and link tasks to matters."
+    },
+    "list": {
+      "title": "Task queue",
+      "body": "Filter by due date, priority, or assignee. Mark complete as work progresses."
+    },
+    "help": {
+      "title": "Tasks",
+      "b1": "Overdue tasks surface on your dashboard automatically.",
+      "b2": "Automations can create tasks from playbooks and court deadlines.",
+      "b3": "Use Copilot to summarize open tasks on a matter."
+    }
+  },
+  "meetings": {
+    "record": {
+      "title": "Record or import",
+      "body": "Capture client meetings, depositions, or calls. Transcripts link to matters."
+    },
+    "list": {
+      "title": "Meeting library",
+      "body": "Browse recordings, transcripts, and AI summaries. Open any meeting to review notes."
+    },
+    "help": {
+      "title": "Meetings",
+      "b1": "Link recordings to matters for context in Copilot and drafting.",
+      "b2": "Search transcripts from the command palette (⌘K).",
+      "b3": "Export notes for client files or court submissions."
+    }
+  },
+  "calendar": {
+    "view": {
+      "title": "Calendar",
+      "body": "See hearings, deadlines, and internal events in one view."
+    },
+    "create": {
+      "title": "Add events",
+      "body": "Create events and link them to matters so the team stays aligned."
+    },
+    "help": {
+      "title": "Calendar",
+      "b1": "Court deadlines from matters can appear here automatically.",
+      "b2": "Share calendar visibility based on your role."
+    }
+  },
+  "time": {
+    "log": {
+      "title": "Log time",
+      "body": "Record billable and non-billable hours against matters."
+    },
+    "list": {
+      "title": "Time entries",
+      "body": "Review and edit entries before pre-bill and invoicing."
+    },
+    "help": {
+      "title": "Time tracking",
+      "b1": "Accurate time logs feed pre-bill review.",
+      "b2": "Use matter links so finance can invoice correctly."
+    }
+  },
+  "documents": {
+    "upload": {
+      "title": "Upload documents",
+      "body": "Add firm files and associate them with clients or matters."
+    },
+    "list": {
+      "title": "Document library",
+      "body": "Browse, search, and open files. Version history is kept per document."
+    },
+    "help": {
+      "title": "Documents",
+      "b1": "Templates and generated drafts also appear here.",
+      "b2": "Use Copilot document search to find clauses across files."
+    }
+  },
+  "lawLibrary": {
+    "search": {
+      "title": "Law library",
+      "body": "Search statutes and regulations for your jurisdiction with hybrid keyword + semantic search."
+    },
+    "help": {
+      "title": "Law library",
+      "b1": "Cite sources directly into matter drafts.",
+      "b2": "Filter by jurisdiction to match your firm's primary country."
+    }
+  },
+  "vault": {
+    "search": {
+      "title": "Firm vault",
+      "body": "Semantic search across firm memory—past matters, memos, and diligence packs."
+    },
+    "help": {
+      "title": "Vault",
+      "b1": "Run bulk diligence queries across uploaded corpora.",
+      "b2": "Results respect matter and client access controls."
+    }
+  },
+  "esign": {
+    "create": {
+      "title": "E-signatures",
+      "body": "Create signing envelopes, add signers, and track completion status."
+    },
+    "help": {
+      "title": "E-sign",
+      "b1": "Link envelopes to matters for audit trails.",
+      "b2": "Clients can sign via secure email links."
+    }
+  },
+  "billing": {
+    "hub": {
+      "title": "Billing hub",
+      "body": "Access invoices, pre-bill review, payments, and trust from one place."
+    },
+    "help": {
+      "title": "Billing",
+      "b1": "Run pre-bill before sending invoices to clients.",
+      "b2": "Trust movements require approval per firm policy."
+    }
+  },
+  "trust": {
+    "balances": {
+      "title": "Trust accounting",
+      "body": "Monitor client trust balances, pending approvals, and reconciliation."
+    },
+    "help": {
+      "title": "Trust",
+      "b1": "Never commingle trust and operating funds.",
+      "b2": "Approval alerts appear on your dashboard when action is needed."
+    }
+  },
+  "finance": {
+    "dashboard": {
+      "title": "Finance dashboard",
+      "body": "Track revenue, accounts receivable, and firm financial KPIs."
+    },
+    "help": {
+      "title": "Finance",
+      "b1": "Drill into invoices and payments from summary cards.",
+      "b2": "Export reports for partners and accountants."
+    }
+  },
+  "expenses": {
+    "create": {
+      "title": "Log expenses",
+      "body": "Record disbursements, attach receipts, and bill to matters where applicable."
+    },
+    "help": {
+      "title": "Expenses",
+      "b1": "Finance roles can approve expenses before invoicing.",
+      "b2": "Link every expense to a matter for clean client billing."
+    }
+  },
+  "leads": {
+    "inbox": {
+      "title": "Leads inbox",
+      "body": "Review incoming intake leads. Qualify and convert qualified leads to clients and matters."
+    },
+    "help": {
+      "title": "Leads",
+      "b1": "Convert a lead in one step to pre-fill client and matter fields.",
+      "b2": "Declined leads are archived for reporting."
+    }
+  },
+  "inbox": {
+    "list": {
+      "title": "Inbox",
+      "body": "Messages and notifications that need a response appear here."
+    },
+    "help": {
+      "title": "Inbox",
+      "b1": "Distinguish client messages from system alerts.",
+      "b2": "Mark items read to keep your queue clean."
+    }
+  },
+  "alerts": {
+    "list": {
+      "title": "Alerts",
+      "body": "KYC gaps, compliance items, and urgent firm alerts are listed here."
+    },
+    "help": {
+      "title": "Alerts",
+      "b1": "Resolve KYC alerts before trust or billing actions.",
+      "b2": "Critical alerts also appear on the dashboard strip."
+    }
+  },
+  "intake": {
+    "wizard": {
+      "title": "Client intake",
+      "body": "Walk through structured intake: issue classification, conflict check, and matter creation."
+    },
+    "help": {
+      "title": "Intake",
+      "b1": "Use for walk-in and phone intake—not only web leads.",
+      "b2": "AI assists with issue classification and required documents."
+    }
+  },
+  "research": {
+    "query": {
+      "title": "AI Legal Search",
+      "body": "Ask a legal question for your jurisdiction. Answers include citations you can verify."
+    },
+    "results": {
+      "title": "Cited results",
+      "body": "Save research to a matter or export citations into drafts."
+    },
+    "help": {
+      "title": "Legal research",
+      "b1": "Be specific about jurisdiction and fact pattern for better citations.",
+      "b2": "AI usage counts against your firm's credit balance.",
+      "b3": "Always verify citations before filing or advising clients."
+    }
+  },
+  "team": {
+    "invite": {
+      "title": "Team management",
+      "body": "Invite colleagues and assign roles that control access to billing, matters, and settings."
+    },
+    "help": {
+      "title": "Team",
+      "b1": "Roles determine sidebar visibility and Copilot permissions.",
+      "b2": "Deactivate users instead of deleting to preserve audit history."
+    }
+  },
+  "templates": {
+    "upload": {
+      "title": "Document templates",
+      "body": "Upload firm templates with merge variables (e.g. client name) for automated generation."
+    },
+    "help": {
+      "title": "Templates",
+      "b1": "Organize by practice area for faster drafting.",
+      "b2": "Edit versions without losing history."
+    }
+  },
+  "settings": {
+    "hub": {
+      "title": "Settings",
+      "body": "Configure users, billing, AI policy, integrations, and compliance from this hub."
+    },
+    "help": {
+      "title": "Settings",
+      "b1": "Only partner admins can change firm-wide governance.",
+      "b2": "Review AI policy and data consent before enabling training features."
+    }
+  },
+  "consumerDashboard": {
+    "cases": {
+      "title": "Your cases",
+      "body": "See active legal cases and their status at a glance."
+    },
+    "actions": {
+      "title": "Quick actions",
+      "body": "Check an issue, upload documents, view reports, or request a lawyer review."
+    },
+    "help": {
+      "title": "Home",
+      "b1": "AI credits power issue checks and document analysis.",
+      "b2": "Open a case to message your lawyer or pay invoices."
+    }
+  },
+  "consumerCases": {
+    "list": {
+      "title": "Case list",
+      "body": "Each case tracks documents, reports, messages, and payments in one place."
+    },
+    "help": {
+      "title": "Cases",
+      "b1": "Start a new issue check from the dashboard if you need a fresh case.",
+      "b2": "Case status updates when your lawyer takes action."
+    }
+  },
+  "consumerCaseDetail": {
+    "tabs": {
+      "title": "Case sections",
+      "body": "Switch between overview, documents, reports, messages, payments, and consent."
+    },
+    "help": {
+      "title": "Case home",
+      "b1": "Upload documents to help your lawyer understand the situation.",
+      "b2": "Request lawyer review when you need formal advice."
+    }
+  },
+  "consumerSubscription": {
+    "plans": {
+      "title": "Plans & credits",
+      "body": "Choose a subscription or buy AI credit packs for issue checks and analysis."
+    },
+    "help": {
+      "title": "Subscription",
+      "b1": "Credits roll over according to your plan terms.",
+      "b2": "Enable auto top-up to avoid interruptions."
+    }
+  },
+  "consumerSettings": {
+    "hub": {
+      "title": "Account settings",
+      "body": "Manage profile, privacy, data consent, and notification preferences."
+    },
+    "help": {
+      "title": "Settings",
+      "b1": "Control how your data is used for AI features.",
+      "b2": "Update contact details so your lawyer can reach you."
+    }
+  }
+}

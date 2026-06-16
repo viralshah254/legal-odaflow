@@ -1,0 +1,223 @@
+{
+  "generatedAt": "2026-06-08T03:12:23.618Z",
+  "totalFiles": 37,
+  "totalStrings": 61,
+  "byNamespace": {
+    "admin": [
+      "([])\n  const [usage, setUsage] = useState",
+      ">([])\n  const [policies, setPolicies] = useState"
+    ],
+    "lawyer": [
+      "& { name: string; trigger: string }\n  onChange: (next: Partial",
+      "([])\n  const [jobs, setJobs] = useState",
+      "(null)\n  const [selectedEvent, setSelectedEvent] = useState",
+      "= (benchmark?.target ?? 0)\n        : value",
+      "Billing Queue",
+      "Intake Queue",
+      "KYC Queue",
+      "Overdue Critical Deadlines",
+      "Trust Approval Queue"
+    ],
+    "matters": [
+      "(null)\n  const [editingId, setEditingId] = useState",
+      "Describe what you want to know about the opponent",
+      "Loss",
+      "Settlement",
+      "Win",
+      "https://...",
+      "•"
+    ],
+    "settings": [
+      "(null)\n  const [error, setError] = useState",
+      "https://idp.example.com/entity",
+      "https://idp.example.com/sso/saml",
+      "jurisdictionLicenses?: Record"
+    ],
+    "auth": [
+      "123456"
+    ],
+    "consumer": [
+      "([])\n  const [creditPacks, setCreditPacks] = useState",
+      "([])\n  const [submitting, setSubmitting] = useState",
+      "Add {confirmSection}?",
+      "Country",
+      "Issue type",
+      "Jurisdiction",
+      "Risk score"
+    ],
+    "common": [
+      "$title\\n$body",
+      "(\"\")\n  const [file, setFile] = useState",
+      ",\n  React.ComponentPropsWithoutRef",
+      ">(({ className, ...props }, ref) => (",
+      "Auto",
+      "Close",
+      "Corporate & Commercial",
+      "Criminal Defense",
+      "Current win path",
+      "Draft doc",
+      "Employment & Labour",
+      "Family & Matrimonial",
+      "GET /public-api/keys",
+      "Immigration",
+      "Intellectual Property",
+      "KES 7,350 / mo AI budget",
+      "Litigation & Disputes",
+      "Loading",
+      "Premium",
+      "Promise",
+      "Real Estate & Property",
+      "Runs",
+      "Tax",
+      "Wills, Estates & Probate",
+      "new Array(newW.length + 1).fill(0)\n  )\n\n  for (let i = 1; i",
+      "•"
+    ],
+    "issueChecker": [
+      "void\n  onSignIn: () => void\n}\n\nconst RISK_BADGE_CLASS: Record",
+      "void\n}\n\nconst RISK_BADGE_CLASS: Record"
+    ],
+    "billing": [
+      "Outstanding",
+      "Paid this month",
+      "Total billed"
+    ]
+  },
+  "byFile": {
+    "legal_web/app/admin/compliance/page.tsx": [
+      ">([])\n  const [policies, setPolicies] = useState"
+    ],
+    "legal_web/app/admin/costs/page.tsx": [
+      "([])\n  const [usage, setUsage] = useState"
+    ],
+    "legal_web/app/app/agents/page.tsx": [
+      "([])\n  const [jobs, setJobs] = useState"
+    ],
+    "legal_web/app/app/automations/page.tsx": [
+      "& { name: string; trigger: string }\n  onChange: (next: Partial"
+    ],
+    "legal_web/app/app/calendar/page.tsx": [
+      "(null)\n  const [selectedEvent, setSelectedEvent] = useState"
+    ],
+    "legal_web/app/app/matters/[matterId]/opponent-analysis/page.tsx": [
+      "Describe what you want to know about the opponent"
+    ],
+    "legal_web/app/app/matters/[matterId]/outcome/page.tsx": [
+      "Win",
+      "Settlement",
+      "Loss"
+    ],
+    "legal_web/app/app/matters/[matterId]/page.tsx": [
+      "https://..."
+    ],
+    "legal_web/app/app/matters/[matterId]/strategy/page.tsx": [
+      "(null)\n  const [editingId, setEditingId] = useState"
+    ],
+    "legal_web/app/app/queues/page.tsx": [
+      "Intake Queue",
+      "KYC Queue",
+      "Billing Queue",
+      "Trust Approval Queue",
+      "Overdue Critical Deadlines"
+    ],
+    "legal_web/app/app/reports/page.tsx": [
+      "= (benchmark?.target ?? 0)\n        : value"
+    ],
+    "legal_web/app/app/settings/integrations/page.tsx": [
+      "(null)\n  const [error, setError] = useState"
+    ],
+    "legal_web/app/app/settings/profile/page.tsx": [
+      "jurisdictionLicenses?: Record"
+    ],
+    "legal_web/app/app/settings/sso/page.tsx": [
+      "https://idp.example.com/entity",
+      "https://idp.example.com/sso/saml"
+    ],
+    "legal_web/app/auth/sign-in/page.tsx": [
+      "123456"
+    ],
+    "legal_web/app/consumer/cases/[caseId]/report/page.tsx": [
+      "Add {confirmSection}?"
+    ],
+    "legal_web/app/consumer/lawyer-review/page.tsx": [
+      "([])\n  const [submitting, setSubmitting] = useState"
+    ],
+    "legal_web/app/consumer/subscription/page.tsx": [
+      "([])\n  const [creditPacks, setCreditPacks] = useState"
+    ],
+    "legal_web/app/developers/page.tsx": [
+      "GET /public-api/keys"
+    ],
+    "legal_web/app/upload-document/page.tsx": [
+      "(\"\")\n  const [file, setFile] = useState"
+    ],
+    "legal_web/components/documents/document-redline.tsx": [
+      "new Array(newW.length + 1).fill(0)\n  )\n\n  for (let i = 1; i"
+    ],
+    "legal_web/components/issue-checker/full-preview.tsx": [
+      "void\n}\n\nconst RISK_BADGE_CLASS: Record"
+    ],
+    "legal_web/components/issue-checker/teaser-preview.tsx": [
+      "void\n  onSignIn: () => void\n}\n\nconst RISK_BADGE_CLASS: Record"
+    ],
+    "legal_web/components/leads/lead-analysis-panel.tsx": [
+      "Current win path"
+    ],
+    "legal_web/components/leads/premium-analysis-strip.tsx": [
+      "Runs"
+    ],
+    "legal_web/components/legal/data-consent-form.tsx": [
+      "Promise"
+    ],
+    "legal_web/components/ui/card.tsx": [
+      ">(({ className, ...props }, ref) => ("
+    ],
+    "legal_web/components/ui/dialog.tsx": [
+      "Close",
+      ",\n  React.ComponentPropsWithoutRef"
+    ],
+    "legal_web/components/ui/page-skeleton.tsx": [
+      "Loading"
+    ],
+    "legal_app/lib/app.dart": [
+      "$title\\n$body"
+    ],
+    "legal_app/lib/core/config/app_config.dart": [
+      "Litigation & Disputes",
+      "Corporate & Commercial",
+      "Employment & Labour",
+      "Family & Matrimonial",
+      "Criminal Defense",
+      "Real Estate & Property",
+      "Intellectual Property",
+      "Immigration",
+      "Tax",
+      "Wills, Estates & Probate"
+    ],
+    "legal_app/lib/features/consumer/cases/case_detail_screen.dart": [
+      "Issue type",
+      "Country",
+      "Jurisdiction",
+      "Risk score"
+    ],
+    "legal_app/lib/features/credits/widgets/credit_usage_meter.dart": [
+      "KES 7,350 / mo AI budget",
+      "Auto",
+      "Premium"
+    ],
+    "legal_app/lib/features/lawyer/billing/billing_screen.dart": [
+      "Total billed",
+      "Outstanding",
+      "Paid this month"
+    ],
+    "legal_app/lib/features/lawyer/leads/leads_inbox_screen.dart": [
+      "Draft doc"
+    ],
+    "legal_app/lib/features/lawyer/matters/matter_detail_screen.dart": [
+      "•"
+    ],
+    "legal_app/lib/features/lawyer/research/legal_research_screen.dart": [
+      "•"
+    ]
+  }
+}

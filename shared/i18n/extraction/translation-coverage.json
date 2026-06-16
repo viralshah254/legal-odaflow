@@ -1,0 +1,1393 @@
+{
+  "generatedAt": "2026-06-15T02:14:34.972Z",
+  "locales": {
+    "fr": {
+      "total": 4243,
+      "untranslated": 28,
+      "allowlisted": 152,
+      "pctUntranslated": 1,
+      "byNamespace": {
+        "common": {
+          "total": 520,
+          "identical": 5,
+          "pct": 1
+        },
+        "auth": {
+          "total": 135,
+          "identical": 0,
+          "pct": 0
+        },
+        "marketing": {
+          "total": 298,
+          "identical": 2,
+          "pct": 1
+        },
+        "legalGuides": {
+          "total": 13,
+          "identical": 0,
+          "pct": 0
+        },
+        "issueChecker": {
+          "total": 357,
+          "identical": 0,
+          "pct": 0
+        },
+        "consumer": {
+          "total": 222,
+          "identical": 0,
+          "pct": 0
+        },
+        "lawyer": {
+          "total": 427,
+          "identical": 0,
+          "pct": 0
+        },
+        "admin": {
+          "total": 127,
+          "identical": 0,
+          "pct": 0
+        },
+        "legal": {
+          "total": 72,
+          "identical": 0,
+          "pct": 0
+        },
+        "settings": {
+          "total": 273,
+          "identical": 9,
+          "pct": 3
+        },
+        "billing": {
+          "total": 226,
+          "identical": 0,
+          "pct": 0
+        },
+        "copilot": {
+          "total": 152,
+          "identical": 0,
+          "pct": 0
+        },
+        "matters": {
+          "total": 610,
+          "identical": 10,
+          "pct": 2
+        },
+        "clients": {
+          "total": 117,
+          "identical": 0,
+          "pct": 0
+        },
+        "portal": {
+          "total": 86,
+          "identical": 0,
+          "pct": 0
+        },
+        "errors": {
+          "total": 98,
+          "identical": 2,
+          "pct": 2
+        },
+        "dashboard": {
+          "total": 231,
+          "identical": 0,
+          "pct": 0
+        },
+        "tutorials": {
+          "total": 279,
+          "identical": 0,
+          "pct": 0
+        }
+      }
+    },
+    "de": {
+      "total": 4243,
+      "untranslated": 30,
+      "allowlisted": 133,
+      "pctUntranslated": 1,
+      "byNamespace": {
+        "common": {
+          "total": 520,
+          "identical": 7,
+          "pct": 1
+        },
+        "auth": {
+          "total": 135,
+          "identical": 0,
+          "pct": 0
+        },
+        "marketing": {
+          "total": 298,
+          "identical": 2,
+          "pct": 1
+        },
+        "legalGuides": {
+          "total": 13,
+          "identical": 0,
+          "pct": 0
+        },
+        "issueChecker": {
+          "total": 357,
+          "identical": 0,
+          "pct": 0
+        },
+        "consumer": {
+          "total": 222,
+          "identical": 0,
+          "pct": 0
+        },
+        "lawyer": {
+          "total": 427,
+          "identical": 0,
+          "pct": 0
+        },
+        "admin": {
+          "total": 127,
+          "identical": 0,
+          "pct": 0
+        },
+        "legal": {
+          "total": 72,
+          "identical": 0,
+          "pct": 0
+        },
+        "settings": {
+          "total": 273,
+          "identical": 9,
+          "pct": 3
+        },
+        "billing": {
+          "total": 226,
+          "identical": 0,
+          "pct": 0
+        },
+        "copilot": {
+          "total": 152,
+          "identical": 0,
+          "pct": 0
+        },
+        "matters": {
+          "total": 610,
+          "identical": 10,
+          "pct": 2
+        },
+        "clients": {
+          "total": 117,
+          "identical": 0,
+          "pct": 0
+        },
+        "portal": {
+          "total": 86,
+          "identical": 0,
+          "pct": 0
+        },
+        "errors": {
+          "total": 98,
+          "identical": 2,
+          "pct": 2
+        },
+        "dashboard": {
+          "total": 231,
+          "identical": 0,
+          "pct": 0
+        },
+        "tutorials": {
+          "total": 279,
+          "identical": 0,
+          "pct": 0
+        }
+      }
+    },
+    "hi": {
+      "total": 4243,
+      "untranslated": 27,
+      "allowlisted": 60,
+      "pctUntranslated": 1,
+      "byNamespace": {
+        "common": {
+          "total": 520,
+          "identical": 6,
+          "pct": 1
+        },
+        "auth": {
+          "total": 135,
+          "identical": 0,
+          "pct": 0
+        },
+        "marketing": {
+          "total": 298,
+          "identical": 0,
+          "pct": 0
+        },
+        "legalGuides": {
+          "total": 13,
+          "identical": 0,
+          "pct": 0
+        },
+        "issueChecker": {
+          "total": 357,
+          "identical": 0,
+          "pct": 0
+        },
+        "consumer": {
+          "total": 222,
+          "identical": 0,
+          "pct": 0
+        },
+        "lawyer": {
+          "total": 427,
+          "identical": 0,
+          "pct": 0
+        },
+        "admin": {
+          "total": 127,
+          "identical": 0,
+          "pct": 0
+        },
+        "legal": {
+          "total": 72,
+          "identical": 0,
+          "pct": 0
+        },
+        "settings": {
+          "total": 273,
+          "identical": 9,
+          "pct": 3
+        },
+        "billing": {
+          "total": 226,
+          "identical": 0,
+          "pct": 0
+        },
+        "copilot": {
+          "total": 152,
+          "identical": 0,
+          "pct": 0
+        },
+        "matters": {
+          "total": 610,
+          "identical": 10,
+          "pct": 2
+        },
+        "clients": {
+          "total": 117,
+          "identical": 0,
+          "pct": 0
+        },
+        "portal": {
+          "total": 86,
+          "identical": 0,
+          "pct": 0
+        },
+        "errors": {
+          "total": 98,
+          "identical": 2,
+          "pct": 2
+        },
+        "dashboard": {
+          "total": 231,
+          "identical": 0,
+          "pct": 0
+        },
+        "tutorials": {
+          "total": 279,
+          "identical": 0,
+          "pct": 0
+        }
+      }
+    },
+    "bn": {
+      "total": 4243,
+      "untranslated": 30,
+      "allowlisted": 60,
+      "pctUntranslated": 1,
+      "byNamespace": {
+        "common": {
+          "total": 520,
+          "identical": 7,
+          "pct": 1
+        },
+        "auth": {
+          "total": 135,
+          "identical": 0,
+          "pct": 0
+        },
+        "marketing": {
+          "total": 298,
+          "identical": 2,
+          "pct": 1
+        },
+        "legalGuides": {
+          "total": 13,
+          "identical": 0,
+          "pct": 0
+        },
+        "issueChecker": {
+          "total": 357,
+          "identical": 0,
+          "pct": 0
+        },
+        "consumer": {
+          "total": 222,
+          "identical": 0,
+          "pct": 0
+        },
+        "lawyer": {
+          "total": 427,
+          "identical": 0,
+          "pct": 0
+        },
+        "admin": {
+          "total": 127,
+          "identical": 0,
+          "pct": 0
+        },
+        "legal": {
+          "total": 72,
+          "identical": 0,
+          "pct": 0
+        },
+        "settings": {
+          "total": 273,
+          "identical": 9,
+          "pct": 3
+        },
+        "billing": {
+          "total": 226,
+          "identical": 0,
+          "pct": 0
+        },
+        "copilot": {
+          "total": 152,
+          "identical": 0,
+          "pct": 0
+        },
+        "matters": {
+          "total": 610,
+          "identical": 10,
+          "pct": 2
+        },
+        "clients": {
+          "total": 117,
+          "identical": 0,
+          "pct": 0
+        },
+        "portal": {
+          "total": 86,
+          "identical": 0,
+          "pct": 0
+        },
+        "errors": {
+          "total": 98,
+          "identical": 2,
+          "pct": 2
+        },
+        "dashboard": {
+          "total": 231,
+          "identical": 0,
+          "pct": 0
+        },
+        "tutorials": {
+          "total": 279,
+          "identical": 0,
+          "pct": 0
+        }
+      }
+    },
+    "te": {
+      "total": 4243,
+      "untranslated": 29,
+      "allowlisted": 73,
+      "pctUntranslated": 1,
+      "byNamespace": {
+        "common": {
+          "total": 520,
+          "identical": 6,
+          "pct": 1
+        },
+        "auth": {
+          "total": 135,
+          "identical": 0,
+          "pct": 0
+        },
+        "marketing": {
+          "total": 298,
+          "identical": 2,
+          "pct": 1
+        },
+        "legalGuides": {
+          "total": 13,
+          "identical": 0,
+          "pct": 0
+        },
+        "issueChecker": {
+          "total": 357,
+          "identical": 0,
+          "pct": 0
+        },
+        "consumer": {
+          "total": 222,
+          "identical": 0,
+          "pct": 0
+        },
+        "lawyer": {
+          "total": 427,
+          "identical": 0,
+          "pct": 0
+        },
+        "admin": {
+          "total": 127,
+          "identical": 0,
+          "pct": 0
+        },
+        "legal": {
+          "total": 72,
+          "identical": 0,
+          "pct": 0
+        },
+        "settings": {
+          "total": 273,
+          "identical": 9,
+          "pct": 3
+        },
+        "billing": {
+          "total": 226,
+          "identical": 0,
+          "pct": 0
+        },
+        "copilot": {
+          "total": 152,
+          "identical": 0,
+          "pct": 0
+        },
+        "matters": {
+          "total": 610,
+          "identical": 10,
+          "pct": 2
+        },
+        "clients": {
+          "total": 117,
+          "identical": 0,
+          "pct": 0
+        },
+        "portal": {
+          "total": 86,
+          "identical": 0,
+          "pct": 0
+        },
+        "errors": {
+          "total": 98,
+          "identical": 2,
+          "pct": 2
+        },
+        "dashboard": {
+          "total": 231,
+          "identical": 0,
+          "pct": 0
+        },
+        "tutorials": {
+          "total": 279,
+          "identical": 0,
+          "pct": 0
+        }
+      }
+    },
+    "mr": {
+      "total": 4243,
+      "untranslated": 30,
+      "allowlisted": 62,
+      "pctUntranslated": 1,
+      "byNamespace": {
+        "common": {
+          "total": 520,
+          "identical": 7,
+          "pct": 1
+        },
+        "auth": {
+          "total": 135,
+          "identical": 0,
+          "pct": 0
+        },
+        "marketing": {
+          "total": 298,
+          "identical": 2,
+          "pct": 1
+        },
+        "legalGuides": {
+          "total": 13,
+          "identical": 0,
+          "pct": 0
+        },
+        "issueChecker": {
+          "total": 357,
+          "identical": 0,
+          "pct": 0
+        },
+        "consumer": {
+          "total": 222,
+          "identical": 0,
+          "pct": 0
+        },
+        "lawyer": {
+          "total": 427,
+          "identical": 0,
+          "pct": 0
+        },
+        "admin": {
+          "total": 127,
+          "identical": 0,
+          "pct": 0
+        },
+        "legal": {
+          "total": 72,
+          "identical": 0,
+          "pct": 0
+        },
+        "settings": {
+          "total": 273,
+          "identical": 9,
+          "pct": 3
+        },
+        "billing": {
+          "total": 226,
+          "identical": 0,
+          "pct": 0
+        },
+        "copilot": {
+          "total": 152,
+          "identical": 0,
+          "pct": 0
+        },
+        "matters": {
+          "total": 610,
+          "identical": 10,
+          "pct": 2
+        },
+        "clients": {
+          "total": 117,
+          "identical": 0,
+          "pct": 0
+        },
+        "portal": {
+          "total": 86,
+          "identical": 0,
+          "pct": 0
+        },
+        "errors": {
+          "total": 98,
+          "identical": 2,
+          "pct": 2
+        },
+        "dashboard": {
+          "total": 231,
+          "identical": 0,
+          "pct": 0
+        },
+        "tutorials": {
+          "total": 279,
+          "identical": 0,
+          "pct": 0
+        }
+      }
+    },
+    "ta": {
+      "total": 4243,
+      "untranslated": 29,
+      "allowlisted": 64,
+      "pctUntranslated": 1,
+      "byNamespace": {
+        "common": {
+          "total": 520,
+          "identical": 6,
+          "pct": 1
+        },
+        "auth": {
+          "total": 135,
+          "identical": 0,
+          "pct": 0
+        },
+        "marketing": {
+          "total": 298,
+          "identical": 2,
+          "pct": 1
+        },
+        "legalGuides": {
+          "total": 13,
+          "identical": 0,
+          "pct": 0
+        },
+        "issueChecker": {
+          "total": 357,
+          "identical": 0,
+          "pct": 0
+        },
+        "consumer": {
+          "total": 222,
+          "identical": 0,
+          "pct": 0
+        },
+        "lawyer": {
+          "total": 427,
+          "identical": 0,
+          "pct": 0
+        },
+        "admin": {
+          "total": 127,
+          "identical": 0,
+          "pct": 0
+        },
+        "legal": {
+          "total": 72,
+          "identical": 0,
+          "pct": 0
+        },
+        "settings": {
+          "total": 273,
+          "identical": 9,
+          "pct": 3
+        },
+        "billing": {
+          "total": 226,
+          "identical": 0,
+          "pct": 0
+        },
+        "copilot": {
+          "total": 152,
+          "identical": 0,
+          "pct": 0
+        },
+        "matters": {
+          "total": 610,
+          "identical": 10,
+          "pct": 2
+        },
+        "clients": {
+          "total": 117,
+          "identical": 0,
+          "pct": 0
+        },
+        "portal": {
+          "total": 86,
+          "identical": 0,
+          "pct": 0
+        },
+        "errors": {
+          "total": 98,
+          "identical": 2,
+          "pct": 2
+        },
+        "dashboard": {
+          "total": 231,
+          "identical": 0,
+          "pct": 0
+        },
+        "tutorials": {
+          "total": 279,
+          "identical": 0,
+          "pct": 0
+        }
+      }
+    },
+    "gu": {
+      "total": 4243,
+      "untranslated": 30,
+      "allowlisted": 62,
+      "pctUntranslated": 1,
+      "byNamespace": {
+        "common": {
+          "total": 520,
+          "identical": 7,
+          "pct": 1
+        },
+        "auth": {
+          "total": 135,
+          "identical": 0,
+          "pct": 0
+        },
+        "marketing": {
+          "total": 298,
+          "identical": 2,
+          "pct": 1
+        },
+        "legalGuides": {
+          "total": 13,
+          "identical": 0,
+          "pct": 0
+        },
+        "issueChecker": {
+          "total": 357,
+          "identical": 0,
+          "pct": 0
+        },
+        "consumer": {
+          "total": 222,
+          "identical": 0,
+          "pct": 0
+        },
+        "lawyer": {
+          "total": 427,
+          "identical": 0,
+          "pct": 0
+        },
+        "admin": {
+          "total": 127,
+          "identical": 0,
+          "pct": 0
+        },
+        "legal": {
+          "total": 72,
+          "identical": 0,
+          "pct": 0
+        },
+        "settings": {
+          "total": 273,
+          "identical": 9,
+          "pct": 3
+        },
+        "billing": {
+          "total": 226,
+          "identical": 0,
+          "pct": 0
+        },
+        "copilot": {
+          "total": 152,
+          "identical": 0,
+          "pct": 0
+        },
+        "matters": {
+          "total": 610,
+          "identical": 10,
+          "pct": 2
+        },
+        "clients": {
+          "total": 117,
+          "identical": 0,
+          "pct": 0
+        },
+        "portal": {
+          "total": 86,
+          "identical": 0,
+          "pct": 0
+        },
+        "errors": {
+          "total": 98,
+          "identical": 2,
+          "pct": 2
+        },
+        "dashboard": {
+          "total": 231,
+          "identical": 0,
+          "pct": 0
+        },
+        "tutorials": {
+          "total": 279,
+          "identical": 0,
+          "pct": 0
+        }
+      }
+    },
+    "kn": {
+      "total": 4243,
+      "untranslated": 29,
+      "allowlisted": 69,
+      "pctUntranslated": 1,
+      "byNamespace": {
+        "common": {
+          "total": 520,
+          "identical": 6,
+          "pct": 1
+        },
+        "auth": {
+          "total": 135,
+          "identical": 0,
+          "pct": 0
+        },
+        "marketing": {
+          "total": 298,
+          "identical": 2,
+          "pct": 1
+        },
+        "legalGuides": {
+          "total": 13,
+          "identical": 0,
+          "pct": 0
+        },
+        "issueChecker": {
+          "total": 357,
+          "identical": 0,
+          "pct": 0
+        },
+        "consumer": {
+          "total": 222,
+          "identical": 0,
+          "pct": 0
+        },
+        "lawyer": {
+          "total": 427,
+          "identical": 0,
+          "pct": 0
+        },
+        "admin": {
+          "total": 127,
+          "identical": 0,
+          "pct": 0
+        },
+        "legal": {
+          "total": 72,
+          "identical": 0,
+          "pct": 0
+        },
+        "settings": {
+          "total": 273,
+          "identical": 9,
+          "pct": 3
+        },
+        "billing": {
+          "total": 226,
+          "identical": 0,
+          "pct": 0
+        },
+        "copilot": {
+          "total": 152,
+          "identical": 0,
+          "pct": 0
+        },
+        "matters": {
+          "total": 610,
+          "identical": 10,
+          "pct": 2
+        },
+        "clients": {
+          "total": 117,
+          "identical": 0,
+          "pct": 0
+        },
+        "portal": {
+          "total": 86,
+          "identical": 0,
+          "pct": 0
+        },
+        "errors": {
+          "total": 98,
+          "identical": 2,
+          "pct": 2
+        },
+        "dashboard": {
+          "total": 231,
+          "identical": 0,
+          "pct": 0
+        },
+        "tutorials": {
+          "total": 279,
+          "identical": 0,
+          "pct": 0
+        }
+      }
+    },
+    "ml": {
+      "total": 4243,
+      "untranslated": 29,
+      "allowlisted": 64,
+      "pctUntranslated": 1,
+      "byNamespace": {
+        "common": {
+          "total": 520,
+          "identical": 6,
+          "pct": 1
+        },
+        "auth": {
+          "total": 135,
+          "identical": 0,
+          "pct": 0
+        },
+        "marketing": {
+          "total": 298,
+          "identical": 2,
+          "pct": 1
+        },
+        "legalGuides": {
+          "total": 13,
+          "identical": 0,
+          "pct": 0
+        },
+        "issueChecker": {
+          "total": 357,
+          "identical": 0,
+          "pct": 0
+        },
+        "consumer": {
+          "total": 222,
+          "identical": 0,
+          "pct": 0
+        },
+        "lawyer": {
+          "total": 427,
+          "identical": 0,
+          "pct": 0
+        },
+        "admin": {
+          "total": 127,
+          "identical": 0,
+          "pct": 0
+        },
+        "legal": {
+          "total": 72,
+          "identical": 0,
+          "pct": 0
+        },
+        "settings": {
+          "total": 273,
+          "identical": 9,
+          "pct": 3
+        },
+        "billing": {
+          "total": 226,
+          "identical": 0,
+          "pct": 0
+        },
+        "copilot": {
+          "total": 152,
+          "identical": 0,
+          "pct": 0
+        },
+        "matters": {
+          "total": 610,
+          "identical": 10,
+          "pct": 2
+        },
+        "clients": {
+          "total": 117,
+          "identical": 0,
+          "pct": 0
+        },
+        "portal": {
+          "total": 86,
+          "identical": 0,
+          "pct": 0
+        },
+        "errors": {
+          "total": 98,
+          "identical": 2,
+          "pct": 2
+        },
+        "dashboard": {
+          "total": 231,
+          "identical": 0,
+          "pct": 0
+        },
+        "tutorials": {
+          "total": 279,
+          "identical": 0,
+          "pct": 0
+        }
+      }
+    },
+    "ur": {
+      "total": 4243,
+      "untranslated": 30,
+      "allowlisted": 63,
+      "pctUntranslated": 1,
+      "byNamespace": {
+        "common": {
+          "total": 520,
+          "identical": 7,
+          "pct": 1
+        },
+        "auth": {
+          "total": 135,
+          "identical": 0,
+          "pct": 0
+        },
+        "marketing": {
+          "total": 298,
+          "identical": 2,
+          "pct": 1
+        },
+        "legalGuides": {
+          "total": 13,
+          "identical": 0,
+          "pct": 0
+        },
+        "issueChecker": {
+          "total": 357,
+          "identical": 0,
+          "pct": 0
+        },
+        "consumer": {
+          "total": 222,
+          "identical": 0,
+          "pct": 0
+        },
+        "lawyer": {
+          "total": 427,
+          "identical": 0,
+          "pct": 0
+        },
+        "admin": {
+          "total": 127,
+          "identical": 0,
+          "pct": 0
+        },
+        "legal": {
+          "total": 72,
+          "identical": 0,
+          "pct": 0
+        },
+        "settings": {
+          "total": 273,
+          "identical": 9,
+          "pct": 3
+        },
+        "billing": {
+          "total": 226,
+          "identical": 0,
+          "pct": 0
+        },
+        "copilot": {
+          "total": 152,
+          "identical": 0,
+          "pct": 0
+        },
+        "matters": {
+          "total": 610,
+          "identical": 10,
+          "pct": 2
+        },
+        "clients": {
+          "total": 117,
+          "identical": 0,
+          "pct": 0
+        },
+        "portal": {
+          "total": 86,
+          "identical": 0,
+          "pct": 0
+        },
+        "errors": {
+          "total": 98,
+          "identical": 2,
+          "pct": 2
+        },
+        "dashboard": {
+          "total": 231,
+          "identical": 0,
+          "pct": 0
+        },
+        "tutorials": {
+          "total": 279,
+          "identical": 0,
+          "pct": 0
+        }
+      }
+    },
+    "pa": {
+      "total": 4243,
+      "untranslated": 30,
+      "allowlisted": 65,
+      "pctUntranslated": 1,
+      "byNamespace": {
+        "common": {
+          "total": 520,
+          "identical": 7,
+          "pct": 1
+        },
+        "auth": {
+          "total": 135,
+          "identical": 0,
+          "pct": 0
+        },
+        "marketing": {
+          "total": 298,
+          "identical": 2,
+          "pct": 1
+        },
+        "legalGuides": {
+          "total": 13,
+          "identical": 0,
+          "pct": 0
+        },
+        "issueChecker": {
+          "total": 357,
+          "identical": 0,
+          "pct": 0
+        },
+        "consumer": {
+          "total": 222,
+          "identical": 0,
+          "pct": 0
+        },
+        "lawyer": {
+          "total": 427,
+          "identical": 0,
+          "pct": 0
+        },
+        "admin": {
+          "total": 127,
+          "identical": 0,
+          "pct": 0
+        },
+        "legal": {
+          "total": 72,
+          "identical": 0,
+          "pct": 0
+        },
+        "settings": {
+          "total": 273,
+          "identical": 9,
+          "pct": 3
+        },
+        "billing": {
+          "total": 226,
+          "identical": 0,
+          "pct": 0
+        },
+        "copilot": {
+          "total": 152,
+          "identical": 0,
+          "pct": 0
+        },
+        "matters": {
+          "total": 610,
+          "identical": 10,
+          "pct": 2
+        },
+        "clients": {
+          "total": 117,
+          "identical": 0,
+          "pct": 0
+        },
+        "portal": {
+          "total": 86,
+          "identical": 0,
+          "pct": 0
+        },
+        "errors": {
+          "total": 98,
+          "identical": 2,
+          "pct": 2
+        },
+        "dashboard": {
+          "total": 231,
+          "identical": 0,
+          "pct": 0
+        },
+        "tutorials": {
+          "total": 279,
+          "identical": 0,
+          "pct": 0
+        }
+      }
+    },
+    "or": {
+      "total": 4243,
+      "untranslated": 28,
+      "allowlisted": 64,
+      "pctUntranslated": 1,
+      "byNamespace": {
+        "common": {
+          "total": 520,
+          "identical": 5,
+          "pct": 1
+        },
+        "auth": {
+          "total": 135,
+          "identical": 0,
+          "pct": 0
+        },
+        "marketing": {
+          "total": 298,
+          "identical": 2,
+          "pct": 1
+        },
+        "legalGuides": {
+          "total": 13,
+          "identical": 0,
+          "pct": 0
+        },
+        "issueChecker": {
+          "total": 357,
+          "identical": 0,
+          "pct": 0
+        },
+        "consumer": {
+          "total": 222,
+          "identical": 0,
+          "pct": 0
+        },
+        "lawyer": {
+          "total": 427,
+          "identical": 0,
+          "pct": 0
+        },
+        "admin": {
+          "total": 127,
+          "identical": 0,
+          "pct": 0
+        },
+        "legal": {
+          "total": 72,
+          "identical": 0,
+          "pct": 0
+        },
+        "settings": {
+          "total": 273,
+          "identical": 9,
+          "pct": 3
+        },
+        "billing": {
+          "total": 226,
+          "identical": 0,
+          "pct": 0
+        },
+        "copilot": {
+          "total": 152,
+          "identical": 0,
+          "pct": 0
+        },
+        "matters": {
+          "total": 610,
+          "identical": 10,
+          "pct": 2
+        },
+        "clients": {
+          "total": 117,
+          "identical": 0,
+          "pct": 0
+        },
+        "portal": {
+          "total": 86,
+          "identical": 0,
+          "pct": 0
+        },
+        "errors": {
+          "total": 98,
+          "identical": 2,
+          "pct": 2
+        },
+        "dashboard": {
+          "total": 231,
+          "identical": 0,
+          "pct": 0
+        },
+        "tutorials": {
+          "total": 279,
+          "identical": 0,
+          "pct": 0
+        }
+      }
+    },
+    "as": {
+      "total": 4243,
+      "untranslated": 30,
+      "allowlisted": 44,
+      "pctUntranslated": 1,
+      "byNamespace": {
+        "common": {
+          "total": 520,
+          "identical": 7,
+          "pct": 1
+        },
+        "auth": {
+          "total": 135,
+          "identical": 0,
+          "pct": 0
+        },
+        "marketing": {
+          "total": 298,
+          "identical": 2,
+          "pct": 1
+        },
+        "legalGuides": {
+          "total": 13,
+          "identical": 0,
+          "pct": 0
+        },
+        "issueChecker": {
+          "total": 357,
+          "identical": 0,
+          "pct": 0
+        },
+        "consumer": {
+          "total": 222,
+          "identical": 0,
+          "pct": 0
+        },
+        "lawyer": {
+          "total": 427,
+          "identical": 0,
+          "pct": 0
+        },
+        "admin": {
+          "total": 127,
+          "identical": 0,
+          "pct": 0
+        },
+        "legal": {
+          "total": 72,
+          "identical": 0,
+          "pct": 0
+        },
+        "settings": {
+          "total": 273,
+          "identical": 9,
+          "pct": 3
+        },
+        "billing": {
+          "total": 226,
+          "identical": 0,
+          "pct": 0
+        },
+        "copilot": {
+          "total": 152,
+          "identical": 0,
+          "pct": 0
+        },
+        "matters": {
+          "total": 610,
+          "identical": 10,
+          "pct": 2
+        },
+        "clients": {
+          "total": 117,
+          "identical": 0,
+          "pct": 0
+        },
+        "portal": {
+          "total": 86,
+          "identical": 0,
+          "pct": 0
+        },
+        "errors": {
+          "total": 98,
+          "identical": 2,
+          "pct": 2
+        },
+        "dashboard": {
+          "total": 231,
+          "identical": 0,
+          "pct": 0
+        },
+        "tutorials": {
+          "total": 279,
+          "identical": 0,
+          "pct": 0
+        }
+      }
+    }
+  },
+  "summary": {
+    "fr": "1% untranslated (28/4243)",
+    "de": "1% untranslated (30/4243)",
+    "hi": "1% untranslated (27/4243)",
+    "bn": "1% untranslated (30/4243)",
+    "te": "1% untranslated (29/4243)",
+    "mr": "1% untranslated (30/4243)",
+    "ta": "1% untranslated (29/4243)",
+    "gu": "1% untranslated (30/4243)",
+    "kn": "1% untranslated (29/4243)",
+    "ml": "1% untranslated (29/4243)",
+    "ur": "1% untranslated (30/4243)",
+    "pa": "1% untranslated (30/4243)",
+    "or": "1% untranslated (28/4243)",
+    "as": "1% untranslated (30/4243)"
+  }
+}

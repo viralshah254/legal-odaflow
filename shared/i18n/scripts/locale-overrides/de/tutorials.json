@@ -1,0 +1,533 @@
+{
+  "controls": {
+    "next": "Nächste",
+    "back": "Zurück",
+    "done": "Erledigt",
+    "progress": "{current} von {total}",
+    "skipTour": "Tour überspringen"
+  },
+  "welcome": {
+    "title": "Willkommen bei Umbrella",
+    "body": "Machen Sie einen kurzen Rundgang, um zu erfahren, wie Sie sich in Ihrem Firmenarbeitsbereich zurechtfinden.",
+    "b1": "Finden Sie Kunden, Angelegenheiten und Abrechnungen in Sekundenschnelle",
+    "b2": "Verwenden Sie AI Copilot für kontextbezogene Hilfe",
+    "b3": "Spielen Sie Touren jederzeit über die Hilfe ab",
+    "start": "Tour starten",
+    "skip": "Überspringen Sie es vorerst"
+  },
+  "help": {
+    "pageHelp": "Seitenhilfe",
+    "replayTour": "Wiederholungstour",
+    "replayShell": "Replay-Plattformtour",
+    "dismiss": "Hilfe ablehnen",
+    "sheetTitle": "Hilfe & Touren",
+    "thisPage": "Diese Seite",
+    "progress": "{completed} von {total} Seiten durchsucht",
+    "hideTips": "Tipps ausblenden",
+    "openTips": "Seitentipps anzeigen",
+    "noPageTour": "Auf dieser Seite ist noch keine Führung verfügbar.",
+    "actions": "Aktionen"
+  },
+  "labels": {
+    "page": "Seitentour",
+    "shell": "Plattformtour",
+    "dashboard": "Armaturenbrett",
+    "clients": "Kunden",
+    "clients_new": "Neuer Kunde",
+    "clients_detail": "Kundenprofil",
+    "matters": "Angelegenheiten",
+    "matters_new": "Neue Angelegenheit",
+    "matters_detail": "Materie-Arbeitsbereich",
+    "tasks": "Aufgaben",
+    "meetings": "Treffen",
+    "calendar": "Kalender",
+    "time": "Zeiterfassung",
+    "documents": "Unterlagen",
+    "law_library": "Juristische Bibliothek",
+    "vault": "Gewölbe",
+    "esign": "E-Sign",
+    "billing": "Abrechnung",
+    "trust": "Treuhandbuchhaltung",
+    "finance": "Finanzen",
+    "expenses": "Kosten",
+    "leads": "Führt",
+    "inbox": "Posteingang",
+    "alerts": "Warnungen",
+    "intake": "Aufnahme",
+    "research": "Forschung",
+    "templates": "Vorlagen",
+    "settings": "Einstellungen",
+    "consumer_dashboard": "Verbraucherheim",
+    "consumer_cases": "Meine Fälle",
+    "consumer_case_detail": "Falldetails",
+    "consumer_subscription": "Abonnement",
+    "consumer_settings": "Kontoeinstellungen"
+  },
+  "shell": {
+    "sidebar": {
+      "title": "Ihr fester Arbeitsplatz",
+      "body": "Verwenden Sie die Seitenleiste, um zwischen Kunden, Angelegenheiten, Abrechnungen, Dokumenten und mehr zu wechseln. Abschnitte werden ausgeblendet, um die Navigation übersichtlich zu halten."
+    },
+    "search": {
+      "title": "Globale Suche",
+      "body": "Durchsuchen Sie Kunden, Angelegenheiten, Dokumente und Aufgaben von überall in der App."
+    },
+    "commandPalette": {
+      "title": "Befehlspalette",
+      "body": "Drücken Sie ⌘K (oder Strg+K), um zu einer beliebigen Seite zu springen, Copilot zu öffnen oder allgemeine Aktionen wie das Erstellen einer Angelegenheit zu starten."
+    },
+    "copilot": {
+      "title": "KI-Copilot",
+      "body": "Stellen Sie Copilot-Fragen im Kontext Ihrer aktuellen Seite oder Angelegenheit. Verwenden Sie die Glitzerschaltfläche in der oberen Leiste oder diese schwebende Schaltfläche."
+    },
+    "notifications": {
+      "title": "Benachrichtigungen und Warnungen",
+      "body": "Hier werden dringende Fristen, KYC-Elemente, Rechnungswarnungen und Systemmeldungen angezeigt."
+    },
+    "profile": {
+      "title": "Ihr Konto",
+      "body": "Öffnen Sie Ihr Profilmenü, um Einstellungen zu verwalten, Ihre Rolle anzuzeigen und sich abzumelden."
+    },
+    "help": {
+      "title": "Sich fortbewegen",
+      "b1": "Verwenden Sie die Seitenleiste für Hauptarbeitsabläufe und ⌘K für schnelle Sprünge.",
+      "b2": "Copilot versteht die Seite, auf der Sie sich befinden – öffnen Sie sie jederzeit, wenn Sie Hilfe benötigen.",
+      "b3": "Spielen Sie diese Tour über das Hilfemenü in der oberen Leiste noch einmal ab."
+    }
+  },
+  "dashboard": {
+    "kpis": {
+      "title": "Fester Schnappschuss",
+      "body": "Diese Karten fassen aktive Angelegenheiten, überfällige Aufgaben, Leads und Einnahmen für das ausgewählte Zeitfenster zusammen."
+    },
+    "alerts": {
+      "title": "Dringende Artikel",
+      "body": "Überprüfen Sie KYC-Lücken, Vertrauensgenehmigungen und Fristenrisiken, die heute Aufmerksamkeit erfordern."
+    },
+    "tasks": {
+      "title": "Ihre Aufgaben",
+      "body": "Hier erscheinen die Ihnen zugewiesenen Aufgaben. Klicken Sie sich durch, um den Status zu aktualisieren oder die verlinkte Angelegenheit zu öffnen."
+    },
+    "onboarding": {
+      "title": "Checkliste für den Einstieg",
+      "body": "Führen Sie diese echten Einrichtungsschritte aus – KI-Suche ausführen, einen Kunden hinzufügen, eine Angelegenheit öffnen –, um Ihren Arbeitsbereich zu aktivieren."
+    },
+    "help": {
+      "title": "Armaturenbrett",
+      "b1": "Wechseln Sie zwischen „Heute“, „Woche“ und „Monat“, um KPIs und Aufgabenfenster zu ändern.",
+      "b2": "Verwenden Sie Next Best Actions für von der KI vorgeschlagene Prioritäten.",
+      "b3": "Öffnen Sie eine beliebige Karte, um Einzelheiten zu Angelegenheiten, Abrechnungen oder Benachrichtigungen anzuzeigen."
+    }
+  },
+  "clients": {
+    "search": {
+      "title": "Finden Sie Kunden",
+      "body": "Suchen Sie nach Name, E-Mail oder Firma. KYC-Ausweise weisen auf fehlende oder abgelaufene Dokumente hin."
+    },
+    "create": {
+      "title": "Fügen Sie einen Kunden hinzu",
+      "body": "Erstellen Sie Einzel- oder Firmenprofile. Sie können Angelegenheiten verknüpfen, nachdem der Mandant gespeichert wurde."
+    },
+    "list": {
+      "title": "Kundenverzeichnis",
+      "body": "Klicken Sie auf eine Zeile, um den Kundendatensatz zu öffnen, Angelegenheiten anzuzeigen und den Portalzugriff zu verwalten."
+    },
+    "help": {
+      "title": "Kunden",
+      "b1": "Führen Sie KYC vor der Rechnungsstellung durch oder vertrauen Sie bei Bedarf Transaktionen an.",
+      "b2": "Verwenden Sie Copilot auf dieser Seite, um Aufnahmenotizen zu erstellen oder den Kundenverlauf zusammenzufassen.",
+      "b3": "Neukunden können automatisch aus Aufnahme-Leads umgewandelt werden."
+    }
+  },
+  "clientsNew": {
+    "form": {
+      "title": "Kundendaten",
+      "body": "Geben Sie Kontaktinformationen und Kundentyp ein. Beim Speichern werden Konfliktprüfungen ausgeführt."
+    },
+    "submit": {
+      "title": "Speichern und fortfahren",
+      "body": "Öffnen Sie nach dem Speichern eine Angelegenheit oder laden Sie KYC-Dokumente aus dem Kundenprofil hoch."
+    },
+    "help": {
+      "title": "Neuer Kunde",
+      "b1": "Die Option „Einzelperson“ oder „Firma“ wirkt sich auf die erforderlichen Felder und die Abrechnungseinrichtung aus.",
+      "b2": "Sie können den Kunden nach der Profilerstellung zum Portal einladen."
+    }
+  },
+  "clientsDetail": {
+    "header": {
+      "title": "Kundenprofil",
+      "body": "Kontaktdaten, KYC-Status und schnelle Aktionen werden oben im Datensatz angezeigt."
+    },
+    "matters": {
+      "title": "Verknüpfte Angelegenheiten",
+      "body": "Alle Fälle für diesen Kunden werden hier angezeigt. Öffnen Sie eine Angelegenheit, um Aufgaben, Dokumente und Abrechnungen zu verwalten."
+    },
+    "help": {
+      "title": "Kundendatensatz",
+      "b1": "Laden Sie KYC-Dokumente hoch und verfolgen Sie Ablaufdaten.",
+      "b2": "Ermöglichen Sie den Zugriff auf das Kundenportal für sichere Nachrichtenübermittlung und Dokumentenfreigabe.",
+      "b3": "Erstellen Sie direkt aus diesem Profil eine neue Angelegenheit."
+    }
+  },
+  "matters": {
+    "create": {
+      "title": "Öffnen Sie eine Angelegenheit",
+      "body": "Starten Sie einen neuen Fall, verknüpfen Sie ihn mit einem Kunden und weisen Sie Teammitglieder zu."
+    },
+    "filter": {
+      "title": "Filtern und suchen",
+      "body": "Grenzen Sie nach Status, Tätigkeitsbereich oder Beauftragtem ein, um schnell aktive Arbeit zu finden."
+    },
+    "list": {
+      "title": "Materie-Pipeline",
+      "body": "In jeder Zeile werden Phase, Termin und Eigentümer angezeigt. Klicken Sie hier, um den Themen-Hub zu öffnen."
+    },
+    "help": {
+      "title": "Angelegenheiten",
+      "b1": "Verwenden Sie Playbooks, um beim Öffnen einer Angelegenheit automatisch Aufgaben zu generieren.",
+      "b2": "Öffnen Sie die KI-Workbench aus einer Angelegenheit zum Entwerfen und Recherchieren.",
+      "b3": "Verfolgen Sie Gerichtsfristen und Ergebnisse auf den Unterseiten der Angelegenheit."
+    }
+  },
+  "mattersNew": {
+    "form": {
+      "title": "Materie-Setup",
+      "body": "Verknüpfen Sie einen Kunden, wählen Sie einen Tätigkeitsbereich aus und legen Sie den Titel und die wichtigsten Termine für die Angelegenheit fest."
+    },
+    "submit": {
+      "title": "Materie erschaffen",
+      "body": "Durch das Speichern werden die Materie-Zeitleiste und optionale Playbook-Aufgaben erstellt."
+    },
+    "help": {
+      "title": "Neue Angelegenheit",
+      "b1": "Weisen Sie Mitarbeiter zu, damit diese Aufgaben und Dokumente sofort sehen können.",
+      "b2": "Der Übungsbereich steuert Vorlagen, Formulare und KI-Vorschläge."
+    }
+  },
+  "mattersDetail": {
+    "header": {
+      "title": "Materie-Hub",
+      "body": "Überblick über Status, Parteien, wichtige Termine und Schnellaktionen für diesen Fall."
+    },
+    "tabs": {
+      "title": "Materieabschnitte",
+      "body": "Wechseln Sie zwischen Zeitleiste, Dokumenten, Aufgaben, Abrechnung und speziellen Tools."
+    },
+    "workbench": {
+      "title": "KI-Werkbank",
+      "body": "Öffnen Sie die Workbench für themenbezogene KI-Chats, Entwürfe und vorgeschlagene nächste Schritte."
+    },
+    "help": {
+      "title": "Materielles Detail",
+      "b1": "Protokollieren Sie den Zeit- und Kostenaufwand für die Angelegenheit, um eine genaue Abrechnung zu gewährleisten.",
+      "b2": "Laden Sie Beweise und Dokumente in den Materie-Tresor hoch.",
+      "b3": "Teilen Sie den schreibgeschützten Zugriff mit Kunden über das Portal, wenn Sie bereit sind."
+    }
+  },
+  "tasks": {
+    "create": {
+      "title": "Erstellen Sie Aufgaben",
+      "body": "Fügen Sie Fristen hinzu, weisen Sie Eigentümer zu und verknüpfen Sie Aufgaben mit Angelegenheiten."
+    },
+    "list": {
+      "title": "Aufgabenwarteschlange",
+      "body": "Filtern Sie nach Fälligkeitsdatum, Priorität oder Beauftragtem. Markieren Sie den Vorgang als abgeschlossen, wenn die Arbeit fortschreitet."
+    },
+    "help": {
+      "title": "Aufgaben",
+      "b1": "Überfällige Aufgaben werden automatisch auf Ihrem Dashboard angezeigt.",
+      "b2": "Automatisierungen können Aufgaben aus Playbooks und Gerichtsfristen erstellen.",
+      "b3": "Nutzen Sie Copilot, um offene Aufgaben zu einem Thema zusammenzufassen."
+    }
+  },
+  "meetings": {
+    "record": {
+      "title": "Aufzeichnen oder importieren",
+      "body": "Erfassen Sie Kundenbesprechungen, Aussagen oder Anrufe. Transkripte verweisen auf Themen."
+    },
+    "list": {
+      "title": "Besprechungsbibliothek",
+      "body": "Durchsuchen Sie Aufzeichnungen, Transkripte und KI-Zusammenfassungen. Öffnen Sie eine beliebige Besprechung, um Notizen durchzusehen."
+    },
+    "help": {
+      "title": "Treffen",
+      "b1": "Verknüpfen Sie Aufzeichnungen mit Themen für den Kontext in Copilot und Drafting.",
+      "b2": "Suchen Sie Transkripte über die Befehlspalette (⌘K).",
+      "b3": "Exportieren Sie Notizen für Mandantenakten oder Gerichtsvorlagen."
+    }
+  },
+  "calendar": {
+    "view": {
+      "title": "Kalender",
+      "body": "Sehen Sie Anhörungen, Fristen und interne Ereignisse auf einen Blick."
+    },
+    "create": {
+      "title": "Ereignisse hinzufügen",
+      "body": "Erstellen Sie Ereignisse und verknüpfen Sie sie mit Angelegenheiten, damit das Team auf dem Laufenden bleibt."
+    },
+    "help": {
+      "title": "Kalender",
+      "b1": "Gerichtsfristen aus Angelegenheiten können hier automatisch angezeigt werden.",
+      "b2": "Teilen Sie die Kalendersichtbarkeit basierend auf Ihrer Rolle."
+    }
+  },
+  "time": {
+    "log": {
+      "title": "Protokollzeit",
+      "body": "Erfassen Sie abrechnungsfähige und nicht abrechnungsfähige Stunden für Angelegenheiten."
+    },
+    "list": {
+      "title": "Zeiteinträge",
+      "body": "Überprüfen und bearbeiten Sie Einträge vor der Vorabrechnung und Rechnungsstellung."
+    },
+    "help": {
+      "title": "Zeiterfassung",
+      "b1": "Genaue Zeitprotokolle dienen der Überprüfung vor der Rechnungsstellung.",
+      "b2": "Verwenden Sie Rechtsangelegenheitslinks, damit die Finanzabteilung korrekt abrechnen kann."
+    }
+  },
+  "documents": {
+    "upload": {
+      "title": "Dokumente hochladen",
+      "body": "Fügen Sie Firmendateien hinzu und verknüpfen Sie sie mit Kunden oder Angelegenheiten."
+    },
+    "list": {
+      "title": "Dokumentenbibliothek",
+      "body": "Durchsuchen, suchen und öffnen Sie Dateien. Der Versionsverlauf wird pro Dokument gespeichert."
+    },
+    "help": {
+      "title": "Unterlagen",
+      "b1": "Hier erscheinen auch Vorlagen und generierte Entwürfe.",
+      "b2": "Verwenden Sie die Dokumentsuche von Copilot, um Klauseln in mehreren Dateien zu finden."
+    }
+  },
+  "lawLibrary": {
+    "search": {
+      "title": "Juristische Bibliothek",
+      "body": "Durchsuchen Sie Gesetze und Vorschriften für Ihre Gerichtsbarkeit mit einer hybriden Stichwort- und semantischen Suche."
+    },
+    "help": {
+      "title": "Juristische Bibliothek",
+      "b1": "Zitieren Sie Quellen direkt in Themenentwürfen.",
+      "b2": "Filtern Sie nach Gerichtsbarkeit, um dem Hauptland Ihrer Firma zu entsprechen."
+    }
+  },
+  "vault": {
+    "search": {
+      "title": "Fester Tresor",
+      "body": "Semantische Suche im Firmengedächtnis – vergangene Angelegenheiten, Memos und Diligence-Pakete."
+    },
+    "help": {
+      "title": "Gewölbe",
+      "b1": "Führen Sie Massen-Diligence-Abfragen für hochgeladene Korpora durch.",
+      "b2": "Die Ergebnisse respektieren Materie und Client-Zugriffskontrollen."
+    }
+  },
+  "esign": {
+    "create": {
+      "title": "E-Signaturen",
+      "body": "Erstellen Sie Signaturumschläge, fügen Sie Unterzeichner hinzu und verfolgen Sie den Abschlussstatus."
+    },
+    "help": {
+      "title": "E-Sign",
+      "b1": "Verknüpfen Sie Umschläge mit Angelegenheiten für Prüfprotokolle.",
+      "b2": "Kunden können über sichere E-Mail-Links signieren."
+    }
+  },
+  "billing": {
+    "hub": {
+      "title": "Abrechnungs-Hub",
+      "body": "Greifen Sie von einem Ort aus auf Rechnungen, Rechnungsprüfungen, Zahlungen und Vertrauen zu."
+    },
+    "help": {
+      "title": "Abrechnung",
+      "b1": "Führen Sie eine Vorabrechnung durch, bevor Sie Rechnungen an Kunden senden.",
+      "b2": "Treuhandbewegungen erfordern eine Genehmigung gemäß den Unternehmensrichtlinien."
+    }
+  },
+  "trust": {
+    "balances": {
+      "title": "Treuhandbuchhaltung",
+      "body": "Überwachen Sie den Treuhandsaldo der Kunden, ausstehende Genehmigungen und den Abgleich."
+    },
+    "help": {
+      "title": "Vertrauen",
+      "b1": "Vermischen Sie niemals Treuhand- und Betriebsmittel.",
+      "b2": "Genehmigungswarnungen werden auf Ihrem Dashboard angezeigt, wenn Maßnahmen erforderlich sind."
+    }
+  },
+  "finance": {
+    "dashboard": {
+      "title": "Finanz-Dashboard",
+      "body": "Verfolgen Sie Einnahmen, Forderungen und finanzielle KPIs des Unternehmens."
+    },
+    "help": {
+      "title": "Finanzen",
+      "b1": "Informieren Sie sich über Rechnungen und Zahlungen anhand von Übersichtskarten.",
+      "b2": "Exportberichte für Partner und Buchhalter."
+    }
+  },
+  "expenses": {
+    "create": {
+      "title": "Ausgaben protokollieren",
+      "body": "Erfassen Sie Auszahlungen, fügen Sie Quittungen bei und stellen Sie gegebenenfalls Rechnungen zu den Angelegenheiten aus."
+    },
+    "help": {
+      "title": "Kosten",
+      "b1": "Finanzrollen können Ausgaben vor der Rechnungsstellung genehmigen.",
+      "b2": "Verknüpfen Sie jede Ausgabe mit einer Angelegenheit für eine saubere Kundenabrechnung."
+    }
+  },
+  "leads": {
+    "inbox": {
+      "title": "Leads-Posteingang",
+      "body": "Überprüfen Sie eingehende Leads. Qualifizieren und wandeln Sie qualifizierte Leads in Kunden und Anliegen um."
+    },
+    "help": {
+      "title": "Führt",
+      "b1": "Konvertieren Sie einen Lead in einem Schritt, um Kunden- und Themenfelder vorab auszufüllen.",
+      "b2": "Abgelehnte Leads werden zur Berichterstellung archiviert."
+    }
+  },
+  "inbox": {
+    "list": {
+      "title": "Posteingang",
+      "body": "Hier werden Nachrichten und Benachrichtigungen angezeigt, die eine Antwort erfordern."
+    },
+    "help": {
+      "title": "Posteingang",
+      "b1": "Unterscheiden Sie Client-Nachrichten von Systemwarnungen.",
+      "b2": "Markieren Sie Elemente als gelesen, um Ihre Warteschlange sauber zu halten."
+    }
+  },
+  "alerts": {
+    "list": {
+      "title": "Warnungen",
+      "body": "Hier werden KYC-Lücken, Compliance-Punkte und dringende Firmenwarnungen aufgelistet."
+    },
+    "help": {
+      "title": "Warnungen",
+      "b1": "Lösen Sie KYC-Warnungen vor Vertrauens- oder Abrechnungsmaßnahmen.",
+      "b2": "Kritische Warnungen werden auch auf dem Dashboard-Streifen angezeigt."
+    }
+  },
+  "intake": {
+    "wizard": {
+      "title": "Kundenaufnahme",
+      "body": "Gehen Sie durch die strukturierte Aufnahme: Problemklassifizierung, Konfliktprüfung und Themenerstellung."
+    },
+    "help": {
+      "title": "Aufnahme",
+      "b1": "Zur Verwendung vor Ort und zur telefonischen Aufnahme – nicht nur für Web-Leads.",
+      "b2": "KI unterstützt bei der Problemklassifizierung und den erforderlichen Dokumenten."
+    }
+  },
+  "research": {
+    "query": {
+      "title": "KI-Rechtssuche",
+      "body": "Stellen Sie eine Rechtsfrage für Ihre Gerichtsbarkeit. Die Antworten enthalten Zitate, die Sie überprüfen können."
+    },
+    "results": {
+      "title": "Zitierte Ergebnisse",
+      "body": "Speichern Sie Recherchen zu einem Thema oder exportieren Sie Zitate in Entwürfe."
+    },
+    "help": {
+      "title": "Rechtsrecherche",
+      "b1": "Machen Sie für bessere Zitate genaue Angaben zu Zuständigkeit und Sachverhalt.",
+      "b2": "Die KI-Nutzung wird auf das Guthaben Ihres Unternehmens angerechnet.",
+      "b3": "Überprüfen Sie Zitate immer, bevor Sie sie einreichen oder Kunden beraten."
+    }
+  },
+  "team": {
+    "invite": {
+      "title": "Teamleitung",
+      "body": "Laden Sie Kollegen ein und weisen Sie Rollen zu, die den Zugriff auf Abrechnungen, Angelegenheiten und Einstellungen steuern."
+    },
+    "help": {
+      "b1": "Rollen bestimmen die Sichtbarkeit der Seitenleiste und die Copilot-Berechtigungen.",
+      "b2": "Deaktivieren Sie Benutzer, anstatt sie zu löschen, um den Prüfverlauf beizubehalten."
+    }
+  },
+  "templates": {
+    "upload": {
+      "title": "Dokumentvorlagen",
+      "body": "Laden Sie Firmenvorlagen mit Zusammenführungsvariablen (z. B. Kundenname) zur automatisierten Generierung hoch."
+    },
+    "help": {
+      "title": "Vorlagen",
+      "b1": "Für eine schnellere Ausarbeitung können Sie nach Übungsbereich ordnen.",
+      "b2": "Bearbeiten Sie Versionen, ohne den Verlauf zu verlieren."
+    }
+  },
+  "settings": {
+    "hub": {
+      "title": "Einstellungen",
+      "body": "Konfigurieren Sie Benutzer, Abrechnung, KI-Richtlinie, Integrationen und Compliance über diesen Hub."
+    },
+    "help": {
+      "title": "Einstellungen",
+      "b1": "Nur Partneradministratoren können die unternehmensweite Governance ändern.",
+      "b2": "Überprüfen Sie die KI-Richtlinie und die Dateneinwilligung, bevor Sie Trainingsfunktionen aktivieren."
+    }
+  },
+  "consumerDashboard": {
+    "cases": {
+      "title": "Ihre Fälle",
+      "body": "Sehen Sie aktive Rechtsfälle und deren Status auf einen Blick."
+    },
+    "actions": {
+      "title": "Schnelle Aktionen",
+      "body": "Überprüfen Sie ein Problem, laden Sie Dokumente hoch, sehen Sie sich Berichte an oder fordern Sie eine anwaltliche Überprüfung an."
+    },
+    "help": {
+      "title": "Heim",
+      "b1": "KI-Gutschriften für Stromproblemprüfungen und Dokumentenanalysen.",
+      "b2": "Eröffnen Sie einen Fall, um Ihrem Anwalt eine Nachricht zu senden oder Rechnungen zu bezahlen."
+    }
+  },
+  "consumerCases": {
+    "list": {
+      "title": "Fallliste",
+      "body": "Jeder Fall verfolgt Dokumente, Berichte, Nachrichten und Zahlungen an einem Ort."
+    },
+    "help": {
+      "title": "Fälle",
+      "b1": "Starten Sie über das Dashboard eine neue Problemprüfung, wenn Sie einen neuen Fall benötigen.",
+      "b2": "Der Fallstatus wird aktualisiert, wenn Ihr Anwalt Maßnahmen ergreift."
+    }
+  },
+  "consumerCaseDetail": {
+    "tabs": {
+      "title": "Fallabschnitte",
+      "body": "Wechseln Sie zwischen Übersicht, Dokumenten, Berichten, Nachrichten, Zahlungen und Einwilligung."
+    },
+    "help": {
+      "title": "Fall nach Hause",
+      "b1": "Laden Sie Dokumente hoch, um Ihrem Anwalt zu helfen, die Situation zu verstehen.",
+      "b2": "Fordern Sie eine anwaltliche Überprüfung an, wenn Sie formellen Rat benötigen."
+    }
+  },
+  "consumerSubscription": {
+    "plans": {
+      "title": "Pläne und Credits",
+      "body": "Wählen Sie ein Abonnement oder kaufen Sie AI-Credit-Pakete für die Überprüfung und Analyse von Problemen."
+    },
+    "help": {
+      "title": "Abonnement",
+      "b1": "Credits werden gemäß den Bedingungen Ihres Plans verlängert.",
+      "b2": "Aktivieren Sie die automatische Aufladung, um Unterbrechungen zu vermeiden."
+    }
+  },
+  "consumerSettings": {
+    "hub": {
+      "title": "Kontoeinstellungen",
+      "body": "Verwalten Sie Profil, Datenschutz, Dateneinwilligung und Benachrichtigungseinstellungen."
+    },
+    "help": {
+      "title": "Einstellungen",
+      "b1": "Steuern Sie, wie Ihre Daten für KI-Funktionen verwendet werden.",
+      "b2": "Aktualisieren Sie Ihre Kontaktdaten, damit Ihr Anwalt Sie erreichen kann."
+    }
+  }
+}

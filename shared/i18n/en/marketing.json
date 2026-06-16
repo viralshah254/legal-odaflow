@@ -1,0 +1,609 @@
+{
+  "4565": "45–65%",
+  "heroTitle": "Legal clarity for everyone",
+  "heroSubtitle": "Understand your legal situation, connect with lawyers, and manage your case — all in one place.",
+  "getStarted": "Get started",
+  "forLawyers": "For lawyers",
+  "forConsumers": "For consumers",
+  "pricing": "Pricing",
+  "features": "Features",
+  "testimonials": "Testimonials",
+  "faq": "Frequently asked questions",
+  "header": {
+    "issueChecker": "Issue Checker",
+    "forLawyers": "For Lawyers",
+    "pricing": "Pricing",
+    "demo": "Demo",
+    "dashboard": "Dashboard",
+    "settings": "Settings",
+    "signOut": "Sign out",
+    "signIn": "Sign In",
+    "getStarted": "Get Started",
+    "start": "Start",
+    "free": "FREE",
+    "account": "Account"
+  },
+  "footer": {
+    "tagline": "Understand your legal problem before you spend thousands on a lawyer.",
+    "forConsumers": "For Consumers",
+    "legalIssueChecker": "Legal Issue Checker",
+    "uploadDocument": "Upload Document",
+    "findLawyer": "Find a Lawyer",
+    "forLawyers": "For Lawyers",
+    "lawyerPlatform": "Lawyer Platform",
+    "pricing": "Pricing",
+    "startFreeTrial": "Start Free Trial",
+    "legal": "Legal",
+    "privacy": "Privacy",
+    "terms": "Terms",
+    "dataConsent": "Data & AI Consent",
+    "legalDisclaimer": "Legal Disclaimer",
+    "copyright": "© {year} Umbrella. All rights reserved.",
+    "signIn": "Sign In"
+  },
+  "pricingPage": {
+    "title": "Pricing",
+    "yourPlan": "Your plan:",
+    "subtitle": "From free consumer guidance to firm-wide AI — including the <strong>Solo</strong> bundle for independent lawyers.",
+    "geoDenied": "Showing <strong>{currency}</strong> pricing (location access not allowed).",
+    "pricesIn": "Prices in <strong>{currency}</strong>.",
+    "viewUsPricing": "View US ({currency}) pricing",
+    "indiaPricing": "India (INR)",
+    "soloPractitioner": "Solo practitioner",
+    "new": "New",
+    "soloDescription": "The <strong>SOLO</strong> bundle is built for one lawyer: matter workspace, AI Copilot, and monthly AI credits — without paying for unused seats.",
+    "perMonth": "/month",
+    "lawFirmsPerSeat": "Law firms — per seat/month ({currency})",
+    "perSeatMonth": "/seat/mo",
+    "forConsumers": "For consumers ({currency})",
+    "consumerDescription": "Self-service legal guidance and optional lawyer review — no firm account required.",
+    "currentPlan": "Current plan",
+    "aiCreditsTitle": "About AI credits:",
+    "aiCreditsBody": "Credits scale with AI model usage — like Cursor. Auto tasks (Copilot, drafts) are efficient and use fewer credits. Premium deep analysis (Similar Cases, Opponent Strategy, Strategy Memo) uses your selected Premium model and is billed by token usage.",
+    "deepAnalysisNote": "Deep case analysis requires <strong>Professional</strong> plan or above.",
+    "enterprisePrompt": "Need enterprise SSO, data residency, or SCIM?",
+    "enterpriseSettings": "Enterprise settings"
+  },
+  "home": {
+    "audienceItems": [
+      "Individuals",
+      "Law Firms",
+      "Solo Advocates",
+      "In-House Counsel",
+      "Litigation Teams",
+      "Corporate Legal Depts",
+      "Compliance Officers",
+      "Legal Researchers",
+      "Law Students",
+      "SMBs",
+      "Startups",
+      "HR & Employment",
+      "Landlords & Tenants",
+      "Entrepreneurs",
+      "Magistrates",
+      "Contract Teams"
+    ],
+    "hero": {
+      "badge": "AI-grounded legal intelligence — for anyone",
+      "title": "Legal intelligence.",
+      "titleHighlight": "For anyone. Anywhere.",
+      "subtitle": "Explain your situation in plain language. We read the actual law, cite real statutes and cases, and tell you exactly where you stand — free to start, no credit card needed.",
+      "bullet1": "Reads your situation, not just keywords",
+      "bullet2": "Real statutes & case law — cited, never fabricated",
+      "bullet3": "Individuals and law firms on one platform",
+      "bullet4": "Auto-detects your jurisdiction, always applies local law",
+      "ctaPrimary": "Start Free — No Credit Card",
+      "ctaSecondary": "See it in action",
+      "trust1": "Free preview always included",
+      "trust2": "Never used to train AI",
+      "trust3": "Private to your account",
+      "howItWorksLink": "How it works"
+    },
+    "coverage": {
+      "india": "India",
+      "us": "US",
+      "uk": "UK",
+      "kenya": "Kenya",
+      "under2Min": "Under 2 min analysis",
+      "freeToStart": "Free to start",
+      "citizensAndFirms": "Citizens + law firms",
+      "dataNeverTraining": "Data never for training"
+    },
+    "howItWorks": {
+      "badge": "How it works",
+      "title": "From situation to clarity in under 2 minutes",
+      "subtitle": "No forms. No jargon. Just describe what's happening.",
+      "step1Title": "Describe your issue",
+      "step1Desc": "Type your situation in plain language — one message is all it takes.",
+      "step2Title": "AI asks follow-ups",
+      "step2Desc": "2–3 targeted questions sharpen the analysis before we run it.",
+      "step3Title": "We read the law",
+      "step3Desc": "Real statutes and case law are retrieved and applied to your specific facts.",
+      "step4Title": "Get your free preview",
+      "step4Desc": "Risk level, cited law, outcome probability, and next steps — free."
+    },
+    "example": {
+      "badge": "Example output",
+      "title": "What your AI preview looks like",
+      "subtitle": "Real analysis. Cited law. Outcome probability. Plain language.",
+      "aiPreview": "AI Preview",
+      "mediumRisk": "⚠ Medium Risk",
+      "jurisdiction": "Landlord & Tenant",
+      "caseTitle": "Unlawful Rent Increase by Landlord",
+      "caseSubtitle": "Based on Rent Restriction Act (Cap 296) and Law of Contract Act",
+      "outcomeLabel": "Estimated outcome strength",
+      "outcomeValue": "45–65%",
+      "outcomeDisclaimer": "Illustrative estimate based on stated facts. Not a legal prediction.",
+      "point1": "Your 5-year lease cap of 7% annual increase contradicts the landlord's 30% demand.",
+      "point2": "Rent Restriction Act limits increases on controlled premises without tribunal approval.",
+      "point3": "Written evidence (contract, bank records) significantly strengthens your position.",
+      "cta": "Get my free preview"
+    },
+    "platform": {
+      "badge": "The platform",
+      "title": "Every motion. Every clause.",
+      "titleHighlight": "Every jurisdiction.",
+      "subtitle": "Not a chatbot. A structured legal intelligence engine — for citizens and law firms, built for your jurisdiction.",
+      "features": [
+        {
+          "num": "01",
+          "label": "ANALYZE",
+          "title": "Contextual Issue Analysis",
+          "desc": "Describe your situation in plain language. Our AI reads the legal context — not just the keywords — and maps it to real statutes and case law.",
+          "cta": "Try it free"
+        },
+        {
+          "num": "02",
+          "label": "RESEARCH",
+          "title": "Jurisdiction-Grounded Law",
+          "desc": "Every answer is grounded in the actual laws of your jurisdiction. Auto-detected, always applied. No generic templates.",
+          "cta": "Try it free"
+        },
+        {
+          "num": "03",
+          "label": "DRAFT",
+          "title": "Document Generation",
+          "desc": "Demand letters, contracts, notices, and pleadings — drafted with AI, cited from real statutes, ready to send or file.",
+          "cta": "Start drafting"
+        },
+        {
+          "num": "04",
+          "label": "MANAGE",
+          "title": "Full Practice OS for Firms",
+          "desc": "Matter management, billing, trust accounting, client intake — one platform for your entire firm. The AI Copilot knows every case.",
+          "cta": "For law firms"
+        },
+        {
+          "num": "05",
+          "label": "CONNECT",
+          "title": "Lawyer Marketplace",
+          "desc": "When you need a professional, connect directly with vetted lawyers in your jurisdiction. Warm handoff from AI analysis to real counsel.",
+          "cta": "Find a lawyer"
+        },
+        {
+          "num": "06",
+          "label": "TRANSCRIBE",
+          "title": "Native Meeting Intelligence",
+          "desc": "Record, transcribe, and summarize client meetings automatically. AI extracts action items, links them to matters, and drafts follow-up notes.",
+          "cta": "For firms"
+        }
+      ]
+    },
+    "difference": {
+      "badge": "The difference",
+      "title": "One ChatGPT prompt, three hallucinated cases,",
+      "titleItalic": "one very expensive mistake.",
+      "subtitle": "Other platforms force you to pick a side — citizen or lawyer, one tool, one use case. Umbrella connects everything.",
+      "beforeLabel": "Before Umbrella",
+      "beforeItems": [
+        "Ask ChatGPT. Get confident, fabricated case citations.",
+        "Pay a lawyer $300 just to learn if you might have a case.",
+        "Juggle billing in one app, matters in another, transcripts in a third.",
+        "Your client portal is literally email.",
+        "No outcome probability. No risk level. Just a wall of text."
+      ],
+      "afterLabel": "With Umbrella",
+      "afterItems": [
+        "Auto-detected jurisdiction — we know where you are and apply your actual laws.",
+        "Every citation is grounded in real, indexed statutes and case law. Verifiable in one click.",
+        "Free preview shows risk level and outcome probability — before you spend a cent.",
+        "Matter management, billing, AI Copilot, and meeting transcripts — one platform.",
+        "Built-in client portal. Not email. Not a PDF."
+      ],
+      "cta": "Start Free — No Credit Card"
+    },
+    "whyNot": {
+      "badge": "Why Umbrella",
+      "title": "Why not just use",
+      "titleHighlight": "something else?",
+      "subtitle": "Every other tool was built for one audience. Umbrella was built for legal context.",
+      "vsLabel": "vs {name}",
+      "items": [
+        {
+          "name": "ChatGPT",
+          "problem": "Confident answers with fabricated citations. No jurisdiction awareness. No outcome probability.",
+          "solution": "Umbrella reads your facts, retrieves real statutes and case law, and cites sources you can open in one click."
+        },
+        {
+          "name": "LegalZoom",
+          "problem": "Document templates with no context. No analysis of your specific situation. No firm tools.",
+          "solution": "Umbrella analyzes your situation first, then drafts documents grounded in applicable law — plus a full firm OS."
+        },
+        {
+          "name": "Clio",
+          "problem": "Practice management only. No AI analysis for clients. No issue checker. No outcome intelligence.",
+          "solution": "Umbrella is the only platform where citizens get AI legal analysis and firms get a matter-aware Copilot — connected."
+        }
+      ]
+    },
+    "stats": {
+      "badge": "The numbers",
+      "title": "Built for scale. Starting free.",
+      "countriesValue": "10K+",
+      "countriesLabel": "Legal queries answered",
+      "countriesSub": "And growing every day",
+      "timeValue": "< 2 min",
+      "timeLabel": "To your first analysis",
+      "timeSub": "From description to cited output",
+      "costValue": "$0",
+      "costLabel": "To start",
+      "costSub": "Free preview, always included",
+      "platformValue": "2-in-1",
+      "platformLabel": "Platforms in one",
+      "platformSub": "Consumer guidance + firm OS"
+    },
+    "jurisdictions": {
+      "badge": "Global coverage",
+      "title": "Your jurisdiction. Your law.",
+      "subtitle": "Not generic templates. Real, indexed statutes and case law — applied to your specific country and situation.",
+      "items": [
+        {
+          "flag": "🇮🇳",
+          "country": "India",
+          "coverage": [
+            "IPC & CrPC",
+            "Consumer Protection Act",
+            "Companies Act",
+            "Labour Laws",
+            "RTI & POCSO"
+          ]
+        },
+        {
+          "flag": "🇺🇸",
+          "country": "United States",
+          "coverage": [
+            "Federal statutes",
+            "State-specific law",
+            "Employment law",
+            "Contract law",
+            "Civil litigation"
+          ]
+        },
+        {
+          "flag": "🇬🇧",
+          "country": "United Kingdom",
+          "coverage": [
+            "Common law",
+            "Employment Rights Act",
+            "Companies Act",
+            "Housing law",
+            "GDPR & data law"
+          ]
+        },
+        {
+          "flag": "🇰🇪",
+          "country": "Kenya",
+          "coverage": [
+            "Kenyan case law",
+            "High Court to Supreme Court",
+            "Tribunals",
+            "Land law",
+            "Constitutional law"
+          ]
+        }
+      ]
+    },
+    "twoSides": {
+      "badge": "One platform",
+      "title": "Two sides. One platform.",
+      "subtitle": "Citizens get legal guidance. Law firms get a full AI-native OS. No other platform does both.",
+      "individualsTitle": "For Individuals",
+      "individualsDesc": "Understand your rights, analyze risk, and find a lawyer — all in one place.",
+      "individualsFeatures": [
+        "Free AI issue preview — always",
+        "Jurisdiction-aware legal guidance",
+        "Outcome probability estimate",
+        "Document upload & analysis",
+        "Lawyer marketplace access"
+      ],
+      "individualsCta": "Check My Legal Issue",
+      "uploadDocument": "Upload a Document",
+      "firmsTitle": "For Law Firms",
+      "firmsDesc": "AI-native Legal OS — full practice management, billing, AI Copilot, and native meeting transcripts.",
+      "firmsFeatures": [
+        "Matter & client management",
+        "AI Copilot with firm memory",
+        "Billing, time tracking & trust",
+        "Native meeting transcripts + AI notes",
+        "Secure client intake portal"
+      ],
+      "firmsCta": "Explore Lawyer Platform",
+      "startFreeTrial": "Start Free Trial"
+    },
+    "testimonials": {
+      "badge": "From the field",
+      "title": "Trusted by lawyers and",
+      "titleHighlight": "individuals worldwide.",
+      "subtitle": "From solo advocates to law firm partners. Real users, real cases.",
+      "items": [
+        {
+          "quote": "I described my landlord dispute and within two minutes I had the exact section of the law cited, with an outcome probability. I didn't even know that was possible.",
+          "name": "Priya M.",
+          "role": "Tenant",
+          "flag": ""
+        },
+        {
+          "quote": "We switched from three separate tools — billing, matter management, and a generic chatbot — to just Umbrella. The AI Copilot alone saves my associates two hours a day.",
+          "name": "Daniel R.",
+          "role": "Partner, Law Firm",
+          "flag": ""
+        },
+        {
+          "quote": "The citations are what won me over. Every analysis references a real statute or case I can open in one click. No hallucinations, no guessing.",
+          "name": "Aisha N.",
+          "role": "Advocate",
+          "flag": ""
+        },
+        {
+          "quote": "As a solo practitioner, I never had access to tools like this. Umbrella gave me the same firepower as a big firm at a fraction of the cost.",
+          "name": "Marcus T.",
+          "role": "Attorney",
+          "flag": ""
+        }
+      ]
+    },
+    "pricingPreview": {
+      "badge": "Pricing",
+      "title": "One platform. Simple pricing.",
+      "subtitle": "Start for free. Upgrade when you need more. Cancel anytime.",
+      "mostPopular": "Most popular",
+      "seeFullPricing": "See full pricing details",
+      "tiers": [
+        {
+          "label": "Free",
+          "price": "$0",
+          "per": "forever",
+          "desc": "3 AI credits. See what the law says about your situation.",
+          "features": [
+            "AI issue preview",
+            "3 free credits",
+            "Jurisdiction detection",
+            "Plain-language guidance"
+          ],
+          "cta": "Start Free"
+        },
+        {
+          "label": "Plus",
+          "price": "$15",
+          "per": "/ month",
+          "desc": "Full reports, cited law, and direct access to lawyers.",
+          "features": [
+            "25 AI credits/month",
+            "Full legal report",
+            "Cited statutes & cases",
+            "Lawyer marketplace access",
+            "Document analysis"
+          ],
+          "cta": "Get Plus"
+        },
+        {
+          "label": "Firm",
+          "price": "From $40",
+          "per": "/ seat / month",
+          "desc": "Full Legal OS — matter management, AI Copilot, billing, transcripts.",
+          "features": [
+            "Unlimited AI Copilot",
+            "Matter & client management",
+            "Billing & trust accounting",
+            "Meeting transcripts",
+            "Secure client intake portal"
+          ],
+          "cta": "Explore Firm Plans"
+        }
+      ]
+    },
+    "trust": {
+      "title": "Built for Trust",
+      "subtitle": "Your case, your data, your privacy. Always.",
+      "items": [
+        {
+          "title": "Not Legal Advice",
+          "desc": "Clear disclaimers on every output. Lawyer review available when needed."
+        },
+        {
+          "title": "Private to Your Account",
+          "desc": "Cases are private. Other users never see your data."
+        },
+        {
+          "title": "Jurisdiction-Grounded",
+          "desc": "Guidance grounded in your jurisdiction's actual laws and case law — not generic templates."
+        },
+        {
+          "title": "Cited Sources",
+          "desc": "Every output references real statutes, case law, and official guidance."
+        }
+      ]
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "items": [
+        {
+          "question": "Is this legal advice?",
+          "answer": "No. Umbrella provides legal information and guidance to help you understand your situation. For formal legal advice, connect with a licensed lawyer through our platform."
+        },
+        {
+          "question": "How much does the free preview cost?",
+          "answer": "The legal issue checker preview is free for registered users, with a limited number of AI credits included. Full reports and lawyer review are paid upgrades."
+        },
+        {
+          "question": "Which jurisdictions are fully supported?",
+          "answer": "We have full legal database coverage with jurisdiction-specific laws and a local lawyer marketplace. We accept issues from all locations and provide best-effort guidance where full coverage isn't yet available."
+        },
+        {
+          "question": "Can lawyers use this platform too?",
+          "answer": "Yes. Umbrella is built for both sides. Individuals get guided legal analysis and document support. Law firms get a full practice management workspace — matter tracking, billing, meeting transcripts, an AI Copilot, and a client intake pipeline — all in one place."
+        },
+        {
+          "question": "What happens to my data?",
+          "answer": "Your data is private to your account. Other users and firms cannot access it. We never use your data to train AI models without explicit consent, and your data stays in your region."
+        },
+        {
+          "question": "How is Umbrella different from other legal tools?",
+          "answer": "Most legal software was built for one audience — either large firm billing or generic document storage. Umbrella is built from the ground up to understand legal context: it reads your situation, maps it to applicable law, and helps you act. It works for individuals and firms, with everything connected in one platform."
+        }
+      ]
+    },
+    "finalCta": {
+      "badge": "Free to start",
+      "title": "Your legal brain.",
+      "titleItalic": "Free to start.",
+      "subtitle": "Describe your situation. Get cited analysis in under 2 minutes. No credit card, no lawyer needed to start.",
+      "ctaPrimary": "Get Started — It's Free",
+      "ctaSecondary": "For law firms →",
+      "footnote": "No credit card · Results in under 2 min · Free preview always included"
+    },
+    "landingIssueBoard": {
+      "title": "What's your legal situation?",
+      "subtitle": "Describe it in plain language — our AI will read the facts, cite the law, and tell you exactly where you stand.",
+      "languageTitle": "Which language do you prefer?",
+      "languageSubtitle": "We'll deliver your legal analysis in the language you choose.",
+      "freePreview": "Free preview",
+      "noCreditCard": "No credit card",
+      "resultsIn2Min": "Results in <2 min",
+      "otherLanguages": "Other languages",
+      "otherLanguagesPlaceholder": "Select a language",
+      "languageSubtitleIndia": "We'll deliver your legal analysis in the language you choose."
+    }
+  },
+  "siteName": "Umbrella",
+  "siteTagline": "Understand your legal issue. Run your firm with AI.",
+  "siteDescription": "Check your legal issue free in IN, US, KE & UK. Law firms get matter-aware AI Copilot, research, billing, and practice automation.",
+  "siteTitle": "Umbrella — AI Legal Guidance & Firm OS",
+  "issueCheckerMetaTitle": "Free Legal Issue Checker",
+  "issueCheckerMetaDescription": "Describe your legal problem and get a free AI preview with country-specific guidance for India, US, Kenya, and the UK.",
+  "forLawyersMetaTitle": "AI-Native Legal OS for Law Firms",
+  "forLawyersMetaDescription": "Matter-aware AI Copilot, legal research, billing, trust accounting, and automation — built for modern law firms.",
+  "welcomeSubtext": "Check a legal issue in minutes. Manage matters and run your firm — private and secure.",
+  "welcomeHeadline": "Legal clarity\nfor everyone.",
+  "instantAnswers": "Instant answers",
+  "private": "Private",
+  "forLawyersChip": "For lawyers",
+  "createAccountCta": "Create Account",
+  "tryForFree": "Try for free — no account needed",
+  "builtForEveryone": "Built for individuals, lawyers, and law firms.",
+  "splashForIndividuals": "For individuals.",
+  "splashForLawyers": "For lawyers.",
+  "splashForLawFirms": "For law firms.",
+  "splashForEveryone": "For everyone.",
+  "ai_legal_analysis": "AI Legal Analysis",
+  "based_on_rent_restriction_act_cap_296_and_law_of_contract_ac": "Based on Rent Restriction Act (Cap 296) and Law of Contract Act",
+  "before_umbrella": "Before Umbrella",
+  "built_for_trust": "Built for Trust",
+  "built_for_scale_starting_free": "Built for scale. Starting free.",
+  "data_ai_consent": "Data & AI Consent",
+  "estimated_outcome_strength": "Estimated outcome strength",
+  "every_jurisdiction": "Every jurisdiction.",
+  "example_output": "Example output",
+  "free": "FREE",
+  "for_consumers": "For Consumers",
+  "for_individuals": "For Individuals",
+  "for_law_firms": "For Law Firms",
+  "for_lawyers": "For Lawyers",
+  "for_anyone_anywhere": "For anyone. Anywhere.",
+  "free_to_start": "Free to start.",
+  "frequently_asked_questions": "Frequently Asked Questions",
+  "from_situation_to_clarity_in_under_2_minutes": "From situation to clarity in under 2 minutes",
+  "from_the_field": "From the field",
+  "get_started": "Get Started",
+  "get_my_free_preview": "Get my free preview",
+  "global_coverage": "Global coverage",
+  "how_it_works": "How it works",
+  "illustrative_estimate_based_on_stated_facts_not_a_legal_pred": "Illustrative estimate based on stated facts. Not a legal prediction.",
+  "india_us_uk_kenya_and_growing": "India · US · UK · Kenya — and growing",
+  "legal": "Legal",
+  "legal_disclaimer": "Legal Disclaimer",
+  "live": "Live",
+  "most_popular": "Most popular",
+  "one_platform": "One platform",
+  "one_platform_simple_pricing": "One platform. Simple pricing.",
+  "privacy": "Privacy",
+  "start": "Start",
+  "start_free_trial": "Start Free Trial",
+  "terms": "Terms",
+  "the_difference": "The difference",
+  "the_numbers": "The numbers",
+  "the_platform": "The platform",
+  "two_sides_one_platform": "Two sides. One platform.",
+  "unlawful_rent_increase_by_landlord": "Unlawful Rent Increase by Landlord",
+  "what_your_ai_preview_looks_like": "What your AI preview looks like",
+  "with_umbrella": "With Umbrella",
+  "your_case_your_data_your_privacy_always": "Your case, your data, your privacy. Always.",
+  "your_jurisdiction_your_law": "Your jurisdiction. Your law.",
+  "four_countries": "four countries.",
+  "one_afternoon_wasted": "one afternoon wasted.",
+  "to_continue": "⌘↵ to continue",
+  "kenya_landlord_amp_tenant": "🇰🇪 Kenya · Landlord &amp; Tenant",
+  "forLawyersBadge": "AI-native Legal Operating System",
+  "forLawyersHeadline1": "Manage Matters",
+  "forLawyersHeadline2": "Efficiently.",
+  "forLawyersHeadline3": "Grow Your Practice.",
+  "forLawyersSubhead": "The all-in-one legal practice management platform — native transcripts, matter-aware Copilot, trust accounting, and automation-first workflows.",
+  "forLawyersTryDemo": "Try Demo",
+  "forLawyersNoCreditCard": "No credit card",
+  "forLawyersTrialDays": "30-day trial",
+  "forLawyersSetupMinutes": "Setup in 5 minutes",
+  "forLawyersStatActiveMatters": "Active Matters",
+  "forLawyersStatDueToday": "Due Today",
+  "forLawyersStatClients": "Clients",
+  "forLawyersStatRevenue": "Revenue",
+  "forLawyersCardCaption": "Native meeting capture → transcript → AI notes → auto timeline updates.",
+  "forLawyersFeaturesTitle1": "Everything You Need to",
+  "forLawyersFeaturesTitle2": "Run Your Practice",
+  "forLawyersFeatureDeadlines": "Never Miss Deadlines",
+  "forLawyersFeatureDeadlinesDesc": "Automated deadline tracking with intelligent alerts.",
+  "forLawyersFeatureMatters": "Matter Management",
+  "forLawyersFeatureMattersDesc": "Intake workflows, conflict checks, and stage pipelines.",
+  "forLawyersFeatureTrust": "Trust Accounting",
+  "forLawyersFeatureTrustDesc": "Built-in trust ledger with approval workflows.",
+  "forLawyersFeaturePortal": "Client Portal",
+  "forLawyersFeaturePortalDesc": "Secure portal for documents, invoices, and messages.",
+  "forLawyersFeatureAutomation": "Automation Engine",
+  "forLawyersFeatureAutomationDesc": "If/then workflows with approvals and SLAs.",
+  "forLawyersFeatureCopilot": "AI Copilot",
+  "forLawyersFeatureCopilotDesc": "Matter-aware drafts, research, and strategy memos.",
+  "forLawyersCtaTitle": "Ready to transform your practice?",
+  "forLawyersCtaSubtitle": "Join forward-thinking law firms using Umbrella.",
+  "forLawyersCtaTrial": "Start Your Free Trial",
+  "forLawyersViewPricing": "View Pricing",
+  "developersBadge": "Public API",
+  "developersTitle": "Developer documentation",
+  "developersIntro": "Integrate Umbrella with your firm systems using API keys and signed webhooks. Manage keys and subscriptions from Settings once signed in.",
+  "developersApiKeys": "API keys",
+  "developersAuthTitle": "Authentication",
+  "developersAuthDesc": "Firm admins create keys via the authenticated API. Pass the key on every request.",
+  "developersListKeys": "List keys:",
+  "developersWebhooks": "Webhooks",
+  "developersSubscriptionsTitle": "Subscriptions",
+  "developersSubscriptionsDesc": "Register HTTPS endpoints to receive event payloads signed with HMAC-SHA256.",
+  "developersVerifyDeliveries": "Verify deliveries using the X-Legal-Signature header. Test connectivity with POST /webhooks/test.",
+  "developersSecurity": "Security",
+  "developersSecurityRotate": "Rotate API keys periodically and scope them to the minimum permissions required.",
+  "developersSecurityWebhook": "Webhook secrets must be stored securely; never commit them to source control.",
+  "developersSecurityTls": "All API traffic requires TLS. Tenant isolation is enforced via X-Tenant-Id on firm-scoped routes.",
+  "subscriptionCancelTitle": "Checkout canceled",
+  "subscriptionCancelBody": "No charges were made. You can return to pricing to choose a plan anytime.",
+  "subscriptionBackToPricing": "Back to pricing",
+  "subscriptionSuccessTitle": "Subscription confirmed",
+  "subscriptionGoToDashboard": "Go to dashboard",
+  "subscriptionPlanUsage": "Plan & usage"
+}

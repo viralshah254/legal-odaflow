@@ -1,0 +1,609 @@
+{
+  "4565": "45-65%",
+  "heroTitle": "প্রত্যেকের জন্য আইনি স্বচ্ছতা",
+  "heroSubtitle": "আপনার আইনি পরিস্থিতি বুঝুন, আইনজীবীদের সাথে সংযোগ করুন এবং আপনার মামলা পরিচালনা করুন — সব এক জায়গায়।",
+  "getStarted": "শুরু করুন",
+  "forLawyers": "আইনজীবীদের জন্য",
+  "forConsumers": "ভোক্তাদের জন্য",
+  "pricing": "মূল্য নির্ধারণ",
+  "features": "বৈশিষ্ট্য",
+  "testimonials": "প্রশংসাপত্র",
+  "faq": "প্রায়শই জিজ্ঞাসিত প্রশ্ন",
+  "header": {
+    "issueChecker": "ইস্যু পরীক্ষক",
+    "forLawyers": "আইনজীবীদের জন্য",
+    "pricing": "মূল্য নির্ধারণ",
+    "demo": "ডেমো",
+    "dashboard": "ড্যাশবোর্ড",
+    "settings": "সেটিংস",
+    "signOut": "সাইন আউট করুন",
+    "signIn": "সাইন ইন করুন",
+    "getStarted": "শুরু করুন",
+    "start": "শুরু করুন",
+    "free": "বিনামূল্যে",
+    "account": "হিসাব"
+  },
+  "footer": {
+    "tagline": "আপনি একজন আইনজীবীর জন্য হাজার হাজার খরচ করার আগে আপনার আইনি সমস্যা বুঝুন।",
+    "forConsumers": "ভোক্তাদের জন্য",
+    "legalIssueChecker": "আইনি সমস্যা পরীক্ষক",
+    "uploadDocument": "নথি আপলোড করুন",
+    "findLawyer": "একজন আইনজীবী খুঁজুন",
+    "forLawyers": "আইনজীবীদের জন্য",
+    "lawyerPlatform": "আইনজীবী প্ল্যাটফর্ম",
+    "pricing": "মূল্য নির্ধারণ",
+    "startFreeTrial": "বিনামূল্যে ট্রায়াল শুরু করুন",
+    "legal": "আইনি",
+    "privacy": "গোপনীয়তা",
+    "terms": "শর্তাবলী",
+    "dataConsent": "ডেটা এবং এআই সম্মতি",
+    "legalDisclaimer": "আইনি দাবিত্যাগ",
+    "copyright": "© {year} ছাতা। সর্বস্বত্ব সংরক্ষিত",
+    "signIn": "সাইন ইন করুন"
+  },
+  "pricingPage": {
+    "title": "মূল্য নির্ধারণ",
+    "yourPlan": "আপনার পরিকল্পনা:",
+    "subtitle": "বিনামূল্যে ভোক্তা নির্দেশিকা থেকে শুরু করে দৃঢ়-বিস্তৃত AI - সহ স্বাধীন আইনজীবীদের জন্য <strong>Solo</strong> বান্ডেল।",
+    "geoDenied": "<strong>{currency}</strong> মূল্য দেখানো হচ্ছে (অবস্থান অ্যাক্সেস অনুমোদিত নয়)।",
+    "pricesIn": "<strong>{currency}</strong>-এ দাম।",
+    "viewUsPricing": "US ({currency}) মূল্য দেখুন",
+    "indiaPricing": "ভারত (INR)",
+    "soloPractitioner": "একাকী অনুশীলনকারী",
+    "new": "নতুন",
+    "soloDescription": "<strong>SOLO</strong> বান্ডেলটি একজন আইনজীবীর জন্য তৈরি করা হয়েছে: ম্যাটার ওয়ার্কস্পেস, এআই কপিলট এবং মাসিক এআই ক্রেডিট — অব্যবহৃত আসনের জন্য অর্থ প্রদান না করে।",
+    "perMonth": "/মাস",
+    "lawFirmsPerSeat": "আইন সংস্থা — প্রতি আসন/মাস ({currency})",
+    "perSeatMonth": "/আসন/মা",
+    "forConsumers": "ভোক্তাদের জন্য ({currency})",
+    "consumerDescription": "স্ব-পরিষেবা আইনি নির্দেশিকা এবং ঐচ্ছিক আইনজীবী পর্যালোচনা — কোন দৃঢ় অ্যাকাউন্টের প্রয়োজন নেই।",
+    "currentPlan": "বর্তমান পরিকল্পনা",
+    "aiCreditsTitle": "এআই ক্রেডিট সম্পর্কে:",
+    "aiCreditsBody": "AI মডেল ব্যবহারের সাথে ক্রেডিট স্কেল — যেমন কার্সার। অটো টাস্ক (কপিলট, ড্রাফ্ট) দক্ষ এবং কম ক্রেডিট ব্যবহার করে। প্রিমিয়াম গভীর বিশ্লেষণ (অনুরূপ কেস, প্রতিপক্ষ কৌশল, কৌশল মেমো) আপনার নির্বাচিত প্রিমিয়াম মডেল ব্যবহার করে এবং টোকেন ব্যবহার দ্বারা বিল করা হয়।",
+    "deepAnalysisNote": "গভীর কেস বিশ্লেষণের জন্য <strong>পেশাদার</strong> পরিকল্পনা বা তার উপরে প্রয়োজন।",
+    "enterprisePrompt": "এন্টারপ্রাইজ SSO, ডেটা রেসিডেন্সি বা SCIM প্রয়োজন?",
+    "enterpriseSettings": "এন্টারপ্রাইজ সেটিংস"
+  },
+  "home": {
+    "audienceItems": [
+      "Individuals",
+      "Law Firms",
+      "Solo Advocates",
+      "In-House Counsel",
+      "Litigation Teams",
+      "Corporate Legal Depts",
+      "Compliance Officers",
+      "Legal Researchers",
+      "Law Students",
+      "SMBs",
+      "Startups",
+      "HR & Employment",
+      "Landlords & Tenants",
+      "Entrepreneurs",
+      "Magistrates",
+      "Contract Teams"
+    ],
+    "hero": {
+      "badge": "AI-ভিত্তিক আইনি বুদ্ধিমত্তা — যে কারও জন্য",
+      "title": "আইনি বুদ্ধিমত্তা।",
+      "titleHighlight": "যে কারো জন্য। যে কোন জায়গায়।",
+      "subtitle": "আপনার পরিস্থিতি সরল ভাষায় ব্যাখ্যা করুন। আমরা প্রকৃত আইন পড়ি, বাস্তব আইন এবং মামলাগুলি উদ্ধৃত করি, এবং আপনি ঠিক কোথায় দাঁড়িয়ে আছেন তা আপনাকে বলি — শুরু করতে বিনামূল্যে, কোনো ক্রেডিট কার্ডের প্রয়োজন নেই৷",
+      "bullet1": "আপনার পরিস্থিতি পড়ে, শুধু কীওয়ার্ড নয়",
+      "bullet2": "বাস্তব বিধি এবং মামলার আইন — উদ্ধৃত, কখনও বানোয়াট নয়",
+      "bullet3": "ব্যক্তি এবং আইন সংস্থাগুলি এক প্ল্যাটফর্মে",
+      "bullet4": "আপনার এখতিয়ার স্বয়ংক্রিয়ভাবে সনাক্ত করে, সর্বদা স্থানীয় আইন প্রয়োগ করে",
+      "ctaPrimary": "বিনামূল্যে শুরু করুন - কোন ক্রেডিট কার্ড নেই",
+      "ctaSecondary": "কর্ম এটি দেখুন",
+      "trust1": "বিনামূল্যে পূর্বরূপ সবসময় অন্তর্ভুক্ত",
+      "trust2": "AI প্রশিক্ষণের জন্য ব্যবহার করা হয় না",
+      "trust3": "আপনার অ্যাকাউন্টে ব্যক্তিগত",
+      "howItWorksLink": "এটা কিভাবে কাজ করে"
+    },
+    "coverage": {
+      "india": "ভারত",
+      "us": "মার্কিন",
+      "uk": "যুক্তরাজ্য",
+      "kenya": "কেনিয়া",
+      "under2Min": "2 মিনিটের নিচে বিশ্লেষণ",
+      "freeToStart": "শুরু করতে বিনামূল্যে",
+      "citizensAndFirms": "নাগরিক + আইন সংস্থা",
+      "dataNeverTraining": "ডেটা কখনই প্রশিক্ষণের জন্য নয়"
+    },
+    "howItWorks": {
+      "badge": "এটা কিভাবে কাজ করে",
+      "title": "2 মিনিটের মধ্যে পরিস্থিতি থেকে স্পষ্টতা",
+      "subtitle": "কোন ফর্ম নেই। কোন পরিভাষা. শুধু কি ঘটছে বর্ণনা.",
+      "step1Title": "আপনার সমস্যা বর্ণনা করুন",
+      "step1Desc": "আপনার পরিস্থিতি সরল ভাষায় টাইপ করুন — শুধু একটি বার্তাই লাগে।",
+      "step2Title": "AI ফলো-আপগুলি জিজ্ঞাসা করে",
+      "step2Desc": "আমরা এটি চালানোর আগে 2-3 টার্গেট করা প্রশ্ন বিশ্লেষণকে তীক্ষ্ণ করে।",
+      "step3Title": "আমরা আইন পড়ি",
+      "step3Desc": "বাস্তব আইন এবং মামলা আইন পুনরুদ্ধার করা হয় এবং আপনার নির্দিষ্ট তথ্য প্রয়োগ করা হয়.",
+      "step4Title": "আপনার বিনামূল্যে পূর্বরূপ পান",
+      "step4Desc": "ঝুঁকির স্তর, উদ্ধৃত আইন, ফলাফলের সম্ভাবনা, এবং পরবর্তী পদক্ষেপগুলি - বিনামূল্যে।"
+    },
+    "example": {
+      "badge": "উদাহরণ আউটপুট",
+      "title": "আপনার এআই প্রিভিউ কেমন দেখাচ্ছে",
+      "subtitle": "বাস্তব বিশ্লেষণ। উদ্ধৃত আইন. ফলাফলের সম্ভাবনা। সরল ভাষা।",
+      "aiPreview": "এআই প্রিভিউ",
+      "mediumRisk": "⚠ মাঝারি ঝুঁকি",
+      "jurisdiction": "বাড়িওয়ালা ও ভাড়াটে",
+      "caseTitle": "বাড়িওয়ালা কর্তৃক বেআইনি ভাড়া বৃদ্ধি",
+      "caseSubtitle": "ভাড়া নিষেধাজ্ঞা আইন (ক্যাপ 296) এবং চুক্তি আইনের উপর ভিত্তি করে",
+      "outcomeLabel": "আনুমানিক ফলাফল শক্তি",
+      "outcomeValue": "45-65%",
+      "outcomeDisclaimer": "বর্ণিত তথ্যের উপর ভিত্তি করে চিত্রিত অনুমান। আইনি ভবিষ্যদ্বাণী নয়।",
+      "point1": "আপনার 5 বছরের লিজ ক্যাপ 7% বার্ষিক বৃদ্ধি বাড়িওয়ালার 30% চাহিদার সাথে সাংঘর্ষিক।",
+      "point2": "ট্রাইব্যুনালের অনুমোদন ছাড়াই নিয়ন্ত্রিত প্রাঙ্গনে ভাড়া নিষেধাজ্ঞা আইনের সীমা বৃদ্ধি পায়।",
+      "point3": "লিখিত প্রমাণ (চুক্তি, ব্যাঙ্ক রেকর্ড) উল্লেখযোগ্যভাবে আপনার অবস্থান শক্তিশালী করে।",
+      "cta": "আমার বিনামূল্যে প্রিভিউ পান"
+    },
+    "platform": {
+      "badge": "প্ল্যাটফর্ম",
+      "title": "প্রতিটি গতি. প্রতিটি ধারা।",
+      "titleHighlight": "প্রতিটি এখতিয়ার।",
+      "subtitle": "চ্যাটবট নয়। একটি কাঠামোগত আইনি বুদ্ধিমত্তা ইঞ্জিন — নাগরিক এবং আইন সংস্থাগুলির জন্য, আপনার এখতিয়ারের জন্য তৈরি৷",
+      "features": [
+        {
+          "num": "01",
+          "label": "ANALYZE",
+          "title": "Contextual Issue Analysis",
+          "desc": "Describe your situation in plain language. Our AI reads the legal context — not just the keywords — and maps it to real statutes and case law.",
+          "cta": "Try it free"
+        },
+        {
+          "num": "02",
+          "label": "RESEARCH",
+          "title": "Jurisdiction-Grounded Law",
+          "desc": "Every answer is grounded in the actual laws of your jurisdiction. Auto-detected, always applied. No generic templates.",
+          "cta": "Try it free"
+        },
+        {
+          "num": "03",
+          "label": "DRAFT",
+          "title": "Document Generation",
+          "desc": "Demand letters, contracts, notices, and pleadings — drafted with AI, cited from real statutes, ready to send or file.",
+          "cta": "Start drafting"
+        },
+        {
+          "num": "04",
+          "label": "MANAGE",
+          "title": "Full Practice OS for Firms",
+          "desc": "Matter management, billing, trust accounting, client intake — one platform for your entire firm. The AI Copilot knows every case.",
+          "cta": "আইন সংস্থাগুলির জন্য"
+        },
+        {
+          "num": "05",
+          "label": "CONNECT",
+          "title": "Lawyer Marketplace",
+          "desc": "When you need a professional, connect directly with vetted lawyers in your jurisdiction. Warm handoff from AI analysis to real counsel.",
+          "cta": "Find a lawyer"
+        },
+        {
+          "num": "06",
+          "label": "TRANSCRIBE",
+          "title": "Native Meeting Intelligence",
+          "desc": "Record, transcribe, and summarize client meetings automatically. AI extracts action items, links them to matters, and drafts follow-up notes.",
+          "cta": "For firms"
+        }
+      ]
+    },
+    "difference": {
+      "badge": "পার্থক্য",
+      "title": "একটি চ্যাটজিপিটি প্রম্পট, তিনটি হ্যালুসিনেটেড কেস,",
+      "titleItalic": "একটি খুব ব্যয়বহুল ভুল।",
+      "subtitle": "অন্যান্য প্ল্যাটফর্মগুলি আপনাকে একটি পক্ষ বেছে নিতে বাধ্য করে — নাগরিক বা আইনজীবী, একটি হাতিয়ার, একটি ব্যবহারের ক্ষেত্রে। ছাতা সবকিছু সংযুক্ত করে।",
+      "beforeLabel": "ছাতার আগে",
+      "beforeItems": [
+        "Ask ChatGPT. Get confident, fabricated case citations.",
+        "Pay a lawyer $300 just to learn if you might have a case.",
+        "Juggle billing in one app, matters in another, transcripts in a third.",
+        "Your client portal is literally email.",
+        "No outcome probability. No risk level. Just a wall of text."
+      ],
+      "afterLabel": "সাথে ছাতা",
+      "afterItems": [
+        "Auto-detected jurisdiction — we know where you are and apply your actual laws.",
+        "Every citation is grounded in real, indexed statutes and case law. Verifiable in one click.",
+        "Free preview shows risk level and outcome probability — before you spend a cent.",
+        "Matter management, billing, AI Copilot, and meeting transcripts — one platform.",
+        "Built-in client portal. Not email. Not a PDF."
+      ],
+      "cta": "বিনামূল্যে শুরু করুন - কোন ক্রেডিট কার্ড নেই"
+    },
+    "whyNot": {
+      "badge": "কেন ছাতা",
+      "title": "কেন শুধু ব্যবহার করবেন না",
+      "titleHighlight": "অন্য কিছু?",
+      "subtitle": "প্রতিটি অন্য টুল এক দর্শকের জন্য নির্মিত হয়েছিল। আইনি প্রেক্ষাপটের জন্য ছাতা তৈরি করা হয়েছিল।",
+      "vsLabel": "বনাম {name}",
+      "items": [
+        {
+          "name": "ChatGPT",
+          "problem": "Confident answers with fabricated citations. No jurisdiction awareness. No outcome probability.",
+          "solution": "Umbrella reads your facts, retrieves real statutes and case law, and cites sources you can open in one click."
+        },
+        {
+          "name": "LegalZoom",
+          "problem": "Document templates with no context. No analysis of your specific situation. No firm tools.",
+          "solution": "Umbrella analyzes your situation first, then drafts documents grounded in applicable law — plus a full firm OS."
+        },
+        {
+          "name": "Clio",
+          "problem": "Practice management only. No AI analysis for clients. No issue checker. No outcome intelligence.",
+          "solution": "Umbrella is the only platform where citizens get AI legal analysis and firms get a matter-aware Copilot — connected."
+        }
+      ]
+    },
+    "stats": {
+      "badge": "সংখ্যাগুলো",
+      "title": "স্কেল জন্য নির্মিত. বিনামূল্যে শুরু হচ্ছে।",
+      "countriesValue": "10K+",
+      "countriesLabel": "আইনি প্রশ্নের উত্তর দিয়েছেন",
+      "countriesSub": "এবং প্রতিদিন বাড়ছে",
+      "timeValue": "< 2 মিনিট",
+      "timeLabel": "আপনার প্রথম বিশ্লেষণ",
+      "timeSub": "বর্ণনা থেকে উদ্ধৃত আউটপুট পর্যন্ত",
+      "costValue": "$0",
+      "costLabel": "শুরু করতে",
+      "costSub": "বিনামূল্যে পূর্বরূপ, সবসময় অন্তর্ভুক্ত",
+      "platformValue": "2-ইন-1",
+      "platformLabel": "একের মধ্যে প্ল্যাটফর্ম",
+      "platformSub": "ভোক্তা নির্দেশিকা + দৃঢ় ওএস"
+    },
+    "jurisdictions": {
+      "badge": "গ্লোবাল কভারেজ",
+      "title": "আপনার এখতিয়ার. আপনার আইন.",
+      "subtitle": "জেনেরিক টেমপ্লেট নয়। বাস্তব, সূচীকৃত আইন এবং মামলার আইন — আপনার নির্দিষ্ট দেশ এবং পরিস্থিতিতে প্রযোজ্য।",
+      "items": [
+        {
+          "flag": "🇮🇳",
+          "country": "ভারত",
+          "coverage": [
+            "IPC & CrPC",
+            "Consumer Protection Act",
+            "Companies Act",
+            "Labour Laws",
+            "RTI & POCSO"
+          ]
+        },
+        {
+          "flag": "🇺🇸",
+          "country": "মার্কিন যুক্তরাষ্ট্র",
+          "coverage": [
+            "Federal statutes",
+            "State-specific law",
+            "Employment law",
+            "Contract law",
+            "Civil litigation"
+          ]
+        },
+        {
+          "flag": "🇬🇧",
+          "country": "যুক্তরাজ্য",
+          "coverage": [
+            "Common law",
+            "Employment Rights Act",
+            "Companies Act",
+            "Housing law",
+            "GDPR & data law"
+          ]
+        },
+        {
+          "flag": "🇰🇪",
+          "country": "কেনিয়া",
+          "coverage": [
+            "Kenyan case law",
+            "High Court to Supreme Court",
+            "Tribunals",
+            "Land law",
+            "Constitutional law"
+          ]
+        }
+      ]
+    },
+    "twoSides": {
+      "badge": "এক প্লাটফর্ম",
+      "title": "দুই পক্ষ। এক প্লাটফর্ম।",
+      "subtitle": "নাগরিকরা আইনি নির্দেশনা পান। আইন সংস্থাগুলি একটি সম্পূর্ণ এআই-নেটিভ ওএস পায়। অন্য কোন প্ল্যাটফর্ম উভয়ই করে না।",
+      "individualsTitle": "ব্যক্তিদের জন্য",
+      "individualsDesc": "আপনার অধিকারগুলি বুঝুন, ঝুঁকি বিশ্লেষণ করুন এবং একজন আইনজীবী খুঁজুন - সবই এক জায়গায়।",
+      "individualsFeatures": [
+        "Free AI issue preview — always",
+        "Jurisdiction-aware legal guidance",
+        "Outcome probability estimate",
+        "নথি আপলোড এবং বিশ্লেষণ",
+        "Lawyer marketplace access"
+      ],
+      "individualsCta": "আমার আইনি সমস্যা চেক করুন",
+      "uploadDocument": "একটি নথি আপলোড করুন",
+      "firmsTitle": "আইন সংস্থাগুলির জন্য",
+      "firmsDesc": "এআই-নেটিভ লিগ্যাল ওএস — সম্পূর্ণ অনুশীলন পরিচালনা, বিলিং, এআই কপিলট এবং নেটিভ মিটিং ট্রান্সক্রিপ্ট।",
+      "firmsFeatures": [
+        "Matter & client management",
+        "AI Copilot with firm memory",
+        "Billing, time tracking & trust",
+        "Native meeting transcripts + AI notes",
+        "Secure client intake portal"
+      ],
+      "firmsCta": "আইনজীবী প্ল্যাটফর্ম অন্বেষণ করুন",
+      "startFreeTrial": "বিনামূল্যে ট্রায়াল শুরু করুন"
+    },
+    "testimonials": {
+      "badge": "মাঠ থেকে",
+      "title": "আইনজীবীদের দ্বারা বিশ্বস্ত এবং",
+      "titleHighlight": "বিশ্বব্যাপী ব্যক্তি।",
+      "subtitle": "একক উকিল থেকে আইন ফার্ম অংশীদারদের. বাস্তব ব্যবহারকারী, বাস্তব ক্ষেত্রে.",
+      "items": [
+        {
+          "quote": "I described my landlord dispute and within two minutes I had the exact section of the law cited, with an outcome probability. I didn't even know that was possible.",
+          "name": "Priya M.",
+          "role": "Tenant",
+          "flag": ""
+        },
+        {
+          "quote": "We switched from three separate tools — billing, matter management, and a generic chatbot — to just Umbrella. The AI Copilot alone saves my associates two hours a day.",
+          "name": "Daniel R.",
+          "role": "Partner, Law Firm",
+          "flag": ""
+        },
+        {
+          "quote": "The citations are what won me over. Every analysis references a real statute or case I can open in one click. No hallucinations, no guessing.",
+          "name": "Aisha N.",
+          "role": "Advocate",
+          "flag": ""
+        },
+        {
+          "quote": "As a solo practitioner, I never had access to tools like this. Umbrella gave me the same firepower as a big firm at a fraction of the cost.",
+          "name": "Marcus T.",
+          "role": "Attorney",
+          "flag": ""
+        }
+      ]
+    },
+    "pricingPreview": {
+      "badge": "মূল্য নির্ধারণ",
+      "title": "এক প্লাটফর্ম। সহজ মূল্য.",
+      "subtitle": "বিনামূল্যে শুরু করুন. আপনার আরও প্রয়োজন হলে আপগ্রেড করুন। যেকোনো সময় বাতিল করুন।",
+      "mostPopular": "সবচেয়ে জনপ্রিয়",
+      "seeFullPricing": "সম্পূর্ণ মূল্য বিবরণ দেখুন",
+      "tiers": [
+        {
+          "label": "বিনামূল্যে",
+          "price": "$0",
+          "per": "forever",
+          "desc": "3 AI credits. See what the law says about your situation.",
+          "features": [
+            "AI issue preview",
+            "3 free credits",
+            "Jurisdiction detection",
+            "Plain-language guidance"
+          ],
+          "cta": "Start Free"
+        },
+        {
+          "label": "প্লাস",
+          "price": "$15",
+          "per": "/ month",
+          "desc": "Full reports, cited law, and direct access to lawyers.",
+          "features": [
+            "25 AI credits/month",
+            "Full legal report",
+            "Cited statutes & cases",
+            "Lawyer marketplace access",
+            "Document analysis"
+          ],
+          "cta": "Get Plus"
+        },
+        {
+          "label": "দৃঢ়",
+          "price": "From $40",
+          "per": "/ seat / month",
+          "desc": "Full Legal OS — matter management, AI Copilot, billing, transcripts.",
+          "features": [
+            "Unlimited AI Copilot",
+            "Matter & client management",
+            "Billing & trust accounting",
+            "Meeting transcripts",
+            "Secure client intake portal"
+          ],
+          "cta": "Explore Firm Plans"
+        }
+      ]
+    },
+    "trust": {
+      "title": "বিশ্বাসের জন্য নির্মিত",
+      "subtitle": "আপনার কেস, আপনার ডেটা, আপনার গোপনীয়তা। সর্বদা।",
+      "items": [
+        {
+          "title": "Not Legal Advice",
+          "desc": "Clear disclaimers on every output. Lawyer review available when needed."
+        },
+        {
+          "title": "Private to Your Account",
+          "desc": "Cases are private. Other users never see your data."
+        },
+        {
+          "title": "Jurisdiction-Grounded",
+          "desc": "Guidance grounded in your jurisdiction's actual laws and case law — not generic templates."
+        },
+        {
+          "title": "Cited Sources",
+          "desc": "Every output references real statutes, case law, and official guidance."
+        }
+      ]
+    },
+    "faq": {
+      "title": "প্রায়শই জিজ্ঞাসিত প্রশ্নাবলী",
+      "items": [
+        {
+          "question": "Is this legal advice?",
+          "answer": "No. Umbrella provides legal information and guidance to help you understand your situation. For formal legal advice, connect with a licensed lawyer through our platform."
+        },
+        {
+          "question": "How much does the free preview cost?",
+          "answer": "The legal issue checker preview is free for registered users, with a limited number of AI credits included. Full reports and lawyer review are paid upgrades."
+        },
+        {
+          "question": "Which jurisdictions are fully supported?",
+          "answer": "We have full legal database coverage with jurisdiction-specific laws and a local lawyer marketplace. We accept issues from all locations and provide best-effort guidance where full coverage isn't yet available."
+        },
+        {
+          "question": "Can lawyers use this platform too?",
+          "answer": "Yes. Umbrella is built for both sides. Individuals get guided legal analysis and document support. Law firms get a full practice management workspace — matter tracking, billing, meeting transcripts, an AI Copilot, and a client intake pipeline — all in one place."
+        },
+        {
+          "question": "What happens to my data?",
+          "answer": "Your data is private to your account. Other users and firms cannot access it. We never use your data to train AI models without explicit consent, and your data stays in your region."
+        },
+        {
+          "question": "How is Umbrella different from other legal tools?",
+          "answer": "Most legal software was built for one audience — either large firm billing or generic document storage. Umbrella is built from the ground up to understand legal context: it reads your situation, maps it to applicable law, and helps you act. It works for individuals and firms, with everything connected in one platform."
+        }
+      ]
+    },
+    "finalCta": {
+      "badge": "শুরু করতে বিনামূল্যে",
+      "title": "আপনার আইনি মস্তিষ্ক.",
+      "titleItalic": "শুরু করতে বিনামূল্যে.",
+      "subtitle": "আপনার অবস্থা বর্ণনা করুন। 2 মিনিটের মধ্যে উদ্ধৃত বিশ্লেষণ পান। কোন ক্রেডিট কার্ড, কোন আইনজীবী শুরু করতে প্রয়োজন.",
+      "ctaPrimary": "শুরু করুন — এটা বিনামূল্যে",
+      "ctaSecondary": "আইন সংস্থাগুলির জন্য →",
+      "footnote": "কোনো ক্রেডিট কার্ড নেই · 2 মিনিটের নিচে ফলাফল · বিনামূল্যে পূর্বরূপ সর্বদা অন্তর্ভুক্ত"
+    },
+    "landingIssueBoard": {
+      "title": "আপনার আইনগত অবস্থা কি?",
+      "subtitle": "এটাকে সরল ভাষায় বর্ণনা করুন — আমাদের AI তথ্যগুলো পড়বে, আইনের উদ্ধৃতি দেবে এবং আপনাকে বলবে আপনি ঠিক কোথায় দাঁড়িয়ে আছেন।",
+      "freePreview": "বিনামূল্যে পূর্বরূপ",
+      "noCreditCard": "ক্রেডিট কার্ড নেই",
+      "resultsIn2Min": "<2 মিনিটের মধ্যে ফলাফল",
+      "otherLanguages": "Other languages",
+      "otherLanguagesPlaceholder": "Select a language",
+      "languageSubtitleIndia": "We'll deliver your legal analysis in the language you choose.",
+      "languageTitle": "Which language do you prefer?",
+      "languageSubtitle": "We'll deliver your legal analysis in the language you choose."
+    }
+  },
+  "siteName": "Umbrella",
+  "siteTagline": "আপনার আইনি সমস্যা বুঝুন. AI দিয়ে আপনার ফার্ম চালান।",
+  "siteDescription": "IN, US, KE এবং UK-এ আপনার আইনি সমস্যা বিনামূল্যে পরীক্ষা করুন। আইন সংস্থাগুলি বিষয়-সচেতন এআই কপিলট, গবেষণা, বিলিং এবং অটোমেশন অনুশীলন করে।",
+  "siteTitle": "ছাতা — এআই লিগ্যাল গাইডেন্স এবং ফার্ম ওএস",
+  "issueCheckerMetaTitle": "বিনামূল্যে আইনি সমস্যা পরীক্ষক",
+  "issueCheckerMetaDescription": "আপনার আইনি সমস্যা বর্ণনা করুন এবং ভারত, মার্কিন যুক্তরাষ্ট্র, কেনিয়া এবং যুক্তরাজ্যের জন্য দেশ-নির্দিষ্ট নির্দেশিকা সহ একটি বিনামূল্যে AI পূর্বরূপ পান।",
+  "forLawyersMetaTitle": "আইন সংস্থাগুলির জন্য এআই-নেটিভ আইনি ওএস",
+  "forLawyersMetaDescription": "বিষয়-সচেতন এআই কপিলট, আইনি গবেষণা, বিলিং, ট্রাস্ট অ্যাকাউন্টিং এবং অটোমেশন — আধুনিক আইন সংস্থাগুলির জন্য তৈরি৷",
+  "welcomeSubtext": "কয়েক মিনিটের মধ্যে একটি আইনি সমস্যা পরীক্ষা করুন। বিষয়গুলি পরিচালনা করুন এবং আপনার ফার্ম চালান — ব্যক্তিগত এবং সুরক্ষিত৷",
+  "welcomeHeadline": "আইনি স্বচ্ছতা\nসবার জন্য",
+  "instantAnswers": "তাত্ক্ষণিক উত্তর",
+  "private": "ব্যক্তিগত",
+  "forLawyersChip": "আইনজীবীদের জন্য",
+  "createAccountCta": "অ্যাকাউন্ট তৈরি করুন",
+  "tryForFree": "বিনামূল্যে চেষ্টা করুন — কোনো অ্যাকাউন্টের প্রয়োজন নেই৷",
+  "builtForEveryone": "ব্যক্তি, আইনজীবী এবং আইন সংস্থাগুলির জন্য নির্মিত।",
+  "splashForIndividuals": "ব্যক্তিদের জন্য।",
+  "splashForLawyers": "আইনজীবীদের জন্য।",
+  "splashForLawFirms": "আইন সংস্থাগুলির জন্য।",
+  "splashForEveryone": "সবার জন্য।",
+  "ai_legal_analysis": "এআই আইনি বিশ্লেষণ",
+  "based_on_rent_restriction_act_cap_296_and_law_of_contract_ac": "ভাড়া নিষেধাজ্ঞা আইন (ক্যাপ 296) এবং চুক্তি আইনের উপর ভিত্তি করে",
+  "before_umbrella": "ছাতার আগে",
+  "built_for_trust": "বিশ্বাসের জন্য নির্মিত",
+  "built_for_scale_starting_free": "স্কেল জন্য নির্মিত. বিনামূল্যে শুরু হচ্ছে।",
+  "data_ai_consent": "ডেটা এবং এআই সম্মতি",
+  "estimated_outcome_strength": "আনুমানিক ফলাফল শক্তি",
+  "every_jurisdiction": "প্রতিটি এখতিয়ার।",
+  "example_output": "উদাহরণ আউটপুট",
+  "free": "বিনামূল্যে",
+  "for_consumers": "ভোক্তাদের জন্য",
+  "for_individuals": "ব্যক্তিদের জন্য",
+  "for_law_firms": "আইন সংস্থাগুলির জন্য",
+  "for_lawyers": "আইনজীবীদের জন্য",
+  "for_anyone_anywhere": "যে কারো জন্য। যে কোন জায়গায়।",
+  "free_to_start": "শুরু করতে বিনামূল্যে.",
+  "frequently_asked_questions": "প্রায়শই জিজ্ঞাসিত প্রশ্নাবলী",
+  "from_situation_to_clarity_in_under_2_minutes": "2 মিনিটের মধ্যে পরিস্থিতি থেকে স্পষ্টতা",
+  "from_the_field": "মাঠ থেকে",
+  "get_started": "শুরু করুন",
+  "get_my_free_preview": "আমার বিনামূল্যে প্রিভিউ পান",
+  "global_coverage": "গ্লোবাল কভারেজ",
+  "how_it_works": "এটা কিভাবে কাজ করে",
+  "illustrative_estimate_based_on_stated_facts_not_a_legal_pred": "বর্ণিত তথ্যের উপর ভিত্তি করে চিত্রিত অনুমান। আইনি ভবিষ্যদ্বাণী নয়।",
+  "india_us_uk_kenya_and_growing": "ভারত · মার্কিন যুক্তরাষ্ট্র · যুক্তরাজ্য · কেনিয়া — এবং ক্রমবর্ধমান",
+  "legal": "আইনি",
+  "legal_disclaimer": "আইনি দাবিত্যাগ",
+  "live": "লাইভ",
+  "most_popular": "সবচেয়ে জনপ্রিয়",
+  "one_platform": "এক প্লাটফর্ম",
+  "one_platform_simple_pricing": "এক প্লাটফর্ম। সহজ মূল্য.",
+  "privacy": "গোপনীয়তা",
+  "start": "শুরু করুন",
+  "start_free_trial": "বিনামূল্যে ট্রায়াল শুরু করুন",
+  "terms": "শর্তাবলী",
+  "the_difference": "পার্থক্য",
+  "the_numbers": "সংখ্যাগুলো",
+  "the_platform": "প্ল্যাটফর্ম",
+  "two_sides_one_platform": "দুই পক্ষ। এক প্লাটফর্ম।",
+  "unlawful_rent_increase_by_landlord": "বাড়িওয়ালা কর্তৃক বেআইনি ভাড়া বৃদ্ধি",
+  "what_your_ai_preview_looks_like": "আপনার এআই প্রিভিউ কেমন দেখাচ্ছে",
+  "with_umbrella": "সাথে ছাতা",
+  "your_case_your_data_your_privacy_always": "আপনার কেস, আপনার ডেটা, আপনার গোপনীয়তা। সর্বদা।",
+  "your_jurisdiction_your_law": "আপনার এখতিয়ার. আপনার আইন.",
+  "four_countries": "চারটি দেশ।",
+  "one_afternoon_wasted": "এক বিকেল নষ্ট।",
+  "to_continue": "⌘↵ চালিয়ে যেতে",
+  "kenya_landlord_amp_tenant": "🇰🇪 কেনিয়া · বাড়িওয়ালা এবং ভাড়াটে",
+  "forLawyersBadge": "এআই-নেটিভ লিগ্যাল অপারেটিং সিস্টেম",
+  "forLawyersHeadline1": "বিষয়গুলি পরিচালনা করুন",
+  "forLawyersHeadline2": "দক্ষতার সাথে।",
+  "forLawyersHeadline3": "আপনার অনুশীলন বাড়ান.",
+  "forLawyersSubhead": "সর্ব-একটি আইনি অনুশীলন পরিচালনার প্ল্যাটফর্ম — নেটিভ ট্রান্সক্রিপ্ট, ব্যাপার-সচেতন কপিলট, ট্রাস্ট অ্যাকাউন্টিং, এবং অটোমেশন-প্রথম ওয়ার্কফ্লো।",
+  "forLawyersTryDemo": "ডেমো চেষ্টা করুন",
+  "forLawyersNoCreditCard": "ক্রেডিট কার্ড নেই",
+  "forLawyersTrialDays": "30 দিনের ট্রায়াল",
+  "forLawyersSetupMinutes": "5 মিনিটের মধ্যে সেটআপ করুন",
+  "forLawyersStatActiveMatters": "সক্রিয় বিষয়",
+  "forLawyersStatDueToday": "আজ ডিউ",
+  "forLawyersStatClients": "ক্লায়েন্ট",
+  "forLawyersStatRevenue": "রাজস্ব",
+  "forLawyersCardCaption": "নেটিভ মিটিং ক্যাপচার → ট্রান্সক্রিপ্ট → AI নোট → অটো টাইমলাইন আপডেট।",
+  "forLawyersFeaturesTitle1": "সবকিছু আপনার প্রয়োজন",
+  "forLawyersFeaturesTitle2": "আপনার অনুশীলন চালান",
+  "forLawyersFeatureDeadlines": "কখনই ডেডলাইন মিস করবেন না",
+  "forLawyersFeatureDeadlinesDesc": "বুদ্ধিমান সতর্কতা সহ স্বয়ংক্রিয় সময়সীমা ট্র্যাকিং।",
+  "forLawyersFeatureMatters": "ম্যাটার ম্যানেজমেন্ট",
+  "forLawyersFeatureMattersDesc": "ইনটেক ওয়ার্কফ্লো, দ্বন্দ্ব চেক, এবং স্টেজ পাইপলাইন।",
+  "forLawyersFeatureTrust": "ট্রাস্ট অ্যাকাউন্টিং",
+  "forLawyersFeatureTrustDesc": "অনুমোদন ওয়ার্কফ্লো সহ অন্তর্নির্মিত ট্রাস্ট লেজার।",
+  "forLawyersFeaturePortal": "ক্লায়েন্ট পোর্টাল",
+  "forLawyersFeaturePortalDesc": "নথি, চালান এবং বার্তাগুলির জন্য সুরক্ষিত পোর্টাল।",
+  "forLawyersFeatureAutomation": "অটোমেশন ইঞ্জিন",
+  "forLawyersFeatureAutomationDesc": "যদি/তাহলে অনুমোদন এবং SLA সহ কর্মপ্রবাহ।",
+  "forLawyersFeatureCopilot": "এআই কপাইলট",
+  "forLawyersFeatureCopilotDesc": "বিষয়-সচেতন খসড়া, গবেষণা, এবং কৌশল মেমো।",
+  "forLawyersCtaTitle": "আপনার অনুশীলন রূপান্তর করতে প্রস্তুত?",
+  "forLawyersCtaSubtitle": "আমব্রেলা ব্যবহার করে এগিয়ে-চিন্তাকারী আইন সংস্থাগুলিতে যোগ দিন।",
+  "forLawyersCtaTrial": "আপনার বিনামূল্যে ট্রায়াল শুরু করুন",
+  "forLawyersViewPricing": "মূল্য দেখুন",
+  "developersBadge": "পাবলিক API",
+  "developersTitle": "বিকাশকারী ডকুমেন্টেশন",
+  "developersIntro": "API কী এবং স্বাক্ষরিত ওয়েবহুক ব্যবহার করে আপনার দৃঢ় সিস্টেমের সাথে ছাতাকে একীভূত করুন। একবার সাইন ইন করার পরে সেটিংস থেকে কী এবং সদস্যতাগুলি পরিচালনা করুন৷",
+  "developersApiKeys": "API কী",
+  "developersAuthTitle": "প্রমাণীকরণ",
+  "developersAuthDesc": "ফার্ম অ্যাডমিনরা প্রমাণীকৃত API এর মাধ্যমে কী তৈরি করে। প্রতিটি অনুরোধে কী পাস করুন।",
+  "developersListKeys": "তালিকা কী:",
+  "developersWebhooks": "ওয়েবহুক",
+  "developersSubscriptionsTitle": "সদস্যতা",
+  "developersSubscriptionsDesc": "HMAC-SHA256 এর সাথে স্বাক্ষরিত ইভেন্ট পেলোড পেতে HTTPS এন্ডপয়েন্ট নিবন্ধন করুন।",
+  "developersVerifyDeliveries": "এক্স-লিগ্যাল-সিগনেচার হেডার ব্যবহার করে ডেলিভারি যাচাই করুন। POST/webhooks/test দিয়ে কানেক্টিভিটি পরীক্ষা করুন।",
+  "developersSecurity": "নিরাপত্তা",
+  "developersSecurityRotate": "পর্যায়ক্রমে API কীগুলি ঘোরান এবং প্রয়োজনীয় ন্যূনতম অনুমতিগুলিতে সেগুলিকে স্কোপ করুন৷",
+  "developersSecurityWebhook": "ওয়েবহুকের গোপনীয়তা অবশ্যই নিরাপদে সংরক্ষণ করতে হবে; উত্স নিয়ন্ত্রণে তাদের কখনই প্রতিশ্রুতিবদ্ধ করবেন না।",
+  "developersSecurityTls": "সমস্ত API ট্র্যাফিকের জন্য TLS প্রয়োজন৷ টেন্যান্ট আইসোলেশন ফার্ম-স্কোপড রুটে X-টেন্যান্ট-আইডির মাধ্যমে প্রয়োগ করা হয়।",
+  "subscriptionCancelTitle": "চেকআউট বাতিল করা হয়েছে",
+  "subscriptionCancelBody": "কোন চার্জ করা হয়নি. আপনি যেকোনও সময় একটি প্ল্যান বেছে নিতে মূল্য নির্ধারণে ফিরে যেতে পারেন।",
+  "subscriptionBackToPricing": "মূল্য নির্ধারণে ফিরে যান",
+  "subscriptionSuccessTitle": "সদস্যতা নিশ্চিত করা হয়েছে",
+  "subscriptionGoToDashboard": "ড্যাশবোর্ডে যান",
+  "subscriptionPlanUsage": "পরিকল্পনা এবং ব্যবহার"
+}
