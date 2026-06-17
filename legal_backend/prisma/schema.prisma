@@ -792,22 +792,32 @@ model CopilotAuditLog {
 }
 
 model Meeting {
-  id          String   @id @default(cuid())
-  tenantId    String
-  matterId    String?
-  title       String
-  status      String   @default("SCHEDULED")
-  scheduledAt DateTime?
-  durationMin Int?
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
-  tenant      Tenant   @relation(fields: [tenantId], references: [id], onDelete: Cascade)
-  matter      Matter?  @relation(fields: [matterId], references: [id])
-  transcripts MeetingTranscript[]
-  notes       MeetingNote[]
+  id                         String    @id @default(cuid())
+  tenantId                   String
+  matterId                   String?
+  clientId                   String?
+  createdByUserId            String?
+  title                      String
+  status                     String    @default("draft")
+  source                     String    @default("manual_recording")
+  confidentiality            String    @default("standard")
+  participants               Json?
+  visibilityAllowListUserIds Json?
+  scheduledAt                DateTime?
+  durationMin                Int?
+  durationMs                 Int?
+  audioStorageKey            String?
+  createdAt                  DateTime  @default(now())
+  updatedAt                  DateTime  @updatedAt
+  tenant                     Tenant    @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+  matter                     Matter?   @relation(fields: [matterId], references: [id])
+  transcripts                MeetingTranscript[]
+  notes                      MeetingNote[]
 
   @@index([tenantId])
   @@index([matterId])
+  @@index([clientId])
+  @@index([createdByUserId])
 }
 
 model MeetingTranscript {
