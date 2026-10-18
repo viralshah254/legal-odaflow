@@ -66,7 +66,7 @@ export function toSourcePromptEntry(source: VerifiedSource): SourcePromptEntry {
     citation: source.citation,
     section: source.section,
     proposition: source.proposition,
-    permitted_use: isVerified && passage ? passage.slice(0, 400) : source.summary?.slice(0, 400),
+    permitted_use: isVerified && passage ? passage.slice(0, 1200) : source.summary?.slice(0, 600),
     channel,
     verified: isVerified,
     citable: isVerified && Boolean(passage || source.proposition),

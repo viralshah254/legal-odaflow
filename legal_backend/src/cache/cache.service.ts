@@ -5,6 +5,7 @@ import Redis from 'ioredis';
 export type CacheNamespace =
   | 'ai:preview'
   | 'ai:research'
+  | 'ai:research:index'
   | 'ai:explainer'
   | 'ai:playbook'
   | 'legal:search'

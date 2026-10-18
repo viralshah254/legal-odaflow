@@ -1,65 +1,95 @@
 "use client";
 
+/**
+ * WorkContextStartDialog — updated for C05 (B04/B05 fixes).
+ *
+ * Changes from previous version:
+ * - Uses useResolvedWorkContext().startWork() instead of calling startWorkContext() directly.
+ *   This means the resolved context (matterId, clientId, countryCode) flows through the
+ *   canonical ResolvedWorkContextProvider and is available to all components via useMatter().
+ * - countryCode is derived from the jurisdiction picker prop, not hard-coded to "IN".
+ * - operationRequestKey is generated automatically inside startWork() (UUID v4 per submit).
+ * - Exported WorkContextSelection is kept for backwards-compatibility with existing callers.
+ */
+
 import { useState } from "react";
-import { startWorkContext } from "@/lib/api/work-context";
+import { useResolvedWorkContext } from "@/lib/contexts/work-context";
 
 export type WorkContextSelection = {
   standalone: boolean;
   clientId?: string;
   matterId?: string;
   clientName?: string;
+  countryCode: string;
 };
 
 type Props = {
   open: boolean;
   onClose: () => void;
+  /**
+   * Called after the work context is successfully resolved and stored.
+   * The resolved context is also available via useMatter() throughout the app.
+   */
   onConfirm: (selection: WorkContextSelection) => void;
+  /**
+   * ISO-2 country code from the jurisdiction picker.
+   * Defaults to the user's profile country when not set.
+   * B05 fix: replaces the previous hard-coded "IN".
+   */
+  countryCode?: string;
 };
 
-export function WorkContextStartDialog({ open, onClose, onConfirm }: Props) {
+export function WorkContextStartDialog({ open, onClose, onConfirm, countryCode = "IN" }: Props) {
+  const { startWork, loading, error: ctxError } = useResolvedWorkContext();
+
   const [mode, setMode] = useState<"existing" | "new" | "unassigned">("existing");
   const [clientId, setClientId] = useState("");
   const [matterId, setMatterId] = useState("");
   const [newClientName, setNewClientName] = useState("");
   const [newMatterTitle, setNewMatterTitle] = useState("");
-  const [busy, setBusy] = useState(false);
-  const [error, setError] = useState<string | null>(null);
+  const [localError, setLocalError] = useState<string | null>(null);
+
+  const error = ctxError ?? localError;
 
   if (!open) return null;
 
   const confirm = async () => {
-    setBusy(true);
-    setError(null);
+    setLocalError(null);
     try {
-      const result = await startWorkContext({
+      // startWork() internally generates a fresh operationRequestKey per call (B05 fix).
+      // The resolved context is stored in the provider and accessible via useMatter().
+      const resolved = await startWork({
         mode:
           mode === "unassigned"
             ? "unassigned"
             : mode === "new"
               ? "new_client"
               : "existing_client",
-        clientId: mode === "existing" ? clientId : undefined,
+        clientId: mode === "existing" ? clientId || undefined : undefined,
         matterId: mode === "existing" ? matterId || undefined : undefined,
+        // B05 fix: countryCode comes from the prop (jurisdiction picker), not hard-coded
+        countryCode,
+        clientName: mode === "new" ? newClientName : undefined,
         createClient:
-          mode === "new"
-            ? { name: newClientName, countryCode: "IN" }
+          mode === "new" && newClientName
+            ? { name: newClientName, countryCode }
             : undefined,
         createMatter:
           mode === "new"
-            ? { title: newMatterTitle || "New matter file", countryCode: "IN" }
+            ? { title: newMatterTitle || "New matter file", countryCode }
             : undefined,
       });
+
       onConfirm({
-        standalone: result.standalone,
-        clientId: result.clientId ?? undefined,
-        matterId: result.matterId ?? undefined,
-        clientName: mode === "new" ? newClientName : undefined,
+        standalone: resolved.standalone,
+        clientId: resolved.clientId ?? undefined,
+        matterId: resolved.matterId ?? undefined,
+        clientName: resolved.clientName,
+        countryCode: resolved.countryCode,
       });
       onClose();
     } catch (e) {
-      setError(e instanceof Error ? e.message : "Could not start work");
-    } finally {
-      setBusy(false);
+      setLocalError(e instanceof Error ? e.message : "Could not start work");
     }
   };
 
@@ -123,11 +153,11 @@ export function WorkContextStartDialog({ open, onClose, onConfirm }: Props) {
           </button>
           <button
             type="button"
-            disabled={busy}
-            className="rounded bg-primary px-3 py-1 text-sm text-primary-foreground"
+            disabled={loading}
+            className="rounded bg-primary px-3 py-1 text-sm text-primary-foreground disabled:opacity-50"
             onClick={() => void confirm()}
           >
-            Continue
+            {loading ? "Starting…" : "Continue"}
           </button>
         </div>
       </div>

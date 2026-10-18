@@ -60,6 +60,7 @@ describe('India legal-research benchmark', () => {
         'PROCEDURE',
         'GENERAL_RESEARCH',
         'MATTER_OPINION',
+        'CASE_SURVEY',
       ]));
   });
 
@@ -105,7 +106,7 @@ describe('India legal-research benchmark', () => {
 
   it('includes the exact partnership-arbitration comparison regression query', () => {
     const comparison = INDIA_RESEARCH_BENCHMARK_MANIFEST.find(
-      (benchmark) => benchmark.id === 'case-comparison-partnership-arbitration-enforcement',
+      (benchmark) => benchmark.id === 'case-survey-partnership-arbitration-enforcement',
     );
     expect(comparison?.query).toMatch(/arbitration clauses in partnership agreements/i);
     expect(comparison?.requiredAuthorities.map(({ key }) => key)).toEqual(

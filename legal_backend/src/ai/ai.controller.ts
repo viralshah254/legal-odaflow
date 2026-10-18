@@ -28,6 +28,7 @@ import { AzureOcrService } from '@/ocr/azure-ocr.service';
 import { PrismaService } from '@/prisma/prisma.service';
 import { AiCommandCenterService } from './ai-command-center.service';
 import { AiGatewayService } from './ai-gateway.service';
+import { ResearchApplicationService } from './legal-research/research-application.service';
 import { AiUsageService } from './ai-usage.service';
 import { DocumentReviewDto } from './dto/document-review.dto';
 import { SaveDocumentReviewDto } from './dto/save-document-review.dto';
@@ -89,6 +90,7 @@ export class AiController {
     private readonly savedResearch: SavedResearchService,
     private readonly matterResearchContext: MatterResearchContextService,
     private readonly legalLocation: LegalLocationService,
+    private readonly researchApplication: ResearchApplicationService,
   ) {}
 
   private async resolveDtoLocation(
@@ -154,7 +156,7 @@ export class AiController {
     const preferredLocale = await this.usersService.getPreferredLocale(user.id);
     const location = await this.resolveDtoLocation(user, tenantId, dto);
     try {
-      return await this.aiGateway.runLawyerLegalResearch({
+      return await this.researchApplication.runLawyerResearch({
         userId: user.id,
         tenantId: tenantId ?? user.tenantId,
         tenantRole: user.tenantRole,

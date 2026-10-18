@@ -1,11 +1,12 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, Optional } from '@nestjs/common';
 import type { CaseRecord } from '../../contracts/case-record';
 import type { GateFinding } from '../../contracts/release-gate';
 import { flattenDraftText, type StructuredDraft } from '../../contracts/structured-draft';
+import { BareActLookupService } from '@/legal-search/bare-act-lookup.service';
 
-const VERIFIER = 'statute-existence-v1';
+const VERIFIER = 'statute-existence-v2';
 
-/** Minimal known act IDs for Wave-1 existence checks (extend via bare-act lookup later). */
+/** Minimal known act IDs for Wave-1 existence checks (extend via bare-act lookup). */
 const KNOWN_ACTS = new Set([
   'BNSS',
   'BNS',
@@ -21,6 +22,8 @@ const KNOWN_ACTS = new Set([
 @Injectable()
 export class StatuteExistenceVerifier {
   readonly version = VERIFIER;
+
+  constructor(@Optional() private readonly bareActLookup?: BareActLookupService) {}
 
   evaluate(record: CaseRecord, draft?: StructuredDraft | string): GateFinding[] {
     const findings: GateFinding[] = [];
@@ -53,21 +56,38 @@ export class StatuteExistenceVerifier {
           : '';
     if (!text) return findings;
 
-    // Sections appearing in draft that are not in charged statutes or suggestions
     const charged = new Set(
       [
-        ...record.statutes.map((s) => `${s.actId}:${s.section}`.toLowerCase()),
-        ...record.suggestedStatutes.map((s) => `${s.actId}:${s.section}`.toLowerCase()),
+        ...record.statutes.map((st) => `${st.actId}:${st.section}`.toLowerCase()),
+        ...record.suggestedStatutes.map((st) => `${st.actId}:${st.section}`.toLowerCase()),
       ],
     );
-    const draftSections = [
-      ...text.matchAll(/\b(?:Section|§|u\/s)\s*(\d+[A-Za-z]?)\b/gi),
-    ];
-    // Soft check only — many procedural sections (193, 480) are vehicles not charges
+    const draftSections = [...text.matchAll(/\b(?:Section|§|u\/s)\s*(\d+[A-Za-z]?)\b/gi)];
     if (charged.size > 0 && draftSections.length > 20) {
-      // no hard fail — adapters handle unsupported section addition
+      // Soft — procedural cites validated via bare-act async path
     }
 
+    return findings;
+  }
+
+  async evaluateAsync(record: CaseRecord, draft?: StructuredDraft | string): Promise<GateFinding[]> {
+    const findings = this.evaluate(record, draft);
+    if (!this.bareActLookup) return findings;
+
+    const country = record.jurisdiction?.countryCode ?? 'IN';
+    for (const s of record.statutes) {
+      if (!KNOWN_ACTS.has(s.actId.toUpperCase()) || !s.section?.trim()) continue;
+      const lookup = await this.bareActLookup.lookupExactSection(s.actId, s.section, country);
+      if (!lookup.found) {
+        findings.push({
+          id: `statute:missing_section:${s.id}`,
+          checkId: 'section_existence',
+          severity: 'blocker',
+          message: `Section ${s.section} of ${s.actId} was not found in primary statutory sources.`,
+          evidence: [s.id],
+        });
+      }
+    }
     return findings;
   }
 }

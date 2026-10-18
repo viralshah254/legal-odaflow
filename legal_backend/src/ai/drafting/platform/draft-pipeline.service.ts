@@ -227,7 +227,7 @@ export class DraftPipelineService {
     }
 
     const accuracyMode = input.accuracyMode ?? (playbook.filingGrade ? 'balanced' : 'fast');
-    let repairProvenance: Parameters<UniversalReleaseGateService['evaluate']>[0]['repairProvenance'];
+    let repairProvenance: Parameters<UniversalReleaseGateService['evaluateAsync']>[0]['repairProvenance'];
 
     if (!input.skipAutoRepair) {
       try {
@@ -264,7 +264,9 @@ export class DraftPipelineService {
       }
     }
 
-    const releaseGate = this.releaseGate.evaluate({
+    // Use evaluateAsync so that BareActLookupService can verify statute sections
+    // against primary law sources (B02 fix).
+    const releaseGate = await this.releaseGate.evaluateAsync({
       caseRecord,
       structuredDraft,
       playbook,

@@ -230,3 +230,63 @@ export async function getTemplateContent(tenantId: string, templateId: string) {
   });
   return res.data as DraftLibraryTemplate;
 }
+
+// ---------------------------------------------------------------------------
+// Work Context (C18) — matches web/Flutter StartWorkPayload contract
+// ---------------------------------------------------------------------------
+
+export interface StartWorkPayload {
+  mode: "new_client" | "existing_client" | "unassigned";
+  clientId?: string;
+  matterId?: string;
+  createClient?: { name: string; email?: string };
+  createMatter?: { title: string; jurisdiction?: string; matterType?: string };
+  countryCode?: string;
+  /** Per-intent UUID — remains constant across retries (B05 parity). */
+  operationRequestKey?: string;
+}
+
+export interface StartWorkResult {
+  scopeKey: string;
+  standalone: boolean;
+  clientId: string | null;
+  matterId: string | null;
+}
+
+/**
+ * Establishes an authorized work context (client + matter) before performing
+ * research or document drafting from within Word.
+ *
+ * The `operationRequestKey` prevents duplicate records on network retry.
+ * Generate it once per user intent (e.g. button click) and persist until
+ * a terminal success or deliberate cancellation.
+ */
+export async function startWork(
+  payload: StartWorkPayload,
+  tenantId: string,
+): Promise<StartWorkResult> {
+  const res = await apiClient.post(
+    "/work-context/start",
+    payload,
+    { headers: tenantHeaders(tenantId) },
+  );
+  return res.data as StartWorkResult;
+}
+
+let _opKeyCounter = 0;
+
+/** Convenience: generates a new per-intent UUID without external dependencies. */
+export function newOperationKey(): string {
+  const bytes: number[] = [];
+  // Monotonic counter prevents collisions when called in rapid succession
+  let seed = (Date.now() ^ ((++_opKeyCounter) * 0x5deece66d)) >>> 0;
+  seed ^= Math.floor(Math.random() * 0xffffffff);
+  for (let i = 0; i < 16; i++) {
+    seed = ((seed * 1664525) + 1013904223) >>> 0;
+    bytes.push(seed & 0xff);
+  }
+  bytes[6] = (bytes[6] & 0x0f) | 0x40; // version 4
+  bytes[8] = (bytes[8] & 0x3f) | 0x80; // variant
+  const hex = bytes.map((b) => b.toString(16).padStart(2, "0"));
+  return `${hex.slice(0, 4).join("")}-${hex.slice(4, 6).join("")}-${hex.slice(6, 8).join("")}-${hex.slice(8, 10).join("")}-${hex.slice(10, 16).join("")}`;
+}

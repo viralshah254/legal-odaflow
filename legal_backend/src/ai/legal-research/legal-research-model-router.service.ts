@@ -118,6 +118,7 @@ export class LegalResearchModelRouter {
     input: ModelRouterInput,
   ): string {
     const needsHardVerifier =
+      input.forceTopTier === true ||
       complexity === 'COMPLEX' ||
       complexity === 'ULTRA' ||
       this.shouldCrossVerify(input);

@@ -5,6 +5,10 @@ export type StartWorkPayload = {
   clientId?: string;
   matterId?: string;
   idempotencyKey?: string;
+  /** Per-intent retry key (UUID v4). Prevents duplicate operations on network retry. */
+  operationRequestKey?: string;
+  /** Explicit ISO-2 country code for the work context. */
+  countryCode?: string;
   createClient?: { name: string; email?: string; phone?: string; countryCode?: string };
   createMatter?: { title: string; jurisdiction?: string; matterType?: string; countryCode?: string };
 };

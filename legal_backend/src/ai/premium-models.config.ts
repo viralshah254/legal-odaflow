@@ -92,7 +92,7 @@ export function listPremiumModels(
   const ordered: string[] = [];
   for (const part of raw.split(',')) {
     const trimmed = part.trim();
-    if (!trimmed || trimmed.startsWith('gemini') || trimmed.includes('google')) continue;
+    if (!trimmed) continue;
     const id = normalizeModelId(trimmed);
     if (seen.has(id) || !(id in MODEL_COSTS)) continue;
     seen.add(id);

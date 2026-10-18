@@ -8,7 +8,7 @@ import {
   insertDraftReplyHtml,
   type EmailContextResponse,
   type SuggestedAction,
-} from "../api/client";
+} from "../../api/client";
 
 function AssistantPage() {
   const [loading, setLoading] = useState(true);

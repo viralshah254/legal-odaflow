@@ -2454,6 +2454,29 @@ export class AiGatewayService {
       },
     );
     input = { ...input, authorizedMatterContext };
+    // Canonical scoped identity: sort and hash actual IDs so that different
+    // document/research selections never share the same cache entry (B01 fix).
+    const docIdsFingerprint = hashPrompt(
+      [...(input.selectedDocumentIds ?? [])].sort().join(','),
+    ).slice(0, 16);
+    const researchIdsFingerprint = hashPrompt(
+      [...(input.selectedSavedResearchIds ?? [])].sort().join(','),
+    ).slice(0, 16);
+    const earlyIndexKey = this.cacheService.buildKey('ai:research:index', [
+      input.tenantId ?? 'none',
+      input.matterId ?? 'none',
+      input.countryCode.toUpperCase(),
+      hashPrompt(input.query.trim().toLowerCase()).slice(0, 20),
+      input.asOfDate ?? '',
+      input.eventDate ?? '',
+      docIdsFingerprint,
+      researchIdsFingerprint,
+    ]);
+    const earlyCached = await this.cacheService.get<LawyerResearchResult>(earlyIndexKey);
+    if (earlyCached && !earlyCached.degraded) {
+      this.logger.log(`[research] early index cache hit tenant=${input.tenantId ?? 'none'}`);
+      return { ...earlyCached, fromCache: true, creditsUsed: 0 };
+    }
     const countryPolicy = await this.complianceGuard.getPolicyForCountry(input.countryCode);
 
     if (input.tenantId) {
@@ -5837,6 +5860,13 @@ export class AiGatewayService {
     }
     this.logger.log(
       `[research-timing] classify=${classifyMs}ms preflight=${preflightMs}ms retrieve=${retrieveMs}ms llm=${llmMs}ms verify=${verifyMs}ms postProcess=${postProcessMs}ms total=${totalMs}ms mode=${researchMode} country=${country.code}`,
+    );
+    await this.cacheService.set(earlyIndexKey, fullResult).catch((err) =>
+      this.logger.warn(
+        `[runLawyerLegalResearch] early index cache set failed (non-critical): ${
+          err instanceof Error ? err.message : String(err)
+        }`,
+      ),
     );
     await this.updateResearchJobProgress(input.agentJobId, 'completed');
     return fullResult;

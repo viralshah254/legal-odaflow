@@ -10,6 +10,7 @@ import { DraftJobsController } from './draft-jobs.controller';
 
 // Core services
 import { DraftJobService } from './draft-job.service';
+import { DraftJobDispatchReconcilerService } from './draft-job-dispatch-reconciler.service';
 import { DraftWorkerProcessor } from './draft-worker.processor';
 import { DraftModelRouterService } from './draft-model-router.service';
 
@@ -129,6 +130,7 @@ import { LlmCompletionService } from '@/ai/llm-completion.service';
   providers: [
     // Core
     DraftJobService,
+    DraftJobDispatchReconcilerService,
     CourtDraftHistoryService,
     DraftWorkerProcessor,
     DraftModelRouterService,

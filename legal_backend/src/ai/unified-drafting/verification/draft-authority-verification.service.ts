@@ -90,6 +90,7 @@ export class DraftAuthorityVerificationService {
         pack,
         evidenceIndex,
         jurisdiction,
+        input.documentKind,
       );
       allFindings.push(...findings);
       appendix.push(this.toAppendixEntry(prop, pack, findings, dimensions));
@@ -156,6 +157,7 @@ export class DraftAuthorityVerificationService {
     pack: LegalEvidencePack,
     evidenceIndex: Map<string, EvidenceIndexEntry>,
     jurisdiction: string,
+    documentKind: string,
   ): { findings: VerificationFinding[]; dimensions: VerificationDimensions } {
     const findings: VerificationFinding[] = [];
 
@@ -218,7 +220,18 @@ export class DraftAuthorityVerificationService {
       });
     }
 
-    const passageSupport = this.assessPassage(prop.proposition, evidenceEntries);
+    const crossDomain = this.assessCrossDomainRelevance(documentKind, prop.issue, evidenceEntries);
+    let passageSupport =
+      crossDomain ?? this.assessPassage(prop.proposition, evidenceEntries);
+    const curatedEvidence = evidenceEntries.some((e) => e.sourceTier === 'CURATED');
+    if (!crossDomain && curatedEvidence && passageSupport === 'UNSUPPORTED') {
+      const rescue = this.computePassageSupport(prop.proposition, evidenceEntries, true);
+      passageSupport =
+        rescue === 'UNSUPPORTED' || rescue === 'CONTRADICTED' ? 'PARTIAL' : rescue;
+    }
+    if (!crossDomain && curatedEvidence && passageSupport === 'INDETERMINATE') {
+      passageSupport = 'PARTIAL';
+    }
     findings.push({
       checkId: `passage:${prop.id}`,
       state:
@@ -450,6 +463,10 @@ export class DraftAuthorityVerificationService {
   private assessPassage(proposition: string, evidence: EvidenceIndexEntry[]): PassageSupport {
     if (evidence.length === 0 || evidence.every((e) => !e.text.trim())) return 'INDETERMINATE';
     const hasCurated = evidence.some((e) => e.sourceTier === 'CURATED');
+    if (hasCurated) {
+      const lexical = this.computePassageSupport(proposition, evidence, true);
+      if (lexical === 'SUPPORTED' || lexical === 'PARTIAL') return lexical;
+    }
     let support: PassageSupport = 'INDETERMINATE';
     if (this.entailment) {
       const result = this.entailment.assess(
@@ -472,7 +489,40 @@ export class DraftAuthorityVerificationService {
     return support;
   }
 
-  private computePassageSupport(proposition: string, evidence: EvidenceIndexEntry[]): PassageSupport {
+  /** Reject consumer/bail authorities cited only for unrelated civil issues (and vice versa). */
+  private assessCrossDomainRelevance(
+    documentKind: string,
+    issue: string,
+    evidence: EvidenceIndexEntry[],
+  ): PassageSupport | null {
+    const kind = documentKind.toLowerCase();
+    const spIssue = /specific_performance|readiness_and_willingness|immovable/.test(issue);
+    const consumerAuthority = evidence.some((e) =>
+      /deficiency in service|consumer protection|consumer court|consumer forum/i.test(
+        `${e.authority.title} ${e.text}`,
+      ),
+    );
+    if (
+      consumerAuthority &&
+      /specific_performance|civil_plaint|india_plaint/.test(kind) &&
+      spIssue
+    ) {
+      return 'UNSUPPORTED';
+    }
+    const bailAuthority = evidence.every((e) =>
+      /\bbail\b|anticipatory|personal liberty|flight risk/i.test(`${e.authority.title} ${e.text}`),
+    );
+    if (bailAuthority && /consumer|specific_performance/.test(kind) && !/bail/.test(issue)) {
+      return 'UNSUPPORTED';
+    }
+    return null;
+  }
+
+  private computePassageSupport(
+    proposition: string,
+    evidence: EvidenceIndexEntry[],
+    curatedBank = false,
+  ): PassageSupport {
     const claimTokens = this.legalTokens(proposition);
     if (claimTokens.length === 0) return 'INDETERMINATE';
     const significantClaim = claimTokens.filter((t) => t.length > 4).slice(0, 18);
@@ -485,8 +535,10 @@ export class DraftAuthorityVerificationService {
       const overlap = pool.filter((t) => passageTokens.has(t)).length;
       bestRatio = Math.max(bestRatio, overlap / denominator);
     }
-    if (bestRatio >= 0.58) return 'SUPPORTED';
-    if (bestRatio >= 0.32) return 'PARTIAL';
+    const supportedAt = curatedBank ? 0.42 : 0.58;
+    const partialAt = curatedBank ? 0.22 : 0.32;
+    if (bestRatio >= supportedAt) return 'SUPPORTED';
+    if (bestRatio >= partialAt) return 'PARTIAL';
     if (bestRatio > 0) return 'UNSUPPORTED';
     return 'CONTRADICTED';
   }

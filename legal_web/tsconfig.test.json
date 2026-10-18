@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "composite": false,
+    "noEmit": true,
+    "types": ["vitest/globals"],
+    "allowJs": true,
+    "noPropertyAccessFromIndexSignature": false
+  },
+  "include": [
+    "**/*.ts",
+    "**/*.tsx",
+    "e2e/**/*.e2e.ts",
+    "lib/**/*.test.ts",
+    "components/**/*.test.ts",
+    "components/**/*.test.tsx"
+  ],
+  "exclude": [
+    "node_modules",
+    ".next",
+    ".next-dev",
+    "lib/geo/dev-geo-mock.test.ts",
+    "lib/geo/ip-api.test.ts"
+  ]
+}

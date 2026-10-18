@@ -83,7 +83,30 @@ export class UniversalReleaseGateService {
     private readonly provenance: DraftProvenanceService,
   ) {}
 
+  /**
+   * Async variant — calls StatuteExistenceVerifier.evaluateAsync() so that
+   * BareActLookupService can verify that cited sections exist in primary law
+   * (B02 fix).  Prefer this on all release routes.
+   */
+  async evaluateAsync(input: ReleaseGateEvaluateInput): Promise<ReleaseGateResult> {
+    const { caseRecord, structuredDraft } = input;
+    // Run the async statute check, then delegate the rest to the sync path
+    // which we override by injecting pre-computed section_existence findings.
+    const asyncStatuteFindings = await this.statuteExistence.evaluateAsync(
+      caseRecord,
+      structuredDraft,
+    );
+    return this._evaluate(input, asyncStatuteFindings);
+  }
+
   evaluate(input: ReleaseGateEvaluateInput): ReleaseGateResult {
+    return this._evaluate(input, undefined);
+  }
+
+  private _evaluate(
+    input: ReleaseGateEvaluateInput,
+    precomputedStatuteFindings?: import('../contracts/release-gate').GateFinding[],
+  ): ReleaseGateResult {
     const { caseRecord, structuredDraft, playbook, adapter } = input;
     const checks: Record<string, CheckResult> = {};
     const verifierVersions: Record<string, string> = {};
@@ -130,7 +153,7 @@ export class UniversalReleaseGateService {
 
     push(
       'section_existence',
-      this.statuteExistence.evaluate(caseRecord, structuredDraft),
+      precomputedStatuteFindings ?? this.statuteExistence.evaluate(caseRecord, structuredDraft),
       this.statuteExistence.version,
     );
 

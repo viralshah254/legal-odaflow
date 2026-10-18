@@ -105,4 +105,121 @@ export class GeminiCompletionAdapter {
       finishReason: text ? 'stop' : 'unknown',
     };
   }
+
+  /**
+   * Real streaming using generateContentStream.
+   * C08/B06 fix: replaces the fake stream() that waited for full completion
+   * and yielded a single chunk.  Now yields text deltas progressively as the
+   * model generates them, matching the OpenAI streaming contract.
+   */
+  async *stream(params: {
+    modelName: string;
+    messages: LlmMessage[];
+    temperature?: number;
+    maxTokens?: number;
+  }): AsyncGenerator<{ delta: string; done?: boolean }> {
+    const client = await this.createClient();
+    const modelName =
+      params.modelName.startsWith('gemini-') || params.modelName.includes('gemini')
+        ? params.modelName
+        : this.defaultModelName();
+
+    const system = params.messages
+      .filter((m) => m.role === 'system')
+      .map((m) => m.content)
+      .join('\n\n');
+    const contents = params.messages
+      .filter((m) => m.role !== 'system')
+      .map((m) => ({
+        role: m.role === 'assistant' ? ('model' as const) : ('user' as const),
+        parts: [{ text: m.content }],
+      }));
+
+    try {
+      const streamResult = await client.models.generateContentStream({
+        model: modelName,
+        contents,
+        config: {
+          temperature: params.temperature ?? 0.2,
+          maxOutputTokens: params.maxTokens ?? 4096,
+          systemInstruction: system || undefined,
+        },
+      });
+
+      for await (const chunk of streamResult) {
+        const delta = chunk.text ?? '';
+        if (delta) yield { delta };
+      }
+    } catch (err) {
+      // Propagate structured errors; provider failure must not look like success.
+      throw err;
+    }
+
+    yield { delta: '', done: true };
+  }
+
+  /**
+   * Multimodal completion: text + inline image data (base64).
+   * C08 addition: supports vision capability required for document attachments.
+   */
+  async completeWithImage(params: {
+    modelName: string;
+    messages: LlmMessage[];
+    imageParts: Array<{ mimeType: string; data: string }>;
+    temperature?: number;
+    maxTokens?: number;
+  }): Promise<LlmCompletionResult> {
+    const client = await this.createClient();
+    const modelName =
+      params.modelName.startsWith('gemini-') || params.modelName.includes('gemini')
+        ? params.modelName
+        : this.defaultModelName();
+
+    const system = params.messages
+      .filter((m) => m.role === 'system')
+      .map((m) => m.content)
+      .join('\n\n');
+
+    // Build a user message with mixed text + image parts
+    const textParts = params.messages
+      .filter((m) => m.role === 'user')
+      .map((m) => ({ text: m.content }));
+
+    const imageParts = params.imageParts.map((img) => ({
+      inlineData: { mimeType: img.mimeType, data: img.data },
+    }));
+
+    const contents = [
+      ...params.messages
+        .filter((m) => m.role === 'assistant')
+        .map((m) => ({
+          role: 'model' as const,
+          parts: [{ text: m.content }],
+        })),
+      {
+        role: 'user' as const,
+        parts: [...textParts, ...imageParts],
+      },
+    ];
+
+    const response = await client.models.generateContent({
+      model: modelName,
+      contents,
+      config: {
+        temperature: params.temperature ?? 0.2,
+        maxOutputTokens: params.maxTokens ?? 4096,
+        systemInstruction: system || undefined,
+      },
+    });
+
+    const text = response.text ?? '';
+    return {
+      content: text,
+      inputTokens: Math.ceil(params.messages.reduce((s, m) => s + m.content.length, 0) / 4),
+      outputTokens: Math.ceil(text.length / 4),
+      provider: 'google',
+      modelName,
+      finishReason: text ? 'stop' : 'unknown',
+    };
+  }
 }

@@ -85,6 +85,50 @@ export class ClientsService {
     return client;
   }
 
+  /**
+   * Post-commit side-effects for a client that was created atomically inside
+   * a transaction (e.g. StartWork).  The transaction guarantees the row exists;
+   * this method fires realtime events and KYC initialization.
+   */
+  async onClientCreated(
+    tenantId: string,
+    clientId: string,
+    userId?: string,
+    role?: string,
+  ): Promise<void> {
+    const client = await this.prisma.client.findUnique({
+      where: { id: clientId },
+      select: { id: true, name: true, type: true, countryCode: true },
+    });
+    if (!client) return;
+
+    this.realtime.publishToTenant(tenantId, REALTIME_EVENTS.CLIENT_CREATED, {
+      entityId: client.id,
+      action: 'created',
+      data: { name: client.name },
+    });
+    this.realtime.publishDashboardRefresh(tenantId, client.id);
+
+    if (userId) {
+      try {
+        await this.kycService.initializeClientChecklist(
+          tenantId,
+          client.id,
+          userId,
+          role,
+          {
+            clientType: client.type,
+            countryCode: client.countryCode ?? undefined,
+          },
+        );
+      } catch (error) {
+        this.logger.warn(
+          `KYC init failed for client ${client.id}: ${error instanceof Error ? error.message : error}`,
+        );
+      }
+    }
+  }
+
   async findAll(
     tenantId: string,
     userId: string,

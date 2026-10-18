@@ -182,6 +182,99 @@ export class MattersService {
     };
   }
 
+  /**
+   * Post-commit side-effects for a matter that was created atomically inside
+   * a transaction (e.g. StartWork).  The transaction guarantees the row exists;
+   * this method fires playbooks, automation, realtime events, and matter-brain.
+   */
+  async onMatterCreated(
+    tenantId: string,
+    matterId: string,
+    countryCode: string,
+    matterType: string,
+    createdByUserId?: string,
+  ): Promise<void> {
+    const matter = await this.prisma.matter.findUnique({
+      where: { id: matterId },
+      select: {
+        id: true,
+        title: true,
+        clientId: true,
+        matterType: true,
+        practiceArea: true,
+        factsSummary: true,
+        createdAt: true,
+      },
+    });
+    if (!matter) return;
+
+    // Timeline event
+    if (createdByUserId) {
+      const creator = await this.prisma.user.findUnique({
+        where: { id: createdByUserId },
+        select: { id: true, name: true, email: true },
+      });
+      await this.prisma.timelineEvent.create({
+        data: {
+          tenantId,
+          matterId: matter.id,
+          eventType: 'MATTER_CREATED',
+          title: 'Matter created',
+          description: matter.title,
+          metadata: {
+            userId: createdByUserId,
+            userName: creator?.name ?? creator?.email?.split('@')[0] ?? 'User',
+          },
+          occurredAt: matter.createdAt,
+        },
+      });
+    }
+
+    // Playbook
+    const { taskCount: autoTaskCount, playbookName } =
+      await this.playbooksService.executePlaybook(
+        tenantId,
+        matter.id,
+        matterType,
+        countryCode,
+        createdByUserId,
+      );
+
+    if (playbookName) {
+      await this.prisma.matter.update({
+        where: { id: matter.id },
+        data: { stage: 'Intake' },
+      }).catch(() => undefined);
+    }
+
+    // Automation
+    await this.automationEngine.dispatch(tenantId, 'matter.created', {
+      matterId: matter.id,
+      matterTitle: matter.title,
+      matterType: matter.matterType,
+      practiceArea: matter.practiceArea,
+      clientId: matter.clientId,
+      userId: createdByUserId,
+      autoTaskCount,
+      playbookName,
+    }).catch((e) => this.logger.warn(`Automation dispatch failed: ${String(e)}`));
+
+    // Realtime
+    this.realtime.publishToTenant(tenantId, REALTIME_EVENTS.MATTER_CREATED, {
+      entityId: matter.id,
+      action: 'created',
+      data: { title: matter.title, clientId: matter.clientId, playbookName },
+    });
+    this.realtime.publishDashboardRefresh(tenantId, matter.id);
+
+    // Autonomous matter brain
+    if (createdByUserId) {
+      this.matterAutonomy?.triggerOnCreate(matter.id, tenantId, createdByUserId);
+    }
+
+    this.searchIndex.indexEntity(tenantId, 'matter', matter.id);
+  }
+
   /** Returns the set of matterIds that have at least one auto-triggered analysis run. */
   async getAutoAnalyzedIds(tenantId: string): Promise<string[]> {
     const runs = await this.prisma.matterAnalysisRun.findMany({

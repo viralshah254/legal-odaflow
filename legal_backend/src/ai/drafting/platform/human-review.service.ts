@@ -148,6 +148,12 @@ export class HumanReviewService {
     notes: string | null;
     invalidated: boolean;
     invalidatedReason: string | null;
+    // Extended dependency-identity fields (C07 fix: include so isApprovalValid
+    // can compare them; previously they were silently dropped by toRecord()).
+    contentRevision?: number | null;
+    evidenceRevision?: string | null;
+    courtProfileId?: string | null;
+    releaseDigest?: string | null;
   }): HumanReviewRecord {
     return {
       id: record.id,
@@ -162,6 +168,11 @@ export class HumanReviewService {
       notes: record.notes ?? undefined,
       invalidated: record.invalidated,
       invalidatedReason: record.invalidatedReason ?? undefined,
-    };
+      // Pass through dependency identity so isApprovalValid() can compare them
+      contentRevision: record.contentRevision ?? undefined,
+      evidenceRevision: record.evidenceRevision ?? undefined,
+      courtProfileId: record.courtProfileId ?? undefined,
+      releaseDigest: record.releaseDigest ?? undefined,
+    } as HumanReviewRecord;
   }
 }

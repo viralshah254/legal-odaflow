@@ -40,6 +40,9 @@
   "exclude": [
     "node_modules",
     "e2e",
-    "**/*.spec.ts"
+    "**/*.spec.ts",
+    "**/*.test.ts",
+    "**/*.test.tsx",
+    "scripts"
   ]
 }

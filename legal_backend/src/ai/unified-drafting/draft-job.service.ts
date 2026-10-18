@@ -92,6 +92,14 @@ export class DraftJobService implements OnModuleDestroy {
       matterId: dto.matterId ?? null,
       jurisdiction: dto.jurisdiction ?? null,
       courtName: dto.courtName ?? null,
+      clientName: dto.clientName ?? null,
+      opposingParty: dto.opposingParty ?? null,
+      parties: dto.parties ?? null,
+      attachmentContext: dto.attachmentContext ?? null,
+      formNumber: dto.formNumber ?? null,
+      language: dto.language ?? null,
+      bundleMode: dto.bundleMode ?? null,
+      bundleIndex: dto.bundleIndex ?? null,
       confirmedCaseRecord: dto.confirmedCaseRecord ?? null,
       accuracyMode: dto.accuracyMode ?? null,
       pinnedSections: dto.pinnedSections ?? null,
@@ -150,12 +158,43 @@ export class DraftJobService implements OnModuleDestroy {
         estimatedCostUsd: estimatedCredits * 0.01,
         courtDraftRecordId: dto.courtDraftRecordId,
         workspaceV3Id: dto.workspaceV3Id,
-        // Persist confirmed CaseRecord + accuracy mode for worker resume
+        // Persist the complete immutable request snapshot alongside execution state.
+        // C06/B08 fix: requestSnapshot contains every semantic input field so the
+        // reconciler can re-dispatch with the full original payload even if the
+        // BullMQ job was lost or never reached the worker.
         executionPlanJson: {
+          // Execution state (read by the worker to resume stages)
           confirmedCaseRecord: dto.confirmedCaseRecord ?? null,
           accuracyMode: dto.accuracyMode ?? null,
           bundleMode: dto.bundleMode ?? null,
           bundleIndex: dto.bundleIndex ?? null,
+          // Immutable request snapshot (read by the reconciler to re-dispatch)
+          requestSnapshot: {
+            tenantId: dto.tenantId,
+            userId: dto.userId,
+            matterId: dto.matterId ?? null,
+            profile: dto.profile,
+            documentKind: dto.documentKind,
+            qualityTier: dto.qualityTier,
+            facts: dto.facts,
+            jurisdiction: dto.jurisdiction ?? null,
+            courtName: dto.courtName ?? null,
+            clientName: dto.clientName ?? null,
+            opposingParty: dto.opposingParty ?? null,
+            parties: dto.parties ?? null,
+            attachmentContext: dto.attachmentContext ?? null,
+            formNumber: dto.formNumber ?? null,
+            language: dto.language ?? null,
+            pinnedSections: dto.pinnedSections ?? null,
+            pinnedCaseLaws: dto.pinnedCaseLaws ?? null,
+            knowledgeSources: dto.knowledgeSources ?? null,
+            courtDraftRecordId: dto.courtDraftRecordId ?? null,
+            workspaceV3Id: dto.workspaceV3Id ?? null,
+            confirmedCaseRecord: dto.confirmedCaseRecord ?? null,
+            accuracyMode: dto.accuracyMode ?? null,
+            bundleMode: dto.bundleMode ?? null,
+            bundleIndex: dto.bundleIndex ?? null,
+          },
         } as any,
       },
     });

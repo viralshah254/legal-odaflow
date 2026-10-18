@@ -57,6 +57,13 @@ export class EmbeddingService {
   }
 
   getEmbeddingModel(): string {
+    const googleModel = this.configService.get<string>('GEMINI_EMBEDDING_MODEL')?.trim();
+    if (
+      googleModel &&
+      this.configService.get<string>('AI_EMBEDDING_PROVIDER', 'openai') === 'google'
+    ) {
+      return googleModel;
+    }
     return this.configService.get<string>('AI_EMBEDDING_MODEL', 'text-embedding-3-small');
   }
 

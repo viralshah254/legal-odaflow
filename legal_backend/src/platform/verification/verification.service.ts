@@ -10,6 +10,12 @@ import type {
   RepairItem,
   RepairPlan,
 } from '@/platform/drafting/drafting.types';
+import {
+  DEFAULT_FILING_CHECK_MANIFEST,
+  mergeCheckState,
+  type FilingCheckState,
+  type FilingManifestComponent,
+} from './filing-check-manifest';
 
 @Injectable()
 export class VerificationService {
@@ -138,20 +144,10 @@ export class VerificationService {
       });
     }
 
-    const mandatoryComponents = [
-      'cause_title',
-      'parties',
-      'facts',
-      'legal_grounds',
-      'prayer',
-      'verification',
-      'formatting',
-      'citations',
-    ] as const;
-
-    const componentScores: Record<string, number> = Object.fromEntries(
-      mandatoryComponents.map((c) => [c, 0]),
-    );
+    const mandatoryComponents = DEFAULT_FILING_CHECK_MANIFEST.map((m) => m.component);
+    const checkStateByComponent = Object.fromEntries(
+      mandatoryComponents.map((c) => [c, 'NOT_RUN' as FilingCheckState]),
+    ) as Record<FilingManifestComponent, FilingCheckState>;
 
     const completed = findings.filter((f) => f.status === 'passed' || f.status === 'failed');
     if (completed.length === 0) {
@@ -164,20 +160,45 @@ export class VerificationService {
 
     for (const f of completed) {
       const comp = this.mapFindingToComponent(f);
-      if (componentScores[comp] === undefined) continue;
-      if (f.status === 'passed') {
-        componentScores[comp] = 100;
-      } else {
-        const penalty = f.severity === 'critical' ? 100 : f.severity === 'major' ? 60 : 20;
-        componentScores[comp] = Math.max(0, 100 - penalty);
+      if (checkStateByComponent[comp as FilingManifestComponent] === undefined) continue;
+      const next: FilingCheckState =
+        f.status === 'passed'
+          ? 'PASS'
+          : f.status === 'warning'
+            ? 'INDETERMINATE'
+            : 'FAIL';
+      checkStateByComponent[comp as FilingManifestComponent] = mergeCheckState(
+        checkStateByComponent[comp as FilingManifestComponent],
+        next,
+      );
+    }
+
+    const componentScores: Record<string, number> = {};
+    for (const comp of mandatoryComponents) {
+      const state = checkStateByComponent[comp];
+      componentScores[comp] =
+        state === 'PASS' ? 100 : state === 'INDETERMINATE' ? 50 : state === 'FAIL' ? 0 : 0;
+      if (state === 'FAIL') {
+        blockers.push({
+          component: comp,
+          severity: 'error',
+          message: `Mandatory check failed for ${comp.replace(/_/g, ' ')}`,
+        });
+      } else if (state === 'NOT_RUN') {
+        blockers.push({
+          component: comp,
+          severity: 'error',
+          message: `Mandatory check not run for ${comp.replace(/_/g, ' ')}`,
+        });
       }
     }
 
     const overallScore =
-      Object.values(componentScores).reduce((a, b) => a + b, 0) /
-      mandatoryComponents.length;
+      Object.values(componentScores).reduce((a, b) => a + b, 0) / mandatoryComponents.length;
 
-    const allMandatoryPassed = mandatoryComponents.every((c) => componentScores[c] === 100);
+    const allMandatoryPassed = mandatoryComponents.every(
+      (c) => checkStateByComponent[c] === 'PASS',
+    );
 
     return {
       overallScore: Math.round(overallScore),
@@ -239,11 +260,13 @@ export class VerificationService {
     if (section.sectionType === 'heading' && content.trim().length < 20) {
       findings.push({
         id: randomUUID(),
+        checkId: 'manifest:cause_title',
         dimension: 'structural',
         severity: 'critical',
         status: 'failed',
         message: `Heading / cause title is too short or missing.`,
         sectionId: section.id,
+        sectionType: section.sectionType,
         repairable: true,
         suggestedAction: 'Regenerate the cause title section.',
       });

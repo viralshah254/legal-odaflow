@@ -29,6 +29,7 @@ import { ValuationCourtFeeValidatorService } from './valuation-court-fee-validat
 import { AnnexureEvidenceValidatorService } from './annexure-evidence-validator.service';
 import { CitationPropositionValidatorService } from './citation-proposition-validator.service';
 import { LiabilityConsentExpertValidatorsService } from './liability-consent-expert-validators.service';
+import { ResearchMemoQualityValidatorService } from './research-memo-quality.validator';
 import { DraftAccuracyRepairService } from './draft-accuracy-repair.service';
 import { DraftRepairSourceResolverService } from './draft-repair-source-resolver.service';
 import { DraftRepairConfirmationService } from './draft-repair-confirmation.service';
@@ -70,6 +71,7 @@ function buildOrchestrator(): DraftAccuracyOrchestratorService {
     new AnnexureEvidenceValidatorService(),
     new CitationPropositionValidatorService(),
     new LiabilityConsentExpertValidatorsService(),
+    new ResearchMemoQualityValidatorService(),
     new DraftAccuracyRepairService(),
     new DraftRepairSourceResolverService(),
     new DraftRepairConfirmationService(),

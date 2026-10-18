@@ -73,6 +73,8 @@ services:
     volumes:
       - /home/ubuntu/legal_backend/.env:/usr/app/.env:ro
       - /home/ubuntu/legal_backend/umbrella-95da1-firebase-adminsdk-fbsvc-11e5b5d0f4.json:/usr/app/umbrella-95da1-firebase-adminsdk-fbsvc-11e5b5d0f4.json:ro
+      - /home/ubuntu/legal_backend/odaflow-50999d5f681a.json:/usr/app/odaflow-50999d5f681a.json:ro
+      - /home/ubuntu/legal_backend/data:/usr/app/data:ro
       - /home/ubuntu/legal_backend/corpus:/usr/app/corpus:ro
       - /usr/app/node_modules
     logging:
@@ -105,6 +107,8 @@ services:
     volumes:
       - /home/ubuntu/legal_backend/.env:/usr/app/.env:ro
       - /home/ubuntu/legal_backend/umbrella-95da1-firebase-adminsdk-fbsvc-11e5b5d0f4.json:/usr/app/umbrella-95da1-firebase-adminsdk-fbsvc-11e5b5d0f4.json:ro
+      - /home/ubuntu/legal_backend/odaflow-50999d5f681a.json:/usr/app/odaflow-50999d5f681a.json:ro
+      - /home/ubuntu/legal_backend/data:/usr/app/data:ro
       - /home/ubuntu/legal_backend/corpus:/usr/app/corpus:ro
     logging:
       driver: "json-file"

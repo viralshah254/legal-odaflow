@@ -199,7 +199,19 @@ export function resolveModelProvider(modelName: string): AiLlmProvider {
   if (known) return known;
   if (normalized.startsWith('deepseek-')) return 'deepseek';
   if (normalized.startsWith('gemini-')) return 'google';
-  return 'openai';
+  if (normalized.startsWith('gpt-') || normalized.startsWith('o1') || normalized.startsWith('o3')) {
+    return 'openai';
+  }
+  throw new Error(`Unknown model id: ${normalized}`);
+}
+
+/** Legacy fallback when callers cannot throw (prefer resolveModelProvider). */
+export function resolveModelProviderOrDefault(modelName: string): AiLlmProvider {
+  try {
+    return resolveModelProvider(modelName);
+  } catch {
+    return 'openai';
+  }
 }
 
 export function isAllowedAiProvider(value: string): value is AiLlmProvider {
@@ -210,7 +222,7 @@ export function getModelCostSync(modelName: string): ModelCostRates {
   const normalized = normalizeModelId(modelName);
   return (
     MODEL_COSTS[normalized] ?? {
-      provider: resolveModelProvider(normalized),
+      provider: resolveModelProviderOrDefault(normalized),
       inputPer1M: 0.4,
       outputPer1M: 1.6,
       tier: 'cheap',

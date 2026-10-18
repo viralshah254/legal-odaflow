@@ -12,9 +12,10 @@ import {
   HttpStatus,
   NotFoundException,
   BadRequestException,
+  Headers,
 } from '@nestjs/common';
-import { Observable, fromEvent, EMPTY } from 'rxjs';
-import { map, takeUntil, finalize } from 'rxjs/operators';
+import { Observable, from, concat } from 'rxjs';
+import { map, finalize } from 'rxjs/operators';
 import { ArtifactAccessResolver } from '@/access/artifact-access.resolver';
 import { DraftJobService, CreateDraftJobDto } from './draft-job.service';
 import { DraftProgressService } from './progress/draft-progress.service';
@@ -83,20 +84,26 @@ export class DraftJobsController {
   async streamProgress(
     @Param('jobId') jobId: string,
     @Req() req: AuthRequest,
+    @Headers('last-event-id') lastEventId?: string,
   ): Promise<Observable<MessageEvent>> {
     await this.access.assertDraftJobAccessible(
       { tenantId: req.user.tenantId, userId: req.user.id, tenantRole: req.user.tenantRole },
       jobId,
     );
+    const lastSeq = lastEventId ? Number.parseInt(lastEventId.split('-').pop() ?? '0', 10) : 0;
+    const replay = this.progressService.replaySince(jobId, Number.isFinite(lastSeq) ? lastSeq : 0);
     const subject = this.progressService.subscribe(jobId);
-    return subject.pipe(
-      map((event) => ({
-        data: JSON.stringify(event),
-        type: 'draft_progress',
-        id: `${jobId}-${event.percent}`,
-      } satisfies MessageEvent)),
+    const toMessage = (event: import('./contracts/draft-progress-event').DraftProgressEvent): MessageEvent => ({
+      data: JSON.stringify(event),
+      type: 'draft_progress',
+      id: `${jobId}-${event.sequence}`,
+    });
+    const replay$ = from(replay.map(toMessage));
+    const live$ = subject.pipe(
+      map(toMessage),
       finalize(() => this.progressService.releaseSubscriber(jobId)),
     );
+    return replay.length > 0 ? concat(replay$, live$) : live$;
   }
 
   /** Cancel a queued or in-progress draft job. */
