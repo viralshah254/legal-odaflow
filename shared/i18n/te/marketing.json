@@ -11,6 +11,8 @@
   "faq": "తరచుగా అడిగే ప్రశ్నలు",
   "header": {
     "issueChecker": "ఇష్యూ చెకర్",
+    "legalAi": "చట్టపరమైన AI",
+    "solutions": "పరిష్కారాలు",
     "forLawyers": "న్యాయవాదుల కోసం",
     "pricing": "ధర నిర్ణయించడం",
     "demo": "డెమో",
@@ -21,10 +23,24 @@
     "getStarted": "ప్రారంభించండి",
     "start": "ప్రారంభించండి",
     "free": "ఉచిత",
-    "account": "ఖాతా"
+    "account": "ఖాతా",
+    "consumer": {
+      "cases": "నా కేసులు",
+      "reports": "నివేదికలు",
+      "lawyerReview": "లాయర్ రివ్యూ",
+      "subscription": "చందా",
+      "research": "చట్టపరమైన పరిశోధన",
+      "documentReview": "డాక్యుమెంట్ రివ్యూ",
+      "issueChecker": "ఇష్యూ చెకర్",
+      "aiTools": "AI సాధనాలు",
+      "firAnalysis": "FIR విశ్లేషణ",
+      "indiaDrafts": "భారతదేశ చిత్తుప్రతులు",
+      "sectionFinder": "విభాగం ఫైండర్",
+      "account": "ఖాతా"
+    }
   },
   "footer": {
-    "tagline": "మీరు ఒక న్యాయవాది కోసం వేలకు వేలు ఖర్చు చేసే ముందు మీ చట్టపరమైన సమస్యను అర్థం చేసుకోండి.",
+    "tagline": "మీరు ఒక న్యాయవాది కోసం వేలకొద్దీ ఖర్చు చేసే ముందు మీ చట్టపరమైన సమస్యను అర్థం చేసుకోండి - లేదా మీ మొత్తం సంస్థను ఒకే వేదికపై నడిపించండి.",
     "forConsumers": "వినియోగదారుల కోసం",
     "legalIssueChecker": "లీగల్ ఇష్యూ చెకర్",
     "uploadDocument": "పత్రాన్ని అప్‌లోడ్ చేయండి",
@@ -38,6 +54,15 @@
     "terms": "నిబంధనలు",
     "dataConsent": "డేటా & AI సమ్మతి",
     "legalDisclaimer": "చట్టపరమైన నిరాకరణ",
+    "legalAi": "చట్టపరమైన AI",
+    "legalGuides": "చట్టపరమైన మార్గదర్శకాలు",
+    "solutions": "పరిష్కారాలు",
+    "compare": "చట్టపరమైన AIని సరిపోల్చండి",
+    "legalAiIndia": "చట్టపరమైన AI భారతదేశం",
+    "legalAiUK": "చట్టపరమైన AI UK",
+    "legalAiUS": "చట్టపరమైన AI US",
+    "legalAiKenya": "లీగల్ AI కెన్యా",
+    "regions": "ప్రాంతాలు",
     "copyright": "© {year} గొడుగు. అన్ని హక్కులు ప్రత్యేకించబడ్డాయి.",
     "signIn": "సైన్ ఇన్ చేయండి"
   },
@@ -62,13 +87,32 @@
     "aiCreditsBody": "AI మోడల్ వినియోగంతో క్రెడిట్స్ స్కేల్ — కర్సర్ లాంటిది. ఆటో టాస్క్‌లు (కోపైలట్, డ్రాఫ్ట్‌లు) సమర్థవంతంగా ఉంటాయి మరియు తక్కువ క్రెడిట్‌లను ఉపయోగిస్తాయి. ప్రీమియం లోతైన విశ్లేషణ (ఇలాంటి సందర్భాలు, ప్రత్యర్థి వ్యూహం, వ్యూహం మెమో) మీరు ఎంచుకున్న ప్రీమియం మోడల్‌ని ఉపయోగిస్తుంది మరియు టోకెన్ వినియోగం ద్వారా బిల్ చేయబడుతుంది.",
     "deepAnalysisNote": "డీప్ కేస్ విశ్లేషణకు <strong>ప్రొఫెషనల్</strong> ప్లాన్ లేదా అంతకంటే ఎక్కువ అవసరం.",
     "enterprisePrompt": "ఎంటర్‌ప్రైజ్ SSO, డేటా రెసిడెన్సీ లేదా SCIM కావాలా?",
-    "enterpriseSettings": "ఎంటర్‌ప్రైజ్ సెట్టింగ్‌లు"
+    "enterpriseSettings": "ఎంటర్‌ప్రైజ్ సెట్టింగ్‌లు",
+    "mostPopular": "అత్యంత ప్రజాదరణ పొందినది",
+    "firmPlansSubtitle": "జట్ల కోసం స్కేలబుల్ ప్రతి సీటు ధర",
+    "transparentPricingBadge": "పారదర్శక ధర · దాచిన రుసుములు లేవు",
+    "showingPricesFor": "<strong>{country}</strong> కోసం ధరలను చూపుతోంది",
+    "findingBestPricing": "మీ ప్రాంతానికి ఉత్తమ ధరను కనుగొనడం",
+    "enterpriseFeatures": "SSO · SCIM · డేటా రెసిడెన్సీ · అంకితమైన SLA",
+    "detectingLocation": "మీ స్థానాన్ని గుర్తిస్తోంది...",
+    "loadingPlans": "ప్లాన్‌లను లోడ్ చేస్తోంది...",
+    "managePlan": "ప్రణాళికను నిర్వహించండి",
+    "freePlan": "ఉచిత",
+    "manageInStripe": "గీతలో నిర్వహించండి",
+    "contactSales": "విక్రయాలను సంప్రదించండి",
+    "downgrade": "డౌన్‌గ్రేడ్ చేయండి",
+    "upgrade": "అప్‌గ్రేడ్ చేయండి",
+    "switchPlan": "ప్లాన్ మార్చండి",
+    "contactUs": "మమ్మల్ని సంప్రదించండి",
+    "audienceLawyers": "న్యాయ సంస్థలు",
+    "audienceConsumers": "వినియోగదారులు",
+    "creditsFootnote": "మోడల్ వినియోగంతో AI క్రెడిట్స్ స్కేల్."
   },
   "home": {
     "audienceItems": [
       "Individuals",
       "Law Firms",
-      "Solo Advocates",
+      "సోలో అడ్వకేట్స్",
       "In-House Counsel",
       "Litigation Teams",
       "Corporate Legal Depts",
@@ -87,17 +131,24 @@
       "badge": "AI- గ్రౌండెడ్ లీగల్ ఇంటెలిజెన్స్ — ఎవరికైనా",
       "title": "లీగల్ ఇంటెలిజెన్స్.",
       "titleHighlight": "ఎవరికైనా. ఎక్కడైనా.",
-      "subtitle": "మీ పరిస్థితిని సాధారణ భాషలో వివరించండి. మేము వాస్తవ చట్టాన్ని చదువుతాము, నిజమైన చట్టాలు మరియు కేసులను ఉదహరిస్తాము మరియు మీరు ఎక్కడ ఉన్నారో ఖచ్చితంగా తెలియజేస్తాము — ప్రారంభించడానికి ఉచితం, క్రెడిట్ కార్డ్ అవసరం లేదు.",
+      "subtitle": "మీ పరిస్థితిని సాధారణ భాషలో వివరించండి. మేము వాస్తవ చట్టాన్ని చదువుతాము, నిజమైన శాసనాలు మరియు కేసులను ఉదహరిస్తాము మరియు మీరు ఎక్కడ ఉన్నారో ఖచ్చితంగా తెలియజేస్తాము — ఉచితంగా ప్రారంభించవచ్చు.",
       "bullet1": "మీ పరిస్థితిని చదువుతుంది, కేవలం కీలకపదాలు మాత్రమే కాదు",
       "bullet2": "నిజమైన శాసనాలు & కేసు చట్టం - ఉదహరించబడింది, ఎప్పుడూ కల్పించబడలేదు",
       "bullet3": "ఒకే వేదికపై వ్యక్తులు మరియు న్యాయ సంస్థలు",
       "bullet4": "మీ అధికార పరిధిని స్వయంచాలకంగా గుర్తిస్తుంది, ఎల్లప్పుడూ స్థానిక చట్టాన్ని వర్తింపజేస్తుంది",
-      "ctaPrimary": "ఉచితంగా ప్రారంభించండి - క్రెడిట్ కార్డ్ లేదు",
+      "ctaPrimary": "ఉచితంగా ప్రారంభించండి",
       "ctaSecondary": "చర్యలో చూడండి",
       "trust1": "ఉచిత ప్రివ్యూ ఎల్లప్పుడూ చేర్చబడుతుంది",
       "trust2": "AIకి శిక్షణ ఇవ్వడానికి ఎప్పుడూ ఉపయోగించలేదు",
       "trust3": "మీ ఖాతాకు ప్రైవేట్",
       "howItWorksLink": "ఇది ఎలా పనిచేస్తుంది"
+    },
+    "guestSignup": {
+      "badge": "ఈరోజు మాత్రమే 40% తగ్గింపు",
+      "title": "మీ ఉచిత ఖాతాను సృష్టించండి",
+      "description": "మీ నివేదికను సేవ్ చేయడానికి మరియు మీ స్వాగత తగ్గింపును అన్‌లాక్ చేయడానికి సైన్ అప్ చేయండి.",
+      "signUp": "సైన్ అప్ చేయండి",
+      "continueAsGuest": "అతిథిగా కొనసాగండి"
     },
     "coverage": {
       "india": "భారతదేశం",
@@ -164,7 +215,7 @@
           "label": "DRAFT",
           "title": "Document Generation",
           "desc": "Demand letters, contracts, notices, and pleadings — drafted with AI, cited from real statutes, ready to send or file.",
-          "cta": "Start drafting"
+          "cta": "డ్రాఫ్టింగ్ ప్రారంభించండి"
         },
         {
           "num": "04",
@@ -178,7 +229,7 @@
           "label": "CONNECT",
           "title": "Lawyer Marketplace",
           "desc": "When you need a professional, connect directly with vetted lawyers in your jurisdiction. Warm handoff from AI analysis to real counsel.",
-          "cta": "Find a lawyer"
+          "cta": "న్యాయవాదిని కనుగొనండి"
         },
         {
           "num": "06",
@@ -210,7 +261,7 @@
         "Matter management, billing, AI Copilot, and meeting transcripts — one platform.",
         "Built-in client portal. Not email. Not a PDF."
       ],
-      "cta": "ఉచితంగా ప్రారంభించండి - క్రెడిట్ కార్డ్ లేదు"
+      "cta": "ఉచితంగా ప్రారంభించండి"
     },
     "whyNot": {
       "badge": "గొడుగు ఎందుకు",
@@ -405,7 +456,7 @@
             "Unlimited AI Copilot",
             "Matter & client management",
             "Billing & trust accounting",
-            "Meeting transcripts",
+            "మీటింగ్ ట్రాన్స్క్రిప్ట్స్",
             "Secure client intake portal"
           ],
           "cta": "Explore Firm Plans"
@@ -467,36 +518,218 @@
       "badge": "ప్రారంభించడానికి ఉచితం",
       "title": "మీ చట్టపరమైన మెదడు.",
       "titleItalic": "ప్రారంభించడానికి ఉచితం.",
-      "subtitle": "మీ పరిస్థితిని వివరించండి. 2 నిమిషాలలోపు ఉదహరించిన విశ్లేషణను పొందండి. క్రెడిట్ కార్డ్ లేదు, ప్రారంభించడానికి లాయర్ అవసరం లేదు.",
+      "subtitle": "మీ పరిస్థితిని వివరించండి. 2 నిమిషాలలోపు ఉదహరించిన విశ్లేషణను పొందండి. ప్రారంభించడానికి న్యాయవాది అవసరం లేదు.",
       "ctaPrimary": "ప్రారంభించండి - ఇది ఉచితం",
       "ctaSecondary": "న్యాయ సంస్థల కోసం →",
-      "footnote": "క్రెడిట్ కార్డ్ లేదు · 2 నిమిషాలలోపు ఫలితాలు · ఉచిత ప్రివ్యూ ఎల్లప్పుడూ చేర్చబడుతుంది"
+      "footnote": "2 నిమిషాలలోపు ఫలితాలు · ఉచిత ప్రివ్యూ ఎల్లప్పుడూ చేర్చబడుతుంది"
     },
     "landingIssueBoard": {
-      "title": "మీ చట్టపరమైన పరిస్థితి ఏమిటి?",
-      "subtitle": "దీన్ని సాదా భాషలో వివరించండి — మా AI వాస్తవాలను చదివి, చట్టాన్ని ఉదహరిస్తుంది మరియు మీరు ఎక్కడ ఉన్నారో ఖచ్చితంగా తెలియజేస్తుంది.",
+      "title": "మీకు ఏమి సహాయం కావాలి?",
+      "subtitle": "ప్రశ్నను పరిశోధించండి, మీ పరిస్థితిని అర్థం చేసుకోండి, పత్రాన్ని రూపొందించండి లేదా ఒప్పందాన్ని సమీక్షించండి — సాధారణ భాషలో మాకు చెప్పండి మరియు మేము వర్తించే చట్టాన్ని ఉదహరిస్తాము.",
+      "titleIssueCheck": "మీ చట్టపరమైన పరిస్థితిని అర్థం చేసుకోండి",
+      "subtitleIssueCheck": "ఏమి జరిగిందో మాకు చెప్పండి. గొడుగు కీలకమైన చట్టపరమైన సమస్యలను గుర్తిస్తుంది, మీ ఎంపికలను వివరిస్తుంది మరియు మీకు అవసరమైన పత్రాల వైపు మీకు మార్గనిర్దేశం చేస్తుంది.",
+      "titleResearch": "చట్టపరమైన ప్రశ్నను పరిశోధించండి",
+      "subtitleResearch": "దృష్టి కేంద్రీకరించిన చట్టపరమైన ప్రశ్నను అడగండి మరియు సంబంధిత చట్టం, కేసులు మరియు అనులేఖనాల ద్వారా మద్దతునిచ్చే నిర్మాణాత్మక సమాధానాన్ని స్వీకరించండి.",
+      "titleDrafting": "చట్టపరమైన పత్రాన్ని రూపొందించండి",
+      "subtitleDrafting": "నోటీసులు, ఒప్పందాలు, పిటిషన్లు మరియు మరిన్నింటిని రూపొందించండి - వర్తించే చట్టం ఆధారంగా.",
+      "titleDocumentReview": "పత్రాన్ని సమీక్షించండి",
+      "subtitleDocumentReview": "ఒప్పందాన్ని అప్‌లోడ్ చేయండి లేదా దాఖలు చేయండి — మేము రిస్క్‌లు, ఖాళీలు మరియు కీలక నిబంధనలను ఫ్లాగ్ చేస్తాము.",
+      "draftExamplesHint": "న్యాయవాదులు ప్రతిరోజూ రూపొందించే జనాదరణ పొందిన టెంప్లేట్‌లు — మీ టెంప్లేట్‌లను రూపొందించడానికి ఉచితంగా సైన్ అప్ చేయండి.",
+      "docReviewHint": "PDFలు లేదా వర్డ్ ఫైల్‌లను అప్‌లోడ్ చేయండి మరియు ఉదహరించిన రిస్క్‌లతో క్లాజ్-బై-క్లాజ్ విశ్లేషణను పొందండి.",
+      "docReviewRisk": "అననుకూలమైన లేదా తప్పిపోయిన నిబంధనల కోసం రిస్క్ ఫ్లాగ్‌లు",
+      "docReviewClauses": "కీ క్లాజ్ ఎక్స్‌ట్రాక్షన్ మరియు సాదా-భాష సారాంశం",
+      "docReviewAi": "AI సమీక్ష మీ అధికార పరిధి చట్టానికి అనుగుణంగా ఉంది",
+      "docReviewCompare": "బహుళ పత్రాలలో పట్టిక సమీక్ష",
+      "tryFreeSignUp": "ప్రయత్నించడానికి ఉచితంగా సైన్ అప్ చేయండి",
+      "researchTeaserUnavailable": "ఈ APIలో పరిశోధన ప్రివ్యూ ఇంకా అందుబాటులో లేదు. స్థానిక బ్యాకెండ్ (పోర్ట్ 4000)ని అమలు చేయండి లేదా తాజా APIని అమలు చేయండి.",
+      "placeholderIssueCheck": "ఏమి జరిగింది, ఎవరు పాల్గొన్నారు, ముఖ్యమైన తేదీలు మరియు మీరు ఏమి సాధించాలనుకుంటున్నారో వివరించండి.",
+      "placeholderResearch": "మీరు పరిశోధించాలనుకుంటున్న చట్టపరమైన ప్రశ్నను నమోదు చేయండి...",
+      "placeholderDrafting": "మీరు రూపొందించాల్సిన పత్రాన్ని వివరించండి — రకం, పార్టీలు మరియు కీలక నిబంధనలు.",
+      "placeholderDocumentReview": "మీరు సమీక్షించాలనుకుంటున్న పత్రాన్ని వివరించండి లేదా కీ నిబంధనలను అతికించండి.",
+      "taskIssueCheck": "ఇష్యూ చెకర్",
+      "taskResearch": "చట్టపరమైన పరిశోధన",
+      "taskDrafting": "ఒక పత్రాన్ని రూపొందించండి",
+      "taskDocumentReview": "ఒక పత్రాన్ని సమీక్షించండి",
+      "taskSelectLabel": "మీరు ఏమి చేయాలనుకుంటున్నారు?",
+      "regionIndia": "భారతదేశం",
+      "regionUnitedStates": "యునైటెడ్ స్టేట్స్",
+      "regionLabel": "అధికార పరిధి",
+      "signUpToUnlock": "అన్‌లాక్ చేయడానికి ఉచితంగా సైన్ అప్ చేయండి",
+      "citedAuthorities": "వాస్తవ చట్టం ఉదహరించబడింది",
+      "languageTitle": "మీరు ఏ భాషను ఇష్టపడతారు?",
+      "languageSubtitle": "మీరు ఎంచుకున్న భాషలో మేము మీ చట్టపరమైన విశ్లేషణను అందిస్తాము.",
       "freePreview": "ఉచిత ప్రివ్యూ",
-      "noCreditCard": "క్రెడిట్ కార్డ్ లేదు",
       "resultsIn2Min": "<2 నిమిషాల్లో ఫలితాలు",
-      "otherLanguages": "Other languages",
-      "otherLanguagesPlaceholder": "Select a language",
-      "languageSubtitleIndia": "We'll deliver your legal analysis in the language you choose.",
-      "languageTitle": "Which language do you prefer?",
-      "languageSubtitle": "We'll deliver your legal analysis in the language you choose."
+      "otherLanguages": "ఇతర భాషలు",
+      "otherLanguagesPlaceholder": "ఒక భాషను ఎంచుకోండి",
+      "languageSubtitleIndia": "మీరు ఎంచుకున్న భాషలో మేము మీ చట్టపరమైన విశ్లేషణను అందిస్తాము.",
+      "draftExamples": {
+        "regularBail": {
+          "label": "రెగ్యులర్ బెయిల్ దరఖాస్తు",
+          "subtitle": "నేరస్థుడు · BNSS §480",
+          "tag": "బెయిల్"
+        },
+        "chequeBounce": {
+          "label": "బౌన్స్ ఫిర్యాదును తనిఖీ చేయండి",
+          "subtitle": "క్రిమినల్ · NI చట్టం §138",
+          "tag": "రికవరీ"
+        },
+        "divorcePetition": {
+          "label": "విడాకుల పిటిషన్",
+          "subtitle": "కుటుంబం · HMA §13",
+          "tag": "కుటుంబం"
+        },
+        "writPetition": {
+          "label": "రిట్ పిటిషన్ (హైకోర్టు)",
+          "subtitle": "రాజ్యాంగం · కళ. 226",
+          "tag": "వ్రాయండి"
+        },
+        "federalComplaint": {
+          "label": "ఫెడరల్ సివిల్ ఫిర్యాదు",
+          "subtitle": "సివిల్ · FRCP నియమం 8",
+          "tag": "ఫెడరల్"
+        },
+        "motionToDismiss": {
+          "label": "12(బి)(6) తొలగించడానికి మోషన్",
+          "subtitle": "సివిల్ · FRCP రూల్ 12",
+          "tag": "చలనం"
+        }
+      },
+      "researchLockedHint": "న్యాయవాదులు ప్రతిరోజూ అడిగే నమూనా పరిశోధన ప్రశ్నలు — ప్రయత్నించడానికి ఉచితంగా సైన్ అప్ చేయండి.",
+      "researchExamples": {
+        "bnss101": {
+          "label": "వారెంట్ లేకుండా పోలీసులు ఎప్పుడు అరెస్ట్ చేయవచ్చు?",
+          "subtitle": "నేరస్థుడు · BNSS §101",
+          "tag": "భారతదేశం"
+        },
+        "section138": {
+          "label": "బౌన్స్ నోటీసు అవసరాలను తనిఖీ చేయండి",
+          "subtitle": "క్రిమినల్ · NI చట్టం §138",
+          "tag": "రికవరీ"
+        },
+        "frcp12": {
+          "label": "12(బి)(6) ప్రమాణాన్ని విస్మరించడానికి మోషన్",
+          "subtitle": "సివిల్ · FRCP రూల్ 12",
+          "tag": "ఫెడరల్"
+        },
+        "ukEmployment": {
+          "label": "అన్యాయమైన తొలగింపు సమయ పరిమితులు",
+          "subtitle": "ఉపాధి · UK ERA 1996",
+          "tag": "UK"
+        },
+        "keLabour": {
+          "label": "తప్పు ముగింపు నివారణలు",
+          "subtitle": "లేబర్ · కెన్యా ఉపాధి చట్టం",
+          "tag": "కెన్యా"
+        },
+        "contactDrafting": {
+          "label": "సేవా ఒప్పందంలో ముఖ్యమైన నిబంధనలు",
+          "subtitle": "వాణిజ్యం · ఒప్పంద చట్టం",
+          "tag": "డ్రాఫ్టింగ్"
+        }
+      },
+      "helperIssueCheck": "మీరు మీ స్వంత మాటలలో వ్రాయవచ్చు. మీరు అందించే మరింత సంబంధిత వివరాలు, విశ్లేషణ మరింత ఉపయోగకరంగా ఉంటుంది.",
+      "helperResearch": "మరింత ఖచ్చితమైన ఫలితాల కోసం అధికార పరిధిని మరియు నిర్దిష్ట సమస్యను చేర్చండి.",
+      "checkMySituation": "నా పరిస్థితిని తనిఖీ చేయండి",
+      "researchThisQuestion": "ఈ ప్రశ్నను పరిశోధించండి",
+      "enterAtLeastChars": "కనీసం {count} అక్షరాలను నమోదు చేయండి",
+      "charCount": "{current} / {max} అక్షరాలు",
+      "footerIssueCheck1": "ఉచిత ప్రారంభ తనిఖీ",
+      "footerIssueCheck2": "వర్తించే చట్టం గుర్తించబడింది",
+      "footerIssueCheck3": "డాక్యుమెంట్ మార్గదర్శకత్వం చేర్చబడింది",
+      "footerResearch1": "అధికార మద్దతుతో కూడిన సమాధానం",
+      "footerResearch2": "సంబంధిత కేసులు మరియు శాసనాలు",
+      "footerResearch3": "అనులేఖనాలను క్లియర్ చేయండి"
+    },
+    "researchProgress": {
+      "runningTitle": "చట్టపరమైన పరిశోధనను నడుపుతోంది",
+      "refiningTitle": "సందర్భంతో శుద్ధి చేస్తోంది…",
+      "modeFast": "వేగంగా",
+      "modeVerified": "ధృవీకరించబడింది",
+      "aboutOneMin": "· ~1 నిమి",
+      "almostThere": "· దాదాపు అక్కడ...",
+      "takingLonger": "· సాధారణం కంటే ఎక్కువ సమయం పడుతుంది",
+      "deepCitationNote": "ధృవీకరించబడిన పరిశోధన లోతైన అనులేఖన తనిఖీలను నిర్వహిస్తుంది - దీనికి కొన్ని నిమిషాలు పట్టవచ్చు.",
+      "verifiedDurationHint": "· సాధారణంగా 1-3 నిమిషాలు",
+      "stillWorking": "· ఇంకా పని చేస్తోంది…",
+      "verifiedRunningBanner": "ధృవీకరించబడిన పరిశోధన లోతైన పునరుద్ధరణ మరియు అనులేఖన తనిఖీలను అమలు చేస్తుంది - దీనికి కొన్ని నిమిషాలు పట్టవచ్చు.",
+      "draftReadyBanner": "డ్రాఫ్ట్ మెమో సిద్ధంగా ఉంది — తుది అనులేఖన ఆడిట్ అమలులో ఉంది…",
+      "draftVerifyingBanner": "చిత్తుప్రతి సిద్ధంగా ఉంది — ఖచ్చితత్వ తనిఖీలను అమలు చేస్తోంది…",
+      "phaseStallNote": "ఇప్పటికీ పని చేస్తోంది — బ్యాకెండ్ ఈ దశను ప్రాసెస్ చేస్తోంది. పెద్ద ప్రశ్నలకు కొన్ని నిమిషాలు పట్టవచ్చు.",
+      "stepCorpusDetailGeneric": "మీ అధికార పరిధి కోసం చట్టాలు, నిబంధనలు మరియు కేసు చట్టాన్ని స్కాన్ చేస్తోంది",
+      "stepAuditDraftLabel": "అనులేఖనాలను ధృవీకరిస్తోంది (మెమో డ్రాఫ్ట్ సిద్ధంగా ఉంది)",
+      "stepAuditDraftDetail": "తుది అనులేఖన ఆడిట్ పాస్ — మీ డ్రాఫ్ట్ క్రింద కనిపిస్తుంది.",
+      "stepParseLabel": "మీ చట్టపరమైన ప్రశ్నను అన్వయించడం",
+      "stepParseDetail": "అధికార పరిధి, నిబంధనలు మరియు ఉద్దేశాన్ని గుర్తించడం",
+      "stepParseDetailProvision": "{provision} మరియు సంబంధిత నిబంధనలను గుర్తించడం",
+      "stepCorpusLabel": "శాసనం కార్పస్‌ని శోధిస్తోంది",
+      "stepCorpusDetailIn": "ఇండియా కోడ్, BNSS, BNS మరియు BSA డేటాబేస్‌లను స్కాన్ చేస్తోంది",
+      "stepCorpusDetailInAct": "{act} మరియు సంబంధిత ఇండియా కోడ్ డేటాబేస్‌లను స్కాన్ చేస్తోంది",
+      "stepCorpusDetailUs": "USC, CFR మరియు ఫెడరల్ రూల్ డేటాబేస్‌లను స్కాన్ చేస్తోంది",
+      "stepRetrieveLabel": "అధికారులు తిరిగి పొందుతున్నారు",
+      "stepRetrieveFetch": "చట్టబద్ధమైన కార్పస్ నుండి {provision}ని పొందుతోంది…",
+      "stepRetrieveRank": "సంబంధిత విభాగాలు మరియు వ్యాఖ్యానాలకు ర్యాంకింగ్…",
+      "stepRetrieveCases": "ఈ నిబంధనను ఉటంకిస్తూ సరిపోలే కేస్ లా…",
+      "stepRetrieveRankCases": "ఔచిత్యాన్ని బట్టి కేస్ లా ర్యాంకింగ్...",
+      "stepRetrieveMatch": "మీ ప్రశ్నకు చట్టబద్ధమైన విభాగాలు సరిపోలుతున్నాయి...",
+      "stepRetrieveCommentary": "అధికారిక వ్యాఖ్యానాన్ని లాగుతోంది…",
+      "stepPredecessorLabel": "మునుపటి నిబంధనలను ధృవీకరిస్తోంది",
+      "stepPredecessorCrpcBnss": "క్రాస్-చెకింగ్ CrPC → BNSS విభాగం రీమ్యాప్‌లు",
+      "stepPredecessorCrpcBnssSection": "క్రాస్-చెకింగ్ CrPC → BNSS విభాగం {section} కోసం రీమ్యాప్‌లు",
+      "stepPredecessorGeneric": "క్రాస్-చెకింగ్ మునుపటి శాసనం మ్యాపింగ్‌లు",
+      "stepGroundLabel": "విశ్లేషణను గ్రౌండింగ్ చేయడం",
+      "stepGroundPinProvision": "అధికారిక మూలాలకు వ్యతిరేకంగా {provision}ని పిన్ చేస్తోంది...",
+      "stepGroundVerify": "కార్పస్‌కి వ్యతిరేకంగా విభాగం వచనాన్ని ధృవీకరిస్తోంది…",
+      "stepGroundAmendments": "సవరణలు మరియు నోటిఫికేషన్‌ల కోసం తనిఖీ చేస్తోంది…",
+      "stepGroundPin": "అధీకృత మూలాధారాలకు వ్యతిరేకంగా తిరిగి పొందిన వచనాన్ని పిన్ చేస్తోంది...",
+      "stepGroundCitations": "విభాగం సంఖ్యలు మరియు అనులేఖనాలను ధృవీకరిస్తోంది…",
+      "stepDraftLabel": "లీగల్ మెమోను రూపొందించడం",
+      "stepDraftStructure": "చట్టపరమైన విశ్లేషణను రూపొందించడం…",
+      "stepDraftWeave": "స్పష్టమైన సమాధానమిచ్చిన అధికారులు...",
+      "stepDraftSummary": "సాదా భాషా సారాంశాన్ని జోడిస్తోంది...",
+      "stepCitationsLabel": "అనులేఖనాలను ధృవీకరిస్తోంది",
+      "stepCitationsFabricated": "కల్పిత లేదా అసంబద్ధమైన కేసు అనులేఖనాల కోసం తనిఖీ చేస్తోంది...",
+      "stepCitationsStatute": "శాసన సూచనలను ధృవీకరిస్తోంది…",
+      "stepCitationsUnsupported": "మద్దతు లేని క్లెయిమ్‌లను తీసివేస్తోంది...",
+      "stepFinalizeLabel": "పదార్థ తనిఖీలను ముగించడం",
+      "stepFinalizeDrift": "డ్రిఫ్ట్ గుర్తింపు మరియు సమ్మతి నియమాలను వర్తింపజేస్తోంది…",
+      "stepFinalizePreview": "మీ ప్రివ్యూ సారాంశాన్ని సిద్ధం చేస్తోంది...",
+      "stepFinalizeReady": "దాదాపు సిద్ధంగా ఉంది…",
+      "stepDeepAgentLabel": "రన్నింగ్ డీప్ రీసెర్చ్ ఏజెంట్",
+      "stepDeepAgentReact": "రియాక్ట్ లూప్: వెబ్, శాసనాలు మరియు కేస్ లా శోధించడం…",
+      "stepDeepAgentEval": "సాధన ఫలితాలను మూల్యాంకనం చేస్తోంది…",
+      "stepDeepAgentPlan": "తదుపరి రిట్రీవల్ పాస్‌ని ప్లాన్ చేస్తోంది…",
+      "stepCrossCheckLabel": "తిరిగి పొందిన మూలాలను క్రాస్-చెకింగ్",
+      "stepCrossCheckMerge": "ప్రత్యక్ష అధికార ఫలితాలతో కార్పస్ హిట్‌లను విలీనం చేస్తోంది...",
+      "stepCrossCheckDedupe": "అతివ్యాప్తి చెందుతున్న అధికారాలను డూప్లికేట్ చేయడం…",
+      "stepAuditLabel": "అనులేఖన తనిఖీని అమలు చేస్తోంది",
+      "stepAuditLabeling": "డెలివరీకి ముందు ధృవీకరించని అనులేఖనాలను లేబుల్ చేస్తోంది…",
+      "stepAuditFinal": "ఫైనల్ సైటేషన్ ఆడిట్ పాస్…"
     }
   },
   "siteName": "Umbrella",
-  "siteTagline": "మీ చట్టపరమైన సమస్యను అర్థం చేసుకోండి. AIతో మీ సంస్థను నడపండి.",
-  "siteDescription": "IN, US, KE & UKలో మీ చట్టపరమైన సమస్యను ఉచితంగా తనిఖీ చేయండి. న్యాయ సంస్థలు మ్యాటర్-అవేర్ AI కోపైలట్, పరిశోధన, బిల్లింగ్ మరియు ప్రాక్టీస్ ఆటోమేషన్‌ను పొందుతాయి.",
-  "siteTitle": "అంబ్రెల్లా — AI లీగల్ గైడెన్స్ & ఫర్మ్ OS",
-  "issueCheckerMetaTitle": "ఉచిత లీగల్ ఇష్యూ చెకర్",
-  "issueCheckerMetaDescription": "మీ చట్టపరమైన సమస్యను వివరించండి మరియు భారతదేశం, US, కెన్యా మరియు UK కోసం దేశ-నిర్దిష్ట మార్గదర్శకత్వంతో ఉచిత AI ప్రివ్యూని పొందండి.",
-  "forLawyersMetaTitle": "AI-న్యాయ సంస్థల కోసం స్థానిక లీగల్ OS",
-  "forLawyersMetaDescription": "మేటర్-అవేర్ AI కోపైలట్, చట్టపరమైన పరిశోధన, బిల్లింగ్, ట్రస్ట్ అకౌంటింగ్ మరియు ఆటోమేషన్ — ఆధునిక న్యాయ సంస్థల కోసం నిర్మించబడింది.",
+  "siteTagline": "గ్లోబల్ లీగల్ AI ప్లాట్‌ఫారమ్ — ఏదైనా పరిస్థితిని అర్థం చేసుకోండి, ఏదైనా పత్రాన్ని రూపొందించండి, ఏదైనా సంస్థను అమలు చేయండి.",
+  "siteDescription": "అంబ్రెల్లా అనేది గ్లోబల్ లీగల్ AI: నిజమైన అనులేఖనాలతో ఉచిత ఇష్యూ చెకర్, AI డాక్యుమెంట్ డ్రాఫ్టింగ్, కాంట్రాక్ట్ రివ్యూ, చట్టపరమైన పరిశోధన మరియు పూర్తి న్యాయ సంస్థ OS — ప్రపంచవ్యాప్తంగా అందుబాటులో ఉంది.",
+  "siteTitle": "అంబ్రెల్లా — గ్లోబల్ లీగల్ AI ప్లాట్‌ఫారమ్",
+  "issueCheckerMetaTitle": "ఉచిత లీగల్ ఇష్యూ చెకర్ — గ్లోబల్ లీగల్ AI",
+  "issueCheckerMetaDescription": "ఏ దేశంలోనైనా మీ చట్టపరమైన సమస్యను వివరించండి. నిజమైన చట్టాలు, ప్రమాద స్థాయి మరియు తదుపరి దశలతో ఉచిత AI ప్రివ్యూని పొందండి — ప్రపంచవ్యాప్తంగా అధికార పరిధి-అవగాహన చట్టపరమైన మార్గదర్శకత్వం.",
+  "forLawyersMetaTitle": "AI-న్యాయ సంస్థల కోసం స్థానిక లీగల్ OS — గ్లోబల్ ప్లాట్‌ఫారమ్",
+  "forLawyersMetaDescription": "మేటర్-అవేర్ AI కోపైలట్, చట్టపరమైన పరిశోధన, డాక్యుమెంట్ డ్రాఫ్టింగ్, బిల్లింగ్, ట్రస్ట్ అకౌంటింగ్ మరియు క్లయింట్ తీసుకోవడం — ప్రతి దేశంలోని సంస్థలకు పూర్తి చట్టపరమైన వేదిక.",
+  "demoMetaTitle": "అంబ్రెల్లా డెమో — గ్లోబల్ లీగల్ AI చర్యలో ఉంది",
+  "demoMetaDescription": "ఇంటరాక్టివ్ ప్రోడక్ట్ టూర్: ఇష్యూ చెకర్, డాక్యుమెంట్ డ్రాఫ్టింగ్, కాంట్రాక్ట్ రివ్యూ, AI కోపైలట్ మరియు ఫర్మ్ వర్క్‌ఫ్లోస్. వ్యక్తులకు ప్రపంచవ్యాప్తంగా ఉచితం; న్యాయ సంస్థలకు ఉచిత ట్రయల్.",
+  "lawyersMetaTitle": "న్యాయవాదిని కనుగొనండి — మీరు మానవ సమీక్ష కోసం సిద్ధంగా ఉన్నప్పుడు",
+  "lawyersMetaDescription": "ప్రపంచవ్యాప్తంగా వెట్టెడ్ లాయర్లను బ్రౌజ్ చేయండి. ఉచిత AI చట్టపరమైన స్పష్టతతో ప్రారంభించండి - మీకు అధికారిక సలహా అవసరమైనప్పుడు మీ అధికార పరిధిలోని లైసెన్స్ పొందిన న్యాయవాదికి కనెక్ట్ అవ్వండి.",
+  "uploadDocumentMetaTitle": "AI డాక్యుమెంట్ రివ్యూ & కాంట్రాక్ట్ అనాలిసిస్ — గ్లోబల్",
+  "uploadDocumentMetaDescription": "AI నిబంధన-స్థాయి సమీక్ష కోసం ఒప్పందాలు, నోటీసులు లేదా ఒప్పందాలను అప్‌లోడ్ చేయండి. అధికార పరిధి-అవగాహన చట్టపరమైన పత్ర విశ్లేషణ — ప్రతి దేశంలో అందుబాటులో ఉంటుంది.",
+  "legalFormsMetaTitle": "లీగల్ డాక్యుమెంట్ డ్రాఫ్టింగ్ & ఫారమ్‌లు — గ్లోబల్ టెంప్లేట్లు",
+  "legalFormsMetaDescription": "AI-ఆధారిత చట్టపరమైన పత్రాల ముసాయిదా: డిమాండ్ లేఖలు, ఒప్పందాలు, నోటీసులు మరియు అభ్యర్ధనలు — ఏ దేశానికైనా అధికార పరిధి-తెలిసిన టెంప్లేట్‌లు.",
+  "learnMoreMetaTitle": "గొడుగు ఎలా పనిచేస్తుంది — గ్లోబల్ లీగల్ ఇంటెలిజెన్స్ ప్లాట్‌ఫారమ్",
+  "learnMoreMetaDescription": "బిల్ చేయదగిన గంట లేకుండా చట్టపరమైన స్పష్టత. AI డాక్యుమెంట్ డ్రాఫ్టింగ్, కాంట్రాక్ట్ రివ్యూ, చట్టపరమైన పరిశోధన మరియు పూర్తి న్యాయ సంస్థ OS — ప్రతి దేశంలో అందుబాటులో ఉన్నాయి.",
   "welcomeSubtext": "నిమిషాల్లో చట్టపరమైన సమస్యను తనిఖీ చేయండి. విషయాలను నిర్వహించండి మరియు మీ సంస్థను నిర్వహించండి — ప్రైవేట్ మరియు సురక్షితం.",
   "welcomeHeadline": "చట్టపరమైన స్పష్టత\nఅందరికీ.",
   "instantAnswers": "తక్షణ సమాధానాలు",
   "private": "ప్రైవేట్",
+  "anywhereChip": "ఎక్కడైనా",
   "forLawyersChip": "న్యాయవాదుల కోసం",
   "createAccountCta": "ఖాతాను సృష్టించండి",
   "tryForFree": "ఉచితంగా ప్రయత్నించండి - ఖాతా అవసరం లేదు",
@@ -529,7 +762,7 @@
   "global_coverage": "గ్లోబల్ కవరేజ్",
   "how_it_works": "ఇది ఎలా పనిచేస్తుంది",
   "illustrative_estimate_based_on_stated_facts_not_a_legal_pred": "పేర్కొన్న వాస్తవాల ఆధారంగా సచిత్ర అంచనా. చట్టపరమైన అంచనా కాదు.",
-  "india_us_uk_kenya_and_growing": "భారతదేశం · US · UK · కెన్యా — మరియు పెరుగుతోంది",
+  "india_us_uk_kenya_and_growing": "ప్రపంచవ్యాప్తంగా ప్రతి దేశం",
   "legal": "చట్టపరమైన",
   "legal_disclaimer": "చట్టపరమైన నిరాకరణ",
   "live": "ప్రత్యక్షం",
@@ -559,7 +792,6 @@
   "forLawyersHeadline3": "మీ అభ్యాసాన్ని పెంచుకోండి.",
   "forLawyersSubhead": "ఆల్-ఇన్-వన్ లీగల్ ప్రాక్టీస్ మేనేజ్‌మెంట్ ప్లాట్‌ఫారమ్ — స్థానిక ట్రాన్‌స్క్రిప్ట్‌లు, మ్యాటర్-అవేర్ కోపైలట్, ట్రస్ట్ అకౌంటింగ్ మరియు ఆటోమేషన్-ఫస్ట్ వర్క్‌ఫ్లోస్.",
   "forLawyersTryDemo": "డెమో ప్రయత్నించండి",
-  "forLawyersNoCreditCard": "క్రెడిట్ కార్డ్ లేదు",
   "forLawyersTrialDays": "30 రోజుల ట్రయల్",
   "forLawyersSetupMinutes": "5 నిమిషాల్లో సెటప్ చేయండి",
   "forLawyersStatActiveMatters": "క్రియాశీల విషయాలు",
@@ -581,6 +813,52 @@
   "forLawyersFeatureAutomationDesc": "ఆమోదాలు మరియు SLAలతో వర్క్‌ఫ్లో ఉంటే/అప్పుడు.",
   "forLawyersFeatureCopilot": "AI కోపైలట్",
   "forLawyersFeatureCopilotDesc": "మ్యాటర్-అవేర్ డ్రాఫ్ట్‌లు, రీసెర్చ్ మరియు స్ట్రాటజీ మెమోలు.",
+  "forLawyersFeatureResearch": "చట్టపరమైన పరిశోధన",
+  "forLawyersFeatureResearchDesc": "ఉదహరించిన శాసనాలు మరియు కేసు చట్టంతో అధికార పరిధి-అవగాహన AI పరిశోధన.",
+  "forLawyersFeatureMeetings": "మీటింగ్ ట్రాన్స్క్రిప్ట్స్",
+  "forLawyersFeatureMeetingsDesc": "క్లయింట్ సమావేశాలను రికార్డ్ చేయండి, లిప్యంతరీకరించండి మరియు స్వయంచాలకంగా సంగ్రహించండి.",
+  "forLawyersFeatureBilling": "బిల్లింగ్ & టైమ్ ట్రాకింగ్",
+  "forLawyersFeatureBillingDesc": "స్వయంచాలక సమయ క్యాప్చర్, ఇన్‌వాయిస్ ఉత్పత్తి మరియు చెల్లింపు సేకరణ.",
+  "forLawyersHowItWorksTitle": "నిమిషాల్లో పైకి లేస్తుంది",
+  "forLawyersStep1Title": "సమావేశాన్ని రికార్డ్ చేయండి లేదా దిగుమతి చేయండి",
+  "forLawyersStep1Desc": "ఏదైనా క్లయింట్ కాల్‌ని క్యాప్చర్ చేయండి లేదా ఇప్పటికే ఉన్న రికార్డింగ్‌ను అప్‌లోడ్ చేయండి. గొడుగు స్వయంచాలకంగా చర్య అంశాలను లిప్యంతరీకరించి, సంగ్రహిస్తుంది.",
+  "forLawyersStep2Title": "AI మీ విషయాన్ని నిర్మిస్తుంది",
+  "forLawyersStep2Desc": "కీలకమైన వాస్తవాలు, గడువులు, నష్టాలు మరియు తదుపరి దశలు లైవ్ మ్యాటర్ ఫైల్‌గా నిర్వహించబడతాయి - మాన్యువల్ డేటా నమోదు అవసరం లేదు.",
+  "forLawyersStep3Title": "మీ అభ్యాసాన్ని అమలు చేయండి",
+  "forLawyersStep3Desc": "బిల్లింగ్, ట్రస్ట్ అకౌంటింగ్, క్లయింట్ కమ్యూనికేషన్‌లు మరియు ఫైలింగ్‌లు అన్నీ సత్యం యొక్క ఒకే మూలం నుండి ప్రవహిస్తాయి.",
+  "forLawyersImpactTitle": "గొడుగు తేడా",
+  "forLawyersImpact1Value": "68%",
+  "forLawyersImpact1Label": "అడ్మిన్‌లో తక్కువ సమయం",
+  "forLawyersImpact2Value": "3×",
+  "forLawyersImpact2Label": "వేగవంతమైన విషయం సెటప్",
+  "forLawyersImpact3Value": "94%",
+  "forLawyersImpact3Label": "బిల్లింగ్ ఖచ్చితత్వం",
+  "forLawyersImpact4Value": "< 5 నిమి",
+  "forLawyersImpact4Label": "సగటు ఆన్‌బోర్డింగ్ సమయం",
+  "forLawyersPersonasTitle": "ప్రతి సాధన రకం కోసం నిర్మించబడింది",
+  "forLawyersPersona1Title": "సోలో అడ్వకేట్స్",
+  "forLawyersPersona1Bullet1": "ఫర్మ్ ఓవర్ హెడ్ లేకుండా ఫుల్ మ్యాటర్ OS",
+  "forLawyersPersona1Bullet2": "AI కోపైలట్ లేఖలు, ఒప్పందాలు మరియు మెమోలను డ్రాఫ్ట్ చేస్తుంది",
+  "forLawyersPersona1Bullet3": "అంతర్నిర్మిత ట్రస్ట్ అకౌంటింగ్ మరియు ఇన్‌వాయిస్",
+  "forLawyersPersona2Title": "బోటిక్ సంస్థలు",
+  "forLawyersPersona2Bullet1": "పాత్ర-ఆధారిత యాక్సెస్ నియంత్రణతో బహుళ-వినియోగదారు",
+  "forLawyersPersona2Bullet2": "షేర్డ్ మ్యాటర్ పైప్‌లైన్ మరియు క్లయింట్ పోర్టల్",
+  "forLawyersPersona2Bullet3": "టీమ్ బిల్లింగ్ మరియు కలెక్షన్స్ డ్యాష్‌బోర్డ్",
+  "forLawyersPersona3Title": "అంతర్గత న్యాయ బృందాలు",
+  "forLawyersPersona3Bullet1": "అపరిమిత అంతర్గత విషయం ట్రాకింగ్",
+  "forLawyersPersona3Bullet2": "సంస్కరణ నియంత్రణతో పాలసీ మరియు కాంట్రాక్ట్ లైబ్రరీ",
+  "forLawyersPersona3Bullet3": "SSO, ఆడిట్ లాగ్‌లు మరియు సమ్మతి రిపోర్టింగ్",
+  "forLawyersPricingTeaserTitle": "సాధారణ, పారదర్శక ధర",
+  "forLawyersPricingTeaserSubtitle": "ఉచితంగా ప్రారంభించండి. మీకు మరింత అవసరమైనప్పుడు అప్‌గ్రేడ్ చేయండి. దాచిన రుసుములు లేవు.",
+  "forLawyersPricingTeaserSolo": "సోలో - $40 / నెల నుండి",
+  "forLawyersPricingTeaserSoloDesc": "వ్యక్తిగత న్యాయవాదులు మరియు న్యాయవాదుల కోసం పూర్తి లాయర్ OS.",
+  "forLawyersPricingTeaserFirm": "సంస్థ — ప్రతి సీటుకు అనుకూలం",
+  "forLawyersPricingTeaserFirmDesc": "బహుళ-వినియోగదారు, SSO, అధునాతన సమ్మతి మరియు అంకితమైన మద్దతు.",
+  "forLawyersPricingTeaserCta": "పూర్తి ధరను చూడండి",
+  "forLawyersFinalCtaTitle": "మీ అభ్యాసం, AI ద్వారా సూపర్ఛార్జ్ చేయబడింది.",
+  "forLawyersFinalCtaSubtitle": "తెలివిగా పని చేయడానికి, మరింత బిల్లు చేయడానికి మరియు మెరుగైన క్లయింట్ ఫలితాలను అందించడానికి ఇప్పటికే గొడుగును ఉపయోగిస్తున్న వందలాది మంది న్యాయవాదులతో చేరండి.",
+  "forLawyersFinalCtaTrial": "ఉచిత ట్రయల్ ప్రారంభించండి",
+  "forLawyersFinalCtaDemo": "ఒక డెమో చూడండి",
   "forLawyersCtaTitle": "మీ అభ్యాసాన్ని మార్చడానికి సిద్ధంగా ఉన్నారా?",
   "forLawyersCtaSubtitle": "అంబ్రెల్లాను ఉపయోగించి ముందుకు ఆలోచించే న్యాయ సంస్థలలో చేరండి.",
   "forLawyersCtaTrial": "మీ ఉచిత ట్రయల్‌ని ప్రారంభించండి",
@@ -604,6 +882,954 @@
   "subscriptionCancelBody": "ఎలాంటి ఆరోపణలు చేయలేదు. మీరు ఎప్పుడైనా ప్లాన్‌ని ఎంచుకోవడానికి ధరకు తిరిగి రావచ్చు.",
   "subscriptionBackToPricing": "తిరిగి ధరకి",
   "subscriptionSuccessTitle": "సభ్యత్వం నిర్ధారించబడింది",
+  "subscriptionSuccessWelcome": "{plan}కి స్వాగతం",
+  "subscriptionSuccessBody": "మీ ప్లాన్ సక్రియంగా ఉంది మరియు మీ ఖాతాకు క్రెడిట్‌లు జోడించబడ్డాయి.",
+  "subscriptionSuccessActivating": "మీ సభ్యత్వాన్ని సక్రియం చేస్తోంది...",
+  "subscriptionSuccessActivatingHint": "చెల్లింపును నిర్ధారిస్తోంది మరియు మీ ప్లాన్‌ని నవీకరిస్తోంది.",
+  "subscriptionSuccessWebhookHint": "చెల్లింపు స్వీకరించబడింది. మీ ప్లాన్ అప్‌డేట్ కావడానికి కొంత సమయం పట్టవచ్చు — త్వరలో ప్లాన్ & వినియోగాన్ని తనిఖీ చేయండి.",
+  "subscriptionSuccessPlan": "ప్లాన్ చేయండి",
+  "subscriptionSuccessActiveBadge": "చురుకుగా",
+  "subscriptionSuccessCredits": "AI క్రెడిట్‌లు ఉన్నాయి",
+  "subscriptionSuccessPrice": "ధర",
+  "subscriptionSuccessPerMonth": "నెల",
+  "subscriptionSuccessRenews": "తదుపరి బిల్లింగ్ తేదీ",
+  "subscriptionSuccessSyncing": "మీ ప్లాన్‌ని సింక్ చేస్తోంది...",
+  "subscriptionSuccessSyncingHint": "చెల్లింపు స్వీకరించబడింది - మీ సభ్యత్వం సక్రియంగా ఉందో లేదో తనిఖీ చేస్తోంది.",
+  "subscriptionSuccessCreditsAdded": "+{count} క్రెడిట్‌లు మీ ఖాతాకు జోడించబడ్డాయి",
+  "subscriptionSuccessConfirmFailed": "మేము మీ సభ్యత్వాన్ని స్వయంచాలకంగా నిర్ధారించలేకపోయాము. మీ స్థితిని తనిఖీ చేయడానికి ప్లాన్ & వినియోగాన్ని తెరవండి లేదా అది ఇప్పటికీ ఉచితం అని చూపిస్తే మద్దతును సంప్రదించండి.",
+  "subscriptionSuccessPendingDeploy": "చెల్లింపు స్వీకరించబడింది. మీ సభ్యత్వం ప్రాసెస్ చేయబడుతోంది - ఇది సాధారణంగా ఒక నిమిషంలోపు పడుతుంది.",
+  "subscriptionSuccessPendingHint": "కొన్ని నిమిషాల తర్వాత కూడా ప్లాన్ & వినియోగం ఉచితం అని చూపిస్తే, పేజీని రిఫ్రెష్ చేయండి లేదా మీ చెక్అవుట్ సెషన్ IDతో మద్దతును సంప్రదించండి.",
   "subscriptionGoToDashboard": "డాష్‌బోర్డ్‌కి వెళ్లండి",
-  "subscriptionPlanUsage": "ప్రణాళిక & వినియోగం"
+  "subscriptionPlanUsage": "ప్రణాళిక & వినియోగం",
+  "legalAi": {
+    "metaTitle": "లీగల్ AI ప్లాట్‌ఫారమ్ — ప్రతి ఒక్కరి కోసం గ్లోబల్ లీగల్ ఇంటెలిజెన్స్",
+    "metaDescription": "అంబ్రెల్లా అనేది గ్లోబల్ లీగల్ AI ప్లాట్‌ఫారమ్: నిజమైన అనులేఖనాలు, AI డాక్యుమెంట్ డ్రాఫ్టింగ్, కాంట్రాక్ట్ రివ్యూ, చట్టపరమైన పరిశోధన మరియు పూర్తి న్యాయ సంస్థ OS — ప్రపంచవ్యాప్తంగా ప్రతి దేశంలో అందుబాటులో ఉంది.",
+    "badge": "గ్లోబల్ లీగల్ AI",
+    "heroTitle": "నిజమైన చట్టాన్ని ఉదహరించే చట్టపరమైన AI — ప్రతిచోటా",
+    "heroSubtitle": "చాలా చట్టపరమైన సాధనాలు మూలాధారాలు లేకుండా నమ్మకంగా సమాధానాలు ఇస్తాయి. గొడుగు అధికార పరిధి-నిర్దిష్ట శాసనాలు మరియు కేస్ లా, డ్రాఫ్ట్ డాక్యుమెంట్లు, కాంట్రాక్ట్‌లను సమీక్షిస్తుంది మరియు మీ మొత్తం సంస్థను ప్రతి దేశంలో నడుపుతుంది.",
+    "heroCtaPrimary": "ఉచిత చట్టపరమైన AI తనిఖీని ప్రయత్నించండి",
+    "heroCtaSecondary": "న్యాయ సంస్థల కోసం చట్టపరమైన AI",
+    "whatIsTitle": "చట్టపరమైన AI అంటే ఏమిటి?",
+    "whatIsBody1": "చట్టపరమైన AI పెద్ద భాషా నమూనాలను మరియు చట్టపరమైన డేటాబేస్‌లను ఉపయోగిస్తుంది, ప్రజలకు హక్కులను అర్థం చేసుకోవడం, పత్రాలను సమీక్షించడం మరియు తదుపరి దశలను ప్లాన్ చేయడంలో సహాయపడుతుంది. సాధారణ చాట్‌బాట్‌ల మాదిరిగా కాకుండా, ఉద్దేశ్యంతో రూపొందించబడిన చట్టపరమైన AI వర్తించే చట్టంలో సమాధానాలను అందించాలి, అధికార పరిధి సరిహద్దులను గౌరవించాలి మరియు అధికారిక న్యాయ సలహా నుండి సమాచారాన్ని స్పష్టంగా వేరు చేయాలి.",
+    "whatIsBody2": "అంబ్రెల్లా రీట్రీవల్-ఆగ్మెంటెడ్ జనరేషన్ (RAG)ని ఇండెక్స్ చేయబడిన శాసనాలు మరియు కేస్ లాతో మ్యాటర్-అవేర్ వర్క్‌ఫ్లోలను మిళితం చేస్తుంది - కాబట్టి వినియోగదారులు గైడెడ్ విశ్లేషణను పొందుతారు మరియు సంస్థలు క్లయింట్ సందర్భం, బిల్లింగ్ మరియు సమ్మతిని అర్థం చేసుకునే కోపైలట్‌ను పొందుతాయి.",
+    "differentTitle": "గొడుగు సాధారణ చట్టపరమైన AI నుండి ఎందుకు భిన్నంగా ఉంటుంది",
+    "differentSubtitle": "మొదటి రోజు నుండి చట్టపరమైన సందర్భం కోసం నిర్మించబడింది — చాట్‌బాట్ రేపర్ కాదు.",
+    "pillars": [
+      {
+        "title": "Real citations you can verify",
+        "body": "Every analysis links to statutes and case law you can open and check — not fabricated references."
+      },
+      {
+        "title": "Global jurisdiction awareness",
+        "body": "Auto-detects your country and applies local law. Deep corpora where available; intelligent guidance everywhere else — one platform for the entire world."
+      },
+      {
+        "title": "Two platforms, one connected system",
+        "body": "Individuals get a free issue checker and document review. Firms get matter management, billing, trust accounting, and an AI Copilot — linked through client intake."
+      },
+      {
+        "title": "Privacy and compliance built in",
+        "body": "Tenant isolation, regional data residency options, and explicit consent before using your data for model training."
+      }
+    ],
+    "useCasesTitle": "చట్టపరమైన AI వినియోగ కేసులు",
+    "useCasesSubtitle": "మొదటి ప్రశ్న నుండి ఫర్మ్-వైడ్ ఆటోమేషన్ వరకు.",
+    "useCases": [
+      {
+        "audience": "Individuals",
+        "title": "మీ చట్టపరమైన పరిస్థితిని అర్థం చేసుకోండి",
+        "items": [
+          "Free legal issue checker with cited guidance",
+          "Document upload and AI review",
+          "Connect with a licensed lawyer when ready"
+        ]
+      },
+      {
+        "audience": "న్యాయ సంస్థలు",
+        "title": "Run a modern AI-native practice",
+        "items": [
+          "Matter-aware AI Copilot",
+          "Legal research with section finder",
+          "Meeting transcripts, billing, and trust accounting",
+          "Client intake from consumer issue checks"
+        ]
+      }
+    ],
+    "compareTitle": "అన్ని చట్టపరమైన AI సామర్థ్యాలను అన్వేషించండి",
+    "compareSubtitle": "డాక్యుమెంట్ డ్రాఫ్టింగ్, కాంట్రాక్ట్ రివ్యూ, లీగల్ రీసెర్చ్ మరియు ఫర్మ్ ఆటోమేషన్ — ఒక గ్లోబల్ ప్లాట్‌ఫారమ్.",
+    "compareLink": "అన్ని పరిష్కారాలను బ్రౌజ్ చేయండి",
+    "guidesTitle": "అధికార పరిధి ద్వారా చట్టపరమైన మార్గదర్శకాలు",
+    "guidesSubtitle": "సాధారణ చట్టపరమైన అంశాలపై విద్యాపరమైన అవలోకనాలు — ఎల్లప్పుడూ లైసెన్స్ పొందిన న్యాయవాదితో ధృవీకరించండి.",
+    "guidesLink": "అన్ని చట్టపరమైన మార్గదర్శకాలను బ్రౌజ్ చేయండి",
+    "faqTitle": "లీగల్ AI — తరచుగా అడిగే ప్రశ్నలు",
+    "faqItems": [
+      {
+        "question": "Is Umbrella legal advice?",
+        "answer": "No. Umbrella provides legal information and AI-guided analysis to help you understand your situation. It is not a substitute for advice from a licensed attorney. For formal legal advice, connect with a lawyer through the platform."
+      },
+      {
+        "question": "How is Legal AI different from ChatGPT?",
+        "answer": "General chatbots can produce confident but incorrect legal answers with fabricated citations. Umbrella retrieves real statutes and case law for your jurisdiction and cites sources you can verify — plus offers firm tools ChatGPT does not provide."
+      },
+      {
+        "question": "Which countries does Umbrella support?",
+        "answer": "Umbrella is built as a global legal AI platform. We serve users in every country worldwide — with deep legal database coverage expanding continuously and intelligent jurisdiction-aware guidance everywhere."
+      },
+      {
+        "question": "Is there a free Legal AI option?",
+        "answer": "Yes. The legal issue checker preview is free for registered users with included AI credits. Law firms can start a free trial of the full platform including AI Copilot."
+      },
+      {
+        "question": "Can law firms use Umbrella as their Legal AI software?",
+        "answer": "Yes. Umbrella is an AI-native legal OS — matter management, billing, trust accounting, document review, meeting transcripts, and a matter-aware Copilot in one platform."
+      },
+      {
+        "question": "Does Legal AI replace lawyers?",
+        "answer": "No. Legal AI helps you understand options faster and prepares better questions for your lawyer. Umbrella connects consumers to licensed attorneys when human review is needed."
+      }
+    ],
+    "finalCtaTitle": "నిజమైన చట్టాన్ని ఉదహరించే చట్టపరమైన AIని ప్రయత్నించండి",
+    "finalCtaSubtitle": "వ్యక్తుల కోసం ఉచిత ఇష్యూ చెకర్. న్యాయ సంస్థలకు ఉచిత ట్రయల్.",
+    "finalCtaPrimary": "ఉచితంగా ప్రారంభించండి — ఇష్యూ చెకర్",
+    "finalCtaSecondary": "సంస్థ వేదికను అన్వేషించండి"
+  },
+  "compareChatGpt": {
+    "metaTitle": "చట్టపరమైన పని కోసం గొడుగు vs ChatGPT",
+    "metaDescription": "అంబ్రెల్లా లీగల్ AI vs ChatGPTని సరిపోల్చండి: నిజమైన అనులేఖనాలు, అధికార పరిధి-అవగాహన చట్టం, ఫలిత మార్గదర్శకత్వం మరియు పూర్తి న్యాయ సంస్థ OS — సాధారణ చాట్‌బాట్ సమాధానాలు కాదు.",
+    "badge": "పోలిక",
+    "title": "చట్టపరమైన పని కోసం గొడుగు vs ChatGPT",
+    "subtitle": "ChatGPT ఒక సాధారణ సహాయకుడు. గొడుగు అనేది నిజమైన చట్టాలు, కేస్ లా మరియు ఫర్మ్ వర్క్‌ఫ్లోస్‌పై నిర్మించబడిన చట్టపరమైన AI.",
+    "umbrellaLabel": "Umbrella",
+    "chatgptLabel": "ChatGPT",
+    "rows": [
+      {
+        "feature": "Legal citations",
+        "umbrella": "Real statutes & case law with clickable sources",
+        "competitor": "Can fabricate citations that look real"
+      },
+      {
+        "feature": "Jurisdiction awareness",
+        "umbrella": "India, US, UK, Kenya legal corpora",
+        "competitor": "Generic — no guaranteed local law"
+      },
+      {
+        "feature": "పత్రం సమీక్ష",
+        "umbrella": "Upload contracts & get clause-level analysis",
+        "competitor": "Paste text only; no matter context"
+      },
+      {
+        "feature": "Law firm tools",
+        "umbrella": "Matters, billing, trust, Copilot, intake",
+        "competitor": "None — chat only"
+      },
+      {
+        "feature": "Connect to a lawyer",
+        "umbrella": "Built-in marketplace & review queue",
+        "competitor": "Not available"
+      },
+      {
+        "feature": "Data privacy",
+        "umbrella": "Tenant isolation; no training without consent",
+        "competitor": "General OpenAI data policies"
+      }
+    ],
+    "verdictTitle": "ఒక్కొక్కటి ఎప్పుడు ఉపయోగించాలి",
+    "verdictBody": "సాధారణ రచన మరియు ఆలోచనాత్మకం కోసం ChatGPTని ఉపయోగించండి. వర్తించే చట్టం, ధృవీకరించదగిన అనులేఖనాలు లేదా ఫర్మ్-గ్రేడ్ వర్క్‌ఫ్లోల ఆధారంగా మీకు చట్టపరమైన విశ్లేషణ అవసరమైనప్పుడు గొడుగుని ఉపయోగించండి.",
+    "cta": "అంబ్రెల్లా లీగల్ AIని ఉచితంగా ప్రయత్నించండి"
+  },
+  "compareHarvey": {
+    "metaTitle": "అంబ్రెల్లా vs హార్వే AI — వినియోగదారు + సంస్థ లీగల్ AI",
+    "metaDescription": "హార్వే AI కేవలం ఎంటర్‌ప్రైజ్ లా సంస్థలను మాత్రమే లక్ష్యంగా చేసుకుంటుంది. అంబ్రెల్లా వ్యక్తులకు ఉచిత చట్టపరమైన స్పష్టతను మరియు పూర్తి సంస్థ OSని అందిస్తుంది — భారతదేశం, UK, US & కెన్యా కవరేజ్ మరియు నిజమైన అనులేఖనాలతో.",
+    "badge": "పోలిక",
+    "title": "గొడుగు vs హార్వే AI",
+    "subtitle": "హార్వే బిగ్‌లా మరియు ఎంటర్‌ప్రైజ్ సంస్థల కోసం ప్రత్యేకంగా నిర్మించబడింది. అంబ్రెల్లా ప్రతి ఒక్కరికీ సేవలు అందిస్తుంది — మీ మొదటి చట్టపరమైన ప్రశ్న నుండి పూర్తి అభ్యాసం వరకు.",
+    "umbrellaLabel": "Umbrella",
+    "harveyLabel": "హార్వే AI",
+    "rows": [
+      {
+        "feature": "Individual consumers",
+        "umbrella": "Free issue checker — no lawyer needed to understand your situation",
+        "competitor": "Enterprise only — no consumer access"
+      },
+      {
+        "feature": "Geographic coverage",
+        "umbrella": "India, US, UK, Kenya with local legal corpora",
+        "competitor": "Primarily US & UK enterprise markets"
+      },
+      {
+        "feature": "Pricing transparency",
+        "umbrella": "Free preview + published plans from $0",
+        "competitor": "Enterprise sales — no public pricing"
+      },
+      {
+        "feature": "Law firm OS",
+        "umbrella": "Matters, billing, trust, intake, Copilot — one platform",
+        "competitor": "AI assistant layer — requires existing firm stack"
+      },
+      {
+        "feature": "Client intake funnel",
+        "umbrella": "Consumer issue checks flow directly to firm matters",
+        "competitor": "No consumer-to-firm pipeline"
+      },
+      {
+        "feature": "అనులేఖన ధృవీకరణ",
+        "umbrella": "Clickable statutes & case law you can verify",
+        "competitor": "Strong for drafting; less consumer-facing clarity"
+      }
+    ],
+    "verdictTitle": "జట్లు హార్వే కంటే గొడుగును ఎందుకు ఎంచుకుంటాయి",
+    "verdictBody": "మీరు ఇప్పటికే ఉన్న టూల్స్‌కు AI లేయర్‌ని జోడించే పెద్ద US/UK సంస్థ అయితే హార్వేని ఎంచుకోండి. మీకు పౌరులు మరియు సంస్థలకు సేవలందించే చట్టపరమైన AI కావాలంటే గొడుగుని ఎంచుకోండి — అభివృద్ధి చెందుతున్న మార్కెట్ కవరేజ్, ఉచిత వినియోగదారు యాక్సెస్ మరియు కనెక్ట్ చేయబడిన ఇన్‌టేక్-టు-మేటర్ వర్క్‌ఫ్లో.",
+    "cta": "అంబ్రెల్లాను ఉచితంగా ప్రయత్నించండి — సేల్స్ కాల్ అవసరం లేదు"
+  },
+  "compareLegora": {
+    "metaTitle": "అంబ్రెల్లా vs లెగోరా — కేవలం సంస్థలకే కాదు, అందరికీ చట్టపరమైన AI",
+    "metaDescription": "లెగోరా ఎంటర్‌ప్రైజ్ లా ఫర్మ్ వర్క్‌ఫ్లోలపై దృష్టి పెడుతుంది. అంబ్రెల్లా పూర్తి సంస్థ ప్లాట్‌ఫారమ్‌తో ఉచిత వినియోగదారు లీగల్ ఇష్యూ చెకర్‌ను మిళితం చేస్తుంది — భారతదేశం, UK, US & కెన్యా, నిజమైన అనులేఖనాలతో.",
+    "badge": "పోలిక",
+    "title": "గొడుగు vs లెగోరా",
+    "subtitle": "Legora అనేది న్యాయ సంస్థలకు చట్టపరమైన AI. గొడుగు అనేది ప్రతి ఒక్కరికీ చట్టపరమైన తెలివితేటలు - వ్యక్తులు న్యాయవాది లేకుండా స్పష్టత పొందుతారు; సంస్థలు పూర్తి OSని పొందుతాయి.",
+    "umbrellaLabel": "Umbrella",
+    "legoraLabel": "లెగోరా",
+    "rows": [
+      {
+        "feature": "No lawyer needed to start",
+        "umbrella": "Free issue checker explains your rights before any billable hour",
+        "competitor": "Firm-only — no individual consumer product"
+      },
+      {
+        "feature": "Emerging markets",
+        "umbrella": "Full India & Kenya legal databases — not just US/EU",
+        "competitor": "Nordic/US enterprise focus"
+      },
+      {
+        "feature": "Solo & small firms",
+        "umbrella": "SOLO bundle from day one — no enterprise minimum",
+        "competitor": "Enterprise-oriented pricing & onboarding"
+      },
+      {
+        "feature": "Outcome guidance",
+        "umbrella": "Risk level, outcome probability, and cited next steps",
+        "competitor": "Research & workflow automation focus"
+      },
+      {
+        "feature": "న్యాయవాది మార్కెట్",
+        "umbrella": "Connect to licensed counsel when AI clarity isn't enough",
+        "competitor": "Not available"
+      },
+      {
+        "feature": "Practice management",
+        "umbrella": "Billing, trust accounting, matters, meetings — built in",
+        "competitor": "Integrates with existing PM tools"
+      }
+    ],
+    "verdictTitle": "గొడుగు అందుబాటులోకి మరియు ప్రాప్యతలో ఎందుకు గెలుస్తుంది",
+    "verdictBody": "లెగోరా పరిపక్వ మార్కెట్లలో ఎంటర్‌ప్రైజ్ సంస్థ ఆటోమేషన్‌లో రాణిస్తుంది. గొడుగు మరింత ముందుకు వెళుతుంది — న్యాయవాదిని ఇంకా కొనుగోలు చేయలేని మిలియన్ల మందికి ఉచిత చట్టపరమైన స్పష్టత, అలాగే భారతదేశం, కెన్యా, UK మరియు USలలో AI- స్థానికంగా తీసుకోవాలనుకునే సంస్థలకు పూర్తి వేదిక.",
+    "cta": "ఉచితంగా ప్రారంభించండి - వ్యక్తులు మరియు సంస్థలు స్వాగతం"
+  },
+  "compareHub": {
+    "metaTitle": "అంబ్రెల్లా లీగల్ AI — vs హార్వే, లెగోరా & చాట్‌జిపిటిని సరిపోల్చండి",
+    "metaDescription": "Harvey AI, Legora మరియు ChatGPTతో గొడుగు ఎలా పోలుస్తుందో చూడండి. భారతదేశం, UK, US & కెన్యా కవరేజీతో - వ్యక్తులు మరియు న్యాయ సంస్థల కోసం రూపొందించబడిన ఏకైక చట్టపరమైన AI.",
+    "badge": "పోలికలు",
+    "title": "గొడుగు ఎలా పోలుస్తుంది",
+    "subtitle": "నిజమైన అనులేఖనాలతో ఉద్దేశ్యంతో నిర్మించిన చట్టపరమైన AI — స్పష్టత అవసరమైన వ్యక్తుల కోసం మరియు OS అవసరమైన సంస్థల కోసం.",
+    "readComparison": "పోలిక చదవండి",
+    "cta": "గొడుగును ఉచితంగా ప్రయత్నించండి",
+    "cards": [
+      {
+        "slug": "umbrella-vs-harvey",
+        "title": "గొడుగు vs హార్వే AI",
+        "description": "Enterprise-only vs consumer + firm. Emerging markets vs US/UK focus."
+      },
+      {
+        "slug": "umbrella-vs-legora",
+        "title": "గొడుగు vs లెగోరా",
+        "description": "Firm-only automation vs free consumer clarity plus full firm OS."
+      },
+      {
+        "slug": "umbrella-vs-chatgpt",
+        "title": "Umbrella vs ChatGPT",
+        "description": "Real legal citations vs fabricated case law. Jurisdiction-aware vs generic."
+      }
+    ]
+  },
+  "countryPages": {
+    "forIndividuals": "వ్యక్తుల కోసం",
+    "forLawFirms": "న్యాయ సంస్థల కోసం",
+    "noLawyerNeededTitle": "మీ పరిస్థితిని అర్థం చేసుకోవడానికి మీకు లాయర్ అవసరం లేదు",
+    "lawyerWhenReady": "మీకు అధికారిక సలహా కావాలనుకున్నప్పుడు, ప్లాట్‌ఫారమ్‌లో లైసెన్స్ పొందిన లాయర్‌తో కనెక్ట్ అవ్వండి — మీ నిబంధనల ప్రకారం.",
+    "guidesTitle": "{country} కోసం చట్టపరమైన మార్గదర్శకాలు",
+    "guidesSubtitle": "సాధారణ చట్టపరమైన అంశాలపై విద్యాపరమైన అవలోకనాలు — న్యాయ సలహా కాదు.",
+    "guideLink": "గైడ్ చదవండి",
+    "allGuides": "అన్ని చట్టపరమైన మార్గదర్శకాలను బ్రౌజ్ చేయండి",
+    "otherMarkets": "ఫీచర్ చేయబడిన ప్రాంతాలు — ప్రపంచవ్యాప్తంగా అందుబాటులో ఉన్నాయి",
+    "in": {
+      "metaTitle": "లీగల్ AI ఇండియా — గ్లోబల్ ప్లాట్‌ఫారమ్, స్థానిక చట్టం",
+      "metaDescription": "అంబ్రెల్లా భారతదేశానికి మరియు ప్రపంచవ్యాప్తంగా ఉన్న ప్రతి దేశానికి సేవలు అందిస్తుంది. IPC అనులేఖనాలు, FIR విశ్లేషణ మరియు సెక్షన్ ఫైండర్‌తో ఉచిత AI ఇష్యూ చెకర్. భారతీయ న్యాయ సంస్థల కోసం పూర్తి చట్టపరమైన OS.",
+      "badge": "చట్టపరమైన AI భారతదేశం",
+      "heroTitle": "భారతదేశానికి చట్టపరమైన స్పష్టత — ప్రారంభించడానికి న్యాయవాది అవసరం లేదు",
+      "heroSubtitle": "హిందీ లేదా ఆంగ్లంలో మీ పరిస్థితిని వివరించండి. గొడుగు భారతీయ శాసనాలు, IPC సెక్షన్‌లు మరియు కేసు చట్టాలను చదువుతుంది — తర్వాత మీరు ఎక్కడ ఉన్నారో ఖచ్చితంగా తెలియజేస్తుంది. న్యాయ సంస్థలు పూర్తి AI-స్థానిక అభ్యాస వేదికను పొందుతాయి.",
+      "heroNote": "చట్టపరమైన సమాచారం మాత్రమే — న్యాయ సలహా కాదు. మీకు అధికారిక ప్రాతినిధ్యం అవసరమైనప్పుడు లైసెన్స్ పొందిన న్యాయవాదిని కనెక్ట్ చేయండి.",
+      "consumerCta": "నా చట్టపరమైన సమస్యను ఉచితంగా తనిఖీ చేయండి",
+      "firmCta": "న్యాయ సంస్థల కోసం వేదిక",
+      "consumerTitle": "చాలా మంది భారతీయులకు తమ వద్ద కేసు ఉందో లేదో తెలుసుకోవడానికి లాయర్ అవసరం లేదు",
+      "consumerBody": "మీరు సంప్రదింపుల కోసం ₹5,000 చెల్లించే ముందు, IPC, CrPC, కాంట్రాక్ట్ చట్టాలు మరియు సంబంధిత కేస్ లా ఆధారంగా ఉచిత AI ప్రివ్యూని పొందండి. మీ ప్రమాద స్థాయి, మీ హక్కులు మరియు మీ తదుపరి దశలను తెలుసుకోండి.",
+      "noLawyerPitch": "అద్దె వివాదాలు, చెక్ బౌన్స్, ఉపాధి సమస్యలు, వినియోగదారుల ఫిర్యాదులు, ఆస్తి విషయాలు — గొడుగు మీ వాస్తవాలను నిజమైన భారతీయ చట్టానికి 2 నిమిషాలలోపు మ్యాప్ చేస్తుంది. మీకు ఒకటి అవసరమని మీరు నిర్ణయించుకున్నప్పుడు మాత్రమే న్యాయవాదికి చెల్లించండి.",
+      "consumerBullets": [
+        "Free issue checker with cited IPC & statute references",
+        "FIR analysis and section finder for criminal matters",
+        "Document upload and AI contract review",
+        "India Drafts — demand letters, notices, and pleadings",
+        "Connect to vetted advocates when ready"
+      ],
+      "firmTitle": "భారతీయ న్యాయ సంస్థల కోసం AI- స్థానిక చట్టపరమైన OS",
+      "firmBody": "జిల్లా కోర్టులలో సోలో అడ్వకేట్‌ల నుండి మధ్య తరహా సంస్థల వరకు — మ్యాటర్ మేనేజ్‌మెంట్, బిల్లింగ్, ట్రస్ట్ అకౌంటింగ్ మరియు ప్రతి క్లయింట్ యొక్క వాస్తవాలను తెలుసుకునే కోపైలట్.",
+      "firmPitch": "వినియోగదారు సమస్య తనిఖీలు నేరుగా మీ తీసుకోవడం క్యూలో ప్రవహిస్తాయి. మొదటి కాల్‌కు ముందే క్లయింట్ పరిస్థితిని మీ కోపైలట్‌కు ఇప్పటికే తెలుసు.",
+      "firmBullets": [
+        "Matter-aware AI Copilot with Indian legal corpora",
+        "Section finder, FIR analysis, and India drafting tools",
+        "Billing, trust accounting, and client portal",
+        "Meeting transcription linked to matters",
+        "SOLO bundle for independent advocates"
+      ],
+      "faqTitle": "లీగల్ AI ఇండియా — తరచుగా అడిగే ప్రశ్నలు",
+      "faqItems": [
+        {
+          "question": "Do I need a lawyer to use Umbrella in India?",
+          "answer": "No. Umbrella helps you understand your legal situation for free. You only need an advocate when you want formal legal advice or court representation."
+        },
+        {
+          "question": "Does Umbrella cover Indian criminal law?",
+          "answer": "Yes. FIR analysis, IPC section finder, and criminal procedure guidance are built in for registered users."
+        },
+        {
+          "question": "Can Indian law firms use Umbrella?",
+          "answer": "Yes. Umbrella is a full practice platform — matters, billing, trust, AI Copilot, and client intake from consumer issue checks."
+        }
+      ]
+    },
+    "us": {
+      "metaTitle": "లీగల్ AI USA — గ్లోబల్ ప్లాట్‌ఫారమ్, US చట్టం",
+      "metaDescription": "అంబ్రెల్లా యునైటెడ్ స్టేట్స్ మరియు ప్రపంచవ్యాప్తంగా ఉన్న ప్రతి దేశానికి సేవలు అందిస్తుంది. ఫెడరల్ మరియు స్టేట్ లా అనులేఖనాలతో ఉచిత AI ఇష్యూ చెకర్. US న్యాయ సంస్థల కోసం పూర్తి చట్టపరమైన OS.",
+      "badge": "చట్టపరమైన AI యునైటెడ్ స్టేట్స్",
+      "heroTitle": "అమెరికాకు చట్టపరమైన స్పష్టత - ప్రారంభించడానికి అటార్నీ బిల్లు లేదు",
+      "heroSubtitle": "ఉద్యోగ వివాదాలు, భూస్వామి సమస్యలు, చిన్న క్లెయిమ్‌లు, ఒప్పందాలు — మీ పరిస్థితిని వివరించండి మరియు సమాఖ్య మరియు రాష్ట్ర చట్టం నుండి ఉదహరించిన మార్గదర్శకత్వం పొందండి. న్యాయ సంస్థలు మ్యాటర్ మేనేజ్‌మెంట్, బిల్లింగ్ మరియు AI కోపైలట్‌లను పొందుతాయి.",
+      "heroNote": "చట్టపరమైన సమాచారం మాత్రమే — న్యాయ సలహా కాదు. మీకు అధికారిక న్యాయవాది అవసరమైనప్పుడు లైసెన్స్ పొందిన న్యాయవాదిని కనెక్ట్ చేయండి.",
+      "consumerCta": "నా చట్టపరమైన సమస్యను ఉచితంగా తనిఖీ చేయండి",
+      "firmCta": "న్యాయ సంస్థల కోసం వేదిక",
+      "consumerTitle": "మీకు కేసు ఉంటే తెలుసుకోవడానికి మీరు $300 చెల్లించకూడదు",
+      "consumerBody": "మీరు న్యాయవాదిని నియమించుకునే ముందు ప్రమాద స్థాయి, ఫలితం సంభావ్యత మరియు ఉదహరించిన శాసనాలతో ఉచిత AI ప్రివ్యూని పొందండి. మీ ఎంపికలను సాధారణ ఆంగ్లంలో తెలుసుకోండి.",
+      "noLawyerPitch": "తప్పు రద్దు, తొలగింపు, ఒప్పంద వివాదాలు, చిన్న దావాలు — గొడుగు మీ వాస్తవాలకు మీ అధికార పరిధి చట్టాన్ని వర్తింపజేస్తుంది. ప్రివ్యూ మీకు విలువైనది అని చెప్పినప్పుడు మాత్రమే న్యాయవాదిని నియమించుకోండి.",
+      "consumerBullets": [
+        "Free issue checker with federal & state law citations",
+        "Document upload and contract clause analysis",
+        "Outcome probability and risk assessment",
+        "US drafting tools for demand letters and notices",
+        "Connect to licensed attorneys when ready"
+      ],
+      "firmTitle": "US న్యాయ సంస్థల కోసం AI- స్థానిక చట్టపరమైన OS",
+      "firmBody": "సోలో ప్రాక్టీషనర్స్ నుండి మిడ్-సైజ్ ఫర్మ్‌లు — విషయాల కోసం ఒక ప్లాట్‌ఫారమ్, బిల్లింగ్, ట్రస్ట్ అకౌంటింగ్, మీటింగ్ ఇంటెలిజెన్స్ మరియు మేటర్-అవేర్ కోపైలట్.",
+      "firmPitch": "ఇష్యూ చెక్‌ల నుండి వినియోగదారు తీసుకోవడం మొదటి సంప్రదింపుకు ముందు మీ టీమ్ సందర్భాన్ని అందిస్తుంది. బిల్ చేయలేని డిస్కవరీ కాల్‌లను తగ్గించండి.",
+      "firmBullets": [
+        "Matter-aware AI Copilot with US legal research",
+        "Billing, trust accounting, and conflict checks",
+        "Meeting transcription and action items",
+        "Client portal — not email threads",
+        "Per-seat pricing with SOLO bundle for solos"
+      ],
+      "faqTitle": "లీగల్ AI USA — తరచుగా అడిగే ప్రశ్నలు",
+      "faqItems": [
+        {
+          "question": "Is Umbrella a substitute for an attorney?",
+          "answer": "No. Umbrella provides legal information to help you understand your situation. For formal legal advice, connect with a licensed attorney through the platform."
+        },
+        {
+          "question": "Which US jurisdictions does Umbrella cover?",
+          "answer": "Umbrella applies federal law and state-specific guidance. Full corpus coverage continues to expand — issue checks work nationwide with best-effort state law."
+        },
+        {
+          "question": "How does Umbrella compare to Harvey AI?",
+          "answer": "Harvey targets enterprise firms only. Umbrella serves both individuals (free issue checker) and firms (full OS) — with transparent pricing and no sales call required."
+        }
+      ]
+    },
+    "gb": {
+      "metaTitle": "లీగల్ AI UK — గ్లోబల్ ప్లాట్‌ఫారమ్, UK చట్టం",
+      "metaDescription": "అంబ్రెల్లా యునైటెడ్ కింగ్‌డమ్ మరియు ప్రపంచవ్యాప్తంగా ఉన్న ప్రతి దేశానికి సేవలు అందిస్తుంది. UK చట్టాలు మరియు కేసు చట్టాన్ని ఉదహరిస్తూ ఉచిత AI ఇష్యూ చెకర్. బ్రిటిష్ న్యాయ సంస్థల కోసం పూర్తి చట్టపరమైన OS.",
+      "badge": "లీగల్ AI యునైటెడ్ కింగ్‌డమ్",
+      "heroTitle": "UK కోసం చట్టపరమైన స్పష్టత — ప్రారంభించడానికి న్యాయవాది అవసరం లేదు",
+      "heroSubtitle": "ఉపాధి ట్రిబ్యునల్స్, హౌసింగ్ మరమ్మతులు, అద్దెదారు హక్కులు, ఒప్పందాలు — సాదా ఆంగ్లంలో UK చట్టం నుండి ఉదహరించిన మార్గదర్శకాలను పొందండి. న్యాయవాదులు మరియు న్యాయవాదులు పూర్తి AI-స్థానిక అభ్యాస వేదికను పొందుతారు.",
+      "heroNote": "చట్టపరమైన సమాచారం మాత్రమే — న్యాయ సలహా కాదు. మీకు అధికారిక న్యాయవాది అవసరమైనప్పుడు నియంత్రిత న్యాయ నిపుణులతో కనెక్ట్ అవ్వండి.",
+      "consumerCta": "నా చట్టపరమైన సమస్యను ఉచితంగా తనిఖీ చేయండి",
+      "firmCta": "న్యాయ సంస్థల కోసం వేదిక",
+      "consumerTitle": "మీరు న్యాయవాదికి సూచించే ముందు మీ హక్కులను తెలుసుకోండి",
+      "consumerBody": "ఉద్యోగ వివాదాలు, గృహ సమస్యలు, వినియోగదారు హక్కులు — మీరు సంప్రదింపుల కోసం చెల్లించే ముందు పార్లమెంటు చట్టాలు మరియు సంబంధిత కేసు చట్టాలను ఉదహరిస్తూ ఉచిత AI ప్రివ్యూని పొందండి.",
+      "noLawyerPitch": "అంబ్రెల్లా మీ వాస్తవాలను UK చట్టానికి మ్యాప్ చేస్తుంది మరియు మీకు ప్రమాద స్థాయి మరియు తదుపరి దశలను అందిస్తుంది. మీరు అధికారిక సలహా కోసం సిద్ధంగా ఉన్నప్పుడు మాత్రమే న్యాయవాదిని సూచించండి.",
+      "consumerBullets": [
+        "Free issue checker citing UK statutes and case law",
+        "Employment tribunal and housing disrepair guidance",
+        "Document review for contracts and tenancy agreements",
+        "Plain-English outcome probability",
+        "Connect to regulated legal professionals when ready"
+      ],
+      "firmTitle": "UK న్యాయ సంస్థల కోసం AI-స్థానిక చట్టపరమైన OS",
+      "firmBody": "ఏకైక అభ్యాసకుల నుండి అభివృద్ధి చెందుతున్న సంస్థల వరకు — వ్యవహారాలు, బిల్లింగ్, ట్రస్ట్ అకౌంటింగ్ మరియు మీ క్లయింట్ తీసుకోవడం డేటాపై శిక్షణ పొందిన కోపైలట్.",
+      "firmPitch": "ఇంగ్లండ్, స్కాట్లాండ్, వేల్స్ మరియు నార్తర్న్ ఐర్లాండ్‌లలో వినియోగదారుల ఇష్యూ తనిఖీలు పూర్తి AI సందర్భంతో మీ తీసుకోవడం పైప్‌లైన్‌ను అందిస్తాయి.",
+      "firmBullets": [
+        "Matter-aware AI Copilot with UK legal corpora",
+        "Billing, trust accounting, and compliance tools",
+        "Meeting transcription linked to matters",
+        "Client portal with secure document sharing",
+        "Transparent per-seat pricing"
+      ],
+      "faqTitle": "లీగల్ AI UK — తరచుగా అడిగే ప్రశ్నలు",
+      "faqItems": [
+        {
+          "question": "Do I need a solicitor to use Umbrella?",
+          "answer": "No. Umbrella helps you understand your legal position for free. Instruct a solicitor when you need regulated legal advice or representation."
+        },
+        {
+          "question": "Does Umbrella cover employment tribunal matters?",
+          "answer": "Yes. Employment rights, unfair dismissal, and tribunal process guidance are included in our UK legal guides and issue checker."
+        },
+        {
+          "question": "How does Umbrella compare to Legora?",
+          "answer": "Legora focuses on enterprise firm automation. Umbrella serves both UK citizens (free clarity) and firms (full OS) — including India and Kenya coverage Legora doesn't offer."
+        }
+      ]
+    },
+    "ke": {
+      "metaTitle": "లీగల్ AI కెన్యా — గ్లోబల్ ప్లాట్‌ఫారమ్, కెన్యాన్ లా",
+      "metaDescription": "గొడుగు కెన్యా మరియు ప్రపంచవ్యాప్తంగా ఉన్న ప్రతి దేశానికి సేవలు అందిస్తుంది. ఉచిత AI ఇష్యూ చెకర్ కెన్యా చట్టాలు మరియు కేసు చట్టాన్ని ఉదహరిస్తుంది. M-Pesa బిల్లింగ్‌తో కెన్యా న్యాయ సంస్థల కోసం పూర్తి చట్టపరమైన OS.",
+      "badge": "లీగల్ AI కెన్యా",
+      "heroTitle": "కెన్యా కోసం చట్టపరమైన స్పష్టత — ప్రారంభించడానికి న్యాయవాది రుసుము లేదు",
+      "heroSubtitle": "ఉద్యోగ హక్కులు, భూ వివాదాలు, వినియోగదారుల ఫిర్యాదులు — మీ పరిస్థితిని వివరించండి మరియు కెన్యా చట్టానికి అనుగుణంగా మార్గదర్శకత్వం పొందండి. న్యాయవాదులు మరియు సంస్థలు మ్యాటర్ మేనేజ్‌మెంట్, బిల్లింగ్ మరియు AI కోపైలట్‌లను పొందుతాయి.",
+      "heroNote": "చట్టపరమైన సమాచారం మాత్రమే — న్యాయ సలహా కాదు. మీకు అధికారిక ప్రాతినిధ్యం అవసరమైనప్పుడు లైసెన్స్ పొందిన న్యాయవాదిని కనెక్ట్ చేయండి.",
+      "consumerCta": "నా చట్టపరమైన సమస్యను ఉచితంగా తనిఖీ చేయండి",
+      "firmCta": "న్యాయ సంస్థల కోసం వేదిక",
+      "consumerTitle": "చట్టపరమైన స్పష్టత కోసం న్యాయవాది సంప్రదింపు రుసుము అవసరం లేదు",
+      "consumerBody": "మీరు సంప్రదింపుల కోసం చెల్లించే ముందు, ఉపాధి చట్టం, భూ చట్టాలు మరియు సంబంధిత కెన్యా కేసు చట్టాన్ని ఉదహరిస్తూ ఉచిత AI ప్రివ్యూని పొందండి. మీ ప్రమాదం మరియు మీ ఎంపికలను తెలుసుకోండి.",
+      "noLawyerPitch": "భూ వివాదాలు, తప్పుడు ముగింపు, వినియోగదారు హక్కులు — గొడుగు మీ వాస్తవాలకు నిమిషాల్లో కెన్యా చట్టాన్ని వర్తింపజేస్తుంది. మీకు ఒకటి అవసరమని మీరు నిర్ణయించుకున్నప్పుడు మాత్రమే న్యాయవాదిని నియమించుకోండి.",
+      "consumerBullets": [
+        "Free issue checker with Kenyan statute citations",
+        "Employment Act and land dispute guidance",
+        "Document upload and contract review",
+        "M-Pesa-friendly subscription and billing",
+        "Connect to vetted advocates when ready"
+      ],
+      "firmTitle": "కెన్యా న్యాయ సంస్థల కోసం AI- స్థానిక చట్టపరమైన OS",
+      "firmBody": "మిడ్-సైజ్ సంస్థలకు సోలో న్యాయవాదులు — వ్యవహారాలు, M-Pesa మద్దతుతో బిల్లింగ్, ట్రస్ట్ అకౌంటింగ్ మరియు కెన్యా అభ్యాసం కోసం నిర్మించిన AI కోపైలట్.",
+      "firmPitch": "కెన్యా అంతటా వినియోగదారుల సమస్య తనిఖీలు పూర్తి సందర్భంతో మీ తీసుకోవడం ఫీడ్ చేస్తాయి — మీ కోపైలట్‌కి మొదటి సమావేశానికి ముందు క్లయింట్ పరిస్థితి తెలుసు.",
+      "firmBullets": [
+        "Matter-aware AI Copilot with Kenyan legal corpora",
+        "M-Pesa billing integration",
+        "Billing, trust accounting, and client portal",
+        "Meeting transcription for client conferences",
+        "SOLO bundle for independent advocates"
+      ],
+      "faqTitle": "లీగల్ AI కెన్యా — తరచుగా అడిగే ప్రశ్నలు",
+      "faqItems": [
+        {
+          "question": "Do I need an advocate to use Umbrella in Kenya?",
+          "answer": "No. Umbrella helps you understand your legal situation for free. You only need an advocate for formal legal advice or court representation."
+        },
+        {
+          "question": "Does Umbrella support M-Pesa payments?",
+          "answer": "Yes. Consumer subscriptions and firm billing support M-Pesa alongside card payments."
+        },
+        {
+          "question": "Which Kenyan laws does Umbrella cover?",
+          "answer": "Employment Act, land and property law, consumer protection, and contract law — with expanding case law coverage."
+        }
+      ]
+    }
+  },
+  "seoGlobal": {
+    "badge": "ప్రపంచవ్యాప్తంగా అందుబాటులో ఉంది",
+    "availability": "ప్రతి దేశంలో అందుబాటులో ఉంది — మీ అధికార పరిధిని స్వయంచాలకంగా గుర్తిస్తుంది మరియు స్థానిక చట్టాన్ని వర్తింపజేస్తుంది.",
+    "featuresTitle": "మీరు ఏమి పొందుతారు",
+    "dualAudienceTitle": "చట్టపరమైన పనిని తాకిన ప్రతి ఒక్కరి కోసం నిర్మించబడింది",
+    "consumerCta": "ఉచితంగా ప్రయత్నించండి — ఇష్యూ చెకర్",
+    "firmCta": "న్యాయ సంస్థల కోసం వేదిక",
+    "faqTitle": "తరచుగా అడిగే ప్రశ్నలు",
+    "relatedSolutions": "సంబంధిత సామర్థ్యాలు",
+    "allSolutions": "అన్ని పరిష్కారాలు"
+  },
+  "solutionsHub": {
+    "metaTitle": "లీగల్ AI సొల్యూషన్స్ — డాక్యుమెంట్ డ్రాఫ్టింగ్, రీసెర్చ్, కాంట్రాక్ట్ రివ్యూ & మరిన్ని",
+    "metaDescription": "అంబ్రెల్లా యొక్క గ్లోబల్ లీగల్ AI పరిష్కారాలను అన్వేషించండి: డాక్యుమెంట్ డ్రాఫ్టింగ్, కాంట్రాక్ట్ రివ్యూ, లీగల్ రీసెర్చ్, లా ఫర్మ్ సాఫ్ట్‌వేర్, లీగల్ కోపైలట్ మరియు వర్క్‌ఫ్లో ఆటోమేషన్ — ప్రపంచవ్యాప్తంగా.",
+    "badge": "పరిష్కారాలు",
+    "title": "ప్రతి చట్టపరమైన పని కోసం చట్టపరమైన AI",
+    "subtitle": "మీ మొదటి చట్టపరమైన ప్రశ్న నుండి మొత్తం గ్లోబల్ ప్రాక్టీస్‌ను అమలు చేయడం వరకు — డాక్యుమెంట్ డ్రాఫ్టింగ్, కాంట్రాక్ట్ రివ్యూ, లీగల్ రీసెర్చ్ మరియు ఫర్మ్ ఆటోమేషన్ ఒకే ప్లాట్‌ఫారమ్‌లో.",
+    "learnMore": "మరింత తెలుసుకోండి",
+    "closing": "ఒక వేదిక. ప్రతి దేశం. వ్యక్తులు మరియు న్యాయ సంస్థలు."
+  },
+  "seoPillars": {
+    "legal-document-drafting": {
+      "metaTitle": "లీగల్ డాక్యుమెంట్ డ్రాఫ్టింగ్ — గ్లోబల్ లీగల్ AI ప్లాట్‌ఫారమ్",
+      "metaDescription": "అంబ్రెల్లా లీగల్ డాక్యుమెంట్ డ్రాఫ్టింగ్: AI- పవర్డ్, అధికార పరిధి-అవగాహన, నిజమైన అనులేఖనాలతో — వ్యక్తులు మరియు న్యాయ సంస్థల కోసం ప్రపంచవ్యాప్తంగా ప్రతి దేశంలో అందుబాటులో ఉంటుంది.",
+      "keywords": [
+        "legal document drafting",
+        "AI legal document drafting",
+        "legal document drafting software",
+        "legal AI",
+        "global legal AI"
+      ],
+      "shortTitle": "లీగల్ డాక్యుమెంట్ డ్రాఫ్టింగ్",
+      "cardDescription": "నిజమైన అనులేఖనాలతో గ్లోబల్ లీగల్ డాక్యుమెంట్ డ్రాఫ్టింగ్ — వ్యక్తులు మరియు న్యాయ సంస్థల కోసం.",
+      "heroTitle": "లీగల్ డాక్యుమెంట్ డ్రాఫ్టింగ్ — వాస్తవ చట్టాన్ని ఉదహరించే AI",
+      "heroSubtitle": "అత్యంత సామర్థ్యం గల లీగల్ డాక్యుమెంట్ డ్రాఫ్టింగ్ ప్లాట్‌ఫారమ్ — వాస్తవ శాసనాలు మరియు కేస్ లా ఆధారంగా, ప్రపంచవ్యాప్తంగా అందుబాటులో ఉన్న మీ అధికార పరిధిని స్వయంచాలకంగా గుర్తిస్తుంది.",
+      "bodyTitle": "ఉత్తమ చట్టపరమైన డాక్యుమెంట్ డ్రాఫ్టింగ్ ప్లాట్‌ఫారమ్",
+      "body1": "గొడుగు ప్రతి దేశానికి ధృవీకరించదగిన అనులేఖనాలు, విషయం-అవగాహన సందర్భం మరియు అధికార పరిధిని స్వయంచాలకంగా గుర్తించడంతో పాటు - లీగల్ కార్పోరాపై తిరిగి పొందడం-అగ్మెంటెడ్ జనరేషన్ ద్వారా ఆధారితమైన లీగల్ డాక్యుమెంట్ డ్రాఫ్టింగ్‌ను అందిస్తుంది.",
+      "body2": "వ్యక్తులు దీన్ని ఉచితంగా ఉపయోగిస్తారు. న్యాయ సంస్థలు AI కోపైలట్, బిల్లింగ్ మరియు వర్క్‌ఫ్లో ఆటోమేషన్‌తో ప్రతి విషయంలో దీన్ని అమలు చేస్తాయి - ఒక గ్లోబల్ ప్లాట్‌ఫారమ్.",
+      "featuresSubtitle": "నిజమైన చట్టపరమైన పని కోసం నిర్మించబడింది.",
+      "features": [
+        "Real statute and case law citations you can verify",
+        "Jurisdiction auto-detection — works in every country",
+        "Free for individuals; firm-grade depth for teams",
+        "Matter-aware AI Copilot with full case context",
+        "Document drafting, review, and research integrated",
+        "Privacy-first — tenant isolation and audit trails"
+      ],
+      "dualAudience": "వ్యక్తులు ఉచిత చట్టపరమైన పత్రాల ముసాయిదాను పొందుతారు. ప్రపంచవ్యాప్తంగా ఉన్న ప్రతి విషయంలో సంస్థలు దీన్ని ఆటోమేట్ చేస్తాయి.",
+      "ctaPrimary": "డ్రాఫ్టింగ్ ప్రారంభించండి",
+      "faqItems": [
+        {
+          "question": "Does legal document drafting work in my country?",
+          "answer": "Yes. Umbrella is a global legal AI platform that auto-detects your jurisdiction and applies local law — available in every country worldwide."
+        },
+        {
+          "question": "Is Umbrella legal document drafting free to try?",
+          "answer": "Yes. Individuals get a free preview with included AI credits. Law firms can start a free trial of the full platform."
+        }
+      ]
+    },
+    "legal-research": {
+      "metaTitle": "లీగల్ రీసెర్చ్ — గ్లోబల్ లీగల్ AI ప్లాట్‌ఫారమ్",
+      "metaDescription": "గొడుగు చట్టపరమైన పరిశోధన: AI- ఆధారితం, అధికార పరిధి-అవగాహన, నిజమైన అనులేఖనాలతో — వ్యక్తులు మరియు న్యాయ సంస్థల కోసం ప్రపంచవ్యాప్తంగా ప్రతి దేశంలో అందుబాటులో ఉంటుంది.",
+      "keywords": [
+        "legal research",
+        "AI legal research",
+        "legal research software",
+        "legal AI",
+        "global legal AI"
+      ],
+      "shortTitle": "చట్టపరమైన పరిశోధన",
+      "cardDescription": "నిజమైన అనులేఖనాలతో ప్రపంచ న్యాయ పరిశోధన — వ్యక్తులు మరియు న్యాయ సంస్థల కోసం.",
+      "heroTitle": "చట్టపరమైన పరిశోధన AI — మీకు వర్తించే చట్టాన్ని కనుగొనండి",
+      "heroSubtitle": "అత్యంత సామర్థ్యం గల చట్టపరమైన పరిశోధన ప్లాట్‌ఫారమ్ — వాస్తవ శాసనాలు మరియు కేసు చట్టం ఆధారంగా, ప్రపంచవ్యాప్తంగా అందుబాటులో ఉన్న మీ అధికార పరిధిని స్వయంచాలకంగా గుర్తిస్తుంది.",
+      "bodyTitle": "ఉత్తమ న్యాయ పరిశోధన వేదిక",
+      "body1": "గొడుగు ప్రతి దేశానికి ధృవీకరించదగిన అనులేఖనాలు, విషయం-అవగాహన సందర్భం మరియు అధికార పరిధిని స్వయంచాలకంగా గుర్తించడంతో పాటు - లీగల్ కార్పోరాపై పునరుద్ధరణ-అగ్మెంటెడ్ జనరేషన్ ద్వారా ఆధారితమైన చట్టపరమైన పరిశోధనను అందిస్తుంది.",
+      "body2": "వ్యక్తులు దీన్ని ఉచితంగా ఉపయోగిస్తారు. న్యాయ సంస్థలు AI కోపైలట్, బిల్లింగ్ మరియు వర్క్‌ఫ్లో ఆటోమేషన్‌తో ప్రతి విషయంలో దీన్ని అమలు చేస్తాయి - ఒక గ్లోబల్ ప్లాట్‌ఫారమ్.",
+      "featuresSubtitle": "నిజమైన చట్టపరమైన పని కోసం నిర్మించబడింది.",
+      "features": [
+        "Real statute and case law citations you can verify",
+        "Jurisdiction auto-detection — works in every country",
+        "Free for individuals; firm-grade depth for teams",
+        "Matter-aware AI Copilot with full case context",
+        "Document drafting, review, and research integrated",
+        "Privacy-first — tenant isolation and audit trails"
+      ],
+      "dualAudience": "వ్యక్తులు ఉచిత న్యాయ పరిశోధనను పొందుతారు. ప్రపంచవ్యాప్తంగా ఉన్న ప్రతి విషయంలో సంస్థలు దీన్ని ఆటోమేట్ చేస్తాయి.",
+      "ctaPrimary": "నా చట్టపరమైన సమస్యను పరిశోధించండి",
+      "faqItems": [
+        {
+          "question": "Does legal research work in my country?",
+          "answer": "Yes. Umbrella is a global legal AI platform that auto-detects your jurisdiction and applies local law — available in every country worldwide."
+        },
+        {
+          "question": "Is Umbrella legal research free to try?",
+          "answer": "Yes. Individuals get a free preview with included AI credits. Law firms can start a free trial of the full platform."
+        }
+      ]
+    },
+    "contract-review": {
+      "metaTitle": "కాంట్రాక్ట్ రివ్యూ — గ్లోబల్ లీగల్ AI ప్లాట్‌ఫారమ్",
+      "metaDescription": "అంబ్రెల్లా కాంట్రాక్ట్ సమీక్ష: AI- పవర్డ్, అధికార పరిధి-అవగాహన, నిజమైన అనులేఖనాలతో — వ్యక్తులు మరియు న్యాయ సంస్థల కోసం ప్రపంచవ్యాప్తంగా ప్రతి దేశంలో అందుబాటులో ఉంటుంది.",
+      "keywords": [
+        "contract review",
+        "AI contract review",
+        "contract review software",
+        "legal AI",
+        "global legal AI"
+      ],
+      "shortTitle": "ఒప్పంద సమీక్ష",
+      "cardDescription": "నిజమైన అనులేఖనాలతో గ్లోబల్ కాంట్రాక్ట్ సమీక్ష — వ్యక్తులు మరియు న్యాయ సంస్థల కోసం.",
+      "heroTitle": "AI ఒప్పంద సమీక్ష - ప్రతి నిబంధన, ప్రతి ప్రమాదం",
+      "heroSubtitle": "అత్యంత సామర్థ్యం గల కాంట్రాక్ట్ రివ్యూ ప్లాట్‌ఫారమ్ — వాస్తవ శాసనాలు మరియు కేస్ లా ఆధారంగా, ప్రపంచవ్యాప్తంగా అందుబాటులో ఉన్న మీ అధికార పరిధిని స్వయంచాలకంగా గుర్తిస్తుంది.",
+      "bodyTitle": "ఉత్తమ ఒప్పంద సమీక్ష వేదిక",
+      "body1": "గొడుగు ప్రతి దేశం కోసం ధృవీకరించదగిన అనులేఖనాలు, విషయం-అవగాహన సందర్భం మరియు అధికార పరిధిని స్వయంచాలకంగా గుర్తించడంతో పాటు చట్టపరమైన కార్పోరాపై పునరుద్ధరణ-అగ్మెంటెడ్ జనరేషన్ ద్వారా ఆధారితమైన ఒప్పంద సమీక్షను అందిస్తుంది.",
+      "body2": "వ్యక్తులు దీన్ని ఉచితంగా ఉపయోగిస్తారు. న్యాయ సంస్థలు AI కోపైలట్, బిల్లింగ్ మరియు వర్క్‌ఫ్లో ఆటోమేషన్‌తో ప్రతి విషయంలో దీన్ని అమలు చేస్తాయి - ఒక గ్లోబల్ ప్లాట్‌ఫారమ్.",
+      "featuresSubtitle": "నిజమైన చట్టపరమైన పని కోసం నిర్మించబడింది.",
+      "features": [
+        "Real statute and case law citations you can verify",
+        "Jurisdiction auto-detection — works in every country",
+        "Free for individuals; firm-grade depth for teams",
+        "Matter-aware AI Copilot with full case context",
+        "Document drafting, review, and research integrated",
+        "Privacy-first — tenant isolation and audit trails"
+      ],
+      "dualAudience": "వ్యక్తులు ఉచిత కాంట్రాక్ట్ సమీక్షను పొందుతారు. ప్రపంచవ్యాప్తంగా ఉన్న ప్రతి విషయంలో సంస్థలు దీన్ని ఆటోమేట్ చేస్తాయి.",
+      "ctaPrimary": "ఒప్పందాన్ని సమీక్షించండి",
+      "faqItems": [
+        {
+          "question": "Does contract review work in my country?",
+          "answer": "Yes. Umbrella is a global legal AI platform that auto-detects your jurisdiction and applies local law — available in every country worldwide."
+        },
+        {
+          "question": "Is Umbrella contract review free to try?",
+          "answer": "Yes. Individuals get a free preview with included AI credits. Law firms can start a free trial of the full platform."
+        }
+      ]
+    },
+    "document-review": {
+      "metaTitle": "డాక్యుమెంట్ రివ్యూ — గ్లోబల్ లీగల్ AI ప్లాట్‌ఫారమ్",
+      "metaDescription": "అంబ్రెల్లా డాక్యుమెంట్ రివ్యూ: AI- పవర్డ్, అధికార పరిధి-అవగాహన, నిజమైన అనులేఖనాలతో — వ్యక్తులు మరియు న్యాయ సంస్థల కోసం ప్రపంచవ్యాప్తంగా ప్రతి దేశంలో అందుబాటులో ఉంటుంది.",
+      "keywords": [
+        "document review",
+        "AI document review",
+        "document review software",
+        "legal AI",
+        "global legal AI"
+      ],
+      "shortTitle": "డాక్యుమెంట్ రివ్యూ",
+      "cardDescription": "నిజమైన అనులేఖనాలతో గ్లోబల్ డాక్యుమెంట్ సమీక్ష — వ్యక్తులు మరియు న్యాయ సంస్థల కోసం.",
+      "heroTitle": "చట్టపరమైన పత్ర సమీక్ష — AI ప్రతి పేజీని చదువుతుంది",
+      "heroSubtitle": "అత్యంత సామర్థ్యం గల డాక్యుమెంట్ రివ్యూ ప్లాట్‌ఫారమ్ — వాస్తవ శాసనాలు మరియు కేస్ లా ఆధారంగా, మీ అధికార పరిధిని స్వయంచాలకంగా గుర్తిస్తుంది, ప్రపంచవ్యాప్తంగా అందుబాటులో ఉంటుంది.",
+      "bodyTitle": "ఉత్తమ పత్ర సమీక్ష వేదిక",
+      "body1": "గొడుగు ప్రతి దేశానికి ధృవీకరించదగిన అనులేఖనాలు, విషయం-అవగాహన సందర్భం మరియు అధికార పరిధిని స్వయంచాలకంగా గుర్తించడంతో పాటు చట్టపరమైన కార్పోరాపై పునరుద్ధరణ-అగ్మెంటెడ్ జనరేషన్ ద్వారా ఆధారితమైన పత్ర సమీక్షను అందిస్తుంది.",
+      "body2": "వ్యక్తులు దీన్ని ఉచితంగా ఉపయోగిస్తారు. న్యాయ సంస్థలు AI కోపైలట్, బిల్లింగ్ మరియు వర్క్‌ఫ్లో ఆటోమేషన్‌తో ప్రతి విషయంలో దీన్ని అమలు చేస్తాయి - ఒక గ్లోబల్ ప్లాట్‌ఫారమ్.",
+      "featuresSubtitle": "నిజమైన చట్టపరమైన పని కోసం నిర్మించబడింది.",
+      "features": [
+        "Real statute and case law citations you can verify",
+        "Jurisdiction auto-detection — works in every country",
+        "Free for individuals; firm-grade depth for teams",
+        "Matter-aware AI Copilot with full case context",
+        "Document drafting, review, and research integrated",
+        "Privacy-first — tenant isolation and audit trails"
+      ],
+      "dualAudience": "వ్యక్తులు ఉచిత పత్ర సమీక్షను పొందుతారు. ప్రపంచవ్యాప్తంగా ఉన్న ప్రతి విషయంలో సంస్థలు దీన్ని ఆటోమేట్ చేస్తాయి.",
+      "ctaPrimary": "పత్రాన్ని అప్‌లోడ్ చేయండి",
+      "faqItems": [
+        {
+          "question": "Does document review work in my country?",
+          "answer": "Yes. Umbrella is a global legal AI platform that auto-detects your jurisdiction and applies local law — available in every country worldwide."
+        },
+        {
+          "question": "Is Umbrella document review free to try?",
+          "answer": "Yes. Individuals get a free preview with included AI credits. Law firms can start a free trial of the full platform."
+        }
+      ]
+    },
+    "law-firm-software": {
+      "metaTitle": "లా ఫర్మ్ సాఫ్ట్‌వేర్ — గ్లోబల్ లీగల్ AI ప్లాట్‌ఫారమ్",
+      "metaDescription": "అంబ్రెల్లా లా ఫర్మ్ సాఫ్ట్‌వేర్: AI- పవర్డ్, అధికార పరిధి-అవగాహన, నిజమైన అనులేఖనాలతో — వ్యక్తులు మరియు న్యాయ సంస్థల కోసం ప్రపంచవ్యాప్తంగా ప్రతి దేశంలో అందుబాటులో ఉంది.",
+      "keywords": [
+        "law firm software",
+        "AI law firm software",
+        "law firm software software",
+        "legal AI",
+        "global legal AI"
+      ],
+      "shortTitle": "న్యాయ సంస్థ సాఫ్ట్‌వేర్",
+      "cardDescription": "నిజమైన అనులేఖనాలతో గ్లోబల్ లా ఫర్మ్ సాఫ్ట్‌వేర్ — వ్యక్తులు మరియు న్యాయ సంస్థల కోసం.",
+      "heroTitle": "AI యుగం కోసం రూపొందించబడిన న్యాయ సంస్థ సాఫ్ట్‌వేర్",
+      "heroSubtitle": "అత్యంత సామర్థ్యమున్న న్యాయ సంస్థ సాఫ్ట్‌వేర్ ప్లాట్‌ఫారమ్ — వాస్తవ శాసనాలు మరియు కేస్ లా ఆధారంగా, ప్రపంచవ్యాప్తంగా అందుబాటులో ఉన్న మీ అధికార పరిధిని స్వయంచాలకంగా గుర్తిస్తుంది.",
+      "bodyTitle": "ఉత్తమ న్యాయ సంస్థ సాఫ్ట్‌వేర్ ప్లాట్‌ఫారమ్",
+      "body1": "గొడుగు ప్రతి దేశానికి ధృవీకరించదగిన అనులేఖనాలు, విషయం-అవగాహన సందర్భం మరియు అధికార పరిధిని స్వయంచాలకంగా గుర్తించడంతో పాటు చట్టపరమైన కార్పోరాపై పునరుద్ధరణ-అగ్మెంటెడ్ జనరేషన్ ద్వారా ఆధారితమైన న్యాయ సంస్థ సాఫ్ట్‌వేర్‌ను అందిస్తుంది.",
+      "body2": "వ్యక్తులు దీన్ని ఉచితంగా ఉపయోగిస్తారు. న్యాయ సంస్థలు AI కోపైలట్, బిల్లింగ్ మరియు వర్క్‌ఫ్లో ఆటోమేషన్‌తో ప్రతి విషయంలో దీన్ని అమలు చేస్తాయి - ఒక గ్లోబల్ ప్లాట్‌ఫారమ్.",
+      "featuresSubtitle": "నిజమైన చట్టపరమైన పని కోసం నిర్మించబడింది.",
+      "features": [
+        "Real statute and case law citations you can verify",
+        "Jurisdiction auto-detection — works in every country",
+        "Free for individuals; firm-grade depth for teams",
+        "Matter-aware AI Copilot with full case context",
+        "Document drafting, review, and research integrated",
+        "Privacy-first — tenant isolation and audit trails"
+      ],
+      "dualAudience": "వ్యక్తులు ఉచిత న్యాయ సంస్థ సాఫ్ట్‌వేర్‌ను పొందుతారు. ప్రపంచవ్యాప్తంగా ఉన్న ప్రతి విషయంలో సంస్థలు దీన్ని ఆటోమేట్ చేస్తాయి.",
+      "ctaPrimary": "సంస్థ వేదికను అన్వేషించండి",
+      "faqItems": [
+        {
+          "question": "Does law firm software work in my country?",
+          "answer": "Yes. Umbrella is a global legal AI platform that auto-detects your jurisdiction and applies local law — available in every country worldwide."
+        },
+        {
+          "question": "Is Umbrella law firm software free to try?",
+          "answer": "Yes. Individuals get a free preview with included AI credits. Law firms can start a free trial of the full platform."
+        }
+      ]
+    },
+    "legal-copilot": {
+      "metaTitle": "లీగల్ కోపైలట్ — గ్లోబల్ లీగల్ AI ప్లాట్‌ఫారమ్",
+      "metaDescription": "అంబ్రెల్లా లీగల్ కోపైలట్: AI- పవర్డ్, అధికార పరిధి-అవగాహన, నిజమైన అనులేఖనాలతో — వ్యక్తులు మరియు న్యాయ సంస్థల కోసం ప్రపంచవ్యాప్తంగా ప్రతి దేశంలో అందుబాటులో ఉంటుంది.",
+      "keywords": [
+        "legal copilot",
+        "AI legal copilot",
+        "legal copilot software",
+        "legal AI",
+        "global legal AI"
+      ],
+      "shortTitle": "లీగల్ కోపైలట్",
+      "cardDescription": "నిజమైన అనులేఖనాలతో గ్లోబల్ లీగల్ కోపైలట్ — వ్యక్తులు మరియు న్యాయ సంస్థల కోసం.",
+      "heroTitle": "లీగల్ కోపైలట్ — మీ కేసులను తెలుసుకునే AI",
+      "heroSubtitle": "అత్యంత సామర్థ్యం గల చట్టపరమైన కోపైలట్ ప్లాట్‌ఫారమ్ — వాస్తవ శాసనాలు మరియు కేసు చట్టం ఆధారంగా, ప్రపంచవ్యాప్తంగా అందుబాటులో ఉన్న మీ అధికార పరిధిని స్వయంచాలకంగా గుర్తిస్తుంది.",
+      "bodyTitle": "ఉత్తమ చట్టపరమైన కోపైలట్ ప్లాట్‌ఫారమ్",
+      "body1": "గొడుగు ప్రతి దేశానికి ధృవీకరించదగిన అనులేఖనాలు, విషయం-అవగాహన సందర్భం మరియు అధికార పరిధిని ఆటో-డిటెక్షన్‌తో - చట్టపరమైన కార్పోరాపై పునరుద్ధరణ-అగ్మెంటెడ్ జనరేషన్ ద్వారా ఆధారితమైన చట్టపరమైన కోపైలట్‌ను అందిస్తుంది.",
+      "body2": "వ్యక్తులు దీన్ని ఉచితంగా ఉపయోగిస్తారు. న్యాయ సంస్థలు AI కోపైలట్, బిల్లింగ్ మరియు వర్క్‌ఫ్లో ఆటోమేషన్‌తో ప్రతి విషయంలో దీన్ని అమలు చేస్తాయి - ఒక గ్లోబల్ ప్లాట్‌ఫారమ్.",
+      "featuresSubtitle": "నిజమైన చట్టపరమైన పని కోసం నిర్మించబడింది.",
+      "features": [
+        "Real statute and case law citations you can verify",
+        "Jurisdiction auto-detection — works in every country",
+        "Free for individuals; firm-grade depth for teams",
+        "Matter-aware AI Copilot with full case context",
+        "Document drafting, review, and research integrated",
+        "Privacy-first — tenant isolation and audit trails"
+      ],
+      "dualAudience": "వ్యక్తులు ఉచిత చట్టపరమైన కోపైలట్‌ను పొందుతారు. ప్రపంచవ్యాప్తంగా ఉన్న ప్రతి విషయంలో సంస్థలు దీన్ని ఆటోమేట్ చేస్తాయి.",
+      "ctaPrimary": "లీగల్ కోపైలట్‌ని ప్రయత్నించండి",
+      "faqItems": [
+        {
+          "question": "Does legal copilot work in my country?",
+          "answer": "Yes. Umbrella is a global legal AI platform that auto-detects your jurisdiction and applies local law — available in every country worldwide."
+        },
+        {
+          "question": "Is Umbrella legal copilot free to try?",
+          "answer": "Yes. Individuals get a free preview with included AI credits. Law firms can start a free trial of the full platform."
+        }
+      ]
+    },
+    "legal-workflow-automation": {
+      "metaTitle": "వర్క్‌ఫ్లో ఆటోమేషన్ — గ్లోబల్ లీగల్ AI ప్లాట్‌ఫారమ్",
+      "metaDescription": "అంబ్రెల్లా వర్క్‌ఫ్లో ఆటోమేషన్: AI- పవర్డ్, అధికార పరిధి-అవగాహన, నిజమైన అనులేఖనాలతో — వ్యక్తులు మరియు న్యాయ సంస్థల కోసం ప్రపంచవ్యాప్తంగా ప్రతి దేశంలో అందుబాటులో ఉంటుంది.",
+      "keywords": [
+        "workflow automation",
+        "AI workflow automation",
+        "workflow automation software",
+        "legal AI",
+        "global legal AI"
+      ],
+      "shortTitle": "వర్క్‌ఫ్లో ఆటోమేషన్",
+      "cardDescription": "నిజమైన అనులేఖనాలతో గ్లోబల్ వర్క్‌ఫ్లో ఆటోమేషన్ — వ్యక్తులు మరియు న్యాయ సంస్థల కోసం.",
+      "heroTitle": "లీగల్ వర్క్‌ఫ్లో ఆటోమేషన్ — తీసుకోవడం నుండి ఇన్‌వాయిస్ వరకు",
+      "heroSubtitle": "అత్యంత సామర్థ్యం గల వర్క్‌ఫ్లో ఆటోమేషన్ ప్లాట్‌ఫారమ్ — నిజమైన శాసనాలు మరియు కేసు చట్టంలో గ్రౌన్దేడ్, మీ అధికార పరిధిని స్వయంచాలకంగా గుర్తిస్తుంది, ప్రపంచవ్యాప్తంగా అందుబాటులో ఉంటుంది.",
+      "bodyTitle": "ఉత్తమ వర్క్‌ఫ్లో ఆటోమేషన్ ప్లాట్‌ఫారమ్",
+      "body1": "గొడుగు ప్రతి దేశానికి ధృవీకరించదగిన అనులేఖనాలు, విషయం-అవగాహన సందర్భం మరియు అధికార పరిధిని స్వయంచాలకంగా గుర్తించడంతో పాటు చట్టపరమైన కార్పోరాపై పునరుద్ధరణ-అగ్మెంటెడ్ జనరేషన్ ద్వారా ఆధారితమైన వర్క్‌ఫ్లో ఆటోమేషన్‌ను అందిస్తుంది.",
+      "body2": "వ్యక్తులు దీన్ని ఉచితంగా ఉపయోగిస్తారు. న్యాయ సంస్థలు AI కోపైలట్, బిల్లింగ్ మరియు వర్క్‌ఫ్లో ఆటోమేషన్‌తో ప్రతి విషయంలో దీన్ని అమలు చేస్తాయి - ఒక గ్లోబల్ ప్లాట్‌ఫారమ్.",
+      "featuresSubtitle": "నిజమైన చట్టపరమైన పని కోసం నిర్మించబడింది.",
+      "features": [
+        "Real statute and case law citations you can verify",
+        "Jurisdiction auto-detection — works in every country",
+        "Free for individuals; firm-grade depth for teams",
+        "Matter-aware AI Copilot with full case context",
+        "Document drafting, review, and research integrated",
+        "Privacy-first — tenant isolation and audit trails"
+      ],
+      "dualAudience": "వ్యక్తులు ఉచిత వర్క్‌ఫ్లో ఆటోమేషన్‌ను పొందుతారు. ప్రపంచవ్యాప్తంగా ఉన్న ప్రతి విషయంలో సంస్థలు దీన్ని ఆటోమేట్ చేస్తాయి.",
+      "ctaPrimary": "మీ సంస్థను ఆటోమేట్ చేయండి",
+      "faqItems": [
+        {
+          "question": "Does workflow automation work in my country?",
+          "answer": "Yes. Umbrella is a global legal AI platform that auto-detects your jurisdiction and applies local law — available in every country worldwide."
+        },
+        {
+          "question": "Is Umbrella workflow automation free to try?",
+          "answer": "Yes. Individuals get a free preview with included AI credits. Law firms can start a free trial of the full platform."
+        }
+      ]
+    },
+    "contract-analysis": {
+      "metaTitle": "కాంట్రాక్ట్ అనాలిసిస్ — గ్లోబల్ లీగల్ AI ప్లాట్‌ఫారమ్",
+      "metaDescription": "అంబ్రెల్లా కాంట్రాక్ట్ విశ్లేషణ: AI- పవర్డ్, అధికార పరిధి-అవగాహన, నిజమైన అనులేఖనాలతో — వ్యక్తులు మరియు న్యాయ సంస్థల కోసం ప్రపంచవ్యాప్తంగా ప్రతి దేశంలో అందుబాటులో ఉంటుంది.",
+      "keywords": [
+        "contract analysis",
+        "AI contract analysis",
+        "contract analysis software",
+        "legal AI",
+        "global legal AI"
+      ],
+      "shortTitle": "ఒప్పంద విశ్లేషణ",
+      "cardDescription": "నిజమైన అనులేఖనాలతో గ్లోబల్ కాంట్రాక్ట్ విశ్లేషణ — వ్యక్తులు మరియు న్యాయ సంస్థల కోసం.",
+      "heroTitle": "AI ఒప్పంద విశ్లేషణ - ఉపరితల-స్థాయి సమీక్షకు మించి",
+      "heroSubtitle": "అత్యంత సామర్థ్యం గల కాంట్రాక్ట్ అనాలిసిస్ ప్లాట్‌ఫారమ్ — వాస్తవ శాసనాలు మరియు కేస్ లా ఆధారంగా, ప్రపంచవ్యాప్తంగా అందుబాటులో ఉన్న మీ అధికార పరిధిని స్వయంచాలకంగా గుర్తిస్తుంది.",
+      "bodyTitle": "ఉత్తమ ఒప్పంద విశ్లేషణ వేదిక",
+      "body1": "గొడుగు ప్రతి దేశానికి ధృవీకరించదగిన అనులేఖనాలు, విషయం-అవగాహన సందర్భం మరియు అధికార పరిధిని స్వయంచాలకంగా గుర్తించడంతో పాటు చట్టపరమైన కార్పోరాపై పునరుద్ధరణ-అగ్మెంటెడ్ జనరేషన్ ద్వారా ఆధారితమైన కాంట్రాక్ట్ విశ్లేషణను అందిస్తుంది.",
+      "body2": "వ్యక్తులు దీన్ని ఉచితంగా ఉపయోగిస్తారు. న్యాయ సంస్థలు AI కోపైలట్, బిల్లింగ్ మరియు వర్క్‌ఫ్లో ఆటోమేషన్‌తో ప్రతి విషయంలో దీన్ని అమలు చేస్తాయి - ఒక గ్లోబల్ ప్లాట్‌ఫారమ్.",
+      "featuresSubtitle": "నిజమైన చట్టపరమైన పని కోసం నిర్మించబడింది.",
+      "features": [
+        "Real statute and case law citations you can verify",
+        "Jurisdiction auto-detection — works in every country",
+        "Free for individuals; firm-grade depth for teams",
+        "Matter-aware AI Copilot with full case context",
+        "Document drafting, review, and research integrated",
+        "Privacy-first — tenant isolation and audit trails"
+      ],
+      "dualAudience": "వ్యక్తులు ఉచిత ఒప్పంద విశ్లేషణను పొందుతారు. ప్రపంచవ్యాప్తంగా ఉన్న ప్రతి విషయంలో సంస్థలు దీన్ని ఆటోమేట్ చేస్తాయి.",
+      "ctaPrimary": "ఒప్పందాన్ని విశ్లేషించండి",
+      "faqItems": [
+        {
+          "question": "Does contract analysis work in my country?",
+          "answer": "Yes. Umbrella is a global legal AI platform that auto-detects your jurisdiction and applies local law — available in every country worldwide."
+        },
+        {
+          "question": "Is Umbrella contract analysis free to try?",
+          "answer": "Yes. Individuals get a free preview with included AI credits. Law firms can start a free trial of the full platform."
+        }
+      ]
+    },
+    "legal-assistant": {
+      "metaTitle": "AI లీగల్ అసిస్టెంట్ — గ్లోబల్ లీగల్ AI ప్లాట్‌ఫారమ్",
+      "metaDescription": "అంబ్రెల్లా AI లీగల్ అసిస్టెంట్: AI- పవర్డ్, అధికార పరిధి-అవగాహన, నిజమైన అనులేఖనాలతో — వ్యక్తులు మరియు న్యాయ సంస్థల కోసం ప్రపంచవ్యాప్తంగా ప్రతి దేశంలో అందుబాటులో ఉంటుంది.",
+      "keywords": [
+        "ai legal assistant",
+        "AI ai legal assistant",
+        "ai legal assistant software",
+        "legal AI",
+        "global legal AI"
+      ],
+      "shortTitle": "AI లీగల్ అసిస్టెంట్",
+      "cardDescription": "నిజమైన అనులేఖనాలతో గ్లోబల్ AI లీగల్ అసిస్టెంట్ — వ్యక్తులు మరియు న్యాయ సంస్థల కోసం.",
+      "heroTitle": "AI లీగల్ అసిస్టెంట్ — నిజమైన సమాధానాలు, నిజమైన అనులేఖనాలు",
+      "heroSubtitle": "అత్యంత సామర్థ్యమున్న AI లీగల్ అసిస్టెంట్ ప్లాట్‌ఫారమ్ — వాస్తవ శాసనాలు మరియు కేస్ లా ఆధారంగా, ప్రపంచవ్యాప్తంగా అందుబాటులో ఉన్న మీ అధికార పరిధిని స్వయంచాలకంగా గుర్తిస్తుంది.",
+      "bodyTitle": "ఉత్తమ AI లీగల్ అసిస్టెంట్ ప్లాట్‌ఫారమ్",
+      "body1": "ప్రతి దేశానికి ధృవీకరించదగిన అనులేఖనాలు, విషయం-అవగాహన సందర్భం మరియు అధికార పరిధిని ఆటో-డిటెక్షన్‌తో - చట్టపరమైన కార్పోరాపై పునరుద్ధరణ-అగ్మెంటెడ్ జనరేషన్ ద్వారా ఆధారితమైన AI లీగల్ అసిస్టెంట్‌ను అంబ్రెల్లా అందిస్తుంది.",
+      "body2": "వ్యక్తులు దీన్ని ఉచితంగా ఉపయోగిస్తారు. న్యాయ సంస్థలు AI కోపైలట్, బిల్లింగ్ మరియు వర్క్‌ఫ్లో ఆటోమేషన్‌తో ప్రతి విషయంలో దీన్ని అమలు చేస్తాయి - ఒక గ్లోబల్ ప్లాట్‌ఫారమ్.",
+      "featuresSubtitle": "నిజమైన చట్టపరమైన పని కోసం నిర్మించబడింది.",
+      "features": [
+        "Real statute and case law citations you can verify",
+        "Jurisdiction auto-detection — works in every country",
+        "Free for individuals; firm-grade depth for teams",
+        "Matter-aware AI Copilot with full case context",
+        "Document drafting, review, and research integrated",
+        "Privacy-first — tenant isolation and audit trails"
+      ],
+      "dualAudience": "వ్యక్తులు ఉచిత AI లీగల్ అసిస్టెంట్ పొందుతారు. ప్రపంచవ్యాప్తంగా ఉన్న ప్రతి విషయంలో సంస్థలు దీన్ని ఆటోమేట్ చేస్తాయి.",
+      "ctaPrimary": "చట్టపరమైన ప్రశ్న అడగండి",
+      "faqItems": [
+        {
+          "question": "Does ai legal assistant work in my country?",
+          "answer": "Yes. Umbrella is a global legal AI platform that auto-detects your jurisdiction and applies local law — available in every country worldwide."
+        },
+        {
+          "question": "Is Umbrella ai legal assistant free to try?",
+          "answer": "Yes. Individuals get a free preview with included AI credits. Law firms can start a free trial of the full platform."
+        }
+      ]
+    },
+    "practice-management": {
+      "metaTitle": "ప్రాక్టీస్ మేనేజ్‌మెంట్ — గ్లోబల్ లీగల్ AI ప్లాట్‌ఫారమ్",
+      "metaDescription": "అంబ్రెల్లా ప్రాక్టీస్ మేనేజ్‌మెంట్: AI- పవర్డ్, అధికార పరిధి-అవగాహన, నిజమైన అనులేఖనాలతో — వ్యక్తులు మరియు న్యాయ సంస్థల కోసం ప్రపంచవ్యాప్తంగా ప్రతి దేశంలో అందుబాటులో ఉంటుంది.",
+      "keywords": [
+        "practice management",
+        "AI practice management",
+        "practice management software",
+        "legal AI",
+        "global legal AI"
+      ],
+      "shortTitle": "ప్రాక్టీస్ మేనేజ్‌మెంట్",
+      "cardDescription": "నిజమైన అనులేఖనాలతో గ్లోబల్ ప్రాక్టీస్ మేనేజ్‌మెంట్ — వ్యక్తులు మరియు న్యాయ సంస్థల కోసం.",
+      "heroTitle": "ప్రాక్టీస్ మేనేజ్‌మెంట్ — AIతో తిరిగి రూపొందించబడింది",
+      "heroSubtitle": "అత్యంత సామర్థ్యం గల ప్రాక్టీస్ మేనేజ్‌మెంట్ ప్లాట్‌ఫారమ్ — నిజమైన శాసనాలు మరియు కేసు చట్టం ఆధారంగా, మీ అధికార పరిధిని స్వయంచాలకంగా గుర్తిస్తుంది, ప్రపంచవ్యాప్తంగా అందుబాటులో ఉంటుంది.",
+      "bodyTitle": "ఉత్తమ అభ్యాస నిర్వహణ వేదిక",
+      "body1": "గొడుగు ప్రతి దేశానికి ధృవీకరించదగిన అనులేఖనాలు, విషయం-అవగాహన సందర్భం మరియు అధికార పరిధిని స్వీయ-గుర్తింపుతో - చట్టబద్ధమైన కార్పోరాపై పునరుద్ధరణ-అగ్మెంటెడ్ జనరేషన్ ద్వారా ఆధారితమైన అభ్యాస నిర్వహణను అందిస్తుంది.",
+      "body2": "వ్యక్తులు దీన్ని ఉచితంగా ఉపయోగిస్తారు. న్యాయ సంస్థలు AI కోపైలట్, బిల్లింగ్ మరియు వర్క్‌ఫ్లో ఆటోమేషన్‌తో ప్రతి విషయంలో దీన్ని అమలు చేస్తాయి - ఒక గ్లోబల్ ప్లాట్‌ఫారమ్.",
+      "featuresSubtitle": "నిజమైన చట్టపరమైన పని కోసం నిర్మించబడింది.",
+      "features": [
+        "Real statute and case law citations you can verify",
+        "Jurisdiction auto-detection — works in every country",
+        "Free for individuals; firm-grade depth for teams",
+        "Matter-aware AI Copilot with full case context",
+        "Document drafting, review, and research integrated",
+        "Privacy-first — tenant isolation and audit trails"
+      ],
+      "dualAudience": "వ్యక్తులు ఉచిత అభ్యాస నిర్వహణను పొందుతారు. ప్రపంచవ్యాప్తంగా ఉన్న ప్రతి విషయంలో సంస్థలు దీన్ని ఆటోమేట్ చేస్తాయి.",
+      "ctaPrimary": "మీ అభ్యాసాన్ని నిర్వహించండి",
+      "faqItems": [
+        {
+          "question": "Does practice management work in my country?",
+          "answer": "Yes. Umbrella is a global legal AI platform that auto-detects your jurisdiction and applies local law — available in every country worldwide."
+        },
+        {
+          "question": "Is Umbrella practice management free to try?",
+          "answer": "Yes. Individuals get a free preview with included AI credits. Law firms can start a free trial of the full platform."
+        }
+      ]
+    },
+    "legal-due-diligence": {
+      "metaTitle": "లీగల్ డ్యూ డిలిజెన్స్ — గ్లోబల్ లీగల్ AI ప్లాట్‌ఫారమ్",
+      "metaDescription": "గొడుగు చట్టపరమైన డ్యూ డిలిజెన్స్: AI- పవర్డ్, అధికార పరిధి-అవగాహన, నిజమైన అనులేఖనాలతో — వ్యక్తులు మరియు న్యాయ సంస్థల కోసం ప్రపంచవ్యాప్తంగా ప్రతి దేశంలో అందుబాటులో ఉంటుంది.",
+      "keywords": [
+        "legal due diligence",
+        "AI legal due diligence",
+        "legal due diligence software",
+        "legal AI",
+        "global legal AI"
+      ],
+      "shortTitle": "లీగల్ డ్యూ డిలిజెన్స్",
+      "cardDescription": "నిజమైన అనులేఖనాలతో గ్లోబల్ లీగల్ డ్యూ డిలిజెన్స్ — వ్యక్తులు మరియు న్యాయ సంస్థల కోసం.",
+      "heroTitle": "AI లీగల్ డ్యూ డిలిజెన్స్ — వేగంగా, లోతుగా, ఉదహరించబడింది",
+      "heroSubtitle": "అత్యంత సామర్థ్యం గల చట్టపరమైన డ్యూ డిలిజెన్స్ ప్లాట్‌ఫారమ్ — నిజమైన శాసనాలు మరియు కేసు చట్టం ఆధారంగా, ప్రపంచవ్యాప్తంగా అందుబాటులో ఉన్న మీ అధికార పరిధిని స్వయంచాలకంగా గుర్తిస్తుంది.",
+      "bodyTitle": "ఉత్తమ న్యాయపరమైన శ్రద్ధగల వేదిక",
+      "body1": "గొడుగు ప్రతి దేశానికి ధృవీకరించదగిన అనులేఖనాలు, విషయం-అవగాహన సందర్భం మరియు అధికార పరిధిని స్వయంచాలకంగా గుర్తించడంతో పాటు చట్టపరమైన కార్పోరాపై పునరుద్ధరణ-అగ్మెంటెడ్ జనరేషన్ ద్వారా ఆధారితమైన చట్టపరమైన శ్రద్ధను అందిస్తుంది.",
+      "body2": "వ్యక్తులు దీన్ని ఉచితంగా ఉపయోగిస్తారు. న్యాయ సంస్థలు AI కోపైలట్, బిల్లింగ్ మరియు వర్క్‌ఫ్లో ఆటోమేషన్‌తో ప్రతి విషయంలో దీన్ని అమలు చేస్తాయి - ఒక గ్లోబల్ ప్లాట్‌ఫారమ్.",
+      "featuresSubtitle": "నిజమైన చట్టపరమైన పని కోసం నిర్మించబడింది.",
+      "features": [
+        "Real statute and case law citations you can verify",
+        "Jurisdiction auto-detection — works in every country",
+        "Free for individuals; firm-grade depth for teams",
+        "Matter-aware AI Copilot with full case context",
+        "Document drafting, review, and research integrated",
+        "Privacy-first — tenant isolation and audit trails"
+      ],
+      "dualAudience": "వ్యక్తులు ఉచిత న్యాయపరమైన శ్రద్ధను పొందుతారు. ప్రపంచవ్యాప్తంగా ఉన్న ప్రతి విషయంలో సంస్థలు దీన్ని ఆటోమేట్ చేస్తాయి.",
+      "ctaPrimary": "తగిన శ్రద్ధ సమీక్షను ప్రారంభించండి",
+      "faqItems": [
+        {
+          "question": "Does legal due diligence work in my country?",
+          "answer": "Yes. Umbrella is a global legal AI platform that auto-detects your jurisdiction and applies local law — available in every country worldwide."
+        },
+        {
+          "question": "Is Umbrella legal due diligence free to try?",
+          "answer": "Yes. Individuals get a free preview with included AI credits. Law firms can start a free trial of the full platform."
+        }
+      ]
+    },
+    "legal-issue-analysis": {
+      "metaTitle": "లీగల్ ఇష్యూ అనాలిసిస్ — గ్లోబల్ లీగల్ AI ప్లాట్‌ఫారమ్",
+      "metaDescription": "గొడుగు చట్టపరమైన సమస్య విశ్లేషణ: AI-ఆధారిత, అధికార పరిధి-అవగాహన, నిజమైన అనులేఖనాలతో — వ్యక్తులు మరియు న్యాయ సంస్థల కోసం ప్రపంచవ్యాప్తంగా ప్రతి దేశంలో అందుబాటులో ఉంటుంది.",
+      "keywords": [
+        "legal issue analysis",
+        "AI legal issue analysis",
+        "legal issue analysis software",
+        "legal AI",
+        "global legal AI"
+      ],
+      "shortTitle": "చట్టపరమైన సమస్య విశ్లేషణ",
+      "cardDescription": "నిజమైన అనులేఖనాలతో గ్లోబల్ లీగల్ ఇష్యూ విశ్లేషణ — వ్యక్తులు మరియు న్యాయ సంస్థల కోసం.",
+      "heroTitle": "చట్టపరమైన సమస్య విశ్లేషణ - మీరు ఎక్కడ ఉన్నారో తెలుసుకోండి",
+      "heroSubtitle": "అత్యంత సామర్థ్యం గల చట్టపరమైన సమస్య విశ్లేషణ ప్లాట్‌ఫారమ్ — వాస్తవ శాసనాలు మరియు కేస్ లా ఆధారంగా, ప్రపంచవ్యాప్తంగా అందుబాటులో ఉన్న మీ అధికార పరిధిని స్వయంచాలకంగా గుర్తిస్తుంది.",
+      "bodyTitle": "ఉత్తమ చట్టపరమైన సమస్య విశ్లేషణ వేదిక",
+      "body1": "గొడుగు ప్రతి దేశానికి ధృవీకరించదగిన అనులేఖనాలు, విషయం-అవగాహన సందర్భం మరియు అధికార పరిధిని స్వయంచాలకంగా గుర్తించడంతో పాటు - లీగల్ కార్పోరాపై పునరుద్ధరణ-అగ్మెంటెడ్ జనరేషన్ ద్వారా ఆధారితమైన చట్టపరమైన సమస్య విశ్లేషణను అందిస్తుంది.",
+      "body2": "వ్యక్తులు దీన్ని ఉచితంగా ఉపయోగిస్తారు. న్యాయ సంస్థలు AI కోపైలట్, బిల్లింగ్ మరియు వర్క్‌ఫ్లో ఆటోమేషన్‌తో ప్రతి విషయంలో దీన్ని అమలు చేస్తాయి - ఒక గ్లోబల్ ప్లాట్‌ఫారమ్.",
+      "featuresSubtitle": "నిజమైన చట్టపరమైన పని కోసం నిర్మించబడింది.",
+      "features": [
+        "Real statute and case law citations you can verify",
+        "Jurisdiction auto-detection — works in every country",
+        "Free for individuals; firm-grade depth for teams",
+        "Matter-aware AI Copilot with full case context",
+        "Document drafting, review, and research integrated",
+        "Privacy-first — tenant isolation and audit trails"
+      ],
+      "dualAudience": "వ్యక్తులు ఉచిత చట్టపరమైన సమస్య విశ్లేషణను పొందుతారు. ప్రపంచవ్యాప్తంగా ఉన్న ప్రతి విషయంలో సంస్థలు దీన్ని ఆటోమేట్ చేస్తాయి.",
+      "ctaPrimary": "నా చట్టపరమైన సమస్యను విశ్లేషించండి",
+      "faqItems": [
+        {
+          "question": "Does legal issue analysis work in my country?",
+          "answer": "Yes. Umbrella is a global legal AI platform that auto-detects your jurisdiction and applies local law — available in every country worldwide."
+        },
+        {
+          "question": "Is Umbrella legal issue analysis free to try?",
+          "answer": "Yes. Individuals get a free preview with included AI credits. Law firms can start a free trial of the full platform."
+        }
+      ]
+    }
+  }
 }

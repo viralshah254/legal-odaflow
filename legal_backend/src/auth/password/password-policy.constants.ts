@@ -1,0 +1,11 @@
+export const PASSWORD_MIN_LENGTH = 8;
+export const PASSWORD_MAX_LENGTH = 128;
+
+export const PASSWORD_POLICY_ERROR_CODES = {
+  TOO_SHORT: 'PASSWORD_TOO_SHORT',
+  TOO_LONG: 'PASSWORD_TOO_LONG',
+  MISSING_NUMBER: 'PASSWORD_MISSING_NUMBER',
+} as const;
+
+export type PasswordPolicyErrorCode =
+  (typeof PASSWORD_POLICY_ERROR_CODES)[keyof typeof PASSWORD_POLICY_ERROR_CODES];

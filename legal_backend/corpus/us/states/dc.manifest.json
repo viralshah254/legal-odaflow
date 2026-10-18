@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "stateCode": "DC",
+  "stateName": "District of Columbia",
+  "acts": [
+    {
+      "actId": "dc-code",
+      "title": "District of Columbia code",
+      "sourceAuthority": "cornell-lii",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.law.cornell.edu/states/dc",
+      "externalId": "dc-code",
+      "notes": "District of Columbia state law via Cornell LII state index"
+    },
+    {
+      "actId": "dc-statutes",
+      "title": "District of Columbia statutes",
+      "sourceAuthority": "cornell-lii",
+      "sourceTier": "mirror",
+      "primaryPdfUrl": "https://www.law.cornell.edu/states/dc",
+      "externalId": "dc-statutes",
+      "notes": "District of Columbia state law via Cornell LII state index"
+    }
+  ]
+}

@@ -1,0 +1,155 @@
+/* Umbrella-branded Driver.js tour popover */
+.driver-overlay {
+  backdrop-filter: blur(2px);
+}
+
+.driver-popover.umbrella-tour-popover {
+  max-width: 380px;
+  background: hsl(var(--popover));
+  color: hsl(var(--popover-foreground));
+  border: 1px solid hsl(var(--border));
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-lg);
+  padding: 0;
+  overflow: hidden;
+}
+
+.driver-popover.umbrella-tour-popover .umbrella-tour-popover-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  background: linear-gradient(
+    135deg,
+    hsl(var(--primary) / 0.12) 0%,
+    hsl(var(--primary) / 0.04) 100%
+  );
+  border-bottom: 1px solid hsl(var(--border));
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: hsl(var(--primary));
+}
+
+.driver-popover.umbrella-tour-popover .umbrella-tour-popover-brand svg {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+}
+
+.driver-popover.umbrella-tour-popover .driver-popover-title {
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.35;
+  padding: 1rem 1rem 0.25rem;
+  color: hsl(var(--foreground));
+}
+
+.driver-popover.umbrella-tour-popover .driver-popover-description {
+  font-size: 0.875rem;
+  line-height: 1.55;
+  padding: 0 1rem 0.75rem;
+  color: hsl(var(--muted-foreground));
+}
+
+.driver-popover.umbrella-tour-popover .driver-popover-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem 1rem;
+  border-top: 1px solid hsl(var(--border));
+  background: hsl(var(--muted) / 0.35);
+}
+
+.driver-popover.umbrella-tour-popover .driver-popover-progress-text {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: hsl(var(--muted-foreground));
+  background: hsl(var(--background));
+  border: 1px solid hsl(var(--border));
+  border-radius: 9999px;
+  padding: 0.2rem 0.65rem;
+}
+
+.driver-popover.umbrella-tour-popover .driver-popover-navigation-btns {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.driver-popover.umbrella-tour-popover .driver-popover-prev-btn,
+.driver-popover.umbrella-tour-popover .driver-popover-next-btn {
+  font-size: 0.8125rem;
+  font-weight: 500;
+  border-radius: calc(var(--radius) - 2px);
+  padding: 0.4rem 0.85rem;
+  text-shadow: none;
+  transition: background-color var(--motion-duration-fast) var(--motion-ease-out),
+    color var(--motion-duration-fast) var(--motion-ease-out);
+}
+
+.driver-popover.umbrella-tour-popover .driver-popover-prev-btn {
+  background: transparent;
+  color: hsl(var(--foreground));
+  border: 1px solid hsl(var(--border));
+}
+
+.driver-popover.umbrella-tour-popover .driver-popover-prev-btn:hover {
+  background: hsl(var(--accent));
+}
+
+.driver-popover.umbrella-tour-popover .driver-popover-next-btn {
+  background: hsl(var(--primary));
+  color: hsl(var(--primary-foreground));
+  border: none;
+}
+
+.driver-popover.umbrella-tour-popover .driver-popover-next-btn:hover {
+  filter: brightness(1.05);
+}
+
+.driver-popover.umbrella-tour-popover .driver-popover-close-btn {
+  color: hsl(var(--muted-foreground));
+  width: 28px;
+  height: 28px;
+  top: 0.65rem;
+  right: 0.65rem;
+}
+
+.driver-popover.umbrella-tour-popover .driver-popover-close-btn:hover {
+  color: hsl(var(--foreground));
+}
+
+.driver-popover.umbrella-tour-popover .driver-popover-arrow {
+  border-color: hsl(var(--popover));
+}
+
+.driver-popover.umbrella-tour-popover .umbrella-tour-skip-link {
+  font-size: 0.75rem;
+  color: hsl(var(--muted-foreground));
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.driver-popover.umbrella-tour-popover .umbrella-tour-skip-link:hover {
+  color: hsl(var(--foreground));
+}
+
+.driver-active-element {
+  outline: 2px solid hsl(var(--primary) / 0.5) !important;
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .driver-popover.umbrella-tour-popover,
+  .driver-popover.umbrella-tour-popover .driver-popover-prev-btn,
+  .driver-popover.umbrella-tour-popover .driver-popover-next-btn {
+    transition: none;
+  }
+}

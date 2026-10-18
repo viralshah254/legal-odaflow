@@ -1,4 +1,5 @@
 import {
+  BadRequestException,
   Body,
   Controller,
   Delete,
@@ -7,15 +8,20 @@ import {
   Patch,
   Post,
   Query,
+  UploadedFile,
   UseGuards,
+  UseInterceptors,
 } from '@nestjs/common';
+import { FileInterceptor } from '@nestjs/platform-express';
 import { CurrentUser } from '@/common/decorators/current-user.decorator';
 import { TenantId } from '@/common/decorators/tenant-id.decorator';
 import { TenantGuard } from '@/common/guards/tenant.guard';
 import { RequestUser } from '@/common/types/request-user.interface';
 import { DocumentsService } from './documents.service';
 import {
+  CreateConsumerUploadUrlDto,
   CreateUploadUrlDto,
+  UploadConsumerFileDto,
   UploadConsumerDocumentDto,
   UploadDocumentMetadataDto,
 } from './dto/upload-document.dto';
@@ -24,6 +30,7 @@ import {
   CreateDocumentVersionDto as CreateVersionDto,
   UpdateDocumentFolderDto as UpdateFolderDto,
 } from './dto/document-management.dto';
+import { UpdateDocumentMetadataDto } from './dto/update-document.dto';
 
 @Controller('documents')
 export class DocumentsController {
@@ -35,6 +42,36 @@ export class DocumentsController {
     @Body() dto: UploadConsumerDocumentDto,
   ) {
     return this.documentsService.uploadConsumerDocument(user.id, dto);
+  }
+
+  @Post('consumer/upload-url')
+  createConsumerUploadUrl(
+    @CurrentUser() user: RequestUser,
+    @Body() dto: CreateConsumerUploadUrlDto,
+  ) {
+    return this.documentsService.createConsumerUploadUrl(
+      user.id,
+      dto.consumerCaseId,
+      dto.fileName,
+    );
+  }
+
+  @Post('consumer/upload-file')
+  @UseInterceptors(FileInterceptor('file'))
+  uploadConsumerFile(
+    @CurrentUser() user: RequestUser,
+    @UploadedFile() file: Express.Multer.File,
+    @Body() dto: UploadConsumerFileDto,
+  ) {
+    if (!file) {
+      throw new BadRequestException('file is required');
+    }
+    return this.documentsService.uploadConsumerFileFromBuffer(
+      user.id,
+      dto.consumerCaseId,
+      file,
+      dto.documentType,
+    );
   }
 
   @Post('upload')
@@ -77,10 +114,21 @@ export class DocumentsController {
   listTenantDocuments(
     @TenantId() tenantId: string,
     @Query('matterId') matterId?: string,
+    @Query('clientId') clientId?: string,
+    @Query('scope') scope?: 'all' | 'general' | 'client',
     @Query('folderId') folderId?: string,
     @Query('search') search?: string,
+    @Query('status') status?: 'ACTIVE' | 'ARCHIVED' | 'all',
   ) {
-    return this.documentsService.listTenantDocuments(tenantId, matterId, folderId, search);
+    return this.documentsService.listTenantDocuments(
+      tenantId,
+      matterId,
+      folderId,
+      search,
+      clientId,
+      scope,
+      status,
+    );
   }
 
   @Get('folders')
@@ -141,6 +189,38 @@ export class DocumentsController {
     return this.documentsService.createDocumentVersion(tenantId, documentId, user.id, dto);
   }
 
+  @Post(':documentId/versions/:versionId/restore')
+  @UseGuards(TenantGuard)
+  restoreDocumentVersion(
+    @CurrentUser() user: RequestUser,
+    @TenantId() tenantId: string,
+    @Param('documentId') documentId: string,
+    @Param('versionId') versionId: string,
+  ) {
+    return this.documentsService.restoreDocumentVersion(
+      tenantId,
+      documentId,
+      versionId,
+      user.id,
+      user.tenantRole,
+    );
+  }
+
+  @Get(':documentId/share-link')
+  @UseGuards(TenantGuard)
+  generateShareLink(
+    @CurrentUser() user: RequestUser,
+    @TenantId() tenantId: string,
+    @Param('documentId') documentId: string,
+  ) {
+    return this.documentsService.generateShareLink(
+      tenantId,
+      documentId,
+      user.id,
+      user.tenantRole,
+    );
+  }
+
   @Get(':documentId/download')
   @UseGuards(TenantGuard)
   getDocumentDownload(
@@ -153,6 +233,23 @@ export class DocumentsController {
       documentId,
       user.id,
       user.tenantRole,
+    );
+  }
+
+  @Patch(':documentId')
+  @UseGuards(TenantGuard)
+  updateTenantDocument(
+    @CurrentUser() user: RequestUser,
+    @TenantId() tenantId: string,
+    @Param('documentId') documentId: string,
+    @Body() dto: UpdateDocumentMetadataDto,
+  ) {
+    return this.documentsService.updateTenantDocument(
+      tenantId,
+      documentId,
+      user.id,
+      user.tenantRole,
+      dto,
     );
   }
 
@@ -169,5 +266,20 @@ export class DocumentsController {
       user.id,
       user.tenantRole,
     );
+  }
+
+  /**
+   * POST /documents/:documentId/trigger-ocr
+   * Re-enqueues OCR for a document that has no extractedText (e.g. scanned PDFs).
+   * Used by the OcrBanner component in the Smart Research Workspace.
+   */
+  @Post(':documentId/trigger-ocr')
+  @UseGuards(TenantGuard)
+  async triggerOcr(
+    @CurrentUser() user: RequestUser,
+    @TenantId() tenantId: string,
+    @Param('documentId') documentId: string,
+  ) {
+    return this.documentsService.triggerOcrForDocument(tenantId, documentId, user.id);
   }
 }

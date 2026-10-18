@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "stateCode": "NJ",
+  "stateName": "New Jersey",
+  "acts": [
+    {
+      "actId": "nj-code",
+      "title": "New Jersey code",
+      "sourceAuthority": "cornell-lii",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.law.cornell.edu/states/nj",
+      "externalId": "nj-code",
+      "notes": "New Jersey state law via Cornell LII state index"
+    },
+    {
+      "actId": "nj-statutes",
+      "title": "New Jersey statutes",
+      "sourceAuthority": "cornell-lii",
+      "sourceTier": "mirror",
+      "primaryPdfUrl": "https://www.law.cornell.edu/states/nj",
+      "externalId": "nj-statutes",
+      "notes": "New Jersey state law via Cornell LII state index"
+    }
+  ]
+}

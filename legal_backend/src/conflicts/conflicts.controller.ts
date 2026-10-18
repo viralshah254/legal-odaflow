@@ -29,4 +29,16 @@ export class ConflictsController {
   ) {
     return this.conflictsService.create(tenantId, user.id, dto);
   }
+
+  /**
+   * Quick check — returns conflict matches without creating a record.
+   * Use this during matter creation flow before committing.
+   */
+  @Post('quick-check')
+  quickCheck(
+    @TenantId() tenantId: string,
+    @Body() dto: { parties: Array<{ name?: string; email?: string }>; clientId?: string },
+  ) {
+    return this.conflictsService.quickCheck(tenantId, dto.parties, dto.clientId);
+  }
 }

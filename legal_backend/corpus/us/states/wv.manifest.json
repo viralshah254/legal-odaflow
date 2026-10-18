@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "stateCode": "WV",
+  "stateName": "West Virginia",
+  "acts": [
+    {
+      "actId": "wv-code",
+      "title": "West Virginia code",
+      "sourceAuthority": "cornell-lii",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.law.cornell.edu/states/wv",
+      "externalId": "wv-code",
+      "notes": "West Virginia state law via Cornell LII state index"
+    },
+    {
+      "actId": "wv-statutes",
+      "title": "West Virginia statutes",
+      "sourceAuthority": "cornell-lii",
+      "sourceTier": "mirror",
+      "primaryPdfUrl": "https://www.law.cornell.edu/states/wv",
+      "externalId": "wv-statutes",
+      "notes": "West Virginia state law via Cornell LII state index"
+    }
+  ]
+}

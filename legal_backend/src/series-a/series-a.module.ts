@@ -2,7 +2,9 @@ import { Module, forwardRef } from '@nestjs/common';
 import { AiModule } from '@/ai/ai.module';
 import { AuditModule } from '@/audit/audit.module';
 import { NotificationsModule } from '@/notifications/notifications.module';
+import { SecurityModule } from '@/security/security.module';
 import { TimeModule } from '@/time/time.module';
+import { FeatureFlagsModule } from '@/platform/feature-flags/feature-flags.module';
 import { EvidenceController } from './evidence.controller';
 import { EvidenceService } from './evidence.service';
 import { InboxController } from './inbox.controller';
@@ -15,7 +17,14 @@ import { SuggestedTimeController } from './suggested-time.controller';
 import { SuggestedTimeService } from './suggested-time.service';
 
 @Module({
-  imports: [forwardRef(() => AiModule), AuditModule, NotificationsModule, TimeModule],
+  imports: [
+    forwardRef(() => AiModule),
+    AuditModule,
+    NotificationsModule,
+    SecurityModule,
+    TimeModule,
+    FeatureFlagsModule,
+  ],
   controllers: [
     EvidenceController,
     InboxController,

@@ -1,0 +1,3135 @@
+{
+  "generatedAt": "2026-07-10T03:11:33.356Z",
+  "jurisdiction": "US",
+  "totalKinds": 477,
+  "archetypeCounts": {
+    "civil_plaint": 33,
+    "criminal_trial_pleading": 13,
+    "other": 213,
+    "protective_order": 4,
+    "appellate_revision": 10,
+    "regulatory_notice": 6,
+    "writ_constitutional": 4,
+    "police_criminal_complaint": 2,
+    "bail_release": 4,
+    "special_statute_complaint": 184,
+    "family_matrimonial": 4
+  },
+  "highTrafficKinds": [
+    {
+      "kind": "us_federal_complaint",
+      "archetype": "civil_plaint",
+      "register": "civil_plaint",
+      "highTraffic": true
+    },
+    {
+      "kind": "us_federal_motion_dismiss_12b6",
+      "archetype": "criminal_trial_pleading",
+      "register": "court_petition",
+      "highTraffic": true
+    },
+    {
+      "kind": "us_federal_motion_dismiss_12b1",
+      "archetype": "criminal_trial_pleading",
+      "register": "court_petition",
+      "highTraffic": true
+    },
+    {
+      "kind": "us_federal_section_1983_complaint",
+      "archetype": "writ_constitutional",
+      "register": "writ",
+      "highTraffic": true
+    },
+    {
+      "kind": "us_federal_criminal_complaint",
+      "archetype": "police_criminal_complaint",
+      "register": "police_complaint",
+      "highTraffic": true
+    },
+    {
+      "kind": "us_federal_habeas_2255",
+      "archetype": "writ_constitutional",
+      "register": "writ",
+      "highTraffic": true
+    },
+    {
+      "kind": "us_federal_habeas_2241",
+      "archetype": "writ_constitutional",
+      "register": "writ",
+      "highTraffic": true
+    },
+    {
+      "kind": "us_federal_detention_memo",
+      "archetype": "bail_release",
+      "register": "bail_application",
+      "highTraffic": true
+    },
+    {
+      "kind": "us_bankruptcy_adversary_complaint",
+      "archetype": "civil_plaint",
+      "register": "civil_plaint",
+      "highTraffic": true
+    },
+    {
+      "kind": "us_federal_employment_complaint",
+      "archetype": "civil_plaint",
+      "register": "civil_plaint",
+      "highTraffic": true
+    },
+    {
+      "kind": "us_ftc_complaint",
+      "archetype": "civil_plaint",
+      "register": "civil_plaint",
+      "highTraffic": true
+    },
+    {
+      "kind": "us_cfpb_complaint",
+      "archetype": "civil_plaint",
+      "register": "civil_plaint",
+      "highTraffic": true
+    },
+    {
+      "kind": "us_osha_complaint",
+      "archetype": "civil_plaint",
+      "register": "civil_plaint",
+      "highTraffic": true
+    },
+    {
+      "kind": "us_hhs_hipaa_complaint",
+      "archetype": "civil_plaint",
+      "register": "civil_plaint",
+      "highTraffic": true
+    },
+    {
+      "kind": "us_patent_infringement_complaint",
+      "archetype": "civil_plaint",
+      "register": "civil_plaint",
+      "highTraffic": true
+    },
+    {
+      "kind": "us_trademark_infringement_complaint",
+      "archetype": "civil_plaint",
+      "register": "civil_plaint",
+      "highTraffic": true
+    },
+    {
+      "kind": "us_copyright_infringement_complaint",
+      "archetype": "civil_plaint",
+      "register": "civil_plaint",
+      "highTraffic": true
+    },
+    {
+      "kind": "us_federal_bivens_complaint",
+      "archetype": "civil_plaint",
+      "register": "civil_plaint",
+      "highTraffic": true
+    },
+    {
+      "kind": "us_federal_first_amendment_complaint",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": true
+    },
+    {
+      "kind": "us_federal_equal_protection_complaint",
+      "archetype": "civil_plaint",
+      "register": "civil_plaint",
+      "highTraffic": true
+    },
+    {
+      "kind": "us_fcc_consumer_complaint",
+      "archetype": "civil_plaint",
+      "register": "civil_plaint",
+      "highTraffic": true
+    },
+    {
+      "kind": "us_ferc_complaint",
+      "archetype": "civil_plaint",
+      "register": "civil_plaint",
+      "highTraffic": true
+    },
+    {
+      "kind": "us_usitc_337_complaint",
+      "archetype": "civil_plaint",
+      "register": "civil_plaint",
+      "highTraffic": true
+    },
+    {
+      "kind": "us_antitrust_sherman_complaint",
+      "archetype": "civil_plaint",
+      "register": "civil_plaint",
+      "highTraffic": true
+    },
+    {
+      "kind": "us_dot_fmcsa_complaint",
+      "archetype": "civil_plaint",
+      "register": "civil_plaint",
+      "highTraffic": true
+    },
+    {
+      "kind": "us_dol_whistleblower_complaint",
+      "archetype": "civil_plaint",
+      "register": "civil_plaint",
+      "highTraffic": true
+    },
+    {
+      "kind": "us_doj_civil_rights_complaint",
+      "archetype": "civil_plaint",
+      "register": "civil_plaint",
+      "highTraffic": true
+    },
+    {
+      "kind": "us_hud_fair_housing_complaint",
+      "archetype": "civil_plaint",
+      "register": "civil_plaint",
+      "highTraffic": true
+    },
+    {
+      "kind": "us_merit_systems_complaint",
+      "archetype": "civil_plaint",
+      "register": "civil_plaint",
+      "highTraffic": true
+    },
+    {
+      "kind": "us_state_civil_complaint",
+      "archetype": "civil_plaint",
+      "register": "civil_plaint",
+      "highTraffic": true
+    },
+    {
+      "kind": "us_state_motion_dismiss",
+      "archetype": "criminal_trial_pleading",
+      "register": "court_petition",
+      "highTraffic": true
+    },
+    {
+      "kind": "us_state_small_claims_complaint",
+      "archetype": "civil_plaint",
+      "register": "civil_plaint",
+      "highTraffic": true
+    },
+    {
+      "kind": "us_state_bail_motion",
+      "archetype": "bail_release",
+      "register": "bail_application",
+      "highTraffic": true
+    },
+    {
+      "kind": "us_state_divorce_petition",
+      "archetype": "family_matrimonial",
+      "register": "family_petition",
+      "highTraffic": true
+    },
+    {
+      "kind": "us_state_domestic_violence_petition",
+      "archetype": "protective_order",
+      "register": "protective_order",
+      "highTraffic": true
+    },
+    {
+      "kind": "us_state_restraining_order",
+      "archetype": "protective_order",
+      "register": "protective_order",
+      "highTraffic": true
+    },
+    {
+      "kind": "us_state_foreclosure_complaint",
+      "archetype": "civil_plaint",
+      "register": "civil_plaint",
+      "highTraffic": true
+    },
+    {
+      "kind": "us_state_criminal_complaint",
+      "archetype": "police_criminal_complaint",
+      "register": "police_complaint",
+      "highTraffic": true
+    },
+    {
+      "kind": "us_state_motion_reduce_bail",
+      "archetype": "bail_release",
+      "register": "bail_application",
+      "highTraffic": true
+    },
+    {
+      "kind": "us_state_motion_dismiss_criminal",
+      "archetype": "criminal_trial_pleading",
+      "register": "court_petition",
+      "highTraffic": true
+    },
+    {
+      "kind": "us_state_unlawful_detainer_complaint",
+      "archetype": "civil_plaint",
+      "register": "civil_plaint",
+      "highTraffic": true
+    }
+  ],
+  "kinds": [
+    {
+      "kind": "us_federal_complaint",
+      "archetype": "civil_plaint",
+      "register": "civil_plaint",
+      "highTraffic": true
+    },
+    {
+      "kind": "us_federal_answer",
+      "archetype": "civil_plaint",
+      "register": "civil_plaint",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_federal_counterclaim",
+      "archetype": "civil_plaint",
+      "register": "civil_plaint",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_federal_motion_dismiss_12b6",
+      "archetype": "criminal_trial_pleading",
+      "register": "court_petition",
+      "highTraffic": true
+    },
+    {
+      "kind": "us_federal_motion_dismiss_12b1",
+      "archetype": "criminal_trial_pleading",
+      "register": "court_petition",
+      "highTraffic": true
+    },
+    {
+      "kind": "us_federal_motion_summary_judgment",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_federal_opposition_msj",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_federal_preliminary_injunction",
+      "archetype": "civil_plaint",
+      "register": "civil_plaint",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_federal_tro",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_federal_motion_in_limine",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_federal_daubert_motion",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_federal_interrogatories",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_federal_rfp",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_federal_rfa",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_federal_motion_compel",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_federal_protective_order",
+      "archetype": "protective_order",
+      "register": "protective_order",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_federal_class_certification",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_federal_notice_appeal",
+      "archetype": "appellate_revision",
+      "register": "appellate",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_federal_appellate_brief",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_federal_cert_petition",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_federal_demand_letter",
+      "archetype": "regulatory_notice",
+      "register": "notice_letter",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_federal_section_1983_complaint",
+      "archetype": "writ_constitutional",
+      "register": "writ",
+      "highTraffic": true
+    },
+    {
+      "kind": "us_federal_criminal_complaint",
+      "archetype": "police_criminal_complaint",
+      "register": "police_complaint",
+      "highTraffic": true
+    },
+    {
+      "kind": "us_federal_plea_agreement",
+      "archetype": "criminal_trial_pleading",
+      "register": "court_petition",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_federal_motion_suppress_4th",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_federal_sentencing_memo",
+      "archetype": "criminal_trial_pleading",
+      "register": "court_petition",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_federal_habeas_2255",
+      "archetype": "writ_constitutional",
+      "register": "writ",
+      "highTraffic": true
+    },
+    {
+      "kind": "us_federal_habeas_2241",
+      "archetype": "writ_constitutional",
+      "register": "writ",
+      "highTraffic": true
+    },
+    {
+      "kind": "us_federal_detention_memo",
+      "archetype": "bail_release",
+      "register": "bail_application",
+      "highTraffic": true
+    },
+    {
+      "kind": "us_federal_brady_motion",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_federal_speedy_trial_motion",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_bankruptcy_ch7_petition",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_bankruptcy_ch11_petition",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_bankruptcy_ch13_petition",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_bankruptcy_proof_of_claim",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_bankruptcy_plan_reorganization",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_bankruptcy_adversary_complaint",
+      "archetype": "civil_plaint",
+      "register": "civil_plaint",
+      "highTraffic": true
+    },
+    {
+      "kind": "us_bankruptcy_motion_lift_stay",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_bankruptcy_preference_defense",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_immigration_asylum_application",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_immigration_motion_reopen",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_immigration_removal_defense",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_immigration_601a_waiver",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_immigration_employer_support",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_immigration_hardship_declaration",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_tax_court_petition",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_irs_audit_response",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_irs_offer_compromise",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_irs_cdp_request",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_irs_penalty_abatement",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_irs_installment_request",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_eeoc_charge",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_federal_employment_complaint",
+      "archetype": "civil_plaint",
+      "register": "civil_plaint",
+      "highTraffic": true
+    },
+    {
+      "kind": "us_fmla_dispute_letter",
+      "archetype": "regulatory_notice",
+      "register": "notice_letter",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_flsa_wage_claim",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_nlrb_unfair_labor_charge",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_ada_accommodation_request",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_sec_inquiry_response",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_ftc_complaint",
+      "archetype": "civil_plaint",
+      "register": "civil_plaint",
+      "highTraffic": true
+    },
+    {
+      "kind": "us_cfpb_complaint",
+      "archetype": "civil_plaint",
+      "register": "civil_plaint",
+      "highTraffic": true
+    },
+    {
+      "kind": "us_osha_complaint",
+      "archetype": "civil_plaint",
+      "register": "civil_plaint",
+      "highTraffic": true
+    },
+    {
+      "kind": "us_epa_enforcement_response",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_fda_warning_letter_response",
+      "archetype": "regulatory_notice",
+      "register": "notice_letter",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_hhs_hipaa_complaint",
+      "archetype": "civil_plaint",
+      "register": "civil_plaint",
+      "highTraffic": true
+    },
+    {
+      "kind": "us_patent_infringement_complaint",
+      "archetype": "civil_plaint",
+      "register": "civil_plaint",
+      "highTraffic": true
+    },
+    {
+      "kind": "us_trademark_infringement_complaint",
+      "archetype": "civil_plaint",
+      "register": "civil_plaint",
+      "highTraffic": true
+    },
+    {
+      "kind": "us_copyright_infringement_complaint",
+      "archetype": "civil_plaint",
+      "register": "civil_plaint",
+      "highTraffic": true
+    },
+    {
+      "kind": "us_dmca_takedown",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_dmca_counter_notice",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_uspto_office_action_response",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_ttab_opposition_brief",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_ipr_petition",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_federal_bivens_complaint",
+      "archetype": "civil_plaint",
+      "register": "civil_plaint",
+      "highTraffic": true
+    },
+    {
+      "kind": "us_federal_first_amendment_complaint",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": true
+    },
+    {
+      "kind": "us_federal_equal_protection_complaint",
+      "archetype": "civil_plaint",
+      "register": "civil_plaint",
+      "highTraffic": true
+    },
+    {
+      "kind": "us_cease_desist_letter",
+      "archetype": "regulatory_notice",
+      "register": "notice_letter",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_demand_breach_contract",
+      "archetype": "regulatory_notice",
+      "register": "notice_letter",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_settlement_agreement_federal",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_bankruptcy_schedules_summary",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_bankruptcy_meeting_341",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_immigration_n400_naturalization_brief",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_ssdi_disability_appeal",
+      "archetype": "appellate_revision",
+      "register": "appellate",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_va_benefits_claim_brief",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_foia_request",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_medicare_advantage_appeal",
+      "archetype": "appellate_revision",
+      "register": "appellate",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_erisa_benefits_appeal",
+      "archetype": "appellate_revision",
+      "register": "appellate",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_fcc_consumer_complaint",
+      "archetype": "civil_plaint",
+      "register": "civil_plaint",
+      "highTraffic": true
+    },
+    {
+      "kind": "us_ferc_complaint",
+      "archetype": "civil_plaint",
+      "register": "civil_plaint",
+      "highTraffic": true
+    },
+    {
+      "kind": "us_ucmj_article_32",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_federal_criminal_superseding_response",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_federal_motion_continue",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_federal_motion_seal",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_federal_subpoena_motion_quash",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_federal_jury_instruction_request",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_federal_sentencing_variation",
+      "archetype": "criminal_trial_pleading",
+      "register": "court_petition",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_federal_declaratory_judgment",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_federal_interpleader",
+      "archetype": "criminal_trial_pleading",
+      "register": "court_petition",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_federal_mandamus_petition",
+      "archetype": "writ_constitutional",
+      "register": "writ",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_irs_wage_garnishment_release",
+      "archetype": "bail_release",
+      "register": "bail_application",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_eeoc_position_statement",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_usitc_337_complaint",
+      "archetype": "civil_plaint",
+      "register": "civil_plaint",
+      "highTraffic": true
+    },
+    {
+      "kind": "us_antitrust_sherman_complaint",
+      "archetype": "civil_plaint",
+      "register": "civil_plaint",
+      "highTraffic": true
+    },
+    {
+      "kind": "us_federal_civil_cover_sheet_narrative",
+      "archetype": "civil_plaint",
+      "register": "civil_plaint",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_federal_motion_strike",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_federal_cr_tra_reply",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_immigration_i129_petition",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_immigration_i140_petition",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_immigration_i539_extension",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_immigration_i751_removal_conditions",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_immigration_i90_renewal",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_immigration_i824_follow_to_join",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_immigration_i864_affidavit_support",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_immigration_i912_fee_waiver",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_immigration_i131_travel_document",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_immigration_i821_tps",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_irs_form_1040x_amended",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_irs_form_9465_installment",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_irs_form_433_a_collection",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_irs_form_8822_address_change",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_irs_form_2848_poa",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_irs_form_4506_t_transcript",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_irs_form_941_employer",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_irs_form_w4_employee",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_irs_form_1099_correction",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_irs_innocent_spouse_relief",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_irs_injured_spouse_claim",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_ssa_ss5_card_replacement",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_ssa_disability_reconsideration",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_medicare_part_b_appeal",
+      "archetype": "appellate_revision",
+      "register": "appellate",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_medicaid_fair_hearing",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_dot_fmcsa_complaint",
+      "archetype": "civil_plaint",
+      "register": "civil_plaint",
+      "highTraffic": true
+    },
+    {
+      "kind": "us_cfpb_debt_collection_response",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_cfpb_credit_report_dispute",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_ftc_identity_theft_report",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_dol_whistleblower_complaint",
+      "archetype": "civil_plaint",
+      "register": "civil_plaint",
+      "highTraffic": true
+    },
+    {
+      "kind": "us_doj_civil_rights_complaint",
+      "archetype": "civil_plaint",
+      "register": "civil_plaint",
+      "highTraffic": true
+    },
+    {
+      "kind": "us_hud_fair_housing_complaint",
+      "archetype": "civil_plaint",
+      "register": "civil_plaint",
+      "highTraffic": true
+    },
+    {
+      "kind": "us_eeoc_rebuttal_position",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_dol_wage_hour_investigation",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_nlrb_election_petition",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_mspb_appeal",
+      "archetype": "appellate_revision",
+      "register": "appellate",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_merit_systems_complaint",
+      "archetype": "civil_plaint",
+      "register": "civil_plaint",
+      "highTraffic": true
+    },
+    {
+      "kind": "us_cafc_patent_appeal",
+      "archetype": "appellate_revision",
+      "register": "appellate",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_ptab_ipr_response",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_copyright_dmca_counter_suit",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_immigration_i130",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_immigration_i485",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_immigration_i765",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_immigration_i129",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_immigration_i140",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_immigration_i539",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_immigration_i751",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_immigration_i90",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_immigration_i824",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_immigration_i864",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_immigration_i912",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_immigration_i131",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_immigration_i821",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_immigration_n400",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_immigration_i589",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_immigration_i601",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_immigration_i693",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_immigration_i129f",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_immigration_i360",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_immigration_i526",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_immigration_i526e",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_immigration_i829",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_immigration_i918",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_immigration_i918a",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_immigration_i914",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_immigration_i914a",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_immigration_i102",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_immigration_i212",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_immigration_i290b",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_immigration_i407",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_immigration_i485j",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_immigration_i600",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_immigration_i600a",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_immigration_i800",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_immigration_i800a",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_immigration_i907",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_immigration_i941",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_immigration_n565",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_immigration_n600",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_immigration_n648",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_immigration_i765v",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_immigration_i956",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_immigration_i956f",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_irs_form_1040",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_irs_form_1040_sr",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_irs_form_1040_x",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_irs_form_1040_es",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_irs_form_schedule_a",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_irs_form_schedule_b",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_irs_form_schedule_c",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_irs_form_schedule_d",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_irs_form_schedule_e",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_irs_form_schedule_se",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_irs_form_w_4",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_irs_form_w_9",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_irs_form_w_2",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_irs_form_1120",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_irs_form_1120_s",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_irs_form_1065",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_irs_form_1120_f",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_irs_form_990",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_irs_form_941",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_irs_form_940",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_irs_form_1099_nec",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_irs_form_1099_misc",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_irs_form_1099_int",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_irs_form_1099_div",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_irs_form_1099_r",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_irs_form_2848",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_irs_form_433_a",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_irs_form_433_b",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_irs_form_9465",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_irs_form_4506_t",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_irs_form_8822",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_irs_form_56",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_irs_form_656",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_irs_form_843",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_irs_form_4868",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_irs_form_2553",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_irs_form_5471",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_irs_form_8938",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_irs_form_1041",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_irs_form_706",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_irs_form_709",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_irs_form_720",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_irs_form_2290",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_irs_form_4562",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_irs_form_4797",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_irs_form_6251",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_irs_form_8889",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_irs_form_8862",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_irs_form_1023",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_irs_form_8300",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_irs_form_1042",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_irs_form_2555",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_irs_form_1116",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_irs_form_8936",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_irs_form_8995",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_irs_form_2441",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_irs_form_8863",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_irs_form_8283",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_irs_form_8949",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_irs_form_8802",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_irs_form_8854",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_irs_form_3520",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_irs_form_8865",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_irs_form_8621",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_irs_form_926",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_irs_form_8879",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_irs_form_8878",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_irs_form_8821",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_irs_form_433_f",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_irs_form_8379",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_irs_form_8857",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_irs_form_7004",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_irs_form_1065_schedule_k_1",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_irs_form_990_ez",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_irs_form_990_pf",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_irs_form_943",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_irs_form_944",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_irs_form_1099_k",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_irs_form_w_2g",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_irs_form_8832",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_irs_form_5472",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_irs_form_3520_a",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_irs_form_8858",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_irs_form_8990",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_irs_form_8992",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_irs_form_8993",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_irs_form_8082",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_irs_form_8594",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_irs_form_1042_s",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_irs_form_8868",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_irs_form_1024_a",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_irs_form_8716",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_irs_form_8308",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_irs_form_8883",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_irs_form_8888",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_irs_form_8940",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_irs_form_8971",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_irs_form_8994",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_irs_form_8996",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_irs_form_5329",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_irs_form_8606",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_irs_form_8959",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_irs_form_8960",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_irs_form_5695",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_irs_form_2210",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_irs_form_8886",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_federal_court_b101",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_federal_court_b106a_b",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_federal_court_b106c",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_federal_court_b106d",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_federal_court_b106e_f",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_federal_court_b106g",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_federal_court_b106h",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_federal_court_b106i",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_federal_court_b106j",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_federal_court_b107",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_federal_court_b121",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_federal_court_b122a_1",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_federal_court_b122a_2",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_federal_court_b122c_1",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_federal_court_b201",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_federal_court_b301",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_federal_court_b410",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_federal_court_ao440",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_federal_court_ao450",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_federal_court_ao455",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_federal_court_ao459",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_federal_court_ao460",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_federal_court_ao470",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_federal_court_ao471",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_federal_court_ao473",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_federal_court_ao475",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_federal_court_ao478",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_federal_court_ao483",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_federal_court_ao485",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_federal_court_ao486",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_federal_court_ao487",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_federal_court_ao488",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_federal_court_ao489",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_federal_court_ao490",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_federal_court_ao491",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_federal_court_ao492",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_federal_court_ao493",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_federal_court_ao494",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_federal_court_ao495",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_federal_court_ao496",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_federal_court_ao497",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_federal_court_ao498",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_federal_court_ao499",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_federal_court_cja23",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_federal_court_cja24",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_federal_court_js44",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_federal_court_js45",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_federal_court_js46",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_federal_court_js47",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_federal_court_js48",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_federal_court_js49",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_federal_court_js50",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_federal_court_js51",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_federal_court_js52",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_federal_court_js53",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_federal_court_js54",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_federal_court_js55",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_federal_court_js56",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_federal_court_js57",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_federal_court_js58",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_federal_court_js59",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_federal_court_js60",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_federal_court_js61",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_federal_court_js62",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_federal_court_js63",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_federal_court_js64",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_federal_court_js65",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_federal_court_js66",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_federal_court_js67",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_federal_court_js68",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_federal_court_js69",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_federal_court_js70",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_federal_court_js71",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_federal_court_js72",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_federal_court_js73",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_federal_court_js74",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_federal_court_js75",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_federal_court_js76",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_federal_court_js77",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_federal_court_js78",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_federal_court_js79",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_federal_court_js80",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_federal_court_js81",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_federal_court_js82",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_federal_court_js83",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_federal_court_js84",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_federal_court_js85",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_federal_court_js86",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_federal_court_js87",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_federal_court_js88",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_federal_court_js89",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_federal_court_js90",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_federal_court_js91",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_federal_court_js92",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_federal_court_js93",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_federal_court_js94",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_federal_court_js95",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_federal_court_js96",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_federal_court_js97",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_federal_court_js98",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_federal_court_js99",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_federal_court_js100",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_state_civil_complaint",
+      "archetype": "civil_plaint",
+      "register": "civil_plaint",
+      "highTraffic": true
+    },
+    {
+      "kind": "us_state_civil_answer",
+      "archetype": "civil_plaint",
+      "register": "civil_plaint",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_state_motion_dismiss",
+      "archetype": "criminal_trial_pleading",
+      "register": "court_petition",
+      "highTraffic": true
+    },
+    {
+      "kind": "us_state_summary_judgment",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_state_injunction_motion",
+      "archetype": "civil_plaint",
+      "register": "civil_plaint",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_state_small_claims_complaint",
+      "archetype": "civil_plaint",
+      "register": "civil_plaint",
+      "highTraffic": true
+    },
+    {
+      "kind": "us_state_bail_motion",
+      "archetype": "bail_release",
+      "register": "bail_application",
+      "highTraffic": true
+    },
+    {
+      "kind": "us_state_motion_suppress",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_state_plea_agreement",
+      "archetype": "criminal_trial_pleading",
+      "register": "court_petition",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_state_expungement_petition",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_state_divorce_petition",
+      "archetype": "family_matrimonial",
+      "register": "family_petition",
+      "highTraffic": true
+    },
+    {
+      "kind": "us_state_child_custody",
+      "archetype": "family_matrimonial",
+      "register": "family_petition",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_state_child_support_motion",
+      "archetype": "family_matrimonial",
+      "register": "family_petition",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_state_domestic_violence_petition",
+      "archetype": "protective_order",
+      "register": "protective_order",
+      "highTraffic": true
+    },
+    {
+      "kind": "us_state_adoption_petition",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_state_will",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_state_living_trust",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_state_probate_petition",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_state_power_of_attorney",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_state_warranty_deed",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_state_lease_agreement",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_state_eviction_notice",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_state_restraining_order",
+      "archetype": "protective_order",
+      "register": "protective_order",
+      "highTraffic": true
+    },
+    {
+      "kind": "us_state_name_change_petition",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_state_mechanics_lien",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_state_foreclosure_complaint",
+      "archetype": "civil_plaint",
+      "register": "civil_plaint",
+      "highTraffic": true
+    },
+    {
+      "kind": "us_state_quiet_title",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_state_workers_comp_claim",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_state_unemployment_appeal",
+      "archetype": "appellate_revision",
+      "register": "appellate",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_state_dui_plea_petition",
+      "archetype": "criminal_trial_pleading",
+      "register": "court_petition",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_state_landlord_deposit_demand",
+      "archetype": "regulatory_notice",
+      "register": "notice_letter",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_state_small_estate_affidavit",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_state_malpractice_notice",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_state_prenuptial_agreement",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_state_llc_formation",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_state_gun_rights_restoration",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_state_parenting_plan_modification",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_state_affidavit_of_service",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_state_subpoena_duces_tecum",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_state_motion_continue",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_state_tax_appeal",
+      "archetype": "appellate_revision",
+      "register": "appellate",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_state_general_affidavit",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_state_civil_cover_sheet",
+      "archetype": "civil_plaint",
+      "register": "civil_plaint",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_state_motion_default_judgment",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_state_motion_joinder",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_state_motion_class_cert",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_state_interrogatories",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_state_request_production",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_state_request_admissions",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_state_deposition_notice",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_state_subpoena_ad_testificandum",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_state_motion_compel_discovery",
+      "archetype": "criminal_trial_pleading",
+      "register": "court_petition",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_state_protective_order_discovery",
+      "archetype": "protective_order",
+      "register": "protective_order",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_state_preliminary_objections",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_state_new_trial_motion",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_state_motion_reconsideration",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_state_notice_appeal",
+      "archetype": "appellate_revision",
+      "register": "appellate",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_state_appellate_brief",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_state_criminal_complaint",
+      "archetype": "police_criminal_complaint",
+      "register": "police_complaint",
+      "highTraffic": true
+    },
+    {
+      "kind": "us_state_arraignment_waiver",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_state_motion_reduce_bail",
+      "archetype": "bail_release",
+      "register": "bail_application",
+      "highTraffic": true
+    },
+    {
+      "kind": "us_state_motion_discovery_criminal",
+      "archetype": "criminal_trial_pleading",
+      "register": "court_petition",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_state_motion_dismiss_criminal",
+      "archetype": "criminal_trial_pleading",
+      "register": "court_petition",
+      "highTraffic": true
+    },
+    {
+      "kind": "us_state_sentencing_memo",
+      "archetype": "criminal_trial_pleading",
+      "register": "court_petition",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_state_marital_settlement",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_state_spousal_support_motion",
+      "archetype": "family_matrimonial",
+      "register": "family_petition",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_state_paternity_petition",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_state_adoption_consent",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_state_emancipation_petition",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_state_guardianship_petition",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_state_conservatorship_petition",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_state_codicil",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_state_trust_amendment",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_state_promissory_note",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_state_bill_of_sale",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_state_contractor_agreement",
+      "archetype": "civil_plaint",
+      "register": "civil_plaint",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_state_commercial_lease",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_state_notice_to_vacate",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_state_pay_or_quit_notice",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_state_cure_or_quit_notice",
+      "archetype": "other",
+      "register": "unknown",
+      "highTraffic": false
+    },
+    {
+      "kind": "us_state_unlawful_detainer_complaint",
+      "archetype": "civil_plaint",
+      "register": "civil_plaint",
+      "highTraffic": true
+    }
+  ],
+  "notes": [
+    "police_complaint currently maps to us_form_catalog — must route to us_state_criminal_complaint or protective order",
+    "No UsLegalSectionRouterService exists yet",
+    "Named state kinds (CA/NY/TX/FL/IL) inherit archetype from base classification"
+  ]
+}

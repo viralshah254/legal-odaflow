@@ -27,8 +27,8 @@ export class WebhooksDeliveryService {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
-            'X-OdaFlow-Signature': signature,
-            'X-OdaFlow-Event': event,
+            'X-Umbrella-Signature': signature,
+            'X-Umbrella-Event': event,
           },
           body,
         });

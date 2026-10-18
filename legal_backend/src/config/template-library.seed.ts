@@ -1,0 +1,310 @@
+import { EXTENDED_TEMPLATE_DEFS } from './templates/extended-template-defs';
+import { TIER1_BODY_OVERRIDES } from './templates/tier1-bodies';
+import type { TemplateDef } from './templates/helpers';
+
+const BASE_TEMPLATE_DEFS: Record<string, TemplateDef[]> = {
+  corporate_commercial: [
+    { kind: 'engagement_letter', title: 'Corporate Engagement Letter', body: '<p>This letter confirms engagement of {{firmName}} to act for {{clientName}} in connection with {{matterDescription}}.</p><p>Our fees will be billed at the agreed rate. This engagement is subject to our standard terms of business.</p>' },
+    {
+      kind: 'service_agreement',
+      title: 'Service / Contractor Agreement',
+      body: [
+        '<h2>SERVICE AGREEMENT</h2>',
+        '<p>This Service Agreement ("Agreement") is entered into as of <strong>{{contractStartDate}}</strong> between:</p>',
+        '<p><strong>Party 1 (Client):</strong> {{party1Name}}<br/>Address: {{party1Address}}</p>',
+        '<p><strong>Party 2 (Service Provider / Contractor):</strong> {{party2Name}}<br/>Address: {{party2Address}}</p>',
+        '<h3>1. Services</h3>',
+        '<p>The Service Provider agrees to perform the following services: <strong>{{servicesDescription}}</strong>.</p>',
+        '<h3>2. Term</h3>',
+        '<p>This Agreement commences on {{contractStartDate}} and continues until {{contractEndDate}}, unless terminated earlier in accordance with this Agreement.</p>',
+        '<h3>3. Fees and Payment</h3>',
+        '<p>{{paymentTerms}}</p>',
+        '<h3>4. Intellectual Property</h3>',
+        '<p>All work product created under this Agreement shall be the exclusive property of the Client upon full payment of all fees, unless otherwise agreed in writing.</p>',
+        '<h3>5. Confidentiality</h3>',
+        '<p>Each party agrees to keep confidential all proprietary or sensitive information disclosed by the other party in connection with this Agreement.</p>',
+        '<h3>6. Independent Contractor</h3>',
+        '<p>The Service Provider is an independent contractor. Nothing in this Agreement creates an employment, partnership, or joint venture relationship.</p>',
+        '<h3>7. Limitation of Liability</h3>',
+        '<p>Neither party shall be liable for indirect, consequential, or punitive damages. Total liability shall not exceed the fees paid in the preceding three months.</p>',
+        '<h3>8. Termination</h3>',
+        '<p>Either party may terminate this Agreement on 30 days\' written notice. The Client may terminate immediately for material breach.</p>',
+        '<h3>9. Governing Law</h3>',
+        '<p>This Agreement is governed by the laws of {{governingLaw}}. Any disputes shall be resolved by {{jurisdiction}} courts.</p>',
+        '<h3>10. Signatures</h3>',
+        '<p>Signed for and on behalf of <strong>{{party1Name}}</strong>: ___________________ Date: ___________</p>',
+        '<p>Signed for and on behalf of <strong>{{party2Name}}</strong>: ___________________ Date: ___________</p>',
+      ].join(''),
+    },
+    {
+      kind: 'nda',
+      title: 'Mutual Non-Disclosure Agreement (NDA)',
+      body: [
+        '<h2>MUTUAL NON-DISCLOSURE AGREEMENT</h2>',
+        '<p>This NDA is entered into as of <strong>{{today}}</strong> between:</p>',
+        '<p><strong>Disclosing / Receiving Party 1:</strong> {{party1Name}}, {{party1Address}}</p>',
+        '<p><strong>Disclosing / Receiving Party 2:</strong> {{party2Name}}, {{party2Address}}</p>',
+        '<h3>1. Confidential Information</h3>',
+        '<p>"Confidential Information" means any and all non-public information relating to {{matterDescription}} disclosed by either party, whether in writing, orally, or by any other means.</p>',
+        '<h3>2. Exclusions</h3>',
+        '<p>Confidential Information does not include information that: (a) is or becomes publicly known through no breach of this Agreement; (b) was already known to the receiving party; (c) is independently developed; or (d) is required to be disclosed by law.</p>',
+        '<h3>3. Obligations</h3>',
+        '<p>Each party agrees to: (a) hold the other party\'s Confidential Information in strict confidence; (b) not disclose it to third parties without prior written consent; (c) use it solely for evaluating or pursuing a business relationship between the parties.</p>',
+        '<h3>4. Term</h3>',
+        '<p>This Agreement shall remain in effect for {{ndaDurationYears}} years from the date hereof and shall survive termination of any underlying business relationship.</p>',
+        '<h3>5. Return of Information</h3>',
+        '<p>Upon request, each party shall promptly return or destroy all Confidential Information received from the other party.</p>',
+        '<h3>6. Governing Law</h3>',
+        '<p>This Agreement is governed by the laws of {{governingLaw}}.</p>',
+        '<h3>7. Signatures</h3>',
+        '<p><strong>{{party1Name}}</strong>: ___________________ Date: ___________</p>',
+        '<p><strong>{{party2Name}}</strong>: ___________________ Date: ___________</p>',
+      ].join(''),
+    },
+    {
+      kind: 'partnership_agreement',
+      title: 'Partnership Agreement',
+      body: [
+        '<h2>PARTNERSHIP AGREEMENT</h2>',
+        '<p>This Partnership Agreement is entered into as of <strong>{{contractStartDate}}</strong> between:</p>',
+        '<p><strong>Partner 1:</strong> {{party1Name}}, {{party1Address}}</p>',
+        '<p><strong>Partner 2:</strong> {{party2Name}}, {{party2Address}}</p>',
+        '<p>(together the "Partners" in the business known as <strong>{{businessName}}</strong>)</p>',
+        '<h3>1. Business Purpose</h3>',
+        '<p>The Partnership is formed to carry on the business of: {{servicesDescription}}.</p>',
+        '<h3>2. Capital Contributions</h3>',
+        '<p>{{paymentTerms}}</p>',
+        '<h3>3. Profit and Loss Sharing</h3>',
+        '<p>Profits and losses shall be shared between the Partners as follows: {{equitySplit}}.</p>',
+        '<h3>4. Management and Decision-Making</h3>',
+        '<p>{{partnerRoles}}</p>',
+        '<h3>5. Banking and Accounts</h3>',
+        '<p>A Partnership bank account shall be maintained in the name of the business. All funds shall be deposited and disbursements made only with both Partners\' approval above {{paymentTerms}}.</p>',
+        '<h3>6. Intellectual Property</h3>',
+        '<p>All IP developed in the course of the Partnership business is jointly owned by the Partners in proportion to their profit-sharing ratio.</p>',
+        '<h3>7. Admission of New Partners</h3>',
+        '<p>New partners may only be admitted by unanimous written consent of all existing Partners.</p>',
+        '<h3>8. Dissolution</h3>',
+        '<p>The Partnership may be dissolved by mutual written agreement or by 90 days\' notice from any Partner. On dissolution, assets shall be liquidated, liabilities settled, and surplus distributed in proportion to profit-sharing ratios.</p>',
+        '<h3>9. Governing Law</h3>',
+        '<p>This Agreement is governed by the laws of {{governingLaw}}.</p>',
+        '<h3>10. Signatures</h3>',
+        '<p><strong>{{party1Name}}</strong>: ___________________ Date: ___________</p>',
+        '<p><strong>{{party2Name}}</strong>: ___________________ Date: ___________</p>',
+      ].join(''),
+    },
+    {
+      kind: 'lease_agreement',
+      title: 'Residential / Commercial Lease Agreement',
+      body: [
+        '<h2>LEASE AGREEMENT</h2>',
+        '<p>This Lease Agreement ("Lease") is entered into as of <strong>{{today}}</strong> between:</p>',
+        '<p><strong>Landlord:</strong> {{party1Name}}<br/>Address: {{party1Address}}</p>',
+        '<p><strong>Tenant:</strong> {{party2Name}}<br/>Address: {{party2Address}}</p>',
+        '<h3>1. Premises</h3>',
+        '<p>The Landlord leases to the Tenant the property located at: <strong>{{propertyAddress}}</strong> ("the Premises").</p>',
+        '<h3>2. Term</h3>',
+        '<p>The lease commences on <strong>{{contractStartDate}}</strong> and expires on <strong>{{contractEndDate}}</strong> ("the Lease Term"), unless earlier terminated.</p>',
+        '<h3>3. Rent</h3>',
+        '<p>The Tenant agrees to pay rent of <strong>{{rentAmount}}</strong> per month, due on the 1st of each month. {{paymentTerms}}</p>',
+        '<h3>4. Security Deposit</h3>',
+        '<p>The Tenant shall pay a security deposit of <strong>{{depositAmount}}</strong> upon signing. The deposit shall be returned within 30 days of vacating, less any deductions for damages beyond fair wear and tear.</p>',
+        '<h3>5. Use of Premises</h3>',
+        '<p>The Premises shall be used solely for {{servicesDescription}} purposes. No subletting without prior written consent.</p>',
+        '<h3>6. Maintenance and Repairs</h3>',
+        '<p>The Landlord shall maintain the structure, roof, and major systems. The Tenant shall be responsible for minor repairs and maintaining the Premises in clean condition.</p>',
+        '<h3>7. Utilities</h3>',
+        '<p>The Tenant is responsible for all utility charges (electricity, water, internet) unless otherwise agreed: {{matterDescription}}.</p>',
+        '<h3>8. Termination</h3>',
+        '<p>Either party may terminate this Lease with 30 days\' written notice. The Landlord may terminate immediately for non-payment of rent or material breach.</p>',
+        '<h3>9. Governing Law</h3>',
+        '<p>This Lease is governed by the laws of {{governingLaw}} and the tenancy legislation of {{jurisdiction}}.</p>',
+        '<h3>10. Signatures</h3>',
+        '<p><strong>Landlord — {{party1Name}}</strong>: ___________________ Date: ___________</p>',
+        '<p><strong>Tenant — {{party2Name}}</strong>: ___________________ Date: ___________</p>',
+      ].join(''),
+    },
+    {
+      kind: 'employment_contract',
+      title: 'Employment Contract',
+      body: [
+        '<h2>CONTRACT OF EMPLOYMENT</h2>',
+        '<p><strong>Employer:</strong> {{party1Name}}<br/>Address: {{party1Address}}</p>',
+        '<p><strong>Employee:</strong> {{party2Name}}<br/>Address: {{party2Address}}</p>',
+        '<h3>1. Position and Duties</h3>',
+        '<p>The Employee is employed as <strong>{{jobTitle}}</strong> and shall perform the duties set out in the attached job description or as reasonably directed by management.</p>',
+        '<h3>2. Commencement</h3>',
+        '<p>Employment commences on <strong>{{contractStartDate}}</strong>. The probationary period is {{probationPeriod}}.</p>',
+        '<h3>3. Remuneration</h3>',
+        '<p>The Employee shall be paid a salary of <strong>{{salary}}</strong> per annum / per month, payable by bank transfer on the last working day of each month. {{paymentTerms}}</p>',
+        '<h3>4. Hours of Work</h3>',
+        '<p>Normal working hours are {{workingHours}}. Overtime may be required and shall be {{overtimeTerms}}.</p>',
+        '<h3>5. Leave Entitlement</h3>',
+        '<p>The Employee is entitled to annual leave in accordance with the applicable employment legislation of {{governingLaw}}.</p>',
+        '<h3>6. Confidentiality</h3>',
+        '<p>The Employee shall maintain strict confidentiality of all proprietary information of the Employer during and after employment.</p>',
+        '<h3>7. Intellectual Property</h3>',
+        '<p>All work product created in the course of employment belongs exclusively to the Employer.</p>',
+        '<h3>8. Termination</h3>',
+        '<p>Either party may terminate this Agreement by giving {{noticePeriod}} notice in writing. The Employer may summarily dismiss for gross misconduct.</p>',
+        '<h3>9. Governing Law</h3>',
+        '<p>This Agreement is governed by the employment laws of {{governingLaw}}.</p>',
+        '<h3>10. Signatures</h3>',
+        '<p><strong>Employer — {{party1Name}}</strong>: ___________________ Date: ___________</p>',
+        '<p><strong>Employee — {{party2Name}}</strong>: ___________________ Date: ___________</p>',
+      ].join(''),
+    },
+    { kind: 'shareholders_agreement', title: 'Shareholders Agreement', body: '<p>This Shareholders Agreement governs the relationship between the shareholders of {{companyName}}. The parties agree to the following terms regarding share transfers, dividends, board composition, and exit rights.</p>' },
+    { kind: 'board_resolution', title: 'Board Resolution Template', body: '<p>MINUTES OF A MEETING OF THE BOARD OF DIRECTORS OF {{companyName}}</p><p>Date: {{today}}</p><p>The Board resolved to: {{resolutionDescription}}.</p><p>Signed: {{boardChairName}}</p>' },
+    {
+      kind: 'llc_operating_agreement',
+      title: 'LLC Operating Agreement',
+      body: [
+        '<h2>OPERATING AGREEMENT</h2>',
+        '<p>This Operating Agreement ("Agreement") of <strong>{{companyName}}</strong> is entered into as of <strong>{{contractStartDate}}</strong> by and among the Members listed herein.</p>',
+        '<h3>1. Formation</h3>',
+        '<p>The Company was formed as a limited liability company under applicable law. The registered agent and principal office are as stated in the formation documents.</p>',
+        '<h3>2. Purpose</h3>',
+        '<p>The Company is formed to engage in: {{servicesDescription}}.</p>',
+        '<h3>3. Members and Ownership</h3>',
+        '<p>Initial Members and ownership interests: {{equitySplit}}.</p>',
+        '<h3>4. Capital Contributions</h3>',
+        '<p>{{paymentTerms}}</p>',
+        '<h3>5. Management</h3>',
+        '<p>The Company shall be managed by {{managementStructure}}. Major decisions require approval as set out in this Agreement.</p>',
+        '<h3>6. Distributions</h3>',
+        '<p>Profits and losses shall be allocated among Members in proportion to their ownership interests unless otherwise agreed in writing.</p>',
+        '<h3>7. Transfer Restrictions</h3>',
+        '<p>No Member may transfer an interest without prior written consent of the other Members, except as permitted by law.</p>',
+        '<h3>8. Dissolution</h3>',
+        '<p>The Company may be dissolved upon unanimous consent of the Members or as otherwise required by law.</p>',
+        '<h3>9. Governing Law</h3>',
+        '<p>This Agreement is governed by the laws of {{governingLaw}}.</p>',
+        '<h3>10. Signatures</h3>',
+        '<p>Member: ___________________ Date: ___________</p>',
+      ].join(''),
+    },
+    {
+      kind: 'incorporation_documents',
+      title: 'Incorporation / Formation Documents',
+      body: [
+        '<h2>INCORPORATION DOCUMENTS</h2>',
+        '<p>Formation package for <strong>{{companyName}}</strong> to be filed with the relevant registrar.</p>',
+        '<h3>1. Company Details</h3>',
+        '<p>Proposed name: {{companyName}}</p>',
+        '<p>Registered office: {{party1Address}}</p>',
+        '<p>Principal business activity: {{servicesDescription}}</p>',
+        '<h3>2. Directors / Officers</h3>',
+        '<p>Initial directors: {{directorNames}}</p>',
+        '<h3>3. Share Capital</h3>',
+        '<p>Authorised share capital and initial allotment: {{paymentTerms}}</p>',
+        '<h3>4. Memorandum & Articles</h3>',
+        '<p>The memorandum and articles of association shall adopt the standard form appropriate to {{governingLaw}}, with such bespoke provisions as counsel advises.</p>',
+        '<h3>5. Filing Checklist</h3>',
+        '<ul><li>Completed incorporation application</li><li>Director consent forms</li><li>Registered office evidence</li><li>Stamp duty / filing fee payment</li></ul>',
+        '<h3>6. Post-Incorporation</h3>',
+        '<p>Upon registration, the company shall obtain tax registrations, open a bank account, and issue share certificates.</p>',
+      ].join(''),
+    },
+  ],
+  employment_labour: [
+    { kind: 'engagement_letter', title: 'Employment Matter Engagement Letter', body: '<p>Dear {{clientName}}, we are pleased to confirm our engagement by {{firmName}} to advise and represent you in connection with {{matterDescription}}.</p>' },
+    { kind: 'demand_letter', title: 'Employment Dispute Notice', body: '<p>Without Prejudice Save as to Costs</p><p>To: {{respondentName}}</p><p>We act for {{clientName}}. We write to formally notify you of the following alleged employment issues: {{factsOfCase}}. We require a response within 14 days.</p>' },
+    { kind: 'employment_contract', title: 'Employment Contract', body: '<p>CONTRACT OF EMPLOYMENT</p><p>Employer: {{firmName}}</p><p>Employee: {{clientName}}</p><p>Position: {{jobTitle}}</p><p>Start Date: {{startDate}}</p><p>Salary: {{salary}}</p><p>This contract is subject to the applicable employment legislation of {{jurisdictionName}}.</p>' },
+    { kind: 'settlement_agreement', title: 'Settlement Agreement (Employment)', body: '<p>SETTLEMENT AGREEMENT</p><p>Between {{clientName}} (Employee) and {{respondentName}} (Employer).</p><p>In full and final settlement of all claims, the Employer agrees to pay {{settlementAmount}} within {{paymentDays}} days.</p>' },
+    { kind: 'grievance_letter', title: 'Formal Grievance Letter', body: '<p>Dear {{managerName}},</p><p>I write to formally raise a grievance pursuant to the company\'s grievance procedure. The nature of my complaint: {{grievanceDetails}}. I request a formal grievance hearing within 5 working days.</p><p>Yours sincerely, {{clientName}}</p>' },
+  ],
+  family_matrimonial: [
+    { kind: 'engagement_letter', title: 'Family Law Engagement Letter', body: '<p>We confirm our engagement to advise {{clientName}} in connection with {{matterDescription}}. All communications are protected by legal professional privilege.</p>' },
+    { kind: 'intake_letter', title: 'Matrimonial Matter Intake Summary', body: '<p>CONFIDENTIAL — PRIVILEGED</p><p>Client: {{clientName}}</p><p>Spouse/Partner: {{spouseName}}</p><p>Marriage date: {{marriageDate}}</p><p>Children: {{childrenDetails}}</p><p>Assets: {{assetsOverview}}</p>' },
+    { kind: 'consent_order', title: 'Consent Order (Financial Remedy)', body: '<p>UPON the parties having agreed financial matters:</p><p>IT IS ORDERED BY CONSENT THAT:</p><p>1. {{clientName}} shall transfer {{propertyAddress}} to {{spouseName}} on {{completionDate}}.</p><p>2. Pension sharing: {{pensionSharingTerms}}.</p>' },
+    { kind: 'parenting_plan', title: 'Parenting Plan Agreement', body: '<p>This Parenting Plan is agreed between {{clientName}} and {{spouseName}} for the welfare of {{childrenDetails}}.</p><p>Residence: {{residenceArrangement}}</p><p>Contact: {{contactSchedule}}</p>' },
+    { kind: 'protective_injunction', title: 'Application for Non-Molestation Order', body: '<p>IN THE FAMILY COURT</p><p>Applicant: {{clientName}}</p><p>Respondent: {{respondentName}}</p><p>The Applicant applies for a Non-Molestation Order on the grounds of: {{groundsForOrder}}.</p>' },
+  ],
+  real_estate_property: [
+    { kind: 'engagement_letter', title: 'Real Estate Engagement Letter', body: '<p>We confirm our engagement to act for {{clientName}} in the {{transactionType}} of property at {{propertyAddress}}. Purchase Price / Consideration: {{propertyPrice}}.</p>' },
+    { kind: 'demand_letter', title: 'Property Dispute Notice', body: '<p>To: {{respondentName}}</p><p>We act for {{clientName}}. We write regarding the property at {{propertyAddress}}. Our client asserts: {{disputeDetails}}. Kindly respond within 21 days.</p>' },
+    { kind: 'sale_agreement', title: 'Agreement for Sale of Property', body: '<p>AGREEMENT FOR SALE</p><p>Vendor: {{vendorName}}</p><p>Purchaser: {{clientName}}</p><p>Property: {{propertyAddress}}</p><p>Price: {{propertyPrice}}</p><p>Completion: {{completionDate}}</p>' },
+    { kind: 'lease_agreement', title: 'Commercial Lease Agreement', body: '<p>LEASE AGREEMENT</p><p>Landlord: {{landlordName}}</p><p>Tenant: {{clientName}}</p><p>Premises: {{propertyAddress}}</p><p>Lease Term: {{leaseTerm}}</p><p>Rent: {{rentAmount}} per month</p>' },
+    { kind: 'title_opinion', title: 'Title Opinion / Certificate', body: '<p>TITLE OPINION</p><p>Property: {{propertyAddress}}</p><p>Prepared for: {{clientName}}</p><p>Having examined the title documents, we are of the opinion that: {{titleOpinionText}}</p>' },
+  ],
+  criminal_defense: [
+    { kind: 'engagement_letter', title: 'Criminal Defense Engagement Letter', body: '<p>We confirm our engagement to represent {{clientName}} in the matter of {{chargesSummary}}. All communications are subject to legal professional privilege.</p>' },
+    { kind: 'bail_application', title: 'Bail Application', body: '<p>IN THE {{courtName}}</p><p>Accused: {{clientName}}</p><p>Charge: {{chargesSummary}}</p><p>GROUNDS FOR BAIL:</p><p>1. The accused has strong community ties: {{communityTies}}.</p><p>2. The accused poses no flight risk: {{noFlightRiskReasons}}.</p><p>We respectfully pray that bail be granted on terms.</p>' },
+    { kind: 'defense_memo', title: 'Defense Strategy Memorandum', body: '<p>PRIVILEGED AND CONFIDENTIAL</p><p>Client: {{clientName}}</p><p>Charges: {{chargesSummary}}</p><p>Defense Summary: {{defenseStrategy}}</p><p>Key witnesses: {{witnessNames}}</p>' },
+    { kind: 'plea_in_mitigation', title: 'Plea in Mitigation', body: '<p>IN MITIGATION — {{clientName}}</p><p>Personal circumstances: {{personalCircumstances}}</p><p>Expression of remorse: {{remorseStatement}}</p><p>We respectfully request the court impose the minimum sentence available.</p>' },
+    { kind: 'police_complaint', title: 'Complaint Against Police Conduct', body: '<p>To: The Independent Office for Police Conduct / DCI / IPCA</p><p>We act for {{clientName}}. We write to formally complain about the conduct of officers during the arrest/investigation on {{incidentDate}}: {{complaintDetails}}.</p>' },
+  ],
+  immigration: [
+    { kind: 'engagement_letter', title: 'Immigration Engagement Letter', body: '<p>We confirm our engagement to assist {{clientName}} with {{visaOrStatusType}} application. We will advise on eligibility, prepare documentation, and liaise with the relevant authority.</p>' },
+    { kind: 'cover_letter', title: 'Visa Application Cover Letter', body: '<p>To: {{immigrationAuthority}}</p><p>Re: {{clientName}} — {{visaOrStatusType}} Application</p><p>We submit herewith the application of {{clientName}}. The applicant meets all requirements: {{eligibilityPoints}}. Please find enclosed all supporting documents.</p>' },
+    { kind: 'appeal_letter', title: 'Immigration Appeal / Reconsideration Letter', body: '<p>Re: {{clientName}} — Refused {{visaOrStatusType}}</p><p>We write to appeal the refusal dated {{refusalDate}}. Grounds of appeal: {{groundsOfAppeal}}. We request the decision be reconsidered.</p>' },
+    { kind: 'sponsor_letter', title: 'Employer Sponsorship Letter', body: '<p>To Whom It May Concern,</p><p>We, {{firmName}}, hereby confirm that we are sponsoring {{clientName}} for the position of {{jobTitle}}. Salary: {{salary}}. The role cannot be filled by a settled worker.</p>' },
+    { kind: 'document_checklist', title: 'Immigration Document Checklist', body: '<p>DOCUMENT CHECKLIST — {{clientName}} — {{visaOrStatusType}}</p><ul><li>Valid passport</li><li>Sponsor certificate / job offer</li><li>Educational certificates</li><li>Bank statements (3 months)</li><li>English language certificate</li><li>Medical certificate (if required)</li></ul>' },
+  ],
+  intellectual_property: [
+    { kind: 'engagement_letter', title: 'IP Engagement Letter', body: '<p>We confirm our engagement to advise {{clientName}} on intellectual property matters concerning {{ipAssetDescription}}.</p>' },
+    { kind: 'nda', title: 'IP Confidentiality Agreement', body: '<p>This Confidentiality Agreement is entered into between {{clientName}} and {{counterpartyName}} in connection with discussions regarding {{ipAssetDescription}}. Neither party shall disclose confidential information for {{ndaDurationYears}} years.</p>' },
+    { kind: 'ip_assignment', title: 'IP Assignment Agreement', body: '<p>ASSIGNMENT OF INTELLECTUAL PROPERTY</p><p>Assignor: {{assignorName}}</p><p>Assignee: {{clientName}}</p><p>IP Assigned: {{ipAssetDescription}}</p><p>Consideration: {{assignmentConsideration}}</p>' },
+    { kind: 'licensing_agreement', title: 'IP Licensing Agreement', body: '<p>This License Agreement grants {{licenseeName}} a {{exclusivity}} license to use {{ipAssetDescription}} in {{licensedTerritory}} for the term of {{licenseTerm}}. Royalty: {{royaltyRate}}.</p>' },
+    { kind: 'cease_desist', title: 'IP Cease and Desist Letter', body: '<p>Without Prejudice</p><p>To: {{infringerName}}</p><p>We act for {{clientName}}, owner of {{ipAssetDescription}}. We have become aware that you are infringing our client\'s rights by {{infringementDetails}}. We require you to cease this activity immediately and provide written undertakings within 14 days.</p>' },
+  ],
+  litigation_disputes: [
+    { kind: 'engagement_letter', title: 'Litigation Engagement Letter', body: '<p>We are pleased to confirm our engagement to represent {{clientName}} in civil proceedings concerning {{matterDescription}}.</p>' },
+    { kind: 'demand_letter', title: 'Pre-Litigation Demand Letter', body: '<p>WITHOUT PREJUDICE SAVE AS TO COSTS</p><p>To: {{respondentName}}</p><p>We act for {{clientName}}. We write in respect of: {{matterDescription}}. Our client\'s loss amounts to {{claimAmount}}. We demand payment within {{noticePeriod}} days, failing which proceedings will be issued without further notice.</p>' },
+    { kind: 'witness_statement', title: 'Witness Statement', body: '<p>WITNESS STATEMENT OF {{clientName}}</p><p>I, {{clientName}}, of {{clientAddress}}, state as follows:</p><p>1. I am the {{roleInProceedings}} in this matter.</p><p>2. {{witnessNarrative}}</p><p>I believe that the facts stated in this witness statement are true.</p>' },
+    { kind: 'mediation_brief', title: 'Mediation Position Statement', body: '<p>MEDIATION BRIEF — {{clientName}}</p><p>Background: {{matterDescription}}</p><p>Our position: {{clientPosition}}</p><p>Ideal resolution: {{desiredOutcome}}</p>' },
+    { kind: 'settlement_agreement', title: 'Settlement and Release Agreement', body: '<p>SETTLEMENT AGREEMENT</p><p>Claimant: {{clientName}}</p><p>Defendant: {{respondentName}}</p><p>In full and final settlement, the Defendant agrees to pay {{settlementAmount}} within {{paymentDays}} days. Both parties release each other from all further claims relating to {{matterDescription}}.</p>' },
+  ],
+  tax: [
+    { kind: 'engagement_letter', title: 'Tax Advisory Engagement Letter', body: '<p>We confirm engagement to advise {{clientName}} on tax matters for the period {{taxPeriod}}. Services: {{taxServicesDescription}}.</p>' },
+    { kind: 'representation_letter', title: 'Tax Authority Representation Letter', body: '<p>To: {{taxAuthority}}</p><p>We act as tax advisors for {{clientName}} (Tax ID: {{clientTaxId}}). We are authorised to deal with all tax matters on their behalf. Please address all future correspondence to us.</p>' },
+    { kind: 'appeal_grounds', title: 'Grounds of Tax Appeal', body: '<p>IN THE {{taxTribunal}}</p><p>Appellant: {{clientName}}</p><p>Re: Assessment dated {{assessmentDate}}</p><p>GROUNDS OF APPEAL:</p><p>1. {{groundOne}}</p><p>2. {{groundTwo}}</p><p>We respectfully request that the assessment be reduced / cancelled.</p>' },
+    { kind: 'tax_advice_memo', title: 'Tax Advice Memorandum', body: '<p>PRIVILEGED AND CONFIDENTIAL</p><p>To: {{clientName}}</p><p>Re: {{taxAdviceTopic}}</p><p>Summary of advice: {{adviceSummary}}</p><p>Applicable legislation: {{legislationCited}}</p><p>Recommendation: {{recommendation}}</p>' },
+    { kind: 'voluntary_disclosure', title: 'Voluntary Disclosure Letter', body: '<p>To: {{taxAuthority}}</p><p>We act for {{clientName}}. Our client wishes to make a voluntary disclosure in respect of: {{disclosureDetails}}. Additional tax due: {{additionalTaxDue}}. We enclose payment and trust this matter can now be settled.</p>' },
+  ],
+  wills_estates_probate: [
+    { kind: 'engagement_letter', title: 'Estate Planning Engagement Letter', body: '<p>We confirm engagement to advise {{clientName}} on wills, estate planning, and related matters. We will prepare: {{estateServicesDescription}}.</p>' },
+    { kind: 'last_will_testament', title: 'Last Will and Testament', body: '<p>LAST WILL AND TESTAMENT OF {{clientName}}</p><p>I, {{clientName}}, being of sound mind, revoke all former wills and declare this my Last Will.</p><p>EXECUTORS: {{executorNames}}</p><p>RESIDUARY ESTATE: I give my residuary estate to {{primaryBeneficiary}}.</p><p>Signed: ____________________  Date: {{today}}</p><p>Witnessed: ___________________</p>' },
+    { kind: 'power_of_attorney', title: 'Lasting Power of Attorney', body: '<p>LASTING POWER OF ATTORNEY — PROPERTY AND FINANCIAL AFFAIRS</p><p>Donor: {{clientName}}</p><p>Attorney: {{attorneyName}}</p><p>The Donor grants the Attorney authority to manage all property and financial affairs.</p>' },
+    { kind: 'estate_accounts', title: 'Estate Administration Accounts', body: '<p>ESTATE OF {{deceasedName}}</p><p>Administrator/Executor: {{clientName}}</p><p>ASSETS COLLECTED: {{totalAssets}}</p><p>LIABILITIES PAID: {{totalLiabilities}}</p><p>NET ESTATE: {{netEstate}}</p><p>DISTRIBUTION: {{distributionDetails}}</p>' },
+    { kind: 'inheritance_trust_deed', title: 'Discretionary Trust Deed', body: '<p>DISCRETIONARY TRUST DEED</p><p>Settlor: {{clientName}}</p><p>Trustees: {{trusteeNames}}</p><p>Beneficiaries: {{beneficiaryClass}}</p><p>Trust Fund: {{trustFundDescription}}</p>' },
+  ],
+};
+
+function mergeTemplateDefs(): Record<string, TemplateDef[]> {
+  const merged: Record<string, TemplateDef[]> = {};
+
+  for (const [area, defs] of Object.entries(BASE_TEMPLATE_DEFS)) {
+    merged[area] = [...defs];
+  }
+  for (const [area, defs] of Object.entries(EXTENDED_TEMPLATE_DEFS)) {
+    merged[area] = [...(merged[area] ?? []), ...defs];
+  }
+
+  const bodyAliases: Record<string, string> = {
+    master_service_agreement: 'service_agreement',
+    consulting_agreement: 'service_agreement',
+    consultancy_agreement_individual: 'service_agreement',
+  };
+
+  for (const area of Object.keys(merged)) {
+    merged[area] = merged[area].map((def) => {
+      const aliasKind = bodyAliases[def.kind];
+      const override =
+        TIER1_BODY_OVERRIDES[def.kind] ??
+        (aliasKind ? TIER1_BODY_OVERRIDES[aliasKind] : undefined);
+      return override ? { ...def, body: override } : def;
+    });
+  }
+
+  return merged;
+}
+
+export const TEMPLATE_DEFS = mergeTemplateDefs();
+
+export {
+  buildTemplateLibrarySeeds,
+  TEMPLATE_LIBRARY_SEEDS,
+  type SystemTemplateSeed,
+} from './templates/build-seeds';

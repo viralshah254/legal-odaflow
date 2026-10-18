@@ -11,5 +11,11 @@
   "placeholderSection": "This section will be expanded with jurisdiction-specific content.",
   "subtitle": "Legal guides for your jurisdiction",
   "need_help_with_your_specific_situation": "Need help with your specific situation?",
-  "ctaSubtitleWithSite": "Try the free {siteName} issue checker for personalized guidance."
+  "ctaSubtitleWithSite": "Try the free {siteName} issue checker for personalized guidance.",
+  "indexTitle": "Legal Guides by Country",
+  "indexDescription": "Plain-language legal guides for common issues in India, the United States, the United Kingdom, and Kenya.",
+  "indexMetaTitle": "Legal Guides — India, US, UK & Kenya",
+  "indexMetaDescription": "Free legal guides on employment, housing, consumer rights, and more — by jurisdiction. Educational information only, not legal advice.",
+  "browseGuides": "Browse guides",
+  "countryGuides": "{country} guides"
 }

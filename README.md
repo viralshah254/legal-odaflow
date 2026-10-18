@@ -1,91 +1,87 @@
-# Legal by OdaFlow - Frontend Only
+# Umbrella
 
-A world-class Legal CRM UI built with Next.js (App Router), TypeScript, TailwindCSS, and shadcn/ui.
+Dual-sided AI legal super platform — consumer legal guidance, lawyer OS, and marketplace bridge.
 
-## Features
+## Repositories
 
-- **Client-First Design**: Client profile is the hub for everything
-- **Never Miss Deadlines**: Strong alerts and notifications UI
-- **Work Queues**: Smart queues surface what needs attention
-- **Templates/Playbooks**: Matter types auto-suggest tasks/docs/KYC
-- **Approvals UI**: Trust disbursement, document, and invoice approvals
-- **RBAC UI Gating**: Screens/actions hidden/disabled based on role
+| Folder | Stack | Purpose |
+|--------|-------|---------|
+| [`legal_web/`](legal_web/) | Next.js 14, TypeScript, Tailwind, shadcn/ui | Public site, consumer dashboard, lawyer OS, admin console |
+| [`legal_backend/`](legal_backend/) | NestJS, Prisma, PostgreSQL, Redis, BullMQ | APIs, auth, AI gateway, billing, jobs |
+| [`legal_app/`](legal_app/) | Flutter | Consumer + lawyer mobile app |
 
-## Tech Stack
+**Spec:** [`PRODUCTION-SPEC.md`](legal_web/public/docs/PRODUCTION-SPEC.md)
 
-- **Next.js 14** (App Router)
-- **TypeScript**
-- **TailwindCSS v4**
-- **shadcn/ui** components
-- **Zustand** for state management
-- **React Hook Form + Zod** for forms
-- **TanStack Table** for data tables
-- **Mock API** layer with simulated delays
+See **[DEV-WORKFLOW.md](legal_web/public/docs/DEV-WORKFLOW.md)** for full setup, env files, and smoke checks.
 
-## Getting Started
+> **Real API only:** Set `NEXT_PUBLIC_USE_MOCK_DATA=false` in `legal_web/.env.local`. The web app proxies to the NestJS backend — there is no mock API layer in production paths.
 
-1. Install dependencies:
+### 1. Infrastructure
+
 ```bash
-npm install
+docker compose up -d
 ```
 
-2. Run the development server:
+Starts PostgreSQL (with pgvector) on `5432` and Redis on `6379`.
+
+### 2. Backend
+
 ```bash
+cd legal_backend
+cp .env.example .env
+npm install
+npx prisma migrate dev
+npm run start:dev
+```
+
+In a **second terminal**, start the background worker (required for OCR, embeddings, long AI jobs, and report generation):
+
+```bash
+cd legal_backend
+npm run start:worker
+```
+
+API: http://localhost:4000  
+Health: http://localhost:4000/api/v1/health
+
+### 3. Web
+
+```bash
+cd legal_web
+cp .env.local.example .env.local
+npm install
 npm run dev
 ```
 
-3. Open [http://localhost:3000](http://localhost:3000) in your browser.
+Web: http://localhost:3000
 
-## Demo Credentials
+### 4. Mobile
 
-- Email: `john.doe@lawfirm.com`
-- Password: `password`
-
-## Project Structure
-
-```
-/app
-  /app          # Main application pages
-  /auth         # Authentication pages
-  /portal       # Client portal pages
-  /superadmin   # Super admin pages
-/components
-  /ui           # shadcn/ui components
-/lib
-  mock-api.ts   # Mock API services
-  mock-data.ts  # Mock data
-  store.ts      # Zustand stores
-  types.ts      # TypeScript types
-  utils.ts      # Utility functions
+```bash
+cd legal_app
+flutter pub get
+flutter run
 ```
 
-## Mock Data
+## Environment
 
-The application uses mock data and API services that simulate real API calls with delays (300-800ms). All data is stored in memory and resets on page refresh.
+- Web: `legal_web/.env.example` → `.env.local`
+- Backend: `legal_backend/.env.example` → `.env`
+- App: `legal_app/.env.example` (via `--dart-define` or config)
 
-## Key Pages
+## Development workflow
 
-- **Dashboard** (`/app`) - Overview with summary cards and work queues
-- **Clients** (`/app/clients`) - Client list, create, and detail pages
-- **Matters** (`/app/matters`) - Matter management
-- **Tasks** (`/app/tasks`) - Task management with filters
-- **Invoices** (`/app/accounting/invoices`) - Invoice management
-- **Trust** (`/app/trust`) - Trust account management
-- **Settings** (`/app/settings`) - Firm settings
+1. Implement a small slice in backend → web → app
+2. Start Redis + worker alongside the API (`npm run start:worker`)
+3. Run lint/build: `npm run lint && npm run build` (web/backend), `flutter analyze` (app)
+4. Smoke-test wired flows end-to-end with `NEXT_PUBLIC_USE_MOCK_DATA=false`
+5. Commit incrementally
 
-## Command Palette
+## Coverage tiers
 
-Press `Cmd+K` (Mac) or `Ctrl+K` (Windows/Linux) to open the command palette for quick navigation.
+| Tier | Jurisdictions | What users get |
+|------|---------------|----------------|
+| **Deep** | India (IN), United States (US), Kenya (KE), United Kingdom (GB) | Hand-authored profiles, statute/case connectors, citation-gated verified research |
+| **Best-effort** | All other countries (e.g. Uganda) | Common-law/civil-law framing, live web where configured, analytical/doctrine mode when local RAG is thin |
 
-## Notes
-
-- This is a **frontend-only** application with no backend
-- All API calls are mocked with artificial delays
-- Data persists only during the session (resets on refresh)
-- Authentication is mocked (no real auth)
-- File uploads store metadata only (no actual file storage)
-
-# legal-odaflow
-
-
-
+Marketing “available globally” means the product runs worldwide; it does **not** mean equal primary-law depth everywhere. Deep tiers expand as connectors and corpora land (see `legal_backend/corpus/ug/README.md` for the Uganda plan).

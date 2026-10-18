@@ -1,22 +1,17 @@
 import { Injectable } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { PrismaService } from '@/prisma/prisma.service';
-import { estimateCostUsd } from '@/common/utils/prompt-hash.util';
+import { getModelCostSync, OPENAI_MODEL_COSTS } from '@/ai/model-costs.config';
 import { getCreditCost } from '@/ai-credits/credit-costs';
-
-const DEFAULT_MODEL_COSTS: Record<
-  string,
-  { inputPer1M: number; outputPer1M: number; tier: string }
-> = {
-  'gpt-4.1-mini': { inputPer1M: 0.4, outputPer1M: 1.6, tier: 'cheap' },
-  'gpt-4.1': { inputPer1M: 3.0, outputPer1M: 12.0, tier: 'premium' },
-};
+import { estimateTokenCostUsd } from '@/ai-credits/credit-pricing.util';
+import { CreditPricingService } from '@/ai-credits/credit-pricing.service';
 
 @Injectable()
 export class AiCostService {
   constructor(
     private readonly prisma: PrismaService,
     private readonly configService: ConfigService,
+    private readonly creditPricing: CreditPricingService,
   ) {}
 
   async getModelCost(provider: string, modelName: string) {
@@ -32,7 +27,7 @@ export class AiCostService {
         tier: db.modelTier,
       };
     }
-    return DEFAULT_MODEL_COSTS[modelName] ?? { inputPer1M: 0.4, outputPer1M: 1.6, tier: 'cheap' };
+    return OPENAI_MODEL_COSTS[modelName] ?? getModelCostSync(modelName);
   }
 
   async computeActualCostUsd(params: {
@@ -42,23 +37,24 @@ export class AiCostService {
     outputTokens: number;
   }) {
     const cost = await this.getModelCost(params.provider, params.modelName);
-    return estimateCostUsd(
+    return estimateTokenCostUsd(
+      cost.inputPer1M,
+      cost.outputPer1M,
       params.inputTokens,
       params.outputTokens,
-      cost.inputPer1M / 1_000_000,
-      cost.outputPer1M / 1_000_000,
     );
   }
 
   computeCreditValueUsd(chargedCredits: number, countryCode = 'US'): number {
-    const unitValues: Record<string, number> = {
-      US: 0.1,
-      IN: 0.012,
-      KE: 0.0077,
-      GB: 0.12,
+    const countryMultipliers: Record<string, number> = {
+      US: 1,
+      IN: 0.12,
+      KE: 0.077,
+      GB: 1.2,
     };
-    const unit = unitValues[countryCode.toUpperCase()] ?? 0.1;
-    return Number((chargedCredits * unit).toFixed(6));
+    const base = this.creditPricing.computeCreditValueUsd(chargedCredits);
+    const multiplier = countryMultipliers[countryCode.toUpperCase()] ?? 1;
+    return Number((base * multiplier).toFixed(6));
   }
 
   computeMargin(params: {
@@ -83,7 +79,10 @@ export class AiCostService {
       this.configService.get<string>('AI_ALLOW_NEGATIVE_MARGIN_FOR_FREE_PREVIEW', 'true') ===
       'true';
     const minMargin = Number(
-      this.configService.get<string>('AI_MIN_GROSS_MARGIN_PERCENT', '65'),
+      this.configService.get<string>(
+        'AI_MIN_GROSS_MARGIN_PERCENT',
+        String(Math.max(15, this.creditPricing.getNetMarginPercent() - 5)),
+      ),
     );
 
     if (params.isFreePreview && allowFree) {

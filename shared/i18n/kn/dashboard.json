@@ -117,7 +117,7 @@
     "newClientMatter": "ಹೊಸ ಕ್ಲೈಂಟ್ ವಿಷಯ"
   },
   "aiSearch": {
-    "title": "AI ಕಾನೂನು ಹುಡುಕಾಟ",
+    "title": "ಕಾನೂನು ಸಂಶೋಧನೆ",
     "subtitle": "ಯಾವುದೇ ಕಾನೂನು ಪ್ರಶ್ನೆಯನ್ನು ಕೇಳಿ - ಉತ್ತರಗಳು ನಿಮ್ಮ ಅಧಿಕಾರ ವ್ಯಾಪ್ತಿಯ ನೈಜ ಅಧಿಕಾರಿಗಳನ್ನು ಉಲ್ಲೇಖಿಸುತ್ತವೆ.",
     "placeholder": "ನಿಮಗೆ ಯಾವ ಕಾನೂನು ಪ್ರಶ್ನೆಗೆ ಉತ್ತರ ಬೇಕು?",
     "prompts": {
@@ -165,6 +165,23 @@
     "triageLeads": "ಚಿಕಿತ್ಸೆಯ ಸರದಿ ನಿರ್ಧಾರ {count} ಮುನ್ನಡೆ",
     "askMorningBrief": "ನನ್ನ ಬೆಳಿಗ್ಗೆ ಸಂಕ್ಷಿಪ್ತವಾಗಿ ಕೇಳಿ"
   },
+  "aiReview": {
+    "title": "AI review queue",
+    "subtitle": "AI outputs flagged for lawyer review before client use",
+    "queueTitle": "{count, plural, one {# item awaiting review} other {# items awaiting review}}",
+    "queueDescription": "Review, open the source workspace, or mark as reviewed when signed off.",
+    "empty": "No AI outputs are waiting for lawyer review.",
+    "loadError": "Failed to load review queue",
+    "author": "Author",
+    "matter": "Matter",
+    "jurisdiction": "Jurisdiction",
+    "unverified": "Unverified",
+    "preview": "Preview",
+    "openWorkspace": "Open workspace",
+    "markReviewed": "Mark reviewed",
+    "previewTruncated": "Open the workspace for the full output.",
+    "unknownAuthor": "Unknown"
+  },
   "tasks": {
     "myTasks": "ನನ್ನ ಕಾರ್ಯಗಳು",
     "next7d": "ಮುಂದಿನ 7 ಡಿ",
@@ -187,12 +204,12 @@
     "start": "ಪ್ರಾರಂಭಿಸಿ →",
     "allSetUp": "ನೀವು ಸಿದ್ಧರಾಗಿರುವಿರಿ!",
     "allSetUpDescription": "ಎಲ್ಲಾ ಪ್ರಾರಂಭದ ಹಂತಗಳು ಪೂರ್ಣಗೊಂಡಿವೆ. ಈ ಪರಿಶೀಲನಾಪಟ್ಟಿ ಶೀಘ್ರದಲ್ಲೇ ಕಣ್ಮರೆಯಾಗುತ್ತದೆ.",
-    "aiSearchLabel": "ನಿಮ್ಮ ಮೊದಲ AI ಕಾನೂನು ಹುಡುಕಾಟವನ್ನು ರನ್ ಮಾಡಿ",
+    "aiSearchLabel": "ನಿಮ್ಮ ಮೊದಲ ಕಾನೂನು ಸಂಶೋಧನೆಯನ್ನು ರನ್ ಮಾಡಿ",
     "aiSearchDescription": "ಕಾನೂನಾತ್ಮಕ ಪ್ರಶ್ನೆಯನ್ನು ಕೇಳಿ ಮತ್ತು ನಿಮ್ಮ ನ್ಯಾಯವ್ಯಾಪ್ತಿಗಾಗಿ ಉಲ್ಲೇಖಿಸಿದ ಉತ್ತರಗಳನ್ನು ಪಡೆಯಿರಿ",
     "clientLabel": "ನಿಮ್ಮ ಮೊದಲ ಕ್ಲೈಂಟ್ ಅನ್ನು ಸೇರಿಸಿ",
     "clientDescription": "ವಿಷಯಗಳನ್ನು ನಿರ್ವಹಿಸುವುದನ್ನು ಪ್ರಾರಂಭಿಸಲು ಕ್ಲೈಂಟ್ ಪ್ರೊಫೈಲ್ ಅನ್ನು ರಚಿಸಿ",
-    "matterLabel": "ಒಂದು ವಿಷಯವನ್ನು ತೆರೆಯಿರಿ",
-    "matterDescription": "ಪ್ರಕರಣವನ್ನು ಟ್ರ್ಯಾಕಿಂಗ್ ಪ್ರಾರಂಭಿಸಲು ಮ್ಯಾಟರ್ ಅನ್ನು ರಚಿಸಿ",
+    "matterLabel": "ನಿಮ್ಮ ಮೊದಲ ವಿಷಯವನ್ನು ರಚಿಸಿ",
+    "matterDescription": "ಪ್ರಕರಣವನ್ನು ಟ್ರ್ಯಾಕ್ ಮಾಡುವುದನ್ನು ಪ್ರಾರಂಭಿಸಲು ಮ್ಯಾಟರ್ ಅನ್ನು ಹೊಂದಿಸಿ",
     "templateLabel": "ಡಾಕ್ಯುಮೆಂಟ್ ಟೆಂಪ್ಲೇಟ್ ಅನ್ನು ಅಪ್‌ಲೋಡ್ ಮಾಡಿ",
     "templateDescription": "ಡಾಕ್ಯುಮೆಂಟ್ ಉತ್ಪಾದನೆಯನ್ನು ಸ್ವಯಂಚಾಲಿತಗೊಳಿಸಲು ಟೆಂಪ್ಲೇಟ್‌ಗಳನ್ನು ಹೊಂದಿಸಿ",
     "taskLabel": "ನಿಮ್ಮ ಕಾರ್ಯ ಸರದಿಯನ್ನು ಪರಿಶೀಲಿಸಿ",

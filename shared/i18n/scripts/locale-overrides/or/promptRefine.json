@@ -1,0 +1,20 @@
+{
+  "title": "ବିଶୋଧିତ ପ୍ରମ୍ପ୍ଟ |",
+  "description": "ସ୍ୱଚ୍ଛ AI ଫଳାଫଳ ପାଇଁ ଆମେ ଆପଣଙ୍କର ବର୍ଣ୍ଣନାକୁ ପୁନ organ ସଂଗଠିତ କରିଛୁ | ଆବଶ୍ୟକ ହେଲେ ସଂପାଦନ କରନ୍ତୁ, ତାପରେ ଜାରି ରଖନ୍ତୁ |",
+  "yourOriginal": "ତୁମର ମୂଳ ପ୍ରମ୍ପ୍ଟ |",
+  "refinedLabel": "ବିଶୋଧିତ ପ୍ରମ୍ପ୍ଟ |",
+  "continueRefined": "ବିଶୋଧିତ ପ୍ରମ୍ପ୍ଟ ସହିତ ଜାରି ରଖନ୍ତୁ |",
+  "useOriginal": "ଏହା ବଦଳରେ ମୂଳ ବ୍ୟବହାର କରନ୍ତୁ |",
+  "hintJurisdiction": "ଅଧିକାର",
+  "hintDocument": "ଡକ୍ୟୁମେଣ୍ଟ୍",
+  "hintParty": "ପାର୍ଟୀ |",
+  "hintStatute": "ନିୟମ",
+  "preparing": "ତୁମର ପ୍ରମ୍ପ୍ଟ ପ୍ରସ୍ତୁତ କରୁଛି…",
+  "startingDrafting": "{seconds}s ରେ ଡ୍ରାଫ୍ଟ ଆରମ୍ଭ କରିବା…",
+  "startingResearch": "{seconds}s ରେ ଗବେଷଣା ଆରମ୍ଭ…",
+  "undo": "ପୂର୍ବବତ୍ କରନ୍ତୁ |",
+  "autoFilledTitle": "ତୁରନ୍ତ ବିଶୋଧିତ |",
+  "autoFilledDescription": "{seconds}s ରେ ଜାରି - ଆପଣଙ୍କର ମୂଳ ରଖିବାକୁ ପୂର୍ବବତ୍ କରନ୍ତୁ |",
+  "autoFillCountdownAria": "{seconds} ପୂର୍ବବତ୍ କରିବାକୁ ବାକି ଅଛି |",
+  "autoFillHint": "ଆପଣଙ୍କର ମୂଳ ପ୍ରମ୍ପ୍ଟକୁ ପୁନ o ସ୍ଥାପନ କରନ୍ତୁ |"
+}

@@ -1,3 +1,8 @@
+import {
+  CountryPrivacyRequirements,
+  getCountryPrivacyRequirements,
+} from './privacy-controls';
+
 export interface CountryCompliancePolicySeed {
   countryCode: string;
   countryName: string;
@@ -13,6 +18,7 @@ export interface CountryCompliancePolicySeed {
   approvedProductLabels: string[];
   dataResidencyRequired?: boolean;
   defaultDataRegion?: string;
+  privacyRequirements?: CountryPrivacyRequirements;
   notes?: string;
 }
 
@@ -35,6 +41,41 @@ const COMMON_APPROVED_LABELS = [
   'Risk analysis',
   'Self-help legal preparation',
 ];
+
+/** EU/EEA member states without a dedicated policy fall back to the EU seed. */
+export const EU_MEMBER_COUNTRY_CODES = new Set([
+  'AT',
+  'BE',
+  'BG',
+  'HR',
+  'CY',
+  'CZ',
+  'DK',
+  'EE',
+  'FI',
+  'FR',
+  'DE',
+  'GR',
+  'HU',
+  'IE',
+  'IT',
+  'LV',
+  'LT',
+  'LU',
+  'MT',
+  'NL',
+  'PL',
+  'PT',
+  'RO',
+  'SK',
+  'SI',
+  'ES',
+  'SE',
+  'IS',
+  'LI',
+  'NO',
+  'CH',
+]);
 
 export const COUNTRY_COMPLIANCE_POLICY_SEEDS: CountryCompliancePolicySeed[] = [
   {
@@ -74,6 +115,7 @@ export const COUNTRY_COMPLIANCE_POLICY_SEEDS: CountryCompliancePolicySeed[] = [
     requireExplicitTrainingConsent: true,
     dataResidencyRequired: true,
     defaultDataRegion: 'af-south-1',
+    privacyRequirements: getCountryPrivacyRequirements('KE'),
     restrictedPhrases: [
       ...COMMON_RESTRICTED_PHRASES,
       'LSK certified AI',
@@ -95,6 +137,23 @@ export const COUNTRY_COMPLIANCE_POLICY_SEEDS: CountryCompliancePolicySeed[] = [
     ],
     approvedProductLabels: COMMON_APPROVED_LABELS,
     notes: 'SRA/LSB context — legal information and self-help only for consumers.',
+  },
+  {
+    countryCode: 'FR',
+    countryName: 'France',
+    requireLawyerReviewForAdvice: true,
+    requireExplicitTrainingConsent: true,
+    allowAutomatedDecisioning: false,
+    dataResidencyRequired: true,
+    defaultDataRegion: 'eu-west-3',
+    restrictedPhrases: [
+      ...COMMON_RESTRICTED_PHRASES,
+      'CNB certified AI',
+      'substitut de avocat',
+      'conseil juridique garanti',
+    ],
+    approvedProductLabels: COMMON_APPROVED_LABELS,
+    notes: 'French bar / GDPR posture — legal information only; lawyer review for advice.',
   },
   {
     countryCode: 'EU',

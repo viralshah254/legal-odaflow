@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "stateCode": "TX",
+  "stateName": "Texas",
+  "acts": [
+    { "actId": "tx-penal-code", "title": "Texas Penal Code", "sourceAuthority": "state-portal", "sourceTier": "primary", "primaryPdfUrl": "https://statutes.capitol.texas.gov/Docs/PE/htm/PE.htm", "externalId": "tx-penal_code" },
+    { "actId": "tx-business-organizations-code", "title": "Texas Business Organizations Code", "sourceAuthority": "state-portal", "sourceTier": "primary", "primaryPdfUrl": "https://statutes.capitol.texas.gov/Docs/BO/htm/BO.htm", "externalId": "tx-business_organizations_code" },
+    { "actId": "tx-civil-practice", "title": "Texas Civil Practice and Remedies Code", "sourceAuthority": "state-portal", "sourceTier": "primary", "primaryPdfUrl": "https://statutes.capitol.texas.gov/Docs/CP/htm/CP.htm", "externalId": "tx-civil_practice" },
+    { "actId": "tx-family-code", "title": "Texas Family Code", "sourceAuthority": "state-portal", "sourceTier": "primary", "primaryPdfUrl": "https://statutes.capitol.texas.gov/Docs/FA/htm/FA.htm", "externalId": "tx-family_code" },
+    { "actId": "tx-property-code", "title": "Texas Property Code", "sourceAuthority": "state-portal", "sourceTier": "primary", "primaryPdfUrl": "https://statutes.capitol.texas.gov/Docs/PR/htm/PR.htm", "externalId": "tx-property_code" },
+    { "actId": "tx-transportation-code", "title": "Texas Transportation Code", "sourceAuthority": "state-portal", "sourceTier": "primary", "primaryPdfUrl": "https://statutes.capitol.texas.gov/Docs/TN/htm/TN.htm", "externalId": "tx-transportation_code" },
+    { "actId": "tx-health-safety-code", "title": "Texas Health and Safety Code", "sourceAuthority": "state-portal", "sourceTier": "primary", "primaryPdfUrl": "https://statutes.capitol.texas.gov/Docs/HS/htm/HS.htm", "externalId": "tx-health_safety_code" },
+    { "actId": "tx-labor-code", "title": "Texas Labor Code", "sourceAuthority": "state-portal", "sourceTier": "primary", "primaryPdfUrl": "https://statutes.capitol.texas.gov/Docs/LA/htm/LA.htm", "externalId": "tx-labor_code" },
+    { "actId": "tx-insurance-code", "title": "Texas Insurance Code", "sourceAuthority": "state-portal", "sourceTier": "primary", "primaryPdfUrl": "https://statutes.capitol.texas.gov/Docs/IN/htm/IN.htm", "externalId": "tx-insurance_code" },
+    { "actId": "tx-tax-code", "title": "Texas Tax Code", "sourceAuthority": "state-portal", "sourceTier": "primary", "primaryPdfUrl": "https://statutes.capitol.texas.gov/Docs/TX/htm/TX.htm", "externalId": "tx-tax_code" },
+    { "actId": "tx-education-code", "title": "Texas Education Code", "sourceAuthority": "state-portal", "sourceTier": "primary", "primaryPdfUrl": "https://statutes.capitol.texas.gov/Docs/ED/htm/ED.htm", "externalId": "tx-education_code" },
+    { "actId": "tx-alcoholic-beverage-code", "title": "Texas Alcoholic Beverage Code", "sourceAuthority": "state-portal", "sourceTier": "primary", "primaryPdfUrl": "https://statutes.capitol.texas.gov/Docs/AL/htm/AL.htm", "externalId": "tx-alcoholic_beverage_code" },
+    { "actId": "tx-code-criminal-procedure", "title": "Texas Code of Criminal Procedure", "sourceAuthority": "state-portal", "sourceTier": "primary", "primaryPdfUrl": "https://statutes.capitol.texas.gov/Docs/CR/htm/CR.htm", "externalId": "tx-code_criminal_procedure" },
+    { "actId": "tx-government-code", "title": "Texas Government Code", "sourceAuthority": "state-portal", "sourceTier": "primary", "primaryPdfUrl": "https://statutes.capitol.texas.gov/Docs/GV/htm/GV.htm", "externalId": "tx-government_code" },
+    { "actId": "tx-occupations-code", "title": "Texas Occupations Code", "sourceAuthority": "state-portal", "sourceTier": "primary", "primaryPdfUrl": "https://statutes.capitol.texas.gov/Docs/OC/htm/OC.htm", "externalId": "tx-occupations_code" }
+  ]
+}

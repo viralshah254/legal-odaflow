@@ -1,0 +1,50 @@
+import { DeepJurisdictionProfile } from './types';
+
+export const IN_PROFILE: DeepJurisdictionProfile = {
+  code: 'IN',
+  name: 'India',
+  legalSystem: 'common_law',
+  languageOfRecord: ['English', 'Hindi'],
+  citationStyle: [
+    'AIR <YYYY> SC <n>  — e.g. AIR 1973 SC 1461',
+    '(<YYYY>) <vol> SCC <n>  — e.g. (1980) 3 SCC 625',
+    '(<YYYY>) <vol> SCR <n>',
+    'High Court: AIR <YYYY> <StateAbbr> <n>  — e.g. AIR 1985 Bom 123',
+    'Neutral: <YYYY>:<Court>:<n>',
+  ],
+  courtHierarchy: [
+    { name: 'Supreme Court of India', role: 'apex' },
+    { name: 'High Courts (state)', role: 'appellate' },
+    { name: 'District & Sessions Courts', role: 'trial' },
+    { name: 'Tribunals (NCLT, NCLAT, DRT, RERA, NGT, ITAT, CAT)', role: 'tribunal' },
+    { name: 'Lok Adalat', role: 'specialised (settlement)' },
+  ],
+  practiceAreas: [
+    { name: 'Criminal law', keyStatutes: ['Bharatiya Nyaya Sanhita 2023 (replacing IPC 1860)', 'Indian Penal Code 1860'] },
+    { name: 'Criminal procedure', keyStatutes: ['Bharatiya Nagarik Suraksha Sanhita 2023 (replacing CrPC 1973)', 'Code of Criminal Procedure 1973'] },
+    { name: 'Evidence', keyStatutes: ['Bharatiya Sakshya Adhiniyam 2023 (replacing Indian Evidence Act 1872)'] },
+    { name: 'Consumer protection', keyStatutes: ['Consumer Protection Act 2019'] },
+    { name: 'Company & corporate', keyStatutes: ['Companies Act 2013', 'Insolvency and Bankruptcy Code 2016', 'SEBI Act 1992'] },
+    { name: 'Labour & employment', keyStatutes: ['Code on Wages 2019', 'Industrial Relations Code 2020', 'Occupational Safety, Health and Working Conditions Code 2020', 'Social Security Code 2020'] },
+    { name: 'Right to Information', keyStatutes: ['Right to Information Act 2005'] },
+    { name: 'Protection of children', keyStatutes: ['POCSO Act 2012', 'Juvenile Justice Act 2015'] },
+    { name: 'Contract & commercial', keyStatutes: ['Indian Contract Act 1872', 'Sale of Goods Act 1930', 'Specific Relief Act 1963'] },
+    { name: 'Property & land', keyStatutes: ['Transfer of Property Act 1882', 'Registration Act 1908', 'RERA 2016'] },
+    { name: 'Family & personal law', keyStatutes: ['Hindu Marriage Act 1955', 'Special Marriage Act 1954', 'Dowry Prohibition Act 1961', 'Protection of Women from Domestic Violence Act 2005', 'Family Courts Act 1984', 'Muslim personal law', 'Indian Succession Act 1925'] },
+    { name: 'Taxation', keyStatutes: ['Income-tax Act 1961', 'Central Goods and Services Tax Act 2017'] },
+    { name: 'Constitutional law', keyStatutes: ['Constitution of India 1950'] },
+    { name: 'Intellectual property & technology', keyStatutes: ['Patents Act 1970', 'Trade Marks Act 1999', 'Copyright Act 1957', 'Information Technology Act 2000', 'Digital Personal Data Protection Act 2023'] },
+    { name: 'NRI & private client', keyStatutes: ['Foreign Exchange Management Act 1999', 'Indian Succession Act 1925', 'Citizenship Act 1955 (OCI Rules)', 'Income-tax Act 1961 (NRI provisions)'] },
+    { name: 'International & cross-border', keyStatutes: ['Arbitration and Conciliation Act 1996 (Part II)', 'Code of Civil Procedure 1908 (§44A foreign decrees)', 'Foreign Exchange Management Act 1999'] },
+  ],
+  adrPathways: [
+    { mechanism: 'negotiation', isLegallyBinding: false },
+    { mechanism: 'mediation', isLegallyBinding: false, note: 'Mediation Act 2023; binding once a settlement agreement is signed.' },
+    { mechanism: 'conciliation', isLegallyBinding: false, note: 'Settlement agreement has the status of an arbitral award under the Arbitration and Conciliation Act 1996.' },
+    { mechanism: 'lok adalat', isLegallyBinding: true, note: 'Award is final and binding with no appeal under the Legal Services Authorities Act 1987.' },
+    { mechanism: 'arbitration', isLegallyBinding: true, note: 'Arbitration and Conciliation Act 1996.' },
+  ],
+  limitationNotes:
+    'Governed by the Limitation Act 1963. Typical periods: 3 years for contract/recovery, 12 years for possession of immovable property; condonation of delay possible with sufficient cause.',
+  primaryLegislationStyle: 'Bare Acts, Gazette of India, India Code; cases via SCC, AIR, and court neutral citations.',
+};

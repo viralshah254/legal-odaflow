@@ -1,5 +1,6 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { PrismaService } from '@/prisma/prisma.service';
+import { JobsService } from '@/jobs/jobs.service';
 import {
   BUILT_IN_AUTOMATION_RECIPES,
   INTERNAL_AGENTS,
@@ -10,7 +11,10 @@ import {
 
 @Injectable()
 export class AgentsService {
-  constructor(private readonly prisma: PrismaService) {}
+  constructor(
+    private readonly prisma: PrismaService,
+    private readonly jobsService: JobsService,
+  ) {}
 
   async listAgents() {
     const dbAgents = await this.prisma.aIAgent.findMany({
@@ -67,5 +71,17 @@ export class AgentsService {
       orderBy: { createdAt: 'desc' },
       take: Math.min(Math.max(limit, 1), 100),
     });
+  }
+
+  enqueueAgentJob(input: {
+    agentId: string;
+    jobType: string;
+    tenantId: string;
+    userId: string;
+    params: Record<string, unknown>;
+    priority?: 'high' | 'low';
+    sessionId?: string;
+  }) {
+    return this.jobsService.enqueueAgentJob(input);
   }
 }

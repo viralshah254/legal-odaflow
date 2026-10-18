@@ -1,24 +1,26 @@
-import { Body, Controller, Get, Put, UseGuards } from '@nestjs/common';
-import { TenantId } from '@/common/decorators/tenant-id.decorator';
+import { Body, Controller, Get, Param, Put, UseGuards } from '@nestjs/common';
+import { TenantPermission } from '@/common/decorators/tenant-permission.decorator';
+import { TenantPermissionGuard } from '@/common/guards/tenant-permission.guard';
 import { TenantGuard } from '@/common/guards/tenant.guard';
 import {
   TenantRolePermissionsMap,
   TenantRolePermissionsService,
 } from './tenant-role-permissions.service';
 
-@Controller('governance/role-permissions')
-@UseGuards(TenantGuard)
+@Controller('tenants/:tenantId/governance/role-permissions')
+@UseGuards(TenantGuard, TenantPermissionGuard)
 export class TenantRolePermissionsController {
   constructor(private readonly rolePermissionsService: TenantRolePermissionsService) {}
 
   @Get()
-  getPermissions(@TenantId() tenantId: string): Promise<TenantRolePermissionsMap> {
+  getPermissions(@Param('tenantId') tenantId: string): Promise<TenantRolePermissionsMap> {
     return this.rolePermissionsService.getPermissions(tenantId);
   }
 
   @Put()
+  @TenantPermission('canManageSettings')
   updatePermissions(
-    @TenantId() tenantId: string,
+    @Param('tenantId') tenantId: string,
     @Body() body: TenantRolePermissionsMap,
   ): Promise<TenantRolePermissionsMap> {
     return this.rolePermissionsService.updatePermissions(tenantId, body);

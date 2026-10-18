@@ -4,6 +4,7 @@ export type InternalAgentId =
   | 'research-agent'
   | 'matter-analyst'
   | 'drafting-agent'
+  | 'diligence-agent'
   | 'ocr-agent'
   | 'notification-agent'
   | 'automation-agent'
@@ -50,8 +51,16 @@ export const INTERNAL_AGENTS: Record<InternalAgentId, InternalAgentDefinition> =
       'Drafts memos, letters, and filings from matter context; notifies when ready.',
     queue: 'ai.low_priority',
     capabilities: ['draft_document', 'matter_context'],
-    copilotTools: ['draft_document'],
+    copilotTools: ['find_draft', 'draft_document'],
     requiresApproval: true,
+  },
+  'diligence-agent': {
+    id: 'diligence-agent',
+    name: 'Diligence Agent',
+    description:
+      'Runs bulk document review, extracts risks, and builds diligence summary matrices.',
+    queue: 'ai.high_priority',
+    capabilities: ['bulk_diligence', 'clause_risk_extraction', 'document_summarize'],
   },
   'ocr-agent': {
     id: 'ocr-agent',
@@ -208,6 +217,105 @@ export const BUILT_IN_AUTOMATION_RECIPES = [
         body: 'Invoice {{invoiceNumber}} ({{amount}} {{currency}}) is overdue.',
         notifyRole: 'FIRM_ADMIN',
       },
+    ],
+  },
+  // ── PRACTICE-AREA RECIPES ──────────────────────────────────────────────────
+  // conditions.practiceArea matches matter.practiceArea (canonical slugs from
+  // platform-taxonomy.ts). Alias matching is handled by AutomationEngineService.
+  {
+    recipeKey: 'employment_new_matter_tasks',
+    name: 'Employment: initial checklist tasks',
+    description: 'Create standard initial tasks when an employment law matter is opened.',
+    trigger: 'matter.created',
+    conditions: { practiceArea: 'employment_labour' },
+    actions: [
+      { type: 'create_task', title: 'Obtain client employment contract', priority: 'HIGH', matterIdField: 'matterId' },
+      { type: 'create_task', title: 'Confirm limitation period for claims', priority: 'HIGH', matterIdField: 'matterId' },
+      { type: 'create_task', title: 'Assess statutory employment rights and entitlements', priority: 'MEDIUM', matterIdField: 'matterId' },
+    ],
+  },
+  {
+    recipeKey: 'corporate_incorporation_tasks',
+    name: 'Corporate: incorporation checklist',
+    description: 'Create standard tasks for company incorporation matters.',
+    trigger: 'matter.created',
+    conditions: { practiceArea: 'corporate_commercial' },
+    actions: [
+      { type: 'create_task', title: 'Draft Memorandum & Articles of Association', priority: 'HIGH', matterIdField: 'matterId' },
+      { type: 'create_task', title: 'File company incorporation application', priority: 'HIGH', matterIdField: 'matterId' },
+      { type: 'create_task', title: 'Prepare shareholders agreement', priority: 'MEDIUM', matterIdField: 'matterId' },
+    ],
+  },
+  {
+    recipeKey: 'criminal_defense_tasks',
+    name: 'Criminal: initial defense tasks',
+    description: 'Create standard tasks for criminal defense matters.',
+    trigger: 'matter.created',
+    conditions: { practiceArea: 'litigation_disputes' },
+    actions: [
+      { type: 'create_task', title: 'Obtain FIR / charge sheet / police disclosure', priority: 'HIGH', matterIdField: 'matterId' },
+      { type: 'create_task', title: 'Advise client on bail/remand conditions', priority: 'HIGH', matterIdField: 'matterId' },
+      { type: 'create_task', title: 'Confirm hearing / mention date', priority: 'HIGH', matterIdField: 'matterId' },
+    ],
+  },
+  {
+    recipeKey: 'family_divorce_tasks',
+    name: 'Family: divorce/separation initial tasks',
+    description: 'Create standard tasks for family law / divorce matters.',
+    trigger: 'matter.created',
+    conditions: { practiceArea: 'family_matrimonial' },
+    actions: [
+      { type: 'create_task', title: 'Obtain marriage certificate', priority: 'HIGH', matterIdField: 'matterId' },
+      { type: 'create_task', title: 'Prepare financial disclosure statement', priority: 'HIGH', matterIdField: 'matterId' },
+      { type: 'create_task', title: 'Advise on mediation / pre-litigation requirements', priority: 'MEDIUM', matterIdField: 'matterId' },
+    ],
+  },
+  {
+    recipeKey: 'litigation_claim_tasks',
+    name: 'Litigation: new claim initial tasks',
+    description: 'Create standard tasks for civil litigation matters.',
+    trigger: 'matter.created',
+    conditions: { practiceArea: 'litigation_disputes' },
+    actions: [
+      { type: 'create_task', title: 'Send legal notice / Letter Before Claim', priority: 'HIGH', matterIdField: 'matterId' },
+      { type: 'create_task', title: 'Calculate and confirm limitation period', priority: 'HIGH', matterIdField: 'matterId' },
+      { type: 'create_task', title: 'Gather evidence and witness statements', priority: 'MEDIUM', matterIdField: 'matterId' },
+    ],
+  },
+  {
+    recipeKey: 'ip_trademark_tasks',
+    name: 'IP: trade mark registration tasks',
+    description: 'Create standard tasks for intellectual property matters.',
+    trigger: 'matter.created',
+    conditions: { practiceArea: 'intellectual_property' },
+    actions: [
+      { type: 'create_task', title: 'Conduct availability / clearance search', priority: 'HIGH', matterIdField: 'matterId' },
+      { type: 'create_task', title: 'Classify goods and services (Nice Classification)', priority: 'MEDIUM', matterIdField: 'matterId' },
+      { type: 'create_task', title: 'File trade mark application', priority: 'HIGH', matterIdField: 'matterId' },
+    ],
+  },
+  {
+    recipeKey: 'property_conveyancing_tasks',
+    name: 'Real Estate: conveyancing tasks',
+    description: 'Create standard tasks for property conveyancing matters.',
+    trigger: 'matter.created',
+    conditions: { practiceArea: 'real_estate_property' },
+    actions: [
+      { type: 'create_task', title: 'Conduct property / title searches', priority: 'HIGH', matterIdField: 'matterId' },
+      { type: 'create_task', title: 'Review title deeds and land registry entries', priority: 'HIGH', matterIdField: 'matterId' },
+      { type: 'create_task', title: 'Draft / review transfer deed', priority: 'HIGH', matterIdField: 'matterId' },
+    ],
+  },
+  {
+    recipeKey: 'immigration_visa_tasks',
+    name: 'Immigration: visa application tasks',
+    description: 'Create standard tasks for immigration and visa matters.',
+    trigger: 'matter.created',
+    conditions: { practiceArea: 'immigration' },
+    actions: [
+      { type: 'create_task', title: 'Verify passport validity and travel history', priority: 'HIGH', matterIdField: 'matterId' },
+      { type: 'create_task', title: 'Gather supporting documents', priority: 'HIGH', matterIdField: 'matterId' },
+      { type: 'create_task', title: 'Prepare visa application form and cover letter', priority: 'HIGH', matterIdField: 'matterId' },
     ],
   },
 ] as const;

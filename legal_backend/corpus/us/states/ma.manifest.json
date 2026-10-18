@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "stateCode": "MA",
+  "stateName": "Massachusetts",
+  "acts": [
+    {
+      "actId": "ma-code",
+      "title": "Massachusetts code",
+      "sourceAuthority": "cornell-lii",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.law.cornell.edu/states/ma",
+      "externalId": "ma-code",
+      "notes": "Massachusetts state law via Cornell LII state index"
+    },
+    {
+      "actId": "ma-statutes",
+      "title": "Massachusetts statutes",
+      "sourceAuthority": "cornell-lii",
+      "sourceTier": "mirror",
+      "primaryPdfUrl": "https://www.law.cornell.edu/states/ma",
+      "externalId": "ma-statutes",
+      "notes": "Massachusetts state law via Cornell LII state index"
+    }
+  ]
+}

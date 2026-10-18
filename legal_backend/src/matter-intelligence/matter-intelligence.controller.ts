@@ -23,6 +23,7 @@ import {
   UpdateMatterStrategyMemoDto,
 } from './dto/matter-intelligence.dto';
 import { MatterIntelligenceService } from './matter-intelligence.service';
+import { MatterAnalysisService, RunMatterAnalysisDto } from './matter-analysis.service';
 
 @Controller('matters/:matterId/facts')
 @UseGuards(TenantGuard)
@@ -214,7 +215,10 @@ export class MatterArgumentsController {
 @Controller('matters/:matterId/strategy-memos')
 @UseGuards(TenantGuard)
 export class MatterStrategyMemosController {
-  constructor(private readonly service: MatterIntelligenceService) {}
+  constructor(
+    private readonly service: MatterIntelligenceService,
+    private readonly analysisService: MatterAnalysisService,
+  ) {}
 
   @Post()
   create(
@@ -280,6 +284,123 @@ export class MatterStrategyMemosController {
       tenantId,
       matterId,
       memoId,
+      user.id,
+      user.tenantRole,
+    );
+  }
+
+  /** Auto-generate a strategy memo from matter context */
+  @Post('auto-generate')
+  autoGenerate(
+    @TenantId() tenantId: string,
+    @Param('matterId') matterId: string,
+    @CurrentUser() user: RequestUser,
+    @Body() dto: RunMatterAnalysisDto,
+  ) {
+    return this.analysisService.autoGenerateStrategyMemo(
+      tenantId,
+      matterId,
+      user.id,
+      user.tenantRole,
+      dto.focusPrompt,
+      'manual',
+    );
+  }
+}
+
+@Controller('matters/:matterId/similar-cases')
+@UseGuards(TenantGuard)
+export class MatterSimilarCasesController {
+  constructor(private readonly analysisService: MatterAnalysisService) {}
+
+  @Post()
+  run(
+    @TenantId() tenantId: string,
+    @Param('matterId') matterId: string,
+    @CurrentUser() user: RequestUser,
+    @Body() dto: RunMatterAnalysisDto,
+  ) {
+    return this.analysisService.runSimilarCases(
+      tenantId,
+      matterId,
+      user.id,
+      user.tenantRole,
+      dto,
+    );
+  }
+
+  @Get()
+  list(
+    @TenantId() tenantId: string,
+    @Param('matterId') matterId: string,
+    @CurrentUser() user: RequestUser,
+  ) {
+    return this.analysisService.listSimilarCases(tenantId, matterId, user.id, user.tenantRole);
+  }
+
+  @Delete(':runId')
+  remove(
+    @TenantId() tenantId: string,
+    @Param('matterId') matterId: string,
+    @Param('runId') runId: string,
+    @CurrentUser() user: RequestUser,
+  ) {
+    return this.analysisService.deleteAnalysisRun(
+      tenantId,
+      matterId,
+      runId,
+      user.id,
+      user.tenantRole,
+    );
+  }
+}
+
+@Controller('matters/:matterId/opponent-analyses')
+@UseGuards(TenantGuard)
+export class MatterOpponentAnalysisController {
+  constructor(private readonly analysisService: MatterAnalysisService) {}
+
+  @Post()
+  run(
+    @TenantId() tenantId: string,
+    @Param('matterId') matterId: string,
+    @CurrentUser() user: RequestUser,
+    @Body() dto: RunMatterAnalysisDto,
+  ) {
+    return this.analysisService.runOpponentAnalysis(
+      tenantId,
+      matterId,
+      user.id,
+      user.tenantRole,
+      dto,
+    );
+  }
+
+  @Get()
+  list(
+    @TenantId() tenantId: string,
+    @Param('matterId') matterId: string,
+    @CurrentUser() user: RequestUser,
+  ) {
+    return this.analysisService.listOpponentAnalyses(
+      tenantId,
+      matterId,
+      user.id,
+      user.tenantRole,
+    );
+  }
+
+  @Delete(':runId')
+  remove(
+    @TenantId() tenantId: string,
+    @Param('matterId') matterId: string,
+    @Param('runId') runId: string,
+    @CurrentUser() user: RequestUser,
+  ) {
+    return this.analysisService.deleteAnalysisRun(
+      tenantId,
+      matterId,
+      runId,
       user.id,
       user.tenantRole,
     );

@@ -1,0 +1,21 @@
+/** Platform accuracy services barrel */
+
+export { CaseRecordExtractionService } from './case-record-extraction.service';
+export { SourceConflictResolver } from './source-conflict-resolver.service';
+export { DraftPlaybookRegistryService } from './draft-playbook-registry.service';
+export { DocumentKindResolver } from './document-kind-resolver.service';
+export { IssuePlanService } from './issue-plan.service';
+export { StructuredDraftGenerator } from './structured-draft-generator.service';
+export { UniversalReleaseGateService } from './universal-release-gate.service';
+export { DraftPipelineService } from './draft-pipeline.service';
+export { HumanReviewService } from './human-review.service';
+export { DraftAccuracyMetricsService } from './draft-accuracy-metrics.service';
+export { RegularBailAdapter } from './adapters/regular-bail.adapter';
+export { AnticipatoryBailAdapter } from './adapters/anticipatory-bail.adapter';
+export { LegalNoticeAdapter } from './adapters/legal-notice.adapter';
+export { ContractDraftAdapter } from './adapters/contract-draft.adapter';
+export { ResearchMemoAdapter } from './adapters/research-memo.adapter';
+export { ConsumerComplaintAdapter } from './adapters/consumer-complaint.adapter';
+export { BailFactMaterialityService } from './adapters/bail-fact-materiality.service';
+export { AuthorityRetrievalPlannerService } from './authority-retrieval-planner.service';
+export { AuthorityVerificationGateValidator } from './validators/authority-verification-gate.validator';

@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "stateCode": "VT",
+  "stateName": "Vermont",
+  "acts": [
+    {
+      "actId": "vt-code",
+      "title": "Vermont code",
+      "sourceAuthority": "cornell-lii",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.law.cornell.edu/states/vt",
+      "externalId": "vt-code",
+      "notes": "Vermont state law via Cornell LII state index"
+    },
+    {
+      "actId": "vt-statutes",
+      "title": "Vermont statutes",
+      "sourceAuthority": "cornell-lii",
+      "sourceTier": "mirror",
+      "primaryPdfUrl": "https://www.law.cornell.edu/states/vt",
+      "externalId": "vt-statutes",
+      "notes": "Vermont state law via Cornell LII state index"
+    }
+  ]
+}

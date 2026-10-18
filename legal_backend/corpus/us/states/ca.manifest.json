@@ -1,0 +1,136 @@
+{
+  "version": 1,
+  "stateCode": "CA",
+  "stateName": "California",
+  "acts": [
+    {
+      "actId": "ca-penal-code",
+      "title": "California Penal Code",
+      "sourceAuthority": "state-portal",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://codes.findlaw.com/ca/penal-code/",
+      "externalId": "ca-penal_code",
+      "notes": "FindLaw mirror of CA Penal Code"
+    },
+    {
+      "actId": "ca-civil-code",
+      "title": "California Civil Code",
+      "sourceAuthority": "state-portal",
+      "sourceTier": "mirror",
+      "primaryPdfUrl": "https://codes.findlaw.com/ca/civil-code/",
+      "externalId": "ca-civil_code"
+    },
+    {
+      "actId": "ca-corporations-code",
+      "title": "California Corporations Code",
+      "sourceAuthority": "state-portal",
+      "sourceTier": "mirror",
+      "primaryPdfUrl": "https://codes.findlaw.com/ca/corporations-code/",
+      "externalId": "ca-corporations_code"
+    },
+    {
+      "actId": "ca-labor-code",
+      "title": "California Labor Code",
+      "sourceAuthority": "state-portal",
+      "sourceTier": "mirror",
+      "primaryPdfUrl": "https://codes.findlaw.com/ca/labor-code/",
+      "externalId": "ca-labor_code"
+    },
+    {
+      "actId": "ca-evidence-code",
+      "title": "California Evidence Code",
+      "sourceAuthority": "state-portal",
+      "sourceTier": "mirror",
+      "primaryPdfUrl": "https://codes.findlaw.com/ca/evidence-code/",
+      "externalId": "ca-evidence_code"
+    },
+    {
+      "actId": "ca-code-civil-procedure",
+      "title": "California Code of Civil Procedure",
+      "sourceAuthority": "state-portal",
+      "sourceTier": "mirror",
+      "primaryPdfUrl": "https://codes.findlaw.com/ca/code-of-civil-procedure/",
+      "externalId": "ca-code_civil_procedure"
+    },
+    {
+      "actId": "ca-family-code",
+      "title": "California Family Code",
+      "sourceAuthority": "state-portal",
+      "sourceTier": "mirror",
+      "primaryPdfUrl": "https://codes.findlaw.com/ca/family-code/",
+      "externalId": "ca-family_code"
+    },
+    {
+      "actId": "ca-probate-code",
+      "title": "California Probate Code",
+      "sourceAuthority": "state-portal",
+      "sourceTier": "mirror",
+      "primaryPdfUrl": "https://codes.findlaw.com/ca/probate-code/",
+      "externalId": "ca-probate_code"
+    },
+    {
+      "actId": "ca-commercial-code",
+      "title": "California Commercial Code",
+      "sourceAuthority": "state-portal",
+      "sourceTier": "mirror",
+      "primaryPdfUrl": "https://codes.findlaw.com/ca/commercial-code/",
+      "externalId": "ca-commercial_code"
+    },
+    {
+      "actId": "ca-insurance-code",
+      "title": "California Insurance Code",
+      "sourceAuthority": "state-portal",
+      "sourceTier": "mirror",
+      "primaryPdfUrl": "https://codes.findlaw.com/ca/insurance-code/",
+      "externalId": "ca-insurance_code"
+    },
+    {
+      "actId": "ca-education-code",
+      "title": "California Education Code",
+      "sourceAuthority": "state-portal",
+      "sourceTier": "mirror",
+      "primaryPdfUrl": "https://codes.findlaw.com/ca/education-code/",
+      "externalId": "ca-education_code"
+    },
+    {
+      "actId": "ca-government-code",
+      "title": "California Government Code",
+      "sourceAuthority": "state-portal",
+      "sourceTier": "mirror",
+      "primaryPdfUrl": "https://codes.findlaw.com/ca/government-code/",
+      "externalId": "ca-government_code"
+    },
+    {
+      "actId": "ca-health-safety-code",
+      "title": "California Health and Safety Code",
+      "sourceAuthority": "state-portal",
+      "sourceTier": "mirror",
+      "primaryPdfUrl": "https://codes.findlaw.com/ca/health-and-safety-code/",
+      "externalId": "ca-health_safety_code"
+    },
+    {
+      "actId": "ca-unemployment-insurance-code",
+      "title": "California Unemployment Insurance Code",
+      "sourceAuthority": "state-portal",
+      "sourceTier": "mirror",
+      "primaryPdfUrl": "https://codes.findlaw.com/ca/unemployment-insurance-code/",
+      "externalId": "ca-unemployment_insurance_code"
+    },
+    {
+      "actId": "ca-revenue-taxation-code",
+      "title": "California Revenue and Taxation Code",
+      "sourceAuthority": "state-portal",
+      "sourceTier": "mirror",
+      "primaryPdfUrl": "https://codes.findlaw.com/ca/revenue-and-taxation-code/",
+      "externalId": "ca-revenue_taxation_code"
+    },
+    {
+      "actId": "ca-vehicle-code",
+      "title": "California Vehicle Code",
+      "sourceAuthority": "state-portal",
+      "sourceTier": "mirror",
+      "primaryPdfUrl": "https://codes.findlaw.com/ca/vehicle-code/",
+      "externalId": "ca-vehicle_code"
+    }
+  ]
+}

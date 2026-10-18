@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "stateCode": "NM",
+  "stateName": "New Mexico",
+  "acts": [
+    {
+      "actId": "nm-code",
+      "title": "New Mexico code",
+      "sourceAuthority": "cornell-lii",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.law.cornell.edu/states/nm",
+      "externalId": "nm-code",
+      "notes": "New Mexico state law via Cornell LII state index"
+    },
+    {
+      "actId": "nm-statutes",
+      "title": "New Mexico statutes",
+      "sourceAuthority": "cornell-lii",
+      "sourceTier": "mirror",
+      "primaryPdfUrl": "https://www.law.cornell.edu/states/nm",
+      "externalId": "nm-statutes",
+      "notes": "New Mexico state law via Cornell LII state index"
+    }
+  ]
+}

@@ -1,8 +1,8 @@
 {
   "generic": "কিবা এটা ভুল হ’ল",
   "network": "নেটৱৰ্ক ত্ৰুটি। অনুগ্ৰহ কৰি পুনৰ চেষ্টা কৰক।",
-  "timeout": "The request timed out. Please try again.",
-  "connection": "Could not reach the server. Check your connection and try again.",
+  "timeout": "অনুৰোধৰ সময় শেষ হৈ গ’ল। অনুগ্ৰহ কৰি পুনৰ চেষ্টা কৰক।",
+  "connection": "চাৰ্ভাৰত উপনীত হ'ব পৰা নগ'ল। আপোনাৰ সংযোগ পৰীক্ষা কৰক আৰু পুনৰ চেষ্টা কৰক।",
   "unauthorized": "এই কাৰ্য্য কৰিবলৈ আপুনি অনুমোদিত নহয়।",
   "notFound": "পোৱা নাযায়",
   "validationFailed": "অনুগ্ৰহ কৰি আপোনাৰ ইনপুট পৰীক্ষা কৰক আৰু পুনৰ চেষ্টা কৰক।",
@@ -25,6 +25,10 @@
   "tooManyRequests": "অত্যধিক চেষ্টা। অলপ সময় অপেক্ষা কৰক আৰু আকৌ চেষ্টা কৰক।",
   "firebaseEmailSignInDisabled": "এই প্ৰকল্পৰ বাবে Firebase ত ইমেইল চাইন-ইন সামৰ্থবান কৰা হোৱা নাই।",
   "authenticationFailed": "প্ৰমাণীকৰণ বিফল হ'ল।",
+  "accountExistsDifferentCredential": "এই ইমেইলটো এটা পাছৱৰ্ডৰ সৈতে পঞ্জীয়ন কৰা হৈছে। প্ৰথমে ইমেইলৰ জৰিয়তে চাইন ইন কৰক, তাৰ পিছত ছেটিংছত ছ’চিয়েল একাউণ্ট লিংক কৰক।",
+  "socialSignInCancelled": "চাইন-ইন বাতিল কৰা হ’ল।",
+  "socialSignInPopupBlocked": "পপ-আপ ব্লক কৰা হৈছিল। এই চাইটৰ বাবে পপ-আপৰ অনুমতি দিয়ক বা পুনৰ চেষ্টা কৰক।",
+  "socialSignInFailed": "সামাজিক চাইন-ইন বিফল হ’ল। অনুগ্ৰহ কৰি পুনৰ চেষ্টা কৰক।",
   "toast": {
     "preBillSessionCreated": "প্ৰি-বিল অধিবেশন সৃষ্টি কৰা হৈছে",
     "couldNotCreateSession": "অধিবেশন সৃষ্টি কৰিব পৰা নগ'ল",

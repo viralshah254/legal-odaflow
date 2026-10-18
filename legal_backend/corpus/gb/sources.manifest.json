@@ -1,0 +1,25 @@
+{
+  "countryCode": "GB",
+  "source": "legislation.gov.uk",
+  "builtAt": "2026-06-23T00:00:00.000Z",
+  "acts": [
+    { "actId": "era-1996", "title": "Employment Rights Act 1996", "publicUrl": "https://www.legislation.gov.uk/ukpga/1996/18", "externalId": "ukpga-1996-18" },
+    { "actId": "equality-act-2010", "title": "Equality Act 2010", "publicUrl": "https://www.legislation.gov.uk/ukpga/2010/15", "externalId": "ukpga-2010-15" },
+    { "actId": "companies-act-2006", "title": "Companies Act 2006", "publicUrl": "https://www.legislation.gov.uk/ukpga/2006/46", "externalId": "ukpga-2006-46" },
+    { "actId": "insolvency-act-1986", "title": "Insolvency Act 1986", "publicUrl": "https://www.legislation.gov.uk/ukpga/1986/45", "externalId": "ukpga-1986-45" },
+    { "actId": "pace-1984", "title": "Police and Criminal Evidence Act 1984", "publicUrl": "https://www.legislation.gov.uk/ukpga/1984/60", "externalId": "ukpga-1984-60" },
+    { "actId": "theft-act-1968", "title": "Theft Act 1968", "publicUrl": "https://www.legislation.gov.uk/ukpga/1968/60", "externalId": "ukpga-1968-60" },
+    { "actId": "criminal-justice-act-2003", "title": "Criminal Justice Act 2003", "publicUrl": "https://www.legislation.gov.uk/ukpga/2003/44", "externalId": "ukpga-2003-44" },
+    { "actId": "housing-act-1988", "title": "Housing Act 1988", "publicUrl": "https://www.legislation.gov.uk/ukpga/1988/50", "externalId": "ukpga-1988-50" },
+    { "actId": "consumer-rights-act-2015", "title": "Consumer Rights Act 2015", "publicUrl": "https://www.legislation.gov.uk/ukpga/2015/15", "externalId": "ukpga-2015-15" },
+    { "actId": "matrimonial-causes-act-1973", "title": "Matrimonial Causes Act 1973", "publicUrl": "https://www.legislation.gov.uk/ukpga/1973/18", "externalId": "ukpga-1973-18" },
+    { "actId": "children-act-1989", "title": "Children Act 1989", "publicUrl": "https://www.legislation.gov.uk/ukpga/1989/41", "externalId": "ukpga-1989-41" },
+    { "actId": "law-of-property-act-1925", "title": "Law of Property Act 1925", "publicUrl": "https://www.legislation.gov.uk/ukpga/1925/20", "externalId": "ukpga-1925-20" },
+    { "actId": "land-registration-act-2002", "title": "Land Registration Act 2002", "publicUrl": "https://www.legislation.gov.uk/ukpga/2002/9", "externalId": "ukpga-2002-9" },
+    { "actId": "data-protection-act-2018", "title": "Data Protection Act 2018", "publicUrl": "https://www.legislation.gov.uk/ukpga/2018/12", "externalId": "ukpga-2018-12" },
+    { "actId": "arbitration-act-1996", "title": "Arbitration Act 1996", "publicUrl": "https://www.legislation.gov.uk/ukpga/1996/23", "externalId": "ukpga-1996-23" },
+    { "actId": "limitation-act-1980", "title": "Limitation Act 1980", "publicUrl": "https://www.legislation.gov.uk/ukpga/1980/58", "externalId": "ukpga-1980-58" },
+    { "actId": "senior-courts-act-1981", "title": "Senior Courts Act 1981", "publicUrl": "https://www.legislation.gov.uk/ukpga/1981/54", "externalId": "ukpga-1981-54" },
+    { "actId": "sale-of-goods-act-1979", "title": "Sale of Goods Act 1979", "publicUrl": "https://www.legislation.gov.uk/ukpga/1979/54", "externalId": "ukpga-1979-54" }
+  ]
+}

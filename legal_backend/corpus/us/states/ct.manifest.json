@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "stateCode": "CT",
+  "stateName": "Connecticut",
+  "acts": [
+    {
+      "actId": "ct-code",
+      "title": "Connecticut code",
+      "sourceAuthority": "cornell-lii",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.law.cornell.edu/states/ct",
+      "externalId": "ct-code",
+      "notes": "Connecticut state law via Cornell LII state index"
+    },
+    {
+      "actId": "ct-statutes",
+      "title": "Connecticut statutes",
+      "sourceAuthority": "cornell-lii",
+      "sourceTier": "mirror",
+      "primaryPdfUrl": "https://www.law.cornell.edu/states/ct",
+      "externalId": "ct-statutes",
+      "notes": "Connecticut state law via Cornell LII state index"
+    }
+  ]
+}

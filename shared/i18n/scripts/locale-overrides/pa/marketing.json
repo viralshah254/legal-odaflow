@@ -10,6 +10,8 @@
   "faq": "ਅਕਸਰ ਪੁੱਛੇ ਜਾਂਦੇ ਸਵਾਲ",
   "header": {
     "issueChecker": "ਮੁੱਦਾ ਜਾਂਚਕਰਤਾ",
+    "legalAi": "ਕਾਨੂੰਨੀ ਏ.ਆਈ",
+    "solutions": "ਹੱਲ",
     "forLawyers": "ਵਕੀਲਾਂ ਲਈ",
     "pricing": "ਕੀਮਤ",
     "demo": "ਡੈਮੋ",
@@ -20,10 +22,24 @@
     "getStarted": "ਸ਼ੁਰੂ ਕਰੋ",
     "start": "ਸ਼ੁਰੂ ਕਰੋ",
     "free": "ਮੁਫ਼ਤ",
-    "account": "ਖਾਤਾ"
+    "account": "ਖਾਤਾ",
+    "consumer": {
+      "cases": "ਮੇਰੇ ਕੇਸ",
+      "reports": "ਰਿਪੋਰਟਾਂ",
+      "lawyerReview": "ਵਕੀਲ ਸਮੀਖਿਆ",
+      "subscription": "ਗਾਹਕੀ",
+      "research": "ਕਾਨੂੰਨੀ ਖੋਜ",
+      "documentReview": "ਦਸਤਾਵੇਜ਼ ਸਮੀਖਿਆ",
+      "issueChecker": "ਮੁੱਦਾ ਜਾਂਚਕਰਤਾ",
+      "aiTools": "AI ਟੂਲਜ਼",
+      "firAnalysis": "FIR ਵਿਸ਼ਲੇਸ਼ਣ",
+      "indiaDrafts": "ਭਾਰਤ ਡਰਾਫਟ",
+      "sectionFinder": "ਸੈਕਸ਼ਨ ਖੋਜਕ",
+      "account": "ਖਾਤਾ"
+    }
   },
   "footer": {
-    "tagline": "ਵਕੀਲ 'ਤੇ ਹਜ਼ਾਰਾਂ ਖਰਚ ਕਰਨ ਤੋਂ ਪਹਿਲਾਂ ਆਪਣੀ ਕਾਨੂੰਨੀ ਸਮੱਸਿਆ ਨੂੰ ਸਮਝੋ।",
+    "tagline": "ਕਿਸੇ ਵਕੀਲ 'ਤੇ ਹਜ਼ਾਰਾਂ ਖਰਚ ਕਰਨ ਤੋਂ ਪਹਿਲਾਂ ਆਪਣੀ ਕਾਨੂੰਨੀ ਸਮੱਸਿਆ ਨੂੰ ਸਮਝੋ — ਜਾਂ ਆਪਣੀ ਪੂਰੀ ਫਰਮ ਨੂੰ ਇੱਕ ਪਲੇਟਫਾਰਮ 'ਤੇ ਚਲਾਓ।",
     "forConsumers": "ਖਪਤਕਾਰਾਂ ਲਈ",
     "legalIssueChecker": "ਕਨੂੰਨੀ ਮੁੱਦਾ ਜਾਂਚਕਰਤਾ",
     "uploadDocument": "ਦਸਤਾਵੇਜ਼ ਅੱਪਲੋਡ ਕਰੋ",
@@ -37,6 +53,15 @@
     "terms": "ਸ਼ਰਤਾਂ",
     "dataConsent": "ਡਾਟਾ ਅਤੇ AI ਸਹਿਮਤੀ",
     "legalDisclaimer": "ਕਨੂੰਨੀ ਬੇਦਾਅਵਾ",
+    "legalAi": "ਕਾਨੂੰਨੀ ਏ.ਆਈ",
+    "legalGuides": "ਕਾਨੂੰਨੀ ਗਾਈਡ",
+    "solutions": "ਹੱਲ",
+    "compare": "ਕਾਨੂੰਨੀ AI ਦੀ ਤੁਲਨਾ ਕਰੋ",
+    "legalAiIndia": "ਕਾਨੂੰਨੀ ਏਆਈ ਇੰਡੀਆ",
+    "legalAiUK": "ਕਾਨੂੰਨੀ AI UK",
+    "legalAiUS": "ਕਾਨੂੰਨੀ AI US",
+    "legalAiKenya": "ਕਾਨੂੰਨੀ ਏਆਈ ਕੀਨੀਆ",
+    "regions": "ਖੇਤਰ",
     "copyright": "© {year} ਛਤਰੀ। ਸਾਰੇ ਹੱਕ ਰਾਖਵੇਂ ਹਨ.",
     "signIn": "ਸਾਈਨ - ਇਨ"
   },
@@ -61,24 +86,68 @@
     "aiCreditsBody": "AI ਮਾਡਲ ਦੀ ਵਰਤੋਂ ਨਾਲ ਕ੍ਰੈਡਿਟ ਸਕੇਲ — ਜਿਵੇਂ ਕਰਸਰ। ਆਟੋ ਟਾਸਕ (ਕੋਪਾਇਲਟ, ਡਰਾਫਟ) ਕੁਸ਼ਲ ਹਨ ਅਤੇ ਘੱਟ ਕ੍ਰੈਡਿਟ ਦੀ ਵਰਤੋਂ ਕਰਦੇ ਹਨ। ਪ੍ਰੀਮੀਅਮ ਡੂੰਘੇ ਵਿਸ਼ਲੇਸ਼ਣ (ਸਮਾਨ ਕੇਸ, ਵਿਰੋਧੀ ਰਣਨੀਤੀ, ਰਣਨੀਤੀ ਮੀਮੋ) ਤੁਹਾਡੇ ਚੁਣੇ ਹੋਏ ਪ੍ਰੀਮੀਅਮ ਮਾਡਲ ਦੀ ਵਰਤੋਂ ਕਰਦਾ ਹੈ ਅਤੇ ਟੋਕਨ ਵਰਤੋਂ ਦੁਆਰਾ ਬਿਲ ਕੀਤਾ ਜਾਂਦਾ ਹੈ।",
     "deepAnalysisNote": "ਡੂੰਘੇ ਕੇਸ ਵਿਸ਼ਲੇਸ਼ਣ ਲਈ <strong>ਪੇਸ਼ੇਵਰ</strong> ਯੋਜਨਾ ਜਾਂ ਇਸ ਤੋਂ ਉੱਪਰ ਦੀ ਲੋੜ ਹੁੰਦੀ ਹੈ।",
     "enterprisePrompt": "ਐਂਟਰਪ੍ਰਾਈਜ਼ SSO, ਡੇਟਾ ਰੈਜ਼ੀਡੈਂਸੀ, ਜਾਂ SCIM ਦੀ ਲੋੜ ਹੈ?",
-    "enterpriseSettings": "ਐਂਟਰਪ੍ਰਾਈਜ਼ ਸੈਟਿੰਗਾਂ"
+    "enterpriseSettings": "ਐਂਟਰਪ੍ਰਾਈਜ਼ ਸੈਟਿੰਗਾਂ",
+    "mostPopular": "ਸਭ ਤੋਂ ਮਸ਼ਹੂਰ",
+    "firmPlansSubtitle": "ਟੀਮਾਂ ਲਈ ਸਕੇਲੇਬਲ ਪ੍ਰਤੀ-ਸੀਟ ਕੀਮਤ",
+    "transparentPricingBadge": "ਪਾਰਦਰਸ਼ੀ ਕੀਮਤ · ਕੋਈ ਲੁਕਵੀਂ ਫੀਸ ਨਹੀਂ",
+    "showingPricesFor": "<strong>{country}</strong> ਲਈ ਕੀਮਤਾਂ ਦਿਖਾ ਰਿਹਾ ਹੈ",
+    "findingBestPricing": "ਤੁਹਾਡੇ ਖੇਤਰ ਲਈ ਸਭ ਤੋਂ ਵਧੀਆ ਕੀਮਤ ਲੱਭਣਾ",
+    "enterpriseFeatures": "SSO · SCIM · ਡੇਟਾ ਰੈਜ਼ੀਡੈਂਸੀ · ਸਮਰਪਿਤ SLA",
+    "detectingLocation": "ਤੁਹਾਡੇ ਟਿਕਾਣੇ ਦਾ ਪਤਾ ਲਗਾਇਆ ਜਾ ਰਿਹਾ ਹੈ...",
+    "loadingPlans": "ਯੋਜਨਾਵਾਂ ਨੂੰ ਲੋਡ ਕੀਤਾ ਜਾ ਰਿਹਾ ਹੈ...",
+    "managePlan": "ਯੋਜਨਾ ਦਾ ਪ੍ਰਬੰਧਨ ਕਰੋ",
+    "freePlan": "ਮੁਫ਼ਤ",
+    "manageInStripe": "Stripe ਵਿੱਚ ਪ੍ਰਬੰਧਿਤ ਕਰੋ",
+    "contactSales": "ਵਿਕਰੀ ਨਾਲ ਸੰਪਰਕ ਕਰੋ",
+    "downgrade": "ਡਾਊਨਗ੍ਰੇਡ ਕਰੋ",
+    "upgrade": "ਅੱਪਗ੍ਰੇਡ ਕਰੋ",
+    "switchPlan": "ਯੋਜਨਾ ਬਦਲੋ",
+    "contactUs": "ਸਾਡੇ ਨਾਲ ਸੰਪਰਕ ਕਰੋ",
+    "audienceLawyers": "ਕਾਨੂੰਨ ਫਰਮਾਂ",
+    "audienceConsumers": "ਖਪਤਕਾਰ",
+    "creditsFootnote": "ਮਾਡਲ ਦੀ ਵਰਤੋਂ ਨਾਲ AI ਕ੍ਰੈਡਿਟ ਸਕੇਲ।"
   },
   "home": {
+    "audienceItems": [
+      "Individuals",
+      "Law Firms",
+      "ਸੋਲੋ ਐਡਵੋਕੇਟ",
+      "In-House Counsel",
+      "Litigation Teams",
+      "Corporate Legal Depts",
+      "Compliance Officers",
+      "Legal Researchers",
+      "Law Students",
+      "SMBs",
+      "Startups",
+      "HR & Employment",
+      "Landlords & Tenants",
+      "Entrepreneurs",
+      "Magistrates",
+      "Contract Teams"
+    ],
     "hero": {
       "badge": "AI- ਆਧਾਰਿਤ ਕਾਨੂੰਨੀ ਖੁਫੀਆ ਜਾਣਕਾਰੀ — ਕਿਸੇ ਲਈ ਵੀ",
       "title": "ਕਾਨੂੰਨੀ ਖੁਫੀਆ ਜਾਣਕਾਰੀ.",
       "titleHighlight": "ਕਿਸੇ ਲਈ ਵੀ। ਕਿਤੇ ਵੀ।",
-      "subtitle": "ਆਪਣੀ ਸਥਿਤੀ ਨੂੰ ਸਾਦੀ ਭਾਸ਼ਾ ਵਿੱਚ ਸਮਝਾਓ। ਅਸੀਂ ਅਸਲ ਕਨੂੰਨ ਪੜ੍ਹਦੇ ਹਾਂ, ਅਸਲ ਕਾਨੂੰਨਾਂ ਅਤੇ ਕੇਸਾਂ ਦਾ ਹਵਾਲਾ ਦਿੰਦੇ ਹਾਂ, ਅਤੇ ਤੁਹਾਨੂੰ ਬਿਲਕੁਲ ਦੱਸਦੇ ਹਾਂ ਕਿ ਤੁਸੀਂ ਕਿੱਥੇ ਖੜ੍ਹੇ ਹੋ — ਸ਼ੁਰੂ ਕਰਨ ਲਈ ਮੁਫ਼ਤ, ਕਿਸੇ ਕ੍ਰੈਡਿਟ ਕਾਰਡ ਦੀ ਲੋੜ ਨਹੀਂ।",
+      "subtitle": "ਆਪਣੀ ਸਥਿਤੀ ਨੂੰ ਸਾਦੀ ਭਾਸ਼ਾ ਵਿੱਚ ਸਮਝਾਓ। ਅਸੀਂ ਅਸਲ ਕਾਨੂੰਨ ਪੜ੍ਹਦੇ ਹਾਂ, ਅਸਲ ਕਾਨੂੰਨਾਂ ਅਤੇ ਕੇਸਾਂ ਦਾ ਹਵਾਲਾ ਦਿੰਦੇ ਹਾਂ, ਅਤੇ ਤੁਹਾਨੂੰ ਬਿਲਕੁਲ ਦੱਸਦੇ ਹਾਂ ਕਿ ਤੁਸੀਂ ਕਿੱਥੇ ਖੜ੍ਹੇ ਹੋ — ਸ਼ੁਰੂ ਕਰਨ ਲਈ ਸੁਤੰਤਰ।",
       "bullet1": "ਤੁਹਾਡੀ ਸਥਿਤੀ ਨੂੰ ਪੜ੍ਹਦਾ ਹੈ, ਨਾ ਸਿਰਫ਼ ਕੀਵਰਡਸ",
       "bullet2": "ਅਸਲ ਕਾਨੂੰਨ ਅਤੇ ਕੇਸ ਕਾਨੂੰਨ - ਹਵਾਲਾ ਦਿੱਤਾ ਗਿਆ, ਕਦੇ ਵੀ ਮਨਘੜਤ ਨਹੀਂ",
       "bullet3": "ਇੱਕ ਪਲੇਟਫਾਰਮ 'ਤੇ ਵਿਅਕਤੀ ਅਤੇ ਕਾਨੂੰਨ ਫਰਮਾਂ",
       "bullet4": "ਤੁਹਾਡੇ ਅਧਿਕਾਰ ਖੇਤਰ ਦਾ ਸਵੈ-ਪਛਾਣ ਕਰਦਾ ਹੈ, ਹਮੇਸ਼ਾ ਸਥਾਨਕ ਕਾਨੂੰਨ ਲਾਗੂ ਕਰਦਾ ਹੈ",
-      "ctaPrimary": "ਮੁਫ਼ਤ ਸ਼ੁਰੂ ਕਰੋ - ਕੋਈ ਕ੍ਰੈਡਿਟ ਕਾਰਡ ਨਹੀਂ",
+      "ctaPrimary": "ਮੁਫਤ ਸ਼ੁਰੂਆਤ ਕਰੋ",
       "ctaSecondary": "ਇਸ ਨੂੰ ਕਾਰਵਾਈ ਵਿੱਚ ਵੇਖੋ",
       "trust1": "ਮੁਫ਼ਤ ਝਲਕ ਹਮੇਸ਼ਾ ਸ਼ਾਮਲ",
       "trust2": "AI ਨੂੰ ਸਿਖਲਾਈ ਦੇਣ ਲਈ ਕਦੇ ਨਹੀਂ ਵਰਤਿਆ",
       "trust3": "ਤੁਹਾਡੇ ਖਾਤੇ ਲਈ ਨਿੱਜੀ",
       "howItWorksLink": "ਇਹ ਕਿਵੇਂ ਕੰਮ ਕਰਦਾ ਹੈ"
+    },
+    "guestSignup": {
+      "badge": "ਸਿਰਫ਼ ਅੱਜ 40% ਦੀ ਛੋਟ",
+      "title": "ਆਪਣਾ ਮੁਫਤ ਖਾਤਾ ਬਣਾਓ",
+      "description": "ਆਪਣੀ ਰਿਪੋਰਟ ਨੂੰ ਸੁਰੱਖਿਅਤ ਕਰਨ ਲਈ ਸਾਈਨ ਅੱਪ ਕਰੋ ਅਤੇ ਆਪਣੀ ਸੁਆਗਤ ਛੋਟ ਨੂੰ ਅਨਲੌਕ ਕਰੋ।",
+      "signUp": "ਸਾਇਨ ਅਪ",
+      "continueAsGuest": "ਮਹਿਮਾਨ ਵਜੋਂ ਜਾਰੀ ਰੱਖੋ"
     },
     "coverage": {
       "india": "ਭਾਰਤ",
@@ -144,7 +213,7 @@
           "label": "DRAFT",
           "title": "Document Generation",
           "desc": "Demand letters, contracts, notices, and pleadings — drafted with AI, cited from real statutes, ready to send or file.",
-          "cta": "Start drafting"
+          "cta": "ਖਰੜਾ ਤਿਆਰ ਕਰਨਾ ਸ਼ੁਰੂ ਕਰੋ"
         },
         {
           "num": "04",
@@ -158,7 +227,7 @@
           "label": "CONNECT",
           "title": "Lawyer Marketplace",
           "desc": "When you need a professional, connect directly with vetted lawyers in your jurisdiction. Warm handoff from AI analysis to real counsel.",
-          "cta": "Find a lawyer"
+          "cta": "ਕੋਈ ਵਕੀਲ ਲੱਭੋ"
         },
         {
           "num": "06",
@@ -176,14 +245,31 @@
       "subtitle": "ਹੋਰ ਪਲੇਟਫਾਰਮ ਤੁਹਾਨੂੰ ਇੱਕ ਪਾਸੇ ਚੁਣਨ ਲਈ ਮਜ਼ਬੂਰ ਕਰਦੇ ਹਨ — ਨਾਗਰਿਕ ਜਾਂ ਵਕੀਲ, ਇੱਕ ਸਾਧਨ, ਇੱਕ ਵਰਤੋਂ ਦਾ ਕੇਸ। ਛਤਰੀ ਹਰ ਚੀਜ਼ ਨੂੰ ਜੋੜਦੀ ਹੈ।",
       "beforeLabel": "ਛਤਰੀ ਅੱਗੇ",
       "afterLabel": "ਛਤਰੀ ਨਾਲ",
-      "cta": "ਮੁਫ਼ਤ ਸ਼ੁਰੂ ਕਰੋ - ਕੋਈ ਕ੍ਰੈਡਿਟ ਕਾਰਡ ਨਹੀਂ"
+      "cta": "ਮੁਫਤ ਸ਼ੁਰੂਆਤ ਕਰੋ"
     },
     "whyNot": {
       "badge": "ਕਿਉਂ ਛਤਰੀ",
       "title": "ਕਿਉਂ ਨਾ ਸਿਰਫ਼ ਵਰਤੋਂ",
       "titleHighlight": "ਕੁਝ ਹੋਰ?",
       "subtitle": "ਹਰ ਦੂਜੇ ਟੂਲ ਨੂੰ ਇੱਕ ਦਰਸ਼ਕਾਂ ਲਈ ਬਣਾਇਆ ਗਿਆ ਸੀ। ਛਤਰੀ ਕਾਨੂੰਨੀ ਸੰਦਰਭ ਲਈ ਬਣਾਈ ਗਈ ਸੀ।",
-      "vsLabel": "ਬਨਾਮ {name}"
+      "vsLabel": "ਬਨਾਮ {name}",
+      "items": [
+        {
+          "name": "ਚੈਟਜੀਪੀਟੀ",
+          "problem": "Confident answers with fabricated citations. No jurisdiction awareness. No outcome probability.",
+          "solution": "Umbrella reads your facts, retrieves real statutes and case law, and cites sources you can open in one click."
+        },
+        {
+          "name": "LegalZoom",
+          "problem": "Document templates with no context. No analysis of your specific situation. No firm tools.",
+          "solution": "Umbrella analyzes your situation first, then drafts documents grounded in applicable law — plus a full firm OS."
+        },
+        {
+          "name": "Clio",
+          "problem": "Practice management only. No AI analysis for clients. No issue checker. No outcome intelligence.",
+          "solution": "Umbrella is the only platform where citizens get AI legal analysis and firms get a matter-aware Copilot — connected."
+        }
+      ]
     },
     "stats": {
       "badge": "ਨੰਬਰ",
@@ -319,7 +405,7 @@
             "Unlimited AI Copilot",
             "Matter & client management",
             "Billing & trust accounting",
-            "Meeting transcripts",
+            "ਮੁਲਾਕਾਤ ਪ੍ਰਤੀਲਿਪੀਆਂ",
             "Secure client intake portal"
           ],
           "cta": "Explore Firm Plans"
@@ -337,30 +423,217 @@
       "badge": "ਸ਼ੁਰੂ ਕਰਨ ਲਈ ਮੁਫ਼ਤ",
       "title": "ਤੁਹਾਡਾ ਕਾਨੂੰਨੀ ਦਿਮਾਗ.",
       "titleItalic": "ਸ਼ੁਰੂ ਕਰਨ ਲਈ ਮੁਫ਼ਤ.",
-      "subtitle": "ਆਪਣੀ ਸਥਿਤੀ ਦਾ ਵਰਣਨ ਕਰੋ। 2 ਮਿੰਟਾਂ ਦੇ ਅੰਦਰ ਹਵਾਲਾ ਵਿਸ਼ਲੇਸ਼ਣ ਪ੍ਰਾਪਤ ਕਰੋ। ਕੋਈ ਕ੍ਰੈਡਿਟ ਕਾਰਡ ਨਹੀਂ, ਸ਼ੁਰੂ ਕਰਨ ਲਈ ਕਿਸੇ ਵਕੀਲ ਦੀ ਲੋੜ ਨਹੀਂ।",
+      "subtitle": "ਆਪਣੀ ਸਥਿਤੀ ਦਾ ਵਰਣਨ ਕਰੋ। 2 ਮਿੰਟਾਂ ਦੇ ਅੰਦਰ ਹਵਾਲਾ ਵਿਸ਼ਲੇਸ਼ਣ ਪ੍ਰਾਪਤ ਕਰੋ। ਸ਼ੁਰੂ ਕਰਨ ਲਈ ਕਿਸੇ ਵਕੀਲ ਦੀ ਲੋੜ ਨਹੀਂ ਹੈ।",
       "ctaPrimary": "ਸ਼ੁਰੂਆਤ ਕਰੋ — ਇਹ ਮੁਫ਼ਤ ਹੈ",
       "ctaSecondary": "ਕਨੂੰਨੀ ਫਰਮਾਂ ਲਈ →",
-      "footnote": "ਕੋਈ ਕ੍ਰੈਡਿਟ ਕਾਰਡ ਨਹੀਂ · 2 ਮਿੰਟ ਤੋਂ ਘੱਟ ਦੇ ਨਤੀਜੇ · ਮੁਫਤ ਪੂਰਵਦਰਸ਼ਨ ਹਮੇਸ਼ਾ ਸ਼ਾਮਲ ਹੁੰਦਾ ਹੈ"
+      "footnote": "2 ਮਿੰਟ ਤੋਂ ਘੱਟ ਵਿੱਚ ਨਤੀਜੇ · ਮੁਫਤ ਪੂਰਵਦਰਸ਼ਨ ਹਮੇਸ਼ਾ ਸ਼ਾਮਲ ਹੁੰਦਾ ਹੈ"
     },
     "landingIssueBoard": {
-      "title": "ਤੁਹਾਡੀ ਕਾਨੂੰਨੀ ਸਥਿਤੀ ਕੀ ਹੈ?",
-      "subtitle": "ਸਾਦੀ ਭਾਸ਼ਾ ਵਿੱਚ ਇਸਦਾ ਵਰਣਨ ਕਰੋ — ਸਾਡਾ AI ਤੱਥਾਂ ਨੂੰ ਪੜ੍ਹੇਗਾ, ਕਾਨੂੰਨ ਦਾ ਹਵਾਲਾ ਦੇਵੇਗਾ, ਅਤੇ ਤੁਹਾਨੂੰ ਦੱਸੇਗਾ ਕਿ ਤੁਸੀਂ ਕਿੱਥੇ ਖੜ੍ਹੇ ਹੋ।",
+      "title": "ਤੁਹਾਨੂੰ ਕਿਸ ਲਈ ਮਦਦ ਦੀ ਲੋੜ ਹੈ?",
+      "subtitle": "ਕਿਸੇ ਸਵਾਲ ਦੀ ਖੋਜ ਕਰੋ, ਆਪਣੀ ਸਥਿਤੀ ਨੂੰ ਸਮਝੋ, ਦਸਤਾਵੇਜ਼ ਦਾ ਖਰੜਾ ਤਿਆਰ ਕਰੋ, ਜਾਂ ਇਕਰਾਰਨਾਮੇ ਦੀ ਸਮੀਖਿਆ ਕਰੋ — ਸਾਨੂੰ ਸਾਦੀ ਭਾਸ਼ਾ ਵਿੱਚ ਦੱਸੋ ਅਤੇ ਅਸੀਂ ਲਾਗੂ ਹੋਣ ਵਾਲੇ ਕਾਨੂੰਨ ਦਾ ਹਵਾਲਾ ਦੇਵਾਂਗੇ।",
+      "titleIssueCheck": "ਆਪਣੀ ਕਾਨੂੰਨੀ ਸਥਿਤੀ ਨੂੰ ਸਮਝੋ",
+      "subtitleIssueCheck": "ਸਾਨੂੰ ਦੱਸੋ ਕੀ ਹੋਇਆ। ਛਤਰੀ ਮੁੱਖ ਕਾਨੂੰਨੀ ਮੁੱਦਿਆਂ ਦੀ ਪਛਾਣ ਕਰੇਗੀ, ਤੁਹਾਡੇ ਵਿਕਲਪਾਂ ਦੀ ਵਿਆਖਿਆ ਕਰੇਗੀ, ਅਤੇ ਤੁਹਾਨੂੰ ਲੋੜੀਂਦੇ ਦਸਤਾਵੇਜ਼ਾਂ ਵੱਲ ਸੇਧ ਦੇਵੇਗੀ।",
+      "titleResearch": "ਇੱਕ ਕਾਨੂੰਨੀ ਸਵਾਲ ਦੀ ਖੋਜ ਕਰੋ",
+      "subtitleResearch": "ਇੱਕ ਫੋਕਸ ਕਨੂੰਨੀ ਸਵਾਲ ਪੁੱਛੋ ਅਤੇ ਸੰਬੰਧਿਤ ਕਨੂੰਨ, ਕੇਸਾਂ ਅਤੇ ਹਵਾਲਿਆਂ ਦੁਆਰਾ ਸਮਰਥਿਤ ਇੱਕ ਢਾਂਚਾਗਤ ਜਵਾਬ ਪ੍ਰਾਪਤ ਕਰੋ।",
+      "titleDrafting": "ਇੱਕ ਕਾਨੂੰਨੀ ਦਸਤਾਵੇਜ਼ ਦਾ ਖਰੜਾ ਤਿਆਰ ਕਰੋ",
+      "subtitleDrafting": "ਨੋਟਿਸ, ਇਕਰਾਰਨਾਮੇ, ਪਟੀਸ਼ਨਾਂ, ਅਤੇ ਹੋਰ ਬਹੁਤ ਕੁਝ ਤਿਆਰ ਕਰੋ — ਲਾਗੂ ਕਾਨੂੰਨ ਵਿੱਚ ਆਧਾਰਿਤ।",
+      "titleDocumentReview": "ਇੱਕ ਦਸਤਾਵੇਜ਼ ਦੀ ਸਮੀਖਿਆ ਕਰੋ",
+      "subtitleDocumentReview": "ਇਕਰਾਰਨਾਮਾ ਜਾਂ ਫਾਈਲਿੰਗ ਅਪਲੋਡ ਕਰੋ — ਅਸੀਂ ਜੋਖਮਾਂ, ਅੰਤਰਾਲਾਂ ਅਤੇ ਮੁੱਖ ਧਾਰਾਵਾਂ ਨੂੰ ਫਲੈਗ ਕਰਾਂਗੇ।",
+      "draftExamplesHint": "ਪ੍ਰਸਿੱਧ ਟੈਂਪਲੇਟਸ ਵਕੀਲ ਹਰ ਰੋਜ਼ ਡਰਾਫਟ ਕਰਦੇ ਹਨ — ਆਪਣਾ ਬਣਾਉਣ ਲਈ ਮੁਫ਼ਤ ਸਾਈਨ ਅੱਪ ਕਰੋ।",
+      "docReviewHint": "PDF ਜਾਂ Word ਫਾਈਲਾਂ ਅਪਲੋਡ ਕਰੋ ਅਤੇ ਹਵਾਲਾ ਦਿੱਤੇ ਜੋਖਮਾਂ ਦੇ ਨਾਲ ਧਾਰਾ-ਦਰ-ਕਲਾਜ਼ ਵਿਸ਼ਲੇਸ਼ਣ ਪ੍ਰਾਪਤ ਕਰੋ।",
+      "docReviewRisk": "ਅਣਉਚਿਤ ਜਾਂ ਗੁੰਮ ਸ਼ਰਤਾਂ ਲਈ ਜੋਖਮ ਫਲੈਗ",
+      "docReviewClauses": "ਮੁੱਖ ਧਾਰਾ ਕੱਢਣਾ ਅਤੇ ਸਾਦੀ-ਭਾਸ਼ਾ ਦਾ ਸੰਖੇਪ",
+      "docReviewAi": "AI ਸਮੀਖਿਆ ਤੁਹਾਡੇ ਅਧਿਕਾਰ ਖੇਤਰ ਦੇ ਕਾਨੂੰਨ ਵਿੱਚ ਆਧਾਰਿਤ ਹੈ",
+      "docReviewCompare": "ਕਈ ਦਸਤਾਵੇਜ਼ਾਂ ਵਿੱਚ ਸਾਰਣੀਬੱਧ ਸਮੀਖਿਆ",
+      "tryFreeSignUp": "ਕੋਸ਼ਿਸ਼ ਕਰਨ ਲਈ ਮੁਫ਼ਤ ਸਾਈਨ ਅੱਪ ਕਰੋ",
+      "researchTeaserUnavailable": "ਖੋਜ ਪ੍ਰੀਵਿਊ ਅਜੇ ਇਸ API 'ਤੇ ਉਪਲਬਧ ਨਹੀਂ ਹੈ। ਸਥਾਨਕ ਬੈਕਐਂਡ (ਪੋਰਟ 4000) ਚਲਾਓ ਜਾਂ ਨਵੀਨਤਮ API ਨੂੰ ਲਾਗੂ ਕਰੋ।",
+      "placeholderIssueCheck": "ਵਰਣਨ ਕਰੋ ਕਿ ਕੀ ਹੋਇਆ, ਕੌਣ ਸ਼ਾਮਲ ਸੀ, ਮਹੱਤਵਪੂਰਣ ਤਾਰੀਖਾਂ, ਅਤੇ ਤੁਸੀਂ ਕੀ ਪ੍ਰਾਪਤ ਕਰਨਾ ਚਾਹੁੰਦੇ ਹੋ।",
+      "placeholderResearch": "ਉਹ ਕਾਨੂੰਨੀ ਸਵਾਲ ਦਾਖਲ ਕਰੋ ਜਿਸਦੀ ਤੁਸੀਂ ਖੋਜ ਕਰਨਾ ਚਾਹੁੰਦੇ ਹੋ...",
+      "placeholderDrafting": "ਉਸ ਦਸਤਾਵੇਜ਼ ਦਾ ਵਰਣਨ ਕਰੋ ਜਿਸਦਾ ਤੁਹਾਨੂੰ ਖਰੜਾ ਤਿਆਰ ਕਰਨ ਦੀ ਲੋੜ ਹੈ — ਕਿਸਮ, ਪਾਰਟੀਆਂ ਅਤੇ ਮੁੱਖ ਸ਼ਰਤਾਂ।",
+      "placeholderDocumentReview": "ਦਸਤਾਵੇਜ਼ ਦਾ ਵਰਣਨ ਕਰੋ ਜਾਂ ਮੁੱਖ ਧਾਰਾਵਾਂ ਨੂੰ ਪੇਸਟ ਕਰੋ ਜਿਨ੍ਹਾਂ ਦੀ ਤੁਸੀਂ ਸਮੀਖਿਆ ਕਰਨਾ ਚਾਹੁੰਦੇ ਹੋ।",
+      "taskIssueCheck": "ਮੁੱਦਾ ਜਾਂਚਕਰਤਾ",
+      "taskResearch": "ਕਾਨੂੰਨੀ ਖੋਜ",
+      "taskDrafting": "ਇੱਕ ਦਸਤਾਵੇਜ਼ ਦਾ ਖਰੜਾ ਤਿਆਰ ਕਰੋ",
+      "taskDocumentReview": "ਇੱਕ ਦਸਤਾਵੇਜ਼ ਦੀ ਸਮੀਖਿਆ ਕਰੋ",
+      "taskSelectLabel": "ਤੁਸੀਂ ਕੀ ਕਰਨਾ ਚਾਹੋਗੇ?",
+      "regionIndia": "ਭਾਰਤ",
+      "regionUnitedStates": "ਸੰਯੁਕਤ ਰਾਜ",
+      "regionLabel": "ਅਧਿਕਾਰ ਖੇਤਰ",
+      "signUpToUnlock": "ਅਨਲੌਕ ਕਰਨ ਲਈ ਮੁਫ਼ਤ ਸਾਈਨ ਅੱਪ ਕਰੋ",
+      "citedAuthorities": "ਅਸਲ ਕਾਨੂੰਨ ਦਾ ਹਵਾਲਾ ਦਿੱਤਾ",
+      "languageTitle": "ਤੁਸੀਂ ਕਿਹੜੀ ਭਾਸ਼ਾ ਨੂੰ ਤਰਜੀਹ ਦਿੰਦੇ ਹੋ?",
+      "languageSubtitle": "ਅਸੀਂ ਤੁਹਾਡੇ ਦੁਆਰਾ ਚੁਣੀ ਗਈ ਭਾਸ਼ਾ ਵਿੱਚ ਤੁਹਾਡਾ ਕਾਨੂੰਨੀ ਵਿਸ਼ਲੇਸ਼ਣ ਪ੍ਰਦਾਨ ਕਰਾਂਗੇ।",
       "freePreview": "ਮੁਫ਼ਤ ਝਲਕ",
-      "noCreditCard": "ਕੋਈ ਕ੍ਰੈਡਿਟ ਕਾਰਡ ਨਹੀਂ",
-      "resultsIn2Min": "<2 ਮਿੰਟ ਵਿੱਚ ਨਤੀਜੇ"
+      "resultsIn2Min": "<2 ਮਿੰਟ ਵਿੱਚ ਨਤੀਜੇ",
+      "otherLanguages": "ਹੋਰ ਭਾਸ਼ਾਵਾਂ",
+      "otherLanguagesPlaceholder": "ਇੱਕ ਭਾਸ਼ਾ ਚੁਣੋ",
+      "languageSubtitleIndia": "ਅਸੀਂ ਤੁਹਾਡੇ ਦੁਆਰਾ ਚੁਣੀ ਗਈ ਭਾਸ਼ਾ ਵਿੱਚ ਤੁਹਾਡਾ ਕਾਨੂੰਨੀ ਵਿਸ਼ਲੇਸ਼ਣ ਪ੍ਰਦਾਨ ਕਰਾਂਗੇ।",
+      "draftExamples": {
+        "regularBail": {
+          "label": "ਨਿਯਮਤ ਜ਼ਮਾਨਤ ਦੀ ਅਰਜ਼ੀ",
+          "subtitle": "ਅਪਰਾਧਿਕ · BNSS §480",
+          "tag": "ਜ਼ਮਾਨਤ"
+        },
+        "chequeBounce": {
+          "label": "ਬਾਊਂਸ ਸ਼ਿਕਾਇਤ ਦੀ ਜਾਂਚ ਕਰੋ",
+          "subtitle": "ਅਪਰਾਧਿਕ · NI ਐਕਟ §138",
+          "tag": "ਰਿਕਵਰੀ"
+        },
+        "divorcePetition": {
+          "label": "ਤਲਾਕ ਦੀ ਪਟੀਸ਼ਨ",
+          "subtitle": "ਪਰਿਵਾਰ · HMA §13",
+          "tag": "ਪਰਿਵਾਰ"
+        },
+        "writPetition": {
+          "label": "ਰਿੱਟ ਪਟੀਸ਼ਨ (ਹਾਈ ਕੋਰਟ)",
+          "subtitle": "ਸੰਵਿਧਾਨਕ · ਕਲਾ. 226",
+          "tag": "ਲਿਖਤ"
+        },
+        "federalComplaint": {
+          "label": "ਫੈਡਰਲ ਸਿਵਲ ਸ਼ਿਕਾਇਤ",
+          "subtitle": "ਸਿਵਲ · FRCP ਨਿਯਮ 8",
+          "tag": "ਸੰਘੀ"
+        },
+        "motionToDismiss": {
+          "label": "12(b)(6) ਖਾਰਜ ਕਰਨ ਲਈ ਮੋਸ਼ਨ",
+          "subtitle": "ਸਿਵਲ · FRCP ਨਿਯਮ 12",
+          "tag": "ਮੋਸ਼ਨ"
+        }
+      },
+      "researchLockedHint": "ਨਮੂਨਾ ਖੋਜ ਸਵਾਲ ਵਕੀਲ ਹਰ ਰੋਜ਼ ਪੁੱਛਦੇ ਹਨ — ਕੋਸ਼ਿਸ਼ ਕਰਨ ਲਈ ਮੁਫ਼ਤ ਸਾਈਨ ਅੱਪ ਕਰੋ।",
+      "researchExamples": {
+        "bnss101": {
+          "label": "ਪੁਲਿਸ ਬਿਨਾਂ ਵਾਰੰਟ ਦੇ ਕਦੋਂ ਗ੍ਰਿਫਤਾਰ ਕਰ ਸਕਦੀ ਹੈ?",
+          "subtitle": "ਅਪਰਾਧਿਕ · BNSS §101",
+          "tag": "ਭਾਰਤ"
+        },
+        "section138": {
+          "label": "ਬਾਊਂਸ ਨੋਟਿਸ ਲੋੜਾਂ ਦੀ ਜਾਂਚ ਕਰੋ",
+          "subtitle": "ਅਪਰਾਧਿਕ · NI ਐਕਟ §138",
+          "tag": "ਰਿਕਵਰੀ"
+        },
+        "frcp12": {
+          "label": "ਸਟੈਂਡਰਡ ਨੂੰ ਖਾਰਜ ਕਰਨ ਲਈ 12(b)(6) ਮੋਸ਼ਨ",
+          "subtitle": "ਸਿਵਲ · FRCP ਨਿਯਮ 12",
+          "tag": "ਸੰਘੀ"
+        },
+        "ukEmployment": {
+          "label": "ਅਣਉਚਿਤ ਬਰਖਾਸਤਗੀ ਸਮਾਂ ਸੀਮਾਵਾਂ",
+          "subtitle": "ਰੁਜ਼ਗਾਰ · UK ERA 1996",
+          "tag": "ਯੂ.ਕੇ"
+        },
+        "keLabour": {
+          "label": "ਗਲਤ ਸਮਾਪਤੀ ਦੇ ਉਪਚਾਰ",
+          "subtitle": "ਲੇਬਰ · ਕੀਨੀਆ ਰੁਜ਼ਗਾਰ ਐਕਟ",
+          "tag": "ਕੀਨੀਆ"
+        },
+        "contactDrafting": {
+          "label": "ਸੇਵਾ ਇਕਰਾਰਨਾਮੇ ਵਿੱਚ ਜ਼ਰੂਰੀ ਧਾਰਾਵਾਂ",
+          "subtitle": "ਵਪਾਰਕ · ਇਕਰਾਰਨਾਮਾ ਕਾਨੂੰਨ",
+          "tag": "ਖਰੜਾ ਤਿਆਰ ਕਰਨਾ"
+        }
+      },
+      "helperIssueCheck": "ਤੁਸੀਂ ਆਪਣੇ ਸ਼ਬਦਾਂ ਵਿੱਚ ਲਿਖ ਸਕਦੇ ਹੋ। ਜਿੰਨਾ ਜ਼ਿਆਦਾ ਢੁਕਵਾਂ ਵੇਰਵਾ ਤੁਸੀਂ ਪ੍ਰਦਾਨ ਕਰੋਗੇ, ਵਿਸ਼ਲੇਸ਼ਣ ਓਨਾ ਹੀ ਉਪਯੋਗੀ ਹੋਵੇਗਾ।",
+      "helperResearch": "ਵਧੇਰੇ ਸਟੀਕ ਨਤੀਜਿਆਂ ਲਈ ਅਧਿਕਾਰ ਖੇਤਰ ਅਤੇ ਖਾਸ ਮੁੱਦੇ ਨੂੰ ਸ਼ਾਮਲ ਕਰੋ।",
+      "checkMySituation": "ਮੇਰੀ ਸਥਿਤੀ ਦੀ ਜਾਂਚ ਕਰੋ",
+      "researchThisQuestion": "ਇਸ ਸਵਾਲ ਦੀ ਖੋਜ ਕਰੋ",
+      "enterAtLeastChars": "ਘੱਟੋ-ਘੱਟ {count} ਅੱਖਰ ਦਾਖਲ ਕਰੋ",
+      "charCount": "{current} / {max} ਅੱਖਰ",
+      "footerIssueCheck1": "ਮੁਫਤ ਸ਼ੁਰੂਆਤੀ ਜਾਂਚ",
+      "footerIssueCheck2": "ਲਾਗੂ ਕਾਨੂੰਨ ਦੀ ਪਛਾਣ ਕੀਤੀ ਗਈ",
+      "footerIssueCheck3": "ਦਸਤਾਵੇਜ਼ ਮਾਰਗਦਰਸ਼ਨ ਸ਼ਾਮਲ ਹਨ",
+      "footerResearch1": "ਅਥਾਰਟੀ-ਬੈਕਡ ਜਵਾਬ",
+      "footerResearch2": "ਸੰਬੰਧਿਤ ਕੇਸ ਅਤੇ ਕਾਨੂੰਨ",
+      "footerResearch3": "ਹਵਾਲੇ ਸਾਫ਼ ਕਰੋ"
+    },
+    "researchProgress": {
+      "runningTitle": "ਕਾਨੂੰਨੀ ਖੋਜ ਚੱਲ ਰਹੀ ਹੈ",
+      "refiningTitle": "ਸੰਦਰਭ ਨਾਲ ਸੁਧਾਰਿਆ ਜਾ ਰਿਹਾ ਹੈ...",
+      "modeFast": "ਤੇਜ਼",
+      "modeVerified": "ਪ੍ਰਮਾਣਿਤ",
+      "aboutOneMin": "· ~1 ਮਿੰਟ",
+      "almostThere": "· ਲਗਭਗ ਉੱਥੇ…",
+      "takingLonger": "· ਆਮ ਨਾਲੋਂ ਜ਼ਿਆਦਾ ਸਮਾਂ ਲੈਣਾ",
+      "deepCitationNote": "ਪ੍ਰਮਾਣਿਤ ਖੋਜ ਡੂੰਘੀ ਹਵਾਲੇ ਜਾਂਚਾਂ ਕਰਦੀ ਹੈ — ਇਸ ਵਿੱਚ ਕੁਝ ਮਿੰਟ ਲੱਗ ਸਕਦੇ ਹਨ।",
+      "verifiedDurationHint": "· ਆਮ ਤੌਰ 'ਤੇ 1-3 ਮਿੰਟ",
+      "stillWorking": "· ਅਜੇ ਵੀ ਕੰਮ ਕਰ ਰਿਹਾ ਹੈ...",
+      "verifiedRunningBanner": "ਪ੍ਰਮਾਣਿਤ ਖੋਜ ਡੂੰਘੀ ਮੁੜ ਪ੍ਰਾਪਤੀ ਅਤੇ ਹਵਾਲੇ ਜਾਂਚਾਂ ਨੂੰ ਚਲਾਉਂਦੀ ਹੈ — ਇਸ ਵਿੱਚ ਕੁਝ ਮਿੰਟ ਲੱਗ ਸਕਦੇ ਹਨ।",
+      "draftReadyBanner": "ਡਰਾਫਟ ਮੀਮੋ ਤਿਆਰ — ਅੰਤਿਮ ਹਵਾਲਾ ਆਡਿਟ ਚੱਲ ਰਿਹਾ ਹੈ...",
+      "draftVerifyingBanner": "ਡਰਾਫਟ ਤਿਆਰ — ਸ਼ੁੱਧਤਾ ਜਾਂਚ ਚੱਲ ਰਹੀ ਹੈ...",
+      "phaseStallNote": "ਅਜੇ ਵੀ ਕੰਮ ਕਰ ਰਿਹਾ ਹੈ — ਬੈਕਐਂਡ ਇਸ ਪਗ 'ਤੇ ਪ੍ਰਕਿਰਿਆ ਕਰ ਰਿਹਾ ਹੈ। ਵੱਡੀਆਂ ਪੁੱਛਗਿੱਛਾਂ ਵਿੱਚ ਕੁਝ ਮਿੰਟ ਲੱਗ ਸਕਦੇ ਹਨ।",
+      "stepCorpusDetailGeneric": "ਤੁਹਾਡੇ ਅਧਿਕਾਰ ਖੇਤਰ ਲਈ ਕਾਨੂੰਨਾਂ, ਨਿਯਮਾਂ ਅਤੇ ਕੇਸ ਕਾਨੂੰਨ ਨੂੰ ਸਕੈਨ ਕਰਨਾ",
+      "stepAuditDraftLabel": "ਹਵਾਲੇ ਦੀ ਪੁਸ਼ਟੀ ਕੀਤੀ ਜਾ ਰਹੀ ਹੈ (ਮੀਮੋ ਡਰਾਫਟ ਤਿਆਰ ਹੈ)",
+      "stepAuditDraftDetail": "ਅੰਤਮ ਹਵਾਲਾ ਆਡਿਟ ਪਾਸ — ਤੁਹਾਡਾ ਡਰਾਫਟ ਹੇਠਾਂ ਦਿਖਾਈ ਦੇ ਰਿਹਾ ਹੈ।",
+      "stepParseLabel": "ਤੁਹਾਡੇ ਕਨੂੰਨੀ ਸਵਾਲ ਨੂੰ ਪਾਰਸ ਕਰ ਰਿਹਾ ਹੈ",
+      "stepParseDetail": "ਅਧਿਕਾਰ ਖੇਤਰ, ਵਿਵਸਥਾਵਾਂ ਅਤੇ ਇਰਾਦੇ ਦੀ ਪਛਾਣ ਕਰਨਾ",
+      "stepParseDetailProvision": "{provision} ਅਤੇ ਸੰਬੰਧਿਤ ਵਿਵਸਥਾਵਾਂ ਦੀ ਪਛਾਣ ਕਰਨਾ",
+      "stepCorpusLabel": "ਕਨੂੰਨ ਕਾਰਪਸ ਦੀ ਖੋਜ ਕੀਤੀ ਜਾ ਰਹੀ ਹੈ",
+      "stepCorpusDetailIn": "ਸਕੈਨਿੰਗ ਇੰਡੀਆ ਕੋਡ, BNSS, BNS, ਅਤੇ BSA ਡੇਟਾਬੇਸ",
+      "stepCorpusDetailInAct": "ਸਕੈਨਿੰਗ {act} ਅਤੇ ਸੰਬੰਧਿਤ ਇੰਡੀਆ ਕੋਡ ਡੇਟਾਬੇਸ",
+      "stepCorpusDetailUs": "USC, CFR, ਅਤੇ ਸੰਘੀ ਨਿਯਮ ਡੇਟਾਬੇਸ ਨੂੰ ਸਕੈਨ ਕਰਨਾ",
+      "stepRetrieveLabel": "ਅਧਿਕਾਰੀ ਮੁੜ ਪ੍ਰਾਪਤ ਕਰ ਰਹੇ ਹਨ",
+      "stepRetrieveFetch": "ਕਨੂੰਨੀ ਕਾਰਪਸ ਤੋਂ {provision} ਲਿਆ ਰਿਹਾ ਹੈ...",
+      "stepRetrieveRank": "ਸੰਬੰਧਿਤ ਭਾਗਾਂ ਅਤੇ ਟਿੱਪਣੀਆਂ ਨੂੰ ਦਰਜਾਬੰਦੀ…",
+      "stepRetrieveCases": "ਮੇਲ ਖਾਂਦਾ ਕੇਸ ਕਾਨੂੰਨ ਜੋ ਇਸ ਵਿਵਸਥਾ ਦਾ ਹਵਾਲਾ ਦਿੰਦਾ ਹੈ...",
+      "stepRetrieveRankCases": "ਪ੍ਰਸੰਗਿਕਤਾ ਦੁਆਰਾ ਕੇਸ ਕਾਨੂੰਨ ਨੂੰ ਦਰਜਾਬੰਦੀ…",
+      "stepRetrieveMatch": "ਤੁਹਾਡੇ ਸਵਾਲ ਨਾਲ ਵਿਧਾਨਕ ਭਾਗਾਂ ਦਾ ਮੇਲ ਕਰ ਰਿਹਾ ਹੈ...",
+      "stepRetrieveCommentary": "ਪ੍ਰਮਾਣਿਕ ​​ਟਿੱਪਣੀ ਨੂੰ ਖਿੱਚਿਆ ਜਾ ਰਿਹਾ ਹੈ...",
+      "stepPredecessorLabel": "ਪੂਰਵਵਰਤੀ ਪ੍ਰਬੰਧਾਂ ਦੀ ਪੁਸ਼ਟੀ ਕਰ ਰਿਹਾ ਹੈ",
+      "stepPredecessorCrpcBnss": "ਕ੍ਰਾਸ-ਚੈਕਿੰਗ CrPC → BNSS ਸੈਕਸ਼ਨ ਰੀਮੈਪ",
+      "stepPredecessorCrpcBnssSection": "ਸੈਕਸ਼ਨ {section} ਲਈ ਕਰਾਸ-ਚੈਕਿੰਗ CrPC → BNSS ਰੀਮੈਪ",
+      "stepPredecessorGeneric": "ਕਰਾਸ-ਚੈਕਿੰਗ ਪੂਰਵਗਾਮੀ ਕਨੂੰਨ ਮੈਪਿੰਗ",
+      "stepGroundLabel": "ਵਿਸ਼ਲੇਸ਼ਣ ਨੂੰ ਆਧਾਰ ਬਣਾ ਰਿਹਾ ਹੈ",
+      "stepGroundPinProvision": "ਪ੍ਰਮਾਣਿਕ ​​ਸਰੋਤਾਂ ਦੇ ਵਿਰੁੱਧ {provision} ਨੂੰ ਪਿੰਨ ਕੀਤਾ ਜਾ ਰਿਹਾ ਹੈ...",
+      "stepGroundVerify": "ਕਾਰਪਸ ਦੇ ਵਿਰੁੱਧ ਸੈਕਸ਼ਨ ਟੈਕਸਟ ਦੀ ਪੁਸ਼ਟੀ ਕੀਤੀ ਜਾ ਰਹੀ ਹੈ...",
+      "stepGroundAmendments": "ਸੋਧਾਂ ਅਤੇ ਸੂਚਨਾਵਾਂ ਦੀ ਜਾਂਚ ਕੀਤੀ ਜਾ ਰਹੀ ਹੈ...",
+      "stepGroundPin": "ਪ੍ਰਮਾਣਿਕ ​​ਸਰੋਤਾਂ ਦੇ ਵਿਰੁੱਧ ਪ੍ਰਾਪਤ ਕੀਤੀ ਲਿਖਤ ਨੂੰ ਪਿੰਨ ਕੀਤਾ ਜਾ ਰਿਹਾ ਹੈ...",
+      "stepGroundCitations": "ਸੈਕਸ਼ਨ ਨੰਬਰਾਂ ਅਤੇ ਹਵਾਲੇ ਦੀ ਪੁਸ਼ਟੀ ਕੀਤੀ ਜਾ ਰਹੀ ਹੈ...",
+      "stepDraftLabel": "ਕਾਨੂੰਨੀ ਮੀਮੋ ਦਾ ਖਰੜਾ ਤਿਆਰ ਕਰਨਾ",
+      "stepDraftStructure": "ਕਾਨੂੰਨੀ ਵਿਸ਼ਲੇਸ਼ਣ ਦਾ ਢਾਂਚਾ...",
+      "stepDraftWeave": "ਅਧਿਕਾਰੀਆਂ ਨੂੰ ਸਪਸ਼ਟ ਜਵਾਬ ਦੇਣ ਲਈ...",
+      "stepDraftSummary": "ਸਾਦੀ-ਭਾਸ਼ਾ ਦਾ ਸਾਰਾਂਸ਼ ਸ਼ਾਮਲ ਕੀਤਾ ਜਾ ਰਿਹਾ ਹੈ...",
+      "stepCitationsLabel": "ਹਵਾਲੇ ਦੀ ਪੁਸ਼ਟੀ ਕੀਤੀ ਜਾ ਰਹੀ ਹੈ",
+      "stepCitationsFabricated": "ਮਨਘੜਤ ਜਾਂ ਅਪ੍ਰਸੰਗਿਕ ਕੇਸ ਹਵਾਲੇ ਲਈ ਜਾਂਚ ਕੀਤੀ ਜਾ ਰਹੀ ਹੈ...",
+      "stepCitationsStatute": "ਕਨੂੰਨ ਹਵਾਲੇ ਪ੍ਰਮਾਣਿਤ ਕੀਤਾ ਜਾ ਰਿਹਾ ਹੈ...",
+      "stepCitationsUnsupported": "ਅਸਮਰਥਿਤ ਦਾਅਵਿਆਂ ਨੂੰ ਹਟਾਇਆ ਜਾ ਰਿਹਾ ਹੈ...",
+      "stepFinalizeLabel": "ਪਦਾਰਥਾਂ ਦੀ ਜਾਂਚ ਨੂੰ ਅੰਤਿਮ ਰੂਪ ਦੇਣਾ",
+      "stepFinalizeDrift": "ਡ੍ਰਾਈਫਟ ਖੋਜ ਅਤੇ ਪਾਲਣਾ ਨਿਯਮਾਂ ਨੂੰ ਲਾਗੂ ਕੀਤਾ ਜਾ ਰਿਹਾ ਹੈ...",
+      "stepFinalizePreview": "ਤੁਹਾਡਾ ਪੂਰਵਦਰਸ਼ਨ ਅੰਸ਼ ਤਿਆਰ ਕੀਤਾ ਜਾ ਰਿਹਾ ਹੈ...",
+      "stepFinalizeReady": "ਲਗਭਗ ਤਿਆਰ…",
+      "stepDeepAgentLabel": "ਡੂੰਘੇ ਖੋਜ ਏਜੰਟ ਚੱਲ ਰਿਹਾ ਹੈ",
+      "stepDeepAgentReact": "ਰੀਐਕਟ ਲੂਪ: ਵੈੱਬ, ਕਾਨੂੰਨ ਅਤੇ ਕੇਸ ਕਾਨੂੰਨ ਦੀ ਖੋਜ ਕਰ ਰਿਹਾ ਹੈ...",
+      "stepDeepAgentEval": "ਟੂਲ ਨਤੀਜਿਆਂ ਦਾ ਮੁਲਾਂਕਣ ਕੀਤਾ ਜਾ ਰਿਹਾ ਹੈ...",
+      "stepDeepAgentPlan": "ਅਗਲੇ ਮੁੜ ਪ੍ਰਾਪਤੀ ਪਾਸ ਦੀ ਯੋਜਨਾ ਬਣਾ ਰਿਹਾ ਹੈ...",
+      "stepCrossCheckLabel": "ਕਰਾਸ-ਚੈਕਿੰਗ ਮੁੜ ਪ੍ਰਾਪਤ ਸਰੋਤ",
+      "stepCrossCheckMerge": "ਲਾਈਵ ਅਥਾਰਟੀ ਨਤੀਜਿਆਂ ਨਾਲ ਕਾਰਪਸ ਹਿੱਟ ਨੂੰ ਮਿਲਾਉਣਾ...",
+      "stepCrossCheckDedupe": "ਓਵਰਲੈਪਿੰਗ ਅਧਿਕਾਰੀਆਂ ਨੂੰ ਡੀ-ਡੁਪਲੀਕੇਟ ਕਰਨਾ...",
+      "stepAuditLabel": "ਹਵਾਲਾ ਆਡਿਟ ਚੱਲ ਰਿਹਾ ਹੈ",
+      "stepAuditLabeling": "ਡਿਲੀਵਰੀ ਤੋਂ ਪਹਿਲਾਂ ਗੈਰ-ਪ੍ਰਮਾਣਿਤ ਹਵਾਲਿਆਂ ਨੂੰ ਲੇਬਲ ਕੀਤਾ ਜਾ ਰਿਹਾ ਹੈ...",
+      "stepAuditFinal": "ਅੰਤਮ ਹਵਾਲਾ ਆਡਿਟ ਪਾਸ…"
     }
   },
-  "siteTagline": "ਆਪਣੇ ਕਾਨੂੰਨੀ ਮੁੱਦੇ ਨੂੰ ਸਮਝੋ. AI ਨਾਲ ਆਪਣੀ ਫਰਮ ਚਲਾਓ।",
-  "siteDescription": "IN, US, KE ਅਤੇ UK ਵਿੱਚ ਆਪਣੇ ਕਾਨੂੰਨੀ ਮੁੱਦੇ ਦੀ ਮੁਫ਼ਤ ਜਾਂਚ ਕਰੋ। ਕਨੂੰਨੀ ਫਰਮਾਂ ਨੂੰ ਮਾਮਲੇ-ਜਾਣੂ ਏਆਈ ਕੋਪਾਇਲਟ, ਖੋਜ, ਬਿਲਿੰਗ, ਅਤੇ ਅਭਿਆਸ ਆਟੋਮੇਸ਼ਨ ਮਿਲਦੀ ਹੈ।",
-  "siteTitle": "ਛਤਰੀ — AI ਕਾਨੂੰਨੀ ਮਾਰਗਦਰਸ਼ਨ ਅਤੇ ਫਰਮ OS",
-  "issueCheckerMetaTitle": "ਮੁਫਤ ਕਨੂੰਨੀ ਮੁੱਦਾ ਜਾਂਚਕਰਤਾ",
-  "issueCheckerMetaDescription": "ਆਪਣੀ ਕਨੂੰਨੀ ਸਮੱਸਿਆ ਦਾ ਵਰਣਨ ਕਰੋ ਅਤੇ ਭਾਰਤ, ਅਮਰੀਕਾ, ਕੀਨੀਆ ਅਤੇ ਯੂਕੇ ਲਈ ਦੇਸ਼-ਵਿਸ਼ੇਸ਼ ਮਾਰਗਦਰਸ਼ਨ ਦੇ ਨਾਲ ਇੱਕ ਮੁਫਤ AI ਪੂਰਵਦਰਸ਼ਨ ਪ੍ਰਾਪਤ ਕਰੋ।",
-  "forLawyersMetaTitle": "ਕਾਨੂੰਨ ਫਰਮਾਂ ਲਈ AI-ਨੇਟਿਵ ਕਾਨੂੰਨੀ OS",
-  "forLawyersMetaDescription": "ਮਾਮਲੇ ਤੋਂ ਜਾਣੂ ਏਆਈ ਕੋਪਾਇਲਟ, ਕਾਨੂੰਨੀ ਖੋਜ, ਬਿਲਿੰਗ, ਟਰੱਸਟ ਅਕਾਉਂਟਿੰਗ, ਅਤੇ ਆਟੋਮੇਸ਼ਨ — ਆਧੁਨਿਕ ਕਾਨੂੰਨ ਫਰਮਾਂ ਲਈ ਬਣਾਇਆ ਗਿਆ ਹੈ।",
+  "siteTagline": "ਗਲੋਬਲ ਕਾਨੂੰਨੀ AI ਪਲੇਟਫਾਰਮ - ਕਿਸੇ ਵੀ ਸਥਿਤੀ ਨੂੰ ਸਮਝੋ, ਕਿਸੇ ਵੀ ਦਸਤਾਵੇਜ਼ ਦਾ ਖਰੜਾ ਤਿਆਰ ਕਰੋ, ਕੋਈ ਵੀ ਫਰਮ ਚਲਾਓ।",
+  "siteDescription": "ਛਤਰੀ ਗਲੋਬਲ ਲੀਗਲ ਏਆਈ ਹੈ: ਅਸਲ ਹਵਾਲੇ, ਏਆਈ ਦਸਤਾਵੇਜ਼ ਡਰਾਫਟ, ਇਕਰਾਰਨਾਮੇ ਦੀ ਸਮੀਖਿਆ, ਕਾਨੂੰਨੀ ਖੋਜ, ਅਤੇ ਇੱਕ ਪੂਰੀ ਕਨੂੰਨੀ ਫਰਮ OS ਦੇ ਨਾਲ ਮੁਫਤ ਮੁੱਦਾ ਜਾਂਚਕਰਤਾ — ਦੁਨੀਆ ਭਰ ਵਿੱਚ ਉਪਲਬਧ ਹੈ।",
+  "siteTitle": "ਛਤਰੀ — ਗਲੋਬਲ ਕਾਨੂੰਨੀ AI ਪਲੇਟਫਾਰਮ",
+  "issueCheckerMetaTitle": "ਮੁਫਤ ਕਾਨੂੰਨੀ ਮੁੱਦੇ ਜਾਂਚਕਰਤਾ - ਗਲੋਬਲ ਲੀਗਲ ਏ.ਆਈ",
+  "issueCheckerMetaDescription": "ਕਿਸੇ ਵੀ ਦੇਸ਼ ਵਿੱਚ ਆਪਣੀ ਕਾਨੂੰਨੀ ਸਮੱਸਿਆ ਦਾ ਵਰਣਨ ਕਰੋ। ਅਸਲ ਕਨੂੰਨਾਂ, ਜੋਖਮ ਪੱਧਰ, ਅਤੇ ਅਗਲੇ ਕਦਮਾਂ ਦੇ ਨਾਲ ਇੱਕ ਮੁਫਤ AI ਪੂਰਵਦਰਸ਼ਨ ਪ੍ਰਾਪਤ ਕਰੋ — ਅਧਿਕਾਰ ਖੇਤਰ-ਜਾਗਰੂਕ ਕਾਨੂੰਨੀ ਮਾਰਗਦਰਸ਼ਨ ਵਿਸ਼ਵ ਭਰ ਵਿੱਚ।",
+  "forLawyersMetaTitle": "ਲਾਅ ਫਰਮਾਂ ਲਈ AI-ਨੇਟਿਵ ਕਾਨੂੰਨੀ OS — ਗਲੋਬਲ ਪਲੇਟਫਾਰਮ",
+  "forLawyersMetaDescription": "ਮਾਮਲੇ ਤੋਂ ਜਾਣੂ ਏਆਈ ਕੋਪਾਇਲਟ, ਕਾਨੂੰਨੀ ਖੋਜ, ਦਸਤਾਵੇਜ਼ ਦਾ ਖਰੜਾ ਤਿਆਰ ਕਰਨਾ, ਬਿਲਿੰਗ, ਟਰੱਸਟ ਅਕਾਉਂਟਿੰਗ, ਅਤੇ ਕਲਾਇੰਟ ਇਨਟੇਕ — ਹਰ ਦੇਸ਼ ਵਿੱਚ ਫਰਮਾਂ ਲਈ ਸੰਪੂਰਨ ਕਾਨੂੰਨੀ ਪਲੇਟਫਾਰਮ।",
+  "demoMetaTitle": "ਅੰਬਰੇਲਾ ਡੈਮੋ — ਗਲੋਬਲ ਲੀਗਲ ਏਆਈ ਇਨ ਐਕਸ਼ਨ",
+  "demoMetaDescription": "ਇੰਟਰਐਕਟਿਵ ਉਤਪਾਦ ਟੂਰ: ਇਸ਼ੂ ਚੈਕਰ, ਦਸਤਾਵੇਜ਼ ਡਰਾਫਟ, ਇਕਰਾਰਨਾਮੇ ਦੀ ਸਮੀਖਿਆ, ਏਆਈ ਕੋਪਾਇਲਟ, ਅਤੇ ਫਰਮ ਵਰਕਫਲੋਜ਼। ਵਿਅਕਤੀਆਂ ਲਈ ਦੁਨੀਆ ਭਰ ਵਿੱਚ ਮੁਫਤ; ਕਨੂੰਨੀ ਫਰਮਾਂ ਲਈ ਮੁਫਤ ਅਜ਼ਮਾਇਸ਼.",
+  "lawyersMetaTitle": "ਇੱਕ ਵਕੀਲ ਲੱਭੋ - ਜਦੋਂ ਤੁਸੀਂ ਮਨੁੱਖੀ ਸਮੀਖਿਆ ਲਈ ਤਿਆਰ ਹੋ",
+  "lawyersMetaDescription": "ਦੁਨੀਆ ਭਰ ਵਿੱਚ ਜਾਂਚ ਕੀਤੇ ਵਕੀਲਾਂ ਨੂੰ ਬ੍ਰਾਊਜ਼ ਕਰੋ। ਮੁਫ਼ਤ AI ਕਾਨੂੰਨੀ ਸਪੱਸ਼ਟਤਾ ਨਾਲ ਸ਼ੁਰੂ ਕਰੋ — ਜਦੋਂ ਤੁਹਾਨੂੰ ਰਸਮੀ ਸਲਾਹ ਦੀ ਲੋੜ ਹੋਵੇ ਤਾਂ ਆਪਣੇ ਅਧਿਕਾਰ ਖੇਤਰ ਵਿੱਚ ਲਾਇਸੰਸਸ਼ੁਦਾ ਸਲਾਹਕਾਰ ਨਾਲ ਜੁੜੋ।",
+  "uploadDocumentMetaTitle": "AI ਦਸਤਾਵੇਜ਼ ਸਮੀਖਿਆ ਅਤੇ ਇਕਰਾਰਨਾਮਾ ਵਿਸ਼ਲੇਸ਼ਣ - ਗਲੋਬਲ",
+  "uploadDocumentMetaDescription": "AI ਧਾਰਾ-ਪੱਧਰ ਦੀ ਸਮੀਖਿਆ ਲਈ ਇਕਰਾਰਨਾਮੇ, ਨੋਟਿਸ ਜਾਂ ਸਮਝੌਤੇ ਅੱਪਲੋਡ ਕਰੋ। ਅਧਿਕਾਰ ਖੇਤਰ-ਜਾਗਰੂਕ ਕਾਨੂੰਨੀ ਦਸਤਾਵੇਜ਼ ਵਿਸ਼ਲੇਸ਼ਣ — ਹਰ ਦੇਸ਼ ਵਿੱਚ ਉਪਲਬਧ ਹੈ।",
+  "legalFormsMetaTitle": "ਕਾਨੂੰਨੀ ਦਸਤਾਵੇਜ਼ ਡਰਾਫਟ ਅਤੇ ਫਾਰਮ — ਗਲੋਬਲ ਟੈਂਪਲੇਟਸ",
+  "legalFormsMetaDescription": "AI-ਸੰਚਾਲਿਤ ਕਾਨੂੰਨੀ ਦਸਤਾਵੇਜ਼ ਦਾ ਖਰੜਾ ਤਿਆਰ ਕਰਨਾ: ਮੰਗ ਪੱਤਰ, ਇਕਰਾਰਨਾਮੇ, ਨੋਟਿਸ, ਅਤੇ ਬੇਨਤੀਆਂ - ਕਿਸੇ ਵੀ ਦੇਸ਼ ਲਈ ਅਧਿਕਾਰ ਖੇਤਰ-ਜਾਣੂ ਟੈਂਪਲੇਟ।",
+  "learnMoreMetaTitle": "ਛਤਰੀ ਕਿਵੇਂ ਕੰਮ ਕਰਦੀ ਹੈ - ਗਲੋਬਲ ਲੀਗਲ ਇੰਟੈਲੀਜੈਂਸ ਪਲੇਟਫਾਰਮ",
+  "learnMoreMetaDescription": "ਬਿੱਲਯੋਗ ਘੰਟੇ ਤੋਂ ਬਿਨਾਂ ਕਾਨੂੰਨੀ ਸਪੱਸ਼ਟਤਾ। AI ਦਸਤਾਵੇਜ਼ ਦਾ ਖਰੜਾ ਤਿਆਰ ਕਰਨਾ, ਇਕਰਾਰਨਾਮੇ ਦੀ ਸਮੀਖਿਆ, ਕਾਨੂੰਨੀ ਖੋਜ, ਅਤੇ ਇੱਕ ਪੂਰੀ ਕਨੂੰਨੀ ਫਰਮ OS — ਹਰ ਦੇਸ਼ ਵਿੱਚ ਉਪਲਬਧ ਹੈ।",
   "welcomeSubtext": "ਮਿੰਟਾਂ ਵਿੱਚ ਇੱਕ ਕਾਨੂੰਨੀ ਮੁੱਦੇ ਦੀ ਜਾਂਚ ਕਰੋ। ਮਾਮਲਿਆਂ ਦਾ ਪ੍ਰਬੰਧਨ ਕਰੋ ਅਤੇ ਆਪਣੀ ਫਰਮ ਚਲਾਓ — ਨਿੱਜੀ ਅਤੇ ਸੁਰੱਖਿਅਤ।",
   "welcomeHeadline": "ਕਾਨੂੰਨੀ ਸਪਸ਼ਟਤਾ\nਹਰ ਕਿਸੇ ਲਈ।",
   "instantAnswers": "ਤੁਰੰਤ ਜਵਾਬ",
   "private": "ਨਿਜੀ",
+  "anywhereChip": "ਕਿਤੇ ਵੀ",
   "forLawyersChip": "ਵਕੀਲਾਂ ਲਈ",
   "createAccountCta": "ਖਾਤਾ ਬਣਾਉ",
   "tryForFree": "ਮੁਫ਼ਤ ਵਿੱਚ ਕੋਸ਼ਿਸ਼ ਕਰੋ - ਕਿਸੇ ਖਾਤੇ ਦੀ ਲੋੜ ਨਹੀਂ",
@@ -393,7 +666,7 @@
   "global_coverage": "ਗਲੋਬਲ ਕਵਰੇਜ",
   "how_it_works": "ਇਹ ਕਿਵੇਂ ਕੰਮ ਕਰਦਾ ਹੈ",
   "illustrative_estimate_based_on_stated_facts_not_a_legal_pred": "ਦੱਸੇ ਗਏ ਤੱਥਾਂ 'ਤੇ ਆਧਾਰਿਤ ਵਿਆਖਿਆਤਮਕ ਅਨੁਮਾਨ। ਕਾਨੂੰਨੀ ਭਵਿੱਖਬਾਣੀ ਨਹੀਂ।",
-  "india_us_uk_kenya_and_growing": "ਭਾਰਤ · ਅਮਰੀਕਾ · ਯੂਕੇ · ਕੀਨੀਆ — ਅਤੇ ਵਧ ਰਿਹਾ ਹੈ",
+  "india_us_uk_kenya_and_growing": "ਦੁਨੀਆ ਭਰ ਵਿੱਚ ਹਰ ਦੇਸ਼",
   "legal": "ਕਾਨੂੰਨੀ",
   "legal_disclaimer": "ਕਨੂੰਨੀ ਬੇਦਾਅਵਾ",
   "live": "ਲਾਈਵ",
@@ -423,7 +696,6 @@
   "forLawyersHeadline3": "ਆਪਣਾ ਅਭਿਆਸ ਵਧਾਓ।",
   "forLawyersSubhead": "ਆਲ-ਇਨ-ਵਨ ਕਾਨੂੰਨੀ ਅਭਿਆਸ ਪ੍ਰਬੰਧਨ ਪਲੇਟਫਾਰਮ — ਨੇਟਿਵ ਟ੍ਰਾਂਸਕ੍ਰਿਪਟਸ, ਮਾਮਲੇ-ਜਾਗਰੂਕ ਕੋਪਾਇਲਟ, ਟਰੱਸਟ ਅਕਾਉਂਟਿੰਗ, ਅਤੇ ਆਟੋਮੇਸ਼ਨ-ਪਹਿਲਾ ਵਰਕਫਲੋ।",
   "forLawyersTryDemo": "ਡੈਮੋ ਦੀ ਕੋਸ਼ਿਸ਼ ਕਰੋ",
-  "forLawyersNoCreditCard": "ਕੋਈ ਕ੍ਰੈਡਿਟ ਕਾਰਡ ਨਹੀਂ",
   "forLawyersTrialDays": "30-ਦਿਨ ਦੀ ਸੁਣਵਾਈ",
   "forLawyersSetupMinutes": "5 ਮਿੰਟ ਵਿੱਚ ਸੈੱਟਅੱਪ ਕਰੋ",
   "forLawyersStatActiveMatters": "ਸਰਗਰਮ ਮਾਮਲੇ",
@@ -445,6 +717,49 @@
   "forLawyersFeatureAutomationDesc": "ਜੇਕਰ/ਫਿਰ ਮਨਜ਼ੂਰੀਆਂ ਅਤੇ SLAs ਨਾਲ ਵਰਕਫਲੋ।",
   "forLawyersFeatureCopilot": "ਏਆਈ ਕੋਪਾਇਲਟ",
   "forLawyersFeatureCopilotDesc": "ਮਾਮਲੇ-ਜਾਣੂ ਡਰਾਫਟ, ਖੋਜ, ਅਤੇ ਰਣਨੀਤੀ ਮੈਮੋ.",
+  "forLawyersFeatureResearch": "ਕਾਨੂੰਨੀ ਖੋਜ",
+  "forLawyersFeatureResearchDesc": "ਹਵਾਲਾ ਦਿੱਤੇ ਕਾਨੂੰਨਾਂ ਅਤੇ ਕੇਸ ਕਾਨੂੰਨ ਦੇ ਨਾਲ ਅਧਿਕਾਰ ਖੇਤਰ-ਜਾਗਰੂਕ AI ਖੋਜ।",
+  "forLawyersFeatureMeetings": "ਮੁਲਾਕਾਤ ਪ੍ਰਤੀਲਿਪੀਆਂ",
+  "forLawyersFeatureMeetingsDesc": "ਕਲਾਇੰਟ ਮੀਟਿੰਗਾਂ ਨੂੰ ਰਿਕਾਰਡ ਕਰੋ, ਟ੍ਰਾਂਸਕ੍ਰਾਈਬ ਕਰੋ ਅਤੇ ਆਟੋ-ਸਾਰਾਂਸ਼ ਕਰੋ।",
+  "forLawyersFeatureBilling": "ਬਿਲਿੰਗ ਅਤੇ ਸਮਾਂ ਟਰੈਕਿੰਗ",
+  "forLawyersFeatureBillingDesc": "ਸਵੈਚਲਿਤ ਸਮਾਂ ਕੈਪਚਰ, ਇਨਵੌਇਸ ਜਨਰੇਸ਼ਨ, ਅਤੇ ਭੁਗਤਾਨ ਸੰਗ੍ਰਹਿ।",
+  "forLawyersHowItWorksTitle": "ਮਿੰਟਾਂ ਵਿੱਚ ਅੱਪ ਅਤੇ ਚੱਲ ਰਿਹਾ ਹੈ",
+  "forLawyersStep1Title": "ਇੱਕ ਮੀਟਿੰਗ ਰਿਕਾਰਡ ਕਰੋ ਜਾਂ ਆਯਾਤ ਕਰੋ",
+  "forLawyersStep1Desc": "ਕਿਸੇ ਵੀ ਕਲਾਇੰਟ ਕਾਲ ਨੂੰ ਕੈਪਚਰ ਕਰੋ ਜਾਂ ਮੌਜੂਦਾ ਰਿਕਾਰਡਿੰਗ ਅੱਪਲੋਡ ਕਰੋ। ਛਤਰੀ ਆਟੋਮੈਟਿਕਲੀ ਐਕਸ਼ਨ ਆਈਟਮਾਂ ਨੂੰ ਪ੍ਰਤੀਲਿਪੀ ਅਤੇ ਐਕਸਟਰੈਕਟ ਕਰਦੀ ਹੈ।",
+  "forLawyersStep2Title": "AI ਤੁਹਾਡੇ ਮਾਮਲੇ ਨੂੰ ਬਣਾਉਂਦਾ ਹੈ",
+  "forLawyersStep2Desc": "ਮੁੱਖ ਤੱਥ, ਸਮਾਂ-ਸੀਮਾਵਾਂ, ਜੋਖਮ, ਅਤੇ ਅਗਲੇ ਕਦਮ ਇੱਕ ਲਾਈਵ ਮੈਟਰ ਫਾਈਲ ਵਿੱਚ ਸੰਗਠਿਤ ਕੀਤੇ ਗਏ ਹਨ — ਕਿਸੇ ਮੈਨੂਅਲ ਡੇਟਾ ਐਂਟਰੀ ਦੀ ਲੋੜ ਨਹੀਂ ਹੈ।",
+  "forLawyersStep3Title": "ਆਪਣਾ ਅਭਿਆਸ ਚਲਾਓ",
+  "forLawyersStep3Desc": "ਬਿਲਿੰਗ, ਟਰੱਸਟ ਅਕਾਉਂਟਿੰਗ, ਕਲਾਇੰਟ ਸੰਚਾਰ, ਅਤੇ ਫਾਈਲਿੰਗ ਸਾਰੇ ਸੱਚ ਦੇ ਇੱਕੋ ਸਰੋਤ ਤੋਂ ਪ੍ਰਵਾਹ ਕਰਦੇ ਹਨ।",
+  "forLawyersImpactTitle": "ਛਤਰੀ ਅੰਤਰ",
+  "forLawyersImpact1Label": "ਐਡਮਿਨ 'ਤੇ ਘੱਟ ਸਮਾਂ",
+  "forLawyersImpact2Label": "ਤੇਜ਼ ਮਾਮਲੇ ਸੈੱਟਅੱਪ",
+  "forLawyersImpact3Label": "ਬਿਲਿੰਗ ਸ਼ੁੱਧਤਾ",
+  "forLawyersImpact4Value": "< 5 ਮਿੰਟ",
+  "forLawyersImpact4Label": "ਔਸਤ ਔਨਬੋਰਡਿੰਗ ਸਮਾਂ",
+  "forLawyersPersonasTitle": "ਹਰ ਅਭਿਆਸ ਕਿਸਮ ਲਈ ਬਣਾਇਆ ਗਿਆ",
+  "forLawyersPersona1Title": "ਸੋਲੋ ਐਡਵੋਕੇਟ",
+  "forLawyersPersona1Bullet1": "ਫਰਮ ਓਵਰਹੈੱਡ ਤੋਂ ਬਿਨਾਂ ਪੂਰਾ ਮਾਮਲਾ OS",
+  "forLawyersPersona1Bullet2": "AI ਕੋਪਾਇਲਟ ਚਿੱਠੀਆਂ, ਇਕਰਾਰਨਾਮੇ ਅਤੇ ਮੈਮੋ ਦਾ ਖਰੜਾ ਤਿਆਰ ਕਰਦਾ ਹੈ",
+  "forLawyersPersona1Bullet3": "ਬਿਲਟ-ਇਨ ਟਰੱਸਟ ਅਕਾਉਂਟਿੰਗ ਅਤੇ ਇਨਵੌਇਸਿੰਗ",
+  "forLawyersPersona2Title": "ਬੁਟੀਕ ਫਰਮਾਂ",
+  "forLawyersPersona2Bullet1": "ਭੂਮਿਕਾ-ਅਧਾਰਿਤ ਪਹੁੰਚ ਨਿਯੰਤਰਣ ਦੇ ਨਾਲ ਮਲਟੀ-ਯੂਜ਼ਰ",
+  "forLawyersPersona2Bullet2": "ਸ਼ੇਅਰਡ ਮੈਟਰ ਪਾਈਪਲਾਈਨ ਅਤੇ ਕਲਾਇੰਟ ਪੋਰਟਲ",
+  "forLawyersPersona2Bullet3": "ਟੀਮ ਬਿਲਿੰਗ ਅਤੇ ਕਲੈਕਸ਼ਨ ਡੈਸ਼ਬੋਰਡ",
+  "forLawyersPersona3Title": "ਇਨ-ਹਾਊਸ ਕਾਨੂੰਨੀ ਟੀਮਾਂ",
+  "forLawyersPersona3Bullet1": "ਅਸੀਮਤ ਅੰਦਰੂਨੀ ਮਾਮਲੇ ਟਰੈਕਿੰਗ",
+  "forLawyersPersona3Bullet2": "ਸੰਸਕਰਣ ਨਿਯੰਤਰਣ ਦੇ ਨਾਲ ਨੀਤੀ ਅਤੇ ਇਕਰਾਰਨਾਮੇ ਦੀ ਲਾਇਬ੍ਰੇਰੀ",
+  "forLawyersPersona3Bullet3": "SSO, ਆਡਿਟ ਲੌਗ, ਅਤੇ ਪਾਲਣਾ ਰਿਪੋਰਟਿੰਗ",
+  "forLawyersPricingTeaserTitle": "ਸਧਾਰਨ, ਪਾਰਦਰਸ਼ੀ ਕੀਮਤ",
+  "forLawyersPricingTeaserSubtitle": "ਮੁਫ਼ਤ ਸ਼ੁਰੂ ਕਰੋ. ਜਦੋਂ ਤੁਹਾਨੂੰ ਹੋਰ ਲੋੜ ਹੋਵੇ ਤਾਂ ਅੱਪਗ੍ਰੇਡ ਕਰੋ। ਕੋਈ ਲੁਕਵੀਂ ਫੀਸ ਨਹੀਂ।",
+  "forLawyersPricingTeaserSolo": "ਸੋਲੋ - $40 / ਮਹੀਨੇ ਤੋਂ",
+  "forLawyersPricingTeaserSoloDesc": "ਵਿਅਕਤੀਗਤ ਵਕੀਲਾਂ ਅਤੇ ਬੈਰਿਸਟਰਾਂ ਲਈ ਪੂਰਾ ਵਕੀਲ ਓ.ਐਸ.",
+  "forLawyersPricingTeaserFirm": "ਫਰਮ - ਪ੍ਰਤੀ ਸੀਟ ਕਸਟਮ",
+  "forLawyersPricingTeaserFirmDesc": "ਬਹੁ-ਉਪਭੋਗਤਾ, SSO, ਉੱਨਤ ਪਾਲਣਾ, ਅਤੇ ਸਮਰਪਿਤ ਸਹਾਇਤਾ।",
+  "forLawyersPricingTeaserCta": "ਪੂਰੀ ਕੀਮਤ ਵੇਖੋ",
+  "forLawyersFinalCtaTitle": "ਤੁਹਾਡਾ ਅਭਿਆਸ, AI ਦੁਆਰਾ ਸੁਪਰਚਾਰਜ ਕੀਤਾ ਗਿਆ।",
+  "forLawyersFinalCtaSubtitle": "ਹੁਸ਼ਿਆਰ ਕੰਮ ਕਰਨ, ਹੋਰ ਬਿਲ ਦੇਣ, ਅਤੇ ਬਿਹਤਰ ਕਲਾਇੰਟ ਨਤੀਜੇ ਪ੍ਰਦਾਨ ਕਰਨ ਲਈ ਪਹਿਲਾਂ ਹੀ ਛਤਰੀ ਦੀ ਵਰਤੋਂ ਕਰਨ ਵਾਲੇ ਸੈਂਕੜੇ ਵਕੀਲਾਂ ਨਾਲ ਜੁੜੋ।",
+  "forLawyersFinalCtaTrial": "ਮੁਫ਼ਤ ਅਜ਼ਮਾਇਸ਼ ਸ਼ੁਰੂ ਕਰੋ",
+  "forLawyersFinalCtaDemo": "ਇੱਕ ਡੈਮੋ ਦੇਖੋ",
   "forLawyersCtaTitle": "ਆਪਣੇ ਅਭਿਆਸ ਨੂੰ ਬਦਲਣ ਲਈ ਤਿਆਰ ਹੋ?",
   "forLawyersCtaSubtitle": "ਛਤਰੀ ਦੀ ਵਰਤੋਂ ਕਰਕੇ ਅਗਾਂਹਵਧੂ ਸੋਚ ਵਾਲੀਆਂ ਕਾਨੂੰਨ ਫਰਮਾਂ ਵਿੱਚ ਸ਼ਾਮਲ ਹੋਵੋ।",
   "forLawyersCtaTrial": "ਆਪਣੀ ਮੁਫ਼ਤ ਅਜ਼ਮਾਇਸ਼ ਸ਼ੁਰੂ ਕਰੋ",
@@ -468,6 +783,495 @@
   "subscriptionCancelBody": "ਕੋਈ ਚਾਰਜ ਨਹੀਂ ਕੀਤਾ ਗਿਆ। ਤੁਸੀਂ ਕਿਸੇ ਵੀ ਸਮੇਂ ਯੋਜਨਾ ਚੁਣਨ ਲਈ ਕੀਮਤ 'ਤੇ ਵਾਪਸ ਆ ਸਕਦੇ ਹੋ।",
   "subscriptionBackToPricing": "ਕੀਮਤ 'ਤੇ ਵਾਪਸ ਜਾਓ",
   "subscriptionSuccessTitle": "ਗਾਹਕੀ ਦੀ ਪੁਸ਼ਟੀ ਕੀਤੀ ਗਈ",
+  "subscriptionSuccessWelcome": "{plan} ਵਿੱਚ ਸੁਆਗਤ ਹੈ",
+  "subscriptionSuccessBody": "ਤੁਹਾਡੀ ਯੋਜਨਾ ਕਿਰਿਆਸ਼ੀਲ ਹੈ ਅਤੇ ਤੁਹਾਡੇ ਖਾਤੇ ਵਿੱਚ ਕ੍ਰੈਡਿਟ ਜੋੜ ਦਿੱਤੇ ਗਏ ਹਨ।",
+  "subscriptionSuccessActivating": "ਤੁਹਾਡੀ ਗਾਹਕੀ ਨੂੰ ਕਿਰਿਆਸ਼ੀਲ ਕੀਤਾ ਜਾ ਰਿਹਾ ਹੈ...",
+  "subscriptionSuccessActivatingHint": "ਭੁਗਤਾਨ ਦੀ ਪੁਸ਼ਟੀ ਕਰਨਾ ਅਤੇ ਤੁਹਾਡੀ ਯੋਜਨਾ ਨੂੰ ਅੱਪਡੇਟ ਕਰਨਾ।",
+  "subscriptionSuccessWebhookHint": "ਭੁਗਤਾਨ ਪ੍ਰਾਪਤ ਹੋਇਆ। ਤੁਹਾਡੀ ਯੋਜਨਾ ਨੂੰ ਅੱਪਡੇਟ ਹੋਣ ਵਿੱਚ ਕੁਝ ਸਮਾਂ ਲੱਗ ਸਕਦਾ ਹੈ — ਯੋਜਨਾ ਅਤੇ ਵਰਤੋਂ ਦੀ ਜਲਦੀ ਹੀ ਜਾਂਚ ਕਰੋ।",
+  "subscriptionSuccessPlan": "ਯੋਜਨਾ",
+  "subscriptionSuccessActiveBadge": "ਕਿਰਿਆਸ਼ੀਲ",
+  "subscriptionSuccessCredits": "AI ਕ੍ਰੈਡਿਟ ਸ਼ਾਮਲ ਹਨ",
+  "subscriptionSuccessPrice": "ਕੀਮਤ",
+  "subscriptionSuccessPerMonth": "ਮਹੀਨਾ",
+  "subscriptionSuccessRenews": "ਅਗਲੀ ਬਿਲਿੰਗ ਮਿਤੀ",
+  "subscriptionSuccessSyncing": "ਤੁਹਾਡੀ ਯੋਜਨਾ ਦਾ ਸਮਕਾਲੀਕਰਨ ਕੀਤਾ ਜਾ ਰਿਹਾ ਹੈ...",
+  "subscriptionSuccessSyncingHint": "ਭੁਗਤਾਨ ਪ੍ਰਾਪਤ ਹੋਇਆ — ਜਾਂਚ ਕਰ ਰਿਹਾ ਹੈ ਕਿ ਤੁਹਾਡੀ ਗਾਹਕੀ ਕਿਰਿਆਸ਼ੀਲ ਹੈ।",
+  "subscriptionSuccessCreditsAdded": "+{count} ਕ੍ਰੈਡਿਟ ਤੁਹਾਡੇ ਖਾਤੇ ਵਿੱਚ ਸ਼ਾਮਲ ਕੀਤੇ ਗਏ",
+  "subscriptionSuccessConfirmFailed": "ਅਸੀਂ ਤੁਹਾਡੀ ਗਾਹਕੀ ਦੀ ਸਵੈਚਲਿਤ ਤੌਰ 'ਤੇ ਪੁਸ਼ਟੀ ਨਹੀਂ ਕਰ ਸਕੇ। ਆਪਣੀ ਸਥਿਤੀ ਦੀ ਜਾਂਚ ਕਰਨ ਲਈ ਯੋਜਨਾ ਅਤੇ ਵਰਤੋਂ ਖੋਲ੍ਹੋ, ਜਾਂ ਸਹਾਇਤਾ ਨਾਲ ਸੰਪਰਕ ਕਰੋ ਜੇਕਰ ਇਹ ਅਜੇ ਵੀ ਮੁਫਤ ਦਿਖਾਈ ਦਿੰਦਾ ਹੈ।",
+  "subscriptionSuccessPendingDeploy": "ਭੁਗਤਾਨ ਪ੍ਰਾਪਤ ਹੋਇਆ। ਤੁਹਾਡੀ ਗਾਹਕੀ 'ਤੇ ਕਾਰਵਾਈ ਕੀਤੀ ਜਾ ਰਹੀ ਹੈ — ਇਸ ਵਿੱਚ ਆਮ ਤੌਰ 'ਤੇ ਇੱਕ ਮਿੰਟ ਤੋਂ ਘੱਟ ਸਮਾਂ ਲੱਗਦਾ ਹੈ।",
+  "subscriptionSuccessPendingHint": "ਜੇਕਰ ਪਲਾਨ ਅਤੇ ਵਰਤੋਂ ਅਜੇ ਵੀ ਕੁਝ ਮਿੰਟਾਂ ਬਾਅਦ ਮੁਫਤ ਦਿਖਾਈ ਦਿੰਦੀ ਹੈ, ਤਾਂ ਪੰਨੇ ਨੂੰ ਤਾਜ਼ਾ ਕਰੋ ਜਾਂ ਆਪਣੇ ਚੈੱਕਆਉਟ ਸੈਸ਼ਨ ID ਨਾਲ ਸਹਾਇਤਾ ਨਾਲ ਸੰਪਰਕ ਕਰੋ।",
   "subscriptionGoToDashboard": "ਡੈਸ਼ਬੋਰਡ 'ਤੇ ਜਾਓ",
-  "subscriptionPlanUsage": "ਯੋਜਨਾ ਅਤੇ ਵਰਤੋਂ"
+  "subscriptionPlanUsage": "ਯੋਜਨਾ ਅਤੇ ਵਰਤੋਂ",
+  "legalAi": {
+    "metaTitle": "ਕਾਨੂੰਨੀ ਏਆਈ ਪਲੇਟਫਾਰਮ - ਹਰ ਕਿਸੇ ਲਈ ਗਲੋਬਲ ਲੀਗਲ ਇੰਟੈਲੀਜੈਂਸ",
+    "metaDescription": "Umbrella ਇੱਕ ਗਲੋਬਲ ਕਾਨੂੰਨੀ AI ਪਲੇਟਫਾਰਮ ਹੈ: ਅਸਲ ਹਵਾਲੇ, AI ਦਸਤਾਵੇਜ਼ ਦਾ ਖਰੜਾ, ਇਕਰਾਰਨਾਮੇ ਦੀ ਸਮੀਖਿਆ, ਕਾਨੂੰਨੀ ਖੋਜ, ਅਤੇ ਇੱਕ ਸੰਪੂਰਨ ਕਨੂੰਨੀ ਫਰਮ OS — ਦੁਨੀਆ ਭਰ ਦੇ ਹਰ ਦੇਸ਼ ਵਿੱਚ ਉਪਲਬਧ ਹੈ।",
+    "badge": "ਗਲੋਬਲ ਕਾਨੂੰਨੀ ਏ.ਆਈ",
+    "heroTitle": "ਕਾਨੂੰਨੀ AI ਜੋ ਅਸਲ ਕਾਨੂੰਨ ਦਾ ਹਵਾਲਾ ਦਿੰਦਾ ਹੈ — ਹਰ ਥਾਂ",
+    "heroSubtitle": "ਜ਼ਿਆਦਾਤਰ ਕਾਨੂੰਨੀ ਸਾਧਨ ਬਿਨਾਂ ਸਰੋਤਾਂ ਦੇ ਭਰੋਸੇਮੰਦ ਜਵਾਬ ਦਿੰਦੇ ਹਨ। Umbrella ਅਧਿਕਾਰ ਖੇਤਰ-ਵਿਸ਼ੇਸ਼ ਕਾਨੂੰਨਾਂ ਅਤੇ ਕੇਸ ਕਾਨੂੰਨਾਂ ਨੂੰ ਮੁੜ ਪ੍ਰਾਪਤ ਕਰਦਾ ਹੈ, ਦਸਤਾਵੇਜ਼ਾਂ ਦਾ ਖਰੜਾ ਤਿਆਰ ਕਰਦਾ ਹੈ, ਇਕਰਾਰਨਾਮਿਆਂ ਦੀ ਸਮੀਖਿਆ ਕਰਦਾ ਹੈ, ਅਤੇ ਤੁਹਾਡੀ ਪੂਰੀ ਫਰਮ ਨੂੰ ਚਲਾਉਂਦਾ ਹੈ — ਹਰ ਦੇਸ਼ ਵਿੱਚ।",
+    "heroCtaPrimary": "ਮੁਫ਼ਤ ਕਾਨੂੰਨੀ ਏਆਈ ਚੈਕਰ ਦੀ ਕੋਸ਼ਿਸ਼ ਕਰੋ",
+    "heroCtaSecondary": "ਕਨੂੰਨੀ ਫਰਮਾਂ ਲਈ ਕਾਨੂੰਨੀ ਏ.ਆਈ",
+    "whatIsTitle": "ਕਾਨੂੰਨੀ AI ਕੀ ਹੈ?",
+    "whatIsBody1": "ਕਾਨੂੰਨੀ AI ਲੋਕਾਂ ਨੂੰ ਅਧਿਕਾਰਾਂ ਨੂੰ ਸਮਝਣ, ਦਸਤਾਵੇਜ਼ਾਂ ਦੀ ਸਮੀਖਿਆ ਕਰਨ, ਅਤੇ ਅਗਲੇ ਕਦਮਾਂ ਦੀ ਯੋਜਨਾ ਬਣਾਉਣ ਵਿੱਚ ਮਦਦ ਕਰਨ ਲਈ ਵੱਡੇ ਭਾਸ਼ਾ ਮਾਡਲਾਂ ਅਤੇ ਕਾਨੂੰਨੀ ਡੇਟਾਬੇਸ ਦੀ ਵਰਤੋਂ ਕਰਦਾ ਹੈ। ਆਮ ਚੈਟਬੋਟਸ ਦੇ ਉਲਟ, ਉਦੇਸ਼-ਨਿਰਮਿਤ ਕਨੂੰਨੀ AI ਨੂੰ ਲਾਗੂ ਕਾਨੂੰਨ ਵਿੱਚ ਜਵਾਬ ਦੇਣਾ ਚਾਹੀਦਾ ਹੈ, ਅਧਿਕਾਰ ਖੇਤਰ ਦੀਆਂ ਸੀਮਾਵਾਂ ਦਾ ਆਦਰ ਕਰਨਾ ਚਾਹੀਦਾ ਹੈ, ਅਤੇ ਰਸਮੀ ਕਾਨੂੰਨੀ ਸਲਾਹ ਤੋਂ ਜਾਣਕਾਰੀ ਨੂੰ ਸਪਸ਼ਟ ਤੌਰ 'ਤੇ ਵੱਖ ਕਰਨਾ ਚਾਹੀਦਾ ਹੈ।",
+    "whatIsBody2": "ਅੰਬਰੇਲਾ ਇੰਡੈਕਸਡ ਸਟੈਚੂਟਸ ਅਤੇ ਕੇਸ ਲਾਅ ਦੇ ਉੱਪਰ ਰੀਟ੍ਰੀਵਲ-ਐਗਮੈਂਟੇਡ ਜਨਰੇਸ਼ਨ (RAG) ਨੂੰ ਮਾਮਲਾ-ਜਾਗਰੂਕ ਵਰਕਫਲੋ ਦੇ ਨਾਲ ਜੋੜਦਾ ਹੈ — ਇਸਲਈ ਖਪਤਕਾਰਾਂ ਨੂੰ ਮਾਰਗਦਰਸ਼ਿਤ ਵਿਸ਼ਲੇਸ਼ਣ ਮਿਲਦਾ ਹੈ ਅਤੇ ਫਰਮਾਂ ਨੂੰ ਇੱਕ ਕੋਪਾਇਲਟ ਮਿਲਦਾ ਹੈ ਜੋ ਕਲਾਇੰਟ ਸੰਦਰਭ, ਬਿਲਿੰਗ, ਅਤੇ ਪਾਲਣਾ ਨੂੰ ਸਮਝਦਾ ਹੈ।",
+    "differentTitle": "ਛਤਰੀ ਆਮ ਕਾਨੂੰਨੀ AI ਤੋਂ ਵੱਖਰੀ ਕਿਉਂ ਹੈ",
+    "differentSubtitle": "ਪਹਿਲੇ ਦਿਨ ਤੋਂ ਕਾਨੂੰਨੀ ਸੰਦਰਭ ਲਈ ਬਣਾਇਆ ਗਿਆ — ਇੱਕ ਚੈਟਬੋਟ ਰੈਪਰ ਨਹੀਂ।",
+    "useCasesTitle": "ਕਾਨੂੰਨੀ AI ਵਰਤੋਂ ਦੇ ਮਾਮਲੇ",
+    "useCasesSubtitle": "ਪਹਿਲੇ ਸਵਾਲ ਤੋਂ ਲੈ ਕੇ ਫਰਮ-ਵਾਈਡ ਆਟੋਮੇਸ਼ਨ ਤੱਕ।",
+    "useCases": [
+      {
+        "audience": "Individuals",
+        "title": "ਆਪਣੀ ਕਾਨੂੰਨੀ ਸਥਿਤੀ ਨੂੰ ਸਮਝੋ",
+        "items": [
+          "Free legal issue checker with cited guidance",
+          "Document upload and AI review",
+          "Connect with a licensed lawyer when ready"
+        ]
+      },
+      {
+        "audience": "ਕਾਨੂੰਨ ਫਰਮਾਂ",
+        "title": "Run a modern AI-native practice",
+        "items": [
+          "Matter-aware AI Copilot",
+          "Legal research with section finder",
+          "Meeting transcripts, billing, and trust accounting",
+          "Client intake from consumer issue checks"
+        ]
+      }
+    ],
+    "compareTitle": "ਸਾਰੀਆਂ ਕਾਨੂੰਨੀ AI ਸਮਰੱਥਾਵਾਂ ਦੀ ਪੜਚੋਲ ਕਰੋ",
+    "compareSubtitle": "ਦਸਤਾਵੇਜ਼ ਦਾ ਖਰੜਾ ਤਿਆਰ ਕਰਨਾ, ਇਕਰਾਰਨਾਮੇ ਦੀ ਸਮੀਖਿਆ, ਕਾਨੂੰਨੀ ਖੋਜ, ਅਤੇ ਫਰਮ ਆਟੋਮੇਸ਼ਨ — ਇੱਕ ਗਲੋਬਲ ਪਲੇਟਫਾਰਮ।",
+    "compareLink": "ਸਾਰੇ ਹੱਲ ਬ੍ਰਾਊਜ਼ ਕਰੋ",
+    "guidesTitle": "ਅਧਿਕਾਰ ਖੇਤਰ ਦੁਆਰਾ ਕਾਨੂੰਨੀ ਗਾਈਡ",
+    "guidesSubtitle": "ਆਮ ਕਨੂੰਨੀ ਵਿਸ਼ਿਆਂ 'ਤੇ ਵਿਦਿਅਕ ਸੰਖੇਪ ਜਾਣਕਾਰੀ — ਹਮੇਸ਼ਾ ਲਾਇਸੰਸਸ਼ੁਦਾ ਅਟਾਰਨੀ ਨਾਲ ਪੁਸ਼ਟੀ ਕਰੋ।",
+    "guidesLink": "ਸਾਰੀਆਂ ਕਾਨੂੰਨੀ ਗਾਈਡਾਂ ਨੂੰ ਬ੍ਰਾਊਜ਼ ਕਰੋ",
+    "faqTitle": "ਕਾਨੂੰਨੀ AI — ਅਕਸਰ ਪੁੱਛੇ ਜਾਂਦੇ ਸਵਾਲ",
+    "finalCtaTitle": "ਕਾਨੂੰਨੀ AI ਦੀ ਕੋਸ਼ਿਸ਼ ਕਰੋ ਜੋ ਅਸਲ ਕਾਨੂੰਨ ਦਾ ਹਵਾਲਾ ਦਿੰਦਾ ਹੈ",
+    "finalCtaSubtitle": "ਵਿਅਕਤੀਆਂ ਲਈ ਮੁਫਤ ਇਸ਼ੂ ਚੈਕਰ। ਕਨੂੰਨੀ ਫਰਮਾਂ ਲਈ ਮੁਫਤ ਅਜ਼ਮਾਇਸ਼.",
+    "finalCtaPrimary": "ਮੁਫਤ ਸ਼ੁਰੂ ਕਰੋ — ਮੁੱਦਾ ਜਾਂਚਕਰਤਾ",
+    "finalCtaSecondary": "ਫਰਮ ਪਲੇਟਫਾਰਮ ਦੀ ਪੜਚੋਲ ਕਰੋ"
+  },
+  "compareChatGpt": {
+    "metaTitle": "ਕਾਨੂੰਨੀ ਕੰਮ ਲਈ ਛਤਰੀ ਬਨਾਮ ਚੈਟਜੀਪੀਟੀ",
+    "metaDescription": "ਛਤਰੀ ਕਾਨੂੰਨੀ AI ਬਨਾਮ ਚੈਟਜੀਪੀਟੀ ਦੀ ਤੁਲਨਾ ਕਰੋ: ਅਸਲ ਹਵਾਲੇ, ਅਧਿਕਾਰ ਖੇਤਰ-ਜਾਗਰੂਕ ਕਾਨੂੰਨ, ਨਤੀਜੇ ਮਾਰਗਦਰਸ਼ਨ, ਅਤੇ ਇੱਕ ਪੂਰੀ ਕਨੂੰਨੀ ਫਰਮ OS — ਆਮ ਚੈਟਬੋਟ ਜਵਾਬ ਨਹੀਂ।",
+    "badge": "ਤੁਲਨਾ",
+    "title": "ਕਾਨੂੰਨੀ ਕੰਮ ਲਈ ਛਤਰੀ ਬਨਾਮ ਚੈਟਜੀਪੀਟੀ",
+    "subtitle": "ChatGPT ਇੱਕ ਆਮ ਸਹਾਇਕ ਹੈ। ਛਤਰੀ ਅਸਲ ਕਨੂੰਨਾਂ, ਕੇਸ ਕਾਨੂੰਨ, ਅਤੇ ਫਰਮ ਵਰਕਫਲੋਜ਼ 'ਤੇ ਬਣੀ ਕਾਨੂੰਨੀ AI ਹੈ।",
+    "chatgptLabel": "ਚੈਟਜੀਪੀਟੀ",
+    "rows": [
+      {
+        "feature": "Legal citations",
+        "umbrella": "Real statutes & case law with clickable sources",
+        "competitor": "Can fabricate citations that look real"
+      },
+      {
+        "feature": "Jurisdiction awareness",
+        "umbrella": "India, US, UK, Kenya legal corpora",
+        "competitor": "Generic — no guaranteed local law"
+      },
+      {
+        "feature": "ਦਸਤਾਵੇਜ਼ ਸਮੀਖਿਆ",
+        "umbrella": "Upload contracts & get clause-level analysis",
+        "competitor": "Paste text only; no matter context"
+      },
+      {
+        "feature": "Law firm tools",
+        "umbrella": "Matters, billing, trust, Copilot, intake",
+        "competitor": "None — chat only"
+      },
+      {
+        "feature": "Connect to a lawyer",
+        "umbrella": "Built-in marketplace & review queue",
+        "competitor": "Not available"
+      },
+      {
+        "feature": "Data privacy",
+        "umbrella": "Tenant isolation; no training without consent",
+        "competitor": "General OpenAI data policies"
+      }
+    ],
+    "verdictTitle": "ਹਰੇਕ ਨੂੰ ਕਦੋਂ ਵਰਤਣਾ ਹੈ",
+    "verdictBody": "ਸਾਧਾਰਨ ਲਿਖਤ ਅਤੇ ਦਿਮਾਗ਼ ਲਈ ਚੈਟਜੀਪੀਟੀ ਦੀ ਵਰਤੋਂ ਕਰੋ। ਜਦੋਂ ਤੁਹਾਨੂੰ ਲਾਗੂ ਕਾਨੂੰਨ, ਪ੍ਰਮਾਣਿਤ ਹਵਾਲਿਆਂ, ਜਾਂ ਫਰਮ-ਗ੍ਰੇਡ ਵਰਕਫਲੋਜ਼ ਵਿੱਚ ਆਧਾਰਿਤ ਕਾਨੂੰਨੀ ਵਿਸ਼ਲੇਸ਼ਣ ਦੀ ਲੋੜ ਹੋਵੇ ਤਾਂ ਛਤਰੀ ਦੀ ਵਰਤੋਂ ਕਰੋ।",
+    "cta": "ਛਤਰੀ ਕਾਨੂੰਨੀ AI ਮੁਫ਼ਤ ਅਜ਼ਮਾਓ"
+  },
+  "compareHarvey": {
+    "metaTitle": "ਛਤਰੀ ਬਨਾਮ ਹਾਰਵੇ AI — ਖਪਤਕਾਰ + ਫਰਮ ਕਾਨੂੰਨੀ AI",
+    "metaDescription": "ਹਾਰਵੇ ਏਆਈ ਸਿਰਫ ਐਂਟਰਪ੍ਰਾਈਜ਼ ਲਾਅ ਫਰਮਾਂ ਨੂੰ ਨਿਸ਼ਾਨਾ ਬਣਾਉਂਦਾ ਹੈ। ਛਤਰੀ ਵਿਅਕਤੀਆਂ ਨੂੰ ਮੁਫਤ ਕਾਨੂੰਨੀ ਸਪੱਸ਼ਟਤਾ ਅਤੇ ਇੱਕ ਪੂਰੀ ਫਰਮ OS ਪ੍ਰਦਾਨ ਕਰਦੀ ਹੈ — ਭਾਰਤ, ਯੂਕੇ, ਯੂਐਸ ਅਤੇ ਕੀਨੀਆ ਕਵਰੇਜ ਅਤੇ ਅਸਲ ਹਵਾਲੇ ਦੇ ਨਾਲ।",
+    "badge": "ਤੁਲਨਾ",
+    "title": "ਛਤਰੀ ਬਨਾਮ ਹਾਰਵੇ ਏ.ਆਈ",
+    "subtitle": "ਹਾਰਵੇ ਨੂੰ ਸਿਰਫ਼ ਬਿਗਲਾਅ ਅਤੇ ਐਂਟਰਪ੍ਰਾਈਜ਼ ਫਰਮਾਂ ਲਈ ਬਣਾਇਆ ਗਿਆ ਹੈ। ਛਤਰੀ ਹਰ ਕਿਸੇ ਦੀ ਸੇਵਾ ਕਰਦੀ ਹੈ — ਤੁਹਾਡੇ ਪਹਿਲੇ ਕਨੂੰਨੀ ਸਵਾਲ ਤੋਂ ਲੈ ਕੇ ਪੂਰੇ ਅਭਿਆਸ ਨੂੰ ਚਲਾਉਣ ਤੱਕ।",
+    "harveyLabel": "ਹਾਰਵੇ ਏ.ਆਈ",
+    "rows": [
+      {
+        "feature": "Individual consumers",
+        "umbrella": "Free issue checker — no lawyer needed to understand your situation",
+        "competitor": "Enterprise only — no consumer access"
+      },
+      {
+        "feature": "Geographic coverage",
+        "umbrella": "India, US, UK, Kenya with local legal corpora",
+        "competitor": "Primarily US & UK enterprise markets"
+      },
+      {
+        "feature": "Pricing transparency",
+        "umbrella": "Free preview + published plans from $0",
+        "competitor": "Enterprise sales — no public pricing"
+      },
+      {
+        "feature": "Law firm OS",
+        "umbrella": "Matters, billing, trust, intake, Copilot — one platform",
+        "competitor": "AI assistant layer — requires existing firm stack"
+      },
+      {
+        "feature": "Client intake funnel",
+        "umbrella": "Consumer issue checks flow directly to firm matters",
+        "competitor": "No consumer-to-firm pipeline"
+      },
+      {
+        "feature": "ਹਵਾਲਾ ਤਸਦੀਕ",
+        "umbrella": "Clickable statutes & case law you can verify",
+        "competitor": "Strong for drafting; less consumer-facing clarity"
+      }
+    ],
+    "verdictTitle": "ਟੀਮਾਂ ਹਾਰਵੇ ਉੱਤੇ ਛਤਰੀ ਕਿਉਂ ਚੁਣਦੀਆਂ ਹਨ",
+    "verdictBody": "ਹਾਰਵੇ ਨੂੰ ਚੁਣੋ ਜੇਕਰ ਤੁਸੀਂ ਇੱਕ ਵੱਡੀ US/UK ਫਰਮ ਹੋ ਜੋ ਮੌਜੂਦਾ ਟੂਲਸ ਵਿੱਚ AI ਲੇਅਰ ਜੋੜ ਰਹੀ ਹੈ। ਛਤਰੀ ਚੁਣੋ ਜੇਕਰ ਤੁਸੀਂ ਕਾਨੂੰਨੀ AI ਚਾਹੁੰਦੇ ਹੋ ਜੋ ਨਾਗਰਿਕਾਂ ਅਤੇ ਫਰਮਾਂ ਦੋਵਾਂ ਦੀ ਸੇਵਾ ਕਰਦਾ ਹੈ — ਉਭਰਦੇ-ਮਾਰਕੀਟ ਕਵਰੇਜ, ਮੁਫਤ ਖਪਤਕਾਰਾਂ ਤੱਕ ਪਹੁੰਚ, ਅਤੇ ਇੱਕ ਕਨੈਕਟਿਡ ਇਨਟੇਕ-ਟੂ-ਮਾਟਰ ਵਰਕਫਲੋ ਦੇ ਨਾਲ।",
+    "cta": "ਛਤਰੀ ਮੁਫ਼ਤ ਅਜ਼ਮਾਓ — ਕੋਈ ਵਿਕਰੀ ਕਾਲ ਦੀ ਲੋੜ ਨਹੀਂ ਹੈ"
+  },
+  "compareLegora": {
+    "metaTitle": "ਛਤਰੀ ਬਨਾਮ ਲੇਗੋਰਾ — ਹਰ ਕਿਸੇ ਲਈ ਕਾਨੂੰਨੀ AI, ਸਿਰਫ਼ ਫਰਮਾਂ ਲਈ ਨਹੀਂ",
+    "metaDescription": "ਲੇਗੋਰਾ ਐਂਟਰਪ੍ਰਾਈਜ਼ ਲਾਅ ਫਰਮ ਦੇ ਵਰਕਫਲੋ 'ਤੇ ਕੇਂਦ੍ਰਤ ਕਰਦਾ ਹੈ। Umbrella ਇੱਕ ਪੂਰੇ ਫਰਮ ਪਲੇਟਫਾਰਮ - ਭਾਰਤ, UK, US ਅਤੇ ਕੀਨੀਆ, ਅਸਲ ਹਵਾਲੇ ਦੇ ਨਾਲ ਇੱਕ ਮੁਫਤ ਖਪਤਕਾਰ ਕਾਨੂੰਨੀ ਮੁੱਦੇ ਜਾਂਚਕਰਤਾ ਨੂੰ ਜੋੜਦਾ ਹੈ।",
+    "badge": "ਤੁਲਨਾ",
+    "title": "ਛਤਰੀ ਬਨਾਮ ਲੈਗੋਰਾ",
+    "subtitle": "ਲੇਗੋਰਾ ਕਨੂੰਨੀ ਫਰਮਾਂ ਲਈ ਕਾਨੂੰਨੀ AI ਹੈ। ਛਤਰੀ ਹਰ ਕਿਸੇ ਲਈ ਕਾਨੂੰਨੀ ਖੁਫੀਆ ਜਾਣਕਾਰੀ ਹੈ — ਵਿਅਕਤੀ ਬਿਨਾਂ ਵਕੀਲ ਦੇ ਸਪੱਸ਼ਟਤਾ ਪ੍ਰਾਪਤ ਕਰਦੇ ਹਨ; ਫਰਮਾਂ ਨੂੰ ਪੂਰਾ OS ਮਿਲਦਾ ਹੈ।",
+    "legoraLabel": "ਲੇਗੋਰਾ",
+    "rows": [
+      {
+        "feature": "No lawyer needed to start",
+        "umbrella": "Free issue checker explains your rights before any billable hour",
+        "competitor": "Firm-only — no individual consumer product"
+      },
+      {
+        "feature": "Emerging markets",
+        "umbrella": "Full India & Kenya legal databases — not just US/EU",
+        "competitor": "Nordic/US enterprise focus"
+      },
+      {
+        "feature": "Solo & small firms",
+        "umbrella": "SOLO bundle from day one — no enterprise minimum",
+        "competitor": "Enterprise-oriented pricing & onboarding"
+      },
+      {
+        "feature": "Outcome guidance",
+        "umbrella": "Risk level, outcome probability, and cited next steps",
+        "competitor": "Research & workflow automation focus"
+      },
+      {
+        "feature": "ਵਕੀਲ ਬਾਜ਼ਾਰ",
+        "umbrella": "Connect to licensed counsel when AI clarity isn't enough",
+        "competitor": "Not available"
+      },
+      {
+        "feature": "Practice management",
+        "umbrella": "Billing, trust accounting, matters, meetings — built in",
+        "competitor": "Integrates with existing PM tools"
+      }
+    ],
+    "verdictTitle": "ਕਿਉਂ ਛਤਰੀ ਪਹੁੰਚ ਅਤੇ ਪਹੁੰਚਯੋਗਤਾ 'ਤੇ ਜਿੱਤਦੀ ਹੈ",
+    "verdictBody": "ਲੇਗੋਰਾ ਪਰਿਪੱਕ ਬਾਜ਼ਾਰਾਂ ਵਿੱਚ ਐਂਟਰਪ੍ਰਾਈਜ਼ ਫਰਮ ਆਟੋਮੇਸ਼ਨ ਵਿੱਚ ਉੱਤਮ ਹੈ। ਛਤਰੀ ਹੋਰ ਅੱਗੇ ਜਾਂਦੀ ਹੈ - ਉਹਨਾਂ ਲੱਖਾਂ ਲੋਕਾਂ ਲਈ ਮੁਫਤ ਕਾਨੂੰਨੀ ਸਪੱਸ਼ਟਤਾ ਜੋ ਅਜੇ ਤੱਕ ਵਕੀਲ ਨਹੀਂ ਕਰ ਸਕਦੇ, ਨਾਲ ਹੀ ਉਹਨਾਂ ਫਰਮਾਂ ਲਈ ਇੱਕ ਪੂਰਾ ਪਲੇਟਫਾਰਮ ਜੋ ਭਾਰਤ, ਕੀਨੀਆ, ਯੂਕੇ ਅਤੇ ਯੂਐਸ ਵਿੱਚ AI-ਦੇਸੀ ਦਾਖਲਾ ਚਾਹੁੰਦੇ ਹਨ।",
+    "cta": "ਮੁਫ਼ਤ ਸ਼ੁਰੂ ਕਰੋ — ਵਿਅਕਤੀਆਂ ਅਤੇ ਫਰਮਾਂ ਦਾ ਸੁਆਗਤ ਹੈ"
+  },
+  "compareHub": {
+    "metaTitle": "Umbrella Legal AI — ਬਨਾਮ ਹਾਰਵੇ, Legora ਅਤੇ ChatGPT ਦੀ ਤੁਲਨਾ ਕਰੋ",
+    "metaDescription": "ਦੇਖੋ ਕਿ ਛਤਰੀ ਹਾਰਵੇ ਏਆਈ, ਲੇਗੋਰਾ, ਅਤੇ ਚੈਟਜੀਪੀਟੀ ਨਾਲ ਕਿਵੇਂ ਤੁਲਨਾ ਕਰਦੀ ਹੈ। ਭਾਰਤ, ਯੂਕੇ, ਯੂਐਸ ਅਤੇ ਕੀਨੀਆ ਕਵਰੇਜ ਦੇ ਨਾਲ - ਵਿਅਕਤੀਆਂ ਅਤੇ ਕਨੂੰਨੀ ਫਰਮਾਂ ਲਈ ਬਣਾਇਆ ਗਿਆ ਇਕੋ-ਇਕ ਕਾਨੂੰਨੀ AI।",
+    "badge": "ਤੁਲਨਾਵਾਂ",
+    "title": "ਛਤਰੀ ਦੀ ਤੁਲਨਾ ਕਿਵੇਂ ਕੀਤੀ ਜਾਂਦੀ ਹੈ",
+    "subtitle": "ਅਸਲ ਹਵਾਲਿਆਂ ਦੇ ਨਾਲ ਉਦੇਸ਼-ਨਿਰਮਿਤ ਕਾਨੂੰਨੀ AI — ਉਹਨਾਂ ਲੋਕਾਂ ਲਈ ਜਿਨ੍ਹਾਂ ਨੂੰ ਸਪਸ਼ਟਤਾ ਦੀ ਲੋੜ ਹੈ ਅਤੇ ਉਹਨਾਂ ਫਰਮਾਂ ਲਈ ਜਿਨ੍ਹਾਂ ਨੂੰ OS ਦੀ ਲੋੜ ਹੈ।",
+    "readComparison": "ਤੁਲਨਾ ਪੜ੍ਹੋ",
+    "cta": "ਛਤਰੀ ਮੁਫ਼ਤ ਅਜ਼ਮਾਓ",
+    "cards": [
+      {
+        "slug": "umbrella-vs-harvey",
+        "title": "ਛਤਰੀ ਬਨਾਮ ਹਾਰਵੇ ਏ.ਆਈ",
+        "description": "Enterprise-only vs consumer + firm. Emerging markets vs US/UK focus."
+      },
+      {
+        "slug": "umbrella-vs-legora",
+        "title": "ਛਤਰੀ ਬਨਾਮ ਲੈਗੋਰਾ",
+        "description": "Firm-only automation vs free consumer clarity plus full firm OS."
+      },
+      {
+        "slug": "umbrella-vs-chatgpt",
+        "title": "Umbrella vs ChatGPT",
+        "description": "Real legal citations vs fabricated case law. Jurisdiction-aware vs generic."
+      }
+    ]
+  },
+  "countryPages": {
+    "forIndividuals": "ਵਿਅਕਤੀਆਂ ਲਈ",
+    "forLawFirms": "ਕਨੂੰਨੀ ਫਰਮਾਂ ਲਈ",
+    "noLawyerNeededTitle": "ਤੁਹਾਡੀ ਸਥਿਤੀ ਨੂੰ ਸਮਝਣ ਲਈ ਤੁਹਾਨੂੰ ਕਿਸੇ ਵਕੀਲ ਦੀ ਲੋੜ ਨਹੀਂ ਹੈ",
+    "lawyerWhenReady": "ਜਦੋਂ ਤੁਸੀਂ ਰਸਮੀ ਸਲਾਹ ਚਾਹੁੰਦੇ ਹੋ, ਤਾਂ ਪਲੇਟਫਾਰਮ 'ਤੇ ਲਾਇਸੰਸਸ਼ੁਦਾ ਵਕੀਲ ਨਾਲ ਜੁੜੋ — ਤੁਹਾਡੀਆਂ ਸ਼ਰਤਾਂ 'ਤੇ।",
+    "guidesTitle": "{country} ਲਈ ਕਾਨੂੰਨੀ ਗਾਈਡ",
+    "guidesSubtitle": "ਆਮ ਕਨੂੰਨੀ ਵਿਸ਼ਿਆਂ 'ਤੇ ਵਿਦਿਅਕ ਸੰਖੇਪ ਜਾਣਕਾਰੀ - ਕਾਨੂੰਨੀ ਸਲਾਹ ਨਹੀਂ।",
+    "guideLink": "ਗਾਈਡ ਪੜ੍ਹੋ",
+    "allGuides": "ਸਾਰੀਆਂ ਕਾਨੂੰਨੀ ਗਾਈਡਾਂ ਨੂੰ ਬ੍ਰਾਊਜ਼ ਕਰੋ",
+    "otherMarkets": "ਫੀਚਰਡ ਖੇਤਰ — ਦੁਨੀਆ ਭਰ ਵਿੱਚ ਉਪਲਬਧ ਹਨ",
+    "in": {
+      "metaTitle": "ਕਾਨੂੰਨੀ ਏਆਈ ਇੰਡੀਆ - ਗਲੋਬਲ ਪਲੇਟਫਾਰਮ, ਸਥਾਨਕ ਕਾਨੂੰਨ",
+      "metaDescription": "ਛਤਰੀ ਭਾਰਤ ਅਤੇ ਦੁਨੀਆ ਭਰ ਦੇ ਹਰ ਦੇਸ਼ ਦੀ ਸੇਵਾ ਕਰਦੀ ਹੈ। IPC ਹਵਾਲੇ, FIR ਵਿਸ਼ਲੇਸ਼ਣ, ਅਤੇ ਸੈਕਸ਼ਨ ਫਾਈਂਡਰ ਦੇ ਨਾਲ ਮੁਫਤ AI ਮੁੱਦਾ ਜਾਂਚਕਰਤਾ। ਭਾਰਤੀ ਕਨੂੰਨੀ ਫਰਮਾਂ ਲਈ ਪੂਰਾ ਕਾਨੂੰਨੀ OS।",
+      "badge": "ਕਾਨੂੰਨੀ ਏਆਈ ਇੰਡੀਆ",
+      "heroTitle": "ਭਾਰਤ ਲਈ ਕਾਨੂੰਨੀ ਸਪੱਸ਼ਟਤਾ - ਸ਼ੁਰੂ ਕਰਨ ਲਈ ਕਿਸੇ ਵਕੀਲ ਦੀ ਲੋੜ ਨਹੀਂ ਹੈ",
+      "heroSubtitle": "ਹਿੰਦੀ ਜਾਂ ਅੰਗਰੇਜ਼ੀ ਵਿੱਚ ਆਪਣੀ ਸਥਿਤੀ ਦਾ ਵਰਣਨ ਕਰੋ। ਅੰਬਰੇਲਾ ਭਾਰਤੀ ਕਾਨੂੰਨਾਂ, IPC ਧਾਰਾਵਾਂ, ਅਤੇ ਕੇਸ ਕਾਨੂੰਨ ਨੂੰ ਪੜ੍ਹਦਾ ਹੈ — ਫਿਰ ਤੁਹਾਨੂੰ ਦੱਸਦਾ ਹੈ ਕਿ ਤੁਸੀਂ ਕਿੱਥੇ ਖੜ੍ਹੇ ਹੋ। ਕਾਨੂੰਨ ਫਰਮਾਂ ਨੂੰ ਇੱਕ ਪੂਰਾ AI-ਦੇਸੀ ਅਭਿਆਸ ਪਲੇਟਫਾਰਮ ਮਿਲਦਾ ਹੈ।",
+      "heroNote": "ਸਿਰਫ਼ ਕਨੂੰਨੀ ਜਾਣਕਾਰੀ — ਕਾਨੂੰਨੀ ਸਲਾਹ ਨਹੀਂ। ਜਦੋਂ ਤੁਹਾਨੂੰ ਰਸਮੀ ਪ੍ਰਤੀਨਿਧਤਾ ਦੀ ਲੋੜ ਹੋਵੇ ਤਾਂ ਕਿਸੇ ਲਾਇਸੰਸਸ਼ੁਦਾ ਵਕੀਲ ਨਾਲ ਜੁੜੋ।",
+      "consumerCta": "ਮੇਰੇ ਕਾਨੂੰਨੀ ਮੁੱਦੇ ਦੀ ਮੁਫ਼ਤ ਜਾਂਚ ਕਰੋ",
+      "firmCta": "ਕਾਨੂੰਨ ਫਰਮਾਂ ਲਈ ਪਲੇਟਫਾਰਮ",
+      "consumerTitle": "ਬਹੁਤੇ ਭਾਰਤੀਆਂ ਨੂੰ ਇਹ ਜਾਣਨ ਲਈ ਵਕੀਲ ਦੀ ਲੋੜ ਨਹੀਂ ਹੁੰਦੀ ਕਿ ਉਨ੍ਹਾਂ ਦਾ ਕੋਈ ਕੇਸ ਹੈ ਜਾਂ ਨਹੀਂ",
+      "consumerBody": "ਸਲਾਹ-ਮਸ਼ਵਰੇ ਲਈ ₹5,000 ਦਾ ਭੁਗਤਾਨ ਕਰਨ ਤੋਂ ਪਹਿਲਾਂ, IPC, CrPC, ਇਕਰਾਰਨਾਮੇ ਦੇ ਕਾਨੂੰਨਾਂ ਅਤੇ ਸੰਬੰਧਿਤ ਕੇਸ ਕਾਨੂੰਨ ਵਿੱਚ ਆਧਾਰਿਤ ਇੱਕ ਮੁਫ਼ਤ AI ਪੂਰਵਦਰਸ਼ਨ ਪ੍ਰਾਪਤ ਕਰੋ। ਆਪਣੇ ਜੋਖਮ ਦੇ ਪੱਧਰ, ਆਪਣੇ ਅਧਿਕਾਰਾਂ ਅਤੇ ਆਪਣੇ ਅਗਲੇ ਕਦਮਾਂ ਬਾਰੇ ਜਾਣੋ।",
+      "noLawyerPitch": "ਕਿਰਾਏ ਦੇ ਵਿਵਾਦ, ਚੈੱਕ ਬਾਊਂਸ, ਰੁਜ਼ਗਾਰ ਦੇ ਮੁੱਦੇ, ਖਪਤਕਾਰਾਂ ਦੀਆਂ ਸ਼ਿਕਾਇਤਾਂ, ਜਾਇਦਾਦ ਦੇ ਮਾਮਲੇ - ਛਤਰੀ 2 ਮਿੰਟਾਂ ਤੋਂ ਘੱਟ ਸਮੇਂ ਵਿੱਚ ਤੁਹਾਡੇ ਤੱਥਾਂ ਨੂੰ ਅਸਲ ਭਾਰਤੀ ਕਾਨੂੰਨ ਨਾਲ ਨਕਸ਼ੇ ਕਰਦੀ ਹੈ। ਕਿਸੇ ਵਕੀਲ ਲਈ ਸਿਰਫ਼ ਉਦੋਂ ਹੀ ਭੁਗਤਾਨ ਕਰੋ ਜਦੋਂ ਤੁਸੀਂ ਫ਼ੈਸਲਾ ਕਰੋ ਕਿ ਤੁਹਾਨੂੰ ਇੱਕ ਵਕੀਲ ਦੀ ਲੋੜ ਹੈ।",
+      "firmTitle": "ਭਾਰਤੀ ਕਾਨੂੰਨ ਫਰਮਾਂ ਲਈ AI-ਦੇਸੀ ਕਾਨੂੰਨੀ OS",
+      "firmBody": "ਜ਼ਿਲ੍ਹਾ ਅਦਾਲਤਾਂ ਵਿੱਚ ਇਕੱਲੇ ਵਕੀਲਾਂ ਤੋਂ ਲੈ ਕੇ ਮੱਧ-ਆਕਾਰ ਦੀਆਂ ਫਰਮਾਂ ਤੱਕ — ਮਾਮਲਾ ਪ੍ਰਬੰਧਨ, ਬਿਲਿੰਗ, ਟਰੱਸਟ ਅਕਾਉਂਟਿੰਗ, ਅਤੇ ਇੱਕ ਕੋਪਾਇਲਟ ਜੋ ਹਰ ਗਾਹਕ ਦੇ ਤੱਥਾਂ ਨੂੰ ਜਾਣਦਾ ਹੈ।",
+      "firmPitch": "ਖਪਤਕਾਰ ਮੁੱਦੇ ਦੀਆਂ ਜਾਂਚਾਂ ਸਿੱਧੇ ਤੁਹਾਡੀ ਇਨਟੇਕ ਕਤਾਰ ਵਿੱਚ ਆਉਂਦੀਆਂ ਹਨ। ਤੁਹਾਡਾ ਕੋਪਾਇਲਟ ਪਹਿਲੀ ਕਾਲ ਤੋਂ ਪਹਿਲਾਂ ਹੀ ਗਾਹਕ ਦੀ ਸਥਿਤੀ ਨੂੰ ਜਾਣਦਾ ਹੈ।",
+      "faqTitle": "ਕਾਨੂੰਨੀ ਏਆਈ ਇੰਡੀਆ - ਅਕਸਰ ਪੁੱਛੇ ਜਾਣ ਵਾਲੇ ਸਵਾਲ"
+    },
+    "us": {
+      "metaTitle": "ਕਾਨੂੰਨੀ AI USA - ਗਲੋਬਲ ਪਲੇਟਫਾਰਮ, US ਕਾਨੂੰਨ",
+      "metaDescription": "ਛਤਰੀ ਸੰਯੁਕਤ ਰਾਜ ਅਮਰੀਕਾ ਅਤੇ ਦੁਨੀਆ ਭਰ ਦੇ ਹਰ ਦੇਸ਼ ਦੀ ਸੇਵਾ ਕਰਦੀ ਹੈ। ਫੈਡਰਲ ਅਤੇ ਸਟੇਟ ਕਨੂੰਨ ਦੇ ਹਵਾਲੇ ਦੇ ਨਾਲ ਮੁਫਤ AI ਮੁੱਦਾ ਚੈਕਰ। ਅਮਰੀਕੀ ਕਨੂੰਨੀ ਫਰਮਾਂ ਲਈ ਪੂਰਾ ਕਾਨੂੰਨੀ OS।",
+      "badge": "ਕਾਨੂੰਨੀ AI ਸੰਯੁਕਤ ਰਾਜ",
+      "heroTitle": "ਅਮਰੀਕਾ ਲਈ ਕਾਨੂੰਨੀ ਸਪੱਸ਼ਟਤਾ - ਸ਼ੁਰੂ ਕਰਨ ਲਈ ਕੋਈ ਅਟਾਰਨੀ ਬਿੱਲ ਨਹੀਂ",
+      "heroSubtitle": "ਰੁਜ਼ਗਾਰ ਵਿਵਾਦ, ਮਕਾਨ ਮਾਲਕ ਦੇ ਮੁੱਦੇ, ਛੋਟੇ ਦਾਅਵੇ, ਇਕਰਾਰਨਾਮੇ - ਆਪਣੀ ਸਥਿਤੀ ਦਾ ਵਰਣਨ ਕਰੋ ਅਤੇ ਸੰਘੀ ਅਤੇ ਰਾਜ ਦੇ ਕਾਨੂੰਨ ਤੋਂ ਹਵਾਲਾ ਪ੍ਰਾਪਤ ਕਰੋ। ਕਨੂੰਨੀ ਫਰਮਾਂ ਨੂੰ ਮਾਮਲਾ ਪ੍ਰਬੰਧਨ, ਬਿਲਿੰਗ, ਅਤੇ ਏਆਈ ਕੋਪਾਇਲਟ ਮਿਲਦਾ ਹੈ।",
+      "heroNote": "ਸਿਰਫ਼ ਕਨੂੰਨੀ ਜਾਣਕਾਰੀ — ਕਾਨੂੰਨੀ ਸਲਾਹ ਨਹੀਂ। ਜਦੋਂ ਤੁਹਾਨੂੰ ਰਸਮੀ ਸਲਾਹ ਦੀ ਲੋੜ ਹੋਵੇ ਤਾਂ ਲਾਇਸੰਸਸ਼ੁਦਾ ਅਟਾਰਨੀ ਨਾਲ ਜੁੜੋ।",
+      "consumerCta": "ਮੇਰੇ ਕਾਨੂੰਨੀ ਮੁੱਦੇ ਦੀ ਮੁਫ਼ਤ ਜਾਂਚ ਕਰੋ",
+      "firmCta": "ਕਾਨੂੰਨ ਫਰਮਾਂ ਲਈ ਪਲੇਟਫਾਰਮ",
+      "consumerTitle": "ਤੁਹਾਨੂੰ ਸਿਰਫ਼ ਇਹ ਜਾਣਨ ਲਈ $300 ਦਾ ਭੁਗਤਾਨ ਨਹੀਂ ਕਰਨਾ ਚਾਹੀਦਾ ਕਿ ਜੇਕਰ ਤੁਹਾਡੇ ਕੋਲ ਕੋਈ ਕੇਸ ਹੈ",
+      "consumerBody": "ਕਿਸੇ ਅਟਾਰਨੀ ਨੂੰ ਨਿਯੁਕਤ ਕਰਨ ਤੋਂ ਪਹਿਲਾਂ ਜੋਖਮ ਪੱਧਰ, ਨਤੀਜਿਆਂ ਦੀ ਸੰਭਾਵਨਾ, ਅਤੇ ਹਵਾਲਾ ਦਿੱਤੇ ਕਾਨੂੰਨਾਂ ਦੇ ਨਾਲ ਇੱਕ ਮੁਫਤ AI ਪੂਰਵਦਰਸ਼ਨ ਪ੍ਰਾਪਤ ਕਰੋ। ਆਪਣੇ ਵਿਕਲਪਾਂ ਨੂੰ ਸਧਾਰਨ ਅੰਗਰੇਜ਼ੀ ਵਿੱਚ ਜਾਣੋ।",
+      "noLawyerPitch": "ਗਲਤ ਢੰਗ ਨਾਲ ਸਮਾਪਤੀ, ਬੇਦਖਲੀ, ਇਕਰਾਰਨਾਮੇ ਦੇ ਵਿਵਾਦ, ਛੋਟੇ ਦਾਅਵੇ — ਛਤਰੀ ਤੁਹਾਡੇ ਅਧਿਕਾਰ ਖੇਤਰ ਦੇ ਕਾਨੂੰਨ ਨੂੰ ਤੁਹਾਡੇ ਤੱਥਾਂ 'ਤੇ ਲਾਗੂ ਕਰਦੀ ਹੈ। ਕਿਸੇ ਵਕੀਲ ਨੂੰ ਸਿਰਫ਼ ਉਦੋਂ ਹੀ ਹਾਇਰ ਕਰੋ ਜਦੋਂ ਪ੍ਰੀਵਿਊ ਤੁਹਾਨੂੰ ਦੱਸੇ ਕਿ ਇਹ ਇਸਦੀ ਕੀਮਤ ਹੈ।",
+      "firmTitle": "ਅਮਰੀਕੀ ਕਨੂੰਨੀ ਫਰਮਾਂ ਲਈ AI-ਦੇਸੀ ਕਾਨੂੰਨੀ OS",
+      "firmBody": "ਮੱਧ-ਆਕਾਰ ਦੀਆਂ ਫਰਮਾਂ ਲਈ ਇਕੱਲੇ ਪ੍ਰੈਕਟੀਸ਼ਨਰ — ਮਾਮਲਿਆਂ, ਬਿਲਿੰਗ, ਟਰੱਸਟ ਅਕਾਉਂਟਿੰਗ, ਮੀਟਿੰਗ ਇੰਟੈਲੀਜੈਂਸ, ਅਤੇ ਇੱਕ ਮਾਮਲੇ-ਜਾਣੂ ਕੋਪਾਇਲਟ ਲਈ ਇੱਕ ਪਲੇਟਫਾਰਮ।",
+      "firmPitch": "ਮੁੱਦੇ ਦੀ ਜਾਂਚ ਤੋਂ ਖਪਤਕਾਰ ਦੀ ਵਰਤੋਂ ਪਹਿਲੀ ਸਲਾਹ ਤੋਂ ਪਹਿਲਾਂ ਤੁਹਾਡੀ ਟੀਮ ਨੂੰ ਸੰਦਰਭ ਦਿੰਦੀ ਹੈ। ਗੈਰ-ਬਿਲਯੋਗ ਖੋਜ ਕਾਲਾਂ ਨੂੰ ਘਟਾਓ।",
+      "faqTitle": "ਕਾਨੂੰਨੀ AI USA - ਅਕਸਰ ਪੁੱਛੇ ਜਾਣ ਵਾਲੇ ਸਵਾਲ"
+    },
+    "gb": {
+      "metaTitle": "ਕਾਨੂੰਨੀ ਏਆਈ ਯੂਕੇ - ਗਲੋਬਲ ਪਲੇਟਫਾਰਮ, ਯੂਕੇ ਕਾਨੂੰਨ",
+      "metaDescription": "ਛਤਰੀ ਯੂਨਾਈਟਿਡ ਕਿੰਗਡਮ ਅਤੇ ਦੁਨੀਆ ਭਰ ਦੇ ਹਰ ਦੇਸ਼ ਦੀ ਸੇਵਾ ਕਰਦੀ ਹੈ। ਯੂਕੇ ਦੇ ਕਾਨੂੰਨਾਂ ਅਤੇ ਕੇਸ ਕਾਨੂੰਨ ਦਾ ਹਵਾਲਾ ਦਿੰਦੇ ਹੋਏ ਮੁਫਤ AI ਮੁੱਦਾ ਜਾਂਚਕਰਤਾ। ਬ੍ਰਿਟਿਸ਼ ਲਾਅ ਫਰਮਾਂ ਲਈ ਪੂਰਾ ਕਾਨੂੰਨੀ OS।",
+      "badge": "ਕਾਨੂੰਨੀ ਏਆਈ ਯੂਨਾਈਟਿਡ ਕਿੰਗਡਮ",
+      "heroTitle": "ਯੂਕੇ ਲਈ ਕਾਨੂੰਨੀ ਸਪੱਸ਼ਟਤਾ - ਸ਼ੁਰੂ ਕਰਨ ਲਈ ਕਿਸੇ ਵਕੀਲ ਦੀ ਲੋੜ ਨਹੀਂ ਹੈ",
+      "heroSubtitle": "ਰੁਜ਼ਗਾਰ ਟ੍ਰਿਬਿਊਨਲ, ਰਿਹਾਇਸ਼ ਦੀ ਖਰਾਬੀ, ਕਿਰਾਏਦਾਰ ਦੇ ਅਧਿਕਾਰ, ਇਕਰਾਰਨਾਮੇ - ਸਾਦੀ ਅੰਗਰੇਜ਼ੀ ਵਿੱਚ ਯੂਕੇ ਦੇ ਕਾਨੂੰਨ ਤੋਂ ਹਵਾਲਾ ਪ੍ਰਾਪਤ ਕਰੋ। ਸਾਲਿਸਟਰਾਂ ਅਤੇ ਬੈਰਿਸਟਰਾਂ ਨੂੰ ਇੱਕ ਪੂਰਾ AI-ਨੇਟਿਵ ਅਭਿਆਸ ਪਲੇਟਫਾਰਮ ਮਿਲਦਾ ਹੈ।",
+      "heroNote": "ਸਿਰਫ਼ ਕਨੂੰਨੀ ਜਾਣਕਾਰੀ — ਕਾਨੂੰਨੀ ਸਲਾਹ ਨਹੀਂ। ਜਦੋਂ ਤੁਹਾਨੂੰ ਰਸਮੀ ਸਲਾਹ ਦੀ ਲੋੜ ਹੋਵੇ ਤਾਂ ਕਿਸੇ ਨਿਯੰਤ੍ਰਿਤ ਕਾਨੂੰਨੀ ਪੇਸ਼ੇਵਰ ਨਾਲ ਜੁੜੋ।",
+      "consumerCta": "ਮੇਰੇ ਕਾਨੂੰਨੀ ਮੁੱਦੇ ਦੀ ਮੁਫ਼ਤ ਜਾਂਚ ਕਰੋ",
+      "firmCta": "ਕਾਨੂੰਨ ਫਰਮਾਂ ਲਈ ਪਲੇਟਫਾਰਮ",
+      "consumerTitle": "ਕਿਸੇ ਵਕੀਲ ਨੂੰ ਨਿਰਦੇਸ਼ ਦੇਣ ਤੋਂ ਪਹਿਲਾਂ ਆਪਣੇ ਅਧਿਕਾਰਾਂ ਨੂੰ ਜਾਣੋ",
+      "consumerBody": "ਰੁਜ਼ਗਾਰ ਵਿਵਾਦ, ਰਿਹਾਇਸ਼ੀ ਮੁੱਦੇ, ਉਪਭੋਗਤਾ ਅਧਿਕਾਰ - ਸਲਾਹ ਲਈ ਭੁਗਤਾਨ ਕਰਨ ਤੋਂ ਪਹਿਲਾਂ ਸੰਸਦ ਦੇ ਐਕਟ ਅਤੇ ਸੰਬੰਧਿਤ ਕੇਸ ਕਾਨੂੰਨ ਦਾ ਹਵਾਲਾ ਦਿੰਦੇ ਹੋਏ ਇੱਕ ਮੁਫਤ AI ਪੂਰਵਦਰਸ਼ਨ ਪ੍ਰਾਪਤ ਕਰੋ।",
+      "noLawyerPitch": "ਅੰਬਰੇਲਾ ਤੁਹਾਡੇ ਤੱਥਾਂ ਨੂੰ ਯੂਕੇ ਦੇ ਕਾਨੂੰਨ ਨਾਲ ਨਕਸ਼ੇ ਕਰਦਾ ਹੈ ਅਤੇ ਤੁਹਾਨੂੰ ਜੋਖਮ ਪੱਧਰ ਅਤੇ ਅਗਲੇ ਕਦਮ ਦਿੰਦਾ ਹੈ। ਕਿਸੇ ਵਕੀਲ ਨੂੰ ਉਦੋਂ ਹੀ ਨਿਰਦੇਸ਼ ਦਿਓ ਜਦੋਂ ਤੁਸੀਂ ਰਸਮੀ ਸਲਾਹ ਲਈ ਤਿਆਰ ਹੋਵੋ।",
+      "firmTitle": "ਯੂਕੇ ਦੀਆਂ ਕਨੂੰਨੀ ਫਰਮਾਂ ਲਈ AI-ਦੇਸੀ ਕਾਨੂੰਨੀ OS",
+      "firmBody": "ਇਕੱਲੇ ਪ੍ਰੈਕਟੀਸ਼ਨਰਾਂ ਤੋਂ ਲੈ ਕੇ ਵਧ ਰਹੀ ਫਰਮਾਂ ਤੱਕ — ਮਾਮਲੇ, ਬਿਲਿੰਗ, ਟਰੱਸਟ ਅਕਾਉਂਟਿੰਗ, ਅਤੇ ਤੁਹਾਡੇ ਕਲਾਇੰਟ ਦੇ ਇਨਟੇਕ ਡੇਟਾ 'ਤੇ ਸਿਖਲਾਈ ਪ੍ਰਾਪਤ ਇੱਕ ਕੋਪਾਇਲਟ।",
+      "firmPitch": "ਇੰਗਲੈਂਡ, ਸਕਾਟਲੈਂਡ, ਵੇਲਜ਼ ਅਤੇ ਉੱਤਰੀ ਆਇਰਲੈਂਡ ਵਿੱਚ ਖਪਤਕਾਰ ਮੁੱਦੇ ਦੀ ਜਾਂਚ ਪੂਰੇ AI ਸੰਦਰਭ ਦੇ ਨਾਲ ਤੁਹਾਡੀ ਇਨਟੇਕ ਪਾਈਪਲਾਈਨ ਨੂੰ ਫੀਡ ਕਰਦੀ ਹੈ।",
+      "faqTitle": "ਕਾਨੂੰਨੀ AI UK - ਅਕਸਰ ਪੁੱਛੇ ਜਾਣ ਵਾਲੇ ਸਵਾਲ"
+    },
+    "ke": {
+      "metaTitle": "ਕਾਨੂੰਨੀ ਏਆਈ ਕੀਨੀਆ - ਗਲੋਬਲ ਪਲੇਟਫਾਰਮ, ਕੀਨੀਆ ਦਾ ਕਾਨੂੰਨ",
+      "metaDescription": "ਛਤਰੀ ਕੀਨੀਆ ਅਤੇ ਦੁਨੀਆ ਭਰ ਦੇ ਹਰ ਦੇਸ਼ ਦੀ ਸੇਵਾ ਕਰਦੀ ਹੈ। ਕੀਨੀਆ ਦੇ ਕਾਨੂੰਨਾਂ ਅਤੇ ਕੇਸ ਕਾਨੂੰਨ ਦਾ ਹਵਾਲਾ ਦਿੰਦੇ ਹੋਏ ਮੁਫਤ ਏਆਈ ਮੁੱਦਾ ਜਾਂਚਕਰਤਾ। ਐਮ-ਪੇਸਾ ਬਿਲਿੰਗ ਦੇ ਨਾਲ ਕੀਨੀਆ ਦੀਆਂ ਕਾਨੂੰਨ ਫਰਮਾਂ ਲਈ ਪੂਰਾ ਕਾਨੂੰਨੀ OS।",
+      "badge": "ਕਾਨੂੰਨੀ ਏਆਈ ਕੀਨੀਆ",
+      "heroTitle": "ਕੀਨੀਆ ਲਈ ਕਾਨੂੰਨੀ ਸਪੱਸ਼ਟਤਾ - ਸ਼ੁਰੂ ਕਰਨ ਲਈ ਕੋਈ ਵਕੀਲ ਫੀਸ ਨਹੀਂ",
+      "heroSubtitle": "ਰੁਜ਼ਗਾਰ ਅਧਿਕਾਰ, ਜ਼ਮੀਨੀ ਵਿਵਾਦ, ਖਪਤਕਾਰਾਂ ਦੀਆਂ ਸ਼ਿਕਾਇਤਾਂ — ਆਪਣੀ ਸਥਿਤੀ ਦਾ ਵਰਣਨ ਕਰੋ ਅਤੇ ਕੀਨੀਆ ਦੇ ਕਾਨੂੰਨ ਵਿੱਚ ਆਧਾਰਿਤ ਮਾਰਗਦਰਸ਼ਨ ਪ੍ਰਾਪਤ ਕਰੋ। ਐਡਵੋਕੇਟ ਅਤੇ ਫਰਮਾਂ ਨੂੰ ਮੈਟਰ ਮੈਨੇਜਮੈਂਟ, ਬਿਲਿੰਗ, ਅਤੇ AI ਕੋਪਾਇਲਟ ਮਿਲਦਾ ਹੈ।",
+      "heroNote": "ਸਿਰਫ਼ ਕਨੂੰਨੀ ਜਾਣਕਾਰੀ — ਕਾਨੂੰਨੀ ਸਲਾਹ ਨਹੀਂ। ਜਦੋਂ ਤੁਹਾਨੂੰ ਰਸਮੀ ਪ੍ਰਤੀਨਿਧਤਾ ਦੀ ਲੋੜ ਹੋਵੇ ਤਾਂ ਕਿਸੇ ਲਾਇਸੰਸਸ਼ੁਦਾ ਵਕੀਲ ਨਾਲ ਜੁੜੋ।",
+      "consumerCta": "ਮੇਰੇ ਕਾਨੂੰਨੀ ਮੁੱਦੇ ਦੀ ਮੁਫ਼ਤ ਜਾਂਚ ਕਰੋ",
+      "firmCta": "ਕਾਨੂੰਨ ਫਰਮਾਂ ਲਈ ਪਲੇਟਫਾਰਮ",
+      "consumerTitle": "ਕਨੂੰਨੀ ਸਪੱਸ਼ਟਤਾ ਲਈ ਵਕੀਲ ਦੀ ਸਲਾਹ-ਮਸ਼ਵਰਾ ਫੀਸ ਦੀ ਲੋੜ ਨਹੀਂ ਹੋਣੀ ਚਾਹੀਦੀ",
+      "consumerBody": "ਸਲਾਹ-ਮਸ਼ਵਰੇ ਲਈ ਭੁਗਤਾਨ ਕਰਨ ਤੋਂ ਪਹਿਲਾਂ, ਰੁਜ਼ਗਾਰ ਕਾਨੂੰਨ, ਜ਼ਮੀਨੀ ਕਾਨੂੰਨਾਂ, ਅਤੇ ਸੰਬੰਧਿਤ ਕੀਨੀਆ ਦੇ ਕੇਸ ਕਾਨੂੰਨ ਦਾ ਹਵਾਲਾ ਦਿੰਦੇ ਹੋਏ ਇੱਕ ਮੁਫ਼ਤ AI ਪੂਰਵਦਰਸ਼ਨ ਪ੍ਰਾਪਤ ਕਰੋ। ਆਪਣੇ ਜੋਖਮ ਅਤੇ ਆਪਣੇ ਵਿਕਲਪਾਂ ਨੂੰ ਜਾਣੋ।",
+      "noLawyerPitch": "ਜ਼ਮੀਨੀ ਵਿਵਾਦ, ਗਲਤ ਢੰਗ ਨਾਲ ਸਮਾਪਤੀ, ਖਪਤਕਾਰ ਅਧਿਕਾਰ — ਅੰਬਰੇਲਾ ਮਿੰਟਾਂ ਵਿੱਚ ਤੁਹਾਡੇ ਤੱਥਾਂ 'ਤੇ ਕੀਨੀਆ ਦੇ ਕਾਨੂੰਨ ਨੂੰ ਲਾਗੂ ਕਰਦਾ ਹੈ। ਕਿਸੇ ਵਕੀਲ ਨੂੰ ਸਿਰਫ਼ ਉਦੋਂ ਹੀ ਨਿਯੁਕਤ ਕਰੋ ਜਦੋਂ ਤੁਸੀਂ ਫੈਸਲਾ ਕਰੋ ਕਿ ਤੁਹਾਨੂੰ ਇੱਕ ਦੀ ਲੋੜ ਹੈ।",
+      "firmTitle": "ਕੀਨੀਆ ਦੀਆਂ ਕਾਨੂੰਨ ਫਰਮਾਂ ਲਈ AI-ਦੇਸੀ ਕਾਨੂੰਨੀ OS",
+      "firmBody": "ਇਕੱਲੇ ਮੱਧ-ਆਕਾਰ ਦੀਆਂ ਫਰਮਾਂ ਦੀ ਵਕਾਲਤ ਕਰਦਾ ਹੈ — ਮਾਮਲੇ, M-Pesa ਸਹਾਇਤਾ ਨਾਲ ਬਿਲਿੰਗ, ਟਰੱਸਟ ਅਕਾਉਂਟਿੰਗ, ਅਤੇ ਕੀਨੀਆ ਅਭਿਆਸ ਲਈ ਬਣਾਏ ਗਏ AI ਕੋਪਾਇਲਟ।",
+      "firmPitch": "ਪੂਰੇ ਕੀਨੀਆ ਤੋਂ ਖਪਤਕਾਰ ਮੁੱਦੇ ਦੀਆਂ ਜਾਂਚਾਂ ਤੁਹਾਡੇ ਦਾਖਲੇ ਨੂੰ ਪੂਰੇ ਸੰਦਰਭ ਨਾਲ ਫੀਡ ਕਰਦੀਆਂ ਹਨ — ਤੁਹਾਡਾ ਕੋਪਾਇਲਟ ਪਹਿਲੀ ਮੀਟਿੰਗ ਤੋਂ ਪਹਿਲਾਂ ਗਾਹਕ ਦੀ ਸਥਿਤੀ ਨੂੰ ਜਾਣਦਾ ਹੈ।",
+      "faqTitle": "ਕਾਨੂੰਨੀ AI ਕੀਨੀਆ - ਅਕਸਰ ਪੁੱਛੇ ਜਾਣ ਵਾਲੇ ਸਵਾਲ"
+    }
+  },
+  "seoGlobal": {
+    "badge": "ਦੁਨੀਆ ਭਰ ਵਿੱਚ ਉਪਲਬਧ ਹੈ",
+    "availability": "ਹਰ ਦੇਸ਼ ਵਿੱਚ ਉਪਲਬਧ — ਤੁਹਾਡੇ ਅਧਿਕਾਰ ਖੇਤਰ ਦਾ ਸਵੈ-ਪਛਾਣ ਕਰਦਾ ਹੈ ਅਤੇ ਸਥਾਨਕ ਕਾਨੂੰਨ ਲਾਗੂ ਕਰਦਾ ਹੈ।",
+    "featuresTitle": "ਜੋ ਤੁਸੀਂ ਪ੍ਰਾਪਤ ਕਰਦੇ ਹੋ",
+    "dualAudienceTitle": "ਕਾਨੂੰਨੀ ਕੰਮ ਨੂੰ ਛੂਹਣ ਵਾਲੇ ਹਰੇਕ ਲਈ ਬਣਾਇਆ ਗਿਆ",
+    "consumerCta": "ਮੁਫ਼ਤ ਅਜ਼ਮਾਓ — ਮੁੱਦਾ ਚੈਕਰ",
+    "firmCta": "ਕਾਨੂੰਨ ਫਰਮਾਂ ਲਈ ਪਲੇਟਫਾਰਮ",
+    "faqTitle": "ਅਕਸਰ ਪੁੱਛੇ ਜਾਂਦੇ ਸਵਾਲ",
+    "relatedSolutions": "ਸੰਬੰਧਿਤ ਸਮਰੱਥਾਵਾਂ",
+    "allSolutions": "ਸਾਰੇ ਹੱਲ"
+  },
+  "solutionsHub": {
+    "metaTitle": "ਕਾਨੂੰਨੀ AI ਹੱਲ — ਦਸਤਾਵੇਜ਼ ਡਰਾਫਟ, ਖੋਜ, ਇਕਰਾਰਨਾਮੇ ਦੀ ਸਮੀਖਿਆ ਅਤੇ ਹੋਰ",
+    "metaDescription": "ਅੰਬਰੇਲਾ ਦੇ ਗਲੋਬਲ ਕਾਨੂੰਨੀ AI ਹੱਲਾਂ ਦੀ ਪੜਚੋਲ ਕਰੋ: ਦਸਤਾਵੇਜ਼ ਦਾ ਖਰੜਾ ਤਿਆਰ ਕਰਨਾ, ਇਕਰਾਰਨਾਮੇ ਦੀ ਸਮੀਖਿਆ, ਕਾਨੂੰਨੀ ਖੋਜ, ਲਾਅ ਫਰਮ ਸੌਫਟਵੇਅਰ, ਕਾਨੂੰਨੀ ਕੋਪਾਇਲਟ, ਅਤੇ ਵਰਕਫਲੋ ਆਟੋਮੇਸ਼ਨ — ਦੁਨੀਆ ਭਰ ਵਿੱਚ।",
+    "badge": "ਹੱਲ",
+    "title": "ਹਰ ਕਾਨੂੰਨੀ ਕੰਮ ਲਈ ਕਾਨੂੰਨੀ ਏ.ਆਈ",
+    "subtitle": "ਤੁਹਾਡੇ ਪਹਿਲੇ ਕਨੂੰਨੀ ਸਵਾਲ ਤੋਂ ਲੈ ਕੇ ਇੱਕ ਪੂਰੇ ਗਲੋਬਲ ਅਭਿਆਸ ਨੂੰ ਚਲਾਉਣ ਤੱਕ — ਦਸਤਾਵੇਜ਼ ਦਾ ਖਰੜਾ ਤਿਆਰ ਕਰਨਾ, ਇਕਰਾਰਨਾਮੇ ਦੀ ਸਮੀਖਿਆ, ਕਾਨੂੰਨੀ ਖੋਜ, ਅਤੇ ਇੱਕ ਪਲੇਟਫਾਰਮ ਵਿੱਚ ਫਰਮ ਆਟੋਮੇਸ਼ਨ।",
+    "learnMore": "ਜਿਆਦਾ ਜਾਣੋ",
+    "closing": "ਇੱਕ ਪਲੇਟਫਾਰਮ. ਹਰ ਦੇਸ਼. ਵਿਅਕਤੀ ਅਤੇ ਕਾਨੂੰਨ ਫਰਮਾਂ।"
+  },
+  "seoPillars": {
+    "legal-document-drafting": {
+      "metaTitle": "ਕਾਨੂੰਨੀ ਦਸਤਾਵੇਜ਼ ਡਰਾਫਟਿੰਗ — ਗਲੋਬਲ ਲੀਗਲ ਏਆਈ ਪਲੇਟਫਾਰਮ",
+      "metaDescription": "ਛਤਰੀ ਕਾਨੂੰਨੀ ਦਸਤਾਵੇਜ਼ ਦਾ ਖਰੜਾ: AI-ਸੰਚਾਲਿਤ, ਅਧਿਕਾਰ ਖੇਤਰ-ਜਾਗਰੂਕ, ਅਸਲ ਹਵਾਲੇ ਦੇ ਨਾਲ — ਵਿਅਕਤੀਆਂ ਅਤੇ ਕਨੂੰਨੀ ਫਰਮਾਂ ਲਈ ਦੁਨੀਆ ਭਰ ਦੇ ਹਰ ਦੇਸ਼ ਵਿੱਚ ਉਪਲਬਧ ਹੈ।",
+      "shortTitle": "ਕਾਨੂੰਨੀ ਦਸਤਾਵੇਜ਼ ਦਾ ਖਰੜਾ ਤਿਆਰ ਕਰਨਾ",
+      "cardDescription": "ਅਸਲ ਹਵਾਲਿਆਂ ਦੇ ਨਾਲ ਗਲੋਬਲ ਕਾਨੂੰਨੀ ਦਸਤਾਵੇਜ਼ ਦਾ ਖਰੜਾ ਤਿਆਰ ਕਰਨਾ — ਵਿਅਕਤੀਆਂ ਅਤੇ ਕਨੂੰਨੀ ਫਰਮਾਂ ਲਈ।",
+      "heroTitle": "ਕਾਨੂੰਨੀ ਦਸਤਾਵੇਜ਼ ਦਾ ਖਰੜਾ ਤਿਆਰ ਕਰਨਾ — AI ਜੋ ਅਸਲ ਕਾਨੂੰਨ ਦਾ ਹਵਾਲਾ ਦਿੰਦਾ ਹੈ",
+      "heroSubtitle": "ਸਭ ਤੋਂ ਸਮਰੱਥ ਕਾਨੂੰਨੀ ਦਸਤਾਵੇਜ਼ ਦਾ ਖਰੜਾ ਤਿਆਰ ਕਰਨ ਵਾਲਾ ਪਲੇਟਫਾਰਮ — ਅਸਲ ਕਨੂੰਨਾਂ ਅਤੇ ਕੇਸ ਕਾਨੂੰਨ ਵਿੱਚ ਅਧਾਰਤ, ਤੁਹਾਡੇ ਅਧਿਕਾਰ ਖੇਤਰ ਦਾ ਸਵੈ-ਪਛਾਣ ਕਰਦਾ ਹੈ, ਦੁਨੀਆ ਭਰ ਵਿੱਚ ਉਪਲਬਧ ਹੈ।",
+      "bodyTitle": "ਸਭ ਤੋਂ ਵਧੀਆ ਕਾਨੂੰਨੀ ਦਸਤਾਵੇਜ਼ ਡਰਾਫਟ ਪਲੇਟਫਾਰਮ",
+      "body1": "Umbrella ਕਾਨੂੰਨੀ ਕਾਰਪੋਰਾ ਉੱਤੇ ਪੁਨਰ-ਪ੍ਰਾਪਤੀ-ਵਧੇ ਹੋਏ ਪੀੜ੍ਹੀ ਦੁਆਰਾ ਸੰਚਾਲਿਤ ਕਾਨੂੰਨੀ ਦਸਤਾਵੇਜ਼ ਦਾ ਖਰੜਾ ਪ੍ਰਦਾਨ ਕਰਦਾ ਹੈ — ਹਰ ਦੇਸ਼ ਲਈ ਪ੍ਰਮਾਣਿਤ ਹਵਾਲੇ, ਮਾਮਲੇ-ਜਾਣੂ ਸੰਦਰਭ, ਅਤੇ ਅਧਿਕਾਰ ਖੇਤਰ ਆਟੋ-ਡਿਟੈਕਸ਼ਨ ਦੇ ਨਾਲ।",
+      "body2": "ਵਿਅਕਤੀ ਇਸਨੂੰ ਮੁਫਤ ਵਿੱਚ ਵਰਤਦੇ ਹਨ। ਕਨੂੰਨੀ ਫਰਮਾਂ ਇਸ ਨੂੰ ਏਆਈ ਕੋਪਾਇਲਟ, ਬਿਲਿੰਗ, ਅਤੇ ਵਰਕਫਲੋ ਆਟੋਮੇਸ਼ਨ - ਇੱਕ ਗਲੋਬਲ ਪਲੇਟਫਾਰਮ ਦੇ ਨਾਲ ਹਰ ਮਾਮਲੇ ਵਿੱਚ ਤੈਨਾਤ ਕਰਦੀਆਂ ਹਨ।",
+      "featuresSubtitle": "ਅਸਲ ਕਾਨੂੰਨੀ ਕੰਮ ਲਈ ਬਣਾਇਆ ਗਿਆ।",
+      "dualAudience": "ਵਿਅਕਤੀਆਂ ਨੂੰ ਮੁਫ਼ਤ ਕਾਨੂੰਨੀ ਦਸਤਾਵੇਜ਼ ਦਾ ਖਰੜਾ ਮਿਲਦਾ ਹੈ। ਫਰਮਾਂ ਦੁਨੀਆ ਭਰ ਵਿੱਚ ਹਰ ਮਾਮਲੇ ਵਿੱਚ ਇਸਨੂੰ ਸਵੈਚਾਲਿਤ ਕਰਦੀਆਂ ਹਨ।",
+      "ctaPrimary": "ਖਰੜਾ ਤਿਆਰ ਕਰਨਾ ਸ਼ੁਰੂ ਕਰੋ"
+    },
+    "legal-research": {
+      "metaTitle": "ਕਾਨੂੰਨੀ ਖੋਜ - ਗਲੋਬਲ ਕਾਨੂੰਨੀ AI ਪਲੇਟਫਾਰਮ",
+      "metaDescription": "ਛਤਰੀ ਕਾਨੂੰਨੀ ਖੋਜ: AI-ਸੰਚਾਲਿਤ, ਅਧਿਕਾਰ ਖੇਤਰ-ਜਾਗਰੂਕ, ਅਸਲ ਹਵਾਲੇ ਦੇ ਨਾਲ — ਵਿਅਕਤੀਆਂ ਅਤੇ ਕਨੂੰਨੀ ਫਰਮਾਂ ਲਈ ਦੁਨੀਆ ਭਰ ਦੇ ਹਰ ਦੇਸ਼ ਵਿੱਚ ਉਪਲਬਧ ਹੈ।",
+      "shortTitle": "ਕਾਨੂੰਨੀ ਖੋਜ",
+      "cardDescription": "ਅਸਲ ਹਵਾਲੇ ਦੇ ਨਾਲ ਗਲੋਬਲ ਕਾਨੂੰਨੀ ਖੋਜ — ਵਿਅਕਤੀਆਂ ਅਤੇ ਕਨੂੰਨੀ ਫਰਮਾਂ ਲਈ।",
+      "heroTitle": "ਕਾਨੂੰਨੀ ਖੋਜ AI — ਤੁਹਾਡੇ 'ਤੇ ਲਾਗੂ ਹੋਣ ਵਾਲੇ ਕਾਨੂੰਨ ਨੂੰ ਲੱਭੋ",
+      "heroSubtitle": "ਸਭ ਤੋਂ ਸਮਰੱਥ ਕਨੂੰਨੀ ਖੋਜ ਪਲੇਟਫਾਰਮ — ਅਸਲ ਕਨੂੰਨਾਂ ਅਤੇ ਕੇਸ ਕਨੂੰਨ ਵਿੱਚ ਅਧਾਰਤ, ਤੁਹਾਡੇ ਅਧਿਕਾਰ ਖੇਤਰ ਦਾ ਸਵੈ-ਪਛਾਣ ਕਰਦਾ ਹੈ, ਦੁਨੀਆ ਭਰ ਵਿੱਚ ਉਪਲਬਧ ਹੈ।",
+      "bodyTitle": "ਸਭ ਤੋਂ ਵਧੀਆ ਕਾਨੂੰਨੀ ਖੋਜ ਪਲੇਟਫਾਰਮ",
+      "body1": "Umbrella ਕਾਨੂੰਨੀ ਕਾਰਪੋਰਾ ਉੱਤੇ ਪੁਨਰ-ਪ੍ਰਾਪਤ-ਵਿਸਤ੍ਰਿਤ ਪੀੜ੍ਹੀ ਦੁਆਰਾ ਸੰਚਾਲਿਤ ਕਾਨੂੰਨੀ ਖੋਜ ਪ੍ਰਦਾਨ ਕਰਦਾ ਹੈ — ਹਰ ਦੇਸ਼ ਲਈ ਪ੍ਰਮਾਣਿਤ ਹਵਾਲੇ, ਮਾਮਲੇ-ਜਾਣੂ ਸੰਦਰਭ, ਅਤੇ ਅਧਿਕਾਰ ਖੇਤਰ ਆਟੋ-ਡਿਟੈਕਸ਼ਨ ਦੇ ਨਾਲ।",
+      "body2": "ਵਿਅਕਤੀ ਇਸਨੂੰ ਮੁਫਤ ਵਿੱਚ ਵਰਤਦੇ ਹਨ। ਕਨੂੰਨੀ ਫਰਮਾਂ ਇਸ ਨੂੰ ਏਆਈ ਕੋਪਾਇਲਟ, ਬਿਲਿੰਗ, ਅਤੇ ਵਰਕਫਲੋ ਆਟੋਮੇਸ਼ਨ - ਇੱਕ ਗਲੋਬਲ ਪਲੇਟਫਾਰਮ ਦੇ ਨਾਲ ਹਰ ਮਾਮਲੇ ਵਿੱਚ ਤੈਨਾਤ ਕਰਦੀਆਂ ਹਨ।",
+      "featuresSubtitle": "ਅਸਲ ਕਾਨੂੰਨੀ ਕੰਮ ਲਈ ਬਣਾਇਆ ਗਿਆ।",
+      "dualAudience": "ਵਿਅਕਤੀ ਮੁਫ਼ਤ ਕਾਨੂੰਨੀ ਖੋਜ ਪ੍ਰਾਪਤ ਕਰਦੇ ਹਨ। ਫਰਮਾਂ ਦੁਨੀਆ ਭਰ ਵਿੱਚ ਹਰ ਮਾਮਲੇ ਵਿੱਚ ਇਸਨੂੰ ਸਵੈਚਾਲਿਤ ਕਰਦੀਆਂ ਹਨ।",
+      "ctaPrimary": "ਮੇਰੇ ਕਾਨੂੰਨੀ ਮੁੱਦੇ ਦੀ ਖੋਜ ਕਰੋ"
+    },
+    "contract-review": {
+      "metaTitle": "ਕੰਟਰੈਕਟ ਰਿਵਿਊ — ਗਲੋਬਲ ਲੀਗਲ ਏਆਈ ਪਲੇਟਫਾਰਮ",
+      "metaDescription": "ਛਤਰੀ ਇਕਰਾਰਨਾਮੇ ਦੀ ਸਮੀਖਿਆ: AI-ਸੰਚਾਲਿਤ, ਅਧਿਕਾਰ ਖੇਤਰ-ਜਾਗਰੂਕ, ਅਸਲ ਹਵਾਲੇ ਦੇ ਨਾਲ — ਵਿਅਕਤੀਆਂ ਅਤੇ ਕਨੂੰਨੀ ਫਰਮਾਂ ਲਈ ਦੁਨੀਆ ਭਰ ਦੇ ਹਰ ਦੇਸ਼ ਵਿੱਚ ਉਪਲਬਧ ਹੈ।",
+      "shortTitle": "ਇਕਰਾਰਨਾਮੇ ਦੀ ਸਮੀਖਿਆ",
+      "cardDescription": "ਅਸਲ ਹਵਾਲੇ ਦੇ ਨਾਲ ਗਲੋਬਲ ਕੰਟਰੈਕਟ ਸਮੀਖਿਆ — ਵਿਅਕਤੀਆਂ ਅਤੇ ਕਨੂੰਨੀ ਫਰਮਾਂ ਲਈ।",
+      "heroTitle": "AI ਇਕਰਾਰਨਾਮੇ ਦੀ ਸਮੀਖਿਆ - ਹਰ ਧਾਰਾ, ਹਰ ਜੋਖਮ",
+      "heroSubtitle": "ਸਭ ਤੋਂ ਸਮਰੱਥ ਇਕਰਾਰਨਾਮੇ ਦੀ ਸਮੀਖਿਆ ਪਲੇਟਫਾਰਮ — ਅਸਲ ਕਨੂੰਨਾਂ ਅਤੇ ਕੇਸ ਕਾਨੂੰਨ ਵਿੱਚ ਅਧਾਰਤ, ਤੁਹਾਡੇ ਅਧਿਕਾਰ ਖੇਤਰ ਦਾ ਸਵੈ-ਪਛਾਣ ਕਰਦਾ ਹੈ, ਦੁਨੀਆ ਭਰ ਵਿੱਚ ਉਪਲਬਧ ਹੈ।",
+      "bodyTitle": "ਸਭ ਤੋਂ ਵਧੀਆ ਕੰਟਰੈਕਟ ਸਮੀਖਿਆ ਪਲੇਟਫਾਰਮ",
+      "body1": "Umbrella ਕਾਨੂੰਨੀ ਕਾਰਪੋਰਾ ਉੱਤੇ ਪੁਨਰ-ਪ੍ਰਾਪਤ-ਵਿਸਤ੍ਰਿਤ ਪੀੜ੍ਹੀ ਦੁਆਰਾ ਸੰਚਾਲਿਤ ਇਕਰਾਰਨਾਮੇ ਦੀ ਸਮੀਖਿਆ ਪ੍ਰਦਾਨ ਕਰਦਾ ਹੈ — ਹਰ ਦੇਸ਼ ਲਈ ਪ੍ਰਮਾਣਿਤ ਹਵਾਲੇ, ਮਾਮਲੇ-ਜਾਣੂ ਸੰਦਰਭ, ਅਤੇ ਅਧਿਕਾਰ ਖੇਤਰ ਆਟੋ-ਡਿਟੈਕਸ਼ਨ ਦੇ ਨਾਲ।",
+      "body2": "ਵਿਅਕਤੀ ਇਸਨੂੰ ਮੁਫਤ ਵਿੱਚ ਵਰਤਦੇ ਹਨ। ਕਨੂੰਨੀ ਫਰਮਾਂ ਇਸ ਨੂੰ ਏਆਈ ਕੋਪਾਇਲਟ, ਬਿਲਿੰਗ, ਅਤੇ ਵਰਕਫਲੋ ਆਟੋਮੇਸ਼ਨ - ਇੱਕ ਗਲੋਬਲ ਪਲੇਟਫਾਰਮ ਦੇ ਨਾਲ ਹਰ ਮਾਮਲੇ ਵਿੱਚ ਤੈਨਾਤ ਕਰਦੀਆਂ ਹਨ।",
+      "featuresSubtitle": "ਅਸਲ ਕਾਨੂੰਨੀ ਕੰਮ ਲਈ ਬਣਾਇਆ ਗਿਆ।",
+      "dualAudience": "ਵਿਅਕਤੀਆਂ ਨੂੰ ਮੁਫਤ ਇਕਰਾਰਨਾਮੇ ਦੀ ਸਮੀਖਿਆ ਮਿਲਦੀ ਹੈ। ਫਰਮਾਂ ਦੁਨੀਆ ਭਰ ਵਿੱਚ ਹਰ ਮਾਮਲੇ ਵਿੱਚ ਇਸਨੂੰ ਸਵੈਚਾਲਿਤ ਕਰਦੀਆਂ ਹਨ।",
+      "ctaPrimary": "ਇਕਰਾਰਨਾਮੇ ਦੀ ਸਮੀਖਿਆ ਕਰੋ"
+    },
+    "document-review": {
+      "metaTitle": "ਦਸਤਾਵੇਜ਼ ਸਮੀਖਿਆ — ਗਲੋਬਲ ਕਾਨੂੰਨੀ AI ਪਲੇਟਫਾਰਮ",
+      "metaDescription": "ਛਤਰੀ ਦਸਤਾਵੇਜ਼ ਸਮੀਖਿਆ: AI-ਸੰਚਾਲਿਤ, ਅਧਿਕਾਰ ਖੇਤਰ-ਜਾਗਰੂਕ, ਅਸਲ ਹਵਾਲੇ ਦੇ ਨਾਲ — ਵਿਅਕਤੀਆਂ ਅਤੇ ਕਨੂੰਨੀ ਫਰਮਾਂ ਲਈ ਦੁਨੀਆ ਭਰ ਦੇ ਹਰ ਦੇਸ਼ ਵਿੱਚ ਉਪਲਬਧ ਹੈ।",
+      "shortTitle": "ਦਸਤਾਵੇਜ਼ ਸਮੀਖਿਆ",
+      "cardDescription": "ਅਸਲ ਹਵਾਲੇ ਦੇ ਨਾਲ ਗਲੋਬਲ ਦਸਤਾਵੇਜ਼ ਸਮੀਖਿਆ — ਵਿਅਕਤੀਆਂ ਅਤੇ ਕਨੂੰਨੀ ਫਰਮਾਂ ਲਈ।",
+      "heroTitle": "ਕਾਨੂੰਨੀ ਦਸਤਾਵੇਜ਼ ਸਮੀਖਿਆ — AI ਹਰ ਪੰਨੇ ਨੂੰ ਪੜ੍ਹਦਾ ਹੈ",
+      "heroSubtitle": "ਸਭ ਤੋਂ ਸਮਰੱਥ ਦਸਤਾਵੇਜ਼ ਸਮੀਖਿਆ ਪਲੇਟਫਾਰਮ — ਅਸਲ ਕਨੂੰਨਾਂ ਅਤੇ ਕੇਸ ਕਾਨੂੰਨ ਵਿੱਚ ਅਧਾਰਤ, ਤੁਹਾਡੇ ਅਧਿਕਾਰ ਖੇਤਰ ਦਾ ਸਵੈ-ਪਛਾਣ ਕਰਦਾ ਹੈ, ਦੁਨੀਆ ਭਰ ਵਿੱਚ ਉਪਲਬਧ ਹੈ।",
+      "bodyTitle": "ਵਧੀਆ ਦਸਤਾਵੇਜ਼ ਸਮੀਖਿਆ ਪਲੇਟਫਾਰਮ",
+      "body1": "Umbrella ਕਾਨੂੰਨੀ ਕਾਰਪੋਰਾ ਉੱਤੇ ਪੁਨਰ-ਪ੍ਰਾਪਤ-ਵਿਸਤ੍ਰਿਤ ਪੀੜ੍ਹੀ ਦੁਆਰਾ ਸੰਚਾਲਿਤ ਦਸਤਾਵੇਜ਼ ਸਮੀਖਿਆ ਪ੍ਰਦਾਨ ਕਰਦਾ ਹੈ — ਹਰ ਦੇਸ਼ ਲਈ ਪ੍ਰਮਾਣਿਤ ਹਵਾਲੇ, ਮਾਮਲੇ-ਜਾਣੂ ਸੰਦਰਭ, ਅਤੇ ਅਧਿਕਾਰ ਖੇਤਰ ਆਟੋ-ਡਿਟੈਕਸ਼ਨ ਦੇ ਨਾਲ।",
+      "body2": "ਵਿਅਕਤੀ ਇਸਨੂੰ ਮੁਫਤ ਵਿੱਚ ਵਰਤਦੇ ਹਨ। ਕਨੂੰਨੀ ਫਰਮਾਂ ਇਸ ਨੂੰ ਏਆਈ ਕੋਪਾਇਲਟ, ਬਿਲਿੰਗ, ਅਤੇ ਵਰਕਫਲੋ ਆਟੋਮੇਸ਼ਨ - ਇੱਕ ਗਲੋਬਲ ਪਲੇਟਫਾਰਮ ਦੇ ਨਾਲ ਹਰ ਮਾਮਲੇ ਵਿੱਚ ਤੈਨਾਤ ਕਰਦੀਆਂ ਹਨ।",
+      "featuresSubtitle": "ਅਸਲ ਕਾਨੂੰਨੀ ਕੰਮ ਲਈ ਬਣਾਇਆ ਗਿਆ।",
+      "dualAudience": "ਵਿਅਕਤੀ ਮੁਫਤ ਦਸਤਾਵੇਜ਼ ਸਮੀਖਿਆ ਪ੍ਰਾਪਤ ਕਰਦੇ ਹਨ। ਫਰਮਾਂ ਦੁਨੀਆ ਭਰ ਵਿੱਚ ਹਰ ਮਾਮਲੇ ਵਿੱਚ ਇਸਨੂੰ ਸਵੈਚਾਲਿਤ ਕਰਦੀਆਂ ਹਨ।",
+      "ctaPrimary": "ਇੱਕ ਦਸਤਾਵੇਜ਼ ਅੱਪਲੋਡ ਕਰੋ"
+    },
+    "law-firm-software": {
+      "metaTitle": "ਲਾਅ ਫਰਮ ਸੌਫਟਵੇਅਰ - ਗਲੋਬਲ ਲੀਗਲ ਏਆਈ ਪਲੇਟਫਾਰਮ",
+      "metaDescription": "ਛਤਰੀ ਕਾਨੂੰਨ ਫਰਮ ਸਾਫਟਵੇਅਰ: AI-ਸੰਚਾਲਿਤ, ਅਧਿਕਾਰ ਖੇਤਰ-ਜਾਗਰੂਕ, ਅਸਲ ਹਵਾਲੇ ਦੇ ਨਾਲ — ਵਿਅਕਤੀਆਂ ਅਤੇ ਕਾਨੂੰਨ ਫਰਮਾਂ ਲਈ ਦੁਨੀਆ ਭਰ ਦੇ ਹਰ ਦੇਸ਼ ਵਿੱਚ ਉਪਲਬਧ ਹੈ।",
+      "shortTitle": "ਲਾਅ ਫਰਮ ਸਾਫਟਵੇਅਰ",
+      "cardDescription": "ਅਸਲ ਹਵਾਲੇ ਦੇ ਨਾਲ ਗਲੋਬਲ ਲਾਅ ਫਰਮ ਸਾਫਟਵੇਅਰ — ਵਿਅਕਤੀਆਂ ਅਤੇ ਕਨੂੰਨੀ ਫਰਮਾਂ ਲਈ।",
+      "heroTitle": "AI ਯੁੱਗ ਲਈ ਬਣਾਇਆ ਕਾਨੂੰਨ ਫਰਮ ਸਾਫਟਵੇਅਰ",
+      "heroSubtitle": "ਸਭ ਤੋਂ ਸਮਰੱਥ ਕਨੂੰਨੀ ਫਰਮ ਸਾਫਟਵੇਅਰ ਪਲੇਟਫਾਰਮ — ਅਸਲ ਕਨੂੰਨਾਂ ਅਤੇ ਕੇਸ ਕਨੂੰਨ ਵਿੱਚ ਅਧਾਰਤ, ਤੁਹਾਡੇ ਅਧਿਕਾਰ ਖੇਤਰ ਦਾ ਸਵੈ-ਪਛਾਣ ਕਰਦਾ ਹੈ, ਦੁਨੀਆ ਭਰ ਵਿੱਚ ਉਪਲਬਧ ਹੈ।",
+      "bodyTitle": "ਵਧੀਆ ਕਾਨੂੰਨ ਫਰਮ ਸਾਫਟਵੇਅਰ ਪਲੇਟਫਾਰਮ",
+      "body1": "Umbrella ਕਾਨੂੰਨੀ ਕਾਰਪੋਰਾ ਉੱਤੇ ਪੁਨਰ-ਪ੍ਰਾਪਤੀ-ਵਧੇਰੇ ਪੀੜ੍ਹੀ ਦੁਆਰਾ ਸੰਚਾਲਿਤ ਲਾਅ ਫਰਮ ਸੌਫਟਵੇਅਰ ਪ੍ਰਦਾਨ ਕਰਦਾ ਹੈ — ਹਰ ਦੇਸ਼ ਲਈ ਪ੍ਰਮਾਣਿਤ ਹਵਾਲੇ, ਮਾਮਲੇ-ਜਾਣੂ ਸੰਦਰਭ, ਅਤੇ ਅਧਿਕਾਰ ਖੇਤਰ ਆਟੋ-ਡਿਟੈਕਸ਼ਨ ਦੇ ਨਾਲ।",
+      "body2": "ਵਿਅਕਤੀ ਇਸਨੂੰ ਮੁਫਤ ਵਿੱਚ ਵਰਤਦੇ ਹਨ। ਕਨੂੰਨੀ ਫਰਮਾਂ ਇਸ ਨੂੰ ਏਆਈ ਕੋਪਾਇਲਟ, ਬਿਲਿੰਗ, ਅਤੇ ਵਰਕਫਲੋ ਆਟੋਮੇਸ਼ਨ - ਇੱਕ ਗਲੋਬਲ ਪਲੇਟਫਾਰਮ ਦੇ ਨਾਲ ਹਰ ਮਾਮਲੇ ਵਿੱਚ ਤੈਨਾਤ ਕਰਦੀਆਂ ਹਨ।",
+      "featuresSubtitle": "ਅਸਲ ਕਾਨੂੰਨੀ ਕੰਮ ਲਈ ਬਣਾਇਆ ਗਿਆ।",
+      "dualAudience": "ਵਿਅਕਤੀਆਂ ਨੂੰ ਮੁਫਤ ਲਾਅ ਫਰਮ ਸਾਫਟਵੇਅਰ ਪ੍ਰਾਪਤ ਹੁੰਦੇ ਹਨ। ਫਰਮਾਂ ਦੁਨੀਆ ਭਰ ਵਿੱਚ ਹਰ ਮਾਮਲੇ ਵਿੱਚ ਇਸਨੂੰ ਸਵੈਚਾਲਿਤ ਕਰਦੀਆਂ ਹਨ।",
+      "ctaPrimary": "ਫਰਮ ਪਲੇਟਫਾਰਮ ਦੀ ਪੜਚੋਲ ਕਰੋ"
+    },
+    "legal-copilot": {
+      "metaTitle": "ਲੀਗਲ ਕੋਪਾਇਲਟ — ਗਲੋਬਲ ਲੀਗਲ ਏਆਈ ਪਲੇਟਫਾਰਮ",
+      "metaDescription": "ਛਤਰੀ ਕਾਨੂੰਨੀ ਕੋਪਾਇਲਟ: AI-ਸੰਚਾਲਿਤ, ਅਧਿਕਾਰ ਖੇਤਰ-ਜਾਗਰੂਕ, ਅਸਲ ਹਵਾਲੇ ਦੇ ਨਾਲ — ਵਿਅਕਤੀਆਂ ਅਤੇ ਕਨੂੰਨੀ ਫਰਮਾਂ ਲਈ ਦੁਨੀਆ ਭਰ ਦੇ ਹਰ ਦੇਸ਼ ਵਿੱਚ ਉਪਲਬਧ ਹੈ।",
+      "shortTitle": "ਕਾਨੂੰਨੀ ਸਹਿਯੋਗੀ",
+      "cardDescription": "ਅਸਲ ਹਵਾਲੇ ਦੇ ਨਾਲ ਗਲੋਬਲ ਕਾਨੂੰਨੀ ਕੋਪਾਇਲਟ — ਵਿਅਕਤੀਆਂ ਅਤੇ ਕਨੂੰਨੀ ਫਰਮਾਂ ਲਈ।",
+      "heroTitle": "ਲੀਗਲ ਕੋਪਾਇਲਟ - AI ਜੋ ਤੁਹਾਡੇ ਕੇਸਾਂ ਨੂੰ ਜਾਣਦਾ ਹੈ",
+      "heroSubtitle": "ਸਭ ਤੋਂ ਸਮਰੱਥ ਕਨੂੰਨੀ ਕੋਪਾਇਲਟ ਪਲੇਟਫਾਰਮ — ਅਸਲ ਕਨੂੰਨਾਂ ਅਤੇ ਕੇਸ ਕਾਨੂੰਨ ਵਿੱਚ ਅਧਾਰਤ, ਤੁਹਾਡੇ ਅਧਿਕਾਰ ਖੇਤਰ ਦਾ ਸਵੈ-ਪਛਾਣ ਕਰਦਾ ਹੈ, ਦੁਨੀਆ ਭਰ ਵਿੱਚ ਉਪਲਬਧ ਹੈ।",
+      "bodyTitle": "ਸਭ ਤੋਂ ਵਧੀਆ ਕਾਨੂੰਨੀ ਕੋਪਾਇਲਟ ਪਲੇਟਫਾਰਮ",
+      "body1": "Umbrella ਕਾਨੂੰਨੀ ਕਾਰਪੋਰਾ ਉੱਤੇ ਪੁਨਰ-ਪ੍ਰਾਪਤੀ-ਵਧੇ ਹੋਏ ਪੀੜ੍ਹੀ ਦੁਆਰਾ ਸੰਚਾਲਿਤ ਕਾਨੂੰਨੀ ਸਹਿ-ਪਾਇਲਟ ਪ੍ਰਦਾਨ ਕਰਦਾ ਹੈ — ਹਰ ਦੇਸ਼ ਲਈ ਪ੍ਰਮਾਣਿਤ ਹਵਾਲੇ, ਮਾਮਲੇ-ਜਾਣੂ ਸੰਦਰਭ, ਅਤੇ ਅਧਿਕਾਰ ਖੇਤਰ ਆਟੋ-ਡਿਟੈਕਸ਼ਨ ਦੇ ਨਾਲ।",
+      "body2": "ਵਿਅਕਤੀ ਇਸਨੂੰ ਮੁਫਤ ਵਿੱਚ ਵਰਤਦੇ ਹਨ। ਕਨੂੰਨੀ ਫਰਮਾਂ ਇਸ ਨੂੰ ਏਆਈ ਕੋਪਾਇਲਟ, ਬਿਲਿੰਗ, ਅਤੇ ਵਰਕਫਲੋ ਆਟੋਮੇਸ਼ਨ - ਇੱਕ ਗਲੋਬਲ ਪਲੇਟਫਾਰਮ ਦੇ ਨਾਲ ਹਰ ਮਾਮਲੇ ਵਿੱਚ ਤੈਨਾਤ ਕਰਦੀਆਂ ਹਨ।",
+      "featuresSubtitle": "ਅਸਲ ਕਾਨੂੰਨੀ ਕੰਮ ਲਈ ਬਣਾਇਆ ਗਿਆ।",
+      "dualAudience": "ਵਿਅਕਤੀਆਂ ਨੂੰ ਮੁਫਤ ਕਾਨੂੰਨੀ ਸਹਿ-ਪਾਇਲਟ ਮਿਲਦਾ ਹੈ। ਫਰਮਾਂ ਦੁਨੀਆ ਭਰ ਵਿੱਚ ਹਰ ਮਾਮਲੇ ਵਿੱਚ ਇਸਨੂੰ ਸਵੈਚਾਲਿਤ ਕਰਦੀਆਂ ਹਨ।",
+      "ctaPrimary": "ਕਾਨੂੰਨੀ ਕੋਪਾਇਲਟ ਦੀ ਕੋਸ਼ਿਸ਼ ਕਰੋ"
+    },
+    "legal-workflow-automation": {
+      "metaTitle": "ਵਰਕਫਲੋ ਆਟੋਮੇਸ਼ਨ — ਗਲੋਬਲ ਕਾਨੂੰਨੀ AI ਪਲੇਟਫਾਰਮ",
+      "metaDescription": "ਛਤਰੀ ਵਰਕਫਲੋ ਆਟੋਮੇਸ਼ਨ: AI-ਸੰਚਾਲਿਤ, ਅਧਿਕਾਰ ਖੇਤਰ-ਜਾਗਰੂਕ, ਅਸਲ ਹਵਾਲੇ ਦੇ ਨਾਲ — ਵਿਅਕਤੀਆਂ ਅਤੇ ਕਨੂੰਨੀ ਫਰਮਾਂ ਲਈ ਦੁਨੀਆ ਭਰ ਦੇ ਹਰ ਦੇਸ਼ ਵਿੱਚ ਉਪਲਬਧ ਹੈ।",
+      "shortTitle": "ਵਰਕਫਲੋ ਆਟੋਮੇਸ਼ਨ",
+      "cardDescription": "ਅਸਲ ਹਵਾਲੇ ਦੇ ਨਾਲ ਗਲੋਬਲ ਵਰਕਫਲੋ ਆਟੋਮੇਸ਼ਨ — ਵਿਅਕਤੀਆਂ ਅਤੇ ਕਨੂੰਨੀ ਫਰਮਾਂ ਲਈ।",
+      "heroTitle": "ਕਾਨੂੰਨੀ ਵਰਕਫਲੋ ਆਟੋਮੇਸ਼ਨ — ਇਨਟੇਕ ਤੋਂ ਇਨਵੌਇਸ ਤੱਕ",
+      "heroSubtitle": "ਸਭ ਤੋਂ ਸਮਰੱਥ ਵਰਕਫਲੋ ਆਟੋਮੇਸ਼ਨ ਪਲੇਟਫਾਰਮ — ਅਸਲ ਕਨੂੰਨਾਂ ਅਤੇ ਕੇਸ ਕਨੂੰਨ ਵਿੱਚ ਅਧਾਰਤ, ਤੁਹਾਡੇ ਅਧਿਕਾਰ ਖੇਤਰ ਦਾ ਸਵੈ-ਪਛਾਣ ਕਰਦਾ ਹੈ, ਦੁਨੀਆ ਭਰ ਵਿੱਚ ਉਪਲਬਧ ਹੈ।",
+      "bodyTitle": "ਵਧੀਆ ਵਰਕਫਲੋ ਆਟੋਮੇਸ਼ਨ ਪਲੇਟਫਾਰਮ",
+      "body1": "Umbrella ਕਾਨੂੰਨੀ ਕਾਰਪੋਰਾ ਉੱਤੇ ਪੁਨਰ-ਪ੍ਰਾਪਤੀ-ਵਧੇ ਹੋਏ ਪੀੜ੍ਹੀ ਦੁਆਰਾ ਸੰਚਾਲਿਤ ਵਰਕਫਲੋ ਆਟੋਮੇਸ਼ਨ ਪ੍ਰਦਾਨ ਕਰਦਾ ਹੈ — ਹਰ ਦੇਸ਼ ਲਈ ਪ੍ਰਮਾਣਿਤ ਹਵਾਲੇ, ਮਾਮਲੇ-ਜਾਣੂ ਸੰਦਰਭ, ਅਤੇ ਅਧਿਕਾਰ ਖੇਤਰ ਆਟੋ-ਡਿਟੈਕਸ਼ਨ ਦੇ ਨਾਲ।",
+      "body2": "ਵਿਅਕਤੀ ਇਸਨੂੰ ਮੁਫਤ ਵਿੱਚ ਵਰਤਦੇ ਹਨ। ਕਨੂੰਨੀ ਫਰਮਾਂ ਇਸ ਨੂੰ ਏਆਈ ਕੋਪਾਇਲਟ, ਬਿਲਿੰਗ, ਅਤੇ ਵਰਕਫਲੋ ਆਟੋਮੇਸ਼ਨ - ਇੱਕ ਗਲੋਬਲ ਪਲੇਟਫਾਰਮ ਦੇ ਨਾਲ ਹਰ ਮਾਮਲੇ ਵਿੱਚ ਤੈਨਾਤ ਕਰਦੀਆਂ ਹਨ।",
+      "featuresSubtitle": "ਅਸਲ ਕਾਨੂੰਨੀ ਕੰਮ ਲਈ ਬਣਾਇਆ ਗਿਆ।",
+      "dualAudience": "ਵਿਅਕਤੀਆਂ ਨੂੰ ਮੁਫਤ ਵਰਕਫਲੋ ਆਟੋਮੇਸ਼ਨ ਮਿਲਦੀ ਹੈ। ਫਰਮਾਂ ਦੁਨੀਆ ਭਰ ਵਿੱਚ ਹਰ ਮਾਮਲੇ ਵਿੱਚ ਇਸਨੂੰ ਸਵੈਚਾਲਿਤ ਕਰਦੀਆਂ ਹਨ।",
+      "ctaPrimary": "ਆਪਣੀ ਫਰਮ ਨੂੰ ਸਵੈਚਾਲਤ ਕਰੋ"
+    },
+    "contract-analysis": {
+      "metaTitle": "ਇਕਰਾਰਨਾਮਾ ਵਿਸ਼ਲੇਸ਼ਣ - ਗਲੋਬਲ ਕਾਨੂੰਨੀ AI ਪਲੇਟਫਾਰਮ",
+      "metaDescription": "ਛਤਰੀ ਇਕਰਾਰਨਾਮਾ ਵਿਸ਼ਲੇਸ਼ਣ: AI-ਸੰਚਾਲਿਤ, ਅਧਿਕਾਰ ਖੇਤਰ-ਜਾਗਰੂਕ, ਅਸਲ ਹਵਾਲੇ ਦੇ ਨਾਲ — ਵਿਅਕਤੀਆਂ ਅਤੇ ਕਨੂੰਨੀ ਫਰਮਾਂ ਲਈ ਦੁਨੀਆ ਭਰ ਦੇ ਹਰ ਦੇਸ਼ ਵਿੱਚ ਉਪਲਬਧ ਹੈ।",
+      "shortTitle": "ਇਕਰਾਰਨਾਮਾ ਵਿਸ਼ਲੇਸ਼ਣ",
+      "cardDescription": "ਅਸਲ ਹਵਾਲੇ ਦੇ ਨਾਲ ਗਲੋਬਲ ਕੰਟਰੈਕਟ ਵਿਸ਼ਲੇਸ਼ਣ — ਵਿਅਕਤੀਆਂ ਅਤੇ ਕਨੂੰਨੀ ਫਰਮਾਂ ਲਈ।",
+      "heroTitle": "AI ਕੰਟਰੈਕਟ ਵਿਸ਼ਲੇਸ਼ਣ - ਸਤਹ-ਪੱਧਰ ਦੀ ਸਮੀਖਿਆ ਤੋਂ ਪਰੇ",
+      "heroSubtitle": "ਸਭ ਤੋਂ ਸਮਰੱਥ ਇਕਰਾਰਨਾਮਾ ਵਿਸ਼ਲੇਸ਼ਣ ਪਲੇਟਫਾਰਮ — ਅਸਲ ਕਨੂੰਨਾਂ ਅਤੇ ਕੇਸ ਕਾਨੂੰਨ ਵਿੱਚ ਅਧਾਰਤ, ਤੁਹਾਡੇ ਅਧਿਕਾਰ ਖੇਤਰ ਦਾ ਸਵੈ-ਪਛਾਣ ਕਰਦਾ ਹੈ, ਦੁਨੀਆ ਭਰ ਵਿੱਚ ਉਪਲਬਧ ਹੈ।",
+      "bodyTitle": "ਸਭ ਤੋਂ ਵਧੀਆ ਇਕਰਾਰਨਾਮਾ ਵਿਸ਼ਲੇਸ਼ਣ ਪਲੇਟਫਾਰਮ",
+      "body1": "Umbrella ਕਾਨੂੰਨੀ ਕਾਰਪੋਰਾ ਉੱਤੇ ਪੁਨਰ-ਪ੍ਰਾਪਤ-ਵਿਸਤ੍ਰਿਤ ਪੀੜ੍ਹੀ ਦੁਆਰਾ ਸੰਚਾਲਿਤ ਇਕਰਾਰਨਾਮਾ ਵਿਸ਼ਲੇਸ਼ਣ ਪ੍ਰਦਾਨ ਕਰਦਾ ਹੈ — ਹਰ ਦੇਸ਼ ਲਈ ਪ੍ਰਮਾਣਿਤ ਹਵਾਲੇ, ਮਾਮਲੇ-ਜਾਣੂ ਸੰਦਰਭ, ਅਤੇ ਅਧਿਕਾਰ ਖੇਤਰ ਆਟੋ-ਡਿਟੈਕਸ਼ਨ ਦੇ ਨਾਲ।",
+      "body2": "ਵਿਅਕਤੀ ਇਸਨੂੰ ਮੁਫਤ ਵਿੱਚ ਵਰਤਦੇ ਹਨ। ਕਨੂੰਨੀ ਫਰਮਾਂ ਇਸ ਨੂੰ ਏਆਈ ਕੋਪਾਇਲਟ, ਬਿਲਿੰਗ, ਅਤੇ ਵਰਕਫਲੋ ਆਟੋਮੇਸ਼ਨ - ਇੱਕ ਗਲੋਬਲ ਪਲੇਟਫਾਰਮ ਦੇ ਨਾਲ ਹਰ ਮਾਮਲੇ ਵਿੱਚ ਤੈਨਾਤ ਕਰਦੀਆਂ ਹਨ।",
+      "featuresSubtitle": "ਅਸਲ ਕਾਨੂੰਨੀ ਕੰਮ ਲਈ ਬਣਾਇਆ ਗਿਆ।",
+      "dualAudience": "ਵਿਅਕਤੀਆਂ ਨੂੰ ਮੁਫਤ ਇਕਰਾਰਨਾਮਾ ਵਿਸ਼ਲੇਸ਼ਣ ਮਿਲਦਾ ਹੈ। ਫਰਮਾਂ ਦੁਨੀਆ ਭਰ ਵਿੱਚ ਹਰ ਮਾਮਲੇ ਵਿੱਚ ਇਸਨੂੰ ਸਵੈਚਾਲਿਤ ਕਰਦੀਆਂ ਹਨ।",
+      "ctaPrimary": "ਇਕਰਾਰਨਾਮੇ ਦਾ ਵਿਸ਼ਲੇਸ਼ਣ ਕਰੋ"
+    },
+    "legal-assistant": {
+      "metaTitle": "AI ਕਾਨੂੰਨੀ ਸਹਾਇਕ - ਗਲੋਬਲ ਲੀਗਲ AI ਪਲੇਟਫਾਰਮ",
+      "metaDescription": "Umbrella ai ਕਾਨੂੰਨੀ ਸਹਾਇਕ: AI-ਸੰਚਾਲਿਤ, ਅਧਿਕਾਰ ਖੇਤਰ-ਜਾਣੂ, ਅਸਲ ਹਵਾਲੇ ਦੇ ਨਾਲ — ਵਿਅਕਤੀਆਂ ਅਤੇ ਕਨੂੰਨੀ ਫਰਮਾਂ ਲਈ ਦੁਨੀਆ ਭਰ ਦੇ ਹਰ ਦੇਸ਼ ਵਿੱਚ ਉਪਲਬਧ ਹੈ।",
+      "shortTitle": "AI ਕਾਨੂੰਨੀ ਸਹਾਇਕ",
+      "cardDescription": "ਅਸਲ ਹਵਾਲੇ ਦੇ ਨਾਲ ਗਲੋਬਲ ਏਆਈ ਕਾਨੂੰਨੀ ਸਹਾਇਕ — ਵਿਅਕਤੀਆਂ ਅਤੇ ਕਨੂੰਨੀ ਫਰਮਾਂ ਲਈ।",
+      "heroTitle": "AI ਕਾਨੂੰਨੀ ਸਹਾਇਕ — ਅਸਲ ਜਵਾਬ, ਅਸਲ ਹਵਾਲੇ",
+      "heroSubtitle": "ਸਭ ਤੋਂ ਸਮਰੱਥ AI ਕਾਨੂੰਨੀ ਸਹਾਇਕ ਪਲੇਟਫਾਰਮ — ਅਸਲ ਕਨੂੰਨਾਂ ਅਤੇ ਕੇਸ ਕਾਨੂੰਨ ਵਿੱਚ ਅਧਾਰਤ, ਤੁਹਾਡੇ ਅਧਿਕਾਰ ਖੇਤਰ ਦਾ ਸਵੈ-ਪਛਾਣ ਕਰਦਾ ਹੈ, ਦੁਨੀਆ ਭਰ ਵਿੱਚ ਉਪਲਬਧ ਹੈ।",
+      "bodyTitle": "ਸਭ ਤੋਂ ਵਧੀਆ ਏਆਈ ਕਾਨੂੰਨੀ ਸਹਾਇਕ ਪਲੇਟਫਾਰਮ",
+      "body1": "Umbrella ਹਰ ਦੇਸ਼ ਲਈ ਪ੍ਰਮਾਣਿਤ ਹਵਾਲੇ, ਮਾਮਲੇ-ਜਾਣੂ ਸੰਦਰਭ, ਅਤੇ ਅਧਿਕਾਰ ਖੇਤਰ ਆਟੋ-ਡਿਟੈਕਸ਼ਨ ਦੇ ਨਾਲ ਕਨੂੰਨੀ ਕਾਰਪੋਰਾ ਉੱਤੇ ਪੁਨਰ-ਪ੍ਰਾਪਤੀ-ਵਧੇਰੇ ਪੀੜ੍ਹੀ ਦੁਆਰਾ ਸੰਚਾਲਿਤ AI ਕਾਨੂੰਨੀ ਸਹਾਇਕ ਪ੍ਰਦਾਨ ਕਰਦਾ ਹੈ।",
+      "body2": "ਵਿਅਕਤੀ ਇਸਨੂੰ ਮੁਫਤ ਵਿੱਚ ਵਰਤਦੇ ਹਨ। ਕਨੂੰਨੀ ਫਰਮਾਂ ਇਸ ਨੂੰ ਏਆਈ ਕੋਪਾਇਲਟ, ਬਿਲਿੰਗ, ਅਤੇ ਵਰਕਫਲੋ ਆਟੋਮੇਸ਼ਨ - ਇੱਕ ਗਲੋਬਲ ਪਲੇਟਫਾਰਮ ਦੇ ਨਾਲ ਹਰ ਮਾਮਲੇ ਵਿੱਚ ਤੈਨਾਤ ਕਰਦੀਆਂ ਹਨ।",
+      "featuresSubtitle": "ਅਸਲ ਕਾਨੂੰਨੀ ਕੰਮ ਲਈ ਬਣਾਇਆ ਗਿਆ।",
+      "dualAudience": "ਵਿਅਕਤੀਆਂ ਨੂੰ ਮੁਫ਼ਤ AI ਕਾਨੂੰਨੀ ਸਹਾਇਕ ਮਿਲਦਾ ਹੈ। ਫਰਮਾਂ ਦੁਨੀਆ ਭਰ ਵਿੱਚ ਹਰ ਮਾਮਲੇ ਵਿੱਚ ਇਸਨੂੰ ਸਵੈਚਾਲਿਤ ਕਰਦੀਆਂ ਹਨ।",
+      "ctaPrimary": "ਇੱਕ ਕਾਨੂੰਨੀ ਸਵਾਲ ਪੁੱਛੋ"
+    },
+    "practice-management": {
+      "metaTitle": "ਅਭਿਆਸ ਪ੍ਰਬੰਧਨ - ਗਲੋਬਲ ਕਾਨੂੰਨੀ ਏਆਈ ਪਲੇਟਫਾਰਮ",
+      "metaDescription": "ਛਤਰੀ ਅਭਿਆਸ ਪ੍ਰਬੰਧਨ: AI-ਸੰਚਾਲਿਤ, ਅਧਿਕਾਰ ਖੇਤਰ-ਜਾਗਰੂਕ, ਅਸਲ ਹਵਾਲੇ ਦੇ ਨਾਲ — ਵਿਅਕਤੀਆਂ ਅਤੇ ਕਾਨੂੰਨ ਫਰਮਾਂ ਲਈ ਦੁਨੀਆ ਭਰ ਦੇ ਹਰ ਦੇਸ਼ ਵਿੱਚ ਉਪਲਬਧ ਹੈ।",
+      "shortTitle": "ਅਭਿਆਸ ਪ੍ਰਬੰਧਨ",
+      "cardDescription": "ਅਸਲ ਹਵਾਲੇ ਦੇ ਨਾਲ ਗਲੋਬਲ ਅਭਿਆਸ ਪ੍ਰਬੰਧਨ — ਵਿਅਕਤੀਆਂ ਅਤੇ ਕਾਨੂੰਨ ਫਰਮਾਂ ਲਈ।",
+      "heroTitle": "ਅਭਿਆਸ ਪ੍ਰਬੰਧਨ - AI ਨਾਲ ਦੁਬਾਰਾ ਕਲਪਨਾ ਕੀਤੀ ਗਈ",
+      "heroSubtitle": "ਸਭ ਤੋਂ ਸਮਰੱਥ ਅਭਿਆਸ ਪ੍ਰਬੰਧਨ ਪਲੇਟਫਾਰਮ — ਅਸਲ ਕਨੂੰਨਾਂ ਅਤੇ ਕੇਸ ਕਾਨੂੰਨ ਵਿੱਚ ਅਧਾਰਤ, ਤੁਹਾਡੇ ਅਧਿਕਾਰ ਖੇਤਰ ਦਾ ਸਵੈ-ਪਛਾਣ ਕਰਦਾ ਹੈ, ਦੁਨੀਆ ਭਰ ਵਿੱਚ ਉਪਲਬਧ ਹੈ।",
+      "bodyTitle": "ਵਧੀਆ ਅਭਿਆਸ ਪ੍ਰਬੰਧਨ ਪਲੇਟਫਾਰਮ",
+      "body1": "Umbrella ਕਾਨੂੰਨੀ ਕਾਰਪੋਰਾ ਉੱਤੇ ਪੁਨਰ-ਪ੍ਰਾਪਤ-ਵਿਸਤ੍ਰਿਤ ਪੀੜ੍ਹੀ ਦੁਆਰਾ ਸੰਚਾਲਿਤ ਅਭਿਆਸ ਪ੍ਰਬੰਧਨ ਪ੍ਰਦਾਨ ਕਰਦਾ ਹੈ — ਹਰ ਦੇਸ਼ ਲਈ ਪ੍ਰਮਾਣਿਤ ਹਵਾਲੇ, ਮਾਮਲੇ-ਜਾਣੂ ਸੰਦਰਭ, ਅਤੇ ਅਧਿਕਾਰ ਖੇਤਰ ਆਟੋ-ਡਿਟੈਕਸ਼ਨ ਦੇ ਨਾਲ।",
+      "body2": "ਵਿਅਕਤੀ ਇਸਨੂੰ ਮੁਫਤ ਵਿੱਚ ਵਰਤਦੇ ਹਨ। ਕਨੂੰਨੀ ਫਰਮਾਂ ਇਸ ਨੂੰ ਏਆਈ ਕੋਪਾਇਲਟ, ਬਿਲਿੰਗ, ਅਤੇ ਵਰਕਫਲੋ ਆਟੋਮੇਸ਼ਨ - ਇੱਕ ਗਲੋਬਲ ਪਲੇਟਫਾਰਮ ਦੇ ਨਾਲ ਹਰ ਮਾਮਲੇ ਵਿੱਚ ਤੈਨਾਤ ਕਰਦੀਆਂ ਹਨ।",
+      "featuresSubtitle": "ਅਸਲ ਕਾਨੂੰਨੀ ਕੰਮ ਲਈ ਬਣਾਇਆ ਗਿਆ।",
+      "dualAudience": "ਵਿਅਕਤੀਆਂ ਨੂੰ ਮੁਫਤ ਅਭਿਆਸ ਪ੍ਰਬੰਧਨ ਮਿਲਦਾ ਹੈ। ਫਰਮਾਂ ਦੁਨੀਆ ਭਰ ਵਿੱਚ ਹਰ ਮਾਮਲੇ ਵਿੱਚ ਇਸਨੂੰ ਸਵੈਚਾਲਿਤ ਕਰਦੀਆਂ ਹਨ।",
+      "ctaPrimary": "ਆਪਣੇ ਅਭਿਆਸ ਦਾ ਪ੍ਰਬੰਧਨ ਕਰੋ"
+    },
+    "legal-due-diligence": {
+      "metaTitle": "ਲੀਗਲ ਡੂ ਡਿਲੀਜੈਂਸ — ਗਲੋਬਲ ਲੀਗਲ ਏਆਈ ਪਲੇਟਫਾਰਮ",
+      "metaDescription": "ਛਤਰੀ ਕਾਨੂੰਨੀ ਉਚਿਤ ਮਿਹਨਤ: AI-ਸੰਚਾਲਿਤ, ਅਧਿਕਾਰ ਖੇਤਰ-ਜਾਗਰੂਕ, ਅਸਲ ਹਵਾਲੇ ਦੇ ਨਾਲ — ਵਿਅਕਤੀਆਂ ਅਤੇ ਕਨੂੰਨੀ ਫਰਮਾਂ ਲਈ ਦੁਨੀਆ ਭਰ ਦੇ ਹਰ ਦੇਸ਼ ਵਿੱਚ ਉਪਲਬਧ ਹੈ।",
+      "shortTitle": "ਕਾਨੂੰਨੀ ਕਾਰਨ ਮਿਹਨਤ",
+      "cardDescription": "ਵਿਅਕਤੀਆਂ ਅਤੇ ਕਨੂੰਨੀ ਫਰਮਾਂ ਲਈ - ਅਸਲ ਹਵਾਲਿਆਂ ਦੇ ਨਾਲ ਗਲੋਬਲ ਕਾਨੂੰਨੀ ਉਚਿਤ ਮਿਹਨਤ।",
+      "heroTitle": "AI ਕਾਨੂੰਨੀ ਉਚਿਤ ਮਿਹਨਤ — ਤੇਜ਼, ਡੂੰਘਾ, ਹਵਾਲਾ ਦਿੱਤਾ ਗਿਆ",
+      "heroSubtitle": "ਸਭ ਤੋਂ ਸਮਰੱਥ ਕਾਨੂੰਨੀ ਨਿਯਤ ਮਿਹਨਤੀ ਪਲੇਟਫਾਰਮ — ਅਸਲ ਕਨੂੰਨਾਂ ਅਤੇ ਕੇਸ ਕਾਨੂੰਨ ਵਿੱਚ ਅਧਾਰਤ, ਤੁਹਾਡੇ ਅਧਿਕਾਰ ਖੇਤਰ ਦਾ ਸਵੈ-ਪਛਾਣ ਕਰਦਾ ਹੈ, ਦੁਨੀਆ ਭਰ ਵਿੱਚ ਉਪਲਬਧ ਹੈ।",
+      "bodyTitle": "ਸਭ ਤੋਂ ਵਧੀਆ ਕਾਨੂੰਨੀ ਕਾਰਨ ਮਿਹਨਤ ਪਲੇਟਫਾਰਮ",
+      "body1": "Umbrella ਕਾਨੂੰਨੀ ਕਾਰਪੋਰਾ ਉੱਤੇ ਪੁਨਰ-ਪ੍ਰਾਪਤੀ-ਵਧਾਈ ਪੀੜ੍ਹੀ ਦੁਆਰਾ ਸੰਚਾਲਿਤ ਕਾਨੂੰਨੀ ਉਚਿਤ ਮਿਹਨਤ ਪ੍ਰਦਾਨ ਕਰਦਾ ਹੈ — ਪ੍ਰਮਾਣਿਤ ਹਵਾਲਿਆਂ, ਮਾਮਲੇ-ਜਾਣੂ ਸੰਦਰਭ, ਅਤੇ ਹਰੇਕ ਦੇਸ਼ ਲਈ ਅਧਿਕਾਰ ਖੇਤਰ ਆਟੋ-ਡਿਟੈਕਸ਼ਨ ਦੇ ਨਾਲ।",
+      "body2": "ਵਿਅਕਤੀ ਇਸਨੂੰ ਮੁਫਤ ਵਿੱਚ ਵਰਤਦੇ ਹਨ। ਕਨੂੰਨੀ ਫਰਮਾਂ ਇਸ ਨੂੰ ਏਆਈ ਕੋਪਾਇਲਟ, ਬਿਲਿੰਗ, ਅਤੇ ਵਰਕਫਲੋ ਆਟੋਮੇਸ਼ਨ - ਇੱਕ ਗਲੋਬਲ ਪਲੇਟਫਾਰਮ ਦੇ ਨਾਲ ਹਰ ਮਾਮਲੇ ਵਿੱਚ ਤੈਨਾਤ ਕਰਦੀਆਂ ਹਨ।",
+      "featuresSubtitle": "ਅਸਲ ਕਾਨੂੰਨੀ ਕੰਮ ਲਈ ਬਣਾਇਆ ਗਿਆ।",
+      "dualAudience": "ਵਿਅਕਤੀਆਂ ਨੂੰ ਮੁਫਤ ਕਾਨੂੰਨੀ ਕਾਰਨ ਮਿਹਨਤ ਮਿਲਦੀ ਹੈ। ਫਰਮਾਂ ਦੁਨੀਆ ਭਰ ਵਿੱਚ ਹਰ ਮਾਮਲੇ ਵਿੱਚ ਇਸਨੂੰ ਸਵੈਚਾਲਿਤ ਕਰਦੀਆਂ ਹਨ।",
+      "ctaPrimary": "ਉਚਿਤ ਮਿਹਨਤ ਸਮੀਖਿਆ ਸ਼ੁਰੂ ਕਰੋ"
+    },
+    "legal-issue-analysis": {
+      "metaTitle": "ਕਾਨੂੰਨੀ ਮੁੱਦੇ ਦਾ ਵਿਸ਼ਲੇਸ਼ਣ — ਗਲੋਬਲ ਕਾਨੂੰਨੀ AI ਪਲੇਟਫਾਰਮ",
+      "metaDescription": "ਛਤਰੀ ਕਾਨੂੰਨੀ ਮੁੱਦੇ ਦਾ ਵਿਸ਼ਲੇਸ਼ਣ: AI-ਸੰਚਾਲਿਤ, ਅਧਿਕਾਰ ਖੇਤਰ-ਜਾਗਰੂਕ, ਅਸਲ ਹਵਾਲੇ ਦੇ ਨਾਲ — ਵਿਅਕਤੀਆਂ ਅਤੇ ਕਨੂੰਨੀ ਫਰਮਾਂ ਲਈ ਦੁਨੀਆ ਭਰ ਦੇ ਹਰ ਦੇਸ਼ ਵਿੱਚ ਉਪਲਬਧ ਹੈ।",
+      "shortTitle": "ਕਾਨੂੰਨੀ ਮੁੱਦੇ ਦਾ ਵਿਸ਼ਲੇਸ਼ਣ",
+      "cardDescription": "ਅਸਲ ਹਵਾਲੇ ਦੇ ਨਾਲ ਗਲੋਬਲ ਕਾਨੂੰਨੀ ਮੁੱਦੇ ਦਾ ਵਿਸ਼ਲੇਸ਼ਣ — ਵਿਅਕਤੀਆਂ ਅਤੇ ਕਨੂੰਨੀ ਫਰਮਾਂ ਲਈ।",
+      "heroTitle": "ਕਾਨੂੰਨੀ ਮੁੱਦੇ ਦਾ ਵਿਸ਼ਲੇਸ਼ਣ — ਜਾਣੋ ਕਿ ਤੁਸੀਂ ਕਿੱਥੇ ਖੜ੍ਹੇ ਹੋ",
+      "heroSubtitle": "ਸਭ ਤੋਂ ਸਮਰੱਥ ਕਨੂੰਨੀ ਮੁੱਦੇ ਵਿਸ਼ਲੇਸ਼ਣ ਪਲੇਟਫਾਰਮ — ਅਸਲ ਕਨੂੰਨਾਂ ਅਤੇ ਕੇਸ ਕਾਨੂੰਨ ਵਿੱਚ ਅਧਾਰਤ, ਤੁਹਾਡੇ ਅਧਿਕਾਰ ਖੇਤਰ ਦਾ ਸਵੈ-ਪਛਾਣ ਕਰਦਾ ਹੈ, ਦੁਨੀਆ ਭਰ ਵਿੱਚ ਉਪਲਬਧ ਹੈ।",
+      "bodyTitle": "ਸਭ ਤੋਂ ਵਧੀਆ ਕਾਨੂੰਨੀ ਮੁੱਦੇ ਵਿਸ਼ਲੇਸ਼ਣ ਪਲੇਟਫਾਰਮ",
+      "body1": "Umbrella ਕਾਨੂੰਨੀ ਕਾਰਪੋਰਾ ਉੱਤੇ ਪੁਨਰ-ਪ੍ਰਾਪਤ-ਵਿਸਤ੍ਰਿਤ ਪੀੜ੍ਹੀ ਦੁਆਰਾ ਸੰਚਾਲਿਤ ਕਾਨੂੰਨੀ ਮੁੱਦੇ ਵਿਸ਼ਲੇਸ਼ਣ ਪ੍ਰਦਾਨ ਕਰਦਾ ਹੈ — ਹਰ ਦੇਸ਼ ਲਈ ਪ੍ਰਮਾਣਿਤ ਹਵਾਲੇ, ਮਾਮਲੇ-ਜਾਣੂ ਸੰਦਰਭ, ਅਤੇ ਅਧਿਕਾਰ ਖੇਤਰ ਆਟੋ-ਡਿਟੈਕਸ਼ਨ ਦੇ ਨਾਲ।",
+      "body2": "ਵਿਅਕਤੀ ਇਸਨੂੰ ਮੁਫਤ ਵਿੱਚ ਵਰਤਦੇ ਹਨ। ਕਨੂੰਨੀ ਫਰਮਾਂ ਇਸ ਨੂੰ ਏਆਈ ਕੋਪਾਇਲਟ, ਬਿਲਿੰਗ, ਅਤੇ ਵਰਕਫਲੋ ਆਟੋਮੇਸ਼ਨ - ਇੱਕ ਗਲੋਬਲ ਪਲੇਟਫਾਰਮ ਦੇ ਨਾਲ ਹਰ ਮਾਮਲੇ ਵਿੱਚ ਤੈਨਾਤ ਕਰਦੀਆਂ ਹਨ।",
+      "featuresSubtitle": "ਅਸਲ ਕਾਨੂੰਨੀ ਕੰਮ ਲਈ ਬਣਾਇਆ ਗਿਆ।",
+      "dualAudience": "ਵਿਅਕਤੀਆਂ ਨੂੰ ਮੁਫ਼ਤ ਕਾਨੂੰਨੀ ਮੁੱਦੇ ਦਾ ਵਿਸ਼ਲੇਸ਼ਣ ਮਿਲਦਾ ਹੈ। ਫਰਮਾਂ ਦੁਨੀਆ ਭਰ ਵਿੱਚ ਹਰ ਮਾਮਲੇ ਵਿੱਚ ਇਸਨੂੰ ਸਵੈਚਾਲਿਤ ਕਰਦੀਆਂ ਹਨ।",
+      "ctaPrimary": "ਮੇਰੇ ਕਾਨੂੰਨੀ ਮੁੱਦੇ ਦਾ ਵਿਸ਼ਲੇਸ਼ਣ ਕਰੋ"
+    }
+  }
 }

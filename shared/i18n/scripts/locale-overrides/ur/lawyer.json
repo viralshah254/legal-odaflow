@@ -1,5 +1,6 @@
 {
   "nav": {
+    "quickActions": "فوری اقدامات",
     "dashboard": "ڈیش بورڈ",
     "clients": "کلائنٹس",
     "matters": "معاملات",
@@ -11,6 +12,7 @@
     "evidence": "ثبوت",
     "billing": "بلنگ",
     "trust": "بھروسہ",
+    "trustAccounts": "ٹرسٹ اکاؤنٹس",
     "finance": "فنانس",
     "expenses": "اخراجات",
     "queues": "قطاریں",
@@ -19,14 +21,20 @@
     "inbox": "انباکس",
     "newIntake": "نیا انٹیک",
     "alerts": "انتباہات",
+    "monitors": "مانیٹر",
     "team": "ٹیم",
     "templates": "ٹیمپلیٹس",
     "reports": "رپورٹس",
     "settings": "ترتیبات",
-    "aiLegalSearch": "AI قانونی تلاش",
+    "aiLegalSearch": "قانونی تحقیق",
+    "documentDrafting": "دستاویز کا مسودہ تیار کرنا",
+    "draftDocument": "دستاویز کا مسودہ",
     "more": "مزید",
     "myProfile": "میرا پروفائل",
-    "notifications": "اطلاعات"
+    "notifications": "اطلاعات",
+    "lawLibrary": "لاء لائبریری",
+    "vault": "والٹ",
+    "esign": "ای سائن"
   },
   "navGroups": {
     "scheduleTime": "شیڈول اور ٹائم",
@@ -238,7 +246,7 @@
   "notify_the_partner": "ساتھی کو مطلع کریں۔",
   "only_if_optional": "صرف اس صورت میں جب (اختیاری)",
   "open_case": "اوپن کیس",
-  "open_matter_workbench": "کھلا معاملہ ورک بینچ",
+  "open_matter_workbench": "کوئیک AI کھولیں۔",
   "open_task_details": "کام کی تفصیلات کھولیں۔",
   "opening": "کھلنا",
   "output_preview": "آؤٹ پٹ پیش نظارہ",

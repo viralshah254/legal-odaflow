@@ -117,7 +117,7 @@
     "newClientMatter": "പുതിയ ക്ലയൻ്റ് കാര്യം"
   },
   "aiSearch": {
-    "title": "AI നിയമപരമായ തിരയൽ",
+    "title": "നിയമ ഗവേഷണം",
     "subtitle": "ഏതെങ്കിലും നിയമപരമായ ചോദ്യം ചോദിക്കുക - ഉത്തരങ്ങൾ നിങ്ങളുടെ അധികാരപരിധിയിലെ യഥാർത്ഥ അധികാരികളെ ഉദ്ധരിക്കുന്നു.",
     "placeholder": "എന്ത് നിയമപരമായ ചോദ്യമാണ് നിങ്ങൾക്ക് ഉത്തരം നൽകേണ്ടത്?",
     "prompts": {
@@ -165,6 +165,23 @@
     "triageLeads": "ട്രയേജ് {count} ലീഡുകൾ",
     "askMorningBrief": "എൻ്റെ പ്രഭാത സംഗ്രഹം ചോദിക്കൂ"
   },
+  "aiReview": {
+    "title": "AI review queue",
+    "subtitle": "AI outputs flagged for lawyer review before client use",
+    "queueTitle": "{count, plural, one {# item awaiting review} other {# items awaiting review}}",
+    "queueDescription": "Review, open the source workspace, or mark as reviewed when signed off.",
+    "empty": "No AI outputs are waiting for lawyer review.",
+    "loadError": "Failed to load review queue",
+    "author": "Author",
+    "matter": "Matter",
+    "jurisdiction": "Jurisdiction",
+    "unverified": "Unverified",
+    "preview": "Preview",
+    "openWorkspace": "Open workspace",
+    "markReviewed": "Mark reviewed",
+    "previewTruncated": "Open the workspace for the full output.",
+    "unknownAuthor": "Unknown"
+  },
   "tasks": {
     "myTasks": "എൻ്റെ ജോലികൾ",
     "next7d": "അടുത്ത 7d",
@@ -187,12 +204,12 @@
     "start": "ആരംഭിക്കുക →",
     "allSetUp": "നിങ്ങൾ എല്ലാം സജ്ജീകരിച്ചു!",
     "allSetUpDescription": "ആരംഭിക്കുന്നതിനുള്ള എല്ലാ ഘട്ടങ്ങളും പൂർത്തിയായി. ഈ ചെക്ക്‌ലിസ്റ്റ് ഉടൻ അപ്രത്യക്ഷമാകും.",
-    "aiSearchLabel": "നിങ്ങളുടെ ആദ്യത്തെ AI നിയമ തിരയൽ പ്രവർത്തിപ്പിക്കുക",
+    "aiSearchLabel": "നിങ്ങളുടെ ആദ്യത്തെ നിയമ ഗവേഷണം പ്രവർത്തിപ്പിക്കുക",
     "aiSearchDescription": "ഒരു നിയമപരമായ ചോദ്യം ചോദിക്കുകയും നിങ്ങളുടെ അധികാരപരിധിക്കായി ഉദ്ധരിച്ച ഉത്തരങ്ങൾ നേടുകയും ചെയ്യുക",
     "clientLabel": "നിങ്ങളുടെ ആദ്യ ക്ലയൻ്റ് ചേർക്കുക",
     "clientDescription": "കാര്യങ്ങൾ കൈകാര്യം ചെയ്യാൻ ആരംഭിക്കുന്നതിന് ഒരു ക്ലയൻ്റ് പ്രൊഫൈൽ സൃഷ്ടിക്കുക",
-    "matterLabel": "ഒരു കാര്യം തുറന്നു പറയൂ",
-    "matterDescription": "ഒരു കേസ് ട്രാക്ക് ചെയ്യാൻ തുടങ്ങുന്നതിന് ഒരു കാര്യം സൃഷ്ടിക്കുക",
+    "matterLabel": "നിങ്ങളുടെ ആദ്യ കാര്യം സൃഷ്ടിക്കുക",
+    "matterDescription": "കേസ് ട്രാക്ക് ചെയ്യുന്നത് ആരംഭിക്കാൻ ഒരു കാര്യം സജ്ജീകരിക്കുക",
     "templateLabel": "ഒരു ഡോക്യുമെൻ്റ് ടെംപ്ലേറ്റ് അപ്‌ലോഡ് ചെയ്യുക",
     "templateDescription": "ഡോക്യുമെൻ്റ് ജനറേഷൻ ഓട്ടോമേറ്റ് ചെയ്യുന്നതിന് ടെംപ്ലേറ്റുകൾ സജ്ജീകരിക്കുക",
     "taskLabel": "നിങ്ങളുടെ ടാസ്‌ക് ക്യൂ അവലോകനം ചെയ്യുക",

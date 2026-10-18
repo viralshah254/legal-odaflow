@@ -7,6 +7,7 @@ import {
 } from '@nestjs/common';
 import { Prisma } from '@prisma/client';
 import { AICreditLedgerService } from '@/ai-credits/ai-credit-ledger.service';
+import { FinanceService } from '@/finance/finance.service';
 import { getCountryConfig } from '@/config/countries';
 import { MarketplaceService } from '@/marketplace/marketplace.service';
 import { PrismaService } from '@/prisma/prisma.service';
@@ -14,9 +15,9 @@ import { SubscriptionsService } from '@/subscriptions/subscriptions.service';
 import { CreatePaymentDto } from './dto/create-payment.dto';
 import { MpesaProvider, mpesaCallbackSignatureValid } from './mpesa.provider';
 import { PaymentGateway } from './payment-gateway.interface';
-import { RazorpayService } from './razorpay.service';
 import { StripeService } from './stripe.service';
 import { ConfigService } from '@nestjs/config';
+import { syncUserCreditBalance } from '@/common/utils/firestore-sync.util';
 
 @Injectable()
 export class PaymentsService {
@@ -24,9 +25,9 @@ export class PaymentsService {
     private readonly prisma: PrismaService,
     private readonly configService: ConfigService,
     private readonly stripeService: StripeService,
-    private readonly razorpayService: RazorpayService,
     private readonly mpesaProvider: MpesaProvider,
     private readonly creditLedger: AICreditLedgerService,
+    private readonly financeService: FinanceService,
     @Inject(forwardRef(() => MarketplaceService))
     private readonly marketplaceService: MarketplaceService,
     @Inject(forwardRef(() => SubscriptionsService))
@@ -151,55 +152,18 @@ export class PaymentsService {
     };
   }
 
-  async handleRazorpayWebhook(rawBody: string, signature?: string) {
-    if (
-      !signature ||
-      !this.razorpayService.verifyWebhookSignature(rawBody, signature)
-    ) {
-      throw new UnauthorizedException('Invalid Razorpay webhook signature');
-    }
-
-    const event = this.parseJsonWebhook(rawBody) as RazorpayWebhookEvent;
-    if (!event.event) {
-      throw new BadRequestException('Missing Razorpay webhook event type');
-    }
-
-    if (event.event === 'payment.captured' || event.event === 'order.paid') {
-      const paymentEntity = event.payload?.payment?.entity;
-      const orderEntity = event.payload?.order?.entity;
-      const providerPaymentId = paymentEntity?.order_id ?? orderEntity?.id;
-
-      if (providerPaymentId) {
-        await this.markPaymentSuccess({
-          provider: 'razorpay',
-          providerPaymentId,
-          providerStatus: paymentEntity?.status ?? orderEntity?.status ?? event.event,
-          invoiceId:
-            paymentEntity?.notes?.invoiceId ??
-            orderEntity?.notes?.invoiceId,
-          providerEventId: event.event,
-          providerReferenceId: paymentEntity?.id ?? orderEntity?.id,
-        });
-      }
-    }
-
-    return {
-      received: true,
-      provider: 'razorpay',
-      verified: true,
-      eventType: event.event,
-      processedAt: new Date().toISOString(),
-    };
-  }
-
   async handleMpesaWebhook(rawBody: string, signature?: string) {
+    const mpesaEnabled = !!this.configService.get<string>('MPESA_CONSUMER_KEY', '');
     const webhookSecret = this.configService.get<string>('MPESA_WEBHOOK_SECRET', '');
-    if (
-      webhookSecret &&
-      signature &&
-      !mpesaCallbackSignatureValid(rawBody, webhookSecret, signature)
-    ) {
-      throw new UnauthorizedException('Invalid M-Pesa webhook signature');
+
+    if (mpesaEnabled) {
+      if (
+        !webhookSecret ||
+        !signature ||
+        !mpesaCallbackSignatureValid(rawBody, webhookSecret, signature)
+      ) {
+        throw new UnauthorizedException('Invalid M-Pesa webhook signature');
+      }
     }
 
     const body = this.mpesaProvider.parseCallbackPayload(rawBody);
@@ -242,7 +206,7 @@ export class PaymentsService {
   }
 
   private async markPaymentSuccess(input: {
-    provider: 'stripe' | 'razorpay' | 'mpesa';
+    provider: 'stripe' | 'mpesa';
     providerPaymentId: string;
     providerStatus: string;
     invoiceId?: string;
@@ -270,6 +234,11 @@ export class PaymentsService {
     metadata.providerStatus = input.providerStatus;
     metadata.processedAt = new Date().toISOString();
 
+    const invoiceId = input.invoiceId ?? metadata.invoiceId;
+    if (typeof invoiceId === 'string' && invoiceId) {
+      metadata.invoiceId = invoiceId;
+    }
+
     const updatedPayment = await this.prisma.payment.update({
       where: { id: payment.id },
       data: {
@@ -280,12 +249,16 @@ export class PaymentsService {
 
     await this.ensureReceipt(updatedPayment.id, updatedPayment.tenantId ?? undefined, input.invoiceId);
 
-    const invoiceId = input.invoiceId ?? metadata.invoiceId;
     if (typeof invoiceId === 'string' && invoiceId) {
       await this.prisma.invoice.updateMany({
         where: { id: invoiceId, status: { not: 'PAID' } },
         data: { status: 'PAID' },
       });
+
+      await this.financeService.reconcilePaymentFromWebhook(
+        updatedPayment.id,
+        updatedPayment.tenantId ?? undefined,
+      );
     }
 
     if (
@@ -325,12 +298,52 @@ export class PaymentsService {
         });
 
         if (userId) {
-          await this.prisma.consumerProfile.updateMany({
-            where: { userId },
-            data: { aiCreditsRemaining: { increment: credits } },
-          });
+          // Sync updated balance to Firestore for real-time UI updates
+          void this.syncCreditBalanceToFirestore(userId, credits);
         }
       }
+    }
+
+    // Platform revenue ledger — idempotent write for every successful payment
+    void this.upsertPlatformRevenue(updatedPayment);
+  }
+
+  private async upsertPlatformRevenue(payment: {
+    id: string;
+    purpose?: string | null;
+    amount: Prisma.Decimal;
+    currency: string;
+    countryCode?: string | null;
+    tenantId?: string | null;
+    userId?: string | null;
+    paymentProvider?: string | null;
+    createdAt: Date;
+  }) {
+    try {
+      const gross = Number(payment.amount);
+      const source = mapPurposeToRevenueSource(payment.purpose ?? '');
+      await this.prisma.platformRevenueEntry.upsert({
+        where: { providerRef: `payment:${payment.id}` },
+        create: {
+          source,
+          grossAmount: new Prisma.Decimal(gross),
+          taxAmount: new Prisma.Decimal(0),
+          feeAmount: new Prisma.Decimal(0),
+          netAmount: new Prisma.Decimal(gross),
+          currency: payment.currency,
+          countryCode: payment.countryCode,
+          tenantId: payment.tenantId,
+          userId: payment.userId,
+          paymentProvider: payment.paymentProvider ?? 'unknown',
+          providerRef: `payment:${payment.id}`,
+          occurredAt: payment.createdAt,
+          metadata: { paymentId: payment.id } as Prisma.InputJsonValue,
+        },
+        update: {},
+      });
+    } catch (err) {
+      // Non-fatal — revenue ledger write should never break the payment flow
+      console.warn('[PlatformAccounting] revenue upsert failed:', (err as Error).message);
     }
   }
 
@@ -376,12 +389,30 @@ export class PaymentsService {
         autoTopUp: 'true',
       },
     });
+  }
 
-    if (!input.tenantId) {
-      await this.prisma.consumerProfile.updateMany({
-        where: { userId: input.userId },
-        data: { aiCreditsRemaining: { increment: input.credits } },
+  private async syncCreditBalanceToFirestore(userId: string, creditsAdded: number): Promise<void> {
+    try {
+      const user = await this.prisma.user.findUnique({
+        where: { id: userId },
+        select: { firebaseUid: true, countryCode: true },
       });
+      if (!user?.firebaseUid) return;
+
+      const profile = await this.prisma.consumerProfile.findFirst({
+        where: { userId },
+        select: { aiCreditsRemaining: true },
+      });
+      const balance = profile?.aiCreditsRemaining ?? creditsAdded;
+
+      await syncUserCreditBalance({
+        firebaseUid: user.firebaseUid,
+        balance: Number(balance),
+        userSegment: 'CONSUMER',
+        countryCode: user.countryCode ?? 'US',
+      });
+    } catch (err) {
+      console.warn('[Firestore] syncCreditBalanceToFirestore error:', (err as Error).message);
     }
   }
 
@@ -401,9 +432,6 @@ export class PaymentsService {
   }
 
   private resolveGateway(provider: string, countryCode?: string): PaymentGateway {
-    if (provider === 'razorpay') {
-      return this.razorpayService;
-    }
     if (provider === 'mpesa') {
       return this.mpesaProvider;
     }
@@ -462,23 +490,11 @@ type StripeWebhookEvent = {
   };
 };
 
-type RazorpayWebhookEvent = {
-  event?: string;
-  payload?: {
-    payment?: {
-      entity?: {
-        id?: string;
-        order_id?: string;
-        status?: string;
-        notes?: Record<string, string>;
-      };
-    };
-    order?: {
-      entity?: {
-        id?: string;
-        status?: string;
-        notes?: Record<string, string>;
-      };
-    };
-  };
-};
+function mapPurposeToRevenueSource(purpose: string): string {
+  if (purpose === 'subscription') return 'subscription';
+  if (purpose === 'AI_CREDIT_TOPUP') return 'credit_topup';
+  if (purpose === 'lawyer_review') return 'lawyer_review';
+  if (purpose === 'marketplace') return 'marketplace';
+  return 'other';
+}
+

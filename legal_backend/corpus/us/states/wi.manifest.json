@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "stateCode": "WI",
+  "stateName": "Wisconsin",
+  "acts": [
+    {
+      "actId": "wi-code",
+      "title": "Wisconsin code",
+      "sourceAuthority": "cornell-lii",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.law.cornell.edu/states/wi",
+      "externalId": "wi-code",
+      "notes": "Wisconsin state law via Cornell LII state index"
+    },
+    {
+      "actId": "wi-statutes",
+      "title": "Wisconsin statutes",
+      "sourceAuthority": "cornell-lii",
+      "sourceTier": "mirror",
+      "primaryPdfUrl": "https://www.law.cornell.edu/states/wi",
+      "externalId": "wi-statutes",
+      "notes": "Wisconsin state law via Cornell LII state index"
+    }
+  ]
+}

@@ -1,5 +1,6 @@
 {
   "nav": {
+    "quickActions": "ತ್ವರಿತ ಕ್ರಮಗಳು",
     "dashboard": "ಡ್ಯಾಶ್‌ಬೋರ್ಡ್",
     "clients": "ಗ್ರಾಹಕರು",
     "matters": "ವಿಷಯಗಳು",
@@ -11,6 +12,7 @@
     "evidence": "ಸಾಕ್ಷಿ",
     "billing": "ಬಿಲ್ಲಿಂಗ್",
     "trust": "ನಂಬಿಕೆ",
+    "trustAccounts": "ಟ್ರಸ್ಟ್ ಖಾತೆಗಳು",
     "finance": "ಹಣಕಾಸು",
     "expenses": "ವೆಚ್ಚಗಳು",
     "queues": "ಸಾಲುಗಳು",
@@ -19,17 +21,20 @@
     "inbox": "ಇನ್‌ಬಾಕ್ಸ್",
     "newIntake": "ಹೊಸ ಸೇವನೆ",
     "alerts": "ಎಚ್ಚರಿಕೆಗಳು",
+    "monitors": "ಮಾನಿಟರ್‌ಗಳು",
     "team": "ತಂಡ",
     "templates": "ಟೆಂಪ್ಲೇಟ್‌ಗಳು",
     "reports": "ವರದಿಗಳು",
     "settings": "ಸೆಟ್ಟಿಂಗ್‌ಗಳು",
-    "aiLegalSearch": "AI ಕಾನೂನು ಹುಡುಕಾಟ",
+    "aiLegalSearch": "ಕಾನೂನು ಸಂಶೋಧನೆ",
+    "documentDrafting": "ಡಾಕ್ಯುಮೆಂಟ್ ಡ್ರಾಫ್ಟಿಂಗ್",
+    "draftDocument": "ದಾಖಲೆ ಡ್ರಾಫ್ಟ್",
     "more": "ಇನ್ನಷ್ಟು",
     "myProfile": "ನನ್ನ ಪ್ರೊಫೈಲ್",
     "notifications": "ಅಧಿಸೂಚನೆಗಳು",
     "lawLibrary": "ಕಾನೂನು ಗ್ರಂಥಾಲಯ",
     "vault": "ವಾಲ್ಟ್",
-    "esign": "ಇ-ಸಿಗ್ನ್"
+    "esign": "ಇ-ಸೈನ್"
   },
   "navGroups": {
     "scheduleTime": "ವೇಳಾಪಟ್ಟಿ ಮತ್ತು ಸಮಯ",
@@ -245,7 +250,7 @@
   "notify_the_partner": "ಪಾಲುದಾರನಿಗೆ ತಿಳಿಸಿ",
   "only_if_optional": "ಒಂದು ವೇಳೆ (ಐಚ್ಛಿಕ)",
   "open_case": "ಓಪನ್ ಕೇಸ್",
-  "open_matter_workbench": "ಓಪನ್ ಮ್ಯಾಟರ್ ವರ್ಕ್‌ಬೆಂಚ್",
+  "open_matter_workbench": "ತ್ವರಿತ AI ತೆರೆಯಿರಿ",
   "open_task_details": "ಕಾರ್ಯ ವಿವರಗಳನ್ನು ತೆರೆಯಿರಿ",
   "opening": "ತೆರೆಯಲಾಗುತ್ತಿದೆ",
   "output_preview": "ಔಟ್ಪುಟ್ ಪೂರ್ವವೀಕ್ಷಣೆ",

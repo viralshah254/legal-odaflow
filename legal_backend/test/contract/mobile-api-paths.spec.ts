@@ -38,4 +38,11 @@ describe('Mobile API client paths', () => {
     expect(source).toContain('/ai/copilot/chat');
     expect(source).toContain('X-Tenant-Id');
   });
+
+  it('matter outcome client uses outcome-analysis paths', () => {
+    const source = readAppApi('lib/core/network/matter_outcome_api.dart');
+    expect(source).toContain('/outcome-analysis');
+    expect(source).toContain('/outcome-analysis/generate');
+    expect(source).toContain('/outcome-analysis/');
+  });
 });

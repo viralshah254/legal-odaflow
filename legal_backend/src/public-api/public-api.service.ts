@@ -1,8 +1,11 @@
 import { Injectable } from '@nestjs/common';
 import { WebhookTestDto } from './dto/webhook-test.dto';
+import { WebhooksDeliveryService } from './webhooks-delivery.service';
 
 @Injectable()
 export class PublicApiService {
+  constructor(private readonly webhooksDelivery: WebhooksDeliveryService) {}
+
   getHealth() {
     return {
       status: 'ok',
@@ -12,14 +15,21 @@ export class PublicApiService {
     };
   }
 
-  testWebhook(dto: WebhookTestDto) {
+  async testWebhook(tenantId: string, dto: WebhookTestDto) {
     const event = dto.event ?? 'test.event';
+    const payload = dto.payload ?? { test: true, source: 'webhook-test' };
+
+    const delivery = await this.webhooksDelivery.dispatch(
+      tenantId,
+      event,
+      payload,
+    );
 
     return {
       received: true,
       event,
-      payload: dto.payload ?? {},
-      message: 'Webhook test accepted — use POST /webhooks/subscriptions for live delivery.',
+      payload,
+      delivery,
       processedAt: new Date().toISOString(),
     };
   }

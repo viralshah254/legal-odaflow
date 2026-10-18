@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "stateCode": "MD",
+  "stateName": "Maryland",
+  "acts": [
+    {
+      "actId": "md-code",
+      "title": "Maryland code",
+      "sourceAuthority": "cornell-lii",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.law.cornell.edu/states/md",
+      "externalId": "md-code",
+      "notes": "Maryland state law via Cornell LII state index"
+    },
+    {
+      "actId": "md-statutes",
+      "title": "Maryland statutes",
+      "sourceAuthority": "cornell-lii",
+      "sourceTier": "mirror",
+      "primaryPdfUrl": "https://www.law.cornell.edu/states/md",
+      "externalId": "md-statutes",
+      "notes": "Maryland state law via Cornell LII state index"
+    }
+  ]
+}

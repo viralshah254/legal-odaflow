@@ -2,7 +2,9 @@ import {
   ForbiddenException,
   Injectable,
   NotFoundException,
+  ServiceUnavailableException,
 } from '@nestjs/common';
+import { ConfigService } from '@nestjs/config';
 import { Prisma } from '@prisma/client';
 import { MatterAccessService } from '@/access/matter-access.service';
 import { AiGatewayService } from '@/ai/ai-gateway.service';
@@ -45,6 +47,7 @@ export class MatterOutcomeService {
     private readonly matterAccess: MatterAccessService,
     private readonly aiGateway: AiGatewayService,
     private readonly tasksService: TasksService,
+    private readonly configService: ConfigService,
   ) {}
 
   async generate(
@@ -96,6 +99,50 @@ export class MatterOutcomeService {
         createdBy: userId,
       },
     });
+  }
+
+  /**
+   * Lightweight preview — returns the latest approved (or most recent) analysis
+   * mapped to the compact OutcomePreviewData shape the matter card expects.
+   * Returns null when no analysis has been run yet.
+   */
+  async preview(
+    tenantId: string,
+    matterId: string,
+    userId: string,
+    role?: string,
+  ) {
+    await this.ensureMatterAccess(tenantId, matterId, userId, role);
+
+    const latest = await this.prisma.matterOutcomeAnalysis.findFirst({
+      where: { tenantId, matterId },
+      orderBy: [{ status: 'asc' }, { createdAt: 'desc' }], // APPROVED first, then most recent
+    });
+
+    if (!latest) return null;
+
+    const win = latest.winProbability as { mid?: number } | null;
+    const settlement = latest.settlementProbability as { mid?: number } | null;
+    const factorsFor = (latest.factorsFor as string[] | null) ?? [];
+    const solutions = (latest.solutions as string[] | null) ?? [];
+
+    // Map overall band to risk level expected by the frontend
+    const band = (latest.overallBand ?? '').toLowerCase();
+    const riskLevel: 'Low' | 'Medium' | 'High' | 'Critical' =
+      band.includes('strong') ? 'Low'
+      : band.includes('moderate') ? 'Medium'
+      : band.includes('weak') ? 'High'
+      : 'Medium';
+
+    return {
+      winProbability: win?.mid ?? 0,
+      settlementProbability: settlement?.mid ?? 0,
+      riskLevel,
+      headline: latest.overallBand ?? 'Analysis complete',
+      recommendedStrategy: solutions[0] ?? 'Consult your lawyer for strategy recommendations.',
+      keyRisks: factorsFor.slice(0, 3),
+      requiresApproval: latest.status !== 'APPROVED',
+    };
   }
 
   async findAll(
@@ -162,45 +209,12 @@ export class MatterOutcomeService {
     });
   }
 
-  async getFirmBenchmarks(
-    tenantId: string,
-    userId: string,
-    role: string | undefined,
-    filters?: { practiceArea?: string; countryCode?: string },
-  ) {
-    const accessibleMatterIds = await this.matterAccess.getAccessibleMatterIds(
-      tenantId,
-      userId,
-      role,
-    );
-
-    const closedMatters = await this.prisma.matter.findMany({
-      where: {
-        tenantId,
-        status: { in: ['CLOSED', 'RESOLVED', 'SETTLED'] },
-        id: accessibleMatterIds ? { in: accessibleMatterIds } : undefined,
-        practiceArea: filters?.practiceArea,
-        countryCode: filters?.countryCode?.toUpperCase(),
-      },
-      select: { id: true, practiceArea: true, countryCode: true },
-      take: 200,
-    });
-
-    if (closedMatters.length === 0) {
-      return {
-        sampleSize: 0,
-        benchmarks: [],
-        disclaimer:
-          'Insufficient closed matters for firm benchmarks — outcomes improve as cases close.',
-      };
-    }
-
-    const matterIds = closedMatters.map((m) => m.id);
+  async getFirmOutcomeBenchmarks(tenantId: string, matterIds?: string[]) {
     const analyses = await this.prisma.matterOutcomeAnalysis.findMany({
       where: {
         tenantId,
-        matterId: { in: matterIds },
         status: 'APPROVED',
+        matterId: matterIds?.length ? { in: matterIds } : undefined,
       },
       orderBy: { reviewedAt: 'desc' },
     });
@@ -210,6 +224,23 @@ export class MatterOutcomeService {
       if (!latestByMatter.has(row.matterId)) {
         latestByMatter.set(row.matterId, row);
       }
+    }
+
+    if (latestByMatter.size === 0) {
+      return {
+        sampleSize: 0,
+        bandDistribution: {
+          FAVORABLE: 0,
+          NEUTRAL: 0,
+          UNFAVORABLE: 0,
+          INSUFFICIENT_DATA: 0,
+        },
+        averageWinProbability: null as number | null,
+        averageSettlementProbability: null as number | null,
+        dominantBand: null as string | null,
+        disclaimer:
+          'Insufficient approved outcome analyses for firm benchmarks — approve analyses on closed matters to build comparisons.',
+      };
     }
 
     const bands = { FAVORABLE: 0, NEUTRAL: 0, UNFAVORABLE: 0, INSUFFICIENT_DATA: 0 };
@@ -234,24 +265,142 @@ export class MatterOutcomeService {
 
     const avg = (values: number[]) =>
       values.length
-        ? Math.round(values.reduce((sum, value) => sum + value, 0) / values.length)
+        ? Math.round((values.reduce((sum, value) => sum + value, 0) / values.length) * 100) /
+          100
         : null;
+
+    const dominantBand =
+      Object.entries(bands).sort((a, b) => b[1] - a[1]).find(([, count]) => count > 0)?.[0] ??
+      null;
 
     return {
       sampleSize: latestByMatter.size,
+      bandDistribution: bands,
+      averageWinProbability: avg(winMids),
+      averageSettlementProbability: avg(settlementMids),
+      dominantBand,
+      disclaimer: null as string | null,
+    };
+  }
+
+  async getMatterOutcomeBenchmarks(
+    tenantId: string,
+    matterId: string,
+    userId: string,
+    role: string | undefined,
+  ) {
+    await this.ensureMatterAccess(tenantId, matterId, userId, role);
+
+    const accessibleMatterIds = await this.matterAccess.getAccessibleMatterIds(
+      tenantId,
+      userId,
+      role,
+    );
+
+    const firm = await this.getFirmOutcomeBenchmarks(
+      tenantId,
+      accessibleMatterIds ?? undefined,
+    );
+
+    const latestAnalysis = await this.prisma.matterOutcomeAnalysis.findFirst({
+      where: { tenantId, matterId },
+      orderBy: { createdAt: 'desc' },
+    });
+
+    const matterWinMid =
+      (latestAnalysis?.winProbability as { mid?: number } | null)?.mid ?? null;
+    const matterSettlementMid =
+      (latestAnalysis?.settlementProbability as { mid?: number } | null)?.mid ?? null;
+
+    const vsFirmAverage =
+      firm.sampleSize > 0 && latestAnalysis
+        ? {
+            winProbabilityDelta:
+              matterWinMid != null && firm.averageWinProbability != null
+                ? Math.round((matterWinMid - firm.averageWinProbability) * 100) / 100
+                : null,
+            settlementProbabilityDelta:
+              matterSettlementMid != null && firm.averageSettlementProbability != null
+                ? Math.round((matterSettlementMid - firm.averageSettlementProbability) * 100) /
+                  100
+                : null,
+            bandVsDominant:
+              latestAnalysis.overallBand && firm.dominantBand
+                ? latestAnalysis.overallBand === firm.dominantBand
+                  ? 'aligned'
+                  : 'different'
+                : null,
+          }
+        : null;
+
+    return {
+      firm,
+      matter: latestAnalysis
+        ? {
+            analysisId: latestAnalysis.id,
+            overallBand: latestAnalysis.overallBand,
+            winProbability: latestAnalysis.winProbability,
+            settlementProbability: latestAnalysis.settlementProbability,
+            status: latestAnalysis.status,
+          }
+        : null,
+      vsFirmAverage,
+      disclaimers: this.ensureDisclaimers(undefined),
+    };
+  }
+
+  async getFirmBenchmarks(
+    tenantId: string,
+    userId: string,
+    role: string | undefined,
+    filters?: { practiceArea?: string; countryCode?: string },
+  ) {
+    const accessibleMatterIds = await this.matterAccess.getAccessibleMatterIds(
+      tenantId,
+      userId,
+      role,
+    );
+
+    let scopedMatterIds = accessibleMatterIds ?? undefined;
+    if (filters?.practiceArea || filters?.countryCode) {
+      const filtered = await this.prisma.matter.findMany({
+        where: {
+          tenantId,
+          id: scopedMatterIds ? { in: scopedMatterIds } : undefined,
+          practiceArea: filters.practiceArea,
+          countryCode: filters.countryCode?.toUpperCase(),
+        },
+        select: { id: true },
+        take: 200,
+      });
+      scopedMatterIds = filtered.map((m) => m.id);
+    }
+
+    const firm = await this.getFirmOutcomeBenchmarks(tenantId, scopedMatterIds);
+
+    if (firm.sampleSize === 0) {
+      return {
+        sampleSize: 0,
+        benchmarks: [],
+        disclaimer: firm.disclaimer,
+      };
+    }
+
+    return {
+      sampleSize: firm.sampleSize,
       filters: filters ?? {},
       benchmarks: [
         {
           metric: 'overall_band_distribution',
-          value: bands,
+          value: firm.bandDistribution,
         },
         {
           metric: 'median_win_probability',
-          value: avg(winMids),
+          value: firm.averageWinProbability,
         },
         {
           metric: 'median_settlement_probability',
-          value: avg(settlementMids),
+          value: firm.averageSettlementProbability,
         },
       ],
       disclaimers: this.ensureDisclaimers(undefined),
@@ -475,8 +624,14 @@ export class MatterOutcomeService {
         const parsed = JSON.parse(jsonMatch[1].trim()) as Partial<StructuredOutcomeAnalysis>;
         return this.normalizeStructured(parsed, context);
       } catch {
-        // fall through to mock builder
+        // fall through
       }
+    }
+
+    if (this.configService.get<string>('NODE_ENV') === 'production') {
+      throw new ServiceUnavailableException(
+        'Outcome analysis could not parse structured AI output. Retry generation or contact support.',
+      );
     }
 
     return this.buildMockAnalysis(context);

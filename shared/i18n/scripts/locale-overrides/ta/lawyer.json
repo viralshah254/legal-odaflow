@@ -1,5 +1,6 @@
 {
   "nav": {
+    "quickActions": "விரைவான செயல்கள்",
     "dashboard": "டாஷ்போர்டு",
     "clients": "வாடிக்கையாளர்கள்",
     "matters": "விஷயங்கள்",
@@ -11,6 +12,7 @@
     "evidence": "ஆதாரம்",
     "billing": "பில்லிங்",
     "trust": "நம்பிக்கை",
+    "trustAccounts": "நம்பிக்கை கணக்குகள்",
     "finance": "நிதி",
     "expenses": "செலவுகள்",
     "queues": "வரிசைகள்",
@@ -19,14 +21,20 @@
     "inbox": "இன்பாக்ஸ்",
     "newIntake": "புதிய உட்கொள்ளல்",
     "alerts": "எச்சரிக்கைகள்",
+    "monitors": "கண்காணிப்பாளர்கள்",
     "team": "குழு",
     "templates": "வார்ப்புருக்கள்",
     "reports": "அறிக்கைகள்",
     "settings": "அமைப்புகள்",
-    "aiLegalSearch": "AI சட்டத் தேடல்",
+    "aiLegalSearch": "சட்ட ஆராய்ச்சி",
+    "documentDrafting": "ஆவண வரைவு",
+    "draftDocument": "ஆவண வரைவு",
     "more": "மேலும்",
     "myProfile": "எனது சுயவிவரம்",
-    "notifications": "அறிவிப்புகள்"
+    "notifications": "அறிவிப்புகள்",
+    "lawLibrary": "சட்ட நூலகம்",
+    "vault": "வால்ட்",
+    "esign": "மின்-அடையாளம்"
   },
   "navGroups": {
     "scheduleTime": "அட்டவணை & நேரம்",
@@ -238,7 +246,7 @@
   "notify_the_partner": "கூட்டாளருக்கு தெரிவிக்கவும்",
   "only_if_optional": "(விரும்பினால்) மட்டும்",
   "open_case": "திறந்த வழக்கு",
-  "open_matter_workbench": "ஓபன் மேட்டர் ஒர்க் பெஞ்ச்",
+  "open_matter_workbench": "Quick AIஐத் திறக்கவும்",
   "open_task_details": "பணி விவரங்களைத் திறக்கவும்",
   "opening": "திறப்பு",
   "output_preview": "வெளியீட்டு முன்னோட்டம்",

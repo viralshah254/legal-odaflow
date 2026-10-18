@@ -1,4 +1,5 @@
 import { Module } from '@nestjs/common';
+import { GovernanceModule } from '@/governance/governance.module';
 import { ApiKeysController } from './api-keys.controller';
 import { ApiKeysService } from './api-keys.service';
 import { IssueCheckerSchemaController } from './issue-checker-schema.controller';
@@ -8,6 +9,7 @@ import { WebhooksController } from './webhooks.controller';
 import { WebhooksDeliveryService } from './webhooks-delivery.service';
 
 @Module({
+  imports: [GovernanceModule],
   controllers: [
     PublicApiController,
     WebhooksController,

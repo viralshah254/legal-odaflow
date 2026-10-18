@@ -1,10 +1,20 @@
-import { PrismaClient } from '@prisma/client';
+/// <reference types="node" />
+import { PrismaClient, Prisma } from '@prisma/client';
 import * as bcrypt from 'bcryptjs';
 import { INTERNAL_AGENTS } from '../src/agents/agent.registry';
 import { COUNTRY_COMPLIANCE_POLICY_SEEDS } from '../src/country-compliance/country-compliance.seed';
 import { LEGAL_AUTHORITY_SEEDS } from '../src/config/legal-authority.seed';
 import { COUNTRY_PRICING_SEEDS } from '../src/config/pricing.config';
 import { LEGAL_SOURCE_CONNECTOR_SEEDS } from '../src/legal-sources/legal-source.seed';
+import { TEMPLATE_LIBRARY_SEEDS } from '../src/config/template-library.seed';
+import { JURISDICTION_TEMPLATE_SEEDS } from '../src/config/jurisdiction-clause-library.seed';
+import { PRACTICE_AREA_AUTHORITY_SEEDS } from '../src/legal-sources/practice-area-authority.seed';
+import { PRIORITY_STATUTE_SECTIONS } from '../src/legal-sources/statute-sections.seed';
+import { SYSTEM_PLAYBOOKS } from '../src/config/system-playbooks.seed';
+import { AI_CREDIT_RATE_SEEDS } from '../src/ai-credits/ai-credit-rate.seed';
+import { MODEL_COSTS } from '../src/ai/model-costs.config';
+import { STT_MODEL_COSTS } from '../src/ai/costs/model-cost-sync.service';
+import { CATALOG_GENERATED } from '../src/legal-forms/catalog.generated';
 
 const prisma = new PrismaClient();
 
@@ -73,24 +83,27 @@ async function upsertDemoTenant(input: {
     });
   }
 
+  const clientCode = `${input.countryCode}-DEMO-001`;
   const client = await prisma.client.upsert({
     where: { id: `seed-client-${input.countryCode.toLowerCase()}` },
     create: {
       id: `seed-client-${input.countryCode.toLowerCase()}`,
       tenantId: tenant.id,
+      clientCode,
       name: `${input.countryCode} Demo Client`,
       email: `client-${input.countryCode.toLowerCase()}@example.com`,
       type: 'INDIVIDUAL',
       countryCode: input.countryCode,
     },
     update: {
+      clientCode,
       name: `${input.countryCode} Demo Client`,
       email: `client-${input.countryCode.toLowerCase()}@example.com`,
       countryCode: input.countryCode,
     },
   });
 
-  await prisma.matter.upsert({
+  const matter = await prisma.matter.upsert({
     where: { id: `seed-matter-${input.countryCode.toLowerCase()}` },
     create: {
       id: `seed-matter-${input.countryCode.toLowerCase()}`,
@@ -114,6 +127,154 @@ async function upsertDemoTenant(input: {
       practiceArea: 'Employment',
       matterType: 'LITIGATION',
       status: 'OPEN',
+    },
+  });
+
+  await prisma.task.upsert({
+    where: { id: `seed-task-${input.countryCode.toLowerCase()}` },
+    create: {
+      id: `seed-task-${input.countryCode.toLowerCase()}`,
+      tenantId: tenant.id,
+      matterId: matter.id,
+      title: 'Prepare investor demo case strategy memo',
+      status: 'TODO',
+      priority: 'HIGH',
+      dueDate: new Date(Date.now() + 3 * 24 * 60 * 60 * 1000),
+    },
+    update: {
+      matterId: matter.id,
+      title: 'Prepare investor demo case strategy memo',
+      status: 'TODO',
+      priority: 'HIGH',
+    },
+  });
+
+  await prisma.document.upsert({
+    where: { id: `seed-document-${input.countryCode.toLowerCase()}` },
+    create: {
+      id: `seed-document-${input.countryCode.toLowerCase()}`,
+      tenantId: tenant.id,
+      clientId: client.id,
+      matterId: matter.id,
+      fileName: 'Demo employment contract.pdf',
+      fileUrl: 'https://example.com/demo-employment-contract.pdf',
+      mimeType: 'application/pdf',
+      extractedText: 'Demo contract with termination, compensation, and confidentiality clauses.',
+      visibility: 'PRIVATE',
+      version: 1,
+    },
+    update: {
+      clientId: client.id,
+      matterId: matter.id,
+      fileName: 'Demo employment contract.pdf',
+      extractedText: 'Demo contract with termination, compensation, and confidentiality clauses.',
+      visibility: 'PRIVATE',
+    },
+  });
+
+  const invoice = await prisma.invoice.upsert({
+    where: { id: `seed-invoice-${input.countryCode.toLowerCase()}` },
+    create: {
+      id: `seed-invoice-${input.countryCode.toLowerCase()}`,
+      tenantId: tenant.id,
+      clientId: client.id,
+      invoiceNumber: `${input.countryCode}-INV-0001`,
+      amount: 1250,
+      currency: input.currency,
+      status: 'SENT',
+      billingModel: 'FIXED',
+      dueDate: new Date(Date.now() + 14 * 24 * 60 * 60 * 1000),
+    },
+    update: {
+      clientId: client.id,
+      invoiceNumber: `${input.countryCode}-INV-0001`,
+      amount: 1250,
+      currency: input.currency,
+      status: 'SENT',
+    },
+  });
+
+  const payment = await prisma.payment.upsert({
+    where: { id: `seed-payment-${input.countryCode.toLowerCase()}` },
+    create: {
+      id: `seed-payment-${input.countryCode.toLowerCase()}`,
+      tenantId: tenant.id,
+      countryCode: input.countryCode,
+      currency: input.currency,
+      amount: 500,
+      paymentProvider: 'demo',
+      providerPaymentId: `${input.countryCode}-DEMO-PAYMENT-0001`,
+      status: 'SUCCESS',
+      purpose: 'INVOICE_PAYMENT',
+      metadata: { invoiceId: invoice.id, demo: true },
+    },
+    update: {
+      tenantId: tenant.id,
+      currency: input.currency,
+      amount: 500,
+      status: 'SUCCESS',
+      metadata: { invoiceId: invoice.id, demo: true },
+    },
+  });
+
+  await prisma.receipt.upsert({
+    where: { paymentId: payment.id },
+    create: {
+      paymentId: payment.id,
+      tenantId: tenant.id,
+      invoiceId: invoice.id,
+      receiptNumber: `${input.countryCode}-REC-0001`,
+      amount: 500,
+      currency: input.currency,
+      metadata: { demo: true },
+    },
+    update: {
+      invoiceId: invoice.id,
+      amount: 500,
+      currency: input.currency,
+      metadata: { demo: true },
+    },
+  });
+
+  await prisma.portalMessage.upsert({
+    where: { id: `seed-portal-message-${input.countryCode.toLowerCase()}` },
+    create: {
+      id: `seed-portal-message-${input.countryCode.toLowerCase()}`,
+      tenantId: tenant.id,
+      clientId: client.id,
+      matterId: matter.id,
+      subject: 'Welcome to your secure matter portal',
+      body: 'Your legal team will share documents, invoices, and progress updates here.',
+      fromFirm: true,
+    },
+    update: {
+      matterId: matter.id,
+      subject: 'Welcome to your secure matter portal',
+      body: 'Your legal team will share documents, invoices, and progress updates here.',
+      fromFirm: true,
+    },
+  });
+
+  await prisma.lawyerLead.upsert({
+    where: { id: `seed-lead-${input.countryCode.toLowerCase()}` },
+    create: {
+      id: `seed-lead-${input.countryCode.toLowerCase()}`,
+      tenantId: tenant.id,
+      issueType: 'Employment dispute',
+      countryCode: input.countryCode,
+      jurisdiction: matter.jurisdiction,
+      urgency: 'HIGH',
+      summary: 'Demo lead ready for qualification and conversion.',
+      status: 'NEW',
+      intakeStage: 'SCREENING',
+    },
+    update: {
+      tenantId: tenant.id,
+      issueType: 'Employment dispute',
+      urgency: 'HIGH',
+      summary: 'Demo lead ready for qualification and conversion.',
+      status: 'NEW',
+      intakeStage: 'SCREENING',
     },
   });
 
@@ -253,6 +414,10 @@ async function main() {
     });
   }
 
+  const seedPlaceholderAuthorities =
+    process.env.SEED_PLACEHOLDER_AUTHORITIES === 'true';
+
+  if (seedPlaceholderAuthorities) {
   for (const authority of LEGAL_AUTHORITY_SEEDS) {
     const citation = authority.citation ?? `${authority.countryCode}-SEED-${authority.title.slice(0, 12)}`;
     const existing = await prisma.legalAuthority.findFirst({
@@ -298,6 +463,39 @@ async function main() {
         },
       });
     }
+  }
+  }
+
+  // Priority statute sections for all countries (IN:31, US:10, KE:8, GB:8) — Law Library foundation.
+  for (const section of PRIORITY_STATUTE_SECTIONS) {
+    const citation = `${section.actId.toUpperCase()} s.${section.section}`;
+    const id = `statute-${section.countryCode.toLowerCase()}-${section.actId}-s${section.section}`;
+    await prisma.legalAuthority.upsert({
+      where: { id },
+      create: {
+        id,
+        countryCode: section.countryCode,
+        authorityType: 'STATUTE_SECTION',
+        title: section.title,
+        citation,
+        sourceName: section.sourceName,
+        sourceUrl: section.sourceUrl ?? null,
+        summary: section.summary,
+        fullText: section.fullText,
+        topics: section.topics,
+        practiceAreas: section.practiceAreas,
+        embeddingStatus: 'PENDING',
+      },
+      update: {
+        title: section.title,
+        citation,
+        summary: section.summary,
+        fullText: section.fullText,
+        topics: section.topics,
+        practiceAreas: section.practiceAreas,
+        sourceUrl: section.sourceUrl ?? null,
+      },
+    });
   }
 
   for (const source of LEGAL_SOURCE_CONNECTOR_SEEDS) {
@@ -358,42 +556,47 @@ async function main() {
     });
   }
 
-  const modelCosts = [
-    {
-      provider: 'openai',
-      modelName: 'gpt-4.1-mini',
-      modelTier: 'cheap',
-      inputCostPer1M: 0.4,
-      outputCostPer1M: 1.6,
-    },
-    {
-      provider: 'openai',
-      modelName: 'gpt-4.1',
-      modelTier: 'premium',
-      inputCostPer1M: 3.0,
-      outputCostPer1M: 12.0,
-    },
-  ];
-
-  for (const cost of modelCosts) {
+  for (const [modelName, rates] of Object.entries(MODEL_COSTS)) {
     await prisma.aIModelCostConfig.upsert({
       where: {
         provider_modelName: {
-          provider: cost.provider,
-          modelName: cost.modelName,
+          provider: rates.provider,
+          modelName,
         },
       },
       create: {
-        provider: cost.provider,
-        modelName: cost.modelName,
-        modelTier: cost.modelTier,
-        inputCostPer1M: cost.inputCostPer1M,
-        outputCostPer1M: cost.outputCostPer1M,
+        provider: rates.provider,
+        modelName,
+        modelTier: rates.tier,
+        inputCostPer1M: rates.inputPer1M,
+        outputCostPer1M: rates.outputPer1M,
       },
       update: {
-        modelTier: cost.modelTier,
-        inputCostPer1M: cost.inputCostPer1M,
-        outputCostPer1M: cost.outputCostPer1M,
+        modelTier: rates.tier,
+        inputCostPer1M: rates.inputPer1M,
+        outputCostPer1M: rates.outputPer1M,
+        isActive: true,
+      },
+    });
+  }
+
+  for (const stt of STT_MODEL_COSTS) {
+    await prisma.aIModelCostConfig.upsert({
+      where: {
+        provider_modelName: {
+          provider: stt.provider,
+          modelName: stt.modelName,
+        },
+      },
+      create: {
+        provider: stt.provider,
+        modelName: stt.modelName,
+        modelTier: stt.modelTier,
+        inputCostPer1M: stt.inputCostPer1M,
+        outputCostPer1M: stt.outputCostPer1M,
+      },
+      update: {
+        modelTier: stt.modelTier,
         isActive: true,
       },
     });
@@ -454,28 +657,42 @@ async function main() {
 
   const adminEmail = process.env.SEED_ADMIN_EMAIL ?? 'admin@odaflow.com';
   const adminPassword = process.env.SEED_ADMIN_PASSWORD ?? 'Admin123!ChangeMe';
+  const resetAdminPassword = process.env.SEED_ADMIN_RESET_PASSWORD === 'true';
   const passwordHash = await bcrypt.hash(adminPassword, 12);
 
-  await prisma.user.upsert({
+  const existingAdmin = await prisma.user.findUnique({
     where: { email: adminEmail.toLowerCase() },
-    create: {
-      email: adminEmail.toLowerCase(),
-      name: 'Platform Admin',
-      passwordHash,
-      userType: 'SUPER_ADMIN',
-      countryCode: 'US',
-      isActive: true,
-    },
-    update: {
-      name: 'Platform Admin',
-      passwordHash,
-      userType: 'SUPER_ADMIN',
-      isActive: true,
-    },
+    select: { id: true },
   });
 
+  if (!existingAdmin) {
+    await prisma.user.create({
+      data: {
+        email: adminEmail.toLowerCase(),
+        name: 'Platform Admin',
+        passwordHash,
+        userType: 'SUPER_ADMIN',
+        countryCode: 'US',
+        isActive: true,
+        mustChangePassword: true,
+      },
+    });
+  } else {
+    await prisma.user.update({
+      where: { email: adminEmail.toLowerCase() },
+      data: {
+        name: 'Platform Admin',
+        userType: 'SUPER_ADMIN',
+        isActive: true,
+        ...(resetAdminPassword
+          ? { passwordHash, mustChangePassword: true }
+          : {}),
+      },
+    });
+  }
+
   await upsertDemoTenant({
-    name: 'OdaFlow Legal Kenya',
+    name: 'Umbrella Kenya',
     countryCode: 'KE',
     currency: 'KES',
     lawyers: [
@@ -484,7 +701,7 @@ async function main() {
     ],
   });
   await upsertDemoTenant({
-    name: 'OdaFlow Legal US',
+    name: 'Umbrella US',
     countryCode: 'US',
     currency: 'USD',
     lawyers: [
@@ -493,7 +710,7 @@ async function main() {
     ],
   });
   await upsertDemoTenant({
-    name: 'OdaFlow Legal India',
+    name: 'Umbrella India',
     countryCode: 'IN',
     currency: 'INR',
     lawyers: [
@@ -502,12 +719,226 @@ async function main() {
     ],
   });
 
+  // Seed system playbooks for all demo tenants
+  const demoTenantIds = ['seed-ke', 'seed-us', 'seed-in'];
+  for (const tenantId of demoTenantIds) {
+    for (const pb of SYSTEM_PLAYBOOKS) {
+      const uniqueId = `sys-pb-${tenantId}-${pb.practiceArea}-${pb.matterType.replace(/\s+/g, '_')}`;
+      await prisma.matterPlaybook.upsert({
+        where: { id: uniqueId },
+        create: {
+          id: uniqueId,
+          tenantId,
+          name: pb.name,
+          description: pb.description,
+          practiceArea: pb.practiceArea,
+          matterType: pb.matterType,
+          countryCode: pb.countryCode ?? undefined,
+          isEnabled: true,
+          taskTemplates: pb.taskTemplates as unknown as Prisma.InputJsonValue,
+        },
+        update: {
+          name: pb.name,
+          description: pb.description,
+          practiceArea: pb.practiceArea,
+          matterType: pb.matterType,
+          countryCode: pb.countryCode ?? null,
+          isEnabled: true,
+          taskTemplates: pb.taskTemplates as unknown as Prisma.InputJsonValue,
+        },
+      });
+    }
+  }
+  console.log(`Seeded ${SYSTEM_PLAYBOOKS.length * demoTenantIds.length} system playbooks across demo tenants`);
+
+  for (const template of TEMPLATE_LIBRARY_SEEDS) {
+    await prisma.systemDocumentTemplate.upsert({
+      where: {
+        countryCode_practiceArea_name: {
+          countryCode: template.countryCode,
+          practiceArea: template.practiceArea,
+          name: template.name,
+        },
+      },
+      create: {
+        countryCode: template.countryCode,
+        practiceArea: template.practiceArea,
+        category: 'GENERAL_TEMPLATE',
+        name: template.name,
+        content: template.content,
+        documentKind: template.documentKind,
+        jurisdiction: template.jurisdiction,
+        conditionalFields: template.conditionalFields ?? undefined,
+        sortOrder: template.sortOrder,
+        isActive: true,
+      },
+      update: {
+        content: template.content,
+        documentKind: template.documentKind,
+        jurisdiction: template.jurisdiction,
+        conditionalFields: template.conditionalFields ?? undefined,
+        sortOrder: template.sortOrder,
+        isActive: true,
+      },
+    });
+  }
+
+  // Seed jurisdiction-specific templates (multi-jurisdiction clause library)
+  let jurisdictionTemplatesSeeded = 0;
+  for (const template of JURISDICTION_TEMPLATE_SEEDS) {
+    const existing = await prisma.systemDocumentTemplate.findFirst({
+      where: { name: template.name, countryCode: template.countryCode },
+      select: { id: true },
+    });
+    if (existing) continue;
+    await prisma.systemDocumentTemplate.create({
+      data: {
+        countryCode: template.countryCode,
+        practiceArea: template.practiceArea,
+        category: 'JURISDICTION_SPECIFIC',
+        name: template.name,
+        content: template.content,
+        documentKind: template.documentKind,
+        jurisdiction: template.jurisdiction,
+        sortOrder: template.sortOrder + 100,
+        isActive: true,
+      },
+    });
+    jurisdictionTemplatesSeeded++;
+  }
+  console.log(`Seeded ${jurisdictionTemplatesSeeded} jurisdiction-specific templates`);
+
+  // Seed per-practice-area landmark legal authorities
+  let authoritiesSeeded = 0;
+  for (const seed of PRACTICE_AREA_AUTHORITY_SEEDS) {
+    const existing = await prisma.legalAuthority.findFirst({
+      where: { citation: seed.citation, countryCode: seed.countryCode },
+      select: { id: true },
+    });
+    if (existing) continue;
+    await prisma.legalAuthority.create({
+      data: {
+        title: seed.title,
+        citation: seed.citation,
+        authorityType: seed.authorityType,
+        sourceName: seed.sourceName,
+        countryCode: seed.countryCode,
+        jurisdiction: seed.jurisdiction,
+        practiceAreas: seed.practiceAreas as string[],
+        topics: [] as string[],
+        summary: seed.summary,
+        holding: seed.holding,
+        sourceUrl: seed.sourceUrl ?? null,
+        embeddingStatus: 'PENDING',
+      },
+    });
+    authoritiesSeeded++;
+  }
+  console.log(`Seeded ${authoritiesSeeded} practice-area landmark authorities`);
+
+  // Seed AI credit rates (admin-configurable task × segment pricing)
+  let creditRatesSeeded = 0;
+  for (const rate of AI_CREDIT_RATE_SEEDS) {
+    await prisma.aICreditRate.upsert({
+      where: { id: rate.id },
+      create: {
+        id: rate.id,
+        taskType: rate.taskType,
+        userSegment: rate.userSegment,
+        baseCredits: rate.baseCredits,
+        minCredits: rate.minCredits,
+        maxCredits: rate.maxCredits,
+        modelTier: rate.modelTier,
+        markupMultiplier: rate.markupMultiplier,
+        enabled: rate.enabled,
+      },
+      update: {
+        baseCredits: rate.baseCredits,
+        minCredits: rate.minCredits,
+        maxCredits: rate.maxCredits,
+        modelTier: rate.modelTier,
+        enabled: rate.enabled,
+        // markupMultiplier intentionally not overwritten — admin may have tuned it
+      },
+    });
+    creditRatesSeeded++;
+  }
+  console.log(`Seeded ${creditRatesSeeded} AI credit rates`);
+
+  // Seed jurisdiction forms catalog (10,800+ official forms)
+  let formsSeeded = 0;
+  let formsSkipped = 0;
+  const FORMS_BATCH = 200;
+  for (let i = 0; i < CATALOG_GENERATED.length; i += FORMS_BATCH) {
+    const batch = CATALOG_GENERATED.slice(i, i + FORMS_BATCH);
+    for (const form of batch) {
+      if (!form.formNumber) { formsSkipped++; continue; }
+      await prisma.jurisdictionForm.upsert({
+        where: { formNumber_countryCode: { formNumber: form.formNumber, countryCode: form.countryCode } },
+        create: {
+          countryCode: form.countryCode,
+          jurisdiction: form.jurisdiction ?? null,
+          practiceArea: form.practiceArea,
+          formName: form.formName,
+          formNumber: form.formNumber,
+          authority: form.authority,
+          sourceUrl: form.sourceUrl,
+          description: form.description ?? null,
+          category: form.category ?? null,
+          feeInfo: form.feeInfo ?? null,
+          isSystem: form.isSystem,
+        },
+        update: {
+          formName: form.formName,
+          practiceArea: form.practiceArea,
+          authority: form.authority,
+          description: form.description ?? null,
+          category: form.category ?? null,
+          sourceUrl: form.sourceUrl,
+        },
+      }).catch(() => { formsSkipped++; });
+      formsSeeded++;
+    }
+    if (i % 2000 === 0) process.stdout.write(`  Forms seeded: ${formsSeeded}...\r`);
+  }
+  console.log(`\nSeeded ${formsSeeded} jurisdiction forms (${formsSkipped} skipped)`);
+
+  // WhatsApp test prospect for admin test campaigns (+254738266973 · Ahmedabad)
+  await prisma.lawyerProspect.upsert({
+    where: { dedupeKey: '13a2940ff39e69a4e2e864d93973f110' },
+    create: {
+      id: 'cm7test25473826697300001',
+      fullName: 'Test User (Admin)',
+      firstName: 'Test',
+      city: 'Ahmedabad',
+      state: 'Gujarat',
+      country: 'India',
+      whatsapp: '+254738266973',
+      whatsappConfidence: 'verified',
+      source: 'test_user',
+      dedupeKey: '13a2940ff39e69a4e2e864d93973f110',
+      outreachStatus: 'NEW',
+      isTest: true,
+    },
+    update: {
+      whatsapp: '+254738266973',
+      whatsappConfidence: 'verified',
+      city: 'Ahmedabad',
+      state: 'Gujarat',
+      country: 'India',
+      isTest: true,
+      source: 'test_user',
+    },
+  });
+  console.log('Seeded WhatsApp test prospect (Test User Admin · +254738266973)');
+
+  console.log(`Seeded ${TEMPLATE_LIBRARY_SEEDS.length} system document templates`);
   console.log(`Seeded ${COUNTRY_COMPLIANCE_POLICY_SEEDS.length} country compliance policies`);
   console.log(`Seeded ${COUNTRY_PRICING_SEEDS.length} country pricing rows`);
   console.log(`Seeded ${LEGAL_AUTHORITY_SEEDS.length} legal authority rows`);
   console.log(`Seeded ${LEGAL_SOURCE_CONNECTOR_SEEDS.length} legal source connectors`);
   console.log(`Seeded ${Object.keys(INTERNAL_AGENTS).length} AI agents`);
-  console.log(`Seeded ${modelCosts.length} AI model cost configs`);
+  console.log(`Seeded ${MODEL_COSTS.length} AI model cost configs`);
   console.log(`Seeded ${creditPackSeeds.length * packCountries.length} credit packs`);
   console.log(`Platform admin ready: ${adminEmail.toLowerCase()}`);
   console.log('Seeded multi-country demo tenants, lawyers, playbooks, and automations');

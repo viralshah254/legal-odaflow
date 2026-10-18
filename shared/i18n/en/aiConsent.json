@@ -1,0 +1,11 @@
+{
+  "dialogTitle": "AI processing consent",
+  "dialogBody": "Umbrella sends your query and matter context to third-party AI providers to power legal analysis, drafting, and research. Your data is not used to train AI models.",
+  "dialogProviders": "Providers: OpenAI, DeepSeek, and Deepgram (transcription).",
+  "dialogPurpose": "You can withdraw consent anytime in Privacy & Security settings. Without consent, AI features will be unavailable.",
+  "dialogLearnMore": "Learn more in our",
+  "dialogDecline": "Not now",
+  "dialogAgree": "I agree",
+  "settingsTitle": "AI inference consent",
+  "settingsDescription": "Consent reset. You will be asked again before the next AI feature."
+}

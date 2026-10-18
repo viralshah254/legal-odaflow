@@ -1,0 +1,3654 @@
+{
+  "generatedAt": "2026-07-10T03:11:33.353Z",
+  "jurisdiction": "IN",
+  "totalKinds": 393,
+  "archetypeCounts": {
+    "bail_release": 15,
+    "other": 174,
+    "criminal_trial_pleading": 7,
+    "appellate_revision": 35,
+    "magistrate_private_complaint": 2,
+    "supporting_filing": 24,
+    "police_criminal_complaint": 2,
+    "civil_plaint": 35,
+    "writ_constitutional": 5,
+    "family_matrimonial": 14,
+    "protective_order": 4,
+    "special_statute_complaint": 64,
+    "regulatory_notice": 12
+  },
+  "highTrafficKinds": [
+    {
+      "kind": "india_regular_bail_bnss_480",
+      "archetype": "bail_release",
+      "register": "bail_application",
+      "proceduralSections": [
+        {
+          "actId": "bnss",
+          "section": "480"
+        }
+      ],
+      "substantiveSections": [],
+      "highTraffic": true
+    },
+    {
+      "kind": "india_anticipatory_bail_bnss_482",
+      "archetype": "bail_release",
+      "register": "bail_application",
+      "proceduralSections": [
+        {
+          "actId": "bnss",
+          "section": "482"
+        }
+      ],
+      "substantiveSections": [],
+      "highTraffic": true
+    },
+    {
+      "kind": "india_default_bail_bnss_187",
+      "archetype": "bail_release",
+      "register": "bail_application",
+      "proceduralSections": [
+        {
+          "actId": "bnss",
+          "section": "187"
+        }
+      ],
+      "substantiveSections": [],
+      "highTraffic": true
+    },
+    {
+      "kind": "india_bail_bailable_bnss_478",
+      "archetype": "bail_release",
+      "register": "bail_application",
+      "proceduralSections": [
+        {
+          "actId": "bnss",
+          "section": "478"
+        }
+      ],
+      "substantiveSections": [],
+      "highTraffic": true
+    },
+    {
+      "kind": "india_bail_cancellation_bnss_483",
+      "archetype": "bail_release",
+      "register": "bail_application",
+      "proceduralSections": [
+        {
+          "actId": "bnss",
+          "section": "483"
+        }
+      ],
+      "substantiveSections": [],
+      "highTraffic": true
+    },
+    {
+      "kind": "india_pocso_bail_application",
+      "archetype": "bail_release",
+      "register": "bail_application",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": true
+    },
+    {
+      "kind": "india_ndps_bail_application",
+      "archetype": "bail_release",
+      "register": "bail_application",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": true
+    },
+    {
+      "kind": "india_pmla_bail_application",
+      "archetype": "bail_release",
+      "register": "bail_application",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": true
+    },
+    {
+      "kind": "india_bail_cancellation_reply",
+      "archetype": "bail_release",
+      "register": "bail_application",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": true
+    },
+    {
+      "kind": "india_quashing_petition_bnss_528",
+      "archetype": "criminal_trial_pleading",
+      "register": "court_petition",
+      "proceduralSections": [
+        {
+          "actId": "bnss",
+          "section": "528"
+        }
+      ],
+      "substantiveSections": [],
+      "highTraffic": true
+    },
+    {
+      "kind": "india_cheque_bounce_complaint_ni138",
+      "archetype": "magistrate_private_complaint",
+      "register": "magistrate_complaint",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": true
+    },
+    {
+      "kind": "india_fir_complaint",
+      "archetype": "police_criminal_complaint",
+      "register": "police_complaint",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": true
+    },
+    {
+      "kind": "india_complaint_magistrate_bnss_223",
+      "archetype": "magistrate_private_complaint",
+      "register": "magistrate_complaint",
+      "proceduralSections": [
+        {
+          "actId": "bnss",
+          "section": "223"
+        }
+      ],
+      "substantiveSections": [],
+      "highTraffic": true
+    },
+    {
+      "kind": "india_written_statement",
+      "archetype": "writ_constitutional",
+      "register": "writ",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": true
+    },
+    {
+      "kind": "india_maintenance_application_bnss_144",
+      "archetype": "family_matrimonial",
+      "register": "family_petition",
+      "proceduralSections": [
+        {
+          "actId": "bnss",
+          "section": "144"
+        }
+      ],
+      "substantiveSections": [],
+      "highTraffic": true
+    },
+    {
+      "kind": "india_maintenance_application_bnss_144_family",
+      "archetype": "family_matrimonial",
+      "register": "family_petition",
+      "proceduralSections": [
+        {
+          "actId": "bnss",
+          "section": "144"
+        }
+      ],
+      "substantiveSections": [],
+      "highTraffic": true
+    },
+    {
+      "kind": "india_divorce_petition_s13",
+      "archetype": "family_matrimonial",
+      "register": "family_petition",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": true
+    },
+    {
+      "kind": "india_divorce_mutual_consent",
+      "archetype": "family_matrimonial",
+      "register": "family_petition",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": true
+    },
+    {
+      "kind": "india_domestic_violence_petition",
+      "archetype": "protective_order",
+      "register": "protective_order",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": true
+    },
+    {
+      "kind": "india_domestic_violence_protection_order",
+      "archetype": "protective_order",
+      "register": "protective_order",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": true
+    },
+    {
+      "kind": "india_christian_divorce",
+      "archetype": "family_matrimonial",
+      "register": "family_petition",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": true
+    },
+    {
+      "kind": "india_muslim_maintenance",
+      "archetype": "family_matrimonial",
+      "register": "family_petition",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": true
+    },
+    {
+      "kind": "india_muslim_divorce",
+      "archetype": "family_matrimonial",
+      "register": "family_petition",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": true
+    },
+    {
+      "kind": "india_writ_petition_hc",
+      "archetype": "writ_constitutional",
+      "register": "writ",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": true
+    },
+    {
+      "kind": "india_writ_petition_sc",
+      "archetype": "writ_constitutional",
+      "register": "writ",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": true
+    },
+    {
+      "kind": "india_consumer_complaint",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": true
+    },
+    {
+      "kind": "india_state_consumer_appeal",
+      "archetype": "appellate_revision",
+      "register": "appellate",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": true
+    },
+    {
+      "kind": "india_gst_appeal_first",
+      "archetype": "appellate_revision",
+      "register": "appellate",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": true
+    },
+    {
+      "kind": "india_gst_hc_writ",
+      "archetype": "writ_constitutional",
+      "register": "writ",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": true
+    },
+    {
+      "kind": "india_cyber_crime_complaint",
+      "archetype": "police_criminal_complaint",
+      "register": "police_complaint",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": true
+    },
+    {
+      "kind": "india_habeas_corpus_petition",
+      "archetype": "writ_constitutional",
+      "register": "writ",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": true
+    },
+    {
+      "kind": "india_parsi_divorce_petition",
+      "archetype": "family_matrimonial",
+      "register": "family_petition",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": true
+    },
+    {
+      "kind": "india_interim_custody_bail",
+      "archetype": "bail_release",
+      "register": "bail_application",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": true
+    },
+    {
+      "kind": "india_anticipatory_bail_cancellation",
+      "archetype": "bail_release",
+      "register": "bail_application",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": true
+    },
+    {
+      "kind": "india_fire_noc_application",
+      "archetype": "supporting_filing",
+      "register": "supporting",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": true
+    },
+    {
+      "kind": "india_bond_bail_surety_indemnity",
+      "archetype": "bail_release",
+      "register": "bail_application",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": true
+    },
+    {
+      "kind": "india_anticipatory_bail_extension",
+      "archetype": "bail_release",
+      "register": "bail_application",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": true
+    },
+    {
+      "kind": "india_default_bail_computation",
+      "archetype": "bail_release",
+      "register": "bail_application",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": true
+    },
+    {
+      "kind": "india_quashing_settlement_affidavit",
+      "archetype": "criminal_trial_pleading",
+      "register": "court_petition",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": true
+    },
+    {
+      "kind": "india_nia_s138_cheque_memo",
+      "archetype": "supporting_filing",
+      "register": "supporting",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": true
+    },
+    {
+      "kind": "india_pocso_victim_compensation",
+      "archetype": "other",
+      "register": "unknown",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": true
+    },
+    {
+      "kind": "india_ndps_bail_cancellation",
+      "archetype": "bail_release",
+      "register": "bail_application",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": true
+    },
+    {
+      "kind": "india_pmla_attachment_representation",
+      "archetype": "other",
+      "register": "unknown",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": true
+    },
+    {
+      "kind": "india_domestic_violence_interim",
+      "archetype": "protective_order",
+      "register": "protective_order",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": true
+    },
+    {
+      "kind": "india_maintenance_order_revision",
+      "archetype": "appellate_revision",
+      "register": "appellate",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": true
+    },
+    {
+      "kind": "india_maintenance_appeal_final",
+      "archetype": "appellate_revision",
+      "register": "appellate",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": true
+    },
+    {
+      "kind": "india_family_court_maintenance_appeal",
+      "archetype": "appellate_revision",
+      "register": "appellate",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": true
+    }
+  ],
+  "kinds": [
+    {
+      "kind": "india_regular_bail_bnss_480",
+      "archetype": "bail_release",
+      "register": "bail_application",
+      "proceduralSections": [
+        {
+          "actId": "bnss",
+          "section": "480"
+        }
+      ],
+      "substantiveSections": [],
+      "highTraffic": true
+    },
+    {
+      "kind": "india_anticipatory_bail_bnss_482",
+      "archetype": "bail_release",
+      "register": "bail_application",
+      "proceduralSections": [
+        {
+          "actId": "bnss",
+          "section": "482"
+        }
+      ],
+      "substantiveSections": [],
+      "highTraffic": true
+    },
+    {
+      "kind": "india_default_bail_bnss_187",
+      "archetype": "bail_release",
+      "register": "bail_application",
+      "proceduralSections": [
+        {
+          "actId": "bnss",
+          "section": "187"
+        }
+      ],
+      "substantiveSections": [],
+      "highTraffic": true
+    },
+    {
+      "kind": "india_bail_bailable_bnss_478",
+      "archetype": "bail_release",
+      "register": "bail_application",
+      "proceduralSections": [
+        {
+          "actId": "bnss",
+          "section": "478"
+        }
+      ],
+      "substantiveSections": [],
+      "highTraffic": true
+    },
+    {
+      "kind": "india_bail_cancellation_bnss_483",
+      "archetype": "bail_release",
+      "register": "bail_application",
+      "proceduralSections": [
+        {
+          "actId": "bnss",
+          "section": "483"
+        }
+      ],
+      "substantiveSections": [],
+      "highTraffic": true
+    },
+    {
+      "kind": "india_pocso_bail_application",
+      "archetype": "bail_release",
+      "register": "bail_application",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": true
+    },
+    {
+      "kind": "india_ndps_bail_application",
+      "archetype": "bail_release",
+      "register": "bail_application",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": true
+    },
+    {
+      "kind": "india_pmla_bail_application",
+      "archetype": "bail_release",
+      "register": "bail_application",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": true
+    },
+    {
+      "kind": "india_surety_bond",
+      "archetype": "other",
+      "register": "unknown",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_bail_cancellation_reply",
+      "archetype": "bail_release",
+      "register": "bail_application",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": true
+    },
+    {
+      "kind": "india_discharge_application_bnss_250",
+      "archetype": "criminal_trial_pleading",
+      "register": "court_petition",
+      "proceduralSections": [
+        {
+          "actId": "bnss",
+          "section": "250"
+        }
+      ],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_quashing_petition_bnss_528",
+      "archetype": "criminal_trial_pleading",
+      "register": "court_petition",
+      "proceduralSections": [
+        {
+          "actId": "bnss",
+          "section": "528"
+        }
+      ],
+      "substantiveSections": [],
+      "highTraffic": true
+    },
+    {
+      "kind": "india_criminal_revision",
+      "archetype": "appellate_revision",
+      "register": "appellate",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_revision_petition_bnss_438",
+      "archetype": "appellate_revision",
+      "register": "appellate",
+      "proceduralSections": [
+        {
+          "actId": "bnss",
+          "section": "438"
+        }
+      ],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_cheque_bounce_complaint_ni138",
+      "archetype": "magistrate_private_complaint",
+      "register": "magistrate_complaint",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": true
+    },
+    {
+      "kind": "india_contempt_petition",
+      "archetype": "other",
+      "register": "unknown",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_criminal_appeal",
+      "archetype": "appellate_revision",
+      "register": "appellate",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_acquittal_appeal",
+      "archetype": "criminal_trial_pleading",
+      "register": "court_petition",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_transfer_petition_criminal",
+      "archetype": "other",
+      "register": "unknown",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_charge_framing_objection",
+      "archetype": "criminal_trial_pleading",
+      "register": "court_petition",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_compounding_offences",
+      "archetype": "other",
+      "register": "unknown",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_parole_application",
+      "archetype": "supporting_filing",
+      "register": "supporting",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_fir_complaint",
+      "archetype": "police_criminal_complaint",
+      "register": "police_complaint",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": true
+    },
+    {
+      "kind": "india_complaint_magistrate_bnss_223",
+      "archetype": "magistrate_private_complaint",
+      "register": "magistrate_complaint",
+      "proceduralSections": [
+        {
+          "actId": "bnss",
+          "section": "223"
+        }
+      ],
+      "substantiveSections": [],
+      "highTraffic": true
+    },
+    {
+      "kind": "india_long_incarceration_bnss_479",
+      "archetype": "other",
+      "register": "unknown",
+      "proceduralSections": [
+        {
+          "actId": "bnss",
+          "section": "479"
+        }
+      ],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_mention_memo",
+      "archetype": "supporting_filing",
+      "register": "supporting",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_reply_to_chargesheet",
+      "archetype": "other",
+      "register": "unknown",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_protest_petition",
+      "archetype": "other",
+      "register": "unknown",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_suit_recovery_cpc_37",
+      "archetype": "civil_plaint",
+      "register": "civil_plaint",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_civil_plaint",
+      "archetype": "civil_plaint",
+      "register": "civil_plaint",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_civil_suit_money_recovery",
+      "archetype": "civil_plaint",
+      "register": "civil_plaint",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_suit_permanent_injunction",
+      "archetype": "civil_plaint",
+      "register": "civil_plaint",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_application_temp_injunction",
+      "archetype": "civil_plaint",
+      "register": "civil_plaint",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_suit_specific_performance",
+      "archetype": "civil_plaint",
+      "register": "civil_plaint",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_written_statement",
+      "archetype": "writ_constitutional",
+      "register": "writ",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": true
+    },
+    {
+      "kind": "india_execution_petition",
+      "archetype": "civil_plaint",
+      "register": "civil_plaint",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_partition_suit",
+      "archetype": "civil_plaint",
+      "register": "civil_plaint",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_declaration_suit",
+      "archetype": "civil_plaint",
+      "register": "civil_plaint",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_damages_suit",
+      "archetype": "civil_plaint",
+      "register": "civil_plaint",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_civil_revision",
+      "archetype": "appellate_revision",
+      "register": "appellate",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_civil_appeal_hc",
+      "archetype": "appellate_revision",
+      "register": "appellate",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_second_appeal",
+      "archetype": "appellate_revision",
+      "register": "appellate",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_amendment_or6r17",
+      "archetype": "other",
+      "register": "unknown",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_eviction_suit",
+      "archetype": "civil_plaint",
+      "register": "civil_plaint",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_civil_contempt",
+      "archetype": "civil_plaint",
+      "register": "civil_plaint",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_maintenance_application_bnss_144",
+      "archetype": "family_matrimonial",
+      "register": "family_petition",
+      "proceduralSections": [
+        {
+          "actId": "bnss",
+          "section": "144"
+        }
+      ],
+      "substantiveSections": [],
+      "highTraffic": true
+    },
+    {
+      "kind": "india_maintenance_application_bnss_144_family",
+      "archetype": "family_matrimonial",
+      "register": "family_petition",
+      "proceduralSections": [
+        {
+          "actId": "bnss",
+          "section": "144"
+        }
+      ],
+      "substantiveSections": [],
+      "highTraffic": true
+    },
+    {
+      "kind": "india_divorce_petition_s13",
+      "archetype": "family_matrimonial",
+      "register": "family_petition",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": true
+    },
+    {
+      "kind": "india_divorce_mutual_consent",
+      "archetype": "family_matrimonial",
+      "register": "family_petition",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": true
+    },
+    {
+      "kind": "india_restitution_conjugal_rights",
+      "archetype": "other",
+      "register": "unknown",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_domestic_violence_petition",
+      "archetype": "protective_order",
+      "register": "protective_order",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": true
+    },
+    {
+      "kind": "india_domestic_violence_protection_order",
+      "archetype": "protective_order",
+      "register": "protective_order",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": true
+    },
+    {
+      "kind": "india_child_custody",
+      "archetype": "family_matrimonial",
+      "register": "family_petition",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_guardianship_petition",
+      "archetype": "family_matrimonial",
+      "register": "family_petition",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_adoption_petition",
+      "archetype": "family_matrimonial",
+      "register": "family_petition",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_special_marriage_petition",
+      "archetype": "other",
+      "register": "unknown",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_christian_divorce",
+      "archetype": "family_matrimonial",
+      "register": "family_petition",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": true
+    },
+    {
+      "kind": "india_muslim_maintenance",
+      "archetype": "family_matrimonial",
+      "register": "family_petition",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": true
+    },
+    {
+      "kind": "india_muslim_divorce",
+      "archetype": "family_matrimonial",
+      "register": "family_petition",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": true
+    },
+    {
+      "kind": "india_visitation_rights",
+      "archetype": "other",
+      "register": "unknown",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_writ_petition_hc",
+      "archetype": "writ_constitutional",
+      "register": "writ",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": true
+    },
+    {
+      "kind": "india_slp_draft",
+      "archetype": "other",
+      "register": "unknown",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_writ_petition_sc",
+      "archetype": "writ_constitutional",
+      "register": "writ",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": true
+    },
+    {
+      "kind": "india_pil_petition",
+      "archetype": "other",
+      "register": "unknown",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_transfer_petition_sc",
+      "archetype": "other",
+      "register": "unknown",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_election_petition",
+      "archetype": "other",
+      "register": "unknown",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_consumer_complaint",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": true
+    },
+    {
+      "kind": "india_state_consumer_appeal",
+      "archetype": "appellate_revision",
+      "register": "appellate",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": true
+    },
+    {
+      "kind": "india_ncdrc_appeal",
+      "archetype": "appellate_revision",
+      "register": "appellate",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_rera_complaint",
+      "archetype": "civil_plaint",
+      "register": "civil_plaint",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_insurance_complaint",
+      "archetype": "civil_plaint",
+      "register": "civil_plaint",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_banking_ombudsman",
+      "archetype": "family_matrimonial",
+      "register": "family_petition",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_telecom_complaint",
+      "archetype": "civil_plaint",
+      "register": "civil_plaint",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_vakalatnama",
+      "archetype": "supporting_filing",
+      "register": "supporting",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_legal_notice",
+      "archetype": "regulatory_notice",
+      "register": "notice_letter",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_general_poa",
+      "archetype": "other",
+      "register": "unknown",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_special_poa",
+      "archetype": "other",
+      "register": "unknown",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_agreement_to_sell",
+      "archetype": "other",
+      "register": "unknown",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_sale_deed",
+      "archetype": "other",
+      "register": "unknown",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_lease_deed",
+      "archetype": "other",
+      "register": "unknown",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_gift_deed",
+      "archetype": "other",
+      "register": "unknown",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_mortgage_deed",
+      "archetype": "other",
+      "register": "unknown",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_release_deed",
+      "archetype": "other",
+      "register": "unknown",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_relinquishment_deed",
+      "archetype": "other",
+      "register": "unknown",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_exchange_deed",
+      "archetype": "other",
+      "register": "unknown",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_development_agreement",
+      "archetype": "other",
+      "register": "unknown",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_rent_agreement",
+      "archetype": "other",
+      "register": "unknown",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_eviction_notice_landlord",
+      "archetype": "regulatory_notice",
+      "register": "notice_letter",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_income_tax_notice_reply",
+      "archetype": "regulatory_notice",
+      "register": "notice_letter",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_income_tax_appeal_cita",
+      "archetype": "appellate_revision",
+      "register": "appellate",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_itat_petition",
+      "archetype": "other",
+      "register": "unknown",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_gst_notice_reply",
+      "archetype": "regulatory_notice",
+      "register": "notice_letter",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_gst_appeal_first",
+      "archetype": "appellate_revision",
+      "register": "appellate",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": true
+    },
+    {
+      "kind": "india_gst_hc_writ",
+      "archetype": "writ_constitutional",
+      "register": "writ",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": true
+    },
+    {
+      "kind": "india_customs_appeal_cestat",
+      "archetype": "appellate_revision",
+      "register": "appellate",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_advance_ruling_gst",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_advance_ruling_it",
+      "archetype": "other",
+      "register": "unknown",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_drt_oa",
+      "archetype": "other",
+      "register": "unknown",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_shareholder_agreement",
+      "archetype": "other",
+      "register": "unknown",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_founders_agreement",
+      "archetype": "other",
+      "register": "unknown",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_sha_rights",
+      "archetype": "other",
+      "register": "unknown",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_convertible_note_india",
+      "archetype": "other",
+      "register": "unknown",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_esop_grant_letter",
+      "archetype": "other",
+      "register": "unknown",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_board_resolution",
+      "archetype": "other",
+      "register": "unknown",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_mou_india",
+      "archetype": "other",
+      "register": "unknown",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_nda_india",
+      "archetype": "other",
+      "register": "unknown",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_employment_agreement_india",
+      "archetype": "other",
+      "register": "unknown",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_service_agreement_india",
+      "archetype": "other",
+      "register": "unknown",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_technology_licence_india",
+      "archetype": "other",
+      "register": "unknown",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_llp_agreement",
+      "archetype": "other",
+      "register": "unknown",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_partnership_deed",
+      "archetype": "other",
+      "register": "unknown",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_loan_agreement_india",
+      "archetype": "other",
+      "register": "unknown",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_guarantee_deed_india",
+      "archetype": "other",
+      "register": "unknown",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_hypothecation_agreement",
+      "archetype": "other",
+      "register": "unknown",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_pledge_agreement",
+      "archetype": "other",
+      "register": "unknown",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_debenture_trust_deed",
+      "archetype": "other",
+      "register": "unknown",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_will",
+      "archetype": "other",
+      "register": "unknown",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_codicil",
+      "archetype": "other",
+      "register": "unknown",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_probate_petition",
+      "archetype": "other",
+      "register": "unknown",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_letters_of_administration",
+      "archetype": "other",
+      "register": "unknown",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_succession_certificate",
+      "archetype": "other",
+      "register": "unknown",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_trust_deed",
+      "archetype": "other",
+      "register": "unknown",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_family_settlement_deed",
+      "archetype": "other",
+      "register": "unknown",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_labour_court_application",
+      "archetype": "supporting_filing",
+      "register": "supporting",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_employment_legal_opinion",
+      "archetype": "other",
+      "register": "unknown",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_illegal_termination_demand_notice",
+      "archetype": "regulatory_notice",
+      "register": "notice_letter",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_wrongful_termination",
+      "archetype": "other",
+      "register": "unknown",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_posh_complaint",
+      "archetype": "protective_order",
+      "register": "protective_order",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_pf_dispute",
+      "archetype": "other",
+      "register": "unknown",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_gratuity_claim",
+      "archetype": "other",
+      "register": "unknown",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_industrial_tribunal_ref",
+      "archetype": "other",
+      "register": "unknown",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_show_cause_reply_employee",
+      "archetype": "other",
+      "register": "unknown",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_workmen_compensation",
+      "archetype": "other",
+      "register": "unknown",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_arbitration_notice_s21",
+      "archetype": "regulatory_notice",
+      "register": "notice_letter",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_statement_of_claim_arb",
+      "archetype": "other",
+      "register": "unknown",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_s9_interim_relief",
+      "archetype": "other",
+      "register": "unknown",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_s11_arbitrator_appointment",
+      "archetype": "other",
+      "register": "unknown",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_s34_setting_aside",
+      "archetype": "other",
+      "register": "unknown",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_s36_enforcement",
+      "archetype": "other",
+      "register": "unknown",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_mediation_settlement",
+      "archetype": "other",
+      "register": "unknown",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_ibc_s7_application",
+      "archetype": "supporting_filing",
+      "register": "supporting",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_ibc_s9_application",
+      "archetype": "supporting_filing",
+      "register": "supporting",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_ibc_s10_application",
+      "archetype": "supporting_filing",
+      "register": "supporting",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_insolvency_proof_of_claim",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_resolution_plan_outline",
+      "archetype": "other",
+      "register": "unknown",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_personal_insolvency_s94",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_patent_infringement_suit",
+      "archetype": "civil_plaint",
+      "register": "civil_plaint",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_trademark_infringement_suit",
+      "archetype": "civil_plaint",
+      "register": "civil_plaint",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_copyright_infringement_suit",
+      "archetype": "civil_plaint",
+      "register": "civil_plaint",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_trademark_objection_reply",
+      "archetype": "other",
+      "register": "unknown",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_patent_pre_grant_opposition",
+      "archetype": "other",
+      "register": "unknown",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_copyright_assignment",
+      "archetype": "other",
+      "register": "unknown",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_ngt_petition",
+      "archetype": "other",
+      "register": "unknown",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_rti_application",
+      "archetype": "supporting_filing",
+      "register": "supporting",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_rti_appeal",
+      "archetype": "appellate_revision",
+      "register": "appellate",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_cic_second_appeal",
+      "archetype": "appellate_revision",
+      "register": "appellate",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_it_act_complaint",
+      "archetype": "civil_plaint",
+      "register": "civil_plaint",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_cyber_crime_complaint",
+      "archetype": "police_criminal_complaint",
+      "register": "police_complaint",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": true
+    },
+    {
+      "kind": "india_sarfaesi_reply",
+      "archetype": "other",
+      "register": "unknown",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_caveat_application_cpc_o42",
+      "archetype": "civil_plaint",
+      "register": "civil_plaint",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_replication_cpc",
+      "archetype": "civil_plaint",
+      "register": "civil_plaint",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_general_affidavit",
+      "archetype": "supporting_filing",
+      "register": "supporting",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_memo_appearance",
+      "archetype": "supporting_filing",
+      "register": "supporting",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_review_petition_sc",
+      "archetype": "appellate_revision",
+      "register": "appellate",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_curative_petition_sc",
+      "archetype": "other",
+      "register": "unknown",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_habeas_corpus_petition",
+      "archetype": "writ_constitutional",
+      "register": "writ",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": true
+    },
+    {
+      "kind": "india_letters_patent_appeal",
+      "archetype": "appellate_revision",
+      "register": "appellate",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_plaint_title_suit",
+      "archetype": "civil_plaint",
+      "register": "civil_plaint",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_receiver_application",
+      "archetype": "supporting_filing",
+      "register": "supporting",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_commission_application",
+      "archetype": "supporting_filing",
+      "register": "supporting",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_attachment_before_judgment",
+      "archetype": "other",
+      "register": "unknown",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_set_off_counterclaim_civil",
+      "archetype": "civil_plaint",
+      "register": "civil_plaint",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_suspension_of_sentence",
+      "archetype": "other",
+      "register": "unknown",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_suspension_of_conviction",
+      "archetype": "criminal_trial_pleading",
+      "register": "court_petition",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_nclt_oppression_petition",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_nclt_winding_up_petition",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_cat_original_application",
+      "archetype": "supporting_filing",
+      "register": "supporting",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_sat_appeal",
+      "archetype": "appellate_revision",
+      "register": "appellate",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_drt_appeal",
+      "archetype": "appellate_revision",
+      "register": "appellate",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_ngt_appeal",
+      "archetype": "appellate_revision",
+      "register": "appellate",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_gst_refund_application",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_tds_default_response",
+      "archetype": "other",
+      "register": "unknown",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_transfer_pricing_reply",
+      "archetype": "other",
+      "register": "unknown",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_fema_compounding_application",
+      "archetype": "supporting_filing",
+      "register": "supporting",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_sebi_complaint",
+      "archetype": "civil_plaint",
+      "register": "civil_plaint",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_cci_information",
+      "archetype": "other",
+      "register": "unknown",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_mact_claim_petition",
+      "archetype": "other",
+      "register": "unknown",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_mutation_application",
+      "archetype": "supporting_filing",
+      "register": "supporting",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_huf_partition_deed",
+      "archetype": "other",
+      "register": "unknown",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_court_marriage_petition",
+      "archetype": "other",
+      "register": "unknown",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_annulment_petition",
+      "archetype": "other",
+      "register": "unknown",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_parsi_divorce_petition",
+      "archetype": "family_matrimonial",
+      "register": "family_petition",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": true
+    },
+    {
+      "kind": "india_legal_heir_certificate",
+      "archetype": "other",
+      "register": "unknown",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_indemnity_bond",
+      "archetype": "other",
+      "register": "unknown",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_poa_litigation",
+      "archetype": "other",
+      "register": "unknown",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_restoration_application",
+      "archetype": "supporting_filing",
+      "register": "supporting",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_condonation_delay",
+      "archetype": "other",
+      "register": "unknown",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_impleadment_application",
+      "archetype": "criminal_trial_pleading",
+      "register": "court_petition",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_withdrawal_suit",
+      "archetype": "civil_plaint",
+      "register": "civil_plaint",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_compromise_decree",
+      "archetype": "other",
+      "register": "unknown",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_exparte_set_aside",
+      "archetype": "other",
+      "register": "unknown",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_stay_application",
+      "archetype": "supporting_filing",
+      "register": "supporting",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_interim_custody_bail",
+      "archetype": "bail_release",
+      "register": "bail_application",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": true
+    },
+    {
+      "kind": "india_anticipatory_bail_cancellation",
+      "archetype": "bail_release",
+      "register": "bail_application",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": true
+    },
+    {
+      "kind": "india_nclat_appeal",
+      "archetype": "appellate_revision",
+      "register": "appellate",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_itat_rectification",
+      "archetype": "other",
+      "register": "unknown",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_income_tax_revision_hc",
+      "archetype": "appellate_revision",
+      "register": "appellate",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_stamp_duty_adjudication",
+      "archetype": "other",
+      "register": "unknown",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_affidavit_in_support",
+      "archetype": "supporting_filing",
+      "register": "supporting",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_mca_dir12_appointment",
+      "archetype": "other",
+      "register": "unknown",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_mca_dir12_resignation",
+      "archetype": "other",
+      "register": "unknown",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_mca_mgt7_annual_return",
+      "archetype": "other",
+      "register": "unknown",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_mca_aoc4_financials",
+      "archetype": "other",
+      "register": "unknown",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_mca_inc22_registered_office",
+      "archetype": "other",
+      "register": "unknown",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_mca_inc24_name_change",
+      "archetype": "other",
+      "register": "unknown",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_mca_sh7_share_capital",
+      "archetype": "other",
+      "register": "unknown",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_mca_mgt14_board_resolution",
+      "archetype": "other",
+      "register": "unknown",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_mca_chg1_charge_creation",
+      "archetype": "other",
+      "register": "unknown",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_mca_chg4_charge_satisfaction",
+      "archetype": "other",
+      "register": "unknown",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_mca_stk2_buyback",
+      "archetype": "other",
+      "register": "unknown",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_mca_pas3_allotment",
+      "archetype": "other",
+      "register": "unknown",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_mca_dpt3_deposits",
+      "archetype": "other",
+      "register": "unknown",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_mca_msme1_form",
+      "archetype": "other",
+      "register": "unknown",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_mca_ben2_beneficial_owner",
+      "archetype": "other",
+      "register": "unknown",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_sebi_lodr_disclosure",
+      "archetype": "other",
+      "register": "unknown",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_sebi_takeover_open_offer",
+      "archetype": "other",
+      "register": "unknown",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_sebi_insider_trading_policy",
+      "archetype": "other",
+      "register": "unknown",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_sebi_aif_placement",
+      "archetype": "other",
+      "register": "unknown",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_sebi_qip_placement",
+      "archetype": "other",
+      "register": "unknown",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_sebi_delisting_petition",
+      "archetype": "other",
+      "register": "unknown",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_sebi_ombudsman_complaint",
+      "archetype": "family_matrimonial",
+      "register": "family_petition",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_nclt_cirp_public_announcement",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_nclt_information_utility_claim",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_nclt_liquidation_application",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_nclt_avoidance_transaction",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_nclt_resolution_professional_appointment",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_nclt_class_action",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_nclt_reduction_capital",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_nclt_compromise_arrangement",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_nclt_merger_scheme",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_nclt_investigation_petition",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_nclt_deposit_repayment",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_nclt_managing_director_removal",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_nclt_opp_mismanagement_reply",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_nclt_ibbi_form_c_claim",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_nclt_fresh_start_application",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_tdsat_appeal",
+      "archetype": "appellate_revision",
+      "register": "appellate",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_cestat_appeal_customs",
+      "archetype": "appellate_revision",
+      "register": "appellate",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_itat_misc_application",
+      "archetype": "supporting_filing",
+      "register": "supporting",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_nclat_insolvency_appeal",
+      "archetype": "appellate_revision",
+      "register": "appellate",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_nclat_companies_appeal",
+      "archetype": "appellate_revision",
+      "register": "appellate",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_aft_appeal",
+      "archetype": "appellate_revision",
+      "register": "appellate",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_cgit_labour_appeal",
+      "archetype": "appellate_revision",
+      "register": "appellate",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_rera_appeal",
+      "archetype": "appellate_revision",
+      "register": "appellate",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_nclt_benami_action",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_trai_petition",
+      "archetype": "other",
+      "register": "unknown",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_maharashtra_rent_control_notice",
+      "archetype": "regulatory_notice",
+      "register": "notice_letter",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_delhi_rent_control_petition",
+      "archetype": "other",
+      "register": "unknown",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_karnataka_rent_petition",
+      "archetype": "other",
+      "register": "unknown",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_tamil_nadu_rent_petition",
+      "archetype": "other",
+      "register": "unknown",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_up_rent_suit",
+      "archetype": "civil_plaint",
+      "register": "civil_plaint",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_gujarat_rent_notice",
+      "archetype": "regulatory_notice",
+      "register": "notice_letter",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_wb_premises_tenancy_suit",
+      "archetype": "civil_plaint",
+      "register": "civil_plaint",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_haryana_rent_petition",
+      "archetype": "other",
+      "register": "unknown",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_rajasthan_rent_petition",
+      "archetype": "other",
+      "register": "unknown",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_mh_leave_license_agreement",
+      "archetype": "other",
+      "register": "unknown",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_nclt_voluntary_liquidation",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_nclt_pre_pack_insolvency",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_nclt_cross_border_insolvency",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_nclt_fast_track_cirp",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_nclt_homebuyer_cirp",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_nclt_suspension_board_powers",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_nclt_plan_approval",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_nclt_liquidator_appointment",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_nclt_dispute_avoidance",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_nclt_irp_appointment",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_nclt_coc_meeting_minutes",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_nclt_publication_cirp",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_nclt_form_b_claim",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_nclt_form_f_claim",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_nclt_form_d_claim",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_nclt_form_e_claim",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_nclt_form_g_coc",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_nclt_form_h_objection",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_nclt_form_i_liquidation",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_nclt_form_j_liquidation",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_letters_patent_review",
+      "archetype": "appellate_revision",
+      "register": "appellate",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_inherent_review_hc",
+      "archetype": "appellate_revision",
+      "register": "appellate",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_contempt_apology",
+      "archetype": "other",
+      "register": "unknown",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_caveat_supreme_court",
+      "archetype": "other",
+      "register": "unknown",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_slp_condonation_delay",
+      "archetype": "other",
+      "register": "unknown",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_arbitration_interim_hc",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_gift_settlement_family",
+      "archetype": "other",
+      "register": "unknown",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_partnership_dissolution",
+      "archetype": "other",
+      "register": "unknown",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_llp_partner_admission",
+      "archetype": "other",
+      "register": "unknown",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_llp_partner_retirement",
+      "archetype": "other",
+      "register": "unknown",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_share_transfer_sh4",
+      "archetype": "other",
+      "register": "unknown",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_demand_promoter_allotment",
+      "archetype": "regulatory_notice",
+      "register": "notice_letter",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_rera_agent_registration",
+      "archetype": "other",
+      "register": "unknown",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_rera_project_registration",
+      "archetype": "other",
+      "register": "unknown",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_fssai_license_application",
+      "archetype": "supporting_filing",
+      "register": "supporting",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_drug_license_application",
+      "archetype": "supporting_filing",
+      "register": "supporting",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_pollution_control_consent",
+      "archetype": "other",
+      "register": "unknown",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_fire_noc_application",
+      "archetype": "supporting_filing",
+      "register": "supporting",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": true
+    },
+    {
+      "kind": "india_building_plan_approval",
+      "archetype": "other",
+      "register": "unknown",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_trade_license_application",
+      "archetype": "supporting_filing",
+      "register": "supporting",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_shop_establishment_registration",
+      "archetype": "other",
+      "register": "unknown",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_pf_registration_employer",
+      "archetype": "other",
+      "register": "unknown",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_esi_registration_employer",
+      "archetype": "other",
+      "register": "unknown",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_professional_tax_registration",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_gst_registration_application",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_gst_registration_amendment",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_gst_lut_bond",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_income_tax_return_revised",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_income_tax_rectification",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_transfer_pricing_apa",
+      "archetype": "other",
+      "register": "unknown",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_bond_bail_surety_indemnity",
+      "archetype": "bail_release",
+      "register": "bail_application",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": true
+    },
+    {
+      "kind": "india_anticipatory_bail_extension",
+      "archetype": "bail_release",
+      "register": "bail_application",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": true
+    },
+    {
+      "kind": "india_default_bail_computation",
+      "archetype": "bail_release",
+      "register": "bail_application",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": true
+    },
+    {
+      "kind": "india_quashing_settlement_affidavit",
+      "archetype": "criminal_trial_pleading",
+      "register": "court_petition",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": true
+    },
+    {
+      "kind": "india_nia_s138_cheque_memo",
+      "archetype": "supporting_filing",
+      "register": "supporting",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": true
+    },
+    {
+      "kind": "india_nia_s138_demand_notice",
+      "archetype": "regulatory_notice",
+      "register": "notice_letter",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_pocso_victim_compensation",
+      "archetype": "other",
+      "register": "unknown",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": true
+    },
+    {
+      "kind": "india_ndps_bail_cancellation",
+      "archetype": "bail_release",
+      "register": "bail_application",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": true
+    },
+    {
+      "kind": "india_pmla_attachment_representation",
+      "archetype": "other",
+      "register": "unknown",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": true
+    },
+    {
+      "kind": "india_ed_prosecution_complaint",
+      "archetype": "civil_plaint",
+      "register": "civil_plaint",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_cbi_court_complaint",
+      "archetype": "civil_plaint",
+      "register": "civil_plaint",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_sc_st_atrocities_complaint",
+      "archetype": "civil_plaint",
+      "register": "civil_plaint",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_dowry_prohibition_complaint",
+      "archetype": "civil_plaint",
+      "register": "civil_plaint",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_domestic_violence_interim",
+      "archetype": "protective_order",
+      "register": "protective_order",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": true
+    },
+    {
+      "kind": "india_hindu_adoption_deed",
+      "archetype": "family_matrimonial",
+      "register": "family_petition",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_muslim_nikahnama",
+      "archetype": "other",
+      "register": "unknown",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_special_marriage_notice",
+      "archetype": "regulatory_notice",
+      "register": "notice_letter",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_probate_caveat",
+      "archetype": "other",
+      "register": "unknown",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_probate_objection",
+      "archetype": "other",
+      "register": "unknown",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_letters_administration_caveat",
+      "archetype": "other",
+      "register": "unknown",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_ap_rent_petition",
+      "archetype": "other",
+      "register": "unknown",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_kerala_rent_petition",
+      "archetype": "other",
+      "register": "unknown",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_telangana_rent_suit",
+      "archetype": "civil_plaint",
+      "register": "civil_plaint",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_mp_rent_petition",
+      "archetype": "other",
+      "register": "unknown",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_punjab_rent_petition",
+      "archetype": "other",
+      "register": "unknown",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_bihar_rent_suit",
+      "archetype": "civil_plaint",
+      "register": "civil_plaint",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_odisha_rent_petition",
+      "archetype": "other",
+      "register": "unknown",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_assam_rent_petition",
+      "archetype": "other",
+      "register": "unknown",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_chhattisgarh_rent_notice",
+      "archetype": "regulatory_notice",
+      "register": "notice_letter",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_jharkhand_rent_petition",
+      "archetype": "other",
+      "register": "unknown",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_hp_rent_petition",
+      "archetype": "other",
+      "register": "unknown",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_uttarakhand_rent_petition",
+      "archetype": "other",
+      "register": "unknown",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_goa_rent_petition",
+      "archetype": "other",
+      "register": "unknown",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_jk_rent_petition",
+      "archetype": "other",
+      "register": "unknown",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_ladakh_rent_petition",
+      "archetype": "other",
+      "register": "unknown",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_nclt_cirp_real_estate",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_nclt_cirp_infra",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_nclt_cirp_msme",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_nclt_cirp_nbfc",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_nclt_cirp_startup",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_nclt_cirp_education",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_nclt_cirp_healthcare",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_nclt_cirp_hospitality",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_nclt_cirp_textile",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_nclt_cirp_power_sector",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_nclt_cirp_agri",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_nclt_cirp_ecommerce",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_nclt_cirp_defence",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_nclt_cirp_retail",
+      "archetype": "special_statute_complaint",
+      "register": "special_statute",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_drt_sarfaesi_13_2",
+      "archetype": "other",
+      "register": "unknown",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_drt_sarfaesi_14",
+      "archetype": "other",
+      "register": "unknown",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_drat_appeal",
+      "archetype": "appellate_revision",
+      "register": "appellate",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_drt_recovery_certificate",
+      "archetype": "civil_plaint",
+      "register": "civil_plaint",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_cat_contempt",
+      "archetype": "other",
+      "register": "unknown",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_cat_oae",
+      "archetype": "other",
+      "register": "unknown",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_cat_review",
+      "archetype": "appellate_revision",
+      "register": "appellate",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_sat_interim_relief",
+      "archetype": "other",
+      "register": "unknown",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_sat_settlement",
+      "archetype": "other",
+      "register": "unknown",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_sat_penalty_challenge",
+      "archetype": "other",
+      "register": "unknown",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_cat_transfer_petition",
+      "archetype": "other",
+      "register": "unknown",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_drt_interim_injunction",
+      "archetype": "civil_plaint",
+      "register": "civil_plaint",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_maharashtra_stamp_adjudication",
+      "archetype": "other",
+      "register": "unknown",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_karnataka_stamp_certificate",
+      "archetype": "other",
+      "register": "unknown",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_gujarat_registration_deed",
+      "archetype": "other",
+      "register": "unknown",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_tn_registration_document",
+      "archetype": "other",
+      "register": "unknown",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_up_stamp_refund",
+      "archetype": "other",
+      "register": "unknown",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_delhi_e_stamp",
+      "archetype": "other",
+      "register": "unknown",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_rajasthan_conveyance_deed",
+      "archetype": "other",
+      "register": "unknown",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_wb_stamp_duty_appeal",
+      "archetype": "appellate_revision",
+      "register": "appellate",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_mh_leave_license_registration",
+      "archetype": "other",
+      "register": "unknown",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_telangana_registration_deed",
+      "archetype": "other",
+      "register": "unknown",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_ap_registration_deed",
+      "archetype": "other",
+      "register": "unknown",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_kerala_stamp_adjudication",
+      "archetype": "other",
+      "register": "unknown",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_generic_conveyance_deed",
+      "archetype": "other",
+      "register": "unknown",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": false
+    },
+    {
+      "kind": "india_maintenance_order_revision",
+      "archetype": "appellate_revision",
+      "register": "appellate",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": true
+    },
+    {
+      "kind": "india_maintenance_appeal_final",
+      "archetype": "appellate_revision",
+      "register": "appellate",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": true
+    },
+    {
+      "kind": "india_family_court_maintenance_appeal",
+      "archetype": "appellate_revision",
+      "register": "appellate",
+      "proceduralSections": [],
+      "substantiveSections": [],
+      "highTraffic": true
+    }
+  ],
+  "notes": [
+    "KIND_SECTION_HINTS currently pins BNS §78 on india_fir_complaint — must be offence-driven",
+    "COMMON_OFFENCE_REMAPS covers only 6 offences — expand via DraftArchetypeRegistry",
+    "INDIA_PROCEDURAL_RULES has 9 rules — archetype router supersedes for kind selection"
+  ]
+}

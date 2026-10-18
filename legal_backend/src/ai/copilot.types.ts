@@ -3,6 +3,7 @@ export type CopilotToolName =
   | 'summarize_matter'
   | 'legal_research_memo'
   | 'draft_document'
+  | 'find_draft'
   | 'suggest_next_steps';
 
 export interface CopilotActionProposal {

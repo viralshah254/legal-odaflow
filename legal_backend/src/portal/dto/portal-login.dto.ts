@@ -1,11 +1,8 @@
-import { IsEmail, IsNotEmpty, IsString, MinLength } from 'class-validator';
+import { IsNotEmpty, IsString, MinLength } from 'class-validator';
 
 export class PortalLoginDto {
-  @IsEmail()
-  @IsNotEmpty()
-  email!: string;
-
   @IsString()
-  @MinLength(2)
-  fullName!: string;
+  @IsNotEmpty()
+  @MinLength(20)
+  inviteToken!: string;
 }

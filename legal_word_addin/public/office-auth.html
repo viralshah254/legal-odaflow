@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Sign in — Umbrella</title>
+    <style>
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        font-size: 14px;
+        color: #0f172a;
+        background: #fff;
+      }
+      main {
+        max-width: 20rem;
+        margin: 0 auto;
+        padding: 1.5rem 1.25rem;
+      }
+      .logo {
+        width: 2.5rem;
+        height: 2.5rem;
+        margin: 0 auto 0.75rem;
+        border-radius: 0.625rem;
+        background: #2563eb;
+        color: #fff;
+        font-weight: 700;
+        line-height: 2.5rem;
+        text-align: center;
+      }
+      h1 { margin: 0 0 0.25rem; font-size: 1rem; font-weight: 600; text-align: center; }
+      .hint {
+        margin: 0 0 1rem;
+        font-size: 0.75rem;
+        color: #64748b;
+        text-align: center;
+        line-height: 1.45;
+      }
+      .error {
+        margin-bottom: 0.75rem;
+        padding: 0.625rem 0.75rem;
+        border-radius: 0.5rem;
+        background: #fef2f2;
+        border: 1px solid #fecaca;
+        color: #b91c1c;
+        font-size: 0.75rem;
+      }
+      .hidden { display: none; }
+      input, button { width: 100%; font: inherit; }
+      input {
+        margin-bottom: 0.5rem;
+        padding: 0.625rem 0.75rem;
+        border: 1px solid #e2e8f0;
+        border-radius: 0.5rem;
+      }
+      .btn-primary {
+        padding: 0.625rem 0.875rem;
+        border-radius: 0.5rem;
+        border: none;
+        background: #2563eb;
+        color: #fff;
+        font-weight: 500;
+        cursor: pointer;
+      }
+      .btn-primary:disabled { opacity: 0.55; cursor: not-allowed; }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="logo">U</div>
+      <h1>Sign in to Umbrella</h1>
+      <p class="hint">Sign in once — Umbrella keeps you signed in inside Word.</p>
+      <div id="error" class="error hidden"></div>
+      <input id="email" type="email" placeholder="Email" autocomplete="username" />
+      <input id="password" type="password" placeholder="Password" autocomplete="current-password" />
+      <button type="button" id="email-btn" class="btn-primary">Sign in</button>
+    </main>
+    <script type="text/javascript">
+      (function () {
+        var API_URL = "__API_URL__";
+        var RETURN_KEY = "umbrella_office_addin_return_url";
+
+        var errorEl = document.getElementById("error");
+        var emailBtn = document.getElementById("email-btn");
+        var emailInput = document.getElementById("email");
+        var passwordInput = document.getElementById("password");
+
+        function showError(message) {
+          if (!message) {
+            errorEl.className = "error hidden";
+            errorEl.textContent = "";
+            return;
+          }
+          errorEl.className = "error";
+          errorEl.textContent = message;
+        }
+
+        function isAllowedReturnUrl(returnUrl) {
+          try {
+            var url = new URL(returnUrl);
+            return (
+              url.protocol === "https:" &&
+              url.host === "localhost:3001" &&
+              url.pathname.indexOf("/auth-bridge.html") !== -1
+            );
+          } catch (e) {
+            return false;
+          }
+        }
+
+        function getReturnUrl() {
+          var fromQuery = new URLSearchParams(window.location.search).get("returnUrl") || "";
+          if (isAllowedReturnUrl(fromQuery)) {
+            try { localStorage.setItem(RETURN_KEY, fromQuery); } catch (e) {}
+            return fromQuery;
+          }
+          try {
+            var remembered = localStorage.getItem(RETURN_KEY) || "";
+            return isAllowedReturnUrl(remembered) ? remembered : "";
+          } catch (e2) {
+            return "";
+          }
+        }
+
+        function handoff(returnUrl, response) {
+          var params = new URLSearchParams({
+            accessToken: response.accessToken,
+            refreshToken: response.refreshToken || "",
+            userId: response.user.id,
+            tenantId: response.user.tenantId || "",
+            displayName: response.user.name || response.user.email,
+          });
+          var base = returnUrl.split("?")[0].split("#")[0];
+          window.location.replace(base + "?" + params.toString());
+        }
+
+        function directApiLogin(email, password) {
+          return fetch(API_URL + "/api/v1/auth/login", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ email: email, password: password }),
+          }).then(function (res) {
+            return res.json().then(function (body) {
+              if (!res.ok) throw new Error(body.message || "Invalid email or password");
+              return body;
+            });
+          });
+        }
+
+        emailBtn.addEventListener("click", function () {
+          var returnUrl = getReturnUrl();
+          var email = emailInput.value.trim();
+          var password = passwordInput.value;
+          if (!returnUrl) return showError("Missing return URL.");
+          if (!email || !password) return showError("Enter email and password.");
+          emailBtn.disabled = true;
+          showError(null);
+          directApiLogin(email, password)
+            .then(function (response) { handoff(returnUrl, response); })
+            .catch(function (err) {
+              emailBtn.disabled = false;
+              showError(err && err.message ? err.message : "Login failed");
+            });
+        });
+
+        passwordInput.addEventListener("keydown", function (e) {
+          if (e.key === "Enter") emailBtn.click();
+        });
+
+        if (!getReturnUrl()) {
+          showError("Missing Office add-in return URL.");
+        }
+      })();
+    </script>
+  </body>
+</html>

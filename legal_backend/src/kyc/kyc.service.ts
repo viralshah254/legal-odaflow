@@ -26,14 +26,10 @@ export class KycService {
     PARTNERSHIP_DEED: 'Partnership Deed',
     NGO_REGISTRATION: 'NGO Registration',
     BANK_STATEMENT: 'Bank Statement',
+    AADHAAR: 'Aadhaar Card',
+    PAN_CARD: 'PAN Card',
+    CIN_CERTIFICATE: 'CIN / Certificate of Incorporation',
     OTHER: 'Other Document',
-  };
-
-  private readonly requiredDocsByClientType: Record<string, string[]> = {
-    INDIVIDUAL: ['ID_PASSPORT', 'PROOF_OF_ADDRESS', 'KRA_PIN'],
-    COMPANY: ['COMPANY_REGISTRATION', 'CR12', 'DIRECTOR_IDS', 'KRA_PIN'],
-    NGO: ['NGO_REGISTRATION', 'DIRECTOR_IDS', 'KRA_PIN'],
-    PARTNERSHIP: ['PARTNERSHIP_DEED', 'DIRECTOR_IDS', 'KRA_PIN'],
   };
 
   constructor(
@@ -69,12 +65,14 @@ export class KycService {
   ) {
     await this.ensureClientReadable(tenantId, clientId, userId, role);
 
-    const normalizedType = this.normalizeClientType(dto.clientType);
-    const requiredDocTypes =
-      this.requiredDocsByClientType[normalizedType] ?? [
-        'ID_PASSPORT',
-        'PROOF_OF_ADDRESS',
-      ];
+    const client = await this.prisma.client.findFirst({
+      where: { id: clientId, tenantId },
+    });
+    const normalizedType = this.normalizeClientType(
+      dto.clientType ?? client?.type,
+    );
+    const countryCode = dto.countryCode ?? client?.countryCode ?? 'KE';
+    const requiredDocTypes = this.getRequiredDocTypes(countryCode, normalizedType);
 
     const checklist =
       (await this.prisma.kycChecklist.findFirst({
@@ -364,6 +362,38 @@ export class KycService {
     }
   }
 
+  getRequiredDocTypes(countryCode: string | null | undefined, clientType: string): string[] {
+    const country = (countryCode ?? 'KE').trim().toUpperCase();
+    const type = this.normalizeClientType(clientType);
+
+    const byCountry: Record<string, Record<string, string[]>> = {
+      IN: {
+        INDIVIDUAL: ['AADHAAR', 'PAN_CARD', 'PROOF_OF_ADDRESS'],
+        COMPANY: ['CIN_CERTIFICATE', 'DIRECTOR_IDS', 'PAN_CARD'],
+        NGO: ['NGO_REGISTRATION', 'DIRECTOR_IDS', 'PAN_CARD'],
+        PARTNERSHIP: ['PARTNERSHIP_DEED', 'DIRECTOR_IDS', 'PAN_CARD'],
+      },
+      KE: {
+        INDIVIDUAL: ['ID_PASSPORT', 'PROOF_OF_ADDRESS', 'KRA_PIN'],
+        COMPANY: ['COMPANY_REGISTRATION', 'CR12', 'DIRECTOR_IDS', 'KRA_PIN'],
+        NGO: ['NGO_REGISTRATION', 'DIRECTOR_IDS', 'KRA_PIN'],
+        PARTNERSHIP: ['PARTNERSHIP_DEED', 'DIRECTOR_IDS', 'KRA_PIN'],
+      },
+    };
+
+    const defaultByType: Record<string, string[]> = {
+      INDIVIDUAL: ['ID_PASSPORT', 'PROOF_OF_ADDRESS'],
+      COMPANY: ['COMPANY_REGISTRATION', 'DIRECTOR_IDS'],
+      NGO: ['NGO_REGISTRATION', 'DIRECTOR_IDS'],
+      PARTNERSHIP: ['PARTNERSHIP_DEED', 'DIRECTOR_IDS'],
+    };
+
+    return (
+      byCountry[country]?.[type] ??
+      defaultByType[type] ?? ['ID_PASSPORT', 'PROOF_OF_ADDRESS']
+    );
+  }
+
   private normalizeClientType(clientType?: string) {
     return (clientType ?? '').trim().toUpperCase();
   }
@@ -407,6 +437,7 @@ export class KycService {
       label:
         this.kycDocLabels[document.documentType.toUpperCase()] ??
         document.documentType,
+      fileName: document.fileName,
       status: this.toApiStatus(document.status),
       uploadedAt: document.fileUrl ? document.createdAt.toISOString() : null,
       expiresAt: null,

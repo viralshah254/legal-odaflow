@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "stateCode": "UT",
+  "stateName": "Utah",
+  "acts": [
+    {
+      "actId": "ut-code",
+      "title": "Utah code",
+      "sourceAuthority": "cornell-lii",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.law.cornell.edu/states/ut",
+      "externalId": "ut-code",
+      "notes": "Utah state law via Cornell LII state index"
+    },
+    {
+      "actId": "ut-statutes",
+      "title": "Utah statutes",
+      "sourceAuthority": "cornell-lii",
+      "sourceTier": "mirror",
+      "primaryPdfUrl": "https://www.law.cornell.edu/states/ut",
+      "externalId": "ut-statutes",
+      "notes": "Utah state law via Cornell LII state index"
+    }
+  ]
+}

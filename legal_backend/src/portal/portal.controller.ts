@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Param, Patch, Post, Query, Req, UseGuards } from '@nestjs/common';
+import { Body, Controller, Get, Headers, Param, Patch, Post, Query, Req, UseGuards } from '@nestjs/common';
 import { Request } from 'express';
 import { Public } from '@/common/decorators/public.decorator';
 import { CurrentUser } from '@/common/decorators/current-user.decorator';
@@ -12,6 +12,7 @@ import { RequestUser } from '@/common/types/request-user.interface';
 import { CreatePortalDocumentRequestDto } from './dto/create-document-request.dto';
 import { CreatePortalMessageDto } from './dto/create-portal-message.dto';
 import { CreateClientPortalMessageDto } from './dto/create-client-portal-message.dto';
+import { CreatePortalInviteDto } from './dto/create-portal-invite.dto';
 import { PortalLoginDto } from './dto/portal-login.dto';
 import { PayInvoiceDto } from './dto/pay-invoice.dto';
 import { UploadPortalRequestDocumentDto } from './dto/upload-request-document.dto';
@@ -33,6 +34,15 @@ export class PortalController {
       req.portalUser.tenantId,
       matterId,
     );
+  }
+
+  @Post('firm/invites')
+  @UseGuards(TenantGuard)
+  createInvite(
+    @TenantId() tenantId: string,
+    @Body() dto: CreatePortalInviteDto,
+  ) {
+    return this.portalService.createPortalInvite(tenantId, dto.clientId);
   }
 
   @Public()
@@ -69,6 +79,16 @@ export class PortalController {
     @Body() dto: CreatePortalMessageDto,
   ) {
     return this.portalService.createMessage(tenantId, user.id, dto);
+  }
+
+  @Post('firm/share-document')
+  @UseGuards(TenantGuard)
+  shareDocument(
+    @TenantId() tenantId: string,
+    @CurrentUser() user: RequestUser,
+    @Body() dto: { matterId: string; clientId?: string; documentName: string; documentUrl: string; message?: string },
+  ) {
+    return this.portalService.shareDocumentWithClient(tenantId, user.id, dto);
   }
 
   @Public()
@@ -131,8 +151,12 @@ export class PortalController {
 
   @Public()
   @Get('invoices/:invoiceId')
-  getInvoice(@Param('invoiceId') invoiceId: string) {
-    return this.portalService.getPublicInvoice(invoiceId);
+  getInvoice(
+    @Param('invoiceId') invoiceId: string,
+    @Query('token') payToken?: string,
+    @Headers('authorization') authHeader?: string,
+  ) {
+    return this.portalService.getPublicInvoice(invoiceId, { payToken, authHeader });
   }
 
   @Public()
@@ -140,7 +164,70 @@ export class PortalController {
   payInvoice(
     @Param('invoiceId') invoiceId: string,
     @Body() dto: PayInvoiceDto,
+    @Query('token') payToken?: string,
+    @Headers('authorization') authHeader?: string,
   ) {
-    return this.portalService.payInvoice(invoiceId, dto);
+    return this.portalService.payInvoice(invoiceId, dto, {
+      payToken: payToken ?? dto.payToken,
+      authHeader,
+    });
+  }
+
+  // ── Portal Task Collaboration ─────────────────────────────────────────────
+
+  @Public()
+  @UseGuards(PortalAuthGuard)
+  @Get('tasks')
+  listTasks(@Req() req: Request & { portalUser: PortalRequestUser }) {
+    return this.portalService.listPortalTasks(
+      req.portalUser.clientId,
+      req.portalUser.tenantId,
+    );
+  }
+
+  @Public()
+  @UseGuards(PortalAuthGuard)
+  @Get('tasks/:taskId')
+  getTask(
+    @Req() req: Request & { portalUser: PortalRequestUser },
+    @Param('taskId') taskId: string,
+  ) {
+    return this.portalService.getPortalTask(
+      req.portalUser.clientId,
+      req.portalUser.tenantId,
+      taskId,
+    );
+  }
+
+  @Public()
+  @UseGuards(PortalAuthGuard)
+  @Patch('tasks/:taskId')
+  updateTask(
+    @Req() req: Request & { portalUser: PortalRequestUser },
+    @Param('taskId') taskId: string,
+    @Body() dto: { status?: string; notes?: string },
+  ) {
+    return this.portalService.updatePortalTask(
+      req.portalUser.clientId,
+      req.portalUser.tenantId,
+      taskId,
+      dto,
+    );
+  }
+
+  @Public()
+  @UseGuards(PortalAuthGuard)
+  @Post('tasks/:taskId/comments')
+  addTaskComment(
+    @Req() req: Request & { portalUser: PortalRequestUser },
+    @Param('taskId') taskId: string,
+    @Body() dto: { body: string },
+  ) {
+    return this.portalService.addPortalTaskComment(
+      req.portalUser.clientId,
+      req.portalUser.tenantId,
+      taskId,
+      dto.body,
+    );
   }
 }

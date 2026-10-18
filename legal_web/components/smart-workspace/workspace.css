@@ -1,0 +1,227 @@
+/* ─────────────────────────────────────────────────────────────────────────
+   Smart Workspace — global keyframes, dark canvas, glassmorphism tokens
+   ───────────────────────────────────────────────────────────────────────── */
+
+/* ── Keyframe animations ──────────────────────────────────────────────── */
+
+@keyframes ws-drift {
+  0%   { background-position: 0px 0px, 0px 0px; }
+  100% { background-position: 0px 0px, 56px 56px; }
+}
+
+@keyframes ws-flow {
+  from { stroke-dashoffset: 0; }
+  to   { stroke-dashoffset: -48; }
+}
+
+@keyframes ws-pop-in {
+  0%   { transform: scale(0) translateY(8px); opacity: 0; }
+  60%  { transform: scale(1.05) translateY(-2px); opacity: 1; }
+  100% { transform: scale(1) translateY(0); opacity: 1; }
+}
+
+@keyframes ws-float {
+  0%   { transform: translateY(0px) rotate(-1deg); }
+  50%  { transform: translateY(-10px) rotate(1deg); }
+  100% { transform: translateY(0px) rotate(-1deg); }
+}
+
+@keyframes ws-pulse-ring {
+  0%   { transform: scale(1); opacity: 1; }
+  100% { transform: scale(2.2); opacity: 0; }
+}
+
+@keyframes ws-pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.6; transform: scale(1.4); }
+}
+
+@keyframes ws-ghost-fade {
+  0%, 100% { opacity: 0.08; }
+  50%       { opacity: 0.15; }
+}
+
+@keyframes ws-arrow-draw-in {
+  from { stroke-dashoffset: 400; }
+  to   { stroke-dashoffset: 0; }
+}
+
+@keyframes ws-slide-in-up {
+  from { transform: translateY(8px); opacity: 0; }
+  to   { transform: translateY(0); opacity: 1; }
+}
+
+/* ── Canvas background ─────────────────────────────────────────────────── */
+
+.ws-canvas-bg {
+  background:
+    radial-gradient(ellipse at 15% 60%, rgba(99, 102, 241, 0.12) 0%, transparent 55%),
+    radial-gradient(ellipse at 80% 20%, rgba(6, 182, 212, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 50% 50%, transparent 0%, transparent 100%),
+    #0f1117;
+  background-image:
+    radial-gradient(ellipse at 15% 60%, rgba(99, 102, 241, 0.12) 0%, transparent 55%),
+    radial-gradient(ellipse at 80% 20%, rgba(6, 182, 212, 0.08) 0%, transparent 50%),
+    radial-gradient(circle, rgba(255, 255, 255, 0.038) 1px, transparent 1px);
+  background-size: auto, auto, 28px 28px;
+  animation: ws-drift 80s linear infinite;
+}
+
+/* ── Node pop-in ───────────────────────────────────────────────────────── */
+
+.ws-node-pop-in {
+  animation: ws-pop-in 360ms cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  transform-origin: top left;
+}
+
+/* ── Ghost float (empty state) ─────────────────────────────────────────── */
+
+.ws-ghost-float-1 {
+  animation: ws-float 5s ease-in-out infinite;
+}
+.ws-ghost-float-2 {
+  animation: ws-float 5s ease-in-out infinite 1.6s;
+}
+.ws-ghost-float-3 {
+  animation: ws-float 5s ease-in-out infinite 3.2s;
+}
+.ws-ghost-fade {
+  animation: ws-ghost-fade 4s ease-in-out infinite;
+}
+
+/* ── Link flow ─────────────────────────────────────────────────────────── */
+
+.ws-link-flow {
+  animation: ws-flow 2.4s linear infinite;
+}
+
+/* ── Anchor dot pulse ──────────────────────────────────────────────────── */
+
+.ws-anchor-dot {
+  animation: ws-pulse-dot 2s ease-in-out infinite;
+}
+
+.ws-pulse-ring {
+  animation: ws-pulse-ring 1.8s ease-out infinite;
+}
+
+/* ── Arrow draw-in ─────────────────────────────────────────────────────── */
+
+.ws-arrow-draw-in {
+  stroke-dasharray: 400;
+  animation: ws-arrow-draw-in 0.4s ease-out forwards;
+}
+
+/* ── Toolbar slide-in ──────────────────────────────────────────────────── */
+
+.ws-toolbar-slide-in {
+  animation: ws-slide-in-up 250ms cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+/* ── Glassmorphism card base ───────────────────────────────────────────── */
+
+.ws-card-glass {
+  background: rgba(255, 255, 255, 0.045);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+}
+
+/* ── Card glow accent variants ─────────────────────────────────────────── */
+
+.ws-card-note {
+  border-left: 3px solid rgba(251, 191, 36, 0.7) !important;
+  box-shadow:
+    0 0 0 1px rgba(251, 191, 36, 0.08),
+    0 4px 24px rgba(0, 0, 0, 0.4),
+    inset 0 0 20px rgba(251, 191, 36, 0.03);
+}
+
+.ws-card-excerpt {
+  border-left: 3px solid rgba(56, 189, 248, 0.7) !important;
+  box-shadow:
+    0 0 0 1px rgba(56, 189, 248, 0.08),
+    0 4px 24px rgba(0, 0, 0, 0.4),
+    inset 0 0 20px rgba(56, 189, 248, 0.03);
+}
+
+.ws-card-timeline {
+  border-left: 3px solid rgba(52, 211, 153, 0.7) !important;
+  box-shadow:
+    0 0 0 1px rgba(52, 211, 153, 0.08),
+    0 4px 24px rgba(0, 0, 0, 0.4),
+    inset 0 0 20px rgba(52, 211, 153, 0.03);
+}
+
+.ws-card-research {
+  border-left: 3px solid rgba(167, 139, 250, 0.7) !important;
+  box-shadow:
+    0 0 0 1px rgba(167, 139, 250, 0.08),
+    0 4px 24px rgba(0, 0, 0, 0.4),
+    inset 0 0 20px rgba(167, 139, 250, 0.03);
+}
+
+.ws-card-ink {
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* ── Card drag lift ────────────────────────────────────────────────────── */
+
+.ws-card-dragging {
+  transform: scale(1.03) !important;
+  box-shadow:
+    0 16px 48px rgba(0, 0, 0, 0.6),
+    0 0 0 2px rgba(99, 102, 241, 0.4) !important;
+  z-index: 100 !important;
+  transition: none !important;
+}
+
+/* ── Card hover action bar ─────────────────────────────────────────────── */
+
+.ws-card-actions {
+  opacity: 0;
+  transition: opacity 150ms ease;
+  pointer-events: none;
+}
+
+.ws-card-glass:hover .ws-card-actions,
+.ws-card-glass:focus-within .ws-card-actions {
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* ── Toolbar pill ──────────────────────────────────────────────────────── */
+
+.ws-toolbar-pill {
+  background: rgba(15, 17, 23, 0.85);
+  backdrop-filter: blur(20px) saturate(160%);
+  -webkit-backdrop-filter: blur(20px) saturate(160%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.5),
+    0 0 0 1px rgba(255, 255, 255, 0.03) inset;
+}
+
+/* ── Ink stroke ────────────────────────────────────────────────────────── */
+
+.ws-ink-live {
+  filter: drop-shadow(0 0 4px currentColor);
+}
+
+/* ── Resize handle ─────────────────────────────────────────────────────── */
+
+.ws-resize-handle {
+  opacity: 0;
+  transition: opacity 150ms ease;
+}
+
+.ws-card-glass:hover .ws-resize-handle {
+  opacity: 1;
+}
+
+/* ── Source pill ───────────────────────────────────────────────────────── */
+
+.ws-source-pill {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}

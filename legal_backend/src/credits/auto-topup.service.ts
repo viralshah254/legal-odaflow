@@ -2,25 +2,71 @@ import {
   BadRequestException,
   Injectable,
   Logger,
+  OnModuleInit,
 } from '@nestjs/common';
 import { Prisma } from '@prisma/client';
 import { AICreditLedgerService } from '@/ai-credits/ai-credit-ledger.service';
-import { getCreditPack } from '@/ai-credits/credit-packs';
+import { CreditPacksService } from '@/ai-credits/credit-packs.service';
 import { getCountryConfig } from '@/config/countries';
+import { normalizeBillingPlan } from '@/config/billing-plans';
 import { PrismaService } from '@/prisma/prisma.service';
 import { StripeService } from '@/payments/stripe.service';
 
 const AUTO_TOPUP_COOLDOWN_MS = 24 * 60 * 60 * 1000;
 
 @Injectable()
-export class AutoTopUpService {
+export class AutoTopUpService implements OnModuleInit {
   private readonly logger = new Logger(AutoTopUpService.name);
 
   constructor(
     private readonly prisma: PrismaService,
     private readonly stripeService: StripeService,
     private readonly creditLedger: AICreditLedgerService,
+    private readonly creditPacks: CreditPacksService,
   ) {}
+
+  onModuleInit(): void {
+    this.creditLedger.registerPostDebitHook((params) => this.handlePostDebit(params));
+  }
+
+  private async handlePostDebit(params: {
+    userId?: string;
+    tenantId?: string;
+    balanceAfter: number;
+  }): Promise<void> {
+    let userId = params.userId;
+    let countryCode = 'US';
+
+    if (params.tenantId) {
+      const tenant = await this.prisma.tenant.findUnique({
+        where: { id: params.tenantId },
+        select: { primaryCountry: true },
+      });
+      countryCode = tenant?.primaryCountry ?? 'US';
+      if (!userId) {
+        const member = await this.prisma.tenantUser.findFirst({
+          where: { tenantId: params.tenantId, role: { in: ['PARTNER', 'ADMIN'] } },
+          select: { userId: true },
+        });
+        userId = member?.userId;
+      }
+    } else if (userId) {
+      const profile = await this.prisma.consumerProfile.findUnique({
+        where: { userId },
+        select: { countryCode: true },
+      });
+      countryCode = profile?.countryCode ?? 'US';
+    }
+
+    if (!userId) return;
+
+    await this.maybeTriggerAutoTopUp({
+      userId,
+      tenantId: params.tenantId,
+      balance: params.balanceAfter,
+      countryCode,
+    });
+  }
 
   async createSetupIntent(params: { userId: string; tenantId?: string; email?: string }) {
     const wallet = await this.resolveWalletRecord(params);
@@ -58,6 +104,37 @@ export class AutoTopUpService {
     return { success: true, hasPaymentMethod: true };
   }
 
+  async removePaymentMethod(params: { userId: string; tenantId?: string }) {
+    const wallet = await this.resolveWalletRecord(params);
+    if (!wallet.stripePaymentMethodId) {
+      return { success: true, hasPaymentMethod: false };
+    }
+
+    try {
+      await this.stripeService.detachPaymentMethod(wallet.stripePaymentMethodId);
+    } catch (error) {
+      this.logger.warn(
+        `Failed to detach Stripe payment method for ${params.tenantId ?? params.userId}: ${
+          error instanceof Error ? error.message : error
+        }`,
+      );
+    }
+
+    if (params.tenantId) {
+      await this.prisma.tenant.update({
+        where: { id: params.tenantId },
+        data: { stripePaymentMethodId: null },
+      });
+    } else {
+      await this.prisma.consumerProfile.update({
+        where: { userId: params.userId },
+        data: { stripePaymentMethodId: null },
+      });
+    }
+
+    return { success: true, hasPaymentMethod: false };
+  }
+
   async maybeTriggerAutoTopUp(params: {
     userId: string;
     tenantId?: string;
@@ -85,7 +162,7 @@ export class AutoTopUpService {
       return { triggered: false, reason: 'unsupported_provider' };
     }
 
-    const pack = getCreditPack(params.countryCode, wallet.autoTopUpPackId);
+    const pack = await this.resolvePack(params.countryCode, wallet.autoTopUpPackId, params.tenantId);
     const idempotencyKey = `auto_topup_${params.tenantId ?? params.userId}_${new Date().toISOString().slice(0, 10)}`;
 
     try {
@@ -129,6 +206,30 @@ export class AutoTopUpService {
     }
 
     return { triggered: false, reason: 'payment_failed' };
+  }
+
+  private async resolvePack(countryCode: string, packId: string, tenantId?: string) {
+    let billingPlan: string | null = null;
+    let userSegment = 'LAWYER_SOLO';
+
+    if (tenantId) {
+      const tenant = await this.prisma.tenant.findUnique({
+        where: { id: tenantId },
+        select: { billingPlan: true },
+      });
+      billingPlan = tenant?.billingPlan ?? null;
+      const normalized = normalizeBillingPlan(billingPlan);
+      userSegment =
+        normalized === 'ENTERPRISE'
+          ? 'ENTERPRISE'
+          : normalized === 'PRO_PLUS' || normalized === 'PROFESSIONAL'
+            ? 'FIRM'
+            : 'LAWYER_SOLO';
+    } else {
+      userSegment = 'CONSUMER_PLUS';
+    }
+
+    return this.creditPacks.getCreditPack(countryCode, packId, userSegment, billingPlan);
   }
 
   private async resolveWalletRecord(params: { userId: string; tenantId?: string }) {
@@ -270,12 +371,5 @@ export class AutoTopUpService {
         autoTopUp: 'true',
       },
     });
-
-    if (!input.tenantId) {
-      await this.prisma.consumerProfile.updateMany({
-        where: { userId: input.userId },
-        data: { aiCreditsRemaining: { increment: input.credits } },
-      });
-    }
   }
 }

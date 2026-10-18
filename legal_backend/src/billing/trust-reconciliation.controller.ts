@@ -40,4 +40,9 @@ export class TrustReconciliationController {
   ) {
     return this.reconciliation.close(tenantId, id, user.id, body.notes);
   }
+
+  @Get(':id/statement')
+  getStatement(@TenantId() tenantId: string, @Param('id') id: string) {
+    return this.reconciliation.getStatementText(tenantId, id);
+  }
 }

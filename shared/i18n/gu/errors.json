@@ -1,8 +1,8 @@
 {
   "generic": "કંઈક ખોટું થયું",
   "network": "નેટવર્ક ભૂલ. કૃપા કરીને ફરી પ્રયાસ કરો.",
-  "timeout": "The request timed out. Please try again.",
-  "connection": "Could not reach the server. Check your connection and try again.",
+  "timeout": "વિનંતીનો સમય સમાપ્ત થયો. કૃપા કરીને ફરી પ્રયાસ કરો.",
+  "connection": "સર્વર સુધી પહોંચી શકાયું નથી. તમારું કનેક્શન તપાસો અને ફરી પ્રયાસ કરો.",
   "unauthorized": "તમે આ ક્રિયા કરવા માટે અધિકૃત નથી.",
   "notFound": "મળી નથી",
   "validationFailed": "કૃપા કરીને તમારું ઇનપુટ તપાસો અને ફરી પ્રયાસ કરો.",
@@ -25,6 +25,10 @@
   "tooManyRequests": "ઘણા બધા પ્રયત્નો. થોડીવાર રાહ જુઓ અને ફરી પ્રયાસ કરો.",
   "firebaseEmailSignInDisabled": "આ પ્રોજેક્ટ માટે ફાયરબેસમાં ઇમેઇલ સાઇન-ઇન સક્ષમ નથી.",
   "authenticationFailed": "પ્રમાણીકરણ નિષ્ફળ થયું.",
+  "accountExistsDifferentCredential": "આ ઇમેઇલ પાસવર્ડ સાથે નોંધાયેલ છે. પહેલા ઇમેઇલ વડે સાઇન ઇન કરો, પછી સેટિંગ્સમાં સામાજિક એકાઉન્ટ્સને લિંક કરો.",
+  "socialSignInCancelled": "સાઇન-ઇન રદ કરવામાં આવ્યું હતું.",
+  "socialSignInPopupBlocked": "પોપ-અપ અવરોધિત કરવામાં આવ્યું હતું. આ સાઇટ માટે પોપ-અપ્સને મંજૂરી આપો અથવા ફરી પ્રયાસ કરો.",
+  "socialSignInFailed": "સામાજિક સાઇન-ઇન નિષ્ફળ થયું. કૃપા કરીને ફરી પ્રયાસ કરો.",
   "toast": {
     "preBillSessionCreated": "પ્રી-બિલ સત્ર બનાવ્યું",
     "couldNotCreateSession": "સત્ર બનાવી શકાયું નથી",

@@ -42,18 +42,16 @@ export class LeadSlaScheduler {
         continue;
       }
 
-      if (lead.summary?.includes('slaEscalated:true')) {
+      if (lead.slaEscalatedAt) {
         continue;
       }
-
-      const updatedSummary = [lead.summary ?? '', 'slaEscalated:true'].filter(Boolean).join('\n');
 
       await this.prisma.lawyerLead.update({
         where: { id: lead.id },
         data: {
           status: 'OPEN',
           urgency: lead.urgency === 'LOW' ? 'MEDIUM' : 'HIGH',
-          summary: updatedSummary,
+          slaEscalatedAt: new Date(),
         },
       });
 
@@ -74,7 +72,7 @@ export class LeadSlaScheduler {
           title: 'Lead SLA escalation',
           body: `Lead for ${lead.issueType} (${lead.countryCode}) exceeded ${slaHours}h response window.`,
           type: 'LEAD_SLA_ESCALATION',
-          metadata: { leadId: lead.id, urgency: lead.urgency },
+          metadata: { leadId: lead.id, urgency: lead.urgency, link: `/app/leads/${lead.id}` },
         });
       }
 

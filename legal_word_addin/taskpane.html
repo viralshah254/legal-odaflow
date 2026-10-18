@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Legal Copilot Draft</title>
+    <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
+    <style>
+      body {
+        font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+        margin: 16px;
+        color: #111827;
+      }
+      h1 {
+        font-size: 1.125rem;
+        margin: 0 0 12px;
+      }
+      label {
+        display: block;
+        font-size: 0.875rem;
+        font-weight: 600;
+        margin-bottom: 4px;
+      }
+      input,
+      textarea,
+      select {
+        width: 100%;
+        box-sizing: border-box;
+        margin-bottom: 12px;
+        padding: 8px;
+        border: 1px solid #d1d5db;
+        border-radius: 6px;
+        font: inherit;
+      }
+      textarea {
+        min-height: 96px;
+        resize: vertical;
+      }
+      button {
+        width: 100%;
+        padding: 10px 12px;
+        border: none;
+        border-radius: 6px;
+        background: #1d4ed8;
+        color: #fff;
+        font-weight: 600;
+        cursor: pointer;
+      }
+      button:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+      }
+      .status {
+        margin-top: 12px;
+        font-size: 0.875rem;
+        white-space: pre-wrap;
+      }
+      .error {
+        color: #b91c1c;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Legal Copilot Draft</h1>
+    <label for="apiBase">API base URL</label>
+    <input id="apiBase" value="http://localhost:4000/api/v1" />
+
+    <label for="token">Bearer token</label>
+    <input id="token" type="password" placeholder="JWT access token" />
+
+    <label for="tenantId">Tenant ID</label>
+    <input id="tenantId" placeholder="Tenant ID" />
+
+    <label for="matterId">Matter ID (optional)</label>
+    <input id="matterId" placeholder="Matter context ID" />
+
+    <label for="docType">Document type</label>
+    <select id="docType">
+      <option value="memo">Memo</option>
+      <option value="letter">Letter</option>
+      <option value="motion">Motion</option>
+      <option value="contract">Contract</option>
+    </select>
+
+    <label for="instructions">Draft instructions</label>
+    <textarea
+      id="instructions"
+      placeholder="Draft a client update letter summarizing recent filings and next steps."
+    ></textarea>
+
+    <label for="docKind">Document kind (playbook review)</label>
+    <select id="docKind">
+      <option value="service_agreement">Service agreement</option>
+      <option value="nda">NDA</option>
+      <option value="employment_contract">Employment contract</option>
+      <option value="demand_letter">Demand letter</option>
+    </select>
+
+    <button id="draftBtn">Generate draft</button>
+    <button id="playbookBtn" style="margin-top: 8px; background: #047857">Review against playbook</button>
+    <div id="status" class="status"></div>
+
+    <script>
+      Office.onReady(() => {
+        const draftBtn = document.getElementById("draftBtn");
+        const statusEl = document.getElementById("status");
+
+        draftBtn.addEventListener("click", async () => {
+          await runDraft();
+        });
+
+        document.getElementById("playbookBtn").addEventListener("click", async () => {
+          const apiBase = document.getElementById("apiBase").value.trim();
+          const token = document.getElementById("token").value.trim();
+          const tenantId = document.getElementById("tenantId").value.trim();
+          const docKind = document.getElementById("docKind").value;
+          statusEl.className = "status";
+          statusEl.textContent = "";
+
+          if (!token || !tenantId) {
+            statusEl.className = "status error";
+            statusEl.textContent = "Token and tenant ID are required.";
+            return;
+          }
+
+          try {
+            let text = "";
+            await Word.run(async (context) => {
+              const body = context.document.body;
+              body.load("text");
+              await context.sync();
+              text = body.text;
+            });
+
+            const response = await fetch(`${apiBase}/document-automation/playbook-review`, {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+                Authorization: `Bearer ${token}`,
+                "X-Tenant-Id": tenantId,
+              },
+              body: JSON.stringify({ text, documentKind: docKind }),
+            });
+
+            if (!response.ok) {
+              throw new Error(await response.text());
+            }
+
+            const data = await response.json();
+            const missing = (data.findings ?? [])
+              .filter((f) => f.status === "missing")
+              .map((f) => `• ${f.clause}`)
+              .join("\n");
+            statusEl.textContent = data.passed
+              ? "Playbook review passed — all required clauses detected."
+              : `Missing ${data.missingCount} clause(s):\n${missing}`;
+          } catch (error) {
+            statusEl.className = "status error";
+            statusEl.textContent =
+              error instanceof Error ? error.message : "Playbook review failed.";
+          }
+        });
+
+        async function runDraft() {
+          const apiBase = document.getElementById("apiBase").value.trim();
+          const token = document.getElementById("token").value.trim();
+          const tenantId = document.getElementById("tenantId").value.trim();
+          const matterId = document.getElementById("matterId").value.trim();
+          const docType = document.getElementById("docType").value;
+          const instructions = document.getElementById("instructions").value.trim();
+
+          statusEl.className = "status";
+          statusEl.textContent = "";
+
+          if (!token || !tenantId || instructions.length < 3) {
+            statusEl.className = "status error";
+            statusEl.textContent = "Token, tenant ID, and instructions are required.";
+            return;
+          }
+
+          draftBtn.disabled = true;
+          statusEl.textContent = "Calling copilot draft API…";
+
+          try {
+            const message = `Draft a ${docType} document. ${instructions}`;
+            const response = await fetch(`${apiBase}/ai/copilot/chat`, {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+                Authorization: `Bearer ${token}`,
+                "X-Tenant-Id": tenantId,
+              },
+              body: JSON.stringify({
+                message,
+                context: matterId
+                  ? { selectedMatterId: matterId, matterId, documentType: docType }
+                  : { documentType: docType },
+              }),
+            });
+
+            if (!response.ok) {
+              const errText = await response.text();
+              throw new Error(errText || `HTTP ${response.status}`);
+            }
+
+            const data = await response.json();
+            const content =
+              data?.message?.content ||
+              data?.message ||
+              "Draft request accepted. Check copilot session for async job output.";
+
+            await Word.run(async (context) => {
+              const range = context.document.getSelection();
+              range.insertText(String(content), Word.InsertLocation.replace);
+              await context.sync();
+            });
+
+            statusEl.textContent = "Draft inserted into the document.";
+          } catch (error) {
+            statusEl.className = "status error";
+            statusEl.textContent =
+              error instanceof Error ? error.message : "Draft request failed.";
+          } finally {
+            draftBtn.disabled = false;
+          }
+        }
+      });
+    </script>
+  </body>
+</html>

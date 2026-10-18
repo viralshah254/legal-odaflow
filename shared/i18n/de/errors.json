@@ -1,8 +1,8 @@
 {
   "generic": "Etwas ist schief gelaufen",
   "network": "Netzwerkfehler. Bitte versuchen Sie es erneut.",
-  "timeout": "The request timed out. Please try again.",
-  "connection": "Could not reach the server. Check your connection and try again.",
+  "timeout": "Bei der Anfrage ist eine Zeitüberschreitung aufgetreten. Bitte versuchen Sie es erneut.",
+  "connection": "Der Server konnte nicht erreicht werden. Überprüfen Sie Ihre Verbindung und versuchen Sie es erneut.",
   "unauthorized": "Sie sind nicht berechtigt, diese Aktion durchzuführen.",
   "notFound": "Nicht gefunden",
   "validationFailed": "Bitte überprüfen Sie Ihre Eingabe und versuchen Sie es erneut.",
@@ -25,6 +25,10 @@
   "tooManyRequests": "Zu viele Versuche. Warten Sie einen Moment und versuchen Sie es erneut.",
   "firebaseEmailSignInDisabled": "Die E-Mail-Anmeldung ist in Firebase für dieses Projekt nicht aktiviert.",
   "authenticationFailed": "Authentifizierung fehlgeschlagen.",
+  "accountExistsDifferentCredential": "Diese E-Mail ist mit einem Passwort registriert. Melden Sie sich zuerst mit Ihrer E-Mail-Adresse an und verknüpfen Sie dann soziale Konten in den Einstellungen.",
+  "socialSignInCancelled": "Die Anmeldung wurde abgebrochen.",
+  "socialSignInPopupBlocked": "Popup wurde blockiert. Lassen Sie Pop-ups für diese Website zu oder versuchen Sie es erneut.",
+  "socialSignInFailed": "Die soziale Anmeldung ist fehlgeschlagen. Bitte versuchen Sie es erneut.",
   "toast": {
     "preBillSessionCreated": "Vorabrechnungssitzung erstellt",
     "couldNotCreateSession": "Sitzung konnte nicht erstellt werden",

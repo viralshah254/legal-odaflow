@@ -6,39 +6,19 @@
     "progress": "{current} de {total}",
     "skipTour": "Passer la visite"
   },
-  "welcome": {
-    "title": "Bienvenue chez Parapluie",
-    "body": "Faites une visite rapide pour apprendre à naviguer dans l’espace de travail de votre entreprise.",
-    "b1": "Trouvez des clients, des dossiers et la facturation en quelques secondes",
-    "b2": "Utilisez AI Copilot pour une aide contextuelle",
-    "b3": "Rejouez les visites à tout moment depuis l'aide",
-    "start": "Commencer la visite",
-    "skip": "Passer pour l'instant"
-  },
-  "help": {
-    "pageHelp": "Page d'aide",
-    "replayTour": "Visite en rediffusion",
-    "replayShell": "Visite de la plateforme en replay",
-    "dismiss": "Ignorer l'aide",
-    "sheetTitle": "Aide et visites",
-    "thisPage": "Cette page",
-    "progress": "{completed} sur {total} pages explorées",
-    "hideTips": "Masquer les conseils",
-    "openTips": "Afficher les conseils sur la page",
-    "noPageTour": "Aucune visite guidée n'est encore disponible sur cette page.",
-    "actions": "Actes"
-  },
   "labels": {
+    "dashboard": "Tableau de bord",
+    "matters": "Importe",
+    "tasks": "Tâches",
+    "settings": "Paramètres",
+    "consumer_reports": "Rapports",
     "page": "Tour de page",
     "shell": "Visite de la plateforme",
-    "dashboard": "Tableau de bord",
     "clients": "Clientèle",
     "clients_new": "Nouveau client",
     "clients_detail": "Profil client",
-    "matters": "Importe",
     "matters_new": "Nouvelle affaire",
     "matters_detail": "Espace de travail de matière",
-    "tasks": "Tâches",
     "meetings": "Réunions",
     "calendar": "Calendrier",
     "time": "Suivi du temps",
@@ -55,21 +35,56 @@
     "research": "Recherche",
     "team": "Équipe",
     "templates": "Modèles",
-    "settings": "Paramètres",
     "consumer_dashboard": "Maison de consommation",
     "consumer_cases": "Mes cas",
     "consumer_case_detail": "Détails du cas",
     "consumer_subscription": "Abonnement",
-    "consumer_settings": "Paramètres du compte"
+    "consumer_settings": "Paramètres du compte",
+    "consumer_find_lawyer": "Trouver un avocat",
+    "consumer_research": "Recherche juridique",
+    "consumer_document_drafting": "Rédaction de documents",
+    "consumer_document_review": "Examen des documents",
+    "consumer_plan_usage": "Forfait et utilisation",
+    "monitors": "Veilleuses réglementaires",
+    "home": "Actions rapides",
+    "evidence": "Coffre-fort de preuves",
+    "queues": "Files d'attente de travail",
+    "automations": "Automatisations",
+    "reports": "Analyse du cabinet",
+    "document_review": "Examen des documents",
+    "legal_forms": "Formes juridiques",
+    "section_finder": "Recherche de section",
+    "fir_analysis": "Analyse FIR",
+    "india_drafting": "Rédaction en Inde",
+    "us_drafting": "rédaction américaine",
+    "contracts": "Contrats",
+    "saved_drafts": "Brouillons enregistrés",
+    "ai_command_center": "Centre de commande IA",
+    "agents": "Agents IA",
+    "onboarding": "Intégration ferme",
+    "profile": "Votre profil",
+    "referrals": "Références",
+    "copilot_audit": "Audit copilote",
+    "accounting_payments": "Paiements",
+    "accounting_statements": "Déclarations",
+    "pre_bill": "Examen avant la facturation",
+    "consumer_lawyer_review": "Examen d'un avocat",
+    "consumer_settings_payment_methods": "Modes de paiement",
+    "consumer_settings_data_consent": "Consentement aux données",
+    "consumer_india_drafting": "Projets judiciaires indiens",
+    "consumer_section_finder": "Recherche de section",
+    "consumer_fir_analysis": "Analyse FIR",
+    "consumer_rights_checker": "Vérificateur de droits",
+    "consumer_marketplace": "Marché légal"
   },
   "shell": {
+    "search": {
+      "body": "Recherchez des clients, des dossiers, des documents et des tâches depuis n'importe où dans l'application.",
+      "title": "Recherche globale"
+    },
     "sidebar": {
       "title": "Votre espace de travail en entreprise",
       "body": "Utilisez la barre latérale pour vous déplacer entre les clients, les dossiers, la facturation, les documents, etc. Les sections se réduisent pour garder la navigation ordonnée."
-    },
-    "search": {
-      "title": "Recherche globale",
-      "body": "Recherchez des clients, des dossiers, des documents et des tâches depuis n'importe où dans l'application."
     },
     "commandPalette": {
       "title": "Palette de commandes",
@@ -95,37 +110,37 @@
     }
   },
   "dashboard": {
-    "kpis": {
-      "title": "Instantané ferme",
-      "body": "Ces cartes récapitulent les dossiers actifs, les tâches en retard, les pistes et les revenus pour la fenêtre horaire sélectionnée."
-    },
-    "alerts": {
-      "title": "Articles urgents",
-      "body": "Examinez les lacunes KYC, les approbations de confiance et les risques liés aux délais qui nécessitent une attention particulière aujourd'hui."
-    },
     "tasks": {
-      "title": "Vos tâches",
-      "body": "Les tâches qui vous sont assignées apparaissent ici. Cliquez pour mettre à jour le statut ou ouvrir le sujet lié."
-    },
-    "onboarding": {
-      "title": "Liste de contrôle pour démarrer",
-      "body": "Effectuez ces véritables étapes de configuration (exécutez une recherche AI, ajoutez un client, ouvrez un dossier) pour activer votre espace de travail."
+      "body": "Tâches qui vous sont assignées avec des dates d'échéance. Cliquez sur n’importe quelle ligne pour mettre à jour le statut ou accéder au sujet lié.",
+      "title": "Votre file d'attente de tâches"
     },
     "help": {
       "title": "Tableau de bord",
       "b1": "Basculez Aujourd’hui/Semaine/Mois pour modifier les KPI et les fenêtres de tâches.",
       "b2": "Utilisez Next Best Actions pour les priorités suggérées par l’IA.",
       "b3": "Ouvrez n'importe quelle carte pour accéder aux problèmes, à la facturation ou aux alertes."
+    },
+    "kpis": {
+      "title": "Instantané ferme",
+      "body": "Sujets actifs, tâches en retard, valeur du pipeline et revenus pour Aujourd'hui, Semaine ou Mois : changez la plage dans l'en-tête."
+    },
+    "alerts": {
+      "title": "A besoin d'attention aujourd'hui",
+      "body": "Les lacunes KYC, les approbations de confiance et les risques liés aux délais apparaissent ici en premier. Résolvez les problèmes critiques avant qu’ils n’atteignent les dates de facturation ou d’audience."
+    },
+    "onboarding": {
+      "title": "Liste de contrôle pour démarrer",
+      "body": "Les partenaires voient ici les étapes de configuration (effectuer une recherche, ajouter un client, ouvrir un dossier) pour activer pleinement votre espace de travail."
     }
   },
   "clients": {
     "search": {
-      "title": "Trouver des clients",
-      "body": "Recherchez par nom, e-mail ou entreprise. Les badges KYC affichent les documents manquants ou expirés."
+      "body": "Recherchez par nom, e-mail ou entreprise. Les badges KYC affichent les documents manquants ou expirés.",
+      "title": "Trouver des clients"
     },
     "create": {
-      "title": "Ajouter un client",
-      "body": "Créez des profils individuels ou d'entreprise. Vous pouvez lier des sujets une fois le client enregistré."
+      "body": "Créez des profils individuels ou d'entreprise. Vous pouvez lier des sujets une fois le client enregistré.",
+      "title": "Ajouter un client"
     },
     "list": {
       "title": "Annuaire des clients",
@@ -137,6 +152,323 @@
       "b2": "Utilisez Copilot sur cette page pour rédiger des notes d'admission ou résumer l'historique du client.",
       "b3": "Les nouveaux clients peuvent être convertis automatiquement à partir des prospects reçus."
     }
+  },
+  "clientsDetail": {
+    "help": {
+      "b3": "Créez un nouveau sujet directement à partir de ce profil.",
+      "title": "Dossier client",
+      "b1": "Téléchargez des documents KYC et suivez les dates d'expiration.",
+      "b2": "Activez l’accès au portail client pour une messagerie sécurisée et le partage de documents."
+    },
+    "header": {
+      "title": "Profil client",
+      "body": "Les coordonnées, le statut KYC et les actions rapides figurent en haut de l'enregistrement."
+    },
+    "matters": {
+      "title": "Questions liées",
+      "body": "Tous les cas pour ce client apparaissent ici. Ouvrez un sujet pour gérer les tâches, les documents et la facturation."
+    }
+  },
+  "matters": {
+    "help": {
+      "title": "Importe",
+      "b1": "Utilisez des playbooks pour générer automatiquement des tâches lorsqu'un sujet s'ouvre.",
+      "b2": "Ouvrez l'AI Quick AI à partir d'un sujet de rédaction et de recherche.",
+      "b3": "Suivez les délais et les résultats des tribunaux à partir des sous-pages du dossier."
+    },
+    "create": {
+      "title": "Ouvrir un sujet",
+      "body": "Démarrez un nouveau dossier, associez-le à un client et affectez des membres à l'équipe."
+    },
+    "filter": {
+      "title": "Filtrer et rechercher",
+      "body": "Affinez votre travail par statut, domaine de pratique ou responsable pour trouver rapidement du travail actif."
+    },
+    "list": {
+      "title": "Pipeline de matières",
+      "body": "Chaque ligne indique l'étape, la date limite et le propriétaire. Cliquez pour ouvrir le hub de sujets."
+    }
+  },
+  "mattersNew": {
+    "submit": {
+      "title": "Créer de la matière",
+      "body": "L’enregistrement crée la chronologie du sujet et les tâches facultatives du playbook."
+    },
+    "form": {
+      "title": "Configuration du sujet",
+      "body": "Liez un client, choisissez un domaine de pratique et définissez le titre du dossier et les dates clés."
+    },
+    "help": {
+      "title": "Nouvelle affaire",
+      "b1": "Affectez des collaborateurs pour qu’ils voient immédiatement les tâches et les documents.",
+      "b2": "Le domaine de pratique génère des modèles, des formulaires et des suggestions d’IA."
+    }
+  },
+  "tasks": {
+    "create": {
+      "title": "Créer des tâches",
+      "body": "Ajoutez des délais, attribuez des propriétaires et liez les tâches aux dossiers."
+    },
+    "help": {
+      "title": "Tâches",
+      "b1": "Les tâches en retard apparaissent automatiquement sur votre tableau de bord.",
+      "b2": "Les automatisations peuvent créer des tâches à partir de playbooks et de délais judiciaires.",
+      "b3": "Utilisez Copilot pour résumer les tâches ouvertes sur un sujet."
+    },
+    "list": {
+      "title": "File d'attente des tâches",
+      "body": "Filtrez par date d'échéance, priorité ou responsable. Marquez comme terminé au fur et à mesure que le travail progresse."
+    }
+  },
+  "meetings": {
+    "help": {
+      "b2": "Recherchez des transcriptions à partir de la palette de commandes (⌘K).",
+      "title": "Réunions",
+      "b1": "Liez les enregistrements aux sujets pour le contexte dans Copilot et la rédaction.",
+      "b3": "Exportez des notes pour les dossiers clients ou les présentations au tribunal."
+    },
+    "record": {
+      "title": "Enregistrer ou importer",
+      "body": "Capturez les réunions, les dépositions ou les appels des clients. Les transcriptions renvoient aux sujets."
+    },
+    "list": {
+      "title": "Bibliothèque de réunion",
+      "body": "Parcourez les enregistrements, les transcriptions et les résumés AI. Ouvrez n’importe quelle réunion pour consulter les notes."
+    }
+  },
+  "calendar": {
+    "create": {
+      "body": "Créez des événements et associez-les à des sujets afin que l'équipe reste alignée.",
+      "title": "Ajouter des événements"
+    },
+    "view": {
+      "title": "Calendrier",
+      "body": "Consultez les audiences, les délais et les événements internes dans une seule vue."
+    },
+    "help": {
+      "title": "Calendrier",
+      "b1": "Les délais judiciaires des affaires peuvent apparaître ici automatiquement.",
+      "b2": "Partagez la visibilité du calendrier en fonction de votre rôle."
+    }
+  },
+  "lawLibrary": {
+    "search": {
+      "body": "Recherchez les lois et règlements de votre juridiction avec une recherche hybride mot-clé + sémantique.",
+      "title": "Bibliothèque de droit"
+    },
+    "help": {
+      "title": "Bibliothèque de droit",
+      "b1": "Citer les sources directement dans les brouillons du sujet.",
+      "b2": "Filtrez par juridiction pour correspondre au pays principal de votre entreprise."
+    }
+  },
+  "esign": {
+    "create": {
+      "body": "Créez des enveloppes de signature, ajoutez des signataires et suivez l'état d'avancement.",
+      "title": "Signatures électroniques"
+    },
+    "help": {
+      "title": "Signature électronique",
+      "b1": "Liez les enveloppes aux dossiers pour les pistes d’audit.",
+      "b2": "Les clients peuvent signer via des liens de courrier électronique sécurisés."
+    }
+  },
+  "intake": {
+    "continue": {
+      "title": "Continuer la prise",
+      "body": "Passez à l'étape suivante lorsque la description du problème est prête. Vous pourrez affiner les détails plus tard."
+    },
+    "issueInput": {
+      "title": "Décrivez le problème",
+      "body": "Inscrivez la situation du client dans un langage simple. AI classe le problème juridique et suggère les prochaines étapes."
+    },
+    "steps": {
+      "title": "Progression de l'admission",
+      "body": "Suivez chaque étape : détails du problème, vérification des conflits, planification et création du problème."
+    },
+    "aiModel": {
+      "title": "Modèle d'IA",
+      "body": "Choisissez le modèle de classification et de planification. Les modèles vérifiés utilisent plus de crédits mais améliorent la précision."
+    },
+    "wizard": {
+      "title": "Accueil des clients",
+      "body": "Parcourez l'admission structurée : classification des problèmes, vérification des conflits et création de sujets."
+    },
+    "help": {
+      "title": "Admission",
+      "b1": "À utiliser pour les visites sans rendez-vous et les appels téléphoniques, et pas seulement pour les prospects Web.",
+      "b2": "L'IA aide à la classification des problèmes et aux documents requis.",
+      "b3": "Prise en charge complète pour créer un client et un sujet en un seul flux de travail."
+    }
+  },
+  "monitors": {
+    "create": {
+      "title": "Créer un moniteur",
+      "body": "Suivez les changements réglementaires par juridiction et par sujet. Umbrella résume les alertes lorsque les lois sont mises à jour."
+    },
+    "list": {
+      "title": "Vos moniteurs",
+      "body": "Activez ou désactivez les moniteurs, ouvrez les détails de l'historique des alertes et ajustez les sujets à mesure que votre pratique évolue."
+    },
+    "help": {
+      "title": "Veilleuses réglementaires",
+      "b1": "Commencez par votre juridiction principale et vos principaux domaines de pratique.",
+      "b2": "Des alertes critiques peuvent apparaître sur votre tableau de bord et dans les notifications.",
+      "b3": "Demandez à Copilot d'expliquer comment un changement réglementaire affecte les affaires en cours."
+    }
+  },
+  "settings": {
+    "hub": {
+      "title": "Paramètres",
+      "body": "Configurez les utilisateurs, la facturation, la politique d'IA, les intégrations et la conformité à partir de ce hub."
+    },
+    "help": {
+      "title": "Paramètres",
+      "b1": "Seuls les administrateurs partenaires peuvent modifier la gouvernance à l’échelle de l’entreprise.",
+      "b2": "Vérifiez la politique d’IA et le consentement aux données avant d’activer les fonctionnalités de formation."
+    }
+  },
+  "consumerSettings": {
+    "help": {
+      "title": "Paramètres",
+      "b1": "Contrôlez la manière dont vos données sont utilisées pour la formation et l’analyse de l’IA.",
+      "b2": "Gardez vos coordonnées à jour afin que votre avocat puisse vous joindre.",
+      "b3": "Vérifiez le consentement aux données avant d’activer les fonctionnalités avancées d’IA."
+    },
+    "hub": {
+      "title": "Paramètres du compte",
+      "body": "Mettez à jour le profil, les méthodes de paiement, les préférences de confidentialité et le consentement aux données pour les fonctionnalités d'IA."
+    }
+  },
+  "consumerFindLawyer": {
+    "search": {
+      "body": "Recherchez par nom ou domaine de pratique et filtrez par pays. Chaque avocat répertorié est vérifié sur Umbrella.",
+      "title": "Trouvez le bon avocat"
+    },
+    "results": {
+      "title": "Comparez & réservez",
+      "body": "Examinez les profils, les domaines de pratique et les juridictions. Réservez une consultation lorsque vous êtes prêt à parler."
+    },
+    "help": {
+      "title": "Trouver un avocat",
+      "b1": "Changez de pays si vous avez besoin d’un avocat dans une autre juridiction.",
+      "b2": "La réservation crée un enregistrement que vous pourrez lier à un cas ultérieurement.",
+      "b3": "Vos rapports de vérification des problèmes aident les avocats à comprendre votre situation plus rapidement."
+    }
+  },
+  "home": {
+    "help": {
+      "b1": "Ouvrez le tableau de bord complet pour les KPI et les travaux en retard.",
+      "title": "Actions rapides",
+      "b2": "⌘K saute instantanément ici ou vers n'importe quelle page.",
+      "b3": "Des outils spécifiques à l'Inde (Section Finder, FIR) apparaissent lorsque votre juridiction est IN."
+    },
+    "header": {
+      "title": "Centre d'actions rapides",
+      "body": "Votre rampe de lancement pour la rédaction, la recherche, la révision et le travail sur des dossiers, personnalisée en fonction de votre rôle et de votre juridiction."
+    },
+    "actions": {
+      "title": "Démarrez n’importe quel flux de travail",
+      "body": "Chaque carte ouvre un outil ciblé. Utilisez les modèles de tâches ci-dessus pour les invites courantes de recherche et de rédaction."
+    }
+  },
+  "reports": {
+    "help": {
+      "title": "Rapports",
+      "b1": "Exportez des résumés pour les réunions des partenaires.",
+      "b2": "Comparez les critères de résultats lorsque vous avez suffisamment de dossiers clos.",
+      "b3": "Nécessite un plan Professionnel ou supérieur."
+    },
+    "header": {
+      "title": "Analyse du cabinet",
+      "body": "Mesures d'utilisation, de réalisation, de collecte et de pipeline par rapport aux références du secteur."
+    },
+    "kpis": {
+      "title": "KPI de performances",
+      "body": "Les indicateurs verts dépassent les objectifs. Explorez les finances ou les questions à partir des cartes liées ci-dessous."
+    }
+  },
+  "legalForms": {
+    "workspace": {
+      "body": "Recherchez dans le catalogue, répondez aux questions guidées et générez un brouillon rempli prêt à être révisé.",
+      "title": "Espace de travail brouillon"
+    },
+    "intro": {
+      "title": "Catalogue de formulaires officiel",
+      "body": "Parcourez plus de 10 000 formulaires judiciaires et gouvernementaux aux États-Unis, au Royaume-Uni, au Kenya et en Inde, ou décrivez ce dont vous avez besoin et rédigez-le avec l'IA."
+    },
+    "help": {
+      "title": "Formes juridiques",
+      "b1": "Les brouillons enregistrés apparaissent dans Brouillons enregistrés.",
+      "b2": "Liez les résultats aux sujets de facturation et d’audit.",
+      "b3": "Utilisez la rédaction indienne ou américaine pour les formats spécifiques aux tribunaux."
+    }
+  },
+  "sectionFinder": {
+    "workspace": {
+      "body": "Recherchez les passages pour piétons IPC → BNS, CrPC → BNSS ou les sections de code américain. Les requêtes populaires vous aident à démarrer rapidement.",
+      "title": "Rechercher des sections"
+    },
+    "help": {
+      "title": "Recherche de section",
+      "b1": "Vérifiez les résultats par rapport aux actes officiels avant de les citer.",
+      "b2": "Exportez les résultats de la recherche dans des brouillons de sujet."
+    }
+  },
+  "onboarding": {
+    "help": {
+      "b2": "Vous pouvez revenir ici à tout moment depuis les paramètres.",
+      "title": "Intégration",
+      "b1": "Les partenaires doivent terminer toutes les étapes avant d'inviter des associés."
+    },
+    "wizard": {
+      "title": "Configuration ferme",
+      "body": "Complétez les étapes de profil, de facturation, d'invitations d'équipe et de politique d'IA pour activer votre espace de travail."
+    }
+  },
+  "profile": {
+    "help": {
+      "title": "Profil",
+      "b1": "Gardez votre téléphone à jour pour les alertes urgentes sur les délais.",
+      "b2": "Le rôle et les autorisations sont gérés par les administrateurs de l'entreprise."
+    },
+    "form": {
+      "title": "Votre profil",
+      "body": "Mettez à jour le nom, les coordonnées, les préférences de notification et le mot de passe."
+    }
+  },
+  "consumerReports": {
+    "help": {
+      "title": "Rapports",
+      "b1": "Les rapports renvoient au cas à partir duquel ils ont été créés.",
+      "b2": "Demandez l’examen d’un avocat pour obtenir des conseils formels sur un rapport."
+    },
+    "list": {
+      "title": "Vos rapports",
+      "body": "Rapports de vérification et d'analyse des problèmes par l'IA pour tous vos dossiers : ouvrez-en un pour le lire ou le partager avec un avocat."
+    }
+  },
+  "welcome": {
+    "title": "Bienvenue chez Parapluie",
+    "body": "Une visite guidée de deux minutes vous montre où trouver les clients, les dossiers, la facturation et AI Copilot.",
+    "b1": "Aller n'importe où avec la recherche ou ⌘K",
+    "b2": "Copilot comprend la page sur laquelle vous vous trouvez",
+    "b3": "Rejouez n’importe quelle visite guidée de l’aide chaque fois que vous avez besoin d’un rappel",
+    "start": "Commencer la visite",
+    "skip": "Passer pour l'instant"
+  },
+  "help": {
+    "pageHelp": "Page d'aide",
+    "replayTour": "Visite en rediffusion",
+    "replayShell": "Visite de la plateforme en replay",
+    "dismiss": "Ignorer l'aide",
+    "sheetTitle": "Aide et visites",
+    "thisPage": "Cette page",
+    "progress": "{completed} sur {total} pages explorées",
+    "hideTips": "Masquer les conseils",
+    "openTips": "Afficher les conseils sur la page",
+    "noPageTour": "Aucune visite guidée n'est encore disponible sur cette page.",
+    "actions": "Actes"
   },
   "clientsNew": {
     "form": {
@@ -153,57 +485,6 @@
       "b2": "Vous pouvez inviter le client sur le portail une fois le profil créé."
     }
   },
-  "clientsDetail": {
-    "header": {
-      "title": "Profil client",
-      "body": "Les coordonnées, le statut KYC et les actions rapides figurent en haut de l'enregistrement."
-    },
-    "matters": {
-      "title": "Questions liées",
-      "body": "Tous les cas pour ce client apparaissent ici. Ouvrez un sujet pour gérer les tâches, les documents et la facturation."
-    },
-    "help": {
-      "title": "Dossier client",
-      "b1": "Téléchargez des documents KYC et suivez les dates d'expiration.",
-      "b2": "Activez l’accès au portail client pour une messagerie sécurisée et le partage de documents.",
-      "b3": "Créez un nouveau sujet directement à partir de ce profil."
-    }
-  },
-  "matters": {
-    "create": {
-      "title": "Ouvrir un sujet",
-      "body": "Démarrez un nouveau dossier, associez-le à un client et affectez des membres à l'équipe."
-    },
-    "filter": {
-      "title": "Filtrer et rechercher",
-      "body": "Affinez votre travail par statut, domaine de pratique ou responsable pour trouver rapidement du travail actif."
-    },
-    "list": {
-      "title": "Pipeline de matières",
-      "body": "Chaque ligne indique l'étape, la date limite et le propriétaire. Cliquez pour ouvrir le hub de sujets."
-    },
-    "help": {
-      "title": "Importe",
-      "b1": "Utilisez des playbooks pour générer automatiquement des tâches lorsqu'un sujet s'ouvre.",
-      "b2": "Ouvrez l'atelier AI à partir d'un sujet de rédaction et de recherche.",
-      "b3": "Suivez les délais et les résultats des tribunaux à partir des sous-pages du dossier."
-    }
-  },
-  "mattersNew": {
-    "form": {
-      "title": "Configuration du sujet",
-      "body": "Liez un client, choisissez un domaine de pratique et définissez le titre du dossier et les dates clés."
-    },
-    "submit": {
-      "title": "Créer de la matière",
-      "body": "L’enregistrement crée la chronologie du sujet et les tâches facultatives du playbook."
-    },
-    "help": {
-      "title": "Nouvelle affaire",
-      "b1": "Affectez des collaborateurs pour qu’ils voient immédiatement les tâches et les documents.",
-      "b2": "Le domaine de pratique génère des modèles, des formulaires et des suggestions d’IA."
-    }
-  },
   "mattersDetail": {
     "header": {
       "title": "Centre de matière",
@@ -214,61 +495,14 @@
       "body": "Basculez entre la chronologie, les documents, les tâches, la facturation et les outils spécialisés."
     },
     "workbench": {
-      "title": "Établi d'IA",
-      "body": "Ouvrez l'atelier pour une conversation IA, une rédaction et des suggestions d'étapes suivantes à l'échelle du sujet."
+      "title": "IA IA rapide",
+      "body": "Ouvrez Quick AI pour un chat, une rédaction et des suggestions d'étapes suivantes liées à un sujet."
     },
     "help": {
       "title": "Détail de la matière",
       "b1": "Enregistrez le temps et les dépenses liés à l'affaire pour une facturation précise.",
       "b2": "Téléchargez des preuves et des documents dans le coffre-fort.",
       "b3": "Partagez l'accès en lecture seule avec les clients via le portail lorsque vous êtes prêt."
-    }
-  },
-  "tasks": {
-    "create": {
-      "title": "Créer des tâches",
-      "body": "Ajoutez des délais, attribuez des propriétaires et liez les tâches aux dossiers."
-    },
-    "list": {
-      "title": "File d'attente des tâches",
-      "body": "Filtrez par date d'échéance, priorité ou responsable. Marquez comme terminé au fur et à mesure que le travail progresse."
-    },
-    "help": {
-      "title": "Tâches",
-      "b1": "Les tâches en retard apparaissent automatiquement sur votre tableau de bord.",
-      "b2": "Les automatisations peuvent créer des tâches à partir de playbooks et de délais judiciaires.",
-      "b3": "Utilisez Copilot pour résumer les tâches ouvertes sur un sujet."
-    }
-  },
-  "meetings": {
-    "record": {
-      "title": "Enregistrer ou importer",
-      "body": "Capturez les réunions, les dépositions ou les appels des clients. Les transcriptions renvoient aux sujets."
-    },
-    "list": {
-      "title": "Bibliothèque de réunion",
-      "body": "Parcourez les enregistrements, les transcriptions et les résumés AI. Ouvrez n’importe quelle réunion pour consulter les notes."
-    },
-    "help": {
-      "title": "Réunions",
-      "b1": "Liez les enregistrements aux sujets pour le contexte dans Copilot et la rédaction.",
-      "b2": "Recherchez des transcriptions à partir de la palette de commandes (⌘K).",
-      "b3": "Exportez des notes pour les dossiers clients ou les présentations au tribunal."
-    }
-  },
-  "calendar": {
-    "view": {
-      "title": "Calendrier",
-      "body": "Consultez les audiences, les délais et les événements internes dans une seule vue."
-    },
-    "create": {
-      "title": "Ajouter des événements",
-      "body": "Créez des événements et associez-les à des sujets afin que l'équipe reste alignée."
-    },
-    "help": {
-      "title": "Calendrier",
-      "b1": "Les délais judiciaires des affaires peuvent apparaître ici automatiquement.",
-      "b2": "Partagez la visibilité du calendrier en fonction de votre rôle."
     }
   },
   "time": {
@@ -300,17 +534,6 @@
       "b2": "Utilisez la recherche de documents Copilot pour rechercher des clauses dans les fichiers."
     }
   },
-  "lawLibrary": {
-    "search": {
-      "title": "Bibliothèque de droit",
-      "body": "Recherchez les lois et règlements de votre juridiction avec une recherche hybride mot-clé + sémantique."
-    },
-    "help": {
-      "title": "Bibliothèque de droit",
-      "b1": "Citer les sources directement dans les brouillons du sujet.",
-      "b2": "Filtrez par juridiction pour correspondre au pays principal de votre entreprise."
-    }
-  },
   "vault": {
     "search": {
       "title": "Coffre ferme",
@@ -322,18 +545,19 @@
       "b2": "Les résultats respectent les contrôles d’accès aux dossiers et aux clients."
     }
   },
-  "esign": {
-    "create": {
-      "title": "Signatures électroniques",
-      "body": "Créez des enveloppes de signature, ajoutez des signataires et suivez l'état d'avancement."
-    },
-    "help": {
-      "title": "Signature électronique",
-      "b1": "Liez les enveloppes aux dossiers pour les pistes d’audit.",
-      "b2": "Les clients peuvent signer via des liens de courrier électronique sécurisés."
-    }
-  },
   "billing": {
+    "header": {
+      "title": "Aperçu de la facturation",
+      "body": "Commencez ici pour les factures, l'examen préalable à la facture, les paiements, les relevés et les paramètres d'abonnement ferme."
+    },
+    "links": {
+      "title": "Raccourcis de facturation",
+      "body": "Chaque carte ouvre un flux de travail ciblé : abonnement, factures, pré-facture, paiements ou rapports financiers."
+    },
+    "invoices": {
+      "title": "Liste des factures",
+      "body": "Filtrez par statut, recherchez par numéro et ouvrez n'importe quelle facture pour envoyer, enregistrer le paiement ou exporter des LEDES."
+    },
     "hub": {
       "title": "Centre de facturation",
       "body": "Accédez aux factures, à l'examen préalable des factures, aux paiements et à la confiance à partir d'un seul endroit."
@@ -341,7 +565,8 @@
     "help": {
       "title": "Facturation",
       "b1": "Exécutez la pré-facture avant d’envoyer les factures aux clients.",
-      "b2": "Les mouvements de confiance nécessitent une approbation conformément à la politique de l'entreprise."
+      "b2": "Les mouvements de confiance nécessitent une approbation conformément à la politique de l'entreprise.",
+      "b3": "Reliez les entrées de temps et les dépenses aux dossiers pour obtenir des factures précises."
     }
   },
   "trust": {
@@ -409,30 +634,23 @@
       "b2": "Les alertes critiques apparaissent également sur la bande du tableau de bord."
     }
   },
-  "intake": {
-    "wizard": {
-      "title": "Accueil des clients",
-      "body": "Parcourez l'admission structurée : classification des problèmes, vérification des conflits et création de sujets."
-    },
-    "help": {
-      "title": "Admission",
-      "b1": "À utiliser pour les visites sans rendez-vous et les appels téléphoniques, et pas seulement pour les prospects Web.",
-      "b2": "L'IA aide à la classification des problèmes et aux documents requis."
-    }
-  },
   "research": {
     "query": {
-      "title": "Recherche juridique IA",
-      "body": "Posez une question juridique pour votre juridiction. Les réponses incluent des citations que vous pouvez vérifier."
+      "title": "Posez votre question de recherche",
+      "body": "Décrivez la question juridique et la juridiction. Soyez précis sur les faits : de meilleures entrées produisent de meilleures citations."
+    },
+    "sources": {
+      "title": "Choisissez des sources de connaissances",
+      "body": "Choisissez les lois, la jurisprudence et les sources du coffre-fort du cabinet à inclure. Affinez les sources pour des réponses plus rapides et plus ciblées."
     },
     "results": {
-      "title": "Résultats cités",
-      "body": "Enregistrez la recherche dans un sujet ou exportez des citations sous forme de brouillons."
+      "title": "Examiner les réponses citées",
+      "body": "Après avoir effectué des recherches, vérifiez les citations ici. Enregistrez dans un sujet ou exportez sous forme de brouillons."
     },
     "help": {
       "title": "Recherche juridique",
-      "b1": "Soyez précis sur la juridiction et la structure des faits pour de meilleures citations.",
-      "b2": "L'utilisation de l'IA est comptabilisée dans le solde créditeur de votre entreprise.",
+      "b1": "Utilisez le mode Vérifié lorsque la précision est importante ; Mode rapide pour une orientation rapide.",
+      "b2": "La recherche utilise le solde créditeur IA de votre entreprise.",
       "b3": "Vérifiez toujours les citations avant de déposer ou de conseiller les clients."
     }
   },
@@ -458,30 +676,20 @@
       "b2": "Modifiez les versions sans perdre l'historique."
     }
   },
-  "settings": {
-    "hub": {
-      "title": "Paramètres",
-      "body": "Configurez les utilisateurs, la facturation, la politique d'IA, les intégrations et la conformité à partir de ce hub."
-    },
-    "help": {
-      "title": "Paramètres",
-      "b1": "Seuls les administrateurs partenaires peuvent modifier la gouvernance à l’échelle de l’entreprise.",
-      "b2": "Vérifiez la politique d’IA et le consentement aux données avant d’activer les fonctionnalités de formation."
-    }
-  },
   "consumerDashboard": {
     "cases": {
-      "title": "Vos cas",
-      "body": "Consultez les affaires juridiques actives et leur statut en un coup d'œil."
+      "title": "Votre instantané",
+      "body": "Les crédits, les dossiers actifs, les rapports et la juridiction apparaissent ici afin que vous sachiez où vous en êtes en un coup d'œil."
     },
     "actions": {
-      "title": "Actions rapides",
-      "body": "Vérifiez un problème, téléchargez des documents, consultez des rapports ou demandez un examen par un avocat."
+      "title": "Que faire ensuite",
+      "body": "Démarrez une vérification de problème, téléchargez des documents, effectuez des recherches, rédigez une lettre ou engagez un avocat, tout cela à partir de ces raccourcis."
     },
     "help": {
       "title": "Maison",
-      "b1": "L’IA crédite la vérification des problèmes et l’analyse des documents.",
-      "b2": "Ouvrez un dossier pour envoyer un message à votre avocat ou payer des factures."
+      "b1": "L’IA accorde des crédits à la vérification des problèmes, à la recherche et à l’analyse des documents.",
+      "b2": "Ouvrez un dossier pour envoyer un message à votre avocat, télécharger des fichiers ou payer des factures.",
+      "b3": "Rechargez les crédits de l'abonnement avant une longue session de recherche ou de révision."
     }
   },
   "consumerCases": {
@@ -509,23 +717,373 @@
   "consumerSubscription": {
     "plans": {
       "title": "Forfaits et crédits",
-      "body": "Choisissez un abonnement ou achetez des packs de crédits AI pour des vérifications et des analyses d'émission."
+      "body": "Comparez les forfaits gratuits et Plus, achetez des packs de crédits et gérez la recharge automatique afin que les fonctionnalités d'IA ne s'arrêtent jamais en cours de tâche."
     },
     "help": {
       "title": "Abonnement",
-      "b1": "Les crédits sont reportés selon les conditions de votre forfait.",
-      "b2": "Activez la recharge automatique pour éviter les interruptions."
+      "b1": "Vérifiez le plan et l'utilisation pour une répartition détaillée du crédit.",
+      "b2": "Activez la recharge automatique avant les semaines chargées en délais.",
+      "b3": "Les forfaits Plus incluent plus de crédits mensuels et une assistance prioritaire."
     }
   },
-  "consumerSettings": {
-    "hub": {
-      "title": "Paramètres du compte",
-      "body": "Gérez le profil, la confidentialité, le consentement aux données et les préférences de notification."
+  "consumerResearch": {
+    "query": {
+      "title": "Recherchez votre question",
+      "body": "Renseignez-vous en langage simple sur votre situation. Incluez votre pays et les faits clés pour de meilleures réponses."
+    },
+    "sources": {
+      "title": "Choisissez des sources fiables",
+      "body": "Choisissez les lois et la jurisprudence à rechercher. Moins de sources signifie souvent des résultats plus rapides et plus clairs."
     },
     "help": {
-      "title": "Paramètres",
-      "b1": "Contrôlez la manière dont vos données sont utilisées pour les fonctionnalités d'IA.",
-      "b2": "Mettez à jour vos coordonnées afin que votre avocat puisse vous joindre."
+      "title": "Recherche juridique",
+      "b1": "La recherche utilise des crédits d'IA : vérifiez votre solde sur le tableau de bord.",
+      "b2": "Enregistrez les réponses utiles à un cas pour que votre avocat puisse les examiner.",
+      "b3": "Il s’agit d’informations générales et non de conseils juridiques formels : demandez l’avis d’un avocat lorsque les décisions sont importantes."
+    }
+  },
+  "consumerDocumentDrafting": {
+    "intro": {
+      "title": "Rédiger des documents juridiques",
+      "body": "Décrivez ce dont vous avez besoin (un avis, un accord ou une demande) et Umbrella vous suggère le bon formulaire et vous aide à le remplir."
+    },
+    "workspace": {
+      "title": "Rédaction guidée",
+      "body": "Répondez à quelques questions, examinez le texte généré par l'IA et téléchargez ou partagez le document final."
+    },
+    "help": {
+      "title": "Rédaction de documents",
+      "b1": "Commencez par une description claire de la personne à qui le document est destiné et de ce qu’il doit accomplir.",
+      "b2": "Lisez attentivement chaque clause avant de l’envoyer ou de la signer.",
+      "b3": "Enregistrez les brouillons dans un dossier afin que votre avocat puisse les modifier."
+    }
+  },
+  "consumerDocumentReview": {
+    "upload": {
+      "title": "Télécharger ou coller",
+      "body": "Déposez un fichier PDF, Word ou collez du texte. Umbrella signale les clauses risquées et suggère des améliorations."
+    },
+    "analyze": {
+      "title": "Exécuter l'analyse",
+      "body": "Choisissez un modèle d'IA et cliquez sur Analyser. Les résultats mettent en évidence les risques, les termes clés et les modifications suggérées."
+    },
+    "help": {
+      "title": "Examen des documents",
+      "b1": "Utilisez le mode unique pour un contrat ; Mode tabulaire pour comparer de nombreux fichiers.",
+      "b2": "Enregistrez les avis pour les revoir avant de signer.",
+      "b3": "Partagez les résultats avec votre avocat pour obtenir des conseils formels sur les documents à enjeux élevés."
+    }
+  },
+  "consumerPlanUsage": {
+    "usage": {
+      "title": "Crédits et utilisation",
+      "body": "Consultez les crédits restants, l'utilisation récente par fonctionnalité et ajustez votre modèle d'IA par défaut ou vos paramètres de recharge."
+    },
+    "help": {
+      "title": "Forfait et utilisation",
+      "b1": "Les recherches approfondies et l'examen de documents consomment plus de crédits que les vérifications rapides.",
+      "b2": "Mettez à niveau ou achetez des packs avec abonnement lorsque votre niveau est bas."
+    }
+  },
+  "evidence": {
+    "matter": {
+      "title": "Lien vers un sujet",
+      "body": "La preuve est toujours limitée à un sujet. Sélectionnez le cas avant d'ajouter des pièces à conviction ou des éléments de chronologie."
+    },
+    "list": {
+      "title": "Registre des preuves",
+      "body": "Suivez les éléments, les indicateurs de privilèges et les cartes de préparation. Exportez des lots lors de la préparation du tribunal."
+    },
+    "help": {
+      "title": "Coffre-fort de preuves",
+      "b1": "Ajoutez des éléments avec des titres clairs pour l'indexation des bundles.",
+      "b2": "Examinez le privilège avant de le partager avec l’avocat de la partie adverse.",
+      "b3": "Ouvrez le sujet Quick AI pour une chronologie assistée par l'IA."
+    }
+  },
+  "queues": {
+    "grid": {
+      "title": "Files d'attente de travail",
+      "body": "Les files d'attente d'admission, de facturation et de tâches indiquent ce qui nécessite une action dans l'entreprise : cliquez pour résoudre les éléments."
+    },
+    "help": {
+      "title": "Files d'attente",
+      "b1": "Vérifiez quotidiennement la file d'attente d'admission pour détecter les nouveaux problèmes en attente de configuration.",
+      "b2": "Les rôles financiers voient les files d’attente d’approbation de facturation ici."
+    }
+  },
+  "automations": {
+    "header": {
+      "title": "Automatisations",
+      "body": "Les règles Quand/Alors connectent les déclencheurs (nouveau sujet, téléchargement de document, date limite) aux tâches, aux agents et à la facturation, aucun code n'est requis."
+    },
+    "recipes": {
+      "title": "Recettes recommandées",
+      "body": "Installez des automatisations testées en un clic. Revenez aux valeurs par défaut à tout moment sans perdre vos données."
+    },
+    "help": {
+      "title": "Automatisations",
+      "b1": "Commencez par les recettes d’admission et de date limite.",
+      "b2": "Liez les automatisations aux agents IA pour le travail asynchrone.",
+      "b3": "Surveillez l’état de la dernière exécution sur chaque fiche de recette."
+    }
+  },
+  "documentReview": {
+    "upload": {
+      "title": "Télécharger ou coller",
+      "body": "Abandonnez les contrats, les plaidoiries ou les accords. Umbrella signale les clauses risquées et suggère des amendements."
+    },
+    "analyze": {
+      "title": "Exécuter une analyse",
+      "body": "Choisissez le mode Simple ou Tabulaire, choisissez un modèle d'IA, puis analysez. Enregistrez les résultats dans un dossier ou un dossier client."
+    },
+    "help": {
+      "title": "Examen des documents",
+      "b1": "Le mode tabulaire compare les clauses de plusieurs fichiers.",
+      "b2": "Vérifiez toujours les suggestions de l’IA avant de déposer.",
+      "b3": "Exportez les avis annotés au format PDF."
+    }
+  },
+  "firAnalysis": {
+    "intro": {
+      "title": "Renseignement FIR",
+      "body": "Téléchargez un premier rapport d'information pour extraire les faits, les infractions, la situation de mise en liberté sous caution et les prochaines étapes suggérées."
+    },
+    "upload": {
+      "title": "Télécharger le FIR",
+      "body": "Les téléchargements de PDF ou d'images sont analysés et structurés pour examen et exportation."
+    },
+    "help": {
+      "title": "Analyse FIR",
+      "b1": "Juridiction indienne uniquement.",
+      "b2": "Enregistrez l’analyse dans un sujet pour la collaboration en équipe."
+    }
+  },
+  "indiaDrafting": {
+    "intro": {
+      "title": "Projets judiciaires indiens",
+      "body": "Demandes de libération sous caution, avis juridiques, plaintes de consommateurs et bien plus encore, fondés sur BNS/BNSS/BSA 2023."
+    },
+    "workspace": {
+      "title": "Choisissez un format",
+      "body": "Choisissez un modèle, remplissez les faits et générez une première ébauche pour examen par un avocat."
+    },
+    "help": {
+      "title": "Rédaction en Inde",
+      "b1": "Vérifiez toujours avant de déposer.",
+      "b2": "Les formats se synchronisent avec le catalogue d'applications mobiles."
+    }
+  },
+  "usDrafting": {
+    "workspace": {
+      "title": "Rédaction du tribunal américain",
+      "body": "Modèles de motions fédérales et étatiques avec invites et aides à la citation tenant compte des juridictions."
+    },
+    "help": {
+      "title": "rédaction américaine",
+      "b1": "Confirmez les règles du tribunal local avant de déposer.",
+      "b2": "Enregistrez les brouillons dans les dossiers pour le suivi du temps."
+    }
+  },
+  "contracts": {
+    "dashboard": {
+      "title": "Cycle de vie du contrat",
+      "body": "Suivez l’état des contrats, les renouvellements, les obligations et les questions liées dans un seul tableau de bord."
+    },
+    "help": {
+      "title": "Contrats",
+      "b1": "Téléchargez les contrats exécutés pour l’extraction IA des dates clés.",
+      "b2": "Définissez des alertes de renouvellement pour éviter les délais manqués."
+    }
+  },
+  "savedDrafts": {
+    "list": {
+      "title": "Historique du brouillon",
+      "body": "Reprenez tout projet d'IA enregistré à partir de formulaires juridiques, de rédaction Inde/États-Unis ou de Copilot."
+    },
+    "help": {
+      "title": "Brouillons enregistrés",
+      "b1": "Les brouillons sont limités au locataire et vérifiables.",
+      "b2": "Ouvrez un brouillon pour poursuivre la modification ou l'exportation."
+    }
+  },
+  "aiCommandCenter": {
+    "header": {
+      "title": "Centre de commande IA",
+      "body": "Surveillez la charge de travail de l'IA, les examens en attente, les questions à haut risque et les dépenses en crédits dans l'ensemble de l'entreprise."
+    },
+    "cards": {
+      "title": "Cartes opérationnelles",
+      "body": "Chaque carte est liée à la file d'attente sous-jacente : pistes, brouillons, problèmes ou facturation."
+    },
+    "help": {
+      "title": "Centre de commandement",
+      "b1": "Vérifiez quotidiennement les brouillons en attente de l’approbation de l’avocat.",
+      "b2": "Surveillez l'utilisation du crédit par rapport à l'allocation de votre plan.",
+      "b3": "Les administrateurs partenaires voient les statistiques à l'échelle de l'entreprise."
+    }
+  },
+  "agents": {
+    "jobs": {
+      "title": "Emplois d'agent",
+      "body": "Les agents d’IA en arrière-plan effectuent des tâches de recherche, de rédaction et de diligence. Suivez l’état et les sorties ici."
+    },
+    "help": {
+      "title": "Agents IA",
+      "b1": "Les agents sont déclenchés par des automatisations ou des exécutions manuelles.",
+      "b2": "Les tâches ayant échoué peuvent être réessayées à partir du panneau de détails de la tâche."
+    }
+  },
+  "referrals": {
+    "share": {
+      "title": "Référez des collègues",
+      "body": "Partagez votre lien de parrainage. Gagnez des crédits lorsque de nouvelles entreprises ou consommateurs s'inscrivent et s'abonnent."
+    },
+    "help": {
+      "title": "Références",
+      "b1": "Suivez les références en attente et terminées ici.",
+      "b2": "Les crédits de parrainage s’appliquent à l’utilisation de l’IA."
+    }
+  },
+  "copilotAudit": {
+    "list": {
+      "title": "Journal d'audit du copilote",
+      "body": "Examinez les actions d’IA proposées et exécutées par Copilot sur tous les sujets pour vérifier leur conformité."
+    },
+    "help": {
+      "title": "Audit copilote",
+      "b1": "Filtrez par utilisateur, sujet ou type d'action.",
+      "b2": "Exportez les journaux pour les examens de la gouvernance de l’entreprise."
+    }
+  },
+  "accountingPayments": {
+    "list": {
+      "title": "Dossiers de paiement",
+      "body": "Enregistrez les paiements des clients par rapport aux factures et suivez les montants non alloués."
+    },
+    "help": {
+      "title": "Paiements",
+      "b1": "Faites correspondre les paiements aux factures pour une RA propre.",
+      "b2": "Les paiements en fiducie suivent des flux d'approbation distincts."
+    }
+  },
+  "accountingStatements": {
+    "list": {
+      "title": "Déclarations des clients",
+      "body": "Générez et envoyez des relevés de compte récapitulant les factures et crédits ouverts."
+    },
+    "help": {
+      "title": "Déclarations",
+      "b1": "Exécutez les relevés avant la clôture de fin de mois.",
+      "b2": "Les déclarations PDF peuvent être envoyées par courrier électronique à partir du sujet."
+    }
+  },
+  "preBill": {
+    "workspace": {
+      "title": "Examen avant la facturation",
+      "body": "Vérifiez les entrées de temps et les dépenses avant de facturer. Modifiez les récits, les radiations et les fractionnements ici."
+    },
+    "help": {
+      "title": "Pré-facture",
+      "b1": "Approuvez les pré-factures avant de générer les factures finales.",
+      "b2": "Signalez les entrées qui nécessitent un examen par un partenaire."
+    }
+  },
+  "consumerLawyerReview": {
+    "request": {
+      "title": "Demander un examen formel",
+      "body": "Améliorez un rapport d'IA en une opinion vérifiée et révisée par un avocat pour votre situation spécifique."
+    },
+    "help": {
+      "title": "Examen d'un avocat",
+      "b1": "Les frais varient selon le pays et le type de problème.",
+      "b2": "Un avocat vérifié répond via les messages de votre dossier.",
+      "b3": "Cela ne remplace pas un conseil juridique d’urgence."
+    }
+  },
+  "consumerSettingsPayment": {
+    "methods": {
+      "title": "Modes de paiement",
+      "body": "Gérez les cartes pour les abonnements et les recharges de crédit. La recharge automatique utilise votre méthode par défaut."
+    },
+    "help": {
+      "title": "Modes de paiement",
+      "b1": "Conservez une carte valide pour éviter les interruptions de service.",
+      "b2": "Les reçus apparaissent dans votre historique d'abonnement."
+    }
+  },
+  "consumerSettingsConsent": {
+    "form": {
+      "title": "Consentement aux données et à l'IA",
+      "body": "Contrôlez si vos données contribuent à améliorer les invites, l'évaluation ou la formation de modèles."
+    },
+    "help": {
+      "title": "Consentement aux données",
+      "b1": "Vous pouvez vous désinscrire à tout moment.",
+      "b2": "Les fonctionnalités de base fonctionnent sans consentement de formation."
+    }
+  },
+  "consumerIndiaDrafting": {
+    "intro": {
+      "title": "Projets judiciaires indiens",
+      "body": "Projets de point de départ pour la caution, la pension alimentaire, les plaintes des consommateurs et les mentions légales sous BNS/BNSS/BSA 2023."
+    },
+    "workspace": {
+      "title": "Choisissez un format",
+      "body": "Choisissez un modèle, décrivez vos faits et téléchargez une ébauche pour examen par un avocat."
+    },
+    "help": {
+      "title": "Drafts indiens",
+      "b1": "Juridiction indienne uniquement.",
+      "b2": "Enregistrez-le dans un dossier que votre avocat pourra modifier."
+    }
+  },
+  "consumerSectionFinder": {
+    "workspace": {
+      "title": "Trouver une rubrique",
+      "body": "Recherchez les sections pénales et procédurales indiennes avec les passages pour piétons IPC → BNS en langage simple."
+    },
+    "help": {
+      "title": "Recherche de section",
+      "b1": "Utile pour comprendre les rapports de police et les FIR.",
+      "b2": "Vérifiez les actes officiels avant de vous adresser au tribunal."
+    }
+  },
+  "consumerFirAnalysis": {
+    "intro": {
+      "title": "Comprendre votre FIR",
+      "body": "Téléchargez un FIR pour connaître les infractions accusées, les options de mise en liberté sous caution et les prochaines étapes pratiques."
+    },
+    "upload": {
+      "title": "Télécharger un document",
+      "body": "Photo ou PDF des travaux du FIR. L'analyse est privée sur votre compte."
+    },
+    "help": {
+      "title": "Aide du FIR",
+      "b1": "Partagez les résultats avec votre avocat à travers une affaire.",
+      "b2": "En cas d’urgence, contactez immédiatement un avocat."
+    }
+  },
+  "consumerRightsChecker": {
+    "scenarios": {
+      "title": "Connaissez vos droits",
+      "body": "Choisissez un scénario (logement, emploi, dette, police) pour connaître vos droits et les étapes recommandées."
+    },
+    "help": {
+      "title": "Vérificateur de droits",
+      "b1": "Des conseils généraux uniquement, pas des conseils juridiques.",
+      "b2": "Commencez une vérification du problème ou trouvez un avocat pour votre cas."
+    }
+  },
+  "consumerMarketplace": {
+    "skus": {
+      "title": "Services juridiques",
+      "body": "Parcourez les offres à prix fixe (examen de documents, consultation, contrôles de conformité) proposées par des professionnels vérifiés."
+    },
+    "help": {
+      "title": "Marché",
+      "b1": "Les prix et les délais varient selon le service.",
+      "b2": "Les achats sont liés à votre compte Umbrella pour le suivi."
     }
   }
 }

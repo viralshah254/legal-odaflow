@@ -27,37 +27,26 @@ export class AiModelResolverService {
     cycleStart: Date;
     overrideMode?: AiModelMode;
     overridePremiumModelId?: string;
+    forDeepAnalysis?: boolean;
   }): Promise<ResolvedAiModelContext> {
     const prefs = await this.preferences.resolveForRequest({
       userId: params.userId,
       tenantId: params.tenantId,
       overrideMode: params.overrideMode,
       overridePremiumModelId: params.overridePremiumModelId,
+      forDeepAnalysis: params.forDeepAnalysis,
     });
-
-    let premiumFallback = false;
-    if (prefs.aiModelMode === 'PREMIUM') {
-      const remaining = await this.allowance.getPremiumAllowanceRemaining({
-        userId: params.tenantId ? undefined : params.userId,
-        tenantId: params.tenantId,
-        planCreditsMonthly: params.planCreditsMonthly,
-        cycleStart: params.cycleStart,
-      });
-      if (remaining <= 0) {
-        premiumFallback = true;
-      }
-    }
 
     const route = this.modelRouter.resolveRoute(params.taskType, undefined, {
       modelMode: prefs.aiModelMode,
       premiumModelId: prefs.premiumModelId,
-      premiumFallback,
+      premiumFallback: false,
     });
 
     return {
       modelMode: route.modelMode,
       premiumModelId: prefs.premiumModelId,
-      premiumFallback: route.premiumFallback,
+      premiumFallback: false,
       route,
     };
   }

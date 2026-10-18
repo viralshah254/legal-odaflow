@@ -1,0 +1,62 @@
+{
+  "project_info": {
+    "project_number": "1034275934580",
+    "project_id": "umbrella-95da1",
+    "storage_bucket": "umbrella-95da1.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1034275934580:android:3666a91b7cad3c99809c21",
+        "android_client_info": {
+          "package_name": "com.dvtechventures.umbrella"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1034275934580-3dr15jt1cbqdc5bhtlm2qmv5n8jrvlo2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.dvtechventures.umbrella",
+            "certificate_hash": "f9a252105bc9ffdb5caa1d8bf48c5b44acc9a719"
+          }
+        },
+        {
+          "client_id": "1034275934580-mci56a3jgm0lq0mt8grf05cih666bpi5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.dvtechventures.umbrella",
+            "certificate_hash": "374bbb498150d6c37ad9c358fdef2ee6b62a9b6a"
+          }
+        },
+        {
+          "client_id": "1034275934580-rm58bb4bj2csrpasbmngbfqd1ndqv96q.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAGcWqTQKWtdp1_FJtsgwpe7H3b3cpAX2I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1034275934580-rm58bb4bj2csrpasbmngbfqd1ndqv96q.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1034275934580-2sn8vugf9vum4js1n7ma0s796mihfmju.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.dvtechventures.umbrella"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

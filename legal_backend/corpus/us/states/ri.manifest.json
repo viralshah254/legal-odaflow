@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "stateCode": "RI",
+  "stateName": "Rhode Island",
+  "acts": [
+    {
+      "actId": "ri-code",
+      "title": "Rhode Island code",
+      "sourceAuthority": "cornell-lii",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.law.cornell.edu/states/ri",
+      "externalId": "ri-code",
+      "notes": "Rhode Island state law via Cornell LII state index"
+    },
+    {
+      "actId": "ri-statutes",
+      "title": "Rhode Island statutes",
+      "sourceAuthority": "cornell-lii",
+      "sourceTier": "mirror",
+      "primaryPdfUrl": "https://www.law.cornell.edu/states/ri",
+      "externalId": "ri-statutes",
+      "notes": "Rhode Island state law via Cornell LII state index"
+    }
+  ]
+}

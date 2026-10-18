@@ -1,4 +1,5 @@
 import { Module } from '@nestjs/common';
+import { CountryComplianceModule } from '@/country-compliance/country-compliance.module';
 import { TrainingConsentModule } from '@/training-consent/training-consent.module';
 import { GovernanceController } from './governance.controller';
 import { GovernanceSettingsController } from './governance-settings.controller';
@@ -8,7 +9,7 @@ import { TenantRolePermissionsController } from './tenant-role-permissions.contr
 import { TenantRolePermissionsService } from './tenant-role-permissions.service';
 
 @Module({
-  imports: [TrainingConsentModule],
+  imports: [CountryComplianceModule, TrainingConsentModule],
   controllers: [
     GovernanceController,
     GovernanceSettingsController,

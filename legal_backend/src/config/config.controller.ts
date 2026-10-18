@@ -1,10 +1,11 @@
-import { Controller, Get, Param } from '@nestjs/common';
+import { Controller, Get, Param, Query } from '@nestjs/common';
 import { Public } from '@/common/decorators/public.decorator';
 import {
   COUNTRY_CONFIGS,
   SUPPORTED_COUNTRY_CODES,
   getCountryConfig,
 } from '@/config/countries';
+import { LOCALE_DEFINITIONS } from '@/config/locales';
 
 @Controller('config')
 export class ConfigController {
@@ -24,8 +25,21 @@ export class ConfigController {
         paymentProviders: config.paymentProviders,
         defaultPaymentProvider: config.defaultPaymentProvider,
         consumerFreePreviews: config.consumerFreePreviews,
+        supportedUiLocales: config.supportedUiLocales,
+        supportedJurisdictions: config.supportedJurisdictions,
       };
     });
+  }
+
+  @Public()
+  @Get('locales')
+  listLocales(@Query('country') country?: string) {
+    const countryCode = (country ?? 'US').toUpperCase();
+    const config = getCountryConfig(countryCode);
+    return config.supportedUiLocales.map((code) => ({
+      ...LOCALE_DEFINITIONS[code],
+      code,
+    }));
   }
 
   @Public()

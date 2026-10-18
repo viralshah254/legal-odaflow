@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "stateCode": "PA",
+  "stateName": "Pennsylvania",
+  "acts": [
+    {
+      "actId": "pa-consolidated-statutes",
+      "title": "Pennsylvania consolidated statutes",
+      "sourceAuthority": "cornell-lii",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.law.cornell.edu/states/pa",
+      "externalId": "pa-consolidated_statutes",
+      "notes": "Pennsylvania state law via Cornell LII state index"
+    },
+    {
+      "actId": "pa-business-corporations",
+      "title": "Pennsylvania business corporations",
+      "sourceAuthority": "cornell-lii",
+      "sourceTier": "mirror",
+      "primaryPdfUrl": "https://www.law.cornell.edu/states/pa",
+      "externalId": "pa-business_corporations",
+      "notes": "Pennsylvania state law via Cornell LII state index"
+    }
+  ]
+}

@@ -58,6 +58,16 @@ export class RateTablesService {
     });
   }
 
+  async resolveRateForUserId(
+    tenantId: string,
+    userId: string,
+  ): Promise<{ rate: number; currency: string } | null> {
+    const tenantUser = await this.prisma.tenantUser.findFirst({
+      where: { tenantId, userId },
+    });
+    return this.resolveRateForRole(tenantId, tenantUser?.role ?? 'ASSOCIATE');
+  }
+
   async resolveRateForRole(
     tenantId: string,
     role: string,

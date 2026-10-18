@@ -93,6 +93,40 @@ export class AssistanceService {
     });
   }
 
+  async listPending(tenantId: string) {
+    const requests = await this.prisma.assistanceRequest.findMany({
+      where: { tenantId, status: 'OPEN' },
+      include: {
+        matter: { select: { title: true } },
+      },
+      orderBy: { createdAt: 'desc' },
+    });
+
+    const requesterIds = [...new Set(requests.map((req) => req.requesterId))];
+    const users =
+      requesterIds.length > 0
+        ? await this.prisma.user.findMany({
+            where: { id: { in: requesterIds } },
+            select: { id: true, name: true },
+          })
+        : [];
+    const userMap = new Map(users.map((user) => [user.id, user.name]));
+
+    return requests.map((req) => ({
+      id: req.id,
+      matterId: req.matterId,
+      matterTitle: req.matter.title,
+      requestedById: req.requesterId,
+      requestedByName: userMap.get(req.requesterId),
+      assignedToId: null,
+      status: req.status,
+      scope: req.subject,
+      reason: req.description,
+      createdAt: req.createdAt.toISOString(),
+      updatedAt: req.updatedAt.toISOString(),
+    }));
+  }
+
   private async ensureMatterReadable(
     tenantId: string,
     matterId: string,

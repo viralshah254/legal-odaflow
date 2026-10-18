@@ -64,6 +64,10 @@ export class InitializeKycClientDto {
   @IsOptional()
   @IsString()
   clientType?: string;
+
+  @IsOptional()
+  @IsString()
+  countryCode?: string;
 }
 
 export class UpdateKycDocumentByTypeDto {

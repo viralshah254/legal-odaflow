@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "stateCode": "NY",
+  "stateName": "New York",
+  "acts": [
+    { "actId": "ny-penal-law", "title": "New York Penal Law", "sourceAuthority": "state-portal", "sourceTier": "primary", "primaryPdfUrl": "https://codes.findlaw.com/ny/penal-law/", "externalId": "ny-penal_law" },
+    { "actId": "ny-civil-practice-law", "title": "New York Civil Practice Law and Rules", "sourceAuthority": "state-portal", "sourceTier": "mirror", "primaryPdfUrl": "https://codes.findlaw.com/ny/civil-practice-law-and-rules/", "externalId": "ny-civil_practice_law" },
+    { "actId": "ny-business-corporation-law", "title": "New York Business Corporation Law", "sourceAuthority": "state-portal", "sourceTier": "mirror", "primaryPdfUrl": "https://codes.findlaw.com/ny/business-corporation-law/", "externalId": "ny-business_corporation_law" },
+    { "actId": "ny-evidence-law", "title": "New York Evidence provisions", "sourceAuthority": "state-portal", "sourceTier": "mirror", "primaryPdfUrl": "https://codes.findlaw.com/ny/civil-practice-law-and-rules/", "externalId": "ny-evidence_law" },
+    { "actId": "ny-domestic-relations-law", "title": "New York Domestic Relations Law", "sourceAuthority": "state-portal", "sourceTier": "mirror", "primaryPdfUrl": "https://codes.findlaw.com/ny/domestic-relations-law/", "externalId": "ny-domestic_relations_law" },
+    { "actId": "ny-real-property-law", "title": "New York Real Property Law", "sourceAuthority": "state-portal", "sourceTier": "mirror", "primaryPdfUrl": "https://codes.findlaw.com/ny/real-property-law/", "externalId": "ny-real_property_law" },
+    { "actId": "ny-labor-law", "title": "New York Labor Law", "sourceAuthority": "state-portal", "sourceTier": "mirror", "primaryPdfUrl": "https://codes.findlaw.com/ny/labor-law/", "externalId": "ny-labor_law" },
+    { "actId": "ny-general-business-law", "title": "New York General Business Law", "sourceAuthority": "state-portal", "sourceTier": "mirror", "primaryPdfUrl": "https://codes.findlaw.com/ny/general-business-law/", "externalId": "ny-general_business_law" },
+    { "actId": "ny-estates-powers-trusts-law", "title": "New York Estates, Powers and Trusts Law", "sourceAuthority": "state-portal", "sourceTier": "mirror", "primaryPdfUrl": "https://codes.findlaw.com/ny/estates-powers-and-trusts-law/", "externalId": "ny-estates_powers_trusts_law" },
+    { "actId": "ny-insurance-law", "title": "New York Insurance Law", "sourceAuthority": "state-portal", "sourceTier": "mirror", "primaryPdfUrl": "https://codes.findlaw.com/ny/insurance-law/", "externalId": "ny-insurance_law" },
+    { "actId": "ny-tax-law", "title": "New York Tax Law", "sourceAuthority": "state-portal", "sourceTier": "mirror", "primaryPdfUrl": "https://codes.findlaw.com/ny/tax-law/", "externalId": "ny-tax_law" },
+    { "actId": "ny-vehicle-traffic-law", "title": "New York Vehicle and Traffic Law", "sourceAuthority": "state-portal", "sourceTier": "mirror", "primaryPdfUrl": "https://codes.findlaw.com/ny/vehicle-and-traffic-law/", "externalId": "ny-vehicle_traffic_law" },
+    { "actId": "ny-correction-law", "title": "New York Correction Law", "sourceAuthority": "state-portal", "sourceTier": "mirror", "primaryPdfUrl": "https://codes.findlaw.com/ny/correction-law/", "externalId": "ny-correction_law" },
+    { "actId": "ny-criminal-procedure-law", "title": "New York Criminal Procedure Law", "sourceAuthority": "state-portal", "sourceTier": "mirror", "primaryPdfUrl": "https://codes.findlaw.com/ny/criminal-procedure-law/", "externalId": "ny-criminal_procedure_law" },
+    { "actId": "ny-judiciary-law", "title": "New York Judiciary Law", "sourceAuthority": "state-portal", "sourceTier": "mirror", "primaryPdfUrl": "https://codes.findlaw.com/ny/judiciary-law/", "externalId": "ny-judiciary_law" }
+  ]
+}

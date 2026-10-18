@@ -25,6 +25,10 @@
   "tooManyRequests": "Too many attempts. Wait a moment and try again.",
   "firebaseEmailSignInDisabled": "Email sign-in is not enabled in Firebase for this project.",
   "authenticationFailed": "Authentication failed.",
+  "accountExistsDifferentCredential": "This email is registered with a password. Sign in with email first, then link social accounts in settings.",
+  "socialSignInCancelled": "Sign-in was cancelled.",
+  "socialSignInPopupBlocked": "Pop-up was blocked. Allow pop-ups for this site or try again.",
+  "socialSignInFailed": "Social sign-in failed. Please try again.",
   "toast": {
     "preBillSessionCreated": "Pre-bill session created",
     "couldNotCreateSession": "Could not create session",

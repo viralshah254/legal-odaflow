@@ -1,0 +1,30 @@
+{
+  "name": "com.dvtechventures.umbrella-webhook",
+  "version": "1.0.0",
+  "description": "GitHub webhook server for automated deployments",
+  "main": "webhook-server-unified.js",
+  "scripts": {
+    "start": "node webhook-server-unified.js",
+    "dev": "nodemon webhook-server-unified.js",
+    "pm2:start": "pm2 start webhook-server-unified.js --name erp-webhook",
+    "pm2:stop": "pm2 stop erp-webhook",
+    "pm2:restart": "pm2 restart erp-webhook",
+    "pm2:logs": "pm2 logs erp-webhook"
+  },
+  "dependencies": {
+    "axios": "^1.11.0",
+    "express": "^4.18.2",
+    "ioredis": "^5.7.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.7"
+  },
+  "keywords": [
+    "webhook",
+    "github",
+    "deployment",
+    "automation"
+  ],
+  "author": "",
+  "license": "ISC"
+}

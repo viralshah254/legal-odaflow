@@ -23,6 +23,8 @@ export interface AiUsageLogInput {
   latencyMs?: number;
   status: string;
   error?: string;
+  /** Per-run research/drafting quality telemetry, jurisdiction-neutral. */
+  telemetry?: Prisma.InputJsonValue;
 }
 
 export interface AiUsageAggregateFilters {
@@ -68,6 +70,7 @@ export class AiUsageService {
         latencyMs: input.latencyMs,
         status: input.status,
         error: input.error,
+        telemetry: input.telemetry,
       },
     });
   }

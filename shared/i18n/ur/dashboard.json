@@ -117,7 +117,7 @@
     "newClientMatter": "نیا کلائنٹ معاملہ"
   },
   "aiSearch": {
-    "title": "AI قانونی تلاش",
+    "title": "قانونی تحقیق",
     "subtitle": "کوئی بھی قانونی سوال پوچھیں - جوابات آپ کے دائرہ اختیار کے لیے حقیقی حکام کا حوالہ دیتے ہیں۔",
     "placeholder": "آپ کو کس قانونی سوال کا جواب درکار ہے؟",
     "prompts": {
@@ -165,6 +165,23 @@
     "triageLeads": "ٹرائیج {count} لیڈز",
     "askMorningBrief": "میری صبح کی بریف مانگیں۔"
   },
+  "aiReview": {
+    "title": "AI review queue",
+    "subtitle": "AI outputs flagged for lawyer review before client use",
+    "queueTitle": "{count, plural, one {# item awaiting review} other {# items awaiting review}}",
+    "queueDescription": "Review, open the source workspace, or mark as reviewed when signed off.",
+    "empty": "No AI outputs are waiting for lawyer review.",
+    "loadError": "Failed to load review queue",
+    "author": "Author",
+    "matter": "Matter",
+    "jurisdiction": "Jurisdiction",
+    "unverified": "Unverified",
+    "preview": "Preview",
+    "openWorkspace": "Open workspace",
+    "markReviewed": "Mark reviewed",
+    "previewTruncated": "Open the workspace for the full output.",
+    "unknownAuthor": "Unknown"
+  },
   "tasks": {
     "myTasks": "میرے کام",
     "next7d": "اگلا 7 ڈی",
@@ -187,12 +204,12 @@
     "start": "شروع کریں →",
     "allSetUp": "آپ سب سیٹ اپ ہیں!",
     "allSetUpDescription": "شروع کرنے کے تمام مراحل مکمل ہو گئے ہیں۔ یہ چیک لسٹ جلد ہی غائب ہو جائے گی۔",
-    "aiSearchLabel": "اپنی پہلی AI قانونی تلاش چلائیں۔",
+    "aiSearchLabel": "اپنی پہلی قانونی تحقیق چلائیں",
     "aiSearchDescription": "ایک قانونی سوال پوچھیں اور اپنے دائرہ اختیار کے حوالے سے جوابات حاصل کریں۔",
     "clientLabel": "اپنا پہلا کلائنٹ شامل کریں۔",
     "clientDescription": "معاملات کا انتظام شروع کرنے کے لیے ایک کلائنٹ پروفائل بنائیں",
-    "matterLabel": "ایک معاملہ کھولیں۔",
-    "matterDescription": "کیس کا سراغ لگانا شروع کرنے کے لیے ایک معاملہ بنائیں",
+    "matterLabel": "اپنا پہلا معاملہ بنائیں",
+    "matterDescription": "کیس کا سراغ لگانا شروع کرنے کے لیے معاملہ مرتب کریں۔",
     "templateLabel": "ایک دستاویز ٹیمپلیٹ اپ لوڈ کریں۔",
     "templateDescription": "دستاویز کی تخلیق کو خودکار کرنے کے لیے ٹیمپلیٹس ترتیب دیں۔",
     "taskLabel": "اپنے کام کی قطار کا جائزہ لیں۔",

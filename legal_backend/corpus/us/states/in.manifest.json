@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "stateCode": "IN",
+  "stateName": "Indiana",
+  "acts": [
+    {
+      "actId": "in-code",
+      "title": "Indiana code",
+      "sourceAuthority": "cornell-lii",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.law.cornell.edu/states/in",
+      "externalId": "in-code",
+      "notes": "Indiana state law via Cornell LII state index"
+    },
+    {
+      "actId": "in-statutes",
+      "title": "Indiana statutes",
+      "sourceAuthority": "cornell-lii",
+      "sourceTier": "mirror",
+      "primaryPdfUrl": "https://www.law.cornell.edu/states/in",
+      "externalId": "in-statutes",
+      "notes": "Indiana state law via Cornell LII state index"
+    }
+  ]
+}

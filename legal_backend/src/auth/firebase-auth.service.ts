@@ -2,13 +2,14 @@ import {
   Injectable,
   ServiceUnavailableException,
   UnauthorizedException,
+  UnprocessableEntityException,
 } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import * as admin from 'firebase-admin';
 import { PrismaService } from '@/prisma/prisma.service';
 import { AuthService } from './auth.service';
 import { FirebaseLoginDto } from './dto/firebase-login.dto';
-import { USER_TYPES } from './constants';
+import { resolveFirebaseServiceAccount } from '@/common/utils/firebase-admin.util';
 
 @Injectable()
 export class FirebaseAuthService {
@@ -29,7 +30,7 @@ export class FirebaseAuthService {
   async loginWithFirebase(dto: FirebaseLoginDto) {
     if (!this.firebaseApp) {
       throw new ServiceUnavailableException(
-        'Firebase authentication is not configured. Set FIREBASE_PROJECT_ID, FIREBASE_CLIENT_EMAIL, and FIREBASE_PRIVATE_KEY.',
+        'Firebase authentication is not configured. Set FIREBASE_SERVICE_ACCOUNT_PATH or FIREBASE_PROJECT_ID, FIREBASE_CLIENT_EMAIL, and FIREBASE_PRIVATE_KEY.',
       );
     }
 
@@ -40,17 +41,13 @@ export class FirebaseAuthService {
       throw new UnauthorizedException('Invalid Firebase ID token');
     }
 
-    const email = decoded.email?.toLowerCase();
-    if (!email) {
-      throw new UnauthorizedException('Firebase token must include an email');
-    }
-
+    const email = decoded.email?.toLowerCase() ?? null;
     const displayName = dto.name ?? decoded.name ?? null;
 
     let user = await this.prisma.user.findFirst({
-      where: {
-        OR: [{ firebaseUid: decoded.uid }, { email }],
-      },
+      where: email
+        ? { OR: [{ firebaseUid: decoded.uid }, { email }] }
+        : { firebaseUid: decoded.uid },
     });
 
     if (user) {
@@ -59,25 +56,54 @@ export class FirebaseAuthService {
         data: {
           firebaseUid: decoded.uid,
           name: user.name ?? displayName,
+          ...(dto.phone && !user.phone ? { phone: dto.phone.trim() } : {}),
         },
       });
+
+      // Apply referral code for existing users who arrive via a referral link —
+      // this fills the gap when the user already had an account and skipped /auth/sign-up.
+      if (dto.referralCode) {
+        await this.authService.applyReferralCodeIfMissing(
+          user.id,
+          dto.referralCode,
+          dto.deviceFingerprint,
+        );
+      }
     } else {
+      if (!email) {
+        throw new UnauthorizedException(
+          'Unable to sign in with Apple. Use the same Apple ID you signed up with, or contact support.',
+        );
+      }
+
+      if (!dto.userType || !dto.countryCode) {
+        throw new UnprocessableEntityException({
+          code: 'PROFILE_COMPLETION_REQUIRED',
+          message: 'Complete your profile to finish sign up',
+          email,
+          name: displayName,
+        });
+      }
+
       await this.authService.provisionFirebaseUser({
         email,
         firebaseUid: decoded.uid,
         name: displayName,
-        userType: dto.userType ?? USER_TYPES.CONSUMER,
+        userType: dto.userType,
         countryCode: dto.countryCode,
         jurisdiction: dto.jurisdiction,
         firmName: dto.firmName,
+        phone: dto.phone?.trim(),
+        referralCode: dto.referralCode,
+        deviceFingerprint: dto.deviceFingerprint,
       });
     }
 
     if (!user) {
       user = await this.prisma.user.findFirst({
-        where: {
-          OR: [{ firebaseUid: decoded.uid }, { email }],
-        },
+        where: email
+          ? { OR: [{ firebaseUid: decoded.uid }, { email }] }
+          : { firebaseUid: decoded.uid },
       });
     }
 
@@ -93,23 +119,22 @@ export class FirebaseAuthService {
   }
 
   private initializeFirebase(): void {
-    const projectId = this.configService.get<string>('FIREBASE_PROJECT_ID');
-    const clientEmail = this.configService.get<string>('FIREBASE_CLIENT_EMAIL');
-    const privateKey = this.configService
-      .get<string>('FIREBASE_PRIVATE_KEY')
-      ?.replace(/\\n/g, '\n');
+    const config = resolveFirebaseServiceAccount({
+      FIREBASE_SERVICE_ACCOUNT_PATH: this.configService.get<string>(
+        'FIREBASE_SERVICE_ACCOUNT_PATH',
+      ),
+      FIREBASE_PROJECT_ID: this.configService.get<string>('FIREBASE_PROJECT_ID'),
+      FIREBASE_CLIENT_EMAIL: this.configService.get<string>('FIREBASE_CLIENT_EMAIL'),
+      FIREBASE_PRIVATE_KEY: this.configService.get<string>('FIREBASE_PRIVATE_KEY'),
+    });
 
-    if (!projectId || !clientEmail || !privateKey) {
+    if (!config) {
       return;
     }
 
     try {
       this.firebaseApp = admin.initializeApp({
-        credential: admin.credential.cert({
-          projectId,
-          clientEmail,
-          privateKey,
-        }),
+        credential: admin.credential.cert(config),
       });
     } catch (error) {
       if (

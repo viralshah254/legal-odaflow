@@ -1,0 +1,17 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Credit wallet — owner may read; all client writes denied (Admin SDK only).
+    match /users/{userId}/credits/{docId} {
+      allow read: if request.auth != null && request.auth.uid == userId;
+      allow write: if false;
+    }
+
+    // Credit packs catalogue — authenticated read-only; seeded from backend.
+    match /credit_packs/{packId} {
+      allow read: if request.auth != null;
+      allow write: if false;
+    }
+  }
+}

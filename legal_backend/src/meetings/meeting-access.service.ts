@@ -70,6 +70,26 @@ export class MeetingAccessService {
   }
 
   /**
+   * SQL-level visibility filter for list queries (partners/admins see all).
+   * Allow-list edge cases are still validated via filterMeetings on each page.
+   */
+  buildListAccessWhere(
+    callerUserId: string | undefined,
+    callerRole: string | undefined,
+  ): Record<string, unknown> | null {
+    if (!callerUserId) return null;
+    if (callerRole && PARTNER_ROLES.has(callerRole)) return null;
+
+    return {
+      OR: [
+        { confidentiality: 'standard' },
+        { confidentiality: null },
+        { createdByUserId: callerUserId },
+      ],
+    };
+  }
+
+  /**
    * Filters a list of meetings to only those the caller is allowed to see.
    * Keeps standard meetings for everyone; restricted ones only for authorized callers.
    */

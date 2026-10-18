@@ -5,6 +5,7 @@ import { JobsService } from '@/jobs/jobs.service';
 import { PrismaService } from '@/prisma/prisma.service';
 import { RealtimePublisherService } from '@/realtime/realtime-publisher.service';
 import { REALTIME_EVENTS } from '@/realtime/realtime-events';
+import { getFirebaseAdminApp } from '@/common/utils/firebase-admin.util';
 import {
   CreateNotificationDto,
   RegisterDeviceTokenDto,
@@ -94,20 +95,12 @@ export class NotificationsService {
   }
 
   async markRead(tenantId: string, userId: string, notificationId: string) {
-    const notification = await this.prisma.notification.findFirst({
+    const result = await this.prisma.notification.updateMany({
       where: { id: notificationId, tenantId, userId },
-    });
-
-    if (!notification) {
-      return { success: false };
-    }
-
-    await this.prisma.notification.update({
-      where: { id: notificationId },
       data: { isRead: true },
     });
 
-    return { success: true };
+    return { success: result.count > 0 };
   }
 
   async markAllRead(tenantId: string, userId: string) {
@@ -213,6 +206,77 @@ export class NotificationsService {
     });
   }
 
+  /**
+   * Sends a push notification to every user who has at least one registered
+   * device token.  Runs in batches to stay within FCM rate limits.
+   * Returns a summary of how many messages were sent vs skipped.
+   */
+  async broadcastPush(
+    title: string,
+    body: string,
+    data?: Record<string, string>,
+  ): Promise<{ totalUsers: number; totalSent: number; skipped: boolean }> {
+    const app = await this.getFirebaseApp();
+    if (!app) {
+      this.logger.warn('broadcastPush: Firebase Admin not configured — skipped.');
+      return { totalUsers: 0, totalSent: 0, skipped: true };
+    }
+
+    // Fetch all distinct user IDs that have at least one device token.
+    const rows = await this.prisma.deviceToken.findMany({
+      select: { userId: true, token: true },
+      distinct: ['token'],
+    });
+
+    if (rows.length === 0) {
+      return { totalUsers: 0, totalSent: 0, skipped: false };
+    }
+
+    const messaging = app.messaging();
+    let totalSent = 0;
+    const userSet = new Set(rows.map((r) => r.userId));
+
+    // Send in batches of 500 (FCM multicast limit).
+    const BATCH = 500;
+    const tokens = rows.map((r) => r.token);
+
+    for (let i = 0; i < tokens.length; i += BATCH) {
+      const batch = tokens.slice(i, i + BATCH);
+      try {
+        const response = await messaging.sendEachForMulticast({
+          tokens: batch,
+          notification: { title, body },
+          data,
+          android: { notification: { channelId: 'umbrella_notifications' } },
+        });
+        totalSent += response.successCount;
+        // Clean up stale tokens that FCM reports as unregistered.
+        response.responses.forEach((resp, idx) => {
+          if (
+            !resp.success &&
+            resp.error?.code === 'messaging/registration-token-not-registered'
+          ) {
+            this.prisma.deviceToken
+              .deleteMany({ where: { token: batch[idx] } })
+              .catch(() => {});
+          }
+        });
+      } catch (err) {
+        this.logger.error(
+          `broadcastPush batch ${i}–${i + batch.length} failed: ${
+            err instanceof Error ? err.message : String(err)
+          }`,
+        );
+      }
+    }
+
+    this.logger.log(
+      `broadcastPush complete — ${totalSent}/${tokens.length} tokens across ${userSet.size} users.`,
+    );
+
+    return { totalUsers: userSet.size, totalSent, skipped: false };
+  }
+
   async sendFcmToUser(
     userId: string,
     title: string,
@@ -236,21 +300,35 @@ export class NotificationsService {
     const messaging = app.messaging();
     let sent = 0;
 
+    const staleTokens: string[] = [];
+
     for (const row of tokens) {
       try {
         await messaging.send({
           token: row.token,
           notification: { title, body },
           data,
+          android: { notification: { channelId: 'umbrella_notifications', priority: 'high' } },
+          apns: { payload: { aps: { sound: 'default', badge: 1 } } },
         });
         sent += 1;
       } catch (error) {
+        const code = (error as { errorInfo?: { code?: string } })?.errorInfo?.code;
+        if (code === 'messaging/registration-token-not-registered' || code === 'messaging/invalid-registration-token') {
+          staleTokens.push(row.token);
+        }
         this.logger.warn(
           `FCM send failed for token prefix ${row.token.slice(0, 8)}: ${
             error instanceof Error ? error.message : 'unknown'
           }`,
         );
       }
+    }
+
+    if (staleTokens.length > 0) {
+      this.prisma.deviceToken
+        .deleteMany({ where: { token: { in: staleTokens } } })
+        .catch(() => {});
     }
 
     return { sent, skipped: false };
@@ -261,30 +339,8 @@ export class NotificationsService {
       return this.firebaseApp;
     }
 
-    const projectId = this.configService.get<string>('FIREBASE_PROJECT_ID', '').trim();
-    const clientEmail = this.configService.get<string>('FIREBASE_CLIENT_EMAIL', '').trim();
-    const privateKey = this.configService
-      .get<string>('FIREBASE_PRIVATE_KEY', '')
-      .replace(/\\n/g, '\n')
-      .trim();
-
-    if (!projectId || !clientEmail || !privateKey) {
-      return null;
-    }
-
     try {
-      const admin = await import('firebase-admin');
-      if (!admin.apps.length) {
-        this.firebaseApp = admin.initializeApp({
-          credential: admin.credential.cert({
-            projectId,
-            clientEmail,
-            privateKey,
-          }),
-        });
-      } else {
-        this.firebaseApp = admin.app();
-      }
+      this.firebaseApp = await getFirebaseAdminApp();
       return this.firebaseApp;
     } catch (error) {
       this.logger.warn(

@@ -1,9 +1,9 @@
-import { IsIn, IsOptional, IsString, MinLength } from 'class-validator';
-import { SUPPORTED_COUNTRY_CODES } from '@/config/countries';
+import { IsArray, IsIn, IsObject, IsOptional, IsString, MinLength } from 'class-validator';
 import { ISSUE_CHECKER_MODES } from '../issue-checker.constants';
 
 export class IssueCheckerPreviewDto {
-  @IsIn(SUPPORTED_COUNTRY_CODES)
+  @IsString()
+  @MinLength(2)
   countryCode!: string;
 
   @IsOptional()
@@ -48,6 +48,18 @@ export class IssueCheckerPreviewDto {
 
   @IsOptional()
   @IsString()
+  clientEmail?: string;
+
+  @IsOptional()
+  @IsString()
+  clientPhone?: string;
+
+  @IsOptional()
+  @IsIn(['INDIVIDUAL', 'COMPANY', 'NGO', 'PARTNERSHIP'])
+  clientType?: string;
+
+  @IsOptional()
+  @IsString()
   clientReference?: string;
 
   @IsOptional()
@@ -57,4 +69,13 @@ export class IssueCheckerPreviewDto {
   @IsOptional()
   @IsString()
   anonymousSessionId?: string;
+
+  @IsOptional()
+  @IsObject()
+  planningAnswers?: Record<string, string | string[]>;
+
+  @IsOptional()
+  @IsArray()
+  @IsString({ each: true })
+  suggestedOutcomes?: string[];
 }

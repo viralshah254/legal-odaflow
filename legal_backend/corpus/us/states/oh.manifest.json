@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "stateCode": "OH",
+  "stateName": "Ohio",
+  "acts": [
+    {
+      "actId": "oh-revised-code",
+      "title": "Ohio revised code",
+      "sourceAuthority": "cornell-lii",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.law.cornell.edu/states/oh",
+      "externalId": "oh-revised_code",
+      "notes": "Ohio state law via Cornell LII state index"
+    },
+    {
+      "actId": "oh-business-corporations",
+      "title": "Ohio business corporations",
+      "sourceAuthority": "cornell-lii",
+      "sourceTier": "mirror",
+      "primaryPdfUrl": "https://www.law.cornell.edu/states/oh",
+      "externalId": "oh-business_corporations",
+      "notes": "Ohio state law via Cornell LII state index"
+    }
+  ]
+}

@@ -1,4 +1,4 @@
-import { Module } from '@nestjs/common';
+import { Module, forwardRef } from '@nestjs/common';
 import { JwtModule } from '@nestjs/jwt';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { PaymentsModule } from '@/payments/payments.module';
@@ -9,7 +9,7 @@ import { PortalService } from './portal.service';
 
 @Module({
   imports: [
-    PaymentsModule,
+    forwardRef(() => PaymentsModule),
     MatterOutcomeModule,
     JwtModule.registerAsync({
       imports: [ConfigModule],
@@ -24,5 +24,6 @@ import { PortalService } from './portal.service';
   ],
   controllers: [PortalController],
   providers: [PortalService, PortalAuthGuard],
+  exports: [PortalService],
 })
 export class PortalModule {}

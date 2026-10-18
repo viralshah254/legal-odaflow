@@ -8,10 +8,10 @@
   },
   "welcome": {
     "title": "Welcome to Umbrella",
-    "body": "Take a quick tour to learn how to navigate your firm workspace.",
-    "b1": "Find clients, matters, and billing in seconds",
-    "b2": "Use AI Copilot for context-aware help",
-    "b3": "Replay tours anytime from Help",
+    "body": "A two-minute tour shows you where to find clients, matters, billing, and AI Copilot.",
+    "b1": "Jump anywhere with search or ⌘K",
+    "b2": "Copilot understands the page you are on",
+    "b3": "Replay any tour from Help whenever you need a refresher",
     "start": "Start tour",
     "skip": "Skip for now"
   },
@@ -62,7 +62,44 @@
     "consumer_cases": "My cases",
     "consumer_case_detail": "Case details",
     "consumer_subscription": "Subscription",
-    "consumer_settings": "Account settings"
+    "consumer_settings": "Account settings",
+    "consumer_find_lawyer": "Find a lawyer",
+    "consumer_research": "Legal research",
+    "consumer_document_drafting": "Document drafting",
+    "consumer_document_review": "Document review",
+    "consumer_plan_usage": "Plan & usage",
+    "monitors": "Regulatory monitors",
+    "home": "Quick actions",
+    "evidence": "Evidence vault",
+    "queues": "Work queues",
+    "automations": "Automations",
+    "reports": "Firm analytics",
+    "document_review": "Document review",
+    "legal_forms": "Legal forms",
+    "section_finder": "Section finder",
+    "fir_analysis": "FIR analysis",
+    "india_drafting": "India drafting",
+    "us_drafting": "US drafting",
+    "contracts": "Contracts",
+    "saved_drafts": "Saved drafts",
+    "ai_command_center": "AI command center",
+    "agents": "AI agents",
+    "onboarding": "Firm onboarding",
+    "profile": "Your profile",
+    "referrals": "Referrals",
+    "copilot_audit": "Copilot audit",
+    "accounting_payments": "Payments",
+    "accounting_statements": "Statements",
+    "pre_bill": "Pre-bill review",
+    "consumer_reports": "Reports",
+    "consumer_lawyer_review": "Lawyer review",
+    "consumer_settings_payment_methods": "Payment methods",
+    "consumer_settings_data_consent": "Data consent",
+    "consumer_india_drafting": "India court drafts",
+    "consumer_section_finder": "Section finder",
+    "consumer_fir_analysis": "FIR analysis",
+    "consumer_rights_checker": "Rights checker",
+    "consumer_marketplace": "Legal marketplace"
   },
   "shell": {
     "sidebar": {
@@ -99,19 +136,19 @@
   "dashboard": {
     "kpis": {
       "title": "Firm snapshot",
-      "body": "These cards summarize active matters, overdue tasks, leads, and revenue for the selected time window."
+      "body": "Active matters, overdue tasks, pipeline value, and revenue for Today, Week, or Month—switch the range in the header."
     },
     "alerts": {
-      "title": "Urgent items",
-      "body": "Review KYC gaps, trust approvals, and deadline risks that need attention today."
+      "title": "Needs attention today",
+      "body": "KYC gaps, trust approvals, and deadline risks surface here first. Resolve critical items before they hit billing or court dates."
     },
     "tasks": {
-      "title": "Your tasks",
-      "body": "Tasks assigned to you appear here. Click through to update status or open the linked matter."
+      "title": "Your task queue",
+      "body": "Tasks assigned to you with due dates. Click any row to update status or jump to the linked matter."
     },
     "onboarding": {
       "title": "Getting started checklist",
-      "body": "Complete these real setup steps—run AI search, add a client, open a matter—to activate your workspace."
+      "body": "Partners see setup steps here—run research, add a client, open a matter—to fully activate your workspace."
     },
     "help": {
       "title": "Dashboard",
@@ -187,7 +224,7 @@
     "help": {
       "title": "Matters",
       "b1": "Use playbooks to auto-generate tasks when a matter opens.",
-      "b2": "Open the AI workbench from a matter for drafting and research.",
+      "b2": "Open the AI Quick AI from a matter for drafting and research.",
       "b3": "Track court deadlines and outcomes from matter sub-pages."
     }
   },
@@ -216,8 +253,8 @@
       "body": "Switch between timeline, documents, tasks, billing, and specialized tools."
     },
     "workbench": {
-      "title": "AI workbench",
-      "body": "Open the workbench for matter-scoped AI chat, drafting, and suggested next steps."
+      "title": "AI Quick AI",
+      "body": "Open the Quick AI for matter-scoped AI chat, drafting, and suggested next steps."
     },
     "help": {
       "title": "Matter detail",
@@ -337,6 +374,18 @@
     }
   },
   "billing": {
+    "header": {
+      "title": "Billing overview",
+      "body": "Start here for invoices, pre-bill review, payments, statements, and firm subscription settings."
+    },
+    "links": {
+      "title": "Billing shortcuts",
+      "body": "Each card opens a focused workflow—subscription, invoices, pre-bill, payments, or finance reports."
+    },
+    "invoices": {
+      "title": "Invoice list",
+      "body": "Filter by status, search by number, and open any invoice to send, record payment, or export LEDES."
+    },
     "hub": {
       "title": "Billing hub",
       "body": "Access invoices, pre-bill review, payments, and trust from one place."
@@ -344,7 +393,8 @@
     "help": {
       "title": "Billing",
       "b1": "Run pre-bill before sending invoices to clients.",
-      "b2": "Trust movements require approval per firm policy."
+      "b2": "Trust movements require approval per firm policy.",
+      "b3": "Link time entries and expenses to matters for accurate invoices."
     }
   },
   "trust": {
@@ -414,6 +464,22 @@
     }
   },
   "intake": {
+    "issueInput": {
+      "title": "Describe the issue",
+      "body": "Enter the client's situation in plain language. AI classifies the legal issue and suggests next steps."
+    },
+    "steps": {
+      "title": "Intake progress",
+      "body": "Follow each step—issue details, conflict check, planning, and matter creation."
+    },
+    "aiModel": {
+      "title": "AI model",
+      "body": "Choose the model for classification and planning. Verified models use more credits but improve accuracy."
+    },
+    "continue": {
+      "title": "Continue intake",
+      "body": "Move to the next step when the issue description is ready. You can refine details later."
+    },
     "wizard": {
       "title": "Client intake",
       "body": "Walk through structured intake: issue classification, conflict check, and matter creation."
@@ -421,23 +487,44 @@
     "help": {
       "title": "Intake",
       "b1": "Use for walk-in and phone intake—not only web leads.",
-      "b2": "AI assists with issue classification and required documents."
+      "b2": "AI assists with issue classification and required documents.",
+      "b3": "Complete intake to create a client and matter in one workflow."
     }
   },
   "research": {
     "query": {
-      "title": "AI Legal Search",
-      "body": "Ask a legal question for your jurisdiction. Answers include citations you can verify."
+      "title": "Ask your research question",
+      "body": "Describe the legal issue and jurisdiction. Be specific about facts—better inputs produce better citations."
+    },
+    "sources": {
+      "title": "Choose knowledge sources",
+      "body": "Pick statutes, case law, and firm vault sources to include. Narrow sources for faster, more focused answers."
     },
     "results": {
-      "title": "Cited results",
-      "body": "Save research to a matter or export citations into drafts."
+      "title": "Review cited answers",
+      "body": "After you run research, verify citations here. Save to a matter or export into drafts."
     },
     "help": {
       "title": "Legal research",
-      "b1": "Be specific about jurisdiction and fact pattern for better citations.",
-      "b2": "AI usage counts against your firm's credit balance.",
+      "b1": "Use Verified mode when accuracy matters; Fast mode for quick orientation.",
+      "b2": "Research uses your firm's AI credit balance.",
       "b3": "Always verify citations before filing or advising clients."
+    }
+  },
+  "monitors": {
+    "create": {
+      "title": "Create a monitor",
+      "body": "Track regulatory changes by jurisdiction and topic. Umbrella summarises alerts when laws update."
+    },
+    "list": {
+      "title": "Your monitors",
+      "body": "Toggle monitors on or off, open details for alert history, and adjust topics as your practice evolves."
+    },
+    "help": {
+      "title": "Regulatory monitors",
+      "b1": "Start with your primary jurisdiction and top practice areas.",
+      "b2": "Critical alerts can surface on your dashboard and in notifications.",
+      "b3": "Ask Copilot to explain how a regulatory change affects open matters."
     }
   },
   "team": {
@@ -475,17 +562,18 @@
   },
   "consumerDashboard": {
     "cases": {
-      "title": "Your cases",
-      "body": "See active legal cases and their status at a glance."
+      "title": "Your snapshot",
+      "body": "Credits, active cases, reports, and jurisdiction appear here so you know where you stand at a glance."
     },
     "actions": {
-      "title": "Quick actions",
-      "body": "Check an issue, upload documents, view reports, or request a lawyer review."
+      "title": "What to do next",
+      "body": "Start an issue check, upload documents, run research, draft a letter, or book a lawyer—all from these shortcuts."
     },
     "help": {
       "title": "Home",
-      "b1": "AI credits power issue checks and document analysis.",
-      "b2": "Open a case to message your lawyer or pay invoices."
+      "b1": "AI credits power issue checks, research, and document analysis.",
+      "b2": "Open a case to message your lawyer, upload files, or pay invoices.",
+      "b3": "Top up credits from Subscription before a long research or review session."
     }
   },
   "consumerCases": {
@@ -513,23 +601,493 @@
   "consumerSubscription": {
     "plans": {
       "title": "Plans & credits",
-      "body": "Choose a subscription or buy AI credit packs for issue checks and analysis."
+      "body": "Compare free and Plus plans, buy credit packs, and manage auto top-up so AI features never stop mid-task."
     },
     "help": {
       "title": "Subscription",
-      "b1": "Credits roll over according to your plan terms.",
-      "b2": "Enable auto top-up to avoid interruptions."
+      "b1": "Check Plan & Usage for a detailed credit breakdown.",
+      "b2": "Enable auto top-up before deadline-heavy weeks.",
+      "b3": "Plus plans include more monthly credits and priority support."
     }
   },
   "consumerSettings": {
     "hub": {
       "title": "Account settings",
-      "body": "Manage profile, privacy, data consent, and notification preferences."
+      "body": "Update profile, payment methods, privacy preferences, and data consent for AI features."
     },
     "help": {
       "title": "Settings",
-      "b1": "Control how your data is used for AI features.",
-      "b2": "Update contact details so your lawyer can reach you."
+      "b1": "Control how your data is used for AI training and analysis.",
+      "b2": "Keep contact details current so your lawyer can reach you.",
+      "b3": "Review data consent before enabling advanced AI features."
+    }
+  },
+  "consumerFindLawyer": {
+    "search": {
+      "title": "Find the right lawyer",
+      "body": "Search by name or practice area and filter by country. Every listed lawyer is verified on Umbrella."
+    },
+    "results": {
+      "title": "Compare & book",
+      "body": "Review profiles, practice areas, and jurisdictions. Book a consultation when you are ready to talk."
+    },
+    "help": {
+      "title": "Find a lawyer",
+      "b1": "Switch country if you need counsel in another jurisdiction.",
+      "b2": "Booking creates a record you can link to a case later.",
+      "b3": "Your issue-check reports help lawyers understand your situation faster."
+    }
+  },
+  "consumerResearch": {
+    "query": {
+      "title": "Research your question",
+      "body": "Ask in plain language about your situation. Include your country and key facts for better answers."
+    },
+    "sources": {
+      "title": "Pick trusted sources",
+      "body": "Choose which statutes and case law to search. Fewer sources often means faster, clearer results."
+    },
+    "help": {
+      "title": "Legal research",
+      "b1": "Research uses AI credits—check your balance on the dashboard.",
+      "b2": "Save useful answers to a case for your lawyer to review.",
+      "b3": "This is general information, not formal legal advice—request a lawyer review when decisions matter."
+    }
+  },
+  "consumerDocumentDrafting": {
+    "intro": {
+      "title": "Draft legal documents",
+      "body": "Describe what you need—a notice, agreement, or application—and Umbrella suggests the right form and helps you fill it in."
+    },
+    "workspace": {
+      "title": "Guided drafting",
+      "body": "Answer a few questions, review AI-generated text, and download or share the finished document."
+    },
+    "help": {
+      "title": "Document drafting",
+      "b1": "Start with a clear description of who the document is for and what it should accomplish.",
+      "b2": "Review every clause carefully before sending or signing.",
+      "b3": "Save drafts to a case so your lawyer can edit them."
+    }
+  },
+  "consumerDocumentReview": {
+    "upload": {
+      "title": "Upload or paste",
+      "body": "Drop a PDF, Word file, or paste text. Umbrella flags risky clauses and suggests improvements."
+    },
+    "analyze": {
+      "title": "Run the analysis",
+      "body": "Pick an AI model and click Analyse. Results highlight risks, key terms, and suggested amendments."
+    },
+    "help": {
+      "title": "Document review",
+      "b1": "Use Single mode for one contract; Tabular mode to compare many files.",
+      "b2": "Save reviews to revisit before signing.",
+      "b3": "Share results with your lawyer for formal advice on high-stakes documents."
+    }
+  },
+  "consumerPlanUsage": {
+    "usage": {
+      "title": "Credits & usage",
+      "body": "See remaining credits, recent usage by feature, and adjust your default AI model or top-up settings."
+    },
+    "help": {
+      "title": "Plan & usage",
+      "b1": "Heavy research and document review consume more credits than quick checks.",
+      "b2": "Upgrade or buy packs from Subscription when you are running low."
+    }
+  },
+  "home": {
+    "header": {
+      "title": "Quick actions hub",
+      "body": "Your launch pad for drafting, research, review, and matter work—personalised to your role and jurisdiction."
+    },
+    "actions": {
+      "title": "Start any workflow",
+      "body": "Each card opens a focused tool. Use task patterns above for common research and drafting prompts."
+    },
+    "help": {
+      "title": "Quick actions",
+      "b1": "Open the full Dashboard for KPIs and overdue work.",
+      "b2": "⌘K jumps here or to any page instantly.",
+      "b3": "India-specific tools (Section Finder, FIR) appear when your jurisdiction is IN."
+    }
+  },
+  "evidence": {
+    "matter": {
+      "title": "Link to a matter",
+      "body": "Evidence is always scoped to a matter. Select the case before adding exhibits or chronology items."
+    },
+    "list": {
+      "title": "Evidence register",
+      "body": "Track items, privilege flags, and readiness cards. Export bundles when preparing for court."
+    },
+    "help": {
+      "title": "Evidence vault",
+      "b1": "Add items with clear titles for bundle indexing.",
+      "b2": "Review privilege before sharing with opposing counsel.",
+      "b3": "Open the matter Quick AI for AI-assisted chronology."
+    }
+  },
+  "queues": {
+    "grid": {
+      "title": "Work queues",
+      "body": "Intake, billing, and task queues show what needs action across the firm—click through to resolve items."
+    },
+    "help": {
+      "title": "Queues",
+      "b1": "Check intake queue daily for new matters awaiting setup.",
+      "b2": "Finance roles see billing approval queues here."
+    }
+  },
+  "automations": {
+    "header": {
+      "title": "Automations",
+      "body": "When/then rules connect triggers (new matter, document upload, deadline) to tasks, agents, and billing—no code required."
+    },
+    "recipes": {
+      "title": "Recommended recipes",
+      "body": "Install tested automations in one click. Revert to defaults anytime without losing your data."
+    },
+    "help": {
+      "title": "Automations",
+      "b1": "Start with intake and deadline recipes.",
+      "b2": "Link automations to AI agents for async work.",
+      "b3": "Monitor last-run status on each recipe card."
+    }
+  },
+  "reports": {
+    "header": {
+      "title": "Firm analytics",
+      "body": "Utilisation, realisation, collections, and pipeline metrics compared to industry benchmarks."
+    },
+    "kpis": {
+      "title": "Performance KPIs",
+      "body": "Green indicators beat targets. Drill into finance or matters from linked cards below."
+    },
+    "help": {
+      "title": "Reports",
+      "b1": "Export summaries for partner meetings.",
+      "b2": "Compare outcome benchmarks when you have enough closed matters.",
+      "b3": "Requires Professional plan or higher."
+    }
+  },
+  "documentReview": {
+    "upload": {
+      "title": "Upload or paste",
+      "body": "Drop contracts, pleadings, or agreements. Umbrella flags risky clauses and suggests amendments."
+    },
+    "analyze": {
+      "title": "Run analysis",
+      "body": "Choose Single or Tabular mode, pick an AI model, then analyse. Save results to a matter or client file."
+    },
+    "help": {
+      "title": "Document review",
+      "b1": "Tabular mode compares clauses across multiple files.",
+      "b2": "Always verify AI suggestions before filing.",
+      "b3": "Export annotated reviews as PDF."
+    }
+  },
+  "legalForms": {
+    "intro": {
+      "title": "Official form catalog",
+      "body": "Browse 10,000+ court and government forms across US, UK, Kenya, and India—or describe what you need and draft with AI."
+    },
+    "workspace": {
+      "title": "Draft workspace",
+      "body": "Search the catalog, answer guided questions, and generate a filled draft ready for review."
+    },
+    "help": {
+      "title": "Legal forms",
+      "b1": "Saved drafts appear in Saved Drafts.",
+      "b2": "Link outputs to matters for billing and audit.",
+      "b3": "Use India or US drafting for court-specific formats."
+    }
+  },
+  "sectionFinder": {
+    "workspace": {
+      "title": "Look up sections",
+      "body": "Search IPC→BNS, CrPC→BNSS crosswalks, or US code sections. Popular queries help you get started quickly."
+    },
+    "help": {
+      "title": "Section finder",
+      "b1": "Verify results against official bare acts before citing.",
+      "b2": "Export lookup results into matter drafts."
+    }
+  },
+  "firAnalysis": {
+    "intro": {
+      "title": "FIR intelligence",
+      "body": "Upload a First Information Report to extract facts, offences, bail posture, and suggested next steps."
+    },
+    "upload": {
+      "title": "Upload FIR",
+      "body": "PDF or image uploads are parsed and structured for review and export."
+    },
+    "help": {
+      "title": "FIR analysis",
+      "b1": "India jurisdiction only.",
+      "b2": "Save analysis to a matter for team collaboration."
+    }
+  },
+  "indiaDrafting": {
+    "intro": {
+      "title": "India court drafts",
+      "body": "Bail applications, legal notices, consumer complaints, and more—grounded in BNS/BNSS/BSA 2023."
+    },
+    "workspace": {
+      "title": "Pick a format",
+      "body": "Choose a template, fill facts, and generate a first draft for lawyer review."
+    },
+    "help": {
+      "title": "India drafting",
+      "b1": "Always review before filing.",
+      "b2": "Formats sync with the mobile app catalog."
+    }
+  },
+  "usDrafting": {
+    "workspace": {
+      "title": "US court drafting",
+      "body": "Federal and state motion templates with jurisdiction-aware prompts and citation helpers."
+    },
+    "help": {
+      "title": "US drafting",
+      "b1": "Confirm local court rules before filing.",
+      "b2": "Save drafts to matters for time tracking."
+    }
+  },
+  "contracts": {
+    "dashboard": {
+      "title": "Contract lifecycle",
+      "body": "Track contract status, renewals, obligations, and linked matters in one dashboard."
+    },
+    "help": {
+      "title": "Contracts",
+      "b1": "Upload executed contracts for AI extraction of key dates.",
+      "b2": "Set renewal alerts to avoid missed deadlines."
+    }
+  },
+  "savedDrafts": {
+    "list": {
+      "title": "Draft history",
+      "body": "Resume any saved AI draft from legal forms, India/US drafting, or Copilot."
+    },
+    "help": {
+      "title": "Saved drafts",
+      "b1": "Drafts are tenant-scoped and auditable.",
+      "b2": "Open a draft to continue editing or export."
+    }
+  },
+  "aiCommandCenter": {
+    "header": {
+      "title": "AI command center",
+      "body": "Monitor AI workload, pending reviews, high-risk matters, and credit spend across the firm."
+    },
+    "cards": {
+      "title": "Operational cards",
+      "body": "Each card links to the underlying queue—leads, drafts, matters, or billing."
+    },
+    "help": {
+      "title": "Command center",
+      "b1": "Check daily for drafts awaiting lawyer approval.",
+      "b2": "Watch credit usage against your plan allocation.",
+      "b3": "Partner admins see firm-wide metrics."
+    }
+  },
+  "agents": {
+    "jobs": {
+      "title": "Agent jobs",
+      "body": "Background AI agents run research, drafting, and diligence tasks. Track status and outputs here."
+    },
+    "help": {
+      "title": "AI agents",
+      "b1": "Agents are triggered by automations or manual runs.",
+      "b2": "Failed jobs can be retried from the job detail panel."
+    }
+  },
+  "onboarding": {
+    "wizard": {
+      "title": "Firm setup",
+      "body": "Complete profile, billing, team invites, and AI policy steps to activate your workspace."
+    },
+    "help": {
+      "title": "Onboarding",
+      "b1": "Partners should finish all steps before inviting associates.",
+      "b2": "You can return here anytime from Settings."
+    }
+  },
+  "profile": {
+    "form": {
+      "title": "Your profile",
+      "body": "Update name, contact details, notification preferences, and password."
+    },
+    "help": {
+      "title": "Profile",
+      "b1": "Keep phone current for urgent deadline alerts.",
+      "b2": "Role and permissions are managed by firm admins."
+    }
+  },
+  "referrals": {
+    "share": {
+      "title": "Refer colleagues",
+      "body": "Share your referral link. Earn credits when new firms or consumers sign up and subscribe."
+    },
+    "help": {
+      "title": "Referrals",
+      "b1": "Track pending and completed referrals here.",
+      "b2": "Referral credits apply to AI usage."
+    }
+  },
+  "copilotAudit": {
+    "list": {
+      "title": "Copilot audit log",
+      "body": "Review AI actions proposed and executed by Copilot across matters for compliance."
+    },
+    "help": {
+      "title": "Copilot audit",
+      "b1": "Filter by user, matter, or action type.",
+      "b2": "Export logs for firm governance reviews."
+    }
+  },
+  "accountingPayments": {
+    "list": {
+      "title": "Payment records",
+      "body": "Record client payments against invoices and track unallocated amounts."
+    },
+    "help": {
+      "title": "Payments",
+      "b1": "Match payments to invoices for clean AR.",
+      "b2": "Trust payments follow separate approval flows."
+    }
+  },
+  "accountingStatements": {
+    "list": {
+      "title": "Client statements",
+      "body": "Generate and send account statements summarising open invoices and credits."
+    },
+    "help": {
+      "title": "Statements",
+      "b1": "Run statements before month-end close.",
+      "b2": "PDF statements can be emailed from the matter."
+    }
+  },
+  "preBill": {
+    "workspace": {
+      "title": "Pre-bill review",
+      "body": "Review time entries and expenses before invoicing. Edit narratives, write-offs, and splits here."
+    },
+    "help": {
+      "title": "Pre-bill",
+      "b1": "Approve pre-bills before generating final invoices.",
+      "b2": "Flag entries that need partner review."
+    }
+  },
+  "consumerReports": {
+    "list": {
+      "title": "Your reports",
+      "body": "AI issue-check and analysis reports across all your cases—open any to read or share with a lawyer."
+    },
+    "help": {
+      "title": "Reports",
+      "b1": "Reports link to the case they were created from.",
+      "b2": "Request lawyer review for formal advice on a report."
+    }
+  },
+  "consumerLawyerReview": {
+    "request": {
+      "title": "Request formal review",
+      "body": "Upgrade an AI report to a verified lawyer-reviewed opinion for your specific situation."
+    },
+    "help": {
+      "title": "Lawyer review",
+      "b1": "Fees vary by country and issue type.",
+      "b2": "A verified lawyer responds through your case messages.",
+      "b3": "Not a substitute for emergency legal counsel."
+    }
+  },
+  "consumerSettingsPayment": {
+    "methods": {
+      "title": "Payment methods",
+      "body": "Manage cards for subscriptions and credit top-ups. Auto top-up uses your default method."
+    },
+    "help": {
+      "title": "Payment methods",
+      "b1": "Keep a valid card to avoid service interruptions.",
+      "b2": "Receipts appear in your subscription history."
+    }
+  },
+  "consumerSettingsConsent": {
+    "form": {
+      "title": "Data & AI consent",
+      "body": "Control whether your data helps improve prompts, evaluation, or model training."
+    },
+    "help": {
+      "title": "Data consent",
+      "b1": "You can opt out anytime.",
+      "b2": "Core features work without training consent."
+    }
+  },
+  "consumerIndiaDrafting": {
+    "intro": {
+      "title": "India court drafts",
+      "body": "Starting-point drafts for bail, maintenance, consumer complaints, and legal notices under BNS/BNSS/BSA 2023."
+    },
+    "workspace": {
+      "title": "Choose a format",
+      "body": "Pick a template, describe your facts, and download a draft for lawyer review."
+    },
+    "help": {
+      "title": "India drafts",
+      "b1": "India jurisdiction only.",
+      "b2": "Save to a case for your lawyer to edit."
+    }
+  },
+  "consumerSectionFinder": {
+    "workspace": {
+      "title": "Find a section",
+      "body": "Look up Indian penal and procedural sections with IPC→BNS crosswalks in plain language."
+    },
+    "help": {
+      "title": "Section finder",
+      "b1": "Useful for understanding police reports and FIRs.",
+      "b2": "Verify against official bare acts before relying in court."
+    }
+  },
+  "consumerFirAnalysis": {
+    "intro": {
+      "title": "Understand your FIR",
+      "body": "Upload an FIR to see offences charged, bail options, and practical next steps."
+    },
+    "upload": {
+      "title": "Upload document",
+      "body": "Photo or PDF of the FIR works. Analysis is private to your account."
+    },
+    "help": {
+      "title": "FIR help",
+      "b1": "Share results with your lawyer through a case.",
+      "b2": "For emergencies, contact a lawyer immediately."
+    }
+  },
+  "consumerRightsChecker": {
+    "scenarios": {
+      "title": "Know your rights",
+      "body": "Pick a scenario—housing, employment, debt, police—to see your rights and recommended steps."
+    },
+    "help": {
+      "title": "Rights checker",
+      "b1": "General guidance only, not legal advice.",
+      "b2": "Start an issue check or find a lawyer for your case."
+    }
+  },
+  "consumerMarketplace": {
+    "skus": {
+      "title": "Legal services",
+      "body": "Browse fixed-price offerings—document review, consultation, compliance checks—from verified professionals."
+    },
+    "help": {
+      "title": "Marketplace",
+      "b1": "Prices and turnaround vary by service.",
+      "b2": "Purchases link to your Umbrella account for tracking."
     }
   }
 }

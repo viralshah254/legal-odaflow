@@ -3,7 +3,8 @@ import { SentryModule } from '@sentry/nestjs/setup';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { APP_GUARD, APP_INTERCEPTOR } from '@nestjs/core';
 import { ScheduleModule } from '@nestjs/schedule';
-import { ThrottlerGuard, ThrottlerModule } from '@nestjs/throttler';
+import { ThrottlerModule } from '@nestjs/throttler';
+import { ConditionalThrottlerGuard } from '@/common/guards/conditional-throttler.guard';
 import { AccessModule } from '@/access/access.module';
 import { AnonymizationModule } from '@/anonymization/anonymization.module';
 import { CountryComplianceModule } from '@/country-compliance/country-compliance.module';
@@ -43,6 +44,7 @@ import { MatterPartiesModule } from '@/matter-parties/matter-parties.module';
 import { MatterOutcomeModule } from '@/matter-outcome/matter-outcome.module';
 import { CourtModule } from '@/court/court.module';
 import { MigrationModule } from '@/migration/migration.module';
+import { SecurityModule } from '@/security/security.module';
 import { StorageModule } from '@/storage/storage.module';
 import { PublicApiModule } from '@/public-api/public-api.module';
 import { IntegrationsModule } from '@/integrations/integrations.module';
@@ -53,8 +55,10 @@ import { CreditsModule } from '@/credits/credits.module';
 import { LegalSourcesModule } from '@/legal-sources/legal-sources.module';
 import { MarketplaceModule } from '@/marketplace/marketplace.module';
 import { MattersModule } from '@/matters/matters.module';
+import { MatterNotesModule } from '@/matter-notes/matter-notes.module';
 import { MeetingsModule } from '@/meetings/meetings.module';
 import { NotificationsModule } from '@/notifications/notifications.module';
+import { MeCountsModule } from '@/me-counts/me-counts.module';
 import { PaymentsModule } from '@/payments/payments.module';
 import { PortalModule } from '@/portal/portal.module';
 import { PrismaModule } from '@/prisma/prisma.module';
@@ -69,9 +73,28 @@ import { ConflictsModule } from '@/conflicts/conflicts.module';
 import { DocumentAutomationModule } from '@/document-automation/document-automation.module';
 import { FirmMemoryModule } from '@/firm-memory/firm-memory.module';
 import { SeriesAModule } from '@/series-a/series-a.module';
+import { MatterAnalysisSnapshotModule } from '@/matter-analysis-snapshot/matter-analysis-snapshot.module';
+import { ReferralsModule } from '@/referrals/referrals.module';
+import { LegalFormsModule } from '@/legal-forms/legal-forms.module';
+import { DraftingSessionModule } from '@/drafting-session/drafting-session.module';
+import { MatterBudgetModule } from '@/matter-budget/matter-budget.module';
+import { CourtDeadlinesModule } from '@/court-deadlines/court-deadlines.module';
+import { ESignModule } from '@/esign/esign.module';
+import { WorkflowsModule } from '@/workflows/workflows.module';
+import { CommonEventsModule } from '@/common/events/common-events.module';
+import { MonitorsModule } from '@/monitors/monitors.module';
+import { PlatformModule } from '@/platform/platform.module';
+import { AddInModule } from '@/add-in/add-in.module';
 import { AuditLogInterceptor } from '@/common/interceptors/audit-log.interceptor';
 import { RealtimeModule } from '@/realtime/realtime.module';
+import { RootModule } from '@/root/root.module';
+import { TaskPatternsModule } from '@/task-patterns/task-patterns.module';
 import { JwtAuthGuard } from '@/common/guards/jwt-auth.guard';
+import { DraftingModule } from '@/platform/drafting/drafting.module';
+import { UserDraftStyleModule } from '@/user-draft-style/user-draft-style.module';
+import { SmartWorkspaceModule } from '@/smart-workspace/smart-workspace.module';
+import { WorkContextModule } from '@/work-context/work-context.module';
+import { SiteAnalyticsModule } from '@/site-analytics/site-analytics.module';
 
 @Module({
   imports: [
@@ -90,8 +113,9 @@ import { JwtAuthGuard } from '@/common/guards/jwt-auth.guard';
         },
       ],
     }),
-    ScheduleModule.forRoot(),
+    ...(process.env.DISABLE_SCHEDULERS === '1' ? [] : [ScheduleModule.forRoot()]),
     PrismaModule,
+    SecurityModule,
     StorageModule,
     AccessModule,
     CountryComplianceModule,
@@ -106,10 +130,12 @@ import { JwtAuthGuard } from '@/common/guards/jwt-auth.guard';
     AuthModule,
     GeoModule,
     HealthModule,
+    RootModule,
     AppConfigModule,
     AiCreditsModule,
     CreditsModule,
     LegalSourcesModule,
+    TaskPatternsModule,
     EmbeddingsModule,
     CostMonitoringModule,
     MatterBrainModule,
@@ -129,6 +155,7 @@ import { JwtAuthGuard } from '@/common/guards/jwt-auth.guard';
     DocumentsModule,
     MattersModule,
     ClientsModule,
+    WorkContextModule,
     TasksModule,
     TimeModule,
     CalendarModule,
@@ -139,6 +166,7 @@ import { JwtAuthGuard } from '@/common/guards/jwt-auth.guard';
     AdminModule,
     AgentsModule,
     NotificationsModule,
+    MeCountsModule,
     MeetingsModule,
     KycModule,
     AlertsModule,
@@ -146,6 +174,7 @@ import { JwtAuthGuard } from '@/common/guards/jwt-auth.guard';
     FinanceModule,
     AutomationsModule,
     TimelineModule,
+    MatterNotesModule,
     AssistanceModule,
     GovernanceModule,
     GdprModule,
@@ -157,6 +186,22 @@ import { JwtAuthGuard } from '@/common/guards/jwt-auth.guard';
     DocumentAutomationModule,
     FirmMemoryModule,
     SeriesAModule,
+    MatterAnalysisSnapshotModule,
+    ReferralsModule,
+    LegalFormsModule,
+    DraftingSessionModule,
+    MatterBudgetModule,
+    CourtDeadlinesModule,
+    ESignModule,
+    MonitorsModule,
+    AddInModule,
+    WorkflowsModule,
+    CommonEventsModule,
+    PlatformModule,
+    DraftingModule,
+    UserDraftStyleModule,
+    SmartWorkspaceModule,
+    SiteAnalyticsModule,
   ],
   providers: [
     {
@@ -165,7 +210,7 @@ import { JwtAuthGuard } from '@/common/guards/jwt-auth.guard';
     },
     {
       provide: APP_GUARD,
-      useClass: ThrottlerGuard,
+      useClass: ConditionalThrottlerGuard,
     },
     {
       provide: APP_INTERCEPTOR,

@@ -117,7 +117,7 @@
     "newClientMatter": "Neukundenangelegenheit"
   },
   "aiSearch": {
-    "title": "KI-Rechtssuche",
+    "title": "Rechtsrecherche",
     "subtitle": "Stellen Sie rechtliche Fragen – in den Antworten werden echte Behörden für Ihren Zuständigkeitsbereich genannt.",
     "placeholder": "Welche Rechtsfrage benötigen Sie beantwortet?",
     "prompts": {
@@ -165,6 +165,23 @@
     "triageLeads": "Triage {count} Leads",
     "askMorningBrief": "Fragen Sie nach meinem Morgenbrief"
   },
+  "aiReview": {
+    "title": "AI review queue",
+    "subtitle": "AI outputs flagged for lawyer review before client use",
+    "queueTitle": "{count, plural, one {# item awaiting review} other {# items awaiting review}}",
+    "queueDescription": "Review, open the source workspace, or mark as reviewed when signed off.",
+    "empty": "No AI outputs are waiting for lawyer review.",
+    "loadError": "Failed to load review queue",
+    "author": "Author",
+    "matter": "Matter",
+    "jurisdiction": "Jurisdiction",
+    "unverified": "Unverified",
+    "preview": "Preview",
+    "openWorkspace": "Open workspace",
+    "markReviewed": "Mark reviewed",
+    "previewTruncated": "Open the workspace for the full output.",
+    "unknownAuthor": "Unknown"
+  },
   "tasks": {
     "myTasks": "Meine Aufgaben",
     "next7d": "Nächste 7 Tage",
@@ -187,12 +204,12 @@
     "start": "Starten →",
     "allSetUp": "Sie sind bereit!",
     "allSetUpDescription": "Alle ersten Schritte sind abgeschlossen. Diese Checkliste wird in Kürze verschwinden.",
-    "aiSearchLabel": "Führen Sie Ihre erste KI-Rechtssuche durch",
+    "aiSearchLabel": "Führen Sie Ihre erste Rechtsrecherche durch",
     "aiSearchDescription": "Stellen Sie eine rechtliche Frage und erhalten Sie zitierte Antworten für Ihre Gerichtsbarkeit",
     "clientLabel": "Fügen Sie Ihren ersten Kunden hinzu",
     "clientDescription": "Erstellen Sie ein Kundenprofil, um mit der Verwaltung der Angelegenheiten zu beginnen",
-    "matterLabel": "Öffnen Sie eine Angelegenheit",
-    "matterDescription": "Erstellen Sie eine Angelegenheit, um mit der Verfolgung eines Falls zu beginnen",
+    "matterLabel": "Erstellen Sie Ihre erste Angelegenheit",
+    "matterDescription": "Richten Sie eine Angelegenheit ein, um mit der Verfolgung des Falles zu beginnen",
     "templateLabel": "Laden Sie eine Dokumentvorlage hoch",
     "templateDescription": "Richten Sie Vorlagen ein, um die Dokumentenerstellung zu automatisieren",
     "taskLabel": "Überprüfen Sie Ihre Aufgabenwarteschlange",

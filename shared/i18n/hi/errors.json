@@ -1,8 +1,8 @@
 {
   "generic": "कुछ गलत हो गया",
   "network": "नेटवर्क त्रुटि। कृपया पुन: प्रयास करें।",
-  "timeout": "The request timed out. Please try again.",
-  "connection": "Could not reach the server. Check your connection and try again.",
+  "timeout": "अनुरोध का समय समाप्त हो गया. कृपया पुन: प्रयास करें।",
+  "connection": "सर्वर तक नहीं पहुंच सका. अपना कनेक्शन जांचें और पुनः प्रयास करें।",
   "unauthorized": "आप यह कार्रवाई करने के लिए अधिकृत नहीं हैं.",
   "notFound": "नहीं मिला",
   "validationFailed": "कृपया अपना इनपुट जांचें और पुनः प्रयास करें।",
@@ -25,6 +25,10 @@
   "tooManyRequests": "बहुत अधिक प्रयास. एक क्षण रुकें और पुनः प्रयास करें।",
   "firebaseEmailSignInDisabled": "इस प्रोजेक्ट के लिए फायरबेस में ईमेल साइन-इन सक्षम नहीं है।",
   "authenticationFailed": "प्रमाणीकरण विफल होना।",
+  "accountExistsDifferentCredential": "यह ईमेल एक पासवर्ड के साथ पंजीकृत है. पहले ईमेल से साइन इन करें, फिर सेटिंग्स में सोशल अकाउंट लिंक करें।",
+  "socialSignInCancelled": "साइन-इन रद्द कर दिया गया.",
+  "socialSignInPopupBlocked": "पॉप-अप अवरुद्ध कर दिया गया था. इस साइट के लिए पॉप-अप की अनुमति दें या पुनः प्रयास करें।",
+  "socialSignInFailed": "सामाजिक साइन-इन विफल रहा. कृपया पुन: प्रयास करें।",
   "toast": {
     "preBillSessionCreated": "प्री-बिल सत्र बनाया गया",
     "couldNotCreateSession": "सत्र नहीं बनाया जा सका",

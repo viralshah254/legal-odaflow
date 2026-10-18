@@ -1,0 +1,157 @@
+[
+  {
+    "full_name": "Ashis Kumar Ray",
+    "organisation": "Chartered Accountant",
+    "city": "Kolkata",
+    "state": "West Bengal",
+    "phone": "+919830010345",
+    "email": "ray.ashis555@gmail.com",
+    "practice_areas": "Civil laws, property dispute, taxation"
+  },
+  {
+    "full_name": "Bikash Dutta",
+    "organisation": "Advocate",
+    "city": "Kolkata",
+    "state": "West Bengal",
+    "phone": "+919903081970",
+    "alternate_phone": "+919831081970",
+    "email": "bkbd_dutta@rediffmail.com",
+    "practice_areas": "Civil & criminal law, corporate law, real estate"
+  },
+  {
+    "full_name": "Singhania & Co",
+    "organisation": "Solicitors & Advocates",
+    "city": "Kolkata",
+    "state": "West Bengal",
+    "email": "calcutta@singhania.com",
+    "website": "https://www.singhania.com",
+    "practice_areas": "Litigation, intellectual property, arbitration"
+  },
+  {
+    "full_name": "I.L.A. Pasrich & Company",
+    "organisation": "Advocates and Legal Consultants",
+    "city": "New Delhi",
+    "state": "Delhi",
+    "phone": "+919818249584",
+    "email": "inbox@ilaindia.com",
+    "website": "https://www.ilaindia.com",
+    "practice_areas": "Real estate, litigation, arbitration, company law, employment"
+  },
+  {
+    "full_name": "Pramod Singh",
+    "organisation": "Lux Veritas Advocates",
+    "city": "New Delhi",
+    "state": "Delhi",
+    "phone": "+919810003904",
+    "email": "pks@luxveritas.in",
+    "website": "https://www.luxveritas.in",
+    "practice_areas": "Corporate law, property, FDI, non-profits"
+  },
+  {
+    "full_name": "Shilpi Jain",
+    "organisation": "Shilpi Jain & Company",
+    "city": "New Delhi",
+    "state": "Delhi",
+    "phone": "+919811110997",
+    "email": "shilpijainlawyer@gmail.com",
+    "website": "https://www.shilipijain.com",
+    "practice_areas": "Criminal, matrimonial, family law, surrogacy"
+  },
+  {
+    "full_name": "Pritpal Singh Nijjar",
+    "organisation": "Advocate",
+    "city": "New Delhi",
+    "state": "Delhi",
+    "phone": "+919971155522",
+    "email": "pritpal@nijjarlaw.com",
+    "website": "https://www.nijjarlaw.com",
+    "practice_areas": "Civil, criminal, corporate, arbitration, family law, IPR"
+  },
+  {
+    "full_name": "Rajeev Awasthi",
+    "organisation": "Awasthi and Associates",
+    "city": "New Delhi",
+    "state": "Delhi",
+    "phone": "+919810558550",
+    "email": "rajeevawasthi1967@gmail.com",
+    "practice_areas": "Criminal, customs, immigration consultancy, corporate, IP"
+  },
+  {
+    "full_name": "Jasdev Singh Mehndiratta",
+    "organisation": "Law office of Jasdev Singh Mehndiratta",
+    "city": "Chandigarh",
+    "state": "Punjab",
+    "phone": "+919872223180",
+    "email": "jsmehndiratta@gmail.com",
+    "practice_areas": "Criminal, constitutional, civil, matrimonial, family law"
+  },
+  {
+    "full_name": "Shantanu Mohan Puri",
+    "organisation": "SMA Legal",
+    "city": "Chandigarh",
+    "state": "Punjab",
+    "phone": "+919814428053",
+    "email": "info@smalegal.in",
+    "website": "https://www.smalegal.in",
+    "practice_areas": "Civil & criminal law, immigration, FDI, corporate, arbitration"
+  },
+  {
+    "full_name": "Amar Correa",
+    "organisation": "Amar Correa Associates",
+    "city": "Bangalore",
+    "state": "Karnataka",
+    "phone": "+919845113678",
+    "email": "amar.correa@acajuris.com",
+    "website": "https://www.acajuris.com",
+    "practice_areas": "IPC offences, defamation, matrimonial, foreign nationals"
+  },
+  {
+    "full_name": "Dua & Associates",
+    "organisation": "Advocates & Solicitors",
+    "city": "Bangalore",
+    "state": "Karnataka",
+    "phone": "+919845055836",
+    "email": "subaya@duaassociates.com",
+    "website": "https://www.duaassociates.com",
+    "practice_areas": "Family, banking, corporate, IP, immigration"
+  },
+  {
+    "full_name": "King & Partridge",
+    "organisation": "Advocates",
+    "city": "Bangalore",
+    "state": "Karnataka",
+    "phone": "+919845117454",
+    "email": "vvgiri@kingandpartridge.in",
+    "website": "http://www.kingandpartridge.in",
+    "practice_areas": "Civil, banking, corporate, IP, litigation, maritime"
+  },
+  {
+    "full_name": "Dua Associates",
+    "organisation": "Advocates & Solicitors",
+    "city": "Chennai",
+    "state": "Tamil Nadu",
+    "email": "senthil@duaassociates.com",
+    "website": "https://www.duaassociates.com",
+    "practice_areas": "Insurance, banking, commercial, IP, civil law"
+  },
+  {
+    "full_name": "King & Partridge",
+    "organisation": "Advocates",
+    "city": "Chennai",
+    "state": "Tamil Nadu",
+    "email": "mail@kingandpartridge.org",
+    "website": "https://www.kingandpartridge.org",
+    "practice_areas": "Civil, banking, corporate, IP, litigation, maritime"
+  },
+  {
+    "full_name": "V J Mathew",
+    "organisation": "V J Mathew & Co",
+    "city": "Chennai",
+    "state": "Tamil Nadu",
+    "phone": "+919847031765",
+    "alternate_phone": "+919895676751",
+    "email": "chennai@vjmathew.com",
+    "website": "https://www.vjmathew.com",
+    "practice_areas": "Shipping, admiralty, maritime, corporate, international trade"
+  }
+]

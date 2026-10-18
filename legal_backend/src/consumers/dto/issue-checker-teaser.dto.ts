@@ -1,9 +1,10 @@
-import { IsIn, IsOptional, IsString, MinLength } from 'class-validator';
-import { SUPPORTED_COUNTRY_CODES } from '@/config/countries';
+import { IsIn, IsObject, IsOptional, IsString, MinLength } from 'class-validator';
 import { ISSUE_CHECKER_MODES } from '../issue-checker.constants';
+import { IssueCheckerAnonymousFields } from './issue-checker-anonymous.dto';
 
-export class IssueCheckerTeaserDto {
-  @IsIn(SUPPORTED_COUNTRY_CODES)
+export class IssueCheckerTeaserDto extends IssueCheckerAnonymousFields {
+  @IsString()
+  @MinLength(2)
   countryCode!: string;
 
   @IsOptional()
@@ -49,4 +50,8 @@ export class IssueCheckerTeaserDto {
   @IsOptional()
   @IsString()
   internalNotes?: string;
+
+  @IsOptional()
+  @IsObject()
+  planningAnswers?: Record<string, string | string[]>;
 }

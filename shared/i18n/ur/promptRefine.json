@@ -1,0 +1,20 @@
+{
+  "title": "ریفائنڈ پرامپٹ",
+  "description": "ہم نے واضح AI نتائج کے لیے آپ کی تفصیل کو دوبارہ ترتیب دیا۔ اگر ضرورت ہو تو ترمیم کریں، پھر جاری رکھیں۔",
+  "yourOriginal": "آپ کا اصل اشارہ",
+  "refinedLabel": "ریفائنڈ پرامپٹ",
+  "continueRefined": "بہتر پرامپٹ کے ساتھ جاری رکھیں",
+  "useOriginal": "اس کے بجائے اصل استعمال کریں۔",
+  "hintJurisdiction": "دائرہ اختیار",
+  "hintDocument": "دستاویز",
+  "hintParty": "پارٹی",
+  "hintStatute": "آئین",
+  "preparing": "آپ کا پرامپٹ تیار ہو رہا ہے…",
+  "startingDrafting": "{seconds} سیکنڈ میں مسودہ تیار کرنا شروع ہو رہا ہے…",
+  "startingResearch": "{seconds} میں تحقیق شروع ہو رہی ہے…",
+  "undo": "کالعدم",
+  "autoFilledTitle": "فوری طور پر بہتر",
+  "autoFilledDescription": "{seconds}s میں جاری ہے — اپنی اصل رکھنے کے لیے کالعدم کریں۔",
+  "autoFillCountdownAria": "کالعدم کرنے میں {seconds} سیکنڈ باقی ہیں۔",
+  "autoFillHint": "Undo آپ کے اصل پرامپٹ کو بحال کرتا ہے۔"
+}

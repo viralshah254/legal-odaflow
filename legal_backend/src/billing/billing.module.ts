@@ -1,4 +1,6 @@
 import { Module } from '@nestjs/common';
+import { ConfigModule, ConfigService } from '@nestjs/config';
+import { JwtModule } from '@nestjs/jwt';
 import { AutomationsModule } from '@/automations/automations.module';
 import { NotificationsModule } from '@/notifications/notifications.module';
 import { InvoiceOverdueScheduler } from './invoice-overdue.scheduler';
@@ -14,13 +16,30 @@ import { TrustController } from './trust.controller';
 import { TrustReconciliationController } from './trust-reconciliation.controller';
 import { TrustReconciliationService } from './trust-reconciliation.service';
 import { DunningService } from './dunning.service';
+import { LedesService } from './ledes.service';
+import { TrustComplianceController } from './trust-compliance.controller';
+import { TrustComplianceService } from './trust-compliance.service';
 
 @Module({
-  imports: [AutomationsModule, NotificationsModule],
+  imports: [
+    AutomationsModule,
+    NotificationsModule,
+    JwtModule.registerAsync({
+      imports: [ConfigModule],
+      inject: [ConfigService],
+      useFactory: (configService: ConfigService) => ({
+        secret: configService.get<string>('JWT_SECRET', 'change_me_dev_secret'),
+        signOptions: {
+          expiresIn: configService.get<string>('JWT_EXPIRES_IN', '7d'),
+        },
+      }),
+    }),
+  ],
   controllers: [
     InvoicesController,
     TrustController,
     TrustReconciliationController,
+    TrustComplianceController,
     RateTablesController,
     PreBillController,
     StatementsController,
@@ -32,8 +51,10 @@ import { DunningService } from './dunning.service';
     RateTablesService,
     PreBillService,
     TrustReconciliationService,
+    TrustComplianceService,
     StatementsService,
     DunningService,
+    LedesService,
   ],
   exports: [
     InvoicesService,
@@ -41,7 +62,9 @@ import { DunningService } from './dunning.service';
     RateTablesService,
     PreBillService,
     TrustReconciliationService,
+    TrustComplianceService,
     StatementsService,
+    LedesService,
   ],
 })
 export class BillingModule {}

@@ -117,7 +117,7 @@
     "newClientMatter": "নতুন ক্লায়েন্ট ব্যাপার"
   },
   "aiSearch": {
-    "title": "এআই আইনি অনুসন্ধান",
+    "title": "আইনি গবেষণা",
     "subtitle": "যেকোনো আইনি প্রশ্ন জিজ্ঞাসা করুন — উত্তরগুলি আপনার এখতিয়ারের জন্য প্রকৃত কর্তৃপক্ষকে উল্লেখ করে।",
     "placeholder": "আপনি কোন আইনি প্রশ্নের উত্তর দিতে হবে?",
     "prompts": {
@@ -165,6 +165,23 @@
     "triageLeads": "Triage {count} লিড",
     "askMorningBrief": "আমার সকালের সংক্ষিপ্ত জন্য জিজ্ঞাসা করুন"
   },
+  "aiReview": {
+    "title": "AI review queue",
+    "subtitle": "AI outputs flagged for lawyer review before client use",
+    "queueTitle": "{count, plural, one {# item awaiting review} other {# items awaiting review}}",
+    "queueDescription": "Review, open the source workspace, or mark as reviewed when signed off.",
+    "empty": "No AI outputs are waiting for lawyer review.",
+    "loadError": "Failed to load review queue",
+    "author": "Author",
+    "matter": "Matter",
+    "jurisdiction": "Jurisdiction",
+    "unverified": "Unverified",
+    "preview": "Preview",
+    "openWorkspace": "Open workspace",
+    "markReviewed": "Mark reviewed",
+    "previewTruncated": "Open the workspace for the full output.",
+    "unknownAuthor": "Unknown"
+  },
   "tasks": {
     "myTasks": "আমার কাজ",
     "next7d": "পরবর্তী 7d",
@@ -187,12 +204,12 @@
     "start": "শুরু →",
     "allSetUp": "আপনি সব সেট আপ!",
     "allSetUpDescription": "সমস্ত প্রাপ্তি-শুরু পদক্ষেপ সম্পূর্ণ হয়েছে৷ এই চেকলিস্ট শীঘ্রই অদৃশ্য হয়ে যাবে।",
-    "aiSearchLabel": "আপনার প্রথম এআই আইনি অনুসন্ধান চালান",
+    "aiSearchLabel": "আপনার প্রথম আইনি গবেষণা চালান",
     "aiSearchDescription": "একটি আইনি প্রশ্ন জিজ্ঞাসা করুন এবং আপনার এখতিয়ারের জন্য উদ্ধৃত উত্তর পান",
     "clientLabel": "আপনার প্রথম ক্লায়েন্ট যোগ করুন",
     "clientDescription": "বিষয়গুলি পরিচালনা শুরু করতে একটি ক্লায়েন্ট প্রোফাইল তৈরি করুন",
-    "matterLabel": "একটি বিষয় খুলুন",
-    "matterDescription": "একটি কেস ট্র্যাকিং শুরু করার জন্য একটি বিষয় তৈরি করুন",
+    "matterLabel": "আপনার প্রথম বিষয় তৈরি করুন",
+    "matterDescription": "মামলা ট্র্যাকিং শুরু করার জন্য একটি বিষয় সেট আপ করুন",
     "templateLabel": "একটি নথি টেমপ্লেট আপলোড করুন",
     "templateDescription": "নথি তৈরি স্বয়ংক্রিয় করতে টেমপ্লেট সেট আপ করুন",
     "taskLabel": "আপনার টাস্ক সারি পর্যালোচনা করুন",

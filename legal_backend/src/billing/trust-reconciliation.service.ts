@@ -78,11 +78,82 @@ export class TrustReconciliationService {
   }
 
   buildStatementPdfData(tenantId: string, reconciliationId: string) {
-    return this.prisma.trustReconciliation.findFirst({
+    return this.getStatementText(tenantId, reconciliationId);
+  }
+
+  async getStatementText(tenantId: string, reconciliationId: string) {
+    const row = await this.prisma.trustReconciliation.findFirst({
       where: { id: reconciliationId, tenantId },
       include: {
         tenant: { select: { name: true } },
       },
     });
+    if (!row) {
+      throw new NotFoundException('Reconciliation not found');
+    }
+
+    const account = await this.prisma.trustAccount.findFirst({
+      where: { id: row.accountId, tenantId },
+    });
+    if (!account) {
+      throw new NotFoundException('Trust account not found');
+    }
+
+    const entries = await this.prisma.trustLedgerEntry.findMany({
+      where: {
+        accountId: row.accountId,
+        createdAt: { gte: row.periodStart, lte: row.periodEnd },
+        status: 'COMPLETED',
+      },
+      orderBy: { createdAt: 'asc' },
+    });
+
+    const lines = [
+      'TRUST ACCOUNT STATEMENT',
+      '=======================',
+      `Firm: ${row.tenant.name}`,
+      `Account: ${account.name}`,
+      `Period: ${row.periodStart.toISOString().slice(0, 10)} to ${row.periodEnd.toISOString().slice(0, 10)}`,
+      `Status: ${row.status}`,
+      '',
+      'BALANCES',
+      '--------',
+      `Opening Balance: ${Number(row.openingBalance.toString()).toFixed(2)} ${account.currency}`,
+      `Closing Balance: ${Number(row.closingBalance.toString()).toFixed(2)} ${account.currency}`,
+      '',
+      'TRANSACTIONS',
+      '------------',
+    ];
+
+    if (entries.length === 0) {
+      lines.push('No completed transactions in this period.');
+    } else {
+      for (const entry of entries) {
+        const sign = entry.type === 'DEPOSIT' || entry.type === 'TRANSFER_IN' ? '+' : '-';
+        lines.push(
+          `${entry.createdAt.toISOString().slice(0, 10)} | ${entry.type} | ${sign}${Number(entry.amount.toString()).toFixed(2)} ${account.currency} | ${entry.description ?? ''}`,
+        );
+      }
+    }
+
+    if (row.notes) {
+      lines.push('', 'NOTES', '-----', row.notes);
+    }
+
+    const text = lines.join('\n');
+
+    return {
+      reconciliationId: row.id,
+      accountId: row.accountId,
+      accountName: account.name,
+      currency: account.currency,
+      periodStart: row.periodStart.toISOString(),
+      periodEnd: row.periodEnd.toISOString(),
+      openingBalance: Number(row.openingBalance.toString()),
+      closingBalance: Number(row.closingBalance.toString()),
+      status: row.status,
+      transactionCount: entries.length,
+      text,
+    };
   }
 }

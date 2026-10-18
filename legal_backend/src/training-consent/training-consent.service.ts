@@ -4,6 +4,7 @@ import {
   NotFoundException,
 } from '@nestjs/common';
 import { Prisma } from '@prisma/client';
+import { PrivacyControlsService } from '@/country-compliance/privacy-controls.service';
 import { PrismaService } from '@/prisma/prisma.service';
 import { DEFAULT_TRAINING_CONSENT_STATUS } from './training-consent.constants';
 import {
@@ -13,7 +14,10 @@ import {
 
 @Injectable()
 export class TrainingConsentService {
-  constructor(private readonly prisma: PrismaService) {}
+  constructor(
+    private readonly prisma: PrismaService,
+    private readonly privacyControls: PrivacyControlsService,
+  ) {}
 
   async findAll(filters?: {
     userId?: string;
@@ -47,6 +51,9 @@ export class TrainingConsentService {
   async create(dto: CreateTrainingConsentDto, actorUserId?: string) {
     const consentStatus = dto.consentStatus ?? 'DENIED';
     const isGranted = consentStatus === 'GRANTED';
+    if (isGranted && dto.tenantId) {
+      await this.privacyControls.assertTenantProcessingAllowed(dto.tenantId, 'training');
+    }
 
     const consent = await this.prisma.trainingConsent.create({
       data: {
@@ -81,6 +88,9 @@ export class TrainingConsentService {
     const nextStatus = dto.consentStatus ?? existing.consentStatus;
     const wasGranted = existing.consentStatus === 'GRANTED';
     const willGrant = nextStatus === 'GRANTED' && !wasGranted;
+    if (nextStatus === 'GRANTED' && existing.tenantId) {
+      await this.privacyControls.assertTenantProcessingAllowed(existing.tenantId, 'training');
+    }
 
     const consent = await this.prisma.trainingConsent.update({
       where: { id },
@@ -203,6 +213,15 @@ export class TrainingConsentService {
     consentStatus: 'GRANTED' | 'DENIED' | 'WITHDRAWN',
     actorUserId?: string,
   ) {
+    if (consentStatus === 'GRANTED') {
+      const existing = await this.findOne(consentId);
+      if (existing.tenantId) {
+        await this.privacyControls.assertTenantProcessingAllowed(
+          existing.tenantId,
+          'training',
+        );
+      }
+    }
     const consent = await this.prisma.trainingConsent.update({
       where: { id: consentId },
       data: {

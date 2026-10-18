@@ -5,7 +5,10 @@ import {
 } from '@nestjs/common';
 import { PrismaService } from '@/prisma/prisma.service';
 import { MatterAccessService } from './matter-access.service';
-import { GrantMatterAccessDto } from './dto/matter-access.dto';
+import {
+  GrantMatterAccessDto,
+  UpdateMatterAccessDto,
+} from './dto/matter-access.dto';
 
 @Injectable()
 export class MatterAccessManagementService {
@@ -83,13 +86,74 @@ export class MatterAccessManagementService {
     return { success: true, revokedBy: actorId };
   }
 
+  async updateAccess(
+    tenantId: string,
+    matterId: string,
+    userId: string,
+    actorId: string,
+    actorRole: string | undefined,
+    dto: UpdateMatterAccessDto,
+  ) {
+    if (!this.matterAccess.hasFullAccess(actorRole)) {
+      throw new ForbiddenException('Only admins can update matter access');
+    }
+
+    await this.ensureMatter(tenantId, matterId);
+    const access = await this.prisma.matterAccess.findUnique({
+      where: { matterId_userId: { matterId, userId } },
+    });
+    if (!access || access.tenantId !== tenantId) {
+      throw new NotFoundException('Matter access record not found');
+    }
+
+    return this.prisma.matterAccess.update({
+      where: { matterId_userId: { matterId, userId } },
+      data: { accessLevel: dto.accessLevel, grantedBy: actorId },
+    });
+  }
+
   async listAccess(tenantId: string, matterId: string) {
     await this.ensureMatter(tenantId, matterId);
 
-    return this.prisma.matterAccess.findMany({
+    const rows = await this.prisma.matterAccess.findMany({
       where: { tenantId, matterId },
       include: { user: { select: { id: true, email: true, name: true } } },
     });
+
+    return rows.map((row) => ({
+      id: row.id,
+      matterId: row.matterId,
+      userId: row.userId,
+      userName: row.user.name ?? row.user.email.split('@')[0],
+      accessLevel: row.accessLevel,
+      sharedBy: row.grantedBy,
+      sharedAt: row.createdAt.toISOString(),
+      createdAt: row.createdAt.toISOString(),
+      updatedAt: row.updatedAt.toISOString(),
+    }));
+  }
+
+  async getMyAccess(
+    tenantId: string,
+    matterId: string,
+    userId: string,
+    role?: string,
+  ) {
+    await this.ensureMatter(tenantId, matterId);
+
+    if (this.matterAccess.hasFullAccess(role)) {
+      return { accessLevel: 'WRITE', isOwner: true };
+    }
+
+    const access = await this.prisma.matterAccess.findUnique({
+      where: { matterId_userId: { matterId, userId } },
+    });
+
+    const writeLevels = new Set(['WRITE', 'FULL', 'FULL_CASE_SUPPORT', 'OWNER']);
+    return {
+      accessLevel: access?.accessLevel ?? null,
+      isOwner: access ? writeLevels.has(access.accessLevel) : false,
+    };
   }
 
   private async ensureMatter(tenantId: string, matterId: string) {

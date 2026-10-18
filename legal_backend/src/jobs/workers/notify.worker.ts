@@ -4,6 +4,7 @@ import { AI_JOB_TYPES } from '../jobs.constants';
 import { NotificationDispatchPayload } from '../jobs.types';
 import { QUEUE_NAMES } from '../jobs.constants';
 import { getWorkerServices } from './worker-context';
+import { getFirebaseAdminApp } from '@/common/utils/firebase-admin.util';
 
 const prisma = new PrismaClient();
 
@@ -20,11 +21,8 @@ async function sendFcmToUser(
   body: string,
   data?: Record<string, string>,
 ): Promise<{ sent: number; skipped: boolean }> {
-  const projectId = process.env.FIREBASE_PROJECT_ID?.trim();
-  const clientEmail = process.env.FIREBASE_CLIENT_EMAIL?.trim();
-  const privateKey = process.env.FIREBASE_PRIVATE_KEY?.replace(/\\n/g, '\n').trim();
-
-  if (!projectId || !clientEmail || !privateKey) {
+  const app = await getFirebaseAdminApp();
+  if (!app) {
     return { sent: 0, skipped: true };
   }
 
@@ -38,21 +36,9 @@ async function sendFcmToUser(
   }
 
   try {
-    // eslint-disable-next-line @typescript-eslint/no-require-imports
-    const admin = require('firebase-admin') as typeof import('firebase-admin');
-
-    if (!admin.apps.length) {
-      admin.initializeApp({
-        credential: admin.credential.cert({
-          projectId,
-          clientEmail,
-          privateKey,
-        }),
-      });
-    }
-
-    const messaging = admin.messaging();
+    const messaging = app.messaging();
     let sent = 0;
+    const staleTokens: string[] = [];
 
     for (const row of tokens) {
       try {
@@ -60,11 +46,25 @@ async function sendFcmToUser(
           token: row.token,
           notification: { title, body },
           data,
+          android: { notification: { channelId: 'umbrella_notifications', priority: 'high' } },
+          apns: { payload: { aps: { sound: 'default', badge: 1 } } },
         });
         sent += 1;
-      } catch {
-        // Invalid tokens can be pruned in a later pass.
+      } catch (err) {
+        const code = (err as { errorInfo?: { code?: string } })?.errorInfo?.code;
+        if (
+          code === 'messaging/registration-token-not-registered' ||
+          code === 'messaging/invalid-registration-token'
+        ) {
+          staleTokens.push(row.token);
+        }
       }
+    }
+
+    if (staleTokens.length > 0) {
+      await prisma.deviceToken
+        .deleteMany({ where: { token: { in: staleTokens } } })
+        .catch(() => {});
     }
 
     return { sent, skipped: false };

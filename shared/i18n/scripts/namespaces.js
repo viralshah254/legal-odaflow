@@ -11,6 +11,7 @@ module.exports.NAMESPACES = [
   'legal',
   'settings',
   'billing',
+  'credits',
   'copilot',
   'matters',
   'clients',
@@ -18,6 +19,16 @@ module.exports.NAMESPACES = [
   'errors',
   'dashboard',
   'tutorials',
+  'accessibility',
+  'indiaDrafting',
+  'sectionFinder',
+  'firAnalysis',
+  'drafting',
+  'matterIntelligence',
+  'aiConsent',
+  'docuDraft',
+  'mobile',
+  'promptRefine',
 ]
 
 module.exports.FILE_TO_NS = {
@@ -32,6 +43,7 @@ module.exports.FILE_TO_NS = {
   legal: 'legal',
   settings: 'settings',
   billing: 'billing',
+  credits: 'credits',
   copilot: 'copilot',
   matters: 'matters',
   clients: 'clients',
@@ -39,6 +51,16 @@ module.exports.FILE_TO_NS = {
   errors: 'errors',
   dashboard: 'dashboard',
   tutorials: 'tutorials',
+  accessibility: 'accessibility',
+  indiaDrafting: 'indiaDrafting',
+  sectionFinder: 'sectionFinder',
+  firAnalysis: 'firAnalysis',
+  drafting: 'drafting',
+  matterIntelligence: 'matterIntelligence',
+  aiConsent: 'aiConsent',
+  docuDraft: 'docuDraft',
+  mobile: 'mobile',
+  promptRefine: 'promptRefine',
 }
 
 module.exports.TARGET_LOCALES = [

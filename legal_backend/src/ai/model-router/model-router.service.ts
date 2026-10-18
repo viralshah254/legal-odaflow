@@ -1,9 +1,12 @@
 import { Injectable } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { getCreditCost, requiresCreditConfirmation } from '@/ai-credits/credit-costs';
+import { CreditPricingService } from '@/ai-credits/credit-pricing.service';
+import { TokenCreditChargeService } from '@/ai-credits/token-credit-charge.service';
+import { resolveModelProvider } from '@/ai/model-costs.config';
 import {
   AiModelMode,
-  getAutoModelName,
+  DEFAULT_PREMIUM_MODEL_ID,
   getPremiumModel,
 } from '@/ai/premium-models.config';
 import {
@@ -30,6 +33,9 @@ export interface ResolvedModelRoute {
   requiresCitationVerification: boolean;
   requiresMatterContext: boolean;
   estimatedCredits: number;
+  estimatedProviderCostUsd?: number;
+  estimatedInputTokens?: number;
+  estimatedOutputTokens?: number;
   requiresConfirmation: boolean;
   routingEnabled: boolean;
   modelMode: AiModelMode;
@@ -39,7 +45,11 @@ export interface ResolvedModelRoute {
 
 @Injectable()
 export class ModelRouterService {
-  constructor(private readonly configService: ConfigService) {}
+  constructor(
+    private readonly configService: ConfigService,
+    private readonly creditPricing: CreditPricingService,
+    private readonly tokenCreditCharge: TokenCreditChargeService,
+  ) {}
 
   isRoutingEnabled(): boolean {
     const flag = this.configService.get<string>('AI_ENABLE_MODEL_ROUTING', 'true');
@@ -65,33 +75,55 @@ export class ModelRouterService {
     if (effectiveMode === 'PREMIUM') {
       const envModels = this.configService.get<string>('AI_PREMIUM_MODELS');
       const premiumModel = getPremiumModel(
-        options?.premiumModelId ?? 'gpt-4.1',
+        options?.premiumModelId ?? DEFAULT_PREMIUM_MODEL_ID,
         envModels,
+        {
+          creditUsdValue: this.creditPricing.getCreditUsdValue(),
+          netMarginPercent: this.creditPricing.getNetMarginPercent(),
+        },
       );
       modelName = premiumModel?.modelId ?? this.resolveModelName(route);
       tier = 'premium';
     } else {
-      modelName = getAutoModelName(this.configService);
-      tier = 'cheap';
+      // AUTO: use each task type's configured tier (e.g. LEGAL_RESEARCH → reasoning model).
+      modelName = this.resolveModelName(route);
+      tier = route.tier;
     }
 
-    const estimatedCredits = this.computeCredits(
-      baseCredits,
-      effectiveMode,
-      options?.premiumModelId,
+    const typicalInput = Math.min(
+      route.maxInputTokens,
+      Math.max(500, Math.round(route.maxInputTokens * 0.12)),
     );
+    const typicalOutput = Math.min(
+      route.maxOutputTokens,
+      Math.max(200, Math.round(route.maxOutputTokens * 0.2)),
+    );
+
+    const tokenEstimate = this.tokenCreditCharge.estimateCreditsForModel({
+      modelName,
+      inputTokens: typicalInput,
+      outputTokens: typicalOutput,
+      minCredits: baseCredits,
+    });
+
+    const estimatedCredits = this.tokenCreditCharge.isTokenBased()
+      ? tokenEstimate.credits
+      : baseCredits;
 
     return {
       taskType,
       tier,
       modelName,
-      provider: this.configService.get<string>('AI_PROVIDER', 'openai'),
+      provider: resolveModelProvider(modelName),
       maxInputTokens: route.maxInputTokens,
       maxOutputTokens: route.maxOutputTokens,
       requiresRag: route.requiresRag,
       requiresCitationVerification: route.requiresCitationVerification,
       requiresMatterContext: route.requiresMatterContext ?? false,
       estimatedCredits,
+      estimatedProviderCostUsd: tokenEstimate.providerCostUsd,
+      estimatedInputTokens: tokenEstimate.inputTokens,
+      estimatedOutputTokens: tokenEstimate.outputTokens,
       requiresConfirmation: requiresCreditConfirmation(taskType),
       routingEnabled,
       modelMode: effectiveMode,
@@ -100,27 +132,13 @@ export class ModelRouterService {
     };
   }
 
-  computeCredits(
-    baseCredits: number,
-    modelMode: AiModelMode,
-    premiumModelId?: string,
-  ): number {
-    if (modelMode !== 'PREMIUM') {
-      return baseCredits;
-    }
-    const envModels = this.configService.get<string>('AI_PREMIUM_MODELS');
-    const premiumModel = getPremiumModel(premiumModelId ?? 'gpt-4.1', envModels);
-    const multiplier = premiumModel?.creditMultiplier ?? 3;
-    return Math.max(baseCredits, Math.ceil(baseCredits * multiplier));
-  }
-
   resolveModelName(route: ModelRouteConfig): string {
     const cheap = this.configService.get<string>('AI_CHEAP_MODEL', '');
     const mid = this.configService.get<string>('AI_MID_MODEL', '');
-    const fast = this.configService.get<string>('AI_FAST_MODEL', 'gpt-4.1-mini');
+    const fast = this.configService.get<string>('AI_FAST_MODEL', 'gpt-5.4-mini');
     const reasoning = this.configService.get<string>(
       'AI_REASONING_MODEL',
-      'gpt-4.1',
+      'gpt-5.5',
     );
     const local = this.configService.get<string>('AI_LOCAL_CLASSIFIER_MODEL', '');
 
@@ -129,6 +147,13 @@ export class ModelRouterService {
 
     if (envValue) {
       return envValue;
+    }
+
+    if (route.fallbackModelEnv) {
+      const fallbackValue = this.configService.get<string>(route.fallbackModelEnv, '');
+      if (fallbackValue) {
+        return fallbackValue;
+      }
     }
 
     switch (route.tier) {

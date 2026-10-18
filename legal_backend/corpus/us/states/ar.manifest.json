@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "stateCode": "AR",
+  "stateName": "Arkansas",
+  "acts": [
+    {
+      "actId": "ar-code",
+      "title": "Arkansas code",
+      "sourceAuthority": "cornell-lii",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.law.cornell.edu/states/ar",
+      "externalId": "ar-code",
+      "notes": "Arkansas state law via Cornell LII state index"
+    },
+    {
+      "actId": "ar-statutes",
+      "title": "Arkansas statutes",
+      "sourceAuthority": "cornell-lii",
+      "sourceTier": "mirror",
+      "primaryPdfUrl": "https://www.law.cornell.edu/states/ar",
+      "externalId": "ar-statutes",
+      "notes": "Arkansas state law via Cornell LII state index"
+    }
+  ]
+}

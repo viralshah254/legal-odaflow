@@ -1,8 +1,8 @@
 import { Injectable } from '@nestjs/common';
 import { PrismaService } from '@/prisma/prisma.service';
 import { getCountryConfig } from '@/config/countries';
-import { computeCreditsFromPayment } from './credit-pricing.util';
-import { listCreditPacks as listHardcodedPacks } from './credit-packs';
+import { CurrencyFxService } from '@/config/currency-fx.service';
+import { listLocalizedCreditPacks } from './credit-packs';
 
 export interface ResolvedCreditPack {
   packId: string;
@@ -16,11 +16,15 @@ export interface ResolvedCreditPack {
 
 @Injectable()
 export class CreditPacksService {
-  constructor(private readonly prisma: PrismaService) {}
+  constructor(
+    private readonly prisma: PrismaService,
+    private readonly currencyFx: CurrencyFxService,
+  ) {}
 
   async listCreditPacks(
     countryCode: string,
     userSegment = 'LAWYER_SOLO',
+    billingPlan?: string | null,
   ): Promise<ResolvedCreditPack[]> {
     const country = getCountryConfig(countryCode);
     const rows = await this.prisma.creditPack.findMany({
@@ -44,11 +48,16 @@ export class CreditPacksService {
       }));
     }
 
-    return listHardcodedPacks(countryCode);
+    return listLocalizedCreditPacks(countryCode, this.currencyFx, billingPlan);
   }
 
-  async getCreditPack(countryCode: string, packId: string, userSegment = 'LAWYER_SOLO') {
-    const packs = await this.listCreditPacks(countryCode, userSegment);
+  async getCreditPack(
+    countryCode: string,
+    packId: string,
+    userSegment = 'LAWYER_SOLO',
+    billingPlan?: string | null,
+  ) {
+    const packs = await this.listCreditPacks(countryCode, userSegment, billingPlan);
     const pack = packs.find((row) => row.packId === packId);
     if (!pack) {
       throw new Error(`Unknown credit pack: ${packId}`);
@@ -57,7 +66,7 @@ export class CreditPacksService {
   }
 
   async syncRatesFromEnv(countryCode: string, userSegment: string) {
-    const hardcoded = listHardcodedPacks(countryCode);
+    const hardcoded = await listLocalizedCreditPacks(countryCode, this.currencyFx);
     for (const pack of hardcoded) {
       await this.prisma.creditPack.upsert({
         where: {

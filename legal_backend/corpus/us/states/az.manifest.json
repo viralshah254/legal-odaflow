@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "stateCode": "AZ",
+  "stateName": "Arizona",
+  "acts": [
+    {
+      "actId": "az-code",
+      "title": "Arizona code",
+      "sourceAuthority": "cornell-lii",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.law.cornell.edu/states/az",
+      "externalId": "az-code",
+      "notes": "Arizona state law via Cornell LII state index"
+    },
+    {
+      "actId": "az-statutes",
+      "title": "Arizona statutes",
+      "sourceAuthority": "cornell-lii",
+      "sourceTier": "mirror",
+      "primaryPdfUrl": "https://www.law.cornell.edu/states/az",
+      "externalId": "az-statutes",
+      "notes": "Arizona state law via Cornell LII state index"
+    }
+  ]
+}

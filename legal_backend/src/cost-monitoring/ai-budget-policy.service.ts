@@ -66,4 +66,73 @@ export class AIBudgetPolicyService {
       },
     });
   }
+
+  /**
+   * User-facing update: sets spend limits directly from settings UI.
+   * hardStopEnabled=false sets hardStopAtPercent=0 (soft limit only).
+   */
+  async updateUserPolicy(params: {
+    tenantId?: string;
+    userId?: string;
+    monthlyBudgetUsd?: number;
+    alertAtPercent?: number;
+    hardStopEnabled?: boolean;
+  }) {
+    const existing = await this.prisma.aIBudgetPolicy.findFirst({
+      where: { tenantId: params.tenantId, userId: params.userId },
+    });
+
+    const hardStopAtPercent =
+      params.hardStopEnabled === undefined
+        ? undefined
+        : params.hardStopEnabled
+          ? 100
+          : 0;
+
+    const updateData: Record<string, unknown> = {};
+    if (params.monthlyBudgetUsd !== undefined) {
+      updateData.monthlyBudgetUsd =
+        params.monthlyBudgetUsd > 0
+          ? new Prisma.Decimal(params.monthlyBudgetUsd)
+          : null;
+    }
+    if (params.alertAtPercent !== undefined) {
+      updateData.alertAtPercent = params.alertAtPercent;
+    }
+    if (hardStopAtPercent !== undefined) {
+      updateData.hardStopAtPercent = hardStopAtPercent;
+    }
+
+    if (existing) {
+      const updated = await this.prisma.aIBudgetPolicy.update({
+        where: { id: existing.id },
+        data: updateData,
+      });
+      return {
+        monthlyBudgetUsd: Number(updated.monthlyBudgetUsd ?? 0),
+        alertAtPercent: updated.alertAtPercent,
+        hardStopEnabled: updated.hardStopAtPercent > 0,
+        hardStopAtPercent: updated.hardStopAtPercent,
+      };
+    }
+
+    const created = await this.prisma.aIBudgetPolicy.create({
+      data: {
+        tenantId: params.tenantId,
+        userId: params.userId,
+        monthlyBudgetUsd:
+          params.monthlyBudgetUsd && params.monthlyBudgetUsd > 0
+            ? new Prisma.Decimal(params.monthlyBudgetUsd)
+            : undefined,
+        alertAtPercent: params.alertAtPercent ?? 80,
+        hardStopAtPercent: hardStopAtPercent ?? 0,
+      },
+    });
+    return {
+      monthlyBudgetUsd: Number(created.monthlyBudgetUsd ?? 0),
+      alertAtPercent: created.alertAtPercent,
+      hardStopEnabled: created.hardStopAtPercent > 0,
+      hardStopAtPercent: created.hardStopAtPercent,
+    };
+  }
 }

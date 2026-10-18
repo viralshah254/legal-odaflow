@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "stateCode": "MH",
+  "stateName": "Maharashtra",
+  "browseHandlePath": "/handle/123456789/2517",
+  "acts": [
+    {
+      "actId": "mh-cooperative-societies-1960",
+      "title": "The Maharashtra Co-operative Societies Act, 1960",
+      "sourceAuthority": "india-code",
+      "sourceTier": "primary",
+      "handleUrl": "https://www.indiacode.nic.in/handle/123456789/2517",
+      "primaryPdfUrl": "https://www.indiacode.nic.in/handle/123456789/2517/browse?type=shorttitle",
+      "year": 1960,
+      "notes": "Pilot entry — resolve bitstream via India Code handle during ingest"
+    },
+    {
+      "actId": "mh-rent-control-1999",
+      "title": "The Maharashtra Rent Control Act, 1999",
+      "sourceAuthority": "india-code",
+      "sourceTier": "primary",
+      "handleUrl": "https://www.indiacode.nic.in/handle/123456789/2517",
+      "year": 1999,
+      "notes": "Pilot entry — state browse collection; bitstream resolved at ingest time"
+    }
+  ]
+}

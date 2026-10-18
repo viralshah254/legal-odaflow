@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "stateCode": "SD",
+  "stateName": "South Dakota",
+  "acts": [
+    {
+      "actId": "sd-code",
+      "title": "South Dakota code",
+      "sourceAuthority": "cornell-lii",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.law.cornell.edu/states/sd",
+      "externalId": "sd-code",
+      "notes": "South Dakota state law via Cornell LII state index"
+    },
+    {
+      "actId": "sd-statutes",
+      "title": "South Dakota statutes",
+      "sourceAuthority": "cornell-lii",
+      "sourceTier": "mirror",
+      "primaryPdfUrl": "https://www.law.cornell.edu/states/sd",
+      "externalId": "sd-statutes",
+      "notes": "South Dakota state law via Cornell LII state index"
+    }
+  ]
+}

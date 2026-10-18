@@ -10,6 +10,10 @@ export class UpdateAiPreferencesDto {
   premiumModelId?: string;
 
   @IsOptional()
+  @IsString()
+  deepAnalysisPremiumModelId?: string;
+
+  @IsOptional()
   @IsBoolean()
   autoTopUpEnabled?: boolean;
 

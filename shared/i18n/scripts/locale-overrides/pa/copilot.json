@@ -150,5 +150,10 @@
   "tasksDue": "{count, plural, one {# task due} other {# tasks due}}",
   "calendarEvents": "{count, plural, one {# event} other {# events}}",
   "overdueInvoices": "{count, plural, one {# overdue invoice} other {# overdue invoices}}",
-  "pendingApprovals": "{count, plural, one {# pending approval} other {# pending approvals}}"
+  "pendingApprovals": "{count, plural, one {# pending approval} other {# pending approvals}}",
+  "agentPickerDefault": "ਜਨਰਲ ਕੋਪਾਇਲਟ",
+  "draftPromptLabel": "ਤੁਸੀਂ ਪੁੱਛਿਆ",
+  "draftOutputLabel": "ਆਉਟਪੁੱਟ",
+  "draftUntitled": "ਬਿਨਾਂ ਸਿਰਲੇਖ ਵਾਲਾ ਡਰਾਫਟ",
+  "sessionUntitled": "ਚੈਟ ਸੈਸ਼ਨ"
 }

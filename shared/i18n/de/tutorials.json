@@ -8,10 +8,10 @@
   },
   "welcome": {
     "title": "Willkommen bei Umbrella",
-    "body": "Machen Sie einen kurzen Rundgang, um zu erfahren, wie Sie sich in Ihrem Firmenarbeitsbereich zurechtfinden.",
-    "b1": "Finden Sie Kunden, Angelegenheiten und Abrechnungen in Sekundenschnelle",
-    "b2": "Verwenden Sie AI Copilot für kontextbezogene Hilfe",
-    "b3": "Spielen Sie Touren jederzeit über die Hilfe ab",
+    "body": "Eine zweiminütige Tour zeigt Ihnen, wo Sie Kunden, Angelegenheiten, Abrechnung und AI Copilot finden.",
+    "b1": "Springen Sie mit der Suche oder ⌘K an eine beliebige Stelle",
+    "b2": "Copilot versteht die Seite, auf der Sie sich befinden",
+    "b3": "Spielen Sie jederzeit eine beliebige Tour aus der Hilfe ab, wenn Sie eine Auffrischung benötigen",
     "start": "Tour starten",
     "skip": "Überspringen Sie es vorerst"
   },
@@ -62,7 +62,44 @@
     "consumer_cases": "Meine Fälle",
     "consumer_case_detail": "Falldetails",
     "consumer_subscription": "Abonnement",
-    "consumer_settings": "Kontoeinstellungen"
+    "consumer_settings": "Kontoeinstellungen",
+    "consumer_find_lawyer": "Finden Sie einen Anwalt",
+    "consumer_research": "Rechtsrecherche",
+    "consumer_document_drafting": "Dokumentenerstellung",
+    "consumer_document_review": "Dokumentenprüfung",
+    "consumer_plan_usage": "Plan & Nutzung",
+    "monitors": "Regulierungsmonitore",
+    "home": "Schnelle Aktionen",
+    "evidence": "Beweistresor",
+    "queues": "Arbeitswarteschlangen",
+    "automations": "Automatisierungen",
+    "reports": "Firmenanalytik",
+    "document_review": "Dokumentenprüfung",
+    "legal_forms": "Rechtsformen",
+    "section_finder": "Abschnittsfinder",
+    "fir_analysis": "FIR-Analyse",
+    "india_drafting": "Indien entwirft",
+    "us_drafting": "US-Entwurf",
+    "contracts": "Verträge",
+    "saved_drafts": "Gespeicherte Entwürfe",
+    "ai_command_center": "KI-Kommandozentrale",
+    "agents": "KI-Agenten",
+    "onboarding": "Festes Onboarding",
+    "profile": "Ihr Profil",
+    "referrals": "Empfehlungen",
+    "copilot_audit": "Copilot-Audit",
+    "accounting_payments": "Zahlungen",
+    "accounting_statements": "Aussagen",
+    "pre_bill": "Überprüfung vor der Rechnungsstellung",
+    "consumer_reports": "Berichte",
+    "consumer_lawyer_review": "Rezension eines Anwalts",
+    "consumer_settings_payment_methods": "Zahlungsmethoden",
+    "consumer_settings_data_consent": "Dateneinwilligung",
+    "consumer_india_drafting": "Gerichtsentwürfe in Indien",
+    "consumer_section_finder": "Abschnittsfinder",
+    "consumer_fir_analysis": "FIR-Analyse",
+    "consumer_rights_checker": "Rechteprüfer",
+    "consumer_marketplace": "Legaler Marktplatz"
   },
   "shell": {
     "sidebar": {
@@ -99,19 +136,19 @@
   "dashboard": {
     "kpis": {
       "title": "Fester Schnappschuss",
-      "body": "Diese Karten fassen aktive Angelegenheiten, überfällige Aufgaben, Leads und Einnahmen für das ausgewählte Zeitfenster zusammen."
+      "body": "Aktive Angelegenheiten, überfällige Aufgaben, Pipeline-Wert und Umsatz für heute, Woche oder Monat – wechseln Sie den Bereich in der Kopfzeile."
     },
     "alerts": {
-      "title": "Dringende Artikel",
-      "body": "Überprüfen Sie KYC-Lücken, Vertrauensgenehmigungen und Fristenrisiken, die heute Aufmerksamkeit erfordern."
+      "title": "Braucht heute Aufmerksamkeit",
+      "body": "KYC-Lücken, Vertrauensgenehmigungen und Terminrisiken tauchen hier zuerst auf. Klären Sie kritische Punkte, bevor es zu Abrechnungs- oder Gerichtsterminen kommt."
     },
     "tasks": {
-      "title": "Ihre Aufgaben",
-      "body": "Hier erscheinen die Ihnen zugewiesenen Aufgaben. Klicken Sie sich durch, um den Status zu aktualisieren oder die verlinkte Angelegenheit zu öffnen."
+      "title": "Ihre Aufgabenwarteschlange",
+      "body": "Ihnen zugewiesene Aufgaben mit Fälligkeitsterminen. Klicken Sie auf eine beliebige Zeile, um den Status zu aktualisieren oder zum verknüpften Thema zu springen."
     },
     "onboarding": {
       "title": "Checkliste für den Einstieg",
-      "body": "Führen Sie diese echten Einrichtungsschritte aus – KI-Suche ausführen, einen Kunden hinzufügen, eine Angelegenheit öffnen –, um Ihren Arbeitsbereich zu aktivieren."
+      "body": "Partner sehen hier die Einrichtungsschritte – Recherche durchführen, einen Kunden hinzufügen, eine Angelegenheit öffnen – um Ihren Arbeitsbereich vollständig zu aktivieren."
     },
     "help": {
       "title": "Armaturenbrett",
@@ -187,7 +224,7 @@
     "help": {
       "title": "Angelegenheiten",
       "b1": "Verwenden Sie Playbooks, um beim Öffnen einer Angelegenheit automatisch Aufgaben zu generieren.",
-      "b2": "Öffnen Sie die KI-Workbench aus einer Angelegenheit zum Entwerfen und Recherchieren.",
+      "b2": "Öffnen Sie die AI Quick AI aus einer Angelegenheit zum Verfassen und Recherchieren.",
       "b3": "Verfolgen Sie Gerichtsfristen und Ergebnisse auf den Unterseiten der Angelegenheit."
     }
   },
@@ -216,8 +253,8 @@
       "body": "Wechseln Sie zwischen Zeitleiste, Dokumenten, Aufgaben, Abrechnung und speziellen Tools."
     },
     "workbench": {
-      "title": "KI-Werkbank",
-      "body": "Öffnen Sie die Workbench für themenbezogene KI-Chats, Entwürfe und vorgeschlagene nächste Schritte."
+      "title": "KI Schnelle KI",
+      "body": "Öffnen Sie Quick AI für themenbezogenen KI-Chat, Entwürfe und Vorschläge für die nächsten Schritte."
     },
     "help": {
       "title": "Materielles Detail",
@@ -337,6 +374,18 @@
     }
   },
   "billing": {
+    "header": {
+      "title": "Abrechnungsübersicht",
+      "body": "Beginnen Sie hier mit Rechnungen, Rechnungsprüfungen, Zahlungen, Kontoauszügen und festen Abonnementeinstellungen."
+    },
+    "links": {
+      "title": "Verknüpfungen zur Abrechnung",
+      "body": "Jede Karte eröffnet einen fokussierten Workflow – Abonnement, Rechnungen, Vorabrechnung, Zahlungen oder Finanzberichte."
+    },
+    "invoices": {
+      "title": "Rechnungsliste",
+      "body": "Filtern Sie nach Status, suchen Sie nach Nummer und öffnen Sie eine beliebige Rechnung, um sie zu senden, die Zahlung aufzuzeichnen oder LEDES zu exportieren."
+    },
     "hub": {
       "title": "Abrechnungs-Hub",
       "body": "Greifen Sie von einem Ort aus auf Rechnungen, Rechnungsprüfungen, Zahlungen und Vertrauen zu."
@@ -344,7 +393,8 @@
     "help": {
       "title": "Abrechnung",
       "b1": "Führen Sie eine Vorabrechnung durch, bevor Sie Rechnungen an Kunden senden.",
-      "b2": "Treuhandbewegungen erfordern eine Genehmigung gemäß den Unternehmensrichtlinien."
+      "b2": "Treuhandbewegungen erfordern eine Genehmigung gemäß den Unternehmensrichtlinien.",
+      "b3": "Verknüpfen Sie Zeiteinträge und Ausgaben mit Sachverhalten, um korrekte Rechnungen zu erhalten."
     }
   },
   "trust": {
@@ -414,6 +464,22 @@
     }
   },
   "intake": {
+    "issueInput": {
+      "title": "Beschreiben Sie das Problem",
+      "body": "Geben Sie die Situation des Kunden in einfacher Sprache wieder. KI ordnet die Rechtsfrage ein und schlägt die nächsten Schritte vor."
+    },
+    "steps": {
+      "title": "Einnahmefortschritt",
+      "body": "Befolgen Sie jeden Schritt – Problemdetails, Konfliktprüfung, Planung und Erstellung von Angelegenheiten."
+    },
+    "aiModel": {
+      "title": "KI-Modell",
+      "body": "Wählen Sie das Modell zur Klassifizierung und Planung. Verifizierte Modelle verbrauchen mehr Credits, verbessern aber die Genauigkeit."
+    },
+    "continue": {
+      "title": "Einnahme fortsetzen",
+      "body": "Fahren Sie mit dem nächsten Schritt fort, wenn die Problembeschreibung fertig ist. Sie können die Details später verfeinern."
+    },
     "wizard": {
       "title": "Kundenaufnahme",
       "body": "Gehen Sie durch die strukturierte Aufnahme: Problemklassifizierung, Konfliktprüfung und Themenerstellung."
@@ -421,23 +487,44 @@
     "help": {
       "title": "Aufnahme",
       "b1": "Zur Verwendung vor Ort und zur telefonischen Aufnahme – nicht nur für Web-Leads.",
-      "b2": "KI unterstützt bei der Problemklassifizierung und den erforderlichen Dokumenten."
+      "b2": "KI unterstützt bei der Problemklassifizierung und den erforderlichen Dokumenten.",
+      "b3": "Vollständige Aufnahme zur Erstellung eines Kunden und einer Angelegenheit in einem Arbeitsablauf."
     }
   },
   "research": {
     "query": {
-      "title": "KI-Rechtssuche",
-      "body": "Stellen Sie eine Rechtsfrage für Ihre Gerichtsbarkeit. Die Antworten enthalten Zitate, die Sie überprüfen können."
+      "title": "Stellen Sie Ihre Forschungsfrage",
+      "body": "Beschreiben Sie die Rechtsfrage und den Gerichtsstand. Seien Sie konkret bei Fakten – bessere Eingaben führen zu besseren Zitaten."
+    },
+    "sources": {
+      "title": "Wählen Sie Wissensquellen",
+      "body": "Wählen Sie Gesetze, Rechtsprechung und Firmentresorquellen aus, die einbezogen werden sollen. Schmale Quellen für schnellere und gezieltere Antworten."
     },
     "results": {
-      "title": "Zitierte Ergebnisse",
-      "body": "Speichern Sie Recherchen zu einem Thema oder exportieren Sie Zitate in Entwürfe."
+      "title": "Überprüfen Sie die zitierten Antworten",
+      "body": "Überprüfen Sie nach der Recherche die Zitate hier. Speichern Sie es in einer Angelegenheit oder exportieren Sie es in Entwürfe."
     },
     "help": {
       "title": "Rechtsrecherche",
-      "b1": "Machen Sie für bessere Zitate genaue Angaben zu Zuständigkeit und Sachverhalt.",
-      "b2": "Die KI-Nutzung wird auf das Guthaben Ihres Unternehmens angerechnet.",
+      "b1": "Verwenden Sie den verifizierten Modus, wenn es auf Genauigkeit ankommt; Schnellmodus zur schnellen Orientierung.",
+      "b2": "Die Forschung verwendet das KI-Guthaben Ihres Unternehmens.",
       "b3": "Überprüfen Sie Zitate immer, bevor Sie sie einreichen oder Kunden beraten."
+    }
+  },
+  "monitors": {
+    "create": {
+      "title": "Erstellen Sie einen Monitor",
+      "body": "Verfolgen Sie regulatorische Änderungen nach Gerichtsbarkeit und Thema. Umbrella fasst Warnungen zusammen, wenn Gesetze aktualisiert werden."
+    },
+    "list": {
+      "title": "Ihre Monitore",
+      "body": "Schalten Sie Monitore ein oder aus, öffnen Sie Details zum Alarmverlauf und passen Sie Themen an die Weiterentwicklung Ihrer Praxis an."
+    },
+    "help": {
+      "title": "Regulierungsmonitore",
+      "b1": "Beginnen Sie mit Ihrer primären Gerichtsbarkeit und den wichtigsten Tätigkeitsbereichen.",
+      "b2": "Kritische Warnungen können auf Ihrem Dashboard und in Benachrichtigungen angezeigt werden.",
+      "b3": "Bitten Sie Copilot zu erklären, wie sich eine regulatorische Änderung auf offene Angelegenheiten auswirkt."
     }
   },
   "team": {
@@ -475,17 +562,18 @@
   },
   "consumerDashboard": {
     "cases": {
-      "title": "Ihre Fälle",
-      "body": "Sehen Sie aktive Rechtsfälle und deren Status auf einen Blick."
+      "title": "Dein Schnappschuss",
+      "body": "Credits, aktive Fälle, Berichte und Gerichtsbarkeit werden hier angezeigt, sodass Sie auf einen Blick wissen, wo Sie stehen."
     },
     "actions": {
-      "title": "Schnelle Aktionen",
-      "body": "Überprüfen Sie ein Problem, laden Sie Dokumente hoch, sehen Sie sich Berichte an oder fordern Sie eine anwaltliche Überprüfung an."
+      "title": "Was als nächstes zu tun ist",
+      "body": "Starten Sie eine Problemprüfung, laden Sie Dokumente hoch, führen Sie eine Recherche durch, verfassen Sie einen Brief oder beauftragen Sie einen Anwalt – alles über diese Verknüpfungen."
     },
     "help": {
       "title": "Heim",
-      "b1": "KI-Gutschriften für Stromproblemprüfungen und Dokumentenanalysen.",
-      "b2": "Eröffnen Sie einen Fall, um Ihrem Anwalt eine Nachricht zu senden oder Rechnungen zu bezahlen."
+      "b1": "AI schreibt Stromproblemprüfungen, Recherchen und Dokumentenanalysen gut.",
+      "b2": "Öffnen Sie einen Fall, um Ihrem Anwalt eine Nachricht zu senden, Dateien hochzuladen oder Rechnungen zu bezahlen.",
+      "b3": "Laden Sie vor einer langen Recherche- oder Rezensionssitzung Guthaben aus dem Abonnement auf."
     }
   },
   "consumerCases": {
@@ -513,23 +601,493 @@
   "consumerSubscription": {
     "plans": {
       "title": "Pläne und Credits",
-      "body": "Wählen Sie ein Abonnement oder kaufen Sie AI-Credit-Pakete für die Überprüfung und Analyse von Problemen."
+      "body": "Vergleichen Sie kostenlose und Plus-Pläne, kaufen Sie Guthabenpakete und verwalten Sie die automatische Aufladung, damit die KI-Funktionen nie mitten in der Arbeit aufhören."
     },
     "help": {
       "title": "Abonnement",
-      "b1": "Credits werden gemäß den Bedingungen Ihres Plans verlängert.",
-      "b2": "Aktivieren Sie die automatische Aufladung, um Unterbrechungen zu vermeiden."
+      "b1": "Eine detaillierte Aufschlüsselung der Kreditwürdigkeit finden Sie unter Plan & Nutzung.",
+      "b2": "Aktivieren Sie die automatische Aufladung vor fristintensiven Wochen.",
+      "b3": "Plus-Pläne beinhalten mehr monatliche Gutschriften und vorrangigen Support."
     }
   },
   "consumerSettings": {
     "hub": {
       "title": "Kontoeinstellungen",
-      "body": "Verwalten Sie Profil, Datenschutz, Dateneinwilligung und Benachrichtigungseinstellungen."
+      "body": "Aktualisieren Sie Profil, Zahlungsmethoden, Datenschutzeinstellungen und Dateneinwilligung für KI-Funktionen."
     },
     "help": {
       "title": "Einstellungen",
-      "b1": "Steuern Sie, wie Ihre Daten für KI-Funktionen verwendet werden.",
-      "b2": "Aktualisieren Sie Ihre Kontaktdaten, damit Ihr Anwalt Sie erreichen kann."
+      "b1": "Steuern Sie, wie Ihre Daten für KI-Training und -Analyse verwendet werden.",
+      "b2": "Halten Sie Ihre Kontaktdaten aktuell, damit Ihr Anwalt Sie erreichen kann.",
+      "b3": "Überprüfen Sie die Dateneinwilligung, bevor Sie erweiterte KI-Funktionen aktivieren."
+    }
+  },
+  "consumerFindLawyer": {
+    "search": {
+      "title": "Finden Sie den richtigen Anwalt",
+      "body": "Suchen Sie nach Name oder Tätigkeitsbereich und filtern Sie nach Land. Jeder gelistete Anwalt ist auf Umbrella verifiziert."
+    },
+    "results": {
+      "title": "Vergleichen und buchen",
+      "body": "Überprüfen Sie Profile, Tätigkeitsbereiche und Gerichtsbarkeiten. Vereinbaren Sie einen Beratungstermin, wenn Sie gesprächsbereit sind."
+    },
+    "help": {
+      "title": "Finden Sie einen Anwalt",
+      "b1": "Wechseln Sie das Land, wenn Sie einen Rechtsbeistand in einem anderen Rechtsgebiet benötigen.",
+      "b2": "Booking erstellt einen Datensatz, den Sie später mit einem Fall verknüpfen können.",
+      "b3": "Ihre Issue-Check-Berichte helfen Anwälten, Ihre Situation schneller zu verstehen."
+    }
+  },
+  "consumerResearch": {
+    "query": {
+      "title": "Recherchieren Sie Ihre Frage",
+      "body": "Fragen Sie im Klartext nach Ihrer Situation. Geben Sie Ihr Land und wichtige Fakten an, um bessere Antworten zu erhalten."
+    },
+    "sources": {
+      "title": "Wählen Sie vertrauenswürdige Quellen",
+      "body": "Wählen Sie aus, welche Gesetze und Rechtsprechung durchsucht werden sollen. Weniger Quellen bedeuten oft schnellere und klarere Ergebnisse."
+    },
+    "help": {
+      "title": "Rechtsrecherche",
+      "b1": "Die Forschung nutzt KI-Guthaben – überprüfen Sie Ihr Guthaben im Dashboard.",
+      "b2": "Speichern Sie nützliche Antworten zu einem Fall, damit Ihr Anwalt sie überprüfen kann.",
+      "b3": "Hierbei handelt es sich um allgemeine Informationen und nicht um eine formelle Rechtsberatung. Fordern Sie bei wichtigen Entscheidungen eine anwaltliche Überprüfung an."
+    }
+  },
+  "consumerDocumentDrafting": {
+    "intro": {
+      "title": "Entwerfen Sie rechtliche Dokumente",
+      "body": "Beschreiben Sie, was Sie benötigen – eine Mitteilung, eine Vereinbarung oder einen Antrag – und Umbrella schlägt Ihnen das richtige Formular vor und hilft Ihnen beim Ausfüllen."
+    },
+    "workspace": {
+      "title": "Geführter Entwurf",
+      "body": "Beantworten Sie ein paar Fragen, überprüfen Sie den KI-generierten Text und laden Sie das fertige Dokument herunter oder teilen Sie es."
+    },
+    "help": {
+      "title": "Dokumentenerstellung",
+      "b1": "Beginnen Sie mit einer klaren Beschreibung, für wen das Dokument bestimmt ist und was es bewirken soll.",
+      "b2": "Lesen Sie jede Klausel sorgfältig durch, bevor Sie sie senden oder unterschreiben.",
+      "b3": "Speichern Sie Entwürfe in einem Fall, damit Ihr Anwalt sie bearbeiten kann."
+    }
+  },
+  "consumerDocumentReview": {
+    "upload": {
+      "title": "Hochladen oder einfügen",
+      "body": "Legen Sie eine PDF- oder Word-Datei ab oder fügen Sie Text ein. Umbrella weist auf riskante Klauseln hin und schlägt Verbesserungen vor."
+    },
+    "analyze": {
+      "title": "Führen Sie die Analyse durch",
+      "body": "Wählen Sie ein KI-Modell aus und klicken Sie auf Analysieren. Die Ergebnisse heben Risiken, Schlüsselbegriffe und vorgeschlagene Änderungen hervor."
+    },
+    "help": {
+      "title": "Dokumentenprüfung",
+      "b1": "Verwenden Sie den Single-Modus für einen Vertrag. Tabellenmodus zum Vergleichen vieler Dateien.",
+      "b2": "Speichern Sie Bewertungen, um sie vor der Unterzeichnung erneut anzusehen.",
+      "b3": "Teilen Sie die Ergebnisse Ihrem Anwalt mit, um eine formelle Beratung zu wichtigen Dokumenten zu erhalten."
+    }
+  },
+  "consumerPlanUsage": {
+    "usage": {
+      "title": "Credits und Nutzung",
+      "body": "Sehen Sie sich das verbleibende Guthaben und die aktuelle Nutzung nach Funktion an und passen Sie Ihr Standard-KI-Modell oder Ihre Aufladeeinstellungen an."
+    },
+    "help": {
+      "title": "Plan & Nutzung",
+      "b1": "Umfangreiche Recherchen und Dokumentenprüfungen verbrauchen mehr Credits als schnelle Überprüfungen.",
+      "b2": "Upgraden Sie oder kaufen Sie Pakete aus dem Abonnement, wenn Sie zur Neige gehen."
+    }
+  },
+  "home": {
+    "header": {
+      "title": "Schnellaktions-Hub",
+      "body": "Ihr Startpunkt für die Ausarbeitung, Recherche, Überprüfung und Sachbearbeitung – personalisiert auf Ihre Rolle und Ihren Zuständigkeitsbereich."
+    },
+    "actions": {
+      "title": "Starten Sie einen beliebigen Workflow",
+      "body": "Jede Karte öffnet ein fokussiertes Werkzeug. Verwenden Sie die oben genannten Aufgabenmuster für allgemeine Recherche- und Entwurfsaufforderungen."
+    },
+    "help": {
+      "title": "Schnelle Aktionen",
+      "b1": "Öffnen Sie das vollständige Dashboard für KPIs und überfällige Arbeiten.",
+      "b2": "⌘K springt sofort hierher oder zu einer beliebigen Seite.",
+      "b3": "Indienspezifische Tools (Section Finder, FIR) werden angezeigt, wenn Ihre Gerichtsbarkeit IN ist."
+    }
+  },
+  "evidence": {
+    "matter": {
+      "title": "Link zu einer Angelegenheit",
+      "body": "Beweise beziehen sich immer auf einen Sachverhalt. Wählen Sie den Fall aus, bevor Sie Exponate oder Chronologieelemente hinzufügen."
+    },
+    "list": {
+      "title": "Beweisregister",
+      "body": "Verfolgen Sie Artikel, Berechtigungsmarkierungen und Bereitschaftskarten. Exportpakete zur Vorbereitung auf das Gericht."
+    },
+    "help": {
+      "title": "Beweistresor",
+      "b1": "Fügen Sie Elemente mit eindeutigen Titeln für die Bundle-Indizierung hinzu.",
+      "b2": "Überprüfen Sie das Privileg, bevor Sie es mit dem gegnerischen Anwalt teilen.",
+      "b3": "Öffnen Sie die Angelegenheit „Quick AI“ für KI-gestützte Chronologie."
+    }
+  },
+  "queues": {
+    "grid": {
+      "title": "Arbeitswarteschlangen",
+      "body": "In den Eingangs-, Abrechnungs- und Aufgabenwarteschlangen wird angezeigt, welche Maßnahmen im gesamten Unternehmen erforderlich sind – klicken Sie sich durch, um Probleme zu lösen."
+    },
+    "help": {
+      "title": "Warteschlangen",
+      "b1": "Überprüfen Sie täglich die Aufnahmewarteschlange auf neue Angelegenheiten, die auf die Einrichtung warten.",
+      "b2": "Finanzrollen sehen hier Rechnungsgenehmigungswarteschlangen."
+    }
+  },
+  "automations": {
+    "header": {
+      "title": "Automatisierungen",
+      "body": "Wann/Dann-Regeln verbinden Auslöser (neue Angelegenheit, Dokument-Upload, Frist) mit Aufgaben, Agenten und Abrechnung – kein Code erforderlich."
+    },
+    "recipes": {
+      "title": "Empfohlene Rezepte",
+      "body": "Installieren Sie getestete Automatisierungen mit einem Klick. Kehren Sie jederzeit zu den Standardeinstellungen zurück, ohne Ihre Daten zu verlieren."
+    },
+    "help": {
+      "title": "Automatisierungen",
+      "b1": "Beginnen Sie mit Rezepten für die Einnahme und Fristen.",
+      "b2": "Verknüpfen Sie Automatisierungen mit KI-Agenten für asynchrone Arbeit.",
+      "b3": "Überwachen Sie den Status der letzten Ausführung auf jeder Rezeptkarte."
+    }
+  },
+  "reports": {
+    "header": {
+      "title": "Firmenanalytik",
+      "body": "Nutzungs-, Realisierungs-, Inkasso- und Pipeline-Metriken im Vergleich zu Branchen-Benchmarks."
+    },
+    "kpis": {
+      "title": "Leistungs-KPIs",
+      "body": "Grüne Indikatoren übertreffen die Ziele. Informieren Sie sich über Finanzen oder Themen anhand der unten verlinkten Karten."
+    },
+    "help": {
+      "title": "Berichte",
+      "b1": "Exportieren Sie Zusammenfassungen für Partnertreffen.",
+      "b2": "Vergleichen Sie Ergebnis-Benchmarks, wenn Sie genügend abgeschlossene Angelegenheiten haben.",
+      "b3": "Erfordert den Professional-Plan oder höher."
+    }
+  },
+  "documentReview": {
+    "upload": {
+      "title": "Hochladen oder einfügen",
+      "body": "Lassen Sie Verträge, Schriftsätze oder Vereinbarungen fallen. Umbrella weist auf riskante Klauseln hin und schlägt Änderungen vor."
+    },
+    "analyze": {
+      "title": "Analyse durchführen",
+      "body": "Wählen Sie den Einzel- oder Tabellenmodus, wählen Sie ein KI-Modell aus und analysieren Sie es. Speichern Sie die Ergebnisse in einer Angelegenheit oder Mandantendatei."
+    },
+    "help": {
+      "title": "Dokumentenprüfung",
+      "b1": "Im Tabellenmodus werden Klauseln über mehrere Dateien hinweg verglichen.",
+      "b2": "Überprüfen Sie immer KI-Vorschläge, bevor Sie sie einreichen.",
+      "b3": "Exportieren Sie kommentierte Bewertungen als PDF."
+    }
+  },
+  "legalForms": {
+    "intro": {
+      "title": "Offizieller Formularkatalog",
+      "body": "Durchsuchen Sie mehr als 10.000 Gerichts- und Regierungsformulare in den USA, Großbritannien, Kenia und Indien – oder beschreiben Sie, was Sie benötigen, und entwerfen Sie mit KI."
+    },
+    "workspace": {
+      "title": "Entwurfsarbeitsbereich",
+      "body": "Durchsuchen Sie den Katalog, beantworten Sie Leitfragen und erstellen Sie einen ausgefüllten Entwurf zur Überprüfung."
+    },
+    "help": {
+      "title": "Rechtsformen",
+      "b1": "Gespeicherte Entwürfe werden unter „Gespeicherte Entwürfe“ angezeigt.",
+      "b2": "Verknüpfen Sie Ausgaben mit Angelegenheiten für Abrechnung und Prüfung.",
+      "b3": "Verwenden Sie für gerichtsspezifische Formate die Formulierung in Indien oder den USA."
+    }
+  },
+  "sectionFinder": {
+    "workspace": {
+      "title": "Abschnitte nachschlagen",
+      "body": "Durchsuchen Sie IPC→BNS-, CrPC→BNSS-Zebrastreifen oder US-Codeabschnitte. Beliebte Suchanfragen helfen Ihnen, schnell loszulegen."
+    },
+    "help": {
+      "title": "Abschnittsfinder",
+      "b1": "Überprüfen Sie die Ergebnisse anhand offizieller Akten, bevor Sie sie zitieren.",
+      "b2": "Exportieren Sie Suchergebnisse in Themenentwürfe."
+    }
+  },
+  "firAnalysis": {
+    "intro": {
+      "title": "FIR-Geheimdienst",
+      "body": "Laden Sie einen ersten Informationsbericht hoch, um Fakten, Straftaten, die Haltung der Kaution und vorgeschlagene nächste Schritte zu extrahieren."
+    },
+    "upload": {
+      "title": "FIR hochladen",
+      "body": "PDF- oder Bild-Uploads werden zur Überprüfung und zum Export analysiert und strukturiert."
+    },
+    "help": {
+      "title": "FIR-Analyse",
+      "b1": "Nur Indien zuständig.",
+      "b2": "Speichern Sie die Analyse in einer Angelegenheit für die Teamzusammenarbeit."
+    }
+  },
+  "indiaDrafting": {
+    "intro": {
+      "title": "Gerichtsentwürfe in Indien",
+      "body": "Kautionsanträge, rechtliche Hinweise, Verbraucherbeschwerden und mehr – basierend auf BNS/BNSS/BSA 2023."
+    },
+    "workspace": {
+      "title": "Wählen Sie ein Format",
+      "body": "Wählen Sie eine Vorlage, geben Sie Fakten ein und erstellen Sie einen ersten Entwurf zur anwaltlichen Prüfung."
+    },
+    "help": {
+      "title": "Indien entwirft",
+      "b1": "Überprüfen Sie es immer, bevor Sie es einreichen.",
+      "b2": "Formate werden mit dem mobilen App-Katalog synchronisiert."
+    }
+  },
+  "usDrafting": {
+    "workspace": {
+      "title": "Ausarbeitung eines US-Gerichtsentwurfs",
+      "body": "Vorlagen für Bundes- und Landesanträge mit Aufforderungen und Zitationshilfen, die sich an der Gerichtsbarkeit orientieren."
+    },
+    "help": {
+      "title": "US-Entwurf",
+      "b1": "Bestätigen Sie vor der Einreichung die örtlichen Gerichtsregeln.",
+      "b2": "Speichern Sie Entwürfe zur Zeiterfassung in Angelegenheiten."
+    }
+  },
+  "contracts": {
+    "dashboard": {
+      "title": "Vertragslebenszyklus",
+      "body": "Verfolgen Sie Vertragsstatus, Verlängerungen, Verpflichtungen und verknüpfte Angelegenheiten in einem Dashboard."
+    },
+    "help": {
+      "title": "Verträge",
+      "b1": "Laden Sie ausgeführte Verträge hoch, um wichtige Daten per KI zu extrahieren.",
+      "b2": "Richten Sie Verlängerungsbenachrichtigungen ein, um Fristüberschreitungen zu vermeiden."
+    }
+  },
+  "savedDrafts": {
+    "list": {
+      "title": "Entwurfsgeschichte",
+      "body": "Setzen Sie alle gespeicherten KI-Entwürfe aus Rechtsformen, Indien/US-Entwürfen oder Copilot fort."
+    },
+    "help": {
+      "title": "Gespeicherte Entwürfe",
+      "b1": "Entwürfe sind mieterbezogen und überprüfbar.",
+      "b2": "Öffnen Sie einen Entwurf, um mit der Bearbeitung oder dem Export fortzufahren."
+    }
+  },
+  "aiCommandCenter": {
+    "header": {
+      "title": "KI-Kommandozentrale",
+      "body": "Überwachen Sie die KI-Arbeitsbelastung, ausstehende Überprüfungen, risikoreiche Angelegenheiten und Kreditausgaben im gesamten Unternehmen."
+    },
+    "cards": {
+      "title": "Betriebskarten",
+      "body": "Jede Karte ist mit der zugrunde liegenden Warteschlange verknüpft – Leads, Entwürfe, Angelegenheiten oder Abrechnung."
+    },
+    "help": {
+      "title": "Kommandozentrale",
+      "b1": "Suchen Sie täglich nach Entwürfen, die auf die Genehmigung durch den Anwalt warten.",
+      "b2": "Beobachten Sie die Kreditverwendung im Vergleich zu Ihrer Planzuteilung.",
+      "b3": "Partneradministratoren sehen unternehmensweite Kennzahlen."
+    }
+  },
+  "agents": {
+    "jobs": {
+      "title": "Agentenjobs",
+      "body": "Hintergrund-KI-Agenten führen Recherche-, Entwurfs- und Sorgfaltsaufgaben durch. Verfolgen Sie hier den Status und die Ausgaben."
+    },
+    "help": {
+      "title": "KI-Agenten",
+      "b1": "Agenten werden durch Automatisierungen oder manuelle Ausführungen ausgelöst.",
+      "b2": "Fehlgeschlagene Aufträge können über das Auftragsdetailfenster erneut versucht werden."
+    }
+  },
+  "onboarding": {
+    "wizard": {
+      "title": "Fester Aufbau",
+      "body": "Führen Sie die Schritte zu Profil, Abrechnung, Teameinladungen und KI-Richtlinien aus, um Ihren Arbeitsbereich zu aktivieren."
+    },
+    "help": {
+      "title": "Onboarding",
+      "b1": "Partner sollten alle Schritte abschließen, bevor sie Mitarbeiter einladen.",
+      "b2": "Sie können jederzeit über die Einstellungen hierher zurückkehren."
+    }
+  },
+  "profile": {
+    "form": {
+      "title": "Ihr Profil",
+      "body": "Aktualisieren Sie Name, Kontaktdaten, Benachrichtigungseinstellungen und Passwort."
+    },
+    "help": {
+      "title": "Profil",
+      "b1": "Halten Sie Ihr Telefon für dringende Terminbenachrichtigungen auf dem neuesten Stand.",
+      "b2": "Rollen und Berechtigungen werden von Firmenadministratoren verwaltet."
+    }
+  },
+  "referrals": {
+    "share": {
+      "title": "Empfehlen Sie Kollegen",
+      "body": "Teilen Sie Ihren Empfehlungslink. Verdienen Sie Credits, wenn sich neue Firmen oder Verbraucher anmelden und ein Abonnement abschließen."
+    },
+    "help": {
+      "title": "Empfehlungen",
+      "b1": "Verfolgen Sie hier ausstehende und abgeschlossene Empfehlungen.",
+      "b2": "Empfehlungsgutschriften gelten für die KI-Nutzung."
+    }
+  },
+  "copilotAudit": {
+    "list": {
+      "title": "Copilot-Überwachungsprotokoll",
+      "body": "Überprüfen Sie die von Copilot vorgeschlagenen und durchgeführten KI-Maßnahmen in allen Angelegenheiten auf Compliance."
+    },
+    "help": {
+      "title": "Copilot-Audit",
+      "b1": "Filtern Sie nach Benutzer, Angelegenheit oder Aktionstyp.",
+      "b2": "Exportieren Sie Protokolle für Unternehmens-Governance-Überprüfungen."
+    }
+  },
+  "accountingPayments": {
+    "list": {
+      "title": "Zahlungsaufzeichnungen",
+      "body": "Erfassen Sie Kundenzahlungen anhand von Rechnungen und verfolgen Sie nicht zugewiesene Beträge."
+    },
+    "help": {
+      "title": "Zahlungen",
+      "b1": "Ordnen Sie Zahlungen den Rechnungen zu, um eine saubere Debitorenbuchhaltung zu gewährleisten.",
+      "b2": "Treuhandzahlungen folgen separaten Genehmigungsabläufen."
+    }
+  },
+  "accountingStatements": {
+    "list": {
+      "title": "Kundenaussagen",
+      "body": "Erstellen und versenden Sie Kontoauszüge mit einer Zusammenfassung offener Rechnungen und Gutschriften."
+    },
+    "help": {
+      "title": "Aussagen",
+      "b1": "Führen Sie Kontoauszüge vor Monatsende aus.",
+      "b2": "Aus der Angelegenheit können PDF-Statements per E-Mail verschickt werden."
+    }
+  },
+  "preBill": {
+    "workspace": {
+      "title": "Überprüfung vor der Rechnungsstellung",
+      "body": "Überprüfen Sie Zeiteinträge und Ausgaben vor der Rechnungsstellung. Bearbeiten Sie hier Erzählungen, Abschreibungen und Aufteilungen."
+    },
+    "help": {
+      "title": "Vorabrechnung",
+      "b1": "Genehmigen Sie Vorabrechnungen, bevor Sie endgültige Rechnungen erstellen.",
+      "b2": "Markieren Sie Einträge, die einer Partnerüberprüfung bedürfen."
+    }
+  },
+  "consumerReports": {
+    "list": {
+      "title": "Ihre Berichte",
+      "body": "KI-Berichte zur Problemprüfung und Analyse aller Ihrer Fälle – öffnen Sie jeden, um ihn zu lesen oder mit einem Anwalt zu teilen."
+    },
+    "help": {
+      "title": "Berichte",
+      "b1": "Berichte verweisen auf den Fall, aus dem sie erstellt wurden.",
+      "b2": "Fordern Sie eine anwaltliche Überprüfung an, um eine formelle Beratung zu einer Meldung zu erhalten."
+    }
+  },
+  "consumerLawyerReview": {
+    "request": {
+      "title": "Fordern Sie eine formelle Überprüfung an",
+      "body": "Erweitern Sie einen KI-Bericht zu einer verifizierten, von einem Anwalt überprüften Meinung für Ihre spezifische Situation."
+    },
+    "help": {
+      "title": "Rezension eines Anwalts",
+      "b1": "Die Gebühren variieren je nach Land und Art der Ausgabe.",
+      "b2": "Ein verifizierter Anwalt antwortet durch Ihre Fallnachrichten.",
+      "b3": "Kein Ersatz für einen Notrechtsbeistand."
+    }
+  },
+  "consumerSettingsPayment": {
+    "methods": {
+      "title": "Zahlungsmethoden",
+      "body": "Verwalten Sie Karten für Abonnements und Guthabenaufladungen. Beim automatischen Aufladen wird Ihre Standardmethode verwendet."
+    },
+    "help": {
+      "title": "Zahlungsmethoden",
+      "b1": "Halten Sie eine gültige Karte bereit, um Serviceunterbrechungen zu vermeiden.",
+      "b2": "Belege werden in Ihrem Abonnementverlauf angezeigt."
+    }
+  },
+  "consumerSettingsConsent": {
+    "form": {
+      "title": "Daten- und KI-Einwilligung",
+      "body": "Steuern Sie, ob Ihre Daten zur Verbesserung von Eingabeaufforderungen, Bewertungen oder Modellschulungen beitragen."
+    },
+    "help": {
+      "title": "Dateneinwilligung",
+      "b1": "Sie können sich jederzeit abmelden.",
+      "b2": "Kernfunktionen funktionieren ohne Schulungseinwilligung."
+    }
+  },
+  "consumerIndiaDrafting": {
+    "intro": {
+      "title": "Gerichtsentwürfe in Indien",
+      "body": "Ausgangsentwürfe für Kaution, Unterhalt, Verbraucherbeschwerden und rechtliche Hinweise gemäß BNS/BNSS/BSA 2023."
+    },
+    "workspace": {
+      "title": "Wählen Sie ein Format",
+      "body": "Wählen Sie eine Vorlage aus, beschreiben Sie Ihren Sachverhalt und laden Sie einen Entwurf zur anwaltlichen Prüfung herunter."
+    },
+    "help": {
+      "title": "Indien-Entwürfe",
+      "b1": "Nur Indien zuständig.",
+      "b2": "Speichern Sie den Fall in einem Fall, damit Ihr Anwalt ihn bearbeiten kann."
+    }
+  },
+  "consumerSectionFinder": {
+    "workspace": {
+      "title": "Suchen Sie einen Abschnitt",
+      "body": "Suchen Sie nach indischen Straf- und Verfahrensabschnitten mit IPC→BNS-Zebrastreifen im Klartext."
+    },
+    "help": {
+      "title": "Abschnittsfinder",
+      "b1": "Nützlich zum Verständnis von Polizeiberichten und FIRs.",
+      "b2": "Bevor Sie sich vor Gericht berufen, überprüfen Sie Ihre Angaben anhand offizieller Akten."
+    }
+  },
+  "consumerFirAnalysis": {
+    "intro": {
+      "title": "Verstehen Sie Ihre FIR",
+      "body": "Laden Sie eine FIR hoch, um die angeklagten Straftaten, Optionen zur Kaution und praktische nächste Schritte zu sehen."
+    },
+    "upload": {
+      "title": "Dokument hochladen",
+      "body": "Foto oder PDF der FIR-Arbeiten. Die Analyse ist privat für Ihr Konto."
+    },
+    "help": {
+      "title": "FIR-Hilfe",
+      "b1": "Teilen Sie die Ergebnisse im Rahmen eines Falls mit Ihrem Anwalt.",
+      "b2": "Wenden Sie sich in Notfällen umgehend an einen Anwalt."
+    }
+  },
+  "consumerRightsChecker": {
+    "scenarios": {
+      "title": "Kennen Sie Ihre Rechte",
+      "body": "Wählen Sie ein Szenario aus – Wohnen, Beschäftigung, Schulden, Polizei –, um Ihre Rechte und empfohlenen Schritte anzuzeigen."
+    },
+    "help": {
+      "title": "Rechteprüfer",
+      "b1": "Nur allgemeine Hinweise, keine Rechtsberatung.",
+      "b2": "Starten Sie eine Problemprüfung oder finden Sie einen Anwalt für Ihren Fall."
+    }
+  },
+  "consumerMarketplace": {
+    "skus": {
+      "title": "Juristische Dienstleistungen",
+      "body": "Durchsuchen Sie Festpreisangebote – Dokumentenprüfung, Beratung, Compliance-Prüfungen – von geprüften Fachleuten."
+    },
+    "help": {
+      "title": "Marktplatz",
+      "b1": "Preise und Bearbeitungszeit variieren je nach Service.",
+      "b2": "Zur Nachverfolgung werden Käufe mit Ihrem Umbrella-Konto verknüpft."
     }
   }
 }

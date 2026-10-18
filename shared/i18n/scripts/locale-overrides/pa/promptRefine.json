@@ -1,0 +1,20 @@
+{
+  "title": "ਰਿਫਾਇੰਡ ਪ੍ਰੋਂਪਟ",
+  "description": "ਅਸੀਂ ਸਪਸ਼ਟ AI ਨਤੀਜਿਆਂ ਲਈ ਤੁਹਾਡੇ ਵਰਣਨ ਨੂੰ ਪੁਨਰਗਠਿਤ ਕੀਤਾ ਹੈ। ਜੇਕਰ ਲੋੜ ਹੋਵੇ ਤਾਂ ਸੰਪਾਦਨ ਕਰੋ, ਫਿਰ ਜਾਰੀ ਰੱਖੋ।",
+  "yourOriginal": "ਤੁਹਾਡਾ ਅਸਲੀ ਪ੍ਰੋਂਪਟ",
+  "refinedLabel": "ਰਿਫਾਇੰਡ ਪ੍ਰੋਂਪਟ",
+  "continueRefined": "ਰਿਫਾਈਨਡ ਪ੍ਰੋਂਪਟ ਨਾਲ ਜਾਰੀ ਰੱਖੋ",
+  "useOriginal": "ਇਸਦੀ ਬਜਾਏ ਅਸਲੀ ਵਰਤੋ",
+  "hintJurisdiction": "ਅਧਿਕਾਰ ਖੇਤਰ",
+  "hintDocument": "ਦਸਤਾਵੇਜ਼",
+  "hintParty": "ਪਾਰਟੀ",
+  "hintStatute": "ਵਿਧਾਨ",
+  "preparing": "ਤੁਹਾਡਾ ਉਤਪ੍ਰੇਰਕ ਤਿਆਰ ਕੀਤਾ ਜਾ ਰਿਹਾ ਹੈ...",
+  "startingDrafting": "{seconds} ਸਕਿੰਟਾਂ ਵਿੱਚ ਖਰੜਾ ਤਿਆਰ ਕਰਨਾ ਸ਼ੁਰੂ ਕੀਤਾ ਜਾ ਰਿਹਾ ਹੈ...",
+  "startingResearch": "{seconds}s ਵਿੱਚ ਖੋਜ ਸ਼ੁਰੂ ਕੀਤੀ ਜਾ ਰਹੀ ਹੈ...",
+  "undo": "ਅਣਡੂ",
+  "autoFilledTitle": "ਪ੍ਰੋਂਪਟ ਸੁਧਾਰਿਆ ਗਿਆ",
+  "autoFilledDescription": "{seconds}s ਵਿੱਚ ਜਾਰੀ ਰੱਖਣਾ — ਆਪਣੇ ਅਸਲੀ ਨੂੰ ਰੱਖਣ ਲਈ ਅਨਡੂ।",
+  "autoFillCountdownAria": "ਅਨਡੂ ਕਰਨ ਲਈ {seconds} ਸਕਿੰਟ ਬਾਕੀ ਹਨ",
+  "autoFillHint": "ਅਨਡੂ ਤੁਹਾਡੇ ਅਸਲ ਪ੍ਰੋਂਪਟ ਨੂੰ ਰੀਸਟੋਰ ਕਰਦਾ ਹੈ"
+}

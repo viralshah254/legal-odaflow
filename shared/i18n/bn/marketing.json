@@ -11,6 +11,8 @@
   "faq": "প্রায়শই জিজ্ঞাসিত প্রশ্ন",
   "header": {
     "issueChecker": "ইস্যু পরীক্ষক",
+    "legalAi": "আইনি এআই",
+    "solutions": "সমাধান",
     "forLawyers": "আইনজীবীদের জন্য",
     "pricing": "মূল্য নির্ধারণ",
     "demo": "ডেমো",
@@ -21,10 +23,24 @@
     "getStarted": "শুরু করুন",
     "start": "শুরু করুন",
     "free": "বিনামূল্যে",
-    "account": "হিসাব"
+    "account": "হিসাব",
+    "consumer": {
+      "cases": "আমার মামলা",
+      "reports": "রিপোর্ট",
+      "lawyerReview": "আইনজীবী পর্যালোচনা",
+      "subscription": "সাবস্ক্রিপশন",
+      "research": "আইনি গবেষণা",
+      "documentReview": "নথি পর্যালোচনা",
+      "issueChecker": "ইস্যু পরীক্ষক",
+      "aiTools": "এআই টুলস",
+      "firAnalysis": "এফআইআর বিশ্লেষণ",
+      "indiaDrafts": "ভারত খসড়া",
+      "sectionFinder": "বিভাগ ফাইন্ডার",
+      "account": "হিসাব"
+    }
   },
   "footer": {
-    "tagline": "আপনি একজন আইনজীবীর জন্য হাজার হাজার খরচ করার আগে আপনার আইনি সমস্যা বুঝুন।",
+    "tagline": "আপনি একজন আইনজীবীর জন্য হাজার হাজার টাকা খরচ করার আগে আপনার আইনি সমস্যা বুঝুন - অথবা আপনার পুরো ফার্মকে একটি প্ল্যাটফর্মে চালান।",
     "forConsumers": "ভোক্তাদের জন্য",
     "legalIssueChecker": "আইনি সমস্যা পরীক্ষক",
     "uploadDocument": "নথি আপলোড করুন",
@@ -38,6 +54,15 @@
     "terms": "শর্তাবলী",
     "dataConsent": "ডেটা এবং এআই সম্মতি",
     "legalDisclaimer": "আইনি দাবিত্যাগ",
+    "legalAi": "আইনি এআই",
+    "legalGuides": "আইনি গাইড",
+    "solutions": "সমাধান",
+    "compare": "আইনি এআই তুলনা করুন",
+    "legalAiIndia": "আইনি এআই ইন্ডিয়া",
+    "legalAiUK": "আইনি এআই ইউকে",
+    "legalAiUS": "আইনি AI US",
+    "legalAiKenya": "আইনি এআই কেনিয়া",
+    "regions": "অঞ্চলসমূহ",
     "copyright": "© {year} ছাতা। সর্বস্বত্ব সংরক্ষিত",
     "signIn": "সাইন ইন করুন"
   },
@@ -62,13 +87,32 @@
     "aiCreditsBody": "AI মডেল ব্যবহারের সাথে ক্রেডিট স্কেল — যেমন কার্সার। অটো টাস্ক (কপিলট, ড্রাফ্ট) দক্ষ এবং কম ক্রেডিট ব্যবহার করে। প্রিমিয়াম গভীর বিশ্লেষণ (অনুরূপ কেস, প্রতিপক্ষ কৌশল, কৌশল মেমো) আপনার নির্বাচিত প্রিমিয়াম মডেল ব্যবহার করে এবং টোকেন ব্যবহার দ্বারা বিল করা হয়।",
     "deepAnalysisNote": "গভীর কেস বিশ্লেষণের জন্য <strong>পেশাদার</strong> পরিকল্পনা বা তার উপরে প্রয়োজন।",
     "enterprisePrompt": "এন্টারপ্রাইজ SSO, ডেটা রেসিডেন্সি বা SCIM প্রয়োজন?",
-    "enterpriseSettings": "এন্টারপ্রাইজ সেটিংস"
+    "enterpriseSettings": "এন্টারপ্রাইজ সেটিংস",
+    "mostPopular": "সর্বাধিক জনপ্রিয়",
+    "firmPlansSubtitle": "দলগুলির জন্য সীট প্রতি স্কেলযোগ্য মূল্য",
+    "transparentPricingBadge": "স্বচ্ছ মূল্য · কোন লুকানো ফি",
+    "showingPricesFor": "<strong>{country}</strong>-এর দাম দেখানো হচ্ছে",
+    "findingBestPricing": "আপনার অঞ্চলের জন্য সেরা মূল্য খোঁজা",
+    "enterpriseFeatures": "SSO · SCIM · ডেটা রেসিডেন্সি · ডেডিকেটেড SLA",
+    "detectingLocation": "আপনার অবস্থান শনাক্ত করা হচ্ছে...",
+    "loadingPlans": "প্ল্যান লোড হচ্ছে...",
+    "managePlan": "পরিকল্পনা পরিচালনা করুন",
+    "freePlan": "বিনামূল্যে",
+    "manageInStripe": "স্ট্রাইপে পরিচালনা করুন",
+    "contactSales": "যোগাযোগ বিক্রয়",
+    "downgrade": "ডাউনগ্রেড",
+    "upgrade": "আপগ্রেড করুন",
+    "switchPlan": "পরিকল্পনা পরিবর্তন করুন",
+    "contactUs": "আমাদের সাথে যোগাযোগ করুন",
+    "audienceLawyers": "আইন সংস্থাগুলি",
+    "audienceConsumers": "ভোক্তাদের",
+    "creditsFootnote": "মডেল ব্যবহারের সাথে AI ক্রেডিট স্কেল।"
   },
   "home": {
     "audienceItems": [
       "Individuals",
       "Law Firms",
-      "Solo Advocates",
+      "একক উকিল",
       "In-House Counsel",
       "Litigation Teams",
       "Corporate Legal Depts",
@@ -87,17 +131,24 @@
       "badge": "AI-ভিত্তিক আইনি বুদ্ধিমত্তা — যে কারও জন্য",
       "title": "আইনি বুদ্ধিমত্তা।",
       "titleHighlight": "যে কারো জন্য। যে কোন জায়গায়।",
-      "subtitle": "আপনার পরিস্থিতি সরল ভাষায় ব্যাখ্যা করুন। আমরা প্রকৃত আইন পড়ি, বাস্তব আইন এবং মামলাগুলি উদ্ধৃত করি, এবং আপনি ঠিক কোথায় দাঁড়িয়ে আছেন তা আপনাকে বলি — শুরু করতে বিনামূল্যে, কোনো ক্রেডিট কার্ডের প্রয়োজন নেই৷",
+      "subtitle": "আপনার পরিস্থিতি সরল ভাষায় ব্যাখ্যা করুন। আমরা প্রকৃত আইন পড়ি, বাস্তব বিধি এবং মামলাগুলি উদ্ধৃত করি এবং আপনাকে বলি যে আপনি ঠিক কোথায় দাঁড়িয়ে আছেন — শুরু করতে বিনামূল্যে৷",
       "bullet1": "আপনার পরিস্থিতি পড়ে, শুধু কীওয়ার্ড নয়",
       "bullet2": "বাস্তব বিধি এবং মামলার আইন — উদ্ধৃত, কখনও বানোয়াট নয়",
       "bullet3": "ব্যক্তি এবং আইন সংস্থাগুলি এক প্ল্যাটফর্মে",
       "bullet4": "আপনার এখতিয়ার স্বয়ংক্রিয়ভাবে সনাক্ত করে, সর্বদা স্থানীয় আইন প্রয়োগ করে",
-      "ctaPrimary": "বিনামূল্যে শুরু করুন - কোন ক্রেডিট কার্ড নেই",
+      "ctaPrimary": "বিনামূল্যে শুরু করুন",
       "ctaSecondary": "কর্ম এটি দেখুন",
       "trust1": "বিনামূল্যে পূর্বরূপ সবসময় অন্তর্ভুক্ত",
       "trust2": "AI প্রশিক্ষণের জন্য ব্যবহার করা হয় না",
       "trust3": "আপনার অ্যাকাউন্টে ব্যক্তিগত",
       "howItWorksLink": "এটা কিভাবে কাজ করে"
+    },
+    "guestSignup": {
+      "badge": "40% ছাড় মাত্র আজ",
+      "title": "আপনার বিনামূল্যে অ্যাকাউন্ট তৈরি করুন",
+      "description": "আপনার রিপোর্ট সংরক্ষণ এবং আপনার স্বাগত ডিসকাউন্ট আনলক করতে সাইন আপ করুন.",
+      "signUp": "সাইন আপ করুন",
+      "continueAsGuest": "অতিথি হিসাবে চালিয়ে যান"
     },
     "coverage": {
       "india": "ভারত",
@@ -164,7 +215,7 @@
           "label": "DRAFT",
           "title": "Document Generation",
           "desc": "Demand letters, contracts, notices, and pleadings — drafted with AI, cited from real statutes, ready to send or file.",
-          "cta": "Start drafting"
+          "cta": "খসড়া শুরু করুন"
         },
         {
           "num": "04",
@@ -178,7 +229,7 @@
           "label": "CONNECT",
           "title": "Lawyer Marketplace",
           "desc": "When you need a professional, connect directly with vetted lawyers in your jurisdiction. Warm handoff from AI analysis to real counsel.",
-          "cta": "Find a lawyer"
+          "cta": "একজন আইনজীবী খুঁজুন"
         },
         {
           "num": "06",
@@ -210,7 +261,7 @@
         "Matter management, billing, AI Copilot, and meeting transcripts — one platform.",
         "Built-in client portal. Not email. Not a PDF."
       ],
-      "cta": "বিনামূল্যে শুরু করুন - কোন ক্রেডিট কার্ড নেই"
+      "cta": "বিনামূল্যে শুরু করুন"
     },
     "whyNot": {
       "badge": "কেন ছাতা",
@@ -220,7 +271,7 @@
       "vsLabel": "বনাম {name}",
       "items": [
         {
-          "name": "ChatGPT",
+          "name": "চ্যাটজিপিটি",
           "problem": "Confident answers with fabricated citations. No jurisdiction awareness. No outcome probability.",
           "solution": "Umbrella reads your facts, retrieves real statutes and case law, and cites sources you can open in one click."
         },
@@ -405,7 +456,7 @@
             "Unlimited AI Copilot",
             "Matter & client management",
             "Billing & trust accounting",
-            "Meeting transcripts",
+            "মিটিং প্রতিলিপি",
             "Secure client intake portal"
           ],
           "cta": "Explore Firm Plans"
@@ -467,36 +518,218 @@
       "badge": "শুরু করতে বিনামূল্যে",
       "title": "আপনার আইনি মস্তিষ্ক.",
       "titleItalic": "শুরু করতে বিনামূল্যে.",
-      "subtitle": "আপনার অবস্থা বর্ণনা করুন। 2 মিনিটের মধ্যে উদ্ধৃত বিশ্লেষণ পান। কোন ক্রেডিট কার্ড, কোন আইনজীবী শুরু করতে প্রয়োজন.",
+      "subtitle": "আপনার অবস্থা বর্ণনা করুন। 2 মিনিটের মধ্যে উদ্ধৃত বিশ্লেষণ পান। শুরু করার জন্য কোন আইনজীবীর প্রয়োজন নেই।",
       "ctaPrimary": "শুরু করুন — এটা বিনামূল্যে",
       "ctaSecondary": "আইন সংস্থাগুলির জন্য →",
-      "footnote": "কোনো ক্রেডিট কার্ড নেই · 2 মিনিটের নিচে ফলাফল · বিনামূল্যে পূর্বরূপ সর্বদা অন্তর্ভুক্ত"
+      "footnote": "2 মিনিটের নিচে ফলাফল · বিনামূল্যে প্রিভিউ সবসময় অন্তর্ভুক্ত"
     },
     "landingIssueBoard": {
-      "title": "আপনার আইনগত অবস্থা কি?",
-      "subtitle": "এটাকে সরল ভাষায় বর্ণনা করুন — আমাদের AI তথ্যগুলো পড়বে, আইনের উদ্ধৃতি দেবে এবং আপনাকে বলবে আপনি ঠিক কোথায় দাঁড়িয়ে আছেন।",
+      "title": "আপনি কি সাহায্য প্রয়োজন?",
+      "subtitle": "একটি প্রশ্ন গবেষণা করুন, আপনার পরিস্থিতি বুঝুন, একটি নথির খসড়া তৈরি করুন, বা একটি চুক্তি পর্যালোচনা করুন — আমাদের সরল ভাষায় বলুন এবং আমরা প্রযোজ্য আইনটি উদ্ধৃত করব৷",
+      "titleIssueCheck": "আপনার আইনগত অবস্থা বুঝতে",
+      "subtitleIssueCheck": "আমাদের বলুন কি হয়েছে. ছাতা মূল আইনি সমস্যাগুলি চিহ্নিত করবে, আপনার বিকল্পগুলি ব্যাখ্যা করবে এবং আপনার প্রয়োজনীয় নথিগুলির দিকে আপনাকে গাইড করবে।",
+      "titleResearch": "একটি আইনি প্রশ্ন গবেষণা",
+      "subtitleResearch": "একটি ফোকাসড আইনি প্রশ্ন জিজ্ঞাসা করুন এবং প্রাসঙ্গিক আইন, মামলা এবং উদ্ধৃতি দ্বারা সমর্থিত একটি কাঠামোগত উত্তর পান।",
+      "titleDrafting": "একটি আইনি নথি খসড়া",
+      "subtitleDrafting": "প্রযোজ্য আইনের ভিত্তিতে নোটিশ, চুক্তি, পিটিশন এবং আরও অনেক কিছু তৈরি করুন।",
+      "titleDocumentReview": "একটি নথি পর্যালোচনা করুন",
+      "subtitleDocumentReview": "একটি চুক্তি বা ফাইলিং আপলোড করুন — আমরা ঝুঁকি, ফাঁক এবং মূল ধারাগুলি চিহ্নিত করব৷",
+      "draftExamplesHint": "জনপ্রিয় টেমপ্লেট আইনজীবীরা প্রতিদিন খসড়া তৈরি করেন — আপনার তৈরি করতে বিনামূল্যে সাইন আপ করুন।",
+      "docReviewHint": "পিডিএফ বা ওয়ার্ড ফাইল আপলোড করুন এবং উদ্ধৃত ঝুঁকি সহ ক্লজ-বাই-ক্লজ বিশ্লেষণ পান।",
+      "docReviewRisk": "প্রতিকূল বা অনুপস্থিত পদের জন্য ঝুঁকির পতাকা",
+      "docReviewClauses": "মূল ধারা নিষ্কাশন এবং সরল-ভাষার সারাংশ",
+      "docReviewAi": "AI পর্যালোচনা আপনার এখতিয়ারের আইনে ভিত্তি করে",
+      "docReviewCompare": "একাধিক নথি জুড়ে ট্যাবুলার পর্যালোচনা",
+      "tryFreeSignUp": "চেষ্টা করার জন্য বিনামূল্যে সাইন আপ করুন",
+      "researchTeaserUnavailable": "রিসার্চ প্রিভিউ এখনও এই API-এ উপলব্ধ নয়। স্থানীয় ব্যাকএন্ড চালান (পোর্ট 4000) বা সর্বশেষ API স্থাপন করুন।",
+      "placeholderIssueCheck": "কী ঘটেছে, কারা জড়িত, গুরুত্বপূর্ণ তারিখ এবং আপনি কী অর্জন করতে চান তা বর্ণনা করুন।",
+      "placeholderResearch": "আপনি যে আইনি প্রশ্নটি গবেষণা করতে চান তা লিখুন...",
+      "placeholderDrafting": "আপনার যে ডকুমেন্টটি ড্রাফ্ট করা দরকার তা বর্ণনা করুন — টাইপ, পার্টি এবং মূল পদ।",
+      "placeholderDocumentReview": "দস্তাবেজটি বর্ণনা করুন বা আপনি পর্যালোচনা করতে চান এমন মূল ধারাগুলি পেস্ট করুন৷",
+      "taskIssueCheck": "ইস্যু পরীক্ষক",
+      "taskResearch": "আইনি গবেষণা",
+      "taskDrafting": "একটি নথি খসড়া",
+      "taskDocumentReview": "একটি নথি পর্যালোচনা করুন",
+      "taskSelectLabel": "আপনি কি করতে চান?",
+      "regionIndia": "ভারত",
+      "regionUnitedStates": "মার্কিন যুক্তরাষ্ট্র",
+      "regionLabel": "এখতিয়ার",
+      "signUpToUnlock": "আনলক করতে বিনামূল্যে সাইন আপ করুন",
+      "citedAuthorities": "বাস্তব আইন উদ্ধৃত",
+      "languageTitle": "আপনি কোন ভাষা পছন্দ করেন?",
+      "languageSubtitle": "আমরা আপনার বেছে নেওয়া ভাষায় আপনার আইনি বিশ্লেষণ প্রদান করব।",
       "freePreview": "বিনামূল্যে পূর্বরূপ",
-      "noCreditCard": "ক্রেডিট কার্ড নেই",
       "resultsIn2Min": "<2 মিনিটের মধ্যে ফলাফল",
-      "otherLanguages": "Other languages",
-      "otherLanguagesPlaceholder": "Select a language",
-      "languageSubtitleIndia": "We'll deliver your legal analysis in the language you choose.",
-      "languageTitle": "Which language do you prefer?",
-      "languageSubtitle": "We'll deliver your legal analysis in the language you choose."
+      "otherLanguages": "অন্যান্য ভাষা",
+      "otherLanguagesPlaceholder": "একটি ভাষা নির্বাচন করুন",
+      "languageSubtitleIndia": "আমরা আপনার বেছে নেওয়া ভাষায় আপনার আইনি বিশ্লেষণ প্রদান করব।",
+      "draftExamples": {
+        "regularBail": {
+          "label": "নিয়মিত জামিনের আবেদন",
+          "subtitle": "অপরাধী · BNSS §480",
+          "tag": "জামিন"
+        },
+        "chequeBounce": {
+          "label": "চেক বাউন্স অভিযোগ",
+          "subtitle": "অপরাধী · NI আইন §138",
+          "tag": "পুনরুদ্ধার"
+        },
+        "divorcePetition": {
+          "label": "ডিভোর্স পিটিশন",
+          "subtitle": "পরিবার · HMA §13",
+          "tag": "পরিবার"
+        },
+        "writPetition": {
+          "label": "রিট পিটিশন (হাইকোর্ট)",
+          "subtitle": "সাংবিধানিক · আর্ট। 226",
+          "tag": "রিট"
+        },
+        "federalComplaint": {
+          "label": "ফেডারেল সিভিল অভিযোগ",
+          "subtitle": "সিভিল · FRCP বিধি 8",
+          "tag": "ফেডারেল"
+        },
+        "motionToDismiss": {
+          "label": "12(b)(6) খারিজ করার প্রস্তাব",
+          "subtitle": "সিভিল · FRCP বিধি 12",
+          "tag": "গতি"
+        }
+      },
+      "researchLockedHint": "নমুনা গবেষণা প্রশ্ন আইনজীবীরা প্রতিদিন জিজ্ঞাসা করেন — চেষ্টা করার জন্য বিনামূল্যে সাইন আপ করুন।",
+      "researchExamples": {
+        "bnss101": {
+          "label": "পুলিশ কখন পরোয়ানা ছাড়া গ্রেফতার করতে পারে?",
+          "subtitle": "অপরাধী · BNSS §101",
+          "tag": "ভারত"
+        },
+        "section138": {
+          "label": "বাউন্স বিজ্ঞপ্তি প্রয়োজনীয়তা চেক করুন",
+          "subtitle": "অপরাধী · NI আইন §138",
+          "tag": "পুনরুদ্ধার"
+        },
+        "frcp12": {
+          "label": "মান খারিজ করার জন্য 12(b)(6) গতি",
+          "subtitle": "সিভিল · FRCP বিধি 12",
+          "tag": "ফেডারেল"
+        },
+        "ukEmployment": {
+          "label": "অন্যায্য বরখাস্ত সময় সীমা",
+          "subtitle": "কর্মসংস্থান · UK ERA 1996",
+          "tag": "যুক্তরাজ্য"
+        },
+        "keLabour": {
+          "label": "ভুল পরিসমাপ্তি প্রতিকার",
+          "subtitle": "শ্রম · কেনিয়া কর্মসংস্থান আইন",
+          "tag": "কেনিয়া"
+        },
+        "contactDrafting": {
+          "label": "একটি পরিষেবা চুক্তিতে প্রয়োজনীয় ধারা",
+          "subtitle": "বাণিজ্যিক · চুক্তি আইন",
+          "tag": "খসড়া"
+        }
+      },
+      "helperIssueCheck": "নিজের ভাষায় লিখতে পারেন। আপনি যত বেশি প্রাসঙ্গিক বিশদ প্রদান করবেন, বিশ্লেষণ তত বেশি কার্যকর হবে।",
+      "helperResearch": "আরও সুনির্দিষ্ট ফলাফলের জন্য এখতিয়ার এবং নির্দিষ্ট সমস্যা অন্তর্ভুক্ত করুন।",
+      "checkMySituation": "আমার অবস্থা পরীক্ষা করুন",
+      "researchThisQuestion": "এই প্রশ্নটি গবেষণা করুন",
+      "enterAtLeastChars": "কমপক্ষে {count} অক্ষর লিখুন",
+      "charCount": "{current} / {max} অক্ষর",
+      "footerIssueCheck1": "বিনামূল্যে প্রাথমিক চেক",
+      "footerIssueCheck2": "প্রযোজ্য আইন চিহ্নিত করা হয়েছে",
+      "footerIssueCheck3": "নথি নির্দেশিকা অন্তর্ভুক্ত",
+      "footerResearch1": "কর্তৃপক্ষ-সমর্থিত উত্তর",
+      "footerResearch2": "প্রাসঙ্গিক মামলা এবং আইন",
+      "footerResearch3": "উদ্ধৃতি পরিষ্কার করুন"
+    },
+    "researchProgress": {
+      "runningTitle": "আইনি গবেষণা চলছে",
+      "refiningTitle": "প্রসঙ্গ সহ পরিমার্জন করা হচ্ছে...",
+      "modeFast": "দ্রুত",
+      "modeVerified": "যাচাই করা হয়েছে",
+      "aboutOneMin": "· ~1 মিনিট",
+      "almostThere": "প্রায় আছে...",
+      "takingLonger": "· স্বাভাবিকের চেয়ে বেশি সময় নিচ্ছে",
+      "deepCitationNote": "যাচাইকৃত গবেষণা গভীর উদ্ধৃতি পরীক্ষা করে — এতে কয়েক মিনিট সময় লাগতে পারে।",
+      "verifiedDurationHint": "· সাধারণত 1-3 মিনিট",
+      "stillWorking": "· এখনও কাজ করছে...",
+      "verifiedRunningBanner": "যাচাইকৃত গবেষণা গভীর পুনরুদ্ধার এবং উদ্ধৃতি পরীক্ষা চালায় — এতে কয়েক মিনিট সময় লাগতে পারে।",
+      "draftReadyBanner": "খসড়া মেমো প্রস্তুত — চূড়ান্ত উদ্ধৃতি নিরীক্ষা চলছে...",
+      "draftVerifyingBanner": "খসড়া প্রস্তুত — সঠিকতা পরীক্ষা চলছে...",
+      "phaseStallNote": "এখনও কাজ করছে — ব্যাকএন্ড এই ধাপটি প্রক্রিয়া করছে। বড় প্রশ্ন কয়েক মিনিট সময় নিতে পারে.",
+      "stepCorpusDetailGeneric": "আপনার এখতিয়ারের জন্য আইন, প্রবিধান এবং মামলার আইন স্ক্যান করা হচ্ছে",
+      "stepAuditDraftLabel": "উদ্ধৃতি যাচাই করা হচ্ছে (মেমোর খসড়া প্রস্তুত)",
+      "stepAuditDraftDetail": "চূড়ান্ত উদ্ধৃতি অডিট পাস — আপনার খসড়া নীচে দৃশ্যমান।",
+      "stepParseLabel": "আপনার আইনি প্রশ্ন পার্সিং",
+      "stepParseDetail": "এখতিয়ার, বিধান এবং অভিপ্রায় সনাক্ত করা",
+      "stepParseDetailProvision": "{provision} এবং সংশ্লিষ্ট বিধান সনাক্ত করা",
+      "stepCorpusLabel": "সংবিধি কর্পাস অনুসন্ধান করা হচ্ছে",
+      "stepCorpusDetailIn": "ইন্ডিয়া কোড, BNSS, BNS, এবং BSA ডেটাবেস স্ক্যান করা হচ্ছে",
+      "stepCorpusDetailInAct": "স্ক্যান করা হচ্ছে {act} এবং সম্পর্কিত ইন্ডিয়া কোড ডেটাবেস",
+      "stepCorpusDetailUs": "USC, CFR, এবং ফেডারেল রুল ডাটাবেস স্ক্যান করা হচ্ছে",
+      "stepRetrieveLabel": "কর্তৃপক্ষ উদ্ধার করছে",
+      "stepRetrieveFetch": "সংবিধিবদ্ধ কর্পাস থেকে {provision} আনা হচ্ছে...",
+      "stepRetrieveRank": "র‌্যাঙ্কিং সম্পর্কিত বিভাগ এবং মন্তব্য...",
+      "stepRetrieveCases": "ম্যাচিং কেস আইন যা এই বিধানটি উল্লেখ করে...",
+      "stepRetrieveRankCases": "প্রাসঙ্গিকতার ভিত্তিতে মামলার আইনের র‌্যাঙ্কিং...",
+      "stepRetrieveMatch": "আপনার প্রশ্নের সাথে সংবিধিবদ্ধ বিভাগ মিলছে...",
+      "stepRetrieveCommentary": "প্রামাণিক মন্তব্য টানা হচ্ছে...",
+      "stepPredecessorLabel": "পূর্বসূরী বিধান যাচাই করা হচ্ছে",
+      "stepPredecessorCrpcBnss": "ক্রস-চেকিং CrPC → BNSS সেকশন রিম্যাপ",
+      "stepPredecessorCrpcBnssSection": "ক্রস-চেকিং CrPC → {section} বিভাগের জন্য BNSS রিম্যাপ",
+      "stepPredecessorGeneric": "ক্রস-চেকিং পূর্বসূরি সংবিধি ম্যাপিং",
+      "stepGroundLabel": "বিশ্লেষণ গ্রাউন্ডিং",
+      "stepGroundPinProvision": "প্রামাণিক উৎসের বিরুদ্ধে {provision} পিন করা হচ্ছে...",
+      "stepGroundVerify": "কর্পাসের বিরুদ্ধে বিভাগের পাঠ্য যাচাই করা হচ্ছে...",
+      "stepGroundAmendments": "সংশোধনী এবং বিজ্ঞপ্তির জন্য পরীক্ষা করা হচ্ছে...",
+      "stepGroundPin": "প্রামাণিক উত্সের বিরুদ্ধে পুনরুদ্ধার করা পাঠ্য পিন করা হচ্ছে...",
+      "stepGroundCitations": "বিভাগ নম্বর এবং উদ্ধৃতি যাচাই করা হচ্ছে...",
+      "stepDraftLabel": "আইনি মেমো খসড়া",
+      "stepDraftStructure": "আইনি বিশ্লেষণ গঠন করা হচ্ছে...",
+      "stepDraftWeave": "কর্তৃপক্ষকে সুস্পষ্ট উত্তরে বুনন...",
+      "stepDraftSummary": "সরল-ভাষার সারাংশ যোগ করা হচ্ছে...",
+      "stepCitationsLabel": "উদ্ধৃতি যাচাই করা হচ্ছে",
+      "stepCitationsFabricated": "বানোয়াট বা অপ্রাসঙ্গিক ক্ষেত্রে উদ্ধৃতি পরীক্ষা করা হচ্ছে...",
+      "stepCitationsStatute": "সংবিধির উল্লেখ যাচাই করা হচ্ছে...",
+      "stepCitationsUnsupported": "অসমর্থিত দাবিগুলি সরানো হচ্ছে...",
+      "stepFinalizeLabel": "পদার্থ চেক চূড়ান্ত করা",
+      "stepFinalizeDrift": "ড্রিফট সনাক্তকরণ এবং সম্মতি নিয়ম প্রয়োগ করা হচ্ছে...",
+      "stepFinalizePreview": "আপনার পূর্বরূপ উদ্ধৃতি প্রস্তুত করা হচ্ছে...",
+      "stepFinalizeReady": "প্রায় প্রস্তুত…",
+      "stepDeepAgentLabel": "গভীর গবেষণা এজেন্ট চলমান",
+      "stepDeepAgentReact": "ReAct লুপ: ওয়েব, আইন, এবং মামলার আইন অনুসন্ধান করা হচ্ছে...",
+      "stepDeepAgentEval": "টুল ফলাফল মূল্যায়ন করা হচ্ছে...",
+      "stepDeepAgentPlan": "পরবর্তী পুনরুদ্ধার পাসের পরিকল্পনা করা হচ্ছে...",
+      "stepCrossCheckLabel": "ক্রস-চেকিং পুনরুদ্ধার উৎস",
+      "stepCrossCheckMerge": "লাইভ অথরিটি ফলাফলের সাথে কর্পাস হিট মার্জ করা হচ্ছে...",
+      "stepCrossCheckDedupe": "ডি-ডুপ্লিকেট ওভারল্যাপিং কর্তৃপক্ষ...",
+      "stepAuditLabel": "উদ্ধৃতি নিরীক্ষা চলমান",
+      "stepAuditLabeling": "ডেলিভারির আগে অযাচাইকৃত উদ্ধৃতি লেবেল করা হচ্ছে...",
+      "stepAuditFinal": "চূড়ান্ত উদ্ধৃতি অডিট পাস…"
     }
   },
   "siteName": "Umbrella",
-  "siteTagline": "আপনার আইনি সমস্যা বুঝুন. AI দিয়ে আপনার ফার্ম চালান।",
-  "siteDescription": "IN, US, KE এবং UK-এ আপনার আইনি সমস্যা বিনামূল্যে পরীক্ষা করুন। আইন সংস্থাগুলি বিষয়-সচেতন এআই কপিলট, গবেষণা, বিলিং এবং অটোমেশন অনুশীলন করে।",
-  "siteTitle": "ছাতা — এআই লিগ্যাল গাইডেন্স এবং ফার্ম ওএস",
-  "issueCheckerMetaTitle": "বিনামূল্যে আইনি সমস্যা পরীক্ষক",
-  "issueCheckerMetaDescription": "আপনার আইনি সমস্যা বর্ণনা করুন এবং ভারত, মার্কিন যুক্তরাষ্ট্র, কেনিয়া এবং যুক্তরাজ্যের জন্য দেশ-নির্দিষ্ট নির্দেশিকা সহ একটি বিনামূল্যে AI পূর্বরূপ পান।",
-  "forLawyersMetaTitle": "আইন সংস্থাগুলির জন্য এআই-নেটিভ আইনি ওএস",
-  "forLawyersMetaDescription": "বিষয়-সচেতন এআই কপিলট, আইনি গবেষণা, বিলিং, ট্রাস্ট অ্যাকাউন্টিং এবং অটোমেশন — আধুনিক আইন সংস্থাগুলির জন্য তৈরি৷",
+  "siteTagline": "গ্লোবাল লিগ্যাল এআই প্ল্যাটফর্ম - যে কোনও পরিস্থিতি বুঝতে, কোনও নথির খসড়া তৈরি করুন, যে কোনও ফার্ম চালান।",
+  "siteDescription": "ছাতা হল বিশ্বব্যাপী আইনি এআই: বাস্তব উদ্ধৃতি সহ বিনামূল্যে ইস্যু পরীক্ষক, এআই নথির খসড়া, চুক্তি পর্যালোচনা, আইনি গবেষণা এবং একটি সম্পূর্ণ আইন সংস্থা OS — বিশ্বব্যাপী উপলব্ধ।",
+  "siteTitle": "ছাতা — গ্লোবাল লিগ্যাল এআই প্ল্যাটফর্ম",
+  "issueCheckerMetaTitle": "বিনামূল্যে আইনি সমস্যা পরীক্ষক — গ্লোবাল লিগ্যাল এআই",
+  "issueCheckerMetaDescription": "যেকোনো দেশে আপনার আইনি সমস্যা বর্ণনা করুন। বাস্তব আইন, ঝুঁকির স্তর এবং পরবর্তী পদক্ষেপগুলির সাথে একটি বিনামূল্যে AI পূর্বরূপ পান — বিশ্বব্যাপী এখতিয়ার-সচেতন আইনি নির্দেশিকা।",
+  "forLawyersMetaTitle": "আইন সংস্থাগুলির জন্য এআই-নেটিভ লিগ্যাল ওএস — গ্লোবাল প্ল্যাটফর্ম",
+  "forLawyersMetaDescription": "বিষয়-সচেতন এআই কপিলট, আইনি গবেষণা, নথির খসড়া, বিলিং, ট্রাস্ট অ্যাকাউন্টিং এবং ক্লায়েন্ট গ্রহণ — প্রতিটি দেশের ফার্মগুলির জন্য সম্পূর্ণ আইনি প্ল্যাটফর্ম।",
+  "demoMetaTitle": "আমব্রেলা ডেমো — গ্লোবাল লিগ্যাল এআই ইন অ্যাকশন",
+  "demoMetaDescription": "ইন্টারেক্টিভ পণ্য সফর: ইস্যু পরীক্ষক, নথি খসড়া, চুক্তি পর্যালোচনা, এআই কপিলট এবং দৃঢ় কর্মপ্রবাহ। ব্যক্তিদের জন্য বিশ্বব্যাপী বিনামূল্যে; আইন সংস্থাগুলির জন্য বিনামূল্যে ট্রায়াল।",
+  "lawyersMetaTitle": "একজন আইনজীবী খুঁজুন — যখন আপনি মানুষের পর্যালোচনার জন্য প্রস্তুত হন",
+  "lawyersMetaDescription": "বিশ্বব্যাপী পরীক্ষিত আইনজীবী ব্রাউজ করুন. বিনামূল্যে AI আইনি স্পষ্টতা দিয়ে শুরু করুন — আপনার এখতিয়ারের লাইসেন্সপ্রাপ্ত কাউন্সেলের সাথে সংযোগ করুন যখন আপনার আনুষ্ঠানিক পরামর্শের প্রয়োজন হয়।",
+  "uploadDocumentMetaTitle": "এআই ডকুমেন্ট পর্যালোচনা এবং চুক্তি বিশ্লেষণ — গ্লোবাল",
+  "uploadDocumentMetaDescription": "AI ক্লজ-লেভেল পর্যালোচনার জন্য চুক্তি, নোটিশ বা চুক্তি আপলোড করুন। এখতিয়ার-সচেতন আইনি নথি বিশ্লেষণ — প্রতিটি দেশে উপলব্ধ।",
+  "legalFormsMetaTitle": "আইনি নথির খসড়া ও ফর্ম — গ্লোবাল টেমপ্লেট",
+  "legalFormsMetaDescription": "এআই-চালিত আইনি নথির খসড়া তৈরি করা: চাহিদাপত্র, চুক্তি, নোটিশ এবং আবেদন — যেকোনো দেশের জন্য এখতিয়ার-সচেতন টেমপ্লেট।",
+  "learnMoreMetaTitle": "কিভাবে ছাতা কাজ করে — গ্লোবাল লিগ্যাল ইন্টেলিজেন্স প্ল্যাটফর্ম",
+  "learnMoreMetaDescription": "বিলযোগ্য ঘন্টা ছাড়া আইনি স্পষ্টতা. AI নথির খসড়া, চুক্তি পর্যালোচনা, আইনি গবেষণা, এবং একটি সম্পূর্ণ আইন সংস্থা OS — প্রতিটি দেশে উপলব্ধ।",
   "welcomeSubtext": "কয়েক মিনিটের মধ্যে একটি আইনি সমস্যা পরীক্ষা করুন। বিষয়গুলি পরিচালনা করুন এবং আপনার ফার্ম চালান — ব্যক্তিগত এবং সুরক্ষিত৷",
   "welcomeHeadline": "আইনি স্বচ্ছতা\nসবার জন্য",
   "instantAnswers": "তাত্ক্ষণিক উত্তর",
   "private": "ব্যক্তিগত",
+  "anywhereChip": "যে কোন জায়গায়",
   "forLawyersChip": "আইনজীবীদের জন্য",
   "createAccountCta": "অ্যাকাউন্ট তৈরি করুন",
   "tryForFree": "বিনামূল্যে চেষ্টা করুন — কোনো অ্যাকাউন্টের প্রয়োজন নেই৷",
@@ -529,7 +762,7 @@
   "global_coverage": "গ্লোবাল কভারেজ",
   "how_it_works": "এটা কিভাবে কাজ করে",
   "illustrative_estimate_based_on_stated_facts_not_a_legal_pred": "বর্ণিত তথ্যের উপর ভিত্তি করে চিত্রিত অনুমান। আইনি ভবিষ্যদ্বাণী নয়।",
-  "india_us_uk_kenya_and_growing": "ভারত · মার্কিন যুক্তরাষ্ট্র · যুক্তরাজ্য · কেনিয়া — এবং ক্রমবর্ধমান",
+  "india_us_uk_kenya_and_growing": "বিশ্বের প্রতিটি দেশে",
   "legal": "আইনি",
   "legal_disclaimer": "আইনি দাবিত্যাগ",
   "live": "লাইভ",
@@ -559,7 +792,6 @@
   "forLawyersHeadline3": "আপনার অনুশীলন বাড়ান.",
   "forLawyersSubhead": "সর্ব-একটি আইনি অনুশীলন পরিচালনার প্ল্যাটফর্ম — নেটিভ ট্রান্সক্রিপ্ট, ব্যাপার-সচেতন কপিলট, ট্রাস্ট অ্যাকাউন্টিং, এবং অটোমেশন-প্রথম ওয়ার্কফ্লো।",
   "forLawyersTryDemo": "ডেমো চেষ্টা করুন",
-  "forLawyersNoCreditCard": "ক্রেডিট কার্ড নেই",
   "forLawyersTrialDays": "30 দিনের ট্রায়াল",
   "forLawyersSetupMinutes": "5 মিনিটের মধ্যে সেটআপ করুন",
   "forLawyersStatActiveMatters": "সক্রিয় বিষয়",
@@ -581,6 +813,52 @@
   "forLawyersFeatureAutomationDesc": "যদি/তাহলে অনুমোদন এবং SLA সহ কর্মপ্রবাহ।",
   "forLawyersFeatureCopilot": "এআই কপাইলট",
   "forLawyersFeatureCopilotDesc": "বিষয়-সচেতন খসড়া, গবেষণা, এবং কৌশল মেমো।",
+  "forLawyersFeatureResearch": "আইনি গবেষণা",
+  "forLawyersFeatureResearchDesc": "উদ্ধৃত বিধি এবং মামলা আইন সহ এখতিয়ার-সচেতন এআই গবেষণা।",
+  "forLawyersFeatureMeetings": "মিটিং প্রতিলিপি",
+  "forLawyersFeatureMeetingsDesc": "ক্লায়েন্ট মিটিং রেকর্ড করুন, প্রতিলিপি করুন এবং স্বয়ংক্রিয়ভাবে সংক্ষিপ্ত করুন।",
+  "forLawyersFeatureBilling": "বিলিং এবং সময় ট্র্যাকিং",
+  "forLawyersFeatureBillingDesc": "অটোমেটেড টাইম ক্যাপচার, ইনভয়েস জেনারেশন এবং পেমেন্ট কালেকশন।",
+  "forLawyersHowItWorksTitle": "মিনিটের মধ্যে আপ এবং চলমান",
+  "forLawyersStep1Title": "একটি মিটিং রেকর্ড বা আমদানি করুন",
+  "forLawyersStep1Desc": "কোনো ক্লায়েন্ট কল ক্যাপচার বা একটি বিদ্যমান রেকর্ডিং আপলোড. ছাতা স্বয়ংক্রিয়ভাবে অ্যাকশন আইটেম প্রতিলিপি করে এবং বের করে।",
+  "forLawyersStep2Title": "AI আপনার ব্যাপার তৈরি করে",
+  "forLawyersStep2Desc": "মূল তথ্য, সময়সীমা, ঝুঁকি, এবং পরবর্তী পদক্ষেপগুলি একটি লাইভ ম্যাটার ফাইলে সংগঠিত হয় — কোনও ম্যানুয়াল ডেটা এন্ট্রির প্রয়োজন নেই।",
+  "forLawyersStep3Title": "আপনার অনুশীলন চালান",
+  "forLawyersStep3Desc": "বিলিং, ট্রাস্ট অ্যাকাউন্টিং, ক্লায়েন্ট যোগাযোগ এবং ফাইলিং সবই সত্যের একই উৎস থেকে প্রবাহিত হয়।",
+  "forLawyersImpactTitle": "ছাতার পার্থক্য",
+  "forLawyersImpact1Value": "68%",
+  "forLawyersImpact1Label": "এডমিনে সময় কম",
+  "forLawyersImpact2Value": "3×",
+  "forLawyersImpact2Label": "দ্রুত ব্যাপার সেটআপ",
+  "forLawyersImpact3Value": "94%",
+  "forLawyersImpact3Label": "বিলিং সঠিকতা",
+  "forLawyersImpact4Value": "< 5 মিনিট",
+  "forLawyersImpact4Label": "গড় অনবোর্ডিং সময়",
+  "forLawyersPersonasTitle": "প্রতিটি অনুশীলন ধরনের জন্য নির্মিত",
+  "forLawyersPersona1Title": "একক উকিল",
+  "forLawyersPersona1Bullet1": "দৃঢ় ওভারহেড ছাড়া সম্পূর্ণ ব্যাপার OS",
+  "forLawyersPersona1Bullet2": "এআই কপাইলট চিঠি, চুক্তি এবং মেমোর খসড়া তৈরি করে",
+  "forLawyersPersona1Bullet3": "অন্তর্নির্মিত ট্রাস্ট অ্যাকাউন্টিং এবং চালান",
+  "forLawyersPersona2Title": "বুটিক ফার্ম",
+  "forLawyersPersona2Bullet1": "ভূমিকা-ভিত্তিক অ্যাক্সেস নিয়ন্ত্রণ সহ বহু-ব্যবহারকারী",
+  "forLawyersPersona2Bullet2": "শেয়ার্ড ম্যাটার পাইপলাইন এবং ক্লায়েন্ট পোর্টাল",
+  "forLawyersPersona2Bullet3": "টিম বিলিং এবং সংগ্রহ ড্যাশবোর্ড",
+  "forLawyersPersona3Title": "ইন-হাউস আইনি দল",
+  "forLawyersPersona3Bullet1": "সীমাহীন অভ্যন্তরীণ বিষয় ট্র্যাকিং",
+  "forLawyersPersona3Bullet2": "সংস্করণ নিয়ন্ত্রণ সহ নীতি এবং চুক্তি গ্রন্থাগার",
+  "forLawyersPersona3Bullet3": "SSO, অডিট লগ, এবং কমপ্লায়েন্স রিপোর্টিং",
+  "forLawyersPricingTeaserTitle": "সহজ, স্বচ্ছ মূল্য",
+  "forLawyersPricingTeaserSubtitle": "বিনামূল্যে শুরু করুন. আপনার আরও প্রয়োজন হলে আপগ্রেড করুন। কোন লুকানো ফি.",
+  "forLawyersPricingTeaserSolo": "একক — $40 / মাস থেকে",
+  "forLawyersPricingTeaserSoloDesc": "স্বতন্ত্র অ্যাডভোকেট এবং ব্যারিস্টারদের জন্য সম্পূর্ণ আইনজীবী ওএস।",
+  "forLawyersPricingTeaserFirm": "দৃঢ় — আসন প্রতি কাস্টম",
+  "forLawyersPricingTeaserFirmDesc": "বহু-ব্যবহারকারী, SSO, উন্নত সম্মতি, এবং উত্সর্গীকৃত সমর্থন।",
+  "forLawyersPricingTeaserCta": "সম্পূর্ণ মূল্য দেখুন",
+  "forLawyersFinalCtaTitle": "আপনার অনুশীলন, AI দ্বারা সুপারচার্জ করা হয়েছে।",
+  "forLawyersFinalCtaSubtitle": "আরও বুদ্ধিমান কাজ করতে, আরও বিল করতে, এবং আরও ভাল ক্লায়েন্ট ফলাফল প্রদানের জন্য ইতিমধ্যেই Umbrella ব্যবহার করে শত শত আইনজীবীদের সাথে যোগ দিন।",
+  "forLawyersFinalCtaTrial": "বিনামূল্যে ট্রায়াল শুরু করুন",
+  "forLawyersFinalCtaDemo": "একটি ডেমো দেখুন",
   "forLawyersCtaTitle": "আপনার অনুশীলন রূপান্তর করতে প্রস্তুত?",
   "forLawyersCtaSubtitle": "আমব্রেলা ব্যবহার করে এগিয়ে-চিন্তাকারী আইন সংস্থাগুলিতে যোগ দিন।",
   "forLawyersCtaTrial": "আপনার বিনামূল্যে ট্রায়াল শুরু করুন",
@@ -604,6 +882,954 @@
   "subscriptionCancelBody": "কোন চার্জ করা হয়নি. আপনি যেকোনও সময় একটি প্ল্যান বেছে নিতে মূল্য নির্ধারণে ফিরে যেতে পারেন।",
   "subscriptionBackToPricing": "মূল্য নির্ধারণে ফিরে যান",
   "subscriptionSuccessTitle": "সদস্যতা নিশ্চিত করা হয়েছে",
+  "subscriptionSuccessWelcome": "{plan} এ স্বাগতম",
+  "subscriptionSuccessBody": "আপনার প্ল্যান সক্রিয় আছে এবং আপনার অ্যাকাউন্টে ক্রেডিট যোগ করা হয়েছে।",
+  "subscriptionSuccessActivating": "আপনার সদস্যতা সক্রিয় করা হচ্ছে...",
+  "subscriptionSuccessActivatingHint": "অর্থপ্রদান নিশ্চিত করা এবং আপনার পরিকল্পনা আপডেট করা হচ্ছে।",
+  "subscriptionSuccessWebhookHint": "পেমেন্ট প্রাপ্ত. আপনার প্ল্যান আপডেট হতে একটু সময় লাগতে পারে — শীঘ্রই প্ল্যান এবং ব্যবহার চেক করুন।",
+  "subscriptionSuccessPlan": "পরিকল্পনা",
+  "subscriptionSuccessActiveBadge": "সক্রিয়",
+  "subscriptionSuccessCredits": "এআই ক্রেডিট অন্তর্ভুক্ত",
+  "subscriptionSuccessPrice": "দাম",
+  "subscriptionSuccessPerMonth": "মাস",
+  "subscriptionSuccessRenews": "পরবর্তী বিলিং তারিখ",
+  "subscriptionSuccessSyncing": "আপনার পরিকল্পনা সিঙ্ক হচ্ছে...",
+  "subscriptionSuccessSyncingHint": "অর্থপ্রদান প্রাপ্ত হয়েছে — আপনার সদস্যতা সক্রিয় কিনা তা পরীক্ষা করা হচ্ছে।",
+  "subscriptionSuccessCreditsAdded": "আপনার অ্যাকাউন্টে +{count} ক্রেডিট যোগ করা হয়েছে",
+  "subscriptionSuccessConfirmFailed": "আমরা স্বয়ংক্রিয়ভাবে আপনার সদস্যতা নিশ্চিত করতে পারিনি. আপনার স্থিতি পরীক্ষা করতে পরিকল্পনা ও ব্যবহার খুলুন, অথবা এটি এখনও বিনামূল্যে দেখায় যদি সহায়তার সাথে যোগাযোগ করুন।",
+  "subscriptionSuccessPendingDeploy": "পেমেন্ট প্রাপ্ত. আপনার সদস্যতা প্রক্রিয়া করা হচ্ছে — এটি সাধারণত এক মিনিটের কম সময় নেয়।",
+  "subscriptionSuccessPendingHint": "যদি কয়েক মিনিটের পরেও প্ল্যান এবং ব্যবহার বিনামূল্যে দেখায়, পৃষ্ঠাটি রিফ্রেশ করুন বা আপনার চেকআউট সেশন আইডি দিয়ে সহায়তার সাথে যোগাযোগ করুন৷",
   "subscriptionGoToDashboard": "ড্যাশবোর্ডে যান",
-  "subscriptionPlanUsage": "পরিকল্পনা এবং ব্যবহার"
+  "subscriptionPlanUsage": "পরিকল্পনা এবং ব্যবহার",
+  "legalAi": {
+    "metaTitle": "আইনি এআই প্ল্যাটফর্ম - প্রত্যেকের জন্য বিশ্বব্যাপী আইনি বুদ্ধিমত্তা",
+    "metaDescription": "আমব্রেলা হল বিশ্বব্যাপী আইনি AI প্ল্যাটফর্ম: বাস্তব উদ্ধৃতি, AI নথির খসড়া, চুক্তি পর্যালোচনা, আইনি গবেষণা এবং একটি সম্পূর্ণ আইন সংস্থা OS — বিশ্বব্যাপী প্রতিটি দেশে উপলব্ধ।",
+    "badge": "গ্লোবাল লিগ্যাল এআই",
+    "heroTitle": "আইনি এআই যা বাস্তব আইনকে উদ্ধৃত করে — সর্বত্র",
+    "heroSubtitle": "বেশীরভাগ আইনি টুল কোন উৎস ছাড়াই আত্মবিশ্বাসী উত্তর দেয়। Umbrella এখতিয়ার-নির্দিষ্ট আইন এবং মামলার আইন পুনরুদ্ধার করে, নথির খসড়া তৈরি করে, চুক্তি পর্যালোচনা করে এবং আপনার সম্পূর্ণ ফার্ম চালায় — প্রতিটি দেশে।",
+    "heroCtaPrimary": "বিনামূল্যে আইনি এআই চেকার চেষ্টা করুন",
+    "heroCtaSecondary": "আইন সংস্থাগুলির জন্য আইনি এআই",
+    "whatIsTitle": "আইনি এআই কি?",
+    "whatIsBody1": "আইনি AI লোকেদের অধিকার বুঝতে, নথি পর্যালোচনা করতে এবং পরবর্তী পদক্ষেপের পরিকল্পনা করতে সাহায্য করার জন্য বড় ভাষার মডেল এবং আইনি ডেটাবেস ব্যবহার করে। সাধারণ চ্যাটবটের বিপরীতে, উদ্দেশ্য-নির্মিত আইনি এআই-এর উচিত প্রযোজ্য আইনে উত্তর দেওয়া, এখতিয়ারের সীমানাকে সম্মান করা এবং আনুষ্ঠানিক আইনি পরামর্শ থেকে তথ্যকে স্পষ্টভাবে আলাদা করা।",
+    "whatIsBody2": "আমব্রেলা ইনডেক্সড স্ট্যাটিউটস এবং কেস ল-এর সাথে বিষয়-সচেতন ওয়ার্কফ্লোগুলির সাথে পুনরুদ্ধার-অগমেন্টেড জেনারেশন (RAG) একত্রিত করে — যাতে ভোক্তারা গাইডেড বিশ্লেষণ পান এবং ফার্মগুলি একটি কপিলট পায় যে ক্লায়েন্ট প্রসঙ্গ, বিলিং এবং সম্মতি বোঝে।",
+    "differentTitle": "কেন ছাতা জেনেরিক লিগ্যাল এআই থেকে আলাদা",
+    "differentSubtitle": "প্রথম দিন থেকে আইনি প্রেক্ষাপটের জন্য তৈরি করা হয়েছে — চ্যাটবট র‍্যাপার নয়।",
+    "pillars": [
+      {
+        "title": "Real citations you can verify",
+        "body": "Every analysis links to statutes and case law you can open and check — not fabricated references."
+      },
+      {
+        "title": "Global jurisdiction awareness",
+        "body": "Auto-detects your country and applies local law. Deep corpora where available; intelligent guidance everywhere else — one platform for the entire world."
+      },
+      {
+        "title": "Two platforms, one connected system",
+        "body": "Individuals get a free issue checker and document review. Firms get matter management, billing, trust accounting, and an AI Copilot — linked through client intake."
+      },
+      {
+        "title": "Privacy and compliance built in",
+        "body": "Tenant isolation, regional data residency options, and explicit consent before using your data for model training."
+      }
+    ],
+    "useCasesTitle": "আইনি এআই ব্যবহারের ক্ষেত্রে",
+    "useCasesSubtitle": "প্রথম প্রশ্ন থেকে দৃঢ়-বিস্তৃত অটোমেশন পর্যন্ত।",
+    "useCases": [
+      {
+        "audience": "Individuals",
+        "title": "আপনার আইনগত অবস্থা বুঝতে",
+        "items": [
+          "Free legal issue checker with cited guidance",
+          "Document upload and AI review",
+          "Connect with a licensed lawyer when ready"
+        ]
+      },
+      {
+        "audience": "আইন সংস্থাগুলি",
+        "title": "Run a modern AI-native practice",
+        "items": [
+          "Matter-aware AI Copilot",
+          "Legal research with section finder",
+          "Meeting transcripts, billing, and trust accounting",
+          "Client intake from consumer issue checks"
+        ]
+      }
+    ],
+    "compareTitle": "সমস্ত আইনি AI ক্ষমতা অন্বেষণ করুন",
+    "compareSubtitle": "নথি খসড়া, চুক্তি পর্যালোচনা, আইনি গবেষণা, এবং দৃঢ় অটোমেশন — একটি বিশ্বব্যাপী প্ল্যাটফর্ম।",
+    "compareLink": "সব সমাধান ব্রাউজ করুন",
+    "guidesTitle": "এখতিয়ার দ্বারা আইনি গাইড",
+    "guidesSubtitle": "সাধারণ আইনি বিষয়ের উপর শিক্ষাগত ওভারভিউ — সর্বদা লাইসেন্সপ্রাপ্ত অ্যাটর্নি দিয়ে যাচাই করুন।",
+    "guidesLink": "সমস্ত আইনি গাইড ব্রাউজ করুন",
+    "faqTitle": "আইনি AI — প্রায়শই জিজ্ঞাসিত প্রশ্ন",
+    "faqItems": [
+      {
+        "question": "Is Umbrella legal advice?",
+        "answer": "No. Umbrella provides legal information and AI-guided analysis to help you understand your situation. It is not a substitute for advice from a licensed attorney. For formal legal advice, connect with a lawyer through the platform."
+      },
+      {
+        "question": "How is Legal AI different from ChatGPT?",
+        "answer": "General chatbots can produce confident but incorrect legal answers with fabricated citations. Umbrella retrieves real statutes and case law for your jurisdiction and cites sources you can verify — plus offers firm tools ChatGPT does not provide."
+      },
+      {
+        "question": "Which countries does Umbrella support?",
+        "answer": "Umbrella is built as a global legal AI platform. We serve users in every country worldwide — with deep legal database coverage expanding continuously and intelligent jurisdiction-aware guidance everywhere."
+      },
+      {
+        "question": "Is there a free Legal AI option?",
+        "answer": "Yes. The legal issue checker preview is free for registered users with included AI credits. Law firms can start a free trial of the full platform including AI Copilot."
+      },
+      {
+        "question": "Can law firms use Umbrella as their Legal AI software?",
+        "answer": "Yes. Umbrella is an AI-native legal OS — matter management, billing, trust accounting, document review, meeting transcripts, and a matter-aware Copilot in one platform."
+      },
+      {
+        "question": "Does Legal AI replace lawyers?",
+        "answer": "No. Legal AI helps you understand options faster and prepares better questions for your lawyer. Umbrella connects consumers to licensed attorneys when human review is needed."
+      }
+    ],
+    "finalCtaTitle": "আইনি এআই ব্যবহার করে দেখুন যা বাস্তব আইনের উল্লেখ করে",
+    "finalCtaSubtitle": "ব্যক্তিদের জন্য বিনামূল্যে সমস্যা পরীক্ষক. আইন সংস্থাগুলির জন্য বিনামূল্যে ট্রায়াল।",
+    "finalCtaPrimary": "বিনামূল্যে শুরু করুন — সমস্যা পরীক্ষক",
+    "finalCtaSecondary": "দৃঢ় প্ল্যাটফর্ম অন্বেষণ"
+  },
+  "compareChatGpt": {
+    "metaTitle": "আইনি কাজের জন্য ছাতা বনাম ChatGPT",
+    "metaDescription": "আমব্রেলা লিগ্যাল এআই বনাম চ্যাটজিপিটি তুলনা করুন: বাস্তব উদ্ধৃতি, এখতিয়ার-সচেতন আইন, ফলাফল নির্দেশিকা এবং একটি সম্পূর্ণ আইন সংস্থা OS — জেনেরিক চ্যাটবট উত্তর নয়।",
+    "badge": "তুলনা",
+    "title": "আইনি কাজের জন্য ছাতা বনাম ChatGPT",
+    "subtitle": "ChatGPT একজন সাধারণ সহকারী। আমব্রেলা হল আইনি AI যা বাস্তব বিধি, মামলার আইন এবং দৃঢ় কর্মপ্রবাহের উপর নির্মিত।",
+    "umbrellaLabel": "Umbrella",
+    "chatgptLabel": "চ্যাটজিপিটি",
+    "rows": [
+      {
+        "feature": "Legal citations",
+        "umbrella": "Real statutes & case law with clickable sources",
+        "competitor": "Can fabricate citations that look real"
+      },
+      {
+        "feature": "Jurisdiction awareness",
+        "umbrella": "India, US, UK, Kenya legal corpora",
+        "competitor": "Generic — no guaranteed local law"
+      },
+      {
+        "feature": "নথি পর্যালোচনা",
+        "umbrella": "Upload contracts & get clause-level analysis",
+        "competitor": "Paste text only; no matter context"
+      },
+      {
+        "feature": "Law firm tools",
+        "umbrella": "Matters, billing, trust, Copilot, intake",
+        "competitor": "None — chat only"
+      },
+      {
+        "feature": "Connect to a lawyer",
+        "umbrella": "Built-in marketplace & review queue",
+        "competitor": "Not available"
+      },
+      {
+        "feature": "Data privacy",
+        "umbrella": "Tenant isolation; no training without consent",
+        "competitor": "General OpenAI data policies"
+      }
+    ],
+    "verdictTitle": "প্রতিটি কখন ব্যবহার করবেন",
+    "verdictBody": "সাধারণ লেখার জন্য এবং বুদ্ধিমত্তার জন্য ChatGPT ব্যবহার করুন। যখন আপনার প্রযোজ্য আইন, যাচাইযোগ্য উদ্ধৃতি, বা দৃঢ়-গ্রেড ওয়ার্কফ্লোতে ভিত্তি করে আইনি বিশ্লেষণের প্রয়োজন হয় তখন ছাতা ব্যবহার করুন।",
+    "cta": "ছাতা আইনি এআই বিনামূল্যে চেষ্টা করুন"
+  },
+  "compareHarvey": {
+    "metaTitle": "ছাতা বনাম হার্ভে এআই — ভোক্তা + দৃঢ় আইনি এআই",
+    "metaDescription": "হার্ভে এআই শুধুমাত্র এন্টারপ্রাইজ আইন সংস্থাগুলিকে লক্ষ্য করে। ছাতা ব্যক্তিদের বিনামূল্যে আইনি স্পষ্টতা এবং একটি সম্পূর্ণ দৃঢ় OS দেয় — ভারত, যুক্তরাজ্য, মার্কিন যুক্তরাষ্ট্র এবং কেনিয়ার কভারেজ এবং বাস্তব উদ্ধৃতি সহ।",
+    "badge": "তুলনা",
+    "title": "ছাতা বনাম হার্ভে এআই",
+    "subtitle": "Harvey শুধুমাত্র BigLaw এবং এন্টারপ্রাইজ ফার্মগুলির জন্য নির্মিত। ছাতা সবাইকে পরিবেশন করে — আপনার প্রথম আইনি প্রশ্ন থেকে শুরু করে পুরো অনুশীলন চালানো পর্যন্ত।",
+    "umbrellaLabel": "Umbrella",
+    "harveyLabel": "হার্ভে এআই",
+    "rows": [
+      {
+        "feature": "Individual consumers",
+        "umbrella": "Free issue checker — no lawyer needed to understand your situation",
+        "competitor": "Enterprise only — no consumer access"
+      },
+      {
+        "feature": "Geographic coverage",
+        "umbrella": "India, US, UK, Kenya with local legal corpora",
+        "competitor": "Primarily US & UK enterprise markets"
+      },
+      {
+        "feature": "Pricing transparency",
+        "umbrella": "Free preview + published plans from $0",
+        "competitor": "Enterprise sales — no public pricing"
+      },
+      {
+        "feature": "Law firm OS",
+        "umbrella": "Matters, billing, trust, intake, Copilot — one platform",
+        "competitor": "AI assistant layer — requires existing firm stack"
+      },
+      {
+        "feature": "Client intake funnel",
+        "umbrella": "Consumer issue checks flow directly to firm matters",
+        "competitor": "No consumer-to-firm pipeline"
+      },
+      {
+        "feature": "উদ্ধৃতি যাচাইকরণ",
+        "umbrella": "Clickable statutes & case law you can verify",
+        "competitor": "Strong for drafting; less consumer-facing clarity"
+      }
+    ],
+    "verdictTitle": "দলগুলো কেন হার্ভেকে ছাতা বেছে নেয়",
+    "verdictBody": "হার্ভে বেছে নিন যদি আপনি একটি বড় ইউএস/ইউকে ফার্ম হয়ে থাকেন যা বিদ্যমান টুলে একটি এআই লেয়ার যোগ করে। আপনি যদি আইনি এআই চান যা নাগরিক এবং সংস্থা উভয়কেই সেবা দেয় — উদীয়মান-বাজার কভারেজ, বিনামূল্যে ভোক্তা অ্যাক্সেস এবং একটি সংযুক্ত গ্রহণ-টু-ম্যাটার ওয়ার্কফ্লো সহ।",
+    "cta": "ছাতা বিনামূল্যে ব্যবহার করে দেখুন — কোনো সেলস কলের প্রয়োজন নেই"
+  },
+  "compareLegora": {
+    "metaTitle": "ছাতা বনাম লেগোরা — সকলের জন্য আইনি এআই, শুধু সংস্থা নয়",
+    "metaDescription": "লেগোরা এন্টারপ্রাইজ ল ফার্ম ওয়ার্কফ্লোতে ফোকাস করে। Umbrella একটি সম্পূর্ণ দৃঢ় প্ল্যাটফর্ম - ভারত, যুক্তরাজ্য, মার্কিন যুক্তরাষ্ট্র এবং কেনিয়া, প্রকৃত উদ্ধৃতি সহ একটি বিনামূল্যে ভোক্তা আইনি সমস্যা পরীক্ষককে একত্রিত করে৷",
+    "badge": "তুলনা",
+    "title": "ছাতা বনাম লেগোরা",
+    "subtitle": "Legora আইন সংস্থার জন্য আইনি AI. ছাতা প্রত্যেকের জন্য আইনী বুদ্ধিমত্তা - ব্যক্তিরা আইনজীবী ছাড়াই স্পষ্টতা পান; সংস্থাগুলি সম্পূর্ণ ওএস পায়।",
+    "umbrellaLabel": "Umbrella",
+    "legoraLabel": "লেগোরা",
+    "rows": [
+      {
+        "feature": "No lawyer needed to start",
+        "umbrella": "Free issue checker explains your rights before any billable hour",
+        "competitor": "Firm-only — no individual consumer product"
+      },
+      {
+        "feature": "Emerging markets",
+        "umbrella": "Full India & Kenya legal databases — not just US/EU",
+        "competitor": "Nordic/US enterprise focus"
+      },
+      {
+        "feature": "Solo & small firms",
+        "umbrella": "SOLO bundle from day one — no enterprise minimum",
+        "competitor": "Enterprise-oriented pricing & onboarding"
+      },
+      {
+        "feature": "Outcome guidance",
+        "umbrella": "Risk level, outcome probability, and cited next steps",
+        "competitor": "Research & workflow automation focus"
+      },
+      {
+        "feature": "আইনজীবীর বাজার",
+        "umbrella": "Connect to licensed counsel when AI clarity isn't enough",
+        "competitor": "Not available"
+      },
+      {
+        "feature": "Practice management",
+        "umbrella": "Billing, trust accounting, matters, meetings — built in",
+        "competitor": "Integrates with existing PM tools"
+      }
+    ],
+    "verdictTitle": "কেন ছাতা নাগাল এবং অ্যাক্সেসযোগ্যতার উপর জয়লাভ করে",
+    "verdictBody": "লেগোরা পরিপক্ক বাজারে এন্টারপ্রাইজ ফার্ম অটোমেশনে পারদর্শী। আমব্রেলা আরও এগিয়ে যায় - লক্ষ লক্ষ লোকের জন্য বিনামূল্যে আইনি স্পষ্টতা যারা এখনও আইনজীবী নিতে পারে না, এছাড়াও ভারত, কেনিয়া, যুক্তরাজ্য এবং মার্কিন যুক্তরাষ্ট্রে AI-নেটিভ ইনটেক চায় এমন সংস্থাগুলির জন্য একটি সম্পূর্ণ প্ল্যাটফর্ম৷",
+    "cta": "বিনামূল্যে শুরু করুন — ব্যক্তি এবং সংস্থাগুলিকে স্বাগত জানাই৷"
+  },
+  "compareHub": {
+    "metaTitle": "আমব্রেলা লিগ্যাল এআই — বনাম হার্ভে, লেগোরা এবং চ্যাটজিপিটি তুলনা করুন",
+    "metaDescription": "হার্ভে এআই, লেগোরা এবং চ্যাটজিপিটির সাথে ছাতা কীভাবে তুলনা করে দেখুন। ভারত, যুক্তরাজ্য, মার্কিন যুক্তরাষ্ট্র এবং কেনিয়ার কভারেজ সহ ব্যক্তি এবং আইন সংস্থাগুলির জন্য নির্মিত একমাত্র আইনি AI।",
+    "badge": "তুলনা",
+    "title": "কিভাবে ছাতা তুলনা",
+    "subtitle": "প্রকৃত উদ্ধৃতি সহ উদ্দেশ্য-নির্মিত আইনি AI — যাদের স্পষ্টতা প্রয়োজন এবং একটি OS প্রয়োজন এমন সংস্থাগুলির জন্য৷",
+    "readComparison": "তুলনা পড়ুন",
+    "cta": "ছাতা বিনামূল্যে চেষ্টা করুন",
+    "cards": [
+      {
+        "slug": "umbrella-vs-harvey",
+        "title": "ছাতা বনাম হার্ভে এআই",
+        "description": "Enterprise-only vs consumer + firm. Emerging markets vs US/UK focus."
+      },
+      {
+        "slug": "umbrella-vs-legora",
+        "title": "ছাতা বনাম লেগোরা",
+        "description": "Firm-only automation vs free consumer clarity plus full firm OS."
+      },
+      {
+        "slug": "umbrella-vs-chatgpt",
+        "title": "Umbrella vs ChatGPT",
+        "description": "Real legal citations vs fabricated case law. Jurisdiction-aware vs generic."
+      }
+    ]
+  },
+  "countryPages": {
+    "forIndividuals": "ব্যক্তিদের জন্য",
+    "forLawFirms": "আইন সংস্থাগুলির জন্য",
+    "noLawyerNeededTitle": "আপনার পরিস্থিতি বোঝার জন্য আপনার আইনজীবীর প্রয়োজন নেই",
+    "lawyerWhenReady": "আপনি যখন আনুষ্ঠানিক পরামর্শ চান, প্ল্যাটফর্মে লাইসেন্সপ্রাপ্ত আইনজীবীর সাথে সংযোগ করুন — আপনার শর্তে।",
+    "guidesTitle": "{country} এর জন্য আইনি নির্দেশিকা",
+    "guidesSubtitle": "সাধারণ আইনি বিষয়ে শিক্ষাগত ওভারভিউ — আইনি পরামর্শ নয়।",
+    "guideLink": "গাইড পড়ুন",
+    "allGuides": "সমস্ত আইনি গাইড ব্রাউজ করুন",
+    "otherMarkets": "বৈশিষ্ট্যযুক্ত অঞ্চল - বিশ্বব্যাপী উপলব্ধ",
+    "in": {
+      "metaTitle": "আইনি এআই ইন্ডিয়া — গ্লোবাল প্ল্যাটফর্ম, স্থানীয় আইন",
+      "metaDescription": "ছাতা ভারত এবং বিশ্বব্যাপী প্রতিটি দেশে পরিবেশন করে। IPC উদ্ধৃতি, এফআইআর বিশ্লেষণ এবং বিভাগ অনুসন্ধানকারী সহ বিনামূল্যে AI সমস্যা পরীক্ষক। ভারতীয় আইন সংস্থাগুলির জন্য সম্পূর্ণ আইনি ওএস।",
+      "badge": "আইনি এআই ইন্ডিয়া",
+      "heroTitle": "ভারতের জন্য আইনি স্পষ্টতা - শুরু করার জন্য কোনও উকিলের প্রয়োজন নেই",
+      "heroSubtitle": "হিন্দি বা ইংরেজিতে আপনার পরিস্থিতি বর্ণনা করুন। ছাতা ভারতীয় আইন, আইপিসি বিভাগ এবং মামলার আইন পড়ে — তারপরে আপনি ঠিক কোথায় দাঁড়িয়ে আছেন তা আপনাকে বলে। আইন সংস্থাগুলি একটি সম্পূর্ণ এআই-নেটিভ অনুশীলন প্ল্যাটফর্ম পায়।",
+      "heroNote": "শুধুমাত্র আইনি তথ্য - আইনি পরামর্শ নয়। যখন আপনার আনুষ্ঠানিক প্রতিনিধিত্বের প্রয়োজন হয় তখন লাইসেন্সপ্রাপ্ত অ্যাডভোকেটের সাথে সংযোগ করুন।",
+      "consumerCta": "আমার আইনি সমস্যা বিনামূল্যে পরীক্ষা করুন",
+      "firmCta": "আইন সংস্থাগুলির জন্য প্ল্যাটফর্ম",
+      "consumerTitle": "বেশিরভাগ ভারতীয়দের কোন মামলা আছে কিনা তা জানার জন্য আইনজীবীর প্রয়োজন নেই",
+      "consumerBody": "পরামর্শের জন্য ₹5,000 প্রদান করার আগে, IPC, CrPC, চুক্তির আইন এবং প্রাসঙ্গিক মামলা আইনের ভিত্তিতে একটি বিনামূল্যের AI প্রিভিউ পান। আপনার ঝুঁকির স্তর, আপনার অধিকার এবং আপনার পরবর্তী পদক্ষেপগুলি জানুন।",
+      "noLawyerPitch": "ভাড়া সংক্রান্ত বিরোধ, চেক বাউন্স, কর্মসংস্থানের সমস্যা, ভোক্তাদের অভিযোগ, সম্পত্তি সংক্রান্ত বিষয়গুলি — ছাতা 2 মিনিটের মধ্যে আপনার বাস্তব ভারতীয় আইনে ম্যাপ করে। আপনি যখন সিদ্ধান্ত নেন যে আপনার একজন আইনজীবীর প্রয়োজন তখনই শুধুমাত্র একজন আইনজীবীর জন্য অর্থ প্রদান করুন।",
+      "consumerBullets": [
+        "Free issue checker with cited IPC & statute references",
+        "FIR analysis and section finder for criminal matters",
+        "Document upload and AI contract review",
+        "India Drafts — demand letters, notices, and pleadings",
+        "Connect to vetted advocates when ready"
+      ],
+      "firmTitle": "ভারতীয় আইন সংস্থাগুলির জন্য এআই-নেটিভ আইনি ওএস",
+      "firmBody": "জেলা আদালতের একক উকিল থেকে শুরু করে মাঝারি আকারের ফার্মগুলি পর্যন্ত — বিষয় ব্যবস্থাপনা, বিলিং, ট্রাস্ট অ্যাকাউন্টিং এবং একজন কপিলট যে প্রত্যেক গ্রাহকের তথ্য জানে৷",
+      "firmPitch": "ভোক্তা ইস্যু চেক সরাসরি আপনার গ্রহণের সারিতে প্রবাহিত হয়। প্রথম কলের আগে আপনার কপাইলট ইতিমধ্যেই ক্লায়েন্টের পরিস্থিতি জানেন।",
+      "firmBullets": [
+        "Matter-aware AI Copilot with Indian legal corpora",
+        "Section finder, FIR analysis, and India drafting tools",
+        "Billing, trust accounting, and client portal",
+        "Meeting transcription linked to matters",
+        "SOLO bundle for independent advocates"
+      ],
+      "faqTitle": "আইনি এআই ইন্ডিয়া — প্রায়শই জিজ্ঞাসিত প্রশ্নাবলী",
+      "faqItems": [
+        {
+          "question": "Do I need a lawyer to use Umbrella in India?",
+          "answer": "No. Umbrella helps you understand your legal situation for free. You only need an advocate when you want formal legal advice or court representation."
+        },
+        {
+          "question": "Does Umbrella cover Indian criminal law?",
+          "answer": "Yes. FIR analysis, IPC section finder, and criminal procedure guidance are built in for registered users."
+        },
+        {
+          "question": "Can Indian law firms use Umbrella?",
+          "answer": "Yes. Umbrella is a full practice platform — matters, billing, trust, AI Copilot, and client intake from consumer issue checks."
+        }
+      ]
+    },
+    "us": {
+      "metaTitle": "আইনি এআই ইউএসএ — গ্লোবাল প্ল্যাটফর্ম, মার্কিন আইন",
+      "metaDescription": "ছাতা মার্কিন যুক্তরাষ্ট্র এবং বিশ্বব্যাপী প্রতিটি দেশে পরিবেশন করে। ফেডারেল এবং রাজ্য আইনের উদ্ধৃতি সহ বিনামূল্যে এআই ইস্যু চেকার। মার্কিন আইন সংস্থাগুলির জন্য সম্পূর্ণ আইনি ওএস।",
+      "badge": "আইনি এআই মার্কিন যুক্তরাষ্ট্র",
+      "heroTitle": "আমেরিকার জন্য আইনি স্পষ্টতা - শুরু করার জন্য কোন অ্যাটর্নি বিল নেই",
+      "heroSubtitle": "কর্মসংস্থান বিরোধ, বাড়িওয়ালার সমস্যা, ছোট দাবি, চুক্তি — আপনার পরিস্থিতি বর্ণনা করুন এবং ফেডারেল এবং রাজ্য আইন থেকে উদ্ধৃত নির্দেশিকা পান। আইন সংস্থাগুলি ম্যাটার ম্যানেজমেন্ট, বিলিং এবং এআই কপিলট পায়।",
+      "heroNote": "শুধুমাত্র আইনি তথ্য - আইনি পরামর্শ নয়। আপনার যখন আনুষ্ঠানিক পরামর্শের প্রয়োজন হয় তখন লাইসেন্সপ্রাপ্ত অ্যাটর্নির সাথে সংযোগ করুন।",
+      "consumerCta": "আমার আইনি সমস্যা বিনামূল্যে পরীক্ষা করুন",
+      "firmCta": "আইন সংস্থাগুলির জন্য প্ল্যাটফর্ম",
+      "consumerTitle": "আপনার যদি কোনো মামলা থাকে তবে শিখতে আপনার $300 দিতে হবে না",
+      "consumerBody": "আপনি একজন অ্যাটর্নি নিয়োগের আগে ঝুঁকির স্তর, ফলাফলের সম্ভাবনা এবং উদ্ধৃত বিধি সহ একটি বিনামূল্যে AI পূর্বরূপ পান৷ সরল ইংরেজিতে আপনার বিকল্পগুলি জানুন।",
+      "noLawyerPitch": "ভুলভাবে সমাপ্তি, উচ্ছেদ, চুক্তি বিবাদ, ছোট দাবি — ছাতা আপনার তথ্যের ক্ষেত্রে আপনার এখতিয়ারের আইন প্রয়োগ করে। একজন আইনজীবী নিয়োগ করুন শুধুমাত্র যখন প্রিভিউ আপনাকে বলে যে এটি মূল্যবান।",
+      "consumerBullets": [
+        "Free issue checker with federal & state law citations",
+        "Document upload and contract clause analysis",
+        "Outcome probability and risk assessment",
+        "US drafting tools for demand letters and notices",
+        "Connect to licensed attorneys when ready"
+      ],
+      "firmTitle": "মার্কিন আইন সংস্থাগুলির জন্য এআই-নেটিভ আইনি ওএস",
+      "firmBody": "মাঝারি আকারের ফার্মগুলিতে একক অনুশীলনকারী — বিষয়, বিলিং, ট্রাস্ট অ্যাকাউন্টিং, বুদ্ধিমত্তা পূরণ এবং একটি বিষয়-সচেতন কপিলটের জন্য একটি প্ল্যাটফর্ম।",
+      "firmPitch": "ইস্যু চেক থেকে ভোক্তা গ্রহণ প্রথম পরামর্শের আগে আপনার দলের প্রসঙ্গ দেয়। বিল অযোগ্য আবিষ্কার কল হ্রাস করুন।",
+      "firmBullets": [
+        "Matter-aware AI Copilot with US legal research",
+        "Billing, trust accounting, and conflict checks",
+        "Meeting transcription and action items",
+        "Client portal — not email threads",
+        "Per-seat pricing with SOLO bundle for solos"
+      ],
+      "faqTitle": "আইনি AI USA — প্রায়শই জিজ্ঞাসিত প্রশ্নাবলী",
+      "faqItems": [
+        {
+          "question": "Is Umbrella a substitute for an attorney?",
+          "answer": "No. Umbrella provides legal information to help you understand your situation. For formal legal advice, connect with a licensed attorney through the platform."
+        },
+        {
+          "question": "Which US jurisdictions does Umbrella cover?",
+          "answer": "Umbrella applies federal law and state-specific guidance. Full corpus coverage continues to expand — issue checks work nationwide with best-effort state law."
+        },
+        {
+          "question": "How does Umbrella compare to Harvey AI?",
+          "answer": "Harvey targets enterprise firms only. Umbrella serves both individuals (free issue checker) and firms (full OS) — with transparent pricing and no sales call required."
+        }
+      ]
+    },
+    "gb": {
+      "metaTitle": "আইনি এআই ইউকে - গ্লোবাল প্ল্যাটফর্ম, ইউকে আইন",
+      "metaDescription": "ছাতা ইউনাইটেড কিংডম এবং বিশ্বব্যাপী প্রতিটি দেশে পরিবেশন করে। বিনামূল্যে এআই ইস্যু পরীক্ষক যুক্তরাজ্যের আইন এবং মামলার আইন উল্লেখ করে। ব্রিটিশ আইন সংস্থাগুলির জন্য সম্পূর্ণ আইনি ওএস।",
+      "badge": "আইনি এআই যুক্তরাজ্য",
+      "heroTitle": "যুক্তরাজ্যের জন্য আইনি স্পষ্টতা - শুরু করার জন্য কোন আইনজীবীর প্রয়োজন নেই",
+      "heroSubtitle": "কর্মসংস্থান ট্রাইব্যুনাল, হাউজিং ডিপেয়ার, ভাড়াটে অধিকার, চুক্তি — সরল ইংরেজিতে ইউকে আইন থেকে উদ্ধৃত নির্দেশিকা পান। সলিসিটর এবং ব্যারিস্টাররা একটি সম্পূর্ণ এআই-নেটিভ অনুশীলন প্ল্যাটফর্ম পান।",
+      "heroNote": "শুধুমাত্র আইনি তথ্য - আইনি পরামর্শ নয়। আপনার যখন আনুষ্ঠানিক পরামর্শের প্রয়োজন হয় তখন একজন নিয়ন্ত্রিত আইনি পেশাদারের সাথে সংযোগ করুন।",
+      "consumerCta": "আমার আইনি সমস্যা বিনামূল্যে পরীক্ষা করুন",
+      "firmCta": "আইন সংস্থাগুলির জন্য প্ল্যাটফর্ম",
+      "consumerTitle": "আপনি একজন আইনজীবীকে নির্দেশ দেওয়ার আগে আপনার অধিকারগুলি জানুন",
+      "consumerBody": "কর্মসংস্থান বিরোধ, আবাসন সমস্যা, ভোক্তা অধিকার — আপনি পরামর্শের জন্য অর্থ প্রদানের আগে সংসদের আইন এবং প্রাসঙ্গিক মামলা আইনের উদ্ধৃতি দিয়ে একটি বিনামূল্যে AI পূর্বরূপ পান।",
+      "noLawyerPitch": "আমব্রেলা ইউকে আইনে আপনার তথ্য ম্যাপ করে এবং আপনাকে ঝুঁকির স্তর এবং পরবর্তী পদক্ষেপগুলি দেয়। আপনি যখন আনুষ্ঠানিক পরামর্শের জন্য প্রস্তুত হন তখনই একজন উকিলকে নির্দেশ দিন।",
+      "consumerBullets": [
+        "Free issue checker citing UK statutes and case law",
+        "Employment tribunal and housing disrepair guidance",
+        "Document review for contracts and tenancy agreements",
+        "Plain-English outcome probability",
+        "Connect to regulated legal professionals when ready"
+      ],
+      "firmTitle": "ইউকে আইন সংস্থাগুলির জন্য এআই-নেটিভ আইনি ওএস",
+      "firmBody": "একমাত্র অনুশীলনকারী থেকে শুরু করে ক্রমবর্ধমান সংস্থাগুলি — বিষয়, বিলিং, ট্রাস্ট অ্যাকাউন্টিং এবং আপনার ক্লায়েন্টের ইনটেক ডেটার উপর প্রশিক্ষিত একজন কপিলট।",
+      "firmPitch": "ইংল্যান্ড, স্কটল্যান্ড, ওয়েলস এবং উত্তর আয়ারল্যান্ডে ভোক্তাদের ইস্যু চেক সম্পূর্ণ AI প্রসঙ্গ সহ আপনার ইনটেক পাইপলাইন ফিড করে।",
+      "firmBullets": [
+        "Matter-aware AI Copilot with UK legal corpora",
+        "Billing, trust accounting, and compliance tools",
+        "Meeting transcription linked to matters",
+        "Client portal with secure document sharing",
+        "Transparent per-seat pricing"
+      ],
+      "faqTitle": "আইনি এআই ইউকে - প্রায়শই জিজ্ঞাসিত প্রশ্নাবলী",
+      "faqItems": [
+        {
+          "question": "Do I need a solicitor to use Umbrella?",
+          "answer": "No. Umbrella helps you understand your legal position for free. Instruct a solicitor when you need regulated legal advice or representation."
+        },
+        {
+          "question": "Does Umbrella cover employment tribunal matters?",
+          "answer": "Yes. Employment rights, unfair dismissal, and tribunal process guidance are included in our UK legal guides and issue checker."
+        },
+        {
+          "question": "How does Umbrella compare to Legora?",
+          "answer": "Legora focuses on enterprise firm automation. Umbrella serves both UK citizens (free clarity) and firms (full OS) — including India and Kenya coverage Legora doesn't offer."
+        }
+      ]
+    },
+    "ke": {
+      "metaTitle": "আইনি এআই কেনিয়া — গ্লোবাল প্ল্যাটফর্ম, কেনিয়ার আইন",
+      "metaDescription": "ছাতা কেনিয়া এবং বিশ্বের প্রতিটি দেশে পরিবেশন করে। কেনিয়ার আইন এবং মামলার আইন উল্লেখ করে বিনামূল্যে এআই ইস্যু চেকার। M-Pesa বিলিং সহ কেনিয়ার আইন সংস্থাগুলির জন্য সম্পূর্ণ আইনি OS।",
+      "badge": "আইনি এআই কেনিয়া",
+      "heroTitle": "কেনিয়ার জন্য আইনি স্বচ্ছতা — শুরু করার জন্য কোনো অ্যাডভোকেট ফি লাগবে না",
+      "heroSubtitle": "কর্মসংস্থানের অধিকার, জমি সংক্রান্ত বিরোধ, ভোক্তাদের অভিযোগ — আপনার পরিস্থিতি বর্ণনা করুন এবং কেনিয়ার আইনের ভিত্তিতে নির্দেশিকা পান। অ্যাডভোকেট এবং সংস্থাগুলি ম্যাটার ম্যানেজমেন্ট, বিলিং এবং এআই কপিলট পায়।",
+      "heroNote": "শুধুমাত্র আইনি তথ্য - আইনি পরামর্শ নয়। যখন আপনার আনুষ্ঠানিক প্রতিনিধিত্বের প্রয়োজন হয় তখন লাইসেন্সপ্রাপ্ত অ্যাডভোকেটের সাথে সংযোগ করুন।",
+      "consumerCta": "আমার আইনি সমস্যা বিনামূল্যে পরীক্ষা করুন",
+      "firmCta": "আইন সংস্থাগুলির জন্য প্ল্যাটফর্ম",
+      "consumerTitle": "আইনগত স্পষ্টতার জন্য একজন উকিলের পরামর্শ ফি প্রয়োজন হবে না",
+      "consumerBody": "পরামর্শের জন্য অর্থপ্রদান করার আগে, কর্মসংস্থান আইন, ভূমি আইন এবং প্রাসঙ্গিক কেনিয়ার মামলার আইন উল্লেখ করে একটি বিনামূল্যের এআই প্রিভিউ পান। আপনার ঝুঁকি এবং আপনার বিকল্পগুলি জানুন।",
+      "noLawyerPitch": "জমি সংক্রান্ত বিরোধ, অন্যায়ভাবে সমাপ্তি, ভোক্তা অধিকার — আমব্রেলা কেনিয়ার আইনকে কয়েক মিনিটের মধ্যে আপনার তথ্যে প্রয়োগ করে। একজন অ্যাডভোকেট নিয়োগ করুন যখন আপনি সিদ্ধান্ত নিন যে আপনার একজনের প্রয়োজন।",
+      "consumerBullets": [
+        "Free issue checker with Kenyan statute citations",
+        "Employment Act and land dispute guidance",
+        "Document upload and contract review",
+        "M-Pesa-friendly subscription and billing",
+        "Connect to vetted advocates when ready"
+      ],
+      "firmTitle": "কেনিয়ার আইন সংস্থাগুলির জন্য এআই-নেটিভ আইনি ওএস",
+      "firmBody": "মাঝারি আকারের সংস্থাগুলির একক উকিল — বিষয়, M-Pesa সমর্থন সহ বিলিং, ট্রাস্ট অ্যাকাউন্টিং এবং কেনিয়ার অনুশীলনের জন্য তৈরি AI কপাইলট৷",
+      "firmPitch": "কেনিয়া জুড়ে কনজিউমার ইস্যু চেকগুলি সম্পূর্ণ প্রসঙ্গ সহ আপনার গ্রহণকে ফিড করে — আপনার কপিলট প্রথম মিটিংয়ের আগে ক্লায়েন্টের পরিস্থিতি জানেন।",
+      "firmBullets": [
+        "Matter-aware AI Copilot with Kenyan legal corpora",
+        "M-Pesa billing integration",
+        "Billing, trust accounting, and client portal",
+        "Meeting transcription for client conferences",
+        "SOLO bundle for independent advocates"
+      ],
+      "faqTitle": "আইনি এআই কেনিয়া — FAQ",
+      "faqItems": [
+        {
+          "question": "Do I need an advocate to use Umbrella in Kenya?",
+          "answer": "No. Umbrella helps you understand your legal situation for free. You only need an advocate for formal legal advice or court representation."
+        },
+        {
+          "question": "Does Umbrella support M-Pesa payments?",
+          "answer": "Yes. Consumer subscriptions and firm billing support M-Pesa alongside card payments."
+        },
+        {
+          "question": "Which Kenyan laws does Umbrella cover?",
+          "answer": "Employment Act, land and property law, consumer protection, and contract law — with expanding case law coverage."
+        }
+      ]
+    }
+  },
+  "seoGlobal": {
+    "badge": "বিশ্বব্যাপী উপলব্ধ",
+    "availability": "প্রতিটি দেশে উপলব্ধ — আপনার এখতিয়ার স্বয়ংক্রিয়ভাবে সনাক্ত করে এবং স্থানীয় আইন প্রয়োগ করে।",
+    "featuresTitle": "যা পাবেন",
+    "dualAudienceTitle": "আইনি কাজ স্পর্শ যারা প্রত্যেকের জন্য নির্মিত",
+    "consumerCta": "বিনামূল্যে চেষ্টা করুন — সমস্যা পরীক্ষক",
+    "firmCta": "আইন সংস্থাগুলির জন্য প্ল্যাটফর্ম",
+    "faqTitle": "প্রায়শই জিজ্ঞাসিত প্রশ্ন",
+    "relatedSolutions": "সম্পর্কিত ক্ষমতা",
+    "allSolutions": "সব সমাধান"
+  },
+  "solutionsHub": {
+    "metaTitle": "আইনি এআই সমাধান — নথি খসড়া, গবেষণা, চুক্তি পর্যালোচনা এবং আরও অনেক কিছু",
+    "metaDescription": "আমব্রেলার বিশ্বব্যাপী আইনি এআই সমাধানগুলি অন্বেষণ করুন: নথির খসড়া, চুক্তি পর্যালোচনা, আইনি গবেষণা, আইন ফার্ম সফ্টওয়্যার, আইনি সহপাইলট এবং ওয়ার্কফ্লো অটোমেশন — বিশ্বব্যাপী।",
+    "badge": "সমাধান",
+    "title": "প্রতিটি আইনি কাজের জন্য আইনি এআই",
+    "subtitle": "আপনার প্রথম আইনি প্রশ্ন থেকে শুরু করে একটি সম্পূর্ণ বিশ্বব্যাপী অনুশীলন চালানোর জন্য — ডকুমেন্ট ড্রাফটিং, চুক্তি পর্যালোচনা, আইনি গবেষণা এবং একটি প্ল্যাটফর্মে দৃঢ় অটোমেশন।",
+    "learnMore": "আরও জানুন",
+    "closing": "এক প্লাটফর্ম। প্রতিটি দেশ। ব্যক্তি এবং আইন সংস্থা।"
+  },
+  "seoPillars": {
+    "legal-document-drafting": {
+      "metaTitle": "আইনি নথি খসড়া — গ্লোবাল লিগ্যাল এআই প্ল্যাটফর্ম",
+      "metaDescription": "আমব্রেলা আইনি নথির খসড়া: এআই-চালিত, এখতিয়ার-সচেতন, বাস্তব উদ্ধৃতি সহ — ব্যক্তি এবং আইন সংস্থাগুলির জন্য বিশ্বব্যাপী প্রতিটি দেশে উপলব্ধ।",
+      "keywords": [
+        "legal document drafting",
+        "AI legal document drafting",
+        "legal document drafting software",
+        "legal AI",
+        "global legal AI"
+      ],
+      "shortTitle": "আইনি নথি খসড়া",
+      "cardDescription": "বিশ্বব্যাপী আইনি নথির খসড়া বাস্তব উদ্ধৃতি সহ — ব্যক্তি এবং আইন সংস্থাগুলির জন্য।",
+      "heroTitle": "আইনি নথির খসড়া তৈরি — এআই যা বাস্তব আইনকে উদ্ধৃত করে",
+      "heroSubtitle": "সবচেয়ে সক্ষম আইনি নথির খসড়া তৈরির প্ল্যাটফর্ম — বাস্তব বিধি এবং মামলার আইনে ভিত্তি করে, আপনার এখতিয়ার স্বয়ংক্রিয়ভাবে সনাক্ত করে, বিশ্বব্যাপী উপলব্ধ।",
+      "bodyTitle": "সেরা আইনি নথি খসড়া প্ল্যাটফর্ম",
+      "body1": "Umbrella আইনি কর্পোরার উপর পুনরুদ্ধার-বর্ধিত প্রজন্মের দ্বারা চালিত আইনি নথির খসড়া সরবরাহ করে — যাচাইযোগ্য উদ্ধৃতি, বিষয়-সচেতন প্রসঙ্গ এবং প্রতিটি দেশের জন্য এখতিয়ার স্বয়ং-সনাক্তকরণ সহ।",
+      "body2": "ব্যক্তি বিনামূল্যে জন্য এটি ব্যবহার. আইন সংস্থাগুলি এআই কপিলট, বিলিং এবং ওয়ার্কফ্লো অটোমেশন - একটি বিশ্বব্যাপী প্ল্যাটফর্মের সাথে প্রতিটি বিষয়ে এটি স্থাপন করে।",
+      "featuresSubtitle": "বাস্তব আইনি কাজের জন্য নির্মিত.",
+      "features": [
+        "Real statute and case law citations you can verify",
+        "Jurisdiction auto-detection — works in every country",
+        "Free for individuals; firm-grade depth for teams",
+        "Matter-aware AI Copilot with full case context",
+        "Document drafting, review, and research integrated",
+        "Privacy-first — tenant isolation and audit trails"
+      ],
+      "dualAudience": "ব্যক্তি বিনামূল্যে আইনি নথি খসড়া পেতে. সংস্থাগুলি বিশ্বব্যাপী প্রতিটি বিষয়ে এটিকে স্বয়ংক্রিয় করে।",
+      "ctaPrimary": "খসড়া শুরু করুন",
+      "faqItems": [
+        {
+          "question": "Does legal document drafting work in my country?",
+          "answer": "Yes. Umbrella is a global legal AI platform that auto-detects your jurisdiction and applies local law — available in every country worldwide."
+        },
+        {
+          "question": "Is Umbrella legal document drafting free to try?",
+          "answer": "Yes. Individuals get a free preview with included AI credits. Law firms can start a free trial of the full platform."
+        }
+      ]
+    },
+    "legal-research": {
+      "metaTitle": "আইনি গবেষণা — গ্লোবাল লিগ্যাল এআই প্ল্যাটফর্ম",
+      "metaDescription": "ছাতা আইনি গবেষণা: এআই-চালিত, এখতিয়ার-সচেতন, বাস্তব উদ্ধৃতি সহ — ব্যক্তি এবং আইন সংস্থাগুলির জন্য বিশ্বব্যাপী প্রতিটি দেশে উপলব্ধ।",
+      "keywords": [
+        "legal research",
+        "AI legal research",
+        "legal research software",
+        "legal AI",
+        "global legal AI"
+      ],
+      "shortTitle": "আইনি গবেষণা",
+      "cardDescription": "প্রকৃত উদ্ধৃতি সহ বিশ্বব্যাপী আইনি গবেষণা — ব্যক্তি এবং আইন সংস্থাগুলির জন্য।",
+      "heroTitle": "আইনি গবেষণা AI — আপনার ক্ষেত্রে প্রযোজ্য আইন খুঁজুন",
+      "heroSubtitle": "সবচেয়ে সক্ষম আইনি গবেষণা প্ল্যাটফর্ম — বাস্তব আইন এবং মামলার আইনের ভিত্তিতে, আপনার এখতিয়ার স্বয়ংক্রিয়ভাবে সনাক্ত করে, বিশ্বব্যাপী উপলব্ধ।",
+      "bodyTitle": "সেরা আইনি গবেষণা প্ল্যাটফর্ম",
+      "body1": "Umbrella আইনি কর্পোরার উপর পুনরুদ্ধার-বর্ধিত প্রজন্মের দ্বারা চালিত আইনি গবেষণা প্রদান করে — যাচাইযোগ্য উদ্ধৃতি, বিষয়-সচেতন প্রসঙ্গ এবং প্রতিটি দেশের জন্য এখতিয়ার স্বয়ংক্রিয় সনাক্তকরণ সহ।",
+      "body2": "ব্যক্তি বিনামূল্যে জন্য এটি ব্যবহার. আইন সংস্থাগুলি এআই কপিলট, বিলিং এবং ওয়ার্কফ্লো অটোমেশন - একটি বিশ্বব্যাপী প্ল্যাটফর্মের সাথে প্রতিটি বিষয়ে এটি স্থাপন করে।",
+      "featuresSubtitle": "বাস্তব আইনি কাজের জন্য নির্মিত.",
+      "features": [
+        "Real statute and case law citations you can verify",
+        "Jurisdiction auto-detection — works in every country",
+        "Free for individuals; firm-grade depth for teams",
+        "Matter-aware AI Copilot with full case context",
+        "Document drafting, review, and research integrated",
+        "Privacy-first — tenant isolation and audit trails"
+      ],
+      "dualAudience": "ব্যক্তি বিনামূল্যে আইনি গবেষণা পেতে. সংস্থাগুলি বিশ্বব্যাপী প্রতিটি বিষয়ে এটিকে স্বয়ংক্রিয় করে।",
+      "ctaPrimary": "আমার আইনি সমস্যা গবেষণা",
+      "faqItems": [
+        {
+          "question": "Does legal research work in my country?",
+          "answer": "Yes. Umbrella is a global legal AI platform that auto-detects your jurisdiction and applies local law — available in every country worldwide."
+        },
+        {
+          "question": "Is Umbrella legal research free to try?",
+          "answer": "Yes. Individuals get a free preview with included AI credits. Law firms can start a free trial of the full platform."
+        }
+      ]
+    },
+    "contract-review": {
+      "metaTitle": "চুক্তি পর্যালোচনা — গ্লোবাল লিগ্যাল এআই প্ল্যাটফর্ম",
+      "metaDescription": "ছাতা চুক্তি পর্যালোচনা: এআই-চালিত, এখতিয়ার-সচেতন, বাস্তব উদ্ধৃতি সহ — ব্যক্তি এবং আইন সংস্থাগুলির জন্য বিশ্বব্যাপী প্রতিটি দেশে উপলব্ধ।",
+      "keywords": [
+        "contract review",
+        "AI contract review",
+        "contract review software",
+        "legal AI",
+        "global legal AI"
+      ],
+      "shortTitle": "চুক্তি পর্যালোচনা",
+      "cardDescription": "প্রকৃত উদ্ধৃতি সহ বিশ্বব্যাপী চুক্তি পর্যালোচনা — ব্যক্তি এবং আইন সংস্থাগুলির জন্য।",
+      "heroTitle": "এআই চুক্তি পর্যালোচনা - প্রতিটি ধারা, প্রতিটি ঝুঁকি",
+      "heroSubtitle": "সবচেয়ে সক্ষম চুক্তি পর্যালোচনা প্ল্যাটফর্ম — বাস্তব বিধি এবং মামলার আইনে ভিত্তি করে, আপনার এখতিয়ার স্বয়ংক্রিয়ভাবে সনাক্ত করে, বিশ্বব্যাপী উপলব্ধ।",
+      "bodyTitle": "সেরা চুক্তি পর্যালোচনা প্ল্যাটফর্ম",
+      "body1": "Umbrella আইনি কর্পোরার উপর পুনরুদ্ধার-বর্ধিত প্রজন্মের দ্বারা চালিত চুক্তি পর্যালোচনা প্রদান করে — যাচাইযোগ্য উদ্ধৃতি, বিষয়-সচেতন প্রসঙ্গ এবং প্রতিটি দেশের জন্য এখতিয়ার স্বয়ংক্রিয় সনাক্তকরণ সহ।",
+      "body2": "ব্যক্তি বিনামূল্যে জন্য এটি ব্যবহার. আইন সংস্থাগুলি এআই কপিলট, বিলিং এবং ওয়ার্কফ্লো অটোমেশন - একটি বিশ্বব্যাপী প্ল্যাটফর্মের সাথে প্রতিটি বিষয়ে এটি স্থাপন করে।",
+      "featuresSubtitle": "বাস্তব আইনি কাজের জন্য নির্মিত.",
+      "features": [
+        "Real statute and case law citations you can verify",
+        "Jurisdiction auto-detection — works in every country",
+        "Free for individuals; firm-grade depth for teams",
+        "Matter-aware AI Copilot with full case context",
+        "Document drafting, review, and research integrated",
+        "Privacy-first — tenant isolation and audit trails"
+      ],
+      "dualAudience": "ব্যক্তি বিনামূল্যে চুক্তি পর্যালোচনা পেতে. সংস্থাগুলি বিশ্বব্যাপী প্রতিটি বিষয়ে এটিকে স্বয়ংক্রিয় করে।",
+      "ctaPrimary": "একটি চুক্তি পর্যালোচনা",
+      "faqItems": [
+        {
+          "question": "Does contract review work in my country?",
+          "answer": "Yes. Umbrella is a global legal AI platform that auto-detects your jurisdiction and applies local law — available in every country worldwide."
+        },
+        {
+          "question": "Is Umbrella contract review free to try?",
+          "answer": "Yes. Individuals get a free preview with included AI credits. Law firms can start a free trial of the full platform."
+        }
+      ]
+    },
+    "document-review": {
+      "metaTitle": "নথি পর্যালোচনা — গ্লোবাল লিগ্যাল এআই প্ল্যাটফর্ম",
+      "metaDescription": "আমব্রেলা ডকুমেন্ট পর্যালোচনা: এআই-চালিত, এখতিয়ার-সচেতন, বাস্তব উদ্ধৃতি সহ — ব্যক্তি এবং আইন সংস্থাগুলির জন্য বিশ্বব্যাপী প্রতিটি দেশে উপলব্ধ।",
+      "keywords": [
+        "document review",
+        "AI document review",
+        "document review software",
+        "legal AI",
+        "global legal AI"
+      ],
+      "shortTitle": "নথি পর্যালোচনা",
+      "cardDescription": "প্রকৃত উদ্ধৃতি সহ বিশ্বব্যাপী নথি পর্যালোচনা — ব্যক্তি এবং আইন সংস্থাগুলির জন্য।",
+      "heroTitle": "আইনি নথি পর্যালোচনা — AI প্রতিটি পৃষ্ঠা পড়ে",
+      "heroSubtitle": "সবচেয়ে সক্ষম ডকুমেন্ট রিভিউ প্ল্যাটফর্ম — বাস্তব বিধি এবং মামলা আইনের ভিত্তিতে, আপনার এখতিয়ার স্বয়ংক্রিয়ভাবে সনাক্ত করে, বিশ্বব্যাপী উপলব্ধ।",
+      "bodyTitle": "সেরা নথি পর্যালোচনা প্ল্যাটফর্ম",
+      "body1": "Umbrella আইনি কর্পোরার উপর পুনরুদ্ধার-বর্ধিত প্রজন্মের দ্বারা চালিত নথি পর্যালোচনা প্রদান করে — যাচাইযোগ্য উদ্ধৃতি, বিষয়-সচেতন প্রসঙ্গ এবং প্রতিটি দেশের জন্য এখতিয়ার স্বয়ংক্রিয় সনাক্তকরণ সহ।",
+      "body2": "ব্যক্তি বিনামূল্যে জন্য এটি ব্যবহার. আইন সংস্থাগুলি এআই কপিলট, বিলিং এবং ওয়ার্কফ্লো অটোমেশন - একটি বিশ্বব্যাপী প্ল্যাটফর্মের সাথে প্রতিটি বিষয়ে এটি স্থাপন করে।",
+      "featuresSubtitle": "বাস্তব আইনি কাজের জন্য নির্মিত.",
+      "features": [
+        "Real statute and case law citations you can verify",
+        "Jurisdiction auto-detection — works in every country",
+        "Free for individuals; firm-grade depth for teams",
+        "Matter-aware AI Copilot with full case context",
+        "Document drafting, review, and research integrated",
+        "Privacy-first — tenant isolation and audit trails"
+      ],
+      "dualAudience": "ব্যক্তি বিনামূল্যে নথি পর্যালোচনা পেতে. সংস্থাগুলি বিশ্বব্যাপী প্রতিটি বিষয়ে এটিকে স্বয়ংক্রিয় করে।",
+      "ctaPrimary": "একটি নথি আপলোড করুন",
+      "faqItems": [
+        {
+          "question": "Does document review work in my country?",
+          "answer": "Yes. Umbrella is a global legal AI platform that auto-detects your jurisdiction and applies local law — available in every country worldwide."
+        },
+        {
+          "question": "Is Umbrella document review free to try?",
+          "answer": "Yes. Individuals get a free preview with included AI credits. Law firms can start a free trial of the full platform."
+        }
+      ]
+    },
+    "law-firm-software": {
+      "metaTitle": "ল ফার্ম সফটওয়্যার — গ্লোবাল লিগ্যাল এআই প্ল্যাটফর্ম",
+      "metaDescription": "আমব্রেলা ল ফার্ম সফ্টওয়্যার: এআই-চালিত, এখতিয়ার-সচেতন, বাস্তব উদ্ধৃতি সহ — ব্যক্তি এবং আইন সংস্থাগুলির জন্য বিশ্বব্যাপী প্রতিটি দেশে উপলব্ধ।",
+      "keywords": [
+        "law firm software",
+        "AI law firm software",
+        "law firm software software",
+        "legal AI",
+        "global legal AI"
+      ],
+      "shortTitle": "ল ফার্ম সফটওয়্যার",
+      "cardDescription": "প্রকৃত উদ্ধৃতি সহ গ্লোবাল ল ফার্ম সফ্টওয়্যার — ব্যক্তি এবং আইন সংস্থাগুলির জন্য।",
+      "heroTitle": "AI যুগের জন্য নির্মিত আইন ফার্ম সফ্টওয়্যার",
+      "heroSubtitle": "সবচেয়ে সক্ষম আইন ফার্ম সফ্টওয়্যার প্ল্যাটফর্ম — বাস্তব বিধি এবং মামলার আইনের ভিত্তিতে, আপনার এখতিয়ার স্বয়ংক্রিয়ভাবে সনাক্ত করে, বিশ্বব্যাপী উপলব্ধ।",
+      "bodyTitle": "সেরা আইন ফার্ম সফ্টওয়্যার প্ল্যাটফর্ম",
+      "body1": "Umbrella আইনি সংস্থার উপর পুনরুদ্ধার-বর্ধিত প্রজন্মের দ্বারা চালিত আইন ফার্ম সফ্টওয়্যার সরবরাহ করে — যাচাইযোগ্য উদ্ধৃতি, বিষয়-সচেতন প্রসঙ্গ এবং প্রতিটি দেশের জন্য এখতিয়ার স্বয়ংক্রিয় সনাক্তকরণ সহ।",
+      "body2": "ব্যক্তি বিনামূল্যে জন্য এটি ব্যবহার. আইন সংস্থাগুলি এআই কপিলট, বিলিং এবং ওয়ার্কফ্লো অটোমেশন - একটি বিশ্বব্যাপী প্ল্যাটফর্মের সাথে প্রতিটি বিষয়ে এটি স্থাপন করে।",
+      "featuresSubtitle": "বাস্তব আইনি কাজের জন্য নির্মিত.",
+      "features": [
+        "Real statute and case law citations you can verify",
+        "Jurisdiction auto-detection — works in every country",
+        "Free for individuals; firm-grade depth for teams",
+        "Matter-aware AI Copilot with full case context",
+        "Document drafting, review, and research integrated",
+        "Privacy-first — tenant isolation and audit trails"
+      ],
+      "dualAudience": "ব্যক্তি বিনামূল্যে আইন ফার্ম সফ্টওয়্যার পেতে. সংস্থাগুলি বিশ্বব্যাপী প্রতিটি বিষয়ে এটিকে স্বয়ংক্রিয় করে।",
+      "ctaPrimary": "দৃঢ় প্ল্যাটফর্ম অন্বেষণ",
+      "faqItems": [
+        {
+          "question": "Does law firm software work in my country?",
+          "answer": "Yes. Umbrella is a global legal AI platform that auto-detects your jurisdiction and applies local law — available in every country worldwide."
+        },
+        {
+          "question": "Is Umbrella law firm software free to try?",
+          "answer": "Yes. Individuals get a free preview with included AI credits. Law firms can start a free trial of the full platform."
+        }
+      ]
+    },
+    "legal-copilot": {
+      "metaTitle": "লিগ্যাল কপিলট — গ্লোবাল লিগ্যাল এআই প্ল্যাটফর্ম",
+      "metaDescription": "আমব্রেলা লিগ্যাল কোপাইলট: এআই-চালিত, এখতিয়ার-সচেতন, বাস্তব উদ্ধৃতি সহ — ব্যক্তি এবং আইন সংস্থাগুলির জন্য বিশ্বব্যাপী প্রতিটি দেশে উপলব্ধ।",
+      "keywords": [
+        "legal copilot",
+        "AI legal copilot",
+        "legal copilot software",
+        "legal AI",
+        "global legal AI"
+      ],
+      "shortTitle": "লিগ্যাল কপিলট",
+      "cardDescription": "প্রকৃত উদ্ধৃতি সহ বিশ্বব্যাপী আইনি সহ-পাইলট — ব্যক্তি এবং আইন সংস্থাগুলির জন্য।",
+      "heroTitle": "লিগ্যাল কপিলট — এআই যে আপনার কেস জানে",
+      "heroSubtitle": "সবচেয়ে সক্ষম আইনি সহপাইলট প্ল্যাটফর্ম — বাস্তব বিধি এবং মামলার আইনে ভিত্তি করে, আপনার এখতিয়ার স্বয়ংক্রিয়ভাবে সনাক্ত করে, বিশ্বব্যাপী উপলব্ধ।",
+      "bodyTitle": "সেরা আইনি সহপাইলট প্ল্যাটফর্ম",
+      "body1": "Umbrella আইনি কর্পোরার উপর পুনরুদ্ধার-বর্ধিত প্রজন্মের দ্বারা চালিত আইনি সহ-পাইলট সরবরাহ করে — যাচাইযোগ্য উদ্ধৃতি, বিষয়-সচেতন প্রসঙ্গ এবং প্রতিটি দেশের জন্য এখতিয়ার স্বয়ংক্রিয় সনাক্তকরণ সহ।",
+      "body2": "ব্যক্তি বিনামূল্যে জন্য এটি ব্যবহার. আইন সংস্থাগুলি এআই কপিলট, বিলিং এবং ওয়ার্কফ্লো অটোমেশন - একটি বিশ্বব্যাপী প্ল্যাটফর্মের সাথে প্রতিটি বিষয়ে এটি স্থাপন করে।",
+      "featuresSubtitle": "বাস্তব আইনি কাজের জন্য নির্মিত.",
+      "features": [
+        "Real statute and case law citations you can verify",
+        "Jurisdiction auto-detection — works in every country",
+        "Free for individuals; firm-grade depth for teams",
+        "Matter-aware AI Copilot with full case context",
+        "Document drafting, review, and research integrated",
+        "Privacy-first — tenant isolation and audit trails"
+      ],
+      "dualAudience": "ব্যক্তি বিনামূল্যে আইনি সহপাইলট পেতে. সংস্থাগুলি বিশ্বব্যাপী প্রতিটি বিষয়ে এটিকে স্বয়ংক্রিয় করে।",
+      "ctaPrimary": "আইনি সহপাইলট চেষ্টা করুন",
+      "faqItems": [
+        {
+          "question": "Does legal copilot work in my country?",
+          "answer": "Yes. Umbrella is a global legal AI platform that auto-detects your jurisdiction and applies local law — available in every country worldwide."
+        },
+        {
+          "question": "Is Umbrella legal copilot free to try?",
+          "answer": "Yes. Individuals get a free preview with included AI credits. Law firms can start a free trial of the full platform."
+        }
+      ]
+    },
+    "legal-workflow-automation": {
+      "metaTitle": "ওয়ার্কফ্লো অটোমেশন — গ্লোবাল লিগ্যাল এআই প্ল্যাটফর্ম",
+      "metaDescription": "ছাতা ওয়ার্কফ্লো অটোমেশন: এআই-চালিত, এখতিয়ার-সচেতন, বাস্তব উদ্ধৃতি সহ — ব্যক্তি এবং আইন সংস্থাগুলির জন্য বিশ্বব্যাপী প্রতিটি দেশে উপলব্ধ।",
+      "keywords": [
+        "workflow automation",
+        "AI workflow automation",
+        "workflow automation software",
+        "legal AI",
+        "global legal AI"
+      ],
+      "shortTitle": "ওয়ার্কফ্লো অটোমেশন",
+      "cardDescription": "বাস্তব উদ্ধৃতি সহ গ্লোবাল ওয়ার্কফ্লো অটোমেশন — ব্যক্তি এবং আইন সংস্থাগুলির জন্য।",
+      "heroTitle": "আইনি ওয়ার্কফ্লো অটোমেশন — ইনটেক থেকে ইনভয়েস পর্যন্ত",
+      "heroSubtitle": "সবচেয়ে সক্ষম ওয়ার্কফ্লো অটোমেশন প্ল্যাটফর্ম — বাস্তব আইন এবং মামলার আইনের ভিত্তিতে, আপনার এখতিয়ার স্বয়ংক্রিয়ভাবে সনাক্ত করে, বিশ্বব্যাপী উপলব্ধ।",
+      "bodyTitle": "সেরা ওয়ার্কফ্লো অটোমেশন প্ল্যাটফর্ম",
+      "body1": "Umbrella আইনি কর্পোরার উপর পুনরুদ্ধার-বর্ধিত প্রজন্মের দ্বারা চালিত ওয়ার্কফ্লো অটোমেশন সরবরাহ করে — যাচাইযোগ্য উদ্ধৃতি, বিষয়-সচেতন প্রসঙ্গ এবং প্রতিটি দেশের জন্য এখতিয়ার স্বয়ংক্রিয় সনাক্তকরণ সহ।",
+      "body2": "ব্যক্তি বিনামূল্যে জন্য এটি ব্যবহার. আইন সংস্থাগুলি এআই কপিলট, বিলিং এবং ওয়ার্কফ্লো অটোমেশন - একটি বিশ্বব্যাপী প্ল্যাটফর্মের সাথে প্রতিটি বিষয়ে এটি স্থাপন করে।",
+      "featuresSubtitle": "বাস্তব আইনি কাজের জন্য নির্মিত.",
+      "features": [
+        "Real statute and case law citations you can verify",
+        "Jurisdiction auto-detection — works in every country",
+        "Free for individuals; firm-grade depth for teams",
+        "Matter-aware AI Copilot with full case context",
+        "Document drafting, review, and research integrated",
+        "Privacy-first — tenant isolation and audit trails"
+      ],
+      "dualAudience": "ব্যক্তিরা বিনামূল্যে ওয়ার্কফ্লো অটোমেশন পান। সংস্থাগুলি বিশ্বব্যাপী প্রতিটি বিষয়ে এটিকে স্বয়ংক্রিয় করে।",
+      "ctaPrimary": "আপনার ফার্ম স্বয়ংক্রিয়",
+      "faqItems": [
+        {
+          "question": "Does workflow automation work in my country?",
+          "answer": "Yes. Umbrella is a global legal AI platform that auto-detects your jurisdiction and applies local law — available in every country worldwide."
+        },
+        {
+          "question": "Is Umbrella workflow automation free to try?",
+          "answer": "Yes. Individuals get a free preview with included AI credits. Law firms can start a free trial of the full platform."
+        }
+      ]
+    },
+    "contract-analysis": {
+      "metaTitle": "চুক্তি বিশ্লেষণ — গ্লোবাল লিগ্যাল এআই প্ল্যাটফর্ম",
+      "metaDescription": "ছাতা চুক্তি বিশ্লেষণ: এআই-চালিত, এখতিয়ার-সচেতন, বাস্তব উদ্ধৃতি সহ — ব্যক্তি এবং আইন সংস্থাগুলির জন্য বিশ্বব্যাপী প্রতিটি দেশে উপলব্ধ।",
+      "keywords": [
+        "contract analysis",
+        "AI contract analysis",
+        "contract analysis software",
+        "legal AI",
+        "global legal AI"
+      ],
+      "shortTitle": "চুক্তি বিশ্লেষণ",
+      "cardDescription": "বাস্তব উদ্ধৃতি সহ বিশ্বব্যাপী চুক্তি বিশ্লেষণ — ব্যক্তি এবং আইন সংস্থাগুলির জন্য।",
+      "heroTitle": "এআই চুক্তি বিশ্লেষণ — পৃষ্ঠ-স্তরের পর্যালোচনার বাইরে",
+      "heroSubtitle": "সবচেয়ে সক্ষম চুক্তি বিশ্লেষণ প্ল্যাটফর্ম — বাস্তব বিধি এবং মামলা আইনের ভিত্তিতে, আপনার এখতিয়ার স্বয়ংক্রিয়ভাবে সনাক্ত করে, বিশ্বব্যাপী উপলব্ধ।",
+      "bodyTitle": "সেরা চুক্তি বিশ্লেষণ প্ল্যাটফর্ম",
+      "body1": "Umbrella আইনি কর্পোরার উপর পুনরুদ্ধার-বর্ধিত প্রজন্ম দ্বারা চালিত চুক্তি বিশ্লেষণ প্রদান করে — যাচাইযোগ্য উদ্ধৃতি, বিষয়-সচেতন প্রসঙ্গ এবং প্রতিটি দেশের জন্য এখতিয়ার স্বয়ংক্রিয়-সনাক্তকরণ সহ।",
+      "body2": "ব্যক্তি বিনামূল্যে জন্য এটি ব্যবহার. আইন সংস্থাগুলি এআই কপিলট, বিলিং এবং ওয়ার্কফ্লো অটোমেশন - একটি বিশ্বব্যাপী প্ল্যাটফর্মের সাথে প্রতিটি বিষয়ে এটি স্থাপন করে।",
+      "featuresSubtitle": "বাস্তব আইনি কাজের জন্য নির্মিত.",
+      "features": [
+        "Real statute and case law citations you can verify",
+        "Jurisdiction auto-detection — works in every country",
+        "Free for individuals; firm-grade depth for teams",
+        "Matter-aware AI Copilot with full case context",
+        "Document drafting, review, and research integrated",
+        "Privacy-first — tenant isolation and audit trails"
+      ],
+      "dualAudience": "ব্যক্তি বিনামূল্যে চুক্তি বিশ্লেষণ পেতে. সংস্থাগুলি বিশ্বব্যাপী প্রতিটি বিষয়ে এটিকে স্বয়ংক্রিয় করে।",
+      "ctaPrimary": "একটি চুক্তি বিশ্লেষণ করুন",
+      "faqItems": [
+        {
+          "question": "Does contract analysis work in my country?",
+          "answer": "Yes. Umbrella is a global legal AI platform that auto-detects your jurisdiction and applies local law — available in every country worldwide."
+        },
+        {
+          "question": "Is Umbrella contract analysis free to try?",
+          "answer": "Yes. Individuals get a free preview with included AI credits. Law firms can start a free trial of the full platform."
+        }
+      ]
+    },
+    "legal-assistant": {
+      "metaTitle": "এআই লিগ্যাল অ্যাসিস্ট্যান্ট - গ্লোবাল লিগ্যাল এআই প্ল্যাটফর্ম",
+      "metaDescription": "আমব্রেলা এআই আইনি সহকারী: এআই-চালিত, এখতিয়ার-সচেতন, বাস্তব উদ্ধৃতি সহ — ব্যক্তি এবং আইন সংস্থাগুলির জন্য বিশ্বব্যাপী প্রতিটি দেশে উপলব্ধ।",
+      "keywords": [
+        "ai legal assistant",
+        "AI ai legal assistant",
+        "ai legal assistant software",
+        "legal AI",
+        "global legal AI"
+      ],
+      "shortTitle": "এআই লিগ্যাল অ্যাসিস্ট্যান্ট",
+      "cardDescription": "প্রকৃত উদ্ধৃতি সহ বিশ্বব্যাপী এআই আইনি সহকারী — ব্যক্তি এবং আইন সংস্থাগুলির জন্য।",
+      "heroTitle": "এআই আইনি সহকারী — বাস্তব উত্তর, বাস্তব উদ্ধৃতি",
+      "heroSubtitle": "সবচেয়ে সক্ষম এআই আইনি সহকারী প্ল্যাটফর্ম — বাস্তব বিধি এবং মামলার আইনে ভিত্তি করে, আপনার এখতিয়ার স্বয়ংক্রিয়ভাবে সনাক্ত করে, বিশ্বব্যাপী উপলব্ধ।",
+      "bodyTitle": "সেরা এআই আইনি সহকারী প্ল্যাটফর্ম",
+      "body1": "Umbrella আইনি সংস্থার উপর পুনরুদ্ধার-বর্ধিত প্রজন্ম দ্বারা চালিত AI আইনি সহকারী সরবরাহ করে — যাচাইযোগ্য উদ্ধৃতি, বিষয়-সচেতন প্রসঙ্গ, এবং প্রতিটি দেশের জন্য এখতিয়ার স্বয়ংক্রিয় সনাক্তকরণ সহ।",
+      "body2": "ব্যক্তি বিনামূল্যে জন্য এটি ব্যবহার. আইন সংস্থাগুলি এআই কপিলট, বিলিং এবং ওয়ার্কফ্লো অটোমেশন - একটি বিশ্বব্যাপী প্ল্যাটফর্মের সাথে প্রতিটি বিষয়ে এটি স্থাপন করে।",
+      "featuresSubtitle": "বাস্তব আইনি কাজের জন্য নির্মিত.",
+      "features": [
+        "Real statute and case law citations you can verify",
+        "Jurisdiction auto-detection — works in every country",
+        "Free for individuals; firm-grade depth for teams",
+        "Matter-aware AI Copilot with full case context",
+        "Document drafting, review, and research integrated",
+        "Privacy-first — tenant isolation and audit trails"
+      ],
+      "dualAudience": "ব্যক্তিরা বিনামূল্যে এআই আইনি সহকারী পান। সংস্থাগুলি বিশ্বব্যাপী প্রতিটি বিষয়ে এটিকে স্বয়ংক্রিয় করে।",
+      "ctaPrimary": "একটি আইনি প্রশ্ন জিজ্ঞাসা করুন",
+      "faqItems": [
+        {
+          "question": "Does ai legal assistant work in my country?",
+          "answer": "Yes. Umbrella is a global legal AI platform that auto-detects your jurisdiction and applies local law — available in every country worldwide."
+        },
+        {
+          "question": "Is Umbrella ai legal assistant free to try?",
+          "answer": "Yes. Individuals get a free preview with included AI credits. Law firms can start a free trial of the full platform."
+        }
+      ]
+    },
+    "practice-management": {
+      "metaTitle": "অনুশীলন পরিচালনা — গ্লোবাল লিগ্যাল এআই প্ল্যাটফর্ম",
+      "metaDescription": "ছাতা অনুশীলন পরিচালনা: এআই-চালিত, এখতিয়ার-সচেতন, বাস্তব উদ্ধৃতি সহ — ব্যক্তি এবং আইন সংস্থাগুলির জন্য বিশ্বব্যাপী প্রতিটি দেশে উপলব্ধ।",
+      "keywords": [
+        "practice management",
+        "AI practice management",
+        "practice management software",
+        "legal AI",
+        "global legal AI"
+      ],
+      "shortTitle": "অনুশীলন ব্যবস্থাপনা",
+      "cardDescription": "বাস্তব উদ্ধৃতি সহ বিশ্বব্যাপী অনুশীলন পরিচালনা — ব্যক্তি এবং আইন সংস্থাগুলির জন্য।",
+      "heroTitle": "অনুশীলন পরিচালনা — এআই দিয়ে পুনরায় কল্পনা করা হয়েছে",
+      "heroSubtitle": "সবচেয়ে সক্ষম অনুশীলন পরিচালনার প্ল্যাটফর্ম — বাস্তব আইন এবং মামলার আইনের ভিত্তিতে, আপনার এখতিয়ার স্বয়ংক্রিয়ভাবে সনাক্ত করে, বিশ্বব্যাপী উপলব্ধ।",
+      "bodyTitle": "সেরা অনুশীলন ব্যবস্থাপনা প্ল্যাটফর্ম",
+      "body1": "Umbrella আইনি কর্পোরার উপর পুনরুদ্ধার-বর্ধিত প্রজন্ম দ্বারা চালিত অনুশীলন ব্যবস্থাপনা প্রদান করে — যাচাইযোগ্য উদ্ধৃতি, বিষয়-সচেতন প্রসঙ্গ এবং প্রতিটি দেশের জন্য এখতিয়ার স্বয়ংক্রিয় সনাক্তকরণ সহ।",
+      "body2": "ব্যক্তি বিনামূল্যে জন্য এটি ব্যবহার. আইন সংস্থাগুলি এআই কপিলট, বিলিং এবং ওয়ার্কফ্লো অটোমেশন - একটি বিশ্বব্যাপী প্ল্যাটফর্মের সাথে প্রতিটি বিষয়ে এটি স্থাপন করে।",
+      "featuresSubtitle": "বাস্তব আইনি কাজের জন্য নির্মিত.",
+      "features": [
+        "Real statute and case law citations you can verify",
+        "Jurisdiction auto-detection — works in every country",
+        "Free for individuals; firm-grade depth for teams",
+        "Matter-aware AI Copilot with full case context",
+        "Document drafting, review, and research integrated",
+        "Privacy-first — tenant isolation and audit trails"
+      ],
+      "dualAudience": "ব্যক্তি বিনামূল্যে অনুশীলন ব্যবস্থাপনা পেতে. সংস্থাগুলি বিশ্বব্যাপী প্রতিটি বিষয়ে এটিকে স্বয়ংক্রিয় করে।",
+      "ctaPrimary": "আপনার অনুশীলন পরিচালনা করুন",
+      "faqItems": [
+        {
+          "question": "Does practice management work in my country?",
+          "answer": "Yes. Umbrella is a global legal AI platform that auto-detects your jurisdiction and applies local law — available in every country worldwide."
+        },
+        {
+          "question": "Is Umbrella practice management free to try?",
+          "answer": "Yes. Individuals get a free preview with included AI credits. Law firms can start a free trial of the full platform."
+        }
+      ]
+    },
+    "legal-due-diligence": {
+      "metaTitle": "আইনি কারণে অধ্যবসায় — গ্লোবাল লিগ্যাল এআই প্ল্যাটফর্ম",
+      "metaDescription": "আমব্রেলা আইনি যথাযথ অধ্যবসায়: এআই-চালিত, এখতিয়ার-সচেতন, বাস্তব উদ্ধৃতি সহ — ব্যক্তি এবং আইন সংস্থাগুলির জন্য বিশ্বব্যাপী প্রতিটি দেশে উপলব্ধ।",
+      "keywords": [
+        "legal due diligence",
+        "AI legal due diligence",
+        "legal due diligence software",
+        "legal AI",
+        "global legal AI"
+      ],
+      "shortTitle": "আইনি কারণে অধ্যবসায়",
+      "cardDescription": "প্রকৃত উদ্ধৃতি সহ বিশ্বব্যাপী আইনি যথাযথ অধ্যবসায় — ব্যক্তি এবং আইন সংস্থাগুলির জন্য।",
+      "heroTitle": "AI আইনি কারণে পরিশ্রম — দ্রুত, গভীর, উদ্ধৃত",
+      "heroSubtitle": "সবচেয়ে সক্ষম আইনি ডিউ ডিলিজেন্স প্ল্যাটফর্ম — বাস্তব বিধি এবং মামলার আইনে ভিত্তি করে, আপনার এখতিয়ার স্বয়ংক্রিয়ভাবে সনাক্ত করে, বিশ্বব্যাপী উপলব্ধ।",
+      "bodyTitle": "সেরা আইনি কারণে অধ্যবসায় প্ল্যাটফর্ম",
+      "body1": "Umbrella আইনি কর্পোরার উপর পুনরুদ্ধার-বর্ধিত প্রজন্মের দ্বারা চালিত আইনি যথাযথ পরিশ্রম প্রদান করে — যাচাইযোগ্য উদ্ধৃতি, বিষয়-সচেতন প্রসঙ্গ, এবং প্রতিটি দেশের জন্য এখতিয়ার স্বয়ংক্রিয় সনাক্তকরণ সহ।",
+      "body2": "ব্যক্তি বিনামূল্যে জন্য এটি ব্যবহার. আইন সংস্থাগুলি এআই কপিলট, বিলিং এবং ওয়ার্কফ্লো অটোমেশন - একটি বিশ্বব্যাপী প্ল্যাটফর্মের সাথে প্রতিটি বিষয়ে এটি স্থাপন করে।",
+      "featuresSubtitle": "বাস্তব আইনি কাজের জন্য নির্মিত.",
+      "features": [
+        "Real statute and case law citations you can verify",
+        "Jurisdiction auto-detection — works in every country",
+        "Free for individuals; firm-grade depth for teams",
+        "Matter-aware AI Copilot with full case context",
+        "Document drafting, review, and research integrated",
+        "Privacy-first — tenant isolation and audit trails"
+      ],
+      "dualAudience": "ব্যক্তি বিনামূল্যে আইনি কারণে অধ্যবসায় পেতে. সংস্থাগুলি বিশ্বব্যাপী প্রতিটি বিষয়ে এটিকে স্বয়ংক্রিয় করে।",
+      "ctaPrimary": "যথাযথ অধ্যবসায় পর্যালোচনা শুরু করুন",
+      "faqItems": [
+        {
+          "question": "Does legal due diligence work in my country?",
+          "answer": "Yes. Umbrella is a global legal AI platform that auto-detects your jurisdiction and applies local law — available in every country worldwide."
+        },
+        {
+          "question": "Is Umbrella legal due diligence free to try?",
+          "answer": "Yes. Individuals get a free preview with included AI credits. Law firms can start a free trial of the full platform."
+        }
+      ]
+    },
+    "legal-issue-analysis": {
+      "metaTitle": "আইনি সমস্যা বিশ্লেষণ — গ্লোবাল লিগ্যাল এআই প্ল্যাটফর্ম",
+      "metaDescription": "আমব্রেলা আইনি সমস্যা বিশ্লেষণ: এআই-চালিত, এখতিয়ার-সচেতন, বাস্তব উদ্ধৃতি সহ — ব্যক্তি এবং আইন সংস্থাগুলির জন্য বিশ্বব্যাপী প্রতিটি দেশে উপলব্ধ।",
+      "keywords": [
+        "legal issue analysis",
+        "AI legal issue analysis",
+        "legal issue analysis software",
+        "legal AI",
+        "global legal AI"
+      ],
+      "shortTitle": "আইনি সমস্যা বিশ্লেষণ",
+      "cardDescription": "প্রকৃত উদ্ধৃতি সহ বিশ্বব্যাপী আইনি সমস্যা বিশ্লেষণ — ব্যক্তি এবং আইন সংস্থাগুলির জন্য।",
+      "heroTitle": "আইনি সমস্যা বিশ্লেষণ — আপনি কোথায় দাঁড়িয়েছেন তা জানুন",
+      "heroSubtitle": "সবচেয়ে সক্ষম আইনি সমস্যা বিশ্লেষণ প্ল্যাটফর্ম — বাস্তব আইন এবং মামলার আইনের ভিত্তিতে, আপনার এখতিয়ার স্বয়ংক্রিয়ভাবে সনাক্ত করে, বিশ্বব্যাপী উপলব্ধ।",
+      "bodyTitle": "সেরা আইনি সমস্যা বিশ্লেষণ প্ল্যাটফর্ম",
+      "body1": "Umbrella আইনি সংস্থার উপর পুনরুদ্ধার-বর্ধিত প্রজন্ম দ্বারা চালিত আইনি সমস্যা বিশ্লেষণ প্রদান করে — যাচাইযোগ্য উদ্ধৃতি, বিষয়-সচেতন প্রসঙ্গ এবং প্রতিটি দেশের জন্য এখতিয়ার স্বয়ংক্রিয়-সনাক্তকরণ সহ।",
+      "body2": "ব্যক্তি বিনামূল্যে জন্য এটি ব্যবহার. আইন সংস্থাগুলি এআই কপিলট, বিলিং এবং ওয়ার্কফ্লো অটোমেশন - একটি বিশ্বব্যাপী প্ল্যাটফর্মের সাথে প্রতিটি বিষয়ে এটি স্থাপন করে।",
+      "featuresSubtitle": "বাস্তব আইনি কাজের জন্য নির্মিত.",
+      "features": [
+        "Real statute and case law citations you can verify",
+        "Jurisdiction auto-detection — works in every country",
+        "Free for individuals; firm-grade depth for teams",
+        "Matter-aware AI Copilot with full case context",
+        "Document drafting, review, and research integrated",
+        "Privacy-first — tenant isolation and audit trails"
+      ],
+      "dualAudience": "ব্যক্তি বিনামূল্যে আইনি সমস্যা বিশ্লেষণ পেতে. সংস্থাগুলি বিশ্বব্যাপী প্রতিটি বিষয়ে এটিকে স্বয়ংক্রিয় করে।",
+      "ctaPrimary": "আমার আইনি সমস্যা বিশ্লেষণ",
+      "faqItems": [
+        {
+          "question": "Does legal issue analysis work in my country?",
+          "answer": "Yes. Umbrella is a global legal AI platform that auto-detects your jurisdiction and applies local law — available in every country worldwide."
+        },
+        {
+          "question": "Is Umbrella legal issue analysis free to try?",
+          "answer": "Yes. Individuals get a free preview with included AI credits. Law firms can start a free trial of the full platform."
+        }
+      ]
+    }
+  }
 }

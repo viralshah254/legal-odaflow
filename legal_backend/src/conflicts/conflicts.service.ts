@@ -46,6 +46,24 @@ export class ConflictsService {
     });
   }
 
+  async quickCheck(
+    tenantId: string,
+    parties: Array<{ name?: string; email?: string }>,
+    clientId?: string,
+  ) {
+    const matches = await this.findPotentialMatches(tenantId, parties, clientId);
+    return {
+      clear: matches.length === 0,
+      matchCount: matches.length,
+      matches,
+      checkedAt: new Date().toISOString(),
+      summary:
+        matches.length > 0
+          ? `${matches.length} potential conflict(s) detected — review before proceeding`
+          : 'No conflicts detected',
+    };
+  }
+
   async getById(tenantId: string, id: string) {
     const row = await this.prisma.conflictCheck.findFirst({
       where: { id, tenantId },
@@ -59,7 +77,7 @@ export class ConflictsService {
     parties: Array<{ name?: string; email?: string }>,
     excludeClientId?: string,
   ) {
-    const matches: Array<{ type: string; id: string; name: string; reason: string }> = [];
+    const matches: Array<{ type: string; id: string; name: string; reason: string; matterId?: string }> = [];
     const names = parties.map((p) => p.name?.trim().toLowerCase()).filter(Boolean) as string[];
     const emails = parties.map((p) => p.email?.trim().toLowerCase()).filter(Boolean) as string[];
 
@@ -88,23 +106,66 @@ export class ConflictsService {
       });
     }
 
-    const opposing = await this.prisma.matterParty.findMany({
-      where: {
-        tenantId,
-        OR: names.map((name) => ({ name: { contains: name, mode: 'insensitive' as const } })),
-      },
-      take: 20,
-    });
+    if (names.length > 0 || emails.length > 0) {
+      const partyConditions = [
+        ...names.map((name) => ({ name: { contains: name, mode: 'insensitive' as const } })),
+        ...emails.map((email) => ({ email: { equals: email, mode: 'insensitive' as const } })),
+      ];
 
-    for (const party of opposing) {
-      matches.push({
-        type: 'matter_party',
-        id: party.id,
-        name: party.name,
-        reason: `Appears as ${party.role} on another matter`,
+      const opposing = await this.prisma.matterParty.findMany({
+        where: {
+          tenantId,
+          OR: partyConditions,
+        },
+        include: {
+          matter: { select: { id: true, title: true, status: true } },
+        },
+        take: 20,
       });
+
+      for (const party of opposing) {
+        matches.push({
+          type: 'matter_party',
+          id: party.id,
+          name: party.name,
+          reason: `Appears as ${party.role} on matter "${party.matter?.title ?? party.matterId}" (${party.matter?.status ?? 'OPEN'})`,
+          matterId: party.matterId,
+        });
+      }
+
+      // Also check matter opposingParty field
+      if (names.length > 0) {
+        const matters = await this.prisma.matter.findMany({
+          where: {
+            tenantId,
+            status: { not: 'CLOSED' },
+            OR: names.map((name) => ({
+              opposingParty: { contains: name, mode: 'insensitive' as const },
+            })),
+          },
+          select: { id: true, title: true, opposingParty: true, status: true },
+          take: 10,
+        });
+
+        for (const matter of matters) {
+          matches.push({
+            type: 'opposing_party',
+            id: matter.id,
+            name: matter.opposingParty ?? '',
+            reason: `Name matches opposing party on matter "${matter.title}" (${matter.status})`,
+            matterId: matter.id,
+          });
+        }
+      }
     }
 
-    return matches;
+    // Deduplicate by id+type
+    const seen = new Set<string>();
+    return matches.filter((m) => {
+      const key = `${m.type}:${m.id}`;
+      if (seen.has(key)) return false;
+      seen.add(key);
+      return true;
+    });
   }
 }

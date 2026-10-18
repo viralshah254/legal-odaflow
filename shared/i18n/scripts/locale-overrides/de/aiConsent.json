@@ -1,0 +1,11 @@
+{
+  "dialogLearnMore": "Erfahren Sie mehr in unserem",
+  "dialogTitle": "Einwilligung zur KI-Verarbeitung",
+  "dialogBody": "Umbrella sendet Ihren Anfrage- und Sachkontext an externe KI-Anbieter, um rechtliche Analysen, Ausarbeitungen und Recherchen durchzuführen. Ihre Daten werden nicht zum Trainieren von KI-Modellen verwendet.",
+  "dialogProviders": "Anbieter: OpenAI, DeepSeek und Deepgram (Transkription).",
+  "dialogPurpose": "Sie können Ihre Einwilligung jederzeit in den Datenschutz- und Sicherheitseinstellungen widerrufen. Ohne Zustimmung sind KI-Funktionen nicht verfügbar.",
+  "dialogDecline": "Nicht jetzt",
+  "dialogAgree": "Ich stimme zu",
+  "settingsTitle": "Zustimmung zur KI-Inferenz",
+  "settingsDescription": "Einwilligung zurückgesetzt. Vor der nächsten KI-Funktion werden Sie erneut gefragt."
+}

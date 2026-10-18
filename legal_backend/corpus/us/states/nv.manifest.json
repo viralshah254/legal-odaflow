@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "stateCode": "NV",
+  "stateName": "Nevada",
+  "acts": [
+    {
+      "actId": "nv-code",
+      "title": "Nevada code",
+      "sourceAuthority": "cornell-lii",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.law.cornell.edu/states/nv",
+      "externalId": "nv-code",
+      "notes": "Nevada state law via Cornell LII state index"
+    },
+    {
+      "actId": "nv-statutes",
+      "title": "Nevada statutes",
+      "sourceAuthority": "cornell-lii",
+      "sourceTier": "mirror",
+      "primaryPdfUrl": "https://www.law.cornell.edu/states/nv",
+      "externalId": "nv-statutes",
+      "notes": "Nevada state law via Cornell LII state index"
+    }
+  ]
+}

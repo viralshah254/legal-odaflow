@@ -1,13 +1,13 @@
-import {
-  ForbiddenException,
-  Injectable,
-  NotFoundException,
-} from '@nestjs/common';
 import { getCountryConfig, resolveCountryConfig } from '@/config/countries';
+import { isLocaleValidForCountry, normalizeLocale } from '@/config/locales';
+import { BadRequestException, ForbiddenException, Injectable, NotFoundException } from '@nestjs/common';
+import { Prisma } from '@prisma/client';
+import { LegalLocationService } from '@/legal-location/legal-location.service';
 import { PrismaService } from '@/prisma/prisma.service';
 import { TENANT_ROLES, USER_TYPES } from '@/auth/constants';
 import { UpdateMeDto } from './dto/update-me.dto';
 import { UpdateUserPreferencesDto } from './dto/update-user-preferences.dto';
+import { ensureFirstLoginRecorded } from './first-login.util';
 
 const userSelect = {
   id: true,
@@ -18,6 +18,7 @@ const userSelect = {
   countryCode: true,
   jurisdiction: true,
   isActive: true,
+  mustChangePassword: true,
   createdAt: true,
   updatedAt: true,
   preferences: true,
@@ -47,9 +48,14 @@ const userSelect = {
 
 @Injectable()
 export class UsersService {
-  constructor(private readonly prisma: PrismaService) {}
+  constructor(
+    private readonly prisma: PrismaService,
+    private readonly legalLocation: LegalLocationService,
+  ) {}
 
   async getMe(userId: string) {
+    await ensureFirstLoginRecorded(this.prisma, userId);
+
     const user = await this.prisma.user.findUnique({
       where: { id: userId },
       select: userSelect,
@@ -164,8 +170,62 @@ export class UsersService {
     return this.ensurePreferences(userId);
   }
 
+  async getPreferredLocale(userId: string): Promise<string | undefined> {
+    const prefs = await this.prisma.userPreferences.findUnique({
+      where: { userId },
+      select: { preferredLocale: true },
+    });
+    return prefs?.preferredLocale;
+  }
+
   async updatePreferences(userId: string, dto: UpdateUserPreferencesDto) {
     await this.ensureUser(userId);
+
+    if (dto.preferredLocale) {
+      const user = await this.prisma.user.findUnique({
+        where: { id: userId },
+        select: {
+          countryCode: true,
+          consumerProfile: { select: { countryCode: true } },
+          tenantUsers: { select: { tenant: { select: { primaryCountry: true } } } },
+        },
+      });
+      const countryCode =
+        user?.tenantUsers[0]?.tenant.primaryCountry ??
+        user?.consumerProfile?.countryCode ??
+        user?.countryCode ??
+        'US';
+      const locale = normalizeLocale(dto.preferredLocale);
+      if (!isLocaleValidForCountry(locale, countryCode)) {
+        throw new BadRequestException(
+          `Locale ${locale} is not supported for country ${countryCode}`,
+        );
+      }
+      dto = { ...dto, preferredLocale: locale };
+
+      await this.prisma.consumerProfile.updateMany({
+        where: { userId },
+        data: { preferredLanguage: locale },
+      });
+    }
+
+    if (dto.tutorialProgress !== undefined) {
+      const existing = await this.prisma.userPreferences.findUnique({
+        where: { userId },
+        select: { tutorialProgress: true },
+      });
+      const prev =
+        existing?.tutorialProgress &&
+        typeof existing.tutorialProgress === 'object' &&
+        !Array.isArray(existing.tutorialProgress)
+          ? (existing.tutorialProgress as Record<string, unknown>)
+          : {};
+      dto = {
+        ...dto,
+        tutorialProgress: { ...prev, ...dto.tutorialProgress },
+      };
+    }
+
     return this.upsertPreferences(userId, dto);
   }
 
@@ -178,6 +238,7 @@ export class UsersService {
     countryCode: string | null;
     jurisdiction: string | null;
     isActive: boolean;
+    mustChangePassword: boolean;
     createdAt: Date;
     updatedAt: Date;
     preferences: {
@@ -207,14 +268,17 @@ export class UsersService {
       membership?.role === TENANT_ROLES.FIRM_ADMIN ||
       membership?.role === TENANT_ROLES.PARTNER;
 
-    const effectiveCountryCode =
-      user.userType === USER_TYPES.LAWYER && tenant
-        ? tenant.primaryCountry
-        : user.consumerProfile?.countryCode ?? user.countryCode;
+    const resolvedLocation = this.legalLocation.resolveFromSnapshot({
+      userType: user.userType,
+      countryCode: user.countryCode,
+      jurisdiction: user.jurisdiction,
+      consumerProfile: user.consumerProfile,
+      tenant: tenant ?? null,
+    });
 
+    const effectiveCountryCode = resolvedLocation.countryCode;
     const country = resolveCountryConfig(effectiveCountryCode);
-    const jurisdiction =
-      user.jurisdiction ?? user.consumerProfile?.stateOrCounty ?? null;
+    const jurisdiction = resolvedLocation.jurisdiction ?? null;
 
     return {
       id: user.id,
@@ -224,10 +288,19 @@ export class UsersService {
       userType: user.userType,
       countryCode: effectiveCountryCode,
       jurisdiction,
+      legalLocation: {
+        countryCode: resolvedLocation.countryCode,
+        jurisdiction: resolvedLocation.jurisdiction ?? null,
+        displayName: resolvedLocation.legalLocation,
+        source: resolvedLocation.source,
+        assumed: resolvedLocation.assumed,
+        tier: resolvedLocation.tier,
+      },
       countryName: country.name,
       currency: country.currency,
       currencySymbol: country.currencySymbol,
       isActive: user.isActive,
+      mustChangePassword: user.mustChangePassword,
       createdAt: user.createdAt,
       updatedAt: user.updatedAt,
       preferences: user.preferences,
@@ -273,6 +346,11 @@ export class UsersService {
         taskReminders: dto.taskReminders ?? true,
         billingAlerts: dto.billingAlerts ?? true,
         trustApprovalAlerts: dto.trustApprovalAlerts ?? true,
+        primaryPracticeArea: dto.primaryPracticeArea,
+        preferredLocale: dto.preferredLocale ?? 'en',
+        ...(dto.tutorialProgress !== undefined
+          ? { tutorialProgress: dto.tutorialProgress as Prisma.InputJsonValue }
+          : {}),
       },
       update: {
         emailNotifications: dto.emailNotifications,
@@ -280,6 +358,11 @@ export class UsersService {
         taskReminders: dto.taskReminders,
         billingAlerts: dto.billingAlerts,
         trustApprovalAlerts: dto.trustApprovalAlerts,
+        primaryPracticeArea: dto.primaryPracticeArea,
+        preferredLocale: dto.preferredLocale,
+        ...(dto.tutorialProgress !== undefined
+          ? { tutorialProgress: dto.tutorialProgress as Prisma.InputJsonValue }
+          : {}),
       },
     });
   }

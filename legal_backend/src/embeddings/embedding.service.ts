@@ -1,7 +1,14 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, Logger } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { Prisma } from '@prisma/client';
-import { createHash } from 'crypto';
+import { createHash, randomUUID } from 'crypto';
+import { postWithRateLimitRetry } from '@/ai/llm-retry.util';
+import {
+  isOpenAiConfigured,
+  resolveOpenAiAuthHeaders,
+  resolveOpenAiRequestModel,
+  resolveOpenAiUrl,
+} from '@/ai/openai-transport';
 import { PrismaService } from '@/prisma/prisma.service';
 
 export interface EmbeddingChunkInput {
@@ -15,6 +22,17 @@ export interface EmbeddingChunkInput {
   metadata?: Prisma.InputJsonValue;
 }
 
+export interface EmbeddingChunkSet {
+  sourceType: string;
+  sourceId: string;
+  chunks: EmbeddingChunkInput[];
+}
+
+const MAX_EMBEDDING_INPUTS_PER_REQUEST = 2048;
+const MAX_EMBEDDING_TOKENS_PER_REQUEST = 300_000;
+const DEFAULT_SAFE_EMBEDDING_TOKENS_PER_REQUEST = 250_000;
+const MAX_EMBEDDING_TOKENS_PER_INPUT = 8_191;
+
 export interface VectorSearchResult {
   id: string;
   sourceType: string;
@@ -27,6 +45,8 @@ export interface VectorSearchResult {
 
 @Injectable()
 export class EmbeddingService {
+  private readonly logger = new Logger(EmbeddingService.name);
+
   constructor(
     private readonly prisma: PrismaService,
     private readonly configService: ConfigService,
@@ -44,24 +64,52 @@ export class EmbeddingService {
     return this.configService.get<string>('AI_ENABLE_RAG', 'true') === 'true';
   }
 
+  private toVectorLiteral(embedding: number[]): string {
+    const sanitized = embedding.map((value) => {
+      if (!Number.isFinite(value)) {
+        throw new Error('Invalid embedding value');
+      }
+      return value;
+    });
+    return `[${sanitized.join(',')}]`;
+  }
+
+  private estimateEmbeddingTokens(text: string): number {
+    // Deliberately conservative for English and multi-byte Indian scripts.
+    // The provider remains the final authority, but this prevents oversized
+    // aggregate requests without introducing a tokenizer dependency.
+    return Math.max(1, Math.ceil(Buffer.byteLength(text, 'utf8') / 2));
+  }
+
   async embedTexts(texts: string[]): Promise<number[][]> {
-    const openAiKey = this.configService.get<string>('OPENAI_API_KEY', '').trim();
-    if (!openAiKey || texts.length === 0) {
+    if (!isOpenAiConfigured(this.configService) || texts.length === 0) {
       return texts.map(() => []);
     }
 
     const modelName = this.getEmbeddingModel();
-    const response = await fetch('https://api.openai.com/v1/embeddings', {
-      method: 'POST',
-      headers: {
-        Authorization: `Bearer ${openAiKey}`,
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        model: modelName,
-        input: texts,
-      }),
-    });
+    const maxAttempts = Number(this.configService.get<string>('AI_LLM_MAX_RETRIES', '6')) || 6;
+
+    let response: Response;
+    try {
+      response = await postWithRateLimitRetry(
+        resolveOpenAiUrl(this.configService, 'embeddings', modelName),
+        {
+          method: 'POST',
+          headers: {
+            ...resolveOpenAiAuthHeaders(this.configService),
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            model: resolveOpenAiRequestModel(this.configService, modelName),
+            input: texts,
+          }),
+        },
+        'OpenAI embeddings',
+        { maxAttempts },
+      );
+    } catch {
+      return texts.map(() => []);
+    }
 
     if (!response.ok) {
       return texts.map(() => []);
@@ -163,18 +211,174 @@ export class EmbeddingService {
 
       const embedding = embeddings[index];
       if (embedding.length > 0) {
-        const vectorLiteral = `[${embedding.join(',')}]`;
-        await this.prisma.$executeRawUnsafe(
-          `UPDATE "EmbeddingChunk" SET "embedding" = $1::vector WHERE "id" = $2`,
-          vectorLiteral,
-          row.id,
-        );
+        const vectorLiteral = this.toVectorLiteral(embedding);
+        await this.prisma.$executeRaw`
+          UPDATE "EmbeddingChunk"
+          SET "embedding" = ${vectorLiteral}::vector
+          WHERE "id" = ${row.id}
+        `;
       }
 
       stored.push(row);
     }
 
     return { stored: stored.length, skipped, chunks: stored };
+  }
+
+  /**
+   * Replace several sources' chunks after obtaining every replacement vector.
+   * Provider requests are bounded, while the DB replacement is one transaction;
+   * any request or write failure therefore leaves all previous chunks intact.
+   */
+  async replaceChunkSets(
+    chunkSets: EmbeddingChunkSet[],
+    options: {
+      maxTextsPerRequest?: number;
+      maxEstimatedTokensPerRequest?: number;
+    } = {},
+  ): Promise<{ stored: number }> {
+    const chunks = chunkSets.flatMap((set) => set.chunks);
+    if (chunks.length === 0) return { stored: 0 };
+    if (!this.isRagEnabled()) {
+      throw new Error('RAG embeddings are disabled');
+    }
+
+    const maxTexts = options.maxTextsPerRequest ?? chunks.length;
+    const maxEstimatedTokens =
+      options.maxEstimatedTokensPerRequest ??
+      DEFAULT_SAFE_EMBEDDING_TOKENS_PER_REQUEST;
+    if (
+      !Number.isInteger(maxTexts) ||
+      maxTexts < 1 ||
+      maxTexts > MAX_EMBEDDING_INPUTS_PER_REQUEST
+    ) {
+      throw new Error(
+        `maxTextsPerRequest must be between 1 and ${MAX_EMBEDDING_INPUTS_PER_REQUEST}`,
+      );
+    }
+    if (
+      !Number.isInteger(maxEstimatedTokens) ||
+      maxEstimatedTokens < 1 ||
+      maxEstimatedTokens > MAX_EMBEDDING_TOKENS_PER_REQUEST
+    ) {
+      throw new Error(
+        `maxEstimatedTokensPerRequest must be between 1 and ${MAX_EMBEDDING_TOKENS_PER_REQUEST}`,
+      );
+    }
+
+    const requests: EmbeddingChunkInput[][] = [];
+    let request: EmbeddingChunkInput[] = [];
+    let requestTokens = 0;
+    for (const chunk of chunks) {
+      const estimatedTokens = this.estimateEmbeddingTokens(chunk.content);
+      if (estimatedTokens > MAX_EMBEDDING_TOKENS_PER_INPUT) {
+        throw new Error(
+          `${chunk.sourceId} chunk ${chunk.chunkIndex} exceeds the safe per-input token limit`,
+        );
+      }
+      if (
+        request.length > 0 &&
+        (request.length >= maxTexts ||
+          requestTokens + estimatedTokens > maxEstimatedTokens)
+      ) {
+        requests.push(request);
+        request = [];
+        requestTokens = 0;
+      }
+      request.push(chunk);
+      requestTokens += estimatedTokens;
+    }
+    if (request.length > 0) requests.push(request);
+
+    const embeddings: number[][] = [];
+    for (let requestIndex = 0; requestIndex < requests.length; requestIndex += 1) {
+      const requestChunks = requests[requestIndex];
+      const response = await this.embedTexts(
+        requestChunks.map((chunk) => chunk.content),
+      );
+      if (
+        response.length !== requestChunks.length ||
+        response.some((embedding) => embedding.length === 0)
+      ) {
+        throw new Error(
+          `Embedding provider returned ${response.length}/${requestChunks.length} ` +
+            `usable vectors for request ${requestIndex + 1}`,
+        );
+      }
+      embeddings.push(...response);
+    }
+
+    const contentHashRows = chunks.map((chunk) => {
+      const contentHash = this.hashContent(chunk.content);
+      return Prisma.sql`(
+        ${randomUUID()},
+        ${contentHash},
+        ${chunk.sourceType},
+        ${chunk.sourceId},
+        ${chunk.modelName}
+      )`;
+    });
+    const embeddingRows = chunks.map((chunk, index) => {
+      const metadata =
+        chunk.metadata === undefined
+          ? Prisma.sql`NULL`
+          : Prisma.sql`${JSON.stringify(chunk.metadata)}::jsonb`;
+      return Prisma.sql`(
+        ${randomUUID()},
+        ${chunk.sourceType},
+        ${chunk.sourceId},
+        ${chunk.chunkIndex},
+        ${chunk.content},
+        ${this.hashContent(chunk.content)},
+        ${chunk.countryCode?.toUpperCase() ?? null},
+        ${chunk.jurisdiction ?? null},
+        ${chunk.modelName},
+        ${metadata},
+        ${this.toVectorLiteral(embeddings[index])}::vector
+      )`;
+    });
+    const stalePredicates = chunkSets.map((set) => {
+      const modelName = set.chunks[0]?.modelName;
+      return Prisma.sql`(
+        "sourceType" = ${set.sourceType}
+        AND "sourceId" = ${set.sourceId}
+        AND "modelName" = ${modelName}
+        AND "chunkIndex" >= ${set.chunks.length}
+      )`;
+    });
+
+    const insertContentHashes = Prisma.sql`
+      INSERT INTO "ContentHash"
+        ("id", "hash", "sourceType", "sourceId", "modelName")
+      VALUES ${Prisma.join(contentHashRows)}
+      ON CONFLICT ("hash") DO NOTHING
+    `;
+    const upsertEmbeddingChunks = Prisma.sql`
+      INSERT INTO "EmbeddingChunk"
+        ("id", "sourceType", "sourceId", "chunkIndex", "content", "contentHash",
+         "countryCode", "jurisdiction", "modelName", "metadata", "embedding")
+      VALUES ${Prisma.join(embeddingRows)}
+      ON CONFLICT ("sourceType", "sourceId", "chunkIndex", "modelName")
+      DO UPDATE SET
+        "content" = EXCLUDED."content",
+        "contentHash" = EXCLUDED."contentHash",
+        "countryCode" = EXCLUDED."countryCode",
+        "jurisdiction" = EXCLUDED."jurisdiction",
+        "metadata" = EXCLUDED."metadata",
+        "embedding" = EXCLUDED."embedding"
+    `;
+    const deleteStaleChunks = Prisma.sql`
+      DELETE FROM "EmbeddingChunk"
+      WHERE ${Prisma.join(stalePredicates, ' OR ')}
+    `;
+
+    await this.prisma.$transaction([
+      this.prisma.$executeRaw(insertContentHashes),
+      this.prisma.$executeRaw(upsertEmbeddingChunks),
+      this.prisma.$executeRaw(deleteStaleChunks),
+    ]);
+
+    return { stored: chunks.length };
   }
 
   async searchByKeyword(query: string, filters?: { countryCode?: string; limit?: number }) {
@@ -195,58 +399,66 @@ export class EmbeddingService {
 
   async searchByVector(
     query: string,
-    filters?: { countryCode?: string; limit?: number },
+    filters?: { countryCode?: string; sourceType?: string; limit?: number; practiceArea?: string },
   ): Promise<VectorSearchResult[]> {
     if (!this.isRagEnabled()) {
       return [];
     }
 
-    const embedding = await this.embedText(query);
-    if (embedding.length === 0) {
-      return [];
-    }
+    try {
+      const embedding = await this.embedText(query);
+      if (embedding.length === 0) {
+        return [];
+      }
 
-    const vectorLiteral = `[${embedding.join(',')}]`;
-    const limit = filters?.limit ?? 10;
-    const countryCode = filters?.countryCode?.toUpperCase();
+      const vectorLiteral = this.toVectorLiteral(embedding);
+      const limit = filters?.limit ?? 10;
+      const countryCode = filters?.countryCode?.toUpperCase();
+      const sourceType = filters?.sourceType ?? null;
+      const practiceArea = filters?.practiceArea ?? null;
 
-    const rows = await this.prisma.$queryRawUnsafe<
-      Array<{
-        id: string;
-        sourceType: string;
-        sourceId: string;
-        chunkIndex: number;
-        content: string;
-        countryCode: string | null;
-        score: number;
-      }>
-    >(
-      `SELECT
+      const rows = await this.prisma.$queryRaw<
+        Array<{
+          id: string;
+          sourceType: string;
+          sourceId: string;
+          chunkIndex: number;
+          content: string;
+          countryCode: string | null;
+          score: number;
+        }>
+      >`
+      SELECT
         ec."id",
         ec."sourceType",
         ec."sourceId",
         ec."chunkIndex",
         ec."content",
         ec."countryCode",
-        1 - (ec."embedding" <=> $1::vector) AS score
+        1 - (ec."embedding" <=> ${vectorLiteral}::vector) AS score
       FROM "EmbeddingChunk" ec
       WHERE ec."embedding" IS NOT NULL
-        AND ($2::text IS NULL OR ec."countryCode" = $2)
-      ORDER BY ec."embedding" <=> $1::vector
-      LIMIT $3`,
-      vectorLiteral,
-      countryCode ?? null,
-      limit,
-    );
+        AND (${countryCode ?? null}::text IS NULL OR ec."countryCode" = ${countryCode ?? null})
+        AND (${sourceType}::text IS NULL OR ec."sourceType" = ${sourceType})
+        AND (${practiceArea}::text IS NULL OR ec."metadata"->>'practiceArea' = ${practiceArea})
+      ORDER BY ec."embedding" <=> ${vectorLiteral}::vector
+      LIMIT ${limit}
+    `;
 
-    return rows.map((row) => ({
-      id: row.id,
-      sourceType: row.sourceType,
-      sourceId: row.sourceId,
-      chunkIndex: row.chunkIndex,
-      content: row.content,
-      countryCode: row.countryCode,
-      score: Number(row.score),
-    }));
+      return rows.map((row) => ({
+        id: row.id,
+        sourceType: row.sourceType,
+        sourceId: row.sourceId,
+        chunkIndex: row.chunkIndex,
+        content: row.content,
+        countryCode: row.countryCode,
+        score: Number(row.score),
+      }));
+    } catch (err) {
+      this.logger.warn(
+        `Vector search failed (non-critical): ${err instanceof Error ? err.message : String(err)}`,
+      );
+      return [];
+    }
   }
 }

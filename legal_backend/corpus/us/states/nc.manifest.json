@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "stateCode": "NC",
+  "stateName": "North Carolina",
+  "acts": [
+    {
+      "actId": "nc-code",
+      "title": "North Carolina code",
+      "sourceAuthority": "cornell-lii",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.law.cornell.edu/states/nc",
+      "externalId": "nc-code",
+      "notes": "North Carolina state law via Cornell LII state index"
+    },
+    {
+      "actId": "nc-statutes",
+      "title": "North Carolina statutes",
+      "sourceAuthority": "cornell-lii",
+      "sourceTier": "mirror",
+      "primaryPdfUrl": "https://www.law.cornell.edu/states/nc",
+      "externalId": "nc-statutes",
+      "notes": "North Carolina state law via Cornell LII state index"
+    }
+  ]
+}

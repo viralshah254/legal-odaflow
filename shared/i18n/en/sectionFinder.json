@@ -1,0 +1,6 @@
+{
+  "title": "Section Finder",
+  "subtitle": "Look up IPC, BNSS, BNS, and Constitution sections with crosswalks and bare-act text",
+  "typeaheadPlaceholder": "e.g. 420 IPC, BNSS 480, Article 21",
+  "networkBadge": "Fetched from India Code — cached for future lookups"
+}

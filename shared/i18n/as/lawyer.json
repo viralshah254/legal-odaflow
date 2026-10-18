@@ -1,5 +1,6 @@
 {
   "nav": {
+    "quickActions": "দ্ৰুত কাৰ্য্যসমূহ",
     "dashboard": "ডেচব'ৰ্ড",
     "clients": "ক্লায়েন্ট",
     "matters": "কথাবোৰ",
@@ -11,6 +12,7 @@
     "evidence": "প্ৰমাণ",
     "billing": "বিলিং",
     "trust": "বিশ্বাস",
+    "trustAccounts": "ট্ৰাষ্ট একাউণ্ট",
     "finance": "বিত্ত",
     "expenses": "খৰচ",
     "queues": "শাৰীবোৰ",
@@ -19,17 +21,20 @@
     "inbox": "ইনবক্স",
     "newIntake": "নতুন ইনটেক",
     "alerts": "সতৰ্কবাণী",
+    "monitors": "মনিটৰ কৰে",
     "team": "দল",
     "templates": "টেমপ্লেটসমূহ",
     "reports": "প্ৰতিবেদন",
     "settings": "ছেটিংছ",
-    "aiLegalSearch": "AI আইনী সন্ধান",
+    "aiLegalSearch": "আইনী গৱেষণা",
+    "documentDrafting": "নথিপত্ৰ খচৰা প্ৰস্তুত কৰা",
+    "draftDocument": "নথিৰ খচৰা",
     "more": "অধিক",
     "myProfile": "মোৰ প্ৰফাইল",
     "notifications": "জাননীসমূহ",
-    "lawLibrary": "আইন পুথিভঁড়াল",
+    "lawLibrary": "ল লাইব্ৰেৰী",
     "vault": "ভল্ট",
-    "esign": "ই-চিগনেচাৰ"
+    "esign": "ই-চাইন"
   },
   "navGroups": {
     "scheduleTime": "সূচী আৰু সময়",
@@ -245,7 +250,7 @@
   "notify_the_partner": "অংশীদাৰক অৱগত কৰক",
   "only_if_optional": "যদিহে (ঐচ্ছিক)",
   "open_case": "মুকলি কেচ",
-  "open_matter_workbench": "মুকলি পদাৰ্থৰ ৱৰ্কবেঞ্চ",
+  "open_matter_workbench": "দ্ৰুত AI খোলক",
   "open_task_details": "কাৰ্য্যৰ বিৱৰণ খোলক",
   "opening": "খোলা",
   "output_preview": "আউটপুট পূৰ্বদৰ্শন",

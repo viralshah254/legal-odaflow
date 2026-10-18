@@ -3,12 +3,13 @@ import { JobsModule } from '@/jobs/jobs.module';
 import { NotificationsModule } from '@/notifications/notifications.module';
 import { AutomationsController } from './automations.controller';
 import { AutomationEngineService } from './automation-engine.service';
+import { AutomationSlaScheduler } from './automation-sla.scheduler';
 import { AutomationsService } from './automations.service';
 
 @Module({
   imports: [JobsModule, NotificationsModule],
   controllers: [AutomationsController],
-  providers: [AutomationsService, AutomationEngineService],
+  providers: [AutomationsService, AutomationEngineService, AutomationSlaScheduler],
   exports: [AutomationsService, AutomationEngineService],
 })
 export class AutomationsModule {}

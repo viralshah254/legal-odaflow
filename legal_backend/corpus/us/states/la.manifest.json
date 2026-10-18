@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "stateCode": "LA",
+  "stateName": "Louisiana",
+  "acts": [
+    {
+      "actId": "la-code",
+      "title": "Louisiana code",
+      "sourceAuthority": "cornell-lii",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.law.cornell.edu/states/la",
+      "externalId": "la-code",
+      "notes": "Louisiana state law via Cornell LII state index"
+    },
+    {
+      "actId": "la-statutes",
+      "title": "Louisiana statutes",
+      "sourceAuthority": "cornell-lii",
+      "sourceTier": "mirror",
+      "primaryPdfUrl": "https://www.law.cornell.edu/states/la",
+      "externalId": "la-statutes",
+      "notes": "Louisiana state law via Cornell LII state index"
+    }
+  ]
+}

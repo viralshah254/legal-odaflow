@@ -1,9 +1,13 @@
 import { createParamDecorator, ExecutionContext } from '@nestjs/common';
 
+/**
+ * Returns only tenant IDs that were resolved by TenantGuard or encoded in route
+ * params. Do not read x-tenant-id here directly: header membership validation
+ * belongs in TenantGuard, which sets request.tenantId after checking tenantUser.
+ */
 export const TenantId = createParamDecorator(
   (_data: unknown, ctx: ExecutionContext): string | undefined => {
     const request = ctx.switchToHttp().getRequest<{
-      headers: Record<string, string | string[] | undefined>;
       params: Record<string, string>;
       tenantId?: string;
     }>();
@@ -12,11 +16,6 @@ export const TenantId = createParamDecorator(
       return request.tenantId;
     }
 
-    const headerValue = request.headers['x-tenant-id'];
-    if (Array.isArray(headerValue)) {
-      return headerValue[0];
-    }
-
-    return headerValue ?? request.params.tenantId;
+    return request.params.tenantId;
   },
 );

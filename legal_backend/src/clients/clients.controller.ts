@@ -23,8 +23,12 @@ export class ClientsController {
   constructor(private readonly clientsService: ClientsService) {}
 
   @Post()
-  create(@TenantId() tenantId: string, @Body() dto: CreateClientDto) {
-    return this.clientsService.create(tenantId, dto);
+  create(
+    @TenantId() tenantId: string,
+    @CurrentUser() user: RequestUser,
+    @Body() dto: CreateClientDto,
+  ) {
+    return this.clientsService.create(tenantId, dto, user.id, user.tenantRole);
   }
 
   @Get()
@@ -43,6 +47,20 @@ export class ClientsController {
     @Param('clientId') clientId: string,
   ) {
     return this.clientsService.findOne(tenantId, clientId, user.id, user.tenantRole);
+  }
+
+  @Get(':clientId/activity-summary')
+  activitySummary(
+    @TenantId() tenantId: string,
+    @CurrentUser() user: RequestUser,
+    @Param('clientId') clientId: string,
+  ) {
+    return this.clientsService.getActivitySummary(
+      tenantId,
+      clientId,
+      user.id,
+      user.tenantRole,
+    );
   }
 
   @Patch(':clientId')

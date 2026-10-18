@@ -1,8 +1,8 @@
 {
   "generic": "ఏదో తప్పు జరిగింది",
   "network": "నెట్‌వర్క్ లోపం. దయచేసి మళ్లీ ప్రయత్నించండి.",
-  "timeout": "The request timed out. Please try again.",
-  "connection": "Could not reach the server. Check your connection and try again.",
+  "timeout": "అభ్యర్థన సమయం ముగిసింది. దయచేసి మళ్లీ ప్రయత్నించండి.",
+  "connection": "సర్వర్‌ని చేరుకోవడం సాధ్యపడలేదు. మీ కనెక్షన్‌ని తనిఖీ చేసి, మళ్లీ ప్రయత్నించండి.",
   "unauthorized": "ఈ చర్యను నిర్వహించడానికి మీకు అధికారం లేదు.",
   "notFound": "దొరకలేదు",
   "validationFailed": "దయచేసి మీ ఇన్‌పుట్‌ని తనిఖీ చేసి, మళ్లీ ప్రయత్నించండి.",
@@ -25,6 +25,10 @@
   "tooManyRequests": "చాలా ప్రయత్నాలు. ఒక క్షణం వేచి ఉండి, మళ్లీ ప్రయత్నించండి.",
   "firebaseEmailSignInDisabled": "ఈ ప్రాజెక్ట్ కోసం Firebaseలో ఇమెయిల్ సైన్-ఇన్ ప్రారంభించబడలేదు.",
   "authenticationFailed": "ప్రమాణీకరణ విఫలమైంది.",
+  "accountExistsDifferentCredential": "ఈ ఇమెయిల్ పాస్‌వర్డ్‌తో నమోదు చేయబడింది. ముందుగా ఇమెయిల్‌తో సైన్ ఇన్ చేయండి, ఆపై సెట్టింగ్‌లలో సామాజిక ఖాతాలను లింక్ చేయండి.",
+  "socialSignInCancelled": "సైన్-ఇన్ రద్దు చేయబడింది.",
+  "socialSignInPopupBlocked": "పాప్-అప్ బ్లాక్ చేయబడింది. ఈ సైట్ కోసం పాప్-అప్‌లను అనుమతించండి లేదా మళ్లీ ప్రయత్నించండి.",
+  "socialSignInFailed": "సామాజిక సైన్-ఇన్ విఫలమైంది. దయచేసి మళ్లీ ప్రయత్నించండి.",
   "toast": {
     "preBillSessionCreated": "ప్రీ-బిల్ సెషన్ సృష్టించబడింది",
     "couldNotCreateSession": "సెషన్‌ని సృష్టించడం సాధ్యపడలేదు",

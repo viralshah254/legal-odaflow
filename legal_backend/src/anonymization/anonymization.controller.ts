@@ -7,7 +7,12 @@ import {
   Patch,
   Post,
   Query,
+  UseGuards,
 } from '@nestjs/common';
+import { Roles } from '@/common/decorators/roles.decorator';
+import { TenantId } from '@/common/decorators/tenant-id.decorator';
+import { RolesGuard } from '@/common/guards/roles.guard';
+import { TenantGuard } from '@/common/guards/tenant.guard';
 import { AnonymizationService } from './anonymization.service';
 import {
   CreateAnonymizationJobDto,
@@ -15,31 +20,37 @@ import {
 } from './dto/anonymization.dto';
 
 @Controller('anonymization')
+@UseGuards(TenantGuard, RolesGuard)
+@Roles('FIRM_ADMIN', 'PARTNER')
 export class AnonymizationController {
   constructor(private readonly anonymizationService: AnonymizationService) {}
 
   @Get()
-  findAll(@Query('status') status?: string) {
-    return this.anonymizationService.findAll(status);
+  findAll(@TenantId() tenantId: string, @Query('status') status?: string) {
+    return this.anonymizationService.findAll(tenantId, status);
   }
 
   @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.anonymizationService.findOne(id);
+  findOne(@TenantId() tenantId: string, @Param('id') id: string) {
+    return this.anonymizationService.findOne(id, tenantId);
   }
 
   @Post()
-  create(@Body() dto: CreateAnonymizationJobDto) {
-    return this.anonymizationService.create(dto);
+  create(@TenantId() tenantId: string, @Body() dto: CreateAnonymizationJobDto) {
+    return this.anonymizationService.create(tenantId, dto);
   }
 
   @Patch(':id')
-  update(@Param('id') id: string, @Body() dto: UpdateAnonymizationJobDto) {
-    return this.anonymizationService.update(id, dto);
+  update(
+    @TenantId() tenantId: string,
+    @Param('id') id: string,
+    @Body() dto: UpdateAnonymizationJobDto,
+  ) {
+    return this.anonymizationService.update(id, tenantId, dto);
   }
 
   @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.anonymizationService.remove(id);
+  remove(@TenantId() tenantId: string, @Param('id') id: string) {
+    return this.anonymizationService.remove(id, tenantId);
   }
 }

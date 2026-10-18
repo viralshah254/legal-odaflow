@@ -117,7 +117,7 @@
     "newClientMatter": "नवीन ग्राहक बाब"
   },
   "aiSearch": {
-    "title": "AI कायदेशीर शोध",
+    "title": "कायदेशीर संशोधन",
     "subtitle": "कोणताही कायदेशीर प्रश्न विचारा — उत्तरे तुमच्या अधिकारक्षेत्रासाठी वास्तविक अधिकार्यांचा हवाला देतात.",
     "placeholder": "तुम्हाला कोणत्या कायदेशीर प्रश्नाचे उत्तर हवे आहे?",
     "prompts": {
@@ -165,6 +165,23 @@
     "triageLeads": "ट्रायज {count} लीड्स",
     "askMorningBrief": "माझी सकाळची संक्षिप्त माहिती विचारा"
   },
+  "aiReview": {
+    "title": "AI review queue",
+    "subtitle": "AI outputs flagged for lawyer review before client use",
+    "queueTitle": "{count, plural, one {# item awaiting review} other {# items awaiting review}}",
+    "queueDescription": "Review, open the source workspace, or mark as reviewed when signed off.",
+    "empty": "No AI outputs are waiting for lawyer review.",
+    "loadError": "Failed to load review queue",
+    "author": "Author",
+    "matter": "Matter",
+    "jurisdiction": "Jurisdiction",
+    "unverified": "Unverified",
+    "preview": "Preview",
+    "openWorkspace": "Open workspace",
+    "markReviewed": "Mark reviewed",
+    "previewTruncated": "Open the workspace for the full output.",
+    "unknownAuthor": "Unknown"
+  },
   "tasks": {
     "myTasks": "माझी कार्ये",
     "next7d": "पुढील ७ दि",
@@ -187,12 +204,12 @@
     "start": "प्रारंभ →",
     "allSetUp": "तुम्ही तयार आहात!",
     "allSetUpDescription": "सुरुवातीच्या सर्व पायऱ्या पूर्ण झाल्या आहेत. ही चेकलिस्ट लवकरच अदृश्य होईल.",
-    "aiSearchLabel": "तुमचा पहिला AI कायदेशीर शोध चालवा",
+    "aiSearchLabel": "तुमचे पहिले कायदेशीर संशोधन चालवा",
     "aiSearchDescription": "कायदेशीर प्रश्न विचारा आणि तुमच्या अधिकारक्षेत्रासाठी उद्धृत उत्तरे मिळवा",
     "clientLabel": "तुमचा पहिला क्लायंट जोडा",
     "clientDescription": "बाबी व्यवस्थापित करण्यास प्रारंभ करण्यासाठी क्लायंट प्रोफाइल तयार करा",
-    "matterLabel": "एक प्रकरण उघडा",
-    "matterDescription": "प्रकरणाचा मागोवा घेणे सुरू करण्यासाठी एक प्रकरण तयार करा",
+    "matterLabel": "तुमची पहिली बाब तयार करा",
+    "matterDescription": "प्रकरणाचा मागोवा घेणे सुरू करण्यासाठी एक प्रकरण सेट करा",
     "templateLabel": "दस्तऐवज टेम्पलेट अपलोड करा",
     "templateDescription": "दस्तऐवज निर्मिती स्वयंचलित करण्यासाठी टेम्पलेट सेट करा",
     "taskLabel": "तुमच्या कार्य रांगेचे पुनरावलोकन करा",

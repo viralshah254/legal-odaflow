@@ -1,5 +1,6 @@
 {
   "nav": {
+    "quickActions": "जलद क्रिया",
     "dashboard": "डॅशबोर्ड",
     "clients": "क्लायंट",
     "matters": "बाबी",
@@ -11,6 +12,7 @@
     "evidence": "पुरावा",
     "billing": "बिलिंग",
     "trust": "भरवसा",
+    "trustAccounts": "ट्रस्ट अकाउंट्स",
     "finance": "वित्त",
     "expenses": "खर्च",
     "queues": "रांगा",
@@ -19,17 +21,20 @@
     "inbox": "इनबॉक्स",
     "newIntake": "नवीन सेवन",
     "alerts": "इशारे",
+    "monitors": "मॉनिटर्स",
     "team": "संघ",
     "templates": "टेम्पलेट्स",
     "reports": "अहवाल",
     "settings": "सेटिंग्ज",
-    "aiLegalSearch": "AI कायदेशीर शोध",
+    "aiLegalSearch": "कायदेशीर संशोधन",
+    "documentDrafting": "दस्तऐवज मसुदा",
+    "draftDocument": "दस्तऐवज मसुदा",
     "more": "अधिक",
     "myProfile": "माझे प्रोफाइल",
     "notifications": "सूचना",
-    "lawLibrary": "कायदा ग्रंथालय",
-    "vault": "व्हॉल्ट",
-    "esign": "ई-साइन"
+    "lawLibrary": "कायदा लायब्ररी",
+    "vault": "तिजोरी",
+    "esign": "ई-चिन्ह"
   },
   "navGroups": {
     "scheduleTime": "वेळापत्रक आणि वेळ",
@@ -245,7 +250,7 @@
   "notify_the_partner": "भागीदाराला सूचित करा",
   "only_if_optional": "फक्त जर (पर्यायी)",
   "open_case": "ओपन केस",
-  "open_matter_workbench": "ओपन मॅटर वर्कबेंच",
+  "open_matter_workbench": "क्विक एआय उघडा",
   "open_task_details": "कार्य तपशील उघडा",
   "opening": "उघडत आहे",
   "output_preview": "आउटपुट पूर्वावलोकन",

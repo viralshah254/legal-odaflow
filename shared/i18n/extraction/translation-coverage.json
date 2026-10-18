@@ -1,44 +1,44 @@
 {
-  "generatedAt": "2026-06-15T02:14:34.972Z",
+  "generatedAt": "2026-07-26T20:25:57.338Z",
   "locales": {
     "fr": {
-      "total": 4243,
-      "untranslated": 28,
-      "allowlisted": 152,
-      "pctUntranslated": 1,
+      "total": 5892,
+      "untranslated": 17,
+      "allowlisted": 169,
+      "pctUntranslated": 0,
       "byNamespace": {
         "common": {
-          "total": 520,
-          "identical": 5,
+          "total": 565,
+          "identical": 4,
           "pct": 1
         },
         "auth": {
-          "total": 135,
+          "total": 212,
           "identical": 0,
           "pct": 0
         },
         "marketing": {
-          "total": 298,
-          "identical": 2,
+          "total": 853,
+          "identical": 9,
           "pct": 1
         },
         "legalGuides": {
-          "total": 13,
+          "total": 19,
           "identical": 0,
           "pct": 0
         },
         "issueChecker": {
-          "total": 357,
+          "total": 363,
           "identical": 0,
           "pct": 0
         },
         "consumer": {
-          "total": 222,
+          "total": 293,
           "identical": 0,
           "pct": 0
         },
         "lawyer": {
-          "total": 427,
+          "total": 432,
           "identical": 0,
           "pct": 0
         },
@@ -48,32 +48,37 @@
           "pct": 0
         },
         "legal": {
-          "total": 72,
-          "identical": 0,
-          "pct": 0
+          "total": 195,
+          "identical": 1,
+          "pct": 1
         },
         "settings": {
-          "total": 273,
-          "identical": 9,
-          "pct": 3
+          "total": 305,
+          "identical": 1,
+          "pct": 0
         },
         "billing": {
           "total": 226,
           "identical": 0,
           "pct": 0
         },
+        "credits": {
+          "total": 21,
+          "identical": 0,
+          "pct": 0
+        },
         "copilot": {
-          "total": 152,
+          "total": 157,
           "identical": 0,
           "pct": 0
         },
         "matters": {
-          "total": 610,
-          "identical": 10,
-          "pct": 2
+          "total": 653,
+          "identical": 0,
+          "pct": 0
         },
         "clients": {
-          "total": 117,
+          "total": 250,
           "identical": 0,
           "pct": 0
         },
@@ -83,9 +88,9 @@
           "pct": 0
         },
         "errors": {
-          "total": 98,
-          "identical": 2,
-          "pct": 2
+          "total": 102,
+          "identical": 0,
+          "pct": 0
         },
         "dashboard": {
           "total": 231,
@@ -93,50 +98,100 @@
           "pct": 0
         },
         "tutorials": {
-          "total": 279,
+          "total": 567,
+          "identical": 0,
+          "pct": 0
+        },
+        "accessibility": {
+          "total": 48,
+          "identical": 2,
+          "pct": 4
+        },
+        "indiaDrafting": {
+          "total": 2,
+          "identical": 0,
+          "pct": 0
+        },
+        "sectionFinder": {
+          "total": 4,
+          "identical": 0,
+          "pct": 0
+        },
+        "firAnalysis": {
+          "total": 2,
+          "identical": 0,
+          "pct": 0
+        },
+        "drafting": {
+          "total": 84,
+          "identical": 0,
+          "pct": 0
+        },
+        "matterIntelligence": {
+          "total": 37,
+          "identical": 0,
+          "pct": 0
+        },
+        "aiConsent": {
+          "total": 9,
+          "identical": 0,
+          "pct": 0
+        },
+        "docuDraft": {
+          "total": 30,
+          "identical": 0,
+          "pct": 0
+        },
+        "mobile": {
+          "total": 1,
+          "identical": 0,
+          "pct": 0
+        },
+        "promptRefine": {
+          "total": 18,
           "identical": 0,
           "pct": 0
         }
       }
     },
     "de": {
-      "total": 4243,
-      "untranslated": 30,
-      "allowlisted": 133,
-      "pctUntranslated": 1,
+      "total": 5892,
+      "untranslated": 20,
+      "allowlisted": 150,
+      "pctUntranslated": 0,
       "byNamespace": {
         "common": {
-          "total": 520,
-          "identical": 7,
+          "total": 565,
+          "identical": 4,
           "pct": 1
         },
         "auth": {
-          "total": 135,
+          "total": 212,
           "identical": 0,
           "pct": 0
         },
         "marketing": {
-          "total": 298,
-          "identical": 2,
-          "pct": 1
+          "total": 853,
+          "identical": 4,
+          "pct": 0
         },
         "legalGuides": {
-          "total": 13,
+          "total": 19,
           "identical": 0,
           "pct": 0
         },
         "issueChecker": {
-          "total": 357,
+          "total": 363,
           "identical": 0,
           "pct": 0
         },
         "consumer": {
-          "total": 222,
-          "identical": 0,
+          "total": 293,
+          "identical": 1,
           "pct": 0
         },
         "lawyer": {
-          "total": 427,
+          "total": 432,
           "identical": 0,
           "pct": 0
         },
@@ -146,32 +201,37 @@
           "pct": 0
         },
         "legal": {
-          "total": 72,
-          "identical": 0,
-          "pct": 0
+          "total": 195,
+          "identical": 2,
+          "pct": 1
         },
         "settings": {
-          "total": 273,
-          "identical": 9,
-          "pct": 3
+          "total": 305,
+          "identical": 1,
+          "pct": 0
         },
         "billing": {
           "total": 226,
           "identical": 0,
           "pct": 0
         },
-        "copilot": {
-          "total": 152,
+        "credits": {
+          "total": 21,
           "identical": 0,
           "pct": 0
         },
+        "copilot": {
+          "total": 157,
+          "identical": 1,
+          "pct": 1
+        },
         "matters": {
-          "total": 610,
-          "identical": 10,
-          "pct": 2
+          "total": 653,
+          "identical": 0,
+          "pct": 0
         },
         "clients": {
-          "total": 117,
+          "total": 250,
           "identical": 0,
           "pct": 0
         },
@@ -181,9 +241,9 @@
           "pct": 0
         },
         "errors": {
-          "total": 98,
-          "identical": 2,
-          "pct": 2
+          "total": 102,
+          "identical": 0,
+          "pct": 0
         },
         "dashboard": {
           "total": 231,
@@ -191,50 +251,100 @@
           "pct": 0
         },
         "tutorials": {
-          "total": 279,
+          "total": 567,
+          "identical": 1,
+          "pct": 0
+        },
+        "accessibility": {
+          "total": 48,
+          "identical": 4,
+          "pct": 8
+        },
+        "indiaDrafting": {
+          "total": 2,
           "identical": 0,
           "pct": 0
+        },
+        "sectionFinder": {
+          "total": 4,
+          "identical": 0,
+          "pct": 0
+        },
+        "firAnalysis": {
+          "total": 2,
+          "identical": 0,
+          "pct": 0
+        },
+        "drafting": {
+          "total": 84,
+          "identical": 1,
+          "pct": 1
+        },
+        "matterIntelligence": {
+          "total": 37,
+          "identical": 0,
+          "pct": 0
+        },
+        "aiConsent": {
+          "total": 9,
+          "identical": 0,
+          "pct": 0
+        },
+        "docuDraft": {
+          "total": 30,
+          "identical": 0,
+          "pct": 0
+        },
+        "mobile": {
+          "total": 1,
+          "identical": 0,
+          "pct": 0
+        },
+        "promptRefine": {
+          "total": 18,
+          "identical": 1,
+          "pct": 6
         }
       }
     },
     "hi": {
-      "total": 4243,
-      "untranslated": 27,
-      "allowlisted": 60,
-      "pctUntranslated": 1,
+      "total": 5892,
+      "untranslated": 7,
+      "allowlisted": 72,
+      "pctUntranslated": 0,
       "byNamespace": {
         "common": {
-          "total": 520,
-          "identical": 6,
+          "total": 565,
+          "identical": 3,
           "pct": 1
         },
         "auth": {
-          "total": 135,
+          "total": 212,
           "identical": 0,
           "pct": 0
         },
         "marketing": {
-          "total": 298,
-          "identical": 0,
+          "total": 853,
+          "identical": 3,
           "pct": 0
         },
         "legalGuides": {
-          "total": 13,
+          "total": 19,
           "identical": 0,
           "pct": 0
         },
         "issueChecker": {
-          "total": 357,
+          "total": 363,
           "identical": 0,
           "pct": 0
         },
         "consumer": {
-          "total": 222,
+          "total": 293,
           "identical": 0,
           "pct": 0
         },
         "lawyer": {
-          "total": 427,
+          "total": 432,
           "identical": 0,
           "pct": 0
         },
@@ -244,32 +354,37 @@
           "pct": 0
         },
         "legal": {
-          "total": 72,
+          "total": 195,
           "identical": 0,
           "pct": 0
         },
         "settings": {
-          "total": 273,
-          "identical": 9,
-          "pct": 3
+          "total": 305,
+          "identical": 0,
+          "pct": 0
         },
         "billing": {
           "total": 226,
           "identical": 0,
           "pct": 0
         },
+        "credits": {
+          "total": 21,
+          "identical": 0,
+          "pct": 0
+        },
         "copilot": {
-          "total": 152,
+          "total": 157,
           "identical": 0,
           "pct": 0
         },
         "matters": {
-          "total": 610,
-          "identical": 10,
-          "pct": 2
+          "total": 653,
+          "identical": 0,
+          "pct": 0
         },
         "clients": {
-          "total": 117,
+          "total": 250,
           "identical": 0,
           "pct": 0
         },
@@ -279,9 +394,9 @@
           "pct": 0
         },
         "errors": {
-          "total": 98,
-          "identical": 2,
-          "pct": 2
+          "total": 102,
+          "identical": 0,
+          "pct": 0
         },
         "dashboard": {
           "total": 231,
@@ -289,50 +404,100 @@
           "pct": 0
         },
         "tutorials": {
-          "total": 279,
+          "total": 567,
+          "identical": 0,
+          "pct": 0
+        },
+        "accessibility": {
+          "total": 48,
+          "identical": 1,
+          "pct": 2
+        },
+        "indiaDrafting": {
+          "total": 2,
+          "identical": 0,
+          "pct": 0
+        },
+        "sectionFinder": {
+          "total": 4,
+          "identical": 0,
+          "pct": 0
+        },
+        "firAnalysis": {
+          "total": 2,
+          "identical": 0,
+          "pct": 0
+        },
+        "drafting": {
+          "total": 84,
+          "identical": 0,
+          "pct": 0
+        },
+        "matterIntelligence": {
+          "total": 37,
+          "identical": 0,
+          "pct": 0
+        },
+        "aiConsent": {
+          "total": 9,
+          "identical": 0,
+          "pct": 0
+        },
+        "docuDraft": {
+          "total": 30,
+          "identical": 0,
+          "pct": 0
+        },
+        "mobile": {
+          "total": 1,
+          "identical": 0,
+          "pct": 0
+        },
+        "promptRefine": {
+          "total": 18,
           "identical": 0,
           "pct": 0
         }
       }
     },
     "bn": {
-      "total": 4243,
-      "untranslated": 30,
-      "allowlisted": 60,
-      "pctUntranslated": 1,
+      "total": 5892,
+      "untranslated": 8,
+      "allowlisted": 72,
+      "pctUntranslated": 0,
       "byNamespace": {
         "common": {
-          "total": 520,
-          "identical": 7,
+          "total": 565,
+          "identical": 4,
           "pct": 1
         },
         "auth": {
-          "total": 135,
+          "total": 212,
           "identical": 0,
           "pct": 0
         },
         "marketing": {
-          "total": 298,
-          "identical": 2,
-          "pct": 1
+          "total": 853,
+          "identical": 3,
+          "pct": 0
         },
         "legalGuides": {
-          "total": 13,
+          "total": 19,
           "identical": 0,
           "pct": 0
         },
         "issueChecker": {
-          "total": 357,
+          "total": 363,
           "identical": 0,
           "pct": 0
         },
         "consumer": {
-          "total": 222,
+          "total": 293,
           "identical": 0,
           "pct": 0
         },
         "lawyer": {
-          "total": 427,
+          "total": 432,
           "identical": 0,
           "pct": 0
         },
@@ -342,32 +507,37 @@
           "pct": 0
         },
         "legal": {
-          "total": 72,
+          "total": 195,
           "identical": 0,
           "pct": 0
         },
         "settings": {
-          "total": 273,
-          "identical": 9,
-          "pct": 3
+          "total": 305,
+          "identical": 0,
+          "pct": 0
         },
         "billing": {
           "total": 226,
           "identical": 0,
           "pct": 0
         },
+        "credits": {
+          "total": 21,
+          "identical": 0,
+          "pct": 0
+        },
         "copilot": {
-          "total": 152,
+          "total": 157,
           "identical": 0,
           "pct": 0
         },
         "matters": {
-          "total": 610,
-          "identical": 10,
-          "pct": 2
+          "total": 653,
+          "identical": 0,
+          "pct": 0
         },
         "clients": {
-          "total": 117,
+          "total": 250,
           "identical": 0,
           "pct": 0
         },
@@ -377,9 +547,9 @@
           "pct": 0
         },
         "errors": {
-          "total": 98,
-          "identical": 2,
-          "pct": 2
+          "total": 102,
+          "identical": 0,
+          "pct": 0
         },
         "dashboard": {
           "total": 231,
@@ -387,50 +557,100 @@
           "pct": 0
         },
         "tutorials": {
-          "total": 279,
+          "total": 567,
+          "identical": 0,
+          "pct": 0
+        },
+        "accessibility": {
+          "total": 48,
+          "identical": 1,
+          "pct": 2
+        },
+        "indiaDrafting": {
+          "total": 2,
+          "identical": 0,
+          "pct": 0
+        },
+        "sectionFinder": {
+          "total": 4,
+          "identical": 0,
+          "pct": 0
+        },
+        "firAnalysis": {
+          "total": 2,
+          "identical": 0,
+          "pct": 0
+        },
+        "drafting": {
+          "total": 84,
+          "identical": 0,
+          "pct": 0
+        },
+        "matterIntelligence": {
+          "total": 37,
+          "identical": 0,
+          "pct": 0
+        },
+        "aiConsent": {
+          "total": 9,
+          "identical": 0,
+          "pct": 0
+        },
+        "docuDraft": {
+          "total": 30,
+          "identical": 0,
+          "pct": 0
+        },
+        "mobile": {
+          "total": 1,
+          "identical": 0,
+          "pct": 0
+        },
+        "promptRefine": {
+          "total": 18,
           "identical": 0,
           "pct": 0
         }
       }
     },
     "te": {
-      "total": 4243,
-      "untranslated": 29,
-      "allowlisted": 73,
-      "pctUntranslated": 1,
+      "total": 5892,
+      "untranslated": 8,
+      "allowlisted": 87,
+      "pctUntranslated": 0,
       "byNamespace": {
         "common": {
-          "total": 520,
-          "identical": 6,
+          "total": 565,
+          "identical": 4,
           "pct": 1
         },
         "auth": {
-          "total": 135,
+          "total": 212,
           "identical": 0,
           "pct": 0
         },
         "marketing": {
-          "total": 298,
-          "identical": 2,
-          "pct": 1
+          "total": 853,
+          "identical": 3,
+          "pct": 0
         },
         "legalGuides": {
-          "total": 13,
+          "total": 19,
           "identical": 0,
           "pct": 0
         },
         "issueChecker": {
-          "total": 357,
+          "total": 363,
           "identical": 0,
           "pct": 0
         },
         "consumer": {
-          "total": 222,
+          "total": 293,
           "identical": 0,
           "pct": 0
         },
         "lawyer": {
-          "total": 427,
+          "total": 432,
           "identical": 0,
           "pct": 0
         },
@@ -440,32 +660,37 @@
           "pct": 0
         },
         "legal": {
-          "total": 72,
+          "total": 195,
           "identical": 0,
           "pct": 0
         },
         "settings": {
-          "total": 273,
-          "identical": 9,
-          "pct": 3
+          "total": 305,
+          "identical": 0,
+          "pct": 0
         },
         "billing": {
           "total": 226,
           "identical": 0,
           "pct": 0
         },
+        "credits": {
+          "total": 21,
+          "identical": 0,
+          "pct": 0
+        },
         "copilot": {
-          "total": 152,
+          "total": 157,
           "identical": 0,
           "pct": 0
         },
         "matters": {
-          "total": 610,
-          "identical": 10,
-          "pct": 2
+          "total": 653,
+          "identical": 0,
+          "pct": 0
         },
         "clients": {
-          "total": 117,
+          "total": 250,
           "identical": 0,
           "pct": 0
         },
@@ -475,9 +700,9 @@
           "pct": 0
         },
         "errors": {
-          "total": 98,
-          "identical": 2,
-          "pct": 2
+          "total": 102,
+          "identical": 0,
+          "pct": 0
         },
         "dashboard": {
           "total": 231,
@@ -485,50 +710,100 @@
           "pct": 0
         },
         "tutorials": {
-          "total": 279,
+          "total": 567,
+          "identical": 0,
+          "pct": 0
+        },
+        "accessibility": {
+          "total": 48,
+          "identical": 1,
+          "pct": 2
+        },
+        "indiaDrafting": {
+          "total": 2,
+          "identical": 0,
+          "pct": 0
+        },
+        "sectionFinder": {
+          "total": 4,
+          "identical": 0,
+          "pct": 0
+        },
+        "firAnalysis": {
+          "total": 2,
+          "identical": 0,
+          "pct": 0
+        },
+        "drafting": {
+          "total": 84,
+          "identical": 0,
+          "pct": 0
+        },
+        "matterIntelligence": {
+          "total": 37,
+          "identical": 0,
+          "pct": 0
+        },
+        "aiConsent": {
+          "total": 9,
+          "identical": 0,
+          "pct": 0
+        },
+        "docuDraft": {
+          "total": 30,
+          "identical": 0,
+          "pct": 0
+        },
+        "mobile": {
+          "total": 1,
+          "identical": 0,
+          "pct": 0
+        },
+        "promptRefine": {
+          "total": 18,
           "identical": 0,
           "pct": 0
         }
       }
     },
     "mr": {
-      "total": 4243,
-      "untranslated": 30,
-      "allowlisted": 62,
-      "pctUntranslated": 1,
+      "total": 5892,
+      "untranslated": 5,
+      "allowlisted": 75,
+      "pctUntranslated": 0,
       "byNamespace": {
         "common": {
-          "total": 520,
-          "identical": 7,
+          "total": 565,
+          "identical": 4,
           "pct": 1
         },
         "auth": {
-          "total": 135,
+          "total": 212,
           "identical": 0,
           "pct": 0
         },
         "marketing": {
-          "total": 298,
-          "identical": 2,
-          "pct": 1
+          "total": 853,
+          "identical": 0,
+          "pct": 0
         },
         "legalGuides": {
-          "total": 13,
+          "total": 19,
           "identical": 0,
           "pct": 0
         },
         "issueChecker": {
-          "total": 357,
+          "total": 363,
           "identical": 0,
           "pct": 0
         },
         "consumer": {
-          "total": 222,
+          "total": 293,
           "identical": 0,
           "pct": 0
         },
         "lawyer": {
-          "total": 427,
+          "total": 432,
           "identical": 0,
           "pct": 0
         },
@@ -538,32 +813,37 @@
           "pct": 0
         },
         "legal": {
-          "total": 72,
+          "total": 195,
           "identical": 0,
           "pct": 0
         },
         "settings": {
-          "total": 273,
-          "identical": 9,
-          "pct": 3
+          "total": 305,
+          "identical": 0,
+          "pct": 0
         },
         "billing": {
           "total": 226,
           "identical": 0,
           "pct": 0
         },
+        "credits": {
+          "total": 21,
+          "identical": 0,
+          "pct": 0
+        },
         "copilot": {
-          "total": 152,
+          "total": 157,
           "identical": 0,
           "pct": 0
         },
         "matters": {
-          "total": 610,
-          "identical": 10,
-          "pct": 2
+          "total": 653,
+          "identical": 0,
+          "pct": 0
         },
         "clients": {
-          "total": 117,
+          "total": 250,
           "identical": 0,
           "pct": 0
         },
@@ -573,9 +853,9 @@
           "pct": 0
         },
         "errors": {
-          "total": 98,
-          "identical": 2,
-          "pct": 2
+          "total": 102,
+          "identical": 0,
+          "pct": 0
         },
         "dashboard": {
           "total": 231,
@@ -583,50 +863,100 @@
           "pct": 0
         },
         "tutorials": {
-          "total": 279,
+          "total": 567,
+          "identical": 0,
+          "pct": 0
+        },
+        "accessibility": {
+          "total": 48,
+          "identical": 1,
+          "pct": 2
+        },
+        "indiaDrafting": {
+          "total": 2,
+          "identical": 0,
+          "pct": 0
+        },
+        "sectionFinder": {
+          "total": 4,
+          "identical": 0,
+          "pct": 0
+        },
+        "firAnalysis": {
+          "total": 2,
+          "identical": 0,
+          "pct": 0
+        },
+        "drafting": {
+          "total": 84,
+          "identical": 0,
+          "pct": 0
+        },
+        "matterIntelligence": {
+          "total": 37,
+          "identical": 0,
+          "pct": 0
+        },
+        "aiConsent": {
+          "total": 9,
+          "identical": 0,
+          "pct": 0
+        },
+        "docuDraft": {
+          "total": 30,
+          "identical": 0,
+          "pct": 0
+        },
+        "mobile": {
+          "total": 1,
+          "identical": 0,
+          "pct": 0
+        },
+        "promptRefine": {
+          "total": 18,
           "identical": 0,
           "pct": 0
         }
       }
     },
     "ta": {
-      "total": 4243,
-      "untranslated": 29,
-      "allowlisted": 64,
-      "pctUntranslated": 1,
+      "total": 5892,
+      "untranslated": 8,
+      "allowlisted": 77,
+      "pctUntranslated": 0,
       "byNamespace": {
         "common": {
-          "total": 520,
-          "identical": 6,
+          "total": 565,
+          "identical": 4,
           "pct": 1
         },
         "auth": {
-          "total": 135,
+          "total": 212,
           "identical": 0,
           "pct": 0
         },
         "marketing": {
-          "total": 298,
-          "identical": 2,
-          "pct": 1
+          "total": 853,
+          "identical": 3,
+          "pct": 0
         },
         "legalGuides": {
-          "total": 13,
+          "total": 19,
           "identical": 0,
           "pct": 0
         },
         "issueChecker": {
-          "total": 357,
+          "total": 363,
           "identical": 0,
           "pct": 0
         },
         "consumer": {
-          "total": 222,
+          "total": 293,
           "identical": 0,
           "pct": 0
         },
         "lawyer": {
-          "total": 427,
+          "total": 432,
           "identical": 0,
           "pct": 0
         },
@@ -636,32 +966,37 @@
           "pct": 0
         },
         "legal": {
-          "total": 72,
+          "total": 195,
           "identical": 0,
           "pct": 0
         },
         "settings": {
-          "total": 273,
-          "identical": 9,
-          "pct": 3
+          "total": 305,
+          "identical": 0,
+          "pct": 0
         },
         "billing": {
           "total": 226,
           "identical": 0,
           "pct": 0
         },
+        "credits": {
+          "total": 21,
+          "identical": 0,
+          "pct": 0
+        },
         "copilot": {
-          "total": 152,
+          "total": 157,
           "identical": 0,
           "pct": 0
         },
         "matters": {
-          "total": 610,
-          "identical": 10,
-          "pct": 2
+          "total": 653,
+          "identical": 0,
+          "pct": 0
         },
         "clients": {
-          "total": 117,
+          "total": 250,
           "identical": 0,
           "pct": 0
         },
@@ -671,9 +1006,9 @@
           "pct": 0
         },
         "errors": {
-          "total": 98,
-          "identical": 2,
-          "pct": 2
+          "total": 102,
+          "identical": 0,
+          "pct": 0
         },
         "dashboard": {
           "total": 231,
@@ -681,50 +1016,100 @@
           "pct": 0
         },
         "tutorials": {
-          "total": 279,
+          "total": 567,
+          "identical": 0,
+          "pct": 0
+        },
+        "accessibility": {
+          "total": 48,
+          "identical": 1,
+          "pct": 2
+        },
+        "indiaDrafting": {
+          "total": 2,
+          "identical": 0,
+          "pct": 0
+        },
+        "sectionFinder": {
+          "total": 4,
+          "identical": 0,
+          "pct": 0
+        },
+        "firAnalysis": {
+          "total": 2,
+          "identical": 0,
+          "pct": 0
+        },
+        "drafting": {
+          "total": 84,
+          "identical": 0,
+          "pct": 0
+        },
+        "matterIntelligence": {
+          "total": 37,
+          "identical": 0,
+          "pct": 0
+        },
+        "aiConsent": {
+          "total": 9,
+          "identical": 0,
+          "pct": 0
+        },
+        "docuDraft": {
+          "total": 30,
+          "identical": 0,
+          "pct": 0
+        },
+        "mobile": {
+          "total": 1,
+          "identical": 0,
+          "pct": 0
+        },
+        "promptRefine": {
+          "total": 18,
           "identical": 0,
           "pct": 0
         }
       }
     },
     "gu": {
-      "total": 4243,
-      "untranslated": 30,
-      "allowlisted": 62,
-      "pctUntranslated": 1,
+      "total": 5892,
+      "untranslated": 8,
+      "allowlisted": 75,
+      "pctUntranslated": 0,
       "byNamespace": {
         "common": {
-          "total": 520,
-          "identical": 7,
+          "total": 565,
+          "identical": 4,
           "pct": 1
         },
         "auth": {
-          "total": 135,
+          "total": 212,
           "identical": 0,
           "pct": 0
         },
         "marketing": {
-          "total": 298,
-          "identical": 2,
-          "pct": 1
+          "total": 853,
+          "identical": 3,
+          "pct": 0
         },
         "legalGuides": {
-          "total": 13,
+          "total": 19,
           "identical": 0,
           "pct": 0
         },
         "issueChecker": {
-          "total": 357,
+          "total": 363,
           "identical": 0,
           "pct": 0
         },
         "consumer": {
-          "total": 222,
+          "total": 293,
           "identical": 0,
           "pct": 0
         },
         "lawyer": {
-          "total": 427,
+          "total": 432,
           "identical": 0,
           "pct": 0
         },
@@ -734,32 +1119,37 @@
           "pct": 0
         },
         "legal": {
-          "total": 72,
+          "total": 195,
           "identical": 0,
           "pct": 0
         },
         "settings": {
-          "total": 273,
-          "identical": 9,
-          "pct": 3
+          "total": 305,
+          "identical": 0,
+          "pct": 0
         },
         "billing": {
           "total": 226,
           "identical": 0,
           "pct": 0
         },
+        "credits": {
+          "total": 21,
+          "identical": 0,
+          "pct": 0
+        },
         "copilot": {
-          "total": 152,
+          "total": 157,
           "identical": 0,
           "pct": 0
         },
         "matters": {
-          "total": 610,
-          "identical": 10,
-          "pct": 2
+          "total": 653,
+          "identical": 0,
+          "pct": 0
         },
         "clients": {
-          "total": 117,
+          "total": 250,
           "identical": 0,
           "pct": 0
         },
@@ -769,9 +1159,9 @@
           "pct": 0
         },
         "errors": {
-          "total": 98,
-          "identical": 2,
-          "pct": 2
+          "total": 102,
+          "identical": 0,
+          "pct": 0
         },
         "dashboard": {
           "total": 231,
@@ -779,50 +1169,100 @@
           "pct": 0
         },
         "tutorials": {
-          "total": 279,
+          "total": 567,
+          "identical": 0,
+          "pct": 0
+        },
+        "accessibility": {
+          "total": 48,
+          "identical": 1,
+          "pct": 2
+        },
+        "indiaDrafting": {
+          "total": 2,
+          "identical": 0,
+          "pct": 0
+        },
+        "sectionFinder": {
+          "total": 4,
+          "identical": 0,
+          "pct": 0
+        },
+        "firAnalysis": {
+          "total": 2,
+          "identical": 0,
+          "pct": 0
+        },
+        "drafting": {
+          "total": 84,
+          "identical": 0,
+          "pct": 0
+        },
+        "matterIntelligence": {
+          "total": 37,
+          "identical": 0,
+          "pct": 0
+        },
+        "aiConsent": {
+          "total": 9,
+          "identical": 0,
+          "pct": 0
+        },
+        "docuDraft": {
+          "total": 30,
+          "identical": 0,
+          "pct": 0
+        },
+        "mobile": {
+          "total": 1,
+          "identical": 0,
+          "pct": 0
+        },
+        "promptRefine": {
+          "total": 18,
           "identical": 0,
           "pct": 0
         }
       }
     },
     "kn": {
-      "total": 4243,
-      "untranslated": 29,
-      "allowlisted": 69,
-      "pctUntranslated": 1,
+      "total": 5892,
+      "untranslated": 8,
+      "allowlisted": 82,
+      "pctUntranslated": 0,
       "byNamespace": {
         "common": {
-          "total": 520,
-          "identical": 6,
+          "total": 565,
+          "identical": 4,
           "pct": 1
         },
         "auth": {
-          "total": 135,
+          "total": 212,
           "identical": 0,
           "pct": 0
         },
         "marketing": {
-          "total": 298,
-          "identical": 2,
-          "pct": 1
+          "total": 853,
+          "identical": 3,
+          "pct": 0
         },
         "legalGuides": {
-          "total": 13,
+          "total": 19,
           "identical": 0,
           "pct": 0
         },
         "issueChecker": {
-          "total": 357,
+          "total": 363,
           "identical": 0,
           "pct": 0
         },
         "consumer": {
-          "total": 222,
+          "total": 293,
           "identical": 0,
           "pct": 0
         },
         "lawyer": {
-          "total": 427,
+          "total": 432,
           "identical": 0,
           "pct": 0
         },
@@ -832,32 +1272,37 @@
           "pct": 0
         },
         "legal": {
-          "total": 72,
+          "total": 195,
           "identical": 0,
           "pct": 0
         },
         "settings": {
-          "total": 273,
-          "identical": 9,
-          "pct": 3
+          "total": 305,
+          "identical": 0,
+          "pct": 0
         },
         "billing": {
           "total": 226,
           "identical": 0,
           "pct": 0
         },
+        "credits": {
+          "total": 21,
+          "identical": 0,
+          "pct": 0
+        },
         "copilot": {
-          "total": 152,
+          "total": 157,
           "identical": 0,
           "pct": 0
         },
         "matters": {
-          "total": 610,
-          "identical": 10,
-          "pct": 2
+          "total": 653,
+          "identical": 0,
+          "pct": 0
         },
         "clients": {
-          "total": 117,
+          "total": 250,
           "identical": 0,
           "pct": 0
         },
@@ -867,9 +1312,9 @@
           "pct": 0
         },
         "errors": {
-          "total": 98,
-          "identical": 2,
-          "pct": 2
+          "total": 102,
+          "identical": 0,
+          "pct": 0
         },
         "dashboard": {
           "total": 231,
@@ -877,50 +1322,100 @@
           "pct": 0
         },
         "tutorials": {
-          "total": 279,
+          "total": 567,
+          "identical": 0,
+          "pct": 0
+        },
+        "accessibility": {
+          "total": 48,
+          "identical": 1,
+          "pct": 2
+        },
+        "indiaDrafting": {
+          "total": 2,
+          "identical": 0,
+          "pct": 0
+        },
+        "sectionFinder": {
+          "total": 4,
+          "identical": 0,
+          "pct": 0
+        },
+        "firAnalysis": {
+          "total": 2,
+          "identical": 0,
+          "pct": 0
+        },
+        "drafting": {
+          "total": 84,
+          "identical": 0,
+          "pct": 0
+        },
+        "matterIntelligence": {
+          "total": 37,
+          "identical": 0,
+          "pct": 0
+        },
+        "aiConsent": {
+          "total": 9,
+          "identical": 0,
+          "pct": 0
+        },
+        "docuDraft": {
+          "total": 30,
+          "identical": 0,
+          "pct": 0
+        },
+        "mobile": {
+          "total": 1,
+          "identical": 0,
+          "pct": 0
+        },
+        "promptRefine": {
+          "total": 18,
           "identical": 0,
           "pct": 0
         }
       }
     },
     "ml": {
-      "total": 4243,
-      "untranslated": 29,
-      "allowlisted": 64,
-      "pctUntranslated": 1,
+      "total": 5892,
+      "untranslated": 9,
+      "allowlisted": 77,
+      "pctUntranslated": 0,
       "byNamespace": {
         "common": {
-          "total": 520,
-          "identical": 6,
+          "total": 565,
+          "identical": 5,
           "pct": 1
         },
         "auth": {
-          "total": 135,
+          "total": 212,
           "identical": 0,
           "pct": 0
         },
         "marketing": {
-          "total": 298,
-          "identical": 2,
-          "pct": 1
+          "total": 853,
+          "identical": 3,
+          "pct": 0
         },
         "legalGuides": {
-          "total": 13,
+          "total": 19,
           "identical": 0,
           "pct": 0
         },
         "issueChecker": {
-          "total": 357,
+          "total": 363,
           "identical": 0,
           "pct": 0
         },
         "consumer": {
-          "total": 222,
+          "total": 293,
           "identical": 0,
           "pct": 0
         },
         "lawyer": {
-          "total": 427,
+          "total": 432,
           "identical": 0,
           "pct": 0
         },
@@ -930,32 +1425,37 @@
           "pct": 0
         },
         "legal": {
-          "total": 72,
+          "total": 195,
           "identical": 0,
           "pct": 0
         },
         "settings": {
-          "total": 273,
-          "identical": 9,
-          "pct": 3
+          "total": 305,
+          "identical": 0,
+          "pct": 0
         },
         "billing": {
           "total": 226,
           "identical": 0,
           "pct": 0
         },
+        "credits": {
+          "total": 21,
+          "identical": 0,
+          "pct": 0
+        },
         "copilot": {
-          "total": 152,
+          "total": 157,
           "identical": 0,
           "pct": 0
         },
         "matters": {
-          "total": 610,
-          "identical": 10,
-          "pct": 2
+          "total": 653,
+          "identical": 0,
+          "pct": 0
         },
         "clients": {
-          "total": 117,
+          "total": 250,
           "identical": 0,
           "pct": 0
         },
@@ -965,9 +1465,9 @@
           "pct": 0
         },
         "errors": {
-          "total": 98,
-          "identical": 2,
-          "pct": 2
+          "total": 102,
+          "identical": 0,
+          "pct": 0
         },
         "dashboard": {
           "total": 231,
@@ -975,50 +1475,100 @@
           "pct": 0
         },
         "tutorials": {
-          "total": 279,
+          "total": 567,
+          "identical": 0,
+          "pct": 0
+        },
+        "accessibility": {
+          "total": 48,
+          "identical": 1,
+          "pct": 2
+        },
+        "indiaDrafting": {
+          "total": 2,
+          "identical": 0,
+          "pct": 0
+        },
+        "sectionFinder": {
+          "total": 4,
+          "identical": 0,
+          "pct": 0
+        },
+        "firAnalysis": {
+          "total": 2,
+          "identical": 0,
+          "pct": 0
+        },
+        "drafting": {
+          "total": 84,
+          "identical": 0,
+          "pct": 0
+        },
+        "matterIntelligence": {
+          "total": 37,
+          "identical": 0,
+          "pct": 0
+        },
+        "aiConsent": {
+          "total": 9,
+          "identical": 0,
+          "pct": 0
+        },
+        "docuDraft": {
+          "total": 30,
+          "identical": 0,
+          "pct": 0
+        },
+        "mobile": {
+          "total": 1,
+          "identical": 0,
+          "pct": 0
+        },
+        "promptRefine": {
+          "total": 18,
           "identical": 0,
           "pct": 0
         }
       }
     },
     "ur": {
-      "total": 4243,
-      "untranslated": 30,
-      "allowlisted": 63,
-      "pctUntranslated": 1,
+      "total": 5892,
+      "untranslated": 8,
+      "allowlisted": 75,
+      "pctUntranslated": 0,
       "byNamespace": {
         "common": {
-          "total": 520,
-          "identical": 7,
+          "total": 565,
+          "identical": 4,
           "pct": 1
         },
         "auth": {
-          "total": 135,
+          "total": 212,
           "identical": 0,
           "pct": 0
         },
         "marketing": {
-          "total": 298,
-          "identical": 2,
-          "pct": 1
+          "total": 853,
+          "identical": 3,
+          "pct": 0
         },
         "legalGuides": {
-          "total": 13,
+          "total": 19,
           "identical": 0,
           "pct": 0
         },
         "issueChecker": {
-          "total": 357,
+          "total": 363,
           "identical": 0,
           "pct": 0
         },
         "consumer": {
-          "total": 222,
+          "total": 293,
           "identical": 0,
           "pct": 0
         },
         "lawyer": {
-          "total": 427,
+          "total": 432,
           "identical": 0,
           "pct": 0
         },
@@ -1028,32 +1578,37 @@
           "pct": 0
         },
         "legal": {
-          "total": 72,
+          "total": 195,
           "identical": 0,
           "pct": 0
         },
         "settings": {
-          "total": 273,
-          "identical": 9,
-          "pct": 3
+          "total": 305,
+          "identical": 0,
+          "pct": 0
         },
         "billing": {
           "total": 226,
           "identical": 0,
           "pct": 0
         },
+        "credits": {
+          "total": 21,
+          "identical": 0,
+          "pct": 0
+        },
         "copilot": {
-          "total": 152,
+          "total": 157,
           "identical": 0,
           "pct": 0
         },
         "matters": {
-          "total": 610,
-          "identical": 10,
-          "pct": 2
+          "total": 653,
+          "identical": 0,
+          "pct": 0
         },
         "clients": {
-          "total": 117,
+          "total": 250,
           "identical": 0,
           "pct": 0
         },
@@ -1063,9 +1618,9 @@
           "pct": 0
         },
         "errors": {
-          "total": 98,
-          "identical": 2,
-          "pct": 2
+          "total": 102,
+          "identical": 0,
+          "pct": 0
         },
         "dashboard": {
           "total": 231,
@@ -1073,50 +1628,100 @@
           "pct": 0
         },
         "tutorials": {
-          "total": 279,
+          "total": 567,
+          "identical": 0,
+          "pct": 0
+        },
+        "accessibility": {
+          "total": 48,
+          "identical": 1,
+          "pct": 2
+        },
+        "indiaDrafting": {
+          "total": 2,
+          "identical": 0,
+          "pct": 0
+        },
+        "sectionFinder": {
+          "total": 4,
+          "identical": 0,
+          "pct": 0
+        },
+        "firAnalysis": {
+          "total": 2,
+          "identical": 0,
+          "pct": 0
+        },
+        "drafting": {
+          "total": 84,
+          "identical": 0,
+          "pct": 0
+        },
+        "matterIntelligence": {
+          "total": 37,
+          "identical": 0,
+          "pct": 0
+        },
+        "aiConsent": {
+          "total": 9,
+          "identical": 0,
+          "pct": 0
+        },
+        "docuDraft": {
+          "total": 30,
+          "identical": 0,
+          "pct": 0
+        },
+        "mobile": {
+          "total": 1,
+          "identical": 0,
+          "pct": 0
+        },
+        "promptRefine": {
+          "total": 18,
           "identical": 0,
           "pct": 0
         }
       }
     },
     "pa": {
-      "total": 4243,
-      "untranslated": 30,
-      "allowlisted": 65,
-      "pctUntranslated": 1,
+      "total": 5892,
+      "untranslated": 8,
+      "allowlisted": 77,
+      "pctUntranslated": 0,
       "byNamespace": {
         "common": {
-          "total": 520,
-          "identical": 7,
+          "total": 565,
+          "identical": 4,
           "pct": 1
         },
         "auth": {
-          "total": 135,
+          "total": 212,
           "identical": 0,
           "pct": 0
         },
         "marketing": {
-          "total": 298,
-          "identical": 2,
-          "pct": 1
+          "total": 853,
+          "identical": 3,
+          "pct": 0
         },
         "legalGuides": {
-          "total": 13,
+          "total": 19,
           "identical": 0,
           "pct": 0
         },
         "issueChecker": {
-          "total": 357,
+          "total": 363,
           "identical": 0,
           "pct": 0
         },
         "consumer": {
-          "total": 222,
+          "total": 293,
           "identical": 0,
           "pct": 0
         },
         "lawyer": {
-          "total": 427,
+          "total": 432,
           "identical": 0,
           "pct": 0
         },
@@ -1126,32 +1731,37 @@
           "pct": 0
         },
         "legal": {
-          "total": 72,
+          "total": 195,
           "identical": 0,
           "pct": 0
         },
         "settings": {
-          "total": 273,
-          "identical": 9,
-          "pct": 3
+          "total": 305,
+          "identical": 0,
+          "pct": 0
         },
         "billing": {
           "total": 226,
           "identical": 0,
           "pct": 0
         },
+        "credits": {
+          "total": 21,
+          "identical": 0,
+          "pct": 0
+        },
         "copilot": {
-          "total": 152,
+          "total": 157,
           "identical": 0,
           "pct": 0
         },
         "matters": {
-          "total": 610,
-          "identical": 10,
-          "pct": 2
+          "total": 653,
+          "identical": 0,
+          "pct": 0
         },
         "clients": {
-          "total": 117,
+          "total": 250,
           "identical": 0,
           "pct": 0
         },
@@ -1161,9 +1771,9 @@
           "pct": 0
         },
         "errors": {
-          "total": 98,
-          "identical": 2,
-          "pct": 2
+          "total": 102,
+          "identical": 0,
+          "pct": 0
         },
         "dashboard": {
           "total": 231,
@@ -1171,50 +1781,100 @@
           "pct": 0
         },
         "tutorials": {
-          "total": 279,
+          "total": 567,
+          "identical": 0,
+          "pct": 0
+        },
+        "accessibility": {
+          "total": 48,
+          "identical": 1,
+          "pct": 2
+        },
+        "indiaDrafting": {
+          "total": 2,
+          "identical": 0,
+          "pct": 0
+        },
+        "sectionFinder": {
+          "total": 4,
+          "identical": 0,
+          "pct": 0
+        },
+        "firAnalysis": {
+          "total": 2,
+          "identical": 0,
+          "pct": 0
+        },
+        "drafting": {
+          "total": 84,
+          "identical": 0,
+          "pct": 0
+        },
+        "matterIntelligence": {
+          "total": 37,
+          "identical": 0,
+          "pct": 0
+        },
+        "aiConsent": {
+          "total": 9,
+          "identical": 0,
+          "pct": 0
+        },
+        "docuDraft": {
+          "total": 30,
+          "identical": 0,
+          "pct": 0
+        },
+        "mobile": {
+          "total": 1,
+          "identical": 0,
+          "pct": 0
+        },
+        "promptRefine": {
+          "total": 18,
           "identical": 0,
           "pct": 0
         }
       }
     },
     "or": {
-      "total": 4243,
-      "untranslated": 28,
-      "allowlisted": 64,
-      "pctUntranslated": 1,
+      "total": 5892,
+      "untranslated": 5,
+      "allowlisted": 76,
+      "pctUntranslated": 0,
       "byNamespace": {
         "common": {
-          "total": 520,
-          "identical": 5,
-          "pct": 1
+          "total": 565,
+          "identical": 2,
+          "pct": 0
         },
         "auth": {
-          "total": 135,
+          "total": 212,
           "identical": 0,
           "pct": 0
         },
         "marketing": {
-          "total": 298,
+          "total": 853,
           "identical": 2,
-          "pct": 1
+          "pct": 0
         },
         "legalGuides": {
-          "total": 13,
+          "total": 19,
           "identical": 0,
           "pct": 0
         },
         "issueChecker": {
-          "total": 357,
+          "total": 363,
           "identical": 0,
           "pct": 0
         },
         "consumer": {
-          "total": 222,
+          "total": 293,
           "identical": 0,
           "pct": 0
         },
         "lawyer": {
-          "total": 427,
+          "total": 432,
           "identical": 0,
           "pct": 0
         },
@@ -1224,32 +1884,37 @@
           "pct": 0
         },
         "legal": {
-          "total": 72,
+          "total": 195,
           "identical": 0,
           "pct": 0
         },
         "settings": {
-          "total": 273,
-          "identical": 9,
-          "pct": 3
+          "total": 305,
+          "identical": 0,
+          "pct": 0
         },
         "billing": {
           "total": 226,
           "identical": 0,
           "pct": 0
         },
+        "credits": {
+          "total": 21,
+          "identical": 0,
+          "pct": 0
+        },
         "copilot": {
-          "total": 152,
+          "total": 157,
           "identical": 0,
           "pct": 0
         },
         "matters": {
-          "total": 610,
-          "identical": 10,
-          "pct": 2
+          "total": 653,
+          "identical": 0,
+          "pct": 0
         },
         "clients": {
-          "total": 117,
+          "total": 250,
           "identical": 0,
           "pct": 0
         },
@@ -1259,9 +1924,9 @@
           "pct": 0
         },
         "errors": {
-          "total": 98,
-          "identical": 2,
-          "pct": 2
+          "total": 102,
+          "identical": 0,
+          "pct": 0
         },
         "dashboard": {
           "total": 231,
@@ -1269,50 +1934,100 @@
           "pct": 0
         },
         "tutorials": {
-          "total": 279,
+          "total": 567,
+          "identical": 0,
+          "pct": 0
+        },
+        "accessibility": {
+          "total": 48,
+          "identical": 1,
+          "pct": 2
+        },
+        "indiaDrafting": {
+          "total": 2,
+          "identical": 0,
+          "pct": 0
+        },
+        "sectionFinder": {
+          "total": 4,
+          "identical": 0,
+          "pct": 0
+        },
+        "firAnalysis": {
+          "total": 2,
+          "identical": 0,
+          "pct": 0
+        },
+        "drafting": {
+          "total": 84,
+          "identical": 0,
+          "pct": 0
+        },
+        "matterIntelligence": {
+          "total": 37,
+          "identical": 0,
+          "pct": 0
+        },
+        "aiConsent": {
+          "total": 9,
+          "identical": 0,
+          "pct": 0
+        },
+        "docuDraft": {
+          "total": 30,
+          "identical": 0,
+          "pct": 0
+        },
+        "mobile": {
+          "total": 1,
+          "identical": 0,
+          "pct": 0
+        },
+        "promptRefine": {
+          "total": 18,
           "identical": 0,
           "pct": 0
         }
       }
     },
     "as": {
-      "total": 4243,
-      "untranslated": 30,
-      "allowlisted": 44,
-      "pctUntranslated": 1,
+      "total": 5892,
+      "untranslated": 9,
+      "allowlisted": 55,
+      "pctUntranslated": 0,
       "byNamespace": {
         "common": {
-          "total": 520,
-          "identical": 7,
+          "total": 565,
+          "identical": 4,
           "pct": 1
         },
         "auth": {
-          "total": 135,
+          "total": 212,
           "identical": 0,
           "pct": 0
         },
         "marketing": {
-          "total": 298,
-          "identical": 2,
-          "pct": 1
+          "total": 853,
+          "identical": 0,
+          "pct": 0
         },
         "legalGuides": {
-          "total": 13,
+          "total": 19,
           "identical": 0,
           "pct": 0
         },
         "issueChecker": {
-          "total": 357,
+          "total": 363,
           "identical": 0,
           "pct": 0
         },
         "consumer": {
-          "total": 222,
+          "total": 293,
           "identical": 0,
           "pct": 0
         },
         "lawyer": {
-          "total": 427,
+          "total": 432,
           "identical": 0,
           "pct": 0
         },
@@ -1322,33 +2037,38 @@
           "pct": 0
         },
         "legal": {
-          "total": 72,
-          "identical": 0,
-          "pct": 0
+          "total": 195,
+          "identical": 1,
+          "pct": 1
         },
         "settings": {
-          "total": 273,
-          "identical": 9,
-          "pct": 3
+          "total": 305,
+          "identical": 0,
+          "pct": 0
         },
         "billing": {
           "total": 226,
           "identical": 0,
           "pct": 0
         },
+        "credits": {
+          "total": 21,
+          "identical": 0,
+          "pct": 0
+        },
         "copilot": {
-          "total": 152,
+          "total": 157,
           "identical": 0,
           "pct": 0
         },
         "matters": {
-          "total": 610,
-          "identical": 10,
-          "pct": 2
+          "total": 653,
+          "identical": 1,
+          "pct": 0
         },
         "clients": {
-          "total": 117,
-          "identical": 0,
+          "total": 250,
+          "identical": 1,
           "pct": 0
         },
         "portal": {
@@ -1357,9 +2077,9 @@
           "pct": 0
         },
         "errors": {
-          "total": 98,
-          "identical": 2,
-          "pct": 2
+          "total": 102,
+          "identical": 0,
+          "pct": 0
         },
         "dashboard": {
           "total": 231,
@@ -1367,27 +2087,77 @@
           "pct": 0
         },
         "tutorials": {
-          "total": 279,
+          "total": 567,
           "identical": 0,
           "pct": 0
+        },
+        "accessibility": {
+          "total": 48,
+          "identical": 0,
+          "pct": 0
+        },
+        "indiaDrafting": {
+          "total": 2,
+          "identical": 0,
+          "pct": 0
+        },
+        "sectionFinder": {
+          "total": 4,
+          "identical": 0,
+          "pct": 0
+        },
+        "firAnalysis": {
+          "total": 2,
+          "identical": 0,
+          "pct": 0
+        },
+        "drafting": {
+          "total": 84,
+          "identical": 0,
+          "pct": 0
+        },
+        "matterIntelligence": {
+          "total": 37,
+          "identical": 0,
+          "pct": 0
+        },
+        "aiConsent": {
+          "total": 9,
+          "identical": 1,
+          "pct": 11
+        },
+        "docuDraft": {
+          "total": 30,
+          "identical": 0,
+          "pct": 0
+        },
+        "mobile": {
+          "total": 1,
+          "identical": 0,
+          "pct": 0
+        },
+        "promptRefine": {
+          "total": 18,
+          "identical": 1,
+          "pct": 6
         }
       }
     }
   },
   "summary": {
-    "fr": "1% untranslated (28/4243)",
-    "de": "1% untranslated (30/4243)",
-    "hi": "1% untranslated (27/4243)",
-    "bn": "1% untranslated (30/4243)",
-    "te": "1% untranslated (29/4243)",
-    "mr": "1% untranslated (30/4243)",
-    "ta": "1% untranslated (29/4243)",
-    "gu": "1% untranslated (30/4243)",
-    "kn": "1% untranslated (29/4243)",
-    "ml": "1% untranslated (29/4243)",
-    "ur": "1% untranslated (30/4243)",
-    "pa": "1% untranslated (30/4243)",
-    "or": "1% untranslated (28/4243)",
-    "as": "1% untranslated (30/4243)"
+    "fr": "0% untranslated (17/5892)",
+    "de": "0% untranslated (20/5892)",
+    "hi": "0% untranslated (7/5892)",
+    "bn": "0% untranslated (8/5892)",
+    "te": "0% untranslated (8/5892)",
+    "mr": "0% untranslated (5/5892)",
+    "ta": "0% untranslated (8/5892)",
+    "gu": "0% untranslated (8/5892)",
+    "kn": "0% untranslated (8/5892)",
+    "ml": "0% untranslated (9/5892)",
+    "ur": "0% untranslated (8/5892)",
+    "pa": "0% untranslated (8/5892)",
+    "or": "0% untranslated (5/5892)",
+    "as": "0% untranslated (9/5892)"
   }
 }

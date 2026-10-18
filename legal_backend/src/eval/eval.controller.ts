@@ -1,17 +1,32 @@
 import { Controller, Get, Param, Post, UseGuards } from '@nestjs/common';
 import { Roles } from '@/common/decorators/roles.decorator';
 import { RolesGuard } from '@/common/guards/roles.guard';
+import { TenantGuard } from '@/common/guards/tenant.guard';
 import { EvalService } from './eval.service';
+import { AccuracyReportService } from './accuracy-report.service';
 
 @Controller('eval')
-@UseGuards(RolesGuard)
+@UseGuards(TenantGuard, RolesGuard)
 @Roles('FIRM_ADMIN', 'PARTNER')
 export class EvalController {
-  constructor(private readonly evalService: EvalService) {}
+  constructor(
+    private readonly evalService: EvalService,
+    private readonly accuracyReport: AccuracyReportService,
+  ) {}
 
   @Post('run')
   runSuite() {
     return this.evalService.runSuite();
+  }
+
+  @Get('accuracy-report')
+  getAccuracyReport() {
+    return this.accuracyReport.buildAdminReport();
+  }
+
+  @Get('public-summary')
+  getPublicSummary() {
+    return this.accuracyReport.buildPublicSummary();
   }
 
   @Get('runs')

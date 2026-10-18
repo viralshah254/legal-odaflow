@@ -1,0 +1,19 @@
+{
+  "continueRefined": "Continuer avec une invite raffinée",
+  "title": "Invite raffinée",
+  "description": "Nous avons réorganisé votre description pour des résultats d'IA plus clairs. Modifiez si nécessaire, puis continuez.",
+  "yourOriginal": "Votre invite d'origine",
+  "refinedLabel": "Invite raffinée",
+  "useOriginal": "Utilisez plutôt l'original",
+  "hintJurisdiction": "Juridiction",
+  "hintParty": "Faire la fête",
+  "hintStatute": "Loi",
+  "preparing": "Préparation de votre invite…",
+  "startingDrafting": "Début de la rédaction dans {seconds}s…",
+  "startingResearch": "Début des recherches dans les {seconds}…",
+  "undo": "Défaire",
+  "autoFilledTitle": "Rapide raffiné",
+  "autoFilledDescription": "Continuer dans {seconds}s — annulez pour conserver votre original.",
+  "autoFillCountdownAria": "{seconds} secondes restantes pour annuler",
+  "autoFillHint": "Annuler restaure votre invite d'origine"
+}

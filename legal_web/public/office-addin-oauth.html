@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Sign in — Umbrella</title>
+    <style>
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        background: #f8fafc;
+        color: #0f172a;
+      }
+      .card {
+        width: 100%;
+        max-width: 18rem;
+        padding: 1.5rem;
+        text-align: center;
+      }
+      .logo {
+        width: 2.5rem;
+        height: 2.5rem;
+        margin: 0 auto 0.75rem;
+        border-radius: 0.625rem;
+        background: #2563eb;
+        color: #fff;
+        font-weight: 700;
+        line-height: 2.5rem;
+        font-size: 1.125rem;
+      }
+      h1 { margin: 0 0 0.25rem; font-size: 1rem; font-weight: 600; }
+      p { margin: 0; font-size: 0.8125rem; color: #64748b; line-height: 1.45; }
+      .spinner {
+        width: 1.25rem;
+        height: 1.25rem;
+        margin: 1rem auto 0;
+        border: 2px solid #dbeafe;
+        border-top-color: #2563eb;
+        border-radius: 50%;
+        animation: spin 0.8s linear infinite;
+      }
+      .error {
+        margin-top: 1rem;
+        padding: 0.625rem 0.75rem;
+        border-radius: 0.5rem;
+        background: #fef2f2;
+        border: 1px solid #fecaca;
+        color: #b91c1c;
+        font-size: 0.75rem;
+        text-align: left;
+      }
+      @keyframes spin { to { transform: rotate(360deg); } }
+    </style>
+    <script
+      type="text/javascript"
+      src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app-compat.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://www.gstatic.com/firebasejs/10.14.1/firebase-auth-compat.js"
+    ></script>
+  </head>
+  <body>
+    <div class="card">
+      <div class="logo">U</div>
+      <h1 id="title">Signing in</h1>
+      <p id="status">Connecting to Umbrella…</p>
+      <div class="spinner" id="spinner"></div>
+      <div id="error" class="error" hidden></div>
+    </div>
+    <script type="text/javascript">
+      (function () {
+        var API_BASE = "http://localhost:4000";
+        var RETURN_KEY = "umbrella_office_addin_return_url";
+        var PENDING_KEY = "umbrella_oauth_redirect_pending";
+        var titleEl = document.getElementById("title");
+        var statusEl = document.getElementById("status");
+        var spinnerEl = document.getElementById("spinner");
+        var errorEl = document.getElementById("error");
+
+        function showError(message) {
+          titleEl.textContent = "Sign-in failed";
+          statusEl.textContent = "Please close this window and try again.";
+          spinnerEl.hidden = true;
+          errorEl.hidden = false;
+          errorEl.textContent = message;
+        }
+
+        function setStatus(title, message) {
+          titleEl.textContent = title;
+          statusEl.textContent = message;
+        }
+
+        function withTimeout(promise, ms, message) {
+          return new Promise(function (resolve, reject) {
+            var timer = setTimeout(function () {
+              reject(new Error(message));
+            }, ms);
+            promise.then(function (v) {
+              clearTimeout(timer);
+              resolve(v);
+            }).catch(function (e) {
+              clearTimeout(timer);
+              reject(e);
+            });
+          });
+        }
+
+        function isAllowedReturnUrl(returnUrl) {
+          try {
+            var url = new URL(returnUrl);
+            return (
+              url.protocol === "https:" &&
+              url.host === "localhost:3001" &&
+              url.pathname.indexOf("/auth-bridge.html") !== -1
+            );
+          } catch (e) {
+            return false;
+          }
+        }
+
+        function getReturnUrl() {
+          var fromQuery = new URLSearchParams(window.location.search).get("returnUrl") || "";
+          if (isAllowedReturnUrl(fromQuery)) {
+            try { localStorage.setItem(RETURN_KEY, fromQuery); } catch (e) {}
+            return fromQuery;
+          }
+          try {
+            var remembered = localStorage.getItem(RETURN_KEY) || "";
+            return isAllowedReturnUrl(remembered) ? remembered : "";
+          } catch (e2) {
+            return "";
+          }
+        }
+
+        function getProvider() {
+          var value = new URLSearchParams(window.location.search).get("provider");
+          return value === "google" || value === "apple" ? value : null;
+        }
+
+        function savePending(provider) {
+          try { localStorage.setItem(PENDING_KEY, provider); } catch (e) {}
+        }
+
+        function readPending() {
+          try {
+            var value = localStorage.getItem(PENDING_KEY);
+            return value === "google" || value === "apple" ? value : null;
+          } catch (e) {
+            return null;
+          }
+        }
+
+        function clearPending() {
+          try { localStorage.removeItem(PENDING_KEY); } catch (e) {}
+        }
+
+        function buildHandoff(response) {
+          return {
+            accessToken: response.accessToken,
+            refreshToken: response.refreshToken || "",
+            userId: response.user.id,
+            tenantId: response.user.tenantId || "",
+            displayName: response.user.name || response.user.email,
+          };
+        }
+
+        function handoffToAddIn(returnUrl, response) {
+          setStatus("Success", "Returning to Word…");
+          var base = returnUrl.split("?")[0].split("#")[0];
+          var params = new URLSearchParams(buildHandoff(response));
+          window.location.replace(base + "?" + params.toString());
+        }
+
+        function firebaseLogin(idToken) {
+          return fetch(API_BASE + "/api/v1/auth/firebase/login", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ idToken: idToken }),
+          }).then(function (res) {
+            return res.json().then(function (body) {
+              if (!res.ok) throw new Error(body.message || "Sign-in failed");
+              return body;
+            });
+          });
+        }
+
+        function finishWithUser(user, returnUrl) {
+          return user.getIdToken().then(function (idToken) {
+            return firebaseLogin(idToken).then(function (response) {
+              clearPending();
+              handoffToAddIn(returnUrl, response);
+            });
+          });
+        }
+
+        function signInWithRedirect(auth, provider) {
+          savePending(provider);
+          if (provider === "google") {
+            var google = new firebase.auth.GoogleAuthProvider();
+            google.addScope("email");
+            google.addScope("profile");
+            return auth.signInWithRedirect(google);
+          }
+          var apple = new firebase.auth.OAuthProvider("apple.com");
+          apple.addScope("email");
+          apple.addScope("name");
+          return auth.signInWithRedirect(apple);
+        }
+
+        function waitForUser(auth, timeoutMs) {
+          if (auth.currentUser) return Promise.resolve(auth.currentUser);
+          return new Promise(function (resolve) {
+            var done = false;
+            var timer = setTimeout(function () {
+              if (done) return;
+              done = true;
+              unsubscribe();
+              resolve(auth.currentUser);
+            }, timeoutMs);
+            var unsubscribe = auth.onAuthStateChanged(function (user) {
+              if (done || !user) return;
+              done = true;
+              clearTimeout(timer);
+              unsubscribe();
+              resolve(user);
+            });
+          });
+        }
+
+        function completeRedirectReturn(auth) {
+          return withTimeout(
+            auth.getRedirectResult(),
+            10000,
+            "Sign-in timed out",
+          ).then(function (result) {
+            if (result && result.user) return result.user;
+            return waitForUser(auth, 10000);
+          });
+        }
+
+        function run() {
+          var returnUrl = getReturnUrl();
+          var provider = getProvider();
+          if (!returnUrl) {
+            showError("Missing Word add-in return URL.");
+            return;
+          }
+
+          fetch("/api/firebase-public-config")
+            .then(function (res) {
+              if (!res.ok) throw new Error("Firebase is not configured.");
+              return res.json();
+            })
+            .then(function (config) {
+              config.authDomain = window.location.host;
+              if (!firebase.apps.length) firebase.initializeApp(config);
+              var auth = firebase.auth();
+
+              var oauthReturn =
+                window.location.search.indexOf("apiKey=") !== -1 ||
+                window.location.hash.indexOf("apiKey=") !== -1;
+              var pending = readPending();
+
+              if (oauthReturn || (pending && !provider)) {
+                setStatus("Signing in", "Finishing sign-in…");
+                return completeRedirectReturn(auth).then(function (user) {
+                  if (!user) {
+                    clearPending();
+                    throw new Error(
+                      "Could not complete sign-in. Use email and password in Word instead.",
+                    );
+                  }
+                  return finishWithUser(user, returnUrl);
+                });
+              }
+
+              if (!provider) {
+                showError("Missing sign-in provider.");
+                return;
+              }
+
+              clearPending();
+              setStatus(
+                "Signing in",
+                provider === "apple" ? "Redirecting to Apple…" : "Redirecting to Google…",
+              );
+              return signInWithRedirect(auth, provider);
+            })
+            .catch(function (err) {
+              clearPending();
+              showError(err && err.message ? err.message : "Sign-in failed.");
+            });
+        }
+
+        run();
+      })();
+    </script>
+  </body>
+</html>

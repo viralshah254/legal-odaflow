@@ -117,7 +117,7 @@
     "newClientMatter": "નવા ગ્રાહક બાબત"
   },
   "aiSearch": {
-    "title": "AI કાનૂની શોધ",
+    "title": "કાનૂની સંશોધન",
     "subtitle": "કોઈપણ કાનૂની પ્રશ્ન પૂછો - જવાબો તમારા અધિકારક્ષેત્ર માટે વાસ્તવિક સત્તાવાળાઓને ટાંકે છે.",
     "placeholder": "તમારે કયા કાનૂની પ્રશ્નનો જવાબ જોઈએ છે?",
     "prompts": {
@@ -165,6 +165,23 @@
     "triageLeads": "ટ્રાયજ {count} લીડ્સ",
     "askMorningBrief": "મારી સવારની ટૂંકી માહિતી માટે પૂછો"
   },
+  "aiReview": {
+    "title": "AI review queue",
+    "subtitle": "AI outputs flagged for lawyer review before client use",
+    "queueTitle": "{count, plural, one {# item awaiting review} other {# items awaiting review}}",
+    "queueDescription": "Review, open the source workspace, or mark as reviewed when signed off.",
+    "empty": "No AI outputs are waiting for lawyer review.",
+    "loadError": "Failed to load review queue",
+    "author": "Author",
+    "matter": "Matter",
+    "jurisdiction": "Jurisdiction",
+    "unverified": "Unverified",
+    "preview": "Preview",
+    "openWorkspace": "Open workspace",
+    "markReviewed": "Mark reviewed",
+    "previewTruncated": "Open the workspace for the full output.",
+    "unknownAuthor": "Unknown"
+  },
   "tasks": {
     "myTasks": "મારા કાર્યો",
     "next7d": "આગામી 7 ડી",
@@ -187,12 +204,12 @@
     "start": "પ્રારંભ →",
     "allSetUp": "તમે તૈયાર છો!",
     "allSetUpDescription": "તમામ પ્રારંભ-પ્રારંભિક પગલાં પૂર્ણ થઈ ગયા છે. આ ચેકલિસ્ટ ટૂંક સમયમાં અદૃશ્ય થઈ જશે.",
-    "aiSearchLabel": "તમારી પ્રથમ AI કાનૂની શોધ ચલાવો",
+    "aiSearchLabel": "તમારું પ્રથમ કાનૂની સંશોધન ચલાવો",
     "aiSearchDescription": "કાનૂની પ્રશ્ન પૂછો અને તમારા અધિકારક્ષેત્ર માટે ટાંકેલા જવાબો મેળવો",
     "clientLabel": "તમારા પ્રથમ ક્લાયંટ ઉમેરો",
     "clientDescription": "બાબતોનું સંચાલન શરૂ કરવા માટે ક્લાયન્ટ પ્રોફાઇલ બનાવો",
-    "matterLabel": "એક બાબત ખોલો",
-    "matterDescription": "કેસને ટ્રેક કરવાનું શરૂ કરવા માટે એક બાબત બનાવો",
+    "matterLabel": "તમારી પ્રથમ બાબત બનાવો",
+    "matterDescription": "કેસને ટ્રૅક કરવાનું શરૂ કરવા માટે એક બાબત સેટ કરો",
     "templateLabel": "દસ્તાવેજ ટેમ્પલેટ અપલોડ કરો",
     "templateDescription": "દસ્તાવેજ જનરેશનને સ્વચાલિત કરવા માટે નમૂનાઓ સેટ કરો",
     "taskLabel": "તમારી કાર્ય કતારની સમીક્ષા કરો",

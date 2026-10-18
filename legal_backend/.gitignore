@@ -1,4 +1,20 @@
 node_modules/
 dist/
+uploads/
+tmp/
+*.tsbuildinfo
+corpus/in/*.pdf
+data/india-caselaw-corpus/source-pdfs/*.pdf
+# Local USC prefetch cache (npm run prefetch:us-uslm / ingest:us-usc)
+corpus/us/usc/*.govinfo.zip
+corpus/us/usc/*.xml
 .env
+.env.*
+!.env.example
+firebase-service-account.json
 config/firebase-service-account.json
+umbrella-*-firebase-adminsdk-*.json
+umbrella-95da1-firebase-adminsdk-fbsvc-11e5b5d0f4.json
+scripts/wipe-all-accounts.ts
+*.pem
+tsconfig.tsbuildinfo

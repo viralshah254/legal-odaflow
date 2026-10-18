@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "stateCode": "NE",
+  "stateName": "Nebraska",
+  "acts": [
+    {
+      "actId": "ne-code",
+      "title": "Nebraska code",
+      "sourceAuthority": "cornell-lii",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.law.cornell.edu/states/ne",
+      "externalId": "ne-code",
+      "notes": "Nebraska state law via Cornell LII state index"
+    },
+    {
+      "actId": "ne-statutes",
+      "title": "Nebraska statutes",
+      "sourceAuthority": "cornell-lii",
+      "sourceTier": "mirror",
+      "primaryPdfUrl": "https://www.law.cornell.edu/states/ne",
+      "externalId": "ne-statutes",
+      "notes": "Nebraska state law via Cornell LII state index"
+    }
+  ]
+}

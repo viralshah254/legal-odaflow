@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "stateCode": "MO",
+  "stateName": "Missouri",
+  "acts": [
+    {
+      "actId": "mo-code",
+      "title": "Missouri code",
+      "sourceAuthority": "cornell-lii",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.law.cornell.edu/states/mo",
+      "externalId": "mo-code",
+      "notes": "Missouri state law via Cornell LII state index"
+    },
+    {
+      "actId": "mo-statutes",
+      "title": "Missouri statutes",
+      "sourceAuthority": "cornell-lii",
+      "sourceTier": "mirror",
+      "primaryPdfUrl": "https://www.law.cornell.edu/states/mo",
+      "externalId": "mo-statutes",
+      "notes": "Missouri state law via Cornell LII state index"
+    }
+  ]
+}

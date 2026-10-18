@@ -1,0 +1,67 @@
+name: CI
+
+on:
+  push:
+    branches: [main, master, develop]
+  pull_request:
+
+jobs:
+  backend:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: legal_backend
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+          cache-dependency-path: legal_backend/package-lock.json
+      - run: npm ci
+      - run: npm run prisma:generate
+      - run: npm run check:no-mock
+      - run: npm run validate:india-act-structure
+      - run: npm run export:task-patterns-catalog
+      - run: npm run audit:taxonomy-coverage -- --strict
+      - run: npm run build
+      - name: Matter Intelligence test gate
+        run: npm test -- --testPathPattern="matter-intelligence|mi-intake|contract/matter"
+      - name: Security regression tests
+        run: npm test -- --runTestsByPath src/admin/super-admin.guard.spec.ts src/common/guards/tenant.guard.spec.ts src/common/guards/tenant-permission.guard.spec.ts src/payments/mpesa.provider.spec.ts src/security/encryption.service.spec.ts
+      - run: npm test
+
+  web:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: legal_web
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+          cache-dependency-path: legal_web/package-lock.json
+      - run: npm ci
+      - run: npm run check:no-mock
+      - run: npm run lint
+      - run: npm run build
+
+  mobile:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: legal_app
+    steps:
+      - uses: actions/checkout@v4
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          cache: true
+      - name: Generate theme tokens
+        run: dart run ../shared/theme/generate_flutter_tokens.dart
+      - run: flutter pub get
+      - run: flutter analyze
+      - run: flutter test
+      - run: flutter build apk --release --dart-define=API_URL=https://legal-api.odaflow.com/api/v1

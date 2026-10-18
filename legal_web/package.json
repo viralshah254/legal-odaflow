@@ -1,0 +1,205 @@
+{
+  "name": "com.dvtechventures.umbrella-web",
+  "version": "0.1.0",
+  "private": true,
+  "main": "electron/main.js",
+  "homepage": "./",
+  "scripts": {
+    "dev": "cross-env NODE_OPTIONS=--max-old-space-size=8192 next dev",
+    "dev:https": "bash scripts/ensure-dev-https-cert.sh && cross-env NODE_OPTIONS=--max-old-space-size=8192 next dev --experimental-https --experimental-https-key certificates/localhost-key.pem --experimental-https-cert certificates/localhost.pem",
+    "dev:turbo": "cross-env NODE_OPTIONS=--max-old-space-size=8192 next dev --turbo",
+    "dev:webpack": "cross-env NODE_OPTIONS=--max-old-space-size=8192 next dev",
+    "dev:clean": "npx rimraf .next-dev && cross-env NODE_OPTIONS=--max-old-space-size=8192 next dev",
+    "prebuild": "node scripts/patch-vercel-og-paths.js && node scripts/sync-theme-tokens.js && node scripts/sync-i18n-to-web.js && node scripts/copy-pdf-worker.js",
+    "i18n:generate": "node ../shared/i18n/scripts/build-translation-catalog.js && node ../shared/i18n/scripts/generate-full-translations.js && node ../shared/i18n/scripts/fix-icu-plurals.js && node ../shared/i18n/scripts/fix-placeholders.js && node ../shared/i18n/scripts/generate-locales.js && node ../shared/i18n/scripts/expand-locale-translations.js",
+    "i18n:catalog": "node ../shared/i18n/scripts/build-translation-catalog.js",
+    "i18n:translate": "node ../shared/i18n/scripts/generate-full-translations.js && node ../shared/i18n/scripts/generate-locales.js",
+    "i18n:coverage": "node ../shared/i18n/scripts/check-translation-coverage.js",
+    "i18n:sync": "node ../shared/i18n/scripts/sync-to-web.js && node ../shared/i18n/scripts/sync-to-flutter.js",
+    "i18n:translate-pending": "node scripts/translate-pending-messages.js",
+    "i18n:check": "node ../shared/i18n/scripts/check-parity.js",
+    "i18n:migrate-web": "node ../shared/i18n/scripts/migrate-web-auto.js",
+    "i18n:fix-flutter": "node ../shared/i18n/scripts/fix-flutter-errors.js && node ../shared/i18n/scripts/fix-flutter-l10n-keys.js",
+    "i18n:audit": "node ../shared/i18n/scripts/check-parity.js && node ../shared/i18n/scripts/check-translation-coverage.js --strict --max-pct=0 && node ../shared/i18n/scripts/check-translation-keys.js && node ../shared/i18n/scripts/check-hardcoded-strings.js && node ../shared/i18n/scripts/check-mixed-locale.js --strict && node ../shared/i18n/scripts/extract-candidates.js",
+    "i18n:extract": "node ../shared/i18n/scripts/extract-candidates.js",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "test:unit": "vitest run",
+    "check:no-mock": "bash scripts/check-no-mock.sh",
+    "electron": "electron .",
+    "electron:dev": "concurrently \"npm run dev\" \"wait-on http://localhost:3000 && electron .\"",
+    "electron:build": "cross-env ELECTRON=true npm run build && electron-builder",
+    "electron:build:win": "cross-env ELECTRON=true npm run build && electron-builder --win",
+    "electron:build:mac": "cross-env ELECTRON=true npm run build && electron-builder --mac",
+    "electron:build:linux": "cross-env ELECTRON=true npm run build && electron-builder --linux",
+    "postinstall": "node scripts/copy-pdf-worker.js && node scripts/patch-vercel-og-paths.js && electron-builder install-app-deps",
+    "test:e2e": "playwright test",
+    "test:e2e:ui": "playwright test --ui"
+  },
+  "dependencies": {
+    "@hookform/resolvers": "^3.3.4",
+    "@marsidev/react-turnstile": "^1.5.3",
+    "@radix-ui/react-accordion": "^1.1.2",
+    "@radix-ui/react-alert-dialog": "^1.0.5",
+    "@radix-ui/react-avatar": "^1.0.4",
+    "@radix-ui/react-checkbox": "^1.0.4",
+    "@radix-ui/react-collapsible": "^1.1.13",
+    "@radix-ui/react-dialog": "^1.0.5",
+    "@radix-ui/react-dropdown-menu": "^2.0.6",
+    "@radix-ui/react-label": "^2.0.2",
+    "@radix-ui/react-popover": "^1.0.7",
+    "@radix-ui/react-radio-group": "^1.3.8",
+    "@radix-ui/react-select": "^2.0.0",
+    "@radix-ui/react-separator": "^1.0.3",
+    "@radix-ui/react-slot": "^1.0.2",
+    "@radix-ui/react-switch": "^1.0.3",
+    "@radix-ui/react-tabs": "^1.0.4",
+    "@radix-ui/react-toast": "^1.1.5",
+    "@radix-ui/react-tooltip": "^1.0.7",
+    "@react-three/drei": "^9.122.0",
+    "@react-three/fiber": "^8.18.0",
+    "@sentry/nextjs": "^10.55.0",
+    "@stripe/react-stripe-js": "^6.4.0",
+    "@stripe/stripe-js": "^9.7.0",
+    "@tanstack/react-query": "^5.17.19",
+    "@tanstack/react-table": "^8.11.2",
+    "@tiptap/extension-image": "3.23.6",
+    "@tiptap/extension-link": "3.23.6",
+    "@tiptap/extension-placeholder": "3.23.6",
+    "@tiptap/extension-table": "3.23.6",
+    "@tiptap/extension-table-cell": "3.23.6",
+    "@tiptap/extension-table-header": "3.23.6",
+    "@tiptap/extension-table-row": "3.23.6",
+    "@tiptap/react": "3.23.6",
+    "@tiptap/starter-kit": "3.23.6",
+    "@tldraw/tldraw": "^5.1.1",
+    "@vercel/analytics": "^2.0.1",
+    "@zxcvbn-ts/core": "^4.1.2",
+    "@zxcvbn-ts/language-common": "^4.1.2",
+    "@zxcvbn-ts/language-en": "^4.1.1",
+    "autoprefixer": "^10.4.17",
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.1.0",
+    "cmdk": "^1.0.0",
+    "country-state-city": "^3.2.1",
+    "date-fns": "^3.0.6",
+    "dompurify": "^3.4.11",
+    "driver.js": "^1.4.0",
+    "firebase": "^12.14.0",
+    "framer-motion": "^12.42.2",
+    "gsap": "^3.15.0",
+    "lenis": "^1.3.25",
+    "lucide-react": "^0.323.0",
+    "mammoth": "^1.12.0",
+    "next": "14.2.35",
+    "next-intl": "^3.26.5",
+    "next-themes": "^0.2.1",
+    "pdfjs-dist": "^5.6.205",
+    "postcss": "^8.5.10",
+    "react": "^18.2.0",
+    "react-day-picker": "^8.10.0",
+    "react-dom": "^18.2.0",
+    "react-hook-form": "^7.49.3",
+    "react-markdown": "^10.1.0",
+    "recharts": "^2.10.3",
+    "rehype-sanitize": "^6.0.0",
+    "remark-gfm": "^4.0.1",
+    "socket.io-client": "^4.8.3",
+    "tailwind-merge": "^2.2.0",
+    "tailwindcss-animate": "^1.0.7",
+    "zod": "^3.22.4",
+    "zustand": "^4.4.7"
+  },
+  "overrides": {
+    "@tiptap/extension-bubble-menu": "3.23.6",
+    "@tiptap/extension-floating-menu": "3.23.6",
+    "postcss": "^8.5.10",
+    "yaml": "^2.7.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.60.0",
+    "@tailwindcss/typography": "^0.5.19",
+    "@types/node": "^20.11.5",
+    "@types/react": "^18.2.48",
+    "@types/react-dom": "^18.2.18",
+    "concurrently": "^8.2.2",
+    "cross-env": "^7.0.3",
+    "electron": "^42.4.1",
+    "electron-builder": "^26.15.3",
+    "eslint": "^8.56.0",
+    "eslint-config-next": "14.2.35",
+    "jsdom": "^29.1.1",
+    "tailwindcss": "3.3.0",
+    "tsx": "^4.7.0",
+    "typescript": "^5.3.3",
+    "vitest": "^4.1.9",
+    "wait-on": "^7.2.0"
+  },
+  "build": {
+    "appId": "com.dvtechventures.umbrella",
+    "productName": "Umbrella",
+    "copyright": "Copyright © 2024 DVTech Ventures",
+    "directories": {
+      "buildResources": "build",
+      "output": "dist"
+    },
+    "files": [
+      "out/**/*",
+      "electron/**/*",
+      "package.json",
+      "node_modules/**/*"
+    ],
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64",
+            "ia32"
+          ]
+        },
+        {
+          "target": "portable",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "icon": "build/icon.ico",
+      "publisherName": "DVTech Ventures",
+      "requestedExecutionLevel": "asInvoker"
+    },
+    "mac": {
+      "target": [
+        "dmg",
+        "zip"
+      ],
+      "icon": "build/icon.icns",
+      "category": "public.app-category.business",
+      "hardenedRuntime": true,
+      "gatekeeperAssess": false,
+      "entitlements": "build/entitlements.mac.plist",
+      "entitlementsInherit": "build/entitlements.mac.plist"
+    },
+    "linux": {
+      "target": [
+        "AppImage",
+        "deb",
+        "rpm"
+      ],
+      "icon": "build/icon.png",
+      "category": "Office"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "Umbrella"
+    },
+    "portable": {
+      "artifactName": "${productName}-${version}-portable.${ext}"
+    }
+  }
+}

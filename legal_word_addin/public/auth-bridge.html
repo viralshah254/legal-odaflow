@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Sign in — Umbrella</title>
+    <script
+      type="text/javascript"
+      src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"
+    ></script>
+    <style>
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        background: #f8fafc;
+        color: #64748b;
+        font-size: 13px;
+      }
+      .error { color: #b91c1c; max-width: 16rem; text-align: center; padding: 1rem; }
+    </style>
+  </head>
+  <body>
+    <p id="status">Finishing sign-in…</p>
+    <script type="text/javascript">
+      (function () {
+        var sent = false;
+
+        function parseHandoff() {
+          var params = new URLSearchParams(window.location.search);
+          var accessToken = params.get("accessToken");
+          if (!accessToken) {
+            var hash = window.location.hash.charAt(0) === "#"
+              ? window.location.hash.slice(1)
+              : window.location.hash;
+            if (hash) {
+              params = new URLSearchParams(hash);
+              accessToken = params.get("accessToken");
+            }
+          }
+          if (!accessToken) return null;
+          return {
+            accessToken: accessToken,
+            refreshToken: params.get("refreshToken") || "",
+            userId: params.get("userId") || "",
+            tenantId: params.get("tenantId") || "",
+            displayName: params.get("displayName") || "",
+          };
+        }
+
+        function showError(message) {
+          document.body.innerHTML =
+            '<p class="error">' + message + "</p>";
+        }
+
+        function sendToParent(handoff) {
+          if (sent) return;
+          sent = true;
+          try {
+            Office.context.ui.messageParent(JSON.stringify(handoff));
+          } catch (e) {
+            showError("Could not return to Word. Close this window and try again.");
+          }
+        }
+
+        function boot() {
+          var handoff = parseHandoff();
+          if (!handoff) {
+            showError("Sign-in did not return a token. Close this window and try again.");
+            return;
+          }
+
+          Office.onReady(function () {
+            sendToParent(handoff);
+          });
+        }
+
+        if (typeof Office !== "undefined") {
+          boot();
+        } else {
+          showError("Office is not available in this window.");
+        }
+      })();
+    </script>
+  </body>
+</html>

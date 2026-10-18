@@ -1,6 +1,7 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, OnModuleInit } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
-import { createHmac, randomBytes } from 'crypto';
+import { createHmac, randomBytes, timingSafeEqual } from 'crypto';
+import { assertProductionConfigured } from '@/common/utils/production-guard';
 import {
   CreatePaymentIntentInput,
   PaymentGateway,
@@ -19,10 +20,21 @@ type MpesaStkResponse = {
 };
 
 @Injectable()
-export class MpesaProvider implements PaymentGateway {
+export class MpesaProvider implements PaymentGateway, OnModuleInit {
   readonly providerName = 'mpesa';
 
   constructor(private readonly configService: ConfigService) {}
+
+  onModuleInit() {
+    const mpesaEnabled = !!this.configService.get<string>('MPESA_CONSUMER_KEY', '');
+    if (mpesaEnabled) {
+      assertProductionConfigured(
+        this.configService,
+        ['MPESA_WEBHOOK_SECRET'],
+        'M-Pesa webhooks',
+      );
+    }
+  }
 
   private get baseUrl(): string {
     const env = this.configService.get<string>('MPESA_ENV', 'sandbox');
@@ -110,8 +122,9 @@ export class MpesaProvider implements PaymentGateway {
     };
   }
 
-  verifyWebhookSignature(_payload: string, _signature: string): boolean {
-    return true;
+  verifyWebhookSignature(payload: string, signature: string): boolean {
+    const secret = this.configService.get<string>('MPESA_WEBHOOK_SECRET', '');
+    return mpesaCallbackSignatureValid(payload, secret, signature);
   }
 
   parseCallbackPayload(payload: string): MpesaCallbackBody {
@@ -202,5 +215,10 @@ export function mpesaCallbackSignatureValid(
     return false;
   }
   const expected = createHmac('sha256', secret).update(payload, 'utf8').digest('hex');
-  return expected === signature;
+  const expectedBuffer = Buffer.from(expected, 'hex');
+  const signatureBuffer = Buffer.from(signature, 'hex');
+  return (
+    expectedBuffer.length === signatureBuffer.length &&
+    timingSafeEqual(expectedBuffer, signatureBuffer)
+  );
 }

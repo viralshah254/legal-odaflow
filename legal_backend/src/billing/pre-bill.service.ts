@@ -160,15 +160,41 @@ export class PreBillService {
     return `${header}\n`;
   }
 
-  async buildLedesExport(tenantId: string, matterId?: string) {
+  async buildLedesExport(tenantId: string, matterId?: string, sessionId?: string) {
     const review = await this.getPreBillReview(tenantId, matterId);
+    const { adjustmentMap, sessionWriteDownPercent } = await this.loadLineAdjustments(
+      tenantId,
+      matterId,
+      sessionId,
+    );
     const invoiceDate = new Date().toISOString().slice(0, 10);
     const invoiceNumber = `PREBILL-${Date.now()}`;
 
     const rows = review.lines
       .filter((line) => line.billable)
-      .map((line, index) =>
-        [
+      .map((line, index) => {
+        const adjustment = adjustmentMap.get(line.id);
+        let hours = line.hours;
+        let amount = line.amount;
+
+        if (adjustment?.adjustedMinutes != null) {
+          hours = adjustment.adjustedMinutes / 60;
+          amount = hours * line.rate;
+        }
+
+        const writeDownPercent =
+          adjustment?.writeDownPercent != null
+            ? Number(adjustment.writeDownPercent.toString())
+            : sessionWriteDownPercent;
+
+        if (writeDownPercent > 0) {
+          amount = amount * (1 - writeDownPercent / 100);
+        }
+
+        hours = Math.round(hours * 100) / 100;
+        amount = Math.round(amount * 100) / 100;
+
+        return [
           invoiceDate,
           invoiceNumber,
           '',
@@ -177,12 +203,12 @@ export class PreBillService {
           line.date.slice(0, 10),
           line.userId,
           'F',
-          line.hours.toFixed(2),
+          hours.toFixed(2),
           line.rate.toFixed(2),
-          line.amount.toFixed(2),
+          amount.toFixed(2),
           `"${(line.narrative ?? '').replace(/"/g, '""')}"`,
-        ].join(','),
-      );
+        ].join(',');
+      });
 
     const csv = `${this.generateLedesCsv(tenantId, matterId)}${rows.join('\n')}`;
 
@@ -192,5 +218,39 @@ export class PreBillService {
       rowCount: rows.length,
       csv,
     };
+  }
+
+  private async loadLineAdjustments(
+    tenantId: string,
+    matterId?: string,
+    sessionId?: string,
+  ) {
+    const session = sessionId
+      ? await this.prisma.preBillSession.findFirst({
+          where: { id: sessionId, tenantId },
+          include: { adjustments: true },
+        })
+      : await this.prisma.preBillSession.findFirst({
+          where: {
+            tenantId,
+            matterId: matterId || undefined,
+            status: { in: ['DRAFT', 'FINALIZED'] },
+          },
+          orderBy: { updatedAt: 'desc' },
+          include: { adjustments: true },
+        });
+
+    const adjustmentMap = new Map(
+      (session?.adjustments ?? []).map((adjustment) => [
+        adjustment.timeEntryId,
+        adjustment,
+      ]),
+    );
+
+    const sessionWriteDownPercent = session?.writeDownPercent
+      ? Number(session.writeDownPercent.toString())
+      : 0;
+
+    return { adjustmentMap, sessionWriteDownPercent };
   }
 }

@@ -1,4 +1,4 @@
-import { IsIn, IsOptional, IsString, MinLength } from 'class-validator';
+import { IsIn, IsOptional, IsString, MinLength, ValidateIf } from 'class-validator';
 import { SUPPORTED_COUNTRY_CODES } from '@/config/countries';
 import { USER_TYPES } from '../constants';
 
@@ -27,4 +27,18 @@ export class FirebaseLoginDto {
   @IsString()
   @MinLength(2)
   firmName?: string;
+
+  @IsOptional()
+  @IsString()
+  referralCode?: string;
+
+  @IsOptional()
+  @IsString()
+  deviceFingerprint?: string;
+
+  /** Required when completing OAuth sign-up (userType + countryCode present). */
+  @ValidateIf((dto: FirebaseLoginDto) => Boolean(dto.userType && dto.countryCode))
+  @IsString()
+  @MinLength(8)
+  phone?: string;
 }

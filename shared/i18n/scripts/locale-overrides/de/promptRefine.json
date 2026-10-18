@@ -1,0 +1,19 @@
+{
+  "continueRefined": "Fahren Sie mit der verfeinerten Eingabeaufforderung fort",
+  "title": "Verfeinerte Eingabeaufforderung",
+  "description": "Wir haben Ihre Beschreibung für klarere KI-Ergebnisse neu organisiert. Bei Bedarf bearbeiten und dann fortfahren.",
+  "yourOriginal": "Ihre ursprüngliche Aufforderung",
+  "refinedLabel": "Verfeinerte Eingabeaufforderung",
+  "useOriginal": "Verwenden Sie stattdessen das Original",
+  "hintJurisdiction": "Zuständigkeit",
+  "hintDocument": "Dokumentieren",
+  "hintStatute": "Satzung",
+  "preparing": "Bereiten Sie Ihre Eingabeaufforderung vor ...",
+  "startingDrafting": "Beginn des Entwurfs in {seconds}s…",
+  "startingResearch": "Beginn der Forschung in {seconds}s…",
+  "undo": "Rückgängig machen",
+  "autoFilledTitle": "Prompt verfeinert",
+  "autoFilledDescription": "Weiter in {seconds}s – machen Sie den Vorgang rückgängig, um Ihr Original beizubehalten.",
+  "autoFillCountdownAria": "Es verbleiben noch {seconds} Sekunden zum Rückgängigmachen",
+  "autoFillHint": "Mit „Rückgängig“ wird Ihre ursprüngliche Eingabeaufforderung wiederhergestellt"
+}

@@ -11,6 +11,7 @@ export interface CountryConfig {
   consumerFreePreviews: number;
   supportedJurisdictions: string[];
   legalDisclaimerLocale: string;
+  supportedUiLocales: string[];
 }
 
 export const COUNTRY_CONFIGS: Record<string, CountryConfig> = {
@@ -22,8 +23,8 @@ export const COUNTRY_CONFIGS: Record<string, CountryConfig> = {
     defaultLocale: 'en-IN',
     dataRegion: 'ap-south-1',
     timezone: 'Asia/Kolkata',
-    paymentProviders: ['razorpay', 'stripe'],
-    defaultPaymentProvider: 'razorpay',
+    paymentProviders: ['stripe'],
+    defaultPaymentProvider: 'stripe',
     consumerFreePreviews: 3,
     supportedJurisdictions: [
       'Delhi',
@@ -34,6 +35,7 @@ export const COUNTRY_CONFIGS: Record<string, CountryConfig> = {
       'Gujarat',
     ],
     legalDisclaimerLocale: 'en-IN',
+    supportedUiLocales: ['en', 'hi', 'bn', 'te', 'mr', 'ta', 'gu', 'kn', 'ml', 'ur', 'pa', 'or', 'as'],
   },
   US: {
     code: 'US',
@@ -56,6 +58,7 @@ export const COUNTRY_CONFIGS: Record<string, CountryConfig> = {
       'Federal',
     ],
     legalDisclaimerLocale: 'en-US',
+    supportedUiLocales: ['en', 'fr', 'de'],
   },
   KE: {
     code: 'KE',
@@ -76,6 +79,7 @@ export const COUNTRY_CONFIGS: Record<string, CountryConfig> = {
       'Eldoret',
     ],
     legalDisclaimerLocale: 'en-KE',
+    supportedUiLocales: ['en', 'fr', 'de'],
   },
   GB: {
     code: 'GB',
@@ -90,6 +94,7 @@ export const COUNTRY_CONFIGS: Record<string, CountryConfig> = {
     consumerFreePreviews: 3,
     supportedJurisdictions: ['England & Wales', 'Scotland', 'Northern Ireland'],
     legalDisclaimerLocale: 'en-GB',
+    supportedUiLocales: ['en', 'fr', 'de'],
   },
 };
 
@@ -108,4 +113,20 @@ export function resolveCountryConfig(countryCode?: string | null): CountryConfig
     return COUNTRY_CONFIGS[countryCode.toUpperCase()];
   }
   return COUNTRY_CONFIGS.US;
+}
+
+/** Returns the config for supported countries, or a best-effort fallback config for unsupported ones. */
+export function resolveCountryConfigBestEffort(countryCode?: string | null): CountryConfig & { isTier1: boolean } {
+  const upper = countryCode?.toUpperCase();
+  if (upper && COUNTRY_CONFIGS[upper]) {
+    return { ...COUNTRY_CONFIGS[upper], isTier1: true };
+  }
+  // Best-effort: use US as the analysis template but keep the user's country code
+  const fallback: CountryConfig & { isTier1: boolean } = {
+    ...COUNTRY_CONFIGS.US,
+    code: upper ?? 'US',
+    name: upper ?? 'Unknown',
+    isTier1: false,
+  };
+  return fallback;
 }

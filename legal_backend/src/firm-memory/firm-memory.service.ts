@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, Logger } from '@nestjs/common';
 import { MatterAccessService } from '@/access/matter-access.service';
 import { EmbeddingService } from '@/embeddings/embedding.service';
 import { PrismaService } from '@/prisma/prisma.service';
@@ -22,6 +22,8 @@ export interface FirmMemorySearchHit {
 
 @Injectable()
 export class FirmMemoryService {
+  private readonly logger = new Logger(FirmMemoryService.name);
+
   constructor(
     private readonly prisma: PrismaService,
     private readonly matterAccess: MatterAccessService,
@@ -40,6 +42,23 @@ export class FirmMemoryService {
       return { query: normalized, hits: [] };
     }
 
+    try {
+      return await this.searchInternal(tenantId, userId, role, normalized, limit);
+    } catch (err) {
+      this.logger.warn(
+        `Firm memory search failed (non-critical): ${err instanceof Error ? err.message : String(err)}`,
+      );
+      return { query: normalized, hits: [] };
+    }
+  }
+
+  private async searchInternal(
+    tenantId: string,
+    userId: string,
+    role: string | undefined,
+    normalized: string,
+    limit: number,
+  ): Promise<{ query: string; hits: FirmMemorySearchHit[] }> {
     const accessibleMatterIds = await this.matterAccess.getAccessibleMatterIds(
       tenantId,
       userId,
@@ -79,6 +98,13 @@ export class FirmMemoryService {
       }
 
       if (
+        resolved.matterId &&
+        (await this.isBlockedByEthicalWall(tenantId, userId, resolved.matterId))
+      ) {
+        continue;
+      }
+
+      if (
         accessibleMatterIds !== null &&
         !resolved.matterId &&
         !MATTER_ARTIFACT_SOURCE_TYPES.includes(
@@ -107,6 +133,130 @@ export class FirmMemoryService {
       query: normalized,
       hits: enriched.sort((a, b) => b.score - a.score),
     };
+  }
+
+  private async isBlockedByEthicalWall(
+    tenantId: string,
+    userId: string,
+    matterId: string,
+  ): Promise<boolean> {
+    const walls = await this.prisma.ethicalWallGroup.findMany({
+      where: { tenantId, isActive: true },
+    });
+
+    for (const wall of walls) {
+      const matterIds = (wall.matterIds as string[]) ?? [];
+      const userIds = (wall.userIds as string[]) ?? [];
+      if (matterIds.includes(matterId) && userIds.includes(userId)) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  /**
+   * Write-path: embed and store approved work product into the firm memory index.
+   * Future searches will retrieve this content when relevant to new matters.
+   */
+  async ingest(
+    tenantId: string,
+    _userId: string,
+    payload: {
+      sourceType: string;
+      sourceId: string;
+      matterId?: string;
+      title?: string;
+      content: string;
+      practiceArea?: string;
+      jurisdiction?: string;
+      tags?: string[];
+    },
+  ): Promise<{ ingested: boolean; chunkCount: number }> {
+    try {
+      const rawChunks = this.chunkContent(payload.content);
+      const modelName = this.embeddingService.getEmbeddingModel();
+      const chunks = rawChunks.map((content, i) => ({
+        sourceType: payload.sourceType,
+        sourceId: payload.sourceId,
+        chunkIndex: i,
+        content,
+        jurisdiction: payload.jurisdiction,
+        modelName,
+        metadata: {
+          tenantId,
+          matterId: payload.matterId ?? null,
+          title: payload.title ?? null,
+          practiceArea: payload.practiceArea ?? null,
+          tags: payload.tags ?? [],
+        },
+      }));
+      const result = await this.embeddingService.storeChunks(chunks);
+      return { ingested: true, chunkCount: result.stored };
+    } catch (err) {
+      this.logger.warn(`Firm memory ingest failed for ${payload.sourceId}: ${String(err)}`);
+      return { ingested: false, chunkCount: 0 };
+    }
+  }
+
+  /**
+   * Compare a draft clause against firm precedents from memory + synthesize market position.
+   * Returns firm precedent hits + a brief market-position summary.
+   */
+  async compareClause(
+    tenantId: string,
+    userId: string,
+    role: string | undefined,
+    payload: {
+      clauseText: string;
+      clauseKind?: string;
+      practiceArea?: string;
+      jurisdiction?: string;
+    },
+  ): Promise<{
+    firmPrecedents: FirmMemorySearchHit[];
+    clauseKind: string | null;
+    marketPosition: string;
+    redFlags: string[];
+  }> {
+    const query = `${payload.clauseKind ?? ''} ${payload.clauseText.slice(0, 300)}`.trim();
+    const { hits } = await this.search(tenantId, userId, role, query, 5);
+
+    // Build a simple market position note from what we found
+    const hasPrecedents = hits.length > 0;
+    const marketPosition = hasPrecedents
+      ? `Found ${hits.length} similar clause(s) in firm precedents. Review and compare positions below.`
+      : 'No firm precedents found for this clause type. Consider checking market standards for this jurisdiction.';
+
+    const redFlags: string[] = [];
+    const lower = payload.clauseText.toLowerCase();
+    if (lower.includes('unlimited liability')) redFlags.push('Unlimited liability exposure detected');
+    if (lower.includes('perpetual')) redFlags.push('Perpetual obligation — consider sunset clause');
+    if (lower.includes('sole discretion')) redFlags.push('Sole discretion language — often non-negotiable, flag for review');
+    if (lower.includes('indemnif') && !lower.includes('mutual')) redFlags.push('One-sided indemnification — check for mutual indemnity');
+
+    return {
+      firmPrecedents: hits,
+      clauseKind: payload.clauseKind ?? null,
+      marketPosition,
+      redFlags,
+    };
+  }
+
+  /** Split content into ~512-token chunks for embedding. */
+  private chunkContent(content: string, maxChunkLen = 1800): string[] {
+    const chunks: string[] = [];
+    const paragraphs = content.split(/\n{2,}/);
+    let current = '';
+    for (const para of paragraphs) {
+      if ((current + '\n\n' + para).length > maxChunkLen && current) {
+        chunks.push(current.trim());
+        current = para;
+      } else {
+        current = current ? current + '\n\n' + para : para;
+      }
+    }
+    if (current.trim()) chunks.push(current.trim());
+    return chunks.length ? chunks : [content.slice(0, maxChunkLen)];
   }
 
   private async resolveArtifact(

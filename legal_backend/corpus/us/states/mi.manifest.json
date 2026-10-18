@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "stateCode": "MI",
+  "stateName": "Michigan",
+  "acts": [
+    {
+      "actId": "mi-penal-code",
+      "title": "Michigan penal code",
+      "sourceAuthority": "cornell-lii",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.law.cornell.edu/states/mi",
+      "externalId": "mi-penal_code",
+      "notes": "Michigan state law via Cornell LII state index"
+    },
+    {
+      "actId": "mi-business-corporations",
+      "title": "Michigan business corporations",
+      "sourceAuthority": "cornell-lii",
+      "sourceTier": "mirror",
+      "primaryPdfUrl": "https://www.law.cornell.edu/states/mi",
+      "externalId": "mi-business_corporations",
+      "notes": "Michigan state law via Cornell LII state index"
+    }
+  ]
+}

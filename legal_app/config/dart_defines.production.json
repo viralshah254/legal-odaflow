@@ -1,0 +1,17 @@
+{
+  "API_URL": "https://legal-api.odaflow.com/api/v1",
+  "WEB_URL": "https://umbrella.okaylegal.ai",
+  "APP_ENV": "development",
+  "DEFAULT_COUNTRY": "IN",
+  "GOOGLE_WEB_CLIENT_ID": "1034275934580-rm58bb4bj2csrpasbmngbfqd1ndqv96q.apps.googleusercontent.com",
+  "GOOGLE_IOS_CLIENT_ID": "1034275934580-2sn8vugf9vum4js1n7ma0s796mihfmju.apps.googleusercontent.com",
+  "ENABLE_CONSUMER_APP": "true",
+  "ENABLE_LAWYER_MODE": "true",
+  "ENABLE_LAWYER_APP": "true",
+  "ENABLE_DOCUMENT_UPLOAD": "true",
+  "ENABLE_LAWYER_REVIEW": "false",
+  "ENABLE_SUBSCRIPTIONS": "true",
+  "ENABLE_IN_APP_PURCHASING": "false",
+  "ENABLE_PUSH_NOTIFICATIONS": "true",
+  "SENTRY_DSN": ""
+}

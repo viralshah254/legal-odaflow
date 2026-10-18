@@ -8,8 +8,12 @@ export type CacheNamespace =
   | 'ai:explainer'
   | 'ai:playbook'
   | 'legal:search'
+  | 'legal:retrieval'
+  | 'authority-thread'
   | 'embed:chunk'
-  | 'issue-checker:session';
+  | 'issue-checker:session'
+  | 'legal-research:session'
+  | 'issue-checker:abuse';
 
 @Injectable()
 export class CacheService implements OnModuleDestroy {
@@ -63,6 +67,37 @@ export class CacheService implements OnModuleDestroy {
       await this.getClient().del(key);
     } catch {
       // ignore
+    }
+  }
+
+  async increment(key: string, ttlSeconds: number): Promise<number> {
+    try {
+      const client = this.getClient();
+      const count = await client.incr(key);
+      if (count === 1) {
+        await client.expire(key, ttlSeconds);
+      }
+      return count;
+    } catch {
+      return Number.MAX_SAFE_INTEGER;
+    }
+  }
+
+  async delByPattern(pattern: string): Promise<number> {
+    try {
+      const client = this.getClient();
+      let cursor = '0';
+      let deleted = 0;
+      do {
+        const [nextCursor, keys] = await client.scan(cursor, 'MATCH', pattern, 'COUNT', 100);
+        cursor = nextCursor;
+        if (keys.length > 0) {
+          deleted += await client.del(...keys);
+        }
+      } while (cursor !== '0');
+      return deleted;
+    } catch {
+      return 0;
     }
   }
 

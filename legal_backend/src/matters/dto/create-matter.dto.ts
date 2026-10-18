@@ -2,9 +2,13 @@ import { IsIn, IsNumber, IsOptional, IsString, MinLength } from 'class-validator
 import { SUPPORTED_COUNTRY_CODES } from '@/config/countries';
 
 export class CreateMatterDto {
+  @IsString()
+  @MinLength(1)
+  clientId!: string;
+
   @IsOptional()
   @IsString()
-  clientId?: string;
+  leadAttorneyId?: string;
 
   @IsString()
   @MinLength(2)

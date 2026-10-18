@@ -1,0 +1,126 @@
+{
+  "version": 1,
+  "baseUrl": "https://yourlordships.in/images/LLC/LawMore/yourlordships/img/pdf/bare-acts/",
+  "catalogPage": "https://yourlordships.in/bare-acts/",
+  "lastVerified": "2026-06-10",
+  "mirrors": [
+    {
+      "actId": "bnss",
+      "pdfFile": "bharatiya-nagarik-suraksha-sanhita-2023.pdf",
+      "validateAgainst": "prsindia",
+      "constitutionPrimary": false
+    },
+    {
+      "actId": "bns",
+      "pdfFile": "the-bharatiya-nyaya-sanhita-2023.pdf",
+      "validateAgainst": "ncrb",
+      "constitutionPrimary": false
+    },
+    {
+      "actId": "bsa",
+      "pdfFile": "the-bharatiya-sakshya-adhiniyam-2023.pdf",
+      "validateAgainst": "prsindia",
+      "constitutionPrimary": false
+    },
+    {
+      "actId": "constitution",
+      "pdfFile": "constitution-of-india.pdf",
+      "validateAgainst": "legislative-department",
+      "constitutionPrimary": false,
+      "note": "Outdated Dec 2023 upload — never use as primary; prefer COI_2024"
+    },
+    {
+      "actId": "ipc",
+      "pdfFile": "ipc-bare-act.pdf",
+      "validateAgainst": "india-code"
+    },
+    {
+      "actId": "crpc",
+      "pdfFile": "crpc-bare-act-1973.pdf",
+      "validateAgainst": "india-code"
+    },
+    {
+      "actId": "iea",
+      "pdfFile": "evidence-act.pdf",
+      "validateAgainst": "india-code"
+    },
+    {
+      "actId": "cpc",
+      "pdfFile": "cpc-bare-act.pdf",
+      "validateAgainst": "india-code"
+    },
+    {
+      "actId": "contract-act",
+      "pdfFile": "contract-act.pdf",
+      "validateAgainst": "india-code"
+    },
+    {
+      "actId": "contract-act-1872",
+      "pdfFile": "contract-act.pdf",
+      "validateAgainst": "india-code",
+      "note": "Canonical actId used in sources.manifest.json; same PDF as contract-act entry"
+    },
+    {
+      "actId": "transfer-of-property",
+      "pdfFile": "tpa.pdf",
+      "validateAgainst": "india-code"
+    },
+    {
+      "actId": "transfer-of-property-act-1882",
+      "pdfFile": "tpa.pdf",
+      "validateAgainst": "india-code",
+      "note": "Canonical manifest actId; same PDF as transfer-of-property"
+    },
+    {
+      "actId": "sale-of-goods",
+      "pdfFile": "sale-of-goods-act.pdf",
+      "validateAgainst": "india-code"
+    },
+    {
+      "actId": "sale-of-goods-act-1930",
+      "pdfFile": "sale-of-goods-act.pdf",
+      "validateAgainst": "india-code",
+      "note": "Canonical manifest actId; same PDF as sale-of-goods"
+    },
+    {
+      "actId": "limitation-act",
+      "pdfFile": "limitation-act.pdf",
+      "validateAgainst": "india-code"
+    },
+    {
+      "actId": "negotiable-instruments",
+      "pdfFile": "negotiable-instruments-act-1881.pdf",
+      "validateAgainst": "india-code"
+    },
+    {
+      "actId": "hindu-marriage",
+      "pdfFile": "hindu-marriage-act.pdf",
+      "validateAgainst": "india-code"
+    },
+    {
+      "actId": "hindu-adoption",
+      "pdfFile": "hindu-adoption-and-maintenance-act.pdf",
+      "validateAgainst": "india-code"
+    },
+    {
+      "actId": "hindu-succession",
+      "pdfFile": "the-hindu-succession-act1956.pdf",
+      "validateAgainst": "india-code"
+    },
+    {
+      "actId": "muslim-dissolution",
+      "pdfFile": "dissolution-of-muslim-marriage-act.pdf",
+      "validateAgainst": "india-code"
+    },
+    {
+      "actId": "muslim-marriages-registration",
+      "pdfFile": "muslim-marriages-registration-act-1981.pdf",
+      "validateAgainst": "india-code"
+    },
+    {
+      "actId": "muslim-women-divorce",
+      "pdfFile": "muslim-women-protection-of-rights-on-divorce-act-1986.pdf",
+      "validateAgainst": "india-code"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+node_modules
+dist
+corpus
+.git
+.github
+.env
+.env.*
+deployment/node_modules
+deployment/.env
+docker-swarm/*.log
+umbrella-*-firebase-adminsdk-*.json
+firebase-service-account.json
+test
+coverage
+*.md
+!README.md

@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "stateCode": "OK",
+  "stateName": "Oklahoma",
+  "acts": [
+    {
+      "actId": "ok-code",
+      "title": "Oklahoma code",
+      "sourceAuthority": "cornell-lii",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.law.cornell.edu/states/ok",
+      "externalId": "ok-code",
+      "notes": "Oklahoma state law via Cornell LII state index"
+    },
+    {
+      "actId": "ok-statutes",
+      "title": "Oklahoma statutes",
+      "sourceAuthority": "cornell-lii",
+      "sourceTier": "mirror",
+      "primaryPdfUrl": "https://www.law.cornell.edu/states/ok",
+      "externalId": "ok-statutes",
+      "notes": "Oklahoma state law via Cornell LII state index"
+    }
+  ]
+}

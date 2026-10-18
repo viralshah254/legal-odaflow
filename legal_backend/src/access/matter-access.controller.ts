@@ -4,6 +4,7 @@ import {
   Delete,
   Get,
   Param,
+  Patch,
   Post,
   UseGuards,
 } from '@nestjs/common';
@@ -11,7 +12,10 @@ import { CurrentUser } from '@/common/decorators/current-user.decorator';
 import { TenantId } from '@/common/decorators/tenant-id.decorator';
 import { TenantGuard } from '@/common/guards/tenant.guard';
 import { RequestUser } from '@/common/types/request-user.interface';
-import { GrantMatterAccessDto } from './dto/matter-access.dto';
+import {
+  GrantMatterAccessDto,
+  UpdateMatterAccessDto,
+} from './dto/matter-access.dto';
 import { MatterAccessManagementService } from './matter-access-management.service';
 
 @Controller('matters/:matterId/access')
@@ -20,6 +24,20 @@ export class MatterAccessController {
   constructor(
     private readonly matterAccessManagement: MatterAccessManagementService,
   ) {}
+
+  @Get('me')
+  getMyAccess(
+    @TenantId() tenantId: string,
+    @Param('matterId') matterId: string,
+    @CurrentUser() user: RequestUser,
+  ) {
+    return this.matterAccessManagement.getMyAccess(
+      tenantId,
+      matterId,
+      user.id,
+      user.tenantRole,
+    );
+  }
 
   @Get()
   listAccess(
@@ -58,6 +76,24 @@ export class MatterAccessController {
       userId,
       user.id,
       user.tenantRole,
+    );
+  }
+
+  @Patch(':userId')
+  updateAccess(
+    @TenantId() tenantId: string,
+    @Param('matterId') matterId: string,
+    @Param('userId') userId: string,
+    @CurrentUser() user: RequestUser,
+    @Body() dto: UpdateMatterAccessDto,
+  ) {
+    return this.matterAccessManagement.updateAccess(
+      tenantId,
+      matterId,
+      userId,
+      user.id,
+      user.tenantRole,
+      dto,
     );
   }
 }

@@ -1,0 +1,135 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`API contract — matter intelligence matches full classification result snapshot 1`] = `
+{
+  "clarifyingQuestions": [],
+  "graph": {
+    "claims": [
+      {
+        "summary": "Wrongful termination without domestic inquiry",
+      },
+    ],
+    "defences": [],
+    "documents": [
+      {
+        "title": "Termination letter",
+      },
+    ],
+    "evidence": [
+      {
+        "description": "Termination letter dated 15 Jan 2025",
+      },
+    ],
+    "parties": [
+      {
+        "name": "Arjun Patel",
+        "role": "employee",
+        "side": "claimant",
+      },
+    ],
+    "precedents": [],
+    "statutes": [
+      {
+        "act": "Industrial Disputes Act",
+        "section": "25F",
+      },
+    ],
+    "timeline": [
+      {
+        "date": "2025-01-15",
+        "description": "Termination issued",
+      },
+    ],
+  },
+  "profile": {
+    "confidence": 0.88,
+    "country": "IN",
+    "curatedKinds": [
+      "india_wrongful_termination",
+    ],
+    "documentKind": "wrongful_termination_petition",
+    "documentTypes": [
+      "labour_court_petition",
+    ],
+    "fieldConfidence": {
+      "forum": 0.7,
+      "nature": 0.8,
+      "practiceArea": 0.9,
+      "subPracticeArea": 0.85,
+    },
+    "forum": "labour_court",
+    "issues": [
+      "Illegal termination without inquiry",
+    ],
+    "nature": "dispute",
+    "practiceArea": "employment_labour",
+    "remedies": [
+      "reinstatement",
+      "back_wages",
+    ],
+    "subPracticeArea": "wrongful_termination",
+  },
+  "recommendationMode": "matched",
+  "shouldProceed": true,
+  "taskGraph": {
+    "deadlines": [
+      {
+        "description": "Check ID Act timeline",
+        "label": "Limitation",
+      },
+    ],
+    "missingDocuments": [
+      "Domestic inquiry report",
+    ],
+    "nextBestAction": "Send legal notice",
+    "recommendedActions": [
+      "Send legal notice",
+      "File labour court petition",
+    ],
+    "requiredDocuments": [
+      "Termination letter",
+      "Salary slips",
+    ],
+  },
+}
+`;
+
+exports[`API contract — matter intelligence matches stable MatterGraph field set 1`] = `
+[
+  "claims",
+  "defences",
+  "documents",
+  "evidence",
+  "parties",
+  "precedents",
+  "statutes",
+  "timeline",
+]
+`;
+
+exports[`API contract — matter intelligence matches stable MatterProfile field set 1`] = `
+[
+  "confidence",
+  "country",
+  "curatedKinds",
+  "documentKind",
+  "documentTypes",
+  "fieldConfidence",
+  "forum",
+  "issues",
+  "nature",
+  "practiceArea",
+  "remedies",
+  "subPracticeArea",
+]
+`;
+
+exports[`API contract — matter intelligence matches stable MatterTaskGraph field set 1`] = `
+[
+  "deadlines",
+  "missingDocuments",
+  "nextBestAction",
+  "recommendedActions",
+  "requiredDocuments",
+]
+`;

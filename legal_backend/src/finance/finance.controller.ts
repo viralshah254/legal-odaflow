@@ -8,7 +8,9 @@ import {
   Query,
   UseGuards,
 } from '@nestjs/common';
+import { TenantPermission } from '@/common/decorators/tenant-permission.decorator';
 import { TenantId } from '@/common/decorators/tenant-id.decorator';
+import { TenantPermissionGuard } from '@/common/guards/tenant-permission.guard';
 import { TenantGuard } from '@/common/guards/tenant.guard';
 import {
   CreateClaimDto,
@@ -23,9 +25,15 @@ import {
 import { FinanceService } from './finance.service';
 
 @Controller('finance')
-@UseGuards(TenantGuard)
+@UseGuards(TenantGuard, TenantPermissionGuard)
+@TenantPermission('canViewFinance')
 export class FinanceController {
   constructor(private readonly financeService: FinanceService) {}
+
+  @Get('dashboard')
+  getDashboard(@TenantId() tenantId: string) {
+    return this.financeService.getDashboard(tenantId);
+  }
 
   @Get('invoices')
   findInvoices(@TenantId() tenantId: string, @Query('status') status?: string) {
@@ -68,6 +76,11 @@ export class FinanceController {
     @Body() dto: UpdatePaymentReconciliationDto,
   ) {
     return this.financeService.setPaymentReconciled(tenantId, paymentId, dto.reconciled);
+  }
+
+  @Get('dunning/status')
+  getDunningStatus(@TenantId() tenantId: string) {
+    return this.financeService.getDunningStatus(tenantId);
   }
 
   @Get('pl')

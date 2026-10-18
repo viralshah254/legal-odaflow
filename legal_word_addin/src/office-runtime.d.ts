@@ -1,0 +1,8 @@
+/** Office add-in runtime storage (available in task pane). */
+declare const OfficeRuntime: {
+  storage: {
+    getItem(key: string): Promise<string | null>;
+    setItem(key: string, value: string): Promise<void>;
+    removeItem(key: string): Promise<void>;
+  };
+};

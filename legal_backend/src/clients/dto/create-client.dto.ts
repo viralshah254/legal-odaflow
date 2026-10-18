@@ -1,5 +1,24 @@
-import { IsEmail, IsIn, IsOptional, IsString, MinLength } from 'class-validator';
+import { IsArray, IsEmail, IsIn, IsOptional, IsString, MinLength, ValidateNested } from 'class-validator';
+import { Type } from 'class-transformer';
 import { SUPPORTED_COUNTRY_CODES } from '@/config/countries';
+
+export class ContactPersonDto {
+  @IsString()
+  @MinLength(1)
+  name!: string;
+
+  @IsOptional()
+  @IsString()
+  role?: string;
+
+  @IsOptional()
+  @IsEmail()
+  email?: string;
+
+  @IsOptional()
+  @IsString()
+  phone?: string;
+}
 
 export class CreateClientDto {
   @IsString()
@@ -15,11 +34,21 @@ export class CreateClientDto {
   phone?: string;
 
   @IsOptional()
+  @IsString()
+  address?: string;
+
+  @IsOptional()
   @IsIn(['INDIVIDUAL', 'COMPANY', 'NGO', 'PARTNERSHIP'])
   type?: string;
 
   @IsOptional()
   @IsIn(SUPPORTED_COUNTRY_CODES)
   countryCode?: string;
+
+  @IsOptional()
+  @IsArray()
+  @ValidateNested({ each: true })
+  @Type(() => ContactPersonDto)
+  contactPeople?: ContactPersonDto[];
 }
 

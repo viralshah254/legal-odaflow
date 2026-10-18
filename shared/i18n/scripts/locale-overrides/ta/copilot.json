@@ -150,5 +150,10 @@
   "tasksDue": "{count, plural, one {# task due} other {# tasks due}}",
   "calendarEvents": "{count, plural, one {# event} other {# events}}",
   "overdueInvoices": "{count, plural, one {# overdue invoice} other {# overdue invoices}}",
-  "pendingApprovals": "{count, plural, one {# pending approval} other {# pending approvals}}"
+  "pendingApprovals": "{count, plural, one {# pending approval} other {# pending approvals}}",
+  "agentPickerDefault": "ஜெனரல் கோபிலட்",
+  "draftPromptLabel": "நீங்கள் கேட்டீர்கள்",
+  "draftOutputLabel": "வெளியீடு",
+  "draftUntitled": "பெயரிடப்படாத வரைவு",
+  "sessionUntitled": "அரட்டை அமர்வு"
 }

@@ -35,6 +35,17 @@ export class CalendarController {
     return this.calendarService.findAll(tenantId, matterId, from, to);
   }
 
+  // Alias so both /calendar and /calendar/events resolve correctly
+  @Get('events')
+  findAllAlias(
+    @TenantId() tenantId: string,
+    @Query('matterId') matterId?: string,
+    @Query('from') from?: string,
+    @Query('to') to?: string,
+  ) {
+    return this.calendarService.findAll(tenantId, matterId, from, to);
+  }
+
   @Get(':eventId')
   findOne(@TenantId() tenantId: string, @Param('eventId') eventId: string) {
     return this.calendarService.findOne(tenantId, eventId);

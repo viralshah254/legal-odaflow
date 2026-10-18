@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "stateCode": "DE",
+  "stateName": "Delaware",
+  "acts": [
+    {
+      "actId": "de-code",
+      "title": "Delaware code",
+      "sourceAuthority": "cornell-lii",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.law.cornell.edu/states/de",
+      "externalId": "de-code",
+      "notes": "Delaware state law via Cornell LII state index"
+    },
+    {
+      "actId": "de-statutes",
+      "title": "Delaware statutes",
+      "sourceAuthority": "cornell-lii",
+      "sourceTier": "mirror",
+      "primaryPdfUrl": "https://www.law.cornell.edu/states/de",
+      "externalId": "de-statutes",
+      "notes": "Delaware state law via Cornell LII state index"
+    }
+  ]
+}

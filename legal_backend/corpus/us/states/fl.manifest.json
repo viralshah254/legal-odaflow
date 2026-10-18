@@ -1,0 +1,21 @@
+{
+  "version": 1,
+  "stateCode": "FL",
+  "stateName": "Florida",
+  "acts": [
+    { "actId": "fl-statutes-title-xlvi", "title": "Florida Statutes Title XLVI — Crimes", "sourceAuthority": "state-portal", "sourceTier": "primary", "primaryPdfUrl": "https://codes.findlaw.com/fl/statutes/title-xlvi/", "externalId": "fl-statutes_title_xlvi" },
+    { "actId": "fl-business-organizations", "title": "Florida Business Organizations", "sourceAuthority": "state-portal", "sourceTier": "mirror", "primaryPdfUrl": "https://codes.findlaw.com/fl/business-corporation-act/", "externalId": "fl-business_organizations" },
+    { "actId": "fl-civil-code", "title": "Florida Civil Practice and Procedure", "sourceAuthority": "state-portal", "sourceTier": "mirror", "primaryPdfUrl": "https://codes.findlaw.com/fl/civil-practice-and-procedure/", "externalId": "fl-civil_code" },
+    { "actId": "fl-evidence-code", "title": "Florida Evidence Code", "sourceAuthority": "state-portal", "sourceTier": "mirror", "primaryPdfUrl": "https://codes.findlaw.com/fl/evidence-code/", "externalId": "fl-evidence_code" },
+    { "actId": "fl-family-code", "title": "Florida Family Code provisions", "sourceAuthority": "state-portal", "sourceTier": "mirror", "primaryPdfUrl": "https://codes.findlaw.com/fl/domestic-relations/", "externalId": "fl-family_code" },
+    { "actId": "fl-probate-code", "title": "Florida Probate Code", "sourceAuthority": "state-portal", "sourceTier": "mirror", "primaryPdfUrl": "https://codes.findlaw.com/fl/probate-code/", "externalId": "fl-probate_code" },
+    { "actId": "fl-corporations-code", "title": "Florida Business Corporation Act", "sourceAuthority": "state-portal", "sourceTier": "mirror", "primaryPdfUrl": "https://codes.findlaw.com/fl/business-corporation-act/", "externalId": "fl-corporations_code" },
+    { "actId": "fl-labor-code", "title": "Florida Labor Code", "sourceAuthority": "state-portal", "sourceTier": "mirror", "primaryPdfUrl": "https://codes.findlaw.com/fl/labor/", "externalId": "fl-labor_code" },
+    { "actId": "fl-insurance-code", "title": "Florida Insurance Code", "sourceAuthority": "state-portal", "sourceTier": "mirror", "primaryPdfUrl": "https://codes.findlaw.com/fl/insurance-code/", "externalId": "fl-insurance_code" },
+    { "actId": "fl-tax-code", "title": "Florida Tax Code", "sourceAuthority": "state-portal", "sourceTier": "mirror", "primaryPdfUrl": "https://codes.findlaw.com/fl/tax-code/", "externalId": "fl-tax_code" },
+    { "actId": "fl-education-code", "title": "Florida Education Code", "sourceAuthority": "state-portal", "sourceTier": "mirror", "primaryPdfUrl": "https://codes.findlaw.com/fl/education-code/", "externalId": "fl-education_code" },
+    { "actId": "fl-health-code", "title": "Florida Public Health Code", "sourceAuthority": "state-portal", "sourceTier": "mirror", "primaryPdfUrl": "https://codes.findlaw.com/fl/public-health/", "externalId": "fl-health_code" },
+    { "actId": "fl-traffic-code", "title": "Florida Traffic Code", "sourceAuthority": "state-portal", "sourceTier": "mirror", "primaryPdfUrl": "https://codes.findlaw.com/fl/traffic-regulation/", "externalId": "fl-traffic_code" },
+    { "actId": "fl-juvenile-code", "title": "Florida Juvenile Code", "sourceAuthority": "state-portal", "sourceTier": "mirror", "primaryPdfUrl": "https://codes.findlaw.com/fl/juvenile/", "externalId": "fl-juvenile_code" }
+  ]
+}

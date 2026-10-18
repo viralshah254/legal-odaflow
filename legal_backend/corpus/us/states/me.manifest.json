@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "stateCode": "ME",
+  "stateName": "Maine",
+  "acts": [
+    {
+      "actId": "me-code",
+      "title": "Maine code",
+      "sourceAuthority": "cornell-lii",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.law.cornell.edu/states/me",
+      "externalId": "me-code",
+      "notes": "Maine state law via Cornell LII state index"
+    },
+    {
+      "actId": "me-statutes",
+      "title": "Maine statutes",
+      "sourceAuthority": "cornell-lii",
+      "sourceTier": "mirror",
+      "primaryPdfUrl": "https://www.law.cornell.edu/states/me",
+      "externalId": "me-statutes",
+      "notes": "Maine state law via Cornell LII state index"
+    }
+  ]
+}

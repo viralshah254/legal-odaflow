@@ -1,0 +1,167 @@
+version: "3.8"
+
+services:
+  redis:
+    image: redis:7-alpine
+    networks:
+      - legal-network
+    ports:
+      - "6379:6379"
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+    deploy:
+      replicas: 1
+      placement:
+        constraints:
+          - node.role == manager
+      restart_policy:
+        condition: on-failure
+        delay: 5s
+        max_attempts: 3
+        window: 120s
+      resources:
+        limits:
+          memory: 100M
+        reservations:
+          memory: 50M
+    volumes:
+      - redis_data:/data
+    command: redis-server --appendonly yes --maxmemory 64mb --maxmemory-policy allkeys-lru
+
+  app:
+    image: ayienda/legal-byodaflow:dev
+    networks:
+      - legal-network
+    deploy:
+      replicas: 1
+      update_config:
+        parallelism: 1
+        delay: 10s
+        failure_action: rollback
+        monitor: 60s
+        max_failure_ratio: 0.3
+        order: start-first
+      rollback_config:
+        parallelism: 1
+        delay: 5s
+        monitor: 60s
+        max_failure_ratio: 0.3
+        order: start-first
+      restart_policy:
+        condition: on-failure
+        delay: 5s
+        max_attempts: 5
+        window: 120s
+      resources:
+        limits:
+          memory: 512M
+        reservations:
+          memory: 256M
+      labels: []
+    ports:
+      - "4000:4000"
+    environment:
+      - NODE_ENV=staging
+      - PORT=4000
+      - NODE_OPTIONS=--max-old-space-size=512
+      - REDIS_URL=redis://redis:6379
+    volumes:
+      - /home/ubuntu/legal_backend/.env:/usr/app/.env:ro
+      - /home/ubuntu/legal_backend/umbrella-95da1-firebase-adminsdk-fbsvc-11e5b5d0f4.json:/usr/app/umbrella-95da1-firebase-adminsdk-fbsvc-11e5b5d0f4.json:ro
+      - /home/ubuntu/legal_backend/corpus:/usr/app/corpus:ro
+      - /usr/app/node_modules
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "5m"
+        max-file: "2"
+
+  worker:
+    image: ayienda/legal-byodaflow:dev
+    command: ["node", "dist/jobs/workers/worker.main.js"]
+    networks:
+      - legal-network
+    deploy:
+      replicas: 1
+      restart_policy:
+        condition: on-failure
+        delay: 5s
+        max_attempts: 5
+        window: 120s
+      resources:
+        limits:
+          memory: 512M
+        reservations:
+          memory: 256M
+    environment:
+      - NODE_ENV=staging
+      - NODE_OPTIONS=--max-old-space-size=384
+      - REDIS_URL=redis://redis:6379
+    volumes:
+      - /home/ubuntu/legal_backend/.env:/usr/app/.env:ro
+      - /home/ubuntu/legal_backend/umbrella-95da1-firebase-adminsdk-fbsvc-11e5b5d0f4.json:/usr/app/umbrella-95da1-firebase-adminsdk-fbsvc-11e5b5d0f4.json:ro
+      - /home/ubuntu/legal_backend/corpus:/usr/app/corpus:ro
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "5m"
+        max-file: "2"
+
+  webhook:
+    image: ayienda/legal-byodaflow-webhook:latest
+    networks:
+      - legal-network
+    deploy:
+      replicas: 1
+      placement:
+        constraints:
+          - node.role == manager
+      restart_policy:
+        condition: on-failure
+        delay: 5s
+        max_attempts: 3
+        window: 120s
+      resources:
+        limits:
+          memory: 150M
+        reservations:
+          memory: 75M
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=staging
+      - REDIS_URL=redis://redis:6379
+      - API_URL=http://app:4000
+      - GITHUB_WEBHOOK_SECRET=${GITHUB_WEBHOOK_SECRET}
+      - DOCKER_HUB_TOKEN=${DOCKER_HUB_TOKEN:-}
+      - SWARM_DIR=/app/docker-swarm
+      - HOST_PROJECT_ROOT=/home/ubuntu/legal_backend
+      - IMAGE_TAG=dev
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /home/ubuntu/legal_backend/docker-swarm:/app/docker-swarm
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "node",
+          "-e",
+          "require('http').get('http://localhost:3000/health', (res) => process.exit(res.statusCode === 200 ? 0 : 1)).on('error', () => process.exit(1))",
+        ]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+networks:
+  legal-network:
+    driver: overlay
+    attachable: true
+
+volumes:
+  redis_data:
+    driver: local

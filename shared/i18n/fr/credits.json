@@ -1,0 +1,27 @@
+{
+  "free_daily_title": "Crédits quotidiens gratuits",
+  "free_daily_subtitle": "Se réinitialise tous les jours sur le forfait gratuit",
+  "free_daily_exhausted": "Crédits gratuits quotidiens utilisés",
+  "free_daily_exhausted_subtitle": "Abonnez-vous pour plus d'utilisation de l'IA dès aujourd'hui",
+  "gate": {
+    "title": "Vous n'avez plus de crédits IA",
+    "subtitle": "Rechargez instantanément ou mettez à niveau votre forfait pour plus de crédits mensuels et de modèles premium.",
+    "inlineMessage": "Vous n'avez pas assez de crédits IA pour cette action.",
+    "loadingBalance": "Vérification du solde…",
+    "balanceUnknown": "Solde indisponible",
+    "creditsRemaining": "{count} crédits restants",
+    "topUpTitle": "Recharger des crédits",
+    "topUpDescription": "Packs uniques · paiement sécurisé · n'expirent jamais",
+    "subscribeTitle": "Améliorez votre forfait",
+    "subscribeDescription": "Plus de crédits mensuels, de modèles premium et de fonctionnalités fermes",
+    "topUpCta": "Recharger des crédits",
+    "footer": "Paiement sécurisé Stripe · Les crédits n'expirent jamais · Annulez les abonnements à tout moment",
+    "features": {
+      "drafting": "La rédaction de documents nécessite des crédits d'IA pour générer des ébauches prêtes pour le tribunal à partir de vos faits.",
+      "research": "La recherche juridique utilise des crédits pour chaque requête – Verified Research utilise des modèles premium.",
+      "intake": "L'analyse de l'admission des clients utilise les crédits pour classer les problèmes et créer votre résumé des prospects.",
+      "documentReview": "L'examen des documents utilise des crédits pour analyser les clauses, les risques et les modifications.",
+      "sectionFinder": "Section Finder utilise des crédits lors de la recherche de statuts et de passages pour piétons."
+    }
+  }
+}

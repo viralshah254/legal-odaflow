@@ -8,6 +8,8 @@ export interface RealtimeAuthResult {
   userId: string;
   tenantId: string;
   email: string;
+  userType: string;
+  countryCode: string | null;
 }
 
 @Injectable()
@@ -43,7 +45,13 @@ export class RealtimeAuthService {
 
     const user = await this.prisma.user.findUnique({
       where: { id: payload.sub },
-      select: { id: true, email: true, isActive: true },
+      select: {
+        id: true,
+        email: true,
+        isActive: true,
+        userType: true,
+        countryCode: true,
+      },
     });
 
     if (!user?.isActive) {
@@ -67,6 +75,8 @@ export class RealtimeAuthService {
       userId: user.id,
       tenantId,
       email: user.email,
+      userType: user.userType,
+      countryCode: user.countryCode,
     };
   }
 }

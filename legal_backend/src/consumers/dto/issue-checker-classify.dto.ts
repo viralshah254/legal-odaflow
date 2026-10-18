@@ -1,9 +1,10 @@
 import { IsIn, IsOptional, IsString, MinLength } from 'class-validator';
-import { SUPPORTED_COUNTRY_CODES } from '@/config/countries';
 import { ISSUE_CHECKER_MODES } from '../issue-checker.constants';
+import { IssueCheckerAnonymousFields } from './issue-checker-anonymous.dto';
 
-export class IssueCheckerClassifyDto {
-  @IsIn(SUPPORTED_COUNTRY_CODES)
+export class IssueCheckerClassifyDto extends IssueCheckerAnonymousFields {
+  @IsString()
+  @MinLength(2)
   countryCode!: string;
 
   @IsString()

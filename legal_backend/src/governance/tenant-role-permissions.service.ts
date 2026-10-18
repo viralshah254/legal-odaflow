@@ -11,9 +11,33 @@ export type FlatRolePermissionKey =
   | 'canViewAllTasks'
   | 'canViewAllCalendar'
   | 'canManageSettings'
-  | 'canApproveTrust';
+  | 'canApproveTrust'
+  // Team member management
+  | 'canViewTeamMembers'
+  | 'canCreateTeamMember'
+  | 'canUpdateTeamMember'
+  | 'canDeactivateTeamMember'
+  // AI credit management
+  | 'canViewCreditUsage'
+  | 'canManageCreditLimits'
+  | 'canResetCreditCycle'
+  // Billing
+  | 'canViewBilling'
+  | 'canManageBilling';
 
 export type TenantRolePermissionsMap = Record<string, Record<FlatRolePermissionKey, boolean>>;
+
+/** Maps TenantUser.role (DB) to permission-map keys used in settings UI. */
+const DB_ROLE_TO_PERMISSION_KEY: Record<string, string> = {
+  FIRM_ADMIN: 'PARTNER_ADMIN',
+  PARTNER: 'JUNIOR_PARTNER',
+  BILLING: 'FINANCE',
+  STAFF: 'RECEPTION',
+};
+
+function resolvePermissionRoleKey(role: string): string {
+  return DB_ROLE_TO_PERMISSION_KEY[role] ?? role;
+}
 
 const DEFAULT_ROLE_PERMISSIONS: TenantRolePermissionsMap = {
   PARTNER_ADMIN: {
@@ -26,6 +50,15 @@ const DEFAULT_ROLE_PERMISSIONS: TenantRolePermissionsMap = {
     canViewAllCalendar: true,
     canManageSettings: true,
     canApproveTrust: true,
+    canViewTeamMembers: true,
+    canCreateTeamMember: true,
+    canUpdateTeamMember: true,
+    canDeactivateTeamMember: true,
+    canViewCreditUsage: true,
+    canManageCreditLimits: true,
+    canResetCreditCycle: true,
+    canViewBilling: true,
+    canManageBilling: true,
   },
   JUNIOR_PARTNER: {
     canViewAllMatters: true,
@@ -37,6 +70,15 @@ const DEFAULT_ROLE_PERMISSIONS: TenantRolePermissionsMap = {
     canViewAllCalendar: true,
     canManageSettings: false,
     canApproveTrust: false,
+    canViewTeamMembers: true,
+    canCreateTeamMember: false,
+    canUpdateTeamMember: false,
+    canDeactivateTeamMember: false,
+    canViewCreditUsage: true,
+    canManageCreditLimits: false,
+    canResetCreditCycle: false,
+    canViewBilling: false,
+    canManageBilling: false,
   },
   ASSOCIATE: {
     canViewAllMatters: false,
@@ -48,6 +90,15 @@ const DEFAULT_ROLE_PERMISSIONS: TenantRolePermissionsMap = {
     canViewAllCalendar: false,
     canManageSettings: false,
     canApproveTrust: false,
+    canViewTeamMembers: true,
+    canCreateTeamMember: false,
+    canUpdateTeamMember: false,
+    canDeactivateTeamMember: false,
+    canViewCreditUsage: false,
+    canManageCreditLimits: false,
+    canResetCreditCycle: false,
+    canViewBilling: false,
+    canManageBilling: false,
   },
   PARALEGAL: {
     canViewAllMatters: false,
@@ -59,6 +110,15 @@ const DEFAULT_ROLE_PERMISSIONS: TenantRolePermissionsMap = {
     canViewAllCalendar: true,
     canManageSettings: false,
     canApproveTrust: false,
+    canViewTeamMembers: true,
+    canCreateTeamMember: false,
+    canUpdateTeamMember: false,
+    canDeactivateTeamMember: false,
+    canViewCreditUsage: false,
+    canManageCreditLimits: false,
+    canResetCreditCycle: false,
+    canViewBilling: false,
+    canManageBilling: false,
   },
   FINANCE: {
     canViewAllMatters: true,
@@ -70,6 +130,15 @@ const DEFAULT_ROLE_PERMISSIONS: TenantRolePermissionsMap = {
     canViewAllCalendar: false,
     canManageSettings: false,
     canApproveTrust: true,
+    canViewTeamMembers: false,
+    canCreateTeamMember: false,
+    canUpdateTeamMember: false,
+    canDeactivateTeamMember: false,
+    canViewCreditUsage: true,
+    canManageCreditLimits: false,
+    canResetCreditCycle: false,
+    canViewBilling: true,
+    canManageBilling: false,
   },
   INTAKE: {
     canViewAllMatters: true,
@@ -81,6 +150,15 @@ const DEFAULT_ROLE_PERMISSIONS: TenantRolePermissionsMap = {
     canViewAllCalendar: true,
     canManageSettings: false,
     canApproveTrust: false,
+    canViewTeamMembers: false,
+    canCreateTeamMember: false,
+    canUpdateTeamMember: false,
+    canDeactivateTeamMember: false,
+    canViewCreditUsage: false,
+    canManageCreditLimits: false,
+    canResetCreditCycle: false,
+    canViewBilling: false,
+    canManageBilling: false,
   },
   OPS_HR: {
     canViewAllMatters: false,
@@ -92,6 +170,15 @@ const DEFAULT_ROLE_PERMISSIONS: TenantRolePermissionsMap = {
     canViewAllCalendar: true,
     canManageSettings: true,
     canApproveTrust: false,
+    canViewTeamMembers: true,
+    canCreateTeamMember: false,
+    canUpdateTeamMember: false,
+    canDeactivateTeamMember: false,
+    canViewCreditUsage: false,
+    canManageCreditLimits: false,
+    canResetCreditCycle: false,
+    canViewBilling: false,
+    canManageBilling: false,
   },
   RECEPTION: {
     canViewAllMatters: false,
@@ -103,6 +190,15 @@ const DEFAULT_ROLE_PERMISSIONS: TenantRolePermissionsMap = {
     canViewAllCalendar: true,
     canManageSettings: false,
     canApproveTrust: false,
+    canViewTeamMembers: false,
+    canCreateTeamMember: false,
+    canUpdateTeamMember: false,
+    canDeactivateTeamMember: false,
+    canViewCreditUsage: false,
+    canManageCreditLimits: false,
+    canResetCreditCycle: false,
+    canViewBilling: false,
+    canManageBilling: false,
   },
   READ_ONLY: {
     canViewAllMatters: true,
@@ -114,6 +210,15 @@ const DEFAULT_ROLE_PERMISSIONS: TenantRolePermissionsMap = {
     canViewAllCalendar: true,
     canManageSettings: false,
     canApproveTrust: false,
+    canViewTeamMembers: true,
+    canCreateTeamMember: false,
+    canUpdateTeamMember: false,
+    canDeactivateTeamMember: false,
+    canViewCreditUsage: false,
+    canManageCreditLimits: false,
+    canResetCreditCycle: false,
+    canViewBilling: false,
+    canManageBilling: false,
   },
 };
 
@@ -197,8 +302,13 @@ export class TenantRolePermissionsService {
     permission: FlatRolePermissionKey,
   ): Promise<boolean> {
     if (!role) return false;
-    if (role === 'PARTNER_ADMIN') return true;
+    const permissionRole = resolvePermissionRoleKey(role);
+    if (permissionRole === 'PARTNER_ADMIN') return true;
     const map = await this.getPermissions(tenantId);
-    return map[role]?.[permission] ?? DEFAULT_ROLE_PERMISSIONS[role]?.[permission] ?? false;
+    return (
+      map[permissionRole]?.[permission] ??
+      DEFAULT_ROLE_PERMISSIONS[permissionRole]?.[permission] ??
+      false
+    );
   }
 }

@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "stateCode": "AL",
+  "stateName": "Alabama",
+  "acts": [
+    {
+      "actId": "al-code",
+      "title": "Alabama code",
+      "sourceAuthority": "cornell-lii",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.law.cornell.edu/states/al",
+      "externalId": "al-code",
+      "notes": "Alabama state law via Cornell LII state index"
+    },
+    {
+      "actId": "al-statutes",
+      "title": "Alabama statutes",
+      "sourceAuthority": "cornell-lii",
+      "sourceTier": "mirror",
+      "primaryPdfUrl": "https://www.law.cornell.edu/states/al",
+      "externalId": "al-statutes",
+      "notes": "Alabama state law via Cornell LII state index"
+    }
+  ]
+}

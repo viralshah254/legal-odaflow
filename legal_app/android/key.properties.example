@@ -1,0 +1,8 @@
+# Copy to key.properties (gitignored) and fill in real values.
+# Generate a keystore: ../scripts/setup-android-signing.sh
+#
+# Use a path relative to android/ or an absolute path.
+storeFile=keystores/umbrella-upload.jks
+storePassword=YOUR_STORE_PASSWORD
+keyAlias=umbrella-upload
+keyPassword=YOUR_KEY_PASSWORD

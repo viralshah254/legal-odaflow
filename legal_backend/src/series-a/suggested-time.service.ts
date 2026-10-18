@@ -42,6 +42,10 @@ export class SuggestedTimeService {
   }
 
   async accept(tenantId: string, userId: string, suggestionId: string) {
+    return this.approve(tenantId, userId, suggestionId);
+  }
+
+  async approve(tenantId: string, userId: string, suggestionId: string) {
     const row = await this.prisma.suggestedTimeEntry.findFirst({
       where: { id: suggestionId, tenantId, userId, status: 'PENDING' },
     });
@@ -51,7 +55,7 @@ export class SuggestedTimeService {
       matterId: row.matterId ?? undefined,
       date: new Date().toISOString(),
       minutes: row.minutes,
-      narrative: row.narrative ?? `Accepted from ${row.source}`,
+      narrative: row.narrative ?? `Approved from ${row.source}`,
       billable: true,
       status: 'DRAFT',
     });

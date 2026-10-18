@@ -150,5 +150,10 @@
   "tasksDue": "{count, plural, one {# task due} other {# tasks due}}",
   "calendarEvents": "{count, plural, one {# event} other {# events}}",
   "overdueInvoices": "{count, plural, one {# overdue invoice} other {# overdue invoices}}",
-  "pendingApprovals": "{count, plural, one {# pending approval} other {# pending approvals}}"
+  "pendingApprovals": "{count, plural, one {# pending approval} other {# pending approvals}}",
+  "agentPickerDefault": "ಜನರಲ್ ಕಾಪಿಲಟ್",
+  "draftPromptLabel": "ನೀನು ಕೇಳಿದೆ",
+  "draftOutputLabel": "ಔಟ್ಪುಟ್",
+  "draftUntitled": "ಶೀರ್ಷಿಕೆರಹಿತ ಕರಡು",
+  "sessionUntitled": "ಚಾಟ್ ಸೆಷನ್"
 }

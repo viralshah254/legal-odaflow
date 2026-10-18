@@ -1,0 +1,20 @@
+{
+  "continueRefined": "परिष्कृत संकेत के साथ जारी रखें",
+  "title": "परिष्कृत संकेत",
+  "description": "स्पष्ट AI परिणामों के लिए हमने आपके विवरण को पुनर्गठित किया है। यदि आवश्यक हो तो संपादित करें, फिर जारी रखें।",
+  "yourOriginal": "आपका मूल संकेत",
+  "refinedLabel": "परिष्कृत संकेत",
+  "useOriginal": "इसके बजाय मूल का उपयोग करें",
+  "hintJurisdiction": "क्षेत्राधिकार",
+  "hintDocument": "दस्तावेज़",
+  "hintParty": "दल",
+  "hintStatute": "क़ानून",
+  "preparing": "आपका प्रॉम्प्ट तैयार किया जा रहा है...",
+  "startingDrafting": "{seconds}s में प्रारूपण प्रारंभ हो रहा है...",
+  "startingResearch": "{seconds}s में शोध प्रारंभ करना...",
+  "undo": "पूर्ववत",
+  "autoFilledTitle": "शीघ्र परिष्कृत",
+  "autoFilledDescription": "{seconds}s में जारी रखना - अपना मूल बनाए रखने के लिए पूर्ववत करें।",
+  "autoFillCountdownAria": "पूर्ववत करने के लिए {seconds} सेकंड शेष हैं",
+  "autoFillHint": "पूर्ववत करने से आपका मूल संकेत पुनर्स्थापित हो जाता है"
+}

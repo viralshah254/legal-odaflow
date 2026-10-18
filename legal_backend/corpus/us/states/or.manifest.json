@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "stateCode": "OR",
+  "stateName": "Oregon",
+  "acts": [
+    {
+      "actId": "or-code",
+      "title": "Oregon code",
+      "sourceAuthority": "cornell-lii",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.law.cornell.edu/states/or",
+      "externalId": "or-code",
+      "notes": "Oregon state law via Cornell LII state index"
+    },
+    {
+      "actId": "or-statutes",
+      "title": "Oregon statutes",
+      "sourceAuthority": "cornell-lii",
+      "sourceTier": "mirror",
+      "primaryPdfUrl": "https://www.law.cornell.edu/states/or",
+      "externalId": "or-statutes",
+      "notes": "Oregon state law via Cornell LII state index"
+    }
+  ]
+}

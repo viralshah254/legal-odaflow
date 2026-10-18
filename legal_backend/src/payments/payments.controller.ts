@@ -10,6 +10,7 @@ import { CreatePaymentDto } from './dto/create-payment.dto';
 import { PaymentsService } from './payments.service';
 
 @Controller('payments')
+@UseGuards(TenantGuard)
 export class PaymentsController {
   constructor(private readonly paymentsService: PaymentsService) {}
 
@@ -29,7 +30,6 @@ export class PaymentsController {
   }
 
   @Post('tenant/intent')
-  @UseGuards(TenantGuard)
   createTenantIntent(
     @CurrentUser() user: RequestUser,
     @TenantId() tenantId: string,
@@ -47,20 +47,6 @@ export class PaymentsController {
         ? req.body.toString('utf8')
         : JSON.stringify(req.body ?? {});
     return this.paymentsService.handleStripeWebhook(rawBody, signature);
-  }
-
-  @Public()
-  @Post('webhooks/razorpay')
-  handleRazorpayWebhook(
-    @Req() req: Request,
-    @Headers('x-razorpay-signature') signature?: string,
-  ) {
-    const rawBody = Buffer.isBuffer((req as Request & { rawBody?: Buffer }).rawBody)
-      ? (req as Request & { rawBody?: Buffer }).rawBody!.toString('utf8')
-      : Buffer.isBuffer(req.body)
-        ? req.body.toString('utf8')
-        : JSON.stringify(req.body ?? {});
-    return this.paymentsService.handleRazorpayWebhook(rawBody, signature);
   }
 
   @Public()

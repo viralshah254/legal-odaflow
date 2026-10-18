@@ -1,0 +1,857 @@
+{
+  "generatedAt": "2026-06-19T11:23:07.017Z",
+  "sourceDir": "/Users/v/Downloads/india acts",
+  "totalFiles": 118,
+  "mapped": 121,
+  "skipped": 4,
+  "unmapped": [],
+  "entries": [
+    {
+      "filename": "189008.pdf",
+      "manifestActId": "guardians-wards",
+      "registryActId": "guardians-wards",
+      "bundledPath": "corpus/in/india-code/guardians-wards.pdf",
+      "sourceAuthority": "india-code-local"
+    },
+    {
+      "filename": "193003.pdf",
+      "manifestActId": "sale-of-goods-act-1930",
+      "registryActId": "sale-of-goods",
+      "bundledPath": "corpus/in/india-code/sale-of-goods-act-1930.pdf",
+      "sourceAuthority": "india-code-local"
+    },
+    {
+      "filename": "193908.pdf",
+      "manifestActId": "muslim-dissolution",
+      "registryActId": "muslim-dissolution",
+      "bundledPath": "corpus/in/india-code/muslim-dissolution.pdf",
+      "sourceAuthority": "india-code-local"
+    },
+    {
+      "filename": "195632.pdf",
+      "manifestActId": "hindu-minority-guardianship",
+      "registryActId": "hindu-minority-guardianship",
+      "bundledPath": "corpus/in/india-code/hindu-minority-guardianship.pdf",
+      "sourceAuthority": "india-code-local"
+    },
+    {
+      "filename": "200037.pdf",
+      "manifestActId": "semiconductor-layout-design-act",
+      "registryActId": "semiconductor-layout-design-act",
+      "bundledPath": "corpus/in/india-code/semiconductor-layout-design-act.pdf",
+      "sourceAuthority": "india-code-local"
+    },
+    {
+      "filename": "201320.pdf",
+      "manifestActId": "national-food-security-act",
+      "registryActId": "national-food-security-act",
+      "bundledPath": "corpus/in/india-code/national-food-security-act.pdf",
+      "sourceAuthority": "india-code-local"
+    },
+    {
+      "filename": "201401.pdf",
+      "manifestActId": "lokpal-lokayuktas-act",
+      "registryActId": "lokpal-lokayuktas-act",
+      "bundledPath": "corpus/in/india-code/lokpal-lokayuktas-act.pdf",
+      "sourceAuthority": "india-code-local"
+    },
+    {
+      "filename": "2025-24.pdf",
+      "manifestActId": "merchant-shipping-act-2025",
+      "registryActId": "merchant-shipping-act-2025",
+      "bundledPath": "corpus/in/india-code/merchant-shipping-act-2025.pdf",
+      "sourceAuthority": "india-code-local"
+    },
+    {
+      "filename": "2bf1f0e9f04e6fb4f8fef35e82c42aa5.pdf",
+      "manifestActId": "dpdp",
+      "registryActId": "dpdp",
+      "bundledPath": "corpus/in/india-code/dpdp.pdf",
+      "sourceAuthority": "india-code-local"
+    },
+    {
+      "filename": "A187209.pdf",
+      "manifestActId": "contract-act-1872",
+      "registryActId": "contract-act",
+      "bundledPath": "corpus/in/india-code/contract-act-1872.pdf",
+      "sourceAuthority": "india-code-local"
+    },
+    {
+      "filename": "A1882-04.pdf",
+      "manifestActId": "transfer-of-property-act-1882",
+      "registryActId": "transfer-of-property",
+      "bundledPath": "corpus/in/india-code/transfer-of-property-act-1882.pdf",
+      "sourceAuthority": "india-code-local"
+    },
+    {
+      "filename": "A1882-05.pdf",
+      "manifestActId": "easements-act",
+      "registryActId": "easements-act",
+      "bundledPath": "corpus/in/india-code/easements-act.pdf",
+      "sourceAuthority": "india-code-local"
+    },
+    {
+      "filename": "A1923-19.pdf",
+      "manifestActId": "official-secrets-act",
+      "registryActId": "official-secrets-act",
+      "bundledPath": "corpus/in/india-code/official-secrets-act.pdf",
+      "sourceAuthority": "india-code-local"
+    },
+    {
+      "filename": "A1937-26.pdf",
+      "manifestActId": "shariat-application-act",
+      "registryActId": "shariat-application-act",
+      "bundledPath": "corpus/in/india-code/shariat-application-act.pdf",
+      "sourceAuthority": "india-code-local"
+    },
+    {
+      "filename": "A1938-04.pdf",
+      "manifestActId": "insurance-act",
+      "registryActId": "insurance-act",
+      "bundledPath": "corpus/in/india-code/insurance-act.pdf",
+      "sourceAuthority": "india-code-local"
+    },
+    {
+      "filename": "A1955-25.pdf",
+      "manifestActId": "hindu-marriage",
+      "registryActId": "hindu-marriage",
+      "bundledPath": "corpus/in/india-code/hindu-marriage.pdf",
+      "sourceAuthority": "india-code-local"
+    },
+    {
+      "filename": "A1963-36.pdf",
+      "manifestActId": "limitation-act",
+      "registryActId": "limitation-act",
+      "bundledPath": "corpus/in/india-code/limitation-act.pdf",
+      "sourceAuthority": "india-code-local"
+    },
+    {
+      "filename": "A1963-47.pdf",
+      "manifestActId": "specific-relief-act-1963",
+      "registryActId": "specific-relief",
+      "bundledPath": "corpus/in/india-code/specific-relief-act-1963.pdf",
+      "sourceAuthority": "india-code-local"
+    },
+    {
+      "filename": "A1967-37.pdf",
+      "manifestActId": "uapa",
+      "registryActId": "uapa",
+      "bundledPath": "corpus/in/india-code/uapa.pdf",
+      "sourceAuthority": "india-code-local"
+    },
+    {
+      "filename": "A1970-39.pdf",
+      "manifestActId": "patents-act-1970",
+      "registryActId": "patents-act",
+      "bundledPath": "corpus/in/india-code/patents-act-1970.pdf",
+      "sourceAuthority": "india-code-local"
+    },
+    {
+      "filename": "A1971-70.pdf",
+      "manifestActId": "contempt-of-courts",
+      "registryActId": "contempt-of-courts",
+      "bundledPath": "corpus/in/india-code/contempt-of-courts.pdf",
+      "sourceAuthority": "india-code-local"
+    },
+    {
+      "filename": "A1999_42.pdf",
+      "manifestActId": "fema-1999",
+      "registryActId": "fema",
+      "bundledPath": "corpus/in/india-code/fema-1999.pdf",
+      "sourceAuthority": "india-code-local"
+    },
+    {
+      "filename": "A2000-16.pdf",
+      "manifestActId": "designs-act",
+      "registryActId": "designs-act",
+      "bundledPath": "corpus/in/india-code/designs-act.pdf",
+      "sourceAuthority": "india-code-local"
+    },
+    {
+      "filename": "A2001-53.pdf",
+      "manifestActId": "ppvfr-act",
+      "registryActId": "ppvfr-act",
+      "bundledPath": "corpus/in/india-code/ppvfr-act.pdf",
+      "sourceAuthority": "india-code-local"
+    },
+    {
+      "filename": "A2002-54.pdf",
+      "manifestActId": "sarfaesi-act",
+      "registryActId": "sarfaesi-act",
+      "bundledPath": "corpus/in/india-code/sarfaesi-act.pdf",
+      "sourceAuthority": "india-code-local"
+    },
+    {
+      "filename": "A2003-12.pdf",
+      "manifestActId": "competition-act",
+      "registryActId": "competition-act",
+      "bundledPath": "corpus/in/india-code/competition-act.pdf",
+      "sourceAuthority": "india-code-local"
+    },
+    {
+      "filename": "A2003-36.pdf",
+      "manifestActId": "electricity-act",
+      "registryActId": "electricity-act",
+      "bundledPath": "corpus/in/india-code/electricity-act.pdf",
+      "sourceAuthority": "india-code-local"
+    },
+    {
+      "filename": "A200553.pdf",
+      "manifestActId": "disaster-management-act",
+      "registryActId": "disaster-management-act",
+      "bundledPath": "corpus/in/india-code/disaster-management-act.pdf",
+      "sourceAuthority": "india-code-local"
+    },
+    {
+      "filename": "A2006-19.pdf",
+      "manifestActId": "pngrb-act",
+      "registryActId": "pngrb-act",
+      "bundledPath": "corpus/in/india-code/pngrb-act.pdf",
+      "sourceAuthority": "india-code-local"
+    },
+    {
+      "filename": "A2007-55 (1).pdf",
+      "manifestActId": "skipped",
+      "bundledPath": "",
+      "sourceAuthority": "india-code-local",
+      "skipped": true,
+      "skipReason": "duplicate"
+    },
+    {
+      "filename": "A2007-55.pdf",
+      "manifestActId": "armed-forces-tribunal-act",
+      "registryActId": "armed-forces-tribunal-act",
+      "bundledPath": "corpus/in/india-code/armed-forces-tribunal-act.pdf",
+      "sourceAuthority": "india-code-local"
+    },
+    {
+      "filename": "A2009-06.pdf",
+      "manifestActId": "llp-act",
+      "registryActId": "llp-act",
+      "bundledPath": "corpus/in/india-code/llp-act.pdf",
+      "sourceAuthority": "india-code-local"
+    },
+    {
+      "filename": "A2013-18.pdf",
+      "manifestActId": "companies-act-2013",
+      "registryActId": "companies-act",
+      "bundledPath": "corpus/in/india-code/companies-act-2013.pdf",
+      "sourceAuthority": "india-code-local"
+    },
+    {
+      "filename": "A2016-38.pdf",
+      "manifestActId": "compensatory-afforestation-fund-act",
+      "registryActId": "compensatory-afforestation-fund-act",
+      "bundledPath": "corpus/in/india-code/compensatory-afforestation-fund-act.pdf",
+      "sourceAuthority": "india-code-local"
+    },
+    {
+      "filename": "A2017-10.pdf",
+      "manifestActId": "mental-healthcare-act",
+      "registryActId": "mental-healthcare-act",
+      "bundledPath": "corpus/in/india-code/mental-healthcare-act.pdf",
+      "sourceAuthority": "india-code-local"
+    },
+    {
+      "filename": "A2023-44.pdf",
+      "manifestActId": "telecommunications-act-2023",
+      "registryActId": "telecommunications-act-2023",
+      "bundledPath": "corpus/in/india-code/telecommunications-act-2023.pdf",
+      "sourceAuthority": "india-code-local"
+    },
+    {
+      "filename": "AA2010__19green.pdf",
+      "manifestActId": "ngt-act",
+      "registryActId": "ngt-act",
+      "bundledPath": "corpus/in/india-code/ngt-act.pdf",
+      "sourceAuthority": "india-code-local"
+    },
+    {
+      "filename": "AA2012-32.pdf",
+      "manifestActId": "pocso-act-2012",
+      "registryActId": "pocso",
+      "bundledPath": "corpus/in/india-code/pocso-act-2012.pdf",
+      "sourceAuthority": "india-code-local"
+    },
+    {
+      "filename": "AAA1956suc___30.pdf",
+      "manifestActId": "hindu-succession",
+      "registryActId": "hindu-succession",
+      "bundledPath": "corpus/in/india-code/hindu-succession.pdf",
+      "sourceAuthority": "india-code-local"
+    },
+    {
+      "filename": "CGST-Act-Updated-30092020.pdf",
+      "manifestActId": "skipped",
+      "bundledPath": "",
+      "sourceAuthority": "india-code-local",
+      "skipped": true,
+      "skipReason": "duplicate"
+    },
+    {
+      "filename": "IGST-bill-e.pdf",
+      "manifestActId": "igst-act",
+      "registryActId": "igst-act",
+      "bundledPath": "corpus/in/india-code/igst-act.pdf",
+      "sourceAuthority": "india-code-local"
+    },
+    {
+      "filename": "UTGST-bill-e.pdf",
+      "manifestActId": "utgst-act",
+      "registryActId": "utgst-act",
+      "bundledPath": "corpus/in/india-code/utgst-act.pdf",
+      "sourceAuthority": "india-code-local"
+    },
+    {
+      "filename": "a1934-2.pdf",
+      "manifestActId": "rbi-act",
+      "registryActId": "rbi-act",
+      "bundledPath": "corpus/in/india-code/rbi-act.pdf",
+      "sourceAuthority": "india-code-local"
+    },
+    {
+      "filename": "a1944-01.pdf",
+      "manifestActId": "central-excise-act",
+      "registryActId": "central-excise-act",
+      "bundledPath": "corpus/in/india-code/central-excise-act.pdf",
+      "sourceAuthority": "india-code-local"
+    },
+    {
+      "filename": "a1948-011.pdf",
+      "manifestActId": "minimum-wages",
+      "registryActId": "minimum-wages",
+      "bundledPath": "corpus/in/india-code/minimum-wages.pdf",
+      "sourceAuthority": "india-code-local"
+    },
+    {
+      "filename": "a1957-14.pdf",
+      "manifestActId": "copyright-act-1957",
+      "registryActId": "copyright-act",
+      "bundledPath": "corpus/in/india-code/copyright-act-1957.pdf",
+      "sourceAuthority": "india-code-local"
+    },
+    {
+      "filename": "a1961-43.pdf",
+      "manifestActId": "income-tax-act-1961",
+      "registryActId": "income-tax",
+      "bundledPath": "corpus/in/india-code/income-tax-act-1961.pdf",
+      "sourceAuthority": "india-code-local"
+    },
+    {
+      "filename": "a1980-69.pdf",
+      "manifestActId": "forest-conservation-act",
+      "registryActId": "forest-conservation-act",
+      "bundledPath": "corpus/in/india-code/forest-conservation-act.pdf",
+      "sourceAuthority": "india-code-local"
+    },
+    {
+      "filename": "a1984__66.pdf",
+      "manifestActId": "family-courts",
+      "registryActId": "family-courts",
+      "bundledPath": "corpus/in/india-code/family-courts.pdf",
+      "sourceAuthority": "india-code-local"
+    },
+    {
+      "filename": "a1988-59.pdf",
+      "manifestActId": "motor-vehicles-act-1988",
+      "registryActId": "mva",
+      "bundledPath": "corpus/in/india-code/motor-vehicles-act-1988.pdf",
+      "sourceAuthority": "india-code-local"
+    },
+    {
+      "filename": "a199948.pdf",
+      "manifestActId": "sebi-act",
+      "registryActId": "sebi-act",
+      "bundledPath": "corpus/in/india-code/sebi-act.pdf",
+      "sourceAuthority": "india-code-local"
+    },
+    {
+      "filename": "a2007-37.pdf",
+      "manifestActId": "warehousing-development-regulation-act",
+      "registryActId": "warehousing-development-regulation-act",
+      "bundledPath": "corpus/in/india-code/warehousing-development-regulation-act.pdf",
+      "sourceAuthority": "india-code-local"
+    },
+    {
+      "filename": "a2008-34.pdf",
+      "manifestActId": "nia-act-2008",
+      "registryActId": "nia-act-2008",
+      "bundledPath": "corpus/in/india-code/nia-act-2008.pdf",
+      "sourceAuthority": "india-code-local"
+    },
+    {
+      "filename": "a2015-22.pdf",
+      "manifestActId": "black-money-act",
+      "registryActId": "black-money-act",
+      "bundledPath": "corpus/in/india-code/black-money-act.pdf",
+      "sourceAuthority": "india-code-local"
+    },
+    {
+      "filename": "a2016-2.pdf",
+      "manifestActId": "jj-act",
+      "registryActId": "jj-act",
+      "bundledPath": "corpus/in/india-code/jj-act.pdf",
+      "sourceAuthority": "india-code-local"
+    },
+    {
+      "filename": "a2019-20.pdf",
+      "manifestActId": "muslim-women-rights-on-marriage-act",
+      "registryActId": "muslim-women-rights-on-marriage-act",
+      "bundledPath": "corpus/in/india-code/muslim-women-rights-on-marriage-act.pdf",
+      "sourceAuthority": "india-code-local"
+    },
+    {
+      "filename": "a202345.pdf",
+      "manifestActId": "bns",
+      "registryActId": "bns",
+      "bundledPath": "corpus/in/india-code/bns.pdf",
+      "sourceAuthority": "india-code-local"
+    },
+    {
+      "filename": "aA1962-52.pdf",
+      "manifestActId": "skipped",
+      "bundledPath": "",
+      "sourceAuthority": "india-code-local",
+      "skipped": true,
+      "skipReason": "duplicate"
+    },
+    {
+      "filename": "aA2021-42.pdf",
+      "manifestActId": "maintenance-and-welfare-of-parents-act",
+      "bundledPath": "corpus/in/india-code/maintenance-and-welfare-of-parents-act.pdf",
+      "sourceAuthority": "india-code-local"
+    },
+    {
+      "filename": "aa1949-10.pdf",
+      "manifestActId": "banking-regulation-act",
+      "registryActId": "banking-regulation-act",
+      "bundledPath": "corpus/in/india-code/banking-regulation-act.pdf",
+      "sourceAuthority": "india-code-local"
+    },
+    {
+      "filename": "aa2005.pdf",
+      "manifestActId": "rti-act-2005",
+      "registryActId": "rti",
+      "bundledPath": "corpus/in/india-code/rti-act-2005.pdf",
+      "sourceAuthority": "india-code-local"
+    },
+    {
+      "filename": "aa202347.pdf",
+      "manifestActId": "bsa",
+      "registryActId": "bsa",
+      "bundledPath": "corpus/in/india-code/bsa.pdf",
+      "sourceAuthority": "india-code-local"
+    },
+    {
+      "filename": "aaA2021-47.pdf",
+      "manifestActId": "surrogacy-regulation-act",
+      "registryActId": "surrogacy-regulation-act",
+      "bundledPath": "corpus/in/india-code/surrogacy-regulation-act.pdf",
+      "sourceAuthority": "india-code-local"
+    },
+    {
+      "filename": "air_act-1981.pdf",
+      "manifestActId": "air-pollution-act",
+      "registryActId": "air-pollution-act",
+      "bundledPath": "corpus/in/india-code/air-pollution-act.pdf",
+      "sourceAuthority": "india-code-local"
+    },
+    {
+      "filename": "contract_labour_act.pdf",
+      "manifestActId": "contract-labour-act",
+      "registryActId": "contract-labour-act",
+      "bundledPath": "corpus/in/india-code/contract-labour-act.pdf",
+      "sourceAuthority": "india-code-local"
+    },
+    {
+      "filename": "dowry_prohibition.pdf",
+      "manifestActId": "dowry-prohibition",
+      "registryActId": "dowry-prohibition",
+      "bundledPath": "corpus/in/india-code/dowry-prohibition.pdf",
+      "sourceAuthority": "india-code-local"
+    },
+    {
+      "filename": "eng.pdf",
+      "manifestActId": "bnss",
+      "registryActId": "bnss",
+      "bundledPath": "corpus/in/india-code/bnss.pdf",
+      "sourceAuthority": "india-code-local"
+    },
+    {
+      "filename": "eng201935.pdf",
+      "manifestActId": "consumer-protection-act-2019",
+      "registryActId": "consumer-protection",
+      "bundledPath": "corpus/in/india-code/consumer-protection-act-2019.pdf",
+      "sourceAuthority": "india-code-local"
+    },
+    {
+      "filename": "ep_act_1986.pdf",
+      "manifestActId": "environment-protection",
+      "registryActId": "environment-protection",
+      "bundledPath": "corpus/in/india-code/environment-protection.pdf",
+      "sourceAuthority": "india-code-local"
+    },
+    {
+      "filename": "factory_acta1948-63.pdf",
+      "manifestActId": "factories-act",
+      "registryActId": "factories-act",
+      "bundledPath": "corpus/in/india-code/factories-act.pdf",
+      "sourceAuthority": "india-code-local"
+    },
+    {
+      "filename": "goods_and_services_tax_act,_2017.pdf",
+      "manifestActId": "gst-act-2017",
+      "registryActId": "gst-act",
+      "bundledPath": "corpus/in/india-code/gst-act-2017.pdf",
+      "sourceAuthority": "india-code-local"
+    },
+    {
+      "filename": "h-153_the_gujarat_court_fees_act_2004_dt21-02-2024.pdf",
+      "manifestActId": "gujarat-court-fees-act",
+      "bundledPath": "corpus/in/india-code/gujarat-court-fees-act.pdf",
+      "sourceAuthority": "india-code-local"
+    },
+    {
+      "filename": "iea_1872.pdf",
+      "manifestActId": "iea",
+      "registryActId": "iea",
+      "bundledPath": "corpus/in/india-code/iea.pdf",
+      "sourceAuthority": "india-code-local"
+    },
+    {
+      "filename": "indian_partnership_act_1932.pdf",
+      "manifestActId": "partnership-act",
+      "registryActId": "partnership-act",
+      "bundledPath": "corpus/in/india-code/partnership-act.pdf",
+      "sourceAuthority": "india-code-local"
+    },
+    {
+      "filename": "insults_to_national_honour_act,_1971.pdf",
+      "manifestActId": "prevention-of-insults-national-honour-act",
+      "bundledPath": "corpus/in/india-code/prevention-of-insults-national-honour-act.pdf",
+      "sourceAuthority": "india-code-local"
+    },
+    {
+      "filename": "it_act_2000_updated.pdf",
+      "manifestActId": "it-act",
+      "registryActId": "it-act",
+      "bundledPath": "corpus/in/india-code/it-act.pdf",
+      "sourceAuthority": "india-code-local"
+    },
+    {
+      "filename": "legal_service_authorities_act,_1987.pdf",
+      "manifestActId": "legal-services-authorities",
+      "registryActId": "legal-services-authorities",
+      "bundledPath": "corpus/in/india-code/legal-services-authorities.pdf",
+      "sourceAuthority": "india-code-local"
+    },
+    {
+      "filename": "legalmetrology_act_2009.pdf",
+      "manifestActId": "legal-metrology-act",
+      "registryActId": "legal-metrology-act",
+      "bundledPath": "corpus/in/india-code/legal-metrology-act.pdf",
+      "sourceAuthority": "india-code-local"
+    },
+    {
+      "filename": "mmdr_act,1957.pdf",
+      "manifestActId": "mmdr-act",
+      "registryActId": "mmdr-act",
+      "bundledPath": "corpus/in/india-code/mmdr-act.pdf",
+      "sourceAuthority": "india-code-local"
+    },
+    {
+      "filename": "moneylaunderingact2002.pdf",
+      "manifestActId": "pmla",
+      "registryActId": "pmla",
+      "bundledPath": "corpus/in/india-code/pmla.pdf",
+      "sourceAuthority": "india-code-local"
+    },
+    {
+      "filename": "mtp-act-1971.pdf",
+      "manifestActId": "mtp-act",
+      "registryActId": "mtp-act",
+      "bundledPath": "corpus/in/india-code/mtp-act.pdf",
+      "sourceAuthority": "india-code-local"
+    },
+    {
+      "filename": "muslim_women_(protection_of_rights_on_divorce)_act,_1986.pdf",
+      "manifestActId": "muslim-women-divorce",
+      "registryActId": "muslim-women-divorce",
+      "bundledPath": "corpus/in/india-code/muslim-women-divorce.pdf",
+      "sourceAuthority": "india-code-local"
+    },
+    {
+      "filename": "narcotic-drugs-and-psychotropic-substances-act-1985.pdf",
+      "manifestActId": "ndps-act-1985",
+      "registryActId": "ndps",
+      "bundledPath": "corpus/in/india-code/ndps-act-1985.pdf",
+      "sourceAuthority": "india-code-local"
+    },
+    {
+      "filename": "negotiable_instruments_act,_1881.pdf",
+      "manifestActId": "negotiable-instruments",
+      "registryActId": "nia",
+      "bundledPath": "corpus/in/india-code/negotiable-instruments.pdf",
+      "sourceAuthority": "india-code-local"
+    },
+    {
+      "filename": "payment_of_wages_act_1936.pdf",
+      "manifestActId": "payment-of-wages",
+      "registryActId": "payment-of-wages",
+      "bundledPath": "corpus/in/india-code/payment-of-wages.pdf",
+      "sourceAuthority": "india-code-local"
+    },
+    {
+      "filename": "pitndpsact1988.pdf",
+      "manifestActId": "pitndps-act",
+      "registryActId": "pitndps-act",
+      "bundledPath": "corpus/in/india-code/pitndps-act.pdf",
+      "sourceAuthority": "india-code-local"
+    },
+    {
+      "filename": "protection_of_women_from_domestic_violence_act,_2005.pdf",
+      "manifestActId": "domestic-violence-act-2005",
+      "registryActId": "domestic-violence",
+      "bundledPath": "corpus/in/india-code/domestic-violence-act-2005.pdf",
+      "sourceAuthority": "india-code-local"
+    },
+    {
+      "filename": "repealedfileopen.pdf",
+      "manifestActId": "ipc",
+      "registryActId": "ipc",
+      "bundledPath": "corpus/in/india-code/ipc.pdf",
+      "sourceAuthority": "india-code-local"
+    },
+    {
+      "filename": "special_marriage_act.pdf",
+      "manifestActId": "special-marriage",
+      "registryActId": "special-marriage",
+      "bundledPath": "corpus/in/india-code/special-marriage.pdf",
+      "sourceAuthority": "india-code-local"
+    },
+    {
+      "filename": "the-employees-compensation-act_1923 (1).pdf",
+      "manifestActId": "skipped",
+      "bundledPath": "",
+      "sourceAuthority": "india-code-local",
+      "skipped": true,
+      "skipReason": "duplicate"
+    },
+    {
+      "filename": "the-employees-compensation-act_1923.pdf",
+      "manifestActId": "employees-compensation",
+      "registryActId": "employees-compensation",
+      "bundledPath": "corpus/in/india-code/employees-compensation.pdf",
+      "sourceAuthority": "india-code-local"
+    },
+    {
+      "filename": "the_advocate_act,_1961.pdf",
+      "manifestActId": "advocates-act",
+      "registryActId": "advocates-act",
+      "bundledPath": "corpus/in/india-code/advocates-act.pdf",
+      "sourceAuthority": "india-code-local"
+    },
+    {
+      "filename": "the_arbitration_and_conciliation_act,_1996_act_no._26_of_1996.pdf",
+      "manifestActId": "arbitration-conciliation-act-1996",
+      "registryActId": "arbitration-act",
+      "bundledPath": "corpus/in/india-code/arbitration-conciliation-act-1996.pdf",
+      "sourceAuthority": "india-code-local"
+    },
+    {
+      "filename": "the_biological_diversity_act,_2002.pdf",
+      "manifestActId": "biological-diversity-act",
+      "registryActId": "biological-diversity-act",
+      "bundledPath": "corpus/in/india-code/biological-diversity-act.pdf",
+      "sourceAuthority": "india-code-local"
+    },
+    {
+      "filename": "the_code_of_civil_procedure,_1908.pdf",
+      "manifestActId": "cpc",
+      "registryActId": "cpc",
+      "bundledPath": "corpus/in/india-code/cpc.pdf",
+      "sourceAuthority": "india-code-local"
+    },
+    {
+      "filename": "the_code_of_criminal_procedure,_1973.pdf",
+      "manifestActId": "crpc",
+      "registryActId": "crpc",
+      "bundledPath": "corpus/in/india-code/crpc.pdf",
+      "sourceAuthority": "india-code-local"
+    },
+    {
+      "filename": "the_court-fees_act1870.pdf",
+      "manifestActId": "court-fees-act",
+      "registryActId": "court-fees-act",
+      "bundledPath": "corpus/in/india-code/court-fees-act.pdf",
+      "sourceAuthority": "india-code-local"
+    },
+    {
+      "filename": "the_customs_act,_1962.pdf",
+      "manifestActId": "customs-act",
+      "registryActId": "customs-act",
+      "bundledPath": "corpus/in/india-code/customs-act.pdf",
+      "sourceAuthority": "india-code-local"
+    },
+    {
+      "filename": "the_equal_remuneration_act,_1976.pdf",
+      "manifestActId": "equal-remuneration-act",
+      "registryActId": "equal-remuneration-act",
+      "bundledPath": "corpus/in/india-code/equal-remuneration-act.pdf",
+      "sourceAuthority": "india-code-local"
+    },
+    {
+      "filename": "the_forest_(conservation)_act,_1980.pdf",
+      "manifestActId": "forest-conservation-act",
+      "registryActId": "forest-conservation-act",
+      "bundledPath": "corpus/in/india-code/forest-conservation-act.pdf",
+      "sourceAuthority": "india-code-local"
+    },
+    {
+      "filename": "the_hindu_adoptions_and_maintenance_act,1965.pdf",
+      "manifestActId": "hindu-adoption",
+      "registryActId": "hindu-adoption",
+      "bundledPath": "corpus/in/india-code/hindu-adoption.pdf",
+      "sourceAuthority": "india-code-local"
+    },
+    {
+      "filename": "the_indian_forest_act,_1927.pdf",
+      "manifestActId": "indian-forest-act",
+      "registryActId": "indian-forest-act",
+      "bundledPath": "corpus/in/india-code/indian-forest-act.pdf",
+      "sourceAuthority": "india-code-local"
+    },
+    {
+      "filename": "the_indian_stamp_act,_1899.pdf",
+      "manifestActId": "indian-stamp-act",
+      "registryActId": "indian-stamp-act",
+      "bundledPath": "corpus/in/india-code/indian-stamp-act.pdf",
+      "sourceAuthority": "india-code-local"
+    },
+    {
+      "filename": "the_industrial_disputes_act.pdf",
+      "manifestActId": "industrial-disputes",
+      "registryActId": "industrial-disputes",
+      "bundledPath": "corpus/in/india-code/industrial-disputes.pdf",
+      "sourceAuthority": "india-code-local"
+    },
+    {
+      "filename": "the_industrial_employment.pdf",
+      "manifestActId": "industrial-employment-standing-orders-act",
+      "registryActId": "industrial-employment-standing-orders-act",
+      "bundledPath": "corpus/in/india-code/industrial-employment-standing-orders-act.pdf",
+      "sourceAuthority": "india-code-local"
+    },
+    {
+      "filename": "the_insolvency_and_bankruptcy_code,_2016.pdf",
+      "manifestActId": "ibc-2016",
+      "registryActId": "ibc",
+      "bundledPath": "corpus/in/india-code/ibc-2016.pdf",
+      "sourceAuthority": "india-code-local"
+    },
+    {
+      "filename": "the_prohibition_of_benami_property_transactions_act,_1988.pdf",
+      "manifestActId": "benami-transactions-act",
+      "registryActId": "benami-transactions-act",
+      "bundledPath": "corpus/in/india-code/benami-transactions-act.pdf",
+      "sourceAuthority": "india-code-local"
+    },
+    {
+      "filename": "the_public_liability_insurance_act_1991.pdf",
+      "manifestActId": "public-liability-insurance-act",
+      "registryActId": "public-liability-insurance-act",
+      "bundledPath": "corpus/in/india-code/public-liability-insurance-act.pdf",
+      "sourceAuthority": "india-code-local"
+    },
+    {
+      "filename": "the_railways_act,_1989.pdf",
+      "manifestActId": "railways-act",
+      "registryActId": "railways-act",
+      "bundledPath": "corpus/in/india-code/railways-act.pdf",
+      "sourceAuthority": "india-code-local"
+    },
+    {
+      "filename": "the_real_estate_(regulation_and_development)_act,_2016.pdf",
+      "manifestActId": "rera-2016",
+      "registryActId": "rera",
+      "bundledPath": "corpus/in/india-code/rera-2016.pdf",
+      "sourceAuthority": "india-code-local"
+    },
+    {
+      "filename": "the_registration_act,1908.pdf",
+      "manifestActId": "registration-act",
+      "registryActId": "registration-act",
+      "bundledPath": "corpus/in/india-code/registration-act.pdf",
+      "sourceAuthority": "india-code-local"
+    },
+    {
+      "filename": "the_right_to_fair_compensation_and_transparency_in_land_acquisition,_rehabilitation_and_resettlement_act,_2013..pdf",
+      "manifestActId": "land-acquisition-act",
+      "registryActId": "land-acquisition-act",
+      "bundledPath": "corpus/in/india-code/land-acquisition-act.pdf",
+      "sourceAuthority": "india-code-local"
+    },
+    {
+      "filename": "the_rights_of_persons_with_disabilities_act,_2016.pdf",
+      "manifestActId": "rpwd-act",
+      "registryActId": "rpwd-act",
+      "bundledPath": "corpus/in/india-code/rpwd-act.pdf",
+      "sourceAuthority": "india-code-local"
+    },
+    {
+      "filename": "the_trade_marks_act,_1999.pdf",
+      "manifestActId": "trademarks-act-1999",
+      "registryActId": "trademarks-act",
+      "bundledPath": "corpus/in/india-code/trademarks-act-1999.pdf",
+      "sourceAuthority": "india-code-local"
+    },
+    {
+      "filename": "the_water_(prevention_and_control_of_pollution)_act,_1974.pdf",
+      "manifestActId": "water-pollution-act",
+      "registryActId": "water-pollution-act",
+      "bundledPath": "corpus/in/india-code/water-pollution-act.pdf",
+      "sourceAuthority": "india-code-local"
+    },
+    {
+      "filename": "the_wild_life_(protection)_act,_1972.pdf",
+      "manifestActId": "wildlife-protection-act",
+      "registryActId": "wildlife-protection-act",
+      "bundledPath": "corpus/in/india-code/wildlife-protection-act.pdf",
+      "sourceAuthority": "india-code-local"
+    },
+    {
+      "filename": "trade_unions_act_1926.pdf",
+      "manifestActId": "trade-unions-act",
+      "registryActId": "trade-unions-act",
+      "bundledPath": "corpus/in/india-code/trade-unions-act.pdf",
+      "sourceAuthority": "india-code-local"
+    },
+    {
+      "filename": "transplantation_of_human_organs_and_tissues_act,_1994.pdf",
+      "manifestActId": "transplantation-of-human-organs-act",
+      "bundledPath": "corpus/in/india-code/transplantation-of-human-organs-act.pdf",
+      "sourceAuthority": "india-code-local"
+    },
+    {
+      "filename": "gi-act.pdf",
+      "manifestActId": "gi-act",
+      "registryActId": "gi-act",
+      "bundledPath": "corpus/in/india-code/gi-act.pdf",
+      "sourceAuthority": "india-code-local"
+    },
+    {
+      "filename": "cinematograph-act.pdf",
+      "manifestActId": "cinematograph-act",
+      "registryActId": "cinematograph-act",
+      "bundledPath": "corpus/in/india-code/cinematograph-act.pdf",
+      "sourceAuthority": "india-code-local"
+    },
+    {
+      "filename": "cable-television-networks-act.pdf",
+      "manifestActId": "cable-television-networks-act",
+      "registryActId": "cable-television-networks-act",
+      "bundledPath": "corpus/in/india-code/cable-television-networks-act.pdf",
+      "sourceAuthority": "india-code-local"
+    }
+  ]
+}

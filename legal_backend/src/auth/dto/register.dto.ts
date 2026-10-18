@@ -7,14 +7,14 @@ import {
   ValidateIf,
 } from 'class-validator';
 import { SUPPORTED_COUNTRY_CODES } from '@/config/countries';
+import { IsPasswordPolicy } from '../password-policy';
 import { USER_TYPES } from '../constants';
 
 export class RegisterDto {
   @IsEmail()
   email!: string;
 
-  @IsString()
-  @MinLength(8)
+  @IsPasswordPolicy()
   password!: string;
 
   @IsOptional()
@@ -43,4 +43,12 @@ export class RegisterDto {
   @IsOptional()
   @IsString()
   paymentMethodId?: string;
+
+  @IsOptional()
+  @IsString()
+  referralCode?: string;
+
+  @IsOptional()
+  @IsString()
+  deviceFingerprint?: string;
 }

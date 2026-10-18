@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "stateCode": "SC",
+  "stateName": "South Carolina",
+  "acts": [
+    {
+      "actId": "sc-code",
+      "title": "South Carolina code",
+      "sourceAuthority": "cornell-lii",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.law.cornell.edu/states/sc",
+      "externalId": "sc-code",
+      "notes": "South Carolina state law via Cornell LII state index"
+    },
+    {
+      "actId": "sc-statutes",
+      "title": "South Carolina statutes",
+      "sourceAuthority": "cornell-lii",
+      "sourceTier": "mirror",
+      "primaryPdfUrl": "https://www.law.cornell.edu/states/sc",
+      "externalId": "sc-statutes",
+      "notes": "South Carolina state law via Cornell LII state index"
+    }
+  ]
+}

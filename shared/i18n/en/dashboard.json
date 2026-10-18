@@ -117,7 +117,7 @@
     "newClientMatter": "New client matter"
   },
   "aiSearch": {
-    "title": "AI Legal Search",
+    "title": "Legal Research",
     "subtitle": "Ask any legal question — answers cite real authorities for your jurisdiction.",
     "placeholder": "What legal question do you need answered?",
     "prompts": {
@@ -165,6 +165,23 @@
     "triageLeads": "Triage {count} leads",
     "askMorningBrief": "Ask for my morning brief"
   },
+  "aiReview": {
+    "title": "AI review queue",
+    "subtitle": "AI outputs flagged for lawyer review before client use",
+    "queueTitle": "{count, plural, one {# item awaiting review} other {# items awaiting review}}",
+    "queueDescription": "Review, open the source workspace, or mark as reviewed when signed off.",
+    "empty": "No AI outputs are waiting for lawyer review.",
+    "loadError": "Failed to load review queue",
+    "author": "Author",
+    "matter": "Matter",
+    "jurisdiction": "Jurisdiction",
+    "unverified": "Unverified",
+    "preview": "Preview",
+    "openWorkspace": "Open workspace",
+    "markReviewed": "Mark reviewed",
+    "previewTruncated": "Open the workspace for the full output.",
+    "unknownAuthor": "Unknown"
+  },
   "tasks": {
     "myTasks": "My Tasks",
     "next7d": "Next 7d",
@@ -187,12 +204,12 @@
     "start": "Start →",
     "allSetUp": "You're all set up!",
     "allSetUpDescription": "All getting-started steps are complete. This checklist will disappear shortly.",
-    "aiSearchLabel": "Run your first AI Legal Search",
+    "aiSearchLabel": "Run your first Legal Research",
     "aiSearchDescription": "Ask a legal question and get cited answers for your jurisdiction",
     "clientLabel": "Add your first client",
     "clientDescription": "Create a client profile to start managing matters",
-    "matterLabel": "Open a matter",
-    "matterDescription": "Create a matter to begin tracking a case",
+    "matterLabel": "Create your first matter",
+    "matterDescription": "Set up a matter to begin tracking the case",
     "templateLabel": "Upload a document template",
     "templateDescription": "Set up templates to automate document generation",
     "taskLabel": "Review your task queue",

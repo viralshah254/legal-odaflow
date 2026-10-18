@@ -1,5 +1,6 @@
 {
   "nav": {
+    "quickActions": "Schnelle Aktionen",
     "dashboard": "Armaturenbrett",
     "clients": "Kunden",
     "matters": "Angelegenheiten",
@@ -11,6 +12,7 @@
     "evidence": "Beweis",
     "billing": "Abrechnung",
     "trust": "Vertrauen",
+    "trustAccounts": "Treuhandkonten",
     "finance": "Finanzen",
     "expenses": "Kosten",
     "queues": "Warteschlangen",
@@ -19,17 +21,20 @@
     "inbox": "Posteingang",
     "newIntake": "Neue Aufnahme",
     "alerts": "Warnungen",
+    "monitors": "Monitore",
     "team": "Team",
     "templates": "Vorlagen",
     "reports": "Berichte",
     "settings": "Einstellungen",
-    "aiLegalSearch": "KI-Rechtssuche",
+    "aiLegalSearch": "Rechtsrecherche",
+    "documentDrafting": "Dokumentenerstellung",
+    "draftDocument": "Dokumententwurf",
     "more": "Mehr",
     "myProfile": "Mein Profil",
     "notifications": "Benachrichtigungen",
     "lawLibrary": "Rechtsbibliothek",
-    "vault": "Tresor",
-    "esign": "E-Unterschrift"
+    "vault": "Gewölbe",
+    "esign": "E-Sign"
   },
   "navGroups": {
     "scheduleTime": "Zeitplan und Zeit",
@@ -245,7 +250,7 @@
   "notify_the_partner": "Benachrichtigen Sie den Partner",
   "only_if_optional": "Nur wenn (optional)",
   "open_case": "Offener Fall",
-  "open_matter_workbench": "Offene Materie-Werkbank",
+  "open_matter_workbench": "Öffnen Sie Quick AI",
   "open_task_details": "Aufgabendetails öffnen",
   "opening": "Öffnung",
   "output_preview": "Ausgabevorschau",

@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "stateCode": "CO",
+  "stateName": "Colorado",
+  "acts": [
+    {
+      "actId": "co-code",
+      "title": "Colorado code",
+      "sourceAuthority": "cornell-lii",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.law.cornell.edu/states/co",
+      "externalId": "co-code",
+      "notes": "Colorado state law via Cornell LII state index"
+    },
+    {
+      "actId": "co-statutes",
+      "title": "Colorado statutes",
+      "sourceAuthority": "cornell-lii",
+      "sourceTier": "mirror",
+      "primaryPdfUrl": "https://www.law.cornell.edu/states/co",
+      "externalId": "co-statutes",
+      "notes": "Colorado state law via Cornell LII state index"
+    }
+  ]
+}

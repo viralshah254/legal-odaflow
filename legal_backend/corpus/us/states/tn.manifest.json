@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "stateCode": "TN",
+  "stateName": "Tennessee",
+  "acts": [
+    {
+      "actId": "tn-code",
+      "title": "Tennessee code",
+      "sourceAuthority": "cornell-lii",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.law.cornell.edu/states/tn",
+      "externalId": "tn-code",
+      "notes": "Tennessee state law via Cornell LII state index"
+    },
+    {
+      "actId": "tn-statutes",
+      "title": "Tennessee statutes",
+      "sourceAuthority": "cornell-lii",
+      "sourceTier": "mirror",
+      "primaryPdfUrl": "https://www.law.cornell.edu/states/tn",
+      "externalId": "tn-statutes",
+      "notes": "Tennessee state law via Cornell LII state index"
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+version: "3.9"
+
+services:
+  legal_backend:
+    image: ghcr.io/odaflow/legal-backend:latest
+    env_file:
+      - ./legal_backend/.env
+    ports:
+      - "4000:4000"
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    restart: unless-stopped
+
+  legal_web:
+    image: ghcr.io/odaflow/legal-web:latest
+    env_file:
+      - ./legal_web/.env.production
+    ports:
+      - "3000:3000"
+    depends_on:
+      - legal_backend
+    restart: unless-stopped
+
+  worker:
+    image: ghcr.io/odaflow/legal-backend:latest
+    env_file:
+      - ./legal_backend/.env
+    command: ["npm", "run", "worker:start"]
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    restart: unless-stopped
+
+  postgres:
+    image: postgres:16
+    environment:
+      POSTGRES_DB: legal
+      POSTGRES_USER: legal
+      POSTGRES_PASSWORD: change-me
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U legal -d legal"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+    restart: unless-stopped
+
+  redis:
+    image: redis:7
+    command: ["redis-server", "--appendonly", "yes"]
+    volumes:
+      - redisdata:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+    restart: unless-stopped
+
+volumes:
+  pgdata:
+  redisdata:

@@ -1,0 +1,92 @@
+[
+  [
+    "MCA-DIR-12",
+    "Director Appointment (DIR-12)",
+    "corporate_commercial",
+    "MCA"
+  ],
+  [
+    "MCA-MGT-7",
+    "Annual Return (MGT-7)",
+    "corporate_commercial",
+    "MCA"
+  ],
+  [
+    "MCA-AOC-4",
+    "Financial Statements (AOC-4)",
+    "corporate_commercial",
+    "MCA"
+  ],
+  [
+    "NCLT-CIRP",
+    "CIRP Application",
+    "insolvency",
+    "NCLT"
+  ],
+  [
+    "NCLT-IBC-7",
+    "Financial Creditor Application (IBC §7)",
+    "insolvency",
+    "NCLT"
+  ],
+  [
+    "DRT-OA",
+    "Original Application (DRT)",
+    "banking",
+    "DRT"
+  ],
+  [
+    "SEBI-LODR",
+    "LODR Disclosure",
+    "securities",
+    "SEBI"
+  ],
+  [
+    "GST-REG-01",
+    "GST Registration",
+    "tax",
+    "GSTN"
+  ],
+  [
+    "ITR-1",
+    "Income Tax Return (ITR-1)",
+    "tax",
+    "Income Tax Dept"
+  ],
+  [
+    "STAMP-ADJ",
+    "Stamp Duty Adjudication",
+    "conveyancing",
+    "State Stamp Authority"
+  ],
+  [
+    "RENT-PETITION",
+    "Rent Control Petition",
+    "real_estate_property",
+    "State Rent Authority"
+  ],
+  [
+    "BAIL-APP",
+    "Bail Application (BNSS)",
+    "criminal",
+    "District/Sessions Court"
+  ],
+  [
+    "QUASHING-PET",
+    "Quashing Petition (BNSS §528)",
+    "criminal",
+    "High Court"
+  ],
+  [
+    "WRIT-PET-A226",
+    "Writ Petition (Art. 226)",
+    "constitutional",
+    "High Court"
+  ],
+  [
+    "SLP-SC",
+    "Special Leave Petition",
+    "constitutional",
+    "Supreme Court"
+  ]
+]

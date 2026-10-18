@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "stateCode": "ID",
+  "stateName": "Idaho",
+  "acts": [
+    {
+      "actId": "id-code",
+      "title": "Idaho code",
+      "sourceAuthority": "cornell-lii",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.law.cornell.edu/states/id",
+      "externalId": "id-code",
+      "notes": "Idaho state law via Cornell LII state index"
+    },
+    {
+      "actId": "id-statutes",
+      "title": "Idaho statutes",
+      "sourceAuthority": "cornell-lii",
+      "sourceTier": "mirror",
+      "primaryPdfUrl": "https://www.law.cornell.edu/states/id",
+      "externalId": "id-statutes",
+      "notes": "Idaho state law via Cornell LII state index"
+    }
+  ]
+}

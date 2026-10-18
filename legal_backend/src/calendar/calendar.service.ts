@@ -21,7 +21,10 @@ export class CalendarService {
       data: {
         tenantId,
         matterId: dto.matterId,
+        clientId: dto.clientId,
         title: dto.title,
+        description: dto.description,
+        type: dto.type ?? 'MEETING',
         startAt: new Date(dto.startAt),
         endAt: new Date(dto.endAt),
       },
@@ -74,7 +77,10 @@ export class CalendarService {
       where: { id: eventId },
       data: {
         matterId: dto.matterId,
+        clientId: dto.clientId,
         title: dto.title,
+        description: dto.description,
+        type: dto.type,
         startAt: dto.startAt ? new Date(dto.startAt) : undefined,
         endAt: dto.endAt ? new Date(dto.endAt) : undefined,
       },

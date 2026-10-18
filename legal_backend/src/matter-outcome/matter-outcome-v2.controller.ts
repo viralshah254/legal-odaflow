@@ -11,17 +11,27 @@ export class MatterOutcomeV2Controller {
   constructor(private readonly matterOutcomeService: MatterOutcomeService) {}
 
   @Get('benchmarks')
-  getFirmBenchmarks(
+  getMatterOutcomeBenchmarks(
     @TenantId() tenantId: string,
+    @Param('matterId') matterId: string,
     @CurrentUser() user: RequestUser,
     @Query('practiceArea') practiceArea?: string,
     @Query('countryCode') countryCode?: string,
   ) {
-    return this.matterOutcomeService.getFirmBenchmarks(
+    if (practiceArea || countryCode) {
+      return this.matterOutcomeService.getFirmBenchmarks(
+        tenantId,
+        user.id,
+        user.tenantRole,
+        { practiceArea, countryCode },
+      );
+    }
+
+    return this.matterOutcomeService.getMatterOutcomeBenchmarks(
       tenantId,
+      matterId,
       user.id,
       user.tenantRole,
-      { practiceArea, countryCode },
     );
   }
 

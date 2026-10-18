@@ -1,0 +1,236 @@
+/**
+ * Hand-curated enriched litigation entries (full punishment/bail/practice metadata).
+ * These override Schedule I crosswalk rows for the same legacy section id.
+ */
+import type { LegacyActId, NewActId, SectionFinderEntry, ChangeType, TrialCourt } from './section-finder.types';
+
+const LEGACY_ACT_META: Record<LegacyActId, { short: string; full: string }> = {
+  ipc: { short: 'IPC', full: 'Indian Penal Code, 1860' },
+  crpc: { short: 'CrPC', full: 'Code of Criminal Procedure, 1973' },
+  iea: { short: 'IEA', full: 'Indian Evidence Act, 1872' },
+  ni_act: { short: 'NI Act', full: 'Negotiable Instruments Act, 1881' },
+  pocso: { short: 'POCSO', full: 'Protection of Children from Sexual Offences Act, 2012' },
+  ndps: { short: 'NDPS', full: 'Narcotic Drugs and Psychotropic Substances Act, 1985' },
+  pmla: { short: 'PMLA', full: 'Prevention of Money Laundering Act, 2002' },
+  cpc: { short: 'CPC', full: 'Code of Civil Procedure, 1908' },
+  other: { short: '', full: '' },
+};
+
+const NEW_ACT_META: Record<NewActId, { short: string; full: string }> = {
+  bns: { short: 'BNS', full: 'Bharatiya Nyaya Sanhita, 2023' },
+  bnss: { short: 'BNSS', full: 'Bharatiya Nagarik Suraksha Sanhita, 2023' },
+  bsa: { short: 'BSA', full: 'Bharatiya Sakshya Adhiniyam, 2023' },
+  unchanged: { short: '', full: '' },
+};
+
+function entry(
+  legacyActId: LegacyActId,
+  legacySection: string,
+  legacyTitle: string,
+  newActId: NewActId,
+  newSection: string,
+  newTitle: string,
+  changeType: ChangeType,
+  changeSummary: string,
+  punishment: string,
+  isCognizable: boolean,
+  isBailable: boolean,
+  isCompoundable: boolean,
+  trialCourt: TrialCourt,
+  trialCourtLabel: string,
+  bailPosture: string,
+  sourceRef: string,
+  opts?: {
+    maxYears?: number;
+    minYears?: number;
+    practiceNote?: string;
+    transitionWarning?: string;
+    isInForce?: boolean;
+    successorSection?: string;
+    successorActShort?: string;
+    officialRemovalNote?: string;
+  },
+): SectionFinderEntry {
+  const la = LEGACY_ACT_META[legacyActId];
+  const na = NEW_ACT_META[newActId];
+  const omitted = changeType === 'omitted' || opts?.isInForce === false;
+  return {
+    id: `${legacyActId.toUpperCase()}-${legacySection}`,
+    legacyActId,
+    legacyActShort: la.short,
+    legacyActFull: la.full,
+    legacySection,
+    legacyTitle,
+    newActId,
+    newActShort: na.short,
+    newActFull: na.full,
+    newSection,
+    newTitle,
+    changeType,
+    changeSummary,
+    punishment: omitted ? 'Not applicable — section omitted' : punishment,
+    maxYears: opts?.maxYears,
+    minYears: opts?.minYears,
+    isCognizable: omitted ? false : isCognizable,
+    isBailable: omitted ? false : isBailable,
+    isCompoundable,
+    trialCourt,
+    trialCourtLabel,
+    bailPosture: omitted ? 'Not applicable — legacy section no longer in force' : bailPosture,
+    practiceNote: opts?.practiceNote,
+    transitionWarning: opts?.transitionWarning,
+    sourceRef,
+    transitionDate: '2024-07-01',
+    tier: 'enriched',
+    isInForce: opts?.isInForce ?? !omitted,
+    successorSection: opts?.successorSection,
+    successorActShort: opts?.successorActShort,
+    officialRemovalNote: opts?.officialRemovalNote,
+    effectiveAsOf: '2024-07-01',
+    lastVerifiedAt: '2026-06-15',
+  };
+}
+
+/** Priority section ids for enriched tier (~150 litigation staples). */
+export const LITIGATION_PRIORITY_IDS = new Set([
+  'IPC-302', 'IPC-304', 'IPC-304A', 'IPC-304B', 'IPC-307', 'IPC-308', 'IPC-323', 'IPC-325', 'IPC-326',
+  'IPC-354', 'IPC-354A', 'IPC-354B', 'IPC-354C', 'IPC-354D', 'IPC-376', 'IPC-376D', 'IPC-377',
+  'IPC-379', 'IPC-380', 'IPC-384', 'IPC-385', 'IPC-389', 'IPC-406', 'IPC-411', 'IPC-420', 'IPC-463',
+  'IPC-465', 'IPC-468', 'IPC-498A', 'IPC-500', 'IPC-506', 'IPC-509', 'IPC-511', 'IPC-124A',
+  'IPC-34', 'IPC-120', 'IPC-120B', 'IPC-141', 'IPC-143', 'IPC-147', 'IPC-148', 'IPC-149', 'IPC-305', 'IPC-306',
+  'IPC-363', 'IPC-363A', 'IPC-365', 'IPC-366', 'IPC-366A', 'IPC-368', 'IPC-375', 'IPC-377',
+  'IPC-395', 'IPC-396', 'IPC-397', 'IPC-399', 'IPC-402', 'IPC-409', 'IPC-420', 'IPC-467', 'IPC-471',
+  'IPC-489A', 'IPC-489B', 'IPC-489C', 'IPC-489D', 'IPC-489E', 'IPC-499', 'IPC-500', 'IPC-501', 'IPC-502',
+  'IPC-279', 'IPC-281', 'IPC-282', 'IPC-283', 'IPC-284', 'IPC-285', 'IPC-287', 'IPC-288', 'IPC-290',
+  'IPC-332', 'IPC-333', 'IPC-336', 'IPC-337', 'IPC-338', 'IPC-341', 'IPC-342', 'IPC-343', 'IPC-344',
+  'CRPC-41', 'CRPC-50', 'CRPC-57', 'CRPC-91', 'CRPC-93', 'CRPC-97', 'CRPC-98', 'CRPC-154', 'CRPC-156',
+  'CRPC-157', 'CRPC-172', 'CRPC-200', 'CRPC-204', 'CRPC-239', 'CRPC-240', 'CRPC-357', 'CRPC-389',
+  'CRPC-401', 'CRPC-405', 'CRPC-437', 'CRPC-438', 'CRPC-125', 'CRPC-144', 'CRPC-133', 'CRPC-145',
+  'CRPC-107', 'CRPC-151', 'CRPC-190', 'CRPC-319', 'CRPC-320', 'CRPC-482',
+  'IEA-3', 'IEA-8', 'IEA-9', 'IEA-10', 'IEA-11', 'IEA-12', 'IEA-17', 'IEA-24', 'IEA-27', 'IEA-32', 'IEA-45', 'IEA-56', 'IEA-57', 'IEA-61', 'IEA-65B',
+  'IEA-73', 'IEA-101', 'IEA-102', 'IEA-106', 'IEA-113A', 'IEA-113B', 'IEA-114', 'IEA-118', 'IEA-133',
+  'NI_ACT-138', 'NI_ACT-141', 'NI_ACT-142', 'NI_ACT-143', 'NI_ACT-139', 'NI_ACT-140',
+  'POCSO-3', 'POCSO-4', 'POCSO-5', 'POCSO-6', 'POCSO-8', 'POCSO-10',
+  'NDPS-8', 'NDPS-20', 'NDPS-21', 'NDPS-27', 'NDPS-29',
+  'PMLA-3', 'PMLA-4', 'PMLA-45', 'PMLA-50',
+]);
+
+export const ENRICHED_SECTION_FINDER_DATA: SectionFinderEntry[] = [
+  // ── IPC omitted (high-traffic) ───────────────────────────────────────────
+  entry('ipc', '124A', 'Sedition', 'bns', '', '',
+    'omitted',
+    'IPC §124A (Sedition) has been **omitted** under the Bharatiya Nyaya Sanhita, 2023 (effective 1 July 2024). This provision is **no longer in force**. A related (not identical) provision is now BNS §152 — Acts endangering sovereignty, unity and integrity of India. Review the new text before relying on old jurisprudence.',
+    'Not applicable — section omitted', false, false, false, 'sessions', 'Court of Session',
+    'Not applicable — legacy section no longer in force',
+    'BNS, 2023, Schedule I — IPC 124A omitted; Annexure III',
+    {
+      isInForce: false,
+      successorSection: '152',
+      successorActShort: 'BNS',
+      officialRemovalNote: '[Omitted by Bharatiya Nyaya Sanhita, 2023]',
+      practiceNote: 'Unlike IPC 124A, BNS 152 does not require "tendency to excite disaffection". The Supreme Court moratorium on IPC 124A (May 2022) is superseded for post-July 2024 matters.',
+    },
+  ),
+
+  // ── Homicide & hurt ─────────────────────────────────────────────────────
+  entry('ipc', '302', 'Murder', 'bns', '101', 'Punishment for murder',
+    'substantially_re_enacted', 'Section substantially re-enacted. Punishment unchanged — death or life imprisonment. BNS 101(2) adds mob lynching as aggravated form.',
+    'Death or imprisonment for life and fine', true, false, false, 'sessions', 'Court of Session',
+    'Non-bailable. Bail only by Sessions Court or High Court.',
+    'BNS, 2023, Schedule I; s.101', { practiceNote: 'FIR under IPC 302 before 1 July 2024 retains IPC framing. New FIRs use BNS 101.' },
+  ),
+  entry('ipc', '304', 'Culpable homicide not amounting to murder', 'bns', '103', 'Punishment for culpable homicide not amounting to murder',
+    'substantially_re_enacted', 'Two limbs preserved. Part I (intent): life/10 yrs min 5. Part II (knowledge): up to 10 years.',
+    'Imprisonment for life, or imprisonment for not less than 5 years but which may extend to 10 years, and fine (Part I)',
+    true, false, false, 'sessions', 'Court of Session', 'Non-bailable. Bail at Sessions or High Court discretion.',
+    'BNS, 2023, Schedule I; s.103', { maxYears: 10 },
+  ),
+  entry('ipc', '304A', 'Causing death by negligence', 'bns', '106', 'Causing death by negligence',
+    're_enacted_with_additions', 'BNS 106(1) enhances punishment to 5 years. BNS 106(2) adds hit-and-run / failure to report (notification-dependent).',
+    'Imprisonment up to 5 years and fine (106(1)); enhanced punishment for hit-and-run under 106(2)',
+    true, true, false, 'sessions', 'Court of Session', 'Generally bailable for 106(1); 106(2) non-bailable — verify notification status.',
+    'BNS, 2023, s.106', { maxYears: 5 },
+  ),
+  entry('ipc', '307', 'Attempt to murder', 'bns', '109', 'Attempt to murder',
+    'substantially_re_enacted', 'Attempt to murder re-enacted with punishment up to life imprisonment.',
+    'Imprisonment for life, or imprisonment up to 10 years and fine', true, false, false, 'sessions', 'Court of Session',
+    'Non-bailable. Anticipatory bail possible in weak cases.', 'BNS, 2023, s.109', { maxYears: 10 },
+  ),
+  entry('ipc', '376', 'Rape', 'bns', '63', 'Rape',
+    'substantially_re_enacted', 'Rape re-enacted. Minimum 10 years; life imprisonment for certain aggravated forms.',
+    'Rigorous imprisonment not less than 10 years, may extend to life, and fine', true, false, false, 'sessions', 'Court of Session',
+    'Non-bailable. Bail rare; stringent conditions.', 'BNS, 2023, s.63', { minYears: 10 },
+  ),
+  entry('ipc', '420', 'Cheating and dishonestly inducing delivery of property', 'bns', '318(4)', 'Cheating and dishonestly inducing delivery of property',
+    'substantially_re_enacted', 'Cheating with delivery of property — corresponds to IPC 420.',
+    'Imprisonment up to 7 years and fine', true, false, false, 'magistrate_first_class', 'Magistrate of First Class / Sessions (by value)',
+    'Non-bailable. Online fraud: CBI/EOW may investigate. Bail at Magistrate for first offence.',
+    'BNS, 2023, s.318(4)', { maxYears: 7, practiceNote: 'BNS s.318 is cheating generally; s.318(4) is dishonestly inducing delivery of property (IPC 420 equivalent).' },
+  ),
+  entry('ipc', '498A', 'Cruelty by husband or relatives', 'bns', '85', 'Cruelty by husband or relatives',
+    'substantially_re_enacted', 'Cruelty by husband or relatives re-enacted. Cognizable, non-bailable.',
+    'Imprisonment up to 3 years and fine', true, false, true, 'magistrate_first_class', 'Magistrate of First Class',
+    'Non-bailable but bail commonly granted. Arnesh Kumar guidelines on arrest apply.', 'BNS, 2023, s.85', { maxYears: 3 },
+  ),
+
+  // ── CrPC procedure ────────────────────────────────────────────────────────
+  entry('crpc', '154', 'Information in cognizable cases (FIR)', 'bnss', '173', 'Information in cognizable cases',
+    'substantially_re_enacted', 'FIR registration procedure re-enacted. Zero-FIR and e-FIR provisions updated.',
+    'N/A — procedural provision', true, true, false, 'magistrate_first_class', 'Officer in charge of police station',
+    'Procedural — not an offence. Refusal to register FIR: mandamus to SHO / Magistrate under BNSS.',
+    'BNSS, 2023, s.173', { practiceNote: 'E-FIR and Zero-FIR at any police station continue. Copy to complainant free of cost.' },
+  ),
+  entry('crpc', '437', 'Bail in non-bailable offences', 'bnss', '480', 'Bail in non-bailable offences',
+    'substantially_re_enacted', 'Regular bail in non-bailable offences — substantially re-enacted.',
+    'N/A — procedural provision', false, true, false, 'sessions', 'Court of Session / High Court',
+    'Bail at discretion of Sessions or High Court. Cannot be refused merely because offence is non-bailable.',
+    'BNSS, 2023, s.480',
+  ),
+  entry('crpc', '438', 'Anticipatory bail', 'bnss', '482', 'Anticipatory bail',
+    'substantially_re_enacted', 'Anticipatory bail re-enacted. No anticipatory bail in certain offences per s.482(4).',
+    'N/A — procedural provision', false, true, false, 'high_court', 'High Court / Court of Session',
+    'Application before Sessions or High Court. Conditions: cooperate with investigation, not leave country.',
+    'BNSS, 2023, s.482', { practiceNote: 'S.482(4) restricts anticipatory bail for offences against women/children and specified grave offences.' },
+  ),
+  entry('crpc', '125', 'Maintenance of wives, children and parents', 'bnss', '144', 'Maintenance of wives, children and parents',
+    'substantially_re_enacted', 'Maintenance procedure re-enacted under BNSS.',
+    'N/A — procedural provision', false, true, false, 'magistrate_first_class', 'Magistrate of First Class',
+    'Interim maintenance available. Enforcement through BNSS contempt provisions.', 'BNSS, 2023, s.144',
+  ),
+
+  // ── IEA evidence ──────────────────────────────────────────────────────────
+  entry('iea', '65B', 'Admissibility of electronic records', 'bsa', '63', 'Admissibility of electronic or digital records',
+    're_enacted_with_additions', 'BSA 63 retains certificate requirement; government records deemed certified.',
+    'N/A — evidence provision', false, false, false, 'magistrate_first_class', 'Any Court',
+    'Certificate under s.63 BSA required unless exempted. Arjun Panditrao principles apply.',
+    'BSA, 2023, s.63', { practiceNote: 'Certificate from device owner/custodian; 65B IEA jurisprudence largely carries over.' },
+  ),
+  entry('iea', '27', 'Discovery of fact in consequence of information from accused', 'bsa', '23', 'Discovery of fact in consequence of information from accused',
+    'substantially_re_enacted', 'Discovery provision re-enacted.',
+    'N/A — evidence provision', false, false, false, 'magistrate_first_class', 'Any Court',
+    'Only portion leading to discovery of fact admissible (Pulukuri Kottaya).', 'BSA, 2023, s.23',
+  ),
+
+  // ── NI Act ────────────────────────────────────────────────────────────────
+  entry('ni_act', '138', 'Dishonour of cheque for insufficiency of funds', 'unchanged', '138', 'Dishonour of cheque (unchanged)',
+    'unchanged', 'NI Act s.138 unchanged. Cheque bounce prosecutions continue under NI Act.',
+    'Imprisonment up to 2 years or fine up to twice the cheque amount or both',
+    false, true, true, 'magistrate_first_class', 'Judicial Magistrate First Class',
+    'Bailable. Summary trial under s.143 NI Act.', 'Negotiable Instruments Act, 1881, s.138', { maxYears: 2 },
+  ),
+  entry('ni_act', '141', 'Offences by companies', 'unchanged', '141', 'Offences by companies',
+    'unchanged', 'Vicarious liability of directors/officers for NI Act offences.',
+    'Same as principal offence', false, true, false, 'magistrate_first_class', 'Magistrate of First Class',
+    'Every person in charge of conduct of business liable unless proves due diligence.', 'NI Act, 1881, s.141',
+  ),
+  entry('ni_act', '142', 'Cognizance of offences', 'unchanged', '142', 'Cognizance of offences',
+    'unchanged', 'Complaint by payee/holder in due course within 1 month of cause of action.',
+    'N/A — procedural', false, false, false, 'magistrate_first_class', 'Magistrate of First Class',
+    'Complaint only on written complaint; limitation: 1 month from cause of action.', 'NI Act, 1881, s.142',
+  ),
+  entry('ni_act', '143', 'Power of Court to try cases summarily', 'unchanged', '143', 'Power of Court to try cases summarily',
+    'unchanged', 'Summary trial for NI Act offences punishable up to 2 years.',
+    'N/A — procedural', false, false, false, 'magistrate_first_class', 'Magistrate of First Class',
+    'Summary procedure; evidence through affidavits permitted.', 'NI Act, 1881, s.143',
+  ),
+];

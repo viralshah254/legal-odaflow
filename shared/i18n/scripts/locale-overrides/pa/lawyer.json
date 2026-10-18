@@ -1,5 +1,6 @@
 {
   "nav": {
+    "quickActions": "ਤੇਜ਼ ਕਾਰਵਾਈਆਂ",
     "dashboard": "ਡੈਸ਼ਬੋਰਡ",
     "clients": "ਗਾਹਕ",
     "matters": "ਮਾਮਲੇ",
@@ -11,6 +12,7 @@
     "evidence": "ਸਬੂਤ",
     "billing": "ਬਿਲਿੰਗ",
     "trust": "ਭਰੋਸਾ",
+    "trustAccounts": "ਟਰੱਸਟ ਖਾਤੇ",
     "finance": "ਵਿੱਤ",
     "expenses": "ਖਰਚੇ",
     "queues": "ਕਤਾਰਾਂ",
@@ -19,14 +21,20 @@
     "inbox": "ਇਨਬਾਕਸ",
     "newIntake": "ਨਵਾਂ ਦਾਖਲਾ",
     "alerts": "ਚੇਤਾਵਨੀਆਂ",
+    "monitors": "ਨਿਗਰਾਨੀ ਕਰਦਾ ਹੈ",
     "team": "ਟੀਮ",
     "templates": "ਟੈਂਪਲੇਟਸ",
     "reports": "ਰਿਪੋਰਟਾਂ",
     "settings": "ਸੈਟਿੰਗਾਂ",
-    "aiLegalSearch": "AI ਕਾਨੂੰਨੀ ਖੋਜ",
+    "aiLegalSearch": "ਕਾਨੂੰਨੀ ਖੋਜ",
+    "documentDrafting": "ਦਸਤਾਵੇਜ਼ ਦਾ ਖਰੜਾ ਤਿਆਰ ਕਰਨਾ",
+    "draftDocument": "ਦਸਤਾਵੇਜ਼ ਡਰਾਫਟ",
     "more": "ਹੋਰ",
     "myProfile": "ਮੇਰਾ ਪ੍ਰੋਫ਼ਾਈਲ",
-    "notifications": "ਸੂਚਨਾਵਾਂ"
+    "notifications": "ਸੂਚਨਾਵਾਂ",
+    "lawLibrary": "ਕਾਨੂੰਨ ਲਾਇਬ੍ਰੇਰੀ",
+    "vault": "ਵਾਲਟ",
+    "esign": "ਈ-ਸਾਈਨ"
   },
   "navGroups": {
     "scheduleTime": "ਸਮਾਂ-ਸੂਚੀ ਅਤੇ ਸਮਾਂ",
@@ -238,7 +246,7 @@
   "notify_the_partner": "ਸਾਥੀ ਨੂੰ ਸੂਚਿਤ ਕਰੋ",
   "only_if_optional": "ਕੇਵਲ ਤਾਂ ਹੀ (ਵਿਕਲਪਿਕ)",
   "open_case": "ਓਪਨ ਕੇਸ",
-  "open_matter_workbench": "ਓਪਨ ਮੈਟਰ ਵਰਕਬੈਂਚ",
+  "open_matter_workbench": "ਤੇਜ਼ AI ਖੋਲ੍ਹੋ",
   "open_task_details": "ਕਾਰਜ ਵੇਰਵੇ ਖੋਲ੍ਹੋ",
   "opening": "ਖੁੱਲ ਰਿਹਾ ਹੈ",
   "output_preview": "ਆਉਟਪੁੱਟ ਝਲਕ",

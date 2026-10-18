@@ -1,5 +1,9 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { randomUUID } from 'crypto';
+import { Prisma } from '@prisma/client';
+import { JobsService } from '@/jobs/jobs.service';
+import { MIGRATION_JOB_TYPES } from '@/jobs/jobs.constants';
+import { PrismaService } from '@/prisma/prisma.service';
 import { ClioImportDto } from './dto/clio-import.dto';
 
 export type MigrationJobStatus =
@@ -11,6 +15,7 @@ export type MigrationJobStatus =
 
 export interface ClioMigrationJob {
   jobId: string;
+  agentJobId: string;
   status: MigrationJobStatus;
   provider: 'clio';
   tenantId: string;
@@ -23,52 +28,123 @@ export interface ClioMigrationJob {
   queuedAt: string;
   updatedAt: string;
   completedAt?: string;
+  result?: Record<string, unknown>;
 }
 
 const REQUIRED_CSV_HEADERS = ['id', 'display_name', 'type'] as const;
 
 @Injectable()
 export class MigrationService {
-  private readonly jobs = new Map<string, ClioMigrationJob>();
+  constructor(
+    private readonly jobsService: JobsService,
+    private readonly prisma: PrismaService,
+  ) {}
 
-  importClioCsv(tenantId: string, dto: ClioImportDto) {
-    const jobId = randomUUID();
+  async importClioCsv(tenantId: string, dto: ClioImportDto) {
     const validation = this.validateClioCsv(dto);
     const now = new Date().toISOString();
 
-    const job: ClioMigrationJob = {
-      jobId,
-      status: validation.errors.length > 0 ? 'FAILED' : 'QUEUED',
-      provider: 'clio',
+    if (validation.errors.length > 0) {
+      return {
+        jobId: '',
+        agentJobId: '',
+        status: 'FAILED' as const,
+        provider: 'clio' as const,
+        tenantId,
+        fileName: dto.fileName,
+        rowCount: dto.rowCount,
+        parsedRowCount: validation.parsedRowCount,
+        entityTypes: dto.entityTypes ?? ['clients', 'matters', 'contacts'],
+        validationErrors: validation.errors,
+        message: 'Clio CSV validation failed',
+        queuedAt: now,
+        updatedAt: now,
+      } satisfies ClioMigrationJob;
+    }
+
+    const customJobId = randomUUID();
+    const enqueue = await this.jobsService.enqueueClioMigration({
+      jobId: customJobId,
       tenantId,
       fileName: dto.fileName,
       rowCount: dto.rowCount,
       parsedRowCount: validation.parsedRowCount,
       entityTypes: dto.entityTypes ?? ['clients', 'matters', 'contacts'],
-      validationErrors: validation.errors,
-      message:
-        validation.errors.length > 0
-          ? 'Clio CSV validation failed'
-          : 'Clio CSV validated and queued for import',
-      queuedAt: now,
-      updatedAt: now,
-    };
+      csvContent: dto.csvContent,
+    });
 
-    this.jobs.set(jobId, job);
-
-    if (validation.errors.length === 0) {
-      void this.simulateJobProgress(jobId);
-    }
-
-    return job;
+    return this.mapAgentJob(
+      await this.prisma.agentJob.findUniqueOrThrow({
+        where: { id: enqueue.agentJobId },
+      }),
+    );
   }
 
-  getJobStatus(tenantId: string, jobId: string) {
-    const job = this.jobs.get(jobId);
-    if (!job || job.tenantId !== tenantId) {
+  async getJobStatus(tenantId: string, jobId: string) {
+    const agentJob = await this.prisma.agentJob.findFirst({
+      where: {
+        id: jobId,
+        tenantId,
+        jobType: MIGRATION_JOB_TYPES.CLIO_IMPORT,
+      },
+    });
+
+    if (!agentJob) {
       throw new NotFoundException('Migration job not found');
     }
-    return job;
+
+    return this.mapAgentJob(agentJob);
+  }
+
+  private mapAgentJob(agentJob: {
+    id: string;
+    tenantId: string | null;
+    status: string;
+    payload: unknown;
+    result: unknown;
+    error: string | null;
+    createdAt: Date;
+    updatedAt: Date;
+    completedAt: Date | null;
+  }): ClioMigrationJob {
+    const payload =
+      agentJob.payload && typeof agentJob.payload === 'object'
+        ? (agentJob.payload as Record<string, unknown>)
+        : {};
+    const result =
+      agentJob.result && typeof agentJob.result === 'object'
+        ? (agentJob.result as Record<string, unknown>)
+        : undefined;
+
+    const validationErrors = Array.isArray(payload.validationErrors)
+      ? (payload.validationErrors as string[])
+      : [];
+
+    return {
+      jobId: String(payload.jobId ?? agentJob.id),
+      agentJobId: agentJob.id,
+      status: agentJob.status as MigrationJobStatus,
+      provider: 'clio',
+      tenantId: agentJob.tenantId ?? String(payload.tenantId ?? ''),
+      fileName: String(payload.fileName ?? 'clio-export.csv'),
+      rowCount: Number(payload.rowCount ?? 0),
+      parsedRowCount: Number(payload.parsedRowCount ?? 0),
+      entityTypes: Array.isArray(payload.entityTypes)
+        ? (payload.entityTypes as string[])
+        : ['clients', 'matters', 'contacts'],
+      validationErrors,
+      message:
+        agentJob.error ??
+        (agentJob.status === 'COMPLETED'
+          ? `Import completed (${String(result?.mattersCreated ?? 0)} matters, ${String(result?.clientsCreated ?? 0)} clients)`
+          : agentJob.status === 'FAILED'
+            ? 'Import failed'
+            : 'Clio CSV queued for import'),
+      queuedAt: agentJob.createdAt.toISOString(),
+      updatedAt: agentJob.updatedAt.toISOString(),
+      completedAt: agentJob.completedAt?.toISOString(),
+      result,
+    };
   }
 
   private validateClioCsv(dto: ClioImportDto): {
@@ -122,29 +198,5 @@ export class MigrationService {
     }
 
     return { parsedRowCount, errors };
-  }
-
-  private async simulateJobProgress(jobId: string) {
-    const advance = (status: MigrationJobStatus, message: string) => {
-      const job = this.jobs.get(jobId);
-      if (!job) return;
-      job.status = status;
-      job.message = message;
-      job.updatedAt = new Date().toISOString();
-      if (status === 'COMPLETED' || status === 'FAILED') {
-        job.completedAt = job.updatedAt;
-      }
-      this.jobs.set(jobId, job);
-    };
-
-    await new Promise((r) => setTimeout(r, 400));
-    advance('VALIDATING', 'Validating Clio export mappings…');
-    await new Promise((r) => setTimeout(r, 600));
-    advance('PROCESSING', 'Importing clients and matters…');
-    await new Promise((r) => setTimeout(r, 800));
-    advance(
-      'COMPLETED',
-      `Imported ${this.jobs.get(jobId)?.parsedRowCount ?? 0} rows (stub worker; connect BullMQ for production).`,
-    );
   }
 }

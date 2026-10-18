@@ -45,7 +45,13 @@ export class PreBillController {
 
   @Get('ledes')
   @Header('Content-Type', 'text/csv')
-  exportLedes(@TenantId() tenantId: string, @Query('matterId') matterId?: string) {
-    return this.preBillService.buildLedesExport(tenantId, matterId).then((result) => result.csv);
+  exportLedes(
+    @TenantId() tenantId: string,
+    @Query('matterId') matterId?: string,
+    @Query('sessionId') sessionId?: string,
+  ) {
+    return this.preBillService
+      .buildLedesExport(tenantId, matterId, sessionId)
+      .then((result) => result.csv);
   }
 }

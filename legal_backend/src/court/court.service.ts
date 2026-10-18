@@ -8,7 +8,9 @@ import {
 import { ConfigService } from '@nestjs/config';
 import { Prisma } from '@prisma/client';
 import { MatterAccessService } from '@/access/matter-access.service';
+import { CalendarService } from '@/calendar/calendar.service';
 import { CourtListenerConnector } from '@/legal-sources/connectors/courtlistener.connector';
+import { JobsService } from '@/jobs/jobs.service';
 import { PrismaService } from '@/prisma/prisma.service';
 import {
   CreateCourtCaseDto,
@@ -27,6 +29,8 @@ export class CourtService {
     private readonly matterAccess: MatterAccessService,
     private readonly configService: ConfigService,
     private readonly courtListener: CourtListenerConnector,
+    private readonly calendarService: CalendarService,
+    private readonly jobsService: JobsService,
   ) {}
 
   async getCourtCaseForMatter(
@@ -188,11 +192,13 @@ export class CourtService {
       }
 
       const payload = (await response.json()) as Record<string, unknown>;
-      return {
+      const result = {
         provider: 'ecourts-india-live',
         cnrNumber: cnr,
         ...payload,
       };
+      await this.syncHearingsToCalendar(dto, result);
+      return result;
     }
 
     const nodeEnv = this.configService.get<string>('NODE_ENV', 'development');
@@ -202,7 +208,7 @@ export class CourtService {
       );
     }
 
-    return {
+    const stubResult = {
       provider: 'ecourts-india-stub',
       cnrNumber: cnr,
       status: 'FOUND',
@@ -231,6 +237,8 @@ export class CourtService {
       disclaimer:
         'Stub eCourts response for development. Set ECOURTS_API_URL for production data.',
     };
+    await this.syncHearingsToCalendar(dto, stubResult);
+    return stubResult;
   }
 
   async usDocketSync(tenantId: string, dto: UsDocketSyncDto) {
@@ -260,6 +268,21 @@ export class CourtService {
       'STUB-DOCKET-001';
 
     const liveEntries = await this.fetchCourtListenerDocketEntries(docketNumber);
+    const isProduction = this.configService.get<string>('NODE_ENV') === 'production';
+
+    if (liveEntries.length === 0) {
+      if (isProduction) {
+        if (!this.courtListener.isConfigured()) {
+          throw new ServiceUnavailableException(
+            'US docket sync requires CourtListener API configuration in production',
+          );
+        }
+        throw new NotFoundException(
+          `No docket entries found for docket number ${docketNumber}`,
+        );
+      }
+    }
+
     const entries =
       liveEntries.length > 0
         ? liveEntries
@@ -306,6 +329,13 @@ export class CourtService {
       },
     });
 
+    await this.syncDocketEntriesToCalendar(
+      tenantId,
+      courtCase.matterId,
+      created,
+    );
+    await this.enqueueDeadlineAgent(tenantId, courtCase.matterId, dto.matterId ? undefined : courtCase.id);
+
     return {
       courtCaseId: courtCase.id,
       matterId: courtCase.matterId,
@@ -314,6 +344,88 @@ export class CourtService {
       syncedEntries: created.length,
       entries: created,
     };
+  }
+
+  private async syncHearingsToCalendar(
+    dto: EcourtsLookupDto,
+    payload: Record<string, unknown>,
+  ) {
+    if (!dto.tenantId || !dto.matterId) return;
+
+    const hearings = payload.hearings;
+    if (!Array.isArray(hearings)) return;
+
+    for (const hearing of hearings) {
+      if (!hearing || typeof hearing !== 'object') continue;
+      const row = hearing as Record<string, unknown>;
+      const dateStr = (row.date ?? row.hearingDate ?? row.nextHearingDate) as string | undefined;
+      if (!dateStr) continue;
+
+      const start = new Date(dateStr);
+      if (Number.isNaN(start.getTime()) || start.getTime() < Date.now()) continue;
+
+      const end = new Date(start.getTime() + 60 * 60 * 1000);
+      const purpose = String(row.purpose ?? row.hearingType ?? 'Court hearing');
+      await this.calendarService.create(dto.tenantId, {
+        matterId: dto.matterId,
+        title: `Hearing: ${purpose} (CNR ${dto.cnrNumber})`,
+        startAt: start.toISOString(),
+        endAt: end.toISOString(),
+      });
+    }
+
+    if (dto.userId) {
+      await this.enqueueDeadlineAgent(dto.tenantId, dto.matterId);
+    }
+  }
+
+  private async syncDocketEntriesToCalendar(
+    tenantId: string,
+    matterId: string,
+    entries: Array<{ entryDate: Date; description: string }>,
+  ) {
+    for (const entry of entries) {
+      const start = entry.entryDate;
+      if (start.getTime() < Date.now()) continue;
+      const end = new Date(start.getTime() + 60 * 60 * 1000);
+      await this.calendarService.create(tenantId, {
+        matterId,
+        title: `Docket: ${entry.description.slice(0, 120)}`,
+        startAt: start.toISOString(),
+        endAt: end.toISOString(),
+      });
+    }
+  }
+
+  private async enqueueDeadlineAgent(
+    tenantId: string,
+    matterId: string,
+    courtCaseId?: string,
+  ) {
+    try {
+      const matter = await this.prisma.matter.findFirst({
+        where: { id: matterId, tenantId },
+        select: { id: true },
+      });
+      if (!matter) return;
+
+      const membership = await this.prisma.tenantUser.findFirst({
+        where: { tenantId, status: 'ACTIVE' },
+        orderBy: { createdAt: 'asc' },
+        select: { userId: true },
+      });
+      if (!membership) return;
+
+      await this.jobsService.enqueueAgentJob({
+        tenantId,
+        userId: membership.userId,
+        agentId: 'deadline',
+        jobType: 'court_deadline_scan',
+        params: { matterId, courtCaseId },
+      });
+    } catch {
+      /* non-fatal */
+    }
   }
 
   private async fetchCourtListenerDocketEntries(docketNumber: string): Promise<

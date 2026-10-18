@@ -1,0 +1,1668 @@
+{
+  "version": 1,
+  "countryCode": "IN",
+  "acts": [
+    {
+      "actId": "bnss",
+      "sourceAuthority": "india-code",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://prsindia.org/files/bills_acts/bills_parliament/2023/Bharatiya_Nagarik_Suraksha_Sanhita,_2023.pdf",
+      "effectiveFrom": "2023-12-25",
+      "notes": "Gazette Extraordinary; replaces CrPC 1973",
+      "editionDate": "2023-12-25",
+      "lastVerified": "2026-06-15",
+      "localPdfPath": "corpus/in/india-code/bnss.pdf"
+    },
+    {
+      "actId": "bns",
+      "sourceAuthority": "india-code",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.ncrb.gov.in/uploads/SankalanPortal/DownloadPDF/BNS2023.pdf",
+      "effectiveFrom": "2023-12-25",
+      "notes": "NCRB Sankalan; replaces IPC 1860",
+      "editionDate": "2023-12-25",
+      "lastVerified": "2026-06-15",
+      "localPdfPath": "corpus/in/india-code/bns.pdf"
+    },
+    {
+      "actId": "bsa",
+      "sourceAuthority": "india-code",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://yourlordships.in/images/LLC/LawMore/yourlordships/img/pdf/bare-acts/the-bharatiya-sakshya-adhiniyam-2023.pdf",
+      "effectiveFrom": "2023-12-25",
+      "notes": "Replaces Indian Evidence Act 1872",
+      "editionDate": "2023-12-25",
+      "lastVerified": "2026-06-15",
+      "localPdfPath": "corpus/in/india-code/bsa.pdf"
+    },
+    {
+      "actId": "constitution",
+      "sourceAuthority": "legislative-department",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://cdnbbsr.s3waas.gov.in/s380537a945c7aaa788ccfcdf1b99b5d8f/uploads/2024/07/20240716890312078.pdf",
+      "fallbackPdfUrl": "https://lddashboard.legislative.gov.in/sites/default/files/coi/COI_2024.pdf",
+      "documentType": "constitution",
+      "editionDate": "2024-05-01",
+      "lastEnactedAmendment": "106th Amendment Act, 2023",
+      "lastAmendmentCommencement": "2026-04-16",
+      "amendmentCount": 106,
+      "supplementaryAuthorities": [
+        {
+          "type": "commencement-notification",
+          "id": "constitution-106th-amendment-commencement",
+          "amendment": "106th Amendment Act, 2023",
+          "effectiveDate": "2026-04-16",
+          "title": "106th Constitutional Amendment — commencement notification",
+          "summary": "The 106th Amendment Act, 2023 (Nari Shakti Vandan Adhiniyam) came into force on 16 April 2026. Articles 330A, 332A and 334A (women's reservation framework) were inserted by this Amendment; operational implementation remains subject to census and delimitation.",
+          "sourceName": "Gazette of India, Ministry of Law & Justice",
+          "sourceUrl": "https://lddashboard.legislative.gov.in/constitution-of-india"
+        }
+      ],
+      "pendingAmendments": [
+        {
+          "bill": "Constitution (131st Amendment) Bill, 2026",
+          "status": "introduced-negatived",
+          "date": "2026-04-17",
+          "url": "https://prsindia.org/files/bills_acts/bills_parliament/2026/Constitution_(131st_Amendment)_Bill,2026.pdf",
+          "note": "Do not ingest as current law"
+        }
+      ],
+      "notes": "6th pocket diglot edition; Appendices I–III; reject India Code 2022 bitstream",
+      "lastVerified": "2026-06-10"
+    },
+    {
+      "actId": "crpc",
+      "sourceAuthority": "india-code",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.indiacode.nic.in/bitstream/123456789/2345/1/A1974-2.pdf",
+      "mirrorPdfUrl": "https://yourlordships.in/images/LLC/LawMore/yourlordships/img/pdf/bare-acts/crpc-bare-act-1973.pdf",
+      "externalId": "bitstream/123456789/2345/1/A1974-2.pdf",
+      "notes": "Legacy; superseded by BNSS for new offences from 1 July 2024",
+      "isRepealed": true,
+      "repealNotes": "Superseded by BNSS 2023, in force from 1 July 2024 for new matters",
+      "editionDate": "2023-12-25",
+      "lastVerified": "2026-06-15",
+      "localPdfPath": "corpus/in/india-code/crpc.pdf"
+    },
+    {
+      "actId": "ipc",
+      "sourceAuthority": "india-code",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.indiacode.nic.in/bitstream/123456789/2263/1/A1860-45.pdf",
+      "externalId": "bitstream/123456789/2263/1/A1860-45.pdf",
+      "notes": "Legacy; superseded by BNS for new offences from 1 July 2024",
+      "isRepealed": true,
+      "repealNotes": "Superseded by BNS 2023, in force from 1 July 2024 for new matters",
+      "editionDate": "2023-12-25",
+      "lastVerified": "2026-06-15",
+      "localPdfPath": "corpus/in/india-code/ipc.pdf"
+    },
+    {
+      "actId": "iea",
+      "sourceAuthority": "india-code",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://yourlordships.in/images/LLC/LawMore/yourlordships/img/pdf/bare-acts/evidence-act.pdf",
+      "fallbackPdfUrl": "https://web.archive.org/web/20240101000000*/https://www.indiacode.nic.in/bitstream/123456789/2331/1/A1872-1.pdf",
+      "mirrorPdfUrl": "https://yourlordships.in/images/LLC/LawMore/yourlordships/img/pdf/bare-acts/evidence-act.pdf",
+      "externalId": "bitstream/123456789/2331/1/A1872-1.pdf",
+      "notes": "Legacy; superseded by BSA. yourlordships.in mirror confirmed working (432KB). Duplicate primaryPdfUrl+mirrorPdfUrl ensures retry on transient YL outage.",
+      "isRepealed": true,
+      "repealNotes": "Superseded by BSA 2023, in force from 1 July 2024 for new matters",
+      "editionDate": "2023-12-25",
+      "lastVerified": "2026-06-15",
+      "localPdfPath": "corpus/in/india-code/iea.pdf"
+    },
+    {
+      "actId": "cpc",
+      "sourceAuthority": "india-code",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://yourlordships.in/images/LLC/LawMore/yourlordships/img/pdf/bare-acts/cpc-bare-act.pdf",
+      "externalId": "bitstream/123456789/2344/1/A1908-5.pdf",
+      "notes": "yourlordships.in mirror confirmed working (2.9MB). Duplicate primaryPdfUrl+mirrorPdfUrl ensures retry on transient YL outage.",
+      "editionDate": "2023-12-25",
+      "lastVerified": "2026-06-15",
+      "localPdfPath": "corpus/in/india-code/cpc.pdf"
+    },
+    {
+      "actId": "hindu-marriage",
+      "sourceAuthority": "india-code",
+      "sourceTier": "mirror",
+      "primaryPdfUrl": "https://yourlordships.in/images/LLC/LawMore/yourlordships/img/pdf/bare-acts/hindu-marriage-act.pdf",
+      "notes": "Cross-validate against India Code before treating as authoritative",
+      "localPdfPath": "corpus/in/india-code/hindu-marriage.pdf"
+    },
+    {
+      "actId": "hindu-adoption",
+      "sourceAuthority": "india-code",
+      "sourceTier": "mirror",
+      "primaryPdfUrl": "https://yourlordships.in/images/LLC/LawMore/yourlordships/img/pdf/bare-acts/hindu-adoption-and-maintenance-act.pdf",
+      "notes": "Cross-validate against India Code before treating as authoritative",
+      "localPdfPath": "corpus/in/india-code/hindu-adoption.pdf"
+    },
+    {
+      "actId": "hindu-succession",
+      "sourceAuthority": "india-code",
+      "sourceTier": "mirror",
+      "primaryPdfUrl": "https://yourlordships.in/images/LLC/LawMore/yourlordships/img/pdf/bare-acts/the-hindu-succession-act1956.pdf",
+      "notes": "Cross-validate against India Code before treating as authoritative",
+      "localPdfPath": "corpus/in/india-code/hindu-succession.pdf"
+    },
+    {
+      "actId": "muslim-dissolution",
+      "sourceAuthority": "india-code",
+      "sourceTier": "mirror",
+      "primaryPdfUrl": "https://yourlordships.in/images/LLC/LawMore/yourlordships/img/pdf/bare-acts/dissolution-of-muslim-marriage-act.pdf",
+      "notes": "Cross-validate against India Code before treating as authoritative",
+      "localPdfPath": "corpus/in/india-code/muslim-dissolution.pdf"
+    },
+    {
+      "actId": "muslim-marriages-registration",
+      "sourceAuthority": "yourlordships-mirror",
+      "sourceTier": "mirror",
+      "primaryPdfUrl": "https://yourlordships.in/images/LLC/LawMore/yourlordships/img/pdf/bare-acts/muslim-marriages-registration-act-1981.pdf",
+      "notes": "Cross-validate against India Code before treating as authoritative"
+    },
+    {
+      "actId": "muslim-women-divorce",
+      "sourceAuthority": "india-code",
+      "sourceTier": "mirror",
+      "primaryPdfUrl": "https://yourlordships.in/images/LLC/LawMore/yourlordships/img/pdf/bare-acts/muslim-women-protection-of-rights-on-divorce-act-1986.pdf",
+      "notes": "Cross-validate against India Code before treating as authoritative",
+      "localPdfPath": "corpus/in/india-code/muslim-women-divorce.pdf"
+    },
+    {
+      "actId": "limitation-act",
+      "sourceAuthority": "india-code",
+      "sourceTier": "mirror",
+      "primaryPdfUrl": "https://yourlordships.in/images/LLC/LawMore/yourlordships/img/pdf/bare-acts/limitation-act.pdf",
+      "notes": "Cross-validate against India Code before treating as authoritative",
+      "localPdfPath": "corpus/in/india-code/limitation-act.pdf"
+    },
+    {
+      "actId": "negotiable-instruments",
+      "sourceAuthority": "india-code",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.indiacode.nic.in/bitstream/123456789/15327/1/negotiable_instruments_act%2C_1881.pdf",
+      "mirrorPdfUrl": "https://yourlordships.in/images/LLC/LawMore/yourlordships/img/pdf/bare-acts/negotiable-instruments-act-1881.pdf",
+      "externalId": "bitstream/123456789/15327/1/negotiable_instruments_act,_1881.pdf",
+      "notes": "India Code official PDF; primary source for Section 138 cheque dishonour",
+      "editionDate": "2023-12-25",
+      "lastVerified": "2026-06-15",
+      "localPdfPath": "corpus/in/india-code/negotiable-instruments.pdf"
+    },
+    {
+      "actId": "companies-act-2013",
+      "sourceAuthority": "india-code",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.indiacode.nic.in/bitstream/123456789/2045/1/A2013-18.pdf",
+      "mirrorPdfUrl": "https://nclt.gov.in/sites/default/files/Act%26rules/the_companies_act_2013_0.pdf",
+      "externalId": "bitstream/123456789/2045/1/A2013-18.pdf",
+      "notes": "India Code official PDF; Companies Act 2013",
+      "localPdfPath": "corpus/in/india-code/companies-act-2013.pdf"
+    },
+    {
+      "actId": "arbitration-conciliation-act-1996",
+      "sourceAuthority": "india-code",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.indiacode.nic.in/bitstream/123456789/15243/1/arbitration_and_conciliation_act,_1996.pdf",
+      "externalId": "bitstream/123456789/15243/1/arbitration_and_conciliation_act,_1996.pdf",
+      "notes": "India Code official PDF; Arbitration and Conciliation Act 1996 as amended by 2015 and 2019 Acts",
+      "localPdfPath": "corpus/in/india-code/arbitration-conciliation-act-1996.pdf"
+    },
+    {
+      "actId": "transfer-of-property-act-1882",
+      "sourceAuthority": "india-code",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.indiacode.nic.in/bitstream/123456789/2338/1/A1882-4.pdf",
+      "mirrorPdfUrl": "https://yourlordships.in/images/LLC/LawMore/yourlordships/img/pdf/bare-acts/tpa.pdf",
+      "externalId": "bitstream/123456789/2338/1/A1882-4.pdf",
+      "notes": "India Code official PDF; Transfer of Property Act 1882",
+      "localPdfPath": "corpus/in/india-code/transfer-of-property-act-1882.pdf"
+    },
+    {
+      "actId": "specific-relief-act-1963",
+      "sourceAuthority": "india-code",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.indiacode.nic.in/bitstream/123456789/2087/1/A1963-47.pdf",
+      "externalId": "bitstream/123456789/2087/1/A1963-47.pdf",
+      "notes": "India Code official PDF; Specific Relief Act 1963 as amended by 2018 Act",
+      "localPdfPath": "corpus/in/india-code/specific-relief-act-1963.pdf"
+    },
+    {
+      "actId": "consumer-protection-act-2019",
+      "sourceAuthority": "india-code",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.indiacode.nic.in/bitstream/123456789/15256/1/consumer_protection_act,_2019.pdf",
+      "mirrorPdfUrl": "https://cdnbbsr.s3waas.gov.in/s346515dcd99ea50dd0671bc6840830404/uploads/2025/01/20250124140646320.pdf",
+      "externalId": "bitstream/123456789/15256/1/consumer_protection_act,_2019.pdf",
+      "notes": "India Code official PDF; Consumer Protection Act 2019 replacing 1986 Act",
+      "localPdfPath": "corpus/in/india-code/consumer-protection-act-2019.pdf"
+    },
+    {
+      "actId": "rera-2016",
+      "sourceAuthority": "india-code",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.indiacode.nic.in/bitstream/123456789/2374/1/A2016-16.pdf",
+      "externalId": "bitstream/123456789/2374/1/A2016-16.pdf",
+      "notes": "India Code official PDF; Real Estate (Regulation and Development) Act 2016",
+      "localPdfPath": "corpus/in/india-code/rera-2016.pdf"
+    },
+    {
+      "actId": "pocso-act-2012",
+      "sourceAuthority": "india-code",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.indiacode.nic.in/bitstream/123456789/2079/1/A2012-32.pdf",
+      "mirrorPdfUrl": "https://web.archive.org/web/20230122111059/https://www.indiacode.nic.in/bitstream/123456789/2079/1/A2012-32.pdf",
+      "externalId": "bitstream/123456789/2079/1/A2012-32.pdf",
+      "notes": "India Code official PDF; Protection of Children from Sexual Offences Act 2012",
+      "lastVerified": "2026-06-15",
+      "editionDate": "2023-12-25",
+      "localPdfPath": "corpus/in/india-code/pocso-act-2012.pdf"
+    },
+    {
+      "actId": "domestic-violence-act-2005",
+      "sourceAuthority": "india-code",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.indiacode.nic.in/bitstream/123456789/2021/1/A2005-43.pdf",
+      "localPdfPath": "corpus/in/india-code/domestic-violence-act-2005.pdf",
+      "externalId": "bitstream/123456789/2021/1/A2005-43.pdf",
+      "notes": "Protection of Women from Domestic Violence Act 2005. Local PDF bundled in corpus/in/. Remote mirrors unavailable."
+    },
+    {
+      "actId": "motor-vehicles-act-1988",
+      "sourceAuthority": "india-code",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.indiacode.nic.in/bitstream/123456789/1798/1/A1988-59.pdf",
+      "fallbackPdfUrl": "https://web.archive.org/web/20230122111059/https://www.indiacode.nic.in/bitstream/123456789/1798/1/A1988-59.pdf",
+      "externalId": "bitstream/123456789/1798/1/A1988-59.pdf",
+      "notes": "India Code official PDF; Motor Vehicles Act 1988 as amended by 2019 Act",
+      "localPdfPath": "corpus/in/india-code/motor-vehicles-act-1988.pdf"
+    },
+    {
+      "actId": "income-tax-act-1961",
+      "sourceAuthority": "india-code",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.indiacode.nic.in/bitstream/123456789/2049/1/A1961-43.pdf",
+      "localPdfPath": "corpus/in/india-code/income-tax-act-1961.pdf",
+      "externalId": "bitstream/123456789/2049/1/A1961-43.pdf",
+      "notes": "Income Tax Act 1961. Local PDF bundled in corpus/in/ (6.2MB). Priority-section filter applied during ingest to limit to ~62 high-use sections."
+    },
+    {
+      "actId": "gst-act-2017",
+      "sourceAuthority": "india-code",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.indiacode.nic.in/bitstream/123456789/2868/1/A2017-12.pdf",
+      "externalId": "bitstream/123456789/2868/1/A2017-12.pdf",
+      "notes": "India Code official PDF; Central Goods and Services Tax Act 2017",
+      "localPdfPath": "corpus/in/india-code/gst-act-2017.pdf"
+    },
+    {
+      "actId": "ibc-2016",
+      "sourceAuthority": "india-code",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.indiacode.nic.in/bitstream/123456789/15245/1/insolvency_and_bankruptcy_code%2C_2016.pdf",
+      "mirrorPdfUrl": "https://ibbi.gov.in/uploads/legalframwork/547c9c2af074c90ac5919fa8a5c60bd4.pdf",
+      "externalId": "bitstream/123456789/15245/1/insolvency_and_bankruptcy_code,_2016.pdf",
+      "notes": "India Code official PDF; Insolvency and Bankruptcy Code 2016",
+      "localPdfPath": "corpus/in/india-code/ibc-2016.pdf"
+    },
+    {
+      "actId": "contract-act-1872",
+      "sourceAuthority": "india-code",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.indiacode.nic.in/bitstream/123456789/2332/1/A1872-9.pdf",
+      "mirrorPdfUrl": "https://yourlordships.in/images/LLC/LawMore/yourlordships/img/pdf/bare-acts/contract-act.pdf",
+      "externalId": "bitstream/123456789/2332/1/A1872-9.pdf",
+      "notes": "India Code official PDF; Indian Contract Act 1872",
+      "localPdfPath": "corpus/in/india-code/contract-act-1872.pdf"
+    },
+    {
+      "actId": "sale-of-goods-act-1930",
+      "sourceAuthority": "india-code",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.indiacode.nic.in/bitstream/123456789/2358/1/A1930-3.pdf",
+      "mirrorPdfUrl": "https://yourlordships.in/images/LLC/LawMore/yourlordships/img/pdf/bare-acts/sale-of-goods-act.pdf",
+      "externalId": "bitstream/123456789/2358/1/A1930-3.pdf",
+      "notes": "India Code official PDF; Sale of Goods Act 1930",
+      "localPdfPath": "corpus/in/india-code/sale-of-goods-act-1930.pdf"
+    },
+    {
+      "actId": "ndps-act-1985",
+      "sourceAuthority": "india-code",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.indiacode.nic.in/bitstream/123456789/1934/1/A1985-61.pdf",
+      "mirrorPdfUrl": "https://yourlordships.in/images/LLC/LawMore/yourlordships/img/pdf/bare-acts/ndps-act.pdf",
+      "externalId": "bitstream/123456789/1934/1/A1985-61.pdf",
+      "notes": "India Code official PDF; Narcotic Drugs and Psychotropic Substances Act 1985",
+      "lastVerified": "2026-06-15",
+      "editionDate": "2023-12-25",
+      "localPdfPath": "corpus/in/india-code/ndps-act-1985.pdf"
+    },
+    {
+      "actId": "rti-act-2005",
+      "sourceAuthority": "india-code",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.indiacode.nic.in/bitstream/123456789/2064/1/A2005-22.pdf",
+      "mirrorPdfUrl": "https://legalaffairs.gov.in/sites/default/files/rti-act-2005.pdf",
+      "externalId": "bitstream/123456789/2064/1/A2005-22.pdf",
+      "notes": "India Code official PDF; Right to Information Act 2005",
+      "localPdfPath": "corpus/in/india-code/rti-act-2005.pdf"
+    },
+    {
+      "actId": "succession-act-1925",
+      "sourceAuthority": "india-code",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.indiacode.nic.in/bitstream/123456789/2372/1/A1925-39.pdf",
+      "mirrorPdfUrl": "https://yourlordships.in/images/LLC/LawMore/yourlordships/img/pdf/bare-acts/indian-succession-act.pdf",
+      "externalId": "bitstream/123456789/2372/1/A1925-39.pdf",
+      "notes": "India Code official PDF; Indian Succession Act 1925"
+    },
+    {
+      "actId": "fema-1999",
+      "sourceAuthority": "india-code",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.indiacode.nic.in/bitstream/123456789/1942/1/A1999-42.pdf",
+      "mirrorPdfUrl": "https://www.rbi.org.in/Scripts/PublicationsView.aspx?id=13769",
+      "externalId": "bitstream/123456789/1942/1/A1999-42.pdf",
+      "notes": "India Code official PDF; Foreign Exchange Management Act 1999",
+      "localPdfPath": "corpus/in/india-code/fema-1999.pdf"
+    },
+    {
+      "actId": "copyright-act-1957",
+      "sourceAuthority": "india-code",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.indiacode.nic.in/bitstream/123456789/1367/1/A1957-14.pdf",
+      "mirrorPdfUrl": "https://copyright.gov.in/Documents/CopyrightRules1957.pdf",
+      "externalId": "bitstream/123456789/1367/1/A1957-14.pdf",
+      "notes": "India Code official PDF; Copyright Act 1957",
+      "localPdfPath": "corpus/in/india-code/copyright-act-1957.pdf"
+    },
+    {
+      "actId": "patents-act-1970",
+      "sourceAuthority": "india-code",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.indiacode.nic.in/bitstream/123456789/1983/1/A1970-39.pdf",
+      "mirrorPdfUrl": "https://ipindia.gov.in/frontend/pdf/patents/1_113_1_The_Patents_Act__1970___incorporating_all_amendments_till_1-08-2024.pdf",
+      "externalId": "bitstream/123456789/1983/1/A1970-39.pdf",
+      "notes": "India Code official PDF; Patents Act 1970",
+      "localPdfPath": "corpus/in/india-code/patents-act-1970.pdf"
+    },
+    {
+      "actId": "dowry-prohibition",
+      "sourceAuthority": "india-code",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.indiacode.nic.in/bitstream/123456789/15479/1/dowry_prohibition_act_1961.pdf",
+      "localPdfPath": "corpus/in/india-code/dowry-prohibition.pdf",
+      "externalId": "bitstream/123456789/15479/1/dowry_prohibition_act_1961.pdf",
+      "notes": "Dowry Prohibition Act 1961. Local PDF bundled in corpus/in/."
+    },
+    {
+      "actId": "family-courts",
+      "sourceAuthority": "india-code",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.indiacode.nic.in/bitstream/123456789/15478/1/family_courts_act_1984.pdf",
+      "localPdfPath": "corpus/in/india-code/family-courts.pdf",
+      "externalId": "bitstream/123456789/15478/1/family_courts_act_1984.pdf",
+      "notes": "Family Courts Act 1984. Local PDF bundled in corpus/in/."
+    },
+    {
+      "actId": "dpdp",
+      "sourceAuthority": "india-code",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://egazette.gov.in/WriteReadData/2023/248045.pdf",
+      "externalId": "bitstream/123456789/22037/1/A2023-22.pdf",
+      "notes": "Digital Personal Data Protection Act 2023 (No. 22 of 2023). Official Gazette of India PDF confirmed accessible (182KB).",
+      "localPdfPath": "corpus/in/india-code/dpdp.pdf"
+    },
+    {
+      "actId": "trademarks-act-1999",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.indiacode.nic.in/bitstream/123456789/2062/1/A1999-47.pdf",
+      "mirrorPdfUrl": "https://yourlordships.in/images/LLC/LawMore/yourlordships/img/pdf/bare-acts/trade-marks-act-1999.pdf",
+      "externalId": "bitstream/123456789/2062/1/A1999-47.pdf",
+      "notes": "India Code official PDF; Trade Marks Act 1999. Mirror source unavailable — ipindia.gov.in PDF URL is dynamic/JS-driven",
+      "sourceAuthority": "india-code",
+      "localPdfPath": "corpus/in/india-code/trademarks-act-1999.pdf"
+    },
+    {
+      "actId": "easements-act",
+      "sourceAuthority": "india-code",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.indiacode.nic.in/bitstream/123456789/2349/1/A1882-05.pdf",
+      "externalId": "bitstream/123456789/2349/1/A1882-05.pdf",
+      "notes": "India Code official PDF; Indian Easements Act 1882",
+      "localPdfPath": "corpus/in/india-code/easements-act.pdf"
+    },
+    {
+      "actId": "partnership-act",
+      "sourceAuthority": "india-code",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.indiacode.nic.in/bitstream/123456789/13660/1/indian_partnership_act_1932.pdf",
+      "externalId": "bitstream/123456789/13660/1/indian_partnership_act_1932.pdf",
+      "notes": "India Code official PDF; Indian Partnership Act 1932",
+      "localPdfPath": "corpus/in/india-code/partnership-act.pdf"
+    },
+    {
+      "actId": "llp-act",
+      "sourceAuthority": "india-code",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.indiacode.nic.in/bitstream/123456789/2023/1/A2009-06.pdf",
+      "externalId": "bitstream/123456789/2023/1/A2009-06.pdf",
+      "notes": "India Code official PDF; Limited Liability Partnership Act 2008 (Act No. 6 of 2009)",
+      "localPdfPath": "corpus/in/india-code/llp-act.pdf"
+    },
+    {
+      "actId": "competition-act",
+      "sourceAuthority": "india-code",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.indiacode.nic.in/bitstream/123456789/2010/7/A2003-12.pdf",
+      "externalId": "bitstream/123456789/2010/7/A2003-12.pdf",
+      "notes": "India Code official PDF; Competition Act 2002 (Act No. 12 of 2003)",
+      "localPdfPath": "corpus/in/india-code/competition-act.pdf"
+    },
+    {
+      "actId": "igst-act",
+      "sourceAuthority": "india-code",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.indiacode.nic.in/bitstream/123456789/2251/1/A201713.pdf",
+      "externalId": "bitstream/123456789/2251/1/A201713.pdf",
+      "notes": "India Code official PDF; Integrated Goods and Services Tax Act 2017",
+      "localPdfPath": "corpus/in/india-code/igst-act.pdf"
+    },
+    {
+      "actId": "utgst-act",
+      "sourceAuthority": "india-code",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.indiacode.nic.in/bitstream/123456789/2252/1/A201714.pdf",
+      "mirrorPdfUrl": "https://cbic-gst.gov.in/pdf/utgst-act-updated.pdf",
+      "externalId": "bitstream/123456789/2252/1/A201714.pdf",
+      "notes": "India Code official PDF; Union Territory Goods and Services Tax Act 2017",
+      "localPdfPath": "corpus/in/india-code/utgst-act.pdf"
+    },
+    {
+      "actId": "it-act",
+      "sourceAuthority": "india-code",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.indiacode.nic.in/bitstream/123456789/13116/1/it_act_2000_updated.pdf",
+      "fallbackPdfUrl": "https://www.indiacode.nic.in/bitstream/123456789/1999/1/A2000-21%20%281%29.pdf",
+      "externalId": "bitstream/123456789/13116/1/it_act_2000_updated.pdf",
+      "notes": "India Code official PDF (updated 2000-21); Information Technology Act 2000",
+      "localPdfPath": "corpus/in/india-code/it-act.pdf"
+    },
+    {
+      "actId": "designs-act",
+      "sourceAuthority": "india-code",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.indiacode.nic.in/bitstream/123456789/1917/1/200016.pdf",
+      "externalId": "bitstream/123456789/1917/1/200016.pdf",
+      "notes": "India Code official PDF; Designs Act 2000",
+      "localPdfPath": "corpus/in/india-code/designs-act.pdf"
+    },
+    {
+      "actId": "gi-act",
+      "sourceAuthority": "india-code",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.indiacode.nic.in/bitstream/123456789/1981/5/A1999-48.pdf",
+      "mirrorPdfUrl": "https://faolex.fao.org/docs/pdf/ind82321.pdf",
+      "externalId": "bitstream/123456789/1981/5/A1999-48.pdf",
+      "notes": "India Code / FAOLEX mirror; Geographical Indications of Goods (Registration and Protection) Act 1999",
+      "localPdfPath": "corpus/in/india-code/gi-act.pdf"
+    },
+    {
+      "actId": "hindu-minority-guardianship",
+      "sourceAuthority": "india-code",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.indiacode.nic.in/bitstream/123456789/1649/1/195632.pdf",
+      "externalId": "bitstream/123456789/1649/1/195632.pdf",
+      "notes": "India Code official PDF; Hindu Minority and Guardianship Act 1956",
+      "localPdfPath": "corpus/in/india-code/hindu-minority-guardianship.pdf"
+    },
+    {
+      "actId": "guardians-wards",
+      "sourceAuthority": "india-code",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.indiacode.nic.in/bitstream/123456789/2318/1/189008.pdf",
+      "externalId": "bitstream/123456789/2318/1/189008.pdf",
+      "notes": "India Code official PDF; Guardians and Wards Act 1890",
+      "localPdfPath": "corpus/in/india-code/guardians-wards.pdf"
+    },
+    {
+      "actId": "prevention-of-corruption",
+      "sourceAuthority": "india-code",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.indiacode.nic.in/bitstream/123456789/15302/1/pc_act,_1988.pdf",
+      "externalId": "bitstream/123456789/15302/1/pc_act,_1988.pdf",
+      "notes": "India Code official PDF; Prevention of Corruption Act 1988"
+    },
+    {
+      "actId": "industrial-disputes",
+      "sourceAuthority": "india-code",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.indiacode.nic.in/bitstream/123456789/11102/1/industrial-disputes-act-1947.pdf",
+      "externalId": "bitstream/123456789/11102/1/industrial-disputes-act-1947.pdf",
+      "notes": "India Code official PDF; Industrial Disputes Act 1947",
+      "localPdfPath": "corpus/in/india-code/industrial-disputes.pdf"
+    },
+    {
+      "actId": "payment-of-wages",
+      "sourceAuthority": "india-code",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.indiacode.nic.in/bitstream/123456789/20359/1/payment_of_wages_act_1936.pdf",
+      "externalId": "bitstream/123456789/20359/1/payment_of_wages_act_1936.pdf",
+      "notes": "India Code official PDF; Payment of Wages Act 1936",
+      "localPdfPath": "corpus/in/india-code/payment-of-wages.pdf"
+    },
+    {
+      "actId": "employees-compensation",
+      "sourceAuthority": "india-code",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.indiacode.nic.in/bitstream/123456789/13197/1/the-employees-compensation-act_1923.pdf",
+      "externalId": "bitstream/123456789/13197/1/the-employees-compensation-act_1923.pdf",
+      "notes": "India Code official PDF; Employee's Compensation Act 1923",
+      "localPdfPath": "corpus/in/india-code/employees-compensation.pdf"
+    },
+    {
+      "actId": "minimum-wages",
+      "sourceAuthority": "india-code",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.indiacode.nic.in/bitstream/123456789/1730/1/A1948-011.pdf",
+      "mirrorPdfUrl": "https://labour.gov.in/sites/default/files/TheMinimumWagesAct1948_0.pdf",
+      "externalId": "bitstream/123456789/1730/1/A1948-011.pdf",
+      "notes": "India Code official PDF; Minimum Wages Act 1948",
+      "localPdfPath": "corpus/in/india-code/minimum-wages.pdf"
+    },
+    {
+      "actId": "maternity-benefit",
+      "sourceAuthority": "india-code",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.indiacode.nic.in/bitstream/123456789/9324/1/the_maternity_benefit_act_1961.pdf",
+      "externalId": "bitstream/123456789/9324/1/the_maternity_benefit_act_1961.pdf",
+      "notes": "India Code official PDF; Maternity Benefit Act 1961"
+    },
+    {
+      "actId": "environment-protection",
+      "sourceAuthority": "india-code",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.indiacode.nic.in/bitstream/123456789/4316/1/ep_act_1986.pdf",
+      "externalId": "bitstream/123456789/4316/1/ep_act_1986.pdf",
+      "notes": "India Code official PDF; Environment (Protection) Act 1986",
+      "localPdfPath": "corpus/in/india-code/environment-protection.pdf"
+    },
+    {
+      "actId": "water-pollution-act",
+      "sourceAuthority": "india-code",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.indiacode.nic.in/bitstream/123456789/1612/1/A1974-06.pdf",
+      "mirrorPdfUrl": "https://www.cpcb.nic.in/uploads/water_act_1974.pdf",
+      "externalId": "bitstream/123456789/1612/1/A1974-06.pdf",
+      "notes": "India Code official PDF; Water (Prevention and Control of Pollution) Act 1974",
+      "localPdfPath": "corpus/in/india-code/water-pollution-act.pdf"
+    },
+    {
+      "actId": "air-pollution-act",
+      "sourceAuthority": "india-code",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.indiacode.nic.in/bitstream/123456789/1389/1/A1981-14.pdf",
+      "mirrorPdfUrl": "https://www.cpcb.nic.in/uploads/air_act_1981.pdf",
+      "externalId": "bitstream/123456789/1389/1/A1981-14.pdf",
+      "notes": "India Code official PDF; Air (Prevention and Control of Pollution) Act 1981",
+      "localPdfPath": "corpus/in/india-code/air-pollution-act.pdf"
+    },
+    {
+      "actId": "legal-services-authorities",
+      "sourceAuthority": "india-code",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.indiacode.nic.in/bitstream/123456789/1925/1/198739.pdf",
+      "externalId": "bitstream/123456789/1925/1/198739.pdf",
+      "notes": "India Code official PDF; Legal Services Authorities Act 1987",
+      "localPdfPath": "corpus/in/india-code/legal-services-authorities.pdf"
+    },
+    {
+      "actId": "contempt-of-courts",
+      "sourceAuthority": "india-code",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.indiacode.nic.in/bitstream/123456789/1514/1/A1971-70.pdf",
+      "externalId": "bitstream/123456789/1514/1/A1971-70.pdf",
+      "notes": "India Code official PDF; Contempt of Courts Act 1971",
+      "localPdfPath": "corpus/in/india-code/contempt-of-courts.pdf"
+    },
+    {
+      "actId": "administrative-tribunals",
+      "sourceAuthority": "india-code",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.indiacode.nic.in/bitstream/123456789/1832/1/A1985-13.pdf",
+      "mirrorPdfUrl": "https://dopt.gov.in/sites/default/files/at_act_1985.pdf",
+      "externalId": "bitstream/123456789/1832/1/A1985-13.pdf",
+      "notes": "India Code official PDF; Administrative Tribunals Act 1985"
+    },
+    {
+      "actId": "uapa",
+      "sourceAuthority": "india-code",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.indiacode.nic.in/handle/123456789/1963",
+      "notes": "India Code; Unlawful Activities (Prevention) Act 1967",
+      "externalId": "bitstream/123456789/1963/1/A194902.pdf",
+      "localPdfPath": "corpus/in/india-code/uapa.pdf"
+    },
+    {
+      "actId": "nia-act-2008",
+      "sourceAuthority": "india-code",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.indiacode.nic.in/handle/123456789/2056",
+      "notes": "India Code; National Investigation Agency Act 2008",
+      "externalId": "bitstream/123456789/2056/1/200604.pdf",
+      "localPdfPath": "corpus/in/india-code/nia-act-2008.pdf"
+    },
+    {
+      "actId": "afspa",
+      "sourceAuthority": "mha",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.mha.gov.in/sites/default/files/armed_forces_special_powers_act1958.pdf",
+      "notes": "Ministry of Home Affairs PDF; Armed Forces (Special Powers) Act 1958"
+    },
+    {
+      "actId": "official-secrets-act",
+      "sourceAuthority": "india-code",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.indiacode.nic.in/handle/123456789/2331",
+      "mirrorPdfUrl": "https://mha.gov.in/sites/default/files/officialsecreatsact1923_0.pdf",
+      "externalId": "bitstream/123456789/2331/1/A1923-19.pdf",
+      "notes": "India Code; Official Secrets Act 1923",
+      "localPdfPath": "corpus/in/india-code/official-secrets-act.pdf"
+    },
+    {
+      "actId": "pitndps-act",
+      "sourceAuthority": "india-code",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.indiacode.nic.in/handle/123456789/16225",
+      "externalId": "bitstream/123456789/16225/1/A1988-46.pdf",
+      "notes": "India Code; Prevention of Illicit Traffic in Narcotic Drugs and Psychotropic Substances Act 1988",
+      "localPdfPath": "corpus/in/india-code/pitndps-act.pdf"
+    },
+    {
+      "actId": "armed-forces-tribunal-act",
+      "sourceAuthority": "india-code",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.indiacode.nic.in/handle/123456789/2060",
+      "notes": "India Code; Armed Forces Tribunal Act 2007",
+      "externalId": "bitstream/123456789/2060/3/A2009-04.pdf",
+      "localPdfPath": "corpus/in/india-code/armed-forces-tribunal-act.pdf"
+    },
+    {
+      "actId": "indian-forest-act",
+      "sourceAuthority": "india-code",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.indiacode.nic.in/handle/123456789/2255",
+      "notes": "India Code; Indian Forest Act 1927",
+      "localPdfPath": "corpus/in/india-code/indian-forest-act.pdf"
+    },
+    {
+      "actId": "forest-conservation-act",
+      "sourceAuthority": "india-code",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.indiacode.nic.in/handle/123456789/1598",
+      "notes": "India Code; Forest Conservation Act (Van Sanrakshan Evam Samvardhan Adhiniyam) 1980",
+      "localPdfPath": "corpus/in/india-code/forest-conservation-act.pdf"
+    },
+    {
+      "actId": "wildlife-protection-act",
+      "sourceAuthority": "india-code",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.indiacode.nic.in/handle/123456789/1605",
+      "mirrorPdfUrl": "https://wiienvis.nic.in/Database/wpa_8062.pdf",
+      "externalId": "bitstream/123456789/1605/1/A1972-53.pdf",
+      "notes": "India Code; Wildlife Protection Act 1972",
+      "localPdfPath": "corpus/in/india-code/wildlife-protection-act.pdf"
+    },
+    {
+      "actId": "public-liability-insurance-act",
+      "sourceAuthority": "india-code",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.indiacode.nic.in/handle/123456789/1757",
+      "mirrorPdfUrl": "https://moef.gov.in/wp-content/uploads/2017/08/Public-Liability-Insurance-Act-1991.pdf",
+      "externalId": "bitstream/123456789/1757/1/A1991-06.pdf",
+      "notes": "India Code; Public Liability Insurance Act 1991",
+      "localPdfPath": "corpus/in/india-code/public-liability-insurance-act.pdf"
+    },
+    {
+      "actId": "compensatory-afforestation-fund-act",
+      "sourceAuthority": "india-code",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.indiacode.nic.in/handle/123456789/11883",
+      "mirrorPdfUrl": "https://campa.nic.in/pdf/CAFA2016.pdf",
+      "externalId": "bitstream/123456789/11883/1/A2016-38.pdf",
+      "notes": "India Code; Compensatory Afforestation Fund Act 2016",
+      "localPdfPath": "corpus/in/india-code/compensatory-afforestation-fund-act.pdf"
+    },
+    {
+      "actId": "biological-diversity-act",
+      "sourceAuthority": "india-code",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.indiacode.nic.in/handle/123456789/2010",
+      "notes": "India Code; Biological Diversity Act 2002",
+      "localPdfPath": "corpus/in/india-code/biological-diversity-act.pdf"
+    },
+    {
+      "actId": "muslim-women-rights-on-marriage-act",
+      "sourceAuthority": "india-code",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.indiacode.nic.in/bitstream/123456789/15350/1/A2019-20.pdf",
+      "mirrorPdfUrl": "https://egazette.gov.in/WriteReadData/2019/207499.pdf",
+      "externalId": "bitstream/123456789/15350/1/A2019-20.pdf",
+      "notes": "Muslim Women (Protection of Rights on Marriage) Act 2019 (Act 20 of 2019). India Code handle 15350 resolved to Indecent Representation of Women Act; corrected to direct bitstream A2019-20.",
+      "localPdfPath": "corpus/in/india-code/muslim-women-rights-on-marriage-act.pdf"
+    },
+    {
+      "actId": "shariat-application-act",
+      "sourceAuthority": "india-code",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.indiacode.nic.in/handle/123456789/2252",
+      "notes": "India Code; Muslim Personal Law (Shariat) Application Act 1937",
+      "localPdfPath": "corpus/in/india-code/shariat-application-act.pdf"
+    },
+    {
+      "actId": "indian-stamp-act",
+      "sourceAuthority": "india-code",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.indiacode.nic.in/handle/123456789/2253",
+      "notes": "India Code; Indian Stamp Act 1899",
+      "localPdfPath": "corpus/in/india-code/indian-stamp-act.pdf"
+    },
+    {
+      "actId": "pmla",
+      "sourceAuthority": "india-code",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.indiacode.nic.in/handle/123456789/2011",
+      "notes": "India Code; Prevention of Money Laundering Act 2002",
+      "editionDate": "2023-12-25",
+      "lastVerified": "2026-06-15",
+      "externalId": "bitstream/123456789/2011/1/A2003-49.pdf",
+      "localPdfPath": "corpus/in/india-code/pmla.pdf"
+    },
+    {
+      "actId": "benami-transactions-act",
+      "sourceAuthority": "india-code",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.indiacode.nic.in/handle/123456789/2067",
+      "notes": "India Code; Benami Transactions (Prohibition) Act 1988",
+      "externalId": "bitstream/123456789/2067/1/A2003-45.pdf",
+      "localPdfPath": "corpus/in/india-code/benami-transactions-act.pdf"
+    },
+    {
+      "actId": "black-money-act",
+      "sourceAuthority": "india-code",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.indiacode.nic.in/bitstream/123456789/11357/1/A2015-22.pdf",
+      "mirrorPdfUrl": "https://egazette.gov.in/WriteReadData/2015/165649.pdf",
+      "externalId": "bitstream/123456789/11357/1/A2015-22.pdf",
+      "notes": "Black Money (Undisclosed Foreign Income and Assets) and Imposition of Tax Act 2015 (Act 22 of 2015). India Code handle 11357; direct bitstream A2015-22. eGazette mirror added.",
+      "localPdfPath": "corpus/in/india-code/black-money-act.pdf"
+    },
+    {
+      "actId": "central-excise-act",
+      "sourceAuthority": "india-code",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.indiacode.nic.in/handle/123456789/2259",
+      "mirrorPdfUrl": "https://cbic.gov.in/resources//htdocs-cbec/excise/cxact.pdf",
+      "externalId": "bitstream/123456789/2259/1/A1944-01.pdf",
+      "notes": "India Code; Central Excise Act 1944",
+      "localPdfPath": "corpus/in/india-code/central-excise-act.pdf"
+    },
+    {
+      "actId": "banking-regulation-act",
+      "sourceAuthority": "india-code",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.indiacode.nic.in/handle/123456789/2256",
+      "notes": "India Code; Banking Regulation Act 1949",
+      "externalId": "bitstream/123456789/2256/5/A2017-22.pdf",
+      "localPdfPath": "corpus/in/india-code/banking-regulation-act.pdf"
+    },
+    {
+      "actId": "rbi-act",
+      "sourceAuthority": "india-code",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.indiacode.nic.in/handle/123456789/2258",
+      "notes": "India Code; Reserve Bank of India Act 1934",
+      "externalId": "bitstream/123456789/2258/1/A1946-25.pdf",
+      "localPdfPath": "corpus/in/india-code/rbi-act.pdf"
+    },
+    {
+      "actId": "sarfaesi-act",
+      "sourceAuthority": "india-code",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.indiacode.nic.in/handle/123456789/2012",
+      "notes": "India Code; Securitisation and Reconstruction of Financial Assets and Enforcement of Security Interest Act 2002",
+      "externalId": "bitstream/123456789/2012/1/A2006-19.pdf",
+      "localPdfPath": "corpus/in/india-code/sarfaesi-act.pdf"
+    },
+    {
+      "actId": "insurance-act",
+      "sourceAuthority": "india-code",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.indiacode.nic.in/handle/123456789/2257",
+      "mirrorPdfUrl": "https://irdai.gov.in/ADMINCMS/cms/frmGeneral_Layout.aspx?page=PageNo3942",
+      "externalId": "bitstream/123456789/2257/1/A1938-04.pdf",
+      "notes": "India Code; Insurance Act 1938",
+      "localPdfPath": "corpus/in/india-code/insurance-act.pdf"
+    },
+    {
+      "actId": "trade-unions-act",
+      "sourceAuthority": "india-code",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.indiacode.nic.in/handle/123456789/2254",
+      "notes": "India Code; Trade Unions Act 1926",
+      "localPdfPath": "corpus/in/india-code/trade-unions-act.pdf"
+    },
+    {
+      "actId": "industrial-employment-standing-orders-act",
+      "sourceAuthority": "india-code",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.indiacode.nic.in/handle/123456789/2260",
+      "mirrorPdfUrl": "https://labour.gov.in/sites/default/files/TheIndustrialEmploymentStandingOrdersAct1946.pdf",
+      "externalId": "bitstream/123456789/2260/1/A1946-20.pdf",
+      "notes": "India Code; Industrial Employment (Standing Orders) Act 1946",
+      "localPdfPath": "corpus/in/india-code/industrial-employment-standing-orders-act.pdf"
+    },
+    {
+      "actId": "factories-act",
+      "sourceAuthority": "india-code",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.indiacode.nic.in/handle/123456789/2261",
+      "mirrorPdfUrl": "https://labour.gov.in/sites/default/files/TheFactoriesAct1948.pdf",
+      "externalId": "bitstream/123456789/2261/1/A1948-63.pdf",
+      "notes": "India Code; Factories Act 1948",
+      "localPdfPath": "corpus/in/india-code/factories-act.pdf"
+    },
+    {
+      "actId": "contract-labour-act",
+      "sourceAuthority": "india-code",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.indiacode.nic.in/handle/123456789/1554",
+      "mirrorPdfUrl": "https://labour.gov.in/sites/default/files/TheContractLabourRegulationAndAbolitionAct1970.pdf",
+      "externalId": "bitstream/123456789/1554/1/A1970-37.pdf",
+      "notes": "India Code; Contract Labour (Regulation and Abolition) Act 1970",
+      "localPdfPath": "corpus/in/india-code/contract-labour-act.pdf"
+    },
+    {
+      "actId": "equal-remuneration-act",
+      "sourceAuthority": "india-code",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.indiacode.nic.in/handle/123456789/1627",
+      "notes": "India Code; Equal Remuneration Act 1976",
+      "localPdfPath": "corpus/in/india-code/equal-remuneration-act.pdf"
+    },
+    {
+      "actId": "ppvfr-act",
+      "sourceAuthority": "india-code",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.indiacode.nic.in/bitstream/123456789/1909/1/A2001-53.pdf",
+      "externalId": "bitstream/123456789/1909/1/A2001-53.pdf",
+      "notes": "India Code; Protection of Plant Varieties and Farmers' Rights Act 2001",
+      "localPdfPath": "corpus/in/india-code/ppvfr-act.pdf"
+    },
+    {
+      "actId": "semiconductor-layout-design-act",
+      "sourceAuthority": "india-code",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.indiacode.nic.in/handle/123456789/2014",
+      "externalId": "bitstream/123456789/2014/1/A2000-37.pdf",
+      "notes": "India Code; Semiconductor Integrated Circuits Layout-Design Act 2000",
+      "localPdfPath": "corpus/in/india-code/semiconductor-layout-design-act.pdf"
+    },
+    {
+      "actId": "telecommunications-act-2023",
+      "sourceAuthority": "india-code",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://dot.gov.in/sites/default/files/The%20Telecommunications%20Act%2C%202023.pdf",
+      "mirrorPdfUrl": "https://egazette.gov.in/WriteReadData/2023/248085.pdf",
+      "notes": "Telecommunications Act 2023 (Act 44 of 2023). DoT official PDF. India Code handle 20080 resolved to wrong act (Mahul Creek 1922); using authoritative DoT source.",
+      "localPdfPath": "corpus/in/india-code/telecommunications-act-2023.pdf"
+    },
+    {
+      "actId": "electricity-act",
+      "sourceAuthority": "india-code",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.indiacode.nic.in/handle/123456789/2016",
+      "notes": "India Code; Electricity Act 2003",
+      "localPdfPath": "corpus/in/india-code/electricity-act.pdf"
+    },
+    {
+      "actId": "railways-act",
+      "sourceAuthority": "india-code",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.indiacode.nic.in/handle/123456789/2017",
+      "mirrorPdfUrl": "https://indianrailways.gov.in/railwayboard/uploads/acts/Railways_Act_1989.pdf",
+      "externalId": "bitstream/123456789/2017/1/A1989-24.pdf",
+      "notes": "India Code; Railways Act 1989",
+      "localPdfPath": "corpus/in/india-code/railways-act.pdf"
+    },
+    {
+      "actId": "pngrb-act",
+      "sourceAuthority": "india-code",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.indiacode.nic.in/handle/123456789/2055",
+      "mirrorPdfUrl": "https://www.pngrb.gov.in/pdf/acts/PNGRB_Act_2006.pdf",
+      "externalId": "bitstream/123456789/2055/1/A2006-19.pdf",
+      "notes": "India Code; Petroleum and Natural Gas Regulatory Board Act 2006",
+      "localPdfPath": "corpus/in/india-code/pngrb-act.pdf"
+    },
+    {
+      "actId": "merchant-shipping-act",
+      "sourceAuthority": "india-code",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.indiacode.nic.in/handle/123456789/2262",
+      "mirrorPdfUrl": "https://dgshipping.gov.in/content/merchant-shipping-act-1958",
+      "externalId": "bitstream/123456789/2262/1/A1958-44.pdf",
+      "notes": "India Code; Merchant Shipping Act 1958"
+    },
+    {
+      "actId": "customs-act",
+      "sourceAuthority": "india-code",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.indiacode.nic.in/handle/123456789/2263",
+      "mirrorPdfUrl": "https://cbic.gov.in/resources//htdocs-cbec/customs/cs-act/formatted-htmls/cs-act.pdf",
+      "externalId": "bitstream/123456789/2263/1/A1962-52.pdf",
+      "notes": "India Code; Customs Act 1962",
+      "localPdfPath": "corpus/in/india-code/customs-act.pdf"
+    },
+    {
+      "actId": "mmdr-act",
+      "sourceAuthority": "india-code",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.indiacode.nic.in/handle/123456789/1951",
+      "notes": "India Code; Mines and Minerals (Development and Regulation) Act 1957",
+      "localPdfPath": "corpus/in/india-code/mmdr-act.pdf"
+    },
+    {
+      "actId": "warehousing-development-regulation-act",
+      "sourceAuthority": "india-code",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.indiacode.nic.in/handle/123456789/2057",
+      "notes": "India Code; Warehousing (Development and Regulation) Act 2007",
+      "localPdfPath": "corpus/in/india-code/warehousing-development-regulation-act.pdf"
+    },
+    {
+      "actId": "advocates-act",
+      "sourceAuthority": "india-code",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.indiacode.nic.in/handle/123456789/1497",
+      "notes": "India Code; Advocates Act 1961",
+      "externalId": "bitstream/123456789/1497/1/A1948-56.pdf",
+      "localPdfPath": "corpus/in/india-code/advocates-act.pdf"
+    },
+    {
+      "actId": "lokpal-lokayuktas-act",
+      "sourceAuthority": "india-code",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.indiacode.nic.in/handle/123456789/2082",
+      "notes": "India Code; Lokpal and Lokayuktas Act 2013",
+      "localPdfPath": "corpus/in/india-code/lokpal-lokayuktas-act.pdf"
+    },
+    {
+      "actId": "mental-healthcare-act",
+      "sourceAuthority": "india-code",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.indiacode.nic.in/handle/123456789/11888",
+      "mirrorPdfUrl": "https://main.mohfw.gov.in/sites/default/files/mental%20health%20act%202017.pdf",
+      "externalId": "bitstream/123456789/11888/1/A2017-10.pdf",
+      "notes": "India Code; Mental Healthcare Act 2017",
+      "localPdfPath": "corpus/in/india-code/mental-healthcare-act.pdf"
+    },
+    {
+      "actId": "rpwd-act",
+      "sourceAuthority": "india-code",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.indiacode.nic.in/handle/123456789/11887",
+      "mirrorPdfUrl": "https://disabilityaffairs.gov.in/upload/uploadfiles/files/RPWD%20ACT%202016.pdf",
+      "externalId": "bitstream/123456789/11887/1/A2016-49.pdf",
+      "notes": "India Code; Rights of Persons with Disabilities Act 2016",
+      "localPdfPath": "corpus/in/india-code/rpwd-act.pdf"
+    },
+    {
+      "actId": "court-fees-act",
+      "sourceAuthority": "india-code",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.indiacode.nic.in/handle/123456789/2264",
+      "externalId": "bitstream/123456789/2264/1/A1870-07.pdf",
+      "notes": "India Code; Court Fees Act 1870",
+      "localPdfPath": "corpus/in/india-code/court-fees-act.pdf"
+    },
+    {
+      "actId": "legal-metrology-act",
+      "sourceAuthority": "india-code",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.indiacode.nic.in/bitstream/123456789/2025/1/A2010-01.pdf",
+      "mirrorPdfUrl": "https://consumeraffairs.nic.in/sites/default/files/file-uploads/acts-and-rules-related-to-department/Legal_Metrology_Act_2009.pdf",
+      "externalId": "bitstream/123456789/2025/1/A2010-01.pdf",
+      "notes": "Legal Metrology Act 2009 (Act 1 of 2010). Previous WB Consumers URL was unreachable (TypeError: fetch failed). Switched to India Code direct bitstream A2010-01.",
+      "localPdfPath": "corpus/in/india-code/legal-metrology-act.pdf"
+    },
+    {
+      "actId": "national-food-security-act",
+      "sourceAuthority": "india-code",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.indiacode.nic.in/handle/123456789/2083",
+      "notes": "India Code; National Food Security Act 2013",
+      "localPdfPath": "corpus/in/india-code/national-food-security-act.pdf"
+    },
+    {
+      "actId": "disaster-management-act",
+      "sourceAuthority": "india-code",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.indiacode.nic.in/handle/123456789/2037",
+      "notes": "India Code; Disaster Management Act 2005",
+      "localPdfPath": "corpus/in/india-code/disaster-management-act.pdf"
+    },
+    {
+      "actId": "mtp-act",
+      "sourceAuthority": "india-code",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.indiacode.nic.in/handle/123456789/1565",
+      "notes": "India Code; Medical Termination of Pregnancy Act 1971",
+      "localPdfPath": "corpus/in/india-code/mtp-act.pdf"
+    },
+    {
+      "actId": "thota-act",
+      "sourceAuthority": "india-code",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.indiacode.nic.in/handle/123456789/1820",
+      "mirrorPdfUrl": "https://notto.abdm.gov.in/uploads/1/Transplantation_of_Human_Organs_and_Tissues_Act_1994.pdf",
+      "externalId": "bitstream/123456789/1820/1/A1994-42.pdf",
+      "notes": "India Code; Transplantation of Human Organs and Tissues Act 1994"
+    },
+    {
+      "actId": "surrogacy-regulation-act",
+      "sourceAuthority": "india-code",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.indiacode.nic.in/bitstream/123456789/18841/1/A2021-47.pdf",
+      "mirrorPdfUrl": "https://nhsrcindia.org/sites/default/files/2022-06/The%20Surrogacy%20%28Regulation%29%20Act%2C%202021.pdf",
+      "externalId": "bitstream/123456789/18841/1/A2021-47.pdf",
+      "notes": "Surrogacy (Regulation) Act 2021 (Act 47 of 2021). India Code handle 18841 resolved to Rajasthan Stamp Act; corrected to direct bitstream A2021-47. NHSRC mirror added.",
+      "localPdfPath": "corpus/in/india-code/surrogacy-regulation-act.pdf"
+    },
+    {
+      "actId": "art-regulation-act",
+      "sourceAuthority": "india-code",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.indiacode.nic.in/bitstream/123456789/18840/1/A2021-32.pdf",
+      "mirrorPdfUrl": "https://main.mohfw.gov.in/sites/default/files/ART%20Act%202021.pdf",
+      "externalId": "bitstream/123456789/18840/1/A2021-32.pdf",
+      "notes": "Assisted Reproductive Technology (Regulation) Act 2021 (Act 32 of 2021). India Code handle 18840 resolved to Sports University Act; corrected to direct bitstream A2021-32. MoHFW mirror added."
+    },
+    {
+      "actId": "special-marriage",
+      "sourceAuthority": "india-code",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.indiacode.nic.in/bitstream/123456789/15480/1/special_marriage_act.pdf",
+      "externalId": "bitstream/123456789/15480/1/special_marriage_act.pdf",
+      "notes": "Special Marriage Act, 1954. Direct India Code bitstream — same path already confirmed in statute registry externalId.",
+      "localPdfPath": "corpus/in/india-code/special-marriage.pdf"
+    },
+    {
+      "actId": "registration-act",
+      "sourceAuthority": "india-code",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.indiacode.nic.in/handle/123456789/2316",
+      "mirrorPdfUrl": "https://dor.gov.in/sites/default/files/Registration-Act-1908.pdf",
+      "externalId": "bitstream/123456789/2316/1/A1908-16.pdf",
+      "notes": "Registration Act, 1908. India Code handle 2316 (Act 16 of 1908). DoR ministry mirror added as fallback.",
+      "localPdfPath": "corpus/in/india-code/registration-act.pdf"
+    },
+    {
+      "actId": "sebi-act",
+      "sourceAuthority": "india-code",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.sebi.gov.in/sebi_data/pdffiles/sebi_act.pdf",
+      "mirrorPdfUrl": "https://www.indiacode.nic.in/handle/123456789/1983",
+      "notes": "Securities and Exchange Board of India Act, 1992. Official SEBI PDF. India Code handle 1983 as mirror.",
+      "localPdfPath": "corpus/in/india-code/sebi-act.pdf"
+    },
+    {
+      "actId": "jj-act",
+      "sourceAuthority": "india-code",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.indiacode.nic.in/handle/123456789/2189",
+      "mirrorPdfUrl": "https://wcd.nic.in/sites/default/files/jjactamended2021.pdf",
+      "externalId": "bitstream/123456789/2189/1/A2015-02.pdf",
+      "notes": "Juvenile Justice (Care and Protection of Children) Act, 2015. India Code handle 2189. WCD Ministry amended version (2021) as mirror.",
+      "localPdfPath": "corpus/in/india-code/jj-act.pdf"
+    },
+    {
+      "actId": "code-wages",
+      "sourceAuthority": "india-code",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.indiacode.nic.in/handle/123456789/7622",
+      "mirrorPdfUrl": "https://labour.gov.in/sites/default/files/Code_on_Wages-2019.pdf",
+      "externalId": "bitstream/123456789/7622/1/A2019-29.pdf",
+      "notes": "Code on Wages, 2019. India Code handle 7622. Ministry of Labour mirror added."
+    },
+    {
+      "actId": "industrial-relations",
+      "sourceAuthority": "india-code",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.indiacode.nic.in/handle/123456789/13716",
+      "mirrorPdfUrl": "https://labour.gov.in/sites/default/files/IRC_2020.pdf",
+      "externalId": "bitstream/123456789/13716/1/A2020-35.pdf",
+      "notes": "Industrial Relations Code, 2020. India Code handle 13716. Ministry of Labour mirror added."
+    },
+    {
+      "actId": "ngt-act",
+      "sourceAuthority": "india-code",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.indiacode.nic.in/handle/123456789/2039",
+      "mirrorPdfUrl": "https://greentribunal.gov.in/sites/default/files/NGT_Act_2010.pdf",
+      "externalId": "bitstream/123456789/2039/1/A2010-19.pdf",
+      "notes": "National Green Tribunal Act, 2010. India Code handle 2039. NGT official website mirror added.",
+      "localPdfPath": "corpus/in/india-code/ngt-act.pdf"
+    },
+    {
+      "actId": "fcra",
+      "sourceAuthority": "india-code",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.indiacode.nic.in/handle/123456789/2063",
+      "mirrorPdfUrl": "https://fcraonline.nic.in/home/PDF_Doc/fc(R)a_2010.pdf",
+      "externalId": "bitstream/123456789/2063/1/A2010-42.pdf",
+      "notes": "Foreign Contribution (Regulation) Act, 2010. India Code handle 2063. FCRA Online (MHA) mirror added."
+    },
+    {
+      "actId": "epf-act",
+      "sourceAuthority": "india-code",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.indiacode.nic.in/handle/123456789/1708",
+      "externalId": "bitstream/123456789/1708/1/A1952-19.pdf",
+      "notes": "EPF Act 1952"
+    },
+    {
+      "actId": "esi-act",
+      "sourceAuthority": "india-code",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.indiacode.nic.in/handle/123456789/1731",
+      "externalId": "bitstream/123456789/1731/1/A1948-34.pdf",
+      "notes": "ESI Act 1948"
+    },
+    {
+      "actId": "payment-of-bonus-act",
+      "sourceAuthority": "india-code",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.indiacode.nic.in/handle/123456789/1510",
+      "externalId": "bitstream/123456789/1510/1/A1965-21.pdf",
+      "notes": "Payment of Bonus Act 1965"
+    },
+    {
+      "actId": "payment-of-gratuity-act",
+      "sourceAuthority": "india-code",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.indiacode.nic.in/handle/123456789/1513",
+      "externalId": "bitstream/123456789/1513/1/A1972-39.pdf",
+      "notes": "Payment of Gratuity Act 1972"
+    },
+    {
+      "actId": "occupational-safety-code",
+      "sourceAuthority": "india-code",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.indiacode.nic.in/handle/123456789/13715",
+      "externalId": "bitstream/123456789/13715/1/A2020-37.pdf",
+      "notes": "OSH Code 2020"
+    },
+    {
+      "actId": "social-security-code",
+      "sourceAuthority": "india-code",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.indiacode.nic.in/handle/123456789/13714",
+      "externalId": "bitstream/123456789/13714/1/A2020-36.pdf",
+      "notes": "Code on Social Security 2020"
+    },
+    {
+      "actId": "sexual-harassment-act",
+      "sourceAuthority": "india-code",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.indiacode.nic.in/handle/123456789/7621",
+      "externalId": "bitstream/123456789/7621/1/A2013-14.pdf",
+      "notes": "POSH Act 2013"
+    },
+    {
+      "actId": "child-labour-act",
+      "sourceAuthority": "india-code",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.indiacode.nic.in/handle/123456789/1834",
+      "externalId": "bitstream/123456789/1834/1/A1986-61.pdf",
+      "notes": "Child Labour Act 1986"
+    },
+    {
+      "actId": "indian-trusts-act",
+      "sourceAuthority": "india-code",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.indiacode.nic.in/handle/123456789/2350",
+      "externalId": "bitstream/123456789/2350/1/A1882-02.pdf",
+      "notes": "Indian Trusts Act 1882"
+    },
+    {
+      "actId": "societies-registration-act",
+      "sourceAuthority": "india-code",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.indiacode.nic.in/handle/123456789/2262",
+      "externalId": "bitstream/123456789/2262/1/A1860-21.pdf",
+      "notes": "Societies Registration Act 1860"
+    },
+    {
+      "actId": "land-acquisition-act",
+      "sourceAuthority": "india-code",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.indiacode.nic.in/handle/123456789/7620",
+      "externalId": "bitstream/123456789/7620/1/A2013-30.pdf",
+      "notes": "RFCTLARR Act 2013",
+      "localPdfPath": "corpus/in/india-code/land-acquisition-act.pdf"
+    },
+    {
+      "actId": "chit-funds-act",
+      "sourceAuthority": "india-code",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.indiacode.nic.in/handle/123456789/1833",
+      "externalId": "bitstream/123456789/1833/1/A1982-40.pdf",
+      "notes": "Chit Funds Act 1982"
+    },
+    {
+      "actId": "drugs-cosmetics-act",
+      "sourceAuthority": "india-code",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.indiacode.nic.in/handle/123456789/1645",
+      "externalId": "bitstream/123456789/1645/1/A1940-23.pdf",
+      "notes": "Drugs and Cosmetics Act 1940"
+    },
+    {
+      "actId": "food-safety-act",
+      "sourceAuthority": "india-code",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.indiacode.nic.in/handle/123456789/2038",
+      "externalId": "bitstream/123456789/2038/1/A2006-34.pdf",
+      "notes": "Food Safety and Standards Act 2006"
+    },
+    {
+      "actId": "depositories-act",
+      "sourceAuthority": "india-code",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.indiacode.nic.in/handle/123456789/1982",
+      "externalId": "bitstream/123456789/1982/1/A1996-22.pdf",
+      "notes": "Depositories Act 1996"
+    },
+    {
+      "actId": "government-securities-act",
+      "sourceAuthority": "india-code",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.indiacode.nic.in/handle/123456789/2061",
+      "externalId": "bitstream/123456789/2061/1/A2006-38.pdf",
+      "notes": "Government Securities Act 2006"
+    },
+    {
+      "actId": "arms-act",
+      "sourceAuthority": "india-code",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.indiacode.nic.in/handle/123456789/1644",
+      "externalId": "bitstream/123456789/1644/1/A1959-54.pdf",
+      "notes": "Arms Act 1959"
+    },
+    {
+      "actId": "national-security-act",
+      "sourceAuthority": "india-code",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.indiacode.nic.in/handle/123456789/1835",
+      "externalId": "bitstream/123456789/1835/1/A1980-65.pdf",
+      "notes": "National Security Act 1980"
+    },
+    {
+      "actId": "sc-st-atrocities-act",
+      "sourceAuthority": "india-code",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.indiacode.nic.in/handle/123456789/1924",
+      "externalId": "bitstream/123456789/1924/1/A1989-33.pdf",
+      "notes": "SC/ST Atrocities Act 1989"
+    },
+    {
+      "actId": "human-rights-act",
+      "sourceAuthority": "india-code",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.indiacode.nic.in/handle/123456789/1962",
+      "externalId": "bitstream/123456789/1962/1/A1993-10.pdf",
+      "notes": "Protection of Human Rights Act 1993"
+    },
+    {
+      "actId": "immoral-traffic-act",
+      "sourceAuthority": "india-code",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.indiacode.nic.in/handle/123456789/1648",
+      "externalId": "bitstream/123456789/1648/1/A1956-104.pdf",
+      "notes": "Immoral Traffic Act 1956"
+    },
+    {
+      "actId": "aadhaar-act",
+      "sourceAuthority": "india-code",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.indiacode.nic.in/handle/123456789/2188",
+      "externalId": "bitstream/123456789/2188/1/A2016-18.pdf",
+      "notes": "Aadhaar Act 2016"
+    },
+    {
+      "actId": "rte-act",
+      "sourceAuthority": "india-code",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.indiacode.nic.in/handle/123456789/2037",
+      "externalId": "bitstream/123456789/2037/1/A2009-35.pdf",
+      "notes": "RTE Act 2009"
+    },
+    {
+      "actId": "companies-act-1956",
+      "sourceAuthority": "india-code",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.indiacode.nic.in/handle/123456789/1496",
+      "externalId": "bitstream/123456789/1496/1/A1956-1.pdf",
+      "notes": "Companies Act 1956",
+      "isRepealed": true,
+      "repealNotes": "Superseded by Companies Act 2013"
+    },
+    {
+      "actId": "consumer-protection-1986",
+      "sourceAuthority": "india-code",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.indiacode.nic.in/handle/123456789/1836",
+      "externalId": "bitstream/123456789/1836/1/A1986-68.pdf",
+      "notes": "Consumer Protection Act 1986",
+      "isRepealed": true,
+      "repealNotes": "Superseded by Consumer Protection Act 2019"
+    },
+    {
+      "actId": "arbitration-act-1940",
+      "sourceAuthority": "india-code",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.indiacode.nic.in/handle/123456789/1643",
+      "externalId": "bitstream/123456789/1643/1/A1940-10.pdf",
+      "notes": "Arbitration Act 1940",
+      "isRepealed": true,
+      "repealNotes": "Superseded by Arbitration and Conciliation Act 1996"
+    },
+    {
+      "actId": "indian-telegraph-act",
+      "sourceAuthority": "india-code",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.indiacode.nic.in/handle/123456789/2317",
+      "externalId": "bitstream/123456789/2317/1/A1885-13.pdf",
+      "notes": "Indian Telegraph Act 1885",
+      "isRepealed": true,
+      "repealNotes": "Superseded by Telecommunications Act 2023"
+    },
+    {
+      "actId": "cinematograph-act",
+      "sourceAuthority": "india-code",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.indiacode.nic.in/bitstream/123456789/2170/1/A1952-37.pdf",
+      "externalId": "bitstream/123456789/2170/1/A1952-37.pdf",
+      "notes": "Cinematograph Act 1952 (film certification / exhibition)",
+      "localPdfPath": "corpus/in/india-code/cinematograph-act.pdf"
+    },
+    {
+      "actId": "cable-television-networks-act",
+      "sourceAuthority": "india-code",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.indiacode.nic.in/bitstream/123456789/1928/1/A1995-07.pdf",
+      "externalId": "bitstream/123456789/1928/1/A1995-07.pdf",
+      "notes": "Cable Television Networks (Regulation) Act 1995",
+      "localPdfPath": "corpus/in/india-code/cable-television-networks-act.pdf"
+    },
+    {
+      "actId": "merchant-shipping-act-2025",
+      "sourceAuthority": "india-code",
+      "sourceTier": "primary",
+      "localPdfPath": "corpus/in/india-code/merchant-shipping-act-2025.pdf",
+      "primaryPdfUrl": "https://www.indiacode.nic.in/",
+      "notes": "Merchant Shipping Act 2025 (Act 24 of 2025). Supersedes Merchant Shipping Act 1958."
+    },
+    {
+      "actId": "maintenance-and-welfare-of-parents-act",
+      "sourceAuthority": "india-code",
+      "sourceTier": "primary",
+      "localPdfPath": "corpus/in/india-code/maintenance-and-welfare-of-parents-act.pdf",
+      "primaryPdfUrl": "https://www.indiacode.nic.in/",
+      "notes": "Maintenance and Welfare of Parents and Senior Citizens Act 2007."
+    },
+    {
+      "actId": "gujarat-court-fees-act",
+      "sourceAuthority": "india-code",
+      "sourceTier": "primary",
+      "localPdfPath": "corpus/in/india-code/gujarat-court-fees-act.pdf",
+      "primaryPdfUrl": "https://www.indiacode.nic.in/",
+      "notes": "Gujarat Court Fees Act (state act bundled from local corpus)."
+    },
+    {
+      "actId": "prevention-of-insults-national-honour-act",
+      "sourceAuthority": "india-code",
+      "sourceTier": "primary",
+      "localPdfPath": "corpus/in/india-code/prevention-of-insults-national-honour-act.pdf",
+      "primaryPdfUrl": "https://www.indiacode.nic.in/",
+      "notes": "Prevention of Insults to National Honour Act 1971."
+    },
+    {
+      "actId": "transplantation-of-human-organs-act",
+      "sourceAuthority": "india-code",
+      "sourceTier": "primary",
+      "localPdfPath": "corpus/in/india-code/transplantation-of-human-organs-act.pdf",
+      "primaryPdfUrl": "https://www.indiacode.nic.in/",
+      "notes": "Transplantation of Human Organs and Tissues Act 1994."
+    },
+    {
+      "actId": "sgst-andhra-pradesh",
+      "sourceAuthority": "gst-council",
+      "sourceTier": "fallback",
+      "primaryPdfUrl": "http://gstcouncil.gov.in/sgst-act",
+      "notes": "State GST Act — Andhra Pradesh. Fetch PDF from GST Council when not bundled locally."
+    },
+    {
+      "actId": "sgst-arunachal-pradesh",
+      "sourceAuthority": "gst-council",
+      "sourceTier": "fallback",
+      "primaryPdfUrl": "http://gstcouncil.gov.in/sgst-act",
+      "notes": "State GST Act — Arunachal Pradesh. Fetch PDF from GST Council when not bundled locally."
+    },
+    {
+      "actId": "sgst-assam",
+      "sourceAuthority": "gst-council",
+      "sourceTier": "fallback",
+      "primaryPdfUrl": "http://gstcouncil.gov.in/sgst-act",
+      "notes": "State GST Act — Assam. Fetch PDF from GST Council when not bundled locally."
+    },
+    {
+      "actId": "sgst-bihar",
+      "sourceAuthority": "gst-council",
+      "sourceTier": "fallback",
+      "primaryPdfUrl": "http://gstcouncil.gov.in/sgst-act",
+      "notes": "State GST Act — Bihar. Fetch PDF from GST Council when not bundled locally."
+    },
+    {
+      "actId": "sgst-chhattisgarh",
+      "sourceAuthority": "gst-council",
+      "sourceTier": "fallback",
+      "primaryPdfUrl": "http://gstcouncil.gov.in/sgst-act",
+      "notes": "State GST Act — Chhattisgarh. Fetch PDF from GST Council when not bundled locally."
+    },
+    {
+      "actId": "sgst-goa",
+      "sourceAuthority": "gst-council",
+      "sourceTier": "fallback",
+      "primaryPdfUrl": "http://gstcouncil.gov.in/sgst-act",
+      "notes": "State GST Act — Goa. Fetch PDF from GST Council when not bundled locally."
+    },
+    {
+      "actId": "sgst-gujarat",
+      "sourceAuthority": "gst-council",
+      "sourceTier": "fallback",
+      "primaryPdfUrl": "http://gstcouncil.gov.in/sgst-act",
+      "notes": "State GST Act — Gujarat. Fetch PDF from GST Council when not bundled locally."
+    },
+    {
+      "actId": "sgst-haryana",
+      "sourceAuthority": "gst-council",
+      "sourceTier": "fallback",
+      "primaryPdfUrl": "http://gstcouncil.gov.in/sgst-act",
+      "notes": "State GST Act — Haryana. Fetch PDF from GST Council when not bundled locally."
+    },
+    {
+      "actId": "sgst-himachal-pradesh",
+      "sourceAuthority": "gst-council",
+      "sourceTier": "fallback",
+      "primaryPdfUrl": "http://gstcouncil.gov.in/sgst-act",
+      "notes": "State GST Act — Himachal Pradesh. Fetch PDF from GST Council when not bundled locally."
+    },
+    {
+      "actId": "sgst-jharkhand",
+      "sourceAuthority": "gst-council",
+      "sourceTier": "fallback",
+      "primaryPdfUrl": "http://gstcouncil.gov.in/sgst-act",
+      "notes": "State GST Act — Jharkhand. Fetch PDF from GST Council when not bundled locally."
+    },
+    {
+      "actId": "sgst-karnataka",
+      "sourceAuthority": "gst-council",
+      "sourceTier": "fallback",
+      "primaryPdfUrl": "http://gstcouncil.gov.in/sgst-act",
+      "notes": "State GST Act — Karnataka. Fetch PDF from GST Council when not bundled locally."
+    },
+    {
+      "actId": "sgst-kerala",
+      "sourceAuthority": "gst-council",
+      "sourceTier": "fallback",
+      "primaryPdfUrl": "http://gstcouncil.gov.in/sgst-act",
+      "notes": "State GST Act — Kerala. Fetch PDF from GST Council when not bundled locally."
+    },
+    {
+      "actId": "sgst-madhya-pradesh",
+      "sourceAuthority": "gst-council",
+      "sourceTier": "fallback",
+      "primaryPdfUrl": "http://gstcouncil.gov.in/sgst-act",
+      "notes": "State GST Act — Madhya Pradesh. Fetch PDF from GST Council when not bundled locally."
+    },
+    {
+      "actId": "sgst-maharashtra",
+      "sourceAuthority": "gst-council",
+      "sourceTier": "fallback",
+      "primaryPdfUrl": "http://gstcouncil.gov.in/sgst-act",
+      "notes": "State GST Act — Maharashtra. Fetch PDF from GST Council when not bundled locally."
+    },
+    {
+      "actId": "sgst-manipur",
+      "sourceAuthority": "gst-council",
+      "sourceTier": "fallback",
+      "primaryPdfUrl": "http://gstcouncil.gov.in/sgst-act",
+      "notes": "State GST Act — Manipur. Fetch PDF from GST Council when not bundled locally."
+    },
+    {
+      "actId": "sgst-meghalaya",
+      "sourceAuthority": "gst-council",
+      "sourceTier": "fallback",
+      "primaryPdfUrl": "http://gstcouncil.gov.in/sgst-act",
+      "notes": "State GST Act — Meghalaya. Fetch PDF from GST Council when not bundled locally."
+    },
+    {
+      "actId": "sgst-mizoram",
+      "sourceAuthority": "gst-council",
+      "sourceTier": "fallback",
+      "primaryPdfUrl": "http://gstcouncil.gov.in/sgst-act",
+      "notes": "State GST Act — Mizoram. Fetch PDF from GST Council when not bundled locally."
+    },
+    {
+      "actId": "sgst-nagaland",
+      "sourceAuthority": "gst-council",
+      "sourceTier": "fallback",
+      "primaryPdfUrl": "http://gstcouncil.gov.in/sgst-act",
+      "notes": "State GST Act — Nagaland. Fetch PDF from GST Council when not bundled locally."
+    },
+    {
+      "actId": "sgst-odisha",
+      "sourceAuthority": "gst-council",
+      "sourceTier": "fallback",
+      "primaryPdfUrl": "http://gstcouncil.gov.in/sgst-act",
+      "notes": "State GST Act — Odisha. Fetch PDF from GST Council when not bundled locally."
+    },
+    {
+      "actId": "sgst-punjab",
+      "sourceAuthority": "gst-council",
+      "sourceTier": "fallback",
+      "primaryPdfUrl": "http://gstcouncil.gov.in/sgst-act",
+      "notes": "State GST Act — Punjab. Fetch PDF from GST Council when not bundled locally."
+    },
+    {
+      "actId": "sgst-rajasthan",
+      "sourceAuthority": "gst-council",
+      "sourceTier": "fallback",
+      "primaryPdfUrl": "http://gstcouncil.gov.in/sgst-act",
+      "notes": "State GST Act — Rajasthan. Fetch PDF from GST Council when not bundled locally."
+    },
+    {
+      "actId": "sgst-sikkim",
+      "sourceAuthority": "gst-council",
+      "sourceTier": "fallback",
+      "primaryPdfUrl": "http://gstcouncil.gov.in/sgst-act",
+      "notes": "State GST Act — Sikkim. Fetch PDF from GST Council when not bundled locally."
+    },
+    {
+      "actId": "sgst-tamil-nadu",
+      "sourceAuthority": "gst-council",
+      "sourceTier": "fallback",
+      "primaryPdfUrl": "http://gstcouncil.gov.in/sgst-act",
+      "notes": "State GST Act — Tamil Nadu. Fetch PDF from GST Council when not bundled locally."
+    },
+    {
+      "actId": "sgst-telangana",
+      "sourceAuthority": "gst-council",
+      "sourceTier": "fallback",
+      "primaryPdfUrl": "http://gstcouncil.gov.in/sgst-act",
+      "notes": "State GST Act — Telangana. Fetch PDF from GST Council when not bundled locally."
+    },
+    {
+      "actId": "sgst-tripura",
+      "sourceAuthority": "gst-council",
+      "sourceTier": "fallback",
+      "primaryPdfUrl": "http://gstcouncil.gov.in/sgst-act",
+      "notes": "State GST Act — Tripura. Fetch PDF from GST Council when not bundled locally."
+    },
+    {
+      "actId": "sgst-uttar-pradesh",
+      "sourceAuthority": "gst-council",
+      "sourceTier": "fallback",
+      "primaryPdfUrl": "http://gstcouncil.gov.in/sgst-act",
+      "notes": "State GST Act — Uttar Pradesh. Fetch PDF from GST Council when not bundled locally."
+    },
+    {
+      "actId": "sgst-uttarakhand",
+      "sourceAuthority": "gst-council",
+      "sourceTier": "fallback",
+      "primaryPdfUrl": "http://gstcouncil.gov.in/sgst-act",
+      "notes": "State GST Act — Uttarakhand. Fetch PDF from GST Council when not bundled locally."
+    },
+    {
+      "actId": "sgst-west-bengal",
+      "sourceAuthority": "gst-council",
+      "sourceTier": "fallback",
+      "primaryPdfUrl": "http://gstcouncil.gov.in/sgst-act",
+      "notes": "State GST Act — West Bengal. Fetch PDF from GST Council when not bundled locally."
+    },
+    {
+      "actId": "sgst-delhi",
+      "sourceAuthority": "gst-council",
+      "sourceTier": "fallback",
+      "primaryPdfUrl": "http://gstcouncil.gov.in/sgst-act",
+      "notes": "State GST Act — Delhi. Fetch PDF from GST Council when not bundled locally."
+    },
+    {
+      "actId": "sgst-jammu-and-kashmir",
+      "sourceAuthority": "gst-council",
+      "sourceTier": "fallback",
+      "primaryPdfUrl": "http://gstcouncil.gov.in/sgst-act",
+      "notes": "State GST Act — Jammu and Kashmir. Fetch PDF from GST Council when not bundled locally."
+    },
+    {
+      "actId": "sgst-puducherry",
+      "sourceAuthority": "gst-council",
+      "sourceTier": "fallback",
+      "primaryPdfUrl": "http://gstcouncil.gov.in/sgst-act",
+      "notes": "State GST Act — Puducherry. Fetch PDF from GST Council when not bundled locally."
+    }
+  ]
+}

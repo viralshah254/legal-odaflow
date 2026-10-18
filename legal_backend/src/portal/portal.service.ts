@@ -1,20 +1,41 @@
 import {
   BadRequestException,
+  ForbiddenException,
   Injectable,
   NotFoundException,
   UnauthorizedException,
 } from '@nestjs/common';
+import { ConfigService } from '@nestjs/config';
 import { JwtService } from '@nestjs/jwt';
 import { Prisma } from '@prisma/client';
+import { resolveAppUrl } from '@/common/app-url';
 import { getCountryConfig } from '@/config/countries';
 import { PrismaService } from '@/prisma/prisma.service';
 import { PaymentsService } from '@/payments/payments.service';
+import { StripeService } from '@/payments/stripe.service';
 import { CreatePortalDocumentRequestDto } from './dto/create-document-request.dto';
 import { CreatePortalMessageDto } from './dto/create-portal-message.dto';
 import { PortalLoginDto } from './dto/portal-login.dto';
 import { PayInvoiceDto } from './dto/pay-invoice.dto';
 import { UploadPortalRequestDocumentDto } from './dto/upload-request-document.dto';
 import { MatterOutcomeService } from '@/matter-outcome/matter-outcome.service';
+import {
+  buildPortalInviteUrl,
+  signPortalInviteToken,
+} from './portal-invite.util';
+import {
+  buildPortalPaymentPath,
+  signPortalPaymentToken,
+  verifyPortalPaymentToken,
+} from './portal-payment.util';
+import { PortalRequestUser } from '@/common/guards/portal-auth.guard';
+
+interface PortalInvitePayload {
+  type: 'PORTAL_INVITE';
+  clientId: string;
+  tenantId: string;
+  sub: string;
+}
 
 @Injectable()
 export class PortalService {
@@ -22,6 +43,8 @@ export class PortalService {
     private readonly prisma: PrismaService,
     private readonly jwtService: JwtService,
     private readonly paymentsService: PaymentsService,
+    private readonly stripeService: StripeService,
+    private readonly configService: ConfigService,
     private readonly matterOutcomeService: MatterOutcomeService,
   ) {}
 
@@ -33,20 +56,60 @@ export class PortalService {
     );
   }
 
-  async login(dto: PortalLoginDto) {
-    const email = dto.email.trim().toLowerCase();
-    const providedName = dto.fullName.trim().toLowerCase();
+  async createPortalInvite(tenantId: string, clientId: string) {
     const client = await this.prisma.client.findFirst({
-      where: { email: { equals: email, mode: 'insensitive' } },
+      where: { id: clientId, tenantId },
+      include: { tenant: { select: { name: true } } },
+    });
+
+    if (!client) {
+      throw new NotFoundException('Client not found');
+    }
+
+    const inviteToken = signPortalInviteToken(
+      this.jwtService,
+      client.id,
+      client.tenantId,
+    );
+    const inviteUrl = buildPortalInviteUrl(this.configService, inviteToken);
+
+    return {
+      inviteToken,
+      inviteUrl,
+      expiresInDays: 7,
+      client: {
+        id: client.id,
+        name: client.name,
+        email: client.email,
+        tenantId: client.tenantId,
+        tenantName: client.tenant.name,
+      },
+    };
+  }
+
+  async login(dto: PortalLoginDto) {
+    let payload: PortalInvitePayload;
+    try {
+      payload = this.jwtService.verify<PortalInvitePayload>(dto.inviteToken);
+    } catch {
+      throw new UnauthorizedException('Invalid or expired portal invite link');
+    }
+
+    if (
+      payload.type !== 'PORTAL_INVITE' ||
+      !payload.clientId ||
+      !payload.tenantId
+    ) {
+      throw new UnauthorizedException('Invalid portal invite link');
+    }
+
+    const client = await this.prisma.client.findFirst({
+      where: { id: payload.clientId, tenantId: payload.tenantId },
       include: { tenant: { select: { id: true, name: true } } },
     });
 
     if (!client) {
-      throw new UnauthorizedException('No client portal account found for this email');
-    }
-    const canonicalClientName = client.name.trim().toLowerCase();
-    if (!canonicalClientName || canonicalClientName !== providedName) {
-      throw new UnauthorizedException('Portal sign-in details did not match');
+      throw new UnauthorizedException('Portal invite link is no longer valid');
     }
 
     const portalToken = this.jwtService.sign(
@@ -85,14 +148,6 @@ export class PortalService {
       this.prisma.matter.findMany({
         where: { clientId, tenantId },
         orderBy: { updatedAt: 'desc' },
-        select: {
-          id: true,
-          title: true,
-          status: true,
-          stage: true,
-          practiceArea: true,
-          updatedAt: true,
-        },
       }),
       this.prisma.invoice.findMany({
         where: { clientId, tenantId },
@@ -133,17 +188,26 @@ export class PortalService {
         name: client.name,
         email: client.email,
       },
-      matters: matters.map((m) => ({
-        id: m.id,
-        title: m.title,
-        ref: m.id.slice(-8).toUpperCase(),
-        status: m.status,
-        stage: m.stage ?? 'Active',
-        progressPercent: this.estimateMatterProgress(m.stage),
-        nextStep: this.inferNextStep(m.stage),
-        practiceArea: m.practiceArea,
-        updatedAt: m.updatedAt.toISOString(),
-      })),
+      matters: matters.map((m) => {
+        const row = m as typeof m & {
+          matterProfile?: unknown;
+          matterTaskGraph?: { nextBestAction?: string } | null;
+        };
+        const miNextStep = row.matterTaskGraph?.nextBestAction;
+        return {
+          id: m.id,
+          title: m.title,
+          ref: m.id.slice(-8).toUpperCase(),
+          status: m.status,
+          stage: m.stage ?? 'Active',
+          progressPercent: this.estimateMatterProgress(m.stage),
+          nextStep: miNextStep ?? this.inferNextStep(m.stage),
+          practiceArea: m.practiceArea,
+          updatedAt: m.updatedAt.toISOString(),
+          matterProfile: row.matterProfile ?? undefined,
+          matterTaskGraph: row.matterTaskGraph ?? undefined,
+        };
+      }),
       invoices: invoices.map((inv) => this.mapInvoice(inv, client.name)),
       documentRequests: documentRequests.map((req) => ({
         id: req.id,
@@ -387,7 +451,10 @@ export class PortalService {
     };
   }
 
-  async getPublicInvoice(invoiceId: string) {
+  async getPublicInvoice(
+    invoiceId: string,
+    access: { payToken?: string; authHeader?: string } = {},
+  ) {
     const invoice = await this.prisma.invoice.findUnique({
       where: { id: invoiceId },
     });
@@ -395,6 +462,8 @@ export class PortalService {
     if (!invoice) {
       throw new NotFoundException('Invoice not found');
     }
+
+    await this.assertInvoiceAccess(invoice, access);
 
     const client = invoice.clientId
       ? await this.prisma.client.findUnique({ where: { id: invoice.clientId } })
@@ -403,7 +472,11 @@ export class PortalService {
     return this.mapInvoice(invoice, client?.name ?? 'Client');
   }
 
-  async payInvoice(invoiceId: string, dto: PayInvoiceDto) {
+  async payInvoice(
+    invoiceId: string,
+    dto: PayInvoiceDto,
+    access: { payToken?: string; authHeader?: string } = {},
+  ) {
     const invoice = await this.prisma.invoice.findUnique({
       where: { id: invoiceId },
     });
@@ -411,6 +484,8 @@ export class PortalService {
     if (!invoice) {
       throw new NotFoundException('Invoice not found');
     }
+
+    await this.assertInvoiceAccess(invoice, access);
 
     if (invoice.status === 'PAID' || invoice.status === 'CANCELLED') {
       throw new UnauthorizedException(`Invoice is already ${invoice.status.toLowerCase()}`);
@@ -443,10 +518,34 @@ export class PortalService {
           invoiceId: invoice.id,
           invoiceNumber: invoice.invoiceNumber,
           paymentMethod: dto.paymentMethod,
-          paymentProvider: country.defaultPaymentProvider,
+          paymentProvider: 'stripe',
         },
       },
     );
+
+    let checkoutUrl = intent.checkoutUrl;
+    if (intent.provider === 'stripe' && !checkoutUrl) {
+      const appUrl = resolveAppUrl(this.configService.get<string>('APP_URL'));
+      try {
+        const session = await this.stripeService.createDynamicCheckoutSession({
+          amountMinorUnits: Math.round(amount * 100),
+          currency: invoice.currency,
+          productName: `Invoice ${invoice.invoiceNumber}`,
+          productDescription: `Payment for invoice ${invoice.invoiceNumber}`,
+          mode: 'payment',
+          successUrl: `${appUrl}/portal?invoice=${invoice.id}&payment=${payment.id}&status=success`,
+          cancelUrl: `${appUrl}/portal?invoice=${invoice.id}&payment=${payment.id}&status=canceled`,
+          metadata: {
+            paymentId: payment.id,
+            invoiceId: invoice.id,
+            purpose: `INVOICE_PAYMENT:${invoice.id}`,
+          },
+        });
+        checkoutUrl = session.url;
+      } catch {
+        // Fall back to clientSecret flow if hosted checkout cannot be created
+      }
+    }
 
     return {
       payment: {
@@ -461,7 +560,7 @@ export class PortalService {
         provider: intent.provider,
         providerPaymentId: intent.providerPaymentId,
         clientSecret: intent.clientSecret,
-        checkoutUrl: intent.checkoutUrl,
+        checkoutUrl,
         status: intent.status,
       },
       invoice: this.mapInvoice(invoice, 'Client'),
@@ -477,10 +576,17 @@ export class PortalService {
       status: string;
       dueDate: Date | null;
       clientId: string | null;
+      tenantId: string;
       createdAt: Date;
     },
     clientName: string,
   ) {
+    const payToken = signPortalPaymentToken(
+      this.jwtService,
+      invoice.id,
+      invoice.tenantId,
+    );
+
     return {
       id: invoice.id,
       invoiceNumber: invoice.invoiceNumber,
@@ -491,8 +597,48 @@ export class PortalService {
       status: this.normalizeInvoiceStatus(invoice.status, invoice.dueDate),
       dueDate: (invoice.dueDate ?? invoice.createdAt).toISOString(),
       createdAt: invoice.createdAt.toISOString(),
-      paymentLink: `/pay/${invoice.id}`,
+      paymentLink: buildPortalPaymentPath(invoice.id, payToken),
     };
+  }
+
+  private async assertInvoiceAccess(
+    invoice: { id: string; clientId: string | null; tenantId: string },
+    access: { payToken?: string; authHeader?: string },
+  ): Promise<void> {
+    const portalUser = this.extractPortalUser(access.authHeader);
+    if (portalUser) {
+      if (
+        invoice.clientId !== portalUser.clientId ||
+        invoice.tenantId !== portalUser.tenantId
+      ) {
+        throw new ForbiddenException('Invoice not found');
+      }
+      return;
+    }
+
+    if (access.payToken) {
+      verifyPortalPaymentToken(this.jwtService, access.payToken, invoice.id);
+      return;
+    }
+
+    throw new ForbiddenException('Payment link token required');
+  }
+
+  private extractPortalUser(authHeader?: string): PortalRequestUser | null {
+    const token = authHeader?.startsWith('Bearer ') ? authHeader.slice(7) : null;
+    if (!token) {
+      return null;
+    }
+
+    try {
+      const payload = this.jwtService.verify<PortalRequestUser>(token);
+      if (payload.type !== 'PORTAL' || !payload.clientId || !payload.tenantId) {
+        return null;
+      }
+      return payload;
+    } catch {
+      return null;
+    }
   }
 
   private normalizeInvoiceStatus(status: string, dueDate: Date | null): string {
@@ -587,6 +733,131 @@ export class PortalService {
     return {
       clientId: client.id,
       matterId: resolvedMatterId,
+    };
+  }
+
+  // ── Portal task collaboration ─────────────────────────────────────────────
+
+  async listPortalTasks(clientId: string, tenantId: string) {
+    return this.prisma.task.findMany({
+      where: {
+        tenantId,
+        participants: { some: { clientId, participantType: 'CLIENT' } },
+        status: { not: 'CANCELLED' },
+      },
+      include: {
+        matter: { select: { id: true, title: true } },
+        participants: true,
+        comments: { orderBy: { createdAt: 'asc' } },
+      },
+      orderBy: [{ dueDate: 'asc' }, { createdAt: 'desc' }],
+    });
+  }
+
+  async getPortalTask(clientId: string, tenantId: string, taskId: string) {
+    const task = await this.prisma.task.findFirst({
+      where: {
+        id: taskId,
+        tenantId,
+        participants: { some: { clientId, participantType: 'CLIENT' } },
+      },
+      include: {
+        matter: { select: { id: true, title: true } },
+        participants: true,
+        comments: { orderBy: { createdAt: 'asc' } },
+      },
+    });
+
+    if (!task) {
+      throw new NotFoundException('Task not found or access denied');
+    }
+
+    return task;
+  }
+
+  async updatePortalTask(
+    clientId: string,
+    tenantId: string,
+    taskId: string,
+    dto: { status?: string; notes?: string },
+  ) {
+    await this.getPortalTask(clientId, tenantId, taskId);
+
+    const allowed: Record<string, string> = {
+      TODO: 'TODO',
+      IN_PROGRESS: 'IN_PROGRESS',
+      DONE: 'DONE',
+    };
+    const data: Record<string, unknown> = {};
+    if (dto.status && allowed[dto.status]) data.status = dto.status;
+    if (dto.notes !== undefined) data.notes = dto.notes;
+
+    return this.prisma.task.update({
+      where: { id: taskId },
+      data,
+    });
+  }
+
+  async addPortalTaskComment(
+    clientId: string,
+    tenantId: string,
+    taskId: string,
+    body: string,
+  ) {
+    await this.getPortalTask(clientId, tenantId, taskId);
+
+    return this.prisma.taskComment.create({
+      data: {
+        tenantId,
+        taskId,
+        body,
+        authorClientId: clientId,
+      },
+    });
+  }
+
+  /**
+   * Share a generated document link with the client via a portal message.
+   * Creates a portal message with a downloadable link so the client can review/sign.
+   */
+  async shareDocumentWithClient(
+    tenantId: string,
+    senderUserId: string,
+    dto: {
+      matterId: string;
+      clientId?: string;
+      documentName: string;
+      documentUrl: string;
+      message?: string;
+    },
+  ) {
+    const relation = await this.resolveClientAndMatter(tenantId, dto.clientId, dto.matterId);
+
+    const body = [
+      dto.message?.trim() || `Your lawyer has shared a document for your review.`,
+      ``,
+      `Document: ${dto.documentName}`,
+      `Download: ${dto.documentUrl}`,
+      ``,
+      `Please review and let your lawyer know if you have any questions.`,
+    ].join('\n');
+
+    const portalMsg = await this.prisma.portalMessage.create({
+      data: {
+        tenantId,
+        clientId: relation.clientId,
+        matterId: relation.matterId,
+        subject: `Document shared: ${dto.documentName}`,
+        body,
+        fromFirm: true,
+        sentById: senderUserId,
+      },
+    });
+
+    return {
+      success: true,
+      messageId: portalMsg.id,
+      clientId: relation.clientId,
     };
   }
 }

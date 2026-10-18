@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "stateCode": "VA",
+  "stateName": "Virginia",
+  "acts": [
+    {
+      "actId": "va-code",
+      "title": "Virginia code",
+      "sourceAuthority": "cornell-lii",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.law.cornell.edu/states/va",
+      "externalId": "va-code",
+      "notes": "Virginia state law via Cornell LII state index"
+    },
+    {
+      "actId": "va-statutes",
+      "title": "Virginia statutes",
+      "sourceAuthority": "cornell-lii",
+      "sourceTier": "mirror",
+      "primaryPdfUrl": "https://www.law.cornell.edu/states/va",
+      "externalId": "va-statutes",
+      "notes": "Virginia state law via Cornell LII state index"
+    }
+  ]
+}

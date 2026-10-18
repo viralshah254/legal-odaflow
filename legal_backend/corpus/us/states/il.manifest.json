@@ -1,0 +1,21 @@
+{
+  "version": 1,
+  "stateCode": "IL",
+  "stateName": "Illinois",
+  "acts": [
+    { "actId": "il-criminal-code", "title": "Illinois Criminal Code of 2012", "sourceAuthority": "state-portal", "sourceTier": "primary", "primaryPdfUrl": "https://codes.findlaw.com/il/criminal-code-of-2012/", "externalId": "il-criminal_code" },
+    { "actId": "il-civil-procedure", "title": "Illinois Code of Civil Procedure", "sourceAuthority": "state-portal", "sourceTier": "mirror", "primaryPdfUrl": "https://codes.findlaw.com/il/code-of-civil-procedure/", "externalId": "il-civil_procedure" },
+    { "actId": "il-family-code", "title": "Illinois Marriage and Dissolution of Marriage Act", "sourceAuthority": "state-portal", "sourceTier": "mirror", "primaryPdfUrl": "https://codes.findlaw.com/il/marriage-and-dissolution-of-marriage-act/", "externalId": "il-family_code" },
+    { "actId": "il-probate-code", "title": "Illinois Probate Act", "sourceAuthority": "state-portal", "sourceTier": "mirror", "primaryPdfUrl": "https://codes.findlaw.com/il/probate-act/", "externalId": "il-probate_code" },
+    { "actId": "il-evidence-code", "title": "Illinois Rules of Evidence", "sourceAuthority": "state-portal", "sourceTier": "mirror", "primaryPdfUrl": "https://codes.findlaw.com/il/rules-of-evidence/", "externalId": "il-evidence_code" },
+    { "actId": "il-labor-code", "title": "Illinois Labor statutes", "sourceAuthority": "state-portal", "sourceTier": "mirror", "primaryPdfUrl": "https://codes.findlaw.com/il/labor/", "externalId": "il-labor_code" },
+    { "actId": "il-tax-code", "title": "Illinois Tax Code", "sourceAuthority": "state-portal", "sourceTier": "mirror", "primaryPdfUrl": "https://codes.findlaw.com/il/tax/", "externalId": "il-tax_code" },
+    { "actId": "il-vehicle-code", "title": "Illinois Vehicle Code", "sourceAuthority": "state-portal", "sourceTier": "mirror", "primaryPdfUrl": "https://codes.findlaw.com/il/vehicle-code/", "externalId": "il-vehicle_code" },
+    { "actId": "il-corporations-code", "title": "Illinois Business Corporation Act", "sourceAuthority": "state-portal", "sourceTier": "mirror", "primaryPdfUrl": "https://codes.findlaw.com/il/business-corporation-act/", "externalId": "il-corporations_code" },
+    { "actId": "il-insurance-code", "title": "Illinois Insurance Code", "sourceAuthority": "state-portal", "sourceTier": "mirror", "primaryPdfUrl": "https://codes.findlaw.com/il/insurance-code/", "externalId": "il-insurance_code" },
+    { "actId": "il-education-code", "title": "Illinois School Code", "sourceAuthority": "state-portal", "sourceTier": "mirror", "primaryPdfUrl": "https://codes.findlaw.com/il/school-code/", "externalId": "il-education_code" },
+    { "actId": "il-health-code", "title": "Illinois Health and Safety statutes", "sourceAuthority": "state-portal", "sourceTier": "mirror", "primaryPdfUrl": "https://codes.findlaw.com/il/health-and-safety/", "externalId": "il-health_code" },
+    { "actId": "il-trust-code", "title": "Illinois Trust and Fiduciaries Act", "sourceAuthority": "state-portal", "sourceTier": "mirror", "primaryPdfUrl": "https://codes.findlaw.com/il/trust-and-fiduciaries-act/", "externalId": "il-trust_code" },
+    { "actId": "il-criminal-procedure", "title": "Illinois Code of Criminal Procedure of 1963", "sourceAuthority": "state-portal", "sourceTier": "mirror", "primaryPdfUrl": "https://codes.findlaw.com/il/code-of-criminal-procedure-of-1963/", "externalId": "il-criminal_procedure" }
+  ]
+}

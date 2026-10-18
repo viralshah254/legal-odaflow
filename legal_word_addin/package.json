@@ -1,0 +1,51 @@
+{
+  "name": "legal-word-addin",
+  "version": "1.0.0",
+  "description": "Umbrella Legal AI — Microsoft Word Add-In task pane",
+  "private": true,
+  "config": {
+    "dev_server_port": "3001"
+  },
+  "scripts": {
+    "dev-server": "bash scripts/dev-word.sh",
+    "dev": "bash scripts/dev-word.sh",
+    "dev:stop": "bash scripts/stop-dev.sh",
+    "open:test": "open -a Safari https://127.0.0.1:3001/src/taskpane/index.html",
+    "dev:sideload": "bash scripts/sideload-word.sh",
+    "build": "tsc && vite build",
+    "build:prod": "npm run build && node scripts/generate-production-manifest.mjs",
+    "manifest:prod": "node scripts/generate-production-manifest.mjs",
+    "preview": "vite preview",
+    "lint": "eslint src --ext ts,tsx",
+    "sideload": "bash scripts/sideload-word.sh",
+    "sideload:install": "bash scripts/install-dev-manifest.sh",
+    "sideload:stop": "office-addin-debugging stop manifest.dev.xml desktop",
+    "sideload:reset": "bash scripts/reset-sideload.sh",
+    "certs": "office-addin-dev-certs install --machine"
+  },
+  "dependencies": {
+    "@microsoft/office-js": "^1.1.0",
+    "axios": "^1.6.0",
+    "react": "^18.3.0",
+    "react-dom": "^18.3.0",
+    "react-router-dom": "^6.26.0"
+  },
+  "devDependencies": {
+    "@types/office-js": "^1.0.370",
+    "@types/react": "^18.3.0",
+    "@types/react-dom": "^18.3.0",
+    "@typescript-eslint/eslint-plugin": "^7.0.0",
+    "@typescript-eslint/parser": "^7.0.0",
+    "@vitejs/plugin-react": "^4.3.0",
+    "autoprefixer": "^10.5.4",
+    "eslint": "^8.57.0",
+    "office-addin-debugging": "^5.0.0",
+    "office-addin-dev-certs": "^1.13.5",
+    "postcss": "^8.5.20",
+    "tailwindcss": "^3.4.19",
+    "terser": "^5.49.0",
+    "typescript": "^5.5.0",
+    "vite": "^5.4.0",
+    "vite-plugin-singlefile": "^2.3.3"
+  }
+}

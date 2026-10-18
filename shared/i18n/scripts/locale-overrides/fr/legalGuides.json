@@ -1,4 +1,5 @@
 {
+  "indexTitle": "Guides juridiques par pays",
   "title": "Guides juridiques",
   "overview": "Aperçu",
   "whenToSeekHelp": "Quand demander une aide juridique",
@@ -11,5 +12,10 @@
   "placeholderSection": "Cette section sera élargie avec du contenu spécifique à la juridiction.",
   "subtitle": "Guides juridiques pour votre juridiction",
   "need_help_with_your_specific_situation": "Besoin d'aide avec votre situation spécifique ?",
-  "ctaSubtitleWithSite": "Essayez le vérificateur de problèmes gratuit {siteName} pour obtenir des conseils personnalisés."
+  "ctaSubtitleWithSite": "Essayez le vérificateur de problèmes gratuit {siteName} pour obtenir des conseils personnalisés.",
+  "indexDescription": "Guides juridiques en langage simple sur les problèmes courants en Inde, aux États-Unis, au Royaume-Uni et au Kenya.",
+  "indexMetaTitle": "Guides juridiques – Inde, États-Unis, Royaume-Uni et Kenya",
+  "indexMetaDescription": "Guides juridiques gratuits sur l'emploi, le logement, les droits des consommateurs et bien plus encore, par juridiction. Informations éducatives uniquement, pas de conseils juridiques.",
+  "browseGuides": "Parcourir les guides",
+  "countryGuides": "Guides {country}"
 }

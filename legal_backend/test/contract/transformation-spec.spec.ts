@@ -3,6 +3,7 @@
  */
 
 import { AI_CREDIT_COSTS } from '@/ai-credits/credit-costs';
+import { sumAlaCarteSectionCredits } from '@/consumer-reports/report-section-credit-costs';
 import { INTERNAL_AGENTS } from '@/agents/agent.registry';
 import { COUNTRY_PRICING_SEEDS, PRICING_PLANS } from '@/config/pricing.config';
 import { DEFAULT_TRAINING_CONSENT_STATUS } from '@/training-consent/training-consent.constants';
@@ -45,7 +46,9 @@ describe('API contract — transformation modules', () => {
   it('defines AI credit costs from spec §10.6 / §15.3', () => {
     expect(AI_CREDIT_COSTS.ISSUE_CHECKER).toBe(1);
     expect(AI_CREDIT_COSTS.CONSUMER_FULL_REPORT).toBe(20);
+    expect(AI_CREDIT_COSTS.CONSUMER_REPORT_SECTION).toBe(2);
     expect(AI_CREDIT_COSTS.LEGAL_RESEARCH).toBe(30);
+    expect(sumAlaCarteSectionCredits()).toBeGreaterThan(20);
   });
 
   it('registers Phase 5/6 AI agents', () => {

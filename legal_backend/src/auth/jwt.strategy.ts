@@ -4,6 +4,7 @@ import { PassportStrategy } from '@nestjs/passport';
 import { ExtractJwt, Strategy } from 'passport-jwt';
 import { PrismaService } from '@/prisma/prisma.service';
 import { JwtPayload, RequestUser } from '@/common/types/request-user.interface';
+import { resolveJwtSecret } from './auth-secrets.util';
 
 @Injectable()
 export class JwtStrategy extends PassportStrategy(Strategy) {
@@ -14,7 +15,7 @@ export class JwtStrategy extends PassportStrategy(Strategy) {
     super({
       jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
       ignoreExpiration: false,
-      secretOrKey: configService.get<string>('JWT_SECRET', 'change_me_dev_secret'),
+      secretOrKey: resolveJwtSecret(configService),
     });
   }
 
@@ -35,14 +36,34 @@ export class JwtStrategy extends PassportStrategy(Strategy) {
       throw new UnauthorizedException('User account is inactive or not found');
     }
 
+    let tenantId = payload.tenantId;
+    let tenantRole = payload.tenantRole;
+
+    if (tenantId && user.userType !== 'CONSUMER') {
+      const membership = await this.prisma.tenantUser.findUnique({
+        where: {
+          tenantId_userId: {
+            tenantId,
+            userId: user.id,
+          },
+        },
+      });
+
+      if (!membership || membership.status !== 'ACTIVE') {
+        throw new UnauthorizedException('Tenant membership is no longer active');
+      }
+
+      tenantRole = membership.role;
+    }
+
     return {
       id: user.id,
       email: user.email,
       name: user.name,
       userType: user.userType,
       countryCode: user.countryCode,
-      tenantId: payload.tenantId,
-      tenantRole: payload.tenantRole,
+      tenantId,
+      tenantRole,
     };
   }
 }

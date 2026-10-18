@@ -53,32 +53,7 @@ export class NotificationsController {
     );
   }
 
-  @Get(':notificationId')
-  findOne(
-    @TenantId() tenantId: string,
-    @Param('notificationId') notificationId: string,
-  ) {
-    return this.notificationsService.findOne(tenantId, notificationId);
-  }
-
-  @Patch(':notificationId')
-  update(
-    @TenantId() tenantId: string,
-    @Param('notificationId') notificationId: string,
-    @Body() dto: UpdateNotificationDto,
-  ) {
-    return this.notificationsService.update(tenantId, notificationId, dto);
-  }
-
-  @Patch(':notificationId/read')
-  markRead(
-    @TenantId() tenantId: string,
-    @CurrentUser() user: RequestUser,
-    @Param('notificationId') notificationId: string,
-  ) {
-    return this.notificationsService.markRead(tenantId, user.id, notificationId);
-  }
-
+  /** Static and nested routes before :notificationId param routes. */
   @Post('read-all')
   markAllRead(@TenantId() tenantId: string, @CurrentUser() user: RequestUser) {
     return this.notificationsService.markAllRead(tenantId, user.id);
@@ -119,5 +94,31 @@ export class NotificationsController {
     @Param('token') token: string,
   ) {
     return this.notificationsService.removeDeviceToken(user.id, token);
+  }
+
+  @Patch(':notificationId/read')
+  markRead(
+    @TenantId() tenantId: string,
+    @CurrentUser() user: RequestUser,
+    @Param('notificationId') notificationId: string,
+  ) {
+    return this.notificationsService.markRead(tenantId, user.id, notificationId);
+  }
+
+  @Get(':notificationId')
+  findOne(
+    @TenantId() tenantId: string,
+    @Param('notificationId') notificationId: string,
+  ) {
+    return this.notificationsService.findOne(tenantId, notificationId);
+  }
+
+  @Patch(':notificationId')
+  update(
+    @TenantId() tenantId: string,
+    @Param('notificationId') notificationId: string,
+    @Body() dto: UpdateNotificationDto,
+  ) {
+    return this.notificationsService.update(tenantId, notificationId, dto);
   }
 }

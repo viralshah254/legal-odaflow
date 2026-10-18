@@ -1,11 +1,14 @@
 import { Body, Controller, Get, Param, Post, UseGuards } from '@nestjs/common';
+import { TenantPermission } from '@/common/decorators/tenant-permission.decorator';
 import { TenantId } from '@/common/decorators/tenant-id.decorator';
+import { TenantPermissionGuard } from '@/common/guards/tenant-permission.guard';
 import { TenantGuard } from '@/common/guards/tenant.guard';
 import { ClioImportDto } from './dto/clio-import.dto';
 import { MigrationService } from './migration.service';
 
 @Controller('migration')
-@UseGuards(TenantGuard)
+@UseGuards(TenantGuard, TenantPermissionGuard)
+@TenantPermission('canManageSettings')
 export class MigrationController {
   constructor(private readonly migrationService: MigrationService) {}
 

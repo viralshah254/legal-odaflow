@@ -1,0 +1,16 @@
+{
+  "version": "2026.07.2",
+  "corpusEdition": "IN-Caselaw-2026.07.2",
+  "generatedAt": "2026-07-24T08:53:30.229Z",
+  "entryCount": 945,
+  "bundles": [
+    "existing-platform.json",
+    "hr-policing.json",
+    "landmark-sc-pdf.json",
+    "partnership-arbitration.json",
+    "sc-judgments-2026.json",
+    "scf-rti.json",
+    "tnsja-2012-04.json",
+    "tnsja-2018-05.json"
+  ]
+}

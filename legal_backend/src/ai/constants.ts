@@ -1,4 +1,11 @@
 export { AI_TASK_TYPES } from '@/ai-credits/task-types';
+export {
+  STANDARD_DISCLAIMER,
+  CONSUMER_DISCLAIMER,
+  AI_OUTPUT_DISCLAIMER,
+  ATTORNEY_DISCLAIMER,
+  AI_CITATION_NOTICE,
+} from '@/legal-compliance/disclaimer.constants';
 
 export const AI_MODES = {
   CONSUMER_FREE_PREVIEW: 'CONSUMER_FREE_PREVIEW',
@@ -7,8 +14,3 @@ export const AI_MODES = {
   LEGAL_RESEARCH: 'LEGAL_RESEARCH',
   LAWYER_LEGAL_RESEARCH: 'LAWYER_LEGAL_RESEARCH',
 } as const;
-
-export const CONSUMER_DISCLAIMER =
-  'Legal by OdaFlow provides legal information, document explanation, self-help preparation, and risk analysis. ' +
-  'It is not a law firm and does not replace a licensed lawyer. ' +
-  'For legal advice specific to your situation, you should consult a qualified lawyer in your jurisdiction.';

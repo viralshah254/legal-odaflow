@@ -1,0 +1,20 @@
+{
+  "title": "શુદ્ધ પ્રોમ્પ્ટ",
+  "description": "સ્પષ્ટ AI પરિણામો માટે અમે તમારા વર્ણનને ફરીથી ગોઠવ્યું છે. જો જરૂરી હોય તો સંપાદિત કરો, પછી ચાલુ રાખો.",
+  "yourOriginal": "તમારો મૂળ પ્રોમ્પ્ટ",
+  "refinedLabel": "શુદ્ધ પ્રોમ્પ્ટ",
+  "continueRefined": "શુદ્ધ પ્રોમ્પ્ટ સાથે ચાલુ રાખો",
+  "useOriginal": "તેના બદલે મૂળનો ઉપયોગ કરો",
+  "hintJurisdiction": "અધિકારક્ષેત્ર",
+  "hintDocument": "દસ્તાવેજ",
+  "hintParty": "પાર્ટી",
+  "hintStatute": "કાનૂન",
+  "preparing": "તમારો સંકેત તૈયાર કરી રહ્યાં છીએ...",
+  "startingDrafting": "{seconds} સેકન્ડમાં ડ્રાફ્ટિંગ શરૂ કરી રહ્યાં છીએ…",
+  "startingResearch": "{seconds} સેકન્ડમાં સંશોધન શરૂ કરી રહ્યાં છીએ...",
+  "undo": "પૂર્વવત્ કરો",
+  "autoFilledTitle": "પ્રોમ્પ્ટ શુદ્ધ",
+  "autoFilledDescription": "{seconds}s માં ચાલુ રાખો — તમારું મૂળ રાખવા માટે પૂર્વવત્ કરો.",
+  "autoFillCountdownAria": "પૂર્વવત્ કરવા માટે {seconds} સેકન્ડ બાકી છે",
+  "autoFillHint": "તમારા મૂળ પ્રોમ્પ્ટને પૂર્વવત્ કરે છે"
+}

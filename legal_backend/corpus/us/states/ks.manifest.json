@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "stateCode": "KS",
+  "stateName": "Kansas",
+  "acts": [
+    {
+      "actId": "ks-code",
+      "title": "Kansas code",
+      "sourceAuthority": "cornell-lii",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.law.cornell.edu/states/ks",
+      "externalId": "ks-code",
+      "notes": "Kansas state law via Cornell LII state index"
+    },
+    {
+      "actId": "ks-statutes",
+      "title": "Kansas statutes",
+      "sourceAuthority": "cornell-lii",
+      "sourceTier": "mirror",
+      "primaryPdfUrl": "https://www.law.cornell.edu/states/ks",
+      "externalId": "ks-statutes",
+      "notes": "Kansas state law via Cornell LII state index"
+    }
+  ]
+}

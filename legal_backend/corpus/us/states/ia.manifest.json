@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "stateCode": "IA",
+  "stateName": "Iowa",
+  "acts": [
+    {
+      "actId": "ia-code",
+      "title": "Iowa code",
+      "sourceAuthority": "cornell-lii",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.law.cornell.edu/states/ia",
+      "externalId": "ia-code",
+      "notes": "Iowa state law via Cornell LII state index"
+    },
+    {
+      "actId": "ia-statutes",
+      "title": "Iowa statutes",
+      "sourceAuthority": "cornell-lii",
+      "sourceTier": "mirror",
+      "primaryPdfUrl": "https://www.law.cornell.edu/states/ia",
+      "externalId": "ia-statutes",
+      "notes": "Iowa state law via Cornell LII state index"
+    }
+  ]
+}

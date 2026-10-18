@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "stateCode": "ND",
+  "stateName": "North Dakota",
+  "acts": [
+    {
+      "actId": "nd-code",
+      "title": "North Dakota code",
+      "sourceAuthority": "cornell-lii",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.law.cornell.edu/states/nd",
+      "externalId": "nd-code",
+      "notes": "North Dakota state law via Cornell LII state index"
+    },
+    {
+      "actId": "nd-statutes",
+      "title": "North Dakota statutes",
+      "sourceAuthority": "cornell-lii",
+      "sourceTier": "mirror",
+      "primaryPdfUrl": "https://www.law.cornell.edu/states/nd",
+      "externalId": "nd-statutes",
+      "notes": "North Dakota state law via Cornell LII state index"
+    }
+  ]
+}

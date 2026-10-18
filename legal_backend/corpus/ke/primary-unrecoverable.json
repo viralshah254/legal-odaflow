@@ -1,0 +1,11 @@
+{
+  "builtAt": "2026-08-05T17:26:57.682Z",
+  "primaryTotal": 258,
+  "primaryWithSections": 258,
+  "unrecoverableCount": 0,
+  "pdfReadyCount": 0,
+  "registryOk": "21/21",
+  "lawsAfricaEnabled": false,
+  "note": "Residual gaps after HTML + source.pdf probes. pdf_ready acts should be ingested with --from-unrecoverable before remaining here.",
+  "unrecoverable": []
+}

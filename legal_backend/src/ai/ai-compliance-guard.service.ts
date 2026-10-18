@@ -5,7 +5,7 @@ import {
   DisclaimerService,
   RestrictedPhraseMatch,
 } from '@/legal-compliance/disclaimer.service';
-import { CONSUMER_DISCLAIMER } from './constants';
+import { ATTORNEY_DISCLAIMER, CONSUMER_DISCLAIMER } from './constants';
 
 export type AiComplianceContext = 'consumer' | 'lawyer' | 'document_generation';
 
@@ -71,9 +71,11 @@ export class AiComplianceGuardService {
     const hasHighRiskContent = Array.isArray(highRiskMatches) && highRiskMatches.length > 0;
 
     const disclaimer =
-      policy.requireDisclaimerOnEveryOutput || context === 'consumer'
-        ? existingDisclaimer || this.disclaimerService.getDisclaimer() || CONSUMER_DISCLAIMER
-        : existingDisclaimer ?? '';
+      context === 'lawyer' || context === 'document_generation'
+        ? existingDisclaimer || ATTORNEY_DISCLAIMER
+        : policy.requireDisclaimerOnEveryOutput || context === 'consumer'
+          ? existingDisclaimer || this.disclaimerService.getDisclaimer() || CONSUMER_DISCLAIMER
+          : existingDisclaimer ?? '';
 
     const requiresLawyerReview =
       Boolean(policy.requireLawyerReviewForAdvice) ||

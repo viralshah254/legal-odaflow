@@ -3,14 +3,18 @@ import { ConfigService } from '@nestjs/config';
 import { PrismaService } from '@/prisma/prisma.service';
 import {
   AiModelMode,
+  DEFAULT_PREMIUM_MODEL_ID,
   getAutoModelName,
   getPremiumModel,
   listPremiumModels,
 } from '@/ai/premium-models.config';
+import { normalizeModelId } from '@/ai/model-costs.config';
+import { CreditPricingService } from './credit-pricing.service';
 
 export interface AiPreferencesView {
   aiModelMode: AiModelMode;
   premiumModelId: string;
+  deepAnalysisPremiumModelId: string;
   autoTopUpEnabled: boolean;
   autoTopUpThresholdCredits: number;
   autoTopUpPackId: string;
@@ -22,6 +26,7 @@ export interface AiPreferencesView {
 export interface UpdateAiPreferencesInput {
   aiModelMode?: AiModelMode;
   premiumModelId?: string;
+  deepAnalysisPremiumModelId?: string;
   autoTopUpEnabled?: boolean;
   autoTopUpThresholdCredits?: number;
   autoTopUpPackId?: string;
@@ -32,6 +37,7 @@ export class AiPreferencesService {
   constructor(
     private readonly prisma: PrismaService,
     private readonly configService: ConfigService,
+    private readonly creditPricing: CreditPricingService,
   ) {}
 
   async getForConsumer(userId: string): Promise<AiPreferencesView> {
@@ -57,9 +63,13 @@ export class AiPreferencesService {
     if (!tenant) {
       throw new NotFoundException('Tenant not found');
     }
+    const tenantExtra = await this.prisma.$queryRaw<Array<{ deepAnalysisPremiumModelId: string }>>`
+      SELECT "deepAnalysisPremiumModelId" FROM "Tenant" WHERE "id" = ${tenantId} LIMIT 1
+    `.catch(() => [] as Array<{ deepAnalysisPremiumModelId: string }>);
     return this.buildView({
       aiModelMode: tenant.aiModelMode as AiModelMode,
       premiumModelId: tenant.premiumModelId,
+      deepAnalysisPremiumModelId: tenantExtra[0]?.deepAnalysisPremiumModelId ?? tenant.premiumModelId,
       autoTopUpEnabled: tenant.autoTopUpEnabled,
       autoTopUpThresholdCredits: tenant.autoTopUpThresholdCredits,
       autoTopUpPackId: tenant.autoTopUpPackId,
@@ -74,7 +84,7 @@ export class AiPreferencesService {
       create: {
         userId,
         aiModelMode: input.aiModelMode ?? 'AUTO',
-        premiumModelId: input.premiumModelId ?? 'gpt-4.1',
+        premiumModelId: input.premiumModelId ?? DEFAULT_PREMIUM_MODEL_ID,
         autoTopUpEnabled: input.autoTopUpEnabled ?? false,
         autoTopUpThresholdCredits: input.autoTopUpThresholdCredits ?? 10,
         autoTopUpPackId: input.autoTopUpPackId ?? 'pack_25',
@@ -102,16 +112,22 @@ export class AiPreferencesService {
 
   async updateForTenant(tenantId: string, input: UpdateAiPreferencesInput) {
     this.validatePremiumModel(input.premiumModelId);
-    await this.prisma.tenant.update({
-      where: { id: tenantId },
-      data: {
-        aiModelMode: input.aiModelMode,
-        premiumModelId: input.premiumModelId,
-        autoTopUpEnabled: input.autoTopUpEnabled,
-        autoTopUpThresholdCredits: input.autoTopUpThresholdCredits,
-        autoTopUpPackId: input.autoTopUpPackId,
-      },
-    });
+    this.validatePremiumModel(input.deepAnalysisPremiumModelId);
+    const updateData: Record<string, unknown> = {};
+    if (input.aiModelMode !== undefined) updateData.aiModelMode = input.aiModelMode;
+    if (input.premiumModelId !== undefined) updateData.premiumModelId = input.premiumModelId;
+    if (input.autoTopUpEnabled !== undefined) updateData.autoTopUpEnabled = input.autoTopUpEnabled;
+    if (input.autoTopUpThresholdCredits !== undefined) updateData.autoTopUpThresholdCredits = input.autoTopUpThresholdCredits;
+    if (input.autoTopUpPackId !== undefined) updateData.autoTopUpPackId = input.autoTopUpPackId;
+    if (Object.keys(updateData).length > 0) {
+      await this.prisma.tenant.update({ where: { id: tenantId }, data: updateData as any });
+    }
+    if (input.deepAnalysisPremiumModelId !== undefined) {
+      await this.prisma.$executeRaw`
+        UPDATE "Tenant" SET "deepAnalysisPremiumModelId" = ${input.deepAnalysisPremiumModelId}
+        WHERE "id" = ${tenantId}
+      `;
+    }
     return this.getForTenant(tenantId);
   }
 
@@ -120,6 +136,7 @@ export class AiPreferencesService {
     tenantId?: string;
     overrideMode?: AiModelMode;
     overridePremiumModelId?: string;
+    forDeepAnalysis?: boolean;
   }): Promise<{
     aiModelMode: AiModelMode;
     premiumModelId: string;
@@ -127,16 +144,21 @@ export class AiPreferencesService {
     premiumFallback: boolean;
   }> {
     let aiModelMode: AiModelMode = 'AUTO';
-    let premiumModelId = 'gpt-4.1';
+    let premiumModelId = DEFAULT_PREMIUM_MODEL_ID;
+    let deepAnalysisPremiumModelId = DEFAULT_PREMIUM_MODEL_ID;
 
     if (params.tenantId) {
       const tenant = await this.prisma.tenant.findUnique({
         where: { id: params.tenantId },
         select: { aiModelMode: true, premiumModelId: true },
       });
+      const tenantExtra = await this.prisma.$queryRaw<Array<{ deepAnalysisPremiumModelId: string }>>`
+        SELECT "deepAnalysisPremiumModelId" FROM "Tenant" WHERE "id" = ${params.tenantId} LIMIT 1
+      `.catch(() => [] as Array<{ deepAnalysisPremiumModelId: string }>);
       if (tenant) {
-        aiModelMode = tenant.aiModelMode as AiModelMode;
-        premiumModelId = tenant.premiumModelId;
+        aiModelMode = (tenant as any).aiModelMode as AiModelMode;
+        premiumModelId = (tenant as any).premiumModelId;
+        deepAnalysisPremiumModelId = tenantExtra[0]?.deepAnalysisPremiumModelId ?? (tenant as any).premiumModelId;
       }
     } else {
       const profile = await this.prisma.consumerProfile.findUnique({
@@ -146,7 +168,8 @@ export class AiPreferencesService {
         where: { userId: params.userId },
       });
       aiModelMode = (prefs?.aiModelMode ?? profile?.aiModelMode ?? 'AUTO') as AiModelMode;
-      premiumModelId = prefs?.premiumModelId ?? profile?.premiumModelId ?? 'gpt-4.1';
+      premiumModelId = prefs?.premiumModelId ?? profile?.premiumModelId ?? DEFAULT_PREMIUM_MODEL_ID;
+      deepAnalysisPremiumModelId = premiumModelId;
     }
 
     if (params.overrideMode) {
@@ -154,11 +177,27 @@ export class AiPreferencesService {
     }
     if (params.overridePremiumModelId) {
       premiumModelId = params.overridePremiumModelId;
+      deepAnalysisPremiumModelId = params.overridePremiumModelId;
     }
 
+    // Deep analysis always uses PREMIUM mode with the dedicated model
+    const resolvedMode = params.forDeepAnalysis ? 'PREMIUM' : aiModelMode;
+    const envModels = this.configService.get<string>('AI_PREMIUM_MODELS');
+    const available = listPremiumModels(envModels, {
+      creditUsdValue: this.creditPricing.getCreditUsdValue(),
+      netMarginPercent: this.creditPricing.getNetMarginPercent(),
+    });
+    const defaultPremium = available[0]?.modelId ?? DEFAULT_PREMIUM_MODEL_ID;
+    const candidate = normalizeModelId(
+      params.forDeepAnalysis ? deepAnalysisPremiumModelId : premiumModelId,
+    );
+    const resolvedModel = available.some((m) => m.modelId === candidate)
+      ? candidate
+      : defaultPremium;
+
     return {
-      aiModelMode,
-      premiumModelId,
+      aiModelMode: resolvedMode,
+      premiumModelId: resolvedModel,
       autoModelName: getAutoModelName(this.configService),
       premiumFallback: false,
     };
@@ -167,20 +206,41 @@ export class AiPreferencesService {
   private buildView(input: {
     aiModelMode: AiModelMode;
     premiumModelId: string;
+    deepAnalysisPremiumModelId?: string;
     autoTopUpEnabled: boolean;
     autoTopUpThresholdCredits: number;
     autoTopUpPackId: string;
     hasPaymentMethod: boolean;
   }): AiPreferencesView {
     const envModels = this.configService.get<string>('AI_PREMIUM_MODELS');
+    const availablePremiumModels = listPremiumModels(envModels, {
+      creditUsdValue: this.creditPricing.getCreditUsdValue(),
+      netMarginPercent: this.creditPricing.getNetMarginPercent(),
+    });
+    const defaultPremium =
+      availablePremiumModels[0]?.modelId ?? DEFAULT_PREMIUM_MODEL_ID;
+
+    const resolveAvailable = (modelId: string | undefined): string => {
+      const normalized = normalizeModelId(modelId);
+      return availablePremiumModels.some((m) => m.modelId === normalized)
+        ? normalized
+        : defaultPremium;
+    };
+
+    const premiumModelId = resolveAvailable(input.premiumModelId);
+    const deepAnalysisPremiumModelId = resolveAvailable(
+      input.deepAnalysisPremiumModelId ?? input.premiumModelId,
+    );
+
     return {
       aiModelMode: input.aiModelMode,
-      premiumModelId: input.premiumModelId,
+      premiumModelId,
+      deepAnalysisPremiumModelId,
       autoTopUpEnabled: input.autoTopUpEnabled,
       autoTopUpThresholdCredits: input.autoTopUpThresholdCredits,
       autoTopUpPackId: input.autoTopUpPackId,
       hasPaymentMethod: input.hasPaymentMethod,
-      availablePremiumModels: listPremiumModels(envModels),
+      availablePremiumModels,
       autoModelName: getAutoModelName(this.configService),
     };
   }
@@ -189,8 +249,9 @@ export class AiPreferencesService {
     if (!modelId) {
       return;
     }
+    const normalized = normalizeModelId(modelId);
     const envModels = this.configService.get<string>('AI_PREMIUM_MODELS');
-    const model = getPremiumModel(modelId, envModels);
+    const model = getPremiumModel(normalized, envModels);
     if (!model) {
       throw new NotFoundException(`Premium model not available: ${modelId}`);
     }

@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "stateCode": "MT",
+  "stateName": "Montana",
+  "acts": [
+    {
+      "actId": "mt-code",
+      "title": "Montana code",
+      "sourceAuthority": "cornell-lii",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.law.cornell.edu/states/mt",
+      "externalId": "mt-code",
+      "notes": "Montana state law via Cornell LII state index"
+    },
+    {
+      "actId": "mt-statutes",
+      "title": "Montana statutes",
+      "sourceAuthority": "cornell-lii",
+      "sourceTier": "mirror",
+      "primaryPdfUrl": "https://www.law.cornell.edu/states/mt",
+      "externalId": "mt-statutes",
+      "notes": "Montana state law via Cornell LII state index"
+    }
+  ]
+}

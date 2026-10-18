@@ -1,5 +1,6 @@
 {
   "nav": {
+    "quickActions": "ଦ୍ରୁତ କାର୍ଯ୍ୟ",
     "dashboard": "ଡ୍ୟାସବୋର୍ଡ |",
     "clients": "ଗ୍ରାହକ",
     "matters": "ବିଷୟଗୁଡିକ",
@@ -11,6 +12,7 @@
     "evidence": "ପ୍ରମାଣ",
     "billing": "ବିଲିଂ",
     "trust": "ବିଶ୍ୱାସ",
+    "trustAccounts": "ଟ୍ରଷ୍ଟ ଆକାଉଣ୍ଟସ୍",
     "finance": "ଅର୍ଥ",
     "expenses": "ଖର୍ଚ୍ଚ",
     "queues": "ଧାଡ଼ି",
@@ -19,17 +21,20 @@
     "inbox": "ଇନବକ୍ସ |",
     "newIntake": "ନୂତନ ଭୋଜନ |",
     "alerts": "ସତର୍କତା",
+    "monitors": "ମନିଟରଗୁଡିକ",
     "team": "ଦଳ",
     "templates": "ଟେମ୍ପଲେଟ୍ |",
     "reports": "ରିପୋର୍ଟଗୁଡିକ",
     "settings": "ସେଟିଂସମୂହ",
-    "aiLegalSearch": "AI ଆଇନଗତ ସନ୍ଧାନ |",
+    "aiLegalSearch": "ଆଇନଗତ ଅନୁସନ୍ଧାନ |",
+    "documentDrafting": "ଡକ୍ୟୁମେଣ୍ଟ୍ ଡ୍ରାଫ୍ଟିଙ୍ଗ୍ |",
+    "draftDocument": "ଡକ୍ୟୁମେଣ୍ଟ ଡ୍ରାଫ୍ଟ",
     "more": "ଅଧିକ",
     "myProfile": "ମୋର ପ୍ରୋଫାଇଲ୍",
     "notifications": "ବିଜ୍ଞପ୍ତିଗୁଡିକ",
-    "lawLibrary": "ଆଇନ ଗ୍ରନ୍ଥାଗାର",
-    "vault": "ଭଲ୍ଟ",
-    "esign": "ଇ-ସାଇନ"
+    "lawLibrary": "ଆଇନ ଲାଇବ୍ରେରୀ |",
+    "vault": "ଭାଲ୍ଟ |",
+    "esign": "ଇ-ସାଇନ୍ |"
   },
   "navGroups": {
     "scheduleTime": "କାର୍ଯ୍ୟସୂଚୀ ଏବଂ ସମୟ |",
@@ -245,7 +250,7 @@
   "notify_the_partner": "ସାଥୀଙ୍କୁ ଜଣାନ୍ତୁ |",
   "only_if_optional": "କେବଳ ଯଦି (ବ al କଳ୍ପିକ)",
   "open_case": "ଖୋଲା କେସ୍ |",
-  "open_matter_workbench": "ଖୋଲା ବିଷୟ ୱର୍କବେଞ୍ଚ |",
+  "open_matter_workbench": "ଦ୍ରୁତ AI ଖୋଲନ୍ତୁ |",
   "open_task_details": "ଟାସ୍କ ବିବରଣୀ ଖୋଲନ୍ତୁ |",
   "opening": "ଖୋଲୁଛି",
   "output_preview": "ଆଉଟପୁଟ୍ ପୂର୍ବାବଲୋକନ",

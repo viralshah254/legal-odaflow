@@ -39,6 +39,15 @@ export class SuggestedTimeController {
     return this.suggestions.accept(tenantId, user.id, id);
   }
 
+  @Post(':id/approve')
+  approve(
+    @TenantId() tenantId: string,
+    @CurrentUser() user: RequestUser,
+    @Param('id') id: string,
+  ) {
+    return this.suggestions.approve(tenantId, user.id, id);
+  }
+
   @Patch(':id/dismiss')
   dismiss(
     @TenantId() tenantId: string,

@@ -1,0 +1,266 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 14px;
+  color: #323130;
+  background: #ffffff;
+  line-height: 1.5;
+}
+
+.addin-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 12px;
+}
+
+.addin-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #edebe9;
+  margin-bottom: 16px;
+}
+
+.addin-header .logo {
+  width: 24px;
+  height: 24px;
+  background: #0078d4;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 700;
+  font-size: 12px;
+}
+
+.addin-header h1 {
+  font-size: 14px;
+  font-weight: 600;
+  color: #323130;
+}
+
+.tab-bar {
+  display: flex;
+  border-bottom: 1px solid #edebe9;
+  margin-bottom: 16px;
+  gap: 0;
+}
+
+.tab-btn {
+  padding: 8px 14px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 13px;
+  color: #605e5c;
+  border-bottom: 2px solid transparent;
+  transition: all 0.15s;
+}
+
+.tab-btn:hover {
+  color: #0078d4;
+  background: #f3f2f1;
+}
+
+.tab-btn.active {
+  color: #0078d4;
+  border-bottom-color: #0078d4;
+  font-weight: 600;
+}
+
+.section-label {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #605e5c;
+  margin-bottom: 6px;
+}
+
+.field-group {
+  margin-bottom: 14px;
+}
+
+.field-label {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  color: #323130;
+  margin-bottom: 4px;
+}
+
+input[type="text"],
+input[type="email"],
+textarea,
+select {
+  width: 100%;
+  padding: 6px 8px;
+  border: 1px solid #8a8886;
+  border-radius: 2px;
+  font-size: 13px;
+  font-family: inherit;
+  color: #323130;
+  background: #fff;
+  outline: none;
+  transition: border-color 0.15s;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus,
+select:focus {
+  border-color: #0078d4;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border: none;
+  border-radius: 2px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.btn-primary {
+  background: #0078d4;
+  color: white;
+}
+
+.btn-primary:hover {
+  background: #106ebe;
+}
+
+.btn-primary:disabled {
+  background: #c8c6c4;
+  cursor: not-allowed;
+}
+
+.btn-secondary {
+  background: #f3f2f1;
+  color: #323130;
+  border: 1px solid #8a8886;
+}
+
+.btn-secondary:hover {
+  background: #edebe9;
+}
+
+.btn-full {
+  width: 100%;
+}
+
+.alert {
+  padding: 8px 12px;
+  border-radius: 2px;
+  font-size: 13px;
+  margin-bottom: 12px;
+}
+
+.alert-error {
+  background: #fde7e9;
+  color: #a4262c;
+  border-left: 3px solid #a4262c;
+}
+
+.alert-success {
+  background: #dff6dd;
+  color: #107c10;
+  border-left: 3px solid #107c10;
+}
+
+.alert-info {
+  background: #deecf9;
+  color: #0078d4;
+  border-left: 3px solid #0078d4;
+}
+
+.spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid #e1dfdd;
+  border-top-color: #0078d4;
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+  display: inline-block;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.matter-card {
+  background: #f3f2f1;
+  border-radius: 4px;
+  padding: 10px 12px;
+  margin-bottom: 8px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: all 0.15s;
+}
+
+.matter-card:hover,
+.matter-card.selected {
+  border-color: #0078d4;
+  background: #deecf9;
+}
+
+.matter-card .matter-name {
+  font-weight: 600;
+  font-size: 13px;
+}
+
+.matter-card .matter-meta {
+  font-size: 11px;
+  color: #605e5c;
+  margin-top: 2px;
+}
+
+.extracted-field {
+  background: #f3f2f1;
+  border-radius: 2px;
+  padding: 8px 10px;
+  margin-bottom: 8px;
+}
+
+.extracted-field .ef-label {
+  font-size: 11px;
+  color: #605e5c;
+  margin-bottom: 2px;
+}
+
+.extracted-field .ef-value {
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.draft-box {
+  background: #f9f8f7;
+  border: 1px solid #edebe9;
+  border-radius: 4px;
+  padding: 12px;
+  font-size: 13px;
+  white-space: pre-wrap;
+  margin-bottom: 12px;
+  max-height: 300px;
+  overflow-y: auto;
+}

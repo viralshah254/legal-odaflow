@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { PrismaService } from '@/prisma/prisma.service';
 
-const FULL_ACCESS_ROLES = new Set(['FIRM_ADMIN', 'PARTNER']);
+const FULL_ACCESS_ROLES = new Set(['FIRM_ADMIN', 'PARTNER', 'PARTNER_ADMIN']);
 
 @Injectable()
 export class MatterAccessService {

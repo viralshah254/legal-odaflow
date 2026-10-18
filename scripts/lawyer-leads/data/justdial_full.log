@@ -1,0 +1,26 @@
+[justdial] categories: Lawyers, Advocates
+[justdial] CDP WhatsApp mode — scroll listing + extract wa.me/send?phone= links
+[justdial] connected to Chrome via CDP (http://127.0.0.1:9222) — use your normal browser session
+[justdial] closed 1 stray Chrome tabs
+[justdial] Mumbai/Lawyers page 1: +0 WhatsApp (total 0)
+[justdial] no WhatsApp listings for Mumbai/Lawyers
+[justdial] Mumbai/Advocates page 1: +0 WhatsApp (total 0)
+[justdial] no WhatsApp listings for Mumbai/Advocates
+[justdial] city cooldown 43s
+[justdial] WhatsApp card 16/20 failed: Locator.count: Target page, context or browser has been closed
+[justdial] WhatsApp card 17/20 failed: Locator.count: Target page, context or browser has been closed
+[justdial] WhatsApp card 18/20 failed: Locator.count: Target page, context or browser has been closed
+[justdial] WhatsApp card 19/20 failed: Locator.count: Target page, context or browser has been closed
+[justdial] WhatsApp card 20/20 failed: Locator.count: Target page, context or browser has been closed
+[justdial] Chrome was closed during scrape — restart Chrome and re-run
+[justdial] DOM WhatsApp extract failed: Page.evaluate: Target page, context or browser has been closed
+[justdial] Delhi/Lawyers page 1: +0 WhatsApp (total 0)
+[justdial] no WhatsApp listings for Delhi/Lawyers
+[justdial] Delhi/Advocates page 1: +0 WhatsApp (total 0)
+[justdial] no WhatsApp listings for Delhi/Advocates
+[justdial] city cooldown 50s
+[justdial] Bangalore/Lawyers page 1: +0 WhatsApp (total 0)
+[justdial] no WhatsApp listings for Bangalore/Lawyers
+[justdial] Bangalore/Advocates page 1: +0 WhatsApp (total 0)
+[justdial] no WhatsApp listings for Bangalore/Advocates
+[justdial] city cooldown 41s

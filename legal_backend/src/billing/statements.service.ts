@@ -55,4 +55,54 @@ export class StatementsService {
       lines,
     };
   }
+
+  async getClientStatementPdfText(tenantId: string, clientId?: string) {
+    const statement = await this.getClientStatement(tenantId, clientId);
+    const tenant = await this.prisma.tenant.findUnique({
+      where: { id: tenantId },
+      select: { name: true },
+    });
+
+    const clientName = clientId
+      ? (
+          await this.prisma.client.findFirst({
+            where: { id: clientId, tenantId },
+            select: { name: true },
+          })
+        )?.name ?? clientId
+      : 'All Clients';
+
+    const lines = [
+      'CLIENT STATEMENT',
+      '================',
+      `Firm: ${tenant?.name ?? tenantId}`,
+      `Client: ${clientName}`,
+      `Generated: ${statement.generatedAt}`,
+      '',
+      'AGING SUMMARY',
+      '-------------',
+      `Current:     ${statement.aging.current.toFixed(2)}`,
+      `1-30 days:   ${statement.aging.days1_30.toFixed(2)}`,
+      `31-60 days:  ${statement.aging.days31_60.toFixed(2)}`,
+      `61-90 days:  ${statement.aging.days61_90.toFixed(2)}`,
+      `Over 90:     ${statement.aging.over90.toFixed(2)}`,
+      '',
+      `Total Outstanding: ${statement.totalOutstanding.toFixed(2)}`,
+      '',
+      'OPEN INVOICES',
+      '-------------',
+    ];
+
+    if (statement.lines.length === 0) {
+      lines.push('No open invoices.');
+    } else {
+      for (const line of statement.lines) {
+        lines.push(
+          `${line.invoiceNumber} | ${line.amount.toFixed(2)} ${line.currency} | Due ${line.dueDate?.slice(0, 10) ?? 'N/A'} | ${line.daysPastDue} days past due | ${line.status}`,
+        );
+      }
+    }
+
+    return lines.join('\n');
+  }
 }

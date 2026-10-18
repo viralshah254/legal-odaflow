@@ -1,0 +1,27 @@
+{
+  "gate": {
+    "footer": "Sichere Stripe-Kaufabwicklung · Credits verfallen nie · Abonnements können jederzeit gekündigt werden",
+    "title": "Sie haben keine KI-Credits mehr",
+    "subtitle": "Laden Sie Ihr Abo sofort auf oder upgraden Sie es für mehr monatliche Guthaben und Premium-Modelle.",
+    "inlineMessage": "Sie haben nicht genügend KI-Credits für diese Aktion.",
+    "loadingBalance": "Guthaben prüfen…",
+    "balanceUnknown": "Guthaben nicht verfügbar",
+    "creditsRemaining": "{count} Credits verbleiben",
+    "topUpTitle": "Guthaben aufladen",
+    "topUpDescription": "Einmalige Pakete · sichere Kaufabwicklung · laufen nie ab",
+    "subscribeTitle": "Aktualisieren Sie Ihren Plan",
+    "subscribeDescription": "Mehr monatliche Guthaben, Premium-Modelle und feste Features",
+    "topUpCta": "Guthaben aufladen",
+    "features": {
+      "drafting": "Für die Dokumentenerstellung sind KI-Credits erforderlich, um aus Ihren Fakten gerichtsfertige Entwürfe zu erstellen.",
+      "research": "Rechtsrecherche verwendet Credits für jede Abfrage – Verified Research verwendet Premium-Modelle.",
+      "intake": "Bei der Kundenaufnahmeanalyse werden Credits verwendet, um Probleme zu klassifizieren und Ihre Lead-Zusammenfassung zu erstellen.",
+      "documentReview": "Bei der Dokumentenprüfung werden Credits zur Analyse von Klauseln, Risiken und Änderungen verwendet.",
+      "sectionFinder": "Der Abschnittsfinder verwendet Credits, wenn er nach Statuten und Zebrastreifen sucht."
+    }
+  },
+  "free_daily_title": "Kostenlose tägliche Credits",
+  "free_daily_subtitle": "Wird im kostenlosen Plan jeden Tag zurückgesetzt",
+  "free_daily_exhausted": "Tägliches Gratisguthaben verwendet",
+  "free_daily_exhausted_subtitle": "Abonnieren Sie noch heute, um mehr KI-Nutzung zu erhalten"
+}

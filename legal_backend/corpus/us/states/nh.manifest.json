@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "stateCode": "NH",
+  "stateName": "New Hampshire",
+  "acts": [
+    {
+      "actId": "nh-code",
+      "title": "New Hampshire code",
+      "sourceAuthority": "cornell-lii",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.law.cornell.edu/states/nh",
+      "externalId": "nh-code",
+      "notes": "New Hampshire state law via Cornell LII state index"
+    },
+    {
+      "actId": "nh-statutes",
+      "title": "New Hampshire statutes",
+      "sourceAuthority": "cornell-lii",
+      "sourceTier": "mirror",
+      "primaryPdfUrl": "https://www.law.cornell.edu/states/nh",
+      "externalId": "nh-statutes",
+      "notes": "New Hampshire state law via Cornell LII state index"
+    }
+  ]
+}

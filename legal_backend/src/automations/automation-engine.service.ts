@@ -8,6 +8,7 @@ import {
   AutomationConditions,
   AutomationRunPayload,
   AutomationTrigger,
+  PRACTICE_AREA_ALIASES,
 } from './automation.types';
 
 @Injectable()
@@ -41,6 +42,15 @@ export class AutomationEngineService {
           tenantId,
           ruleId: rule.id,
           status: 'QUEUED',
+          result: rule.slaMinutes
+            ? ({
+                slaDeadline: new Date(
+                  Date.now() + rule.slaMinutes * 60_000,
+                ).toISOString(),
+                slaBreached: false,
+                slaMinutes: rule.slaMinutes,
+              } as Prisma.InputJsonValue)
+            : undefined,
         },
       });
 
@@ -108,10 +118,23 @@ export class AutomationEngineService {
   }
 
   private parseActions(raw: Prisma.JsonValue | null): AutomationAction[] {
-    if (!Array.isArray(raw)) {
+    let list: unknown[];
+
+    if (Array.isArray(raw)) {
+      list = raw;
+    } else if (raw && typeof raw === 'object' && !Array.isArray(raw)) {
+      // Handle { steps: [...] } shape produced by older API-created rules.
+      const obj = raw as Record<string, unknown>;
+      if (Array.isArray(obj.steps)) {
+        list = obj.steps;
+      } else {
+        return [];
+      }
+    } else {
       return [];
     }
-    return raw.filter(
+
+    return list.filter(
       (item): item is AutomationAction =>
         typeof item === 'object' && item !== null && 'type' in item,
     );
@@ -137,6 +160,28 @@ export class AutomationEngineService {
 
     if (conditions.matterType && context.matterType !== conditions.matterType) {
       return false;
+    }
+
+    if (conditions.practiceArea) {
+      const contextArea = String(context.practiceArea ?? '').toLowerCase();
+      const condArea = conditions.practiceArea.toLowerCase();
+
+      if (contextArea !== condArea) {
+        // Accept if contextArea is an alias for condArea, or if condArea is an
+        // alias for contextArea's canonical slug.
+        const aliasesForCond = PRACTICE_AREA_ALIASES[condArea] ?? [];
+        const canonicalForContext = Object.entries(PRACTICE_AREA_ALIASES).find(
+          ([, aliases]) => aliases.includes(contextArea),
+        )?.[0];
+
+        const matchesByAlias =
+          aliasesForCond.includes(contextArea) ||
+          (canonicalForContext !== undefined && canonicalForContext === condArea);
+
+        if (!matchesByAlias) {
+          return false;
+        }
+      }
     }
 
     if (

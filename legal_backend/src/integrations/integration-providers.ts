@@ -8,6 +8,8 @@ export const INTEGRATION_PROVIDERS = [
   'teams',
   'docusign',
   'quickbooks',
+  'word_addin',
+  'outlook_addin',
 ] as const;
 
 export type IntegrationProvider = (typeof INTEGRATION_PROVIDERS)[number];

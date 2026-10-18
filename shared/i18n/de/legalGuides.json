@@ -11,5 +11,11 @@
   "placeholderSection": "Dieser Abschnitt wird um gebietsspezifische Inhalte erweitert.",
   "subtitle": "Rechtsleitfäden für Ihre Gerichtsbarkeit",
   "need_help_with_your_specific_situation": "Benötigen Sie Hilfe in Ihrer spezifischen Situation?",
-  "ctaSubtitleWithSite": "Probieren Sie den kostenlosen {siteName} Issue Checker aus, um eine personalisierte Anleitung zu erhalten."
+  "ctaSubtitleWithSite": "Probieren Sie den kostenlosen {siteName} Issue Checker aus, um eine personalisierte Anleitung zu erhalten.",
+  "indexTitle": "Rechtsratgeber nach Ländern",
+  "indexDescription": "Rechtsleitfäden in einfacher Sprache für häufige Probleme in Indien, den Vereinigten Staaten, dem Vereinigten Königreich und Kenia.",
+  "indexMetaTitle": "Rechtsratgeber – Indien, USA, Großbritannien und Kenia",
+  "indexMetaDescription": "Kostenlose Rechtsratgeber zu Beschäftigung, Wohnen, Verbraucherrechten und mehr – nach Gerichtsbarkeit. Nur pädagogische Informationen, keine Rechtsberatung.",
+  "browseGuides": "Durchsuchen Sie Reiseführer",
+  "countryGuides": "{country}-Anleitungen"
 }

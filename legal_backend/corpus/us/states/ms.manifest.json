@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "stateCode": "MS",
+  "stateName": "Mississippi",
+  "acts": [
+    {
+      "actId": "ms-code",
+      "title": "Mississippi code",
+      "sourceAuthority": "cornell-lii",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.law.cornell.edu/states/ms",
+      "externalId": "ms-code",
+      "notes": "Mississippi state law via Cornell LII state index"
+    },
+    {
+      "actId": "ms-statutes",
+      "title": "Mississippi statutes",
+      "sourceAuthority": "cornell-lii",
+      "sourceTier": "mirror",
+      "primaryPdfUrl": "https://www.law.cornell.edu/states/ms",
+      "externalId": "ms-statutes",
+      "notes": "Mississippi state law via Cornell LII state index"
+    }
+  ]
+}

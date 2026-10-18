@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "stateCode": "HI",
+  "stateName": "Hawaii",
+  "acts": [
+    {
+      "actId": "hi-code",
+      "title": "Hawaii code",
+      "sourceAuthority": "cornell-lii",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.law.cornell.edu/states/hi",
+      "externalId": "hi-code",
+      "notes": "Hawaii state law via Cornell LII state index"
+    },
+    {
+      "actId": "hi-statutes",
+      "title": "Hawaii statutes",
+      "sourceAuthority": "cornell-lii",
+      "sourceTier": "mirror",
+      "primaryPdfUrl": "https://www.law.cornell.edu/states/hi",
+      "externalId": "hi-statutes",
+      "notes": "Hawaii state law via Cornell LII state index"
+    }
+  ]
+}

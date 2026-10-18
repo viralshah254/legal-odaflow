@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "stateCode": "KY",
+  "stateName": "Kentucky",
+  "acts": [
+    {
+      "actId": "ky-code",
+      "title": "Kentucky code",
+      "sourceAuthority": "cornell-lii",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.law.cornell.edu/states/ky",
+      "externalId": "ky-code",
+      "notes": "Kentucky state law via Cornell LII state index"
+    },
+    {
+      "actId": "ky-statutes",
+      "title": "Kentucky statutes",
+      "sourceAuthority": "cornell-lii",
+      "sourceTier": "mirror",
+      "primaryPdfUrl": "https://www.law.cornell.edu/states/ky",
+      "externalId": "ky-statutes",
+      "notes": "Kentucky state law via Cornell LII state index"
+    }
+  ]
+}

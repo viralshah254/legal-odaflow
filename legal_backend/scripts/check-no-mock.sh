@@ -8,13 +8,12 @@ SRC="$ROOT/src"
 ALLOWLIST=(
   'src/ai/ai-gateway.service.ts'
   'src/jobs/workers/ocr.worker.ts'
-  'src/payments/razorpay.service.ts'
   'src/payments/stripe.service.ts'
   'src/payments/payments.service.ts'
   'src/health/health.service.ts'
 )
 
-PATTERN='generateMock|mock-|_mock|Mock preview|mock responses|checkout\.razorpay\.com/mock|\[OCR stub\]'
+PATTERN='generateMock|mock-|_mock|Mock preview|mock responses|\[OCR stub\]'
 
 if command -v rg >/dev/null 2>&1; then
   matches="$(rg -n "$PATTERN" "$SRC" || true)"

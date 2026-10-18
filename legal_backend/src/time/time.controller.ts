@@ -88,6 +88,24 @@ export class TimeController {
     return this.timeService.approve(tenantId, entryId, user.tenantRole);
   }
 
+  @Post(':entryId/submit')
+  submit(
+    @TenantId() tenantId: string,
+    @CurrentUser() user: RequestUser,
+    @Param('entryId') entryId: string,
+  ) {
+    return this.timeService.submit(tenantId, entryId, user.id);
+  }
+
+  @Post(':entryId/reject')
+  reject(
+    @TenantId() tenantId: string,
+    @CurrentUser() user: RequestUser,
+    @Param('entryId') entryId: string,
+  ) {
+    return this.timeService.reject(tenantId, entryId, user.tenantRole);
+  }
+
   @Delete(':entryId')
   remove(@TenantId() tenantId: string, @Param('entryId') entryId: string) {
     return this.timeService.remove(tenantId, entryId);

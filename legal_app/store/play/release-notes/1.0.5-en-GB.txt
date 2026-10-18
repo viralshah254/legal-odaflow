@@ -1,0 +1,16 @@
+<en-GB>
+Welcome to Umbrella v1 — legal guidance and practice management on mobile.
+
+For individuals:
+• Check a legal issue with AI guidance
+• Upload documents and follow your case
+• Connect with lawyers via the marketplace
+
+For law firms:
+• Manage matters, clients, and tasks on the go
+• Time tracking, billing, and trust accounts
+• Meeting recording with transcription
+• Push notifications for updates and deadlines
+
+Our first Google Play release. Feedback: support@odaflow.com.
+</en-GB>

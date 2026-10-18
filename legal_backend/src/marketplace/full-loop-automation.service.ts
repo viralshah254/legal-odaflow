@@ -1,8 +1,23 @@
 import { Injectable, Logger } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
+import { JwtService } from '@nestjs/jwt';
 import { Prisma } from '@prisma/client';
 import { PrismaService } from '@/prisma/prisma.service';
+import { generateUniqueClientCode } from '@/clients/client-code.util';
 import { JobsService } from '@/jobs/jobs.service';
+import { defaultMatterTypeForPracticeArea } from '@/config/matter-types';
+import { buildMatterTitleFromLead } from './lead-display.util';
+import {
+  buildPortalInviteUrl,
+  signPortalInviteToken,
+} from '@/portal/portal-invite.util';
+import { MatterIntelligencePipelineService } from '@/ai/matter-intelligence/matter-intelligence-pipeline.service';
+import { MatterMemoryService } from '@/ai/matter-intelligence/matter-memory.service';
+import type {
+  MatterGraph,
+  MatterProfile,
+  MatterTaskGraph,
+} from '@/ai/matter-intelligence/matter-intelligence.types';
 
 interface PlaybookTaskTemplate {
   title: string;
@@ -26,6 +41,9 @@ export class FullLoopAutomationService {
     private readonly prisma: PrismaService,
     private readonly configService: ConfigService,
     private readonly jobsService: JobsService,
+    private readonly jwtService: JwtService,
+    private readonly matterPipeline: MatterIntelligencePipelineService,
+    private readonly matterMemory: MatterMemoryService,
   ) {}
 
   async onLeadAccepted(
@@ -152,21 +170,38 @@ export class FullLoopAutomationService {
     tenantId: string,
   ) {
     let clientId: string | undefined;
+    let matterTitle = `${lead.issueType} intake — New Client`;
+    let consumerCase:
+      | {
+          title: string;
+          issueType: string;
+          facts: string | null;
+          matterProfile: unknown;
+          matterGraph: unknown;
+          matterTaskGraph: unknown;
+          user: { name: string | null; email: string };
+        }
+      | null = null;
 
     if (lead.consumerCaseId) {
-      const consumerCase = await this.prisma.consumerCase.findUnique({
+      consumerCase = await this.prisma.consumerCase.findUnique({
         where: { id: lead.consumerCaseId },
         include: { user: true },
       });
 
       if (consumerCase) {
         const clientName =
-          lead.summary?.match(/Client: ([^—]+)/)?.[1]?.trim() ??
-          consumerCase.user.name ??
-          consumerCase.user.email;
+          consumerCase.user.name?.trim() ??
+          consumerCase.user.email.split('@')[0];
+        const clientCode = await generateUniqueClientCode(
+          this.prisma,
+          tenantId,
+          clientName,
+        );
         const client = await this.prisma.client.create({
           data: {
             tenantId,
+            clientCode,
             name: clientName,
             email: consumerCase.user.email,
             type: 'INDIVIDUAL',
@@ -174,22 +209,65 @@ export class FullLoopAutomationService {
           },
         });
         clientId = client.id;
+        matterTitle = buildMatterTitleFromLead({
+          issueType: consumerCase.issueType ?? lead.issueType,
+          consumerCaseTitle: consumerCase.title,
+          clientName,
+        });
       }
     }
 
-    return this.prisma.matter.create({
+    const matterProfile = consumerCase?.matterProfile as MatterProfile | undefined;
+    const practiceArea = matterProfile?.practiceArea ?? lead.issueType;
+
+    const matter = await this.prisma.matter.create({
       data: {
         tenantId,
         clientId,
-        title: lead.summary?.split(' — ').pop() ?? `${lead.issueType} — Marketplace Intake`,
+        title: matterTitle,
         countryCode: lead.countryCode,
         jurisdiction: lead.jurisdiction ?? undefined,
-        practiceArea: lead.issueType,
-        matterType: 'LITIGATION',
+        practiceArea,
+        matterType: defaultMatterTypeForPracticeArea(practiceArea),
         status: 'OPEN',
-        factsSummary: lead.summary ?? undefined,
+        factsSummary: consumerCase?.facts ?? lead.summary ?? undefined,
+        matterProfile: consumerCase?.matterProfile ?? undefined,
+        matterGraph: consumerCase?.matterGraph ?? undefined,
+        matterTaskGraph: consumerCase?.matterTaskGraph ?? undefined,
       },
     });
+
+    if (consumerCase?.facts && !matterProfile) {
+      const miResult = await this.matterPipeline.run({
+        facts: consumerCase.facts,
+        countryCode: lead.countryCode,
+        jurisdiction: lead.jurisdiction ?? undefined,
+        skipRetrieval: true,
+      });
+      await this.matterMemory.persist(
+        'matter',
+        matter.id,
+        {
+          profile: miResult.profile,
+          graph: miResult.graph,
+          taskGraph: miResult.taskGraph,
+        },
+        consumerCase.facts,
+      );
+    } else if (matterProfile) {
+      await this.matterMemory.persist(
+        'matter',
+        matter.id,
+        {
+          profile: matterProfile,
+          graph: consumerCase?.matterGraph as MatterGraph | undefined,
+          taskGraph: consumerCase?.matterTaskGraph as MatterTaskGraph | undefined,
+        },
+        consumerCase?.facts ?? undefined,
+      );
+    }
+
+    return matter;
   }
 
   private async applyPlaybook(
@@ -199,7 +277,7 @@ export class FullLoopAutomationService {
     createdByUserId: string,
   ): Promise<number> {
     const countryCode = lead.countryCode.toUpperCase();
-    const matterType = 'LITIGATION';
+    const matterType = defaultMatterTypeForPracticeArea(lead.issueType);
 
     const candidates = await this.prisma.matterPlaybook.findMany({
       where: {
@@ -269,7 +347,8 @@ export class FullLoopAutomationService {
       return { sent: false, reason: 'no_client_email' };
     }
 
-    const portalUrl = `${this.configService.get<string>('APP_URL', 'http://localhost:3000')}/portal/sign-in`;
+    const inviteToken = signPortalInviteToken(this.jwtService, client.id, tenantId);
+    const inviteUrl = buildPortalInviteUrl(this.configService, inviteToken);
 
     await this.prisma.portalMessage.create({
       data: {
@@ -280,16 +359,16 @@ export class FullLoopAutomationService {
         body: [
           `Your matter has been opened with ${client.tenant.name}.`,
           '',
-          `Sign in at ${portalUrl} using your email (${client.email}) and full name (${client.name}).`,
+          `Sign in to your client portal: ${inviteUrl}`,
           '',
-          'You can view matter updates, upload documents, and message your legal team.',
+          'This secure link expires in 7 days. Contact your legal team if you need a new one.',
         ].join('\n'),
         fromFirm: true,
         sentById: sentByUserId,
       },
     });
 
-    return { sent: true, clientId: client.id, portalUrl };
+    return { sent: true, clientId: client.id, portalUrl: inviteUrl };
   }
 
   private scoreConsumerCase(consumerCase: {
@@ -297,12 +376,24 @@ export class FullLoopAutomationService {
     urgencyLevel: string;
     facts: string | null;
     desiredOutcome: string | null;
+    matterProfile?: unknown;
     reports: Array<{ riskLevel: string | null; requiresLawyer: boolean }>;
   }): number {
     let score = 0.5;
 
     if (consumerCase.riskScore != null) {
       score = Math.min(1, Math.max(0, consumerCase.riskScore));
+    }
+
+    const profile = consumerCase.matterProfile as MatterProfile | undefined;
+    if (profile?.confidence != null) {
+      score = Math.min(1, score * 0.7 + profile.confidence * 0.3);
+      if (profile.confidence >= 0.85) {
+        score = Math.min(1, score + 0.08);
+      }
+      if (profile.nature === 'dispute') {
+        score = Math.min(1, score + 0.05);
+      }
     }
 
     if (consumerCase.urgencyLevel === 'HIGH') {

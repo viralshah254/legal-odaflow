@@ -117,7 +117,7 @@
     "newClientMatter": "Nouveau client"
   },
   "aiSearch": {
-    "title": "Recherche juridique IA",
+    "title": "Recherche juridique",
     "subtitle": "Posez n'importe quelle question juridique : les réponses citent de véritables autorités pour votre juridiction.",
     "placeholder": "À quelle question juridique souhaitez-vous répondre ?",
     "prompts": {
@@ -165,6 +165,23 @@
     "triageLeads": "Trier les pistes {count}",
     "askMorningBrief": "Demande mon brief du matin"
   },
+  "aiReview": {
+    "title": "AI review queue",
+    "subtitle": "AI outputs flagged for lawyer review before client use",
+    "queueTitle": "{count, plural, one {# item awaiting review} other {# items awaiting review}}",
+    "queueDescription": "Review, open the source workspace, or mark as reviewed when signed off.",
+    "empty": "No AI outputs are waiting for lawyer review.",
+    "loadError": "Failed to load review queue",
+    "author": "Author",
+    "matter": "Matter",
+    "jurisdiction": "Jurisdiction",
+    "unverified": "Unverified",
+    "preview": "Preview",
+    "openWorkspace": "Open workspace",
+    "markReviewed": "Mark reviewed",
+    "previewTruncated": "Open the workspace for the full output.",
+    "unknownAuthor": "Unknown"
+  },
   "tasks": {
     "myTasks": "Mes tâches",
     "next7d": "7j prochains",
@@ -187,12 +204,12 @@
     "start": "Démarrer →",
     "allSetUp": "Vous êtes prêt !",
     "allSetUpDescription": "Toutes les étapes de démarrage sont terminées. Cette liste de contrôle disparaîtra sous peu.",
-    "aiSearchLabel": "Exécutez votre première recherche juridique IA",
+    "aiSearchLabel": "Lancez votre première recherche juridique",
     "aiSearchDescription": "Posez une question juridique et obtenez des réponses citées pour votre juridiction",
     "clientLabel": "Ajoutez votre premier client",
     "clientDescription": "Créez un profil client pour commencer à gérer les dossiers",
-    "matterLabel": "Ouvrir un sujet",
-    "matterDescription": "Créer un sujet pour commencer à suivre un cas",
+    "matterLabel": "Créez votre premier sujet",
+    "matterDescription": "Créer un dossier pour commencer à suivre le dossier",
     "templateLabel": "Télécharger un modèle de document",
     "templateDescription": "Configurer des modèles pour automatiser la génération de documents",
     "taskLabel": "Vérifiez votre file d'attente de tâches",

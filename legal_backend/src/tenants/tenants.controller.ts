@@ -3,6 +3,7 @@ import { CurrentUser } from '@/common/decorators/current-user.decorator';
 import { Roles } from '@/common/decorators/roles.decorator';
 import { SkipTenant } from '@/common/decorators/skip-tenant.decorator';
 import { TenantId } from '@/common/decorators/tenant-id.decorator';
+import { Public } from '@/common/decorators/public.decorator';
 import { RolesGuard } from '@/common/guards/roles.guard';
 import { TenantGuard } from '@/common/guards/tenant.guard';
 import { RequestUser } from '@/common/types/request-user.interface';
@@ -11,7 +12,19 @@ import { UpdateAiPreferencesDto } from '@/credits/dto/update-ai-preferences.dto'
 import { CreateTenantUserDto } from './dto/create-tenant-user.dto';
 import { UpdateTenantDto } from './dto/update-tenant.dto';
 import { UpdateTenantUserDto } from './dto/update-tenant-user.dto';
+import { UpdateUserSeatPlanDto } from './dto/update-user-seat-plan.dto';
 import { TenantsService } from './tenants.service';
+import { IsString, MinLength, MaxLength } from 'class-validator';
+
+class AcceptInvitationDto {
+  @IsString()
+  token!: string;
+
+  @IsString()
+  @MinLength(12)
+  @MaxLength(128)
+  password!: string;
+}
 
 @Controller('tenants')
 @UseGuards(TenantGuard, RolesGuard)
@@ -97,5 +110,45 @@ export class TenantsController {
     @Body() dto: UpdateTenantUserDto,
   ) {
     return this.tenantsService.updateUser(tenantId, user.id, targetUserId, dto);
+  }
+
+  @Patch(':tenantId/users/:userId/plan')
+  @Roles('FIRM_ADMIN', 'PARTNER')
+  updateUserSeatPlan(
+    @Param('tenantId') tenantId: string,
+    @Param('userId') targetUserId: string,
+    @CurrentUser() user: RequestUser,
+    @Body() dto: UpdateUserSeatPlanDto,
+  ) {
+    return this.tenantsService.updateUserSeatPlan(tenantId, user.id, targetUserId, dto);
+  }
+
+  /** Per-user credit usage — admin or self. */
+  @Get(':tenantId/users/:userId/credits')
+  @Roles('FIRM_ADMIN', 'PARTNER', 'ASSOCIATE', 'FINANCE', 'INTAKE')
+  getUserCreditUsage(
+    @Param('tenantId') tenantId: string,
+    @Param('userId') targetUserId: string,
+    @CurrentUser() user: RequestUser,
+  ) {
+    return this.tenantsService.getUserCreditUsage(tenantId, user.id, targetUserId);
+  }
+
+  /** Bulk team credit usage — admin only. Avoids N+1 on the team page. */
+  @Get(':tenantId/users/credit-usage')
+  @Roles('FIRM_ADMIN', 'PARTNER')
+  getTeamCreditUsage(
+    @Param('tenantId') tenantId: string,
+    @CurrentUser() user: RequestUser,
+  ) {
+    return this.tenantsService.getTeamCreditUsage(tenantId, user.id);
+  }
+
+  /** Accept a team invitation — public endpoint (no auth required). */
+  @Post('invitations/accept')
+  @Public()
+  @SkipTenant()
+  acceptInvitation(@Body() dto: AcceptInvitationDto) {
+    return this.tenantsService.acceptInvitation(dto.token, dto.password);
   }
 }

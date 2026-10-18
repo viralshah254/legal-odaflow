@@ -1,0 +1,20 @@
+{
+  "title": "পৰিশোধিত প্ৰমপ্ট",
+  "description": "আমি আপোনাৰ বিৱৰণটো স্পষ্ট AI ফলাফলৰ বাবে পুনৰ সংগঠিত কৰিলোঁ। প্ৰয়োজন হ'লে সম্পাদনা কৰক, তাৰ পিছত আগবাঢ়ক।",
+  "yourOriginal": "আপোনাৰ মূল প্ৰমপ্ট",
+  "refinedLabel": "পৰিশোধিত প্ৰমপ্ট",
+  "continueRefined": "পৰিশোধিত প্ৰমপ্টৰ সৈতে আগবাঢ়ি যাওক",
+  "useOriginal": "ইয়াৰ পৰিৱৰ্তে অৰিজিনেল ব্যৱহাৰ কৰক",
+  "hintJurisdiction": "বিচাৰ ক্ষমতা",
+  "hintDocument": "নথিপত্ৰ",
+  "hintParty": "দল",
+  "hintStatute": "বিধি",
+  "preparing": "Preparing your prompt…",
+  "startingDrafting": "{seconds}s মধ্যে খচৰা আৰম্ভ কৰা হৈছে...",
+  "startingResearch": "{seconds}s মধ্যে গৱেষণা আৰম্ভ...",
+  "undo": "পূৰ্বৱৰ্তী অৱস্থালৈ ঘূৰাই আনিব",
+  "autoFilledTitle": "প্ৰমপ্ট পৰিশোধিত",
+  "autoFilledDescription": "{seconds}s ত অব্যাহত আছে — আপোনাৰ মূল ৰাখিবলৈ পূৰ্বৱৰ্তী অৱস্থালৈ ঘূৰাই আনিব।",
+  "autoFillCountdownAria": "{seconds} ছেকেণ্ড বাকী আছে পূৰ্বৱৰ্তী অৱস্থালৈ ঘূৰাই আনিবলৈ",
+  "autoFillHint": "Undo এ আপোনাৰ মূল প্ৰমপ্ট পুনৰুদ্ধাৰ কৰে"
+}

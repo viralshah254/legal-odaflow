@@ -6,6 +6,12 @@ import {
 import { ConfigService } from '@nestjs/config';
 import { PrismaService } from '@/prisma/prisma.service';
 import { AI_MODES } from './constants';
+import {
+  getOpenAiApiMode,
+  isDeepSeekConfigured,
+  isOpenAiConfigured,
+  openAiNotConfiguredMessage,
+} from './openai-transport';
 
 export interface AiPolicyDecision {
   allowed: boolean;
@@ -39,7 +45,8 @@ export class AiPolicyService {
     if (userCreditsRemaining <= 0) {
       return {
         allowed: false,
-        reason: 'No free preview credits remaining',
+        reason:
+          "You've used all your free daily AI credits. Subscribe to get unlimited access, or wait until tomorrow for your daily credits to reset.",
         mode: AI_MODES.CONSUMER_FREE_PREVIEW,
         requireCitations: true,
         requireDisclaimer: true,
@@ -57,12 +64,19 @@ export class AiPolicyService {
     };
   }
 
-  evaluateConsumerCostCap(currentSpendUsd: number): AiCostCapDecision {
+  evaluateConsumerCostCap(
+    currentSpendUsd: number,
+    hardStopEnabled = false,
+  ): AiCostCapDecision {
     const capUsd = this.getMonthlyConsumerCostCap();
     if (currentSpendUsd >= capUsd) {
+      if (!hardStopEnabled) {
+        // Soft limit: warn but allow through
+        return { allowed: true, currentSpendUsd, capUsd };
+      }
       return {
         allowed: false,
-        reason: `Monthly consumer AI cost cap reached ($${capUsd})`,
+        reason: `Monthly AI spend limit reached ($${capUsd}). Adjust your limit in Settings → AI Usage.`,
         currentSpendUsd,
         capUsd,
       };
@@ -71,12 +85,18 @@ export class AiPolicyService {
     return { allowed: true, currentSpendUsd, capUsd };
   }
 
-  evaluateTenantCostCap(currentSpendUsd: number): AiCostCapDecision {
+  evaluateTenantCostCap(
+    currentSpendUsd: number,
+    hardStopEnabled = false,
+  ): AiCostCapDecision {
     const capUsd = this.getMonthlyTenantCostCap();
     if (currentSpendUsd >= capUsd) {
+      if (!hardStopEnabled) {
+        return { allowed: true, currentSpendUsd, capUsd };
+      }
       return {
         allowed: false,
-        reason: `Monthly tenant AI cost cap reached ($${capUsd})`,
+        reason: `Monthly AI spend limit reached ($${capUsd}). Adjust your limit in Settings → AI Usage.`,
         currentSpendUsd,
         capUsd,
       };
@@ -89,11 +109,15 @@ export class AiPolicyService {
     currentSpendUsd: number,
     estimatedCostUsd: number,
     capUsd: number,
+    hardStopEnabled = false,
   ): AiCostCapDecision {
     if (currentSpendUsd + estimatedCostUsd > capUsd) {
+      if (!hardStopEnabled) {
+        return { allowed: true, currentSpendUsd, capUsd };
+      }
       return {
         allowed: false,
-        reason: `Estimated request would exceed monthly AI cost cap ($${capUsd})`,
+        reason: `Estimated request would exceed monthly AI spend limit ($${capUsd}). Adjust your limit in Settings → AI Usage.`,
         currentSpendUsd,
         capUsd,
       };
@@ -118,22 +142,35 @@ export class AiPolicyService {
     return this.configService.get<string>('TRAINING_OPT_IN_DEFAULT', 'false') === 'true';
   }
 
-  assertOpenAiConfigured(): void {
-    const key = this.configService.get<string>('OPENAI_API_KEY', '').trim();
+  assertAiConfigured(): void {
+    const openAiReady = isOpenAiConfigured(this.configService);
+    const deepSeekReady = isDeepSeekConfigured(this.configService);
     const isProd = this.configService.get<string>('NODE_ENV') === 'production';
     const allowMock = this.configService.get<string>('ALLOW_MOCK_AI', 'false') === 'true';
-    if (isProd && !key && !allowMock) {
+    if (isProd && !openAiReady && !deepSeekReady && !allowMock) {
+      const hint =
+        getOpenAiApiMode(this.configService) === 'azure'
+          ? openAiNotConfiguredMessage(this.configService)
+          : 'Set OPENAI_API_KEY and/or DEEPSEEK_API_KEY for production.';
       throw new ServiceUnavailableException(
-        'AI service is not configured. Set OPENAI_API_KEY for production.',
+        `AI service is not configured. ${hint}`,
       );
     }
   }
 
+  /** @deprecated Use assertAiConfigured */
+  assertOpenAiConfigured(): void {
+    this.assertAiConfigured();
+  }
+
   shouldUseMockResponses(): boolean {
-    const key = this.configService.get<string>('OPENAI_API_KEY', '').trim();
-    if (key) return false;
     const isProd = this.configService.get<string>('NODE_ENV') === 'production';
-    return !isProd || this.configService.get<string>('ALLOW_MOCK_AI', 'false') === 'true';
+    if (isProd) {
+      return false;
+    }
+    if (isOpenAiConfigured(this.configService)) return false;
+    if (isDeepSeekConfigured(this.configService)) return false;
+    return this.configService.get<string>('ALLOW_MOCK_AI', 'false') === 'true';
   }
 
   async getTenantAiPolicy(tenantId: string) {
@@ -201,19 +238,27 @@ export class AiPolicyService {
     userId: string,
     estimatedCostUsd: number,
   ): Promise<BudgetCheckResult> {
-    const maxTaskCost = Number(
-      this.configService.get<string>('AI_DEFAULT_MAX_TASK_COST_USD', '0.25'),
-    );
+    const chargeMode = this.configService.get<string>('AI_CHARGE_MODE', 'token_based');
 
-    if (estimatedCostUsd > maxTaskCost) {
-      return {
-        allowed: false,
-        reason: `Estimated task cost ($${estimatedCostUsd.toFixed(4)}) exceeds max per-task budget ($${maxTaskCost})`,
-        estimatedCostUsd,
-      };
+    // Credit / token billing: wallet + margin are the product gates. Do not hard-block
+    // Premium Verified research on a tiny USD per-task floor (users pay in credits).
+    // Flat / non-credit modes keep the env USD safety cap.
+    if (chargeMode === 'flat') {
+      const maxTaskCost = Number(
+        this.configService.get<string>('AI_DEFAULT_MAX_TASK_COST_USD', '2'),
+      );
+      if (Number.isFinite(maxTaskCost) && estimatedCostUsd > maxTaskCost) {
+        return {
+          allowed: false,
+          reason: `Estimated task cost ($${estimatedCostUsd.toFixed(4)}) exceeds max per-task budget ($${maxTaskCost})`,
+          estimatedCostUsd,
+        };
+      }
     }
 
-    if (tenantId) {
+    // Tenant USD per-task caps only apply in flat mode. Credit mode already
+    // reserves/charges the wallet; MRR-derived $0.25 task caps must not block Premium.
+    if (chargeMode === 'flat' && tenantId) {
       const policy = await this.prisma.aIBudgetPolicy.findFirst({
         where: { tenantId },
         orderBy: { updatedAt: 'desc' },

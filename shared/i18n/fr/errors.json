@@ -1,8 +1,8 @@
 {
   "generic": "Quelque chose s'est mal passé",
   "network": "Erreur réseau. Veuillez réessayer.",
-  "timeout": "The request timed out. Please try again.",
-  "connection": "Could not reach the server. Check your connection and try again.",
+  "timeout": "La demande a expiré. Veuillez réessayer.",
+  "connection": "Impossible d'atteindre le serveur. Vérifiez votre connexion et réessayez.",
   "unauthorized": "Vous n'êtes pas autorisé à effectuer cette action.",
   "notFound": "Pas trouvé",
   "validationFailed": "Veuillez vérifier votre saisie et réessayer.",
@@ -25,6 +25,10 @@
   "tooManyRequests": "Trop de tentatives. Attendez un moment et réessayez.",
   "firebaseEmailSignInDisabled": "La connexion par e-mail n'est pas activée dans Firebase pour ce projet.",
   "authenticationFailed": "L'authentification a échoué.",
+  "accountExistsDifferentCredential": "Cet email est enregistré avec un mot de passe. Connectez-vous d'abord par e-mail, puis associez les comptes sociaux dans les paramètres.",
+  "socialSignInCancelled": "La connexion a été annulée.",
+  "socialSignInPopupBlocked": "Le pop-up a été bloqué. Autorisez les pop-ups pour ce site ou réessayez.",
+  "socialSignInFailed": "La connexion sociale a échoué. Veuillez réessayer.",
   "toast": {
     "preBillSessionCreated": "Session de pré-facturation créée",
     "couldNotCreateSession": "Impossible de créer une session",

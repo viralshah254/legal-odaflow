@@ -1,17 +1,20 @@
 import { Injectable, NotFoundException, OnModuleInit } from '@nestjs/common';
 import { Prisma } from '@prisma/client';
+import { retryDb } from '@/common/utils/retry-db';
 import { PrismaService } from '@/prisma/prisma.service';
 import {
   COUNTRY_COMPLIANCE_POLICY_SEEDS,
   CountryCompliancePolicySeed,
+  EU_MEMBER_COUNTRY_CODES,
 } from './country-compliance.seed';
+import { getCountryPrivacyRequirements } from './privacy-controls';
 
 @Injectable()
 export class CountryComplianceService implements OnModuleInit {
   constructor(private readonly prisma: PrismaService) {}
 
   async onModuleInit() {
-    await this.seedPolicies();
+    await retryDb(() => this.seedPolicies());
   }
 
   async getPolicy(countryCode: string) {
@@ -21,11 +24,11 @@ export class CountryComplianceService implements OnModuleInit {
     });
 
     if (!policy) {
-      const seed = this.findSeed(normalized);
+      const seed = this.findSeed(normalized) ?? this.findEuFallbackSeed(normalized);
       if (seed) {
         policy = await this.prisma.countryCompliancePolicy.upsert({
           where: { countryCode: normalized },
-          create: this.toCreateData(seed),
+          create: this.toCreateData(seed, normalized),
           update: this.toUpdateData(seed),
         });
       }
@@ -35,13 +38,14 @@ export class CountryComplianceService implements OnModuleInit {
       throw new NotFoundException(`Compliance policy not found for ${normalized}`);
     }
 
-    return policy;
+    return this.withPrivacyRequirements(policy);
   }
 
   async listPolicies() {
-    return this.prisma.countryCompliancePolicy.findMany({
+    const policies = await this.prisma.countryCompliancePolicy.findMany({
       orderBy: { countryCode: 'asc' },
     });
+    return policies.map((policy) => this.withPrivacyRequirements(policy));
   }
 
   async seedPolicies() {
@@ -65,10 +69,32 @@ export class CountryComplianceService implements OnModuleInit {
     );
   }
 
-  private toCreateData(seed: CountryCompliancePolicySeed): Prisma.CountryCompliancePolicyCreateInput {
+  private withPrivacyRequirements<T extends { countryCode: string }>(policy: T) {
+    const seed = this.findSeed(policy.countryCode) ?? this.findEuFallbackSeed(policy.countryCode);
     return {
-      countryCode: seed.countryCode,
-      countryName: seed.countryName,
+      ...policy,
+      privacyRequirements:
+        seed?.privacyRequirements ?? getCountryPrivacyRequirements(policy.countryCode),
+    };
+  }
+
+  /** Unseeded EU/EEA members inherit the EU policy template. */
+  private findEuFallbackSeed(countryCode: string): CountryCompliancePolicySeed | undefined {
+    if (!EU_MEMBER_COUNTRY_CODES.has(countryCode) || countryCode === 'EU') {
+      return undefined;
+    }
+    return this.findSeed('EU');
+  }
+
+  private toCreateData(
+    seed: CountryCompliancePolicySeed,
+    countryCodeOverride?: string,
+  ): Prisma.CountryCompliancePolicyCreateInput {
+    return {
+      countryCode: countryCodeOverride ?? seed.countryCode,
+      countryName: countryCodeOverride && countryCodeOverride !== seed.countryCode
+        ? `${countryCodeOverride} (EU policy)`
+        : seed.countryName,
       allowConsumerGuidance: seed.allowConsumerGuidance ?? true,
       allowDocumentGeneration: seed.allowDocumentGeneration ?? true,
       allowLawyerMarketplace: seed.allowLawyerMarketplace ?? true,

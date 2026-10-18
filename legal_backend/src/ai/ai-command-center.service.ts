@@ -1,5 +1,12 @@
 import { Injectable } from '@nestjs/common';
+import { ConfigService } from '@nestjs/config';
+import { CreditWalletService } from '@/credits/credit-wallet.service';
 import { PrismaService } from '@/prisma/prisma.service';
+import {
+  getOpenAiApiMode,
+  isDeepSeekConfigured,
+  isOpenAiConfigured,
+} from './openai-transport';
 import { AiUsageService } from './ai-usage.service';
 
 export interface CommandCenterSummary {
@@ -14,14 +21,17 @@ export interface CommandCenterSummary {
   aiCostThisMonthUsd: number;
   aiCreditsUsed: number;
   aiCreditsIncluded: number;
-  providerHealth: { status: string; provider: string };
+  providerHealth: { status: string; provider: string; mode?: string };
 }
+
 
 @Injectable()
 export class AiCommandCenterService {
   constructor(
     private readonly prisma: PrismaService,
     private readonly aiUsage: AiUsageService,
+    private readonly creditWallet: CreditWalletService,
+    private readonly configService: ConfigService,
   ) {}
 
   async getSummary(tenantId: string): Promise<CommandCenterSummary> {
@@ -38,7 +48,7 @@ export class AiCommandCenterService {
       researchMemosGenerated,
       opponentFilingsNeedingResponse,
       usageSummary,
-      budgetPolicy,
+      tenantWallet,
     ] = await Promise.all([
       this.prisma.lawyerLead.count({
         where: { tenantId, status: { in: ['NEW', 'OPEN'] } },
@@ -89,23 +99,12 @@ export class AiCommandCenterService {
         },
       }),
       this.aiUsage.getUsageSummary({ tenantId, from: monthStart, to: now }),
-      this.prisma.aIBudgetPolicy.findFirst({
-        where: { tenantId },
-        orderBy: { updatedAt: 'desc' },
-      }),
+      this.creditWallet.getTenantWallet(tenantId),
     ]);
 
-    const aiCreditsIncluded = budgetPolicy?.monthlyBudgetUsd
-      ? Math.floor(Number(budgetPolicy.monthlyBudgetUsd) / 0.05)
-      : 100;
-    const aiCreditsUsed = await this.prisma.aICreditLedger.aggregate({
-      where: {
-        tenantId,
-        eventType: 'DEBIT',
-        createdAt: { gte: monthStart },
-      },
-      _sum: { credits: true },
-    });
+    const wallet = tenantWallet?.wallet;
+    const aiCreditsIncluded = wallet?.planCreditsMonthly ?? 0;
+    const aiCreditsUsed = wallet?.usedCreditsThisCycle ?? 0;
 
     return {
       newConsumerLeads,
@@ -117,11 +116,16 @@ export class AiCommandCenterService {
       researchMemosGenerated,
       opponentFilingsNeedingResponse,
       aiCostThisMonthUsd: usageSummary.totalCostUsd ?? 0,
-      aiCreditsUsed: aiCreditsUsed._sum.credits ?? 0,
+      aiCreditsUsed,
       aiCreditsIncluded,
       providerHealth: {
-        status: process.env.OPENAI_API_KEY ? 'ok' : 'degraded',
-        provider: process.env.AI_PROVIDER ?? 'openai',
+        status:
+          isOpenAiConfigured(this.configService) ||
+          isDeepSeekConfigured(this.configService)
+            ? 'ok'
+            : 'degraded',
+        provider: this.configService.get<string>('AI_PROVIDER', 'openai') ?? 'openai',
+        mode: getOpenAiApiMode(this.configService),
       },
     };
   }

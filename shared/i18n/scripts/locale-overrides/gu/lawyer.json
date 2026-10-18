@@ -1,5 +1,6 @@
 {
   "nav": {
+    "quickActions": "ઝડપી ક્રિયાઓ",
     "dashboard": "ડેશબોર્ડ",
     "clients": "ગ્રાહકો",
     "matters": "બાબતો",
@@ -11,6 +12,7 @@
     "evidence": "પુરાવા",
     "billing": "બિલિંગ",
     "trust": "વિશ્વાસ",
+    "trustAccounts": "ટ્રસ્ટ એકાઉન્ટ્સ",
     "finance": "ફાયનાન્સ",
     "expenses": "ખર્ચ",
     "queues": "કતારો",
@@ -19,14 +21,20 @@
     "inbox": "ઇનબોક્સ",
     "newIntake": "નવું ઇન્ટેક",
     "alerts": "ચેતવણીઓ",
+    "monitors": "મોનિટર",
     "team": "ટીમ",
     "templates": "નમૂનાઓ",
     "reports": "અહેવાલો",
     "settings": "સેટિંગ્સ",
-    "aiLegalSearch": "AI કાનૂની શોધ",
+    "aiLegalSearch": "કાનૂની સંશોધન",
+    "documentDrafting": "દસ્તાવેજ ડ્રાફ્ટિંગ",
+    "draftDocument": "દસ્તાવેજ ડ્રાફ્ટ",
     "more": "વધુ",
     "myProfile": "મારી પ્રોફાઇલ",
-    "notifications": "સૂચનાઓ"
+    "notifications": "સૂચનાઓ",
+    "lawLibrary": "લૉ લાઇબ્રેરી",
+    "vault": "વૉલ્ટ",
+    "esign": "ઇ-સાઇન"
   },
   "navGroups": {
     "scheduleTime": "સમયપત્રક અને સમય",
@@ -238,7 +246,7 @@
   "notify_the_partner": "પાર્ટનરને જાણ કરો",
   "only_if_optional": "માત્ર જો (વૈકલ્પિક)",
   "open_case": "ઓપન કેસ",
-  "open_matter_workbench": "ઓપન મેટર વર્કબેન્ચ",
+  "open_matter_workbench": "ઝડપી AI ખોલો",
   "open_task_details": "કાર્ય વિગતો ખોલો",
   "opening": "ઓપનિંગ",
   "output_preview": "આઉટપુટ પૂર્વાવલોકન",

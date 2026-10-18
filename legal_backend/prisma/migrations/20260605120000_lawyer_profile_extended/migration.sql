@@ -1,0 +1,1 @@
+-- This file was intentionally left empty for a migration that was applied directly.

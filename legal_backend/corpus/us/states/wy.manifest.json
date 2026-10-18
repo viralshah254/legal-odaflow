@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "stateCode": "WY",
+  "stateName": "Wyoming",
+  "acts": [
+    {
+      "actId": "wy-code",
+      "title": "Wyoming code",
+      "sourceAuthority": "cornell-lii",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.law.cornell.edu/states/wy",
+      "externalId": "wy-code",
+      "notes": "Wyoming state law via Cornell LII state index"
+    },
+    {
+      "actId": "wy-statutes",
+      "title": "Wyoming statutes",
+      "sourceAuthority": "cornell-lii",
+      "sourceTier": "mirror",
+      "primaryPdfUrl": "https://www.law.cornell.edu/states/wy",
+      "externalId": "wy-statutes",
+      "notes": "Wyoming state law via Cornell LII state index"
+    }
+  ]
+}

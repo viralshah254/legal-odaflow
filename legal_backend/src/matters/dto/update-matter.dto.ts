@@ -1,9 +1,20 @@
-import { IsNumber, IsOptional, IsString } from 'class-validator';
+import { IsIn, IsNumber, IsOptional, IsString } from 'class-validator';
+import { Transform } from 'class-transformer';
+import {
+  MATTER_STAGE_VALUES,
+  MATTER_STATUS_VALUES,
+  normalizeMatterStage,
+  normalizeMatterStatus,
+} from '../matter-lifecycle.constants';
 
 export class UpdateMatterDto {
   @IsOptional()
   @IsString()
   clientId?: string;
+
+  @IsOptional()
+  @IsString()
+  leadAttorneyId?: string | null;
 
   @IsOptional()
   @IsString()
@@ -34,11 +45,13 @@ export class UpdateMatterDto {
   matterType?: string;
 
   @IsOptional()
-  @IsString()
+  @Transform(({ value }) => (typeof value === 'string' ? normalizeMatterStatus(value) : value))
+  @IsIn(MATTER_STATUS_VALUES)
   status?: string;
 
   @IsOptional()
-  @IsString()
+  @Transform(({ value }) => (typeof value === 'string' ? normalizeMatterStage(value) : value))
+  @IsIn(MATTER_STAGE_VALUES)
   stage?: string;
 
   @IsOptional()

@@ -117,7 +117,7 @@
     "newClientMatter": "नये ग्राहक का मामला"
   },
   "aiSearch": {
-    "title": "एआई कानूनी खोज",
+    "title": "कानूनी अनुसन्धान",
     "subtitle": "कोई भी कानूनी प्रश्न पूछें - उत्तर आपके अधिकार क्षेत्र के लिए वास्तविक अधिकारियों का हवाला देते हैं।",
     "placeholder": "आपको किस कानूनी प्रश्न का उत्तर चाहिए?",
     "prompts": {
@@ -165,6 +165,23 @@
     "triageLeads": "ट्राइएज {count} लीड",
     "askMorningBrief": "मेरी सुबह की संक्षिप्त जानकारी माँगें"
   },
+  "aiReview": {
+    "title": "AI review queue",
+    "subtitle": "AI outputs flagged for lawyer review before client use",
+    "queueTitle": "{count, plural, one {# item awaiting review} other {# items awaiting review}}",
+    "queueDescription": "Review, open the source workspace, or mark as reviewed when signed off.",
+    "empty": "No AI outputs are waiting for lawyer review.",
+    "loadError": "Failed to load review queue",
+    "author": "Author",
+    "matter": "Matter",
+    "jurisdiction": "Jurisdiction",
+    "unverified": "Unverified",
+    "preview": "Preview",
+    "openWorkspace": "Open workspace",
+    "markReviewed": "Mark reviewed",
+    "previewTruncated": "Open the workspace for the full output.",
+    "unknownAuthor": "Unknown"
+  },
   "tasks": {
     "myTasks": "मेरे कार्य",
     "next7d": "अगला 7 दिन",
@@ -187,12 +204,12 @@
     "start": "प्रारंभ →",
     "allSetUp": "आप पूरी तरह तैयार हैं!",
     "allSetUpDescription": "आरंभ करने के सभी चरण पूरे हो गए हैं. यह चेकलिस्ट शीघ्र ही गायब हो जाएगी.",
-    "aiSearchLabel": "अपनी पहली AI कानूनी खोज चलाएँ",
+    "aiSearchLabel": "अपना पहला कानूनी अनुसन्धान चलाएँ",
     "aiSearchDescription": "एक कानूनी प्रश्न पूछें और अपने क्षेत्राधिकार के लिए उद्धृत उत्तर प्राप्त करें",
     "clientLabel": "अपना पहला ग्राहक जोड़ें",
     "clientDescription": "मामलों का प्रबंधन शुरू करने के लिए एक क्लाइंट प्रोफ़ाइल बनाएं",
-    "matterLabel": "एक मामला खोलें",
-    "matterDescription": "किसी मामले पर नज़र रखना शुरू करने के लिए एक मामला बनाएं",
+    "matterLabel": "अपना पहला मामला बनाएं",
+    "matterDescription": "मामले पर नज़र रखना शुरू करने के लिए एक मामला स्थापित करें",
     "templateLabel": "दस्तावेज़ टेम्पलेट अपलोड करें",
     "templateDescription": "दस्तावेज़ निर्माण को स्वचालित करने के लिए टेम्पलेट सेट करें",
     "taskLabel": "अपनी कार्य कतार की समीक्षा करें",

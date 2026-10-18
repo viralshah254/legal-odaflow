@@ -1,0 +1,15 @@
+[0;34m[2026-06-26 16:19:09][0m 🚀 Starting deployment from Docker Hub (tag: latest)
+[0;34m[2026-06-26 16:19:09][0m 🚀 Starting deployment from Docker Hub (tag: latest)
+WARNING: DOCKER_INSECURE_NO_IPTABLES_RAW is set
+[0;31m[2026-06-26 16:19:09] ERROR:[0m Docker Swarm is not active
+[0;31m[2026-06-26 16:19:09] ERROR:[0m Docker Swarm is not active
+[0;34m[2026-08-06 05:59:28][0m 🚀 Starting deployment from Docker Hub (tag: f0ea2f41b085a25aff83e93d285f51a4e14ddee1)
+[0;34m[2026-08-06 05:59:28][0m 🚀 Starting deployment from Docker Hub (tag: f0ea2f41b085a25aff83e93d285f51a4e14ddee1)
+WARNING: DOCKER_INSECURE_NO_IPTABLES_RAW is set
+[0;31m[2026-08-06 05:59:28] ERROR:[0m Docker Swarm is not active
+[0;31m[2026-08-06 05:59:28] ERROR:[0m Docker Swarm is not active
+[0;34m[2026-08-06 05:59:51][0m 🚀 Starting deployment from Docker Hub (tag: latest)
+[0;34m[2026-08-06 05:59:51][0m 🚀 Starting deployment from Docker Hub (tag: latest)
+WARNING: DOCKER_INSECURE_NO_IPTABLES_RAW is set
+[0;31m[2026-08-06 05:59:52] ERROR:[0m Docker Swarm is not active
+[0;31m[2026-08-06 05:59:52] ERROR:[0m Docker Swarm is not active

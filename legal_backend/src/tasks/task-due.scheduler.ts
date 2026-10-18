@@ -55,6 +55,7 @@ export class TaskDueScheduler {
           taskId: task.id,
           dueDate: task.dueDate.toISOString(),
           overdue,
+          link: `/app/tasks?highlight=${task.id}`,
         },
       });
       sent += 1;

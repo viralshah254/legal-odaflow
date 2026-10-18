@@ -24,6 +24,8 @@ export class AnalyticsService {
       pendingTrustEntries,
       overdueTasks,
       pendingOutcomeAnalysesCount,
+      practiceAreaGroups,
+      closedMatters,
     ] = await Promise.all([
       this.prisma.matter.groupBy({
         by: ['stage', 'status'],
@@ -78,6 +80,21 @@ export class AnalyticsService {
           status: 'NEEDS_REVIEW',
         },
       }),
+      this.prisma.matter.groupBy({
+        by: ['practiceArea', 'status'],
+        where: { tenantId },
+        _count: { _all: true },
+      }),
+      this.prisma.matter.findMany({
+        where: { tenantId, status: 'CLOSED' },
+        select: {
+          practiceArea: true,
+          createdAt: true,
+          closedAt: true,
+        },
+        take: 200,
+        orderBy: { closedAt: 'desc' },
+      }),
     ]);
 
     const assigneeIds = [
@@ -125,7 +142,50 @@ export class AnalyticsService {
       },
       overdueTasksByOwner,
       outcomeAnalysesPendingReview: pendingOutcomeAnalysesCount,
+      practiceAreaBreakdown: this.buildPracticeAreaBreakdown(practiceAreaGroups, closedMatters),
     };
+  }
+
+  private buildPracticeAreaBreakdown(
+    groups: Array<{ practiceArea: string; status: string; _count: { _all: number } }>,
+    closedMatters: Array<{ practiceArea: string; createdAt: Date; closedAt: Date | null }>,
+  ) {
+    const areaMap = new Map<string, { open: number; closed: number; totalCycleDays: number; closedCount: number }>();
+
+    for (const group of groups) {
+      const area = group.practiceArea ?? 'Other';
+      if (!areaMap.has(area)) {
+        areaMap.set(area, { open: 0, closed: 0, totalCycleDays: 0, closedCount: 0 });
+      }
+      const entry = areaMap.get(area)!;
+      if (group.status === 'CLOSED') {
+        entry.closed += group._count._all;
+      } else {
+        entry.open += group._count._all;
+      }
+    }
+
+    for (const matter of closedMatters) {
+      const area = matter.practiceArea ?? 'Other';
+      if (!areaMap.has(area)) {
+        areaMap.set(area, { open: 0, closed: 0, totalCycleDays: 0, closedCount: 0 });
+      }
+      if (matter.closedAt) {
+        const cycleDays = Math.round(
+          (matter.closedAt.getTime() - matter.createdAt.getTime()) / 86_400_000,
+        );
+        const entry = areaMap.get(area)!;
+        entry.totalCycleDays += cycleDays;
+        entry.closedCount += 1;
+      }
+    }
+
+    return Array.from(areaMap.entries()).map(([area, stats]) => ({
+      practiceArea: area,
+      open: stats.open,
+      closed: stats.closed,
+      avgCycleDays: stats.closedCount > 0 ? Math.round(stats.totalCycleDays / stats.closedCount) : null,
+    }));
   }
 
   async getWorkQueues(tenantId: string) {

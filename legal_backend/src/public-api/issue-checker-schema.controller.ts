@@ -12,7 +12,7 @@ export class IssueCheckerSchemaController {
     return {
       openapi: '3.1.0',
       info: {
-        title: 'Legal by OdaFlow Issue Checker',
+        title: 'Umbrella Issue Checker',
         version: '1.0.0',
         description:
           'Public schema for Custom GPT actions: classify a legal issue, generate a teaser, or request a full preview.',

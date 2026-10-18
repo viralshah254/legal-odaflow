@@ -1,0 +1,10 @@
+import { chromium } from 'playwright';
+const browser = await chromium.launch();
+const page = await browser.newPage({ viewport: { width: 1280, height: 900 } });
+const errors = [];
+page.on('pageerror', (e) => errors.push(String(e)));
+await page.goto('http://localhost:3000/pricing', { waitUntil: 'domcontentloaded', timeout: 20000 }).catch(e => console.log('goto err', e.message));
+await page.waitForTimeout(3000);
+await page.screenshot({ path: '/tmp/pricing-top.png', fullPage: true }).catch(e => console.log('shot err', e.message));
+console.log('errors:', JSON.stringify(errors.slice(0, 10)));
+await browser.close();

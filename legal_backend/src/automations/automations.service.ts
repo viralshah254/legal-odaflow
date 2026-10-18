@@ -29,13 +29,35 @@ export class AutomationsService {
 
   async seedBuiltInRules(tenantId: string) {
     let installed = 0;
+    let upgraded = 0;
     let skipped = 0;
 
     for (const recipe of BUILT_IN_AUTOMATION_RECIPES) {
       const existing = await this.findBuiltInRule(tenantId, recipe.recipeKey, recipe);
 
       if (existing) {
-        skipped += 1;
+        // Upgrade stale conditions: if an existing recipe rule still uses the
+        // old matterType key but the canonical recipe now uses practiceArea,
+        // update it automatically so rules start firing correctly.
+        const existingConds = existing.conditions as Record<string, unknown> | null;
+        const recipeConds = recipe.conditions as Record<string, unknown>;
+        const hasOldMatterType = existingConds && 'matterType' in existingConds;
+        const recipePracticeArea = 'practiceArea' in recipeConds;
+
+        if (hasOldMatterType && recipePracticeArea) {
+          await this.prisma.automationRule.update({
+            where: { id: existing.id },
+            data: {
+              conditions: recipeConditionsWithKey(
+                recipe.recipeKey,
+                recipe.conditions as Record<string, unknown>,
+              ) as Prisma.InputJsonValue,
+            },
+          });
+          upgraded += 1;
+        } else {
+          skipped += 1;
+        }
         continue;
       }
 
@@ -47,6 +69,7 @@ export class AutomationsService {
 
     return {
       installed,
+      upgraded,
       skipped,
       total: BUILT_IN_AUTOMATION_RECIPES.length,
     };
@@ -96,11 +119,28 @@ export class AutomationsService {
       ...(dto.conditions ?? {}),
       v2: v2Meta,
     };
-    const actions = {
-      ...(dto.actions ?? {}),
-      ...(dto.aiActionType ? { type: 'ai', aiActionType: dto.aiActionType } : {}),
-      ...(dto.webhookUrl ? { webhookUrl: dto.webhookUrl } : {}),
-    };
+
+    // Normalize actions to array so the engine can iterate them reliably.
+    // Callers may pass an array, an object with a `steps` key, or a bare
+    // object with a single action — we handle all three.
+    const rawActions = dto.actions;
+    let actionsArray: unknown[];
+    if (Array.isArray(rawActions)) {
+      actionsArray = rawActions;
+    } else if (rawActions && Array.isArray((rawActions as Record<string, unknown>).steps)) {
+      actionsArray = (rawActions as Record<string, unknown>).steps as unknown[];
+    } else if (rawActions && typeof rawActions === 'object' && 'type' in rawActions) {
+      actionsArray = [rawActions];
+    } else {
+      actionsArray = [];
+    }
+
+    if (dto.aiActionType) {
+      actionsArray = [...actionsArray, { type: 'ai', aiActionType: dto.aiActionType }];
+    }
+    if (dto.webhookUrl) {
+      actionsArray = [...actionsArray, { type: 'webhook', webhookUrl: dto.webhookUrl }];
+    }
 
     return this.prisma.automationRule.create({
       data: {
@@ -108,7 +148,7 @@ export class AutomationsService {
         name: dto.name,
         trigger: dto.trigger,
         conditions: conditions as Prisma.InputJsonValue,
-        actions: actions as Prisma.InputJsonValue,
+        actions: actionsArray as Prisma.InputJsonValue,
         isEnabled: dto.isEnabled ?? true,
       },
     });

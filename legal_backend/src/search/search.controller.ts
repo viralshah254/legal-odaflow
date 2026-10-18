@@ -20,4 +20,17 @@ export class SearchController {
       limit ? Math.min(20, Number(limit) || 8) : 8,
     );
   }
+
+  @Get('unified')
+  unified(
+    @TenantId() tenantId: string,
+    @Query('q') q?: string,
+    @Query('limit') limit?: string,
+  ) {
+    return this.searchService.unifiedSearch(
+      tenantId,
+      q ?? '',
+      limit ? Math.min(20, Number(limit) || 8) : 8,
+    );
+  }
 }

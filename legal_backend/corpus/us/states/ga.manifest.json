@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "stateCode": "GA",
+  "stateName": "Georgia",
+  "acts": [
+    {
+      "actId": "ga-code",
+      "title": "Georgia code",
+      "sourceAuthority": "cornell-lii",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.law.cornell.edu/states/ga",
+      "externalId": "ga-code",
+      "notes": "Georgia state law via Cornell LII state index"
+    },
+    {
+      "actId": "ga-business-corporations",
+      "title": "Georgia business corporations",
+      "sourceAuthority": "cornell-lii",
+      "sourceTier": "mirror",
+      "primaryPdfUrl": "https://www.law.cornell.edu/states/ga",
+      "externalId": "ga-business_corporations",
+      "notes": "Georgia state law via Cornell LII state index"
+    }
+  ]
+}

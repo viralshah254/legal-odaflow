@@ -1,0 +1,4968 @@
+{
+  "countryCode": "KE",
+  "source": "kenyalaw.org",
+  "builtAt": "2026-06-29T11:16:26.180Z",
+  "placeCode": "ke",
+  "acts": [
+    {
+      "actId": "ke-ln-attorney-general-2023",
+      "title": "24th Annual Supplement",
+      "workFrbrUri": "akn/ke/act/ln/attorney-general/2023/221",
+      "expressionFrbrUri": "akn/ke/act/ln/attorney-general/2023/221/eng@2023-12-22",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/attorney-general/2023/221/eng@2023-12-22",
+      "nature": "legal_notice",
+      "year": "attorney-general",
+      "number": "2023"
+    },
+    {
+      "actId": "ke-act-1926-10",
+      "title": "Abuse of Opiates Prevention (Amendment) Ordinance",
+      "workFrbrUri": "akn/ke/act/1926/10",
+      "expressionFrbrUri": "akn/ke/act/1926/10/eng@1926-07-01",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/1926/10/eng@1926-07-01",
+      "nature": "act",
+      "year": "1926",
+      "number": "10"
+    },
+    {
+      "actId": "ke-act-1913-14",
+      "title": "Abuse of Opiates Prevention Ordinance, 1913",
+      "workFrbrUri": "akn/ke/act/1913/14",
+      "expressionFrbrUri": "akn/ke/act/1913/14/eng@1914-01-01",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/1913/14/eng@1914-01-01",
+      "nature": "act",
+      "year": "1913",
+      "number": "14"
+    },
+    {
+      "actId": "access-to-information-act-2016",
+      "title": "Access to Information Act",
+      "workFrbrUri": "akn/ke/act/2016/31",
+      "expressionFrbrUri": "akn/ke/act/2016/31/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/2016/31/eng@2022-12-31",
+      "nature": "act",
+      "year": "2016",
+      "number": "31"
+    },
+    {
+      "actId": "ke-act-2008-15",
+      "title": "Accountants Act",
+      "workFrbrUri": "akn/ke/act/2008/15",
+      "expressionFrbrUri": "akn/ke/act/2008/15/eng@2025-06-20",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/2008/15/eng@2025-06-20",
+      "nature": "act",
+      "year": "2008",
+      "number": "15"
+    },
+    {
+      "actId": "ke-ln-2019-109",
+      "title": "Adjustment of Rates for Inflation",
+      "workFrbrUri": "akn/ke/act/ln/2019/109",
+      "expressionFrbrUri": "akn/ke/act/ln/2019/109/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2019/109/eng@2022-12-31",
+      "nature": "legal_notice",
+      "year": "2019",
+      "number": "109"
+    },
+    {
+      "actId": "ke-ln-2018-239",
+      "title": "Adjustment of Rates for Inflation",
+      "workFrbrUri": "akn/ke/act/ln/2018/239",
+      "expressionFrbrUri": "akn/ke/act/ln/2018/239/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2018/239/eng@2022-12-31",
+      "nature": "legal_notice",
+      "year": "2018",
+      "number": "239"
+    },
+    {
+      "actId": "ke-ln-2018-164",
+      "title": "Adjustment of Rates for Inflation",
+      "workFrbrUri": "akn/ke/act/ln/2018/164",
+      "expressionFrbrUri": "akn/ke/act/ln/2018/164/eng@2018-07-13",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2018/164/eng@2018-07-13",
+      "nature": "legal_notice",
+      "year": "2018",
+      "number": "164"
+    },
+    {
+      "actId": "ke-ln-2021-217",
+      "title": "Adjustment of Rates for Inflation",
+      "workFrbrUri": "akn/ke/act/ln/2021/217",
+      "expressionFrbrUri": "akn/ke/act/ln/2021/217/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2021/217/eng@2022-12-31",
+      "nature": "legal_notice",
+      "year": "2021",
+      "number": "217"
+    },
+    {
+      "actId": "ke-ln-2022-204",
+      "title": "Adjustment of Rates of Excise Duty for Inflation",
+      "workFrbrUri": "akn/ke/act/ln/2022/204",
+      "expressionFrbrUri": "akn/ke/act/ln/2022/204/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2022/204/eng@2022-12-31",
+      "nature": "legal_notice",
+      "year": "2022",
+      "number": "204"
+    },
+    {
+      "actId": "ke-ln-2022-176",
+      "title": "Adjustment of Rates of Excise Duty for Inflation, 2022",
+      "workFrbrUri": "akn/ke/act/ln/2022/176",
+      "expressionFrbrUri": "akn/ke/act/ln/2022/176/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2022/176/eng@2022-12-31",
+      "nature": "legal_notice",
+      "year": "2022",
+      "number": "176"
+    },
+    {
+      "actId": "ke-ln-2022-177",
+      "title": "Adjustment of Rates of Excise Levy for Inflation",
+      "workFrbrUri": "akn/ke/act/ln/2022/177",
+      "expressionFrbrUri": "akn/ke/act/ln/2022/177/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2022/177/eng@2022-12-31",
+      "nature": "legal_notice",
+      "year": "2022",
+      "number": "177"
+    },
+    {
+      "actId": "ke-ln-2022-203",
+      "title": "Adjustment of Rates of Export Levy for Inflation",
+      "workFrbrUri": "akn/ke/act/ln/2022/203",
+      "expressionFrbrUri": "akn/ke/act/ln/2022/203/eng@2022-10-28",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2022/203/eng@2022-10-28",
+      "nature": "legal_notice",
+      "year": "2022",
+      "number": "203"
+    },
+    {
+      "actId": "ke-act-1989-18",
+      "title": "Advocates Act",
+      "workFrbrUri": "akn/ke/act/1989/18",
+      "expressionFrbrUri": "akn/ke/act/1989/18/eng@2024-04-26",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/1989/18/eng@2024-04-26",
+      "nature": "act",
+      "year": "1989",
+      "number": "18"
+    },
+    {
+      "actId": "ke-ln-1999-94",
+      "title": "Advocates Act (Commencement of section 32), 1999",
+      "workFrbrUri": "akn/ke/act/ln/1999/94",
+      "expressionFrbrUri": "akn/ke/act/ln/1999/94/eng@1999-07-16",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/1999/94/eng@1999-07-16",
+      "nature": "legal_notice",
+      "year": "1999",
+      "number": "94"
+    },
+    {
+      "actId": "ke-ln-2009-50",
+      "title": "Advocates (Remuneration) (Amendment) Order, 2009",
+      "workFrbrUri": "akn/ke/act/ln/2009/50",
+      "expressionFrbrUri": "akn/ke/act/ln/2009/50/eng@2009-04-09",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2009/50/eng@2009-04-09",
+      "nature": "legal_notice",
+      "year": "2009",
+      "number": "50"
+    },
+    {
+      "actId": "ke-act-2024-2",
+      "title": "Affordable Housing Act",
+      "workFrbrUri": "akn/ke/act/2024/2",
+      "expressionFrbrUri": "akn/ke/act/2024/2/eng@2024-03-21",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/2024/2/eng@2024-03-21",
+      "nature": "act",
+      "year": "2024",
+      "number": "2"
+    },
+    {
+      "actId": "ke-act-1964-4",
+      "title": "African Development Bank Act",
+      "workFrbrUri": "akn/ke/act/1964/4",
+      "expressionFrbrUri": "akn/ke/act/1964/4/eng@1964-04-07",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/1964/4/eng@1964-04-07",
+      "nature": "act",
+      "year": "1964",
+      "number": "4"
+    },
+    {
+      "actId": "ke-act-1994-2",
+      "title": "African Re-insurance Corporation (Mandatory Re-insurance Cessions) Act",
+      "workFrbrUri": "akn/ke/act/1994/2",
+      "expressionFrbrUri": "akn/ke/act/1994/2/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/1994/2/eng@2022-12-31",
+      "nature": "act",
+      "year": "1994",
+      "number": "2"
+    },
+    {
+      "actId": "ke-act-1974-1",
+      "title": "Age of Majority Act",
+      "workFrbrUri": "akn/ke/act/1974/1",
+      "expressionFrbrUri": "akn/ke/act/1974/1/eng@1974-04-05",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/1974/1/eng@1974-04-05",
+      "nature": "act",
+      "year": "1974",
+      "number": "1"
+    },
+    {
+      "actId": "ke-act-1965-7",
+      "title": "Agricultural Development Corporation Act",
+      "workFrbrUri": "akn/ke/act/1965/7",
+      "expressionFrbrUri": "akn/ke/act/1965/7/eng@1988-12-16",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/1965/7/eng@1988-12-16",
+      "nature": "act",
+      "year": "1965",
+      "number": "7"
+    },
+    {
+      "actId": "ke-act-1969-1",
+      "title": "Agricultural Finance Corporation Act",
+      "workFrbrUri": "akn/ke/act/1969/1",
+      "expressionFrbrUri": "akn/ke/act/1969/1/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/1969/1/eng@2022-12-31",
+      "nature": "act",
+      "year": "1969",
+      "number": "1"
+    },
+    {
+      "actId": "ke-act-2013-13",
+      "title": "Agriculture and Food Authority Act",
+      "workFrbrUri": "akn/ke/act/2013/13",
+      "expressionFrbrUri": "akn/ke/act/2013/13/eng@2024-11-21",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/2013/13/eng@2024-11-21",
+      "nature": "act",
+      "year": "2013",
+      "number": "13"
+    },
+    {
+      "actId": "ke-act-1970-21",
+      "title": "Air Passenger Service Charge Act",
+      "workFrbrUri": "akn/ke/act/1970/21",
+      "expressionFrbrUri": "akn/ke/act/1970/21/eng@2026-03-27",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/1970/21/eng@2026-03-27",
+      "nature": "act",
+      "year": "1970",
+      "number": "21"
+    },
+    {
+      "actId": "ke-act-2025-23",
+      "title": "Air Passenger Service Charge (Amendment) Act, 2025",
+      "workFrbrUri": "akn/ke/act/2025/23",
+      "expressionFrbrUri": "akn/ke/act/2025/23/eng@2025-10-21",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/2025/23/eng@2025-10-21",
+      "nature": "act",
+      "year": "2025",
+      "number": "23"
+    },
+    {
+      "actId": "ke-ln-1989-403",
+      "title": "Air Passenger Service Charge  - Exemption",
+      "workFrbrUri": "akn/ke/act/ln/1989/403",
+      "expressionFrbrUri": "akn/ke/act/ln/1989/403/eng@1989-12-01",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/1989/403/eng@1989-12-01",
+      "nature": "legal_notice",
+      "year": "1989",
+      "number": "403"
+    },
+    {
+      "actId": "ke-ln-2003-104",
+      "title": "Air Passenger Service Charge  - Exemption",
+      "workFrbrUri": "akn/ke/act/ln/2003/104",
+      "expressionFrbrUri": "akn/ke/act/ln/2003/104/eng@2003-07-11",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2003/104/eng@2003-07-11",
+      "nature": "legal_notice",
+      "year": "2003",
+      "number": "104"
+    },
+    {
+      "actId": "ke-ln-2001-102",
+      "title": "Air Passenger Service Charge (Variation of Service Charge) Regulations, 2001",
+      "workFrbrUri": "akn/ke/act/ln/2001/102",
+      "expressionFrbrUri": "akn/ke/act/ln/2001/102/eng@2001-06-15",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2001/102/eng@2001-06-15",
+      "nature": "legal_notice",
+      "year": "2001",
+      "number": "102"
+    },
+    {
+      "actId": "ke-ln-2012-28",
+      "title": "Air Passenger Service Charge (Variation of Service Charge) Regulations, 2012",
+      "workFrbrUri": "akn/ke/act/ln/2012/28",
+      "expressionFrbrUri": "akn/ke/act/ln/2012/28/eng@2012-04-20",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2012/28/eng@2012-04-20",
+      "nature": "legal_notice",
+      "year": "2012",
+      "number": "28"
+    },
+    {
+      "actId": "ke-ln-2016-98",
+      "title": "Air Passenger Service Charge (Variation of Service Charge) Regulations, 2016",
+      "workFrbrUri": "akn/ke/act/ln/2016/98",
+      "expressionFrbrUri": "akn/ke/act/ln/2016/98/eng@2016-06-24",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2016/98/eng@2016-06-24",
+      "nature": "legal_notice",
+      "year": "2016",
+      "number": "98"
+    },
+    {
+      "actId": "ke-act-2010-4",
+      "title": "Alcoholic Drinks Control Act",
+      "workFrbrUri": "akn/ke/act/2010/4",
+      "expressionFrbrUri": "akn/ke/act/2010/4/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/2010/4/eng@2022-12-31",
+      "nature": "act",
+      "year": "2010",
+      "number": "4"
+    },
+    {
+      "actId": "ke-act-1967-21",
+      "title": "Anatomy Act",
+      "workFrbrUri": "akn/ke/act/1967/21",
+      "expressionFrbrUri": "akn/ke/act/1967/21/eng@1967-08-25",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/1967/21/eng@1967-08-25",
+      "nature": "act",
+      "year": "1967",
+      "number": "21"
+    },
+    {
+      "actId": "ke-act-1965-4",
+      "title": "Animal Diseases Act",
+      "workFrbrUri": "akn/ke/act/1965/4",
+      "expressionFrbrUri": "akn/ke/act/1965/4/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/1965/4/eng@2022-12-31",
+      "nature": "act",
+      "year": "1965",
+      "number": "4"
+    },
+    {
+      "actId": "ke-act-2010-11",
+      "title": "Animal Technicians Act",
+      "workFrbrUri": "akn/ke/act/2010/11",
+      "expressionFrbrUri": "akn/ke/act/2010/11/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/2010/11/eng@2022-12-31",
+      "nature": "act",
+      "year": "2010",
+      "number": "11"
+    },
+    {
+      "actId": "ke-act-2016-47",
+      "title": "Anti-Bribery Act",
+      "workFrbrUri": "akn/ke/act/2016/47",
+      "expressionFrbrUri": "akn/ke/act/2016/47/eng@2023-12-11",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/2016/47/eng@2023-12-11",
+      "nature": "act",
+      "year": "2016",
+      "number": "47"
+    },
+    {
+      "actId": "ke-act-2003-3",
+      "title": "Anti-Corruption and Economic Crimes Act",
+      "workFrbrUri": "akn/ke/act/2003/3",
+      "expressionFrbrUri": "akn/ke/act/2003/3/eng@2025-08-19",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/2003/3/eng@2025-08-19",
+      "nature": "act",
+      "year": "2003",
+      "number": "3"
+    },
+    {
+      "actId": "ke-act-2008-13",
+      "title": "Anti-Counterfeit Act",
+      "workFrbrUri": "akn/ke/act/2008/13",
+      "expressionFrbrUri": "akn/ke/act/2008/13/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/2008/13/eng@2022-12-31",
+      "nature": "act",
+      "year": "2008",
+      "number": "13"
+    },
+    {
+      "actId": "ke-act-2016-5",
+      "title": "Anti-Doping Act",
+      "workFrbrUri": "akn/ke/act/2016/5",
+      "expressionFrbrUri": "akn/ke/act/2016/5/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/2016/5/eng@2022-12-31",
+      "nature": "act",
+      "year": "2016",
+      "number": "5"
+    },
+    {
+      "actId": "ke-act-2025-6",
+      "title": "Anti-Money Laundering and Combating of Terrorism Financing Laws (Amendment) Act",
+      "workFrbrUri": "akn/ke/act/2025/6",
+      "expressionFrbrUri": "akn/ke/act/2025/6/eng@2025-06-20",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/2025/6/eng@2025-06-20",
+      "nature": "act",
+      "year": "2025",
+      "number": "6"
+    },
+    {
+      "actId": "ke-act-1977-15",
+      "title": "Appellate Jurisdiction Act",
+      "workFrbrUri": "akn/ke/act/1977/15",
+      "expressionFrbrUri": "akn/ke/act/1977/15/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/1977/15/eng@2022-12-31",
+      "nature": "act",
+      "year": "1977",
+      "number": "15"
+    },
+    {
+      "actId": "ke-ln-1963-264",
+      "title": "Application of Section 11 Under Section 11(5)",
+      "workFrbrUri": "akn/ke/act/ln/1963/264",
+      "expressionFrbrUri": "akn/ke/act/ln/1963/264/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/1963/264/eng@2022-12-31",
+      "nature": "legal_notice",
+      "year": "1963",
+      "number": "264"
+    },
+    {
+      "actId": "ke-ln-1991-464",
+      "title": "Appointment of Authorized Officer",
+      "workFrbrUri": "akn/ke/act/ln/1991/464",
+      "expressionFrbrUri": "akn/ke/act/ln/1991/464/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/1991/464/eng@2022-12-31",
+      "nature": "legal_notice",
+      "year": "1991",
+      "number": "464"
+    },
+    {
+      "actId": "ke-gn-1956-2165",
+      "title": "Appointment of Registrar of Building Societies",
+      "workFrbrUri": "akn/ke/act/gn/1956/2165",
+      "expressionFrbrUri": "akn/ke/act/gn/1956/2165/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/gn/1956/2165/eng@2022-12-31",
+      "nature": "gazette_notice",
+      "year": "1956",
+      "number": "2165"
+    },
+    {
+      "actId": "ke-act-2016-20",
+      "title": "Appropriation Act",
+      "workFrbrUri": "akn/ke/act/2016/20",
+      "expressionFrbrUri": "akn/ke/act/2016/20/eng@2016-07-01",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/2016/20/eng@2016-07-01",
+      "nature": "act",
+      "year": "2016",
+      "number": "20"
+    },
+    {
+      "actId": "ke-act-2025-8",
+      "title": "Appropriation Act",
+      "workFrbrUri": "akn/ke/act/2025/8",
+      "expressionFrbrUri": "akn/ke/act/2025/8/eng@2025-06-27",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/2025/8/eng@2025-06-27",
+      "nature": "act",
+      "year": "2025",
+      "number": "8"
+    },
+    {
+      "actId": "ke-act-2018-7",
+      "title": "Appropriation Act",
+      "workFrbrUri": "akn/ke/act/2018/7",
+      "expressionFrbrUri": "akn/ke/act/2018/7/eng@2018-07-13",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/2018/7/eng@2018-07-13",
+      "nature": "act",
+      "year": "2018",
+      "number": "7"
+    },
+    {
+      "actId": "ke-act-2017-9",
+      "title": "Appropriation Act",
+      "workFrbrUri": "akn/ke/act/2017/9",
+      "expressionFrbrUri": "akn/ke/act/2017/9/eng@2021-04-21",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/2017/9/eng@2021-04-21",
+      "nature": "act",
+      "year": "2017",
+      "number": "9"
+    },
+    {
+      "actId": "ke-ln-1986-243",
+      "title": "Approval of Standards",
+      "workFrbrUri": "akn/ke/act/ln/1986/243",
+      "expressionFrbrUri": "akn/ke/act/ln/1986/243/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/1986/243/eng@2022-12-31",
+      "nature": "legal_notice",
+      "year": "1986",
+      "number": "243"
+    },
+    {
+      "actId": "ke-act-1995-4",
+      "title": "Arbitration Act",
+      "workFrbrUri": "akn/ke/act/1995/4",
+      "expressionFrbrUri": "akn/ke/act/1995/4/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/1995/4/eng@2022-12-31",
+      "nature": "act",
+      "year": "1995",
+      "number": "4"
+    },
+    {
+      "actId": "ke-act-1933-60",
+      "title": "Architects and Quantity Surveyors Act",
+      "workFrbrUri": "akn/ke/act/1933/60",
+      "expressionFrbrUri": "akn/ke/act/1933/60/eng@2023-12-11",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/1933/60/eng@2023-12-11",
+      "nature": "act",
+      "year": "1933",
+      "number": "60"
+    },
+    {
+      "actId": "ke-ln-1961-289",
+      "title": "Areas Prescribed Under Regulation 1",
+      "workFrbrUri": "akn/ke/act/ln/1961/289",
+      "expressionFrbrUri": "akn/ke/act/ln/1961/289/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/1961/289/eng@2022-12-31",
+      "nature": "legal_notice",
+      "year": "1961",
+      "number": "289"
+    },
+    {
+      "actId": "ke-act-1942-10",
+      "title": "Asian Officers’ Family Pensions Act",
+      "workFrbrUri": "akn/ke/act/1942/10",
+      "expressionFrbrUri": "akn/ke/act/1942/10/eng@1971-06-04",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/1942/10/eng@1971-06-04",
+      "nature": "act",
+      "year": "1942",
+      "number": "10"
+    },
+    {
+      "actId": "ke-act-2022-5",
+      "title": "Asian Widows&#x27; and Orphans&#x27; Pensions (Repeal) Act",
+      "workFrbrUri": "akn/ke/act/2022/5",
+      "expressionFrbrUri": "akn/ke/act/2022/5/eng@2022-04-01",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/2022/5/eng@2022-04-01",
+      "nature": "act",
+      "year": "2022",
+      "number": "5"
+    },
+    {
+      "actId": "ke-act-2019-4",
+      "title": "Assumption of the Office of Governor Act",
+      "workFrbrUri": "akn/ke/act/2019/4",
+      "expressionFrbrUri": "akn/ke/act/2019/4/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/2019/4/eng@2022-12-31",
+      "nature": "act",
+      "year": "2019",
+      "number": "4"
+    },
+    {
+      "actId": "ke-act-2012-21",
+      "title": "Assumption of the Office of President Act",
+      "workFrbrUri": "akn/ke/act/2012/21",
+      "expressionFrbrUri": "akn/ke/act/2012/21/eng@2024-05-17",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/2012/21/eng@2024-05-17",
+      "nature": "act",
+      "year": "2012",
+      "number": "21"
+    },
+    {
+      "actId": "ke-act-1996-5",
+      "title": "Auctioneers Act",
+      "workFrbrUri": "akn/ke/act/1996/5",
+      "expressionFrbrUri": "akn/ke/act/1996/5/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/1996/5/eng@2022-12-31",
+      "nature": "act",
+      "year": "1996",
+      "number": "5"
+    },
+    {
+      "actId": "ke-gn-1955-1374",
+      "title": "Authorization",
+      "workFrbrUri": "akn/ke/act/gn/1955/1374",
+      "expressionFrbrUri": "akn/ke/act/gn/1955/1374/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/gn/1955/1374/eng@2022-12-31",
+      "nature": "gazette_notice",
+      "year": "1955",
+      "number": "1374"
+    },
+    {
+      "actId": "ke-ln-1967-169",
+      "title": "Authorization of Executive Officers of Board",
+      "workFrbrUri": "akn/ke/act/ln/1967/169",
+      "expressionFrbrUri": "akn/ke/act/ln/1967/169/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/1967/169/eng@2022-12-31",
+      "nature": "legal_notice",
+      "year": "1967",
+      "number": "169"
+    },
+    {
+      "actId": "ke-ln-2020-114",
+      "title": "Avoidance of Double Taxation with Respect to Taxes on Income",
+      "workFrbrUri": "akn/ke/act/ln/2020/114",
+      "expressionFrbrUri": "akn/ke/act/ln/2020/114/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2020/114/eng@2022-12-31",
+      "nature": "legal_notice",
+      "year": "2020",
+      "number": "114"
+    },
+    {
+      "actId": "ke-ln-2021-122",
+      "title": "Bakery, Confectionery, Food Manufacturing and Allied Workers Union (Deduction of Agency Fees) Order",
+      "workFrbrUri": "akn/ke/act/ln/2021/122",
+      "expressionFrbrUri": "akn/ke/act/ln/2021/122/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2021/122/eng@2022-12-31",
+      "nature": "legal_notice",
+      "year": "2021",
+      "number": "122"
+    },
+    {
+      "actId": "ke-act-1989-9",
+      "title": "Banking Act",
+      "workFrbrUri": "akn/ke/act/1989/9",
+      "expressionFrbrUri": "akn/ke/act/1989/9/eng@2024-12-27",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/1989/9/eng@2024-12-27",
+      "nature": "act",
+      "year": "1989",
+      "number": "9"
+    },
+    {
+      "actId": "ke-ln-1989-342",
+      "title": "Banking Act Commencement",
+      "workFrbrUri": "akn/ke/act/ln/1989/342",
+      "expressionFrbrUri": "akn/ke/act/ln/1989/342/eng@1989-11-03",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/1989/342/eng@1989-11-03",
+      "nature": "legal_notice",
+      "year": "1989",
+      "number": "342"
+    },
+    {
+      "actId": "ke-ln-2024-52",
+      "title": "Banking Act - Exemption",
+      "workFrbrUri": "akn/ke/act/ln/2024/52",
+      "expressionFrbrUri": "akn/ke/act/ln/2024/52/eng@2024-04-12",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2024/52/eng@2024-04-12",
+      "nature": "legal_notice",
+      "year": "2024",
+      "number": "52"
+    },
+    {
+      "actId": "ke-act-1992-7",
+      "title": "Bank of Baroda (Kenya) Limited Act",
+      "workFrbrUri": "akn/ke/act/1992/7",
+      "expressionFrbrUri": "akn/ke/act/1992/7/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/1992/7/eng@2022-12-31",
+      "nature": "act",
+      "year": "1992",
+      "number": "7"
+    },
+    {
+      "actId": "ke-act-1944-14",
+      "title": "Bankruptcy (Ammendment) Ordinance",
+      "workFrbrUri": "akn/ke/act/1944/14",
+      "expressionFrbrUri": "akn/ke/act/1944/14/eng@1944-06-16",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/1944/14/eng@1944-06-16",
+      "nature": "act",
+      "year": "1944",
+      "number": "14"
+    },
+    {
+      "actId": "ke-act-1934-49",
+      "title": "Bankruptcy (Ammendment) Ordinance",
+      "workFrbrUri": "akn/ke/act/1934/49",
+      "expressionFrbrUri": "akn/ke/act/1934/49/eng@1934-09-15",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/1934/49/eng@1934-09-15",
+      "nature": "act",
+      "year": "1934",
+      "number": "49"
+    },
+    {
+      "actId": "ke-act-1933-55",
+      "title": "Bankruptcy (Ammendment) Ordinance",
+      "workFrbrUri": "akn/ke/act/1933/55",
+      "expressionFrbrUri": "akn/ke/act/1933/55/eng@1933-12-21",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/1933/55/eng@1933-12-21",
+      "nature": "act",
+      "year": "1933",
+      "number": "55"
+    },
+    {
+      "actId": "ke-act-1930-32",
+      "title": "Bankruptcy Ordinance",
+      "workFrbrUri": "akn/ke/act/1930/32",
+      "expressionFrbrUri": "akn/ke/act/1930/32/eng@1930-09-03",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/1930/32/eng@1930-09-03",
+      "nature": "act",
+      "year": "1930",
+      "number": "32"
+    },
+    {
+      "actId": "ke-act-1926-1",
+      "title": "Bankruptcy Ordinance",
+      "workFrbrUri": "akn/ke/act/1926/1",
+      "expressionFrbrUri": "akn/ke/act/1926/1/eng@1926-12-01",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/1926/1/eng@1926-12-01",
+      "nature": "act",
+      "year": "1926",
+      "number": "1"
+    },
+    {
+      "actId": "ke-act-1978-11",
+      "title": "Barclays Bank of Kenya Limited Act",
+      "workFrbrUri": "akn/ke/act/1978/11",
+      "expressionFrbrUri": "akn/ke/act/1978/11/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/1978/11/eng@2022-12-31",
+      "nature": "act",
+      "year": "1978",
+      "number": "11"
+    },
+    {
+      "actId": "ke-ln-1978-189",
+      "title": "Barclays Bank of Kenya Limited Act- Vesting Day",
+      "workFrbrUri": "akn/ke/act/ln/1978/189",
+      "expressionFrbrUri": "akn/ke/act/ln/1978/189/eng@1978-09-29",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/1978/189/eng@1978-09-29",
+      "nature": "legal_notice",
+      "year": "1978",
+      "number": "189"
+    },
+    {
+      "actId": "ke-act-2013-14",
+      "title": "Basic Education Act",
+      "workFrbrUri": "akn/ke/act/2013/14",
+      "expressionFrbrUri": "akn/ke/act/2013/14/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/2013/14/eng@2022-12-31",
+      "nature": "act",
+      "year": "2013",
+      "number": "14"
+    },
+    {
+      "actId": "ke-act-1966-9",
+      "title": "Betting, Lotteries and Gaming Act",
+      "workFrbrUri": "akn/ke/act/1966/9",
+      "expressionFrbrUri": "akn/ke/act/1966/9/eng@2025-06-20",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/1966/9/eng@2025-06-20",
+      "nature": "act",
+      "year": "1966",
+      "number": "9"
+    },
+    {
+      "actId": "ke-act-1927-7",
+      "title": "Bills of Exchange Act",
+      "workFrbrUri": "akn/ke/act/1927/7",
+      "expressionFrbrUri": "akn/ke/act/1927/7/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/1927/7/eng@2022-12-31",
+      "nature": "act",
+      "year": "1927",
+      "number": "7"
+    },
+    {
+      "actId": "ke-act-2009-2",
+      "title": "Biosafety Act",
+      "workFrbrUri": "akn/ke/act/2009/2",
+      "expressionFrbrUri": "akn/ke/act/2009/2/eng@2023-12-11",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/2009/2/eng@2023-12-11",
+      "nature": "act",
+      "year": "2009",
+      "number": "2"
+    },
+    {
+      "actId": "ke-act-1928-2",
+      "title": "Births and Deaths Registration Act",
+      "workFrbrUri": "akn/ke/act/1928/2",
+      "expressionFrbrUri": "akn/ke/act/1928/2/eng@2026-03-10",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/1928/2/eng@2026-03-10",
+      "nature": "act",
+      "year": "1928",
+      "number": "2"
+    },
+    {
+      "actId": "ke-act-2026-2",
+      "title": "Births and Deaths Registration (Amendment) Act, 2026",
+      "workFrbrUri": "akn/ke/act/2026/2",
+      "expressionFrbrUri": "akn/ke/act/2026/2/eng@2026-02-24",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/2026/2/eng@2026-02-24",
+      "nature": "act",
+      "year": "2026",
+      "number": "2"
+    },
+    {
+      "actId": "ke-ln-2024-153",
+      "title": "Births and Deaths Registration (Amendment) Rules, 2024",
+      "workFrbrUri": "akn/ke/act/ln/2024/153",
+      "expressionFrbrUri": "akn/ke/act/ln/2024/153/eng@2024-10-11",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2024/153/eng@2024-10-11",
+      "nature": "legal_notice",
+      "year": "2024",
+      "number": "153"
+    },
+    {
+      "actId": "ke-ln-2024-152",
+      "title": "Births and Deaths Registration (Late Registration) (Amendment) Rules, 2024",
+      "workFrbrUri": "akn/ke/act/ln/2024/152",
+      "expressionFrbrUri": "akn/ke/act/ln/2024/152/eng@2024-10-11",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2024/152/eng@2024-10-11",
+      "nature": "legal_notice",
+      "year": "2024",
+      "number": "152"
+    },
+    {
+      "actId": "ke-act-1934-30",
+      "title": "Blackwell Pension Ordinance",
+      "workFrbrUri": "akn/ke/act/1934/30",
+      "expressionFrbrUri": "akn/ke/act/1934/30/eng@1934-08-27",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/1934/30/eng@1934-08-27",
+      "nature": "act",
+      "year": "1934",
+      "number": "30"
+    },
+    {
+      "actId": "ke-act-1960-27",
+      "title": "Books and Newspapers Act",
+      "workFrbrUri": "akn/ke/act/1960/27",
+      "expressionFrbrUri": "akn/ke/act/1960/27/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/1960/27/eng@2022-12-31",
+      "nature": "act",
+      "year": "1960",
+      "number": "27"
+    },
+    {
+      "actId": "ke-act-1963-23",
+      "title": "Borstal Institutions Act",
+      "workFrbrUri": "akn/ke/act/1963/23",
+      "expressionFrbrUri": "akn/ke/act/1963/23/eng@1983-12-09",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/1963/23/eng@1983-12-09",
+      "nature": "act",
+      "year": "1963",
+      "number": "23"
+    },
+    {
+      "actId": "ke-act-1907-12",
+      "title": "Branding of Stock Act",
+      "workFrbrUri": "akn/ke/act/1907/12",
+      "expressionFrbrUri": "akn/ke/act/1907/12/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/1907/12/eng@2022-12-31",
+      "nature": "act",
+      "year": "1907",
+      "number": "12"
+    },
+    {
+      "actId": "ke-ln-2010-119",
+      "title": "Brand Kenya Board (Amendment) Order, 2010",
+      "workFrbrUri": "akn/ke/act/ln/2010/119",
+      "expressionFrbrUri": "akn/ke/act/ln/2010/119/eng@2010-08-13",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2010/119/eng@2010-08-13",
+      "nature": "legal_notice",
+      "year": "2010",
+      "number": "119"
+    },
+    {
+      "actId": "ke-ln-2008-38",
+      "title": "Brand Kenya Board Order",
+      "workFrbrUri": "akn/ke/act/ln/2008/38",
+      "expressionFrbrUri": "akn/ke/act/ln/2008/38/eng@2010-08-13",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2008/38/eng@2010-08-13",
+      "nature": "legal_notice",
+      "year": "2008",
+      "number": "38"
+    },
+    {
+      "actId": "ke-act-2012-34",
+      "title": "Breast Milk Substitutes (Regulation and Control) Act",
+      "workFrbrUri": "akn/ke/act/2012/34",
+      "expressionFrbrUri": "akn/ke/act/2012/34/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/2012/34/eng@2022-12-31",
+      "nature": "act",
+      "year": "2012",
+      "number": "34"
+    },
+    {
+      "actId": "ke-act-1963-38",
+      "title": "Bretton Woods Agreement Act",
+      "workFrbrUri": "akn/ke/act/1963/38",
+      "expressionFrbrUri": "akn/ke/act/1963/38/eng@1963-12-10",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/1963/38/eng@1963-12-10",
+      "nature": "act",
+      "year": "1963",
+      "number": "38"
+    },
+    {
+      "actId": "ke-act-1951-61",
+      "title": "British Standard Portland Cement Company Limited (Bamburi Factory) Act",
+      "workFrbrUri": "akn/ke/act/1951/61",
+      "expressionFrbrUri": "akn/ke/act/1951/61/eng@1966-07-12",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/1951/61/eng@1966-07-12",
+      "nature": "act",
+      "year": "1951",
+      "number": "61"
+    },
+    {
+      "actId": "ke-act-1930-56",
+      "title": "Brokers Act",
+      "workFrbrUri": "akn/ke/act/1930/56",
+      "expressionFrbrUri": "akn/ke/act/1930/56/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/1930/56/eng@2022-12-31",
+      "nature": "act",
+      "year": "1930",
+      "number": "56"
+    },
+    {
+      "actId": "ke-act-1956-29",
+      "title": "Building Societies Act",
+      "workFrbrUri": "akn/ke/act/1956/29",
+      "expressionFrbrUri": "akn/ke/act/1956/29/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/1956/29/eng@2022-12-31",
+      "nature": "act",
+      "year": "1956",
+      "number": "29"
+    },
+    {
+      "actId": "ke-act-2018-19",
+      "title": "Building Surveyors Act",
+      "workFrbrUri": "akn/ke/act/2018/19",
+      "expressionFrbrUri": "akn/ke/act/2018/19/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/2018/19/eng@2022-12-31",
+      "nature": "act",
+      "year": "2018",
+      "number": "19"
+    },
+    {
+      "actId": "ke-act-1999-5",
+      "title": "Bukura Agricultural College Act",
+      "workFrbrUri": "akn/ke/act/1999/5",
+      "expressionFrbrUri": "akn/ke/act/1999/5/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/1999/5/eng@2022-12-31",
+      "nature": "act",
+      "year": "1999",
+      "number": "5"
+    },
+    {
+      "actId": "ke-act-2020-1",
+      "title": "Business Laws (Amendment) Act, 2020",
+      "workFrbrUri": "akn/ke/act/2020/1",
+      "expressionFrbrUri": "akn/ke/act/2020/1/eng@2020-04-09",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/2020/1/eng@2020-04-09",
+      "nature": "act",
+      "year": "2020",
+      "number": "1"
+    },
+    {
+      "actId": "ke-act-2024-20",
+      "title": "Business Laws (Amendment) Act, 2024",
+      "workFrbrUri": "akn/ke/act/2024/20",
+      "expressionFrbrUri": "akn/ke/act/2024/20/eng@2024-12-13",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/2024/20/eng@2024-12-13",
+      "nature": "act",
+      "year": "2024",
+      "number": "20"
+    },
+    {
+      "actId": "ke-act-2015-15",
+      "title": "Business Registration Service Act",
+      "workFrbrUri": "akn/ke/act/2015/15",
+      "expressionFrbrUri": "akn/ke/act/2015/15/eng@2024-12-27",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/2015/15/eng@2024-12-27",
+      "nature": "act",
+      "year": "2015",
+      "number": "15"
+    },
+    {
+      "actId": "ke-ln-1963-169",
+      "title": "By-Laws",
+      "workFrbrUri": "akn/ke/act/ln/1963/169",
+      "expressionFrbrUri": "akn/ke/act/ln/1963/169/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/1963/169/eng@2022-12-31",
+      "nature": "legal_notice",
+      "year": "1963",
+      "number": "169"
+    },
+    {
+      "actId": "ke-act-1962-2",
+      "title": "Cabinet Secretary to the Treasury (Incorporation) Act",
+      "workFrbrUri": "akn/ke/act/1962/2",
+      "expressionFrbrUri": "akn/ke/act/1962/2/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/1962/2/eng@2022-12-31",
+      "nature": "act",
+      "year": "1962",
+      "number": "2"
+    },
+    {
+      "actId": "ke-ln-1970-59",
+      "title": "Cancellation of Delegation",
+      "workFrbrUri": "akn/ke/act/ln/1970/59",
+      "expressionFrbrUri": "akn/ke/act/ln/1970/59/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/1970/59/eng@2022-12-31",
+      "nature": "legal_notice",
+      "year": "1970",
+      "number": "59"
+    },
+    {
+      "actId": "ke-act-2012-15",
+      "title": "Cancer Prevention and Control Act",
+      "workFrbrUri": "akn/ke/act/2012/15",
+      "expressionFrbrUri": "akn/ke/act/2012/15/eng@2012-08-03",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/2012/15/eng@2012-08-03",
+      "nature": "act",
+      "year": "2012",
+      "number": "15"
+    },
+    {
+      "actId": "ke-act-1948-23",
+      "title": "Cantonments Act",
+      "workFrbrUri": "akn/ke/act/1948/23",
+      "expressionFrbrUri": "akn/ke/act/1948/23/eng@1948-04-20",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/1948/23/eng@1948-04-20",
+      "nature": "act",
+      "year": "1948",
+      "number": "23"
+    },
+    {
+      "actId": "ke-act-1989-17",
+      "title": "Capital Markets Act",
+      "workFrbrUri": "akn/ke/act/1989/17",
+      "expressionFrbrUri": "akn/ke/act/1989/17/eng@2025-12-11",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/1989/17/eng@2025-12-11",
+      "nature": "act",
+      "year": "1989",
+      "number": "17"
+    },
+    {
+      "actId": "ke-act-2025-26",
+      "title": "Capital Markets (Amendment) Act, 2025",
+      "workFrbrUri": "akn/ke/act/2025/26",
+      "expressionFrbrUri": "akn/ke/act/2025/26/eng@2025-11-27",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/2025/26/eng@2025-11-27",
+      "nature": "act",
+      "year": "2025",
+      "number": "26"
+    },
+    {
+      "actId": "ke-ln-2002-179",
+      "title": "Capital Markets Tribunal Rules",
+      "workFrbrUri": "akn/ke/act/ln/2002/179",
+      "expressionFrbrUri": "akn/ke/act/ln/2002/179/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2002/179/eng@2022-12-31",
+      "nature": "legal_notice",
+      "year": "2002",
+      "number": "179"
+    },
+    {
+      "actId": "ke-act-1993-2",
+      "title": "Carriage by Air Act",
+      "workFrbrUri": "akn/ke/act/1993/2",
+      "expressionFrbrUri": "akn/ke/act/1993/2/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/1993/2/eng@2022-12-31",
+      "nature": "act",
+      "year": "1993",
+      "number": "2"
+    },
+    {
+      "actId": "ke-ln-2023-226",
+      "title": "Catholic University of Eastern Africa Charter (Amendment), 2023",
+      "workFrbrUri": "akn/ke/act/ln/2023/226",
+      "expressionFrbrUri": "akn/ke/act/ln/2023/226/eng@2023-12-29",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2023/226/eng@2023-12-29",
+      "nature": "legal_notice",
+      "year": "2023",
+      "number": "226"
+    },
+    {
+      "actId": "ke-act-1929-32",
+      "title": "Cattle Cleansing Act",
+      "workFrbrUri": "akn/ke/act/1929/32",
+      "expressionFrbrUri": "akn/ke/act/1929/32/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/1929/32/eng@2022-12-31",
+      "nature": "act",
+      "year": "1929",
+      "number": "32"
+    },
+    {
+      "actId": "ke-ln-1967-192",
+      "title": "Cattle Cleansing Areas",
+      "workFrbrUri": "akn/ke/act/ln/1967/192",
+      "expressionFrbrUri": "akn/ke/act/ln/1967/192/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/1967/192/eng@2022-12-31",
+      "nature": "legal_notice",
+      "year": "1967",
+      "number": "192"
+    },
+    {
+      "actId": "ke-act-1966-15",
+      "title": "Central Bank of Kenya Act",
+      "workFrbrUri": "akn/ke/act/1966/15",
+      "expressionFrbrUri": "akn/ke/act/1966/15/eng@2025-11-04",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/1966/15/eng@2025-11-04",
+      "nature": "act",
+      "year": "1966",
+      "number": "15"
+    },
+    {
+      "actId": "ke-ln-1973-225",
+      "title": "Central Bank of Kenya Act- Description of New Coin, 1973",
+      "workFrbrUri": "akn/ke/act/ln/1973/225",
+      "expressionFrbrUri": "akn/ke/act/ln/1973/225/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/1973/225/eng@2022-12-31",
+      "nature": "legal_notice",
+      "year": "1973",
+      "number": "225"
+    },
+    {
+      "actId": "ke-ln-2020-30",
+      "title": "Central Bank of Kenya (Mortgage Refinance Companies)(Amendment) Regulations, 2020",
+      "workFrbrUri": "akn/ke/act/ln/2020/30",
+      "expressionFrbrUri": "akn/ke/act/ln/2020/30/eng@2020-03-27",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2020/30/eng@2020-03-27",
+      "nature": "legal_notice",
+      "year": "2020",
+      "number": "30"
+    },
+    {
+      "actId": "ke-act-2000-4",
+      "title": "Central Depositories Act",
+      "workFrbrUri": "akn/ke/act/2000/4",
+      "expressionFrbrUri": "akn/ke/act/2000/4/eng@2023-12-11",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/2000/4/eng@2023-12-11",
+      "nature": "act",
+      "year": "2000",
+      "number": "4"
+    },
+    {
+      "actId": "ke-ln-2003-51",
+      "title": "Central Depositories Act Commencement",
+      "workFrbrUri": "akn/ke/act/ln/2003/51",
+      "expressionFrbrUri": "akn/ke/act/ln/2003/51/eng@2003-05-23",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2003/51/eng@2003-05-23",
+      "nature": "legal_notice",
+      "year": "2003",
+      "number": "51"
+    },
+    {
+      "actId": "ke-act-1988-12",
+      "title": "Certified Public Secretaries of Kenya Act",
+      "workFrbrUri": "akn/ke/act/1988/12",
+      "expressionFrbrUri": "akn/ke/act/1988/12/eng@2025-06-20",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/1988/12/eng@2025-06-20",
+      "nature": "act",
+      "year": "1988",
+      "number": "12"
+    },
+    {
+      "actId": "ke-ln-2020-109",
+      "title": "Change of Name",
+      "workFrbrUri": "akn/ke/act/ln/2020/109",
+      "expressionFrbrUri": "akn/ke/act/ln/2020/109/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2020/109/eng@2022-12-31",
+      "nature": "legal_notice",
+      "year": "2020",
+      "number": "109"
+    },
+    {
+      "actId": "ke-ln-1963-599",
+      "title": "Change of Title",
+      "workFrbrUri": "akn/ke/act/ln/1963/599",
+      "expressionFrbrUri": "akn/ke/act/ln/1963/599/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/1963/599/eng@2022-12-31",
+      "nature": "legal_notice",
+      "year": "1963",
+      "number": "599"
+    },
+    {
+      "actId": "ke-ln-2021-51",
+      "title": "Charter to Establish United States International University - Amendment",
+      "workFrbrUri": "akn/ke/act/ln/2021/51",
+      "expressionFrbrUri": "akn/ke/act/ln/2021/51/eng@2021-04-30",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2021/51/eng@2021-04-30",
+      "nature": "legal_notice",
+      "year": "2021",
+      "number": "51"
+    },
+    {
+      "actId": "ke-act-1968-41",
+      "title": "Cheques Act",
+      "workFrbrUri": "akn/ke/act/1968/41",
+      "expressionFrbrUri": "akn/ke/act/1968/41/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/1968/41/eng@2022-12-31",
+      "nature": "act",
+      "year": "1968",
+      "number": "41"
+    },
+    {
+      "actId": "ke-act-1937-2",
+      "title": "Chiefs&#x27; Act",
+      "workFrbrUri": "akn/ke/act/1937/2",
+      "expressionFrbrUri": "akn/ke/act/1937/2/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/1937/2/eng@2022-12-31",
+      "nature": "act",
+      "year": "1937",
+      "number": "2"
+    },
+    {
+      "actId": "children-act-2022",
+      "title": "Children Act",
+      "workFrbrUri": "akn/ke/act/2022/29",
+      "expressionFrbrUri": "akn/ke/act/2022/29/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/2022/29/eng@2022-12-31",
+      "nature": "act",
+      "year": "2022",
+      "number": "29"
+    },
+    {
+      "actId": "ke-act-2001-8",
+      "title": "Children Act",
+      "workFrbrUri": "akn/ke/act/2001/8",
+      "expressionFrbrUri": "akn/ke/act/2001/8/eng@2019-01-18",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/2001/8/eng@2019-01-18",
+      "nature": "act",
+      "year": "2001",
+      "number": "8"
+    },
+    {
+      "actId": "ke-ln-2014-58",
+      "title": "Child Welfare Society of Kenya Order",
+      "workFrbrUri": "akn/ke/act/ln/2014/58",
+      "expressionFrbrUri": "akn/ke/act/ln/2014/58/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2014/58/eng@2022-12-31",
+      "nature": "legal_notice",
+      "year": "2014",
+      "number": "58"
+    },
+    {
+      "actId": "ke-act-2013-21",
+      "title": "Civil Aviation Act",
+      "workFrbrUri": "akn/ke/act/2013/21",
+      "expressionFrbrUri": "akn/ke/act/2013/21/eng@2024-04-26",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/2013/21/eng@2024-04-26",
+      "nature": "act",
+      "year": "2013",
+      "number": "21"
+    },
+    {
+      "actId": "ke-ln-2018-94",
+      "title": "Civil Aviation (Aircraft Nationality and Registration Marks) Regulations, 2018",
+      "workFrbrUri": "akn/ke/act/ln/2018/94",
+      "expressionFrbrUri": "akn/ke/act/ln/2018/94/eng@2018-05-04",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2018/94/eng@2018-05-04",
+      "nature": "legal_notice",
+      "year": "2018",
+      "number": "94"
+    },
+    {
+      "actId": "ke-ln-2013-82",
+      "title": "Civil Aviation (Air Operator Certification and Administration) Regulations, 2013",
+      "workFrbrUri": "akn/ke/act/ln/2013/82",
+      "expressionFrbrUri": "akn/ke/act/ln/2013/82/eng@2013-05-17",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2013/82/eng@2013-05-17",
+      "nature": "legal_notice",
+      "year": "2013",
+      "number": "82"
+    },
+    {
+      "actId": "ke-ln-2018-90",
+      "title": "Civil Aviation (Airworthiness) Regulations, 2018",
+      "workFrbrUri": "akn/ke/act/ln/2018/90",
+      "expressionFrbrUri": "akn/ke/act/ln/2018/90/eng@2018-05-04",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2018/90/eng@2018-05-04",
+      "nature": "legal_notice",
+      "year": "2018",
+      "number": "90"
+    },
+    {
+      "actId": "ke-ln-2018-93",
+      "title": "Civil Aviation (Approved Training Organizations) Regulations, 2018",
+      "workFrbrUri": "akn/ke/act/ln/2018/93",
+      "expressionFrbrUri": "akn/ke/act/ln/2018/93/eng@2018-05-04",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2018/93/eng@2018-05-04",
+      "nature": "legal_notice",
+      "year": "2018",
+      "number": "93"
+    },
+    {
+      "actId": "ke-ln-2014-46",
+      "title": "Civil Aviation (Charges for Air Navigation Services) Regulations, 2014",
+      "workFrbrUri": "akn/ke/act/ln/2014/46",
+      "expressionFrbrUri": "akn/ke/act/ln/2014/46/eng@2014-05-16",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2014/46/eng@2014-05-16",
+      "nature": "legal_notice",
+      "year": "2014",
+      "number": "46"
+    },
+    {
+      "actId": "ke-ln-2018-97",
+      "title": "Civil Aviation (Operation of Aircraft-Helicopter) Regulations, 2018",
+      "workFrbrUri": "akn/ke/act/ln/2018/97",
+      "expressionFrbrUri": "akn/ke/act/ln/2018/97/eng@2018-05-11",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2018/97/eng@2018-05-11",
+      "nature": "legal_notice",
+      "year": "2018",
+      "number": "97"
+    },
+    {
+      "actId": "ke-ln-2018-95",
+      "title": "Civil Aviation (Personnel Licensing) Regulations, 2018",
+      "workFrbrUri": "akn/ke/act/ln/2018/95",
+      "expressionFrbrUri": "akn/ke/act/ln/2018/95/eng@2018-05-11",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2018/95/eng@2018-05-11",
+      "nature": "legal_notice",
+      "year": "2018",
+      "number": "95"
+    },
+    {
+      "actId": "ke-ln-2017-259",
+      "title": "Civil Aviation (Remote Piloted Aircraft Systems) Regulations, 2017",
+      "workFrbrUri": "akn/ke/act/ln/2017/259",
+      "expressionFrbrUri": "akn/ke/act/ln/2017/259/eng@2017-12-22",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2017/259/eng@2017-12-22",
+      "nature": "legal_notice",
+      "year": "2017",
+      "number": "259"
+    },
+    {
+      "actId": "ke-ln-2015-148",
+      "title": "Civil Aviation (Safety Management) Regulations, 2015 (Revoked by L.N 91 of 2018)",
+      "workFrbrUri": "akn/ke/act/ln/2015/148",
+      "expressionFrbrUri": "akn/ke/act/ln/2015/148/eng@2015-07-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2015/148/eng@2015-07-31",
+      "nature": "legal_notice",
+      "year": "2015",
+      "number": "148"
+    },
+    {
+      "actId": "ke-ln-2018-91",
+      "title": "Civil Aviation (Safety Management) Regulations, 2018",
+      "workFrbrUri": "akn/ke/act/ln/2018/91",
+      "expressionFrbrUri": "akn/ke/act/ln/2018/91/eng@2018-05-04",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2018/91/eng@2018-05-04",
+      "nature": "legal_notice",
+      "year": "2018",
+      "number": "91"
+    },
+    {
+      "actId": "ke-ln-2015-190",
+      "title": "Civil Aviation (Security) Regulations, 2015 (Revoked by L.N 128 of 2020)",
+      "workFrbrUri": "akn/ke/act/ln/2015/190",
+      "expressionFrbrUri": "akn/ke/act/ln/2015/190/eng@2015-09-18",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2015/190/eng@2015-09-18",
+      "nature": "legal_notice",
+      "year": "2015",
+      "number": "190"
+    },
+    {
+      "actId": "ke-act-1924-3",
+      "title": "Civil Procedure Act",
+      "workFrbrUri": "akn/ke/act/1924/3",
+      "expressionFrbrUri": "akn/ke/act/1924/3/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/1924/3/eng@2022-12-31",
+      "nature": "act",
+      "year": "1924",
+      "number": "3"
+    },
+    {
+      "actId": "ke-ln-2010-151",
+      "title": "Civil Procedure Rules",
+      "workFrbrUri": "akn/ke/act/ln/2010/151",
+      "expressionFrbrUri": "akn/ke/act/ln/2010/151/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2010/151/eng@2022-12-31",
+      "nature": "legal_notice",
+      "year": "2010",
+      "number": "151"
+    },
+    {
+      "actId": "ke-ln-1960-329",
+      "title": "Classes of Books and Newspapers Excluded",
+      "workFrbrUri": "akn/ke/act/ln/1960/329",
+      "expressionFrbrUri": "akn/ke/act/ln/1960/329/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/1960/329/eng@2022-12-31",
+      "nature": "legal_notice",
+      "year": "1960",
+      "number": "329"
+    },
+    {
+      "actId": "ke-ln-1960-330",
+      "title": "Classes of Persons Excluded",
+      "workFrbrUri": "akn/ke/act/ln/1960/330",
+      "expressionFrbrUri": "akn/ke/act/ln/1960/330/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/1960/330/eng@2022-12-31",
+      "nature": "legal_notice",
+      "year": "1960",
+      "number": "330"
+    },
+    {
+      "actId": "ke-act-2016-11",
+      "title": "Climate Change Act",
+      "workFrbrUri": "akn/ke/act/2016/11",
+      "expressionFrbrUri": "akn/ke/act/2016/11/eng@2023-09-15",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/2016/11/eng@2023-09-15",
+      "nature": "act",
+      "year": "2016",
+      "number": "11"
+    },
+    {
+      "actId": "ke-ln-2023-38",
+      "title": "Climate Change (Public Participation and Access to Climate Change Information) Regulations, 2023",
+      "workFrbrUri": "akn/ke/act/ln/2023/38",
+      "expressionFrbrUri": "akn/ke/act/ln/2023/38/eng@2023-04-28",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2023/38/eng@2023-04-28",
+      "nature": "legal_notice",
+      "year": "2023",
+      "number": "38"
+    },
+    {
+      "actId": "ke-act-2017-20",
+      "title": "Clinical Officers (Training, Registration and Licensing) Act",
+      "workFrbrUri": "akn/ke/act/2017/20",
+      "expressionFrbrUri": "akn/ke/act/2017/20/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/2017/20/eng@2022-12-31",
+      "nature": "act",
+      "year": "2017",
+      "number": "20"
+    },
+    {
+      "actId": "ke-ln-1964-243",
+      "title": "Closure of Prisons",
+      "workFrbrUri": "akn/ke/act/ln/1964/243",
+      "expressionFrbrUri": "akn/ke/act/ln/1964/243/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/1964/243/eng@2022-12-31",
+      "nature": "legal_notice",
+      "year": "1964",
+      "number": "243"
+    },
+    {
+      "actId": "ke-act-1990-20",
+      "title": "Coast Development Authority Act",
+      "workFrbrUri": "akn/ke/act/1990/20",
+      "expressionFrbrUri": "akn/ke/act/1990/20/eng@1991-01-18",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/1990/20/eng@1991-01-18",
+      "nature": "act",
+      "year": "1990",
+      "number": "20"
+    },
+    {
+      "actId": "ke-act-2026-8",
+      "title": "Coffee Act",
+      "workFrbrUri": "akn/ke/act/2026/8",
+      "expressionFrbrUri": "akn/ke/act/2026/8/eng@2026-03-27",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/2026/8/eng@2026-03-27",
+      "nature": "act",
+      "year": "2026",
+      "number": "8"
+    },
+    {
+      "actId": "ke-act-1968-19",
+      "title": "College of Arms Act",
+      "workFrbrUri": "akn/ke/act/1968/19",
+      "expressionFrbrUri": "akn/ke/act/1968/19/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/1968/19/eng@2022-12-31",
+      "nature": "act",
+      "year": "1968",
+      "number": "19"
+    },
+    {
+      "actId": "ke-act-1954-38",
+      "title": "Commissioners of Assize Act",
+      "workFrbrUri": "akn/ke/act/1954/38",
+      "expressionFrbrUri": "akn/ke/act/1954/38/eng@1955-01-01",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/1954/38/eng@1955-01-01",
+      "nature": "act",
+      "year": "1954",
+      "number": "38"
+    },
+    {
+      "actId": "ke-act-2010-9",
+      "title": "Commission for the Implementation of the Constitution Act",
+      "workFrbrUri": "akn/ke/act/2010/9",
+      "expressionFrbrUri": "akn/ke/act/2010/9/eng@2010-10-29",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/2010/9/eng@2010-10-29",
+      "nature": "act",
+      "year": "2010",
+      "number": "9"
+    },
+    {
+      "actId": "ke-act-2011-23",
+      "title": "Commission on Administrative Justice Act",
+      "workFrbrUri": "akn/ke/act/2011/23",
+      "expressionFrbrUri": "akn/ke/act/2011/23/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/2011/23/eng@2022-12-31",
+      "nature": "act",
+      "year": "2011",
+      "number": "23"
+    },
+    {
+      "actId": "ke-act-2011-16",
+      "title": "Commission on Revenue Allocation Act",
+      "workFrbrUri": "akn/ke/act/2011/16",
+      "expressionFrbrUri": "akn/ke/act/2011/16/eng@2023-12-11",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/2011/16/eng@2023-12-11",
+      "nature": "act",
+      "year": "2011",
+      "number": "16"
+    },
+    {
+      "actId": "ke-act-1962-11",
+      "title": "Commissions of Inquiry Act",
+      "workFrbrUri": "akn/ke/act/1962/11",
+      "expressionFrbrUri": "akn/ke/act/1962/11/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/1962/11/eng@2022-12-31",
+      "nature": "act",
+      "year": "1962",
+      "number": "11"
+    },
+    {
+      "actId": "ke-act-2022-30",
+      "title": "Community Groups Registration Act",
+      "workFrbrUri": "akn/ke/act/2022/30",
+      "expressionFrbrUri": "akn/ke/act/2022/30/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/2022/30/eng@2022-12-31",
+      "nature": "act",
+      "year": "2022",
+      "number": "30"
+    },
+    {
+      "actId": "ke-act-2016-27",
+      "title": "Community Land Act",
+      "workFrbrUri": "akn/ke/act/2016/27",
+      "expressionFrbrUri": "akn/ke/act/2016/27/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/2016/27/eng@2022-12-31",
+      "nature": "act",
+      "year": "2016",
+      "number": "27"
+    },
+    {
+      "actId": "ke-ln-2018-180",
+      "title": "Community Land (Amendment) Regulations, 2018",
+      "workFrbrUri": "akn/ke/act/ln/2018/180",
+      "expressionFrbrUri": "akn/ke/act/ln/2018/180/eng@2018-09-21",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2018/180/eng@2018-09-21",
+      "nature": "legal_notice",
+      "year": "2018",
+      "number": "180"
+    },
+    {
+      "actId": "ke-ln-2024-28",
+      "title": "Community Land (Amendment) Regulations, 2023",
+      "workFrbrUri": "akn/ke/act/ln/2024/28",
+      "expressionFrbrUri": "akn/ke/act/ln/2024/28/eng@2024-02-02",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2024/28/eng@2024-02-02",
+      "nature": "legal_notice",
+      "year": "2024",
+      "number": "28"
+    },
+    {
+      "actId": "ke-ln-2024-73",
+      "title": "Community Land (Amendment) Regulations, 2024",
+      "workFrbrUri": "akn/ke/act/ln/2024/73",
+      "expressionFrbrUri": "akn/ke/act/ln/2024/73/eng@2024-05-17",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2024/73/eng@2024-05-17",
+      "nature": "legal_notice",
+      "year": "2024",
+      "number": "73"
+    },
+    {
+      "actId": "ke-act-1998-10",
+      "title": "Community Service Orders Act",
+      "workFrbrUri": "akn/ke/act/1998/10",
+      "expressionFrbrUri": "akn/ke/act/1998/10/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/1998/10/eng@2022-12-31",
+      "nature": "act",
+      "year": "1998",
+      "number": "10"
+    },
+    {
+      "actId": "ke-act-2015-17",
+      "title": "Companies Act",
+      "workFrbrUri": "akn/ke/act/2015/17",
+      "expressionFrbrUri": "akn/ke/act/2015/17/eng@2024-12-27",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/2015/17/eng@2024-12-27",
+      "nature": "act",
+      "year": "2015",
+      "number": "17"
+    },
+    {
+      "actId": "ke-ln-2015-233",
+      "title": "Companies Act Commencement",
+      "workFrbrUri": "akn/ke/act/ln/2015/233",
+      "expressionFrbrUri": "akn/ke/act/ln/2015/233/eng@2015-11-20",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2015/233/eng@2015-11-20",
+      "nature": "legal_notice",
+      "year": "2015",
+      "number": "233"
+    },
+    {
+      "actId": "ke-act-2015-19",
+      "title": "Companies and Insolvency Legislation (Consequential Amendments) Act, 2015",
+      "workFrbrUri": "akn/ke/act/2015/19",
+      "expressionFrbrUri": "akn/ke/act/2015/19/eng@2015-09-18",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/2015/19/eng@2015-09-18",
+      "nature": "act",
+      "year": "2015",
+      "number": "19"
+    },
+    {
+      "actId": "ke-ln-2016-61",
+      "title": "Companies (General) (Amendment) (No. 3) Regulations, 2016",
+      "workFrbrUri": "akn/ke/act/ln/2016/61",
+      "expressionFrbrUri": "akn/ke/act/ln/2016/61/eng@2016-04-15",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2016/61/eng@2016-04-15",
+      "nature": "legal_notice",
+      "year": "2016",
+      "number": "61"
+    },
+    {
+      "actId": "ke-act-2010-12",
+      "title": "Competition Act",
+      "workFrbrUri": "akn/ke/act/2010/12",
+      "expressionFrbrUri": "akn/ke/act/2010/12/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/2010/12/eng@2022-12-31",
+      "nature": "act",
+      "year": "2010",
+      "number": "12"
+    },
+    {
+      "actId": "ke-ln-2023-5",
+      "title": "Competition Act - Exclusion",
+      "workFrbrUri": "akn/ke/act/ln/2023/5",
+      "expressionFrbrUri": "akn/ke/act/ln/2023/5/eng@2024-01-01",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2023/5/eng@2024-01-01",
+      "nature": "legal_notice",
+      "year": "2023",
+      "number": "5"
+    },
+    {
+      "actId": "ke-ln-2023-179",
+      "title": "Competition Act—Exclusions",
+      "workFrbrUri": "akn/ke/act/ln/2023/179",
+      "expressionFrbrUri": "akn/ke/act/ln/2023/179/eng@2023-12-22",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2023/179/eng@2023-12-22",
+      "nature": "legal_notice",
+      "year": "2023",
+      "number": "179"
+    },
+    {
+      "actId": "ke-act-1961-16",
+      "title": "Compounding of Potable Spirits Act",
+      "workFrbrUri": "akn/ke/act/1961/16",
+      "expressionFrbrUri": "akn/ke/act/1961/16/eng@1961-12-26",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/1961/16/eng@1961-12-26",
+      "nature": "act",
+      "year": "1961",
+      "number": "16"
+    },
+    {
+      "actId": "ke-act-1951-57",
+      "title": "Compulsory Military Training Ordinance",
+      "workFrbrUri": "akn/ke/act/1951/57",
+      "expressionFrbrUri": "akn/ke/act/1951/57/eng@1951-11-07",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/1951/57/eng@1951-11-07",
+      "nature": "act",
+      "year": "1951",
+      "number": "57"
+    },
+    {
+      "actId": "ke-act-1951-19",
+      "title": "Compulsory National Service Act",
+      "workFrbrUri": "akn/ke/act/1951/19",
+      "expressionFrbrUri": "akn/ke/act/1951/19/eng@1951-10-17",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/1951/19/eng@1951-10-17",
+      "nature": "act",
+      "year": "1951",
+      "number": "19"
+    },
+    {
+      "actId": "ke-act-2018-5",
+      "title": "Computer Misuse and Cybercrimes",
+      "workFrbrUri": "akn/ke/act/2018/5",
+      "expressionFrbrUri": "akn/ke/act/2018/5/eng@2025-11-04",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/2018/5/eng@2025-11-04",
+      "nature": "act",
+      "year": "2018",
+      "number": "5"
+    },
+    {
+      "actId": "ke-act-2025-17",
+      "title": "Computer Misuse and Cybercrimes (Amendment) Act, 2025",
+      "workFrbrUri": "akn/ke/act/2025/17",
+      "expressionFrbrUri": "akn/ke/act/2025/17/eng@2025-10-21",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/2025/17/eng@2025-10-21",
+      "nature": "act",
+      "year": "2025",
+      "number": "17"
+    },
+    {
+      "actId": "ke-ln-2024-44",
+      "title": "Computer Misuse and Cybercrime (The Critical Information Infrastructure and Cybercrime Management) Regulations",
+      "workFrbrUri": "akn/ke/act/ln/2024/44",
+      "expressionFrbrUri": "akn/ke/act/ln/2024/44/eng@2024-02-16",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2024/44/eng@2024-02-16",
+      "nature": "legal_notice",
+      "year": "2024",
+      "number": "44"
+    },
+    {
+      "actId": "ke-ln-2008-128",
+      "title": "Confirmation of Sites and Monuments",
+      "workFrbrUri": "akn/ke/act/ln/2008/128",
+      "expressionFrbrUri": "akn/ke/act/ln/2008/128/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2008/128/eng@2022-12-31",
+      "nature": "legal_notice",
+      "year": "2008",
+      "number": "128"
+    },
+    {
+      "actId": "ke-act-2025-11",
+      "title": "Conflict of Interest Act",
+      "workFrbrUri": "akn/ke/act/2025/11",
+      "expressionFrbrUri": "akn/ke/act/2025/11/eng@2025-08-05",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/2025/11/eng@2025-08-05",
+      "nature": "act",
+      "year": "2025",
+      "number": "11"
+    },
+    {
+      "actId": "ke-act-1991-5",
+      "title": "Consolidated Bank of Kenya Act",
+      "workFrbrUri": "akn/ke/act/1991/5",
+      "expressionFrbrUri": "akn/ke/act/1991/5/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/1991/5/eng@2022-12-31",
+      "nature": "act",
+      "year": "1991",
+      "number": "5"
+    },
+    {
+      "actId": "ke-ln-2023-84",
+      "title": "Consolidated Music Tariffs for the Period 1st January 2023 to 31st December, 2024",
+      "workFrbrUri": "akn/ke/act/ln/2023/84",
+      "expressionFrbrUri": "akn/ke/act/ln/2023/84/eng@2023-06-29",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2023/84/eng@2023-06-29",
+      "nature": "legal_notice",
+      "year": "2023",
+      "number": "84"
+    },
+    {
+      "actId": "ke-act-2013-30",
+      "title": "Constituencies Development Fund Act",
+      "workFrbrUri": "akn/ke/act/2013/30",
+      "expressionFrbrUri": "akn/ke/act/2013/30/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/2013/30/eng@2022-12-31",
+      "nature": "act",
+      "year": "2013",
+      "number": "30"
+    },
+    {
+      "actId": "ke-act-1968-64",
+      "title": "Constitutional Offices (Remuneration) Act",
+      "workFrbrUri": "akn/ke/act/1968/64",
+      "expressionFrbrUri": "akn/ke/act/1968/64/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/1968/64/eng@2022-12-31",
+      "nature": "act",
+      "year": "1968",
+      "number": "64"
+    },
+    {
+      "actId": "constitution-ke",
+      "title": "Constitution of Kenya",
+      "workFrbrUri": "akn/ke/act/2010/constitution",
+      "expressionFrbrUri": "akn/ke/act/2010/constitution/eng@2010-09-03",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/2010/constitution/eng@2010-09-03",
+      "nature": "constitution",
+      "year": "2010",
+      "number": "constitution"
+    },
+    {
+      "actId": "consumer-protection-act-2012",
+      "title": "Consumer Protection Act",
+      "workFrbrUri": "akn/ke/act/2012/46",
+      "expressionFrbrUri": "akn/ke/act/2012/46/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/2012/46/eng@2022-12-31",
+      "nature": "act",
+      "year": "2012",
+      "number": "46"
+    },
+    {
+      "actId": "ke-act-2016-46",
+      "title": "Contempt of Court Act",
+      "workFrbrUri": "akn/ke/act/2016/46",
+      "expressionFrbrUri": "akn/ke/act/2016/46/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/2016/46/eng@2022-12-31",
+      "nature": "act",
+      "year": "2016",
+      "number": "46"
+    },
+    {
+      "actId": "ke-act-1932-40",
+      "title": "Contracts in Restraint of Trade Act",
+      "workFrbrUri": "akn/ke/act/1932/40",
+      "expressionFrbrUri": "akn/ke/act/1932/40/eng@1932-05-26",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/1932/40/eng@1932-05-26",
+      "nature": "act",
+      "year": "1932",
+      "number": "40"
+    },
+    {
+      "actId": "ke-act-2016-26",
+      "title": "Controller of Budget Act",
+      "workFrbrUri": "akn/ke/act/2016/26",
+      "expressionFrbrUri": "akn/ke/act/2016/26/eng@2023-12-11",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/2016/26/eng@2023-12-11",
+      "nature": "act",
+      "year": "2016",
+      "number": "26"
+    },
+    {
+      "actId": "ke-act-1995-6",
+      "title": "Co-operative College of Kenya Act",
+      "workFrbrUri": "akn/ke/act/1995/6",
+      "expressionFrbrUri": "akn/ke/act/1995/6/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/1995/6/eng@2022-12-31",
+      "nature": "act",
+      "year": "1995",
+      "number": "6"
+    },
+    {
+      "actId": "ke-act-1997-12",
+      "title": "Co-operative Societies Act",
+      "workFrbrUri": "akn/ke/act/1997/12",
+      "expressionFrbrUri": "akn/ke/act/1997/12/eng@2023-12-11",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/1997/12/eng@2023-12-11",
+      "nature": "act",
+      "year": "1997",
+      "number": "12"
+    },
+    {
+      "actId": "ke-act-1966-3",
+      "title": "Copyright Act",
+      "workFrbrUri": "akn/ke/act/1966/3",
+      "expressionFrbrUri": "akn/ke/act/1966/3/eng@1966-04-01",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/1966/3/eng@1966-04-01",
+      "nature": "act",
+      "year": "1966",
+      "number": "3"
+    },
+    {
+      "actId": "ke-act-2001-12",
+      "title": "Copyright Act",
+      "workFrbrUri": "akn/ke/act/2001/12",
+      "expressionFrbrUri": "akn/ke/act/2001/12/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/2001/12/eng@2022-12-31",
+      "nature": "act",
+      "year": "2001",
+      "number": "12"
+    },
+    {
+      "actId": "ke-act-1989-14",
+      "title": "Copyright (Amendment) Act",
+      "workFrbrUri": "akn/ke/act/1989/14",
+      "expressionFrbrUri": "akn/ke/act/1989/14/eng@1989-12-08",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/1989/14/eng@1989-12-08",
+      "nature": "act",
+      "year": "1989",
+      "number": "14"
+    },
+    {
+      "actId": "ke-act-1995-9",
+      "title": "Copyright (Amendment) Act",
+      "workFrbrUri": "akn/ke/act/1995/9",
+      "expressionFrbrUri": "akn/ke/act/1995/9/eng@1995-12-29",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/1995/9/eng@1995-12-29",
+      "nature": "act",
+      "year": "1995",
+      "number": "9"
+    },
+    {
+      "actId": "ke-act-1918-18",
+      "title": "Copyright Amendment Ordinance",
+      "workFrbrUri": "akn/ke/act/1918/18",
+      "expressionFrbrUri": "akn/ke/act/1918/18/eng@1918-11-25",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/1918/18/eng@1918-11-25",
+      "nature": "act",
+      "year": "1918",
+      "number": "18"
+    },
+    {
+      "actId": "ke-act-1918-7",
+      "title": "Copyright Ordinance",
+      "workFrbrUri": "akn/ke/act/1918/7",
+      "expressionFrbrUri": "akn/ke/act/1918/7/eng@1918-03-11",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/1918/7/eng@1918-03-11",
+      "nature": "act",
+      "year": "1918",
+      "number": "7"
+    },
+    {
+      "actId": "ke-act-1995-12",
+      "title": "Council of Legal Education Act",
+      "workFrbrUri": "akn/ke/act/1995/12",
+      "expressionFrbrUri": "akn/ke/act/1995/12/eng@1996-01-05",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/1995/12/eng@1996-01-05",
+      "nature": "act",
+      "year": "1995",
+      "number": "12"
+    },
+    {
+      "actId": "ke-act-2014-14",
+      "title": "Counsellors and Psychologists Act",
+      "workFrbrUri": "akn/ke/act/2014/14",
+      "expressionFrbrUri": "akn/ke/act/2014/14/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/2014/14/eng@2022-12-31",
+      "nature": "act",
+      "year": "2014",
+      "number": "14"
+    },
+    {
+      "actId": "ke-act-2010-8",
+      "title": "Counter-Trafficking in Persons Act",
+      "workFrbrUri": "akn/ke/act/2010/8",
+      "expressionFrbrUri": "akn/ke/act/2010/8/eng@2023-12-11",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/2010/8/eng@2023-12-11",
+      "nature": "act",
+      "year": "2010",
+      "number": "8"
+    },
+    {
+      "actId": "ke-act-2018-8",
+      "title": "County Allocation of Revenue Act",
+      "workFrbrUri": "akn/ke/act/2018/8",
+      "expressionFrbrUri": "akn/ke/act/2018/8/eng@2018-07-13",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/2018/8/eng@2018-07-13",
+      "nature": "act",
+      "year": "2018",
+      "number": "8"
+    },
+    {
+      "actId": "ke-act-2013-34",
+      "title": "County Allocation of Revenue Act",
+      "workFrbrUri": "akn/ke/act/2013/34",
+      "expressionFrbrUri": "akn/ke/act/2013/34/eng@2013-08-16",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/2013/34/eng@2013-08-16",
+      "nature": "act",
+      "year": "2013",
+      "number": "34"
+    },
+    {
+      "actId": "ke-act-2025-15",
+      "title": "County Allocation of Revenue Act",
+      "workFrbrUri": "akn/ke/act/2025/15",
+      "expressionFrbrUri": "akn/ke/act/2025/15/eng@2025-08-19",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/2025/15/eng@2025-08-19",
+      "nature": "act",
+      "year": "2025",
+      "number": "15"
+    },
+    {
+      "actId": "ke-act-2017-23",
+      "title": "County Allocation of Revenue Act",
+      "workFrbrUri": "akn/ke/act/2017/23",
+      "expressionFrbrUri": "akn/ke/act/2017/23/eng@2017-07-28",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/2017/23/eng@2017-07-28",
+      "nature": "act",
+      "year": "2017",
+      "number": "23"
+    },
+    {
+      "actId": "ke-act-2016-22",
+      "title": "County Allocation of Revenue Act",
+      "workFrbrUri": "akn/ke/act/2016/22",
+      "expressionFrbrUri": "akn/ke/act/2016/22/eng@2016-07-29",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/2016/22/eng@2016-07-29",
+      "nature": "act",
+      "year": "2016",
+      "number": "22"
+    },
+    {
+      "actId": "ke-act-2021-9",
+      "title": "County Allocation of Revenue Act",
+      "workFrbrUri": "akn/ke/act/2021/9",
+      "expressionFrbrUri": "akn/ke/act/2021/9/eng@2021-07-16",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/2021/9/eng@2021-07-16",
+      "nature": "act",
+      "year": "2021",
+      "number": "9"
+    },
+    {
+      "actId": "ke-act-2018-14",
+      "title": "County Allocation of Revenue (Ammendment) Act",
+      "workFrbrUri": "akn/ke/act/2018/14",
+      "expressionFrbrUri": "akn/ke/act/2018/14/eng@2019-01-11",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/2018/14/eng@2019-01-11",
+      "nature": "act",
+      "year": "2018",
+      "number": "14"
+    },
+    {
+      "actId": "ke-act-2017-35",
+      "title": "County Allocation of Revenue Ammendment Act",
+      "workFrbrUri": "akn/ke/act/2017/35",
+      "expressionFrbrUri": "akn/ke/act/2017/35/eng@2017-12-15",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/2017/35/eng@2017-12-15",
+      "nature": "act",
+      "year": "2017",
+      "number": "35"
+    },
+    {
+      "actId": "ke-act-2017-6",
+      "title": "County Assemblies Powers and Privileges Act",
+      "workFrbrUri": "akn/ke/act/2017/6",
+      "expressionFrbrUri": "akn/ke/act/2017/6/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/2017/6/eng@2022-12-31",
+      "nature": "act",
+      "year": "2017",
+      "number": "6"
+    },
+    {
+      "actId": "ke-act-2017-24",
+      "title": "County Assembly Services Act",
+      "workFrbrUri": "akn/ke/act/2017/24",
+      "expressionFrbrUri": "akn/ke/act/2017/24/eng@2025-08-19",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/2017/24/eng@2025-08-19",
+      "nature": "act",
+      "year": "2017",
+      "number": "24"
+    },
+    {
+      "actId": "ke-act-2012-17",
+      "title": "County Governments Act",
+      "workFrbrUri": "akn/ke/act/2012/17",
+      "expressionFrbrUri": "akn/ke/act/2012/17/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/2012/17/eng@2022-12-31",
+      "nature": "act",
+      "year": "2012",
+      "number": "17"
+    },
+    {
+      "actId": "ke-act-2025-3",
+      "title": "County Governments Additional Allocations Act",
+      "workFrbrUri": "akn/ke/act/2025/3",
+      "expressionFrbrUri": "akn/ke/act/2025/3/eng@2025-05-13",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/2025/3/eng@2025-05-13",
+      "nature": "act",
+      "year": "2025",
+      "number": "3"
+    },
+    {
+      "actId": "ke-act-2022-17",
+      "title": "County Governments Additional Allocations Act",
+      "workFrbrUri": "akn/ke/act/2022/17",
+      "expressionFrbrUri": "akn/ke/act/2022/17/eng@2022-05-13",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/2022/17/eng@2022-05-13",
+      "nature": "act",
+      "year": "2022",
+      "number": "17"
+    },
+    {
+      "actId": "ke-act-2025-28",
+      "title": "County Governments Additional Allocations (No. 2) Act",
+      "workFrbrUri": "akn/ke/act/2025/28",
+      "expressionFrbrUri": "akn/ke/act/2025/28/eng@2025-11-27",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/2025/28/eng@2025-11-27",
+      "nature": "act",
+      "year": "2025",
+      "number": "28"
+    },
+    {
+      "actId": "ke-act-2014-13",
+      "title": "County Governments (Amendment) Act, 2014",
+      "workFrbrUri": "akn/ke/act/2014/13",
+      "expressionFrbrUri": "akn/ke/act/2014/13/eng@2014-08-08",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/2014/13/eng@2014-08-08",
+      "nature": "act",
+      "year": "2014",
+      "number": "13"
+    },
+    {
+      "actId": "ke-act-2016-1",
+      "title": "County Governments (Amendment) Act, 2016",
+      "workFrbrUri": "akn/ke/act/2016/1",
+      "expressionFrbrUri": "akn/ke/act/2016/1/eng@2016-03-24",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/2016/1/eng@2016-03-24",
+      "nature": "act",
+      "year": "2016",
+      "number": "1"
+    },
+    {
+      "actId": "ke-act-2017-4",
+      "title": "County Governments (Amendment) Act, 2017",
+      "workFrbrUri": "akn/ke/act/2017/4",
+      "expressionFrbrUri": "akn/ke/act/2017/4/eng@2017-03-24",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/2017/4/eng@2017-03-24",
+      "nature": "act",
+      "year": "2017",
+      "number": "4"
+    },
+    {
+      "actId": "ke-act-2020-11",
+      "title": "County Governments (Amendment) Act, 2020",
+      "workFrbrUri": "akn/ke/act/2020/11",
+      "expressionFrbrUri": "akn/ke/act/2020/11/eng@2020-07-17",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/2020/11/eng@2020-07-17",
+      "nature": "act",
+      "year": "2020",
+      "number": "11"
+    },
+    {
+      "actId": "ke-act-2016-17",
+      "title": "County Governments (Amendment) (No. 2) Act, 2016",
+      "workFrbrUri": "akn/ke/act/2016/17",
+      "expressionFrbrUri": "akn/ke/act/2016/17/eng@2016-06-10",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/2016/17/eng@2016-06-10",
+      "nature": "act",
+      "year": "2016",
+      "number": "17"
+    },
+    {
+      "actId": "ke-act-2020-10",
+      "title": "County Governments (Amendment) (No. 2) Act, 2020",
+      "workFrbrUri": "akn/ke/act/2020/10",
+      "expressionFrbrUri": "akn/ke/act/2020/10/eng@2020-07-17",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/2020/10/eng@2020-07-17",
+      "nature": "act",
+      "year": "2020",
+      "number": "10"
+    },
+    {
+      "actId": "ke-act-2019-21",
+      "title": "County Governments Retirement Scheme Act",
+      "workFrbrUri": "akn/ke/act/2019/21",
+      "expressionFrbrUri": "akn/ke/act/2019/21/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/2019/21/eng@2022-12-31",
+      "nature": "act",
+      "year": "2019",
+      "number": "21"
+    },
+    {
+      "actId": "ke-act-2024-8",
+      "title": "County Licensing (Uniform Procedures) Act",
+      "workFrbrUri": "akn/ke/act/2024/8",
+      "expressionFrbrUri": "akn/ke/act/2024/8/eng@2024-12-28",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/2024/8/eng@2024-12-28",
+      "nature": "act",
+      "year": "2024",
+      "number": "8"
+    },
+    {
+      "actId": "ke-act-2020-19",
+      "title": "County Outdoor Advertising Control Act",
+      "workFrbrUri": "akn/ke/act/2020/19",
+      "expressionFrbrUri": "akn/ke/act/2020/19/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/2020/19/eng@2022-12-31",
+      "nature": "act",
+      "year": "2020",
+      "number": "19"
+    },
+    {
+      "actId": "ke-act-2015-28",
+      "title": "Court of Appeal (Organization and Administration) Act",
+      "workFrbrUri": "akn/ke/act/2015/28",
+      "expressionFrbrUri": "akn/ke/act/2015/28/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/2015/28/eng@2022-12-31",
+      "nature": "act",
+      "year": "2015",
+      "number": "28"
+    },
+    {
+      "actId": "cap-75",
+      "title": "Criminal Procedure Code",
+      "workFrbrUri": "akn/ke/act/1930/11",
+      "expressionFrbrUri": "akn/ke/act/1930/11/eng@2023-12-11",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/1930/11/eng@2023-12-11",
+      "nature": "act",
+      "year": "1930",
+      "number": "11"
+    },
+    {
+      "actId": "ke-act-2013-16",
+      "title": "Crops Act",
+      "workFrbrUri": "akn/ke/act/2013/16",
+      "expressionFrbrUri": "akn/ke/act/2013/16/eng@2026-03-27",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/2013/16/eng@2026-03-27",
+      "nature": "act",
+      "year": "2013",
+      "number": "16"
+    },
+    {
+      "actId": "ke-ln-2022-102",
+      "title": "Crops (Coffee) (General) (Amendment) Regulations, 2022",
+      "workFrbrUri": "akn/ke/act/ln/2022/102",
+      "expressionFrbrUri": "akn/ke/act/ln/2022/102/eng@2022-06-24",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2022/102/eng@2022-06-24",
+      "nature": "legal_notice",
+      "year": "2022",
+      "number": "102"
+    },
+    {
+      "actId": "ke-ln-2025-174",
+      "title": "Crops (Food Crops)(Amendment) Regulations, 2025",
+      "workFrbrUri": "akn/ke/act/ln/2025/174",
+      "expressionFrbrUri": "akn/ke/act/ln/2025/174/eng@2025-12-24",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2025/174/eng@2025-12-24",
+      "nature": "legal_notice",
+      "year": "2025",
+      "number": "174"
+    },
+    {
+      "actId": "ke-ln-2020-214",
+      "title": "Crops (Sugar) (General) (Amendment) Regulations, 2020",
+      "workFrbrUri": "akn/ke/act/ln/2020/214",
+      "expressionFrbrUri": "akn/ke/act/ln/2020/214/eng@2020-12-24",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2020/214/eng@2020-12-24",
+      "nature": "legal_notice",
+      "year": "2020",
+      "number": "214"
+    },
+    {
+      "actId": "ke-act-1978-10",
+      "title": "Customs and Excise Act",
+      "workFrbrUri": "akn/ke/act/1978/10",
+      "expressionFrbrUri": "akn/ke/act/1978/10/eng@1978-10-13",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/1978/10/eng@1978-10-13",
+      "nature": "act",
+      "year": "1978",
+      "number": "10"
+    },
+    {
+      "actId": "ke-ln-2005-47",
+      "title": "Customs and Excise (Petroleum Oils) (Excise) Regulations 2005",
+      "workFrbrUri": "akn/ke/act/ln/2005/47",
+      "expressionFrbrUri": "akn/ke/act/ln/2005/47/eng@2013-09-13",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2005/47/eng@2013-09-13",
+      "nature": "legal_notice",
+      "year": "2005",
+      "number": "47"
+    },
+    {
+      "actId": "ke-ln-2004-47",
+      "title": "Customs and Excise (Petroleum Oils)(Remission) Order, 2004",
+      "workFrbrUri": "akn/ke/act/ln/2004/47",
+      "expressionFrbrUri": "akn/ke/act/ln/2004/47/eng@2004-06-18",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2004/47/eng@2004-06-18",
+      "nature": "legal_notice",
+      "year": "2004",
+      "number": "47"
+    },
+    {
+      "actId": "ke-act-1958-34",
+      "title": "Dairy Industry Act",
+      "workFrbrUri": "akn/ke/act/1958/34",
+      "expressionFrbrUri": "akn/ke/act/1958/34/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/1958/34/eng@2022-12-31",
+      "nature": "act",
+      "year": "1958",
+      "number": "34"
+    },
+    {
+      "actId": "ke-ln-1964-286",
+      "title": "Dairy Industry (Carriage of Milk) Regulations, 1964",
+      "workFrbrUri": "akn/ke/act/ln/1964/286",
+      "expressionFrbrUri": "akn/ke/act/ln/1964/286/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/1964/286/eng@2022-12-31",
+      "nature": "legal_notice",
+      "year": "1964",
+      "number": "286"
+    },
+    {
+      "actId": "ke-ln-2004-103",
+      "title": "Dairy Industry (Imports and Exports) Regulations, 2004",
+      "workFrbrUri": "akn/ke/act/ln/2004/103",
+      "expressionFrbrUri": "akn/ke/act/ln/2004/103/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2004/103/eng@2022-12-31",
+      "nature": "legal_notice",
+      "year": "2004",
+      "number": "103"
+    },
+    {
+      "actId": "ke-ln-2004-111",
+      "title": "Dairy Industry (Imposition of Cess and Levy) Regulations, 2004",
+      "workFrbrUri": "akn/ke/act/ln/2004/111",
+      "expressionFrbrUri": "akn/ke/act/ln/2004/111/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2004/111/eng@2022-12-31",
+      "nature": "legal_notice",
+      "year": "2004",
+      "number": "111"
+    },
+    {
+      "actId": "ke-ln-2006-85",
+      "title": "Dairy Industry (Licensing of Retailers) (Revocation) Regulations, 2006",
+      "workFrbrUri": "akn/ke/act/ln/2006/85",
+      "expressionFrbrUri": "akn/ke/act/ln/2006/85/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2006/85/eng@2022-12-31",
+      "nature": "legal_notice",
+      "year": "2006",
+      "number": "85"
+    },
+    {
+      "actId": "ke-ln-1961-258",
+      "title": "Dairy Industry (Prices of Dairy Produce) Regulations, 1961",
+      "workFrbrUri": "akn/ke/act/ln/1961/258",
+      "expressionFrbrUri": "akn/ke/act/ln/1961/258/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/1961/258/eng@2022-12-31",
+      "nature": "legal_notice",
+      "year": "1961",
+      "number": "258"
+    },
+    {
+      "actId": "ke-ln-1958-534",
+      "title": "Dairy Industry (Returns, Reports and Estimates) Regulations",
+      "workFrbrUri": "akn/ke/act/ln/1958/534",
+      "expressionFrbrUri": "akn/ke/act/ln/1958/534/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/1958/534/eng@2022-12-31",
+      "nature": "legal_notice",
+      "year": "1958",
+      "number": "534"
+    },
+    {
+      "actId": "ke-gn-1958-4542",
+      "title": "Dairy Industry (Returns, Reports and Estimates)(Scheduled Areas) Order",
+      "workFrbrUri": "akn/ke/act/gn/1958/4542",
+      "expressionFrbrUri": "akn/ke/act/gn/1958/4542/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/gn/1958/4542/eng@2022-12-31",
+      "nature": "gazette_notice",
+      "year": "1958",
+      "number": "4542"
+    },
+    {
+      "actId": "ke-ln-1961-259",
+      "title": "Dairy Industry (Sales by Producers) Regulations, 1961",
+      "workFrbrUri": "akn/ke/act/ln/1961/259",
+      "expressionFrbrUri": "akn/ke/act/ln/1961/259/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/1961/259/eng@2022-12-31",
+      "nature": "legal_notice",
+      "year": "1961",
+      "number": "259"
+    },
+    {
+      "actId": "ke-ln-1964-290",
+      "title": "Dairy Produce Prescribed Under Regulation 2",
+      "workFrbrUri": "akn/ke/act/ln/1964/290",
+      "expressionFrbrUri": "akn/ke/act/ln/1964/290/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/1964/290/eng@2022-12-31",
+      "nature": "legal_notice",
+      "year": "1964",
+      "number": "290"
+    },
+    {
+      "actId": "ke-act-1932-43",
+      "title": "Dangerous Drugs Ordinance",
+      "workFrbrUri": "akn/ke/act/1932/43",
+      "expressionFrbrUri": "akn/ke/act/1932/43/eng@1932-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/1932/43/eng@1932-12-31",
+      "nature": "act",
+      "year": "1932",
+      "number": "43"
+    },
+    {
+      "actId": "data-protection-act-2019",
+      "title": "Data Protection Act",
+      "workFrbrUri": "akn/ke/act/2019/24",
+      "expressionFrbrUri": "akn/ke/act/2019/24/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/2019/24/eng@2022-12-31",
+      "nature": "act",
+      "year": "2019",
+      "number": "24"
+    },
+    {
+      "actId": "ke-ln-1958-364",
+      "title": "Days Appointed for the Commencement of the Act Under Section 1(2)",
+      "workFrbrUri": "akn/ke/act/ln/1958/364",
+      "expressionFrbrUri": "akn/ke/act/ln/1958/364/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/1958/364/eng@2022-12-31",
+      "nature": "legal_notice",
+      "year": "1958",
+      "number": "364"
+    },
+    {
+      "actId": "ke-act-1913-5",
+      "title": "Debts (Summary Recovery) Act",
+      "workFrbrUri": "akn/ke/act/1913/5",
+      "expressionFrbrUri": "akn/ke/act/1913/5/eng@1913-05-26",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/1913/5/eng@1913-05-26",
+      "nature": "act",
+      "year": "1913",
+      "number": "5"
+    },
+    {
+      "actId": "ke-ln-2014-180",
+      "title": "Declaration",
+      "workFrbrUri": "akn/ke/act/ln/2014/180",
+      "expressionFrbrUri": "akn/ke/act/ln/2014/180/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2014/180/eng@2022-12-31",
+      "nature": "legal_notice",
+      "year": "2014",
+      "number": "180"
+    },
+    {
+      "actId": "ke-ln-2014-133",
+      "title": "Declaration",
+      "workFrbrUri": "akn/ke/act/ln/2014/133",
+      "expressionFrbrUri": "akn/ke/act/ln/2014/133/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2014/133/eng@2022-12-31",
+      "nature": "legal_notice",
+      "year": "2014",
+      "number": "133"
+    },
+    {
+      "actId": "ke-ln-2001-160",
+      "title": "Declaration",
+      "workFrbrUri": "akn/ke/act/ln/2001/160",
+      "expressionFrbrUri": "akn/ke/act/ln/2001/160/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2001/160/eng@2022-12-31",
+      "nature": "legal_notice",
+      "year": "2001",
+      "number": "160"
+    },
+    {
+      "actId": "ke-ln-2009-4",
+      "title": "Declaration",
+      "workFrbrUri": "akn/ke/act/ln/2009/4",
+      "expressionFrbrUri": "akn/ke/act/ln/2009/4/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2009/4/eng@2022-12-31",
+      "nature": "legal_notice",
+      "year": "2009",
+      "number": "4"
+    },
+    {
+      "actId": "ke-ln-2020-119",
+      "title": "Declaration",
+      "workFrbrUri": "akn/ke/act/ln/2020/119",
+      "expressionFrbrUri": "akn/ke/act/ln/2020/119/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2020/119/eng@2022-12-31",
+      "nature": "legal_notice",
+      "year": "2020",
+      "number": "119"
+    },
+    {
+      "actId": "ke-ln-1976-212",
+      "title": "Declaration of a Body Corporate Qualified to Own a Kenya Ship",
+      "workFrbrUri": "akn/ke/act/ln/1976/212",
+      "expressionFrbrUri": "akn/ke/act/ln/1976/212/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/1976/212/eng@2022-12-31",
+      "nature": "legal_notice",
+      "year": "1976",
+      "number": "212"
+    },
+    {
+      "actId": "ke-ln-2025-8",
+      "title": "Declaration of a Monument",
+      "workFrbrUri": "akn/ke/act/ln/2025/8",
+      "expressionFrbrUri": "akn/ke/act/ln/2025/8/eng@2025-02-07",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2025/8/eng@2025-02-07",
+      "nature": "legal_notice",
+      "year": "2025",
+      "number": "8"
+    },
+    {
+      "actId": "ke-ln-2025-6",
+      "title": "Declaration of a Monument, 2025",
+      "workFrbrUri": "akn/ke/act/ln/2025/6",
+      "expressionFrbrUri": "akn/ke/act/ln/2025/6/eng@2025-02-07",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2025/6/eng@2025-02-07",
+      "nature": "legal_notice",
+      "year": "2025",
+      "number": "6"
+    },
+    {
+      "actId": "ke-ln-1975-117",
+      "title": "Declaration of Animals Under Section 2",
+      "workFrbrUri": "akn/ke/act/ln/1975/117",
+      "expressionFrbrUri": "akn/ke/act/ln/1975/117/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/1975/117/eng@2022-12-31",
+      "nature": "legal_notice",
+      "year": "1975",
+      "number": "117"
+    },
+    {
+      "actId": "ke-ln-2007-158",
+      "title": "Declaration of Animals Under Section 2",
+      "workFrbrUri": "akn/ke/act/ln/2007/158",
+      "expressionFrbrUri": "akn/ke/act/ln/2007/158/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2007/158/eng@2022-12-31",
+      "nature": "legal_notice",
+      "year": "2007",
+      "number": "158"
+    },
+    {
+      "actId": "ke-ln-1985-59",
+      "title": "Declaration of Approved Service",
+      "workFrbrUri": "akn/ke/act/ln/1985/59",
+      "expressionFrbrUri": "akn/ke/act/ln/1985/59/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/1985/59/eng@2022-12-31",
+      "nature": "legal_notice",
+      "year": "1985",
+      "number": "59"
+    },
+    {
+      "actId": "ke-ln-2023-91",
+      "title": "Declaration of Chetambe (Webuye) Forest",
+      "workFrbrUri": "akn/ke/act/ln/2023/91",
+      "expressionFrbrUri": "akn/ke/act/ln/2023/91/eng@2023-08-25",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2023/91/eng@2023-08-25",
+      "nature": "legal_notice",
+      "year": "2023",
+      "number": "91"
+    },
+    {
+      "actId": "ke-ln-2017-62",
+      "title": "Declaration of Construction Minerals",
+      "workFrbrUri": "akn/ke/act/ln/2017/62",
+      "expressionFrbrUri": "akn/ke/act/ln/2017/62/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2017/62/eng@2022-12-31",
+      "nature": "legal_notice",
+      "year": "2017",
+      "number": "62"
+    },
+    {
+      "actId": "ke-ln-2023-43",
+      "title": "Declaration of Disturbed and Dangerous Areas (Turkana, Elgeyo Marakwet, Baringo, West Pokot, Samburu and Laikipia Counties) Extension Order, No. 4 of 2023",
+      "workFrbrUri": "akn/ke/act/ln/2023/43",
+      "expressionFrbrUri": "akn/ke/act/ln/2023/43/eng@2023-05-05",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2023/43/eng@2023-05-05",
+      "nature": "legal_notice",
+      "year": "2023",
+      "number": "43"
+    },
+    {
+      "actId": "ke-ln-2013-208",
+      "title": "Declaration of Environmentally Significant Area",
+      "workFrbrUri": "akn/ke/act/ln/2013/208",
+      "expressionFrbrUri": "akn/ke/act/ln/2013/208/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2013/208/eng@2022-12-31",
+      "nature": "legal_notice",
+      "year": "2013",
+      "number": "208"
+    },
+    {
+      "actId": "ke-ln-2023-203",
+      "title": "Declaration of Export Processing Zone",
+      "workFrbrUri": "akn/ke/act/ln/2023/203",
+      "expressionFrbrUri": "akn/ke/act/ln/2023/203/eng@2024-01-05",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2023/203/eng@2024-01-05",
+      "nature": "legal_notice",
+      "year": "2023",
+      "number": "203"
+    },
+    {
+      "actId": "ke-ln-2025-105",
+      "title": "Declaration of Export Processing Zone",
+      "workFrbrUri": "akn/ke/act/ln/2025/105",
+      "expressionFrbrUri": "akn/ke/act/ln/2025/105/eng@2025-06-10",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2025/105/eng@2025-06-10",
+      "nature": "legal_notice",
+      "year": "2025",
+      "number": "105"
+    },
+    {
+      "actId": "ke-ln-2023-120",
+      "title": "Declaration of Export Processing Zone",
+      "workFrbrUri": "akn/ke/act/ln/2023/120",
+      "expressionFrbrUri": "akn/ke/act/ln/2023/120/eng@2023-09-22",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2023/120/eng@2023-09-22",
+      "nature": "legal_notice",
+      "year": "2023",
+      "number": "120"
+    },
+    {
+      "actId": "ke-ln-2024-156",
+      "title": "Declaration of Export Processing Zone",
+      "workFrbrUri": "akn/ke/act/ln/2024/156",
+      "expressionFrbrUri": "akn/ke/act/ln/2024/156/eng@2024-10-04",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2024/156/eng@2024-10-04",
+      "nature": "legal_notice",
+      "year": "2024",
+      "number": "156"
+    },
+    {
+      "actId": "ke-ln-2024-31",
+      "title": "Declaration of Export Processing Zones",
+      "workFrbrUri": "akn/ke/act/ln/2024/31",
+      "expressionFrbrUri": "akn/ke/act/ln/2024/31/eng@2024-02-02",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2024/31/eng@2024-02-02",
+      "nature": "legal_notice",
+      "year": "2024",
+      "number": "31"
+    },
+    {
+      "actId": "ke-ln-2017-175",
+      "title": "Declaration of Forest Area",
+      "workFrbrUri": "akn/ke/act/ln/2017/175",
+      "expressionFrbrUri": "akn/ke/act/ln/2017/175/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2017/175/eng@2022-12-31",
+      "nature": "legal_notice",
+      "year": "2017",
+      "number": "175"
+    },
+    {
+      "actId": "ke-ln-2017-172",
+      "title": "Declaration of Forest Area",
+      "workFrbrUri": "akn/ke/act/ln/2017/172",
+      "expressionFrbrUri": "akn/ke/act/ln/2017/172/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2017/172/eng@2022-12-31",
+      "nature": "legal_notice",
+      "year": "2017",
+      "number": "172"
+    },
+    {
+      "actId": "ke-ln-2017-210",
+      "title": "Declaration of Forest Area-GOT Achama Forest",
+      "workFrbrUri": "akn/ke/act/ln/2017/210",
+      "expressionFrbrUri": "akn/ke/act/ln/2017/210/eng@2017-08-25",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2017/210/eng@2017-08-25",
+      "nature": "legal_notice",
+      "year": "2017",
+      "number": "210"
+    },
+    {
+      "actId": "ke-ln-2023-86",
+      "title": "Declaration of Forest Areas",
+      "workFrbrUri": "akn/ke/act/ln/2023/86",
+      "expressionFrbrUri": "akn/ke/act/ln/2023/86/eng@2023-08-25",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2023/86/eng@2023-08-25",
+      "nature": "legal_notice",
+      "year": "2023",
+      "number": "86"
+    },
+    {
+      "actId": "ke-ln-2023-89",
+      "title": "Declaration of Forest Area-Wote Tree Nursery and Arboretum",
+      "workFrbrUri": "akn/ke/act/ln/2023/89",
+      "expressionFrbrUri": "akn/ke/act/ln/2023/89/eng@2023-08-25",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2023/89/eng@2023-08-25",
+      "nature": "legal_notice",
+      "year": "2023",
+      "number": "89"
+    },
+    {
+      "actId": "ke-ln-2009-47",
+      "title": "Declaration of Invalidity of Identity Cards",
+      "workFrbrUri": "akn/ke/act/ln/2009/47",
+      "expressionFrbrUri": "akn/ke/act/ln/2009/47/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2009/47/eng@2022-12-31",
+      "nature": "legal_notice",
+      "year": "2009",
+      "number": "47"
+    },
+    {
+      "actId": "ke-ln-2023-85",
+      "title": "Declaration of Macalder Forest",
+      "workFrbrUri": "akn/ke/act/ln/2023/85",
+      "expressionFrbrUri": "akn/ke/act/ln/2023/85/eng@2023-08-25",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2023/85/eng@2023-08-25",
+      "nature": "legal_notice",
+      "year": "2023",
+      "number": "85"
+    },
+    {
+      "actId": "ke-ln-2025-7",
+      "title": "Declaration of Monument",
+      "workFrbrUri": "akn/ke/act/ln/2025/7",
+      "expressionFrbrUri": "akn/ke/act/ln/2025/7/eng@2025-02-07",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2025/7/eng@2025-02-07",
+      "nature": "legal_notice",
+      "year": "2025",
+      "number": "7"
+    },
+    {
+      "actId": "ke-gn-2013-3144",
+      "title": "Declaration of Persons Elected President and Deputy President",
+      "workFrbrUri": "akn/ke/act/gn/2013/3144",
+      "expressionFrbrUri": "akn/ke/act/gn/2013/3144/eng@2013-03-09",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/gn/2013/3144/eng@2013-03-09",
+      "nature": "gazette_notice",
+      "year": "2013",
+      "number": "3144"
+    },
+    {
+      "actId": "ke-ln-2018-179",
+      "title": "Declaration of Protected Area",
+      "workFrbrUri": "akn/ke/act/ln/2018/179",
+      "expressionFrbrUri": "akn/ke/act/ln/2018/179/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2018/179/eng@2022-12-31",
+      "nature": "legal_notice",
+      "year": "2018",
+      "number": "179"
+    },
+    {
+      "actId": "ke-ln-2009-150",
+      "title": "Declaration of Special Arrangements for the Reciprocal Promotion and Protection of Investment",
+      "workFrbrUri": "akn/ke/act/ln/2009/150",
+      "expressionFrbrUri": "akn/ke/act/ln/2009/150/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2009/150/eng@2022-12-31",
+      "nature": "legal_notice",
+      "year": "2009",
+      "number": "150"
+    },
+    {
+      "actId": "ke-ln-2009-149",
+      "title": "Declaration of Special Arrangements for the Reciprocal Promotion and Protection of Investment",
+      "workFrbrUri": "akn/ke/act/ln/2009/149",
+      "expressionFrbrUri": "akn/ke/act/ln/2009/149/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2009/149/eng@2022-12-31",
+      "nature": "legal_notice",
+      "year": "2009",
+      "number": "149"
+    },
+    {
+      "actId": "ke-ln-2009-152",
+      "title": "Declaration of Special Arrangements for the Reciprocal Promotion and Protection of Investment",
+      "workFrbrUri": "akn/ke/act/ln/2009/152",
+      "expressionFrbrUri": "akn/ke/act/ln/2009/152/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2009/152/eng@2022-12-31",
+      "nature": "legal_notice",
+      "year": "2009",
+      "number": "152"
+    },
+    {
+      "actId": "ke-ln-2015-4",
+      "title": "Declaration of Special Arrangements for the Reciprocal Promotion and Protection of Investment",
+      "workFrbrUri": "akn/ke/act/ln/2015/4",
+      "expressionFrbrUri": "akn/ke/act/ln/2015/4/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2015/4/eng@2022-12-31",
+      "nature": "legal_notice",
+      "year": "2015",
+      "number": "4"
+    },
+    {
+      "actId": "ke-ln-2009-148",
+      "title": "Declaration of Special Arrangements for the Reciprocal Promotion and Protection of Investment",
+      "workFrbrUri": "akn/ke/act/ln/2009/148",
+      "expressionFrbrUri": "akn/ke/act/ln/2009/148/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2009/148/eng@2022-12-31",
+      "nature": "legal_notice",
+      "year": "2009",
+      "number": "148"
+    },
+    {
+      "actId": "ke-ln-2009-151",
+      "title": "Declaration of Special Arrangements for the Reciprocal Promotion and Protection of Investment",
+      "workFrbrUri": "akn/ke/act/ln/2009/151",
+      "expressionFrbrUri": "akn/ke/act/ln/2009/151/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2009/151/eng@2022-12-31",
+      "nature": "legal_notice",
+      "year": "2009",
+      "number": "151"
+    },
+    {
+      "actId": "ke-ln-2014-170",
+      "title": "Declaration of Special Arrangements for the Reciprocal Promotion and Protection of Investment",
+      "workFrbrUri": "akn/ke/act/ln/2014/170",
+      "expressionFrbrUri": "akn/ke/act/ln/2014/170/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2014/170/eng@2022-12-31",
+      "nature": "legal_notice",
+      "year": "2014",
+      "number": "170"
+    },
+    {
+      "actId": "ke-ln-2009-138",
+      "title": "Declaration of Special Arrangements for the Reciprocal Promotion and Protection of Investment",
+      "workFrbrUri": "akn/ke/act/ln/2009/138",
+      "expressionFrbrUri": "akn/ke/act/ln/2009/138/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2009/138/eng@2022-12-31",
+      "nature": "legal_notice",
+      "year": "2009",
+      "number": "138"
+    },
+    {
+      "actId": "ke-ln-2015-3",
+      "title": "Declaration of Special Arrangements for the Reciprocal Promotion and Protection of Investment",
+      "workFrbrUri": "akn/ke/act/ln/2015/3",
+      "expressionFrbrUri": "akn/ke/act/ln/2015/3/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2015/3/eng@2022-12-31",
+      "nature": "legal_notice",
+      "year": "2015",
+      "number": "3"
+    },
+    {
+      "actId": "ke-ln-2017-56",
+      "title": "Declaration of Special Arrangements for the Reciprocal Promotion and Protection of Investment",
+      "workFrbrUri": "akn/ke/act/ln/2017/56",
+      "expressionFrbrUri": "akn/ke/act/ln/2017/56/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2017/56/eng@2022-12-31",
+      "nature": "legal_notice",
+      "year": "2017",
+      "number": "56"
+    },
+    {
+      "actId": "ke-ln-2016-219",
+      "title": "Declaration of Special Arrangements for the Reciprocal Promotion and Protection of Investment",
+      "workFrbrUri": "akn/ke/act/ln/2016/219",
+      "expressionFrbrUri": "akn/ke/act/ln/2016/219/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2016/219/eng@2022-12-31",
+      "nature": "legal_notice",
+      "year": "2016",
+      "number": "219"
+    },
+    {
+      "actId": "ke-ln-2020-154",
+      "title": "Declaration of Special Economic Zone",
+      "workFrbrUri": "akn/ke/act/ln/2020/154",
+      "expressionFrbrUri": "akn/ke/act/ln/2020/154/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2020/154/eng@2022-12-31",
+      "nature": "legal_notice",
+      "year": "2020",
+      "number": "154"
+    },
+    {
+      "actId": "ke-ln-2022-200",
+      "title": "Declaration of Special Economic Zone",
+      "workFrbrUri": "akn/ke/act/ln/2022/200",
+      "expressionFrbrUri": "akn/ke/act/ln/2022/200/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2022/200/eng@2022-12-31",
+      "nature": "legal_notice",
+      "year": "2022",
+      "number": "200"
+    },
+    {
+      "actId": "ke-ln-2024-117",
+      "title": "Declaration of Special Economic Zone",
+      "workFrbrUri": "akn/ke/act/ln/2024/117",
+      "expressionFrbrUri": "akn/ke/act/ln/2024/117/eng@2024-07-26",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2024/117/eng@2024-07-26",
+      "nature": "legal_notice",
+      "year": "2024",
+      "number": "117"
+    },
+    {
+      "actId": "ke-ln-2023-195",
+      "title": "Declaration of Special Economic Zone",
+      "workFrbrUri": "akn/ke/act/ln/2023/195",
+      "expressionFrbrUri": "akn/ke/act/ln/2023/195/eng@2024-01-05",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2023/195/eng@2024-01-05",
+      "nature": "legal_notice",
+      "year": "2023",
+      "number": "195"
+    },
+    {
+      "actId": "ke-ln-2024-149",
+      "title": "Declaration of Special Economic Zone",
+      "workFrbrUri": "akn/ke/act/ln/2024/149",
+      "expressionFrbrUri": "akn/ke/act/ln/2024/149/eng@2024-09-27",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2024/149/eng@2024-09-27",
+      "nature": "legal_notice",
+      "year": "2024",
+      "number": "149"
+    },
+    {
+      "actId": "ke-ln-2022-199",
+      "title": "Declaration of Special Economic Zone",
+      "workFrbrUri": "akn/ke/act/ln/2022/199",
+      "expressionFrbrUri": "akn/ke/act/ln/2022/199/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2022/199/eng@2022-12-31",
+      "nature": "legal_notice",
+      "year": "2022",
+      "number": "199"
+    },
+    {
+      "actId": "ke-ln-2025-29",
+      "title": "Declaration of Special Economic Zone",
+      "workFrbrUri": "akn/ke/act/ln/2025/29",
+      "expressionFrbrUri": "akn/ke/act/ln/2025/29/eng@2025-02-14",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2025/29/eng@2025-02-14",
+      "nature": "legal_notice",
+      "year": "2025",
+      "number": "29"
+    },
+    {
+      "actId": "ke-ln-2022-215",
+      "title": "Declaration of Special Economic Zone",
+      "workFrbrUri": "akn/ke/act/ln/2022/215",
+      "expressionFrbrUri": "akn/ke/act/ln/2022/215/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2022/215/eng@2022-12-31",
+      "nature": "legal_notice",
+      "year": "2022",
+      "number": "215"
+    },
+    {
+      "actId": "ke-ln-2024-33",
+      "title": "Declaration of Special Economic Zone",
+      "workFrbrUri": "akn/ke/act/ln/2024/33",
+      "expressionFrbrUri": "akn/ke/act/ln/2024/33/eng@2024-02-02",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2024/33/eng@2024-02-02",
+      "nature": "legal_notice",
+      "year": "2024",
+      "number": "33"
+    },
+    {
+      "actId": "ke-ln-2024-32",
+      "title": "Declaration of Special Economic Zone",
+      "workFrbrUri": "akn/ke/act/ln/2024/32",
+      "expressionFrbrUri": "akn/ke/act/ln/2024/32/eng@2024-02-02",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2024/32/eng@2024-02-02",
+      "nature": "legal_notice",
+      "year": "2024",
+      "number": "32"
+    },
+    {
+      "actId": "ke-ln-2022-195",
+      "title": "Declaration of Special Economic Zone",
+      "workFrbrUri": "akn/ke/act/ln/2022/195",
+      "expressionFrbrUri": "akn/ke/act/ln/2022/195/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2022/195/eng@2022-12-31",
+      "nature": "legal_notice",
+      "year": "2022",
+      "number": "195"
+    },
+    {
+      "actId": "ke-ln-2022-127",
+      "title": "Declaration of Special Economic Zone",
+      "workFrbrUri": "akn/ke/act/ln/2022/127",
+      "expressionFrbrUri": "akn/ke/act/ln/2022/127/eng@2022-07-22",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2022/127/eng@2022-07-22",
+      "nature": "legal_notice",
+      "year": "2022",
+      "number": "127"
+    },
+    {
+      "actId": "ke-ln-2022-196",
+      "title": "Declaration of Special Economic Zone",
+      "workFrbrUri": "akn/ke/act/ln/2022/196",
+      "expressionFrbrUri": "akn/ke/act/ln/2022/196/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2022/196/eng@2022-12-31",
+      "nature": "legal_notice",
+      "year": "2022",
+      "number": "196"
+    },
+    {
+      "actId": "ke-ln-2022-197",
+      "title": "Declaration of Special Economic Zone",
+      "workFrbrUri": "akn/ke/act/ln/2022/197",
+      "expressionFrbrUri": "akn/ke/act/ln/2022/197/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2022/197/eng@2022-12-31",
+      "nature": "legal_notice",
+      "year": "2022",
+      "number": "197"
+    },
+    {
+      "actId": "ke-ln-2022-198",
+      "title": "Declaration of Special Economic Zone",
+      "workFrbrUri": "akn/ke/act/ln/2022/198",
+      "expressionFrbrUri": "akn/ke/act/ln/2022/198/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2022/198/eng@2022-12-31",
+      "nature": "legal_notice",
+      "year": "2022",
+      "number": "198"
+    },
+    {
+      "actId": "ke-ln-2023-76",
+      "title": "Declaration of Special Economic Zone",
+      "workFrbrUri": "akn/ke/act/ln/2023/76",
+      "expressionFrbrUri": "akn/ke/act/ln/2023/76/eng@2023-08-04",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2023/76/eng@2023-08-04",
+      "nature": "legal_notice",
+      "year": "2023",
+      "number": "76"
+    },
+    {
+      "actId": "ke-ln-2024-132",
+      "title": "Declaration of Special Economic Zone",
+      "workFrbrUri": "akn/ke/act/ln/2024/132",
+      "expressionFrbrUri": "akn/ke/act/ln/2024/132/eng@2024-08-15",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2024/132/eng@2024-08-15",
+      "nature": "legal_notice",
+      "year": "2024",
+      "number": "132"
+    },
+    {
+      "actId": "ke-ln-2023-196",
+      "title": "Declaration of Special Economic Zones",
+      "workFrbrUri": "akn/ke/act/ln/2023/196",
+      "expressionFrbrUri": "akn/ke/act/ln/2023/196/eng@2024-01-05",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2023/196/eng@2024-01-05",
+      "nature": "legal_notice",
+      "year": "2023",
+      "number": "196"
+    },
+    {
+      "actId": "ke-ln-2023-101",
+      "title": "Declaration of Special Economic Zones",
+      "workFrbrUri": "akn/ke/act/ln/2023/101",
+      "expressionFrbrUri": "akn/ke/act/ln/2023/101/eng@2023-07-21",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2023/101/eng@2023-07-21",
+      "nature": "legal_notice",
+      "year": "2023",
+      "number": "101"
+    },
+    {
+      "actId": "ke-ln-2019-180",
+      "title": "Declaration of Special Economic Zone (Schedule of GPS Co-ordinates)",
+      "workFrbrUri": "akn/ke/act/ln/2019/180",
+      "expressionFrbrUri": "akn/ke/act/ln/2019/180/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2019/180/eng@2022-12-31",
+      "nature": "legal_notice",
+      "year": "2019",
+      "number": "180"
+    },
+    {
+      "actId": "ke-ln-2023-87",
+      "title": "Declaration of Takaba Hill Forest",
+      "workFrbrUri": "akn/ke/act/ln/2023/87",
+      "expressionFrbrUri": "akn/ke/act/ln/2023/87/eng@2023-08-25",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2023/87/eng@2023-08-25",
+      "nature": "legal_notice",
+      "year": "2023",
+      "number": "87"
+    },
+    {
+      "actId": "ke-ln-2017-109",
+      "title": "Declaration of the Special Arrangements for the Reciprocal Promotion and Protection of Investments",
+      "workFrbrUri": "akn/ke/act/ln/2017/109",
+      "expressionFrbrUri": "akn/ke/act/ln/2017/109/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2017/109/eng@2022-12-31",
+      "nature": "legal_notice",
+      "year": "2017",
+      "number": "109"
+    },
+    {
+      "actId": "ke-ln-2023-129",
+      "title": "Declaration of Zones",
+      "workFrbrUri": "akn/ke/act/ln/2023/129",
+      "expressionFrbrUri": "akn/ke/act/ln/2023/129/eng@2023-08-28",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2023/129/eng@2023-08-28",
+      "nature": "legal_notice",
+      "year": "2023",
+      "number": "129"
+    },
+    {
+      "actId": "ke-ln-2023-127",
+      "title": "Declaration of Zones",
+      "workFrbrUri": "akn/ke/act/ln/2023/127",
+      "expressionFrbrUri": "akn/ke/act/ln/2023/127/eng@2023-08-28",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2023/127/eng@2023-08-28",
+      "nature": "legal_notice",
+      "year": "2023",
+      "number": "127"
+    },
+    {
+      "actId": "ke-ln-2023-126",
+      "title": "Declaration of Zones",
+      "workFrbrUri": "akn/ke/act/ln/2023/126",
+      "expressionFrbrUri": "akn/ke/act/ln/2023/126/eng@2023-08-28",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2023/126/eng@2023-08-28",
+      "nature": "legal_notice",
+      "year": "2023",
+      "number": "126"
+    },
+    {
+      "actId": "ke-ln-2023-128",
+      "title": "Declaration of Zones",
+      "workFrbrUri": "akn/ke/act/ln/2023/128",
+      "expressionFrbrUri": "akn/ke/act/ln/2023/128/eng@2023-08-28",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2023/128/eng@2023-08-28",
+      "nature": "legal_notice",
+      "year": "2023",
+      "number": "128"
+    },
+    {
+      "actId": "ke-ln-1975-17",
+      "title": "Declarations of Crops",
+      "workFrbrUri": "akn/ke/act/ln/1975/17",
+      "expressionFrbrUri": "akn/ke/act/ln/1975/17/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/1975/17/eng@2022-12-31",
+      "nature": "legal_notice",
+      "year": "1975",
+      "number": "17"
+    },
+    {
+      "actId": "ke-ln-1974-13",
+      "title": "Declarations of Export Slaughterhouses Under Meat Control (Export Slaughterhouses) Regulations",
+      "workFrbrUri": "akn/ke/act/ln/1974/13",
+      "expressionFrbrUri": "akn/ke/act/ln/1974/13/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/1974/13/eng@2022-12-31",
+      "nature": "legal_notice",
+      "year": "1974",
+      "number": "13"
+    },
+    {
+      "actId": "ke-ln-1974-14",
+      "title": "Declarations of Slaughterhouses Under Meat Control (Local Slaughterhouses) Regulations",
+      "workFrbrUri": "akn/ke/act/ln/1974/14",
+      "expressionFrbrUri": "akn/ke/act/ln/1974/14/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/1974/14/eng@2022-12-31",
+      "nature": "legal_notice",
+      "year": "1974",
+      "number": "14"
+    },
+    {
+      "actId": "ke-ln-1958-153",
+      "title": "Declarations Under Rule 6 of the Above Rules",
+      "workFrbrUri": "akn/ke/act/ln/1958/153",
+      "expressionFrbrUri": "akn/ke/act/ln/1958/153/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/1958/153/eng@2022-12-31",
+      "nature": "legal_notice",
+      "year": "1958",
+      "number": "153"
+    },
+    {
+      "actId": "ke-ln-1967-27",
+      "title": "Declaration That Part of Prison Shall Cease to be a Prison Under Section 24",
+      "workFrbrUri": "akn/ke/act/ln/1967/27",
+      "expressionFrbrUri": "akn/ke/act/ln/1967/27/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/1967/27/eng@2022-12-31",
+      "nature": "legal_notice",
+      "year": "1967",
+      "number": "27"
+    },
+    {
+      "actId": "ke-ln-2018-240",
+      "title": "Decrease Rates of Excise Duty",
+      "workFrbrUri": "akn/ke/act/ln/2018/240",
+      "expressionFrbrUri": "akn/ke/act/ln/2018/240/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2018/240/eng@2022-12-31",
+      "nature": "legal_notice",
+      "year": "2018",
+      "number": "240"
+    },
+    {
+      "actId": "ke-act-1930-38",
+      "title": "Deeds of Arrangement Act",
+      "workFrbrUri": "akn/ke/act/1930/38",
+      "expressionFrbrUri": "akn/ke/act/1930/38/eng@1930-09-03",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/1930/38/eng@1930-09-03",
+      "nature": "act",
+      "year": "1930",
+      "number": "38"
+    },
+    {
+      "actId": "ke-act-1970-10",
+      "title": "Defamation Act",
+      "workFrbrUri": "akn/ke/act/1970/10",
+      "expressionFrbrUri": "akn/ke/act/1970/10/eng@1992-10-23",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/1970/10/eng@1992-10-23",
+      "nature": "act",
+      "year": "1970",
+      "number": "10"
+    },
+    {
+      "actId": "ke-ln-1988-201",
+      "title": "Definitions of Measurements",
+      "workFrbrUri": "akn/ke/act/ln/1988/201",
+      "expressionFrbrUri": "akn/ke/act/ln/1988/201/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/1988/201/eng@2022-12-31",
+      "nature": "legal_notice",
+      "year": "1988",
+      "number": "201"
+    },
+    {
+      "actId": "ke-ln-1963-81",
+      "title": "Delegation of Powers",
+      "workFrbrUri": "akn/ke/act/ln/1963/81",
+      "expressionFrbrUri": "akn/ke/act/ln/1963/81/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/1963/81/eng@2022-12-31",
+      "nature": "legal_notice",
+      "year": "1963",
+      "number": "81"
+    },
+    {
+      "actId": "ke-ln-1963-692",
+      "title": "Delegation of Powers",
+      "workFrbrUri": "akn/ke/act/ln/1963/692",
+      "expressionFrbrUri": "akn/ke/act/ln/1963/692/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/1963/692/eng@2022-12-31",
+      "nature": "legal_notice",
+      "year": "1963",
+      "number": "692"
+    },
+    {
+      "actId": "ke-ln-2009-29",
+      "title": "Delegation of Powers",
+      "workFrbrUri": "akn/ke/act/ln/2009/29",
+      "expressionFrbrUri": "akn/ke/act/ln/2009/29/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2009/29/eng@2022-12-31",
+      "nature": "legal_notice",
+      "year": "2009",
+      "number": "29"
+    },
+    {
+      "actId": "ke-ln-2019-72",
+      "title": "Description of New Issue of Fifty, One Hundred, Two Hundred, Five Hundred and One Thousand Shillings Kenya Currency Notes",
+      "workFrbrUri": "akn/ke/act/ln/2019/72",
+      "expressionFrbrUri": "akn/ke/act/ln/2019/72/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2019/72/eng@2022-12-31",
+      "nature": "legal_notice",
+      "year": "2019",
+      "number": "72"
+    },
+    {
+      "actId": "ke-ln-2018-235",
+      "title": "Description of New Issue of One Shilling, Five Shillings, Ten Shillings and Twenty Shillings Coins",
+      "workFrbrUri": "akn/ke/act/ln/2018/235",
+      "expressionFrbrUri": "akn/ke/act/ln/2018/235/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2018/235/eng@2022-12-31",
+      "nature": "legal_notice",
+      "year": "2018",
+      "number": "235"
+    },
+    {
+      "actId": "ke-ln-2003-98",
+      "title": "Designation of Road Sub-Agencies—Eldoret Municipal Council",
+      "workFrbrUri": "akn/ke/act/ln/2003/98",
+      "expressionFrbrUri": "akn/ke/act/ln/2003/98/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2003/98/eng@2022-12-31",
+      "nature": "legal_notice",
+      "year": "2003",
+      "number": "98"
+    },
+    {
+      "actId": "ke-ln-2003-99",
+      "title": "Designation of Road Sub-Agencies—Kenya Wildlife Services",
+      "workFrbrUri": "akn/ke/act/ln/2003/99",
+      "expressionFrbrUri": "akn/ke/act/ln/2003/99/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2003/99/eng@2022-12-31",
+      "nature": "legal_notice",
+      "year": "2003",
+      "number": "99"
+    },
+    {
+      "actId": "ke-ln-2003-96",
+      "title": "Designation of Road Sub-Agencies—Kisumu Municipal Council",
+      "workFrbrUri": "akn/ke/act/ln/2003/96",
+      "expressionFrbrUri": "akn/ke/act/ln/2003/96/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2003/96/eng@2022-12-31",
+      "nature": "legal_notice",
+      "year": "2003",
+      "number": "96"
+    },
+    {
+      "actId": "ke-ln-2003-95",
+      "title": "Designation of Road Sub-Agencies—Mombasa Municipal Council",
+      "workFrbrUri": "akn/ke/act/ln/2003/95",
+      "expressionFrbrUri": "akn/ke/act/ln/2003/95/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2003/95/eng@2022-12-31",
+      "nature": "legal_notice",
+      "year": "2003",
+      "number": "95"
+    },
+    {
+      "actId": "ke-ln-2003-94",
+      "title": "Designation of Road Sub-Agencies—Nairobi City Council",
+      "workFrbrUri": "akn/ke/act/ln/2003/94",
+      "expressionFrbrUri": "akn/ke/act/ln/2003/94/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2003/94/eng@2022-12-31",
+      "nature": "legal_notice",
+      "year": "2003",
+      "number": "94"
+    },
+    {
+      "actId": "ke-ln-2003-97",
+      "title": "Designation of Road Sub-Agencies—Nakuru Municipal Council",
+      "workFrbrUri": "akn/ke/act/ln/2003/97",
+      "expressionFrbrUri": "akn/ke/act/ln/2003/97/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2003/97/eng@2022-12-31",
+      "nature": "legal_notice",
+      "year": "2003",
+      "number": "97"
+    },
+    {
+      "actId": "ke-ln-2003-100",
+      "title": "Designation of Road Sub-Agencies—Roads Department of the Ministry of Roads, Public Works and Housing",
+      "workFrbrUri": "akn/ke/act/ln/2003/100",
+      "expressionFrbrUri": "akn/ke/act/ln/2003/100/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2003/100/eng@2022-12-31",
+      "nature": "legal_notice",
+      "year": "2003",
+      "number": "100"
+    },
+    {
+      "actId": "ke-ln-2003-93",
+      "title": "Designation of Road Sub-Agencies—Urban Development Department of the Ministry of Local Government",
+      "workFrbrUri": "akn/ke/act/ln/2003/93",
+      "expressionFrbrUri": "akn/ke/act/ln/2003/93/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2003/93/eng@2022-12-31",
+      "nature": "legal_notice",
+      "year": "2003",
+      "number": "93"
+    },
+    {
+      "actId": "ke-ln-2020-76",
+      "title": "Designation of Visiting Forces",
+      "workFrbrUri": "akn/ke/act/ln/2020/76",
+      "expressionFrbrUri": "akn/ke/act/ln/2020/76/eng@2020-04-27",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2020/76/eng@2020-04-27",
+      "nature": "legal_notice",
+      "year": "2020",
+      "number": "76"
+    },
+    {
+      "actId": "ke-ln-1973-35",
+      "title": "Determination of Par Value of the Kenyan Shilling, 1973",
+      "workFrbrUri": "akn/ke/act/ln/1973/35",
+      "expressionFrbrUri": "akn/ke/act/ln/1973/35/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/1973/35/eng@2022-12-31",
+      "nature": "legal_notice",
+      "year": "1973",
+      "number": "35"
+    },
+    {
+      "actId": "ke-act-2023-15",
+      "title": "Digital Health Act",
+      "workFrbrUri": "akn/ke/act/2023/15",
+      "expressionFrbrUri": "akn/ke/act/2023/15/eng@2023-11-24",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/2023/15/eng@2023-11-24",
+      "nature": "act",
+      "year": "2023",
+      "number": "15"
+    },
+    {
+      "actId": "ke-ln-1962-386",
+      "title": "Directions Under Rules 2 and 3 of the Books and Newspapers Rules",
+      "workFrbrUri": "akn/ke/act/ln/1962/386",
+      "expressionFrbrUri": "akn/ke/act/ln/1962/386/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/1962/386/eng@2022-12-31",
+      "nature": "legal_notice",
+      "year": "1962",
+      "number": "386"
+    },
+    {
+      "actId": "ke-act-1987-3",
+      "title": "Disposal of Uncollected Goods Act",
+      "workFrbrUri": "akn/ke/act/1987/3",
+      "expressionFrbrUri": "akn/ke/act/1987/3/eng@1987-05-08",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/1987/3/eng@1987-05-08",
+      "nature": "act",
+      "year": "1987",
+      "number": "3"
+    },
+    {
+      "actId": "ke-act-1937-1",
+      "title": "Distress for Rent Act",
+      "workFrbrUri": "akn/ke/act/1937/1",
+      "expressionFrbrUri": "akn/ke/act/1937/1/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/1937/1/eng@2022-12-31",
+      "nature": "act",
+      "year": "1937",
+      "number": "1"
+    },
+    {
+      "actId": "ke-act-1992-5",
+      "title": "Districts and Provinces Act",
+      "workFrbrUri": "akn/ke/act/1992/5",
+      "expressionFrbrUri": "akn/ke/act/1992/5/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/1992/5/eng@2022-12-31",
+      "nature": "act",
+      "year": "1992",
+      "number": "5"
+    },
+    {
+      "actId": "ke-act-2019-18",
+      "title": "Division of Revenue Act",
+      "workFrbrUri": "akn/ke/act/2019/18",
+      "expressionFrbrUri": "akn/ke/act/2019/18/eng@2019-09-20",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/2019/18/eng@2019-09-20",
+      "nature": "act",
+      "year": "2019",
+      "number": "18"
+    },
+    {
+      "actId": "ke-act-2017-16",
+      "title": "Division of Revenue Act",
+      "workFrbrUri": "akn/ke/act/2017/16",
+      "expressionFrbrUri": "akn/ke/act/2017/16/eng@2017-06-30",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/2017/16/eng@2017-06-30",
+      "nature": "act",
+      "year": "2017",
+      "number": "16"
+    },
+    {
+      "actId": "ke-act-2014-12",
+      "title": "Division of Revenue Act, 2014",
+      "workFrbrUri": "akn/ke/act/2014/12",
+      "expressionFrbrUri": "akn/ke/act/2014/12/eng@2014-08-08",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/2014/12/eng@2014-08-08",
+      "nature": "act",
+      "year": "2014",
+      "number": "12"
+    },
+    {
+      "actId": "ke-act-2024-5",
+      "title": "Division of Revenue Act, 2024",
+      "workFrbrUri": "akn/ke/act/2024/5",
+      "expressionFrbrUri": "akn/ke/act/2024/5/eng@2024-06-14",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/2024/5/eng@2024-06-14",
+      "nature": "act",
+      "year": "2024",
+      "number": "5"
+    },
+    {
+      "actId": "ke-act-2025-10",
+      "title": "Division of Revenue Act, 2025",
+      "workFrbrUri": "akn/ke/act/2025/10",
+      "expressionFrbrUri": "akn/ke/act/2025/10/eng@2025-07-11",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/2025/10/eng@2025-07-11",
+      "nature": "act",
+      "year": "2025",
+      "number": "10"
+    },
+    {
+      "actId": "ke-act-2018-12",
+      "title": "Division of Revenue Ammendment Act",
+      "workFrbrUri": "akn/ke/act/2018/12",
+      "expressionFrbrUri": "akn/ke/act/2018/12/eng@2018-10-12",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/2018/12/eng@2018-10-12",
+      "nature": "act",
+      "year": "2018",
+      "number": "12"
+    },
+    {
+      "actId": "ke-ln-2021-123",
+      "title": "Dock Workers Union (Deduction of Agency Fees) Order",
+      "workFrbrUri": "akn/ke/act/ln/2021/123",
+      "expressionFrbrUri": "akn/ke/act/ln/2021/123/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2021/123/eng@2022-12-31",
+      "nature": "legal_notice",
+      "year": "2021",
+      "number": "123"
+    },
+    {
+      "actId": "ke-ln-1977-253",
+      "title": "Double Taxation United Kingdom of Great Britain and Northern Ireland",
+      "workFrbrUri": "akn/ke/act/ln/1977/253",
+      "expressionFrbrUri": "akn/ke/act/ln/1977/253/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/1977/253/eng@2022-12-31",
+      "nature": "legal_notice",
+      "year": "1977",
+      "number": "253"
+    },
+    {
+      "actId": "ke-act-2021-3",
+      "title": "Early Childhood Education Act",
+      "workFrbrUri": "akn/ke/act/2021/3",
+      "expressionFrbrUri": "akn/ke/act/2021/3/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/2021/3/eng@2022-12-31",
+      "nature": "act",
+      "year": "2021",
+      "number": "3"
+    },
+    {
+      "actId": "ke-act-1987-7",
+      "title": "East African Community Mediation Agreement Act",
+      "workFrbrUri": "akn/ke/act/1987/7",
+      "expressionFrbrUri": "akn/ke/act/1987/7/eng@1987-08-07",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/1987/7/eng@1987-08-07",
+      "nature": "act",
+      "year": "1987",
+      "number": "7"
+    },
+    {
+      "actId": "ke-act-1984-3",
+      "title": "East African Development Bank Act",
+      "workFrbrUri": "akn/ke/act/1984/3",
+      "expressionFrbrUri": "akn/ke/act/1984/3/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/1984/3/eng@2022-12-31",
+      "nature": "act",
+      "year": "1984",
+      "number": "3"
+    },
+    {
+      "actId": "ke-act-1987-8",
+      "title": "Eastern and Southern African Management Institute Act",
+      "workFrbrUri": "akn/ke/act/1987/8",
+      "expressionFrbrUri": "akn/ke/act/1987/8/eng@1987-08-07",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/1987/8/eng@1987-08-07",
+      "nature": "act",
+      "year": "1987",
+      "number": "8"
+    },
+    {
+      "actId": "ke-act-2013-42",
+      "title": "Election Campaign Financing Act",
+      "workFrbrUri": "akn/ke/act/2013/42",
+      "expressionFrbrUri": "akn/ke/act/2013/42/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/2013/42/eng@2022-12-31",
+      "nature": "act",
+      "year": "2013",
+      "number": "42"
+    },
+    {
+      "actId": "ke-act-2016-36",
+      "title": "Election Laws (Amendment) Act",
+      "workFrbrUri": "akn/ke/act/2016/36",
+      "expressionFrbrUri": "akn/ke/act/2016/36/eng@2016-09-23",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/2016/36/eng@2016-09-23",
+      "nature": "act",
+      "year": "2016",
+      "number": "36"
+    },
+    {
+      "actId": "ke-act-2016-37",
+      "title": "Election Offences Act",
+      "workFrbrUri": "akn/ke/act/2016/37",
+      "expressionFrbrUri": "akn/ke/act/2016/37/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/2016/37/eng@2022-12-31",
+      "nature": "act",
+      "year": "2016",
+      "number": "37"
+    },
+    {
+      "actId": "ke-act-2011-24",
+      "title": "Elections Act",
+      "workFrbrUri": "akn/ke/act/2011/24",
+      "expressionFrbrUri": "akn/ke/act/2011/24/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/2011/24/eng@2022-12-31",
+      "nature": "act",
+      "year": "2011",
+      "number": "24"
+    },
+    {
+      "actId": "ke-act-1976-2",
+      "title": "Employment Act",
+      "workFrbrUri": "akn/ke/act/1976/2",
+      "expressionFrbrUri": "akn/ke/act/1976/2/eng@1976-04-12",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/1976/2/eng@1976-04-12",
+      "nature": "act",
+      "year": "1976",
+      "number": "2"
+    },
+    {
+      "actId": "ke-act-2007-11",
+      "title": "Employment Act",
+      "workFrbrUri": "akn/ke/act/2007/11",
+      "expressionFrbrUri": "akn/ke/act/2007/11/eng@2024-04-26",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/2007/11/eng@2024-04-26",
+      "nature": "act",
+      "year": "2007",
+      "number": "11"
+    },
+    {
+      "actId": "ke-act-2011-20",
+      "title": "Employment and Labour Relations Court Act",
+      "workFrbrUri": "akn/ke/act/2011/20",
+      "expressionFrbrUri": "akn/ke/act/2011/20/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/2011/20/eng@2022-12-31",
+      "nature": "act",
+      "year": "2011",
+      "number": "20"
+    },
+    {
+      "actId": "ke-act-1948-70",
+      "title": "Employment of Women, Young Persons and Children",
+      "workFrbrUri": "akn/ke/act/1948/70",
+      "expressionFrbrUri": "akn/ke/act/1948/70/eng@1948-09-20",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/1948/70/eng@1948-09-20",
+      "nature": "act",
+      "year": "1948",
+      "number": "70"
+    },
+    {
+      "actId": "ke-act-1935-6",
+      "title": "Employment of Women, Young Persons and Children (Amendment) Ordinance",
+      "workFrbrUri": "akn/ke/act/1935/6",
+      "expressionFrbrUri": "akn/ke/act/1935/6/eng@1935-07-24",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/1935/6/eng@1935-07-24",
+      "nature": "act",
+      "year": "1935",
+      "number": "6"
+    },
+    {
+      "actId": "ke-act-1939-17",
+      "title": "Employment of Women, Young Persons and Children (Amendment) Ordinance",
+      "workFrbrUri": "akn/ke/act/1939/17",
+      "expressionFrbrUri": "akn/ke/act/1939/17/eng@1939-07-18",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/1939/17/eng@1939-07-18",
+      "nature": "act",
+      "year": "1939",
+      "number": "17"
+    },
+    {
+      "actId": "ke-act-1936-35",
+      "title": "Employment of Women, Young Persons and Children (Ammendment) Ordinance",
+      "workFrbrUri": "akn/ke/act/1936/35",
+      "expressionFrbrUri": "akn/ke/act/1936/35/eng@1936-12-03",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/1936/35/eng@1936-12-03",
+      "nature": "act",
+      "year": "1936",
+      "number": "35"
+    },
+    {
+      "actId": "ke-act-1950-35",
+      "title": "Employment of Women, Young Persons and Children (Ammendment) Ordinance",
+      "workFrbrUri": "akn/ke/act/1950/35",
+      "expressionFrbrUri": "akn/ke/act/1950/35/eng@1950-08-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/1950/35/eng@1950-08-31",
+      "nature": "act",
+      "year": "1950",
+      "number": "35"
+    },
+    {
+      "actId": "ke-act-1933-14",
+      "title": "Employment of Women, Young Persons and Children Ordinance",
+      "workFrbrUri": "akn/ke/act/1933/14",
+      "expressionFrbrUri": "akn/ke/act/1933/14/eng@1933-05-05",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/1933/14/eng@1933-05-05",
+      "nature": "act",
+      "year": "1933",
+      "number": "14"
+    },
+    {
+      "actId": "ke-act-2019-1",
+      "title": "Energy Act",
+      "workFrbrUri": "akn/ke/act/2019/1",
+      "expressionFrbrUri": "akn/ke/act/2019/1/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/2019/1/eng@2022-12-31",
+      "nature": "act",
+      "year": "2019",
+      "number": "1"
+    },
+    {
+      "actId": "ke-act-2016-23",
+      "title": "Engineering Technology Act",
+      "workFrbrUri": "akn/ke/act/2016/23",
+      "expressionFrbrUri": "akn/ke/act/2016/23/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/2016/23/eng@2022-12-31",
+      "nature": "act",
+      "year": "2016",
+      "number": "23"
+    },
+    {
+      "actId": "ke-act-2011-43",
+      "title": "Engineers Act",
+      "workFrbrUri": "akn/ke/act/2011/43",
+      "expressionFrbrUri": "akn/ke/act/2011/43/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/2011/43/eng@2022-12-31",
+      "nature": "act",
+      "year": "2011",
+      "number": "43"
+    },
+    {
+      "actId": "ke-ln-2022-20",
+      "title": "Engineers (Scale of Fees for Professional Engineering Services) Rules",
+      "workFrbrUri": "akn/ke/act/ln/2022/20",
+      "expressionFrbrUri": "akn/ke/act/ln/2022/20/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2022/20/eng@2022-12-31",
+      "nature": "legal_notice",
+      "year": "2022",
+      "number": "20"
+    },
+    {
+      "actId": "ke-act-1950-63",
+      "title": "Entertainments Tax Act",
+      "workFrbrUri": "akn/ke/act/1950/63",
+      "expressionFrbrUri": "akn/ke/act/1950/63/eng@1951-01-01",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/1950/63/eng@1951-01-01",
+      "nature": "act",
+      "year": "1950",
+      "number": "63"
+    },
+    {
+      "actId": "environment-management-coordination-act",
+      "title": "Environmental Management and Co-ordination Act",
+      "workFrbrUri": "akn/ke/act/1999/8",
+      "expressionFrbrUri": "akn/ke/act/1999/8/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/1999/8/eng@2022-12-31",
+      "nature": "act",
+      "year": "1999",
+      "number": "8"
+    },
+    {
+      "actId": "ke-ln-2025-66",
+      "title": "Environmental Management and Co-ordination (Air Quality)(Amendment)(No. 2) Regulations, 2025",
+      "workFrbrUri": "akn/ke/act/ln/2025/66",
+      "expressionFrbrUri": "akn/ke/act/ln/2025/66/eng@2025-03-24",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2025/66/eng@2025-03-24",
+      "nature": "legal_notice",
+      "year": "2025",
+      "number": "66"
+    },
+    {
+      "actId": "ke-ln-2025-67",
+      "title": "Environmental Management and Co-ordination (Deposit Bonds)(No. 2) Regulations, 2025",
+      "workFrbrUri": "akn/ke/act/ln/2025/67",
+      "expressionFrbrUri": "akn/ke/act/ln/2025/67/eng@2025-03-24",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2025/67/eng@2025-03-24",
+      "nature": "legal_notice",
+      "year": "2025",
+      "number": "67"
+    },
+    {
+      "actId": "ke-ln-2022-52",
+      "title": "Environmental Management and Co-ordination (Impact Assessment and Audit) (Amendment) (Revocation) Regulations, 2022.",
+      "workFrbrUri": "akn/ke/act/ln/2022/52",
+      "expressionFrbrUri": "akn/ke/act/ln/2022/52/eng@2022-03-30",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2022/52/eng@2022-03-30",
+      "nature": "legal_notice",
+      "year": "2022",
+      "number": "52"
+    },
+    {
+      "actId": "ke-act-2011-19",
+      "title": "Environment and Land Court Act",
+      "workFrbrUri": "akn/ke/act/2011/19",
+      "expressionFrbrUri": "akn/ke/act/2011/19/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/2011/19/eng@2022-12-31",
+      "nature": "act",
+      "year": "2011",
+      "number": "19"
+    },
+    {
+      "actId": "ke-ln-2016-149",
+      "title": "Environment (Impact Assessment and Audit) (Amendment) Regulations, 2016",
+      "workFrbrUri": "akn/ke/act/ln/2016/149",
+      "expressionFrbrUri": "akn/ke/act/ln/2016/149/eng@2016-08-26",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2016/149/eng@2016-08-26",
+      "nature": "legal_notice",
+      "year": "2016",
+      "number": "149"
+    },
+    {
+      "actId": "ke-ln-2025-63",
+      "title": "Environment Management and Co-ordination (Water Quality)(Amendment)(No. 2) Regulations, 2025",
+      "workFrbrUri": "akn/ke/act/ln/2025/63",
+      "expressionFrbrUri": "akn/ke/act/ln/2025/63/eng@2025-03-24",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2025/63/eng@2025-03-24",
+      "nature": "legal_notice",
+      "year": "2025",
+      "number": "63"
+    },
+    {
+      "actId": "ke-act-2023-7",
+      "title": "Equalisation Fund Appropriation Act, 2023",
+      "workFrbrUri": "akn/ke/act/2023/7",
+      "expressionFrbrUri": "akn/ke/act/2023/7/eng@2022-07-01",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/2023/7/eng@2022-07-01",
+      "nature": "act",
+      "year": "2023",
+      "number": "7"
+    },
+    {
+      "actId": "ke-act-2026-14",
+      "title": "Equalisation Fund Appropriation Act, 2026",
+      "workFrbrUri": "akn/ke/act/2026/14",
+      "expressionFrbrUri": "akn/ke/act/2026/14/eng@2026-06-02",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/2026/14/eng@2026-06-02",
+      "nature": "act",
+      "year": "2026",
+      "number": "14"
+    },
+    {
+      "actId": "ke-act-2018-3",
+      "title": "Equalization Fund Appropriation Act",
+      "workFrbrUri": "akn/ke/act/2018/3",
+      "expressionFrbrUri": "akn/ke/act/2018/3/eng@2018-05-11",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/2018/3/eng@2018-05-11",
+      "nature": "act",
+      "year": "2018",
+      "number": "3"
+    },
+    {
+      "actId": "ke-act-2017-8",
+      "title": "Equalization Fund Appropriation Act",
+      "workFrbrUri": "akn/ke/act/2017/8",
+      "expressionFrbrUri": "akn/ke/act/2017/8/eng@2017-04-21",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/2017/8/eng@2017-04-21",
+      "nature": "act",
+      "year": "2017",
+      "number": "8"
+    },
+    {
+      "actId": "ke-act-1909-14",
+      "title": "Equitable Mortgages Act",
+      "workFrbrUri": "akn/ke/act/1909/14",
+      "expressionFrbrUri": "akn/ke/act/1909/14/eng@1909-11-30",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/1909/14/eng@1909-11-30",
+      "nature": "act",
+      "year": "1909",
+      "number": "14"
+    },
+    {
+      "actId": "ke-ln-1968-47",
+      "title": "Establishment of Provincial Land Control Appeals Board",
+      "workFrbrUri": "akn/ke/act/ln/1968/47",
+      "expressionFrbrUri": "akn/ke/act/ln/1968/47/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/1968/47/eng@2022-12-31",
+      "nature": "legal_notice",
+      "year": "1968",
+      "number": "47"
+    },
+    {
+      "actId": "ke-ln-1990-212",
+      "title": "Establishment of Rent Tribunals Under Section 4(1)",
+      "workFrbrUri": "akn/ke/act/ln/1990/212",
+      "expressionFrbrUri": "akn/ke/act/ln/1990/212/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/1990/212/eng@2022-12-31",
+      "nature": "legal_notice",
+      "year": "1990",
+      "number": "212"
+    },
+    {
+      "actId": "ke-act-1984-17",
+      "title": "Estate Agents Act",
+      "workFrbrUri": "akn/ke/act/1984/17",
+      "expressionFrbrUri": "akn/ke/act/1984/17/eng@2025-06-20",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/1984/17/eng@2025-06-20",
+      "nature": "act",
+      "year": "1984",
+      "number": "17"
+    },
+    {
+      "actId": "ke-act-1982-10",
+      "title": "Estate Duty (Abolition) Act",
+      "workFrbrUri": "akn/ke/act/1982/10",
+      "expressionFrbrUri": "akn/ke/act/1982/10/eng@1982-06-28",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/1982/10/eng@1982-06-28",
+      "nature": "act",
+      "year": "1982",
+      "number": "10"
+    },
+    {
+      "actId": "ke-act-1963-15",
+      "title": "Estate Duty Act",
+      "workFrbrUri": "akn/ke/act/1963/15",
+      "expressionFrbrUri": "akn/ke/act/1963/15/eng@1991-12-27",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/1963/15/eng@1991-12-27",
+      "nature": "act",
+      "year": "1963",
+      "number": "15"
+    },
+    {
+      "actId": "ke-act-2011-22",
+      "title": "Ethics and Anti-Corruption Commission Act",
+      "workFrbrUri": "akn/ke/act/2011/22",
+      "expressionFrbrUri": "akn/ke/act/2011/22/eng@2025-08-19",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/2011/22/eng@2025-08-19",
+      "nature": "act",
+      "year": "2011",
+      "number": "22"
+    },
+    {
+      "actId": "ke-act-2024-18",
+      "title": "Ethics and Anti-Corruption Commission (Amendment) Act",
+      "workFrbrUri": "akn/ke/act/2024/18",
+      "expressionFrbrUri": "akn/ke/act/2024/18/eng@2025-01-10",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/2024/18/eng@2025-01-10",
+      "nature": "act",
+      "year": "2024",
+      "number": "18"
+    },
+    {
+      "actId": "ke-act-1963-46",
+      "title": "Evidence Act",
+      "workFrbrUri": "akn/ke/act/1963/46",
+      "expressionFrbrUri": "akn/ke/act/1963/46/eng@2023-12-11",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/1963/46/eng@2023-12-11",
+      "nature": "act",
+      "year": "1963",
+      "number": "46"
+    },
+    {
+      "actId": "ke-act-1989-13",
+      "title": "Ewaso Ng’iro North River Basin Development Authority Act",
+      "workFrbrUri": "akn/ke/act/1989/13",
+      "expressionFrbrUri": "akn/ke/act/1989/13/eng@1989-12-01",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/1989/13/eng@1989-12-01",
+      "nature": "act",
+      "year": "1989",
+      "number": "13"
+    },
+    {
+      "actId": "ke-act-1989-12",
+      "title": "Ewaso Ng&#x27;iro South River Basin Development Authority Act",
+      "workFrbrUri": "akn/ke/act/1989/12",
+      "expressionFrbrUri": "akn/ke/act/1989/12/eng@1989-12-01",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/1989/12/eng@1989-12-01",
+      "nature": "act",
+      "year": "1989",
+      "number": "12"
+    },
+    {
+      "actId": "ke-ln-1983-259",
+      "title": "Excepted Dwelling-Houses",
+      "workFrbrUri": "akn/ke/act/ln/1983/259",
+      "expressionFrbrUri": "akn/ke/act/ln/1983/259/eng@1983-11-25",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/1983/259/eng@1983-11-25",
+      "nature": "legal_notice",
+      "year": "1983",
+      "number": "259"
+    },
+    {
+      "actId": "ke-act-1955-13",
+      "title": "Exchequer and Audit Act",
+      "workFrbrUri": "akn/ke/act/1955/13",
+      "expressionFrbrUri": "akn/ke/act/1955/13/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/1955/13/eng@2022-12-31",
+      "nature": "act",
+      "year": "1955",
+      "number": "13"
+    },
+    {
+      "actId": "ke-ln-2011-102",
+      "title": "Exchequer and Audit (Exchange Risk Assumption Fund) (Revocation) Order, 2011",
+      "workFrbrUri": "akn/ke/act/ln/2011/102",
+      "expressionFrbrUri": "akn/ke/act/ln/2011/102/eng@2011-08-19",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2011/102/eng@2011-08-19",
+      "nature": "legal_notice",
+      "year": "2011",
+      "number": "102"
+    },
+    {
+      "actId": "ke-act-2015-23",
+      "title": "Excise Duty Act",
+      "workFrbrUri": "akn/ke/act/2015/23",
+      "expressionFrbrUri": "akn/ke/act/2015/23/eng@2025-07-01",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/2015/23/eng@2025-07-01",
+      "nature": "act",
+      "year": "2015",
+      "number": "23"
+    },
+    {
+      "actId": "ke-ln-2015-245",
+      "title": "Excise Duty Act Commencement",
+      "workFrbrUri": "akn/ke/act/ln/2015/245",
+      "expressionFrbrUri": "akn/ke/act/ln/2015/245/eng@2015-12-11",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2015/245/eng@2015-12-11",
+      "nature": "legal_notice",
+      "year": "2015",
+      "number": "245"
+    },
+    {
+      "actId": "ke-ln-2023-71",
+      "title": "Exclusion",
+      "workFrbrUri": "akn/ke/act/ln/2023/71",
+      "expressionFrbrUri": "akn/ke/act/ln/2023/71/eng@2023-07-28",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2023/71/eng@2023-07-28",
+      "nature": "legal_notice",
+      "year": "2023",
+      "number": "71"
+    },
+    {
+      "actId": "ke-ln-2023-97",
+      "title": "Exclusion",
+      "workFrbrUri": "akn/ke/act/ln/2023/97",
+      "expressionFrbrUri": "akn/ke/act/ln/2023/97/eng@2023-07-07",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2023/97/eng@2023-07-07",
+      "nature": "legal_notice",
+      "year": "2023",
+      "number": "97"
+    },
+    {
+      "actId": "ke-ln-2023-93",
+      "title": "Exclusion",
+      "workFrbrUri": "akn/ke/act/ln/2023/93",
+      "expressionFrbrUri": "akn/ke/act/ln/2023/93/eng@2023-08-25",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2023/93/eng@2023-08-25",
+      "nature": "legal_notice",
+      "year": "2023",
+      "number": "93"
+    },
+    {
+      "actId": "ke-ln-2023-69",
+      "title": "Exclusion",
+      "workFrbrUri": "akn/ke/act/ln/2023/69",
+      "expressionFrbrUri": "akn/ke/act/ln/2023/69/eng@2023-07-28",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2023/69/eng@2023-07-28",
+      "nature": "legal_notice",
+      "year": "2023",
+      "number": "69"
+    },
+    {
+      "actId": "ke-ln-2023-7",
+      "title": "Exclusion",
+      "workFrbrUri": "akn/ke/act/ln/2023/7",
+      "expressionFrbrUri": "akn/ke/act/ln/2023/7/eng@2023-02-17",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2023/7/eng@2023-02-17",
+      "nature": "legal_notice",
+      "year": "2023",
+      "number": "7"
+    },
+    {
+      "actId": "ke-ln-2009-81",
+      "title": "Exclusion of Certain Printers and Publishers From the Provisions as to Bonds",
+      "workFrbrUri": "akn/ke/act/ln/2009/81",
+      "expressionFrbrUri": "akn/ke/act/ln/2009/81/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2009/81/eng@2022-12-31",
+      "nature": "legal_notice",
+      "year": "2009",
+      "number": "81"
+    },
+    {
+      "actId": "ke-ln-2023-61",
+      "title": "Exclusions",
+      "workFrbrUri": "akn/ke/act/ln/2023/61",
+      "expressionFrbrUri": "akn/ke/act/ln/2023/61/eng@2023-06-16",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2023/61/eng@2023-06-16",
+      "nature": "legal_notice",
+      "year": "2023",
+      "number": "61"
+    },
+    {
+      "actId": "ke-ln-2018-161",
+      "title": "Exemption",
+      "workFrbrUri": "akn/ke/act/ln/2018/161",
+      "expressionFrbrUri": "akn/ke/act/ln/2018/161/eng@2018-07-13",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2018/161/eng@2018-07-13",
+      "nature": "legal_notice",
+      "year": "2018",
+      "number": "161"
+    },
+    {
+      "actId": "ke-ln-2014-26",
+      "title": "Exemption",
+      "workFrbrUri": "akn/ke/act/ln/2014/26",
+      "expressionFrbrUri": "akn/ke/act/ln/2014/26/eng@2014-03-14",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2014/26/eng@2014-03-14",
+      "nature": "legal_notice",
+      "year": "2014",
+      "number": "26"
+    },
+    {
+      "actId": "ke-ln-2019-19",
+      "title": "Exemption",
+      "workFrbrUri": "akn/ke/act/ln/2019/19",
+      "expressionFrbrUri": "akn/ke/act/ln/2019/19/eng@2019-04-12",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2019/19/eng@2019-04-12",
+      "nature": "legal_notice",
+      "year": "2019",
+      "number": "19"
+    },
+    {
+      "actId": "ke-ln-2015-92",
+      "title": "Exemption",
+      "workFrbrUri": "akn/ke/act/ln/2015/92",
+      "expressionFrbrUri": "akn/ke/act/ln/2015/92/eng@2015-06-05",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2015/92/eng@2015-06-05",
+      "nature": "legal_notice",
+      "year": "2015",
+      "number": "92"
+    },
+    {
+      "actId": "ke-ln-2019-73",
+      "title": "Exemption",
+      "workFrbrUri": "akn/ke/act/ln/2019/73",
+      "expressionFrbrUri": "akn/ke/act/ln/2019/73/eng@2019-06-14",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2019/73/eng@2019-06-14",
+      "nature": "legal_notice",
+      "year": "2019",
+      "number": "73"
+    },
+    {
+      "actId": "ke-ln-2017-159",
+      "title": "Exemption",
+      "workFrbrUri": "akn/ke/act/ln/2017/159",
+      "expressionFrbrUri": "akn/ke/act/ln/2017/159/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2017/159/eng@2022-12-31",
+      "nature": "legal_notice",
+      "year": "2017",
+      "number": "159"
+    },
+    {
+      "actId": "ke-ln-2016-199",
+      "title": "Exemption",
+      "workFrbrUri": "akn/ke/act/ln/2016/199",
+      "expressionFrbrUri": "akn/ke/act/ln/2016/199/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2016/199/eng@2022-12-31",
+      "nature": "legal_notice",
+      "year": "2016",
+      "number": "199"
+    },
+    {
+      "actId": "ke-ln-2023-210",
+      "title": "Exemption",
+      "workFrbrUri": "akn/ke/act/ln/2023/210",
+      "expressionFrbrUri": "akn/ke/act/ln/2023/210/eng@2024-01-05",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2023/210/eng@2024-01-05",
+      "nature": "legal_notice",
+      "year": "2023",
+      "number": "210"
+    },
+    {
+      "actId": "ke-ln-2022-91",
+      "title": "Exemption",
+      "workFrbrUri": "akn/ke/act/ln/2022/91",
+      "expressionFrbrUri": "akn/ke/act/ln/2022/91/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2022/91/eng@2022-12-31",
+      "nature": "legal_notice",
+      "year": "2022",
+      "number": "91"
+    },
+    {
+      "actId": "ke-ln-2015-211",
+      "title": "Exemption",
+      "workFrbrUri": "akn/ke/act/ln/2015/211",
+      "expressionFrbrUri": "akn/ke/act/ln/2015/211/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2015/211/eng@2022-12-31",
+      "nature": "legal_notice",
+      "year": "2015",
+      "number": "211"
+    },
+    {
+      "actId": "ke-ln-2023-55",
+      "title": "Exemption",
+      "workFrbrUri": "akn/ke/act/ln/2023/55",
+      "expressionFrbrUri": "akn/ke/act/ln/2023/55/eng@2023-05-19",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2023/55/eng@2023-05-19",
+      "nature": "legal_notice",
+      "year": "2023",
+      "number": "55"
+    },
+    {
+      "actId": "ke-ln-2022-18",
+      "title": "Exemption",
+      "workFrbrUri": "akn/ke/act/ln/2022/18",
+      "expressionFrbrUri": "akn/ke/act/ln/2022/18/eng@2022-02-11",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2022/18/eng@2022-02-11",
+      "nature": "legal_notice",
+      "year": "2022",
+      "number": "18"
+    },
+    {
+      "actId": "ke-ln-2018-46",
+      "title": "Exemption",
+      "workFrbrUri": "akn/ke/act/ln/2018/46",
+      "expressionFrbrUri": "akn/ke/act/ln/2018/46/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2018/46/eng@2022-12-31",
+      "nature": "legal_notice",
+      "year": "2018",
+      "number": "46"
+    },
+    {
+      "actId": "ke-ln-2022-17",
+      "title": "Exemption",
+      "workFrbrUri": "akn/ke/act/ln/2022/17",
+      "expressionFrbrUri": "akn/ke/act/ln/2022/17/eng@2022-02-11",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2022/17/eng@2022-02-11",
+      "nature": "legal_notice",
+      "year": "2022",
+      "number": "17"
+    },
+    {
+      "actId": "ke-ln-2021-32",
+      "title": "Exemption",
+      "workFrbrUri": "akn/ke/act/ln/2021/32",
+      "expressionFrbrUri": "akn/ke/act/ln/2021/32/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2021/32/eng@2022-12-31",
+      "nature": "legal_notice",
+      "year": "2021",
+      "number": "32"
+    },
+    {
+      "actId": "ke-ln-2022-76",
+      "title": "Exemption",
+      "workFrbrUri": "akn/ke/act/ln/2022/76",
+      "expressionFrbrUri": "akn/ke/act/ln/2022/76/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2022/76/eng@2022-12-31",
+      "nature": "legal_notice",
+      "year": "2022",
+      "number": "76"
+    },
+    {
+      "actId": "ke-ln-2021-101",
+      "title": "Exemption",
+      "workFrbrUri": "akn/ke/act/ln/2021/101",
+      "expressionFrbrUri": "akn/ke/act/ln/2021/101/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2021/101/eng@2022-12-31",
+      "nature": "legal_notice",
+      "year": "2021",
+      "number": "101"
+    },
+    {
+      "actId": "ke-ln-2023-73",
+      "title": "Exemption and Waiver of Visa Fees",
+      "workFrbrUri": "akn/ke/act/ln/2023/73",
+      "expressionFrbrUri": "akn/ke/act/ln/2023/73/eng@2023-08-04",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2023/73/eng@2023-08-04",
+      "nature": "legal_notice",
+      "year": "2023",
+      "number": "73"
+    },
+    {
+      "actId": "ke-ln-2021-29",
+      "title": "Exemption from provisions of Section 19(1) of the Microfinance Act (Cap. 493C)",
+      "workFrbrUri": "akn/ke/act/ln/2021/29",
+      "expressionFrbrUri": "akn/ke/act/ln/2021/29/eng@2023-08-12",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2021/29/eng@2023-08-12",
+      "nature": "legal_notice",
+      "year": "2021",
+      "number": "29"
+    },
+    {
+      "actId": "ke-ln-1975-43",
+      "title": "Exemptions",
+      "workFrbrUri": "akn/ke/act/ln/1975/43",
+      "expressionFrbrUri": "akn/ke/act/ln/1975/43/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/1975/43/eng@2022-12-31",
+      "nature": "legal_notice",
+      "year": "1975",
+      "number": "43"
+    },
+    {
+      "actId": "ke-ln-2012-119",
+      "title": "Exemptions",
+      "workFrbrUri": "akn/ke/act/ln/2012/119",
+      "expressionFrbrUri": "akn/ke/act/ln/2012/119/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2012/119/eng@2022-12-31",
+      "nature": "legal_notice",
+      "year": "2012",
+      "number": "119"
+    },
+    {
+      "actId": "ke-ln-2012-98",
+      "title": "Exemptions Under Regulation 54",
+      "workFrbrUri": "akn/ke/act/ln/2012/98",
+      "expressionFrbrUri": "akn/ke/act/ln/2012/98/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2012/98/eng@2022-12-31",
+      "nature": "legal_notice",
+      "year": "2012",
+      "number": "98"
+    },
+    {
+      "actId": "ke-ln-1987-192",
+      "title": "Exemptions under Section 14(2)",
+      "workFrbrUri": "akn/ke/act/ln/1987/192",
+      "expressionFrbrUri": "akn/ke/act/ln/1987/192/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/1987/192/eng@2022-12-31",
+      "nature": "legal_notice",
+      "year": "1987",
+      "number": "192"
+    },
+    {
+      "actId": "ke-ln-1967-261",
+      "title": "Exemptions Under Section 24*",
+      "workFrbrUri": "akn/ke/act/ln/1967/261",
+      "expressionFrbrUri": "akn/ke/act/ln/1967/261/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/1967/261/eng@2022-12-31",
+      "nature": "legal_notice",
+      "year": "1967",
+      "number": "261"
+    },
+    {
+      "actId": "ke-ln-2023-46",
+      "title": "Exemption under regulation 54 of the Kenya Citizenship and Immigration Regulations, 2012",
+      "workFrbrUri": "akn/ke/act/ln/2023/46",
+      "expressionFrbrUri": "akn/ke/act/ln/2023/46/eng@2023-05-12",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2023/46/eng@2023-05-12",
+      "nature": "legal_notice",
+      "year": "2023",
+      "number": "46"
+    },
+    {
+      "actId": "ke-act-1929-13",
+      "title": "Explosives Act",
+      "workFrbrUri": "akn/ke/act/1929/13",
+      "expressionFrbrUri": "akn/ke/act/1929/13/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/1929/13/eng@2022-12-31",
+      "nature": "act",
+      "year": "1929",
+      "number": "13"
+    },
+    {
+      "actId": "ke-act-1990-12",
+      "title": "Export Processing Zones Act",
+      "workFrbrUri": "akn/ke/act/1990/12",
+      "expressionFrbrUri": "akn/ke/act/1990/12/eng@2023-07-01",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/1990/12/eng@2023-07-01",
+      "nature": "act",
+      "year": "1990",
+      "number": "12"
+    },
+    {
+      "actId": "ke-ln-2024-34",
+      "title": "Export Processing Zones Act - Declaration of Zones",
+      "workFrbrUri": "akn/ke/act/ln/2024/34",
+      "expressionFrbrUri": "akn/ke/act/ln/2024/34/eng@2024-02-02",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2024/34/eng@2024-02-02",
+      "nature": "legal_notice",
+      "year": "2024",
+      "number": "34"
+    },
+    {
+      "actId": "ke-ln-2024-30",
+      "title": "Export Processing Zones Act - Declaration of Zones",
+      "workFrbrUri": "akn/ke/act/ln/2024/30",
+      "expressionFrbrUri": "akn/ke/act/ln/2024/30/eng@2024-02-02",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2024/30/eng@2024-02-02",
+      "nature": "legal_notice",
+      "year": "2024",
+      "number": "30"
+    },
+    {
+      "actId": "ke-ln-2023-67",
+      "title": "Extension for the Declaration of Parts of Kilifi County as a Disturbed Area",
+      "workFrbrUri": "akn/ke/act/ln/2023/67",
+      "expressionFrbrUri": "akn/ke/act/ln/2023/67/eng@2023-07-07",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2023/67/eng@2023-07-07",
+      "nature": "legal_notice",
+      "year": "2023",
+      "number": "67"
+    },
+    {
+      "actId": "ke-ln-2016-178",
+      "title": "Extension of Time",
+      "workFrbrUri": "akn/ke/act/ln/2016/178",
+      "expressionFrbrUri": "akn/ke/act/ln/2016/178/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2016/178/eng@2022-12-31",
+      "nature": "legal_notice",
+      "year": "2016",
+      "number": "178"
+    },
+    {
+      "actId": "ke-act-1968-65",
+      "title": "Extradition (Commonwealth Countries) Act",
+      "workFrbrUri": "akn/ke/act/1968/65",
+      "expressionFrbrUri": "akn/ke/act/1968/65/eng@2023-12-11",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/1968/65/eng@2023-12-11",
+      "nature": "act",
+      "year": "1968",
+      "number": "65"
+    },
+    {
+      "actId": "ke-act-1966-7",
+      "title": "Extradition (Contiguous and Foreign Countries) Act",
+      "workFrbrUri": "akn/ke/act/1966/7",
+      "expressionFrbrUri": "akn/ke/act/1966/7/eng@2023-09-15",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/1966/7/eng@2023-09-15",
+      "nature": "act",
+      "year": "1966",
+      "number": "7"
+    },
+    {
+      "actId": "ke-ln-2023-136",
+      "title": "Extradition (Contiguous and Foreign Countries) (People’s Republic of China) Order, 2023",
+      "workFrbrUri": "akn/ke/act/ln/2023/136",
+      "expressionFrbrUri": "akn/ke/act/ln/2023/136/eng@2023-09-29",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2023/136/eng@2023-09-29",
+      "nature": "legal_notice",
+      "year": "2023",
+      "number": "136"
+    },
+    {
+      "actId": "ke-act-2023-14",
+      "title": "Facilities Improvement Financing Act",
+      "workFrbrUri": "akn/ke/act/2023/14",
+      "expressionFrbrUri": "akn/ke/act/2023/14/eng@2023-11-24",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/2023/14/eng@2023-11-24",
+      "nature": "act",
+      "year": "2023",
+      "number": "14"
+    },
+    {
+      "actId": "ke-ln-2024-141",
+      "title": "Fafi Wetland Catchment Protection Order, 2024",
+      "workFrbrUri": "akn/ke/act/ln/2024/141",
+      "expressionFrbrUri": "akn/ke/act/ln/2024/141/eng@2024-09-13",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2024/141/eng@2024-09-13",
+      "nature": "legal_notice",
+      "year": "2024",
+      "number": "141"
+    },
+    {
+      "actId": "ke-act-2015-4",
+      "title": "Fair Administrative Action Act",
+      "workFrbrUri": "akn/ke/act/2015/4",
+      "expressionFrbrUri": "akn/ke/act/2015/4/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/2015/4/eng@2022-12-31",
+      "nature": "act",
+      "year": "2015",
+      "number": "4"
+    },
+    {
+      "actId": "ke-act-1946-7",
+      "title": "Fatal Accidents Act",
+      "workFrbrUri": "akn/ke/act/1946/7",
+      "expressionFrbrUri": "akn/ke/act/1946/7/eng@1946-02-08",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/1946/7/eng@1946-02-08",
+      "nature": "act",
+      "year": "1946",
+      "number": "7"
+    },
+    {
+      "actId": "ke-act-1936-15",
+      "title": "Ferries Act",
+      "workFrbrUri": "akn/ke/act/1936/15",
+      "expressionFrbrUri": "akn/ke/act/1936/15/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/1936/15/eng@2022-12-31",
+      "nature": "act",
+      "year": "1936",
+      "number": "15"
+    },
+    {
+      "actId": "ke-gn-1951-914",
+      "title": "Ferries Rules",
+      "workFrbrUri": "akn/ke/act/gn/1951/914",
+      "expressionFrbrUri": "akn/ke/act/gn/1951/914/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/gn/1951/914/eng@2022-12-31",
+      "nature": "gazette_notice",
+      "year": "1951",
+      "number": "914"
+    },
+    {
+      "actId": "ke-act-1962-23",
+      "title": "Fertilizers and Animal Foodstuffs Act",
+      "workFrbrUri": "akn/ke/act/1962/23",
+      "expressionFrbrUri": "akn/ke/act/1962/23/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/1962/23/eng@2022-12-31",
+      "nature": "act",
+      "year": "1962",
+      "number": "23"
+    },
+    {
+      "actId": "ke-act-1962-34",
+      "title": "Films and Stage Plays Act",
+      "workFrbrUri": "akn/ke/act/1962/34",
+      "expressionFrbrUri": "akn/ke/act/1962/34/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/1962/34/eng@2022-12-31",
+      "nature": "act",
+      "year": "1962",
+      "number": "34"
+    },
+    {
+      "actId": "ke-ln-2024-183",
+      "title": "Films and Stage Plays (Cinematograph Films) (Forms and Fees) (Amendment) Regulations",
+      "workFrbrUri": "akn/ke/act/ln/2024/183",
+      "expressionFrbrUri": "akn/ke/act/ln/2024/183/eng@2024-12-13",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2024/183/eng@2024-12-13",
+      "nature": "legal_notice",
+      "year": "2024",
+      "number": "183"
+    },
+    {
+      "actId": "ke-ln-2024-186",
+      "title": "Films and Stage Plays (Film Censorship) (Amendment) Regulations, 2024",
+      "workFrbrUri": "akn/ke/act/ln/2024/186",
+      "expressionFrbrUri": "akn/ke/act/ln/2024/186/eng@2024-11-14",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2024/186/eng@2024-11-14",
+      "nature": "legal_notice",
+      "year": "2024",
+      "number": "186"
+    },
+    {
+      "actId": "ke-act-1975-2",
+      "title": "Finance Act, 1975",
+      "workFrbrUri": "akn/ke/act/1975/2",
+      "expressionFrbrUri": "akn/ke/act/1975/2/eng@1975-03-07",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/1975/2/eng@1975-03-07",
+      "nature": "act",
+      "year": "1975",
+      "number": "2"
+    },
+    {
+      "actId": "ke-act-1981-6",
+      "title": "Finance Act, 1981",
+      "workFrbrUri": "akn/ke/act/1981/6",
+      "expressionFrbrUri": "akn/ke/act/1981/6/eng@1981-09-18",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/1981/6/eng@1981-09-18",
+      "nature": "act",
+      "year": "1981",
+      "number": "6"
+    },
+    {
+      "actId": "ke-act-2003-15",
+      "title": "Finance Act, 2003",
+      "workFrbrUri": "akn/ke/act/2003/15",
+      "expressionFrbrUri": "akn/ke/act/2003/15/eng@2004-01-16",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/2003/15/eng@2004-01-16",
+      "nature": "act",
+      "year": "2003",
+      "number": "15"
+    },
+    {
+      "actId": "ke-act-2006-10",
+      "title": "Finance Act, 2006",
+      "workFrbrUri": "akn/ke/act/2006/10",
+      "expressionFrbrUri": "akn/ke/act/2006/10/eng@2007-01-12",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/2006/10/eng@2007-01-12",
+      "nature": "act",
+      "year": "2006",
+      "number": "10"
+    },
+    {
+      "actId": "ke-act-2009-8",
+      "title": "Finance Act, 2009",
+      "workFrbrUri": "akn/ke/act/2009/8",
+      "expressionFrbrUri": "akn/ke/act/2009/8/eng@2009-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/2009/8/eng@2009-12-31",
+      "nature": "act",
+      "year": "2009",
+      "number": "8"
+    },
+    {
+      "actId": "ke-act-2012-57",
+      "title": "Finance Act, 2012",
+      "workFrbrUri": "akn/ke/act/2012/57",
+      "expressionFrbrUri": "akn/ke/act/2012/57/eng@2013-02-01",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/2012/57/eng@2013-02-01",
+      "nature": "act",
+      "year": "2012",
+      "number": "57"
+    },
+    {
+      "actId": "ke-act-2014-16",
+      "title": "Finance Act, 2014",
+      "workFrbrUri": "akn/ke/act/2014/16",
+      "expressionFrbrUri": "akn/ke/act/2014/16/eng@2014-09-19",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/2014/16/eng@2014-09-19",
+      "nature": "act",
+      "year": "2014",
+      "number": "16"
+    },
+    {
+      "actId": "ke-act-2016-38",
+      "title": "Finance Act, 2016",
+      "workFrbrUri": "akn/ke/act/2016/38",
+      "expressionFrbrUri": "akn/ke/act/2016/38/eng@2016-09-23",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/2016/38/eng@2016-09-23",
+      "nature": "act",
+      "year": "2016",
+      "number": "38"
+    },
+    {
+      "actId": "ke-act-2017-15",
+      "title": "Finance Act, 2017",
+      "workFrbrUri": "akn/ke/act/2017/15",
+      "expressionFrbrUri": "akn/ke/act/2017/15/eng@2017-06-23",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/2017/15/eng@2017-06-23",
+      "nature": "act",
+      "year": "2017",
+      "number": "15"
+    },
+    {
+      "actId": "ke-act-2018-10",
+      "title": "Finance Act, 2018",
+      "workFrbrUri": "akn/ke/act/2018/10",
+      "expressionFrbrUri": "akn/ke/act/2018/10/eng@2018-09-28",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/2018/10/eng@2018-09-28",
+      "nature": "act",
+      "year": "2018",
+      "number": "10"
+    },
+    {
+      "actId": "ke-act-2019-23",
+      "title": "Finance Act, 2019",
+      "workFrbrUri": "akn/ke/act/2019/23",
+      "expressionFrbrUri": "akn/ke/act/2019/23/eng@2019-11-15",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/2019/23/eng@2019-11-15",
+      "nature": "act",
+      "year": "2019",
+      "number": "23"
+    },
+    {
+      "actId": "ke-act-2020-8",
+      "title": "Finance Act, 2020",
+      "workFrbrUri": "akn/ke/act/2020/8",
+      "expressionFrbrUri": "akn/ke/act/2020/8/eng@2020-07-10",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/2020/8/eng@2020-07-10",
+      "nature": "act",
+      "year": "2020",
+      "number": "8"
+    },
+    {
+      "actId": "ke-act-2021-8",
+      "title": "Finance Act, 2021",
+      "workFrbrUri": "akn/ke/act/2021/8",
+      "expressionFrbrUri": "akn/ke/act/2021/8/eng@2021-07-16",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/2021/8/eng@2021-07-16",
+      "nature": "act",
+      "year": "2021",
+      "number": "8"
+    },
+    {
+      "actId": "ke-act-2022-22",
+      "title": "Finance Act, 2022",
+      "workFrbrUri": "akn/ke/act/2022/22",
+      "expressionFrbrUri": "akn/ke/act/2022/22/eng@2022-07-08",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/2022/22/eng@2022-07-08",
+      "nature": "act",
+      "year": "2022",
+      "number": "22"
+    },
+    {
+      "actId": "ke-act-2023-4",
+      "title": "Finance Act, 2023",
+      "workFrbrUri": "akn/ke/act/2023/4",
+      "expressionFrbrUri": "akn/ke/act/2023/4/eng@2023-08-18",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/2023/4/eng@2023-08-18",
+      "nature": "act",
+      "year": "2023",
+      "number": "4"
+    },
+    {
+      "actId": "ke-act-2025-9",
+      "title": "Finance Act, 2025",
+      "workFrbrUri": "akn/ke/act/2025/9",
+      "expressionFrbrUri": "akn/ke/act/2025/9/eng@2025-06-25",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/2025/9/eng@2025-06-25",
+      "nature": "act",
+      "year": "2025",
+      "number": "9"
+    },
+    {
+      "actId": "ke-act-1975-13",
+      "title": "Finance Act (No. 2) Act, 1975",
+      "workFrbrUri": "akn/ke/act/1975/13",
+      "expressionFrbrUri": "akn/ke/act/1975/13/eng@1975-12-11",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/1975/13/eng@1975-12-11",
+      "nature": "act",
+      "year": "1975",
+      "number": "13"
+    },
+    {
+      "actId": "ke-act-1953-40",
+      "title": "Firearms Act",
+      "workFrbrUri": "akn/ke/act/1953/40",
+      "expressionFrbrUri": "akn/ke/act/1953/40/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/1953/40/eng@2022-12-31",
+      "nature": "act",
+      "year": "1953",
+      "number": "40"
+    },
+    {
+      "actId": "ke-act-1929-33",
+      "title": "Fire Inquiry Act",
+      "workFrbrUri": "akn/ke/act/1929/33",
+      "expressionFrbrUri": "akn/ke/act/1929/33/eng@1929-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/1929/33/eng@1929-12-31",
+      "nature": "act",
+      "year": "1929",
+      "number": "33"
+    },
+    {
+      "actId": "ke-act-2009-5",
+      "title": "Fiscal Management Act",
+      "workFrbrUri": "akn/ke/act/2009/5",
+      "expressionFrbrUri": "akn/ke/act/2009/5/eng@2009-06-19",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/2009/5/eng@2009-06-19",
+      "nature": "act",
+      "year": "2009",
+      "number": "5"
+    },
+    {
+      "actId": "ke-ln-1991-34",
+      "title": "Fisheries (General Regulations), 1991",
+      "workFrbrUri": "akn/ke/act/ln/1991/34",
+      "expressionFrbrUri": "akn/ke/act/ln/1991/34/eng@1991-01-15",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/1991/34/eng@1991-01-15",
+      "nature": "legal_notice",
+      "year": "1991",
+      "number": "34"
+    },
+    {
+      "actId": "ke-act-2016-35",
+      "title": "Fisheries Management and Development Act",
+      "workFrbrUri": "akn/ke/act/2016/35",
+      "expressionFrbrUri": "akn/ke/act/2016/35/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/2016/35/eng@2022-12-31",
+      "nature": "act",
+      "year": "2016",
+      "number": "35"
+    },
+    {
+      "actId": "ke-act-1965-8",
+      "title": "Food, Drugs and Chemical Substances Act",
+      "workFrbrUri": "akn/ke/act/1965/8",
+      "expressionFrbrUri": "akn/ke/act/1965/8/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/1965/8/eng@2022-12-31",
+      "nature": "act",
+      "year": "1965",
+      "number": "8"
+    },
+    {
+      "actId": "ke-ln-2015-157",
+      "title": "Food, Drugs and Chemical Substances (Food Labelling, Additives and Standards) (Amendment) (No. 2) Regulations, 2015",
+      "workFrbrUri": "akn/ke/act/ln/2015/157",
+      "expressionFrbrUri": "akn/ke/act/ln/2015/157/eng@2015-07-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2015/157/eng@2015-07-31",
+      "nature": "legal_notice",
+      "year": "2015",
+      "number": "157"
+    },
+    {
+      "actId": "ke-act-1964-35",
+      "title": "Foreign Investments Protection Act",
+      "workFrbrUri": "akn/ke/act/1964/35",
+      "expressionFrbrUri": "akn/ke/act/1964/35/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/1964/35/eng@2022-12-31",
+      "nature": "act",
+      "year": "1964",
+      "number": "35"
+    },
+    {
+      "actId": "ke-act-1984-4",
+      "title": "Foreign Judgments (Reciprocal Enforcement) Act",
+      "workFrbrUri": "akn/ke/act/1984/4",
+      "expressionFrbrUri": "akn/ke/act/1984/4/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/1984/4/eng@2022-12-31",
+      "nature": "act",
+      "year": "1984",
+      "number": "4"
+    },
+    {
+      "actId": "ke-act-2021-12",
+      "title": "Foreign Service Act",
+      "workFrbrUri": "akn/ke/act/2021/12",
+      "expressionFrbrUri": "akn/ke/act/2021/12/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/2021/12/eng@2022-12-31",
+      "nature": "act",
+      "year": "2021",
+      "number": "12"
+    },
+    {
+      "actId": "ke-act-2016-34",
+      "title": "Forest Conservation and Management Act",
+      "workFrbrUri": "akn/ke/act/2016/34",
+      "expressionFrbrUri": "akn/ke/act/2016/34/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/2016/34/eng@2022-12-31",
+      "nature": "act",
+      "year": "2016",
+      "number": "34"
+    },
+    {
+      "actId": "ke-act-2026-15",
+      "title": "Forest Conservation and Management (Amendment) Act",
+      "workFrbrUri": "akn/ke/act/2026/15",
+      "expressionFrbrUri": "akn/ke/act/2026/15/eng@2026-06-02",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/2026/15/eng@2026-06-02",
+      "nature": "act",
+      "year": "2026",
+      "number": "15"
+    },
+    {
+      "actId": "ke-gn-1955-574",
+      "title": "Form of Certificate",
+      "workFrbrUri": "akn/ke/act/gn/1955/574",
+      "expressionFrbrUri": "akn/ke/act/gn/1955/574/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/gn/1955/574/eng@2022-12-31",
+      "nature": "gazette_notice",
+      "year": "1955",
+      "number": "574"
+    },
+    {
+      "actId": "ke-act-1936-33",
+      "title": "Fugitive Offenders Pursuit Act",
+      "workFrbrUri": "akn/ke/act/1936/33",
+      "expressionFrbrUri": "akn/ke/act/1936/33/eng@1936-12-03",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/1936/33/eng@1936-12-03",
+      "nature": "act",
+      "year": "1936",
+      "number": "33"
+    },
+    {
+      "actId": "ke-act-2025-14",
+      "title": "Gambling Control Act",
+      "workFrbrUri": "akn/ke/act/2025/14",
+      "expressionFrbrUri": "akn/ke/act/2025/14/eng@2025-08-12",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/2025/14/eng@2025-08-12",
+      "nature": "act",
+      "year": "2025",
+      "number": "14"
+    },
+    {
+      "actId": "ke-act-1950-14",
+      "title": "General Loan and Stock Act",
+      "workFrbrUri": "akn/ke/act/1950/14",
+      "expressionFrbrUri": "akn/ke/act/1950/14/eng@1950-06-13",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/1950/14/eng@1950-06-13",
+      "nature": "act",
+      "year": "1950",
+      "number": "14"
+    },
+    {
+      "actId": "ke-act-1968-51",
+      "title": "Geneva Conventions Act",
+      "workFrbrUri": "akn/ke/act/1968/51",
+      "expressionFrbrUri": "akn/ke/act/1968/51/eng@2023-12-11",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/1968/51/eng@2023-12-11",
+      "nature": "act",
+      "year": "1968",
+      "number": "51"
+    },
+    {
+      "actId": "ke-act-1993-10",
+      "title": "Geologists Registration Act",
+      "workFrbrUri": "akn/ke/act/1993/10",
+      "expressionFrbrUri": "akn/ke/act/1993/10/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/1993/10/eng@2022-12-31",
+      "nature": "act",
+      "year": "1993",
+      "number": "10"
+    },
+    {
+      "actId": "ke-act-1935-34",
+      "title": "Girl Guides Act",
+      "workFrbrUri": "akn/ke/act/1935/34",
+      "expressionFrbrUri": "akn/ke/act/1935/34/eng@1935-08-23",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/1935/34/eng@1935-08-23",
+      "nature": "act",
+      "year": "1935",
+      "number": "34"
+    },
+    {
+      "actId": "ke-act-1952-18",
+      "title": "Gold Mines Development Loans Act",
+      "workFrbrUri": "akn/ke/act/1952/18",
+      "expressionFrbrUri": "akn/ke/act/1952/18/eng@1985-09-13",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/1952/18/eng@1985-09-13",
+      "nature": "act",
+      "year": "1952",
+      "number": "18"
+    },
+    {
+      "actId": "ke-act-1963-37",
+      "title": "Government Accommodation Act",
+      "workFrbrUri": "akn/ke/act/1963/37",
+      "expressionFrbrUri": "akn/ke/act/1963/37/eng@1963-12-03",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/1963/37/eng@1963-12-03",
+      "nature": "act",
+      "year": "1963",
+      "number": "37"
+    },
+    {
+      "actId": "ke-act-1956-44",
+      "title": "Government Contracts Act",
+      "workFrbrUri": "akn/ke/act/1956/44",
+      "expressionFrbrUri": "akn/ke/act/1956/44/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/1956/44/eng@2022-12-31",
+      "nature": "act",
+      "year": "1956",
+      "number": "44"
+    },
+    {
+      "actId": "ke-act-2004-5",
+      "title": "Government Financial Management Act",
+      "workFrbrUri": "akn/ke/act/2004/5",
+      "expressionFrbrUri": "akn/ke/act/2004/5/eng@2005-01-07",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/2004/5/eng@2005-01-07",
+      "nature": "act",
+      "year": "2004",
+      "number": "5"
+    },
+    {
+      "actId": "ke-ln-2011-15",
+      "title": "Government Financial Management (National Youth Service Mechanical and Transport Fund) Regulations, 2011",
+      "workFrbrUri": "akn/ke/act/ln/2011/15",
+      "expressionFrbrUri": "akn/ke/act/ln/2011/15/eng@2011-02-18",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2011/15/eng@2011-02-18",
+      "nature": "legal_notice",
+      "year": "2011",
+      "number": "15"
+    },
+    {
+      "actId": "ke-ln-2011-14",
+      "title": "Government Financial Management (Occupational Safety and Health Fund)Regulations, 2011",
+      "workFrbrUri": "akn/ke/act/ln/2011/14",
+      "expressionFrbrUri": "akn/ke/act/ln/2011/14/eng@2011-02-18",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2011/14/eng@2011-02-18",
+      "nature": "legal_notice",
+      "year": "2011",
+      "number": "14"
+    },
+    {
+      "actId": "ke-ln-2010-115",
+      "title": "Government Financial Management (Water Towers Conservation Fund) Regulations, 2010",
+      "workFrbrUri": "akn/ke/act/ln/2010/115",
+      "expressionFrbrUri": "akn/ke/act/ln/2010/115/eng@2010-07-30",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2010/115/eng@2010-07-30",
+      "nature": "legal_notice",
+      "year": "2010",
+      "number": "115"
+    },
+    {
+      "actId": "ke-ln-2010-10",
+      "title": "Government Lands (Consents) (Fees) (Amendment) Rules, 2010",
+      "workFrbrUri": "akn/ke/act/ln/2010/10",
+      "expressionFrbrUri": "akn/ke/act/ln/2010/10/eng@2010-01-29",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2010/10/eng@2010-01-29",
+      "nature": "legal_notice",
+      "year": "2010",
+      "number": "10"
+    },
+    {
+      "actId": "ke-act-2025-25",
+      "title": "Government Owned Enterprises Act",
+      "workFrbrUri": "akn/ke/act/2025/25",
+      "expressionFrbrUri": "akn/ke/act/2025/25/eng@2025-11-27",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/2025/25/eng@2025-11-27",
+      "nature": "act",
+      "year": "2025",
+      "number": "25"
+    },
+    {
+      "actId": "ke-act-1956-47",
+      "title": "Government Proceedings Act",
+      "workFrbrUri": "akn/ke/act/1956/47",
+      "expressionFrbrUri": "akn/ke/act/1956/47/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/1956/47/eng@2022-12-31",
+      "nature": "act",
+      "year": "1956",
+      "number": "47"
+    },
+    {
+      "actId": "ke-act-1963-41",
+      "title": "Government Securities Act",
+      "workFrbrUri": "akn/ke/act/1963/41",
+      "expressionFrbrUri": "akn/ke/act/1963/41/eng@1964-01-07",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/1963/41/eng@1964-01-07",
+      "nature": "act",
+      "year": "1963",
+      "number": "41"
+    },
+    {
+      "actId": "ke-ln-2017-104",
+      "title": "Grant of Permission",
+      "workFrbrUri": "akn/ke/act/ln/2017/104",
+      "expressionFrbrUri": "akn/ke/act/ln/2017/104/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2017/104/eng@2022-12-31",
+      "nature": "legal_notice",
+      "year": "2017",
+      "number": "104"
+    },
+    {
+      "actId": "ke-ln-2012-150",
+      "title": "Grant of Permission",
+      "workFrbrUri": "akn/ke/act/ln/2012/150",
+      "expressionFrbrUri": "akn/ke/act/ln/2012/150/eng@2022-12-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2012/150/eng@2022-12-31",
+      "nature": "legal_notice",
+      "year": "2012",
+      "number": "150"
+    },
+    {
+      "actId": "ke-act-1950-10",
+      "title": "Guarantee (High Commission Posts and Telecommunications Loan) (No. 1) Act",
+      "workFrbrUri": "akn/ke/act/1950/10",
+      "expressionFrbrUri": "akn/ke/act/1950/10/eng@1950-08-29",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/1950/10/eng@1950-08-29",
+      "nature": "act",
+      "year": "1950",
+      "number": "10"
+    },
+    {
+      "actId": "ke-act-1953-32",
+      "title": "Guarantee (High Commission Posts and Telecommunications Loan) (No. 2) Act",
+      "workFrbrUri": "akn/ke/act/1953/32",
+      "expressionFrbrUri": "akn/ke/act/1953/32/eng@1954-11-30",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/1953/32/eng@1954-11-30",
+      "nature": "act",
+      "year": "1953",
+      "number": "32"
+    },
+    {
+      "actId": "ke-act-1960-22",
+      "title": "Guarantee (High Commission Posts and Telecommunications Loan) (No. 3) Act",
+      "workFrbrUri": "akn/ke/act/1960/22",
+      "expressionFrbrUri": "akn/ke/act/1960/22/eng@1961-02-14",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/1960/22/eng@1961-02-14",
+      "nature": "act",
+      "year": "1960",
+      "number": "22"
+    },
+    {
+      "actId": "ke-act-1950-1",
+      "title": "Guarantee (High Commission Railways and Harbours Loan) (No. 1) Act",
+      "workFrbrUri": "akn/ke/act/1950/1",
+      "expressionFrbrUri": "akn/ke/act/1950/1/eng@1950-01-16",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/1950/1/eng@1950-01-16",
+      "nature": "act",
+      "year": "1950",
+      "number": "1"
+    },
+    {
+      "actId": "ke-act-1956-57",
+      "title": "Guarantee (High Commission Railways and Harbours Loan) (No. 3) Act",
+      "workFrbrUri": "akn/ke/act/1956/57",
+      "expressionFrbrUri": "akn/ke/act/1956/57/eng@1957-04-17",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/1956/57/eng@1957-04-17",
+      "nature": "act",
+      "year": "1956",
+      "number": "57"
+    },
+    {
+      "actId": "ke-act-1958-40",
+      "title": "Guarantee (High Commission Railways and Harbours Loan) (No. 4) Act",
+      "workFrbrUri": "akn/ke/act/1958/40",
+      "expressionFrbrUri": "akn/ke/act/1958/40/eng@1960-07-19",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/1958/40/eng@1960-07-19",
+      "nature": "act",
+      "year": "1958",
+      "number": "40"
+    },
+    {
+      "actId": "ke-act-1960-52",
+      "title": "Guarantee (High Commission Railways and Harbours Loan) (No. 5) Act",
+      "workFrbrUri": "akn/ke/act/1960/52",
+      "expressionFrbrUri": "akn/ke/act/1960/52/eng@1961-10-31",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/1960/52/eng@1961-10-31",
+      "nature": "act",
+      "year": "1960",
+      "number": "52"
+    }
+  ]
+}

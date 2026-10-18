@@ -6,6 +6,9 @@ import { MeetingAccessService } from './meeting-access.service';
 import { PrismaService } from '@/prisma/prisma.service';
 import { S3UploadService } from '@/storage/s3-upload.service';
 import { JobsService } from '@/jobs/jobs.service';
+import { LlmCompletionService } from '@/ai/llm-completion.service';
+import { JwtService } from '@nestjs/jwt';
+import { AudioTranscodeService } from './audio-transcode.service';
 
 const mockPrisma = {
   meeting: {
@@ -29,6 +32,19 @@ const mockJobs = {
   enqueueMeetingTranscribeJob: jest.fn().mockResolvedValue({ agentJobId: 'job-1', status: 'QUEUED', queue: 'ai.low_priority' }),
 };
 
+const mockLlm = {
+  complete: jest.fn(),
+};
+
+const mockJwt = {
+  sign: jest.fn().mockReturnValue('recording-token'),
+  verify: jest.fn(),
+};
+
+const mockAudioTranscode = {
+  transcodeWebmToM4a: jest.fn(),
+};
+
 const mockConfig = {
   get: jest.fn((key: string, fallback?: unknown) => {
     if (key === 'S3_PROVIDER') return 'local';
@@ -48,12 +64,21 @@ describe('MeetingsService', () => {
         { provide: PrismaService, useValue: mockPrisma },
         { provide: S3UploadService, useValue: mockS3 },
         { provide: JobsService, useValue: mockJobs },
+        { provide: LlmCompletionService, useValue: mockLlm },
+        { provide: JwtService, useValue: mockJwt },
+        { provide: AudioTranscodeService, useValue: mockAudioTranscode },
         { provide: ConfigService, useValue: mockConfig },
       ],
     }).compile();
 
     service = module.get(MeetingsService);
     jest.clearAllMocks();
+    mockConfig.get.mockImplementation((key: string, fallback?: unknown) => {
+      if (key === 'S3_PROVIDER') return 'local';
+      if (key === 'UPLOAD_DIR') return '/tmp/test-uploads';
+      return fallback;
+    });
+    mockS3.isConfigured.mockReturnValue(false);
   });
 
   // ──────────────────────────────────────────────────────────────
@@ -155,6 +180,70 @@ describe('MeetingsService', () => {
     await expect(
       service.processAudio('tenant-1', 'nonexistent', Buffer.from(''), 'audio/webm', 0, 'user-1'),
     ).rejects.toThrow(NotFoundException);
+  });
+
+  it('processAudio uploads meeting audio to S3 when S3 is configured', async () => {
+    mockConfig.get.mockImplementation((key: string, fallback?: unknown) => {
+      if (key === 'S3_PROVIDER') return 's3';
+      if (key === 'UPLOAD_DIR') return '/tmp/test-uploads';
+      if (key === 'NODE_ENV') return 'test';
+      return fallback;
+    });
+    mockS3.isConfigured.mockReturnValue(true);
+    mockS3.putObject.mockResolvedValue('https://bucket.s3.us-east-1.amazonaws.com/key');
+
+    mockPrisma.meeting.findFirst.mockResolvedValue({
+      id: 'meeting-1',
+      tenantId: 'tenant-1',
+      status: 'recording',
+      confidentiality: 'standard',
+      createdByUserId: 'user-1',
+    });
+    mockPrisma.meeting.update.mockResolvedValue({});
+
+    await service.processAudio(
+      'tenant-1',
+      'meeting-1',
+      Buffer.from('fake-audio-data'),
+      'audio/webm',
+      5000,
+      'user-1',
+    );
+
+    expect(mockS3.putObject).toHaveBeenCalledWith(
+      expect.stringMatching(/^tenant-1\/recordings\//),
+      expect.any(Buffer),
+      'audio/webm',
+    );
+  });
+
+  it('processAudio rejects local disk storage in production when S3 is not configured', async () => {
+    mockConfig.get.mockImplementation((key: string, fallback?: unknown) => {
+      if (key === 'S3_PROVIDER') return 'local';
+      if (key === 'UPLOAD_DIR') return '/tmp/test-uploads';
+      if (key === 'NODE_ENV') return 'production';
+      return fallback;
+    });
+    mockS3.isConfigured.mockReturnValue(false);
+
+    mockPrisma.meeting.findFirst.mockResolvedValue({
+      id: 'meeting-1',
+      tenantId: 'tenant-1',
+      status: 'recording',
+      confidentiality: 'standard',
+      createdByUserId: 'user-1',
+    });
+
+    await expect(
+      service.processAudio(
+        'tenant-1',
+        'meeting-1',
+        Buffer.from('fake-audio-data'),
+        'audio/webm',
+        5000,
+        'user-1',
+      ),
+    ).rejects.toThrow('Meeting recordings require S3 in production');
   });
 
   // ──────────────────────────────────────────────────────────────

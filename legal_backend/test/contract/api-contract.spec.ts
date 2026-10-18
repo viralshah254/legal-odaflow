@@ -35,6 +35,22 @@ const AGENT_ROUTES = {
   jobById: 'GET /agents/jobs/:jobId',
 };
 
+const TIME_ROUTES = {
+  submit: 'POST /time/:entryId/submit',
+  reject: 'POST /time/:entryId/reject',
+  approve: 'POST /time/:entryId/approve',
+};
+
+const BILLING_ROUTES = {
+  statementPdf: 'GET /billing/statements/pdf',
+  invoiceFromApprovedTime: 'POST /billing/invoices/from-approved-time',
+  trustReconciliationStatement: 'GET /billing/trust/reconciliation/:id/statement',
+};
+
+const FINANCE_ROUTES = {
+  dunningStatus: 'GET /finance/dunning/status',
+};
+
 describe('API contract — tasks', () => {
   it('uses backend field names for create payload', () => {
     expect(TASK_CREATE_FIELDS).toContain('assigneeId');
@@ -77,5 +93,31 @@ describe('API contract — agents', () => {
   it('exposes job polling endpoints', () => {
     expect(AGENT_ROUTES.jobs).toContain('/agents/jobs');
     expect(AGENT_ROUTES.jobById).toContain(':jobId');
+  });
+});
+
+describe('API contract — time (Series B Wave 1)', () => {
+  it('exposes submit and reject approval routes', () => {
+    expect(TIME_ROUTES.submit).toBe('POST /time/:entryId/submit');
+    expect(TIME_ROUTES.reject).toBe('POST /time/:entryId/reject');
+    expect(TIME_ROUTES.approve).toContain('/approve');
+  });
+});
+
+describe('API contract — billing (Series B Wave 1)', () => {
+  it('exposes statement PDF and invoice-from-time routes', () => {
+    expect(BILLING_ROUTES.statementPdf).toContain('/billing/statements/pdf');
+    expect(BILLING_ROUTES.invoiceFromApprovedTime).toContain('/from-approved-time');
+  });
+
+  it('exposes trust reconciliation statement route', () => {
+    expect(BILLING_ROUTES.trustReconciliationStatement).toContain('/statement');
+    expect(BILLING_ROUTES.trustReconciliationStatement).toContain(':id');
+  });
+});
+
+describe('API contract — finance (Series B Wave 1)', () => {
+  it('exposes dunning status route', () => {
+    expect(FINANCE_ROUTES.dunningStatus).toBe('GET /finance/dunning/status');
   });
 });

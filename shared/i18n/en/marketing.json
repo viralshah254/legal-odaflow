@@ -11,6 +11,8 @@
   "faq": "Frequently asked questions",
   "header": {
     "issueChecker": "Issue Checker",
+    "legalAi": "Legal AI",
+    "solutions": "Solutions",
     "forLawyers": "For Lawyers",
     "pricing": "Pricing",
     "demo": "Demo",
@@ -21,10 +23,24 @@
     "getStarted": "Get Started",
     "start": "Start",
     "free": "FREE",
-    "account": "Account"
+    "account": "Account",
+    "consumer": {
+      "cases": "My Cases",
+      "reports": "Reports",
+      "lawyerReview": "Lawyer Review",
+      "subscription": "Subscription",
+      "research": "Legal Research",
+      "documentReview": "Document Review",
+      "issueChecker": "Issue Checker",
+      "aiTools": "AI Tools",
+      "firAnalysis": "FIR Analysis",
+      "indiaDrafts": "India Drafts",
+      "sectionFinder": "Section Finder",
+      "account": "Account"
+    }
   },
   "footer": {
-    "tagline": "Understand your legal problem before you spend thousands on a lawyer.",
+    "tagline": "Understand your legal problem before you spend thousands on a lawyer — or run your entire firm on one platform.",
     "forConsumers": "For Consumers",
     "legalIssueChecker": "Legal Issue Checker",
     "uploadDocument": "Upload Document",
@@ -38,6 +54,15 @@
     "terms": "Terms",
     "dataConsent": "Data & AI Consent",
     "legalDisclaimer": "Legal Disclaimer",
+    "legalAi": "Legal AI",
+    "legalGuides": "Legal Guides",
+    "solutions": "Solutions",
+    "compare": "Compare Legal AI",
+    "legalAiIndia": "Legal AI India",
+    "legalAiUK": "Legal AI UK",
+    "legalAiUS": "Legal AI US",
+    "legalAiKenya": "Legal AI Kenya",
+    "regions": "Regions",
     "copyright": "© {year} Umbrella. All rights reserved.",
     "signIn": "Sign In"
   },
@@ -62,7 +87,26 @@
     "aiCreditsBody": "Credits scale with AI model usage — like Cursor. Auto tasks (Copilot, drafts) are efficient and use fewer credits. Premium deep analysis (Similar Cases, Opponent Strategy, Strategy Memo) uses your selected Premium model and is billed by token usage.",
     "deepAnalysisNote": "Deep case analysis requires <strong>Professional</strong> plan or above.",
     "enterprisePrompt": "Need enterprise SSO, data residency, or SCIM?",
-    "enterpriseSettings": "Enterprise settings"
+    "enterpriseSettings": "Enterprise settings",
+    "mostPopular": "Most Popular",
+    "firmPlansSubtitle": "Scalable per-seat pricing for teams",
+    "transparentPricingBadge": "Transparent pricing · No hidden fees",
+    "showingPricesFor": "Showing prices for <strong>{country}</strong>",
+    "findingBestPricing": "Finding the best pricing for your region",
+    "enterpriseFeatures": "SSO · SCIM · Data residency · Dedicated SLA",
+    "detectingLocation": "Detecting your location…",
+    "loadingPlans": "Loading plans…",
+    "managePlan": "Manage plan",
+    "freePlan": "Free",
+    "manageInStripe": "Manage in Stripe",
+    "contactSales": "Contact sales",
+    "downgrade": "Downgrade",
+    "upgrade": "Upgrade",
+    "switchPlan": "Switch plan",
+    "contactUs": "Contact us",
+    "audienceLawyers": "Law firms",
+    "audienceConsumers": "Consumers",
+    "creditsFootnote": "AI credits scale with model usage."
   },
   "home": {
     "audienceItems": [
@@ -87,17 +131,24 @@
       "badge": "AI-grounded legal intelligence — for anyone",
       "title": "Legal intelligence.",
       "titleHighlight": "For anyone. Anywhere.",
-      "subtitle": "Explain your situation in plain language. We read the actual law, cite real statutes and cases, and tell you exactly where you stand — free to start, no credit card needed.",
+      "subtitle": "Explain your situation in plain language. We read the actual law, cite real statutes and cases, and tell you exactly where you stand — free to start.",
       "bullet1": "Reads your situation, not just keywords",
       "bullet2": "Real statutes & case law — cited, never fabricated",
       "bullet3": "Individuals and law firms on one platform",
       "bullet4": "Auto-detects your jurisdiction, always applies local law",
-      "ctaPrimary": "Start Free — No Credit Card",
+      "ctaPrimary": "Get Started Free",
       "ctaSecondary": "See it in action",
       "trust1": "Free preview always included",
       "trust2": "Never used to train AI",
       "trust3": "Private to your account",
       "howItWorksLink": "How it works"
+    },
+    "guestSignup": {
+      "badge": "40% off today only",
+      "title": "Create your free account",
+      "description": "Sign up to save your report and unlock your welcome discount.",
+      "signUp": "Sign up",
+      "continueAsGuest": "Continue as guest"
     },
     "coverage": {
       "india": "India",
@@ -210,7 +261,7 @@
         "Matter management, billing, AI Copilot, and meeting transcripts — one platform.",
         "Built-in client portal. Not email. Not a PDF."
       ],
-      "cta": "Start Free — No Credit Card"
+      "cta": "Get Started Free"
     },
     "whyNot": {
       "badge": "Why Umbrella",
@@ -467,36 +518,234 @@
       "badge": "Free to start",
       "title": "Your legal brain.",
       "titleItalic": "Free to start.",
-      "subtitle": "Describe your situation. Get cited analysis in under 2 minutes. No credit card, no lawyer needed to start.",
+      "subtitle": "Describe your situation. Get cited analysis in under 2 minutes. No lawyer needed to start.",
       "ctaPrimary": "Get Started — It's Free",
       "ctaSecondary": "For law firms →",
-      "footnote": "No credit card · Results in under 2 min · Free preview always included"
+      "footnote": "Results in under 2 min · Free preview always included"
     },
     "landingIssueBoard": {
-      "title": "What's your legal situation?",
-      "subtitle": "Describe it in plain language — our AI will read the facts, cite the law, and tell you exactly where you stand.",
+      "title": "What do you need help with?",
+      "subtitle": "Research a question, understand your situation, draft a document, or review a contract — tell us in plain language and we'll cite the law that applies.",
+      "titleIssueCheck": "Understand your legal situation",
+      "subtitleIssueCheck": "Tell us what happened. Umbrella will identify the key legal issues, explain your options, and guide you toward the documents you may need.",
+      "titleResearch": "Research a legal question",
+      "subtitleResearch": "Ask a focused legal question and receive a structured answer supported by relevant legislation, cases, and citations.",
+      "titleDrafting": "Draft a legal document",
+      "subtitleDrafting": "Generate notices, agreements, petitions, and more — grounded in applicable law.",
+      "titleDocumentReview": "Review a document",
+      "subtitleDocumentReview": "Upload a contract or filing — we'll flag risks, gaps, and key clauses.",
+      "draftExamplesHint": "Popular templates lawyers draft every day — sign up free to generate yours.",
+      "docReviewHint": "Upload PDFs or Word files and get clause-by-clause analysis with cited risks.",
+      "docReviewRisk": "Risk flags for unfavorable or missing terms",
+      "docReviewClauses": "Key clause extraction and plain-language summary",
+      "docReviewAi": "AI review grounded in your jurisdiction's law",
+      "docReviewCompare": "Tabular review across multiple documents",
+      "tryFreeSignUp": "Sign up free to try",
+      "researchTeaserUnavailable": "Research preview is not available on this API yet. Run the local backend (port 4000) or deploy the latest API.",
+      "placeholderIssueCheck": "Describe what happened, who was involved, important dates, and what you want to achieve.",
+      "placeholderResearch": "Enter the legal question you want researched…",
+      "placeholderDrafting": "Describe the document you need drafted — type, parties, and key terms.",
+      "placeholderDocumentReview": "Describe the document or paste key clauses you want reviewed.",
+      "taskIssueCheck": "Issue Checker",
+      "taskResearch": "Legal Research",
+      "taskDrafting": "Draft a Document",
+      "taskDocumentReview": "Review a Document",
+      "taskSelectLabel": "What would you like to do?",
+      "regionIndia": "India",
+      "regionUnitedStates": "United States",
+      "regionLabel": "Jurisdiction",
+      "signUpToUnlock": "Sign up free to unlock",
+      "citedAuthorities": "Real law cited",
       "languageTitle": "Which language do you prefer?",
       "languageSubtitle": "We'll deliver your legal analysis in the language you choose.",
       "freePreview": "Free preview",
-      "noCreditCard": "No credit card",
       "resultsIn2Min": "Results in <2 min",
       "otherLanguages": "Other languages",
       "otherLanguagesPlaceholder": "Select a language",
-      "languageSubtitleIndia": "We'll deliver your legal analysis in the language you choose."
+      "languageSubtitleIndia": "We'll deliver your legal analysis in the language you choose.",
+      "draftExamples": {
+        "regularBail": {
+          "label": "Regular Bail Application",
+          "subtitle": "Criminal · BNSS §480",
+          "tag": "Bail"
+        },
+        "chequeBounce": {
+          "label": "Cheque Bounce Complaint",
+          "subtitle": "Criminal · NI Act §138",
+          "tag": "Recovery"
+        },
+        "divorcePetition": {
+          "label": "Divorce Petition",
+          "subtitle": "Family · HMA §13",
+          "tag": "Family"
+        },
+        "writPetition": {
+          "label": "Writ Petition (High Court)",
+          "subtitle": "Constitutional · Art. 226",
+          "tag": "Writ"
+        },
+        "federalComplaint": {
+          "label": "Federal Civil Complaint",
+          "subtitle": "Civil · FRCP Rule 8",
+          "tag": "Federal"
+        },
+        "motionToDismiss": {
+          "label": "12(b)(6) Motion to Dismiss",
+          "subtitle": "Civil · FRCP Rule 12",
+          "tag": "Motion"
+        }
+      },
+      "researchLockedHint": "Sample research questions lawyers ask every day — sign up free to try.",
+      "researchExamples": {
+        "bnss101": {
+          "label": "When can police arrest without a warrant?",
+          "subtitle": "Criminal · BNSS §101",
+          "tag": "India"
+        },
+        "section138": {
+          "label": "Cheque bounce notice requirements",
+          "subtitle": "Criminal · NI Act §138",
+          "tag": "Recovery"
+        },
+        "frcp12": {
+          "label": "12(b)(6) motion to dismiss standard",
+          "subtitle": "Civil · FRCP Rule 12",
+          "tag": "Federal"
+        },
+        "ukEmployment": {
+          "label": "Unfair dismissal time limits",
+          "subtitle": "Employment · UK ERA 1996",
+          "tag": "UK"
+        },
+        "keLabour": {
+          "label": "Wrongful termination remedies",
+          "subtitle": "Labour · Kenya Employment Act",
+          "tag": "Kenya"
+        },
+        "contactDrafting": {
+          "label": "Essential clauses in a service agreement",
+          "subtitle": "Commercial · Contract law",
+          "tag": "Drafting"
+        }
+      },
+      "helperIssueCheck": "You can write in your own words. The more relevant detail you provide, the more useful the analysis will be.",
+      "helperResearch": "Include the jurisdiction and specific issue for more precise results.",
+      "checkMySituation": "Check my situation",
+      "researchThisQuestion": "Research this question",
+      "enterAtLeastChars": "Enter at least {count} characters",
+      "charCount": "{current} / {max} characters",
+      "footerIssueCheck1": "Free initial check",
+      "footerIssueCheck2": "Applicable law identified",
+      "footerIssueCheck3": "Document guidance included",
+      "footerResearch1": "Authority-backed answer",
+      "footerResearch2": "Relevant cases and statutes",
+      "footerResearch3": "Clear citations"
+    },
+    "researchProgress": {
+      "runningTitle": "Running legal research",
+      "refiningTitle": "Refining with context…",
+      "modeFast": "Fast",
+      "modeGuidance": "AI only",
+      "modeVerified": "Verified",
+      "aboutOneMin": "· ~1 min",
+      "almostThere": "· almost there…",
+        "takingLonger": "· taking longer than usual",
+      "deepCitationNote": "Verified Research is running an in-prompt self-check.",
+      "verifiedDurationHint": "· usually under 45s",
+      "stillWorking": "· still working…",
+      "verifiedRunningBanner": "Verified Research runs deeper retrieval and citation checks — this can take a few minutes.",
+      "draftReadyBanner": "Draft memo ready — running final citation audit…",
+      "draftVerifyingBanner": "Draft ready — running accuracy checks…",
+      "phaseStallNote": "Still drafting — long contracts can take a bit longer.",
+      "phaseStallNoteVerified": "Still working — the backend is processing this step. Large queries can take a few minutes.",
+      "stepCorpusDetailGeneric": "Scanning statutes, regulations, and case law for your jurisdiction",
+      "stepAuditDraftLabel": "Verifying citations (memo draft ready)",
+      "stepAuditDraftDetail": "Final citation audit pass — your draft is visible below.",
+      "stepGuidanceReadLabel": "Reading your question",
+      "stepGuidanceReadDetail": "Identifying the issue, jurisdiction, and contract facts",
+      "stepGuidanceDraftLabel": "Drafting the note",
+      "stepGuidanceDraftDetail": "Writing a first-pass answer from the question and contract",
+      "stepGuidanceReadyLabel": "Ready",
+      "stepGuidanceReadyDetail": "Preparing the research note",
+      "stepSelfCheckLabel": "Self-check",
+      "stepSelfCheckDetail": "Attacking weak assumptions in the same draft",
+      "stepParseLabel": "Parsing your legal question",
+      "stepParseDetail": "Identifying jurisdiction, provisions, and intent",
+      "stepParseDetailProvision": "Identifying {provision} and related provisions",
+      "stepCorpusLabel": "Searching statute corpus",
+      "stepCorpusDetailIn": "Scanning India Code, BNSS, BNS, and BSA databases",
+      "stepCorpusDetailInAct": "Scanning {act} and related India Code databases",
+      "stepCorpusDetailUs": "Scanning USC, CFR, and federal rule databases",
+      "stepRetrieveLabel": "Retrieving authorities",
+      "stepRetrieveFetch": "Fetching {provision} from statute corpus…",
+      "stepRetrieveRank": "Ranking related sections and commentary…",
+      "stepRetrieveCases": "Matching case law that cites this provision…",
+      "stepRetrieveRankCases": "Ranking case law by relevance…",
+      "stepRetrieveMatch": "Matching statutory sections to your question…",
+      "stepRetrieveCommentary": "Pulling authoritative commentary…",
+      "stepPredecessorLabel": "Verifying predecessor provisions",
+      "stepPredecessorCrpcBnss": "Cross-checking CrPC → BNSS section remaps",
+      "stepPredecessorCrpcBnssSection": "Cross-checking CrPC → BNSS remaps for Section {section}",
+      "stepPredecessorGeneric": "Cross-checking predecessor statute mappings",
+      "stepGroundLabel": "Grounding the analysis",
+      "stepGroundPinProvision": "Pinning {provision} against authoritative sources…",
+      "stepGroundVerify": "Verifying section text against corpus…",
+      "stepGroundAmendments": "Checking for amendments and notifications…",
+      "stepGroundPin": "Pinning retrieved text against authoritative sources…",
+      "stepGroundCitations": "Verifying section numbers and citations…",
+      "stepDraftLabel": "Drafting the legal memo",
+      "stepDraftStructure": "Structuring the legal analysis…",
+      "stepDraftWeave": "Weaving authorities into a clear answer…",
+      "stepDraftSummary": "Adding plain-language summary…",
+      "stepCitationsLabel": "Verifying citations",
+      "stepCitationsFabricated": "Checking for fabricated or irrelevant case citations…",
+      "stepCitationsStatute": "Validating statute references…",
+      "stepCitationsUnsupported": "Removing unsupported claims…",
+      "stepFinalizeLabel": "Finalising substance checks",
+      "stepFinalizeDrift": "Applying drift detection and compliance rules…",
+      "stepFinalizePreview": "Preparing your preview excerpt…",
+      "stepFinalizeReady": "Almost ready…",
+      "stepPlanMapLabel": "Planning the research map",
+      "stepPlanMapDetail": "Identifying issues, likely statutes, and retrieval queries",
+      "stepPlanMapQueries": "Expanding search queries from the research plan",
+      "stepLiveRetrieveLabel": "Checking live and corpus sources",
+      "stepLiveRetrieveDetail": "Checking AI-named authorities against live/corpus sources",
+      "stepLiveRetrieveFailover": "Retrying available connectors when a source is down",
+      "stepDeepAgentLabel": "Running deep research agent",
+      "stepDeepAgentReact": "ReAct loop: searching web, statutes, and case law…",
+      "stepDeepAgentEval": "Evaluating tool results…",
+      "stepDeepAgentPlan": "Planning next retrieval pass…",
+      "stepCrossCheckLabel": "Cross-checking retrieved sources",
+      "stepCrossCheckMerge": "Merging corpus hits with live authority results…",
+      "stepCrossCheckDedupe": "De-duplicating overlapping authorities…",
+      "stepAuditLabel": "Running citation audit",
+      "stepAuditLabeling": "Labelling unverified citations before delivery…",
+      "stepAuditFinal": "Final citation audit pass…"
     }
   },
   "siteName": "Umbrella",
-  "siteTagline": "Understand your legal issue. Run your firm with AI.",
-  "siteDescription": "Check your legal issue free in IN, US, KE & UK. Law firms get matter-aware AI Copilot, research, billing, and practice automation.",
-  "siteTitle": "Umbrella — AI Legal Guidance & Firm OS",
-  "issueCheckerMetaTitle": "Free Legal Issue Checker",
-  "issueCheckerMetaDescription": "Describe your legal problem and get a free AI preview with country-specific guidance for India, US, Kenya, and the UK.",
-  "forLawyersMetaTitle": "AI-Native Legal OS for Law Firms",
-  "forLawyersMetaDescription": "Matter-aware AI Copilot, legal research, billing, trust accounting, and automation — built for modern law firms.",
+  "siteTagline": "The global legal AI platform — understand any situation, draft any document, run any firm.",
+  "siteDescription": "Umbrella is global legal AI: free issue checker with real citations, AI document drafting, contract review, legal research, and a full law firm OS — available worldwide.",
+  "siteTitle": "Umbrella — Global Legal AI Platform",
+  "issueCheckerMetaTitle": "Free Legal Issue Checker — Global Legal AI",
+  "issueCheckerMetaDescription": "Describe your legal problem in any country. Get a free AI preview with real statutes, risk level, and next steps — jurisdiction-aware legal guidance worldwide.",
+  "forLawyersMetaTitle": "AI-Native Legal OS for Law Firms — Global Platform",
+  "forLawyersMetaDescription": "Matter-aware AI Copilot, legal research, document drafting, billing, trust accounting, and client intake — the complete legal platform for firms in every country.",
+  "demoMetaTitle": "Umbrella Demo — Global Legal AI in Action",
+  "demoMetaDescription": "Interactive product tour: issue checker, document drafting, contract review, AI Copilot, and firm workflows. Free worldwide for individuals; free trial for law firms.",
+  "lawyersMetaTitle": "Find a Lawyer — When You're Ready for Human Review",
+  "lawyersMetaDescription": "Browse vetted lawyers worldwide. Start with free AI legal clarity — connect to licensed counsel in your jurisdiction when you need formal advice.",
+  "uploadDocumentMetaTitle": "AI Document Review & Contract Analysis — Global",
+  "uploadDocumentMetaDescription": "Upload contracts, notices, or agreements for AI clause-level review. Jurisdiction-aware legal document analysis — available in every country.",
+  "legalFormsMetaTitle": "Legal Document Drafting & Forms — Global Templates",
+  "legalFormsMetaDescription": "AI-powered legal document drafting: demand letters, contracts, notices, and pleadings — jurisdiction-aware templates for any country.",
+  "learnMoreMetaTitle": "How Umbrella Works — Global Legal Intelligence Platform",
+  "learnMoreMetaDescription": "Legal clarity without the billable hour. AI document drafting, contract review, legal research, and a full law firm OS — available in every country.",
   "welcomeSubtext": "Check a legal issue in minutes. Manage matters and run your firm — private and secure.",
   "welcomeHeadline": "Legal clarity\nfor everyone.",
   "instantAnswers": "Instant answers",
   "private": "Private",
+  "anywhereChip": "Anywhere",
   "forLawyersChip": "For lawyers",
   "createAccountCta": "Create Account",
   "tryForFree": "Try for free — no account needed",
@@ -529,7 +778,7 @@
   "global_coverage": "Global coverage",
   "how_it_works": "How it works",
   "illustrative_estimate_based_on_stated_facts_not_a_legal_pred": "Illustrative estimate based on stated facts. Not a legal prediction.",
-  "india_us_uk_kenya_and_growing": "India · US · UK · Kenya — and growing",
+  "india_us_uk_kenya_and_growing": "Every country worldwide",
   "legal": "Legal",
   "legal_disclaimer": "Legal Disclaimer",
   "live": "Live",
@@ -559,7 +808,6 @@
   "forLawyersHeadline3": "Grow Your Practice.",
   "forLawyersSubhead": "The all-in-one legal practice management platform — native transcripts, matter-aware Copilot, trust accounting, and automation-first workflows.",
   "forLawyersTryDemo": "Try Demo",
-  "forLawyersNoCreditCard": "No credit card",
   "forLawyersTrialDays": "30-day trial",
   "forLawyersSetupMinutes": "Setup in 5 minutes",
   "forLawyersStatActiveMatters": "Active Matters",
@@ -581,6 +829,52 @@
   "forLawyersFeatureAutomationDesc": "If/then workflows with approvals and SLAs.",
   "forLawyersFeatureCopilot": "AI Copilot",
   "forLawyersFeatureCopilotDesc": "Matter-aware drafts, research, and strategy memos.",
+  "forLawyersFeatureResearch": "Legal Research",
+  "forLawyersFeatureResearchDesc": "Jurisdiction-aware AI research with cited statutes and case law.",
+  "forLawyersFeatureMeetings": "Meeting Transcripts",
+  "forLawyersFeatureMeetingsDesc": "Record, transcribe, and auto-summarise client meetings.",
+  "forLawyersFeatureBilling": "Billing & Time Tracking",
+  "forLawyersFeatureBillingDesc": "Automated time capture, invoice generation, and payment collection.",
+  "forLawyersHowItWorksTitle": "Up and running in minutes",
+  "forLawyersStep1Title": "Record or import a meeting",
+  "forLawyersStep1Desc": "Capture any client call or upload an existing recording. Umbrella transcribes and extracts action items automatically.",
+  "forLawyersStep2Title": "AI builds your matter",
+  "forLawyersStep2Desc": "Key facts, deadlines, risks, and next steps are organised into a live matter file — no manual data entry required.",
+  "forLawyersStep3Title": "Run your practice",
+  "forLawyersStep3Desc": "Billing, trust accounting, client communications, and filings all flow from the same source of truth.",
+  "forLawyersImpactTitle": "The Umbrella difference",
+  "forLawyersImpact1Value": "68%",
+  "forLawyersImpact1Label": "Less time on admin",
+  "forLawyersImpact2Value": "3×",
+  "forLawyersImpact2Label": "Faster matter setup",
+  "forLawyersImpact3Value": "94%",
+  "forLawyersImpact3Label": "Billing accuracy",
+  "forLawyersImpact4Value": "< 5 min",
+  "forLawyersImpact4Label": "Average onboarding time",
+  "forLawyersPersonasTitle": "Built for every practice type",
+  "forLawyersPersona1Title": "Solo Advocates",
+  "forLawyersPersona1Bullet1": "Full matter OS without firm overhead",
+  "forLawyersPersona1Bullet2": "AI Copilot drafts letters, contracts, and memos",
+  "forLawyersPersona1Bullet3": "Built-in trust accounting and invoicing",
+  "forLawyersPersona2Title": "Boutique Firms",
+  "forLawyersPersona2Bullet1": "Multi-user with role-based access control",
+  "forLawyersPersona2Bullet2": "Shared matter pipeline and client portal",
+  "forLawyersPersona2Bullet3": "Team billing and collections dashboard",
+  "forLawyersPersona3Title": "In-House Legal Teams",
+  "forLawyersPersona3Bullet1": "Unlimited internal matter tracking",
+  "forLawyersPersona3Bullet2": "Policy and contract library with version control",
+  "forLawyersPersona3Bullet3": "SSO, audit logs, and compliance reporting",
+  "forLawyersPricingTeaserTitle": "Simple, transparent pricing",
+  "forLawyersPricingTeaserSubtitle": "Start free. Upgrade when you need more. No hidden fees.",
+  "forLawyersPricingTeaserSolo": "Solo — from $40 / month",
+  "forLawyersPricingTeaserSoloDesc": "Full Lawyer OS for individual advocates and barristers.",
+  "forLawyersPricingTeaserFirm": "Firm — custom per seat",
+  "forLawyersPricingTeaserFirmDesc": "Multi-user, SSO, advanced compliance, and dedicated support.",
+  "forLawyersPricingTeaserCta": "See full pricing",
+  "forLawyersFinalCtaTitle": "Your practice, supercharged by AI.",
+  "forLawyersFinalCtaSubtitle": "Join hundreds of lawyers already using Umbrella to work smarter, bill more, and deliver better client outcomes.",
+  "forLawyersFinalCtaTrial": "Start free trial",
+  "forLawyersFinalCtaDemo": "Watch a demo",
   "forLawyersCtaTitle": "Ready to transform your practice?",
   "forLawyersCtaSubtitle": "Join forward-thinking law firms using Umbrella.",
   "forLawyersCtaTrial": "Start Your Free Trial",
@@ -604,6 +898,954 @@
   "subscriptionCancelBody": "No charges were made. You can return to pricing to choose a plan anytime.",
   "subscriptionBackToPricing": "Back to pricing",
   "subscriptionSuccessTitle": "Subscription confirmed",
+  "subscriptionSuccessWelcome": "Welcome to {plan}",
+  "subscriptionSuccessBody": "Your plan is active and credits have been added to your account.",
+  "subscriptionSuccessActivating": "Activating your subscription…",
+  "subscriptionSuccessActivatingHint": "Confirming payment and updating your plan.",
+  "subscriptionSuccessWebhookHint": "Payment received. Your plan may take a moment to update — check Plan & usage shortly.",
+  "subscriptionSuccessPlan": "Plan",
+  "subscriptionSuccessActiveBadge": "Active",
+  "subscriptionSuccessCredits": "Included AI credits",
+  "subscriptionSuccessPrice": "Price",
+  "subscriptionSuccessPerMonth": "month",
+  "subscriptionSuccessRenews": "Next billing date",
+  "subscriptionSuccessSyncing": "Syncing your plan…",
+  "subscriptionSuccessSyncingHint": "Payment received — checking that your subscription is active.",
+  "subscriptionSuccessCreditsAdded": "+{count} credits added to your account",
+  "subscriptionSuccessConfirmFailed": "We couldn't confirm your subscription automatically. Open Plan & usage to check your status, or contact support if it still shows Free.",
+  "subscriptionSuccessPendingDeploy": "Payment received. Your subscription is being processed — this usually takes under a minute.",
+  "subscriptionSuccessPendingHint": "If Plan & usage still shows Free after a few minutes, refresh the page or contact support with your checkout session ID.",
   "subscriptionGoToDashboard": "Go to dashboard",
-  "subscriptionPlanUsage": "Plan & usage"
+  "subscriptionPlanUsage": "Plan & usage",
+  "legalAi": {
+    "metaTitle": "Legal AI Platform — Global Legal Intelligence for Everyone",
+    "metaDescription": "Umbrella is the global legal AI platform: real citations, AI document drafting, contract review, legal research, and a complete law firm OS — available in every country worldwide.",
+    "badge": "Global Legal AI",
+    "heroTitle": "Legal AI that cites real law — everywhere",
+    "heroSubtitle": "Most legal tools give confident answers with no sources. Umbrella retrieves jurisdiction-specific statutes and case law, drafts documents, reviews contracts, and runs your entire firm — in every country.",
+    "heroCtaPrimary": "Try free legal AI checker",
+    "heroCtaSecondary": "Legal AI for law firms",
+    "whatIsTitle": "What is Legal AI?",
+    "whatIsBody1": "Legal AI uses large language models plus legal databases to help people understand rights, review documents, and plan next steps. Unlike general chatbots, purpose-built legal AI should ground answers in applicable law, respect jurisdiction boundaries, and clearly distinguish information from formal legal advice.",
+    "whatIsBody2": "Umbrella combines retrieval-augmented generation (RAG) over indexed statutes and case law with matter-aware workflows — so consumers get guided analysis and firms get a Copilot that understands client context, billing, and compliance.",
+    "differentTitle": "Why Umbrella is different from generic Legal AI",
+    "differentSubtitle": "Built for legal context from day one — not a chatbot wrapper.",
+    "pillars": [
+      {
+        "title": "Real citations you can verify",
+        "body": "Every analysis links to statutes and case law you can open and check — not fabricated references."
+      },
+      {
+        "title": "Global jurisdiction awareness",
+        "body": "Auto-detects your country and applies local law. Deep corpora where available; intelligent guidance everywhere else — one platform for the entire world."
+      },
+      {
+        "title": "Two platforms, one connected system",
+        "body": "Individuals get a free issue checker and document review. Firms get matter management, billing, trust accounting, and an AI Copilot — linked through client intake."
+      },
+      {
+        "title": "Privacy and compliance built in",
+        "body": "Tenant isolation, regional data residency options, and explicit consent before using your data for model training."
+      }
+    ],
+    "useCasesTitle": "Legal AI use cases",
+    "useCasesSubtitle": "From first question to firm-wide automation.",
+    "useCases": [
+      {
+        "audience": "Individuals",
+        "title": "Understand your legal situation",
+        "items": [
+          "Free legal issue checker with cited guidance",
+          "Document upload and AI review",
+          "Connect with a licensed lawyer when ready"
+        ]
+      },
+      {
+        "audience": "Law firms",
+        "title": "Run a modern AI-native practice",
+        "items": [
+          "Matter-aware AI Copilot",
+          "Legal research with section finder",
+          "Meeting transcripts, billing, and trust accounting",
+          "Client intake from consumer issue checks"
+        ]
+      }
+    ],
+    "compareTitle": "Explore all legal AI capabilities",
+    "compareSubtitle": "Document drafting, contract review, legal research, and firm automation — one global platform.",
+    "compareLink": "Browse all solutions",
+    "guidesTitle": "Legal guides by jurisdiction",
+    "guidesSubtitle": "Educational overviews on common legal topics — always verify with a licensed attorney.",
+    "guidesLink": "Browse all legal guides",
+    "faqTitle": "Legal AI — frequently asked questions",
+    "faqItems": [
+      {
+        "question": "Is Umbrella legal advice?",
+        "answer": "No. Umbrella provides legal information and AI-guided analysis to help you understand your situation. It is not a substitute for advice from a licensed attorney. For formal legal advice, connect with a lawyer through the platform."
+      },
+      {
+        "question": "How is Legal AI different from ChatGPT?",
+        "answer": "General chatbots can produce confident but incorrect legal answers with fabricated citations. Umbrella retrieves real statutes and case law for your jurisdiction and cites sources you can verify — plus offers firm tools ChatGPT does not provide."
+      },
+      {
+        "question": "Which countries does Umbrella support?",
+        "answer": "Umbrella is built as a global legal AI platform. We serve users in every country worldwide — with deep legal database coverage expanding continuously and intelligent jurisdiction-aware guidance everywhere."
+      },
+      {
+        "question": "Is there a free Legal AI option?",
+        "answer": "Yes. The legal issue checker preview is free for registered users with included AI credits. Law firms can start a free trial of the full platform including AI Copilot."
+      },
+      {
+        "question": "Can law firms use Umbrella as their Legal AI software?",
+        "answer": "Yes. Umbrella is an AI-native legal OS — matter management, billing, trust accounting, document review, meeting transcripts, and a matter-aware Copilot in one platform."
+      },
+      {
+        "question": "Does Legal AI replace lawyers?",
+        "answer": "No. Legal AI helps you understand options faster and prepares better questions for your lawyer. Umbrella connects consumers to licensed attorneys when human review is needed."
+      }
+    ],
+    "finalCtaTitle": "Try Legal AI that cites real law",
+    "finalCtaSubtitle": "Free issue checker for individuals. Free trial for law firms.",
+    "finalCtaPrimary": "Start free — issue checker",
+    "finalCtaSecondary": "Explore firm platform"
+  },
+  "compareChatGpt": {
+    "metaTitle": "Umbrella vs ChatGPT for Legal Work",
+    "metaDescription": "Compare Umbrella legal AI vs ChatGPT: real citations, jurisdiction-aware law, outcome guidance, and a full law firm OS — not generic chatbot answers.",
+    "badge": "Comparison",
+    "title": "Umbrella vs ChatGPT for legal work",
+    "subtitle": "ChatGPT is a general assistant. Umbrella is legal AI built on real statutes, case law, and firm workflows.",
+    "umbrellaLabel": "Umbrella",
+    "chatgptLabel": "ChatGPT",
+    "rows": [
+      {
+        "feature": "Legal citations",
+        "umbrella": "Real statutes & case law with clickable sources",
+        "competitor": "Can fabricate citations that look real"
+      },
+      {
+        "feature": "Jurisdiction awareness",
+        "umbrella": "India, US, UK, Kenya legal corpora",
+        "competitor": "Generic — no guaranteed local law"
+      },
+      {
+        "feature": "Document review",
+        "umbrella": "Upload contracts & get clause-level analysis",
+        "competitor": "Paste text only; no matter context"
+      },
+      {
+        "feature": "Law firm tools",
+        "umbrella": "Matters, billing, trust, Copilot, intake",
+        "competitor": "None — chat only"
+      },
+      {
+        "feature": "Connect to a lawyer",
+        "umbrella": "Built-in marketplace & review queue",
+        "competitor": "Not available"
+      },
+      {
+        "feature": "Data privacy",
+        "umbrella": "Tenant isolation; no training without consent",
+        "competitor": "General OpenAI data policies"
+      }
+    ],
+    "verdictTitle": "When to use each",
+    "verdictBody": "Use ChatGPT for general writing and brainstorming. Use Umbrella when you need legal analysis grounded in applicable law, verifiable citations, or firm-grade workflows.",
+    "cta": "Try Umbrella Legal AI free"
+  },
+  "compareHarvey": {
+    "metaTitle": "Umbrella vs Harvey AI — Consumer + Firm Legal AI",
+    "metaDescription": "Harvey AI targets enterprise law firms only. Umbrella gives individuals free legal clarity AND a full firm OS — with India, UK, US & Kenya coverage and real citations.",
+    "badge": "Comparison",
+    "title": "Umbrella vs Harvey AI",
+    "subtitle": "Harvey is built exclusively for BigLaw and enterprise firms. Umbrella serves everyone — from your first legal question to running an entire practice.",
+    "umbrellaLabel": "Umbrella",
+    "harveyLabel": "Harvey AI",
+    "rows": [
+      {
+        "feature": "Individual consumers",
+        "umbrella": "Free issue checker — no lawyer needed to understand your situation",
+        "competitor": "Enterprise only — no consumer access"
+      },
+      {
+        "feature": "Geographic coverage",
+        "umbrella": "India, US, UK, Kenya with local legal corpora",
+        "competitor": "Primarily US & UK enterprise markets"
+      },
+      {
+        "feature": "Pricing transparency",
+        "umbrella": "Free preview + published plans from $0",
+        "competitor": "Enterprise sales — no public pricing"
+      },
+      {
+        "feature": "Law firm OS",
+        "umbrella": "Matters, billing, trust, intake, Copilot — one platform",
+        "competitor": "AI assistant layer — requires existing firm stack"
+      },
+      {
+        "feature": "Client intake funnel",
+        "umbrella": "Consumer issue checks flow directly to firm matters",
+        "competitor": "No consumer-to-firm pipeline"
+      },
+      {
+        "feature": "Citation verification",
+        "umbrella": "Clickable statutes & case law you can verify",
+        "competitor": "Strong for drafting; less consumer-facing clarity"
+      }
+    ],
+    "verdictTitle": "Why teams choose Umbrella over Harvey",
+    "verdictBody": "Choose Harvey if you are a large US/UK firm adding an AI layer to existing tools. Choose Umbrella if you want legal AI that serves both citizens and firms — with emerging-market coverage, free consumer access, and a connected intake-to-matter workflow.",
+    "cta": "Try Umbrella free — no sales call required"
+  },
+  "compareLegora": {
+    "metaTitle": "Umbrella vs Legora — Legal AI for Everyone, Not Just Firms",
+    "metaDescription": "Legora focuses on enterprise law firm workflows. Umbrella combines a free consumer legal issue checker with a full firm platform — India, UK, US & Kenya, with real citations.",
+    "badge": "Comparison",
+    "title": "Umbrella vs Legora",
+    "subtitle": "Legora is legal AI for law firms. Umbrella is legal intelligence for everyone — individuals get clarity without a lawyer; firms get the full OS.",
+    "umbrellaLabel": "Umbrella",
+    "legoraLabel": "Legora",
+    "rows": [
+      {
+        "feature": "No lawyer needed to start",
+        "umbrella": "Free issue checker explains your rights before any billable hour",
+        "competitor": "Firm-only — no individual consumer product"
+      },
+      {
+        "feature": "Emerging markets",
+        "umbrella": "Full India & Kenya legal databases — not just US/EU",
+        "competitor": "Nordic/US enterprise focus"
+      },
+      {
+        "feature": "Solo & small firms",
+        "umbrella": "SOLO bundle from day one — no enterprise minimum",
+        "competitor": "Enterprise-oriented pricing & onboarding"
+      },
+      {
+        "feature": "Outcome guidance",
+        "umbrella": "Risk level, outcome probability, and cited next steps",
+        "competitor": "Research & workflow automation focus"
+      },
+      {
+        "feature": "Lawyer marketplace",
+        "umbrella": "Connect to licensed counsel when AI clarity isn't enough",
+        "competitor": "Not available"
+      },
+      {
+        "feature": "Practice management",
+        "umbrella": "Billing, trust accounting, matters, meetings — built in",
+        "competitor": "Integrates with existing PM tools"
+      }
+    ],
+    "verdictTitle": "Why Umbrella wins on reach and accessibility",
+    "verdictBody": "Legora excels at enterprise firm automation in mature markets. Umbrella goes further — free legal clarity for millions of people who can't afford a lawyer yet, plus a full platform for firms that want AI-native intake in India, Kenya, the UK, and the US.",
+    "cta": "Start free — individuals and firms welcome"
+  },
+  "compareHub": {
+    "metaTitle": "Compare Umbrella Legal AI — vs Harvey, Legora & ChatGPT",
+    "metaDescription": "See how Umbrella compares to Harvey AI, Legora, and ChatGPT. The only legal AI built for individuals AND law firms — with India, UK, US & Kenya coverage.",
+    "badge": "Comparisons",
+    "title": "How Umbrella compares",
+    "subtitle": "Purpose-built legal AI with real citations — for people who need clarity and firms that need an OS.",
+    "readComparison": "Read comparison",
+    "cta": "Try Umbrella free",
+    "cards": [
+      {
+        "slug": "umbrella-vs-harvey",
+        "title": "Umbrella vs Harvey AI",
+        "description": "Enterprise-only vs consumer + firm. Emerging markets vs US/UK focus."
+      },
+      {
+        "slug": "umbrella-vs-legora",
+        "title": "Umbrella vs Legora",
+        "description": "Firm-only automation vs free consumer clarity plus full firm OS."
+      },
+      {
+        "slug": "umbrella-vs-chatgpt",
+        "title": "Umbrella vs ChatGPT",
+        "description": "Real legal citations vs fabricated case law. Jurisdiction-aware vs generic."
+      }
+    ]
+  },
+  "countryPages": {
+    "forIndividuals": "For individuals",
+    "forLawFirms": "For law firms",
+    "noLawyerNeededTitle": "You don't need a lawyer to understand your situation",
+    "lawyerWhenReady": "When you want formal advice, connect to a licensed lawyer on the platform — on your terms.",
+    "guidesTitle": "Legal guides for {country}",
+    "guidesSubtitle": "Educational overviews on common legal topics — not legal advice.",
+    "guideLink": "Read guide",
+    "allGuides": "Browse all legal guides",
+    "otherMarkets": "Featured regions — available worldwide",
+    "in": {
+      "metaTitle": "Legal AI India — Global Platform, Local Law",
+      "metaDescription": "Umbrella serves India and every country worldwide. Free AI issue checker with IPC citations, FIR analysis, and section finder. Full legal OS for Indian law firms.",
+      "badge": "Legal AI India",
+      "heroTitle": "Legal clarity for India — no advocate needed to start",
+      "heroSubtitle": "Describe your situation in Hindi or English. Umbrella reads Indian statutes, IPC sections, and case law — then tells you exactly where you stand. Law firms get a full AI-native practice platform.",
+      "heroNote": "Legal information only — not legal advice. Connect to a licensed advocate when you need formal representation.",
+      "consumerCta": "Check my legal issue free",
+      "firmCta": "Platform for law firms",
+      "consumerTitle": "Most Indians don't need a lawyer to know if they have a case",
+      "consumerBody": "Before you pay ₹5,000 for a consultation, get a free AI preview grounded in the IPC, CrPC, contract acts, and relevant case law. Know your risk level, your rights, and your next steps.",
+      "noLawyerPitch": "Rent disputes, cheque bounce, employment issues, consumer complaints, property matters — Umbrella maps your facts to real Indian law in under 2 minutes. Only pay for a lawyer when you decide you need one.",
+      "consumerBullets": [
+        "Free issue checker with cited IPC & statute references",
+        "FIR analysis and section finder for criminal matters",
+        "Document upload and AI contract review",
+        "India Drafts — demand letters, notices, and pleadings",
+        "Connect to vetted advocates when ready"
+      ],
+      "firmTitle": "AI-native legal OS for Indian law firms",
+      "firmBody": "From solo advocates in district courts to mid-size firms — matter management, billing, trust accounting, and a Copilot that knows every client's facts.",
+      "firmPitch": "Consumer issue checks flow directly into your intake queue. Your Copilot already knows the client's situation before the first call.",
+      "firmBullets": [
+        "Matter-aware AI Copilot with Indian legal corpora",
+        "Section finder, FIR analysis, and India drafting tools",
+        "Billing, trust accounting, and client portal",
+        "Meeting transcription linked to matters",
+        "SOLO bundle for independent advocates"
+      ],
+      "faqTitle": "Legal AI India — FAQ",
+      "faqItems": [
+        {
+          "question": "Do I need a lawyer to use Umbrella in India?",
+          "answer": "No. Umbrella helps you understand your legal situation for free. You only need an advocate when you want formal legal advice or court representation."
+        },
+        {
+          "question": "Does Umbrella cover Indian criminal law?",
+          "answer": "Yes. FIR analysis, IPC section finder, and criminal procedure guidance are built in for registered users."
+        },
+        {
+          "question": "Can Indian law firms use Umbrella?",
+          "answer": "Yes. Umbrella is a full practice platform — matters, billing, trust, AI Copilot, and client intake from consumer issue checks."
+        }
+      ]
+    },
+    "us": {
+      "metaTitle": "Legal AI USA — Global Platform, US Law",
+      "metaDescription": "Umbrella serves the United States and every country worldwide. Free AI issue checker with federal and state law citations. Full legal OS for US law firms.",
+      "badge": "Legal AI United States",
+      "heroTitle": "Legal clarity for America — no attorney bill to start",
+      "heroSubtitle": "Employment disputes, landlord issues, small claims, contracts — describe your situation and get cited guidance from federal and state law. Law firms get matter management, billing, and AI Copilot.",
+      "heroNote": "Legal information only — not legal advice. Connect to a licensed attorney when you need formal counsel.",
+      "consumerCta": "Check my legal issue free",
+      "firmCta": "Platform for law firms",
+      "consumerTitle": "You shouldn't pay $300 just to learn if you have a case",
+      "consumerBody": "Get a free AI preview with risk level, outcome probability, and cited statutes before you hire an attorney. Know your options in plain English.",
+      "noLawyerPitch": "Wrongful termination, eviction, contract disputes, small claims — Umbrella applies your jurisdiction's law to your facts. Hire a lawyer only when the preview tells you it's worth it.",
+      "consumerBullets": [
+        "Free issue checker with federal & state law citations",
+        "Document upload and contract clause analysis",
+        "Outcome probability and risk assessment",
+        "US drafting tools for demand letters and notices",
+        "Connect to licensed attorneys when ready"
+      ],
+      "firmTitle": "AI-native legal OS for US law firms",
+      "firmBody": "Solo practitioners to mid-size firms — one platform for matters, billing, trust accounting, meeting intelligence, and a matter-aware Copilot.",
+      "firmPitch": "Consumer intake from issue checks gives your team context before the first consultation. Reduce unbillable discovery calls.",
+      "firmBullets": [
+        "Matter-aware AI Copilot with US legal research",
+        "Billing, trust accounting, and conflict checks",
+        "Meeting transcription and action items",
+        "Client portal — not email threads",
+        "Per-seat pricing with SOLO bundle for solos"
+      ],
+      "faqTitle": "Legal AI USA — FAQ",
+      "faqItems": [
+        {
+          "question": "Is Umbrella a substitute for an attorney?",
+          "answer": "No. Umbrella provides legal information to help you understand your situation. For formal legal advice, connect with a licensed attorney through the platform."
+        },
+        {
+          "question": "Which US jurisdictions does Umbrella cover?",
+          "answer": "Umbrella applies federal law and state-specific guidance. Full corpus coverage continues to expand — issue checks work nationwide with best-effort state law."
+        },
+        {
+          "question": "How does Umbrella compare to Harvey AI?",
+          "answer": "Harvey targets enterprise firms only. Umbrella serves both individuals (free issue checker) and firms (full OS) — with transparent pricing and no sales call required."
+        }
+      ]
+    },
+    "gb": {
+      "metaTitle": "Legal AI UK — Global Platform, UK Law",
+      "metaDescription": "Umbrella serves the United Kingdom and every country worldwide. Free AI issue checker citing UK statutes and case law. Full legal OS for British law firms.",
+      "badge": "Legal AI United Kingdom",
+      "heroTitle": "Legal clarity for the UK — no solicitor needed to start",
+      "heroSubtitle": "Employment tribunals, housing disrepair, tenant rights, contracts — get cited guidance from UK law in plain English. Solicitors and barristers get a full AI-native practice platform.",
+      "heroNote": "Legal information only — not legal advice. Connect to a regulated legal professional when you need formal counsel.",
+      "consumerCta": "Check my legal issue free",
+      "firmCta": "Platform for law firms",
+      "consumerTitle": "Know your rights before you instruct a solicitor",
+      "consumerBody": "Employment disputes, housing issues, consumer rights — get a free AI preview citing Acts of Parliament and relevant case law before you pay for a consultation.",
+      "noLawyerPitch": "Umbrella maps your facts to UK legislation and gives you risk level and next steps. Instruct a solicitor only when you're ready for formal advice.",
+      "consumerBullets": [
+        "Free issue checker citing UK statutes and case law",
+        "Employment tribunal and housing disrepair guidance",
+        "Document review for contracts and tenancy agreements",
+        "Plain-English outcome probability",
+        "Connect to regulated legal professionals when ready"
+      ],
+      "firmTitle": "AI-native legal OS for UK law firms",
+      "firmBody": "From sole practitioners to growing firms — matters, billing, trust accounting, and a Copilot trained on your client's intake data.",
+      "firmPitch": "Consumer issue checks in England, Scotland, Wales, and Northern Ireland feed your intake pipeline with full AI context.",
+      "firmBullets": [
+        "Matter-aware AI Copilot with UK legal corpora",
+        "Billing, trust accounting, and compliance tools",
+        "Meeting transcription linked to matters",
+        "Client portal with secure document sharing",
+        "Transparent per-seat pricing"
+      ],
+      "faqTitle": "Legal AI UK — FAQ",
+      "faqItems": [
+        {
+          "question": "Do I need a solicitor to use Umbrella?",
+          "answer": "No. Umbrella helps you understand your legal position for free. Instruct a solicitor when you need regulated legal advice or representation."
+        },
+        {
+          "question": "Does Umbrella cover employment tribunal matters?",
+          "answer": "Yes. Employment rights, unfair dismissal, and tribunal process guidance are included in our UK legal guides and issue checker."
+        },
+        {
+          "question": "How does Umbrella compare to Legora?",
+          "answer": "Legora focuses on enterprise firm automation. Umbrella serves both UK citizens (free clarity) and firms (full OS) — including India and Kenya coverage Legora doesn't offer."
+        }
+      ]
+    },
+    "ke": {
+      "metaTitle": "Legal AI Kenya — Global Platform, Kenyan Law",
+      "metaDescription": "Umbrella serves Kenya and every country worldwide. Free AI issue checker citing Kenyan statutes and case law. Full legal OS for Kenyan law firms with M-Pesa billing.",
+      "badge": "Legal AI Kenya",
+      "heroTitle": "Legal clarity for Kenya — no advocate fee to start",
+      "heroSubtitle": "Employment rights, land disputes, consumer complaints — describe your situation and get guidance grounded in Kenyan law. Advocates and firms get matter management, billing, and AI Copilot.",
+      "heroNote": "Legal information only — not legal advice. Connect to a licensed advocate when you need formal representation.",
+      "consumerCta": "Check my legal issue free",
+      "firmCta": "Platform for law firms",
+      "consumerTitle": "Legal clarity shouldn't require an advocate's consultation fee",
+      "consumerBody": "Before you pay for a consultation, get a free AI preview citing the Employment Act, Land laws, and relevant Kenyan case law. Know your risk and your options.",
+      "noLawyerPitch": "Land disputes, wrongful termination, consumer rights — Umbrella applies Kenyan law to your facts in minutes. Hire an advocate only when you decide you need one.",
+      "consumerBullets": [
+        "Free issue checker with Kenyan statute citations",
+        "Employment Act and land dispute guidance",
+        "Document upload and contract review",
+        "M-Pesa-friendly subscription and billing",
+        "Connect to vetted advocates when ready"
+      ],
+      "firmTitle": "AI-native legal OS for Kenyan law firms",
+      "firmBody": "Solo advocates to mid-size firms — matters, billing with M-Pesa support, trust accounting, and AI Copilot built for Kenyan practice.",
+      "firmPitch": "Consumer issue checks from across Kenya feed your intake with full context — your Copilot knows the client's situation before the first meeting.",
+      "firmBullets": [
+        "Matter-aware AI Copilot with Kenyan legal corpora",
+        "M-Pesa billing integration",
+        "Billing, trust accounting, and client portal",
+        "Meeting transcription for client conferences",
+        "SOLO bundle for independent advocates"
+      ],
+      "faqTitle": "Legal AI Kenya — FAQ",
+      "faqItems": [
+        {
+          "question": "Do I need an advocate to use Umbrella in Kenya?",
+          "answer": "No. Umbrella helps you understand your legal situation for free. You only need an advocate for formal legal advice or court representation."
+        },
+        {
+          "question": "Does Umbrella support M-Pesa payments?",
+          "answer": "Yes. Consumer subscriptions and firm billing support M-Pesa alongside card payments."
+        },
+        {
+          "question": "Which Kenyan laws does Umbrella cover?",
+          "answer": "Employment Act, land and property law, consumer protection, and contract law — with expanding case law coverage."
+        }
+      ]
+    }
+  },
+  "seoGlobal": {
+    "badge": "Available worldwide",
+    "availability": "Available in every country — auto-detects your jurisdiction and applies local law.",
+    "featuresTitle": "What you get",
+    "dualAudienceTitle": "Built for everyone who touches legal work",
+    "consumerCta": "Try free — issue checker",
+    "firmCta": "Platform for law firms",
+    "faqTitle": "Frequently asked questions",
+    "relatedSolutions": "Related capabilities",
+    "allSolutions": "All solutions"
+  },
+  "solutionsHub": {
+    "metaTitle": "Legal AI Solutions — Document Drafting, Research, Contract Review & More",
+    "metaDescription": "Explore Umbrella's global legal AI solutions: document drafting, contract review, legal research, law firm software, legal copilot, and workflow automation — worldwide.",
+    "badge": "Solutions",
+    "title": "Legal AI for every legal task",
+    "subtitle": "From your first legal question to running an entire global practice — document drafting, contract review, legal research, and firm automation in one platform.",
+    "learnMore": "Learn more",
+    "closing": "One platform. Every country. Individuals and law firms."
+  },
+  "seoPillars": {
+    "legal-document-drafting": {
+      "metaTitle": "Legal Document Drafting — Global Legal AI Platform",
+      "metaDescription": "Umbrella legal document drafting: AI-powered, jurisdiction-aware, with real citations — available in every country worldwide for individuals and law firms.",
+      "keywords": [
+        "legal document drafting",
+        "AI legal document drafting",
+        "legal document drafting software",
+        "legal AI",
+        "global legal AI"
+      ],
+      "shortTitle": "Legal Document Drafting",
+      "cardDescription": "Global legal document drafting with real citations — for individuals and law firms.",
+      "heroTitle": "Legal document drafting — AI that cites real law",
+      "heroSubtitle": "The most capable legal document drafting platform — grounded in real statutes and case law, auto-detects your jurisdiction, available worldwide.",
+      "bodyTitle": "The best legal document drafting platform",
+      "body1": "Umbrella delivers legal document drafting powered by retrieval-augmented generation over legal corpora — with verifiable citations, matter-aware context, and jurisdiction auto-detection for every country.",
+      "body2": "Individuals use it for free. Law firms deploy it across every matter with AI Copilot, billing, and workflow automation — one global platform.",
+      "featuresSubtitle": "Built for real legal work.",
+      "features": [
+        "Real statute and case law citations you can verify",
+        "Jurisdiction auto-detection — works in every country",
+        "Free for individuals; firm-grade depth for teams",
+        "Matter-aware AI Copilot with full case context",
+        "Document drafting, review, and research integrated",
+        "Privacy-first — tenant isolation and audit trails"
+      ],
+      "dualAudience": "Individuals get free legal document drafting. Firms automate it across every matter worldwide.",
+      "ctaPrimary": "Start drafting",
+      "faqItems": [
+        {
+          "question": "Does legal document drafting work in my country?",
+          "answer": "Yes. Umbrella is a global legal AI platform that auto-detects your jurisdiction and applies local law — available in every country worldwide."
+        },
+        {
+          "question": "Is Umbrella legal document drafting free to try?",
+          "answer": "Yes. Individuals get a free preview with included AI credits. Law firms can start a free trial of the full platform."
+        }
+      ]
+    },
+    "legal-research": {
+      "metaTitle": "Legal Research — Global Legal AI Platform",
+      "metaDescription": "Umbrella legal research: AI-powered, jurisdiction-aware, with real citations — available in every country worldwide for individuals and law firms.",
+      "keywords": [
+        "legal research",
+        "AI legal research",
+        "legal research software",
+        "legal AI",
+        "global legal AI"
+      ],
+      "shortTitle": "Legal Research",
+      "cardDescription": "Global legal research with real citations — for individuals and law firms.",
+      "heroTitle": "Legal research AI — find the law that applies to you",
+      "heroSubtitle": "The most capable legal research platform — grounded in real statutes and case law, auto-detects your jurisdiction, available worldwide.",
+      "bodyTitle": "The best legal research platform",
+      "body1": "Umbrella delivers legal research powered by retrieval-augmented generation over legal corpora — with verifiable citations, matter-aware context, and jurisdiction auto-detection for every country.",
+      "body2": "Individuals use it for free. Law firms deploy it across every matter with AI Copilot, billing, and workflow automation — one global platform.",
+      "featuresSubtitle": "Built for real legal work.",
+      "features": [
+        "Real statute and case law citations you can verify",
+        "Jurisdiction auto-detection — works in every country",
+        "Free for individuals; firm-grade depth for teams",
+        "Matter-aware AI Copilot with full case context",
+        "Document drafting, review, and research integrated",
+        "Privacy-first — tenant isolation and audit trails"
+      ],
+      "dualAudience": "Individuals get free legal research. Firms automate it across every matter worldwide.",
+      "ctaPrimary": "Research my legal issue",
+      "faqItems": [
+        {
+          "question": "Does legal research work in my country?",
+          "answer": "Yes. Umbrella is a global legal AI platform that auto-detects your jurisdiction and applies local law — available in every country worldwide."
+        },
+        {
+          "question": "Is Umbrella legal research free to try?",
+          "answer": "Yes. Individuals get a free preview with included AI credits. Law firms can start a free trial of the full platform."
+        }
+      ]
+    },
+    "contract-review": {
+      "metaTitle": "Contract Review — Global Legal AI Platform",
+      "metaDescription": "Umbrella contract review: AI-powered, jurisdiction-aware, with real citations — available in every country worldwide for individuals and law firms.",
+      "keywords": [
+        "contract review",
+        "AI contract review",
+        "contract review software",
+        "legal AI",
+        "global legal AI"
+      ],
+      "shortTitle": "Contract Review",
+      "cardDescription": "Global contract review with real citations — for individuals and law firms.",
+      "heroTitle": "AI contract review — every clause, every risk",
+      "heroSubtitle": "The most capable contract review platform — grounded in real statutes and case law, auto-detects your jurisdiction, available worldwide.",
+      "bodyTitle": "The best contract review platform",
+      "body1": "Umbrella delivers contract review powered by retrieval-augmented generation over legal corpora — with verifiable citations, matter-aware context, and jurisdiction auto-detection for every country.",
+      "body2": "Individuals use it for free. Law firms deploy it across every matter with AI Copilot, billing, and workflow automation — one global platform.",
+      "featuresSubtitle": "Built for real legal work.",
+      "features": [
+        "Real statute and case law citations you can verify",
+        "Jurisdiction auto-detection — works in every country",
+        "Free for individuals; firm-grade depth for teams",
+        "Matter-aware AI Copilot with full case context",
+        "Document drafting, review, and research integrated",
+        "Privacy-first — tenant isolation and audit trails"
+      ],
+      "dualAudience": "Individuals get free contract review. Firms automate it across every matter worldwide.",
+      "ctaPrimary": "Review a contract",
+      "faqItems": [
+        {
+          "question": "Does contract review work in my country?",
+          "answer": "Yes. Umbrella is a global legal AI platform that auto-detects your jurisdiction and applies local law — available in every country worldwide."
+        },
+        {
+          "question": "Is Umbrella contract review free to try?",
+          "answer": "Yes. Individuals get a free preview with included AI credits. Law firms can start a free trial of the full platform."
+        }
+      ]
+    },
+    "document-review": {
+      "metaTitle": "Document Review — Global Legal AI Platform",
+      "metaDescription": "Umbrella document review: AI-powered, jurisdiction-aware, with real citations — available in every country worldwide for individuals and law firms.",
+      "keywords": [
+        "document review",
+        "AI document review",
+        "document review software",
+        "legal AI",
+        "global legal AI"
+      ],
+      "shortTitle": "Document Review",
+      "cardDescription": "Global document review with real citations — for individuals and law firms.",
+      "heroTitle": "Legal document review — AI reads every page",
+      "heroSubtitle": "The most capable document review platform — grounded in real statutes and case law, auto-detects your jurisdiction, available worldwide.",
+      "bodyTitle": "The best document review platform",
+      "body1": "Umbrella delivers document review powered by retrieval-augmented generation over legal corpora — with verifiable citations, matter-aware context, and jurisdiction auto-detection for every country.",
+      "body2": "Individuals use it for free. Law firms deploy it across every matter with AI Copilot, billing, and workflow automation — one global platform.",
+      "featuresSubtitle": "Built for real legal work.",
+      "features": [
+        "Real statute and case law citations you can verify",
+        "Jurisdiction auto-detection — works in every country",
+        "Free for individuals; firm-grade depth for teams",
+        "Matter-aware AI Copilot with full case context",
+        "Document drafting, review, and research integrated",
+        "Privacy-first — tenant isolation and audit trails"
+      ],
+      "dualAudience": "Individuals get free document review. Firms automate it across every matter worldwide.",
+      "ctaPrimary": "Upload a document",
+      "faqItems": [
+        {
+          "question": "Does document review work in my country?",
+          "answer": "Yes. Umbrella is a global legal AI platform that auto-detects your jurisdiction and applies local law — available in every country worldwide."
+        },
+        {
+          "question": "Is Umbrella document review free to try?",
+          "answer": "Yes. Individuals get a free preview with included AI credits. Law firms can start a free trial of the full platform."
+        }
+      ]
+    },
+    "law-firm-software": {
+      "metaTitle": "Law Firm Software — Global Legal AI Platform",
+      "metaDescription": "Umbrella law firm software: AI-powered, jurisdiction-aware, with real citations — available in every country worldwide for individuals and law firms.",
+      "keywords": [
+        "law firm software",
+        "AI law firm software",
+        "law firm software software",
+        "legal AI",
+        "global legal AI"
+      ],
+      "shortTitle": "Law Firm Software",
+      "cardDescription": "Global law firm software with real citations — for individuals and law firms.",
+      "heroTitle": "Law firm software built for the AI era",
+      "heroSubtitle": "The most capable law firm software platform — grounded in real statutes and case law, auto-detects your jurisdiction, available worldwide.",
+      "bodyTitle": "The best law firm software platform",
+      "body1": "Umbrella delivers law firm software powered by retrieval-augmented generation over legal corpora — with verifiable citations, matter-aware context, and jurisdiction auto-detection for every country.",
+      "body2": "Individuals use it for free. Law firms deploy it across every matter with AI Copilot, billing, and workflow automation — one global platform.",
+      "featuresSubtitle": "Built for real legal work.",
+      "features": [
+        "Real statute and case law citations you can verify",
+        "Jurisdiction auto-detection — works in every country",
+        "Free for individuals; firm-grade depth for teams",
+        "Matter-aware AI Copilot with full case context",
+        "Document drafting, review, and research integrated",
+        "Privacy-first — tenant isolation and audit trails"
+      ],
+      "dualAudience": "Individuals get free law firm software. Firms automate it across every matter worldwide.",
+      "ctaPrimary": "Explore firm platform",
+      "faqItems": [
+        {
+          "question": "Does law firm software work in my country?",
+          "answer": "Yes. Umbrella is a global legal AI platform that auto-detects your jurisdiction and applies local law — available in every country worldwide."
+        },
+        {
+          "question": "Is Umbrella law firm software free to try?",
+          "answer": "Yes. Individuals get a free preview with included AI credits. Law firms can start a free trial of the full platform."
+        }
+      ]
+    },
+    "legal-copilot": {
+      "metaTitle": "Legal Copilot — Global Legal AI Platform",
+      "metaDescription": "Umbrella legal copilot: AI-powered, jurisdiction-aware, with real citations — available in every country worldwide for individuals and law firms.",
+      "keywords": [
+        "legal copilot",
+        "AI legal copilot",
+        "legal copilot software",
+        "legal AI",
+        "global legal AI"
+      ],
+      "shortTitle": "Legal Copilot",
+      "cardDescription": "Global legal copilot with real citations — for individuals and law firms.",
+      "heroTitle": "Legal Copilot — AI that knows your cases",
+      "heroSubtitle": "The most capable legal copilot platform — grounded in real statutes and case law, auto-detects your jurisdiction, available worldwide.",
+      "bodyTitle": "The best legal copilot platform",
+      "body1": "Umbrella delivers legal copilot powered by retrieval-augmented generation over legal corpora — with verifiable citations, matter-aware context, and jurisdiction auto-detection for every country.",
+      "body2": "Individuals use it for free. Law firms deploy it across every matter with AI Copilot, billing, and workflow automation — one global platform.",
+      "featuresSubtitle": "Built for real legal work.",
+      "features": [
+        "Real statute and case law citations you can verify",
+        "Jurisdiction auto-detection — works in every country",
+        "Free for individuals; firm-grade depth for teams",
+        "Matter-aware AI Copilot with full case context",
+        "Document drafting, review, and research integrated",
+        "Privacy-first — tenant isolation and audit trails"
+      ],
+      "dualAudience": "Individuals get free legal copilot. Firms automate it across every matter worldwide.",
+      "ctaPrimary": "Try Legal Copilot",
+      "faqItems": [
+        {
+          "question": "Does legal copilot work in my country?",
+          "answer": "Yes. Umbrella is a global legal AI platform that auto-detects your jurisdiction and applies local law — available in every country worldwide."
+        },
+        {
+          "question": "Is Umbrella legal copilot free to try?",
+          "answer": "Yes. Individuals get a free preview with included AI credits. Law firms can start a free trial of the full platform."
+        }
+      ]
+    },
+    "legal-workflow-automation": {
+      "metaTitle": "Workflow Automation — Global Legal AI Platform",
+      "metaDescription": "Umbrella workflow automation: AI-powered, jurisdiction-aware, with real citations — available in every country worldwide for individuals and law firms.",
+      "keywords": [
+        "workflow automation",
+        "AI workflow automation",
+        "workflow automation software",
+        "legal AI",
+        "global legal AI"
+      ],
+      "shortTitle": "Workflow Automation",
+      "cardDescription": "Global workflow automation with real citations — for individuals and law firms.",
+      "heroTitle": "Legal workflow automation — from intake to invoice",
+      "heroSubtitle": "The most capable workflow automation platform — grounded in real statutes and case law, auto-detects your jurisdiction, available worldwide.",
+      "bodyTitle": "The best workflow automation platform",
+      "body1": "Umbrella delivers workflow automation powered by retrieval-augmented generation over legal corpora — with verifiable citations, matter-aware context, and jurisdiction auto-detection for every country.",
+      "body2": "Individuals use it for free. Law firms deploy it across every matter with AI Copilot, billing, and workflow automation — one global platform.",
+      "featuresSubtitle": "Built for real legal work.",
+      "features": [
+        "Real statute and case law citations you can verify",
+        "Jurisdiction auto-detection — works in every country",
+        "Free for individuals; firm-grade depth for teams",
+        "Matter-aware AI Copilot with full case context",
+        "Document drafting, review, and research integrated",
+        "Privacy-first — tenant isolation and audit trails"
+      ],
+      "dualAudience": "Individuals get free workflow automation. Firms automate it across every matter worldwide.",
+      "ctaPrimary": "Automate your firm",
+      "faqItems": [
+        {
+          "question": "Does workflow automation work in my country?",
+          "answer": "Yes. Umbrella is a global legal AI platform that auto-detects your jurisdiction and applies local law — available in every country worldwide."
+        },
+        {
+          "question": "Is Umbrella workflow automation free to try?",
+          "answer": "Yes. Individuals get a free preview with included AI credits. Law firms can start a free trial of the full platform."
+        }
+      ]
+    },
+    "contract-analysis": {
+      "metaTitle": "Contract Analysis — Global Legal AI Platform",
+      "metaDescription": "Umbrella contract analysis: AI-powered, jurisdiction-aware, with real citations — available in every country worldwide for individuals and law firms.",
+      "keywords": [
+        "contract analysis",
+        "AI contract analysis",
+        "contract analysis software",
+        "legal AI",
+        "global legal AI"
+      ],
+      "shortTitle": "Contract Analysis",
+      "cardDescription": "Global contract analysis with real citations — for individuals and law firms.",
+      "heroTitle": "AI contract analysis — beyond surface-level review",
+      "heroSubtitle": "The most capable contract analysis platform — grounded in real statutes and case law, auto-detects your jurisdiction, available worldwide.",
+      "bodyTitle": "The best contract analysis platform",
+      "body1": "Umbrella delivers contract analysis powered by retrieval-augmented generation over legal corpora — with verifiable citations, matter-aware context, and jurisdiction auto-detection for every country.",
+      "body2": "Individuals use it for free. Law firms deploy it across every matter with AI Copilot, billing, and workflow automation — one global platform.",
+      "featuresSubtitle": "Built for real legal work.",
+      "features": [
+        "Real statute and case law citations you can verify",
+        "Jurisdiction auto-detection — works in every country",
+        "Free for individuals; firm-grade depth for teams",
+        "Matter-aware AI Copilot with full case context",
+        "Document drafting, review, and research integrated",
+        "Privacy-first — tenant isolation and audit trails"
+      ],
+      "dualAudience": "Individuals get free contract analysis. Firms automate it across every matter worldwide.",
+      "ctaPrimary": "Analyze a contract",
+      "faqItems": [
+        {
+          "question": "Does contract analysis work in my country?",
+          "answer": "Yes. Umbrella is a global legal AI platform that auto-detects your jurisdiction and applies local law — available in every country worldwide."
+        },
+        {
+          "question": "Is Umbrella contract analysis free to try?",
+          "answer": "Yes. Individuals get a free preview with included AI credits. Law firms can start a free trial of the full platform."
+        }
+      ]
+    },
+    "legal-assistant": {
+      "metaTitle": "AI Legal Assistant — Global Legal AI Platform",
+      "metaDescription": "Umbrella ai legal assistant: AI-powered, jurisdiction-aware, with real citations — available in every country worldwide for individuals and law firms.",
+      "keywords": [
+        "ai legal assistant",
+        "AI ai legal assistant",
+        "ai legal assistant software",
+        "legal AI",
+        "global legal AI"
+      ],
+      "shortTitle": "AI Legal Assistant",
+      "cardDescription": "Global ai legal assistant with real citations — for individuals and law firms.",
+      "heroTitle": "AI legal assistant — real answers, real citations",
+      "heroSubtitle": "The most capable ai legal assistant platform — grounded in real statutes and case law, auto-detects your jurisdiction, available worldwide.",
+      "bodyTitle": "The best ai legal assistant platform",
+      "body1": "Umbrella delivers ai legal assistant powered by retrieval-augmented generation over legal corpora — with verifiable citations, matter-aware context, and jurisdiction auto-detection for every country.",
+      "body2": "Individuals use it for free. Law firms deploy it across every matter with AI Copilot, billing, and workflow automation — one global platform.",
+      "featuresSubtitle": "Built for real legal work.",
+      "features": [
+        "Real statute and case law citations you can verify",
+        "Jurisdiction auto-detection — works in every country",
+        "Free for individuals; firm-grade depth for teams",
+        "Matter-aware AI Copilot with full case context",
+        "Document drafting, review, and research integrated",
+        "Privacy-first — tenant isolation and audit trails"
+      ],
+      "dualAudience": "Individuals get free ai legal assistant. Firms automate it across every matter worldwide.",
+      "ctaPrimary": "Ask a legal question",
+      "faqItems": [
+        {
+          "question": "Does ai legal assistant work in my country?",
+          "answer": "Yes. Umbrella is a global legal AI platform that auto-detects your jurisdiction and applies local law — available in every country worldwide."
+        },
+        {
+          "question": "Is Umbrella ai legal assistant free to try?",
+          "answer": "Yes. Individuals get a free preview with included AI credits. Law firms can start a free trial of the full platform."
+        }
+      ]
+    },
+    "practice-management": {
+      "metaTitle": "Practice Management — Global Legal AI Platform",
+      "metaDescription": "Umbrella practice management: AI-powered, jurisdiction-aware, with real citations — available in every country worldwide for individuals and law firms.",
+      "keywords": [
+        "practice management",
+        "AI practice management",
+        "practice management software",
+        "legal AI",
+        "global legal AI"
+      ],
+      "shortTitle": "Practice Management",
+      "cardDescription": "Global practice management with real citations — for individuals and law firms.",
+      "heroTitle": "Practice management — reimagined with AI",
+      "heroSubtitle": "The most capable practice management platform — grounded in real statutes and case law, auto-detects your jurisdiction, available worldwide.",
+      "bodyTitle": "The best practice management platform",
+      "body1": "Umbrella delivers practice management powered by retrieval-augmented generation over legal corpora — with verifiable citations, matter-aware context, and jurisdiction auto-detection for every country.",
+      "body2": "Individuals use it for free. Law firms deploy it across every matter with AI Copilot, billing, and workflow automation — one global platform.",
+      "featuresSubtitle": "Built for real legal work.",
+      "features": [
+        "Real statute and case law citations you can verify",
+        "Jurisdiction auto-detection — works in every country",
+        "Free for individuals; firm-grade depth for teams",
+        "Matter-aware AI Copilot with full case context",
+        "Document drafting, review, and research integrated",
+        "Privacy-first — tenant isolation and audit trails"
+      ],
+      "dualAudience": "Individuals get free practice management. Firms automate it across every matter worldwide.",
+      "ctaPrimary": "Manage your practice",
+      "faqItems": [
+        {
+          "question": "Does practice management work in my country?",
+          "answer": "Yes. Umbrella is a global legal AI platform that auto-detects your jurisdiction and applies local law — available in every country worldwide."
+        },
+        {
+          "question": "Is Umbrella practice management free to try?",
+          "answer": "Yes. Individuals get a free preview with included AI credits. Law firms can start a free trial of the full platform."
+        }
+      ]
+    },
+    "legal-due-diligence": {
+      "metaTitle": "Legal Due Diligence — Global Legal AI Platform",
+      "metaDescription": "Umbrella legal due diligence: AI-powered, jurisdiction-aware, with real citations — available in every country worldwide for individuals and law firms.",
+      "keywords": [
+        "legal due diligence",
+        "AI legal due diligence",
+        "legal due diligence software",
+        "legal AI",
+        "global legal AI"
+      ],
+      "shortTitle": "Legal Due Diligence",
+      "cardDescription": "Global legal due diligence with real citations — for individuals and law firms.",
+      "heroTitle": "AI legal due diligence — faster, deeper, cited",
+      "heroSubtitle": "The most capable legal due diligence platform — grounded in real statutes and case law, auto-detects your jurisdiction, available worldwide.",
+      "bodyTitle": "The best legal due diligence platform",
+      "body1": "Umbrella delivers legal due diligence powered by retrieval-augmented generation over legal corpora — with verifiable citations, matter-aware context, and jurisdiction auto-detection for every country.",
+      "body2": "Individuals use it for free. Law firms deploy it across every matter with AI Copilot, billing, and workflow automation — one global platform.",
+      "featuresSubtitle": "Built for real legal work.",
+      "features": [
+        "Real statute and case law citations you can verify",
+        "Jurisdiction auto-detection — works in every country",
+        "Free for individuals; firm-grade depth for teams",
+        "Matter-aware AI Copilot with full case context",
+        "Document drafting, review, and research integrated",
+        "Privacy-first — tenant isolation and audit trails"
+      ],
+      "dualAudience": "Individuals get free legal due diligence. Firms automate it across every matter worldwide.",
+      "ctaPrimary": "Start due diligence review",
+      "faqItems": [
+        {
+          "question": "Does legal due diligence work in my country?",
+          "answer": "Yes. Umbrella is a global legal AI platform that auto-detects your jurisdiction and applies local law — available in every country worldwide."
+        },
+        {
+          "question": "Is Umbrella legal due diligence free to try?",
+          "answer": "Yes. Individuals get a free preview with included AI credits. Law firms can start a free trial of the full platform."
+        }
+      ]
+    },
+    "legal-issue-analysis": {
+      "metaTitle": "Legal Issue Analysis — Global Legal AI Platform",
+      "metaDescription": "Umbrella legal issue analysis: AI-powered, jurisdiction-aware, with real citations — available in every country worldwide for individuals and law firms.",
+      "keywords": [
+        "legal issue analysis",
+        "AI legal issue analysis",
+        "legal issue analysis software",
+        "legal AI",
+        "global legal AI"
+      ],
+      "shortTitle": "Legal Issue Analysis",
+      "cardDescription": "Global legal issue analysis with real citations — for individuals and law firms.",
+      "heroTitle": "Legal issue analysis — know where you stand",
+      "heroSubtitle": "The most capable legal issue analysis platform — grounded in real statutes and case law, auto-detects your jurisdiction, available worldwide.",
+      "bodyTitle": "The best legal issue analysis platform",
+      "body1": "Umbrella delivers legal issue analysis powered by retrieval-augmented generation over legal corpora — with verifiable citations, matter-aware context, and jurisdiction auto-detection for every country.",
+      "body2": "Individuals use it for free. Law firms deploy it across every matter with AI Copilot, billing, and workflow automation — one global platform.",
+      "featuresSubtitle": "Built for real legal work.",
+      "features": [
+        "Real statute and case law citations you can verify",
+        "Jurisdiction auto-detection — works in every country",
+        "Free for individuals; firm-grade depth for teams",
+        "Matter-aware AI Copilot with full case context",
+        "Document drafting, review, and research integrated",
+        "Privacy-first — tenant isolation and audit trails"
+      ],
+      "dualAudience": "Individuals get free legal issue analysis. Firms automate it across every matter worldwide.",
+      "ctaPrimary": "Analyze my legal issue",
+      "faqItems": [
+        {
+          "question": "Does legal issue analysis work in my country?",
+          "answer": "Yes. Umbrella is a global legal AI platform that auto-detects your jurisdiction and applies local law — available in every country worldwide."
+        },
+        {
+          "question": "Is Umbrella legal issue analysis free to try?",
+          "answer": "Yes. Individuals get a free preview with included AI credits. Law firms can start a free trial of the full platform."
+        }
+      ]
+    }
+  }
 }

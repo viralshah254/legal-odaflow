@@ -1,0 +1,54 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+
+# testing
+/coverage
+
+# next.js
+/.next/
+/out/
+/certificates/
+
+# production
+/build
+/dist
+
+# misc
+.DS_Store
+*.pem
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# env files (secrets) — copy from .env.example; set values in Vercel/host secrets
+.env
+.env.*
+!.env.example
+!.env.local.example
+!.env.production.example
+
+# npm auth tokens sometimes live here — never commit
+.npmrc
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+
+# Electron
+/electron/dist
+/electron/main.js.map
+*.log
+/dist
+/out
+.electron-builder.env
+/.next-dev/
+docs/.next-dev/

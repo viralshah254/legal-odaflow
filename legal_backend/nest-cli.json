@@ -3,6 +3,19 @@
   "collection": "@nestjs/schematics",
   "sourceRoot": "src",
   "compilerOptions": {
-    "deleteOutDir": true
+    "deleteOutDir": false,
+    "tsConfigPath": "tsconfig.build.json",
+    "assets": [
+      {
+        "include": "legal-forms/catalog.data.json",
+        "watchAssets": true
+      },
+      {
+        "include": "../data/india-caselaw-corpus/*.json",
+        "outDir": "dist/data/india-caselaw-corpus",
+        "watchAssets": true
+      }
+    ]
   }
 }
+

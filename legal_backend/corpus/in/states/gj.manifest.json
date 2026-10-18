@@ -1,0 +1,44 @@
+{
+  "version": 1,
+  "stateCode": "GJ",
+  "stateName": "Gujarat",
+  "browseHandlePath": "/handle/123456789/2518",
+  "acts": [
+    {
+      "actId": "gj-rent-control-1999",
+      "title": "The Gujarat (Bombay) Rent, Hotel and Lodging House Rates Control Act, 1947 (as applicable in Gujarat)",
+      "sourceAuthority": "india-code",
+      "sourceTier": "primary",
+      "handleUrl": "https://www.indiacode.nic.in/handle/123456789/2518",
+      "year": 1947,
+      "notes": "Pilot entry — Gujarat rent control; bitstream resolved at ingest time"
+    },
+    {
+      "actId": "gj-stamp-act-1958",
+      "title": "The Bombay Stamp (Gujarat Amendment) Act, 1958",
+      "sourceAuthority": "india-code",
+      "sourceTier": "primary",
+      "handleUrl": "https://www.indiacode.nic.in/handle/123456789/2518",
+      "year": 1958,
+      "notes": "Pilot entry — Gujarat stamp duty; bitstream resolved at ingest time"
+    },
+    {
+      "actId": "gj-registration-act-1908",
+      "title": "The Registration Act, 1908 (Gujarat State amendments)",
+      "sourceAuthority": "india-code",
+      "sourceTier": "primary",
+      "handleUrl": "https://www.indiacode.nic.in/handle/123456789/2518",
+      "year": 1908,
+      "notes": "Pilot entry — registration of documents in Gujarat"
+    },
+    {
+      "actId": "gj-land-revenue-code-1879",
+      "title": "The Gujarat Land Revenue Code, 1879",
+      "sourceAuthority": "india-code",
+      "sourceTier": "primary",
+      "handleUrl": "https://www.indiacode.nic.in/handle/123456789/2518",
+      "year": 1879,
+      "notes": "Pilot entry — land revenue and tenure in Gujarat"
+    }
+  ]
+}

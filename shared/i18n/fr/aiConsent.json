@@ -1,0 +1,11 @@
+{
+  "dialogTitle": "Consentement au traitement de l'IA",
+  "dialogBody": "Umbrella envoie votre requête et le contexte de votre affaire à des fournisseurs d'IA tiers pour alimenter l'analyse, la rédaction et la recherche juridiques. Vos données ne sont pas utilisées pour entraîner des modèles d'IA.",
+  "dialogProviders": "Fournisseurs : OpenAI, DeepSeek et Deepgram (transcription).",
+  "dialogPurpose": "Vous pouvez retirer votre consentement à tout moment dans les paramètres de confidentialité et de sécurité. Sans consentement, les fonctionnalités d’IA ne seront pas disponibles.",
+  "dialogLearnMore": "Apprenez-en davantage dans notre",
+  "dialogDecline": "Pas maintenant",
+  "dialogAgree": "Je suis d'accord",
+  "settingsTitle": "Consentement à l'inférence IA",
+  "settingsDescription": "Consentement réinitialisé. Il vous sera demandé à nouveau avant la prochaine fonctionnalité IA."
+}

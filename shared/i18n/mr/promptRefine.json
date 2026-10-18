@@ -1,0 +1,20 @@
+{
+  "title": "परिष्कृत प्रॉम्प्ट",
+  "description": "स्पष्ट AI परिणामांसाठी आम्ही तुमच्या वर्णनाची पुनर्रचना केली आहे. आवश्यक असल्यास संपादित करा, नंतर सुरू ठेवा.",
+  "yourOriginal": "तुमचा मूळ प्रॉम्प्ट",
+  "refinedLabel": "परिष्कृत प्रॉम्प्ट",
+  "continueRefined": "परिष्कृत प्रॉम्प्टसह सुरू ठेवा",
+  "useOriginal": "त्याऐवजी मूळ वापरा",
+  "hintJurisdiction": "अधिकारक्षेत्र",
+  "hintDocument": "दस्तऐवज",
+  "hintParty": "पार्टी",
+  "hintStatute": "कायदा",
+  "preparing": "तुमची सूचना तयार करत आहे...",
+  "startingDrafting": "{seconds} मध्ये मसुदा तयार करणे सुरू करत आहे...",
+  "startingResearch": "{seconds} मध्ये संशोधन सुरू करत आहे...",
+  "undo": "पूर्ववत करा",
+  "autoFilledTitle": "प्रॉम्प्ट परिष्कृत",
+  "autoFilledDescription": "{seconds} मध्ये सुरू ठेवत आहे — तुमचे मूळ ठेवण्यासाठी पूर्ववत करा.",
+  "autoFillCountdownAria": "पूर्ववत करण्यासाठी {seconds} सेकंद शिल्लक आहेत",
+  "autoFillHint": "तुमचा मूळ प्रॉम्प्ट पूर्ववत करा"
+}

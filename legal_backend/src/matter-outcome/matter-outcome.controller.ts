@@ -33,6 +33,24 @@ export class MatterOutcomeController {
     );
   }
 
+  /**
+   * Returns a compact outcome preview for the matter card (win/settlement probabilities,
+   * risk level, headline). Returns null when no analysis has been run yet.
+   */
+  @Get('preview')
+  preview(
+    @TenantId() tenantId: string,
+    @Param('matterId') matterId: string,
+    @CurrentUser() user: RequestUser,
+  ) {
+    return this.matterOutcomeService.preview(
+      tenantId,
+      matterId,
+      user.id,
+      user.tenantRole,
+    );
+  }
+
   @Get()
   findAll(
     @TenantId() tenantId: string,

@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "stateCode": "WA",
+  "stateName": "Washington",
+  "acts": [
+    {
+      "actId": "wa-revised-code",
+      "title": "Washington revised code",
+      "sourceAuthority": "cornell-lii",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.law.cornell.edu/states/wa",
+      "externalId": "wa-revised_code",
+      "notes": "Washington state law via Cornell LII state index"
+    },
+    {
+      "actId": "wa-business-corporations",
+      "title": "Washington business corporations",
+      "sourceAuthority": "cornell-lii",
+      "sourceTier": "mirror",
+      "primaryPdfUrl": "https://www.law.cornell.edu/states/wa",
+      "externalId": "wa-business_corporations",
+      "notes": "Washington state law via Cornell LII state index"
+    }
+  ]
+}

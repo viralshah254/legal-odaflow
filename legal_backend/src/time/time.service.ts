@@ -12,6 +12,14 @@ import { RateTablesService } from '@/billing/rate-tables.service';
 import { CreateTimeEntryDto } from './dto/create-time-entry.dto';
 import { UpdateTimeEntryDto } from './dto/update-time-entry.dto';
 
+const TIME_APPROVER_ROLES = new Set([
+  'FIRM_ADMIN',
+  'PARTNER',
+  'PARTNER_ADMIN',
+  'JUNIOR_PARTNER',
+  'FINANCE',
+]);
+
 type ActiveTimerSession = {
   id: string;
   tenantId: string;
@@ -39,15 +47,17 @@ export class TimeService {
 
     let rate = dto.rate;
     if (rate === undefined) {
-      const tenantUser = await this.prisma.tenantUser.findFirst({
-        where: { tenantId, userId },
-      });
-      const resolved = await this.rateTables.resolveRateForRole(
-        tenantId,
-        tenantUser?.role ?? 'ASSOCIATE',
-      );
+      const resolved = await this.rateTables.resolveRateForUserId(tenantId, userId);
       if (resolved) rate = resolved.rate;
     }
+
+    await this.checkRetainerOnBillableEntry(
+      tenantId,
+      dto.matterId,
+      dto.billable ?? true,
+      dto.minutes,
+      rate,
+    );
 
     const entry = await this.prisma.timeEntry.create({
       data: {
@@ -156,7 +166,7 @@ export class TimeService {
       throw new BadRequestException('Invoiced time entries cannot be approved');
     }
 
-    const allowedRoles = new Set(['PARTNER_ADMIN', 'JUNIOR_PARTNER', 'FINANCE']);
+    const allowedRoles = TIME_APPROVER_ROLES;
     if (approverRole && !allowedRoles.has(approverRole)) {
       throw new ForbiddenException('Insufficient permissions to approve time entries');
     }
@@ -173,6 +183,65 @@ export class TimeService {
     });
 
     return approved;
+  }
+
+  async submit(tenantId: string, entryId: string, userId: string) {
+    const entry = await this.findOne(tenantId, entryId);
+
+    if (entry.userId !== userId) {
+      throw new ForbiddenException('Only the timekeeper can submit this entry');
+    }
+
+    if (entry.status === 'SUBMITTED' || entry.status === 'APPROVED') {
+      return entry;
+    }
+
+    if (entry.status === 'INVOICED') {
+      throw new BadRequestException('Invoiced time entries cannot be submitted');
+    }
+
+    const submitted = await this.prisma.timeEntry.update({
+      where: { id: entryId },
+      data: { status: 'SUBMITTED' },
+      include: { matter: true },
+    });
+
+    this.realtime.publishToTenant(tenantId, REALTIME_EVENTS.TIME_ENTRY_UPDATED, {
+      entityId: entryId,
+      action: 'submitted',
+    });
+
+    return submitted;
+  }
+
+  async reject(tenantId: string, entryId: string, approverRole?: string) {
+    const entry = await this.findOne(tenantId, entryId);
+
+    if (entry.status === 'REJECTED') {
+      return entry;
+    }
+
+    if (entry.status === 'INVOICED') {
+      throw new BadRequestException('Invoiced time entries cannot be rejected');
+    }
+
+    const allowedRoles = TIME_APPROVER_ROLES;
+    if (approverRole && !allowedRoles.has(approverRole)) {
+      throw new ForbiddenException('Insufficient permissions to reject time entries');
+    }
+
+    const rejected = await this.prisma.timeEntry.update({
+      where: { id: entryId },
+      data: { status: 'REJECTED' },
+      include: { matter: true },
+    });
+
+    this.realtime.publishToTenant(tenantId, REALTIME_EVENTS.TIME_ENTRY_UPDATED, {
+      entityId: entryId,
+      action: 'rejected',
+    });
+
+    return rejected;
   }
 
   getActiveTimer(tenantId: string, userId: string) {
@@ -217,6 +286,18 @@ export class TimeService {
       Math.round(elapsedMs / (1000 * 60)) + timer.accumulatedMinutes,
     );
 
+    let rate: number | undefined;
+    const resolved = await this.rateTables.resolveRateForUserId(tenantId, userId);
+    if (resolved) rate = resolved.rate;
+
+    await this.checkRetainerOnBillableEntry(
+      tenantId,
+      timer.matterId,
+      true,
+      elapsedMinutes,
+      rate,
+    );
+
     const entry = await this.prisma.timeEntry.create({
       data: {
         tenantId,
@@ -226,6 +307,7 @@ export class TimeService {
         minutes: elapsedMinutes,
         narrative: 'Timer entry',
         billable: true,
+        rate: rate !== undefined ? new Prisma.Decimal(rate) : undefined,
         status: 'DRAFT',
       },
       include: { matter: true },
@@ -246,6 +328,45 @@ export class TimeService {
 
     if (!matter) {
       throw new NotFoundException('Matter not found for tenant');
+    }
+
+    return matter;
+  }
+
+  private async checkRetainerOnBillableEntry(
+    tenantId: string,
+    matterId: string | undefined,
+    billable: boolean,
+    minutes: number,
+    rate?: number,
+  ) {
+    if (!billable || !matterId) {
+      return;
+    }
+
+    const matter = await this.prisma.matter.findFirst({
+      where: { id: matterId, tenantId },
+      select: { retainerBalance: true },
+    });
+
+    if (matter?.retainerBalance == null) {
+      return;
+    }
+
+    const balance = Number(matter.retainerBalance.toString());
+    if (balance <= 0) {
+      throw new BadRequestException(
+        'Matter retainer is depleted; cannot add billable time',
+      );
+    }
+
+    if (rate !== undefined) {
+      const entryAmount = (minutes / 60) * rate;
+      if (entryAmount > balance) {
+        throw new BadRequestException(
+          `Billable time amount (${entryAmount.toFixed(2)}) exceeds retainer balance (${balance.toFixed(2)})`,
+        );
+      }
     }
   }
 

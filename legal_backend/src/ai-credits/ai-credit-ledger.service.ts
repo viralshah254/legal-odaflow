@@ -1,6 +1,6 @@
 import { ForbiddenException, Injectable } from '@nestjs/common';
 import { Prisma } from '@prisma/client';
-import { getTenantPlanCreditAllowance, normalizeBillingPlan } from '@/config/billing-plans';
+import { getTenantPlanCreditAllowance, getUnpaidTenantCreditAllowance, normalizeBillingPlan } from '@/config/billing-plans';
 import { PrismaService } from '@/prisma/prisma.service';
 import { RealtimePublisherService } from '@/realtime/realtime-publisher.service';
 import { REALTIME_EVENTS } from '@/realtime/realtime-events';
@@ -15,12 +15,38 @@ export interface CreditLedgerInput {
   metadata?: Prisma.InputJsonValue;
 }
 
+export type PostDebitHook = (params: {
+  userId?: string;
+  tenantId?: string;
+  balanceAfter: number;
+}) => Promise<void>;
+
 @Injectable()
 export class AICreditLedgerService {
+  private readonly postDebitHooks: PostDebitHook[] = [];
+
   constructor(
     private readonly prisma: PrismaService,
     private readonly realtime: RealtimePublisherService,
   ) {}
+
+  registerPostDebitHook(hook: PostDebitHook): void {
+    this.postDebitHooks.push(hook);
+  }
+
+  private async runPostDebitHooks(params: {
+    userId?: string;
+    tenantId?: string;
+    balanceAfter: number;
+  }): Promise<void> {
+    for (const hook of this.postDebitHooks) {
+      try {
+        await hook(params);
+      } catch {
+        // Side-effect hooks must not fail the debit.
+      }
+    }
+  }
 
   async credit(input: CreditLedgerInput) {
     const entry = await this.prisma.aICreditLedger.create({
@@ -158,6 +184,11 @@ export class AICreditLedgerService {
 
     const result = { entry, creditsDebited: cost, balanceAfter: balance - cost };
     this.publishCreditBalanceUpdate(params, result.balanceAfter);
+    await this.runPostDebitHooks({
+      userId: params.userId,
+      tenantId: params.tenantId,
+      balanceAfter: result.balanceAfter,
+    });
     return result;
   }
 
@@ -196,6 +227,14 @@ export class AICreditLedgerService {
 
   async getPlanAllowance(params: { userId?: string; tenantId?: string }): Promise<number> {
     if (params.tenantId) {
+      const subscription = await this.prisma.subscription.findFirst({
+        where: { tenantId: params.tenantId, userType: 'LAW_FIRM', status: 'ACTIVE' },
+        orderBy: { updatedAt: 'desc' },
+        select: { planId: true, countryCode: true },
+      });
+      if (!subscription) {
+        return getUnpaidTenantCreditAllowance();
+      }
       const tenant = await this.prisma.tenant.findUnique({
         where: { id: params.tenantId },
         select: { billingPlan: true },
@@ -207,7 +246,7 @@ export class AICreditLedgerService {
       const profile = await this.prisma.consumerProfile.findUnique({
         where: { userId: params.userId },
       });
-      return profile?.aiCreditsRemaining ?? 3;
+      return profile?.aiCreditsRemaining ?? 100;
     }
 
     return 0;

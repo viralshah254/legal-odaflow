@@ -1,11 +1,15 @@
 import {
   BadRequestException,
   ForbiddenException,
+  Inject,
   Injectable,
   NotFoundException,
+  Optional,
+  forwardRef,
 } from '@nestjs/common';
 import { Prisma, PrismaClient } from '@prisma/client';
 import { PrismaService } from '@/prisma/prisma.service';
+import { generateUniqueClientCode } from '@/clients/client-code.util';
 import { PaymentsService } from '@/payments/payments.service';
 import {
   CreateLawyerProfileDto,
@@ -15,8 +19,32 @@ import {
 import { RealtimePublisherService } from '@/realtime/realtime-publisher.service';
 import { REALTIME_EVENTS } from '@/realtime/realtime-events';
 import { DeliverReviewDto } from './dto/deliver-review.dto';
+import { CreatePublicBookingDto } from './dto/public-booking.dto';
+import { defaultMatterTypeForPracticeArea, ISSUE_TYPE_MATTER_TYPE_OVERRIDE } from '@/config/matter-types';
+import { ISSUE_TYPE_TO_PRACTICE_AREA, type IssueCheckerType, getIntakeIntent } from '@/consumers/issue-checker.constants';
+import { buildMatterTitleFromLead } from './lead-display.util';
 import { IntakeAnalysisService } from './intake-analysis.service';
+import { LeadDocumentsService } from './lead-documents.service';
 import { FullLoopAutomationService } from './full-loop-automation.service';
+import { PlaybooksService } from '@/playbooks/playbooks.service';
+import { ConflictsService } from '@/conflicts/conflicts.service';
+import { AutomationEngineService } from '@/automations/automation-engine.service';
+import { MatterAutonomyService } from '@/matter-autonomy/matter-autonomy.service';
+import { CourtDeadlinesService } from '@/court-deadlines/court-deadlines.service';
+import {
+  partiesFromIntakeBrief,
+  readIntakeCaseBrief,
+} from '@/consumers/intake-case-brief';
+import {
+  conflictStatusFromCheck,
+  shouldBlockConvertOnConflict,
+} from './convert-conflict-gate';
+import {
+  CreateLeadDocumentDto,
+  RunLeadAnalysisDto,
+  UpdateLeadContextDto,
+} from './dto/run-lead-analysis.dto';
+import type { MatterProfile } from '@/ai/matter-intelligence/matter-intelligence.types';
 
 const REVIEW_REQUEST_META_PREFIX = 'reviewRequestId:';
 
@@ -36,11 +64,21 @@ type PrismaDb = PrismaService & PrismaClient;
 @Injectable()
 export class MarketplaceService {
   constructor(
-    private readonly prisma: PrismaDb,
+    private readonly prisma: PrismaService,
+    @Inject(forwardRef(() => PaymentsService))
     private readonly paymentsService: PaymentsService,
     private readonly intakeAnalysis: IntakeAnalysisService,
+    private readonly leadDocuments: LeadDocumentsService,
     private readonly realtimePublisher: RealtimePublisherService,
     private readonly fullLoopAutomation: FullLoopAutomationService,
+    private readonly playbooksService: PlaybooksService,
+    private readonly conflictsService: ConflictsService,
+    @Inject(forwardRef(() => AutomationEngineService))
+    private readonly automationEngine: AutomationEngineService,
+    @Optional()
+    private readonly matterAutonomy: MatterAutonomyService | null = null,
+    @Optional()
+    private readonly courtDeadlines: CourtDeadlinesService | null = null,
   ) {}
 
   async upsertLawyerProfile(userId: string, dto: CreateLawyerProfileDto) {
@@ -86,6 +124,12 @@ export class MarketplaceService {
           dto.verified ??
           (verificationTier === 'VERIFIED' || verificationTier === 'PREMIUM'),
         verificationStatus: dto.verificationStatus ?? verificationTier,
+        ...(dto.specialtyLevel !== undefined && { specialtyLevel: dto.specialtyLevel }),
+        ...(dto.jurisdictionLicenses !== undefined && {
+          jurisdictionLicenses: dto.jurisdictionLicenses,
+        }),
+        ...(dto.yearsExperience !== undefined && { yearsExperience: dto.yearsExperience }),
+        ...(dto.bio !== undefined && { bio: dto.bio }),
       },
       update: {
         countryCode: dto.countryCode.toUpperCase(),
@@ -103,6 +147,21 @@ export class MarketplaceService {
           dto.verified ??
           (verificationTier === 'VERIFIED' || verificationTier === 'PREMIUM'),
         verificationStatus: dto.verificationStatus ?? verificationTier,
+        ...(dto.specialtyLevel !== undefined && { specialtyLevel: dto.specialtyLevel }),
+        ...(dto.jurisdictionLicenses !== undefined && { jurisdictionLicenses: dto.jurisdictionLicenses }),
+        ...(dto.yearsExperience !== undefined && { yearsExperience: dto.yearsExperience }),
+        ...(dto.bio !== undefined && { bio: dto.bio }),
+      },
+    });
+  }
+
+  async getLawyerProfileByUserId(userId: string) {
+    return this.prisma.lawyerProfile.findUnique({
+      where: { userId },
+      include: {
+        user: {
+          select: { id: true, name: true, email: true, countryCode: true },
+        },
       },
     });
   }
@@ -138,10 +197,7 @@ export class MarketplaceService {
     });
 
     if (!issueType) {
-      return tierFiltered.map((profile) => ({
-        ...profile,
-        verificationTier: this.normalizeVerificationTier(profile.verificationStatus),
-      }));
+      return tierFiltered.map((profile) => this.enrichLawyerProfile(profile));
     }
 
     return tierFiltered
@@ -151,10 +207,134 @@ export class MarketplaceService {
           area.toLowerCase().includes(issueType.toLowerCase()),
         );
       })
-      .map((profile) => ({
-        ...profile,
-        verificationTier: this.normalizeVerificationTier(profile.verificationStatus),
-      }));
+      .map((profile) => this.enrichLawyerProfile(profile));
+  }
+
+  async getLawyerBySlug(slug: string) {
+    const profiles = await this.prisma.lawyerProfile.findMany({
+      where: { acceptsLeads: true, verified: true },
+      include: {
+        user: {
+          select: {
+            id: true,
+            name: true,
+            email: true,
+          },
+        },
+      },
+      take: 200,
+    });
+
+    const profile = profiles.find(
+      (row) => this.buildLawyerSlug(row.user.name ?? 'lawyer', row.id) === slug,
+    );
+
+    if (!profile) {
+      throw new NotFoundException('Lawyer not found');
+    }
+
+    return this.enrichLawyerProfile(profile);
+  }
+
+  async createPublicBooking(dto: CreatePublicBookingDto) {
+    const slotDate = new Date(dto.slot);
+    if (Number.isNaN(slotDate.getTime())) {
+      throw new BadRequestException('slot must be a valid ISO datetime');
+    }
+
+    const profile = await this.resolveLawyerProfile(dto.lawyerId);
+    if (!profile.acceptsLeads) {
+      throw new BadRequestException('This lawyer is not accepting bookings');
+    }
+
+    const summary = [
+      `Public booking � ${dto.issueType}`,
+      `Slot: ${slotDate.toISOString()}`,
+      `Client: ${dto.clientName} <${dto.clientEmail}>`,
+      dto.clientPhone ? `Phone: ${dto.clientPhone}` : null,
+      dto.description ? `Notes: ${dto.description}` : null,
+    ]
+      .filter(Boolean)
+      .join('\n');
+
+    const lead = await this.prisma.lawyerLead.create({
+      data: {
+        lawyerProfileId: profile.id,
+        tenantId: profile.tenantId ?? undefined,
+        issueType: dto.issueType,
+        countryCode: dto.countryCode.toUpperCase(),
+        jurisdiction: dto.jurisdiction,
+        summary,
+        status: 'NEW',
+        intakeStage: 'CONSULT',
+        urgency: 'MEDIUM',
+      },
+    });
+
+    return {
+      lead,
+      lawyer: this.enrichLawyerProfile(profile),
+      slot: slotDate.toISOString(),
+    };
+  }
+
+  private async resolveLawyerProfile(lawyerId: string) {
+    const byProfileId = await this.prisma.lawyerProfile.findUnique({
+      where: { id: lawyerId },
+      include: {
+        user: { select: { id: true, name: true, email: true } },
+      },
+    });
+    if (byProfileId) {
+      return byProfileId;
+    }
+
+    const byUserId = await this.prisma.lawyerProfile.findUnique({
+      where: { userId: lawyerId },
+      include: {
+        user: { select: { id: true, name: true, email: true } },
+      },
+    });
+    if (byUserId) {
+      return byUserId;
+    }
+
+    throw new NotFoundException('Lawyer not found');
+  }
+
+  buildLawyerSlug(name: string, profileId: string): string {
+    const base =
+      name
+        .toLowerCase()
+        .replace(/[^a-z0-9]+/g, '-')
+        .replace(/^-+|-+$/g, '') || 'lawyer';
+    return `${base}-${profileId.slice(-6)}`;
+  }
+
+  private enrichLawyerProfile(
+    profile: {
+      id: string;
+      userId: string;
+      countryCode: string;
+      practiceAreas: unknown;
+      jurisdictions: unknown;
+      languages: unknown;
+      currency: string;
+      consultationFee: Prisma.Decimal | null;
+      acceptsLeads: boolean;
+      verified: boolean;
+      verificationStatus: string;
+      user: { id: string; name: string | null; email: string };
+    },
+  ) {
+    return {
+      ...profile,
+      slug: this.buildLawyerSlug(profile.user.name ?? 'lawyer', profile.id),
+      verificationTier: this.normalizeVerificationTier(profile.verificationStatus),
+      consultationFee: profile.consultationFee
+        ? Number(profile.consultationFee.toString())
+        : null,
+    };
   }
 
   async createReviewRequest(userId: string, dto: CreateReviewRequestDto) {
@@ -283,6 +463,9 @@ export class MarketplaceService {
       reviewRequestId: request.id,
       payment,
       intent,
+      checkoutUrl: intent.checkoutUrl,
+      clientSecret: intent.clientSecret,
+      provider: intent.provider,
       status: 'PAYMENT_PENDING',
     };
   }
@@ -322,7 +505,7 @@ export class MarketplaceService {
         issueType: request.issueType,
         countryCode: request.countryCode,
         jurisdiction: request.jurisdiction ?? undefined,
-        summary: `${REVIEW_REQUEST_META_PREFIX}${request.id}\nLawyer review — ${request.issueType}`,
+        summary: `${REVIEW_REQUEST_META_PREFIX}${request.id}\nLawyer review � ${request.issueType}`,
         status: 'NEW',
         reviewFeePaid: true,
       },
@@ -457,7 +640,7 @@ export class MarketplaceService {
           consumerCaseId: request.consumerCaseId,
           countryCode: request.countryCode,
           reportType: 'LAWYER_REVIEW',
-          title: `Lawyer review — ${request.issueType}`,
+          title: `Lawyer review � ${request.issueType}`,
           contentMarkdown: deliveryMarkdown,
           lawyerReviewStatus: 'COMPLETED',
           reviewedByLawyerId: lawyerUserId,
@@ -592,11 +775,19 @@ export class MarketplaceService {
       });
     }
 
-    const fullLoop = await this.fullLoopAutomation.onLeadAccepted(
-      leadId,
-      lawyerUserId,
-      updatedLead.tenantId,
+    // Firm-intake leads (created by the accepting lawyer) stay in the pipeline until
+    // the lawyer explicitly converts with a chosen client � do not auto-create a matter.
+    const skipAutoConvert = Boolean(
+      lead.userId && lead.userId === lawyerUserId && updatedLead.tenantId,
     );
+
+    const fullLoop = skipAutoConvert
+      ? { skipped: true, reason: 'firm_intake' }
+      : await this.fullLoopAutomation.onLeadAccepted(
+          leadId,
+          lawyerUserId,
+          updatedLead.tenantId,
+        );
 
     return { ...updatedLead, fullLoop };
   }
@@ -650,7 +841,12 @@ export class MarketplaceService {
     });
   }
 
-  async convertToMatter(lawyerUserId: string, leadId: string) {
+  async convertToMatter(
+    lawyerUserId: string,
+    leadId: string,
+    providedClientId?: string,
+    options?: { overrideConflict?: boolean },
+  ) {
     const user = await this.prisma.user.findUnique({
       where: { id: lawyerUserId },
       include: {
@@ -667,7 +863,13 @@ export class MarketplaceService {
       throw new ForbiddenException('Lawyer must belong to a firm tenant to convert leads');
     }
 
-    const lead = await this.prisma.lawyerLead.findUnique({ where: { id: leadId } });
+    const lead = await this.prisma.lawyerLead.findUnique({
+      where: { id: leadId },
+      include: {
+        analysisRuns: { orderBy: { createdAt: 'desc' } },
+        leadDocuments: { orderBy: { createdAt: 'asc' } },
+      },
+    });
     if (!lead) {
       throw new NotFoundException('Lead not found');
     }
@@ -676,32 +878,82 @@ export class MarketplaceService {
       throw new ForbiddenException('Lead not accessible for this firm');
     }
 
-    if (lead.status !== 'ACCEPTED') {
+    if (lead.convertedMatterId) {
+      const existing = await this.prisma.matter.findUnique({ where: { id: lead.convertedMatterId } });
+      return { matter: existing, playbookApplied: null };
+    }
+
+    // Allow conversion from NEW/OPEN without a separate accept step
+    if (!['ACCEPTED', 'NEW', 'OPEN'].includes(lead.status)) {
       throw new ForbiddenException('Lead must be accepted before conversion');
     }
 
-    if (lead.convertedMatterId) {
-      return this.prisma.matter.findUnique({ where: { id: lead.convertedMatterId } });
-    }
+    // ?? Pull consumer case context ???????????????????????????????????
+    type ConsumerCaseCtx = {
+      id: string; userId: string; title: string; facts: string | null; desiredOutcome: string | null;
+      issueType: string; user: { name: string | null; email: string };
+      documents: Array<{ id: string; fileName: string; fileUrl: string; mimeType: string | null; extractedText: string | null }>;
+    } | null;
 
-    let clientId: string | undefined;
-    if (lead.consumerCaseId) {
-      const consumerCase = await this.prisma.consumerCase.findUnique({
-        where: { id: lead.consumerCaseId },
-        include: { user: true },
+    const fetchedCase = lead.consumerCaseId
+      ? await this.prisma.consumerCase.findUnique({
+          where: { id: lead.consumerCaseId },
+          include: {
+            user: { select: { name: true, email: true } },
+            documents: {
+              select: { id: true, fileName: true, fileUrl: true, mimeType: true, extractedText: true },
+              orderBy: { createdAt: 'asc' },
+            },
+          },
+        })
+      : null;
+    const consumerCase = fetchedCase as unknown as ConsumerCaseCtx;
+
+    // ?? Resolve / create client ??????????????????????????????????????
+    let clientId: string | undefined = providedClientId;
+    let resolvedClientName = 'New Client';
+
+    if (providedClientId) {
+      const existingClient = await this.prisma.client.findFirst({
+        where: { id: providedClientId, tenantId },
       });
+      if (!existingClient) {
+        throw new ForbiddenException('Client not found or not accessible');
+      }
+      resolvedClientName = existingClient.name;
+    } else {
+      // Try to resolve client from lead.clientName first (set during intake),
+      // then fall back to consumer case user name.
+      const intakeClientName = (lead as any).clientName as string | null | undefined;
+      const fallbackName = consumerCase
+        ? (consumerCase.user.name?.trim() || consumerCase.user.email.split('@')[0])
+        : null;
+      const clientName = intakeClientName?.trim() || fallbackName || 'New Client';
 
-      if (consumerCase) {
-        const clientName =
-          lead.summary?.match(/Client: ([^—]+)/)?.[1]?.trim() ??
-          consumerCase.user.name ??
-          consumerCase.user.email;
+      // Search for an existing client with the same name in this tenant (case-insensitive).
+      const existingByName = clientName !== 'New Client'
+        ? await this.prisma.client.findFirst({
+            where: {
+              tenantId,
+              name: { equals: clientName, mode: 'insensitive' },
+            },
+          })
+        : null;
+
+      if (existingByName) {
+        clientId = existingByName.id;
+        resolvedClientName = existingByName.name;
+      } else if (consumerCase || clientName !== 'New Client') {
+        resolvedClientName = clientName;
+        const clientCode = await generateUniqueClientCode(this.prisma, tenantId, clientName);
         const client = await this.prisma.client.create({
           data: {
             tenantId,
+            clientCode,
             name: clientName,
-            email: consumerCase.user.email,
-            type: 'INDIVIDUAL',
+            email: (lead as any).clientEmail ?? consumerCase?.user.email ?? undefined,
+            phone: (lead as any).clientPhone ?? undefined,
+            type: (lead as any).clientType ?? 'INDIVIDUAL',
             countryCode: lead.countryCode,
           },
         });
@@ -709,28 +961,238 @@ export class MarketplaceService {
       }
     }
 
+    const intakeBrief = readIntakeCaseBrief(lead.planningAnswers);
+    const conflictParties = partiesFromIntakeBrief(intakeBrief, [
+      {
+        name: (lead as { clientName?: string | null }).clientName,
+        email: (lead as { clientEmail?: string | null }).clientEmail,
+      },
+      {
+        name: consumerCase?.user.name ?? undefined,
+        email: consumerCase?.user.email,
+      },
+    ]);
+    let conflictCheck: Awaited<ReturnType<ConflictsService['quickCheck']>> | null = null;
+    if (conflictParties.length > 0) {
+      try {
+        conflictCheck = await this.conflictsService.quickCheck(
+          tenantId,
+          conflictParties,
+          clientId,
+        );
+      } catch {
+        conflictCheck = null;
+      }
+    }
+    if (shouldBlockConvertOnConflict(conflictCheck, options?.overrideConflict === true)) {
+      return {
+        matter: null,
+        playbookApplied: null,
+        conflictStatus: 'REVIEW_REQUIRED' as const,
+        conflicts: conflictCheck,
+      };
+    }
+
+    // ?? Build rich matter title ??????????????????????????????????????
+    const matterTitle = buildMatterTitleFromLead({
+      issueType: consumerCase?.issueType ?? lead.issueType,
+      consumerCaseTitle: consumerCase?.title,
+      clientName: resolvedClientName,
+    });
+
+    // ?? Build facts summary ??????????????????????????????????????????
+    const factsParts: string[] = [];
+    if (lead.summary) factsParts.push(lead.summary);
+    if (consumerCase?.facts && consumerCase.facts !== lead.summary) {
+      factsParts.push(`\n\n**Client-stated facts:**\n${consumerCase.facts}`);
+    }
+    if (lead.lawyerContextMarkdown) {
+      factsParts.push(`\n\n**Lawyer notes:**\n${lead.lawyerContextMarkdown}`);
+    }
+    const factsSummary = factsParts.join('\n').trim() || undefined;
+
+    const practiceAreaSlug = ISSUE_TYPE_TO_PRACTICE_AREA[lead.issueType as IssueCheckerType];
+    const matterType =
+      ISSUE_TYPE_MATTER_TYPE_OVERRIDE[lead.issueType] ??
+      defaultMatterTypeForPracticeArea(practiceAreaSlug ?? lead.issueType);
+
+    // ?? Resolve planningAnswers from lead or consumer case ???????????
+    const leadPlanningAnswers = lead.planningAnswers as Record<string, string> | null;
+    const casePlanningAnswers = (fetchedCase as any)?.planningAnswers as Record<string, string> | null;
+    const resolvedPlanningAnswers = { ...(casePlanningAnswers ?? {}), ...(leadPlanningAnswers ?? {}) };
+
+    // ?? Copy drafting workspace from latest PREVIEW analysis run ?????
+    const previewRun = (lead.analysisRuns ?? []).find(
+      (run) => run.runType === 'PREVIEW' && run.structuredOutput,
+    );
+    const draftWorkspace = previewRun?.structuredOutput as Prisma.InputJsonValue | undefined;
+    if (
+      draftWorkspace &&
+      typeof draftWorkspace === 'object' &&
+      !Array.isArray(draftWorkspace) &&
+      (draftWorkspace as Record<string, unknown>).documentType &&
+      !resolvedPlanningAnswers.documentType
+    ) {
+      resolvedPlanningAnswers.documentType = String(
+        (draftWorkspace as Record<string, unknown>).documentType,
+      );
+    }
+
+    // ?? Create the matter ????????????????????????????????????????????
     const matter = await this.prisma.matter.create({
       data: {
         tenantId,
         clientId,
-        title: lead.summary?.split(' — ').pop() ?? `${lead.issueType} — Intake Lead`,
+        title: matterTitle,
         countryCode: lead.countryCode,
         jurisdiction: lead.jurisdiction ?? undefined,
         practiceArea: lead.issueType,
-        matterType: 'LITIGATION',
+        matterType,
         status: 'OPEN',
-        factsSummary: lead.summary ?? undefined,
+        stage: 'Intake',
+        factsSummary,
+        desiredOutcome: consumerCase?.desiredOutcome ?? undefined,
+        sourceLeadId: leadId,
+        consumerCaseId: lead.consumerCaseId ?? undefined,
+        planningAnswers:
+          Object.keys(resolvedPlanningAnswers).length > 0
+            ? (resolvedPlanningAnswers as Prisma.InputJsonValue)
+            : undefined,
+        draftWorkspace,
       },
     });
 
-    return this.prisma.lawyerLead.update({
+    // ?? Seed MatterFacts from consumer case ??????????????????????????
+    const factsToCreate: Array<{ tenantId: string; matterId: string; factText: string; sourceType: string; sourceId?: string; confidence: number }> = [];
+
+    if (consumerCase?.facts) {
+      // Split into sentences as individual facts
+      const sentences = consumerCase.facts
+        .split(/[.!?\n]+/)
+        .map((s) => s.trim())
+        .filter((s) => s.length > 20);
+      for (const sentence of sentences.slice(0, 10)) {
+        factsToCreate.push({
+          tenantId,
+          matterId: matter.id,
+          factText: sentence,
+          sourceType: 'INTAKE',
+          confidence: 0.8,
+        });
+      }
+    }
+
+    if (consumerCase?.desiredOutcome) {
+      factsToCreate.push({
+        tenantId,
+        matterId: matter.id,
+        factText: `Desired outcome: ${consumerCase.desiredOutcome}`,
+        sourceType: 'INTAKE',
+        confidence: 0.9,
+      });
+    }
+
+    if (factsToCreate.length > 0) {
+      await this.prisma.matterFact.createMany({ data: factsToCreate });
+    }
+
+    // ?? Copy consumer documents onto the matter ??????????????????????
+    if (consumerCase?.documents?.length) {
+      const docData = consumerCase.documents.map((doc) => ({
+        tenantId,
+        matterId: matter.id,
+        clientId,
+        fileName: doc.fileName,
+        fileUrl: doc.fileUrl,
+        mimeType: doc.mimeType ?? undefined,
+        extractedText: doc.extractedText ?? undefined,
+        sourceConsumerDocId: doc.id,
+        visibility: 'PRIVATE' as const,
+        version: 1,
+      }));
+      await this.prisma.document.createMany({ data: docData });
+    }
+
+    // ?? Copy lead documents onto the matter ?????????????????????????
+    if (lead.leadDocuments?.length) {
+      const leadDocData = (lead.leadDocuments as Array<{ fileName: string; fileUrl: string; mimeType: string | null; extractedText: string | null }>).map((doc) => ({
+        tenantId,
+        matterId: matter.id,
+        clientId,
+        fileName: doc.fileName,
+        fileUrl: doc.fileUrl,
+        mimeType: doc.mimeType ?? undefined,
+        extractedText: doc.extractedText ?? undefined,
+        visibility: 'PRIVATE' as const,
+        version: 1,
+      }));
+      await this.prisma.document.createMany({ data: leadDocData });
+    }
+
+    // ?? Run practice-area playbook ???????????????????????????????????
+    const playbookResult = await this.playbooksService.executePlaybook(
+      tenantId,
+      matter.id,
+      matterType,
+      lead.countryCode,
+    );
+
+    // Update stage based on playbook result
+    if (playbookResult.playbookName) {
+      await this.prisma.matter.update({
+        where: { id: matter.id },
+        data: { stage: 'Intake' },
+      });
+    }
+
+    // ?? Fire matter.created automation ??????????????????????????????
+    try {
+      await this.automationEngine.dispatch(tenantId, 'matter.created', {
+        matterId: matter.id,
+        tenantId,
+        practiceArea: lead.issueType,
+        matterType,
+      });
+    } catch {
+      // Non-blocking
+    }
+
+    this.matterAutonomy?.triggerOnCreate(matter.id, tenantId, lawyerUserId);
+
+    let limitation: Awaited<ReturnType<CourtDeadlinesService['calculateLimitationPeriod']>> | null =
+      null;
+    if (this.courtDeadlines) {
+      try {
+        limitation = await this.courtDeadlines.calculateLimitationPeriod(tenantId, matter.id);
+      } catch {
+        limitation = null;
+      }
+    }
+
+    // Mark lead as converted
+    await this.prisma.lawyerLead.update({
       where: { id: leadId },
       data: {
         status: 'CONVERTED',
+        intakeStage: 'CONVERTED',
         convertedMatterId: matter.id,
         tenantId,
       },
     });
+
+    const intakeIntent = getIntakeIntent(lead.issueType, fetchedCase?.facts ?? undefined);
+
+    return {
+      matter,
+      playbookApplied: playbookResult.playbookName
+        ? { name: playbookResult.playbookName, tasksCreated: playbookResult.taskCount }
+        : null,
+      intakeIntent,
+      openDocumentsTab: intakeIntent === 'TRANSACTIONAL_DRAFT',
+      conflictStatus: conflictStatusFromCheck(conflictCheck),
+      conflicts: conflictCheck,
+      limitation,
+    };
   }
 
   async listLeads(userId: string, userType: string) {
@@ -751,17 +1213,44 @@ export class MarketplaceService {
         where: { userId },
       });
 
-      return this.prisma.lawyerLead.findMany({
-        where: {
-          tenantId,
-          ...(profile?.countryCode
-            ? { countryCode: profile.countryCode }
-            : {}),
-          status: { in: ['NEW', 'OPEN', 'ACCEPTED', 'CONVERTED', 'REJECTED'] },
-        },
-        orderBy: { createdAt: 'desc' },
-        take: 50,
-      });
+      return this.prisma.lawyerLead
+        .findMany({
+          where: {
+            tenantId,
+            ...(profile?.countryCode
+              ? { countryCode: profile.countryCode }
+              : {}),
+            status: { in: ['NEW', 'OPEN', 'ACCEPTED', 'CONVERTED', 'REJECTED'] },
+          },
+          orderBy: { createdAt: 'desc' },
+          take: 50,
+        })
+        .then(async (leads) => {
+          const caseIds = leads
+            .map((lead) => lead.consumerCaseId)
+            .filter((id): id is string => Boolean(id));
+          const consumerCases = caseIds.length
+            ? await this.prisma.consumerCase.findMany({
+                where: { id: { in: caseIds } },
+                select: {
+                  id: true,
+                  matterProfile: true,
+                  urgencyLevel: true,
+                  riskScore: true,
+                },
+              })
+            : [];
+          const caseById = new Map(consumerCases.map((row) => [row.id, row]));
+
+          return leads
+            .map((lead) => ({
+              ...lead,
+              miLeadScore: this.computeLeadScoreFromConsumerCase(
+                lead.consumerCaseId ? caseById.get(lead.consumerCaseId) : null,
+              ),
+            }))
+            .sort((a, b) => (b.miLeadScore ?? 0) - (a.miLeadScore ?? 0));
+        });
     }
 
     return this.prisma.lawyerLead.findMany({
@@ -799,6 +1288,8 @@ export class MarketplaceService {
 
     const analysisRuns = await this.intakeAnalysis.getAnalysisRuns(userId, leadId);
 
+    const leadDocuments = await this.leadDocuments.listDocuments(userId, leadId);
+
     const quotaStatus = lead.tenantId
       ? await this.intakeAnalysis.getQuotaStatus(lead.tenantId)
       : null;
@@ -811,14 +1302,28 @@ export class MarketplaceService {
       });
     }
 
+    const intakeIntent = getIntakeIntent(lead.issueType, consumerCase?.facts ?? undefined);
+    const intakeCaseBrief = readIntakeCaseBrief(lead.planningAnswers);
+
+    // Expose clientName/clientId at top level for easy dialog pre-fill
+    const clientName = (lead as any).clientName as string | null ?? null;
+    const clientId = (lead as any).clientId as string | null ?? null;
+
     return {
       lead,
       consumerCase,
       previewReport,
       documents,
+      leadDocuments,
       analysisRuns,
       quotaStatus,
       convertedMatter,
+      intakeIntent,
+      intakeCaseBrief,
+      recommendedNextTool: intakeCaseBrief?.recommendedNextTool,
+      clientName,
+      clientId,
+      miLeadScore: this.computeLeadScoreFromConsumerCase(consumerCase),
     };
   }
 
@@ -826,16 +1331,32 @@ export class MarketplaceService {
     return this.intakeAnalysis.getAnalysisRuns(userId, leadId);
   }
 
-  runSimilarCases(userId: string, leadId: string) {
-    return this.intakeAnalysis.runSimilarCases(userId, leadId);
+  updateLeadContext(userId: string, leadId: string, lawyerContextMarkdown?: string) {
+    return this.intakeAnalysis.updateLeadContext(userId, leadId, lawyerContextMarkdown);
   }
 
-  runOpponentAngles(userId: string, leadId: string) {
-    return this.intakeAnalysis.runOpponentAngles(userId, leadId);
+  runSimilarCases(userId: string, leadId: string, dto?: RunLeadAnalysisDto, locale?: string) {
+    return this.intakeAnalysis.runSimilarCases(userId, leadId, dto, locale);
   }
 
-  runStrategyMemo(userId: string, leadId: string) {
-    return this.intakeAnalysis.runStrategyMemo(userId, leadId);
+  runOpponentAngles(userId: string, leadId: string, dto?: RunLeadAnalysisDto, locale?: string) {
+    return this.intakeAnalysis.runOpponentAngles(userId, leadId, dto, locale);
+  }
+
+  runStrategyMemo(userId: string, leadId: string, dto?: RunLeadAnalysisDto, locale?: string) {
+    return this.intakeAnalysis.runStrategyMemo(userId, leadId, dto, locale);
+  }
+
+  listLeadDocuments(userId: string, leadId: string) {
+    return this.leadDocuments.listDocuments(userId, leadId);
+  }
+
+  createLeadDocumentUploadUrl(userId: string, leadId: string, fileName: string) {
+    return this.leadDocuments.createUploadUrl(userId, leadId, fileName);
+  }
+
+  createLeadDocument(userId: string, leadId: string, dto: CreateLeadDocumentDto) {
+    return this.leadDocuments.createDocument(userId, leadId, dto);
   }
 
   private async requireAssignedLawyer(reviewRequestId: string, lawyerUserId: string) {
@@ -900,5 +1421,30 @@ export class MarketplaceService {
       return 'VERIFIED';
     }
     return 'UNVERIFIED';
+  }
+
+  private computeLeadScoreFromConsumerCase(
+    consumerCase?: {
+      matterProfile: unknown;
+      urgencyLevel?: string;
+      riskScore?: number | null;
+    } | null,
+  ): number {
+    if (!consumerCase) return 0.5;
+
+    let score = consumerCase.riskScore != null ? Number(consumerCase.riskScore) : 0.5;
+    const profile = consumerCase.matterProfile as MatterProfile | undefined;
+
+    if (profile?.confidence != null) {
+      score = Math.min(1, score * 0.65 + profile.confidence * 0.35);
+      if (profile.confidence >= 0.85) score = Math.min(1, score + 0.1);
+      if (profile.nature === 'dispute') score = Math.min(1, score + 0.05);
+    }
+
+    if (consumerCase.urgencyLevel === 'HIGH') {
+      score = Math.min(1, score + 0.12);
+    }
+
+    return Math.round(score * 100) / 100;
   }
 }

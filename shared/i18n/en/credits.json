@@ -1,0 +1,27 @@
+{
+  "free_daily_title": "Free daily credits",
+  "free_daily_subtitle": "Resets every day on the free plan",
+  "free_daily_exhausted": "Daily free credits used",
+  "free_daily_exhausted_subtitle": "Subscribe for more AI usage today",
+  "gate": {
+    "title": "You're out of AI credits",
+    "subtitle": "Top up instantly or upgrade your plan for more monthly credits and premium models.",
+    "inlineMessage": "You don't have enough AI credits for this action.",
+    "loadingBalance": "Checking balance…",
+    "balanceUnknown": "Balance unavailable",
+    "creditsRemaining": "{count} credits remaining",
+    "topUpTitle": "Top up credits",
+    "topUpDescription": "One-time packs · secure checkout · never expire",
+    "subscribeTitle": "Upgrade your plan",
+    "subscribeDescription": "More monthly credits, premium models, and firm features",
+    "topUpCta": "Top up credits",
+    "footer": "Secure Stripe checkout · Credits never expire · Cancel anytime on subscriptions",
+    "features": {
+      "drafting": "Document drafting needs AI credits to generate court-ready drafts from your facts.",
+      "research": "Legal research uses credits for each query — Verified Research uses premium models.",
+      "intake": "Client intake analysis uses credits to classify issues and build your lead summary.",
+      "documentReview": "Document review uses credits to analyse clauses, risks, and amendments.",
+      "sectionFinder": "Section Finder uses credits when looking up statutes and crosswalks."
+    }
+  }
+}

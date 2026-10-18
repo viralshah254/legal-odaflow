@@ -1,0 +1,81 @@
+{
+  "countryCode": "UG",
+  "tier": "best_effort",
+  "source": "ulii.org",
+  "builtAt": "2026-08-11T00:00:00.000Z",
+  "notes": "Seed statute list for Uganda deepening. Not bulk-ingested; used for retrieval planning and connector targeting.",
+  "primaryDiscovery": [
+    {
+      "name": "Uganda Legal Information Institute (ULII)",
+      "url": "https://ulii.org",
+      "role": "judgments_and_legislation_discovery"
+    },
+    {
+      "name": "AfricanLII",
+      "url": "https://africanlii.org",
+      "role": "regional_mirror"
+    },
+    {
+      "name": "BAILII",
+      "url": "https://www.bailii.org",
+      "role": "persuasive_common_law_comparative"
+    }
+  ],
+  "seedActs": [
+    {
+      "actId": "ug-contracts-act-2010",
+      "title": "Contracts Act, 2010",
+      "topics": ["contract", "construction_delay"],
+      "discoveryHint": "ULII / Uganda legislation — Contracts Act 2010"
+    },
+    {
+      "actId": "ug-arbitration-conciliation-act",
+      "title": "Arbitration and Conciliation Act",
+      "topics": ["arbitration", "construction_delay"],
+      "discoveryHint": "ULII — Arbitration and Conciliation Act (Cap as consolidated)"
+    },
+    {
+      "actId": "ug-civil-procedure-act",
+      "title": "Civil Procedure Act",
+      "topics": ["civil_litigation"],
+      "discoveryHint": "ULII — Civil Procedure Act / Rules"
+    },
+    {
+      "actId": "ug-evidence-act",
+      "title": "Evidence Act",
+      "topics": ["evidence"],
+      "discoveryHint": "ULII — Evidence Act"
+    },
+    {
+      "actId": "ug-limitation-act",
+      "title": "Limitation Act",
+      "topics": ["limitation"],
+      "discoveryHint": "ULII — Limitation Act"
+    },
+    {
+      "actId": "ug-land-act",
+      "title": "Land Act",
+      "topics": ["property"],
+      "discoveryHint": "ULII — Land Act"
+    },
+    {
+      "actId": "ug-employment-act",
+      "title": "Employment Act",
+      "topics": ["employment"],
+      "discoveryHint": "ULII — Employment Act"
+    },
+    {
+      "actId": "ug-ppda-act",
+      "title": "Public Procurement and Disposal of Public Assets Act",
+      "topics": ["procurement", "construction_delay"],
+      "discoveryHint": "ULII — PPDA Act (public works / infrastructure disputes)"
+    }
+  ],
+  "plannedConnector": {
+    "id": "ulii-search",
+    "type": "live_http",
+    "baseUrl": "https://ulii.org",
+    "capabilities": ["CASE_LAW", "STATUTES", "LIVE_WEB"],
+    "status": "planned"
+  }
+}

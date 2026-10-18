@@ -11,8 +11,12 @@ export class BulkReviewController {
   constructor(private readonly bulkReview: BulkReviewService) {}
 
   @Get()
-  list(@TenantId() tenantId: string, @Param('matterId') matterId: string) {
-    return this.bulkReview.list(tenantId, matterId);
+  list(
+    @TenantId() tenantId: string,
+    @CurrentUser() user: RequestUser,
+    @Param('matterId') matterId: string,
+  ) {
+    return this.bulkReview.list(tenantId, matterId, user.id, user.tenantRole);
   }
 
   @Post()
@@ -22,6 +26,12 @@ export class BulkReviewController {
     @Param('matterId') matterId: string,
     @Body() body: { documentIds: string[] },
   ) {
-    return this.bulkReview.create(tenantId, matterId, body.documentIds ?? [], user.id);
+    return this.bulkReview.create(
+      tenantId,
+      matterId,
+      body.documentIds ?? [],
+      user.id,
+      user.tenantRole,
+    );
   }
 }

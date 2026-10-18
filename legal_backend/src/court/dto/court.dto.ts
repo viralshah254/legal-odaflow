@@ -121,6 +121,18 @@ export class EcourtsLookupDto {
   @IsString()
   @MinLength(1)
   cnrNumber!: string;
+
+  @IsOptional()
+  @IsString()
+  tenantId?: string;
+
+  @IsOptional()
+  @IsString()
+  matterId?: string;
+
+  @IsOptional()
+  @IsString()
+  userId?: string;
 }
 
 export class UsDocketSyncDto {

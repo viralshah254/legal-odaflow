@@ -1,10 +1,13 @@
 import { Body, Controller, Get, Post, UseGuards } from '@nestjs/common';
+import { TenantPermission } from '@/common/decorators/tenant-permission.decorator';
 import { TenantId } from '@/common/decorators/tenant-id.decorator';
+import { TenantPermissionGuard } from '@/common/guards/tenant-permission.guard';
 import { TenantGuard } from '@/common/guards/tenant.guard';
 import { ApiKeysService } from './api-keys.service';
 
 @Controller('public-api/keys')
-@UseGuards(TenantGuard)
+@UseGuards(TenantGuard, TenantPermissionGuard)
+@TenantPermission('canManageSettings')
 export class ApiKeysController {
   constructor(private readonly apiKeys: ApiKeysService) {}
 

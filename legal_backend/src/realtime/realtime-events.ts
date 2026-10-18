@@ -10,6 +10,7 @@ export const REALTIME_EVENTS = {
   TASK_DELETED: 'task.deleted',
   MATTER_CREATED: 'matter.created',
   MATTER_UPDATED: 'matter.updated',
+  MATTER_DELETED: 'matter.deleted',
   CLIENT_CREATED: 'client.created',
   CLIENT_UPDATED: 'client.updated',
   CALENDAR_EVENT_UPDATED: 'calendar.event.updated',
@@ -21,6 +22,9 @@ export const REALTIME_EVENTS = {
   TIME_ENTRY_UPDATED: 'timeEntry.updated',
   INVOICE_UPDATED: 'invoice.updated',
   TRUST_UPDATED: 'trust.updated',
+  BULK_REVIEW_PROGRESS: 'bulkReview.progress',
+  MEETING_STATUS_UPDATED: 'meeting.status.updated',
+  MATTER_AUTONOMY_COMPLETED: 'matter.autonomy.completed',
 } as const;
 
 export type RealtimeEventName =

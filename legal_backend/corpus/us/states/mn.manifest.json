@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "stateCode": "MN",
+  "stateName": "Minnesota",
+  "acts": [
+    {
+      "actId": "mn-code",
+      "title": "Minnesota code",
+      "sourceAuthority": "cornell-lii",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.law.cornell.edu/states/mn",
+      "externalId": "mn-code",
+      "notes": "Minnesota state law via Cornell LII state index"
+    },
+    {
+      "actId": "mn-statutes",
+      "title": "Minnesota statutes",
+      "sourceAuthority": "cornell-lii",
+      "sourceTier": "mirror",
+      "primaryPdfUrl": "https://www.law.cornell.edu/states/mn",
+      "externalId": "mn-statutes",
+      "notes": "Minnesota state law via Cornell LII state index"
+    }
+  ]
+}

@@ -1,6 +1,11 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
+import { JwtService } from '@nestjs/jwt';
 import { Prisma } from '@prisma/client';
 import { PrismaService } from '@/prisma/prisma.service';
+import {
+  buildPortalPaymentPath,
+  signPortalPaymentToken,
+} from '@/portal/portal-payment.util';
 import {
   CreateClaimDto,
   CreateExpenseDto,
@@ -12,7 +17,124 @@ import {
 
 @Injectable()
 export class FinanceService {
-  constructor(private readonly prisma: PrismaService) {}
+  constructor(
+    private readonly prisma: PrismaService,
+    private readonly jwtService: JwtService,
+  ) {}
+
+  async getDashboard(tenantId: string) {
+    const now = new Date();
+    const monthStart = new Date(now.getFullYear(), now.getMonth(), 1);
+
+    const [invoices, paymentsThisMonth] = await Promise.all([
+      this.prisma.invoice.findMany({
+        where: { tenantId, status: { not: 'PAID' } },
+        select: {
+          id: true,
+          amount: true,
+          dueDate: true,
+          status: true,
+          clientId: true,
+        },
+      }),
+      this.prisma.payment.findMany({
+        where: {
+          tenantId,
+          status: 'PAID',
+          createdAt: { gte: monthStart },
+        },
+        select: { amount: true },
+      }),
+    ]);
+
+    const outstandingTotal = invoices.reduce((sum, inv) => sum + Number(inv.amount), 0);
+    const overdueTotal = invoices
+      .filter((inv) => inv.dueDate && inv.dueDate < now)
+      .reduce((sum, inv) => sum + Number(inv.amount), 0);
+    const collectionsThisMonth = paymentsThisMonth.reduce(
+      (sum, p) => sum + Number(p.amount),
+      0,
+    );
+
+    const agingBuckets = [
+      { bucket: 'current', count: 0, amount: 0 },
+      { bucket: 'days1to30', count: 0, amount: 0 },
+      { bucket: 'days31to60', count: 0, amount: 0 },
+      { bucket: 'days61to90', count: 0, amount: 0 },
+      { bucket: 'over90', count: 0, amount: 0 },
+    ];
+
+    for (const inv of invoices) {
+      const amount = Number(inv.amount);
+      if (!inv.dueDate || inv.dueDate >= now) {
+        agingBuckets[0].count += 1;
+        agingBuckets[0].amount += amount;
+        continue;
+      }
+      const daysPast = Math.floor(
+        (now.getTime() - inv.dueDate.getTime()) / (1000 * 60 * 60 * 24),
+      );
+      if (daysPast <= 30) {
+        agingBuckets[1].count += 1;
+        agingBuckets[1].amount += amount;
+      } else if (daysPast <= 60) {
+        agingBuckets[2].count += 1;
+        agingBuckets[2].amount += amount;
+      } else if (daysPast <= 90) {
+        agingBuckets[3].count += 1;
+        agingBuckets[3].amount += amount;
+      } else {
+        agingBuckets[4].count += 1;
+        agingBuckets[4].amount += amount;
+      }
+    }
+
+    const byClient = new Map<
+      string,
+      { clientId: string; invoicedAmount: number; collectedAmount: number; invoiceCount: number }
+    >();
+    for (const inv of invoices) {
+      const cid = inv.clientId ?? 'unassigned';
+      const row = byClient.get(cid) ?? {
+        clientId: cid,
+        invoicedAmount: 0,
+        collectedAmount: 0,
+        invoiceCount: 0,
+      };
+      row.invoicedAmount += Number(inv.amount);
+      row.invoiceCount += 1;
+      byClient.set(cid, row);
+    }
+
+    const clientIds = [...byClient.keys()].filter((id) => id !== 'unassigned');
+    const clients = clientIds.length
+      ? await this.prisma.client.findMany({
+          where: { id: { in: clientIds }, tenantId },
+          select: { id: true, name: true },
+        })
+      : [];
+    const clientById = new Map(clients.map((c) => [c.id, c]));
+
+    const originatorStats = [...byClient.values()].map((row) => ({
+      userId: row.clientId,
+      userName:
+        row.clientId === 'unassigned'
+          ? 'Unassigned'
+          : clientById.get(row.clientId)?.name ?? row.clientId,
+      role: 'CLIENT',
+      invoicedAmount: row.invoicedAmount,
+      collectedAmount: row.collectedAmount,
+      invoiceCount: row.invoiceCount,
+    }));
+
+    return {
+      collectionsThisMonth,
+      outstandingTotal,
+      overdueTotal,
+      invoiceAging: agingBuckets,
+      originatorStats,
+    };
+  }
 
   async findInvoices(tenantId: string, status?: string) {
     const invoices = await this.prisma.invoice.findMany({
@@ -27,7 +149,7 @@ export class FinanceService {
     });
     return invoices.map((inv) => ({
       ...inv,
-      paymentLink: `/pay/${inv.id}`,
+      paymentLink: this.buildPaymentLink(inv),
     }));
   }
 
@@ -45,7 +167,7 @@ export class FinanceService {
       },
       orderBy: { dueDate: 'asc' },
     });
-    return invoices.map((inv) => ({ ...inv, paymentLink: `/pay/${inv.id}` }));
+    return invoices.map((inv) => ({ ...inv, paymentLink: this.buildPaymentLink(inv) }));
   }
 
   async getInvoice(tenantId: string, invoiceId: string) {
@@ -57,7 +179,7 @@ export class FinanceService {
     }
     return {
       ...invoice,
-      paymentLink: `/pay/${invoice.id}`,
+      paymentLink: this.buildPaymentLink(invoice),
     };
   }
 
@@ -166,6 +288,76 @@ export class FinanceService {
       paidAt: metadata.paidAt ?? updated.createdAt.toISOString(),
       paymentMethod: metadata.paymentMethod ?? undefined,
       reconciled,
+    };
+  }
+
+  async reconcilePaymentFromWebhook(paymentId: string, tenantId?: string) {
+    const payment = await this.prisma.payment.findFirst({
+      where: {
+        id: paymentId,
+        tenantId: tenantId || undefined,
+      },
+    });
+    if (!payment) {
+      return null;
+    }
+
+    const metadata = this.toMetadataObject(payment.metadata);
+    metadata.reconciled = 'true';
+    metadata.reconciledAt = new Date().toISOString();
+    metadata.reconciledSource = 'webhook';
+
+    const updated = await this.prisma.payment.update({
+      where: { id: paymentId },
+      data: { metadata: metadata as Prisma.InputJsonValue },
+    });
+
+    return {
+      id: updated.id,
+      invoiceId: metadata.invoiceId ?? '',
+      amount: Number(updated.amount),
+      paidAt: metadata.paidAt ?? updated.createdAt.toISOString(),
+      paymentMethod: metadata.paymentMethod ?? undefined,
+      reconciled: true,
+    };
+  }
+
+  async getDunningStatus(tenantId: string) {
+    const now = new Date();
+    const overdueInvoices = await this.prisma.invoice.findMany({
+      where: {
+        tenantId,
+        status: { in: ['SENT', 'OVERDUE'] },
+        dueDate: { lt: now },
+      },
+      orderBy: { dueDate: 'asc' },
+      take: 100,
+    });
+
+    const totalOverdueAmount = overdueInvoices.reduce(
+      (sum, invoice) => sum + Number(invoice.amount.toString()),
+      0,
+    );
+
+    return {
+      tenantId,
+      checkedAt: now.toISOString(),
+      overdueCount: overdueInvoices.length,
+      totalOverdueAmount: Math.round(totalOverdueAmount * 100) / 100,
+      invoices: overdueInvoices.map((invoice) => ({
+        invoiceId: invoice.id,
+        invoiceNumber: invoice.invoiceNumber,
+        amount: Number(invoice.amount.toString()),
+        currency: invoice.currency,
+        status: invoice.status,
+        dueDate: invoice.dueDate?.toISOString() ?? null,
+        daysPastDue: invoice.dueDate
+          ? Math.max(
+              0,
+              Math.floor((now.getTime() - invoice.dueDate.getTime()) / (1000 * 60 * 60 * 24)),
+            )
+          : 0,
+      })),
     };
   }
 
@@ -513,7 +705,16 @@ export class FinanceService {
       },
       orderBy: { createdAt: 'desc' },
     });
-    return invoices.map((inv) => ({ ...inv, paymentLink: `/pay/${inv.id}` }));
+    return invoices.map((inv) => ({ ...inv, paymentLink: this.buildPaymentLink(inv) }));
+  }
+
+  private buildPaymentLink(invoice: { id: string; tenantId: string }): string {
+    const token = signPortalPaymentToken(
+      this.jwtService,
+      invoice.id,
+      invoice.tenantId,
+    );
+    return buildPortalPaymentPath(invoice.id, token);
   }
 
   private toMetadataObject(metadata: Prisma.JsonValue | null): Record<string, string> {

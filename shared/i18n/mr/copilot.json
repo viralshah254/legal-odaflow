@@ -150,5 +150,10 @@
   "tasksDue": "{count, plural, one {# task due} other {# tasks due}}",
   "calendarEvents": "{count, plural, one {# event} other {# events}}",
   "overdueInvoices": "{count, plural, one {# overdue invoice} other {# overdue invoices}}",
-  "pendingApprovals": "{count, plural, one {# pending approval} other {# pending approvals}}"
+  "pendingApprovals": "{count, plural, one {# pending approval} other {# pending approvals}}",
+  "agentPickerDefault": "जनरल सहपायलट",
+  "draftPromptLabel": "तुम्ही विचारले",
+  "draftOutputLabel": "आउटपुट",
+  "draftUntitled": "शीर्षक नसलेला मसुदा",
+  "sessionUntitled": "गप्पा सत्र"
 }

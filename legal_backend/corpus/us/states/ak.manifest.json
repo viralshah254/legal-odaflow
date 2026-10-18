@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "stateCode": "AK",
+  "stateName": "Alaska",
+  "acts": [
+    {
+      "actId": "ak-code",
+      "title": "Alaska code",
+      "sourceAuthority": "cornell-lii",
+      "sourceTier": "primary",
+      "primaryPdfUrl": "https://www.law.cornell.edu/states/ak",
+      "externalId": "ak-code",
+      "notes": "Alaska state law via Cornell LII state index"
+    },
+    {
+      "actId": "ak-statutes",
+      "title": "Alaska statutes",
+      "sourceAuthority": "cornell-lii",
+      "sourceTier": "mirror",
+      "primaryPdfUrl": "https://www.law.cornell.edu/states/ak",
+      "externalId": "ak-statutes",
+      "notes": "Alaska state law via Cornell LII state index"
+    }
+  ]
+}

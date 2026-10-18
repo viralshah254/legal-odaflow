@@ -9,6 +9,9 @@ describe('RateTablesService', () => {
       update: jest.fn(),
       updateMany: jest.fn(),
     },
+    tenantUser: {
+      findFirst: jest.fn(),
+    },
   };
 
   const service = new RateTablesService(prisma as never);
@@ -30,5 +33,17 @@ describe('RateTablesService', () => {
     prisma.rateTable.findFirst.mockResolvedValue(null);
     const result = await service.resolveRateForRole('tenant1', 'ASSOCIATE');
     expect(result).toBeNull();
+  });
+
+  it('resolves rate for user via tenant role', async () => {
+    prisma.tenantUser.findFirst.mockResolvedValue({ role: 'PARTNER' });
+    prisma.rateTable.findFirst.mockResolvedValue({
+      id: 'rt1',
+      currency: 'USD',
+      rates: { PARTNER: 450, default: 200 },
+    });
+
+    const result = await service.resolveRateForUserId('tenant1', 'user1');
+    expect(result).toEqual({ rate: 450, currency: 'USD' });
   });
 });

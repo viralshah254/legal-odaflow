@@ -1,0 +1,61 @@
+name: Webhook Docker Build and Push
+
+on:
+  push:
+    branches: [webhook]
+  workflow_dispatch:
+
+jobs:
+  webhook-build-and-push:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    if: github.ref == 'refs/heads/webhook' || github.ref == 'refs/heads/main' || github.event_name == 'workflow_dispatch'
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v4
+
+      - name: Login to Docker Hub
+        uses: docker/login-action@v4
+        with:
+          username: ayienda
+          password: ${{ secrets.DOCKER_HUB_TOKEN }}
+
+      - name: Build and push Webhook Docker image
+        uses: docker/build-push-action@v6
+        timeout-minutes: 15
+        with:
+          context: ./deployment
+          file: ./deployment/Dockerfile
+          push: true
+          tags: |
+            ayienda/legal-byodaflow-webhook:latest
+            ayienda/legal-byodaflow-webhook:${{ github.sha }}
+          cache-from: |
+            type=registry,ref=ayienda/legal-byodaflow-webhook:buildcache
+          cache-to: |
+            type=registry,ref=ayienda/legal-byodaflow-webhook:buildcache,mode=min
+          platforms: linux/amd64
+
+      - name: Webhook Build Summary
+        run: |
+          echo "✅ Webhook image pushed to Docker Hub successfully!"
+          echo ""
+          echo "📦 Images built:"
+          echo "   • ayienda/legal-byodaflow-webhook:latest"
+          echo "   • ayienda/legal-byodaflow-webhook:${{ github.sha }}"
+          echo ""
+          echo "🚀 Next steps:"
+          echo "   1. SSH to your EC2 server"
+          echo "   2. Navigate to: /home/ubuntu/legal_backend/deployment"
+          echo "   3. Run: ./deploy-webhook.sh"
+          echo ""
+          echo "🔍 Verify deployment:"
+          echo "   curl https://legal-api.odaflow.com/webhook/health"
+
+      - name: Create deployment reminder
+        run: |
+          echo "::notice title=Webhook Image Built::Webhook Docker image has been built and pushed. Remember to deploy it manually on your server using ./deploy-webhook.sh"

@@ -1,9 +1,15 @@
 {
+  "typescript.tsdk": "legal_web/node_modules/typescript/lib",
+  "typescript.enablePromptUseWorkspaceTsdk": true,
+  "typescript.preferences.includePackageJsonAutoImports": "on",
+  "typescript.tsserver.watchOptions": {
+    "watchFile": "useFsEvents",
+    "watchDirectory": "useFsEvents"
+  },
+  "eslint.workingDirectories": ["legal_backend", "legal_web"],
+  "prisma.schema": "legal_backend/prisma/schema.prisma",
   "css.lint.unknownAtRules": "ignore",
   "scss.lint.unknownAtRules": "ignore",
-  "less.lint.unknownAtRules": "ignore"
+  "less.lint.unknownAtRules": "ignore",
+  "git.ignoreLimitWarning": true
 }
-
-
-
-

@@ -12,4 +12,10 @@ export class GeoController {
   detect(@Req() req: Request) {
     return this.geoService.detectFromRequest(req.headers);
   }
+
+  @Public()
+  @Get('client')
+  detectClient(@Req() req: Request) {
+    return this.geoService.detectClientFromRequest(req.headers);
+  }
 }

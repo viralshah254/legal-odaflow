@@ -18,6 +18,18 @@ export class CreateTemplateDto {
   matterType?: string;
 
   @IsOptional()
+  @IsString()
+  countryCode?: string;
+
+  @IsOptional()
+  @IsString()
+  practiceArea?: string;
+
+  @IsOptional()
+  @IsString()
+  documentKind?: string;
+
+  @IsOptional()
   @IsBoolean()
   isActive?: boolean;
 }
@@ -38,6 +50,18 @@ export class UpdateTemplateDto {
   @IsOptional()
   @IsString()
   matterType?: string;
+
+  @IsOptional()
+  @IsString()
+  countryCode?: string;
+
+  @IsOptional()
+  @IsString()
+  practiceArea?: string;
+
+  @IsOptional()
+  @IsString()
+  documentKind?: string;
 
   @IsOptional()
   @IsBoolean()

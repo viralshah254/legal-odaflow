@@ -19,6 +19,10 @@ export class UploadDocumentMetadataDto {
 
   @IsOptional()
   @IsString()
+  clientId?: string;
+
+  @IsOptional()
+  @IsString()
   folderId?: string;
 }
 
@@ -58,4 +62,28 @@ export class CreateUploadUrlDto {
   @IsOptional()
   @IsString()
   scope?: string;
+}
+
+export class CreateConsumerUploadUrlDto {
+  @IsString()
+  @MinLength(1)
+  consumerCaseId!: string;
+
+  @IsString()
+  @MinLength(1)
+  fileName!: string;
+
+  @IsOptional()
+  @IsString()
+  mimeType?: string;
+}
+
+export class UploadConsumerFileDto {
+  @IsString()
+  @MinLength(1)
+  consumerCaseId!: string;
+
+  @IsOptional()
+  @IsString()
+  documentType?: string;
 }

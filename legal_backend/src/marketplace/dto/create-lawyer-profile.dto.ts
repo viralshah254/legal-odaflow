@@ -2,6 +2,7 @@ import {
   IsArray,
   IsBoolean,
   IsNumber,
+  IsObject,
   IsOptional,
   IsString,
   MinLength,
@@ -42,6 +43,22 @@ export class CreateLawyerProfileDto {
   @IsOptional()
   @IsString()
   verificationStatus?: string;
+
+  @IsOptional()
+  @IsObject()
+  specialtyLevel?: Record<string, string>;
+
+  @IsOptional()
+  @IsObject()
+  jurisdictionLicenses?: Record<string, string>;
+
+  @IsOptional()
+  @IsNumber()
+  yearsExperience?: number;
+
+  @IsOptional()
+  @IsString()
+  bio?: string;
 }
 
 export class CreateReviewRequestDto {

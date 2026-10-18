@@ -1,0 +1,20 @@
+{
+  "title": "Refined prompt",
+  "description": "We reorganized your description for clearer AI results. Edit if needed, then continue.",
+  "yourOriginal": "Your original prompt",
+  "refinedLabel": "Refined prompt",
+  "continueRefined": "Continue with refined prompt",
+  "useOriginal": "Use original instead",
+  "hintJurisdiction": "Jurisdiction",
+  "hintDocument": "Document",
+  "hintParty": "Party",
+  "hintStatute": "Statute",
+  "preparing": "Preparing your prompt…",
+  "startingDrafting": "Starting drafting in {seconds}s…",
+  "startingResearch": "Starting research in {seconds}s…",
+  "undo": "Undo",
+  "autoFilledTitle": "Prompt refined",
+  "autoFilledDescription": "Continuing in {seconds}s — undo to keep your original.",
+  "autoFillCountdownAria": "{seconds} seconds remaining to undo",
+  "autoFillHint": "Undo restores your original prompt"
+}

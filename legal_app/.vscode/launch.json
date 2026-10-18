@@ -1,0 +1,21 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Umbrella (local API)",
+      "request": "launch",
+      "type": "dart",
+      "toolArgs": [
+        "--dart-define-from-file=config/dart_defines.local.json"
+      ]
+    },
+    {
+      "name": "Umbrella (production API)",
+      "request": "launch",
+      "type": "dart",
+      "toolArgs": [
+        "--dart-define-from-file=config/dart_defines.production.json"
+      ]
+    }
+  ]
+}

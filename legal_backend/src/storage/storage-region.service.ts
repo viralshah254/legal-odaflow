@@ -1,5 +1,6 @@
 import { ForbiddenException, Injectable } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
+import { PrivacyControlsService } from '@/country-compliance/privacy-controls.service';
 import { PrismaService } from '@/prisma/prisma.service';
 
 /**
@@ -10,9 +11,14 @@ export class StorageRegionService {
   constructor(
     private readonly prisma: PrismaService,
     private readonly configService: ConfigService,
+    private readonly privacyControls: PrivacyControlsService,
   ) {}
 
   async assertTenantStorageRegion(tenantId: string): Promise<void> {
+    await this.privacyControls.assertTenantProcessingAllowed(
+      tenantId,
+      'document_storage',
+    );
     const tenant = await this.prisma.tenant.findUnique({
       where: { id: tenantId },
       select: { dataRegion: true, primaryCountry: true },

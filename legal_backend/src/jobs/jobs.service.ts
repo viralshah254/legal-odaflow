@@ -13,9 +13,12 @@ import {
   ANONYMIZATION_JOB_TYPES,
   AUTOMATION_JOB_TYPES,
   LEGAL_INGEST_JOB_TYPES,
+  MIGRATION_JOB_TYPES,
   NOTIFICATION_JOB_TYPES,
   QUEUE_NAMES,
+  SEARCH_INDEX_JOB_TYPES,
 } from './jobs.constants';
+import { bullmqAttemptsForJobType } from './research-queue.policy';
 import {
   AiAgentJobPayload,
   AnonymizationJobPayload,
@@ -28,7 +31,26 @@ export interface OcrJobPayload {
   tenantId?: string;
   userId: string;
   fileUrl: string;
-  scope: 'TENANT' | 'CONSUMER';
+  scope: 'TENANT' | 'CONSUMER' | 'LEAD';
+  countryCode?: string;
+}
+
+export interface ClioMigrationJobPayload {
+  jobId: string;
+  tenantId: string;
+  fileName: string;
+  rowCount: number;
+  parsedRowCount: number;
+  entityTypes: string[];
+  csvContent?: string;
+  agentJobId?: string;
+}
+
+export interface SearchIndexJobPayload {
+  tenantId: string;
+  entityType: 'matter' | 'client' | 'document' | 'task';
+  entityId: string;
+  action: 'upsert' | 'delete';
 }
 
 export interface EnqueueResult {
@@ -76,6 +98,21 @@ export class JobsService implements OnModuleDestroy {
     });
   }
 
+  async enqueueLeadDocumentOcrJob(input: {
+    leadDocumentId: string;
+    tenantId: string;
+    userId: string;
+    fileUrl: string;
+  }): Promise<EnqueueResult> {
+    return this.enqueueOcrJob({
+      documentId: input.leadDocumentId,
+      tenantId: input.tenantId,
+      userId: input.userId,
+      fileUrl: input.fileUrl,
+      scope: 'LEAD',
+    });
+  }
+
   async enqueueCopilotAiJob(input: {
     toolName: CopilotToolName;
     tenantId: string;
@@ -103,7 +140,14 @@ export class JobsService implements OnModuleDestroy {
       });
 
     const jobType = mapToolToJobType(input.toolName);
-    const queue = priority === 'high' ? QUEUE_NAMES.AI_HIGH : QUEUE_NAMES.AI_LOW;
+    const isFastResearch =
+      input.toolName === 'legal_research_memo' &&
+      (input.params?.researchMode === 'FAST' || input.params?.researchMode === 'GUIDANCE');
+    const queue = isFastResearch
+      ? QUEUE_NAMES.AI_FAST
+      : priority === 'high'
+        ? QUEUE_NAMES.AI_HIGH
+        : QUEUE_NAMES.AI_LOW;
 
     const agentJob = await this.prisma.agentJob.create({
       data: {
@@ -177,12 +221,13 @@ export class JobsService implements OnModuleDestroy {
   }
 
   async enqueueLegalIngestJob(payload: LegalIngestJobPayload): Promise<EnqueueResult> {
+    const jobType = payload.jobType ?? LEGAL_INGEST_JOB_TYPES.COURTLISTENER_SYNC;
     return this.enqueueJob({
       queue: QUEUE_NAMES.LEGAL_INGEST,
-      jobName: LEGAL_INGEST_JOB_TYPES.COURTLISTENER_SYNC,
-      jobType: LEGAL_INGEST_JOB_TYPES.COURTLISTENER_SYNC,
+      jobName: jobType,
+      jobType,
       userId: 'system',
-      payload,
+      payload: { ...payload, jobType },
     });
   }
 
@@ -308,6 +353,57 @@ export class JobsService implements OnModuleDestroy {
     });
   }
 
+  async enqueueLeadDraftGenerate(input: {
+    leadId: string;
+    tenantId: string;
+    userId: string;
+    documentType: string;
+    planningAnswers?: Record<string, unknown>;
+    countryCode?: string;
+    jurisdiction?: string;
+  }): Promise<EnqueueResult> {
+    const agentJob = await this.prisma.agentJob.create({
+      data: {
+        queue: QUEUE_NAMES.AI_LOW,
+        jobType: AI_JOB_TYPES.LEAD_DRAFT_GENERATE,
+        status: 'QUEUED',
+        userId: input.userId,
+        tenantId: input.tenantId,
+        payload: {
+          leadId: input.leadId,
+          documentType: input.documentType,
+          planningAnswers: input.planningAnswers,
+          countryCode: input.countryCode,
+          jurisdiction: input.jurisdiction,
+        } as Prisma.InputJsonValue,
+      },
+    });
+
+    const aiPayload: AiAgentJobPayload = {
+      agentJobId: agentJob.id,
+      jobType: AI_JOB_TYPES.LEAD_DRAFT_GENERATE,
+      tenantId: input.tenantId,
+      userId: input.userId,
+      params: {
+        leadId: input.leadId,
+        documentType: input.documentType,
+        planningAnswers: input.planningAnswers,
+        countryCode: input.countryCode,
+        jurisdiction: input.jurisdiction,
+      },
+    };
+
+    return this.enqueueJob({
+      queue: QUEUE_NAMES.AI_LOW,
+      jobName: AI_JOB_TYPES.LEAD_DRAFT_GENERATE,
+      jobType: AI_JOB_TYPES.LEAD_DRAFT_GENERATE,
+      userId: input.userId,
+      tenantId: input.tenantId,
+      payload: aiPayload,
+      existingAgentJobId: agentJob.id,
+    });
+  }
+
   private async enqueueJob(input: {
     queue: string;
     jobName: string;
@@ -330,14 +426,25 @@ export class JobsService implements OnModuleDestroy {
           },
         });
 
+    const queuePayload =
+      typeof input.payload === 'object' && input.payload !== null
+        ? { ...input.payload, agentJobId: agentJob.id }
+        : { agentJobId: agentJob.id, value: input.payload };
+
     try {
       const bullJob = await this.getQueue(input.queue).add(
         input.jobName,
-        input.payload,
+        queuePayload,
         {
           removeOnComplete: 100,
           removeOnFail: 50,
-          attempts: 3,
+          attempts: bullmqAttemptsForJobType(input.jobType),
+          ...(input.jobType === AI_JOB_TYPES.MEETING_TRANSCRIBE &&
+          typeof input.payload === 'object' &&
+          input.payload !== null &&
+          'meetingId' in input.payload
+            ? { jobId: `meeting-transcribe-${(input.payload as { meetingId: string }).meetingId}` }
+            : {}),
         },
       );
 
@@ -362,6 +469,277 @@ export class JobsService implements OnModuleDestroy {
         status: 'FAILED',
         message: 'Job recorded but queue is unavailable',
       };
+    }
+  }
+
+  async enqueueClioMigration(payload: ClioMigrationJobPayload): Promise<EnqueueResult> {
+    const agentJob = await this.prisma.agentJob.create({
+      data: {
+        queue: QUEUE_NAMES.MIGRATION,
+        jobType: MIGRATION_JOB_TYPES.CLIO_IMPORT,
+        status: 'QUEUED',
+        userId: payload.tenantId,
+        tenantId: payload.tenantId,
+        payload: payload as unknown as Prisma.InputJsonValue,
+      },
+    });
+
+    const fullPayload: ClioMigrationJobPayload = {
+      ...payload,
+      agentJobId: agentJob.id,
+    };
+
+    try {
+      const bullJob = await this.getQueue(QUEUE_NAMES.MIGRATION).add(
+        MIGRATION_JOB_TYPES.CLIO_IMPORT,
+        fullPayload,
+        {
+          removeOnComplete: 100,
+          removeOnFail: 50,
+          attempts: 3,
+        },
+      );
+
+      await this.prisma.agentJob.update({
+        where: { id: agentJob.id },
+        data: { payload: fullPayload as unknown as Prisma.InputJsonValue },
+      });
+
+      return {
+        agentJobId: agentJob.id,
+        bullJobId: String(bullJob.id),
+        queue: QUEUE_NAMES.MIGRATION,
+        status: 'QUEUED',
+      };
+    } catch (error) {
+      await this.prisma.agentJob.update({
+        where: { id: agentJob.id },
+        data: {
+          status: 'FAILED',
+          error: error instanceof Error ? error.message : 'Queue enqueue failed',
+        },
+      });
+
+      return {
+        agentJobId: agentJob.id,
+        queue: QUEUE_NAMES.MIGRATION,
+        status: 'FAILED',
+        message: 'Job recorded but queue is unavailable',
+      };
+    }
+  }
+
+  async enqueueSearchIndex(payload: SearchIndexJobPayload): Promise<void> {
+    if (this.configService.get<string>('ENABLE_OPENSEARCH', 'false') !== 'true') {
+      return;
+    }
+
+    const jobName =
+      payload.action === 'delete'
+        ? SEARCH_INDEX_JOB_TYPES.DELETE
+        : SEARCH_INDEX_JOB_TYPES.UPSERT;
+
+    try {
+      await this.getQueue(QUEUE_NAMES.SEARCH_INDEX).add(jobName, payload, {
+        removeOnComplete: 200,
+        removeOnFail: 50,
+        attempts: 3,
+      });
+    } catch {
+      // Search indexing is best-effort; Prisma fallback remains available.
+    }
+  }
+
+  async enqueueMeetingTranscribeJob(input: {
+    meetingId: string;
+    tenantId: string;
+    userId: string;
+    audioStorageKey: string;
+    mimeType: string;
+    durationMs?: number;
+  }): Promise<EnqueueResult> {
+    return this.enqueueJob({
+      queue: QUEUE_NAMES.AI_LOW,
+      jobName: AI_JOB_TYPES.MEETING_TRANSCRIBE,
+      jobType: AI_JOB_TYPES.MEETING_TRANSCRIBE,
+      userId: input.userId,
+      tenantId: input.tenantId,
+      payload: input,
+    });
+  }
+
+  async enqueueMatterAutonomy(input: {
+    kind: 'matter_init' | 'matter_refresh';
+    matterId: string;
+    tenantId: string;
+    userId: string;
+    trigger?: 'create' | 'document_upload' | 'status_change';
+  }): Promise<EnqueueResult> {
+    const jobType = input.kind === 'matter_init'
+      ? AI_JOB_TYPES.MATTER_INIT
+      : AI_JOB_TYPES.MATTER_REFRESH;
+
+    // Build a minimal AiAgentJobPayload-compatible record so the worker can
+    // process it with the standard pattern.
+    const agentJob = await this.prisma.agentJob.create({
+      data: {
+        queue: QUEUE_NAMES.AI_LOW,
+        jobType,
+        status: 'QUEUED',
+        userId: input.userId,
+        tenantId: input.tenantId,
+        payload: {
+          matterId: input.matterId,
+          trigger: input.trigger ?? 'create',
+          kind: input.kind,
+        } as Prisma.InputJsonValue,
+      },
+    });
+
+    const payload: Record<string, unknown> = {
+      agentJobId: agentJob.id,
+      jobType,
+      tenantId: input.tenantId,
+      userId: input.userId,
+      params: {
+        matterId: input.matterId,
+        trigger: input.trigger ?? 'create',
+        kind: input.kind,
+      },
+    };
+
+    try {
+      const bullJob = await this.getQueue(QUEUE_NAMES.AI_LOW).add(
+        jobType,
+        payload,
+        { removeOnComplete: 100, removeOnFail: 50, attempts: 2 },
+      );
+      return {
+        agentJobId: agentJob.id,
+        bullJobId: String(bullJob.id),
+        queue: QUEUE_NAMES.AI_LOW,
+        status: 'QUEUED',
+      };
+    } catch (err) {
+      await this.prisma.agentJob.update({
+        where: { id: agentJob.id },
+        data: {
+          status: 'FAILED',
+          error: err instanceof Error ? err.message : 'Queue enqueue failed',
+        },
+      });
+      return {
+        agentJobId: agentJob.id,
+        queue: QUEUE_NAMES.AI_LOW,
+        status: 'FAILED',
+        message: 'Job recorded but queue is unavailable',
+      };
+    }
+  }
+
+  async enqueueAgenticWorkflowRun(input: {
+    runId: string;
+    workflowId: string;
+    tenantId: string;
+    triggeredBy: string;
+    workflowDsl: Record<string, unknown>;
+  }): Promise<void> {
+    try {
+      await this.getQueue(QUEUE_NAMES.AGENTIC_WORKFLOW).add(
+        'run-workflow',
+        input,
+        { removeOnComplete: 100, removeOnFail: 50, attempts: 2 },
+      );
+    } catch {
+      // Queue unavailable — execution fallback handled by service
+    }
+  }
+
+  async enqueueLegalCrawl(input: {
+    sourceId: string;
+    sourceUrl: string;
+    jurisdiction: string;
+    tenantId?: string;
+  }): Promise<void> {
+    try {
+      await this.getQueue(QUEUE_NAMES.LEGAL_CRAWL).add('crawl', input, {
+        removeOnComplete: 200,
+        removeOnFail: 100,
+        attempts: 3,
+        backoff: { type: 'exponential', delay: 60000 },
+      });
+    } catch {
+      // Best-effort
+    }
+  }
+
+  async enqueueObligationCheck(input: { tenantId: string }): Promise<void> {
+    try {
+      await this.getQueue(QUEUE_NAMES.OBLIGATION_CHECK).add('check', input, {
+        removeOnComplete: 50,
+        removeOnFail: 20,
+        attempts: 2,
+      });
+    } catch {
+      // Best-effort
+    }
+  }
+
+  async enqueueGooglePlacesScrape(input: {
+    runId: string;
+    countryCode: string;
+    state: string;
+    city: string;
+    scrapeMode?: 'full' | 'enrichment';
+  }): Promise<void> {
+    await this.getQueue(QUEUE_NAMES.GOOGLE_PLACES_SCRAPE).add(
+      'scrape',
+      { ...input, mode: 'scrape' as const },
+      {
+        removeOnComplete: 50,
+        removeOnFail: 20,
+        attempts: 5,
+        backoff: { type: 'exponential', delay: 30_000 },
+      },
+    );
+  }
+
+  async enqueueGooglePlacesFinalize(input: {
+    runId: string;
+    countryCode: string;
+    state: string;
+    city: string;
+  }): Promise<void> {
+    await this.getQueue(QUEUE_NAMES.GOOGLE_PLACES_SCRAPE).add(
+      'finalize-collected',
+      { ...input, mode: 'finalize-collected' as const },
+      {
+        removeOnComplete: 50,
+        removeOnFail: 20,
+        attempts: 3,
+        backoff: { type: 'exponential', delay: 10_000 },
+      },
+    );
+  }
+
+  async cancelGooglePlacesScrapeJobs(runId: string): Promise<void> {
+    const queue = this.getQueue(QUEUE_NAMES.GOOGLE_PLACES_SCRAPE);
+    for (const state of ['active', 'waiting', 'delayed'] as const) {
+      const jobs = await queue.getJobs([state]);
+      for (const job of jobs) {
+        if (job.data.runId !== runId || job.data.mode === 'finalize-collected') {
+          continue;
+        }
+        try {
+          if (state === 'active') {
+            await job.moveToFailed(new Error('Cancelled by admin'), job.token ?? '', true);
+          } else {
+            await job.remove();
+          }
+        } catch {
+          // Best-effort — finalize job will import collected data regardless.
+        }
+      }
     }
   }
 
