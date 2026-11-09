@@ -132,14 +132,12 @@ async function executeStep(
       }
     }
 
-    case 'verify': {
-      // Placeholder for verification step — signals that content needs verification
+    case 'verify':
+    case 'review': {
       return {
-        success: true,
-        output: {
-          message: 'Verification queued',
-          priorResults: context.stepResults,
-        },
+        success: false,
+        output: null,
+        error: 'Human review required: this workflow has no connected verification executor.',
       };
     }
 
@@ -192,20 +190,24 @@ async function processAgenticWorkflowJob(job: Job<AgenticWorkflowRunPayload>) {
 
     // Execute steps sequentially — skip already-completed steps (durability checkpoint)
     for (const step of steps) {
-      if (stepResults[step.id] !== undefined) {
+      if (stepResults[step.id] != null && step.action !== 'verify' && step.action !== 'review') {
         // Step already completed in a previous attempt — skip
         continue;
       }
 
+      const missingDependency = step.dependsOn?.find((id) => stepResults[id] == null);
+      if (missingDependency) {
+        throw new Error(`Step ${step.id} requires successful dependency ${missingDependency}`);
+      }
       const result = await executeStep(step, { tenantId, triggeredBy, matterId, stepResults });
-      stepResults[step.id] = result.output;
+      if (result.success) stepResults[step.id] = result.output;
 
       // Checkpoint after every step so partial results survive a crash
       await updateRunStatus(runId, workflowId, 'running', stepResults);
       // Report BullMQ progress for UI polling
       await job.updateProgress(Math.round((Object.keys(stepResults).length / steps.length) * 100));
 
-      if (!result.success && step.params?.['required'] !== false) {
+      if (!result.success && (step.params?.['required'] !== false || step.action === 'verify' || step.action === 'review')) {
         hasError = true;
         await updateRunStatus(runId, workflowId, 'failed', stepResults, result.error);
         break;
@@ -217,6 +219,7 @@ async function processAgenticWorkflowJob(job: Job<AgenticWorkflowRunPayload>) {
     }
   } catch (err) {
     await updateRunStatus(runId, workflowId, 'failed', stepResults, String(err));
+    throw err;
   }
 
   return { runId, status: hasError ? 'failed' : 'completed', stepResults };

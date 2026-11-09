@@ -15,7 +15,7 @@ export class DocumentTrainingPermissionService {
         documentId: params.documentId,
         OR: [
           { userId: params.userId },
-          params.tenantId ? { tenantId: params.tenantId } : {},
+          ...(params.tenantId ? [{ tenantId: params.tenantId }] : []),
         ],
       },
       orderBy: { updatedAt: 'desc' },

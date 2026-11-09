@@ -37,6 +37,7 @@ export class EthicalWallService {
     tenantId: string,
     userId: string,
     matterId: string,
+    clientId?: string,
   ): Promise<{ allowed: boolean; wallId?: string }> {
     const walls = await this.prisma.ethicalWall.findMany({
       where: { tenantId, status: 'active' },
@@ -44,7 +45,7 @@ export class EthicalWallService {
 
     for (const wall of walls) {
       const userRestricted = wall.restrictedUserIds.includes(userId);
-      const matterProtected = wall.protectedMatterIds.includes(matterId);
+      const matterProtected = wall.protectedMatterIds.includes(matterId) || Boolean(clientId && wall.protectedClientIds.includes(clientId));
 
       if (userRestricted && matterProtected) {
         await this.securityMonitor.recordEvent({

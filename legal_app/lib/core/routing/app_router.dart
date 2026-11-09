@@ -591,7 +591,9 @@ final routerProvider = Provider<GoRouter>((ref) {
           ),
           GoRoute(
             path: '/lawyer/research',
-            builder: (context, state) => const LegalResearchScreen(),
+            builder: (context, state) => LegalResearchScreen(
+              matterId: state.uri.queryParameters['matterId'],
+            ),
             routes: [
               GoRoute(
                 path: ':jobId',
@@ -625,7 +627,7 @@ final routerProvider = Provider<GoRouter>((ref) {
           ),
           GoRoute(
             path: '/lawyer/section-finder',
-            builder: (context, state) => const SectionFinderScreen(),
+            builder: (context, state) => SectionFinderScreen(matterId: state.uri.queryParameters['matterId']),
           ),
           GoRoute(
             path: '/lawyer/fir-analysis',

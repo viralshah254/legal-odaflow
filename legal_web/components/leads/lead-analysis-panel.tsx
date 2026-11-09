@@ -99,9 +99,9 @@ export function LeadAnalysisPanel({
     const models = wallet?.wallet.availablePremiumModels
     if (models && models.length > 0) return models
     return [
-      { modelId: "gpt-5.6-sol", label: "GPT-5.6 Sol" },
-      { modelId: "gpt-5.6-terra", label: "GPT-5.6 Terra" },
-      { modelId: "gpt-5.6-luna", label: "GPT-5.6 Luna" },
+      { modelId: "gpt-5.6-sol", label: "Advanced reasoning" },
+      { modelId: "gpt-5.6-terra", label: "Detailed analysis" },
+      { modelId: "gpt-5.6-luna", label: "Quick analysis" },
     ]
   }, [wallet])
 
@@ -272,9 +272,9 @@ export function LeadAnalysisPanel({
                   value={premiumModelId}
                   onChange={(e) => persistModel(e.target.value)}
                 >
-                  {availableModels.map((m) => (
+                  {availableModels.map((m, index) => (
                     <option key={m.modelId} value={m.modelId}>
-                      {m.label}
+                      {`Advanced reasoning ${index + 1}`}
                       {(m as { estimatedCreditsTypical?: number }).estimatedCreditsTypical
                         ? ` · ~${(m as { estimatedCreditsTypical?: number }).estimatedCreditsTypical} credits/msg`
                         : ""}
@@ -435,9 +435,9 @@ export function LeadAnalysisPanel({
                 value={premiumModelId}
                 onChange={(e) => void persistModel(e.target.value)}
               >
-                {availableModels.map((m) => (
+                {availableModels.map((m, index) => (
                   <option key={m.modelId} value={m.modelId}>
-                    {m.label}
+                    {`Advanced reasoning ${index + 1}`}
                     {(m as { estimatedCreditsTypical?: number }).estimatedCreditsTypical
                       ? ` · ~${(m as { estimatedCreditsTypical?: number }).estimatedCreditsTypical} credits/msg`
                       : ""}

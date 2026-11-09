@@ -183,33 +183,14 @@ export class CourtDeadlinesService {
       return { calculated: false, reason: period.rule };
     }
 
-    const from = matter.createdAt;
-    const dueDate = new Date(from);
-    dueDate.setDate(dueDate.getDate() + period.days);
-
-    // Check if already exists
-    const existing = await this.prisma.courtDeadline.findFirst({
-      where: { matterId, deadlineType: 'LIMITATION' },
-    });
-
-    if (existing) {
-      return { calculated: false, reason: 'Limitation deadline already exists', existing };
-    }
-
-    const deadline = await this.prisma.courtDeadline.create({
-      data: {
-        tenantId,
-        matterId,
-        title: `Limitation Period — ${practiceArea.replace(/_/g, ' ')}`,
-        deadlineType: 'LIMITATION',
-        dueDate,
-        calculatedFrom: from,
-        ruleReference: period.rule,
-        notes: `Auto-calculated from matter creation date. Verify with applicable legislation.`,
-      },
-    });
-
-    return { calculated: true, deadline, rule: period.rule, daysFromCreation: period.days };
+    // Matter creation is an administrative event, not the legal accrual date.
+    // Do not persist a deadline until an evidenced trigger and applicable rule
+    // (including exceptions and extensions) have been confirmed.
+    return {
+      calculated: false,
+      reason: 'Confirm the legal trigger date and applicable limitation rule before calculating a deadline. Matter creation date cannot be used.',
+      requiresLawyerReview: true,
+    };
   }
 
   getLimitationPeriodInfo(practiceArea: string, countryCode: string) {

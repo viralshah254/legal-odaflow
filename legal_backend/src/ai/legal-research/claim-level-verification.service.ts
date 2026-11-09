@@ -382,6 +382,7 @@ export class ClaimLevelVerificationService {
     const passageOverride = overrides?.passageByClaimId?.[claim.claimId];
     const canApplyPassageOverride =
       deterministicPassageSupport !== 'SUPPORTED' &&
+      deterministicPassageSupport !== 'CONTRADICTED' &&
       passageOverride &&
       passageOverride.confidence >=
         (passageOverride.supportState === 'SUPPORTED' ? 0.82 : 0.72) &&

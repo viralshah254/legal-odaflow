@@ -33,8 +33,11 @@ class SimilarCasesPanel extends StatelessWidget {
                 if (c.court != null) c.court!,
                 if (c.year != null) c.year!,
                 if (c.bindingWeight != null) c.bindingWeight!,
-              ].join(' · '),
-              maxLines: 2,
+                if (c.keyHolding != null) 'Holding: ${c.keyHolding}',
+                'Outcome: ${c.outcome ?? 'Not established by retrieved material'}',
+                if (c.proceduralStage != null) c.proceduralStage!.replaceAll('_', ' '),
+              ].join('\n'),
+              maxLines: 8,
               overflow: TextOverflow.ellipsis,
             ),
             trailing: c.sourceUrl != null

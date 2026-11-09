@@ -11,14 +11,19 @@ ALLOWLIST=(
   'src/payments/stripe.service.ts'
   'src/payments/payments.service.ts'
   'src/health/health.service.ts'
+  # Production rejection guard, not a payment implementation.
+  'src/common/utils/production-guard.ts'
+  # Development fallbacks explicitly reject production (regression tested).
+  'src/payments/mpesa.provider.ts'
+  'src/esign/esign.service.ts'
 )
 
 PATTERN='generateMock|mock-|_mock|Mock preview|mock responses|\[OCR stub\]'
 
 if command -v rg >/dev/null 2>&1; then
-  matches="$(rg -n "$PATTERN" "$SRC" || true)"
+  matches="$(rg -n --glob "!*.spec.ts" --glob "!*.test.ts" "$PATTERN" "$SRC" || true)"
 else
-  matches="$(grep -RInE "$PATTERN" "$SRC" || true)"
+  matches="$(grep -RInE --exclude="*.spec.ts" --exclude="*.test.ts" "$PATTERN" "$SRC" || true)"
 fi
 
 if [ -z "$matches" ]; then

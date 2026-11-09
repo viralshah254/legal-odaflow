@@ -165,6 +165,7 @@ import { DraftFeedbackModule } from './feedback/draft-feedback.module';
 import { PromptLibraryModule } from './prompt-library/prompt-library.module';
 import { PromptRefinementModule } from './prompt-refinement/prompt-refinement.module';
 import { MatterResearchContextService } from './legal-research/matter-research-context.service';
+import { ProcessingDisclosureController } from './processing-disclosure.controller';
 import { ResearchRequestNormalizerService } from './legal-research/research-request-normalizer.service';
 import { ResearchTaskRouterService } from './legal-research/research-task-router.service';
 import { ResearchCapabilityService } from './legal-research/research-capability.service';
@@ -208,6 +209,7 @@ import { LegalLocationModule } from '@/legal-location/legal-location.module';
     SmartWorkspaceModule,
   ],
   controllers: [
+    ProcessingDisclosureController,
     AiController,
     CopilotController,
     CopilotPlanController,

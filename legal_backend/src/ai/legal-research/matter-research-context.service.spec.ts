@@ -1,5 +1,5 @@
 import { ForbiddenException } from '@nestjs/common';
-import { MatterAccessService } from '@/access/matter-access.service';
+import { ArtifactAccessResolver } from '@/access/artifact-access.resolver';
 import { DocumentsService } from '@/documents/documents.service';
 import { PrismaService } from '@/prisma/prisma.service';
 import {
@@ -15,6 +15,7 @@ describe('MatterResearchContextService', () => {
   const actor = { tenantId: 'tenant-1', userId: 'user-1', tenantRole: 'ASSOCIATE' };
   const matter = {
     id: 'matter-1',
+    countryCode: 'KE', jurisdiction: 'High Court', matterType: 'civil', stage: 'pleadings',
     title: 'Acme dispute',
     factsSummary: 'A concise fact summary',
     updatedAt: new Date('2026-07-27T00:00:00.000Z'),
@@ -26,15 +27,16 @@ describe('MatterResearchContextService', () => {
     const prisma = {
       matter: { findFirst: jest.fn().mockResolvedValue(matter) },
       savedResearch: { findMany: jest.fn().mockResolvedValue([]) },
+      documentFolder: { findMany: jest.fn().mockResolvedValue([]) },
     };
-    const access = { ensureMatterAccess: jest.fn().mockResolvedValue(undefined) };
+    const access = { assertMatterReadable: jest.fn().mockResolvedValue(undefined) };
     const documents = {
       listAccessibleMatterDocumentsForResearch: jest.fn().mockResolvedValue([]),
       loadSelectedMatterDocumentsForResearch: jest.fn().mockResolvedValue([]),
     };
     const service = new MatterResearchContextService(
       prisma as unknown as PrismaService,
-      access as unknown as MatterAccessService,
+      access as unknown as ArtifactAccessResolver,
       documents as unknown as DocumentsService,
     );
     return { service, prisma, access, documents };
@@ -95,11 +97,42 @@ describe('MatterResearchContextService', () => {
 
   it('rejects callers without matter access', async () => {
     const { service, access } = setup();
-    access.ensureMatterAccess.mockRejectedValue(new Error('denied'));
+    access.assertMatterReadable.mockRejectedValue(new Error('denied'));
 
     await expect(
       service.buildPromptContext(actor, { matterId: matter.id }),
     ).rejects.toBeInstanceOf(ForbiddenException);
+  });
+
+  it('inherits matter law and includes only authorized readable documents in whole-matter scope', async () => {
+    const { service, documents, access } = setup();
+    documents.listAccessibleMatterDocumentsForResearch.mockResolvedValue([
+      { id: 'b', folderId: 'folder-2', hasExtractedText: true },
+      { id: 'a', folderId: 'folder-1', hasExtractedText: true },
+      { id: 'pending', folderId: 'folder-1', hasExtractedText: false },
+    ]);
+    const result = await service.buildContext(actor, { matterId: matter.id, contextScope: 'MATTER', query: 'Which evidence supports the defence?' });
+    expect(result?.countryCode).toBe('KE');
+    expect(result?.jurisdiction).toBe('High Court');
+    expect(access.assertMatterReadable).toHaveBeenCalledWith(actor, matter.id);
+    expect(documents.loadSelectedMatterDocumentsForResearch).toHaveBeenCalledWith(
+      actor.tenantId, matter.id, actor.userId, actor.tenantRole, ['a', 'b'], expect.objectContaining({ query: 'Which evidence supports the defence?' }),
+    );
+    expect(result?.promptContext).toContain('extractionUnavailable=1');
+  });
+
+  it('includes nested folders without including unrelated authorized matter files', async () => {
+    const { service, prisma, documents } = setup();
+    prisma.documentFolder.findMany.mockResolvedValue([
+      { id: 'root', parentId: null }, { id: 'child', parentId: 'root' }, { id: 'other', parentId: null },
+    ]);
+    documents.listAccessibleMatterDocumentsForResearch.mockResolvedValue([
+      { id: 'included', folderId: 'child', hasExtractedText: true },
+      { id: 'excluded', folderId: 'other', hasExtractedText: true },
+    ]);
+    await service.buildContext(actor, { matterId: matter.id, contextScope: 'FOLDERS', selectedFolderIds: ['root'] });
+    expect(documents.loadSelectedMatterDocumentsForResearch.mock.calls[0][4]).toEqual(['included']);
+    await expect(service.buildContext(actor, { matterId: matter.id, contextScope: 'FOLDERS', selectedFolderIds: ['foreign'] })).rejects.toBeInstanceOf(ForbiddenException);
   });
 
   it('rejects selected research from another matter or tenant', async () => {

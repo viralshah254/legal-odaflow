@@ -6,6 +6,7 @@
 import { readFileSync, existsSync } from 'fs';
 import { resolve } from 'path';
 import pdfParse from 'pdf-parse';
+import { createHash } from 'crypto';
 import { loadActStructureReference } from '../src/legal-sources/act-structure.loader';
 import { parseActTextIntoProvisions } from '../src/legal-sources/parsers/india-act-structure.parser';
 import { findStatuteByManifestActId } from '../src/legal-search/statute-registry';
@@ -28,8 +29,14 @@ async function main() {
       continue;
     }
 
-    const parsed = await pdfParse(readFileSync(pdfPath));
-    const { structure } = parseActTextIntoProvisions(parsed.text);
+    const bytes = readFileSync(pdfPath);
+    if (!entry.sourceSha256 || entry.sourceSha256 !== createHash('sha256').update(bytes).digest('hex')) {
+      errors.push(`${manifestActId}: source fingerprint missing or changed; review and regenerate inventory`);
+    }
+    const parsed = await pdfParse(bytes);
+    const { structure } = parseActTextIntoProvisions(parsed.text, {
+      documentType: entry.structure.articles ? 'constitution' : 'act',
+    });
     const registry = findStatuteByManifestActId(manifestActId);
 
     const compare = (

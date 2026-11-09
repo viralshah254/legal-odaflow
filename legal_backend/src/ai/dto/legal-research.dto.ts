@@ -38,6 +38,17 @@ export class LegalResearchDto {
   selectedSavedResearchIds?: string[];
 
   @IsOptional()
+  @IsIn(['SELECTED', 'MATTER', 'FOLDERS'])
+  contextScope?: 'SELECTED' | 'MATTER' | 'FOLDERS';
+
+  @IsOptional()
+  @IsArray()
+  @ArrayMaxSize(50)
+  @IsString({ each: true })
+  selectedFolderIds?: string[];
+
+
+  @IsOptional()
   @IsString()
   practiceArea?: string;
 

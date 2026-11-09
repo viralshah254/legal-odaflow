@@ -656,7 +656,7 @@ class _QuickLaunchCard extends StatelessWidget {
                   icon: Icons.search_outlined,
                   label: 'Research',
                   color: const Color(0xFF0EA5E9),
-                  onTap: () => context.push('/lawyer/research'),
+                  onTap: () => context.push('/lawyer/research?matterId=${Uri.encodeComponent(matterId)}'),
                 ),
                 _ActionButton(
                   icon: Icons.file_copy_outlined,

@@ -1,3 +1,4 @@
+import { researchCacheIdentity, type ResearchCacheIdentity } from './research-cache-identity';
 /**
  * C02 – Research cache context identity integration spec
  *
@@ -9,40 +10,12 @@
  * These tests run without Redis — they exercise the pure key-construction
  * logic extracted from ai-gateway.service.ts.
  */
-import { hashPrompt } from '@/common/utils/prompt-hash.util';
 
 // ---------------------------------------------------------------------------
-// Mirrors the FIXED key-building logic in ai-gateway.service.ts
-// Any change to the production key schema must be reflected here.
+// Exercises the same cache identity function used by ai-gateway.service.ts.
 // ---------------------------------------------------------------------------
-function buildResearchCacheKey(input: {
-  tenantId?: string;
-  matterId?: string;
-  countryCode: string;
-  query: string;
-  asOfDate?: string;
-  eventDate?: string;
-  selectedDocumentIds?: string[];
-  selectedSavedResearchIds?: string[];
-}): string {
-  const docIdsFingerprint = hashPrompt(
-    [...(input.selectedDocumentIds ?? [])].sort().join(','),
-  ).slice(0, 16);
-  const researchIdsFingerprint = hashPrompt(
-    [...(input.selectedSavedResearchIds ?? [])].sort().join(','),
-  ).slice(0, 16);
-
-  return [
-    'ai:research:index',
-    input.tenantId ?? 'none',
-    input.matterId ?? 'none',
-    input.countryCode.toUpperCase(),
-    hashPrompt(input.query.trim().toLowerCase()).slice(0, 20),
-    input.asOfDate ?? '',
-    input.eventDate ?? '',
-    docIdsFingerprint,
-    researchIdsFingerprint,
-  ].join(':');
+function buildResearchCacheKey(input: Partial<ResearchCacheIdentity> & { countryCode: string; query: string }): string {
+  return researchCacheIdentity({ userId: 'actor-1', ...input }, 'test-pipeline-v2');
 }
 
 // ---------------------------------------------------------------------------
@@ -169,10 +142,10 @@ describe('Research cache context identity (C02)', () => {
     expect(k1).not.toBe(k2);
   });
 
-  it('query is case-insensitive (normalized before hashing)', () => {
+  it('preserves case-sensitive quoted identifiers', () => {
     const k1 = buildResearchCacheKey({ ...baseInput, query: 'Liability under IPC' });
     const k2 = buildResearchCacheKey({ ...baseInput, query: 'liability under ipc' });
-    expect(k1).toBe(k2);
+    expect(k1).not.toBe(k2);
   });
 
   it('different asOfDate produces different key', () => {
@@ -203,5 +176,26 @@ describe('Research cache context identity (C02)', () => {
     );
     const uniqueKeys = new Set(keys);
     expect(uniqueKeys.size).toBe(keys.length);
+  });
+});
+
+describe('Research cache privacy and freshness', () => {
+  const request = { userId: 'alice', tenantId: 'firm', countryCode: 'KE', query: 'What is the remedy?' };
+  it.each([
+    ['actor', { userId: 'bob' }],
+    ['role', { tenantRole: 'FINANCE' }],
+    ['evidence revision', { authorizedMatterContext: 'order v2' }],
+    ['conversation', { priorContext: 'The client is the respondent' }],
+    ['depth', { researchMode: 'DEEP' }],
+    ['language', { outputLanguage: 'sw' }],
+    ['forum', { jurisdiction: 'High Court' }],
+    ['source restrictions', { knowledgeSources: ['statutes'] }],
+  ])('isolates changed %s', (_name, changes) => {
+    expect(researchCacheIdentity(request, 'v2')).not.toBe(researchCacheIdentity({ ...request, ...changes }, 'v2'));
+  });
+  it('invalidates on verifier/prompt version and keeps sensitive text out of keys', () => {
+    const key = researchCacheIdentity(request, 'v2');
+    expect(key).not.toBe(researchCacheIdentity(request, 'v3'));
+    expect(key).toMatch(/^[a-f0-9]{64}$/);
   });
 });

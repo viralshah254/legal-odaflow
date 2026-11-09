@@ -234,6 +234,9 @@ B) CCTV not produced as stated in defence — Prasanta Kumar Sarkar v. Ashis Cha
 C) Forensic imaging timeline — Sanjay Chandra v. CBI (2012) 1 SCC 40.
 D) Parity with co-accused granted bail — Satender Kumar Antil v. CBI (2022) 10 SCC 51.
 E) Wi-Fi / IP insufficiency — Arnesh Kumar v. State of Bihar (2014) 8 SCC 273.
+DEFENCE FACTS REQUIRING DETERMINATION: The defence disputes cash recovery, raises CDR issues,
+relies on the shopkeeper statement, and disputes the intimidation allegation. It says forensic
+imaging occurred after seizure and no CCTV was produced; Wi-Fi / IP address alone is insufficient.
 PRAYER: Enlarge Applicant–Accused on bail.
 VERIFICATION.`,
     forbidDraftPatterns: [

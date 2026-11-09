@@ -20,6 +20,7 @@ import {
   AiLlmProvider,
   isAllowedAiProvider,
   meetsModelFloor,
+  getModelTier,
   normalizeModelId,
   resolveModelProvider,
   type ModelTier,
@@ -167,7 +168,17 @@ export class LlmCompletionService {
 
   constructor(private readonly configService: ConfigService) {}
 
+  private configuredModel(modelName: string, minTier?: ModelTier): string {
+    if (this.configService.get<string>('AI_PROVIDER') !== 'google') return normalizeModelId(modelName);
+    if (modelName.startsWith('gemini-')) return modelName;
+    const tier = minTier ?? getModelTier(modelName);
+    const reasoning = tier === 'premium' || tier === 'reasoning';
+    return this.configService.get<string>(reasoning ? 'GEMINI_REASONING_MODEL' : 'GEMINI_MODEL')
+      || (reasoning ? 'gemini-3.1-pro-preview' : 'gemini-3.8-flash');
+  }
+
   getAllowedProviders(): AiLlmProvider[] {
+    if (this.configService.get<string>('AI_PROVIDER') === 'google') return ['google'];
     const configured = this.configService
       .get<string>('AI_ALLOWED_PROVIDERS', 'openai,deepseek,google')
       .split(',')
@@ -203,11 +214,11 @@ export class LlmCompletionService {
   }
 
   isModelConfigured(modelName: string): boolean {
-    return this.isProviderConfigured(resolveModelProvider(modelName));
+    return this.isProviderConfigured(resolveModelProvider(this.configuredModel(modelName)));
   }
 
   assertModelConfigured(modelName: string): void {
-    const provider = resolveModelProvider(modelName);
+    const provider = resolveModelProvider(this.configuredModel(modelName));
     this.assertProviderAllowed(provider);
     const isProd = this.configService.get<string>('NODE_ENV') === 'production';
     const allowMock = this.configService.get<string>('ALLOW_MOCK_AI', 'false') === 'true';
@@ -295,7 +306,7 @@ export class LlmCompletionService {
     minTier?: ModelTier;
     signal?: AbortSignal;
   }): Promise<LlmCompletionResult> {
-    const resolvedModel = normalizeModelId(params.modelName);
+    const resolvedModel = this.configuredModel(params.modelName, params.minTier);
     const provider = this.assertProviderAllowed(resolveModelProvider(resolvedModel));
     const normalizedParams = {
       ...params,
@@ -336,14 +347,19 @@ export class LlmCompletionService {
 
     for (const modelName of modelsToTry) {
       const modelProvider = resolveModelProvider(modelName);
-      if (!this.isProviderConfigured(modelProvider)) continue;
+      if (!this.getAllowedProviders().includes(modelProvider) || !this.isProviderConfigured(modelProvider)) continue;
       try {
         const attempt = { ...normalizedParams, modelName, signal: params.signal };
         if (modelProvider === 'deepseek') {
           return await this.completeDeepSeek(attempt);
         }
         if (modelProvider === 'google') {
-          return await new GeminiCompletionAdapter(this.configService).complete(attempt);
+          return await new GeminiCompletionAdapter(this.configService).complete({
+            ...attempt,
+            messages: params.systemBlocks?.length
+              ? [{ role: 'system', content: params.systemBlocks.map((block) => block.text).join('\n\n') }, ...params.messages]
+              : params.messages,
+          });
         }
         return await this.completeOpenAi(attempt);
       } catch (err) {
@@ -394,7 +410,7 @@ export class LlmCompletionService {
     if (params.minTier) {
       // Say so explicitly: this is a refusal to downgrade, not an outage.
       throw new ServiceUnavailableException(
-        `No model at or above the "${params.minTier}" tier is available for this request. This work will not be answered by a lower-tier model. Last error: ${lastErrMsg}`,
+        'The required analysis capability is temporarily unavailable. Please try again shortly.',
       );
     }
     if (lastError instanceof HttpException) throw lastError;
@@ -666,13 +682,16 @@ export class LlmCompletionService {
     }>;
     temperature?: number;
   }): Promise<{ toolName: string | null; toolArgs: Record<string, unknown>; textContent: string }> {
-    const resolvedModel = normalizeModelId(params.modelName);
+    const resolvedModel = this.configuredModel(params.modelName);
     const provider = this.assertProviderAllowed(resolveModelProvider(resolvedModel));
 
     if (this.shouldUseMockForModel(resolvedModel)) {
       return { toolName: null, toolArgs: {}, textContent: 'Mock: tool calling not available in dev mode without API keys.' };
     }
 
+    if (provider === 'google') {
+      return new GeminiCompletionAdapter(this.configService).completeWithTools({ ...params, modelName: resolvedModel });
+    }
     if (provider !== 'openai') {
       throw new BadRequestException('Tool calling is only supported for OpenAI models.');
     }

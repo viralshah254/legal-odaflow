@@ -5,9 +5,9 @@ function renderFixtures(): { trust: string; actions: string; card: string } {
   const script = `
     import { createElement } from "react";
     import { renderToStaticMarkup } from "react-dom/server";
-    import { ResearchVerificationActions } from "./components/research/research-verification-actions.tsx";
-    import { ResearchVerificationTrustLabels } from "./components/research/research-verification-trust-labels.tsx";
-    import { ResearchVerificationCard } from "./components/research/research-verification-card.tsx";
+    import ResearchVerificationActionsModule from "./components/research/research-verification-actions.tsx"; const { ResearchVerificationActions } = ResearchVerificationActionsModule;
+    import ResearchVerificationTrustLabelsModule from "./components/research/research-verification-trust-labels.tsx"; const { ResearchVerificationTrustLabels } = ResearchVerificationTrustLabelsModule;
+    import ResearchVerificationCardModule from "./components/research/research-verification-card.tsx"; const { ResearchVerificationCard } = ResearchVerificationCardModule;
 
     const tasks = {
       citationTasks: [{

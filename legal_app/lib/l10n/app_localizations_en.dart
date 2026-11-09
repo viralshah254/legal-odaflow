@@ -1997,7 +1997,25 @@ class AppLocalizationsEn extends AppLocalizations {
   String get clientsActiveMatters => 'Active matters';
 
   @override
+  String get clientsActivityDocumentAdded => 'Document added';
+
+  @override
+  String get clientsActivityKycDocumentReceived => 'KYC document received';
+
+  @override
+  String get clientsActivityMatterUpdated => 'Matter updated';
+
+  @override
+  String get clientsActivityMeetingRecorded => 'Meeting recorded';
+
+  @override
+  String get clientsActivityProfileUpdated => 'Client profile updated';
+
+  @override
   String get clientsAddClient => 'Add client';
+
+  @override
+  String get clientsAddContactPerson => 'Add contact person';
 
   @override
   String get clientsAddFirstClient => 'Add your first client';
@@ -2013,10 +2031,26 @@ class AppLocalizationsEn extends AppLocalizations {
   String get clientsAddNewClient2 => 'Add New Client';
 
   @override
+  String get clientsAddPerson => 'Add person';
+
+  @override
   String get clientsAddress => 'Address';
 
   @override
+  String get clientsAddressPlaceholder => 'Enter the client’s address';
+
+  @override
+  String get clientsAllDocumentTypes => 'All document types';
+
+  @override
+  String get clientsArchiveDocumentDescription =>
+      'This document will be archived and removed from the client file.';
+
+  @override
   String get clientsAskCopilot => 'Ask Copilot';
+
+  @override
+  String get clientsAuthorizedContact => 'Authorized contact';
 
   @override
   String get clientsBasicClientDetails => 'Basic client details';
@@ -2055,7 +2089,35 @@ class AppLocalizationsEn extends AppLocalizations {
   String get clientsClientDetails2 => 'Client Details';
 
   @override
+  String get clientsClientDocuments => 'Client documents';
+
+  @override
+  String get clientsClientDocumentsDescription =>
+      'Files stored for this client, including documents linked to matters.';
+
+  @override
   String get clientsClientInformation => 'Client Information';
+
+  @override
+  String get clientsClientLevelFile => 'Client-level file';
+
+  @override
+  String clientsClientLevelFiles(num count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '# client-level files',
+      one: '# client-level file',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get clientsClientLevelFilesDescription =>
+      'Documents associated directly with this client.';
+
+  @override
+  String get clientsClientLevelRequest => 'Client-level request';
 
   @override
   String get clientsClientName => 'Client name';
@@ -2095,6 +2157,11 @@ class AppLocalizationsEn extends AppLocalizations {
   String get clientsCompanyName => 'Company name';
 
   @override
+  String clientsCompleteProfileFields(String fields) {
+    return 'Complete the client profile by adding: $fields.';
+  }
+
+  @override
   String get clientsConflictCheckRequired =>
       'Run a conflict check and resolve any flags before creating the client.';
 
@@ -2102,7 +2169,33 @@ class AppLocalizationsEn extends AppLocalizations {
   String get clientsContactInformation => 'Contact Information';
 
   @override
+  String get clientsContactNamePlaceholder => 'Contact name';
+
+  @override
+  String clientsContactNumber(String number) {
+    return 'Contact $number';
+  }
+
+  @override
+  String get clientsContactPeople => 'Contact people';
+
+  @override
+  String get clientsContactPeopleDescription =>
+      'Directors, officers, and authorized contacts for this client.';
+
+  @override
+  String clientsContactPersonNumber(String number) {
+    return 'Contact person $number';
+  }
+
+  @override
+  String get clientsContactRolePlaceholder => 'Role or title';
+
+  @override
   String get clientsContacts => 'Contacts';
+
+  @override
+  String get clientsCopyInviteFailed => 'Could not copy the portal invite.';
 
   @override
   String get clientsCouldNotLoadClients => 'Could not load clients.';
@@ -2114,10 +2207,16 @@ class AppLocalizationsEn extends AppLocalizations {
   String get clientsCountryCode => 'Country Code';
 
   @override
+  String get clientsCountryCodePlaceholder => 'For example, KE';
+
+  @override
   String get clientsCreateClient => 'Create client';
 
   @override
   String get clientsCreateClientProfile => 'Create a new client profile';
+
+  @override
+  String get clientsCreateMatter => 'Create matter';
 
   @override
   String get clientsCreating => 'Creating…';
@@ -2126,8 +2225,47 @@ class AppLocalizationsEn extends AppLocalizations {
   String get clientsCreatingClient => 'Creating...';
 
   @override
+  String get clientsDeadlineAndRisk => 'Deadline and risk';
+
+  @override
+  String get clientsDocumentAssociation => 'Document association';
+
+  @override
+  String get clientsDocumentOpenFailed => 'Could not open the document.';
+
+  @override
+  String get clientsDocumentRemoveFailed => 'Could not remove the document.';
+
+  @override
+  String get clientsDocumentRemoved => 'Document removed';
+
+  @override
+  String get clientsDocumentRequestFailed =>
+      'Could not send the document request.';
+
+  @override
+  String get clientsDocumentRequestSent => 'Document request sent';
+
+  @override
+  String get clientsDocumentTypeOptional => 'Document type (optional)';
+
+  @override
+  String get clientsDocumentUploadFailed => 'Could not upload the document.';
+
+  @override
+  String get clientsDocumentUploaded => 'Document uploaded';
+
+  @override
+  String get clientsDocumentsLoadFailed => 'Could not load client documents.';
+
+  @override
   String get clientsDocumentsMobileHint =>
       'Firm document library support is coming to mobile.';
+
+  @override
+  String clientsDownloadDocument(String name) {
+    return 'Download $name';
+  }
 
   @override
   String get clientsEdit => 'Edit';
@@ -2168,10 +2306,19 @@ class AppLocalizationsEn extends AppLocalizations {
   String get clientsFailedToUpdateShort => 'Failed to update client';
 
   @override
+  String get clientsFilterDocumentType => 'Filter by document type';
+
+  @override
   String get clientsIndividual => 'Individual';
 
   @override
   String get clientsKyc => 'KYC';
+
+  @override
+  String get clientsKycChecking => 'Checking KYC';
+
+  @override
+  String get clientsKycChecklistReady => 'KYC checklist is ready';
 
   @override
   String get clientsKycDocuments => 'KYC Documents';
@@ -2182,10 +2329,40 @@ class AppLocalizationsEn extends AppLocalizations {
   }
 
   @override
+  String get clientsKycInitFailed => 'Could not set up the KYC checklist.';
+
+  @override
+  String get clientsKycLoadFailed => 'Could not load KYC information.';
+
+  @override
   String get clientsKycMissingBadge => 'KYC missing';
 
   @override
+  String clientsKycNeedsAttention(num count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '# KYC items need attention',
+      one: '# KYC item needs attention',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get clientsKycNotSetUp => 'KYC not set up';
+
+  @override
+  String get clientsKycSetupDescription =>
+      'Set up the required identity and compliance documents for this client.';
+
+  @override
   String get clientsKycStatus => 'KYC status';
+
+  @override
+  String get clientsKycUnavailable => 'KYC unavailable';
+
+  @override
+  String get clientsKycUpToDate => 'KYC up to date';
 
   @override
   String clientsLinkedMattersCount(num count) {
@@ -2199,7 +2376,40 @@ class AppLocalizationsEn extends AppLocalizations {
   }
 
   @override
+  String get clientsLoadingClientRecord => 'Loading client record…';
+
+  @override
+  String get clientsLoadingDocuments => 'Loading documents…';
+
+  @override
+  String get clientsLoadingKyc => 'Loading KYC…';
+
+  @override
+  String get clientsLoadingMatters => 'Loading matters…';
+
+  @override
   String get clientsManageRelationships => 'Manage your client relationships';
+
+  @override
+  String get clientsMatterLinked => 'Matter linked';
+
+  @override
+  String clientsMatterLinkedFiles(num count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '# matter-linked files',
+      one: '# matter-linked file',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get clientsMatterLinkedFilesDescription =>
+      'Documents associated with this client’s matters.';
+
+  @override
+  String get clientsMattersLoadFailed => 'Could not load client matters.';
 
   @override
   String get clientsName => 'Name';
@@ -2214,10 +2424,68 @@ class AppLocalizationsEn extends AppLocalizations {
   String get clientsNewClient => 'New client';
 
   @override
+  String get clientsNextActionCompleteProfile => 'Complete the client profile';
+
+  @override
+  String get clientsNextActionCompleteProfileDescription =>
+      'Add the missing contact details so the firm has a complete client record.';
+
+  @override
+  String get clientsNextActionCreateMatter => 'Create the first matter';
+
+  @override
+  String get clientsNextActionCreateMatterDescription =>
+      'Start a matter to connect work, documents, deadlines, and billing to this client.';
+
+  @override
+  String get clientsNextActionOpenKyc => 'Open KYC';
+
+  @override
+  String get clientsNextActionOpenMatters => 'Open matters';
+
+  @override
+  String get clientsNextActionReviewKyc => 'Review KYC';
+
+  @override
+  String clientsNextActionReviewKycDescription(num count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'Review # KYC items that need attention.',
+      one: 'Review # KYC item that needs attention.',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get clientsNextActionReviewRisk => 'Review high-risk matters';
+
+  @override
+  String clientsNextActionReviewRiskDescription(num count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'Review # matters with high risk scores.',
+      one: 'Review # matter with a high risk score.',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get clientsNextActionSetupKyc => 'Set up KYC';
+
+  @override
+  String get clientsNextActionSetupKycDescription =>
+      'Create the KYC checklist and begin collecting the required documents.';
+
+  @override
   String get clientsNextContacts => 'Next: Contacts';
 
   @override
   String get clientsNoActiveTenant => 'No active tenant selected.';
+
+  @override
+  String get clientsNoClientLevelFiles => 'No client-level files.';
 
   @override
   String get clientsNoClients => 'No clients yet';
@@ -2232,6 +2500,19 @@ class AppLocalizationsEn extends AppLocalizations {
   }
 
   @override
+  String get clientsNoContactPeopleYet => 'No contact people added yet.';
+
+  @override
+  String get clientsNoDeadline => 'No deadline';
+
+  @override
+  String get clientsNoDocumentsYet => 'No documents yet';
+
+  @override
+  String get clientsNoDocumentsYetDescription =>
+      'Upload the first document to start the client file.';
+
+  @override
   String get clientsNoKycChecklist => 'No KYC checklist available.';
 
   @override
@@ -2242,7 +2523,30 @@ class AppLocalizationsEn extends AppLocalizations {
       'Create a matter and link it to this client.';
 
   @override
+  String get clientsNoMatchingDocuments => 'No matching documents';
+
+  @override
+  String get clientsNoMatchingDocumentsDescription =>
+      'Try a different search or document type.';
+
+  @override
+  String get clientsNoMatchingMatters => 'No matching matters';
+
+  @override
+  String get clientsNoMatchingMattersDescription => 'Try a different search.';
+
+  @override
+  String get clientsNoMatterLinkedFiles => 'No matter-linked files.';
+
+  @override
   String get clientsNoMattersForClient => 'No matters found for this client';
+
+  @override
+  String get clientsNoMattersForClientDescription =>
+      'Create a matter to start tracking work for this client.';
+
+  @override
+  String get clientsNoOpenAction => 'No open action';
 
   @override
   String get clientsNoSearchResults => 'No clients match your search';
@@ -2258,6 +2562,46 @@ class AppLocalizationsEn extends AppLocalizations {
   String get clientsOpen => 'Open';
 
   @override
+  String get clientsOpenAction => 'Open action';
+
+  @override
+  String get clientsOpenClientActions => 'Open client actions';
+
+  @override
+  String get clientsOpenComplianceQueue => 'Open compliance queue';
+
+  @override
+  String get clientsOpenKycSetup => 'Set up KYC';
+
+  @override
+  String clientsOpenSection(String section) {
+    return 'Open $section';
+  }
+
+  @override
+  String get clientsOverviewNextAction => 'Next action';
+
+  @override
+  String get clientsOverviewNextActionDescription =>
+      'The most useful step to move this client forward.';
+
+  @override
+  String get clientsOverviewNoNextAction => 'No action is required right now.';
+
+  @override
+  String get clientsOverviewNoRecentActivity => 'No recent activity yet.';
+
+  @override
+  String get clientsOverviewRecentActivity => 'Recent activity';
+
+  @override
+  String get clientsOverviewRecentActivityDescription =>
+      'Latest updates across this client’s matters and records.';
+
+  @override
+  String get clientsOwner => 'Owner';
+
+  @override
   String get clientsPhone => 'Phone';
 
   @override
@@ -2268,6 +2612,40 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get clientsPhoneDuplicateWarning =>
       'A client with this phone number may already exist.';
+
+  @override
+  String get clientsPortalInvite => 'Portal invite';
+
+  @override
+  String get clientsPortalInviteCopied => 'Portal invite copied';
+
+  @override
+  String get clientsPortalInviteCreated => 'Portal invite created';
+
+  @override
+  String get clientsPortalInviteCreatedCopied =>
+      'Portal invite created and copied';
+
+  @override
+  String get clientsPortalInviteFailed => 'Could not create the portal invite.';
+
+  @override
+  String get clientsPortalInviteReady => 'Client portal invite ready';
+
+  @override
+  String get clientsPortalInviteSecurity =>
+      'Share this secure link only with the intended client.';
+
+  @override
+  String get clientsPortalInviteUrl => 'Portal invite URL';
+
+  @override
+  String clientsPreviewDocument(String name) {
+    return 'Preview $name';
+  }
+
+  @override
+  String get clientsProfileComplete => 'Profile complete';
 
   @override
   String get clientsProfileIncomplete => 'Profile incomplete';
@@ -2287,6 +2665,53 @@ class AppLocalizationsEn extends AppLocalizations {
       'All matters associated with this client';
 
   @override
+  String clientsRemoveClientDocumentDescription(String name) {
+    return 'Remove $name from the client file? The document will be archived.';
+  }
+
+  @override
+  String get clientsRemoveClientDocumentTitle => 'Remove client document?';
+
+  @override
+  String clientsRemoveContactPerson(String number) {
+    return 'Remove contact person $number';
+  }
+
+  @override
+  String clientsRemoveDocument(String name) {
+    return 'Remove $name';
+  }
+
+  @override
+  String get clientsRemoveDocumentAction => 'Remove document';
+
+  @override
+  String get clientsRequestDocument => 'Request document';
+
+  @override
+  String get clientsRequestDocumentDescription =>
+      'Ask the client to provide a document through the secure portal.';
+
+  @override
+  String get clientsRequestDocumentPlaceholder =>
+      'For example, proof of address';
+
+  @override
+  String get clientsRequestDocumentTitle => 'Requested document';
+
+  @override
+  String clientsRiskScore(String score) {
+    return 'Risk $score';
+  }
+
+  @override
+  String get clientsRoleTitle => 'Role or title';
+
+  @override
+  String get clientsSaveBasicAndCompleteLater =>
+      'Save basic details and complete later';
+
+  @override
   String get clientsSaveChanges => 'Save changes';
 
   @override
@@ -2302,6 +2727,12 @@ class AppLocalizationsEn extends AppLocalizations {
   String get clientsSearchClientsLabel => 'Search clients';
 
   @override
+  String get clientsSearchDocuments => 'Search documents';
+
+  @override
+  String get clientsSearchMatters => 'Search matters';
+
+  @override
   String get clientsSearchPlaceholder => 'Search by name, email, or code...';
 
   @override
@@ -2309,6 +2740,30 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get clientsSelectOrAddClient => 'Select or add a client (optional)';
+
+  @override
+  String get clientsSendRequest => 'Send request';
+
+  @override
+  String get clientsSortDeadline => 'Upcoming deadline';
+
+  @override
+  String get clientsSortMatters => 'Sort matters';
+
+  @override
+  String get clientsSortRecentlyUpdated => 'Recently updated';
+
+  @override
+  String get clientsSortRisk => 'Highest risk';
+
+  @override
+  String get clientsSortTitle => 'Title';
+
+  @override
+  String get clientsStage => 'Stage';
+
+  @override
+  String get clientsStatsClientFiles => 'Client files';
 
   @override
   String get clientsStatsHighRisk => 'High risk';
@@ -2384,10 +2839,24 @@ class AppLocalizationsEn extends AppLocalizations {
   String get clientsUnableToCreateClient => 'Unable to create client.';
 
   @override
+  String get clientsUnassigned => 'Unassigned';
+
+  @override
+  String get clientsUploadFirstDocument => 'Upload first document';
+
+  @override
+  String clientsUploadProgress(String progress) {
+    return 'Upload progress: $progress%';
+  }
+
+  @override
   String get clientsUs => 'US';
 
   @override
   String get clientsViewExistingClient => 'view existing client';
+
+  @override
+  String get clientsWorkspaceSections => 'Client workspace sections';
 
   @override
   String get common000 => '0.00';
@@ -2660,6 +3129,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get commonConfidentiality => 'Confidentiality';
 
   @override
+  String get commonConfirm => 'Confirm';
+
+  @override
   String get commonConfirmCountry => 'Confirm your country';
 
   @override
@@ -2686,6 +3158,9 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get commonCopilotResearchModel => 'Copilot & Research model';
+
+  @override
+  String get commonCopy => 'Copy';
 
   @override
   String get commonCopyCitation => 'Copy citation';
@@ -3734,6 +4209,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get commonRejectLead => 'Reject lead';
 
   @override
+  String get commonRemove => 'Remove';
+
+  @override
   String get commonRepresentationBeforeCourtsOrTribunals =>
       'Representation before courts or tribunals';
 
@@ -4060,6 +4538,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get commonUnableToLoadAiUsage => 'Unable to load AI usage.';
 
   @override
+  String get commonUnavailable => 'Unavailable';
+
+  @override
   String get commonUnitedKingdom => 'United Kingdom';
 
   @override
@@ -4074,6 +4555,9 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get commonUpgradeToProfessional => 'Upgrade to Professional';
+
+  @override
+  String get commonUpload => 'Upload';
 
   @override
   String get commonUploadADocumentTemplate => 'Upload a document template';
@@ -6353,10 +6837,10 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get dashboardOnboardingMatterDescription =>
-      'Create a matter to begin tracking a case';
+      'Set up a matter to begin tracking the case';
 
   @override
-  String get dashboardOnboardingMatterLabel => 'Open a matter';
+  String get dashboardOnboardingMatterLabel => 'Create your first matter';
 
   @override
   String dashboardOnboardingProgress(String completed, String total) {
@@ -6739,40 +7223,6 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get docuDraftWhatWeUnderstood => 'What we understood';
-
-  @override
-  String get promptRefineTitle => 'Refined prompt';
-
-  @override
-  String get promptRefineDescription =>
-      'We reorganized your description for clearer AI results. Edit if needed, then continue.';
-
-  @override
-  String get promptRefineYourOriginal => 'Your original prompt';
-
-  @override
-  String get promptRefineRefinedLabel => 'Refined prompt';
-
-  @override
-  String get promptRefineContinueRefined => 'Continue with refined prompt';
-
-  @override
-  String get promptRefineUseOriginal => 'Use original instead';
-
-  @override
-  String get promptRefineHintJurisdiction => 'Jurisdiction';
-
-  @override
-  String get promptRefineHintDocument => 'Document';
-
-  @override
-  String get promptRefineHintParty => 'Party';
-
-  @override
-  String get promptRefineHintStatute => 'Statute';
-
-  @override
-  String get promptRefinePreparing => 'Preparing your prompt…';
 
   @override
   String get draftingAccuracyAuditTitle => 'Accuracy audit';
@@ -9473,6 +9923,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get lawyerNavTrust => 'Trust';
 
   @override
+  String get lawyerNavTrustAccounts => 'Trust Accounts';
+
+  @override
   String get lawyerNavVault => 'Vault';
 
   @override
@@ -9607,7 +10060,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get lawyerOpenCase => 'Open case';
 
   @override
-  String get lawyerOpenMatterWorkbench => 'Open matter workbench';
+  String get lawyerOpenMatterWorkbench => 'Open Quick AI';
 
   @override
   String get lawyerOpenTaskDetails => 'Open task details';
@@ -12320,6 +12773,85 @@ class AppLocalizationsEn extends AppLocalizations {
       'United States';
 
   @override
+  String get marketingHomeLandingIssueBoardResearchExamplesBnss101Label =>
+      'When can police arrest without a warrant?';
+
+  @override
+  String get marketingHomeLandingIssueBoardResearchExamplesBnss101Subtitle =>
+      'Criminal · BNSS §101';
+
+  @override
+  String get marketingHomeLandingIssueBoardResearchExamplesBnss101Tag =>
+      'India';
+
+  @override
+  String
+  get marketingHomeLandingIssueBoardResearchExamplesContactDraftingLabel =>
+      'Essential clauses in a service agreement';
+
+  @override
+  String
+  get marketingHomeLandingIssueBoardResearchExamplesContactDraftingSubtitle =>
+      'Commercial · Contract law';
+
+  @override
+  String get marketingHomeLandingIssueBoardResearchExamplesContactDraftingTag =>
+      'Drafting';
+
+  @override
+  String get marketingHomeLandingIssueBoardResearchExamplesFrcp12Label =>
+      '12(b)(6) motion to dismiss standard';
+
+  @override
+  String get marketingHomeLandingIssueBoardResearchExamplesFrcp12Subtitle =>
+      'Civil · FRCP Rule 12';
+
+  @override
+  String get marketingHomeLandingIssueBoardResearchExamplesFrcp12Tag =>
+      'Federal';
+
+  @override
+  String get marketingHomeLandingIssueBoardResearchExamplesKeLabourLabel =>
+      'Wrongful termination remedies';
+
+  @override
+  String get marketingHomeLandingIssueBoardResearchExamplesKeLabourSubtitle =>
+      'Labour · Kenya Employment Act';
+
+  @override
+  String get marketingHomeLandingIssueBoardResearchExamplesKeLabourTag =>
+      'Kenya';
+
+  @override
+  String get marketingHomeLandingIssueBoardResearchExamplesSection138Label =>
+      'Cheque bounce notice requirements';
+
+  @override
+  String get marketingHomeLandingIssueBoardResearchExamplesSection138Subtitle =>
+      'Criminal · NI Act §138';
+
+  @override
+  String get marketingHomeLandingIssueBoardResearchExamplesSection138Tag =>
+      'Recovery';
+
+  @override
+  String get marketingHomeLandingIssueBoardResearchExamplesUkEmploymentLabel =>
+      'Unfair dismissal time limits';
+
+  @override
+  String
+  get marketingHomeLandingIssueBoardResearchExamplesUkEmploymentSubtitle =>
+      'Employment · UK ERA 1996';
+
+  @override
+  String get marketingHomeLandingIssueBoardResearchExamplesUkEmploymentTag =>
+      'UK';
+
+  @override
+  String get marketingHomeLandingIssueBoardResearchLockedHint =>
+      'Sample research questions lawyers ask every day — sign up free to try.';
+
+  @override
   String get marketingHomeLandingIssueBoardResearchTeaserUnavailable =>
       'Research preview is not available on this API yet. Run the local backend (port 4000) or deploy the latest API.';
 
@@ -14103,6 +14635,14 @@ class AppLocalizationsEn extends AppLocalizations {
   String get matterIntelligenceDocumentMatches => 'Document matches';
 
   @override
+  String get matterIntelligenceDocumentsYouRequested =>
+      'Documents you requested';
+
+  @override
+  String get matterIntelligenceDocumentsYouRequestedHint =>
+      'These match the documents named in your drafting request. Select what to draft — we\'ll open each in order.';
+
+  @override
   String get matterIntelligenceDraftNow => 'Draft now';
 
   @override
@@ -14148,10 +14688,32 @@ class AppLocalizationsEn extends AppLocalizations {
   String get matterIntelligenceNextBestAction => 'Next best action';
 
   @override
+  String get matterIntelligenceOpposingPartyFilingSet =>
+      'Opposing party filings';
+
+  @override
+  String get matterIntelligenceOpposingPartyFilingSetHint =>
+      'Documents the other side may file in response. Optional — include if you want to prepare counter-strategy.';
+
+  @override
   String get matterIntelligenceOtherMatches => 'Other matches';
 
   @override
+  String get matterIntelligencePickAlternative => 'Pick closest match';
+
+  @override
+  String get matterIntelligenceProvisionalMatch =>
+      'Forum inferred — confirm before drafting';
+
+  @override
   String get matterIntelligenceRecommendedActions => 'Recommended actions';
+
+  @override
+  String get matterIntelligenceRecommendedDocuments => 'Recommended documents';
+
+  @override
+  String get matterIntelligenceRecommendedDocumentsHint =>
+      'Based on your drafting request';
 
   @override
   String get matterIntelligenceRecommendedFilingSet => 'Recommended filing set';
@@ -14174,11 +14736,22 @@ class AppLocalizationsEn extends AppLocalizations {
       'AI-inferred practice area, forum, and recommended next steps';
 
   @override
+  String get matterIntelligenceSuggestedForum => 'Suggested forum';
+
+  @override
   String get matterIntelligenceSuggestionsStuck =>
       'Suggestions are taking longer than usual.';
 
   @override
   String get matterIntelligenceTitle => 'Matter intelligence';
+
+  @override
+  String get matterIntelligenceUnmappedRequestedDocs =>
+      'Couldn\'t match automatically';
+
+  @override
+  String get matterIntelligenceUnmappedRequestedDocsHint =>
+      'We found these in your request but couldn\'t map them to a template yet. Pick the closest option below.';
 
   @override
   String get matterIntelligenceUpdatingSuggestions => 'Updating suggestions…';
@@ -14998,8 +15571,11 @@ class AppLocalizationsEn extends AppLocalizations {
   String get mattersFilingType => 'Filing type *';
 
   @override
+  String get mattersFilters => 'Filters';
+
+  @override
   String get mattersFormsPickerDescription =>
-      'Select applicable government forms or standard templates for this matter. Selected forms will be pre-attached to the matter workbench.';
+      'Select applicable government forms or standard templates for this matter. Selected forms will be pre-attached in Documents.';
 
   @override
   String mattersFormsSelectedCount(num count) {
@@ -15418,7 +15994,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get mattersNoStandardFormsFound =>
-      'No standard forms found for this practice area and jurisdiction. You can still proceed — forms can be attached later from the matter workbench.';
+      'No standard forms found for this practice area and jurisdiction. You can still proceed — forms can be attached later from Documents.';
 
   @override
   String get mattersNoStrategyMemosYet => 'No strategy memos yet';
@@ -15646,6 +16222,10 @@ class AppLocalizationsEn extends AppLocalizations {
       'Wills, Estates & Probate';
 
   @override
+  String get mattersPremiumModelResearchHint =>
+      'Premium models may take a little longer.';
+
+  @override
   String get mattersPrescribedForms => 'Prescribed Forms';
 
   @override
@@ -15657,6 +16237,9 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get mattersPrintDocument => 'Print';
+
+  @override
+  String get mattersPromptRefinePreparing => 'Preparing your prompt…';
 
   @override
   String get mattersProvider => 'Provider';
@@ -15757,6 +16340,9 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get mattersResearchProgressTitle => 'Running legal research';
+
+  @override
+  String get mattersResearchPromptTitle => 'Research question';
 
   @override
   String get mattersResearchQuestionMinLength =>
@@ -16231,7 +16817,16 @@ class AppLocalizationsEn extends AppLocalizations {
   String get mattersWorkspaceAi => 'AI';
 
   @override
+  String get mattersWorkspaceBackToMatter => 'Back to matter';
+
+  @override
   String get mattersWorkspaceBilling => 'Billing';
+
+  @override
+  String get mattersWorkspaceCaseTools => 'Case tools';
+
+  @override
+  String get mattersWorkspaceCloseEvidenceDetails => 'Close evidence details';
 
   @override
   String get mattersWorkspaceCourt => 'Court';
@@ -16243,10 +16838,54 @@ class AppLocalizationsEn extends AppLocalizations {
   String get mattersWorkspaceDocuments => 'Documents';
 
   @override
+  String get mattersWorkspaceDraft => 'Draft';
+
+  @override
+  String get mattersWorkspaceEnterFullscreen => 'Enter fullscreen';
+
+  @override
   String get mattersWorkspaceEvidence => 'Evidence';
 
   @override
+  String get mattersWorkspaceEvidenceMap => 'Evidence map';
+
+  @override
+  String get mattersWorkspaceEvidenceMapDescription =>
+      'Trace issues, facts, documents, and contradictions in one view.';
+
+  @override
+  String get mattersWorkspaceExitFullscreen => 'Exit fullscreen';
+
+  @override
+  String get mattersWorkspaceLitigation => 'Litigation';
+
+  @override
   String get mattersWorkspaceMeetings => 'Meetings';
+
+  @override
+  String get mattersWorkspaceMore => 'More';
+
+  @override
+  String get mattersWorkspaceNavigationLabel => 'Matter workspace';
+
+  @override
+  String mattersWorkspaceNodeCount(num count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '# nodes',
+      one: '# node',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get mattersWorkspaceOpenMore => 'Open more matter sections';
+
+  @override
+  String mattersWorkspaceOpenNavigation(String section) {
+    return 'Open matter navigation. Current section: $section';
+  }
 
   @override
   String get mattersWorkspaceOpponent => 'Opponent';
@@ -16255,7 +16894,35 @@ class AppLocalizationsEn extends AppLocalizations {
   String get mattersWorkspaceOutcome => 'Outcome';
 
   @override
+  String get mattersWorkspaceOverview => 'Overview';
+
+  @override
   String get mattersWorkspaceParties => 'Parties';
+
+  @override
+  String get mattersWorkspacePeopleMoney => 'People & money';
+
+  @override
+  String get mattersWorkspaceQuickAi => 'Quick AI';
+
+  @override
+  String get mattersWorkspaceRelatedMatterTools => 'Related matter tools';
+
+  @override
+  String get mattersWorkspaceResearchCanvas => 'Research canvas';
+
+  @override
+  String get mattersWorkspaceResearchPanes => 'Research canvas panes';
+
+  @override
+  String get mattersWorkspaceResearchUnavailable =>
+      'Unable to open Research canvas.';
+
+  @override
+  String get mattersWorkspaceSectionsTitle => 'Matter sections';
+
+  @override
+  String get mattersWorkspaceSimilarCases => 'Similar cases';
 
   @override
   String get mattersWorkspaceStrategy => 'Strategy';
@@ -16264,7 +16931,10 @@ class AppLocalizationsEn extends AppLocalizations {
   String get mattersWorkspaceTasks => 'Tasks';
 
   @override
-  String get mattersWorkspaceWorkbench => 'Workbench';
+  String get mattersWorkspaceWork => 'Work';
+
+  @override
+  String get mattersWorkspaceWorkbench => 'Quick AI';
 
   @override
   String get mattersWrite => 'Write';
@@ -16544,6 +17214,69 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get portalYourTasks => 'Your tasks';
+
+  @override
+  String promptRefineAutoFillCountdownAria(String seconds) {
+    return '$seconds seconds remaining to undo';
+  }
+
+  @override
+  String get promptRefineAutoFillHint => 'Undo restores your original prompt';
+
+  @override
+  String promptRefineAutoFilledDescription(String seconds) {
+    return 'Continuing in ${seconds}s — undo to keep your original.';
+  }
+
+  @override
+  String get promptRefineAutoFilledTitle => 'Prompt refined';
+
+  @override
+  String get promptRefineContinueRefined => 'Continue with refined prompt';
+
+  @override
+  String get promptRefineDescription =>
+      'We reorganized your description for clearer AI results. Edit if needed, then continue.';
+
+  @override
+  String get promptRefineHintDocument => 'Document';
+
+  @override
+  String get promptRefineHintJurisdiction => 'Jurisdiction';
+
+  @override
+  String get promptRefineHintParty => 'Party';
+
+  @override
+  String get promptRefineHintStatute => 'Statute';
+
+  @override
+  String get promptRefinePreparing => 'Preparing your prompt…';
+
+  @override
+  String get promptRefineRefinedLabel => 'Refined prompt';
+
+  @override
+  String promptRefineStartingDrafting(String seconds) {
+    return 'Starting drafting in ${seconds}s…';
+  }
+
+  @override
+  String promptRefineStartingResearch(String seconds) {
+    return 'Starting research in ${seconds}s…';
+  }
+
+  @override
+  String get promptRefineTitle => 'Refined prompt';
+
+  @override
+  String get promptRefineUndo => 'Undo';
+
+  @override
+  String get promptRefineUseOriginal => 'Use original instead';
+
+  @override
+  String get promptRefineYourOriginal => 'Your original prompt';
 
   @override
   String get sectionFinderNetworkBadge =>
@@ -17205,7 +17938,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String settingsPlanUsageAiModelDescription(String credits) {
-    return 'Auto uses a lower-cost model. Premium lets you pick an AI model (OpenAI or Claude) — credits scale with tokens used and model cost (~$credits credit per typical message).';
+    return 'Auto uses a lower-cost model. Premium lets you pick a GPT model — credits scale with tokens used and model cost (~$credits credit per typical message).';
   }
 
   @override
@@ -18474,7 +19207,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get tutorialsEvidenceHelpB3 =>
-      'Open the matter workbench for AI-assisted chronology.';
+      'Open the matter Quick AI for AI-assisted chronology.';
 
   @override
   String get tutorialsEvidenceHelpTitle => 'Evidence vault';
@@ -19025,10 +19758,10 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get tutorialsMattersDetailWorkbenchBody =>
-      'Open the workbench for matter-scoped AI chat, drafting, and suggested next steps.';
+      'Open the Quick AI for matter-scoped AI chat, drafting, and suggested next steps.';
 
   @override
-  String get tutorialsMattersDetailWorkbenchTitle => 'AI workbench';
+  String get tutorialsMattersDetailWorkbenchTitle => 'AI Quick AI';
 
   @override
   String get tutorialsMattersFilterBody =>
@@ -19043,7 +19776,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get tutorialsMattersHelpB2 =>
-      'Open the AI workbench from a matter for drafting and research.';
+      'Open the AI Quick AI from a matter for drafting and research.';
 
   @override
   String get tutorialsMattersHelpB3 =>

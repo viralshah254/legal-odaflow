@@ -7,16 +7,21 @@ import {
   Body,
   HttpCode,
   HttpStatus,
+  UseGuards,
+  NotFoundException,
 } from '@nestjs/common';
+import { TenantGuard } from '@/common/guards/tenant.guard';
+import { TenantId } from '@/common/decorators/tenant-id.decorator';
 import { DeadlineEngineService } from './deadline-engine.service';
 
 @Controller()
+@UseGuards(TenantGuard)
 export class DeadlineEngineController {
   constructor(private readonly svc: DeadlineEngineService) {}
 
   @Get('deadlines')
   getAllDeadlines(
-    @Query('tenantId') tenantId: string,
+    @TenantId() tenantId: string,
     @Query('matterId') matterId?: string,
     @Query('status') status?: string,
     @Query('dueBefore') dueBefore?: string,
@@ -53,11 +58,16 @@ export class DeadlineEngineController {
   @HttpCode(HttpStatus.OK)
   async recomputeFromFacts(
     @Param('matterId') matterId: string,
-    @Body() body: { tenantId: string },
+    @TenantId() tenantId: string,
   ) {
+    const matter = await this.svc['prisma'].matter.findFirst({
+      where: { id: matterId, tenantId },
+      select: { id: true },
+    });
+    if (!matter) throw new NotFoundException('Matter not found');
     const facts = await this.svc['prisma'].matterFactV2.findMany({
       where: { matterId },
     });
-    return this.svc.detectDeadlinesFromFacts(matterId, body.tenantId, facts);
+    return this.svc.detectDeadlinesFromFacts(matterId, tenantId, facts);
   }
 }

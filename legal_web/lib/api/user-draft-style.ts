@@ -17,7 +17,7 @@ export interface UserDraftStyleState {
 }
 
 export const MY_STYLE_ID = "my_style"
-export const STYLE_ANALYSIS_CREDITS = 500
+export const MIN_STYLE_SAMPLES = 5
 
 /** GET /users/me/draft-style */
 export async function getUserDraftStyle(): Promise<UserDraftStyleState> {
@@ -51,7 +51,7 @@ export async function removeDraftStyleSample(
   )
 }
 
-/** POST /users/me/draft-style/analyze — charges 500 credits */
+/** POST /users/me/draft-style/analyze — charges recorded usage */
 export async function analyzeMyDraftStyle(): Promise<{
   status: string
   creditsCharged: number

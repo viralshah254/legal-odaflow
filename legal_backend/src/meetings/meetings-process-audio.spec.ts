@@ -12,6 +12,7 @@ import { AudioTranscodeService } from './audio-transcode.service';
 
 const mockPrisma = {
   meeting: {
+    count: jest.fn().mockResolvedValue(0),
     findMany: jest.fn(),
     findFirst: jest.fn(),
     create: jest.fn(),

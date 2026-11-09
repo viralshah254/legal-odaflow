@@ -84,10 +84,10 @@ describe('research-mode', () => {
     expect(shouldIgnorePremiumOverride('DEEP')).toBe(false);
   });
 
-  it('charges 1.5× API cost in credits', () => {
-    expect(computeResearchCreditsFromCost(0.02, 0.01)).toBe(3);
-    expect(computeResearchCreditsFromCost(0.08, 0.01)).toBe(12);
-    expect(computeResearchCreditsFromCost(0.2, 0.01)).toBe(30);
-    expect(computeResearchCreditsFromCost(0, 0.01)).toBe(1);
+  it('charges 2× API cost in credits', () => {
+    expect(computeResearchCreditsFromCost(0.02, 0.01)).toBe(4);
+    expect(computeResearchCreditsFromCost(0.08, 0.01)).toBe(16);
+    expect(computeResearchCreditsFromCost(0.2, 0.01)).toBe(40);
+    expect(computeResearchCreditsFromCost(0, 0.01)).toBe(0);
   });
 });

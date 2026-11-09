@@ -257,7 +257,7 @@ describe('B03 – StartWork must create client and matter inside a single atomic
     // clients.create inside tx body uses 'this.clients.create', not tx
     const clientsCallsTx = txBody.includes('tx.client') || txBody.includes('clients.create(tx');
     // At time of writing this assertion FAILS (returns false) — defect confirmed.
-    expect(clientsCallsTx).toBe(false);  // ← documents the defect; flip to true after fix
+    expect(clientsCallsTx).toBe(true); // Client creation must participate in the transaction.
   });
 
   it('REQUIREMENT: idempotency key must incorporate operation intent, not just mode+clientId+matterId', () => {

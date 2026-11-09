@@ -77,6 +77,7 @@ export class AiUsageRecorderService {
         tenantId: params.tenantId,
         taskType: params.taskType,
         modelName: params.modelName,
+        providerCostUsd: costUsd,
         inputTokens: params.inputTokens,
         outputTokens: params.outputTokens,
         metadata: {

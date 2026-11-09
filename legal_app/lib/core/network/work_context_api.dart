@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:dio/dio.dart';
 
 import 'api_client.dart';
@@ -179,15 +181,8 @@ class WorkContextOperation {
         '${hex.sublist(10, 16).join()}';
   }
 
-  static List<int> _randomBytes(int length) {
-    // Use Dart's crypto-quality random via dart:convert/math
-    // In production this is fine; for real crypto use `dart:math` Random.secure()
-    final rng = <int>[];
-    var seed = DateTime.now().microsecondsSinceEpoch;
-    for (var i = 0; i < length; i++) {
-      seed = (seed * 1664525 + 1013904223) & 0xFFFFFFFF;
-      rng.add(seed & 0xFF);
-    }
-    return rng;
-  }
+  static final Random _random = Random.secure();
+
+  static List<int> _randomBytes(int length) =>
+      List<int>.generate(length, (_) => _random.nextInt(256));
 }

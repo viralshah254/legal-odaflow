@@ -91,7 +91,8 @@ describe('DocumentsService research context', () => {
       { perItemChars: 60, totalChars: 80 },
     );
 
-    expect(result.map((item) => item.extractedText.length)).toEqual([60, 20]);
+    // Both sources retain usable context; the first file cannot starve the second.
+    expect(result.map((item) => item.extractedText.length)).toEqual([40, 40]);
     expect(result.every((item) => item.truncated)).toBe(true);
   });
 });

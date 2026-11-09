@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { PrismaService } from '@/prisma/prisma.service';
-import { getModelCostSync, OPENAI_MODEL_COSTS } from '@/ai/model-costs.config';
+import { getModelCostForUsage, OPENAI_MODEL_COSTS } from '@/ai/model-costs.config';
 import { getCreditCost } from '@/ai-credits/credit-costs';
 import { estimateTokenCostUsd } from '@/ai-credits/credit-pricing.util';
 import { CreditPricingService } from '@/ai-credits/credit-pricing.service';
@@ -14,7 +14,7 @@ export class AiCostService {
     private readonly creditPricing: CreditPricingService,
   ) {}
 
-  async getModelCost(provider: string, modelName: string) {
+  async getModelCost(provider: string, modelName: string, inputTokens = 0) {
     const db = await this.prisma.aIModelCostConfig.findUnique({
       where: {
         provider_modelName: { provider, modelName },
@@ -27,7 +27,7 @@ export class AiCostService {
         tier: db.modelTier,
       };
     }
-    return OPENAI_MODEL_COSTS[modelName] ?? getModelCostSync(modelName);
+    return OPENAI_MODEL_COSTS[modelName] ?? getModelCostForUsage(modelName, inputTokens);
   }
 
   async computeActualCostUsd(params: {
@@ -36,7 +36,7 @@ export class AiCostService {
     inputTokens: number;
     outputTokens: number;
   }) {
-    const cost = await this.getModelCost(params.provider, params.modelName);
+    const cost = await this.getModelCost(params.provider, params.modelName, params.inputTokens);
     return estimateTokenCostUsd(
       cost.inputPer1M,
       cost.outputPer1M,
@@ -45,16 +45,10 @@ export class AiCostService {
     );
   }
 
-  computeCreditValueUsd(chargedCredits: number, countryCode = 'US'): number {
-    const countryMultipliers: Record<string, number> = {
-      US: 1,
-      IN: 0.12,
-      KE: 0.077,
-      GB: 1.2,
-    };
-    const base = this.creditPricing.computeCreditValueUsd(chargedCredits);
-    const multiplier = countryMultipliers[countryCode.toUpperCase()] ?? 1;
-    return Number((base * multiplier).toFixed(6));
+  computeCreditValueUsd(chargedCredits: number, _countryCode = 'US'): number {
+    // Credits share one USD denomination. Currency conversion belongs at checkout,
+    // not here: multiplying again made funded India/Kenya tasks appear unprofitable.
+    return this.creditPricing.computeCreditValueUsd(chargedCredits);
   }
 
   computeMargin(params: {

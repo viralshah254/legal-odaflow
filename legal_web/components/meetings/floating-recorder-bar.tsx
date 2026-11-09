@@ -290,7 +290,7 @@ export function FloatingRecorderBar({
       setHasSpeechApi(false)
       setCaptionsUnavailable(true)
       setCaptionsHint(
-        "Live captions aren't supported in this browser. Audio is still recording — OpenAI Whisper will transcribe after you stop.",
+        "Live captions aren't supported in this browser. Audio is still recording — A transcript will be prepared after you stop.",
       )
       return false
     }

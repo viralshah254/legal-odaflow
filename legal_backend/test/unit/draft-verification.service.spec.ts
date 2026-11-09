@@ -1,3 +1,17 @@
+import { QuotationVerificationService } from '@/ai/verification/quotation-verification.service';
+import { PropositionEntailmentService } from '@/ai/verification/proposition-entailment.service';
+import { LegalEvidencePackService } from '@/ai/legal-research/legal-evidence-pack.service';
+import { ClaimLevelVerificationService } from '@/ai/legal-research/claim-level-verification.service';
+import { PropositionExtractionService } from '@/ai/verification/proposition-extraction.service';
+import { ClaimRepairService } from '@/ai/verification/claim-repair.service';
+import { CitationResolutionService } from '@/ai/verification/citation-resolution.service';
+import { AuthorityIdentityService } from '@/ai/verification/authority-identity.service';
+import { DraftLegalRegisterService } from '@/ai/drafting/draft-legal-register.service';
+import { DraftArchetypeRouterService } from '@/ai/drafting/archetypes/draft-archetype-router.service';
+import { DraftFactFidelityService } from '@/ai/drafting/draft-fact-fidelity.service';
+import { DraftCaseBriefService } from '@/ai/drafting/draft-case-brief.service';
+import { DraftProceduralTimelineValidator } from '@/ai/drafting/draft-procedural-timeline.validator';
+import { DraftCaseFactCoverageService } from '@/ai/drafting/draft-case-fact-coverage.service';
 import { Test } from '@nestjs/testing';
 import { DraftVerificationService } from '@/ai/drafting/draft-verification.service';
 import { BareActLookupService } from '@/legal-search/bare-act-lookup.service';
@@ -22,7 +36,8 @@ describe('DraftVerificationService', () => {
 
     const moduleRef = await Test.createTestingModule({
       providers: [
-        DraftVerificationService,
+        DraftVerificationService, QuotationVerificationService, PropositionEntailmentService,
+        LegalEvidencePackService, ClaimLevelVerificationService, PropositionExtractionService, ClaimRepairService, CitationResolutionService, AuthorityIdentityService, DraftLegalRegisterService, DraftArchetypeRouterService, DraftFactFidelityService, DraftCaseBriefService, DraftProceduralTimelineValidator, DraftCaseFactCoverageService,
         {
           provide: BareActLookupService,
           useValue: { lookupExactSection: jest.fn().mockResolvedValue({ found: true }) },
@@ -177,7 +192,7 @@ describe('DraftVerificationService', () => {
     expect(result.draft).not.toContain('AIR 1989 SC 1475');
   });
 
-  it('addVerifiedCitations strips citations outside retrieved authorities', async () => {
+  it('addVerifiedCitations withholds unsupported propositions even when citation identity matches', async () => {
     llm.complete.mockResolvedValue({
       content:
         'As held in AIR 2010 SC 1, maintenance is available. Also see AIR 9999 SC 9999.',
@@ -193,7 +208,9 @@ describe('DraftVerificationService', () => {
       instruction: 'add_citations',
     });
 
-    expect(result.revisedText).toContain('AIR 2010 SC 1');
+    // A citation string in retrieval is not evidence for the asserted holding.
+    expect(result.revisedText).not.toContain('maintenance is available');
+    expect(result.revisedText).toContain('Unsupported proposition withheld');
     expect(result.revisedText).not.toContain('AIR 9999 SC 9999');
     expect(result.audit.strippedCitations.some((s) => s.original.includes('9999'))).toBe(true);
   });

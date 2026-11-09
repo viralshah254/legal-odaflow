@@ -29,12 +29,11 @@ import {
   removeDraftStyleSample,
   analyzeMyDraftStyle,
   resetMyDraftStyle,
-  STYLE_ANALYSIS_CREDITS,
   type UserDraftStyleState,
 } from "@/lib/api/user-draft-style"
 
 type Step = "setup" | "confirm" | "processing" | "done" | "manage"
-const MAX_SAMPLES = 4
+const MAX_SAMPLES = 10
 
 interface SampleSlot {
   name: string
@@ -74,9 +73,9 @@ export function DraftingStyleSetupDialog({
 
   const filledCount = slots.filter((s) => s && !s.uploading && !s.error).length
   const hasUploading = slots.some((s) => s?.uploading)
-  const hasEnoughToAnalyze = filledCount >= 1
+  const hasEnoughToAnalyze = filledCount >= 5
   const balance = styleState?.creditBalance ?? 0
-  const canAfford = balance >= STYLE_ANALYSIS_CREDITS
+  const canAfford = balance > 0
 
   const syncSlotsFromCount = (count: number) => {
     setSlots((prev) => {
@@ -173,7 +172,7 @@ export function DraftingStyleSetupDialog({
     let slotIdx = firstEmptyIndex()
     for (const file of list) {
       if (slotIdx === -1) {
-        setError("Maximum 4 samples. Remove one to add another.")
+        setError(`Maximum ${MAX_SAMPLES} samples. Remove one to add another.`)
         break
       }
       await uploadFile(file, slotIdx)
@@ -271,13 +270,13 @@ export function DraftingStyleSetupDialog({
                 <DialogTitle>Your Drafting Style</DialogTitle>
               </div>
               <DialogDescription>
-                Upload 3–4 of your past drafts. The AI learns your tone, structure, and phrasing —
-                then every draft sounds like you wrote it.
+                Upload at least 5 different drafts you wrote. The AI learns your tone, structure, and phrasing —
+                then applies your writing preferences to new drafts.
               </DialogDescription>
             </DialogHeader>
 
             <div className="space-y-4 pt-1">
-              {/* 4-slot grid with drag-and-drop */}
+              {/* Sample grid with drag-and-drop */}
               <div
                 className={cn(
                   "rounded-xl border-2 border-dashed p-3 transition-colors",
@@ -323,12 +322,12 @@ export function DraftingStyleSetupDialog({
                 <div className="flex-1 space-y-1.5">
                   <div className="flex items-center justify-between text-xs text-muted-foreground">
                     <span>{filledCount} of {MAX_SAMPLES} samples</span>
-                    <span>{filledCount >= 3 ? "Great — ready to analyze" : filledCount >= 1 ? "Add more for better accuracy" : "At least 1 required"}</span>
+                    <span>{filledCount >= 5 ? "Ready to analyze" : "At least 5 different drafts required"}</span>
                   </div>
                   <Progress value={(filledCount / MAX_SAMPLES) * 100} className="h-1.5" />
                 </div>
                 <Badge variant="secondary" className="shrink-0 font-mono text-[10px]">
-                  {STYLE_ANALYSIS_CREDITS} credits
+                  Based on actual usage
                 </Badge>
               </div>
 
@@ -375,7 +374,7 @@ export function DraftingStyleSetupDialog({
               <div className="rounded-lg border p-4 space-y-3">
                 <div className="flex items-center justify-between text-sm">
                   <span className="text-muted-foreground">Credit cost</span>
-                  <span className="font-semibold">{STYLE_ANALYSIS_CREDITS} credits</span>
+                  <span className="font-semibold">Based on actual usage</span>
                 </div>
                 <div className="flex items-center justify-between text-sm">
                   <span className="text-muted-foreground">Your balance</span>
@@ -384,16 +383,16 @@ export function DraftingStyleSetupDialog({
                   </span>
                 </div>
                 <div className="border-t pt-3 flex items-center justify-between text-sm font-medium">
-                  <span>Balance after</span>
+                  <span>Final charge</span>
                   <span className={canAfford ? "" : "text-destructive"}>
-                    {canAfford ? balance - STYLE_ANALYSIS_CREDITS : "Insufficient"} credits
+                    Calculated after analysis
                   </span>
                 </div>
               </div>
 
               {!canAfford && (
                 <div className="rounded-lg bg-destructive/10 border border-destructive/20 p-3 text-sm text-destructive">
-                  You need at least {STYLE_ANALYSIS_CREDITS} credits. Top up your account to continue.
+                  Add credits to your account to continue.
                 </div>
               )}
 

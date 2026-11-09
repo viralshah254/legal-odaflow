@@ -1,5 +1,7 @@
+import { researchCacheIdentity } from './legal-research/research-cache-identity';
 import {
   ForbiddenException,
+  HttpException,
   GatewayTimeoutException,
   Injectable,
   Logger,
@@ -164,7 +166,6 @@ import {
   SimilarCasesService,
 } from './legal-research/similar-cases.service';
 import { shouldHardAbortOnMissingSimilarCases } from './legal-research/research-task-context';
-import { automaticResearchEvidenceCredits } from './legal-research/adaptive-research-billing';
 import { SectionMismatchService } from './legal-research/section-mismatch.service';
 import { ResearchCorrectionService } from './legal-research/research-correction.service';
 import { ResearchSectionFinderGroundingService } from './legal-research/research-section-finder-grounding.service';
@@ -442,6 +443,8 @@ export interface LawyerResearchInput {
   selectedDocumentIds?: string[];
   selectedSavedResearchIds?: string[];
   authorizedMatterContext?: string;
+  contextScope?: 'SELECTED' | 'MATTER' | 'FOLDERS';
+  selectedFolderIds?: string[];
   countryCode: string;
   jurisdiction?: string;
   practiceArea?: string;
@@ -2330,13 +2333,14 @@ export class AiGatewayService {
         })
       : 0;
 
-    let chargedCredits = getCreditCost(creditTaskType);
+    let chargedCredits = 0;
     if (result.provider !== 'mock') {
       const tokenDebit = await this.creditEnforcement.debitForTokenUsage({
         userId: input.userId,
         tenantId: input.tenantId,
         taskType: creditTaskType,
         modelName: result.modelName,
+        providerCostUsd: costUsd,
         inputTokens: usage.inputTokens,
         outputTokens: usage.outputTokens,
         metadata: { consumerCaseId: input.consumerCaseId } as Prisma.InputJsonValue,
@@ -2391,15 +2395,9 @@ export class AiGatewayService {
     try {
       return await this.executeLawyerLegalResearch(input);
     } catch (err) {
-      if (err instanceof ForbiddenException) {
-        const msg = err.message ?? '';
-        if (
-          /credits|top up|wallet|access denied|Matter access|cost cap/i.test(msg) &&
-          !/margin/i.test(msg)
-        ) {
-          throw err;
-        }
-      }
+      // Invalid context and denied access must never become a successful-looking
+      // fallback memo. Preserve actionable client errors and queue failure state.
+      if (err instanceof HttpException && err.getStatus() >= 400 && err.getStatus() < 500) throw err;
       this.logger.warn(
         `Research fail-soft: ${err instanceof Error ? err.message : String(err)}`,
       );
@@ -2441,7 +2439,7 @@ export class AiGatewayService {
     input: LawyerResearchInput,
   ): Promise<LawyerResearchResult> {
     const researchStartedAt = Date.now();
-    const authorizedMatterContext = await this.matterResearchContext.buildPromptContext(
+    const matterContext = await this.matterResearchContext.buildContext(
       {
         tenantId: input.tenantId ?? '',
         userId: input.userId,
@@ -2451,30 +2449,25 @@ export class AiGatewayService {
         matterId: input.matterId,
         selectedDocumentIds: input.selectedDocumentIds,
         selectedSavedResearchIds: input.selectedSavedResearchIds,
+        selectedFolderIds: input.selectedFolderIds,
+        contextScope: input.contextScope,
+        query: input.query,
       },
     );
-    input = { ...input, authorizedMatterContext };
-    // Canonical scoped identity: sort and hash actual IDs so that different
-    // document/research selections never share the same cache entry (B01 fix).
-    const docIdsFingerprint = hashPrompt(
-      [...(input.selectedDocumentIds ?? [])].sort().join(','),
-    ).slice(0, 16);
-    const researchIdsFingerprint = hashPrompt(
-      [...(input.selectedSavedResearchIds ?? [])].sort().join(','),
-    ).slice(0, 16);
+    input = {
+      ...input,
+      authorizedMatterContext: matterContext?.promptContext,
+      countryCode: matterContext?.countryCode ?? input.countryCode,
+      jurisdiction: matterContext?.jurisdiction ?? input.jurisdiction,
+    };
     const earlyIndexKey = this.cacheService.buildKey('ai:research:index', [
-      input.tenantId ?? 'none',
-      input.matterId ?? 'none',
-      input.countryCode.toUpperCase(),
-      hashPrompt(input.query.trim().toLowerCase()).slice(0, 20),
-      input.asOfDate ?? '',
-      input.eventDate ?? '',
-      docIdsFingerprint,
-      researchIdsFingerprint,
+      'v2',
+      researchCacheIdentity(input, AiGatewayService.RESEARCH_SYSTEM_VERSION),
     ]);
     const earlyCached = await this.cacheService.get<LawyerResearchResult>(earlyIndexKey);
     if (earlyCached && !earlyCached.degraded) {
       this.logger.log(`[research] early index cache hit tenant=${input.tenantId ?? 'none'}`);
+      await this.updateResearchJobProgress(input.agentJobId, 'completed');
       return { ...earlyCached, fromCache: true, creditsUsed: 0 };
     }
     const countryPolicy = await this.complianceGuard.getPolicyForCountry(input.countryCode);
@@ -5703,7 +5696,7 @@ export class AiGatewayService {
         })
       : 0;
 
-    let chargedCredits = getCreditCost(AI_TASK_TYPES.LEGAL_RESEARCH);
+    let chargedCredits = 0;
     let automaticEnrichmentCredits = 0;
     try {
       if (result.provider !== 'mock') {
@@ -5712,6 +5705,7 @@ export class AiGatewayService {
           tenantId: input.tenantId,
           taskType: AI_TASK_TYPES.LEGAL_RESEARCH,
           modelName: result.modelName,
+          providerCostUsd: costUsd,
           inputTokens: usage.inputTokens,
           outputTokens: usage.outputTokens,
           metadata: { matterId: input.matterId, query: input.query } as Prisma.InputJsonValue,
@@ -5726,26 +5720,8 @@ export class AiGatewayService {
           metadata: { matterId: input.matterId, query: input.query },
         });
       }
-      const addOnCredits = automaticResearchEvidenceCredits({
-        casesAdded: similarCases.length,
-        sectionsAdded: adaptiveSectionsAdded.length,
-      });
-      if (addOnCredits > 0) {
-        await this.aiCreditLedger.assertAndDebit({
-          userId: input.userId,
-          tenantId: input.tenantId,
-          taskType: AI_TASK_TYPES.RESEARCH_ENRICH_BOTH,
-          credits: addOnCredits,
-          metadata: {
-            aiOutputId,
-            mode: 'automatic',
-            casesAdded: similarCases.length,
-            sectionsAdded: adaptiveSectionsAdded.length,
-          },
-        });
-        automaticEnrichmentCredits = addOnCredits;
-        chargedCredits += automaticEnrichmentCredits;
-      }
+      // Evidence counts are not provider costs. Do not levy fixed per-result
+      // surcharges on top of metered AI usage.
 
       const creditValueUsd = this.aiCostService.computeCreditValueUsd(
         chargedCredits,
@@ -5861,7 +5837,7 @@ export class AiGatewayService {
     this.logger.log(
       `[research-timing] classify=${classifyMs}ms preflight=${preflightMs}ms retrieve=${retrieveMs}ms llm=${llmMs}ms verify=${verifyMs}ms postProcess=${postProcessMs}ms total=${totalMs}ms mode=${researchMode} country=${country.code}`,
     );
-    await this.cacheService.set(earlyIndexKey, fullResult).catch((err) =>
+    await this.cacheService.set(earlyIndexKey, fullResult, 300).catch((err) =>
       this.logger.warn(
         `[runLawyerLegalResearch] early index cache set failed (non-critical): ${
           err instanceof Error ? err.message : String(err)
@@ -7046,6 +7022,7 @@ Only include legally meaningful deadlines specific to this practice area and jur
           tenantId: input.tenantId,
           taskType: input.taskType,
           modelName: result.modelName,
+          providerCostUsd: costUsd,
           inputTokens: usage.inputTokens,
           outputTokens: usage.outputTokens,
           metadata: { matterId: input.matterId } as Prisma.InputJsonValue,
@@ -10237,13 +10214,14 @@ Return ONLY a JSON object:
         })
       : 0;
 
-    let chargedCredits = getCreditCost(AI_TASK_TYPES.DOCUMENT_REVIEW);
+    let chargedCredits = 0;
     if (isConfigured) {
       const tokenDebit = await this.creditEnforcement.debitForTokenUsage({
         userId: input.userId,
         tenantId: input.tenantId,
         taskType: AI_TASK_TYPES.DOCUMENT_REVIEW,
         modelName: lastModelName,
+        providerCostUsd: costUsd,
         inputTokens: usage.inputTokens,
         outputTokens: usage.outputTokens,
         metadata: { matterId: input.matterId, fileName: input.fileName } as Prisma.InputJsonValue,

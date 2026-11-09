@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>CADisableMinimumFrameDurationOnPhone</key>
+	<true/>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
@@ -20,10 +22,59 @@
 	<string>$(FLUTTER_BUILD_NAME)</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>com.googleusercontent.apps.1034275934580-2sn8vugf9vum4js1n7ma0s796mihfmju</string>
+			</array>
+		</dict>
+	</array>
 	<key>CFBundleVersion</key>
 	<string>$(FLUTTER_BUILD_NUMBER)</string>
+	<key>GIDClientID</key>
+	<string>1034275934580-2sn8vugf9vum4js1n7ma0s796mihfmju.apps.googleusercontent.com</string>
+	<key>ITSAppUsesNonExemptEncryption</key>
+	<false/>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Umbrella needs microphone access to record client meetings and generate transcripts and AI notes.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Umbrella lets you attach photos and documents from your library to legal cases and matters.</string>
+	<key>NSSpeechRecognitionUsageDescription</key>
+	<string>Umbrella uses speech recognition to show live captions while you record a meeting.</string>
+	<key>UIApplicationSceneManifest</key>
+	<dict>
+		<key>UIApplicationSupportsMultipleScenes</key>
+		<false/>
+		<key>UISceneConfigurations</key>
+		<dict>
+			<key>UIWindowSceneSessionRoleApplication</key>
+			<array>
+				<dict>
+					<key>UISceneClassName</key>
+					<string>UIWindowScene</string>
+					<key>UISceneConfigurationName</key>
+					<string>flutter</string>
+					<key>UISceneDelegateClassName</key>
+					<string>FlutterSceneDelegate</string>
+					<key>UISceneStoryboardFile</key>
+					<string>Main</string>
+				</dict>
+			</array>
+		</dict>
+	</dict>
+	<key>UIApplicationSupportsIndirectInputEvents</key>
+	<true/>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>audio</string>
+		<string>remote-notification</string>
+	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
@@ -40,36 +91,6 @@
 		<string>UIInterfaceOrientationPortraitUpsideDown</string>
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
-	</array>
-	<key>CADisableMinimumFrameDurationOnPhone</key>
-	<true/>
-	<key>ITSAppUsesNonExemptEncryption</key>
-	<false/>
-	<key>UIBackgroundModes</key>
-	<array>
-		<string>audio</string>
-		<string>remote-notification</string>
-	</array>
-	<key>NSMicrophoneUsageDescription</key>
-	<string>Umbrella needs microphone access to record client meetings and generate transcripts and AI notes.</string>
-	<key>NSSpeechRecognitionUsageDescription</key>
-	<string>Umbrella uses speech recognition to show live captions while you record a meeting.</string>
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string>Umbrella lets you attach photos and documents from your library to legal cases and matters.</string>
-	<key>UIApplicationSupportsIndirectInputEvents</key>
-	<true/>
-	<key>GIDClientID</key>
-	<string>1034275934580-2sn8vugf9vum4js1n7ma0s796mihfmju.apps.googleusercontent.com</string>
-	<key>CFBundleURLTypes</key>
-	<array>
-		<dict>
-			<key>CFBundleTypeRole</key>
-			<string>Editor</string>
-			<key>CFBundleURLSchemes</key>
-			<array>
-				<string>com.googleusercontent.apps.1034275934580-2sn8vugf9vum4js1n7ma0s796mihfmju</string>
-			</array>
-		</dict>
 	</array>
 </dict>
 </plist>

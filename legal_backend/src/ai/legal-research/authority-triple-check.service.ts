@@ -1,4 +1,5 @@
 import { Injectable, Logger, Optional } from '@nestjs/common';
+import concurrencyLimit from '@/common/utils/concurrency-limit';
 import { BareActLookupService } from '@/legal-search/bare-act-lookup.service';
 import { TavilySearchConnector } from '@/legal-sources/connectors/tavily-search.connector';
 import { assessCandidateRelevance } from '@/legal-search/retrieval-relevance';
@@ -127,23 +128,27 @@ export class AuthorityTripleCheckService {
       propositionPhrases: input.propositionPhrases,
     };
 
+    // Independent authorities do not depend on one another. Keep network work
+    // bounded, then allocate the six web checks in extraction order so latency
+    // never changes which references receive the limited search budget.
+    const limit = concurrencyLimit(4);
+    const localChecks = await Promise.all(refs.map((ref) => limit(async () => ({
+      ref,
+      corpusHit: this.matchCorpus(ref, input.corpusAuthorities),
+      connectorHit: await this.matchConnector(ref, input.countryCode, input.corpusAuthorities),
+    }))));
     let webChecksUsed = 0;
-    for (const ref of refs) {
-      const evidence: PassHit[] = [];
+    const webChecks = await Promise.all(localChecks.map(({ ref, corpusHit, connectorHit }) => {
+      if ((corpusHit.hit && connectorHit.hit) || webChecksUsed >= 6) {
+        return Promise.resolve({ pass: 'web' as const, hit: false } satisfies PassHit);
+      }
+      webChecksUsed += 1;
+      return limit(() => this.matchWeb(ref, input.countryCode));
+    }));
 
-      const corpusHit = this.matchCorpus(ref, input.corpusAuthorities);
-      evidence.push(corpusHit);
-
-      const connectorHit = await this.matchConnector(ref, input.countryCode, input.corpusAuthorities);
-      evidence.push(connectorHit);
-
-      const alreadyAgreed = corpusHit.hit && connectorHit.hit;
-      const webHit =
-        alreadyAgreed || webChecksUsed >= 6
-          ? ({ pass: 'web' as const, hit: false } satisfies PassHit)
-          : await this.matchWeb(ref, input.countryCode);
-      if (!alreadyAgreed && webChecksUsed < 6) webChecksUsed += 1;
-      evidence.push(webHit);
+    for (const [index, { ref, corpusHit, connectorHit }] of localChecks.entries()) {
+      const webHit = webChecks[index];
+      const evidence: PassHit[] = [corpusHit, connectorHit, webHit];
 
       const checks = {
         corpus: corpusHit.hit,

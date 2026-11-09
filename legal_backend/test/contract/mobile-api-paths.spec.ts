@@ -19,7 +19,8 @@ describe('Mobile API client paths', () => {
   it('subscriptions client uses checkout endpoint', () => {
     const source = readAppApi('lib/core/network/subscriptions_api.dart');
     expect(source).toContain('/subscriptions/checkout');
-    expect(source).toContain('/pricing/plans');
+    expect(source).toContain('PricingApi');
+    expect(readAppApi('lib/core/network/pricing_api.dart')).toContain('/pricing/plans');
   });
 
   it('payments client uses /payments/intent', () => {

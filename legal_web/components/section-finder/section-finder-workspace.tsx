@@ -1,5 +1,7 @@
 "use client"
 
+import { getMatterResearchContext } from "@/lib/api/ai"
+import { resolveSectionFinderCountry } from "@/lib/section-finder-country"
 import { useState, useRef, useEffect, useCallback } from "react"
 import { useRouter, useSearchParams } from "next/navigation"
 import {
@@ -259,7 +261,7 @@ function SectionCard({
             </div>
           ) : !isOmitted ? (
             <p className="text-sm text-muted-foreground italic">
-              Detailed fee tables are in Schedule I of this Act — consult India Code for the full schedule.
+              Section text is unavailable here. Consult the linked official source before relying on this result.
             </p>
           ) : null}
 
@@ -399,9 +401,13 @@ export function SectionFinderWorkspace({ context = "lawyer" }: SectionFinderWork
   const matterIdFromUrl = searchParams.get("matterId") ?? undefined
   const initialQuery = searchParams.get("q") ?? ""
   const paramCountry = searchParams.get("country")?.toUpperCase()
-  const initialCountry = (
-    paramCountry === "US" || paramCountry === "GB" || paramCountry === "KE" ? paramCountry : "IN"
-  ) as SectionFinderCountry
+  const initialCountry = resolveSectionFinderCountry(paramCountry) ?? "IN"
+  const [manualCountry, setManualCountry] = useState<SectionFinderCountry | null>(null)
+  const [matterCountry, setMatterCountry] = useState<string | null>(null)
+  const [matterContextError, setMatterContextError] = useState(false)
+  const countryScope = matterIdFromUrl ? matterCountry : manualCountry ?? paramCountry ?? detectedCountry
+  const resolvedCountry = resolveSectionFinderCountry(countryScope)
+  const countryReady = Boolean(resolvedCountry && (matterIdFromUrl ? matterCountry : manualCountry || paramCountry || !countryLoading))
   const initialJurisdiction = searchParams.get("jurisdiction")?.toUpperCase() ?? "FED"
   const [selectedCountry, setSelectedCountry] = useState<SectionFinderCountry>(initialCountry)
   const [usJurisdiction, setUsJurisdiction] = useState(initialJurisdiction)
@@ -421,15 +427,23 @@ export function SectionFinderWorkspace({ context = "lawyer" }: SectionFinderWork
   const autoRan = useRef(false)
 
   useEffect(() => {
-    if (paramCountry || countryLoading || !detectedCountry) return
-    const normalized = ["US", "GB", "KE", "IN"].includes(detectedCountry)
-      ? detectedCountry
-      : "IN"
-    setSelectedCountry(normalized as SectionFinderCountry)
-  }, [paramCountry, countryLoading, detectedCountry])
+    if (resolvedCountry) setSelectedCountry(resolvedCountry)
+  }, [resolvedCountry])
 
-  const meta = getSectionFinderMeta(selectedCountry)
-  const activeCountryCode = selectedCountry
+  useEffect(() => {
+    if (!matterIdFromUrl) return
+    setMatterCountry(null)
+    setMatterContextError(false)
+    if (!activeTenantId) return
+    let active = true
+    void getMatterResearchContext(activeTenantId, matterIdFromUrl).then((result) => {
+      if (active) setMatterCountry(result.matter.countryCode ?? null)
+    }).catch(() => { if (active) setMatterContextError(true) })
+    return () => { active = false }
+  }, [activeTenantId, matterIdFromUrl])
+
+  const meta = getSectionFinderMeta(resolvedCountry ?? selectedCountry)
+  const activeCountryCode = resolvedCountry ?? selectedCountry
   const activeJurisdiction = selectedCountry === "US" ? usJurisdiction : undefined
   const researchRoute = context === "consumer" ? "/consumer/research" : "/app/research"
   const draftRoute =
@@ -453,7 +467,7 @@ export function SectionFinderWorkspace({ context = "lawyer" }: SectionFinderWork
   })
 
   const doSearch = useCallback(async (q: string, hint?: SectionFinderLookupHint) => {
-    if (!q.trim()) return
+    if (!q.trim() || !countryReady) return
     setSuggestOpen(false)
     setActiveSuggestIndex(-1)
     setLoading(true)
@@ -476,7 +490,7 @@ export function SectionFinderWorkspace({ context = "lawyer" }: SectionFinderWork
     } finally {
       setLoading(false)
     }
-  }, [locale, activeCountryCode, activeJurisdiction, handleApiError])
+  }, [locale, activeCountryCode, activeJurisdiction, handleApiError, countryReady, matterIdFromUrl])
 
   const selectSuggestion = useCallback((suggestion: SectionFinderSuggestion) => {
     setQuery(suggestion.displayLabel)
@@ -495,7 +509,7 @@ export function SectionFinderWorkspace({ context = "lawyer" }: SectionFinderWork
 
   useEffect(() => {
     const trimmed = query.trim()
-    if (trimmed.length < 2) {
+    if (!countryReady || trimmed.length < 2) {
       suggestAbortRef.current?.abort()
       setSuggestions([])
       setSuggestOpen(false)
@@ -533,7 +547,7 @@ export function SectionFinderWorkspace({ context = "lawyer" }: SectionFinderWork
     return () => {
       window.clearTimeout(timer)
     }
-  }, [query, activeCountryCode, activeJurisdiction])
+  }, [query, activeCountryCode, activeJurisdiction, countryReady])
 
   useEffect(() => {
     return () => {
@@ -542,17 +556,17 @@ export function SectionFinderWorkspace({ context = "lawyer" }: SectionFinderWork
   }, [])
 
   useEffect(() => {
-    if (!countryLoading) {
+    if (countryReady) {
       void getPopularSections(activeCountryCode, 10, activeJurisdiction).then(setPopularQueries)
     }
-  }, [activeCountryCode, activeJurisdiction, countryLoading])
+  }, [activeCountryCode, activeJurisdiction, countryReady])
 
   useEffect(() => {
-    if (initialQuery && !autoRan.current && !countryLoading) {
+    if (initialQuery && !autoRan.current && countryReady) {
       autoRan.current = true
       void doSearch(initialQuery)
     }
-  }, [initialQuery, countryLoading, doSearch])
+  }, [initialQuery, countryReady, doSearch])
 
   useEffect(() => {
     if (!initialQuery && !countryLoading) {
@@ -566,18 +580,36 @@ export function SectionFinderWorkspace({ context = "lawyer" }: SectionFinderWork
     autoRan.current = false
   }, [selectedCountry, usJurisdiction])
 
-  useEffect(() => {
-    if (countryLoading || !detectedCountry) return
-    if (detectedCountry === "IN" || detectedCountry === "US" || detectedCountry === "GB" || detectedCountry === "KE") {
-      setSelectedCountry(detectedCountry as SectionFinderCountry)
-    }
-  }, [detectedCountry, countryLoading])
 
   function handleAction(action: string, entry: SectionFinderEntry) {
     const q = `${entry.legacyActShort} ${entry.legacySection} - ${entry.legacyTitle}`
     if (action === "research") router.push(`${researchRoute}?q=${encodeURIComponent(q)}`)
     else if (action === "issue-checker") router.push(`/legal-issue-checker?q=${encodeURIComponent(q)}`)
     else if (action === "draft") router.push(`${draftRoute}${draftRoute.includes("?") ? "&" : "?"}q=${encodeURIComponent(q)}`)
+  }
+
+  if (!countryReady) {
+    return (
+      <section className="mx-auto max-w-3xl space-y-4 rounded-xl border bg-card p-6" aria-live="polite">
+        <h1 className="text-xl font-semibold">Section Finder</h1>
+        <p className="text-sm text-muted-foreground">
+          {matterIdFromUrl && !matterCountry && !matterContextError
+            ? "Loading the matter's legal country…"
+            : matterContextError
+              ? "Matter context is unavailable. Reopen the matter and retry."
+              : countryScope
+                ? `Section lookup is not yet supported for ${countryScope}. Another country's law will not be substituted.`
+                : "Choose the legal country before looking up a provision."}
+        </p>
+        {!matterIdFromUrl && (
+          <div className="flex flex-wrap gap-2">
+            {(["IN", "US", "GB", "KE"] as const).map((code) => (
+              <button key={code} type="button" className="rounded-md border px-3 py-2 text-sm" onClick={() => setManualCountry(code)}>{code}</button>
+            ))}
+          </div>
+        )}
+      </section>
+    )
   }
 
   return (
@@ -594,7 +626,7 @@ export function SectionFinderWorkspace({ context = "lawyer" }: SectionFinderWork
               <div className="flex rounded-lg border border-gray-200/80 dark:border-gray-700 overflow-hidden shadow-sm">
                 <button
                   type="button"
-                  onClick={() => setSelectedCountry("IN")}
+                  disabled={Boolean(matterIdFromUrl)} onClick={() => { setManualCountry("IN"); setSelectedCountry("IN") }}
                   className={cn(
                     "px-3 py-1.5 text-xs font-semibold transition-colors",
                     selectedCountry === "IN"
@@ -606,7 +638,7 @@ export function SectionFinderWorkspace({ context = "lawyer" }: SectionFinderWork
                 </button>
                 <button
                   type="button"
-                  onClick={() => setSelectedCountry("US")}
+                  disabled={Boolean(matterIdFromUrl)} onClick={() => { setManualCountry("US"); setSelectedCountry("US") }}
                   className={cn(
                     "px-3 py-1.5 text-xs font-semibold transition-colors",
                     selectedCountry === "US"
@@ -618,7 +650,7 @@ export function SectionFinderWorkspace({ context = "lawyer" }: SectionFinderWork
                 </button>
                 <button
                   type="button"
-                  onClick={() => setSelectedCountry("GB")}
+                  disabled={Boolean(matterIdFromUrl)} onClick={() => { setManualCountry("GB"); setSelectedCountry("GB") }}
                   className={cn(
                     "px-3 py-1.5 text-xs font-semibold transition-colors",
                     selectedCountry === "GB"
@@ -630,7 +662,7 @@ export function SectionFinderWorkspace({ context = "lawyer" }: SectionFinderWork
                 </button>
                 <button
                   type="button"
-                  onClick={() => setSelectedCountry("KE")}
+                  disabled={Boolean(matterIdFromUrl)} onClick={() => { setManualCountry("KE"); setSelectedCountry("KE") }}
                   className={cn(
                     "px-3 py-1.5 text-xs font-semibold transition-colors",
                     selectedCountry === "KE"

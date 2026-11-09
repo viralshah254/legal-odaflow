@@ -103,7 +103,7 @@ export class SentenceAuditService {
     const ungroundedCount = entries.filter(
       (e) => e.status === 'ungrounded' || e.status === 'contradicted',
     ).length;
-    const coverageRate = substantive.length > 0 ? grounded / substantive.length : 1;
+    const coverageRate = substantive.length > 0 ? Math.min(1, grounded / substantive.length) : 0;
 
     return { coverageRate, entries, ungroundedCount };
   }
@@ -112,7 +112,8 @@ export class SentenceAuditService {
 function splitSentences(text: string): string[] {
   return text
     .replace(/```[\s\S]*?```/g, ' ')
-    .split(/(?<=[.!?])\s+/)
+    .split(/\n+|(?<=[.!?])\s+/)
+    .map((s) => s.replace(/^\s*(?:>\s*|[-*]\s+|\d+[.)]\s+)/, ''))
     .map((s) => s.trim())
     .filter((s) => s.length > 20);
 }
@@ -120,8 +121,6 @@ function splitSentences(text: string): string[] {
 function isBoilerplate(sentence: string): boolean {
   return (
     /^#{1,6}\s/.test(sentence) ||
-    /^>\s/.test(sentence) ||
-    /^[-*]\s/.test(sentence) ||
     /disclaimer|not legal advice|consult a lawyer/i.test(sentence)
   );
 }

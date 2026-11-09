@@ -21,7 +21,9 @@ import '../../../widgets/verification/verification_ui.dart';
 import 'widgets/similar_cases_panel.dart';
 
 class LegalResearchScreen extends ConsumerStatefulWidget {
-  const LegalResearchScreen({super.key});
+  const LegalResearchScreen({super.key, this.matterId});
+
+  final String? matterId;
 
   @override
   ConsumerState<LegalResearchScreen> createState() =>
@@ -40,6 +42,8 @@ class _LegalResearchScreenState extends ConsumerState<LegalResearchScreen> {
   String _aiModelMode = 'PREMIUM';
   String? _premiumModelId = 'gpt-5.6-sol';
   bool _loading = false;
+  bool _matterContextReady = false;
+  String? _matterTitle;
   bool _refiningPrompt = false;
   String? _error;
   ApiErrorKind? _errorKind;
@@ -103,8 +107,35 @@ class _LegalResearchScreenState extends ConsumerState<LegalResearchScreen> {
     super.initState();
     final user = ref.read(authControllerProvider).session?.user;
     _countryCode = user?.countryCode?.toUpperCase() ?? AppConfig.defaultCountry;
-    _applyDetectedLocation();
+    _matterContextReady = widget.matterId == null;
+    if (widget.matterId == null) {
+      _applyDetectedLocation();
+    } else {
+      _loadMatterContext();
+    }
     _queryFocusNode.addListener(_scrollToQuestionWhenFocused);
+  }
+
+  Future<void> _loadMatterContext() async {
+    try {
+      final tenantId = ref.read(authControllerProvider).session?.user.tenantId;
+      if (tenantId == null) throw ApiException('Select the firm that owns this matter.');
+      final matter = await ref.read(mattersApiProvider).getMatterDetail(
+        tenantId: tenantId, matterId: widget.matterId!,
+      );
+      if (matter.countryCode == null || matter.countryCode!.isEmpty) {
+        throw ApiException('Confirm the matter country before research.');
+      }
+      if (!mounted) return;
+      setState(() {
+        _countryCode = matter.countryCode!.toUpperCase();
+        _jurisdiction = matter.jurisdiction;
+        _matterTitle = matter.title;
+        _matterContextReady = true;
+      });
+    } catch (_) {
+      if (mounted) setState(() => _error = 'Matter context is unavailable. Reopen the matter and retry.');
+    }
   }
 
   void _scrollToQuestionWhenFocused() {
@@ -149,7 +180,7 @@ class _LegalResearchScreenState extends ConsumerState<LegalResearchScreen> {
 
   Future<void> _runResearch([String? queryOverride]) async {
     final query = (queryOverride ?? _queryController.text).trim();
-    if (query.length < 10) return;
+    if (query.length < 10 || !_matterContextReady) return;
 
     // Require AI inference consent before sending user data to third-party AI.
     final hasConsent = await requireAiInferenceConsent(context);
@@ -179,7 +210,7 @@ class _LegalResearchScreenState extends ConsumerState<LegalResearchScreen> {
     });
 
     debugPrint(
-      '[Research] Starting: query="$query" country=$_countryCode '
+      '[Research] Starting: country=$_countryCode '
       'mode=$_researchMode tenantId=$tenantId',
     );
 
@@ -190,6 +221,8 @@ class _LegalResearchScreenState extends ConsumerState<LegalResearchScreen> {
               query: query,
               countryCode: _countryCode,
               jurisdiction: _jurisdiction,
+              matterId: widget.matterId,
+              contextScope: widget.matterId == null ? 'SELECTED' : 'MATTER',
               tenantId: tenantId,
               researchMode: _researchMode,
               aiModelMode: _aiModelMode,
@@ -212,6 +245,8 @@ class _LegalResearchScreenState extends ConsumerState<LegalResearchScreen> {
             query: query,
             countryCode: _countryCode,
             jurisdiction: _jurisdiction,
+            matterId: widget.matterId,
+            contextScope: widget.matterId == null ? 'SELECTED' : 'MATTER',
             tenantId: tenantId,
             researchMode: _researchMode,
             aiModelMode: _aiModelMode,
@@ -302,6 +337,14 @@ class _LegalResearchScreenState extends ConsumerState<LegalResearchScreen> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
+                if (widget.matterId != null)
+                  Padding(
+                    padding: const EdgeInsets.only(bottom: 16),
+                    child: Text(_matterContextReady
+                      ? 'Matter: ${_matterTitle ?? widget.matterId} · $_countryCode\nResearch uses authorized matter documents and their source excerpts.'
+                      : 'Loading authorized matter context…',
+                    ),
+                  ),
                 // Header
                 Row(
                   children: [
@@ -375,7 +418,7 @@ class _LegalResearchScreenState extends ConsumerState<LegalResearchScreen> {
                 const SizedBox(height: 6),
                 _ResearchDropdown<String>(
                   value: _countryCode,
-                  items: AppConfig.supportedCountryCodes.map((code) {
+                  items: {...AppConfig.supportedCountryCodes, _countryCode}.map((code) {
                     return DropdownMenuItem(
                       value: code,
                       child: Text(
@@ -383,7 +426,7 @@ class _LegalResearchScreenState extends ConsumerState<LegalResearchScreen> {
                       ),
                     );
                   }).toList(),
-                  onChanged: (v) {
+                  onChanged: widget.matterId != null ? null : (v) {
                     if (v != null) {
                       setState(() {
                         _countryCode = v;
@@ -555,7 +598,7 @@ class _LegalResearchScreenState extends ConsumerState<LegalResearchScreen> {
                 SizedBox(
                   width: double.infinity,
                   child: FilledButton.icon(
-                    onPressed: (!queryReady || _loading || _refiningPrompt) ? null : _handleResearchClick,
+                    onPressed: (!queryReady || _loading || _refiningPrompt || !_matterContextReady) ? null : _handleResearchClick,
                     icon: _loading || _refiningPrompt
                         ? const SizedBox(
                             width: 18,

@@ -31,7 +31,9 @@ describe('KenyaLawJudgmentConnector', () => {
   });
 });
 
-describe('KenyaLawJudgmentConnector search (live)', () => {
+// Explicit online canary: RUN_LIVE_CONNECTOR_TESTS=true npm test -- ke-judgment-ingest
+const describeLive = process.env.RUN_LIVE_CONNECTOR_TESTS === 'true' ? describe : describe.skip;
+describeLive('KenyaLawJudgmentConnector search (live)', () => {
   const connector = new KenyaLawJudgmentConnector();
 
   it('returns employment judgments from the public search API', async () => {

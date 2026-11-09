@@ -12,7 +12,7 @@ describe('DraftJobService result persistence', () => {
     },
   };
   const config = { get: jest.fn().mockReturnValue('redis://localhost:6379') };
-  const service = new DraftJobService(prisma as never, config as never);
+  const service = new DraftJobService(prisma as never, config as never, {} as never);
 
   beforeEach(() => {
     jest.clearAllMocks();

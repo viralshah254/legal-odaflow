@@ -313,7 +313,7 @@ export class DraftVerificationService {
       jurisdiction: input.jurisdiction ?? countryCode,
     });
     if (claimVerification.removedClaims.length > 0 || claimVerification.repairedClaims.length > 0) {
-      draft = this.claimRepair.repairMarkdown(draft, claimVerification.claimAudits);
+      draft = this.claimRepair.repairMarkdown(draft, claimVerification.claimAudits, extractedDraft);
     }
 
     const legalSafetyViolations =

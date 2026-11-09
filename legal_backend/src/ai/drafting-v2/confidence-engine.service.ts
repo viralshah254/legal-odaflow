@@ -155,13 +155,17 @@ export class ConfidenceEngineService {
       score = Math.max(score, 75);
     }
 
+    if (authorities.length === 0) {
+      score = Math.min(score, 34);
+      signals.push('No retrieved authorities — legal propositions remain unverified');
+    }
     score = Math.min(100, Math.max(0, score));
 
     return {
       confidence: {
         score,
         grade: gradeFromScore(score),
-        citationVerified: hasCitations,
+        citationVerified: false, // Pattern detection and lexical overlap do not verify citations.
         groundedSentenceRate: sentenceAuditResult.coverageRate,
         ungroundedCount: sentenceAuditResult.ungroundedCount,
         contradictions,
@@ -182,13 +186,13 @@ export class ConfidenceEngineService {
 
   private perfectConfidence(): ConfidenceScore {
     return {
-      score: 100,
-      grade: 'high',
+      score: 0,
+      grade: 'unverified',
       citationVerified: false,
-      groundedSentenceRate: 1,
+      groundedSentenceRate: 0,
       ungroundedCount: 0,
       contradictions: 0,
-      signals: ['Boilerplate section — confidence auto-assigned'],
+      signals: ['Structural section — substantive accuracy has not been verified'],
     };
   }
 

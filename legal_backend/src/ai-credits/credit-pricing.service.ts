@@ -38,18 +38,16 @@ export class CreditPricingService {
   }
 
   getCreditUsdValue(): number {
-    // DEFAULT_CREDIT_USD_VALUE = $0.01 — 1 credit = $0.01 of provider spend.
+    // One credit represents $0.01 of customer usage charges.
     // Must match credit-pricing.util.ts::DEFAULT_CREDIT_USD_VALUE.
-    return Number(this.configService.get<string>('AI_CREDIT_USD_VALUE', '0.01'));
+    const value = Number(this.configService.get<string>('AI_CREDIT_USD_VALUE', '0.01'));
+    if (!Number.isFinite(value) || value <= 0) throw new Error('Invalid AI_CREDIT_USD_VALUE');
+    return value;
   }
 
-  getNetMarginPercent(billingPlan?: string | null): number {
-    if (billingPlan) {
-      return getPlanNetMarginPercent(billingPlan);
-    }
-    return Number(
-      this.configService.get<string>('AI_PLATFORM_NET_MARGIN_PERCENT', '20'),
-    );
+  getNetMarginPercent(_billingPlan?: string | null): number {
+    // Twice provider cost is a 100% markup / 50% gross margin.
+    return 50;
   }
 
   computeAiBudgetUsd(paymentUsd: number, billingPlan?: string | null): number {

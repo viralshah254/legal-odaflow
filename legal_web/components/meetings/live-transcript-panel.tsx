@@ -90,7 +90,7 @@ export function LiveTranscriptPanel({
           <p className="text-[11px] text-muted-foreground hidden sm:block">
             {transcriptionSource === "deepgram"
               ? "Deepgram cloud STT — final transcript on save."
-              : "Draft captions — OpenAI polishes after save."}
+              : "Draft captions — the transcript is refined after saving."}
           </p>
           <Button
             variant="ghost"

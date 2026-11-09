@@ -50,7 +50,7 @@ export class NotificationsService {
         isRead: isRead === undefined ? undefined : isRead === 'true',
       },
       orderBy: { createdAt: 'desc' },
-      take: Math.min(Math.max(limit, 1), 100),
+      take: Number.isSafeInteger(limit) && limit > 0 ? Math.min(limit, 100) : 50,
     });
   }
 
@@ -69,9 +69,9 @@ export class NotificationsService {
     );
   }
 
-  async findOne(tenantId: string, notificationId: string) {
+  async findOne(tenantId: string, notificationId: string, userId?: string) {
     const notification = await this.prisma.notification.findFirst({
-      where: { id: notificationId, tenantId },
+      where: { id: notificationId, tenantId, ...(userId ? { userId } : {}) },
     });
 
     if (!notification) {
@@ -85,8 +85,9 @@ export class NotificationsService {
     tenantId: string,
     notificationId: string,
     dto: UpdateNotificationDto,
+    userId?: string,
   ) {
-    await this.findOne(tenantId, notificationId);
+    await this.findOne(tenantId, notificationId, userId);
 
     return this.prisma.notification.update({
       where: { id: notificationId },

@@ -35,20 +35,7 @@ export function sanitizeResearchAnswer(markdown: string): string {
     }
   }
 
-  // Verification tab owns triple-check dumps — strip if they leaked into Answer markdown.
-  text = text
-    .replace(/^## Triple-check verification[\s\S]*?(?=\n## |\n# |$)/gm, "")
-    .replace(/^## Verification appendix[\s\S]*?(?=\n## |\n# |$)/gm, "")
-    .trim()
-
-  // Strip inline claim-repair prefixes that belong in findings, not the executive answer.
-  text = text
-    .replace(
-      /^Unsupported by retrieved passages unless counsel verifies independently:\s*/gm,
-      "",
-    )
-    .replace(/^> \*\*Proposition withheld[\s\S]*?(?=\n\n|$)/gm, "")
-    .trim()
+  // Preserve verification findings and inline caveats in every answer surface.
 
   return text.replace(/\n{3,}/g, "\n\n").trim()
 }

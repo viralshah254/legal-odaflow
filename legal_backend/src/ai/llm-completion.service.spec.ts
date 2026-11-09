@@ -87,7 +87,7 @@ describe('LlmCompletionService model floor', () => {
         messages: [{ role: 'user', content: 'verified research' }],
         minTier: 'mid',
       }),
-    ).rejects.toThrow(/at or above the "mid" tier/);
+    ).rejects.toThrow(/required analysis capability is temporarily unavailable/);
 
     expect(modelsTried).not.toContain('deepseek-chat');
     expect(modelsTried).not.toContain('gpt-4o-mini');

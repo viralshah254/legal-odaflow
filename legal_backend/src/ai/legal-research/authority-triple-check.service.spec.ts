@@ -69,3 +69,44 @@ describe('AuthorityTripleCheckService', () => {
     expect(result.repairedMarkdown).not.toMatch(/schedule-VI/i);
   });
 });
+
+describe('Authority checking concurrency', () => {
+  afterEach(() => jest.useRealTimers());
+
+  it('overlaps independent connector calls with a maximum of four and preserves reference order', async () => {
+    jest.useFakeTimers();
+    const checker = new AuthorityTripleCheckService();
+    const refs = Array.from({ length: 10 }, (_, i) => ({ raw: `BNSS section ${i + 1}`, kind: 'statute_section' as const }));
+    jest.spyOn(checker, 'extract').mockReturnValue(refs);
+    jest.spyOn(checker as any, 'matchCorpus').mockReturnValue({ pass: 'corpus', hit: true });
+    let active = 0;
+    let peak = 0;
+    jest.spyOn(checker as any, 'matchConnector').mockImplementation(async () => {
+      peak = Math.max(peak, ++active);
+      await new Promise((resolve) => setTimeout(resolve, 10));
+      active--;
+      return { pass: 'connector', hit: true };
+    });
+    const web = jest.spyOn(checker as any, 'matchWeb');
+    const pending = checker.check({ markdown: '', countryCode: 'IN', corpusAuthorities: [] });
+    await jest.advanceTimersByTimeAsync(30);
+    const result = await pending;
+    expect(peak).toBe(4);
+    expect(result.authorities.map((a) => a.raw)).toEqual(refs.map((r) => r.raw));
+    expect(result.verifiedCount).toBe(10);
+    expect(web).not.toHaveBeenCalled();
+  });
+
+  it('allocates at most six web searches in extraction order despite concurrent connector completion', async () => {
+    const checker = new AuthorityTripleCheckService();
+    const refs = Array.from({ length: 10 }, (_, i) => ({ raw: `BNSS section ${i + 1}`, kind: 'statute_section' as const }));
+    jest.spyOn(checker, 'extract').mockReturnValue(refs);
+    jest.spyOn(checker as any, 'matchCorpus').mockReturnValue({ pass: 'corpus', hit: false });
+    jest.spyOn(checker as any, 'matchConnector').mockResolvedValue({ pass: 'connector', hit: false });
+    const web = jest.spyOn(checker as any, 'matchWeb').mockResolvedValue({ pass: 'web', hit: false });
+    const result = await checker.check({ markdown: '', countryCode: 'IN', corpusAuthorities: [] });
+    expect(web.mock.calls.map((args) => (args[0] as { raw: string }).raw)).toEqual(refs.slice(0, 6).map((r) => r.raw));
+    expect(result.unverifiedCount).toBe(10);
+    expect(result.verifiedCount).toBe(0);
+  });
+});

@@ -17,6 +17,9 @@ class SimilarCase {
     this.summary,
     this.relevance,
     this.bindingWeight,
+    this.keyHolding,
+    this.outcome,
+    this.proceduralStage,
   });
 
   final String authorityId;
@@ -30,6 +33,9 @@ class SimilarCase {
   final List<String> relevantSections;
   final String? relevance;
   final String? bindingWeight;
+  final String? keyHolding;
+  final String? outcome;
+  final String? proceduralStage;
   final double confidence;
   final String verificationStatus;
 
@@ -49,6 +55,9 @@ class SimilarCase {
           const [],
       relevance: json['relevance'] as String?,
       bindingWeight: json['bindingWeight'] as String?,
+      keyHolding: json['keyHolding'] as String?,
+      outcome: json['outcome'] as String?,
+      proceduralStage: json['proceduralStage'] as String?,
       confidence: (json['confidence'] as num?)?.toDouble() ?? 0,
       verificationStatus: json['verificationStatus'] as String? ?? 'unknown',
     );

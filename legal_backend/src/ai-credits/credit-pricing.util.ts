@@ -46,8 +46,8 @@ export function computePlanCreditsFromPrice(
  *    e.g. $50 plan: $25 AI budget → $25 / $0.01 = 2500 credits
  *
  * With AI_CREDIT_USD_VALUE=0.01 and AI_PLATFORM_NET_MARGIN_PERCENT=0,
- * credits deplete 1-for-1 with actual provider cost (1 credit = $0.01).
- * Credits run out exactly when provider spend = tierBudgetPercent% of plan price.
+ * usage charges are calculated separately at twice provider cost.
+ * Grant allocation does not change the usage markup.
  */
 export function computePlanCreditsForTier(
   planAmountUsd: number,
@@ -74,18 +74,10 @@ export function estimateTokenCostUsd(
   );
 }
 
-/**
- * Convert provider cost → credits charged to the user.
- * With AI_CREDIT_USD_VALUE=0.01 and margin=0:
- *   credits = ceil(providerCost / 0.01) = providerCost × 100
- * 1 credit = $0.01 of actual provider spend, so credits deplete at the same
- * rate as real AI cost. The platform's profit is the gap between subscription
- * revenue and the AI budget allocated (tierBudgetPercent% of plan price).
- */
 /** Default gross margin floor for subscription and top-up pricing. */
 export const DEFAULT_SUBSCRIPTION_MARGIN_PERCENT = 40;
 
-/** 1 credit = this many USD of provider API spend at charge time. */
+/** 1 credit = this many USD of customer usage charges. */
 export const DEFAULT_CREDIT_USD_VALUE = 0.01;
 
 /** Offline INR→USD rate used when FX service is unavailable. */
@@ -118,19 +110,26 @@ export function computeCreditsFromLocalPrice(
   return computePlanCreditsFromPrice(paymentUsd, marginPercent, creditUsdValue);
 }
 
+/** Final usage pricing: 100% markup, rounded up once to whole credits.
+ * Legacy margin/floor arguments are retained for call-site compatibility only.
+ * Aggregate provider costs before calling this function for multi-call tasks.
+ */
+export const AI_USAGE_COST_MULTIPLIER = 2;
+
 export function computeCreditsFromProviderCost(
   providerCostUsd: number,
-  creditUsdValue = 0.01,
-  netMarginPercent = 0,
-  minCredits = 1,
+  creditUsdValue = DEFAULT_CREDIT_USD_VALUE,
+  _netMarginPercent = 50,
+  _minCredits = 0,
 ): number {
-  if (providerCostUsd <= 0) {
-    return minCredits;
+  if (!Number.isFinite(providerCostUsd) || providerCostUsd < 0) {
+    throw new Error('Provider cost must be a finite non-negative number');
   }
-  const margin = Math.min(0.95, Math.max(0, netMarginPercent / 100));
-  const budgetPerCredit = Number((creditUsdValue * (1 - margin)).toFixed(6));
-  if (budgetPerCredit <= 0) {
-    return minCredits;
+  if (!Number.isFinite(creditUsdValue) || creditUsdValue <= 0) {
+    throw new Error('Credit USD value must be a finite positive number');
   }
-  return Math.max(minCredits, Math.ceil(providerCostUsd / budgetPerCredit));
+  if (providerCostUsd === 0) return 0;
+  const credits = providerCostUsd * AI_USAGE_COST_MULTIPLIER / creditUsdValue;
+  // Avoid an extra credit caused solely by floating-point representation.
+  return Math.ceil(credits - Number.EPSILON * Math.max(1, credits));
 }

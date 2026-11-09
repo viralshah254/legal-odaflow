@@ -13,6 +13,7 @@ interface ResearchContextBarProps {
   outputLanguage: string
   onOutputLanguageChange: (lang: string) => void
   className?: string
+  matterScope?: boolean
 }
 
 export function ResearchContextBar({
@@ -23,6 +24,7 @@ export function ResearchContextBar({
   outputLanguage,
   onOutputLanguageChange,
   className,
+  matterScope = false,
 }: ResearchContextBarProps) {
   return (
     <div
@@ -32,14 +34,19 @@ export function ResearchContextBar({
       )}
     >
       <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:gap-6">
-        <JurisdictionSelect
+        {matterScope ? (
+          <div className="min-w-0 flex-1 text-xs">
+            <p className="font-semibold">Matter law: {countryCode}</p>
+            <p className="mt-1 text-muted-foreground">Jurisdiction follows this matter. Change it in matter settings.</p>
+          </div>
+        ) : <JurisdictionSelect
           countryCode={countryCode}
           jurisdiction={jurisdiction}
           onChange={onJurisdictionChange}
           isDetecting={countryLoading}
           showProfileHint
           className="flex-1 min-w-0"
-        />
+        />}
         <OutputLanguageSelect
           value={outputLanguage}
           onChange={onOutputLanguageChange}

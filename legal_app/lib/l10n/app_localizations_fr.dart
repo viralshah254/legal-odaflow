@@ -555,32 +555,32 @@ class AppLocalizationsFr extends AppLocalizations {
   String get adminWithPhone => 'Avec téléphone';
 
   @override
-  String get aiConsentDialogAgree => 'J\'accepte';
+  String get aiConsentDialogAgree => 'Je suis d\'accord';
 
   @override
   String get aiConsentDialogBody =>
-      'Umbrella envoie votre requête et le contexte du dossier à des fournisseurs d\'IA tiers pour l\'analyse juridique, la rédaction et la recherche. Vos données ne sont pas utilisées pour entraîner des modèles d\'IA.';
+      'Umbrella envoie votre requête et le contexte de votre affaire à des fournisseurs d\'IA tiers pour alimenter l\'analyse, la rédaction et la recherche juridiques. Vos données ne sont pas utilisées pour entraîner des modèles d\'IA.';
 
   @override
   String get aiConsentDialogDecline => 'Pas maintenant';
 
   @override
-  String get aiConsentDialogLearnMore => 'En savoir plus dans notre';
+  String get aiConsentDialogLearnMore => 'Apprenez-en davantage dans notre';
 
   @override
   String get aiConsentDialogProviders =>
-      'Fournisseurs : OpenAI, Anthropic, DeepSeek et Deepgram (transcription).';
+      'Fournisseurs : OpenAI, DeepSeek et Deepgram (transcription).';
 
   @override
   String get aiConsentDialogPurpose =>
-      'Vous pouvez retirer votre consentement à tout moment dans Confidentialité et sécurité. Sans consentement, les fonctionnalités IA seront indisponibles.';
+      'Vous pouvez retirer votre consentement à tout moment dans les paramètres de confidentialité et de sécurité. Sans consentement, les fonctionnalités d’IA ne seront pas disponibles.';
 
   @override
-  String get aiConsentDialogTitle => 'Consentement au traitement par IA';
+  String get aiConsentDialogTitle => 'Consentement au traitement de l\'IA';
 
   @override
   String get aiConsentSettingsDescription =>
-      'Consentement réinitialisé. Vous serez invité à nouveau avant la prochaine fonctionnalité IA.';
+      'Consentement réinitialisé. Il vous sera demandé à nouveau avant la prochaine fonctionnalité IA.';
 
   @override
   String get aiConsentSettingsTitle => 'Consentement à l\'inférence IA';
@@ -590,10 +590,10 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get auth50OffYourFirstMonth =>
-      '50 % de réduction sur votre premier mois';
+      '40 % de réduction sur votre premier mois';
 
   @override
-  String get authAccountDisabled => 'This account has been disabled.';
+  String get authAccountDisabled => 'Ce compte a été désactivé.';
 
   @override
   String get authAccountIndividual => 'Individuel';
@@ -614,7 +614,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get authAccountUsesSocial =>
-      'This email uses Google or Apple sign-in. Continue with the buttons above.';
+      'Cet e-mail utilise la connexion Google ou Apple. Continuez avec les boutons ci-dessus.';
 
   @override
   String get authAdminFullName => 'Nom complet de l\'administrateur';
@@ -644,17 +644,17 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get authChangePasswordDescription =>
-      'Your account requires a new password before you can continue.';
+      'Votre compte nécessite un nouveau mot de passe avant de pouvoir continuer.';
 
   @override
   String get authChangePasswordFailed =>
-      'Unable to change password. Please try again.';
+      'Impossible de changer le mot de passe. Veuillez réessayer.';
 
   @override
-  String get authChangePasswordTitle => 'Change your password';
+  String get authChangePasswordTitle => 'Changez votre mot de passe';
 
   @override
-  String get authChangePhoneNumber => 'Use a different number';
+  String get authChangePhoneNumber => 'Utiliser un autre numéro';
 
   @override
   String get authCheckDeviceLocation =>
@@ -669,13 +669,13 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get authCompleteProfileDescription =>
-      'A few details to set up your legal workspace. Your email is already verified.';
+      'Quelques détails pour aménager votre espace de travail juridique. Votre email est déjà vérifié.';
 
   @override
-  String get authCompleteSignUp => 'Complete sign up';
+  String get authCompleteSignUp => 'Inscription complète';
 
   @override
-  String get authCompletingSignIn => 'Completing sign-in…';
+  String get authCompletingSignIn => 'Finalisation de la connexion…';
 
   @override
   String get authConfirmCountryBeforeAccount =>
@@ -689,7 +689,7 @@ class AppLocalizationsFr extends AppLocalizations {
   String get authConfirmLegalRegion => 'Confirmez votre région légale';
 
   @override
-  String get authConfirmNewPassword => 'Confirm new password';
+  String get authConfirmNewPassword => 'Confirmer le nouveau mot de passe';
 
   @override
   String get authConfirmPassword => 'Confirmez le mot de passe';
@@ -711,24 +711,24 @@ class AppLocalizationsFr extends AppLocalizations {
       'Consommateur — J\'ai besoin d\'une aide juridique';
 
   @override
-  String get authContinueToUmbrella => 'Continue to Umbrella';
+  String get authContinueToUmbrella => 'Continuer vers Parapluie';
 
   @override
-  String get authContinueWithApple => 'Continue with Apple';
+  String get authContinueWithApple => 'Continuer avec Apple';
 
   @override
-  String get authContinueWithGoogle => 'Continue with Google';
+  String get authContinueWithGoogle => 'Continuer avec Google';
 
   @override
   String get authCouldNotSendOtp =>
-      'Could not send OTP. Check the phone number and try again.';
+      'Impossible d\'envoyer OTP. Vérifiez le numéro de téléphone et réessayez.';
 
   @override
   String get authCountryJurisdiction => 'Pays et juridiction';
 
   @override
   String get authCountrySyncedFromPhone =>
-      'Country updated to match your phone number.';
+      'Pays mis à jour pour correspondre à votre numéro de téléphone.';
 
   @override
   String get authCreateAccount => 'Créer un compte';
@@ -740,7 +740,7 @@ class AppLocalizationsFr extends AppLocalizations {
   String get authCreateYourAccount => 'Créez votre compte';
 
   @override
-  String get authCreateYourProfile => 'Create your profile';
+  String get authCreateYourProfile => 'Créez votre profil';
 
   @override
   String get authCreatingAccount => 'Création d\'un compte...';
@@ -749,7 +749,7 @@ class AppLocalizationsFr extends AppLocalizations {
   String get authCreatingAccountProgress => 'Création d\'un compte...';
 
   @override
-  String get authCurrentPassword => 'Current password';
+  String get authCurrentPassword => 'Mot de passe actuel';
 
   @override
   String get authDefaultsToYourName => 'Par défaut, votre nom';
@@ -776,11 +776,11 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get authEmailAlreadyInUse =>
-      'An account with this email already exists.';
+      'Un compte avec cette adresse email existe déjà.';
 
   @override
   String get authEmailLookupUnavailable =>
-      'We couldn\'t verify this email right now. You can still create an account.';
+      'Nous n\'avons pas pu vérifier cet e-mail pour le moment. Vous pouvez toujours créer un compte.';
 
   @override
   String get authEmailPlaceholder => 'vous@exemple.com';
@@ -798,10 +798,10 @@ class AppLocalizationsFr extends AppLocalizations {
   String get authEnterEmailAddress => 'Entrez votre adresse e-mail';
 
   @override
-  String get authEnterEmailToContinue => 'Enter your email to continue';
+  String get authEnterEmailToContinue => 'Entrez votre email pour continuer';
 
   @override
-  String get authEnterOtpCode => 'Enter the 6-digit code';
+  String get authEnterOtpCode => 'Entrez le code à 6 chiffres';
 
   @override
   String get authEnterValidEmail => 'Entrez un email valide';
@@ -815,11 +815,11 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get authFinishProfileDescription =>
-      'We imported your name and email from your sign-in provider. Choose your account type and country to finish creating your account.';
+      'Nous avons importé votre nom et votre adresse e-mail depuis votre fournisseur de connexion. Choisissez votre type de compte et votre pays pour terminer la création de votre compte.';
 
   @override
   String get authFirebaseNotConfigured =>
-      'Social sign-in is not available in this build.';
+      'La connexion sociale n\'est pas disponible dans cette version.';
 
   @override
   String get authFirebaseResetRequired =>
@@ -856,7 +856,7 @@ class AppLocalizationsFr extends AppLocalizations {
   String get authFullNamePlaceholder => 'Jane Doe';
 
   @override
-  String get authHidePassword => 'Hide password';
+  String get authHidePassword => 'Masquer le mot de passe';
 
   @override
   String get authHowDoYouPractice => 'Comment pratiquez-vous ?';
@@ -875,7 +875,7 @@ class AppLocalizationsFr extends AppLocalizations {
   String get authInstantAnswers => 'Réponses instantanées';
 
   @override
-  String get authInvalidCredentials => 'Invalid email or password.';
+  String get authInvalidCredentials => 'Email ou mot de passe invalide.';
 
   @override
   String get authInvalidEmail => 'Adresse e-mail invalide';
@@ -912,7 +912,7 @@ class AppLocalizationsFr extends AppLocalizations {
       'Umbrella vérifie l\'emplacement de votre appareil avant de vous inscrire afin que les conseils juridiques commencent dans la bonne juridiction.';
 
   @override
-  String get authMostCommon => 'Most common';
+  String get authMostCommon => 'Le plus courant';
 
   @override
   String get authMyPractice => 'Ma pratique';
@@ -929,10 +929,10 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get authNetworkError =>
-      'Network error. Check your connection and try again.';
+      'Erreur réseau. Vérifiez votre connexion et réessayez.';
 
   @override
-  String get authNewPassword => 'New password';
+  String get authNewPassword => 'Nouveau mot de passe';
 
   @override
   String get authNoCountryConfirmed => 'Aucun pays confirmé';
@@ -944,41 +944,42 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get authOauthCompletingTooLong =>
-      'Sign-in is taking longer than expected. You can try again.';
+      'La connexion prend plus de temps que prévu. Vous pouvez réessayer.';
 
   @override
   String get authOauthRedirectFailed =>
-      'We couldn\'t finish Apple/Google sign-in. Please try again.';
+      'Nous n\'avons pas pu terminer la connexion Apple/Google. Veuillez réessayer.';
 
   @override
   String get authOrChooseManually => 'Ou choisissez manuellement';
 
   @override
-  String get authOrContinueWithEmail => 'Or continue with email';
+  String get authOrContinueWithEmail => 'Ou continuez par e-mail';
 
   @override
   String get authOrContinueWithEmailSignUp =>
-      'Or create an account with email below';
+      'Ou créez un compte avec l\'email ci-dessous';
 
   @override
-  String get authOrSelectWorkspaceType => 'Or select a workspace type';
+  String get authOrSelectWorkspaceType =>
+      'Ou sélectionnez un type d\'espace de travail';
 
   @override
   String get authOtp => 'Le code de vérification';
 
   @override
-  String get authOtpSent => 'Code sent. Check your messages.';
+  String get authOtpSent => 'Code envoyé. Vérifiez vos messages.';
 
   @override
   String get authPassword => 'Mot de passe';
 
   @override
   String get authPasswordBreached =>
-      'This password has appeared in a data breach. Choose a different one.';
+      'Ce mot de passe est apparu lors d\'une violation de données. Choisissez-en un autre.';
 
   @override
   String get authPasswordGuidance =>
-      'Your password must meet both requirements:';
+      'Votre mot de passe doit répondre aux deux exigences :';
 
   @override
   String get authPasswordMinLength =>
@@ -986,69 +987,71 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get authPasswordMinLength12 =>
-      'Password must be at least 8 characters';
+      'Le mot de passe doit contenir au moins 8 caractères';
 
   @override
   String get authPasswordMissingNumber =>
-      'Password must include at least one number.';
+      'Le mot de passe doit inclure au moins un chiffre.';
 
   @override
   String get authPasswordPersonalInfo =>
-      'Do not use your name, email, or company name in your password.';
+      'N\'utilisez pas votre nom, votre adresse e-mail ou le nom de votre entreprise dans votre mot de passe.';
 
   @override
   String get authPasswordPlaceholder => '••••••••';
 
   @override
   String get authPasswordRepeated =>
-      'Avoid repeating the same character four or more times.';
+      'Évitez de répéter le même caractère quatre fois ou plus.';
 
   @override
   String get authPasswordRequired => 'Le mot de passe est requis';
 
   @override
   String authPasswordRequirementMinLength(String min) {
-    return 'At least $min characters';
+    return 'Au moins $min caractères';
   }
 
   @override
-  String get authPasswordRequirementNumber => 'Includes one number';
+  String get authPasswordRequirementNumber => 'Comprend un numéro';
 
   @override
   String get authPasswordSequential =>
-      'Avoid sequential numbers or keyboard patterns.';
+      'Évitez les chiffres séquentiels ou les modèles de clavier.';
 
   @override
-  String get authPasswordStrength => 'Password strength';
+  String get authPasswordStrength => 'Force du mot de passe';
 
   @override
-  String get authPasswordStrengthFair => 'Fair';
+  String get authPasswordStrengthFair => 'Équitable';
 
   @override
-  String get authPasswordStrengthStrong => 'Strong';
+  String get authPasswordStrengthStrong => 'Fort';
 
   @override
-  String get authPasswordStrengthVeryStrong => 'Very Strong';
+  String get authPasswordStrengthVeryStrong => 'Très fort';
 
   @override
-  String get authPasswordStrengthVeryWeak => 'Very Weak';
+  String get authPasswordStrengthVeryWeak => 'Très faible';
 
   @override
-  String get authPasswordStrengthWeak => 'Weak';
+  String get authPasswordStrengthWeak => 'Faible';
 
   @override
   String get authPasswordTooCommon =>
-      'This password is too common. Choose a unique passphrase.';
+      'Ce mot de passe est trop courant. Choisissez une phrase secrète unique.';
 
   @override
-  String get authPasswordTooLong => 'Password must be at most 128 characters.';
+  String get authPasswordTooLong =>
+      'Le mot de passe doit comporter au maximum 128 caractères.';
 
   @override
-  String get authPasswordTooShort => 'Password must be at least 8 characters.';
+  String get authPasswordTooShort =>
+      'Le mot de passe doit comporter au moins 8 caractères.';
 
   @override
   String get authPasswordTooWeak =>
-      'Password is too weak. Use a longer, less predictable passphrase.';
+      'Le mot de passe est trop faible. Utilisez une phrase secrète plus longue et moins prévisible.';
 
   @override
   String get authPasswordsDoNotMatch =>
@@ -1065,7 +1068,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get authPhoneHint =>
-      'Include your mobile number — used for account recovery and lawyer matching.';
+      'Incluez votre numéro de téléphone mobile – utilisé pour la récupération de compte et la mise en correspondance d’avocats.';
 
   @override
   String get authPhoneRequired => 'Le numéro de téléphone est requis';
@@ -1081,12 +1084,12 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String authRefInviteBanner(String name) {
-    return 'You were invited by <strong>$name</strong>. Get 40% off your first month when you subscribe.';
+    return 'Vous avez été invité par <strong>$name</strong>. Obtenez 40 % de réduction sur votre premier mois en vous abonnant.';
   }
 
   @override
   String get authRefInviteBannerGeneric =>
-      'You were invited to Umbrella. Get 40% off your first month when you subscribe.';
+      'Vous avez été invité à Umbrella. Obtenez 40 % de réduction sur votre premier mois en vous abonnant.';
 
   @override
   String get authResetPassword => 'Réinitialiser le mot de passe';
@@ -1106,7 +1109,7 @@ class AppLocalizationsFr extends AppLocalizations {
   String get authResetPasswordTitle => 'Réinitialisez votre mot de passe';
 
   @override
-  String get authSelectAccountTypeLabel => 'Account type';
+  String get authSelectAccountTypeLabel => 'Type de compte';
 
   @override
   String get authSendOtp => 'Envoyer le code';
@@ -1118,7 +1121,7 @@ class AppLocalizationsFr extends AppLocalizations {
   String get authSending => 'Envoi...';
 
   @override
-  String get authShowPassword => 'Show password';
+  String get authShowPassword => 'Afficher le mot de passe';
 
   @override
   String get authSignIn => 'Se connecter';
@@ -1131,14 +1134,14 @@ class AppLocalizationsFr extends AppLocalizations {
       'Accédez à votre espace de travail juridique';
 
   @override
-  String get authSignInInstead => 'Sign in instead';
+  String get authSignInInstead => 'Connectez-vous plutôt';
 
   @override
   String get authSignInSecurityNote =>
-      'Encrypted credentials · SOC 2-aligned infrastructure';
+      'Identifiants cryptés · Infrastructure alignée sur SOC 2';
 
   @override
-  String get authSignInTermsPrefix => 'By signing in, you agree to our ';
+  String get authSignInTermsPrefix => 'En vous connectant, vous acceptez notre';
 
   @override
   String get authSignInTitle => 'Connectez-vous à Umbrella';
@@ -1156,36 +1159,35 @@ class AppLocalizationsFr extends AppLocalizations {
   String get authSignUpDescription => 'Commencez avec Umbrella';
 
   @override
-  String get authSignUpTermsPrefix =>
-      'By creating an account, you agree to our ';
+  String get authSignUpTermsPrefix => 'En créant un compte, vous acceptez nos';
 
   @override
   String get authSignUpTitle => 'Créez votre compte';
 
   @override
-  String get authSigningInWithApple => 'Signing in with Apple...';
+  String get authSigningInWithApple => 'Connexion avec Apple...';
 
   @override
-  String get authSigningInWithGoogle => 'Signing in with Google...';
+  String get authSigningInWithGoogle => 'Connexion avec Google...';
 
   @override
   String get authSocialSessionExpired =>
-      'Your sign-in session expired. Please try again.';
+      'Votre session de connexion a expiré. Veuillez réessayer.';
 
   @override
-  String get authSocialSignInCancelled => 'Sign-in was cancelled.';
+  String get authSocialSignInCancelled => 'La connexion a été annulée.';
 
   @override
   String get authSocialSignInFailed =>
-      'Social sign-in failed. Please try again.';
+      'La connexion sociale a échoué. Veuillez réessayer.';
 
   @override
   String get authSocialSignInHint =>
-      'Sign in with Google or Apple, or use your email below.';
+      'Connectez-vous avec Google ou Apple, ou utilisez votre adresse e-mail ci-dessous.';
 
   @override
   String get authSocialSignUpHint =>
-      'Google or Apple sign-in skips the email steps. We\'ll ask you to complete your profile after.';
+      'La connexion à Google ou Apple ignore les étapes de courrier électronique. Nous vous demanderons ensuite de compléter votre profil.';
 
   @override
   String get authSoloIndependent => 'Solo / indépendant';
@@ -1211,10 +1213,10 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get authTooManyAttempts =>
-      'Too many attempts. Please wait and try again.';
+      'Trop de tentatives. Veuillez patienter et réessayer.';
 
   @override
-  String get authTryAgain => 'Try again';
+  String get authTryAgain => 'Essayer à nouveau';
 
   @override
   String get authTryDemo => 'Essayez la démo';
@@ -1235,17 +1237,18 @@ class AppLocalizationsFr extends AppLocalizations {
       'Impossible de créer un compte. Veuillez réessayer.';
 
   @override
-  String get authUnableToSignIn => 'Unable to sign in. Please try again.';
+  String get authUnableToSignIn =>
+      'Impossible de se connecter. Veuillez réessayer.';
 
   @override
   String get authUnifiedAuthDescription =>
-      'Sign in or create an account — we\'ll take you to the right place.';
+      'Connectez-vous ou créez un compte – nous vous dirigerons au bon endroit.';
 
   @override
-  String get authUpdatePassword => 'Update password';
+  String get authUpdatePassword => 'Mettre à jour le mot de passe';
 
   @override
-  String get authUseDifferentEmail => 'Use a different email';
+  String get authUseDifferentEmail => 'Utiliser une autre adresse e-mail';
 
   @override
   String get authVerifyOtp => 'Vérifier et se connecter';
@@ -1258,7 +1261,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get authWhichProfileSubtitle =>
-      'Tell us whether you\'re seeking legal help or practicing law.';
+      'Dites-nous si vous recherchez une aide juridique ou si vous exercez le droit.';
 
   @override
   String get authYouexamplecom => 'vous@exemple.com';
@@ -2028,7 +2031,25 @@ class AppLocalizationsFr extends AppLocalizations {
   String get clientsActiveMatters => 'Affaires actives';
 
   @override
+  String get clientsActivityDocumentAdded => 'Document ajouté';
+
+  @override
+  String get clientsActivityKycDocumentReceived => 'Document KYC reçu';
+
+  @override
+  String get clientsActivityMatterUpdated => 'Sujet mis à jour';
+
+  @override
+  String get clientsActivityMeetingRecorded => 'Réunion enregistrée';
+
+  @override
+  String get clientsActivityProfileUpdated => 'Profil client mis à jour';
+
+  @override
   String get clientsAddClient => 'Ajouter un client';
+
+  @override
+  String get clientsAddContactPerson => 'Add contact person';
 
   @override
   String get clientsAddFirstClient => 'Ajoutez votre premier client';
@@ -2044,10 +2065,26 @@ class AppLocalizationsFr extends AppLocalizations {
   String get clientsAddNewClient2 => 'Ajouter un nouveau client';
 
   @override
+  String get clientsAddPerson => 'Ajouter une personne';
+
+  @override
   String get clientsAddress => 'Adresse';
 
   @override
+  String get clientsAddressPlaceholder => 'Entrez l\'adresse du client';
+
+  @override
+  String get clientsAllDocumentTypes => 'Tous types de documents';
+
+  @override
+  String get clientsArchiveDocumentDescription =>
+      'Ce document sera archivé et supprimé du dossier client.';
+
+  @override
   String get clientsAskCopilot => 'Demandez au copilote';
+
+  @override
+  String get clientsAuthorizedContact => 'Contact autorisé';
 
   @override
   String get clientsBasicClientDetails => 'Détails de base du client';
@@ -2086,7 +2123,35 @@ class AppLocalizationsFr extends AppLocalizations {
   String get clientsClientDetails2 => 'Détails du client';
 
   @override
+  String get clientsClientDocuments => 'Documents clients';
+
+  @override
+  String get clientsClientDocumentsDescription =>
+      'Fichiers stockés pour ce client, y compris les documents liés aux dossiers.';
+
+  @override
   String get clientsClientInformation => 'Informations client';
+
+  @override
+  String get clientsClientLevelFile => 'Fichier au niveau du client';
+
+  @override
+  String clientsClientLevelFiles(num count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '# client-level files',
+      one: '# client-level file',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get clientsClientLevelFilesDescription =>
+      'Documents associés directement à ce client.';
+
+  @override
+  String get clientsClientLevelRequest => 'Demande au niveau du client';
 
   @override
   String get clientsClientName => 'Nom du client';
@@ -2126,6 +2191,11 @@ class AppLocalizationsFr extends AppLocalizations {
   String get clientsCompanyName => 'Nom de l\'entreprise';
 
   @override
+  String clientsCompleteProfileFields(String fields) {
+    return 'Complétez le profil client en ajoutant : $fields.';
+  }
+
+  @override
   String get clientsConflictCheckRequired =>
       'Exécutez une vérification des conflits et résolvez tous les indicateurs avant de créer le client.';
 
@@ -2133,7 +2203,34 @@ class AppLocalizationsFr extends AppLocalizations {
   String get clientsContactInformation => 'Coordonnées';
 
   @override
+  String get clientsContactNamePlaceholder => 'Contact name';
+
+  @override
+  String clientsContactNumber(String number) {
+    return 'Contacter $number';
+  }
+
+  @override
+  String get clientsContactPeople => 'Contacter des personnes';
+
+  @override
+  String get clientsContactPeopleDescription =>
+      'Directeurs, dirigeants et contacts autorisés pour ce client.';
+
+  @override
+  String clientsContactPersonNumber(String number) {
+    return 'Contact person $number';
+  }
+
+  @override
+  String get clientsContactRolePlaceholder => 'Role or title';
+
+  @override
   String get clientsContacts => 'Contacts';
+
+  @override
+  String get clientsCopyInviteFailed =>
+      'Impossible de copier l\'invitation au portail.';
 
   @override
   String get clientsCouldNotLoadClients => 'Impossible de charger les clients.';
@@ -2145,10 +2242,16 @@ class AppLocalizationsFr extends AppLocalizations {
   String get clientsCountryCode => 'Code du pays';
 
   @override
+  String get clientsCountryCodePlaceholder => 'Par exemple, KE';
+
+  @override
   String get clientsCreateClient => 'Créer un client';
 
   @override
   String get clientsCreateClientProfile => 'Créer un nouveau profil client';
+
+  @override
+  String get clientsCreateMatter => 'Create matter';
 
   @override
   String get clientsCreating => 'Création…';
@@ -2157,8 +2260,50 @@ class AppLocalizationsFr extends AppLocalizations {
   String get clientsCreatingClient => 'Création...';
 
   @override
+  String get clientsDeadlineAndRisk => 'Délai et risque';
+
+  @override
+  String get clientsDocumentAssociation => 'Association de documents';
+
+  @override
+  String get clientsDocumentOpenFailed => 'Impossible d\'ouvrir le document.';
+
+  @override
+  String get clientsDocumentRemoveFailed =>
+      'Impossible de supprimer le document.';
+
+  @override
+  String get clientsDocumentRemoved => 'Document supprimé';
+
+  @override
+  String get clientsDocumentRequestFailed =>
+      'Impossible d\'envoyer la demande de document.';
+
+  @override
+  String get clientsDocumentRequestSent => 'Demande de document envoyée';
+
+  @override
+  String get clientsDocumentTypeOptional => 'Type de document (facultatif)';
+
+  @override
+  String get clientsDocumentUploadFailed =>
+      'Impossible de télécharger le document.';
+
+  @override
+  String get clientsDocumentUploaded => 'Document téléchargé';
+
+  @override
+  String get clientsDocumentsLoadFailed =>
+      'Impossible de charger les documents client.';
+
+  @override
   String get clientsDocumentsMobileHint =>
       'La prise en charge ferme de la bibliothèque de documents arrive sur mobile.';
+
+  @override
+  String clientsDownloadDocument(String name) {
+    return 'Télécharger $name';
+  }
 
   @override
   String get clientsEdit => 'Modifier';
@@ -2199,10 +2344,19 @@ class AppLocalizationsFr extends AppLocalizations {
   String get clientsFailedToUpdateShort => 'Échec de la mise à jour du client';
 
   @override
+  String get clientsFilterDocumentType => 'Filtrer par type de document';
+
+  @override
   String get clientsIndividual => 'Individuel';
 
   @override
   String get clientsKyc => 'KYC';
+
+  @override
+  String get clientsKycChecking => 'Vérification du KYC';
+
+  @override
+  String get clientsKycChecklistReady => 'La liste de contrôle KYC est prête';
 
   @override
   String get clientsKycDocuments => 'Documents KYC';
@@ -2213,10 +2367,42 @@ class AppLocalizationsFr extends AppLocalizations {
   }
 
   @override
+  String get clientsKycInitFailed =>
+      'Impossible de configurer la liste de contrôle KYC.';
+
+  @override
+  String get clientsKycLoadFailed =>
+      'Impossible de charger les informations KYC.';
+
+  @override
   String get clientsKycMissingBadge => 'KYC manquant';
 
   @override
+  String clientsKycNeedsAttention(num count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '# KYC items need attention',
+      one: '# KYC item needs attention',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get clientsKycNotSetUp => 'KYC non configuré';
+
+  @override
+  String get clientsKycSetupDescription =>
+      'Configurez les documents d\'identité et de conformité requis pour ce client.';
+
+  @override
   String get clientsKycStatus => 'Statut KYC';
+
+  @override
+  String get clientsKycUnavailable => 'KYC indisponible';
+
+  @override
+  String get clientsKycUpToDate => 'KYC à jour';
 
   @override
   String clientsLinkedMattersCount(num count) {
@@ -2230,7 +2416,41 @@ class AppLocalizationsFr extends AppLocalizations {
   }
 
   @override
+  String get clientsLoadingClientRecord => 'Chargement de la fiche client…';
+
+  @override
+  String get clientsLoadingDocuments => 'Chargement de documents…';
+
+  @override
+  String get clientsLoadingKyc => 'Chargement de KYC…';
+
+  @override
+  String get clientsLoadingMatters => 'Le chargement compte…';
+
+  @override
   String get clientsManageRelationships => 'Gérez vos relations clients';
+
+  @override
+  String get clientsMatterLinked => 'Sujet lié';
+
+  @override
+  String clientsMatterLinkedFiles(num count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '# matter-linked files',
+      one: '# matter-linked file',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get clientsMatterLinkedFilesDescription =>
+      'Documents associés aux dossiers de ce client.';
+
+  @override
+  String get clientsMattersLoadFailed =>
+      'Impossible de charger les dossiers client.';
 
   @override
   String get clientsName => 'Nom';
@@ -2245,10 +2465,69 @@ class AppLocalizationsFr extends AppLocalizations {
   String get clientsNewClient => 'Nouveau client';
 
   @override
+  String get clientsNextActionCompleteProfile => 'Complétez le profil client';
+
+  @override
+  String get clientsNextActionCompleteProfileDescription =>
+      'Ajoutez les coordonnées manquantes afin que le cabinet dispose d\'un dossier client complet.';
+
+  @override
+  String get clientsNextActionCreateMatter => 'Créer le premier sujet';
+
+  @override
+  String get clientsNextActionCreateMatterDescription =>
+      'Démarrez un dossier pour relier le travail, les documents, les délais et la facturation à ce client.';
+
+  @override
+  String get clientsNextActionOpenKyc => 'Ouvrir le KYC';
+
+  @override
+  String get clientsNextActionOpenMatters => 'Affaires ouvertes';
+
+  @override
+  String get clientsNextActionReviewKyc => 'Donnez votre avis sur KYC';
+
+  @override
+  String clientsNextActionReviewKycDescription(num count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'Review # KYC items that need attention.',
+      one: 'Review # KYC item that needs attention.',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get clientsNextActionReviewRisk =>
+      'Examiner les questions à haut risque';
+
+  @override
+  String clientsNextActionReviewRiskDescription(num count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'Review # matters with high risk scores.',
+      one: 'Review # matter with a high risk score.',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get clientsNextActionSetupKyc => 'Configurer KYC';
+
+  @override
+  String get clientsNextActionSetupKycDescription =>
+      'Créez la liste de contrôle KYC et commencez à collecter les documents requis.';
+
+  @override
   String get clientsNextContacts => 'Suivant : Contacts';
 
   @override
   String get clientsNoActiveTenant => 'Aucun locataire actif sélectionné.';
+
+  @override
+  String get clientsNoClientLevelFiles => 'Aucun fichier au niveau du client.';
 
   @override
   String get clientsNoClients => 'Aucun client pour l\'instant';
@@ -2263,6 +2542,20 @@ class AppLocalizationsFr extends AppLocalizations {
   }
 
   @override
+  String get clientsNoContactPeopleYet =>
+      'Aucune personne de contact ajoutée pour l\'instant.';
+
+  @override
+  String get clientsNoDeadline => 'Pas de date limite';
+
+  @override
+  String get clientsNoDocumentsYet => 'Aucun document pour l\'instant';
+
+  @override
+  String get clientsNoDocumentsYetDescription =>
+      'Téléchargez le premier document pour démarrer le dossier client.';
+
+  @override
   String get clientsNoKycChecklist =>
       'Aucune liste de contrôle KYC disponible.';
 
@@ -2274,7 +2567,31 @@ class AppLocalizationsFr extends AppLocalizations {
       'Créez un sujet et associez-le à ce client.';
 
   @override
+  String get clientsNoMatchingDocuments => 'Aucun document correspondant';
+
+  @override
+  String get clientsNoMatchingDocumentsDescription =>
+      'Essayez une autre recherche ou un autre type de document.';
+
+  @override
+  String get clientsNoMatchingMatters => 'Aucun problème de correspondance';
+
+  @override
+  String get clientsNoMatchingMattersDescription =>
+      'Essayez une autre recherche.';
+
+  @override
+  String get clientsNoMatterLinkedFiles => 'Aucun fichier lié à une matière.';
+
+  @override
   String get clientsNoMattersForClient => 'Aucun sujet trouvé pour ce client';
+
+  @override
+  String get clientsNoMattersForClientDescription =>
+      'Créez un sujet pour commencer à suivre le travail de ce client.';
+
+  @override
+  String get clientsNoOpenAction => 'Aucune action ouverte';
 
   @override
   String get clientsNoSearchResults =>
@@ -2291,6 +2608,49 @@ class AppLocalizationsFr extends AppLocalizations {
   String get clientsOpen => 'Ouvrir';
 
   @override
+  String get clientsOpenAction => 'Action ouverte';
+
+  @override
+  String get clientsOpenClientActions => 'Actions client ouvertes';
+
+  @override
+  String get clientsOpenComplianceQueue =>
+      'Ouvrir la file d\'attente de conformité';
+
+  @override
+  String get clientsOpenKycSetup => 'Configurer KYC';
+
+  @override
+  String clientsOpenSection(String section) {
+    return 'Ouvrir $section';
+  }
+
+  @override
+  String get clientsOverviewNextAction => 'Action suivante';
+
+  @override
+  String get clientsOverviewNextActionDescription =>
+      'L\'étape la plus utile pour faire avancer ce client.';
+
+  @override
+  String get clientsOverviewNoNextAction =>
+      'Aucune action n’est requise pour le moment.';
+
+  @override
+  String get clientsOverviewNoRecentActivity =>
+      'Aucune activité récente pour l\'instant.';
+
+  @override
+  String get clientsOverviewRecentActivity => 'Activité récente';
+
+  @override
+  String get clientsOverviewRecentActivityDescription =>
+      'Dernières mises à jour sur les dossiers et dossiers de ce client.';
+
+  @override
+  String get clientsOwner => 'Propriétaire';
+
+  @override
   String get clientsPhone => 'Téléphone';
 
   @override
@@ -2303,14 +2663,49 @@ class AppLocalizationsFr extends AppLocalizations {
       'Un client avec ce numéro de téléphone existe peut-être déjà.';
 
   @override
+  String get clientsPortalInvite => 'Invitation au portail';
+
+  @override
+  String get clientsPortalInviteCopied => 'Invitation au portail copiée';
+
+  @override
+  String get clientsPortalInviteCreated => 'Invitation au portail créée';
+
+  @override
+  String get clientsPortalInviteCreatedCopied =>
+      'Invitation au portail créée et copiée';
+
+  @override
+  String get clientsPortalInviteFailed =>
+      'Impossible de créer l\'invitation au portail.';
+
+  @override
+  String get clientsPortalInviteReady => 'Invitation au portail client prête';
+
+  @override
+  String get clientsPortalInviteSecurity =>
+      'Partagez ce lien sécurisé uniquement avec le client prévu.';
+
+  @override
+  String get clientsPortalInviteUrl => 'URL d\'invitation au portail';
+
+  @override
+  String clientsPreviewDocument(String name) {
+    return 'Aperçu $name';
+  }
+
+  @override
+  String get clientsProfileComplete => 'Profil terminé';
+
+  @override
   String get clientsProfileIncomplete => 'Profil incomplet';
 
   @override
   String get clientsProfileIncompleteBanner =>
-      'This client profile is missing required contact details.';
+      'Il manque les coordonnées requises dans ce profil client.';
 
   @override
-  String get clientsProfileIncompleteDismiss => 'Dismiss';
+  String get clientsProfileIncompleteDismiss => 'Rejeter';
 
   @override
   String get clientsRelatedMatters => 'Questions connexes';
@@ -2318,6 +2713,54 @@ class AppLocalizationsFr extends AppLocalizations {
   @override
   String get clientsRelatedMattersDescription =>
       'Toutes les questions associées à ce client';
+
+  @override
+  String clientsRemoveClientDocumentDescription(String name) {
+    return 'Supprimer $name du fichier client ? Le document sera archivé.';
+  }
+
+  @override
+  String get clientsRemoveClientDocumentTitle =>
+      'Supprimer le document client ?';
+
+  @override
+  String clientsRemoveContactPerson(String number) {
+    return 'Remove contact person $number';
+  }
+
+  @override
+  String clientsRemoveDocument(String name) {
+    return 'Supprimer $name';
+  }
+
+  @override
+  String get clientsRemoveDocumentAction => 'Supprimer le document';
+
+  @override
+  String get clientsRequestDocument => 'Demander un document';
+
+  @override
+  String get clientsRequestDocumentDescription =>
+      'Demandez au client de fournir un document via le portail sécurisé.';
+
+  @override
+  String get clientsRequestDocumentPlaceholder =>
+      'Par exemple, un justificatif de domicile';
+
+  @override
+  String get clientsRequestDocumentTitle => 'Document demandé';
+
+  @override
+  String clientsRiskScore(String score) {
+    return 'Risque $score';
+  }
+
+  @override
+  String get clientsRoleTitle => 'Rôle ou titre';
+
+  @override
+  String get clientsSaveBasicAndCompleteLater =>
+      'Save basic details and complete later';
 
   @override
   String get clientsSaveChanges => 'Enregistrer les modifications';
@@ -2335,6 +2778,12 @@ class AppLocalizationsFr extends AppLocalizations {
   String get clientsSearchClientsLabel => 'Rechercher des clients';
 
   @override
+  String get clientsSearchDocuments => 'Rechercher des documents';
+
+  @override
+  String get clientsSearchMatters => 'La recherche est importante';
+
+  @override
   String get clientsSearchPlaceholder => 'Recherchez par nom, email ou code...';
 
   @override
@@ -2343,6 +2792,30 @@ class AppLocalizationsFr extends AppLocalizations {
   @override
   String get clientsSelectOrAddClient =>
       'Sélectionnez ou ajoutez un client (facultatif)';
+
+  @override
+  String get clientsSendRequest => 'Envoyer la demande';
+
+  @override
+  String get clientsSortDeadline => 'Date limite à venir';
+
+  @override
+  String get clientsSortMatters => 'Trier les affaires';
+
+  @override
+  String get clientsSortRecentlyUpdated => 'Récemment mis à jour';
+
+  @override
+  String get clientsSortRisk => 'Risque le plus élevé';
+
+  @override
+  String get clientsSortTitle => 'Titre';
+
+  @override
+  String get clientsStage => 'Scène';
+
+  @override
+  String get clientsStatsClientFiles => 'Fichiers clients';
 
   @override
   String get clientsStatsHighRisk => 'Risque élevé';
@@ -2418,10 +2891,25 @@ class AppLocalizationsFr extends AppLocalizations {
   String get clientsUnableToCreateClient => 'Impossible de créer un client.';
 
   @override
+  String get clientsUnassigned => 'Non attribué';
+
+  @override
+  String get clientsUploadFirstDocument => 'Télécharger le premier document';
+
+  @override
+  String clientsUploadProgress(String progress) {
+    return 'Progression du téléchargement : $progress %';
+  }
+
+  @override
   String get clientsUs => 'NOUS';
 
   @override
   String get clientsViewExistingClient => 'voir le client existant';
+
+  @override
+  String get clientsWorkspaceSections =>
+      'Sections de l\'espace de travail client';
 
   @override
   String get common000 => '0,00';
@@ -2574,7 +3062,7 @@ class AppLocalizationsFr extends AppLocalizations {
   String get commonAppName => 'Umbrella';
 
   @override
-  String get commonApply => 'Apply';
+  String get commonApply => 'Appliquer';
 
   @override
   String get commonAppointment => 'Rendez-vous';
@@ -2669,7 +3157,7 @@ class AppLocalizationsFr extends AppLocalizations {
   String get commonClear => 'Clair';
 
   @override
-  String get commonClearFilters => 'Clear filters';
+  String get commonClearFilters => 'Effacer les filtres';
 
   @override
   String get commonClient => 'Client';
@@ -2694,6 +3182,9 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get commonConfidentiality => 'Confidentialité';
+
+  @override
+  String get commonConfirm => 'Confirmer';
 
   @override
   String get commonConfirmCountry => 'Confirmez votre pays';
@@ -2723,6 +3214,9 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get commonCopilotResearchModel => 'Modèle Copilote & Recherche';
+
+  @override
+  String get commonCopy => 'Copie';
 
   @override
   String get commonCopyCitation => 'Copier la citation';
@@ -2777,7 +3271,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get commonCreditsAreAwardedAfterTheRefereeapossFirstPaidSubscr =>
-      '• Les crédits sont attribués après l\'activation du premier abonnement payant de l\'arbitre.';
+      '• Les crédits sont attribués une fois que votre invité a terminé son premier abonnement payant.';
 
   @override
   String get commonCreditsEarned => 'Crédits gagnés';
@@ -2811,7 +3305,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String commonDaynum(String dayNum) {
-    return '\$jourNum';
+    return '$dayNum';
   }
 
   @override
@@ -2829,10 +3323,10 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get commonDeleteMeetingDescription =>
-      'This will permanently delete the meeting and its transcript.';
+      'Cela supprimera définitivement la réunion et sa transcription.';
 
   @override
-  String get commonDeleteMeetingTitle => 'Delete meeting?';
+  String get commonDeleteMeetingTitle => 'Supprimer la réunion ?';
 
   @override
   String get commonDescribeYourExperienceSpecialtiesAndApproach =>
@@ -3108,41 +3602,41 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String commonIntroOfferBadge(String percent) {
-    return '$percent% OFF — Introductory offer';
+    return '$percent % de réduction — Offre de lancement';
   }
 
   @override
   String commonIntroOfferCountdown(String days, String hours) {
-    return 'Offer ends in ${days}d ${hours}h';
+    return 'L\'offre se termine dans ${days}d ${hours}h';
   }
 
   @override
   String commonIntroOfferCta(String price) {
-    return 'Subscribe — $price';
+    return 'Abonnez-vous — $price';
   }
 
   @override
   String commonIntroOfferFirstMonthBadge(String percent) {
-    return '$percent% off first month — introductory offer';
+    return '$percent % de réduction sur le premier mois – offre de lancement';
   }
 
   @override
-  String get commonIntroOfferProcessing => 'Processing…';
+  String get commonIntroOfferProcessing => 'Traitement…';
 
   @override
-  String get commonIntroOfferRemindTomorrow => 'Remind me tomorrow';
+  String get commonIntroOfferRemindTomorrow => 'Rappelle-moi demain';
 
   @override
   String get commonIntroOfferSubtitle =>
-      'Welcome offer — save on any paid plan. Discount applies automatically at checkout.';
+      'Offre de bienvenue : économisez sur n\'importe quel forfait payant. La réduction s\'applique automatiquement à la caisse.';
 
   @override
   String commonIntroOfferTitle(String percent) {
-    return '$percent% off your first month';
+    return '$percent % de réduction sur votre premier mois';
   }
 
   @override
-  String get commonIntroOfferViewAllPlans => 'View all plans';
+  String get commonIntroOfferViewAllPlans => 'Voir tous les forfaits';
 
   @override
   String get commonInvalidLocaleForCountry =>
@@ -3267,7 +3761,7 @@ class AppLocalizationsFr extends AppLocalizations {
   String get commonMeeting => 'Réunion';
 
   @override
-  String get commonMeetingDeleted => 'Meeting deleted';
+  String get commonMeetingDeleted => 'Réunion supprimée';
 
   @override
   String get commonMeetingTitle => 'Titre de la réunion';
@@ -3290,65 +3784,66 @@ class AppLocalizationsFr extends AppLocalizations {
   }
 
   @override
-  String get commonMeetingsDateAll => 'All dates';
+  String get commonMeetingsDateAll => 'Toutes les dates';
 
   @override
-  String get commonMeetingsDateCustom => 'Custom range';
+  String get commonMeetingsDateCustom => 'Gamme personnalisée';
 
   @override
-  String get commonMeetingsDateFrom => 'From';
+  String get commonMeetingsDateFrom => 'Depuis';
 
   @override
   String get commonMeetingsDateLabel => 'Date';
 
   @override
-  String get commonMeetingsDateMonth => 'This month';
+  String get commonMeetingsDateMonth => 'Ce mois-ci';
 
   @override
-  String get commonMeetingsDateTo => 'To';
+  String get commonMeetingsDateTo => 'À';
 
   @override
-  String get commonMeetingsDateToday => 'Today';
+  String get commonMeetingsDateToday => 'Aujourd\'hui';
 
   @override
-  String get commonMeetingsDateWeek => 'This week';
+  String get commonMeetingsDateWeek => 'Cette semaine';
 
   @override
-  String get commonMeetingsFilterAll => 'All';
+  String get commonMeetingsFilterAll => 'Tous';
 
   @override
-  String get commonMeetingsFilterDraft => 'Draft';
+  String get commonMeetingsFilterDraft => 'Brouillon';
 
   @override
-  String get commonMeetingsFilterFailed => 'Failed';
+  String get commonMeetingsFilterFailed => 'Échoué';
 
   @override
-  String get commonMeetingsFilterProcessing => 'Processing';
+  String get commonMeetingsFilterProcessing => 'Traitement';
 
   @override
-  String get commonMeetingsFilterReady => 'Ready';
+  String get commonMeetingsFilterReady => 'Prêt';
 
   @override
-  String get commonMeetingsFilterRecording => 'Recording';
+  String get commonMeetingsFilterRecording => 'Enregistrement';
 
   @override
   String commonMeetingsPageOf(String page, String totalPages) {
-    return 'Page $page of $totalPages';
+    return 'Page $page de $totalPages';
   }
 
   @override
   String commonMeetingsPaginationRange(String from, String to, String total) {
-    return '$from–$to of $total';
+    return '$from–$to de $total';
   }
 
   @override
-  String get commonMeetingsScopeAll => 'All meetings in your firm';
+  String get commonMeetingsScopeAll =>
+      'Toutes les réunions dans votre entreprise';
 
   @override
-  String get commonMeetingsScopeClient => 'Meetings for this client';
+  String get commonMeetingsScopeClient => 'Réunions pour ce client';
 
   @override
-  String get commonMeetingsScopeMatter => 'Meetings for this matter';
+  String get commonMeetingsScopeMatter => 'Réunions à ce sujet';
 
   @override
   String get commonMitigation => 'Atténuation';
@@ -3454,7 +3949,8 @@ class AppLocalizationsFr extends AppLocalizations {
   String get commonNoMatter => 'Peu importe';
 
   @override
-  String get commonNoMeetingsMatchFilters => 'No meetings match your filters';
+  String get commonNoMeetingsMatchFilters =>
+      'Aucune réunion ne correspond à vos filtres';
 
   @override
   String get commonNoMeetingsYet => 'Pas encore de réunions';
@@ -3585,7 +4081,7 @@ class AppLocalizationsFr extends AppLocalizations {
   }
 
   @override
-  String get commonPrev => 'Previous';
+  String get commonPrev => 'Précédent';
 
   @override
   String get commonPricing => 'Tarifs';
@@ -3697,7 +4193,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get commonReferralDiscountBadge =>
-      '50 % de réduction sur le premier mois — parrainage appliqué';
+      '40 % de réduction sur le premier mois – offre de lancement';
 
   @override
   String get commonReferralLawyerIntro =>
@@ -3764,7 +4260,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get commonReferralStepSubscribeDesc =>
-      'Votre filleul bénéficie de 50 % de réduction sur son premier mois – appliqué automatiquement au moment du paiement.';
+      'Votre filleul bénéficie de 40 % de réduction sur son premier mois – appliqué automatiquement au moment du paiement.';
 
   @override
   String get commonReferralStepSubscribeTitle => 'Ils s\'abonnent';
@@ -3780,6 +4276,9 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get commonRejectLead => 'Rejeter le prospect';
+
+  @override
+  String get commonRemove => 'Retirer';
 
   @override
   String get commonRepresentationBeforeCourtsOrTribunals =>
@@ -4046,7 +4545,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get commonThe50DiscountAppliesToTheRefereeapossFirstMonthOnly =>
-      '• Le rabais de 50 % s\'applique uniquement au premier mois du répondant.';
+      '• La réduction de 40 % s\'applique uniquement au premier mois de votre invité.';
 
   @override
   String get commonThresholdCredits => 'Seuil (crédits)';
@@ -4059,7 +4558,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String commonTitlenbody(String title, String body) {
-    return '\$titre\\n\$corps';
+    return '$title\n$body';
   }
 
   @override
@@ -4112,6 +4611,9 @@ class AppLocalizationsFr extends AppLocalizations {
       'Impossible de charger l\'utilisation de l\'IA.';
 
   @override
+  String get commonUnavailable => 'Indisponible';
+
+  @override
   String get commonUnitedKingdom => 'Royaume-Uni';
 
   @override
@@ -4127,6 +4629,9 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get commonUpgradeToProfessional => 'Passer au Professionnel';
+
+  @override
+  String get commonUpload => 'Télécharger';
 
   @override
   String get commonUploadADocumentTemplate =>
@@ -4292,7 +4797,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String consumerAibudgetlabelMoAiModelBudget(String amount) {
-    return '\$aiBudgetLabel / mois Budget du modèle d\'IA';
+    return '$amount / mois Budget du modèle d\'IA';
   }
 
   @override
@@ -4435,7 +4940,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get consumerDocuDraftSubtitle =>
-      'Décrivez votre besoin, trouvez le formulaire adapté et générez des brouillons avec l\'IA.';
+      'Décrivez ce dont vous avez besoin, faites correspondre les formulaires officiels et générez des brouillons avec l\'IA.';
 
   @override
   String get consumerDocumentReview => 'Examen des documents';
@@ -4480,10 +4985,10 @@ class AppLocalizationsFr extends AppLocalizations {
   String get consumerFailedToLoadReport => 'Échec du chargement du rapport.';
 
   @override
-  String get consumerFindLawyerBook => 'Réserver une consultation';
+  String get consumerFindLawyerBook => 'Consultations de livres';
 
   @override
-  String get consumerFindLawyerCompliance => 'Conformité au barreau';
+  String get consumerFindLawyerCompliance => 'Conformité des barres';
 
   @override
   String get consumerFindLawyerDefaultHeadline =>
@@ -4491,11 +4996,11 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get consumerFindLawyerEmpty =>
-      'Aucun avocat ne correspond à votre recherche.';
+      'Aucun avocat ne correspond encore à votre recherche.';
 
   @override
   String consumerFindLawyerFromFee(String amount, String currency) {
-    return 'À partir de $amount $currency';
+    return 'Du $amount au $currency';
   }
 
   @override
@@ -4507,11 +5012,11 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get consumerFindLawyerSearchPlaceholder =>
-      'Rechercher par nom ou domaine de pratique…';
+      'Recherche par nom ou domaine de pratique…';
 
   @override
   String get consumerFindLawyerSubtitle =>
-      'Recherchez des avocats vérifiés par domaine de pratique et par pays. Chaque avocat répertorié sur Umbrella est vérifié.';
+      'Recherchez des avocats vérifiés par domaine de pratique et par pays. Chaque avocat répertorié est vérifié sur Umbrella.';
 
   @override
   String get consumerFindLawyerVerified => 'Avocats vérifiés';
@@ -4572,11 +5077,11 @@ class AppLocalizationsFr extends AppLocalizations {
       'Téléchargez un contrat ou un avis et obtenez une analyse des risques liés à l\'IA';
 
   @override
-  String get consumerHomeFindLawyerDesc => 'Trouver un avocat.';
+  String get consumerHomeFindLawyerDesc => 'Trouvez un avocat.';
 
   @override
   String get consumerHomeIssueCheckerDesc =>
-      'Décrivez votre problème juridique et obtenez un aperçu gratuit de l\'IA avec des conseils spécifiques à chaque pays pour l\'Inde, les États-Unis, le Kenya et le Royaume-Uni.';
+      'Décrivez votre problème et obtenez un aperçu juridique gratuit de l\'IA';
 
   @override
   String get consumerHomeLawyerReviewDesc =>
@@ -4711,7 +5216,7 @@ class AppLocalizationsFr extends AppLocalizations {
   String get consumerNavCases => 'Mes cas';
 
   @override
-  String get consumerNavDocuDraft => 'Docu Draft';
+  String get consumerNavDocuDraft => 'Brouillon du document';
 
   @override
   String get consumerNavDocumentReview => 'Examen des documents';
@@ -5841,67 +6346,67 @@ class AppLocalizationsFr extends AppLocalizations {
   String get creditsFreeDailyTitle => 'Crédits quotidiens gratuits';
 
   @override
-  String get creditsGateBalanceUnknown => 'Balance unavailable';
+  String get creditsGateBalanceUnknown => 'Solde indisponible';
 
   @override
   String creditsGateCreditsRemaining(String count) {
-    return '$count credits remaining';
+    return '$count crédits restants';
   }
 
   @override
   String get creditsGateFeaturesDocumentReview =>
-      'Document review uses credits to analyse clauses, risks, and amendments.';
+      'L\'examen des documents utilise des crédits pour analyser les clauses, les risques et les modifications.';
 
   @override
   String get creditsGateFeaturesDrafting =>
-      'Document drafting needs AI credits to generate court-ready drafts from your facts.';
+      'La rédaction de documents nécessite des crédits d\'IA pour générer des ébauches prêtes pour le tribunal à partir de vos faits.';
 
   @override
   String get creditsGateFeaturesIntake =>
-      'Client intake analysis uses credits to classify issues and build your lead summary.';
+      'L\'analyse de l\'admission des clients utilise les crédits pour classer les problèmes et créer votre résumé des prospects.';
 
   @override
   String get creditsGateFeaturesResearch =>
-      'Legal research uses credits for each query — Verified Research uses premium models.';
+      'La recherche juridique utilise des crédits pour chaque requête – Verified Research utilise des modèles premium.';
 
   @override
   String get creditsGateFeaturesSectionFinder =>
-      'Section Finder uses credits when looking up statutes and crosswalks.';
+      'Section Finder utilise des crédits lors de la recherche de statuts et de passages pour piétons.';
 
   @override
   String get creditsGateFooter =>
-      'Secure Stripe checkout · Credits never expire · Cancel anytime on subscriptions';
+      'Paiement sécurisé Stripe · Les crédits n\'expirent jamais · Annulez les abonnements à tout moment';
 
   @override
   String get creditsGateInlineMessage =>
-      'You don\'t have enough AI credits for this action.';
+      'Vous n\'avez pas assez de crédits IA pour cette action.';
 
   @override
-  String get creditsGateLoadingBalance => 'Checking balance…';
+  String get creditsGateLoadingBalance => 'Vérification du solde…';
 
   @override
   String get creditsGateSubscribeDescription =>
-      'More monthly credits, premium models, and firm features';
+      'Plus de crédits mensuels, de modèles premium et de fonctionnalités fermes';
 
   @override
-  String get creditsGateSubscribeTitle => 'Upgrade your plan';
+  String get creditsGateSubscribeTitle => 'Améliorez votre forfait';
 
   @override
   String get creditsGateSubtitle =>
-      'Top up instantly or upgrade your plan for more monthly credits and premium models.';
+      'Rechargez instantanément ou mettez à niveau votre forfait pour plus de crédits mensuels et de modèles premium.';
 
   @override
-  String get creditsGateTitle => 'You\'re out of AI credits';
+  String get creditsGateTitle => 'Vous n\'avez plus de crédits IA';
 
   @override
-  String get creditsGateTopUpCta => 'Top up credits';
+  String get creditsGateTopUpCta => 'Recharger des crédits';
 
   @override
   String get creditsGateTopUpDescription =>
-      'One-time packs · secure checkout · never expire';
+      'Packs uniques · paiement sécurisé · n\'expirent jamais';
 
   @override
-  String get creditsGateTopUpTitle => 'Top up credits';
+  String get creditsGateTopUpTitle => 'Recharger des crédits';
 
   @override
   String get dashboardActionsClearOverdueTasks =>
@@ -6451,10 +6956,10 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get dashboardOnboardingMatterDescription =>
-      'Créer un sujet pour commencer à suivre un cas';
+      'Créer un dossier pour commencer à suivre le dossier';
 
   @override
-  String get dashboardOnboardingMatterLabel => 'Ouvrir un sujet';
+  String get dashboardOnboardingMatterLabel => 'Créez votre premier sujet';
 
   @override
   String dashboardOnboardingProgress(String completed, String total) {
@@ -6748,13 +7253,13 @@ class AppLocalizationsFr extends AppLocalizations {
       'Vos dernières vérifications de problèmes juridiques';
 
   @override
-  String get docuDraftAutoFill => 'Remplir automatiquement';
+  String get docuDraftAutoFill => 'Remplissage automatique des blancs';
 
   @override
   String get docuDraftBrowseFormats => 'Parcourir les formats';
 
   @override
-  String get docuDraftCaseDetails => 'Détails du dossier';
+  String get docuDraftCaseDetails => 'Détails du cas';
 
   @override
   String get docuDraftContextDetected => 'Contexte détecté';
@@ -6766,44 +7271,45 @@ class AppLocalizationsFr extends AppLocalizations {
   String get docuDraftCopyDraft => 'Copier le brouillon';
 
   @override
-  String get docuDraftDraftNow => 'Rédiger maintenant';
+  String get docuDraftDraftNow => 'Brouillon maintenant';
 
   @override
   String docuDraftDraftSelected(num count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: 'Rédiger # documents sélectionnés',
-      one: 'Rédiger # document sélectionné',
+      other: 'Draft # selected documents',
+      one: 'Draft # selected document',
     );
     return '$_temp0';
   }
 
   @override
-  String get docuDraftFindAndDraft => 'Rechercher et rédiger';
+  String get docuDraftFindAndDraft => 'Rechercher et brouillon';
 
   @override
   String get docuDraftFindMatchingForms =>
-      'Trouver les formulaires correspondants';
+      'Rechercher des formulaires correspondants';
 
   @override
-  String get docuDraftGenerateDraft => 'Générer le brouillon';
+  String get docuDraftGenerateDraft => 'Générer un brouillon';
 
   @override
   String get docuDraftGenerationFailed =>
-      'Impossible de générer le brouillon. Veuillez réessayer.';
+      'Impossible de générer un brouillon. Veuillez réessayer.';
 
   @override
-  String get docuDraftOfficialForms => 'Formulaires juridiques officiels';
+  String get docuDraftOfficialForms => 'Formes juridiques officielles';
 
   @override
-  String get docuDraftOtherMatches => 'Autres correspondances';
+  String get docuDraftOtherMatches => 'Autres matchs';
 
   @override
   String get docuDraftProceduralNote => 'Note procédurale';
 
   @override
-  String get docuDraftRecommendedFilingSet => 'Ensemble de dépôt recommandé';
+  String get docuDraftRecommendedFilingSet =>
+      'Ensemble de classement recommandé';
 
   @override
   String get docuDraftRedo => 'Régénérer';
@@ -6819,13 +7325,13 @@ class AppLocalizationsFr extends AppLocalizations {
   String get docuDraftResultsFor => 'Résultats pour';
 
   @override
-  String get docuDraftSearchFormats => 'Rechercher des formats…';
+  String get docuDraftSearchFormats => 'Formats de recherche…';
 
   @override
   String get docuDraftStepDescribe => 'Décrire';
 
   @override
-  String get docuDraftStepDraft => 'Rédiger';
+  String get docuDraftStepDraft => 'Brouillon';
 
   @override
   String get docuDraftStepMatch => 'Correspondre';
@@ -6835,99 +7341,65 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get docuDraftSubtitle =>
-      'Décrivez votre besoin, trouvez le formulaire adapté et générez des brouillons avec l\'IA.';
+      'Décrivez ce dont vous avez besoin, faites correspondre les formulaires officiels et générez des brouillons avec l\'IA.';
 
   @override
-  String get docuDraftTitle => 'Docu Draft';
+  String get docuDraftTitle => 'Brouillon du document';
 
   @override
-  String get docuDraftUpdateAnalysis => 'Mettre à jour l\'analyse';
+  String get docuDraftUpdateAnalysis => 'Analyse de mise à jour';
 
   @override
-  String get docuDraftWhatToDraft => 'Que souhaitez-vous rédiger ?';
+  String get docuDraftWhatToDraft => 'Que veux-tu rédiger ?';
 
   @override
   String get docuDraftWhatWeUnderstood => 'Ce que nous avons compris';
 
   @override
-  String get promptRefineTitle => 'Refined prompt';
-
-  @override
-  String get promptRefineDescription =>
-      'We reorganized your description for clearer AI results. Edit if needed, then continue.';
-
-  @override
-  String get promptRefineYourOriginal => 'Your original prompt';
-
-  @override
-  String get promptRefineRefinedLabel => 'Refined prompt';
-
-  @override
-  String get promptRefineContinueRefined => 'Continue with refined prompt';
-
-  @override
-  String get promptRefineUseOriginal => 'Use original instead';
-
-  @override
-  String get promptRefineHintJurisdiction => 'Jurisdiction';
-
-  @override
-  String get promptRefineHintDocument => 'Document';
-
-  @override
-  String get promptRefineHintParty => 'Party';
-
-  @override
-  String get promptRefineHintStatute => 'Statute';
-
-  @override
-  String get promptRefinePreparing => 'Preparing your prompt…';
-
-  @override
-  String get draftingAccuracyAuditTitle => 'Accuracy audit';
+  String get draftingAccuracyAuditTitle => 'Audit de précision';
 
   @override
   String draftingAccuracyAutoCorrected(String count) {
-    return '$count auto-corrected';
+    return '$count corrigé automatiquement';
   }
 
   @override
-  String get draftingAccuracyCitationsVerifiedShort => 'citations verified';
+  String get draftingAccuracyCitationsVerifiedShort => 'citations vérifiées';
 
   @override
   String get draftingAccuracyCompleteMissingFacts =>
-      'Complete — fill in missing facts';
+      'Terminé : complétez les faits manquants';
 
   @override
-  String get draftingAccuracyDeepSearchSuffix => ' (deep search)';
+  String get draftingAccuracyDeepSearchSuffix => '(recherche approfondie)';
 
   @override
   String draftingAccuracyElapsedSeconds(String seconds) {
-    return '${seconds}s elapsed';
+    return '${seconds}s écoulés';
   }
 
   @override
-  String get draftingAccuracyFactsPendingShort => 'facts pending';
+  String get draftingAccuracyFactsPendingShort => 'faits en attente';
 
   @override
-  String get draftingAccuracyGoverningSections => 'Governing sections';
+  String get draftingAccuracyGoverningSections => 'Sections dirigeantes';
 
   @override
-  String get draftingAccuracyLimitedCorpus => 'Limited sources in corpus';
+  String get draftingAccuracyLimitedCorpus => 'Sources limitées dans le corpus';
 
   @override
-  String get draftingAccuracyNeedsReview => 'Needs lawyer review';
+  String get draftingAccuracyNeedsReview => 'Nécessite un examen par un avocat';
 
   @override
   String get draftingAccuracyProceduralRouteConfirmed =>
-      'Procedural route confirmed';
+      'Voie procédurale confirmée';
 
   @override
   String draftingAccuracyProceduralRouteDetail(
     String recommended,
     String selected,
   ) {
-    return 'Recommended $recommended — using $selected';
+    return '$recommended recommandé — en utilisant $selected';
   }
 
   @override
@@ -6936,251 +7408,252 @@ class AppLocalizationsFr extends AppLocalizations {
     String deep,
     String confidence,
   ) {
-    return '$count authorities retrieved$deep · confidence $confidence';
+    return '$count autorités récupérées$deep · confiance $confidence';
   }
 
   @override
-  String get draftingAccuracySimilarCasesShort => 'similar cases';
+  String get draftingAccuracySimilarCasesShort => 'cas similaires';
 
   @override
-  String get draftingAccuracyStepCases => 'Similar cases';
+  String get draftingAccuracyStepCases => 'Cas similaires';
 
   @override
-  String get draftingAccuracyStepCitations => 'Citation verification';
+  String get draftingAccuracyStepCitations => 'Vérification des citations';
 
   @override
-  String get draftingAccuracyStepCompleteness => 'Completeness';
+  String get draftingAccuracyStepCompleteness => 'exhaustivité';
 
   @override
   String get draftingAccuracyStepCrossCheckingCases =>
-      'Cross-checking case law';
+      'Recoupement de jurisprudence';
 
   @override
-  String get draftingAccuracyStepDrafting => 'Drafting document';
+  String get draftingAccuracyStepDrafting => 'Document de rédaction';
 
   @override
-  String get draftingAccuracyStepProcedural => 'Procedural route';
+  String get draftingAccuracyStepProcedural => 'Voie procédurale';
 
   @override
   String get draftingAccuracyStepResearch =>
-      'Researching statutes and authorities';
+      'Recherche de lois et d\'autorités';
 
   @override
   String get draftingAccuracyStepRoute =>
-      'Determining court and procedural route';
+      'Détermination du tribunal et de la procédure procédurale';
 
   @override
-  String get draftingAccuracyStepStatutes => 'Statutes & crosswalks';
+  String get draftingAccuracyStepStatutes => 'Statuts et passages pour piétons';
 
   @override
   String get draftingAccuracyStepVerifyingStatutes =>
-      'Verifying statutes and crosswalks';
+      'Vérification des statuts et des passages pour piétons';
 
   @override
   String draftingAccuracyStrippedCitations(String count) {
-    return '$count unverified citation(s) removed from draft';
+    return '$count citation(s) non vérifiée(s) supprimée(s) du brouillon';
   }
 
   @override
-  String get draftingAccuracyVerifiedForFiling => 'Verified for filing';
+  String get draftingAccuracyVerifiedForFiling => 'Vérifié pour le dépôt';
 
   @override
-  String get draftingEditAiPanel => 'AI edit';
+  String get draftingEditAiPanel => 'Modification de l\'IA';
 
   @override
-  String get draftingEditApplyEdit => 'Apply AI edit';
+  String get draftingEditApplyEdit => 'Appliquer la modification IA';
 
   @override
   String get draftingEditDocument => 'Document';
 
   @override
-  String get draftingEditDropzone => 'Upload document to edit';
+  String get draftingEditDropzone => 'Télécharger le document à modifier';
 
   @override
-  String get draftingEditEditFailed => 'Edit failed';
+  String get draftingEditEditFailed => 'Échec de la modification';
 
   @override
-  String get draftingEditExportFailed => 'Export failed';
+  String get draftingEditExportFailed => 'Échec de l\'exportation';
 
   @override
-  String get draftingEditFormats => 'DOCX, PDF, TXT — max 20 MB';
+  String get draftingEditFormats => 'DOCX, PDF, TXT — maximum 20 Mo';
 
   @override
   String get draftingEditInstructionPlaceholder =>
-      'What should change? e.g. Make party 2 Garima Jain of Ahmedabad';
+      'Qu\'est-ce qui devrait changer ? par ex. Faites la fête 2 Garima Jain d\'Ahmedabad';
 
   @override
-  String get draftingEditSave => 'Save to Documents';
+  String get draftingEditSave => 'Enregistrer dans les documents';
 
   @override
-  String get draftingEditSaveFailed => 'Save failed';
+  String get draftingEditSaveFailed => 'Échec de l\'enregistrement';
 
   @override
-  String get draftingEditSaveTitle => 'Save & export';
+  String get draftingEditSaveTitle => 'Enregistrer et exporter';
 
   @override
-  String get draftingEditSelection => 'Selected';
+  String get draftingEditSelection => 'Choisi';
 
   @override
   String get draftingEditSubtitle =>
-      'Upload Word or PDF, edit with AI, then save or export.';
+      'Téléchargez Word ou PDF, modifiez avec l\'IA, puis enregistrez ou exportez.';
 
   @override
-  String get draftingEditTitle => 'Attach & edit';
+  String get draftingEditTitle => 'Joindre et modifier';
 
   @override
-  String get draftingEditUpload => 'Upload document';
+  String get draftingEditUpload => 'Télécharger un document';
 
   @override
-  String get draftingEditUploadFailed => 'Upload failed';
+  String get draftingEditUploadFailed => 'Échec du téléchargement';
 
   @override
-  String get draftingErrorsCreateFailed => 'Could not start drafting session.';
+  String get draftingErrorsCreateFailed =>
+      'Impossible de démarrer la session de rédaction.';
 
   @override
   String get draftingErrorsGenerateFailed =>
-      'Could not generate draft. Please try again.';
+      'Impossible de générer un brouillon. Veuillez réessayer.';
 
   @override
   String get draftingErrorsInsufficientCredits =>
-      'You don\'t have enough AI credits for this draft.';
+      'Vous n\'avez pas assez de crédits IA pour cette version.';
 
   @override
   String get draftingErrorsMissingTemplate =>
-      'No template selected. Start from Find & Draft or pick a template.';
+      'Aucun modèle sélectionné. Commencez par Rechercher et brouillon ou choisissez un modèle.';
 
   @override
   String get draftingErrorsSearchFailed =>
-      'Could not search templates. Please try again.';
+      'Impossible de rechercher des modèles. Veuillez réessayer.';
 
   @override
   String draftingGenerateCreditCost(String credits) {
-    return 'Uses $credits AI credits. Credits are deducted when you generate.';
+    return 'Utilise $credits crédits IA. Les crédits sont déduits lorsque vous générez.';
   }
 
   @override
-  String get draftingNavBackToForms => 'Back to Legal Forms';
+  String get draftingNavBackToForms => 'Retour aux formes juridiques';
 
   @override
   String draftingSearchCreditCost(String credits) {
-    return 'Uses $credits AI credits to find matching templates.';
+    return 'Utilise les crédits $credits AI pour trouver des modèles correspondants.';
   }
 
   @override
-  String get draftingUseAllFields => 'All fields';
+  String get draftingUseAllFields => 'Tous les champs';
 
   @override
-  String get draftingUseBack => 'Back';
+  String get draftingUseBack => 'Dos';
 
   @override
-  String get draftingUseClauses => 'Included clauses';
+  String get draftingUseClauses => 'Clauses incluses';
 
   @override
-  String get draftingUseComplete => 'complete';
+  String get draftingUseComplete => 'complet';
 
   @override
-  String get draftingUseConfirmTitle => 'Confirm template';
+  String get draftingUseConfirmTitle => 'Confirmer le modèle';
 
   @override
-  String get draftingUseContinue => 'Continue';
+  String get draftingUseContinue => 'Continuer';
 
   @override
-  String get draftingUseExtractFields => 'Extract fields with AI';
+  String get draftingUseExtractFields => 'Extraire des champs avec l\'IA';
 
   @override
-  String get draftingUseExtracted => 'What we understood';
+  String get draftingUseExtracted => 'Ce que nous avons compris';
 
   @override
-  String get draftingUseFileName => 'File name';
+  String get draftingUseFileName => 'Nom de fichier';
 
   @override
   String get draftingUseFinalizeSubtitle =>
-      'Save to Documents and optionally link a client or matter.';
+      'Enregistrez dans Documents et associez éventuellement un client ou un dossier.';
 
   @override
-  String get draftingUseFinalizeTitle => 'Save document';
+  String get draftingUseFinalizeTitle => 'Enregistrer le document';
 
   @override
   String get draftingUseIntakePlaceholder =>
-      'e.g. Partnership between Viral Shah and Garima Jain for G.V. Ventures, 50-50 profit split, Ahmedabad…';
+      'par ex. Partenariat entre Viral Shah et Garima Jain pour G.V. Ventures, partage des bénéfices 50-50, Ahmedabad…';
 
   @override
   String get draftingUseIntakeSubtitle =>
-      'Paste or confirm details — we\'ll extract parties, terms, and key fields.';
+      'Collez ou confirmez les détails : nous extrairons les parties, les conditions et les champs clés.';
 
   @override
-  String get draftingUseIntakeTitle => 'Describe your document';
+  String get draftingUseIntakeTitle => 'Décrivez votre document';
 
   @override
-  String get draftingUseLinkClient => 'Link client';
+  String get draftingUseLinkClient => 'Lier le client';
 
   @override
-  String get draftingUseLinkMatter => 'Link matter';
+  String get draftingUseLinkMatter => 'Le lien est important';
 
   @override
-  String get draftingUseLoadingSession => 'Loading session…';
+  String get draftingUseLoadingSession => 'Chargement de la session…';
 
   @override
-  String get draftingUseNext => 'Next';
+  String get draftingUseNext => 'Suivant';
 
   @override
   String get draftingUseNoQuestions =>
-      'All key fields look filled — continue to preview.';
+      'Tous les champs clés semblent remplis : continuez à prévisualiser.';
 
   @override
-  String get draftingUseOptional => 'optional';
+  String get draftingUseOptional => 'facultatif';
 
   @override
-  String get draftingUsePolishAi => 'Polish with AI';
+  String get draftingUsePolishAi => 'Polir avec l\'IA';
 
   @override
-  String get draftingUsePreparing => 'Preparing your drafting session…';
+  String get draftingUsePreparing => 'Préparer votre séance de rédaction…';
 
   @override
-  String get draftingUsePreview => 'Preview document';
+  String get draftingUsePreview => 'Aperçu du document';
 
   @override
   String get draftingUsePreviewSubtitle =>
-      'Review assembled content before saving.';
+      'Examinez le contenu assemblé avant de l’enregistrer.';
 
   @override
-  String get draftingUsePreviewTitle => 'Preview';
+  String get draftingUsePreviewTitle => 'Aperçu';
 
   @override
   String draftingUseQuestionProgress(String current, String total) {
-    return 'Question $current of $total';
+    return 'Question $current de $total';
   }
 
   @override
-  String get draftingUseQuestionsTitle => 'Guided questions';
+  String get draftingUseQuestionsTitle => 'Questions guidées';
 
   @override
-  String get draftingUseSaveDocument => 'Save to Documents';
+  String get draftingUseSaveDocument => 'Enregistrer dans les documents';
 
   @override
-  String get draftingUseSaveOptions => 'Save options';
+  String get draftingUseSaveOptions => 'Enregistrer les options';
 
   @override
   String draftingUseSaved(String id) {
-    return 'Saved as document $id';
+    return 'Enregistré sous le document $id';
   }
 
   @override
-  String get draftingUseSkipExtract => 'Skip extraction';
+  String get draftingUseSkipExtract => 'Sauter l\'extraction';
 
   @override
   String get draftingUseSubtitle =>
-      'Confirm the template, fill in details, preview, and save.';
+      'Confirmez le modèle, remplissez les détails, prévisualisez et enregistrez.';
 
   @override
-  String get draftingUseTemplate => 'Template';
+  String get draftingUseTemplate => 'Modèle';
 
   @override
-  String get draftingUseTitle => 'Use template';
+  String get draftingUseTitle => 'Utiliser un modèle';
 
   @override
   String get errorsAccountExistsDifferentCredential =>
-      'This email is registered with a password. Sign in with email first, then link social accounts in settings.';
+      'Cet email est enregistré avec un mot de passe. Connectez-vous d\'abord par e-mail, puis associez les comptes sociaux dans les paramètres.';
 
   @override
   String get errorsAuthenticationFailed => 'L\'authentification a échoué.';
@@ -7241,15 +7714,15 @@ class AppLocalizationsFr extends AppLocalizations {
       'Impossible de se connecter. Veuillez réessayer.';
 
   @override
-  String get errorsSocialSignInCancelled => 'Sign-in was cancelled.';
+  String get errorsSocialSignInCancelled => 'La connexion a été annulée.';
 
   @override
   String get errorsSocialSignInFailed =>
-      'Social sign-in failed. Please try again.';
+      'La connexion sociale a échoué. Veuillez réessayer.';
 
   @override
   String get errorsSocialSignInPopupBlocked =>
-      'Pop-up was blocked. Allow pop-ups for this site or try again.';
+      'Le pop-up a été bloqué. Autorisez les pop-ups pour ce site ou réessayez.';
 
   @override
   String get errorsTenantIdRequired =>
@@ -7605,7 +8078,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String issueCheckerCharCount(String current, String max) {
-    return '$current / $max caractères';
+    return 'Caractères $current / $max';
   }
 
   @override
@@ -7614,7 +8087,7 @@ class AppLocalizationsFr extends AppLocalizations {
   }
 
   @override
-  String get issueCheckerCheckMySituation => 'Analyser ma situation';
+  String get issueCheckerCheckMySituation => 'Vérifier ma situation';
 
   @override
   String get issueCheckerChecklistClientLinked => 'Client/fichier lié';
@@ -7797,7 +8270,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String issueCheckerEnterAtLeastChars(String count) {
-    return 'Saisissez au moins $count caractères';
+    return 'Saisissez au moins $count caractères';
   }
 
   @override
@@ -7806,11 +8279,11 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get issueCheckerErrorBackendInterrupted =>
-      'La connexion d\'analyse a été interrompue avant la fin de l\'aperçu. Assurez-vous que le backend s\'exécute sur le port 4000, puis réessayez.';
+      'La connexion d\'analyse a été interrompue avant la fin de l\'aperçu. Vérifiez votre connexion et réessayez.';
 
   @override
   String get issueCheckerErrorBackendInterruptedFirmIntake =>
-      'La connexion d\'aperçu a été interrompue avant la mise à jour de la page. Vérifiez les prospects : votre apport est peut-être déjà enregistré. Sinon, assurez-vous que le backend s\'exécute sur le port 4000 et réessayez.';
+      'La connexion d\'aperçu a été interrompue avant la mise à jour de la page. Vérifiez les prospects : votre apport est peut-être déjà enregistré. Sinon, réessayez.';
 
   @override
   String get issueCheckerErrorClassificationContinue =>
@@ -7822,11 +8295,11 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get issueCheckerErrorCouldNotReachServer =>
-      'Impossible d\'atteindre le serveur. Vérifiez que le backend s\'exécute sur le port 4000 et réessayez.';
+      'Impossible d\'atteindre le serveur. Vérifiez votre connexion et réessayez.';
 
   @override
   String get issueCheckerErrorCouldNotReachServerFirmIntake =>
-      'Impossible d\'atteindre le serveur lors de l\'enregistrement des entrées. Vérifiez les pistes au cas où elles auraient été enregistrées, assurez-vous que le backend s\'exécute sur le port 4000, puis réessayez.';
+      'Impossible d\'atteindre le serveur lors de l\'enregistrement des entrées. Vérifiez les pistes au cas où elles auraient été enregistrées, puis réessayez.';
 
   @override
   String get issueCheckerErrorPreviewFailed =>
@@ -7834,11 +8307,11 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get issueCheckerErrorPreviewTimedOut =>
-      'The analysis is taking longer than expected. Please try again in a moment.';
+      'L’analyse prend plus de temps que prévu. Veuillez réessayer dans un instant.';
 
   @override
   String get issueCheckerErrorPreviewTimedOutFirmIntake =>
-      'The analysis timed out. Check Leads — your intake may already be saved. If not, try again in a moment.';
+      'L’analyse a expiré. Vérifiez les prospects : votre apport est peut-être déjà enregistré. Sinon, réessayez dans un instant.';
 
   @override
   String get issueCheckerEstimatedOutcomeStrength =>
@@ -8078,7 +8551,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get issueCheckerMicroFlowFactsPlaceholder =>
-      'Décrivez ce qui s’est passé, qui était impliqué, les dates importantes et ce que vous souhaitez obtenir.';
+      'Décrivez ce qui s\'est passé, qui a été impliqué, les dates importantes et ce que vous souhaitez réaliser.';
 
   @override
   String issueCheckerMidLabel(String value) {
@@ -9555,7 +10028,7 @@ class AppLocalizationsFr extends AppLocalizations {
   String get lawyerNavDashboard => 'Tableau de bord';
 
   @override
-  String get lawyerNavDocumentDrafting => 'Document Drafting';
+  String get lawyerNavDocumentDrafting => 'Rédaction de documents';
 
   @override
   String get lawyerNavDocuments => 'Documents';
@@ -9603,7 +10076,7 @@ class AppLocalizationsFr extends AppLocalizations {
   String get lawyerNavMeetings => 'Réunions';
 
   @override
-  String get lawyerNavMonitors => 'Surveillance';
+  String get lawyerNavMonitors => 'Moniteurs';
 
   @override
   String get lawyerNavMore => 'Plus';
@@ -9643,6 +10116,9 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get lawyerNavTrust => 'Confiance';
+
+  @override
+  String get lawyerNavTrustAccounts => 'Comptes en fiducie';
 
   @override
   String get lawyerNavVault => 'Sauter';
@@ -9784,7 +10260,7 @@ class AppLocalizationsFr extends AppLocalizations {
   String get lawyerOpenCase => 'Cas ouvert';
 
   @override
-  String get lawyerOpenMatterWorkbench => 'Établi à matière ouverte';
+  String get lawyerOpenMatterWorkbench => 'Ouvrir l\'IA rapide';
 
   @override
   String get lawyerOpenTaskDetails => 'Ouvrir les détails de la tâche';
@@ -10248,7 +10724,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get legalDataConsentConsumerLink =>
-      'Paramètres de consentement aux données des consommateurs';
+      'Paramètres de consentement aux données du consommateur (paramètres de votre compte)';
 
   @override
   String get legalDataConsentContactBody =>
@@ -10267,7 +10743,8 @@ class AppLocalizationsFr extends AppLocalizations {
       'UE / Royaume-Uni (GDPR / UK GDPR) : le traitement automatisé qui produit des effets juridiques ou d\'importance similaire nécessite une base juridique valide en vertu de l\'art. 22 RGPD. Umbrella ne prend pas de décisions automatisées contraignantes concernant les utilisateurs. Lorsque l’analyse de l’IA influence des résultats importants, les utilisateurs en sont informés et un examen humain est disponible.';
 
   @override
-  String get legalDataConsentCountryHeading => 'Exigences du pays';
+  String get legalDataConsentCountryHeading =>
+      '6. Exigences spécifiques au pays';
 
   @override
   String get legalDataConsentCountryKenyaBody =>
@@ -10279,18 +10756,19 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get legalDataConsentDefaultBody =>
-      'Umbrella n\'utilise pas vos documents, faits de cas ou contenu de l\'affaire pour former des modèles d\'IA, sauf si vous l\'acceptez explicitement. Le consentement ferme à la formation est désactivé par défaut pour tous les locataires.';
+      'Par défaut, Umbrella n\'utilise pas vos documents, descriptions de cas, notes d\'affaires, communications clients, requêtes d\'IA ou tout autre contenu soumis par les utilisateurs pour former, affiner ou évaluer des modèles d\'IA. Cette valeur par défaut s\'applique à tous les utilisateurs (consommateurs, utilisateurs avocats et locataires du cabinet), quel que soit le niveau d\'abonnement. Le consentement ferme à la formation est désactivé par défaut pour tous les locataires et ne peut être activé que par un administrateur de locataire.';
 
   @override
   String get legalDataConsentDefaultHeading =>
-      'Par défaut : aucune formation sur vos données';
+      '1. Par défaut : aucune formation sur vos données';
 
   @override
   String get legalDataConsentDescription =>
-      'Comment nous gérons la formation, l’évaluation et les analyses anonymisées en IA.';
+      'Cette politique explique comment DVTech Ventures gère vos données en ce qui concerne la formation, l\'évaluation et l\'amélioration des modèles d\'IA. Il fait partie de notre politique de confidentialité globale.';
 
   @override
-  String get legalDataConsentFirmLink => 'Opt-in formation cabinet (OS avocat)';
+  String get legalDataConsentFirmLink =>
+      'Consentement ferme à la formation (administrateur du locataire – paramètres Lawyer OS)';
 
   @override
   String get legalDataConsentFormDefaultIs => 'La valeur par défaut est';
@@ -10300,7 +10778,8 @@ class AppLocalizationsFr extends AppLocalizations {
       'Le consentement peut être accordé ou retiré à tout moment via les paramètres de votre compte. Les modifications prennent effet immédiatement pour le traitement futur des données. La rétractation n\'affecte pas le traitement effectué avant la rétractation.';
 
   @override
-  String get legalDataConsentManageHeading => 'Gérer votre consentement';
+  String get legalDataConsentManageHeading =>
+      '7. Comment gérer votre consentement';
 
   @override
   String get legalDataConsentNeverUsedBody =>
@@ -10312,22 +10791,22 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get legalDataConsentOptInAnonymize =>
-      'Toutes les données d\'inscription nécessitent une anonymisation avant tout pipeline de formation.';
+      'Toutes les données d\'adhésion subissent une anonymisation (suppression des identifiants personnels) et une pseudonymisation (remplacement des noms, entités et références de cas par des jetons synthétiques) avant d\'entrer dans un pipeline de formation. L\'anonymisation est vérifiée par une analyse automatisée et, pour un réglage précis, par des contrôles ponctuels manuels.';
 
   @override
   String get legalDataConsentOptInEval =>
-      'Évaluation du modèle (tests de qualité sur des échantillons rédigés)';
+      'Évaluation du modèle : des échantillons rédigés de vos interactions avec l\'IA sont utilisés pour tester la qualité, la sécurité et la précision du modèle par rapport à des références. Les échantillons sont examinés uniquement par des ingénieurs DVTech autorisés et des évaluateurs d\'IA sous contrat en vertu de la NDA.';
 
   @override
   String get legalDataConsentOptInFineTune =>
-      'Affinement (uniquement avec les ensembles de données anonymisés approuvés par l\'administrateur)';
+      'Ajustement : avec l\'approbation de l\'administrateur, des projets juridiques pseudonymisés ou des résumés d\'affaires peuvent être inclus dans des ensembles de données d\'ajustement afin d\'améliorer les performances du modèle spécifique au domaine. Le réglage fin des ensembles de données nécessite une double approbation par un administrateur de locataire et un responsable de la gouvernance des données de DVTech.';
 
   @override
-  String get legalDataConsentOptInHeading => 'Ce que permet l\'opt-in';
+  String get legalDataConsentOptInHeading => '3. Ce que permet l\'opt-in';
 
   @override
   String get legalDataConsentOptInIntro =>
-      'Si vous vous inscrivez, vous pouvez activer séparément :';
+      'Si vous choisissez de vous inscrire, vous pouvez activer un ou plusieurs des éléments suivants, chacun indépendamment :';
 
   @override
   String get legalDataConsentOptInIntroSection =>
@@ -10335,11 +10814,11 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get legalDataConsentOptInPrompt =>
-      'Amélioration rapide (modèles anonymisés)';
+      'Amélioration rapide : les modèles anonymisés issus de vos requêtes d\'IA sont utilisés pour améliorer l\'ingénierie rapide et réduire les hallucinations. Aucune information personnellement identifiable ou fait spécifique au cas n’est inclus.';
 
   @override
   String get legalDataConsentProvidersBody =>
-      'Umbrella achemine les requêtes d\'IA vers de grands fournisseurs tiers de modèles de langage, notamment OpenAI (modèles GPT), Google (Gemini) et Anthropic (Claude). Ces fournisseurs traitent vos requêtes dans le cadre : (a) d\'accords d\'API sans conservation de données, le cas échéant (les requêtes ne sont pas utilisées pour former les modèles de fournisseur) ; (b) les accords de traitement de données qui limitent l\'utilisation à la prestation de services ; (c) des mécanismes de transfert transfrontaliers appropriés (SCC pour l\'UE/Royaume-Uni ; accords équivalents pour d\'autres juridictions). Les fournisseurs spécifiques utilisés pour chaque fonctionnalité sont documentés dans notre registre des sous-traitants ultérieurs disponible sur demande.';
+      'Umbrella achemine les requêtes d\'IA vers des fournisseurs d\'IA tiers. Pour l\'analyse et la rédaction : OpenAI (modèles GPT) et DeepSeek. Pour les intégrations et la recherche de documents : OpenAI. Pour les réunions et la transcription vocale : Deepgram. Ces fournisseurs traitent vos requêtes dans le cadre : (a) d\'accords d\'API sans conservation de données, le cas échéant (les requêtes ne sont pas utilisées pour former les modèles de fournisseur) ; (b) les accords de traitement de données qui limitent l\'utilisation à la prestation de services ; (c) des mécanismes de transfert transfrontaliers appropriés (SCC pour l\'UE/Royaume-Uni ; accords équivalents pour d\'autres juridictions). Les fournisseurs spécifiques utilisés pour chaque fonctionnalité sont documentés dans notre registre des sous-traitants ultérieurs disponible sur demande.';
 
   @override
   String get legalDataConsentProvidersHeading => '5. Fournisseurs d\'IA tiers';
@@ -10366,130 +10845,133 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get legalDataConsentWithdrawBody =>
-      'Vous pouvez retirer votre consentement à tout moment. Le retrait met fin à une utilisation future ; les ensembles de données précédemment anonymisés peuvent être conservés conformément à la politique d\'audit jusqu\'à leur révocation par les administrateurs de la plateforme.';
+      'Vous pouvez retirer votre consentement à tout moment via les paramètres de compte ou en envoyant un e-mail à support@odaflow.com. Lors du retrait : (a) aucune autre donnée de votre compte n\'entrera dans le pipeline de formation ; (b) les données précédemment anonymisées qui ont déjà été incorporées dans un modèle formé ne peuvent pas être supprimées de ce modèle (ce qui est techniquement impossible avec des données agrégées anonymisées, conformément au considérant 26 du RGPD) ; (c) tous les lots de formation en attente contenant vos données seront purgés dans les 30 jours ; (d) vous recevrez une confirmation de retrait par e-mail dans les 5 jours ouvrables.';
 
   @override
-  String get legalDataConsentWithdrawHeading => 'Retrait';
+  String get legalDataConsentWithdrawHeading => '8. Retrait du consentement';
 
   @override
-  String get legalDeleteAccountAppName => 'Umbrella Legal AI';
+  String get legalDeleteAccountAppName => 'IA juridique parapluie';
 
   @override
   String get legalDeleteAccountContactBody =>
-      'Email support@odaflow.com from your registered address. We aim to respond within 10 business days.';
+      'Envoyez un e-mail à support@odaflow.com à partir de votre adresse enregistrée. Nous visons à répondre dans les 10 jours ouvrables.';
 
   @override
-  String get legalDeleteAccountContactHeading => 'Need help?';
+  String get legalDeleteAccountContactHeading => 'Besoin d\'aide ?';
 
   @override
   String get legalDeleteAccountDeletedBody =>
-      'When your account is deleted, we remove or anonymize: your name, email address, phone number, password, consumer profile, issue-checker cases, uploaded documents, legal reports, AI outputs and usage logs tied to your account, lawyer profile (solo users), marketplace leads, training consent records, and active session tokens.';
+      'Lorsque votre compte est supprimé, nous supprimons ou anonymisons : votre nom, votre adresse e-mail, votre numéro de téléphone, votre mot de passe, votre profil de consommateur, les cas de vérification des problèmes, les documents téléchargés, les rapports juridiques, les sorties de l\'IA et les journaux d\'utilisation liés à votre compte, le profil d\'avocat (utilisateurs solo), les prospects du marché, les enregistrements de consentement à la formation et les jetons de session active.';
 
   @override
-  String get legalDeleteAccountDeletedHeading => 'Data that is deleted';
+  String get legalDeleteAccountDeletedHeading => 'Données supprimées';
 
   @override
   String get legalDeleteAccountDescription =>
-      'Request deletion of your Umbrella Legal AI account and associated personal data on umbrella.okaylegal.ai and the Umbrella mobile app.';
+      'Demandez la suppression de votre compte Umbrella Legal AI et des données personnelles associées sur Umbrella.okaylegal.ai et sur l\'application mobile Umbrella.';
 
   @override
   String get legalDeleteAccountFirmBody =>
-      'If you belong to a law firm workspace, deleting your personal user account removes your profile and access but may not delete matter or client data held by the firm. Firm administrators should contact support@odaflow.com for tenant-level deletion.';
+      'Si vous appartenez à un espace de travail d\'un cabinet d\'avocats, la suppression de votre compte d\'utilisateur personnel supprime votre profil et vos accès, mais ne peut pas supprimer les données du dossier ou des clients détenues par le cabinet. Les administrateurs du cabinet doivent contacter support@odaflow.com pour la suppression au niveau du locataire.';
 
   @override
-  String get legalDeleteAccountFirmHeading => 'Law firm and tenant accounts';
+  String get legalDeleteAccountFirmHeading =>
+      'Comptes de cabinets d’avocats et de locataires';
 
   @override
   String get legalDeleteAccountFormDescription =>
-      'Signed-in users can permanently delete their account below. This action cannot be undone.';
+      'Les utilisateurs connectés peuvent supprimer définitivement leur compte ci-dessous. Cette action ne peut pas être annulée.';
 
   @override
-  String get legalDeleteAccountFormEmailLabel => 'Confirm your email';
+  String get legalDeleteAccountFormEmailLabel => 'Confirmez votre email';
 
   @override
-  String get legalDeleteAccountFormEmailPlaceholder => 'you@example.com';
+  String get legalDeleteAccountFormEmailPlaceholder => 'vous@exemple.com';
 
   @override
   String get legalDeleteAccountFormError =>
-      'Unable to delete account. Try again or email support@odaflow.com.';
+      'Impossible de supprimer le compte. Réessayez ou envoyez un e-mail à support@odaflow.com.';
 
   @override
-  String get legalDeleteAccountFormHeading => 'Delete account now';
+  String get legalDeleteAccountFormHeading => 'Supprimer le compte maintenant';
 
   @override
-  String get legalDeleteAccountFormLoading => 'Checking sign-in status…';
+  String get legalDeleteAccountFormLoading =>
+      'Vérification de l\'état de connexion…';
 
   @override
   String get legalDeleteAccountFormMismatch =>
-      'Email does not match your account.';
+      'L\'e-mail ne correspond pas à votre compte.';
 
   @override
   String get legalDeleteAccountFormSignIn =>
-      'Sign in to delete your account using the form on this page.';
+      'Connectez-vous pour supprimer votre compte en utilisant le formulaire sur cette page.';
 
   @override
-  String get legalDeleteAccountFormSignInButton => 'Sign in';
+  String get legalDeleteAccountFormSignInButton => 'Se connecter';
 
   @override
-  String get legalDeleteAccountFormSubmit => 'Delete my account';
+  String get legalDeleteAccountFormSubmit => 'Supprimer mon compte';
 
   @override
-  String get legalDeleteAccountFormSubmitting => 'Deleting…';
+  String get legalDeleteAccountFormSubmitting => 'Suppression…';
 
   @override
   String get legalDeleteAccountFormSuccess =>
-      'Your account has been deleted. You have been signed out.';
+      'Votre compte a été supprimé. Vous avez été déconnecté.';
 
   @override
-  String get legalDeleteAccountOperator => 'Operated by DVTech Ventures';
+  String get legalDeleteAccountOperator => 'Exploité par DVTech Ventures';
 
   @override
   String get legalDeleteAccountPartialBody =>
-      'Yes. You can delete individual issue-checker cases, uploaded documents, and AI conversation history from within the app or web dashboard without closing your entire account. Email support@odaflow.com if you need help removing specific data.';
+      'Oui. Vous pouvez supprimer des cas individuels de vérification de problèmes, des documents téléchargés et l\'historique des conversations AI depuis l\'application ou le tableau de bord Web sans fermer l\'intégralité de votre compte. Envoyez un e-mail à support@odaflow.com si vous avez besoin d\'aide pour supprimer des données spécifiques.';
 
   @override
   String get legalDeleteAccountPartialHeading =>
-      'Delete some data without deleting your account';
+      'Supprimez certaines données sans supprimer votre compte';
 
   @override
-  String get legalDeleteAccountPrivacyLink => 'Privacy Policy';
+  String get legalDeleteAccountPrivacyLink => 'politique de confidentialité';
 
   @override
   String get legalDeleteAccountRetainedBody =>
-      'Some information may be retained where required by law or for legitimate business needs: billing and tax records (up to 7 years), security and audit logs (up to 12 months), anonymized analytics that cannot identify you, and law firm workspace data if you were a member of a firm tenant (managed by your firm administrator).';
+      'Certaines informations peuvent être conservées lorsque la loi l\'exige ou pour des besoins commerciaux légitimes : dossiers de facturation et fiscaux (jusqu\'à 7 ans), journaux de sécurité et d\'audit (jusqu\'à 12 mois), analyses anonymisées qui ne peuvent pas vous identifier et données de l\'espace de travail d\'un cabinet d\'avocats si vous étiez membre d\'un cabinet locataire (géré par l\'administrateur de votre cabinet).';
 
   @override
-  String get legalDeleteAccountRetainedHeading => 'Data that may be kept';
+  String get legalDeleteAccountRetainedHeading =>
+      'Données susceptibles d\'être conservées';
 
   @override
   String get legalDeleteAccountRetentionBody =>
-      'Most personal data is deleted or anonymized within 30 days of a confirmed deletion request. Backup copies containing your data are purged on a rolling basis within 90 days.';
+      'La plupart des données personnelles sont supprimées ou anonymisées dans les 30 jours suivant une demande de suppression confirmée. Les copies de sauvegarde contenant vos données sont supprimées progressivement dans un délai de 90 jours.';
 
   @override
-  String get legalDeleteAccountRetentionHeading => 'Retention period';
+  String get legalDeleteAccountRetentionHeading => 'Période de conservation';
 
   @override
   String get legalDeleteAccountStep1 =>
-      'Sign in to Umbrella at umbrella.okaylegal.ai or open the Umbrella Legal AI mobile app with the account you want to delete.';
+      'Connectez-vous à Umbrella sur Umbrella.okaylegal.ai ou ouvrez l\'application mobile Umbrella Legal AI avec le compte que vous souhaitez supprimer.';
 
   @override
   String get legalDeleteAccountStep2 =>
-      'Use the deletion form on this page while signed in, or email support@odaflow.com from your registered email address with the subject line \"Account deletion request\".';
+      'Utilisez le formulaire de suppression sur cette page lorsque vous êtes connecté, ou envoyez un e-mail à support@odaflow.com à partir de votre adresse e-mail enregistrée avec la ligne d\'objet « Demande de suppression de compte ».';
 
   @override
   String get legalDeleteAccountStep3 =>
-      'Confirm your account email address. We verify that it matches your signed-in account before processing the request.';
+      'Confirmez l\'adresse e-mail de votre compte. Nous vérifions qu\'il correspond à votre compte connecté avant de traiter la demande.';
 
   @override
   String get legalDeleteAccountStep4 =>
-      'After confirmation, your account is deactivated immediately. Personal data is deleted or anonymized within 30 days, subject to legal retention requirements described below.';
+      'Après confirmation, votre compte est immédiatement désactivé. Les données personnelles sont supprimées ou anonymisées dans un délai de 30 jours, sous réserve des exigences légales de conservation décrites ci-dessous.';
 
   @override
   String get legalDeleteAccountStepsHeading =>
-      'How to request account deletion';
+      'Comment demander la suppression d\'un compte';
 
   @override
-  String get legalDeleteAccountTitle => 'Delete your Umbrella account';
+  String get legalDeleteAccountTitle => 'Supprimez votre compte Umbrella';
 
   @override
   String get legalDisclaimerAINotLawyerBody =>
@@ -10503,7 +10985,7 @@ class AppLocalizationsFr extends AppLocalizations {
       'Lorsque Umbrella cite une loi, un règlement, une règle ou une décision judiciaire, vous devez vérifier de manière indépendante : (a) que la source citée existe ; (b) que la citation est exacte (section, sous-section et année) ; (c) que la source est actuellement en vigueur et n\'a pas été modifiée ou abrogée ; (d) que le texte cité reflète fidèlement la source. Les erreurs de citation de l’IA – y compris les citations fabriquées – sont une limitation connue de tous les systèmes d’IA actuels. Ne vous fiez jamais à une citation dans une procédure judiciaire, un conseil ou un dépôt sans vérification indépendante.';
 
   @override
-  String get legalDisclaimerCitationHeading => 'Règle de citation de l\'IA';
+  String get legalDisclaimerCitationHeading => '4. Exactitude des citations';
 
   @override
   String get legalDisclaimerJurisdictionBody =>
@@ -10515,11 +10997,11 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get legalDisclaimerLawyerReviewBody =>
-      'Les rapports examinés par des avocats et les mémos stratégiques nécessitent l’approbation d’un avocat humain avant de pouvoir être considérés comme des conseils juridiques formels.';
+      'Certaines sorties Umbrella portent un badge « Avocat révisé », indiquant qu\'un avocat agréé sur notre marché a examiné et approuvé le contenu. Même les résultats examinés : (a) reflètent l\'opinion de l\'avocat au moment de l\'examen ; (b) ne constituent pas un avis juridique formel à moins d’être accompagnés d’une lettre d’opinion signée ; (c) ne créent pas de relation avocat-client à moins qu\'un contrat de mandat distinct ne soit signé ; (d) peut devenir obsolète à mesure que la loi évolue. L\'avocat réviseur est un entrepreneur indépendant ; DVTech Ventures ne garantit pas la qualité ou l\'exactitude des résultats examinés.';
 
   @override
   String get legalDisclaimerLawyerReviewHeading =>
-      'Mises à niveau révisées par des avocats';
+      '7. Résultats examinés par des avocats';
 
   @override
   String get legalDisclaimerNoPrivilegeBody =>
@@ -10531,11 +11013,11 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get legalDisclaimerNotProvideAdvice =>
-      'Conseils ou résultats juridiques garantis';
+      'Conseils juridiques garantis ou résultats juridiques prévus';
 
   @override
   String get legalDisclaimerNotProvideHeading =>
-      'Ce que nous ne fournissons pas';
+      '11. Ce que nous ne fournissons pas';
 
   @override
   String get legalDisclaimerNotProvidePrivilege =>
@@ -10547,15 +11029,15 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get legalDisclaimerNotProvideRepresentation =>
-      'Représentation devant les cours ou tribunaux';
+      'Représentation devant les cours, tribunaux ou organismes de réglementation';
 
   @override
   String get legalDisclaimerNotProvideSubstitute =>
-      'Remplacer un avocat agréé dans votre juridiction';
+      'Un substitut à un avocat agréé et qualifié dans votre juridiction';
 
   @override
   String get legalDisclaimerPageDescription =>
-      'Avis importants concernant les informations juridiques générées par l\'IA.';
+      'Avis importants concernant les informations juridiques générées par l\'IA d\'Umbrella, ses limites et les responsabilités des utilisateurs. Cette clause de non-responsabilité s\'applique à tous les produits et fonctionnalités proposés par DVTech Ventures via la plateforme Umbrella.';
 
   @override
   String get legalDisclaimerPageTitle => 'Mentions légales';
@@ -10584,11 +11066,11 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get legalDisclaimerUniversalBody =>
-      'Umbrella fournit des informations juridiques, des explications de documents, la détection des problèmes et une analyse des risques. Ce n\'est pas un cabinet d\'avocats et ne remplace pas un avocat agréé. Pour des conseils juridiques spécifiques à votre situation, consultez un avocat qualifié dans votre juridiction. Le contenu généré par l\'IA est fourni à des fins d\'information uniquement et ne constitue pas un conseil juridique, une représentation juridique ou la formation d\'une relation avocat-client entre vous et DVTech Ventures.';
+      'Umbrella fournit des informations juridiques, des explications de documents, la détection des problèmes et une analyse des risques. Ce n\'est pas un cabinet d\'avocats et ne remplace pas un avocat agréé. Pour des conseils juridiques spécifiques à votre situation, consultez un avocat qualifié dans votre juridiction. Le contenu généré par l\'IA est fourni à des fins d\'information uniquement et ne constitue pas un conseil juridique, une représentation légale ou la formation d\'une relation avocat-client entre vous et DVTech Ventures.';
 
   @override
   String get legalDisclaimerUniversalHeading =>
-      'Avis de non-responsabilité universel';
+      '2. Avis de non-responsabilité universel';
 
   @override
   String get legalDisclaimerUserResponsibilitiesBody =>
@@ -10707,7 +11189,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get legalPrivacyCollectContentBody =>
-      'Données de contenu : documents juridiques, descriptions de cas, notes sur les sujets, communications avec les clients et résultats générés par l\'IA que vous créez ou soumettez via la plateforme. Ce contenu est traité pour fournir le service et n\'est pas utilisé pour la formation en IA sans votre consentement explicite.';
+      'Données de contenu : documents juridiques, descriptions de cas, notes d\'affaires, communications clients et résultats générés par l\'IA que vous créez ou soumettez via la plateforme. Ce contenu est traité pour fournir le service et n\'est pas utilisé pour la formation en IA sans votre consentement explicite.';
 
   @override
   String get legalPrivacyCollectCookiesBody =>
@@ -10718,7 +11200,8 @@ class AppLocalizationsFr extends AppLocalizations {
       'Données techniques et de l\'appareil : adresse IP, type de navigateur, système d\'exploitation, identifiants de l\'appareil, résolution de l\'écran et fuseau horaire. Utilisé pour la sécurité, la prévention de la fraude et la compatibilité des services.';
 
   @override
-  String get legalPrivacyCollectHeading => 'Informations que nous collectons';
+  String get legalPrivacyCollectHeading =>
+      '3. Informations que nous collectons';
 
   @override
   String get legalPrivacyCollectUsageBody =>
@@ -10747,7 +11230,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get legalPrivacyDescription =>
-      'Comment Umbrella collecte, utilise et protège vos informations.';
+      'Comment Umbrella collecte, utilise et protège vos informations. Cette politique s\'applique à tous les utilisateurs de parapluie.okaylegal.ai et des applications Umbrella associées en Inde, aux États-Unis, au Kenya et au Royaume-Uni.';
 
   @override
   String get legalPrivacyLegalBasisBody =>
@@ -10762,10 +11245,10 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get legalPrivacyRetentionBody =>
-      'Les données sont chiffrées en transit et au repos. La conservation suit les paramètres de gouvernance de votre entreprise ou les demandes de suppression de compte client, sous réserve des exigences légales de conservation.';
+      'Nous conservons les données personnelles aussi longtemps que votre compte est actif. Lors de la suppression du compte, nous supprimons ou anonymisons les données personnelles dans les 30 jours, sauf lorsque la conservation est requise par la loi (par exemple, les enregistrements de facturation conservés pendant 7 ans à des fins de conformité fiscale, les journaux d\'audit conservés pendant 12 mois). Les locataires de l\'entreprise peuvent configurer des politiques de conservation personnalisées jusqu\'à 7 ans via les paramètres de gouvernance. Les ensembles de données de formation à l\'IA dérivés du contenu opté sont soumis au calendrier de conservation de notre Politique de consentement aux données et à l\'IA.';
 
   @override
-  String get legalPrivacyRetentionHeading => 'Rétention et sécurité';
+  String get legalPrivacyRetentionHeading => '6. Rétention';
 
   @override
   String get legalPrivacyRightsCCPABody =>
@@ -10780,7 +11263,7 @@ class AppLocalizationsFr extends AppLocalizations {
       'Droits GDPR / UK GDPR (utilisateurs de l’UE et du Royaume-Uni) : accès — obtenir une copie de vos données personnelles ; rectification — corriger les données inexactes ; effacement – demander la suppression (sous réserve de conservation légale) ; restriction : limiter le traitement pendant la résolution d\'un litige ; portabilité — recevez vos données dans un format lisible par machine ; objection — s\'opposer au traitement sur la base d\'intérêts légitimes ; décisions automatisées – ne pas être soumises uniquement à des décisions automatisées ayant des effets significatifs. Pour exercer ces droits, envoyez un e-mail à support@odaflow.com ou utilisez les paramètres de confidentialité de l\'application.';
 
   @override
-  String get legalPrivacyRightsHeading => 'Vos droits';
+  String get legalPrivacyRightsHeading => '9. Vos droits';
 
   @override
   String get legalPrivacyRightsKenyaBody =>
@@ -10795,14 +11278,15 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get legalPrivacySharingBody =>
-      'Les dossiers de consommateurs ne sont pas partagés avec les cabinets d\'avocats tant que vous n\'avez pas demandé un examen par un avocat ou converti une piste. Les données fermes sont isolées par locataire. Nous partageons des données avec des sous-traitants (hébergement, paiements, fournisseurs d\'IA) dans le cadre de garanties contractuelles.';
+      'Nous ne vendons pas vos données personnelles. Nous partageons les données uniquement comme suit :';
 
   @override
-  String get legalPrivacySharingHeading => 'Partage';
+  String get legalPrivacySharingHeading =>
+      '5. Avec qui partageons-nous vos données';
 
   @override
   String get legalPrivacySharingLawyerReview =>
-      'Examen par un avocat : si vous demandez l\'examen d\'un avocat, le résumé de votre dossier (et non le contenu complet sauf si vous l\'autorisez) est partagé avec l\'avocat agréé désigné sur notre place de marché. Vous contrôlez ce qui est partagé.';
+      'Examen par un avocat : si vous demandez l\'examen d\'un avocat, le résumé de votre cas (et non le contenu complet sauf si vous l\'autorisez) est partagé avec l\'avocat agréé désigné sur notre place de marché. Vous contrôlez ce qui est partagé.';
 
   @override
   String get legalPrivacySharingLegal =>
@@ -10810,25 +11294,25 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get legalPrivacySharingSubprocessors =>
-      'Sous-traitants ultérieurs : nous engageons des sous-traitants tiers dans le cadre d\'accords de traitement de données qui nécessitent des protections équivalentes. Catégories clés : (i) Infrastructure cloud — AWS (données hébergées dans la région la plus proche de votre pays) ; (ii) Traitement des paiements – Stripe ; (iii) Surveillance des erreurs — Sentry ; (iv) Analyses — Vercel ; (v) Fournisseurs de modèles d\'IA — OpenAI, Google (Gemini), Anthropic — les requêtes sont envoyées dans le cadre d\'accords API de conservation zéro des données, le cas échéant ; (vi) Envoi d\'un e-mail – Renvoyer.';
+      'Sous-traitants ultérieurs : nous engageons des sous-traitants tiers dans le cadre d\'accords de traitement de données qui nécessitent des protections équivalentes. Catégories clés : (i) Infrastructure cloud — AWS (données hébergées dans la région la plus proche de votre pays) ; (ii) Traitement des paiements – Stripe ; (iii) Surveillance des erreurs — Sentry ; (iv) Analyses — Vercel ; (v) Fournisseurs de modèles d’IA – OpenAI et DeepSeek (analyse et intégration de l’IA) ; Deepgram (transcription des réunions) : les requêtes sont envoyées dans le cadre d\'accords API sans conservation de données, le cas échéant ; (vi) Envoi d\'un e-mail – Renvoyer.';
 
   @override
   String get legalPrivacyTitle => 'politique de confidentialité';
 
   @override
   String get legalPrivacyTransfersBody =>
-      'Nous pouvons traiter les données dans les régions requises par les politiques de conformité des pays. Consultez les paramètres de résidence des données configurés par l’administrateur pour les locataires d’entreprise.';
+      'Vos données peuvent être traitées en dehors de votre pays de résidence. Pour les transferts depuis le Royaume-Uni/l\'UE, nous nous appuyons sur les clauses contractuelles types (SCC) approuvées par la Commission européenne et l\'ICO du Royaume-Uni. Pour l\'Inde, les transferts sont conformes aux dispositions de la loi DPDP sur les flux de données transfrontaliers. Pour le Kenya, les transferts sont conformes à l\'article 48 de la loi kényane sur la protection des données de 2019. Les locataires d\'entreprise peuvent demander des restrictions de résidence des données via les paramètres de gouvernance.';
 
   @override
-  String get legalPrivacyTransfersHeading => 'Virements internationaux';
+  String get legalPrivacyTransfersHeading => '10. Virements internationaux';
 
   @override
   String get legalPrivacyUseBody =>
-      'Nous utilisons vos données pour fournir des outils d\'orientation juridique, des fonctionnalités du système d\'exploitation des avocats, des paiements, une assistance et un audit de conformité. Nous n\'utilisons pas votre contenu pour entraîner des modèles d\'IA, sauf si vous l\'acceptez explicitement dans le cadre de notre politique de consentement aux données.';
+      'Nous utilisons les données collectées pour : (a) créer et gérer votre compte ; (b) fournir des analyses juridiques par l\'IA, la gestion des dossiers, la facturation, la recherche et d\'autres fonctionnalités de la plateforme ; (c) traiter les paiements et envoyer les factures ; (d) envoyer des e-mails transactionnels (confirmation de compte, réinitialisation du mot de passe, reçus de facturation) ; (e) détecter, enquêter et prévenir les fraudes, les incidents de sécurité et les abus ; (f) se conformer aux obligations légales, y compris les ordonnances des tribunaux et les exigences réglementaires ; (g) analyser l\'utilisation globale de la plateforme pour améliorer les fonctionnalités (en utilisant uniquement des données anonymisées ou pseudonymisées) ; (h) envoyer des communications marketing là où vous avez accepté (vous pouvez retirer votre consentement à tout moment).';
 
   @override
   String get legalPrivacyUseHeading =>
-      'Comment nous utilisons les informations';
+      '4. Comment nous utilisons vos informations';
 
   @override
   String get legalPublisherName => 'DVTech Ventures';
@@ -10853,10 +11337,10 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get legalTermsAgreementBody =>
-      'En accédant à Umbrella, vous acceptez ces conditions. Si vous utilisez la plateforme au nom d\'un cabinet d\'avocats, vous déclarez que vous avez le pouvoir de lier cette organisation.';
+      'En créant un compte ou en utilisant un service Umbrella, vous acceptez d\'être lié par ces Conditions. Si vous utilisez la plateforme au nom d\'un cabinet d\'avocats, d\'une société ou d\'une autre entité juridique, vous déclarez que vous avez le pouvoir de lier cette entité. Si vous n\'acceptez pas ces Conditions, vous ne devez pas utiliser la plateforme. Les utilisateurs doivent avoir au moins 18 ans.';
 
   @override
-  String get legalTermsAgreementHeading => '1. Accord';
+  String get legalTermsAgreementHeading => '1. Acceptation';
 
   @override
   String get legalTermsChangesBody =>
@@ -10867,28 +11351,28 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get legalTermsConfidentialityBody =>
-      'Nous traitons votre contenu et vos données de manière confidentielle et ne les divulguerons pas à des tiers, sauf dans les cas décrits dans notre Politique de confidentialité ou si la loi l\'exige. Les utilisateurs avocats doivent s’assurer que les communications confidentielles des clients sont conformes aux règles applicables en matière de secret professionnel. Nos systèmes sont architecturés pour isoler les données des locataires.';
+      'Nous traitons votre contenu et vos données de manière confidentielle et ne les divulguerons pas à des tiers, sauf comme décrit dans notre Politique de confidentialité ou si la loi l\'exige. Les utilisateurs avocats doivent s’assurer que les communications confidentielles des clients sont conformes aux règles applicables en matière de secret professionnel. Nos systèmes sont architecturés pour isoler les données des locataires.';
 
   @override
   String get legalTermsConfidentialityHeading => '13. Confidentialité';
 
   @override
   String get legalTermsContactBody =>
-      'Questions concernant ces Conditions : support@odaflow.com';
+      'Questions concernant ces Conditions : support@odaflow.com. DVTech Ventures, coordonnées du siège social disponibles sur demande.';
 
   @override
-  String get legalTermsContactHeading => '7. Contacter';
+  String get legalTermsContactHeading => '21. Contacter';
 
   @override
   String get legalTermsDataBody =>
-      'Notre collecte et notre utilisation des données personnelles sont décrites dans la politique de confidentialité. Les utilisations de formation et d’analyse nécessitent un consentement explicite, comme décrit dans la politique de consentement aux données et à l’IA.';
+      'Notre collecte et notre utilisation des données personnelles sont décrites dans la politique de confidentialité. Les utilisations de la formation et de l\'analyse de l\'IA nécessitent un consentement explicite, comme décrit dans la politique de consentement aux données et à l\'IA.';
 
   @override
   String get legalTermsDataConsentLink =>
       'Politique de consentement aux données et à l\'IA';
 
   @override
-  String get legalTermsDataHeading => '5. Données et confidentialité';
+  String get legalTermsDataHeading => '15. Données et confidentialité';
 
   @override
   String get legalTermsDataPrivacyLink => 'politique de confidentialité';
@@ -10902,7 +11386,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get legalTermsDescription =>
-      'Règles d\'utilisation des plateformes Umbrella pour les consommateurs et les avocats.';
+      'Ces conditions régissent votre utilisation d\'Umbrella, la plateforme juridique native d\'IA exploitée par DVTech Ventures. Veuillez les lire attentivement avant d\'utiliser une quelconque partie de la plateforme.';
 
   @override
   String get legalTermsDisputeBody =>
@@ -10914,7 +11398,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get legalTermsIPContentBody =>
-      'Vous conservez la propriété de tout le contenu que vous soumettez à la plateforme. En soumettant du contenu, vous accordez à DVTech Ventures une licence mondiale, libre de droits et non exclusive pour traiter, stocker et afficher votre contenu uniquement pour fournir les services. Cette licence ne s\'étend pas à la formation en IA, sauf si vous y souscrivez en vertu de la politique de consentement aux données et à l\'IA.';
+      'Vous conservez la propriété de tout le contenu que vous soumettez à la plateforme. En soumettant du contenu, vous accordez à DVTech Ventures une licence mondiale, libre de droits et non exclusive pour traiter, stocker et afficher votre contenu uniquement pour fournir les services. Cette licence ne s\'étend pas à la formation en IA, sauf si vous vous y inscrivez conformément à la politique de consentement aux données et à l\'IA.';
 
   @override
   String get legalTermsIPHeading => '12. Propriété intellectuelle';
@@ -10939,17 +11423,17 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get legalTermsLiabilityBody =>
-      'Dans la mesure permise par la loi, Umbrella n\'est pas responsable des décisions que vous prenez sur la base des résultats de l\'IA. Vous êtes responsable de consulter un avocat qualifié dans votre juridiction.';
+      'DANS LA MESURE MAXIMALE PERMISE PAR LA LOI APPLICABLE : (a) LA RESPONSABILITÉ TOTALE DE DVTECH VENTURES POUR TOUTE RÉCLAMATION DÉCOULANT DE OU LIÉE À CES CONDITIONS OU À LA PLATEFORME EST LIMITÉE AU MONTANT QUE VOUS NOUS AVEZ PAYÉ DANS LES 12 MOIS PRÉCÉDANT LA RÉCLAMATION ; (b) NOUS NE SOMMES PAS RESPONSABLES DES DOMMAGES INDIRECTS, ACCESSOIRES, SPÉCIAUX, CONSÉCUTIFS OU PUNITIFS, DE LA PERTE DE PROFITS, DE LA PERTE DE DONNÉES OU DE LA PERTE DE GOODWILL. CES LIMITATIONS S\'APPLIQUENT MÊME SI NOUS AVONS ÉTÉ INFORMÉS DE LA POSSIBILITÉ DE TELS DOMMAGES ET QUELLE QUE SOIT LA THÉORIE JURIDIQUE AFFIRMÉE.';
 
   @override
-  String get legalTermsLiabilityHeading => '6. Limitation de responsabilité';
+  String get legalTermsLiabilityHeading => '16. Limitation de responsabilité';
 
   @override
   String get legalTermsNotLawFirmBody =>
-      'Umbrella fournit des informations juridiques, une assistance documentaire, la détection des problèmes et une analyse des risques. Nous ne sommes pas un cabinet d\'avocats et ne fournissons pas de représentation juridique, sauf si vous engagez un avocat vérifié via notre marché.';
+      'Umbrella est une plateforme technologique, pas un cabinet d\'avocats. DVTech Ventures ne fournit pas de conseils juridiques ni de représentation juridique. L\'utilisation de la plateforme ne crée pas de relation avocat-client entre vous et DVTech Ventures. Le marché des avocats vous met en contact avec des avocats indépendants agréés ; tout engagement avec un avocat du marché est régi par un contrat de mandat distinct entre vous et cet avocat.';
 
   @override
-  String get legalTermsNotLawFirmHeading => '2. Pas un cabinet d\'avocats';
+  String get legalTermsNotLawFirmHeading => '10. Pas un cabinet d\'avocats';
 
   @override
   String get legalTermsOfService => 'Conditions d\'utilisation';
@@ -11014,7 +11498,7 @@ class AppLocalizationsFr extends AppLocalizations {
   String get marketingAiLegalAnalysis => 'Analyse juridique de l\'IA';
 
   @override
-  String get marketingAnywhereChip => 'Anywhere';
+  String get marketingAnywhereChip => 'N\'importe où';
 
   @override
   String get marketingBasedOnRentRestrictionActCap296AndLawOfContractAc =>
@@ -11035,21 +11519,22 @@ class AppLocalizationsFr extends AppLocalizations {
   String get marketingBuiltForTrust => 'Conçu pour la confiance';
 
   @override
-  String get marketingCompareChatGptBadge => 'Comparison';
+  String get marketingCompareChatGptBadge => 'Comparaison';
 
   @override
   String get marketingCompareChatGptChatgptLabel => 'ChatGPT';
 
   @override
-  String get marketingCompareChatGptCta => 'Try Umbrella Legal AI free';
+  String get marketingCompareChatGptCta =>
+      'Essayez Umbrella Legal AI gratuitement';
 
   @override
   String get marketingCompareChatGptMetaDescription =>
-      'Compare Umbrella legal AI vs ChatGPT: real citations, jurisdiction-aware law, outcome guidance, and a full law firm OS — not generic chatbot answers.';
+      'Comparez Umbrella Legal AI et ChatGPT : citations réelles, loi tenant compte des juridictions, conseils sur les résultats et système d\'exploitation complet pour cabinet d\'avocats – pas de réponses de chatbot génériques.';
 
   @override
   String get marketingCompareChatGptMetaTitle =>
-      'Umbrella vs ChatGPT for Legal Work';
+      'Umbrella vs ChatGPT pour le travail juridique';
 
   @override
   String get marketingCompareChatGptRows =>
@@ -11057,39 +11542,39 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get marketingCompareChatGptSubtitle =>
-      'ChatGPT is a general assistant. Umbrella is legal AI built on real statutes, case law, and firm workflows.';
+      'ChatGPT est un assistant général. Umbrella est une IA juridique fondée sur des lois réelles, de la jurisprudence et des flux de travail de l\'entreprise.';
 
   @override
   String get marketingCompareChatGptTitle =>
-      'Umbrella vs ChatGPT for legal work';
+      'Umbrella vs ChatGPT pour le travail juridique';
 
   @override
   String get marketingCompareChatGptUmbrellaLabel => 'Umbrella';
 
   @override
   String get marketingCompareChatGptVerdictBody =>
-      'Use ChatGPT for general writing and brainstorming. Use Umbrella when you need legal analysis grounded in applicable law, verifiable citations, or firm-grade workflows.';
+      'Utilisez ChatGPT pour la rédaction générale et le brainstorming. Utilisez Umbrella lorsque vous avez besoin d\'une analyse juridique fondée sur la loi applicable, de citations vérifiables ou de flux de travail de niveau entreprise.';
 
   @override
-  String get marketingCompareChatGptVerdictTitle => 'When to use each';
+  String get marketingCompareChatGptVerdictTitle => 'Quand utiliser chacun';
 
   @override
-  String get marketingCompareHarveyBadge => 'Comparison';
+  String get marketingCompareHarveyBadge => 'Comparaison';
 
   @override
   String get marketingCompareHarveyCta =>
-      'Try Umbrella free — no sales call required';
+      'Essayez Umbrella gratuitement – ​​aucun appel commercial requis';
 
   @override
   String get marketingCompareHarveyHarveyLabel => 'Harvey AI';
 
   @override
   String get marketingCompareHarveyMetaDescription =>
-      'Harvey AI targets enterprise law firms only. Umbrella gives individuals free legal clarity AND a full firm OS — with India, UK, US & Kenya coverage and real citations.';
+      'Harvey AI cible uniquement les cabinets d’avocats d’affaires. Umbrella offre aux individus une clarté juridique gratuite ET un système d\'exploitation complet – avec une couverture pour l\'Inde, le Royaume-Uni, les États-Unis et le Kenya et de véritables citations.';
 
   @override
   String get marketingCompareHarveyMetaTitle =>
-      'Umbrella vs Harvey AI — Consumer + Firm Legal AI';
+      'Umbrella vs Harvey AI – IA juridique pour les consommateurs et les entreprises';
 
   @override
   String get marketingCompareHarveyRows =>
@@ -11097,67 +11582,67 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get marketingCompareHarveySubtitle =>
-      'Harvey is built exclusively for BigLaw and enterprise firms. Umbrella serves everyone — from your first legal question to running an entire practice.';
+      'Harvey est conçu exclusivement pour BigLaw et les entreprises. Umbrella est au service de tout le monde, de votre première question juridique à la gestion d\'un cabinet entier.';
 
   @override
-  String get marketingCompareHarveyTitle => 'Umbrella vs Harvey AI';
+  String get marketingCompareHarveyTitle => 'Umbrella contre Harvey AI';
 
   @override
   String get marketingCompareHarveyUmbrellaLabel => 'Umbrella';
 
   @override
   String get marketingCompareHarveyVerdictBody =>
-      'Choose Harvey if you are a large US/UK firm adding an AI layer to existing tools. Choose Umbrella if you want legal AI that serves both citizens and firms — with emerging-market coverage, free consumer access, and a connected intake-to-matter workflow.';
+      'Choisissez Harvey si vous êtes une grande entreprise américaine/britannique qui ajoute une couche d\'IA aux outils existants. Choisissez Umbrella si vous souhaitez une IA juridique qui sert à la fois les citoyens et les entreprises, avec une couverture des marchés émergents, un accès gratuit pour les consommateurs et un flux de travail connecté d\'entrée en matière.';
 
   @override
   String get marketingCompareHarveyVerdictTitle =>
-      'Why teams choose Umbrella over Harvey';
+      'Pourquoi les équipes choisissent Umbrella plutôt que Harvey';
 
   @override
-  String get marketingCompareHubBadge => 'Comparisons';
+  String get marketingCompareHubBadge => 'Comparaisons';
 
   @override
   String get marketingCompareHubCards =>
       '[object Object],[object Object],[object Object]';
 
   @override
-  String get marketingCompareHubCta => 'Try Umbrella free';
+  String get marketingCompareHubCta => 'Essayez Umbrella gratuitement';
 
   @override
   String get marketingCompareHubMetaDescription =>
-      'See how Umbrella compares to Harvey AI, Legora, and ChatGPT. The only legal AI built for individuals AND law firms — with India, UK, US & Kenya coverage.';
+      'Découvrez comment Umbrella se compare à Harvey AI, Legora et ChatGPT. La seule IA juridique conçue pour les particuliers ET les cabinets d\'avocats – avec une couverture en Inde, au Royaume-Uni, aux États-Unis et au Kenya.';
 
   @override
   String get marketingCompareHubMetaTitle =>
-      'Compare Umbrella Legal AI — vs Harvey, Legora & ChatGPT';
+      'Comparez Umbrella Legal AI — vs Harvey, Legora et ChatGPT';
 
   @override
-  String get marketingCompareHubReadComparison => 'Read comparison';
+  String get marketingCompareHubReadComparison => 'Lire la comparaison';
 
   @override
   String get marketingCompareHubSubtitle =>
-      'Purpose-built legal AI with real citations — for people who need clarity and firms that need an OS.';
+      'Une IA juridique spécialement conçue avec de vraies citations — pour les personnes qui ont besoin de clarté et les entreprises qui ont besoin d\'un système d\'exploitation.';
 
   @override
-  String get marketingCompareHubTitle => 'How Umbrella compares';
+  String get marketingCompareHubTitle => 'Comment Umbrella se compare';
 
   @override
-  String get marketingCompareLegoraBadge => 'Comparison';
+  String get marketingCompareLegoraBadge => 'Comparaison';
 
   @override
   String get marketingCompareLegoraCta =>
-      'Start free — individuals and firms welcome';
+      'Démarrez gratuitement – ​​les particuliers et les entreprises sont les bienvenus';
 
   @override
-  String get marketingCompareLegoraLegoraLabel => 'Legora';
+  String get marketingCompareLegoraLegoraLabel => 'Légora';
 
   @override
   String get marketingCompareLegoraMetaDescription =>
-      'Legora focuses on enterprise law firm workflows. Umbrella combines a free consumer legal issue checker with a full firm platform — India, UK, US & Kenya, with real citations.';
+      'Legora se concentre sur les flux de travail des cabinets d\'avocats d\'entreprise. Umbrella combine un vérificateur gratuit de problèmes juridiques pour les consommateurs avec une plate-forme d\'entreprise complète – Inde, Royaume-Uni, États-Unis et Kenya, avec de véritables citations.';
 
   @override
   String get marketingCompareLegoraMetaTitle =>
-      'Umbrella vs Legora — Legal AI for Everyone, Not Just Firms';
+      'Umbrella vs Legora – L\'IA juridique pour tous, pas seulement pour les entreprises';
 
   @override
   String get marketingCompareLegoraRows =>
@@ -11165,326 +11650,335 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get marketingCompareLegoraSubtitle =>
-      'Legora is legal AI for law firms. Umbrella is legal intelligence for everyone — individuals get clarity without a lawyer; firms get the full OS.';
+      'Legora est une IA juridique pour les cabinets d\'avocats. Umbrella est une intelligence juridique pour tous : les individus obtiennent de la clarté sans l\'aide d\'un avocat ; les entreprises obtiennent le système d’exploitation complet.';
 
   @override
-  String get marketingCompareLegoraTitle => 'Umbrella vs Legora';
+  String get marketingCompareLegoraTitle => 'Parapluie contre Legora';
 
   @override
   String get marketingCompareLegoraUmbrellaLabel => 'Umbrella';
 
   @override
   String get marketingCompareLegoraVerdictBody =>
-      'Legora excels at enterprise firm automation in mature markets. Umbrella goes further — free legal clarity for millions of people who can\'t afford a lawyer yet, plus a full platform for firms that want AI-native intake in India, Kenya, the UK, and the US.';
+      'Legora excelle dans l\'automatisation des entreprises sur les marchés matures. Umbrella va plus loin : une clarté juridique gratuite pour des millions de personnes qui ne peuvent pas encore se permettre les services d\'un avocat, ainsi qu\'une plate-forme complète pour les entreprises qui souhaitent bénéficier d\'un accès à l\'IA en Inde, au Kenya, au Royaume-Uni et aux États-Unis.';
 
   @override
   String get marketingCompareLegoraVerdictTitle =>
-      'Why Umbrella wins on reach and accessibility';
+      'Pourquoi Umbrella gagne en termes de portée et d\'accessibilité';
 
   @override
-  String get marketingCountryPagesAllGuides => 'Browse all legal guides';
+  String get marketingCountryPagesAllGuides =>
+      'Parcourez tous les guides juridiques';
 
   @override
-  String get marketingCountryPagesForIndividuals => 'For individuals';
+  String get marketingCountryPagesForIndividuals => 'Pour les particuliers';
 
   @override
-  String get marketingCountryPagesForLawFirms => 'For law firms';
+  String get marketingCountryPagesForLawFirms => 'Pour les cabinets d\'avocats';
 
   @override
-  String get marketingCountryPagesGbBadge => 'Legal AI United Kingdom';
+  String get marketingCountryPagesGbBadge => 'Juridique AI Royaume-Uni';
 
   @override
   String get marketingCountryPagesGbConsumerBody =>
-      'Employment disputes, housing issues, consumer rights — get a free AI preview citing Acts of Parliament and relevant case law before you pay for a consultation.';
+      'Conflits en matière de travail, problèmes de logement, droits des consommateurs : obtenez un aperçu gratuit de l\'IA citant les lois du Parlement et la jurisprudence pertinente avant de payer pour une consultation.';
 
   @override
   String get marketingCountryPagesGbConsumerBullets =>
       'Free issue checker citing UK statutes and case law,Employment tribunal and housing disrepair guidance,Document review for contracts and tenancy agreements,Plain-English outcome probability,Connect to regulated legal professionals when ready';
 
   @override
-  String get marketingCountryPagesGbConsumerCta => 'Check my legal issue free';
+  String get marketingCountryPagesGbConsumerCta =>
+      'Vérifiez mon problème juridique gratuitement';
 
   @override
   String get marketingCountryPagesGbConsumerTitle =>
-      'Know your rights before you instruct a solicitor';
+      'Connaissez vos droits avant de faire appel à un avocat';
 
   @override
   String get marketingCountryPagesGbFaqItems =>
       '[object Object],[object Object],[object Object]';
 
   @override
-  String get marketingCountryPagesGbFaqTitle => 'Legal AI UK — FAQ';
+  String get marketingCountryPagesGbFaqTitle => 'Legal AI UK – FAQ';
 
   @override
   String get marketingCountryPagesGbFirmBody =>
-      'From sole practitioners to growing firms — matters, billing, trust accounting, and a Copilot trained on your client\'s intake data.';
+      'Des praticiens indépendants aux entreprises en croissance : affaires, facturation, comptabilité en fiducie et un copilote formé sur les données d\'admission de vos clients.';
 
   @override
   String get marketingCountryPagesGbFirmBullets =>
       'Matter-aware AI Copilot with UK legal corpora,Billing, trust accounting, and compliance tools,Meeting transcription linked to matters,Client portal with secure document sharing,Transparent per-seat pricing';
 
   @override
-  String get marketingCountryPagesGbFirmCta => 'Platform for law firms';
+  String get marketingCountryPagesGbFirmCta =>
+      'Plateforme pour les cabinets d\'avocats';
 
   @override
   String get marketingCountryPagesGbFirmPitch =>
-      'Consumer issue checks in England, Scotland, Wales, and Northern Ireland feed your intake pipeline with full AI context.';
+      'Les contrôles des problèmes des consommateurs en Angleterre, en Écosse, au Pays de Galles et en Irlande du Nord alimentent votre pipeline d\'admission avec un contexte complet d\'IA.';
 
   @override
   String get marketingCountryPagesGbFirmTitle =>
-      'AI-native legal OS for UK law firms';
+      'Système d\'exploitation juridique natif d\'IA pour les cabinets d\'avocats britanniques';
 
   @override
   String get marketingCountryPagesGbHeroNote =>
-      'Legal information only — not legal advice. Connect to a regulated legal professional when you need formal counsel.';
+      'Informations juridiques uniquement – ​​pas de conseils juridiques. Connectez-vous à un professionnel du droit réglementé lorsque vous avez besoin d’un conseil formel.';
 
   @override
   String get marketingCountryPagesGbHeroSubtitle =>
-      'Employment tribunals, housing disrepair, tenant rights, contracts — get cited guidance from UK law in plain English. Solicitors and barristers get a full AI-native practice platform.';
+      'Tribunaux du travail, délabrement des logements, droits des locataires, contrats : obtenez des conseils cités dans le droit britannique dans un anglais simple. Les avocats et les avocats bénéficient d\'une plate-forme de pratique entièrement native de l\'IA.';
 
   @override
   String get marketingCountryPagesGbHeroTitle =>
-      'Legal clarity for the UK — no solicitor needed to start';
+      'Clarté juridique pour le Royaume-Uni : aucun avocat n\'est nécessaire pour commencer';
 
   @override
   String get marketingCountryPagesGbMetaDescription =>
-      'Umbrella serves the United Kingdom and every country worldwide. Free AI issue checker citing UK statutes and case law. Full legal OS for British law firms.';
+      'Umbrella dessert le Royaume-Uni et tous les pays du monde. Vérificateur gratuit de problèmes d\'IA citant les lois et la jurisprudence du Royaume-Uni. Système d\'exploitation juridique complet pour les cabinets d\'avocats britanniques.';
 
   @override
   String get marketingCountryPagesGbMetaTitle =>
-      'Legal AI UK — Global Platform, UK Law';
+      'Legal AI UK — Plateforme mondiale, droit britannique';
 
   @override
   String get marketingCountryPagesGbNoLawyerPitch =>
-      'Umbrella maps your facts to UK legislation and gives you risk level and next steps. Instruct a solicitor only when you\'re ready for formal advice.';
+      'Umbrella mappe vos faits sur la législation britannique et vous indique le niveau de risque et les prochaines étapes. Demandez à un avocat uniquement lorsque vous êtes prêt à recevoir des conseils formels.';
 
   @override
-  String get marketingCountryPagesGuideLink => 'Read guide';
+  String get marketingCountryPagesGuideLink => 'Lire le guide';
 
   @override
   String get marketingCountryPagesGuidesSubtitle =>
-      'Educational overviews on common legal topics — not legal advice.';
+      'Aperçus pédagogiques sur des sujets juridiques courants – et non des conseils juridiques.';
 
   @override
   String marketingCountryPagesGuidesTitle(String country) {
-    return 'Legal guides for $country';
+    return 'Guides juridiques pour $country';
   }
 
   @override
-  String get marketingCountryPagesInBadge => 'Legal AI India';
+  String get marketingCountryPagesInBadge => 'IA juridique Inde';
 
   @override
   String get marketingCountryPagesInConsumerBody =>
-      'Before you pay ₹5,000 for a consultation, get a free AI preview grounded in the IPC, CrPC, contract acts, and relevant case law. Know your risk level, your rights, and your next steps.';
+      'Avant de payer 5 000 ₹ pour une consultation, obtenez un aperçu gratuit de l\'IA fondé sur l\'IPC, le CrPC, les lois contractuelles et la jurisprudence pertinente. Connaissez votre niveau de risque, vos droits et vos prochaines étapes.';
 
   @override
   String get marketingCountryPagesInConsumerBullets =>
       'Free issue checker with cited IPC & statute references,FIR analysis and section finder for criminal matters,Document upload and AI contract review,India Drafts — demand letters, notices, and pleadings,Connect to vetted advocates when ready';
 
   @override
-  String get marketingCountryPagesInConsumerCta => 'Check my legal issue free';
+  String get marketingCountryPagesInConsumerCta =>
+      'Vérifiez mon problème juridique gratuitement';
 
   @override
   String get marketingCountryPagesInConsumerTitle =>
-      'Most Indians don\'t need a lawyer to know if they have a case';
+      'La plupart des Indiens n\'ont pas besoin d\'un avocat pour savoir s\'ils ont un dossier';
 
   @override
   String get marketingCountryPagesInFaqItems =>
       '[object Object],[object Object],[object Object]';
 
   @override
-  String get marketingCountryPagesInFaqTitle => 'Legal AI India — FAQ';
+  String get marketingCountryPagesInFaqTitle => 'AI juridique Inde - FAQ';
 
   @override
   String get marketingCountryPagesInFirmBody =>
-      'From solo advocates in district courts to mid-size firms — matter management, billing, trust accounting, and a Copilot that knows every client\'s facts.';
+      'Des avocats solos devant les tribunaux de district aux cabinets de taille moyenne : gestion des dossiers, facturation, comptabilité en fiducie et un copilote qui connaît les faits de chaque client.';
 
   @override
   String get marketingCountryPagesInFirmBullets =>
       'Matter-aware AI Copilot with Indian legal corpora,Section finder, FIR analysis, and India drafting tools,Billing, trust accounting, and client portal,Meeting transcription linked to matters,SOLO bundle for independent advocates';
 
   @override
-  String get marketingCountryPagesInFirmCta => 'Platform for law firms';
+  String get marketingCountryPagesInFirmCta =>
+      'Plateforme pour les cabinets d\'avocats';
 
   @override
   String get marketingCountryPagesInFirmPitch =>
-      'Consumer issue checks flow directly into your intake queue. Your Copilot already knows the client\'s situation before the first call.';
+      'Les contrôles des problèmes des consommateurs sont directement envoyés dans votre file d\'attente d\'admission. Votre Copilot connaît déjà la situation du client avant le premier appel.';
 
   @override
   String get marketingCountryPagesInFirmTitle =>
-      'AI-native legal OS for Indian law firms';
+      'Système d\'exploitation juridique natif d\'IA pour les cabinets d\'avocats indiens';
 
   @override
   String get marketingCountryPagesInHeroNote =>
-      'Legal information only — not legal advice. Connect to a licensed advocate when you need formal representation.';
+      'Informations juridiques uniquement – ​​pas de conseils juridiques. Connectez-vous à un avocat agréé lorsque vous avez besoin d’une représentation formelle.';
 
   @override
   String get marketingCountryPagesInHeroSubtitle =>
-      'Describe your situation in Hindi or English. Umbrella reads Indian statutes, IPC sections, and case law — then tells you exactly where you stand. Law firms get a full AI-native practice platform.';
+      'Décrivez votre situation en hindi ou en anglais. Umbrella lit les lois indiennes, les articles de l\'IPC et la jurisprudence, puis vous indique exactement où vous en êtes. Les cabinets d’avocats disposent d’une plateforme de pratique entièrement native de l’IA.';
 
   @override
   String get marketingCountryPagesInHeroTitle =>
-      'Legal clarity for India — no advocate needed to start';
+      'Clarté juridique pour l’Inde : aucun défenseur n’est nécessaire pour commencer';
 
   @override
   String get marketingCountryPagesInMetaDescription =>
-      'Umbrella serves India and every country worldwide. Free AI issue checker with IPC citations, FIR analysis, and section finder. Full legal OS for Indian law firms.';
+      'Umbrella dessert l\'Inde et tous les pays du monde. Vérificateur de problèmes d\'IA gratuit avec citations IPC, analyse FIR et recherche de sections. Système d\'exploitation juridique complet pour les cabinets d\'avocats indiens.';
 
   @override
   String get marketingCountryPagesInMetaTitle =>
-      'Legal AI India — Global Platform, Local Law';
+      'Legal AI India — Plateforme mondiale, droit local';
 
   @override
   String get marketingCountryPagesInNoLawyerPitch =>
-      'Rent disputes, cheque bounce, employment issues, consumer complaints, property matters — Umbrella maps your facts to real Indian law in under 2 minutes. Only pay for a lawyer when you decide you need one.';
+      'Litiges de loyer, chèques sans provision, problèmes d\'emploi, plaintes de consommateurs, questions de propriété - Umbrella mappe vos faits à la vraie loi indienne en moins de 2 minutes. Ne payez les services d’un avocat que lorsque vous décidez que vous en avez besoin.';
 
   @override
-  String get marketingCountryPagesKeBadge => 'Legal AI Kenya';
+  String get marketingCountryPagesKeBadge => 'Juridique AI Kenya';
 
   @override
   String get marketingCountryPagesKeConsumerBody =>
-      'Before you pay for a consultation, get a free AI preview citing the Employment Act, Land laws, and relevant Kenyan case law. Know your risk and your options.';
+      'Avant de payer pour une consultation, obtenez un aperçu gratuit de l\'IA citant la loi sur l\'emploi, les lois foncières et la jurisprudence kenyane pertinente. Connaissez votre risque et vos options.';
 
   @override
   String get marketingCountryPagesKeConsumerBullets =>
       'Free issue checker with Kenyan statute citations,Employment Act and land dispute guidance,Document upload and contract review,M-Pesa-friendly subscription and billing,Connect to vetted advocates when ready';
 
   @override
-  String get marketingCountryPagesKeConsumerCta => 'Check my legal issue free';
+  String get marketingCountryPagesKeConsumerCta =>
+      'Vérifiez mon problème juridique gratuitement';
 
   @override
   String get marketingCountryPagesKeConsumerTitle =>
-      'Legal clarity shouldn\'t require an advocate\'s consultation fee';
+      'La clarté juridique ne devrait pas nécessiter des frais de consultation pour un avocat';
 
   @override
   String get marketingCountryPagesKeFaqItems =>
       '[object Object],[object Object],[object Object]';
 
   @override
-  String get marketingCountryPagesKeFaqTitle => 'Legal AI Kenya — FAQ';
+  String get marketingCountryPagesKeFaqTitle => 'Juridique AI Kenya — FAQ';
 
   @override
   String get marketingCountryPagesKeFirmBody =>
-      'Solo advocates to mid-size firms — matters, billing with M-Pesa support, trust accounting, and AI Copilot built for Kenyan practice.';
+      'Défenseurs solo auprès des entreprises de taille moyenne : questions, facturation avec le support M-Pesa, comptabilité fiduciaire et AI Copilot conçu pour la pratique kenyane.';
 
   @override
   String get marketingCountryPagesKeFirmBullets =>
       'Matter-aware AI Copilot with Kenyan legal corpora,M-Pesa billing integration,Billing, trust accounting, and client portal,Meeting transcription for client conferences,SOLO bundle for independent advocates';
 
   @override
-  String get marketingCountryPagesKeFirmCta => 'Platform for law firms';
+  String get marketingCountryPagesKeFirmCta =>
+      'Plateforme pour les cabinets d\'avocats';
 
   @override
   String get marketingCountryPagesKeFirmPitch =>
-      'Consumer issue checks from across Kenya feed your intake with full context — your Copilot knows the client\'s situation before the first meeting.';
+      'Les vérifications des problèmes des consommateurs à travers le Kenya alimentent votre apport avec un contexte complet : votre copilote connaît la situation du client avant la première réunion.';
 
   @override
   String get marketingCountryPagesKeFirmTitle =>
-      'AI-native legal OS for Kenyan law firms';
+      'Système d\'exploitation juridique natif d\'IA pour les cabinets d\'avocats kenyans';
 
   @override
   String get marketingCountryPagesKeHeroNote =>
-      'Legal information only — not legal advice. Connect to a licensed advocate when you need formal representation.';
+      'Informations juridiques uniquement – ​​pas de conseils juridiques. Connectez-vous à un avocat agréé lorsque vous avez besoin d’une représentation formelle.';
 
   @override
   String get marketingCountryPagesKeHeroSubtitle =>
-      'Employment rights, land disputes, consumer complaints — describe your situation and get guidance grounded in Kenyan law. Advocates and firms get matter management, billing, and AI Copilot.';
+      'Droits du travail, litiges fonciers, plaintes de consommateurs : décrivez votre situation et obtenez des conseils fondés sur la loi kenyane. Les avocats et les entreprises bénéficient de la gestion des dossiers, de la facturation et de l\'IA Copilot.';
 
   @override
   String get marketingCountryPagesKeHeroTitle =>
-      'Legal clarity for Kenya — no advocate fee to start';
+      'Clarté juridique pour le Kenya : pas de frais d\'avocat pour commencer';
 
   @override
   String get marketingCountryPagesKeMetaDescription =>
-      'Umbrella serves Kenya and every country worldwide. Free AI issue checker citing Kenyan statutes and case law. Full legal OS for Kenyan law firms with M-Pesa billing.';
+      'Umbrella dessert le Kenya et tous les pays du monde. Vérificateur gratuit de problèmes d\'IA citant les lois et la jurisprudence kenyanes. Système d\'exploitation juridique complet pour les cabinets d\'avocats kenyans avec facturation M-Pesa.';
 
   @override
   String get marketingCountryPagesKeMetaTitle =>
-      'Legal AI Kenya — Global Platform, Kenyan Law';
+      'Legal AI Kenya — Plateforme mondiale, droit kenyan';
 
   @override
   String get marketingCountryPagesKeNoLawyerPitch =>
-      'Land disputes, wrongful termination, consumer rights — Umbrella applies Kenyan law to your facts in minutes. Hire an advocate only when you decide you need one.';
+      'Litiges fonciers, licenciement abusif, droits des consommateurs — Umbrella applique la loi kenyane à vos faits en quelques minutes. Embauchez un avocat uniquement lorsque vous décidez que vous en avez besoin.';
 
   @override
   String get marketingCountryPagesLawyerWhenReady =>
-      'When you want formal advice, connect to a licensed lawyer on the platform — on your terms.';
+      'Lorsque vous souhaitez des conseils formels, connectez-vous à un avocat agréé sur la plateforme, selon vos conditions.';
 
   @override
   String get marketingCountryPagesNoLawyerNeededTitle =>
-      'You don\'t need a lawyer to understand your situation';
+      'Vous n\'avez pas besoin d\'un avocat pour comprendre votre situation';
 
   @override
   String get marketingCountryPagesOtherMarkets =>
-      'Featured regions — available worldwide';
+      'Régions en vedette – disponibles dans le monde entier';
 
   @override
-  String get marketingCountryPagesUsBadge => 'Legal AI United States';
+  String get marketingCountryPagesUsBadge => 'IA juridique États-Unis';
 
   @override
   String get marketingCountryPagesUsConsumerBody =>
-      'Get a free AI preview with risk level, outcome probability, and cited statutes before you hire an attorney. Know your options in plain English.';
+      'Obtenez un aperçu gratuit de l\'IA avec le niveau de risque, la probabilité de résultat et les lois citées avant d\'engager un avocat. Connaissez vos options dans un anglais simple.';
 
   @override
   String get marketingCountryPagesUsConsumerBullets =>
       'Free issue checker with federal & state law citations,Document upload and contract clause analysis,Outcome probability and risk assessment,US drafting tools for demand letters and notices,Connect to licensed attorneys when ready';
 
   @override
-  String get marketingCountryPagesUsConsumerCta => 'Check my legal issue free';
+  String get marketingCountryPagesUsConsumerCta =>
+      'Vérifiez mon problème juridique gratuitement';
 
   @override
   String get marketingCountryPagesUsConsumerTitle =>
-      'You shouldn\'t pay \$300 just to learn if you have a case';
+      'Vous ne devriez pas payer 300 \$ juste pour savoir si vous avez un dossier';
 
   @override
   String get marketingCountryPagesUsFaqItems =>
       '[object Object],[object Object],[object Object]';
 
   @override
-  String get marketingCountryPagesUsFaqTitle => 'Legal AI USA — FAQ';
+  String get marketingCountryPagesUsFaqTitle => 'Juridique AI USA – FAQ';
 
   @override
   String get marketingCountryPagesUsFirmBody =>
-      'Solo practitioners to mid-size firms — one platform for matters, billing, trust accounting, meeting intelligence, and a matter-aware Copilot.';
+      'Praticiens individuels jusqu\'aux entreprises de taille moyenne : une plate-forme unique pour les affaires, la facturation, la comptabilité fiduciaire, les renseignements sur les réunions et un Copilot sensible aux affaires.';
 
   @override
   String get marketingCountryPagesUsFirmBullets =>
       'Matter-aware AI Copilot with US legal research,Billing, trust accounting, and conflict checks,Meeting transcription and action items,Client portal — not email threads,Per-seat pricing with SOLO bundle for solos';
 
   @override
-  String get marketingCountryPagesUsFirmCta => 'Platform for law firms';
+  String get marketingCountryPagesUsFirmCta =>
+      'Plateforme pour les cabinets d\'avocats';
 
   @override
   String get marketingCountryPagesUsFirmPitch =>
-      'Consumer intake from issue checks gives your team context before the first consultation. Reduce unbillable discovery calls.';
+      'Les retours des consommateurs issus des contrôles de problèmes donnent à votre équipe un contexte avant la première consultation. Réduisez les appels de découverte non facturables.';
 
   @override
   String get marketingCountryPagesUsFirmTitle =>
-      'AI-native legal OS for US law firms';
+      'Système d\'exploitation juridique natif d\'IA pour les cabinets d\'avocats américains';
 
   @override
   String get marketingCountryPagesUsHeroNote =>
-      'Legal information only — not legal advice. Connect to a licensed attorney when you need formal counsel.';
+      'Informations juridiques uniquement – ​​pas de conseils juridiques. Connectez-vous à un avocat agréé lorsque vous avez besoin d’un conseil formel.';
 
   @override
   String get marketingCountryPagesUsHeroSubtitle =>
-      'Employment disputes, landlord issues, small claims, contracts — describe your situation and get cited guidance from federal and state law. Law firms get matter management, billing, and AI Copilot.';
+      'Conflits de travail, problèmes de propriétaire, petites créances, contrats : décrivez votre situation et obtenez des conseils tirés des lois fédérales et étatiques. Les cabinets d\'avocats bénéficient de la gestion des dossiers, de la facturation et de l\'IA Copilot.';
 
   @override
   String get marketingCountryPagesUsHeroTitle =>
-      'Legal clarity for America — no attorney bill to start';
+      'Clarté juridique pour l’Amérique – pas de projet de loi sur les avocats pour commencer';
 
   @override
   String get marketingCountryPagesUsMetaDescription =>
-      'Umbrella serves the United States and every country worldwide. Free AI issue checker with federal and state law citations. Full legal OS for US law firms.';
+      'Umbrella dessert les États-Unis et tous les pays du monde. Vérificateur gratuit de problèmes d\'IA avec citations de lois fédérales et étatiques. Système d\'exploitation juridique complet pour les cabinets d\'avocats américains.';
 
   @override
   String get marketingCountryPagesUsMetaTitle =>
-      'Legal AI USA — Global Platform, US Law';
+      'Legal AI USA — Plateforme mondiale, droit américain';
 
   @override
   String get marketingCountryPagesUsNoLawyerPitch =>
-      'Wrongful termination, eviction, contract disputes, small claims — Umbrella applies your jurisdiction\'s law to your facts. Hire a lawyer only when the preview tells you it\'s worth it.';
+      'Résiliation injustifiée, expulsion, litiges contractuels, petites créances — Umbrella applique la loi de votre juridiction à vos faits. Embauchez un avocat uniquement lorsque l’aperçu vous dit que cela en vaut la peine.';
 
   @override
   String get marketingCreateAccountCta => 'Créer un compte';
@@ -11494,11 +11988,11 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get marketingDemoMetaDescription =>
-      'Interactive product tour: issue checker, document drafting, contract review, AI Copilot, and firm workflows. Free worldwide for individuals; free trial for law firms.';
+      'Visite interactive du produit : vérificateur de problèmes, rédaction de documents, révision de contrats, AI Copilot et flux de travail de l\'entreprise. Gratuit dans le monde entier pour les particuliers ; essai gratuit pour les cabinets d\'avocats.';
 
   @override
   String get marketingDemoMetaTitle =>
-      'Umbrella Demo — Global Legal AI in Action';
+      'Démo Umbrella – L\'IA juridique mondiale en action';
 
   @override
   String get marketingDevelopersApiKeys => 'Clés API';
@@ -11568,7 +12062,7 @@ class AppLocalizationsFr extends AppLocalizations {
   String get marketingFeatures => 'Caractéristiques';
 
   @override
-  String get marketingFooterCompare => 'Compare Legal AI';
+  String get marketingFooterCompare => 'Comparez l’IA juridique';
 
   @override
   String marketingFooterCopyright(String year) {
@@ -11595,25 +12089,25 @@ class AppLocalizationsFr extends AppLocalizations {
   String get marketingFooterLegal => 'Légal';
 
   @override
-  String get marketingFooterLegalAi => 'Legal AI';
+  String get marketingFooterLegalAi => 'IA juridique';
 
   @override
-  String get marketingFooterLegalAiIndia => 'Legal AI India';
+  String get marketingFooterLegalAiIndia => 'IA juridique Inde';
 
   @override
-  String get marketingFooterLegalAiKenya => 'Legal AI Kenya';
+  String get marketingFooterLegalAiKenya => 'Juridique AI Kenya';
 
   @override
-  String get marketingFooterLegalAiUK => 'Legal AI UK';
+  String get marketingFooterLegalAiUK => 'IA juridique au Royaume-Uni';
 
   @override
-  String get marketingFooterLegalAiUS => 'Legal AI US';
+  String get marketingFooterLegalAiUS => 'Juridique AI États-Unis';
 
   @override
   String get marketingFooterLegalDisclaimer => 'Mentions légales';
 
   @override
-  String get marketingFooterLegalGuides => 'Legal Guides';
+  String get marketingFooterLegalGuides => 'Guides juridiques';
 
   @override
   String get marketingFooterLegalIssueChecker =>
@@ -11626,7 +12120,7 @@ class AppLocalizationsFr extends AppLocalizations {
   String get marketingFooterPrivacy => 'Confidentialité';
 
   @override
-  String get marketingFooterRegions => 'Regions';
+  String get marketingFooterRegions => 'Régions';
 
   @override
   String get marketingFooterSignIn => 'Se connecter';
@@ -11639,7 +12133,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get marketingFooterTagline =>
-      'Comprenez votre problème juridique avant de dépenser des milliers de dollars pour un avocat.';
+      'Comprenez votre problème juridique avant de dépenser des milliers de dollars pour un avocat – ou de gérer l’ensemble de votre cabinet sur une seule plateforme.';
 
   @override
   String get marketingFooterTerms => 'Termes';
@@ -11699,11 +12193,12 @@ class AppLocalizationsFr extends AppLocalizations {
       'Flux de travail si/alors avec approbations et SLA.';
 
   @override
-  String get marketingForLawyersFeatureBilling => 'Billing & Time Tracking';
+  String get marketingForLawyersFeatureBilling =>
+      'Facturation et suivi du temps';
 
   @override
   String get marketingForLawyersFeatureBillingDesc =>
-      'Automated time capture, invoice generation, and payment collection.';
+      'Capture automatisée du temps, génération de factures et encaissement des paiements.';
 
   @override
   String get marketingForLawyersFeatureCopilot => 'Copilote IA';
@@ -11728,11 +12223,12 @@ class AppLocalizationsFr extends AppLocalizations {
       'Flux de travail d\'admission, vérifications des conflits et pipelines d\'étapes.';
 
   @override
-  String get marketingForLawyersFeatureMeetings => 'Meeting Transcripts';
+  String get marketingForLawyersFeatureMeetings =>
+      'Transcriptions des réunions';
 
   @override
   String get marketingForLawyersFeatureMeetingsDesc =>
-      'Record, transcribe, and auto-summarise client meetings.';
+      'Enregistrez, transcrivez et résumez automatiquement les réunions clients.';
 
   @override
   String get marketingForLawyersFeaturePortal => 'Portail client';
@@ -11742,11 +12238,11 @@ class AppLocalizationsFr extends AppLocalizations {
       'Portail sécurisé pour les documents, factures et messages.';
 
   @override
-  String get marketingForLawyersFeatureResearch => 'Legal Research';
+  String get marketingForLawyersFeatureResearch => 'Recherche juridique';
 
   @override
   String get marketingForLawyersFeatureResearchDesc =>
-      'Jurisdiction-aware AI research with cited statutes and case law.';
+      'Recherche sur l’IA respectueuse des juridictions avec lois et jurisprudence citées.';
 
   @override
   String get marketingForLawyersFeatureTrust => 'Comptabilité en fiducie';
@@ -11763,18 +12259,18 @@ class AppLocalizationsFr extends AppLocalizations {
   String get marketingForLawyersFeaturesTitle2 => 'Gérez votre cabinet';
 
   @override
-  String get marketingForLawyersFinalCtaDemo => 'Watch a demo';
+  String get marketingForLawyersFinalCtaDemo => 'Regarder une démo';
 
   @override
   String get marketingForLawyersFinalCtaSubtitle =>
-      'Join hundreds of lawyers already using Umbrella to work smarter, bill more, and deliver better client outcomes.';
+      'Rejoignez des centaines d\'avocats qui utilisent déjà Umbrella pour travailler plus intelligemment, facturer davantage et offrir de meilleurs résultats à leurs clients.';
 
   @override
   String get marketingForLawyersFinalCtaTitle =>
-      'Your practice, supercharged by AI.';
+      'Votre pratique, suralimentée par l\'IA.';
 
   @override
-  String get marketingForLawyersFinalCtaTrial => 'Start free trial';
+  String get marketingForLawyersFinalCtaTrial => 'Commencer l\'essai gratuit';
 
   @override
   String get marketingForLawyersHeadline1 => 'Gérer les dossiers';
@@ -11786,116 +12282,121 @@ class AppLocalizationsFr extends AppLocalizations {
   String get marketingForLawyersHeadline3 => 'Développez votre pratique.';
 
   @override
-  String get marketingForLawyersHowItWorksTitle => 'Up and running in minutes';
+  String get marketingForLawyersHowItWorksTitle =>
+      'Opérationnel en quelques minutes';
 
   @override
-  String get marketingForLawyersImpact1Label => 'Less time on admin';
+  String get marketingForLawyersImpact1Label =>
+      'Moins de temps sur l\'administration';
 
   @override
   String get marketingForLawyersImpact1Value => '68%';
 
   @override
-  String get marketingForLawyersImpact2Label => 'Faster matter setup';
+  String get marketingForLawyersImpact2Label =>
+      'Configuration du sujet plus rapide';
 
   @override
   String get marketingForLawyersImpact2Value => '3×';
 
   @override
-  String get marketingForLawyersImpact3Label => 'Billing accuracy';
+  String get marketingForLawyersImpact3Label => 'Exactitude de la facturation';
 
   @override
   String get marketingForLawyersImpact3Value => '94%';
 
   @override
-  String get marketingForLawyersImpact4Label => 'Average onboarding time';
+  String get marketingForLawyersImpact4Label => 'Temps d\'intégration moyen';
 
   @override
-  String get marketingForLawyersImpact4Value => '< 5 min';
+  String get marketingForLawyersImpact4Value => '< 5 minutes';
 
   @override
-  String get marketingForLawyersImpactTitle => 'The Umbrella difference';
+  String get marketingForLawyersImpactTitle => 'La différence du parapluie';
 
   @override
   String get marketingForLawyersMetaDescription =>
-      'AI Copilot sensible à la matière, recherche juridique, facturation, comptabilité fiduciaire et automatisation — conçus pour les cabinets d\'avocats modernes.';
+      'Matter-aware AI Copilot, recherche juridique, rédaction de documents, facturation, comptabilité fiduciaire et prise en charge des clients : la plateforme juridique complète pour les cabinets de tous les pays.';
 
   @override
   String get marketingForLawyersMetaTitle =>
-      'Système d\'exploitation juridique natif d\'IA pour les cabinets d\'avocats';
+      'Système d\'exploitation juridique natif d\'IA pour les cabinets d\'avocats - Plateforme mondiale';
 
   @override
   String get marketingForLawyersPersona1Bullet1 =>
-      'Full matter OS without firm overhead';
+      'Système d\'exploitation complet sans surcharge ferme';
 
   @override
   String get marketingForLawyersPersona1Bullet2 =>
-      'AI Copilot drafts letters, contracts, and memos';
+      'AI Copilot rédige des lettres, des contrats et des mémos';
 
   @override
   String get marketingForLawyersPersona1Bullet3 =>
-      'Built-in trust accounting and invoicing';
+      'Comptabilité fiduciaire et facturation intégrées';
 
   @override
-  String get marketingForLawyersPersona1Title => 'Solo Advocates';
+  String get marketingForLawyersPersona1Title => 'Défenseurs solos';
 
   @override
   String get marketingForLawyersPersona2Bullet1 =>
-      'Multi-user with role-based access control';
+      'Multi-utilisateurs avec contrôle d\'accès basé sur les rôles';
 
   @override
   String get marketingForLawyersPersona2Bullet2 =>
-      'Shared matter pipeline and client portal';
+      'Pipeline de sujets partagés et portail client';
 
   @override
   String get marketingForLawyersPersona2Bullet3 =>
-      'Team billing and collections dashboard';
+      'Tableau de bord de facturation et de recouvrement des équipes';
 
   @override
-  String get marketingForLawyersPersona2Title => 'Boutique Firms';
+  String get marketingForLawyersPersona2Title => 'Entreprises-boutiques';
 
   @override
   String get marketingForLawyersPersona3Bullet1 =>
-      'Unlimited internal matter tracking';
+      'Suivi illimité des dossiers internes';
 
   @override
   String get marketingForLawyersPersona3Bullet2 =>
-      'Policy and contract library with version control';
+      'Bibliothèque de politiques et de contrats avec contrôle de version';
 
   @override
   String get marketingForLawyersPersona3Bullet3 =>
-      'SSO, audit logs, and compliance reporting';
+      'SSO, journaux d\'audit et rapports de conformité';
 
   @override
-  String get marketingForLawyersPersona3Title => 'In-House Legal Teams';
+  String get marketingForLawyersPersona3Title => 'Équipes juridiques internes';
 
   @override
   String get marketingForLawyersPersonasTitle =>
-      'Built for every practice type';
+      'Conçu pour chaque type de pratique';
 
   @override
-  String get marketingForLawyersPricingTeaserCta => 'See full pricing';
+  String get marketingForLawyersPricingTeaserCta => 'Voir les tarifs complets';
 
   @override
-  String get marketingForLawyersPricingTeaserFirm => 'Firm — custom per seat';
+  String get marketingForLawyersPricingTeaserFirm =>
+      'Ferme – personnalisé par siège';
 
   @override
   String get marketingForLawyersPricingTeaserFirmDesc =>
-      'Multi-user, SSO, advanced compliance, and dedicated support.';
+      'Multi-utilisateurs, SSO, conformité avancée et support dédié.';
 
   @override
-  String get marketingForLawyersPricingTeaserSolo => 'Solo — from \$40 / month';
+  String get marketingForLawyersPricingTeaserSolo =>
+      'Solo — à partir de 40 \$/mois';
 
   @override
   String get marketingForLawyersPricingTeaserSoloDesc =>
-      'Full Lawyer OS for individual advocates and barristers.';
+      'Full Lawyer OS pour les avocats individuels et les avocats.';
 
   @override
   String get marketingForLawyersPricingTeaserSubtitle =>
-      'Start free. Upgrade when you need more. No hidden fees.';
+      'Commencez gratuitement. Mettez à niveau lorsque vous en avez besoin de plus. Pas de frais cachés.';
 
   @override
   String get marketingForLawyersPricingTeaserTitle =>
-      'Simple, transparent pricing';
+      'Une tarification simple et transparente';
 
   @override
   String get marketingForLawyersSetupMinutes => 'Installation en 5 minutes';
@@ -11914,24 +12415,25 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get marketingForLawyersStep1Desc =>
-      'Capture any client call or upload an existing recording. Umbrella transcribes and extracts action items automatically.';
+      'Capturez n’importe quel appel client ou téléchargez un enregistrement existant. Umbrella transcrit et extrait automatiquement les éléments d\'action.';
 
   @override
-  String get marketingForLawyersStep1Title => 'Record or import a meeting';
+  String get marketingForLawyersStep1Title =>
+      'Enregistrer ou importer une réunion';
 
   @override
   String get marketingForLawyersStep2Desc =>
-      'Key facts, deadlines, risks, and next steps are organised into a live matter file — no manual data entry required.';
+      'Les faits clés, les délais, les risques et les prochaines étapes sont organisés dans un fichier d\'affaire en direct — aucune saisie manuelle de données n\'est requise.';
 
   @override
-  String get marketingForLawyersStep2Title => 'AI builds your matter';
+  String get marketingForLawyersStep2Title => 'L\'IA construit votre sujet';
 
   @override
   String get marketingForLawyersStep3Desc =>
-      'Billing, trust accounting, client communications, and filings all flow from the same source of truth.';
+      'La facturation, la comptabilité fiduciaire, les communications avec les clients et les dépôts proviennent tous de la même source de vérité.';
 
   @override
-  String get marketingForLawyersStep3Title => 'Run your practice';
+  String get marketingForLawyersStep3Title => 'Exécutez votre pratique';
 
   @override
   String get marketingForLawyersSubhead =>
@@ -11981,40 +12483,40 @@ class AppLocalizationsFr extends AppLocalizations {
   String get marketingHeaderAccount => 'Compte';
 
   @override
-  String get marketingHeaderConsumerAccount => 'Account';
+  String get marketingHeaderConsumerAccount => 'Compte';
 
   @override
-  String get marketingHeaderConsumerAiTools => 'AI Tools';
+  String get marketingHeaderConsumerAiTools => 'Outils d\'IA';
 
   @override
-  String get marketingHeaderConsumerCases => 'My Cases';
+  String get marketingHeaderConsumerCases => 'Mes cas';
 
   @override
-  String get marketingHeaderConsumerDocumentReview => 'Document Review';
+  String get marketingHeaderConsumerDocumentReview => 'Examen des documents';
 
   @override
-  String get marketingHeaderConsumerFirAnalysis => 'FIR Analysis';
+  String get marketingHeaderConsumerFirAnalysis => 'Analyse FIR';
 
   @override
-  String get marketingHeaderConsumerIndiaDrafts => 'India Drafts';
+  String get marketingHeaderConsumerIndiaDrafts => 'Drafts indiens';
 
   @override
-  String get marketingHeaderConsumerIssueChecker => 'Issue Checker';
+  String get marketingHeaderConsumerIssueChecker => 'Vérificateur de problèmes';
 
   @override
-  String get marketingHeaderConsumerLawyerReview => 'Lawyer Review';
+  String get marketingHeaderConsumerLawyerReview => 'Examen des avocats';
 
   @override
-  String get marketingHeaderConsumerReports => 'Reports';
+  String get marketingHeaderConsumerReports => 'Rapports';
 
   @override
-  String get marketingHeaderConsumerResearch => 'Legal Research';
+  String get marketingHeaderConsumerResearch => 'Recherche juridique';
 
   @override
-  String get marketingHeaderConsumerSectionFinder => 'Section Finder';
+  String get marketingHeaderConsumerSectionFinder => 'Recherche de sections';
 
   @override
-  String get marketingHeaderConsumerSubscription => 'Subscription';
+  String get marketingHeaderConsumerSubscription => 'Abonnement';
 
   @override
   String get marketingHeaderDashboard => 'Tableau de bord';
@@ -12035,7 +12537,7 @@ class AppLocalizationsFr extends AppLocalizations {
   String get marketingHeaderIssueChecker => 'Vérificateur de problèmes';
 
   @override
-  String get marketingHeaderLegalAi => 'Legal AI';
+  String get marketingHeaderLegalAi => 'IA juridique';
 
   @override
   String get marketingHeaderPricing => 'Tarifs';
@@ -12064,7 +12566,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get marketingHomeAudienceItems =>
-      'Individuals,Law Firms,Solo Advocates,In-House Counsel,Litigation Teams,Corporate Legal Depts,Compliance Officers,Legal Researchers,Law Students,SMBs,Startups,HR & Employment,Landlords & Tenants,Entrepreneurs,Magistrates,Contract Teams';
+      'Individuals,Law Firms,Défenseurs solos,In-House Counsel,Litigation Teams,Corporate Legal Depts,Compliance Officers,Legal Researchers,Law Students,SMBs,Startups,HR & Employment,Landlords & Tenants,Entrepreneurs,Magistrates,Contract Teams';
 
   @override
   String get marketingHomeCoverageCitizensAndFirms =>
@@ -12110,8 +12612,7 @@ class AppLocalizationsFr extends AppLocalizations {
   String get marketingHomeDifferenceBeforeLabel => 'Avant le parapluie';
 
   @override
-  String get marketingHomeDifferenceCta =>
-      'Commencez gratuitement – ​​sans carte de crédit';
+  String get marketingHomeDifferenceCta => 'Commencez gratuitement';
 
   @override
   String get marketingHomeDifferenceSubtitle =>
@@ -12196,11 +12697,11 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get marketingHomeFinalCtaFootnote =>
-      'Pas de carte de crédit · Résultats en moins de 2 minutes · Aperçu gratuit toujours inclus';
+      'Résultats en moins de 2 minutes · Aperçu gratuit toujours inclus';
 
   @override
   String get marketingHomeFinalCtaSubtitle =>
-      'Décrivez votre situation. Obtenez une analyse citée en moins de 2 minutes. Pas de carte de crédit, pas besoin d\'avocat pour commencer.';
+      'Décrivez votre situation. Obtenez une analyse citée en moins de 2 minutes. Aucun avocat n’était nécessaire pour commencer.';
 
   @override
   String get marketingHomeFinalCtaTitle => 'Votre cerveau juridique.';
@@ -12209,20 +12710,22 @@ class AppLocalizationsFr extends AppLocalizations {
   String get marketingHomeFinalCtaTitleItalic => 'Libre de commencer.';
 
   @override
-  String get marketingHomeGuestSignupBadge => '40% off today only';
+  String get marketingHomeGuestSignupBadge =>
+      '40 % de réduction aujourd\'hui seulement';
 
   @override
-  String get marketingHomeGuestSignupContinueAsGuest => 'Continue as guest';
+  String get marketingHomeGuestSignupContinueAsGuest =>
+      'Continuer en tant qu\'invité';
 
   @override
   String get marketingHomeGuestSignupDescription =>
-      'Sign up to save your report and unlock your welcome discount.';
+      'Inscrivez-vous pour enregistrer votre rapport et débloquer votre réduction de bienvenue.';
 
   @override
-  String get marketingHomeGuestSignupSignUp => 'Sign up';
+  String get marketingHomeGuestSignupSignUp => 'S\'inscrire';
 
   @override
-  String get marketingHomeGuestSignupTitle => 'Create your free account';
+  String get marketingHomeGuestSignupTitle => 'Créez votre compte gratuit';
 
   @override
   String get marketingHomeHeroBadge =>
@@ -12245,8 +12748,7 @@ class AppLocalizationsFr extends AppLocalizations {
       'Détecte automatiquement votre juridiction, applique toujours la loi locale';
 
   @override
-  String get marketingHomeHeroCtaPrimary =>
-      'Commencez gratuitement – ​​sans carte de crédit';
+  String get marketingHomeHeroCtaPrimary => 'Commencez gratuitement';
 
   @override
   String get marketingHomeHeroCtaSecondary => 'Voyez-le en action';
@@ -12256,7 +12758,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get marketingHomeHeroSubtitle =>
-      'Expliquez votre situation dans un langage simple. Nous lisons la loi en vigueur, citons des lois et des cas réels et vous disons exactement où vous en êtes – libre de commencer, aucune carte de crédit nécessaire.';
+      'Expliquez votre situation dans un langage simple. Nous lisons la loi actuelle, citons des lois et des cas réels et vous disons exactement où vous en êtes – libre de commencer.';
 
   @override
   String get marketingHomeHeroTitle => 'Intelligence juridique.';
@@ -12330,206 +12832,285 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String marketingHomeLandingIssueBoardCharCount(String current, String max) {
-    return '$current / $max characters';
+    return 'Caractères $current / $max';
   }
 
   @override
   String get marketingHomeLandingIssueBoardCheckMySituation =>
-      'Check my situation';
+      'Vérifier ma situation';
 
   @override
-  String get marketingHomeLandingIssueBoardCitedAuthorities => 'Real law cited';
+  String get marketingHomeLandingIssueBoardCitedAuthorities =>
+      'La vraie loi citée';
 
   @override
   String get marketingHomeLandingIssueBoardDocReviewAi =>
-      'AI review grounded in your jurisdiction\'s law';
+      'Examen de l\'IA fondé sur la loi de votre juridiction';
 
   @override
   String get marketingHomeLandingIssueBoardDocReviewClauses =>
-      'Key clause extraction and plain-language summary';
+      'Extraction de clauses clés et résumé en langage simple';
 
   @override
   String get marketingHomeLandingIssueBoardDocReviewCompare =>
-      'Tabular review across multiple documents';
+      'Examen tabulaire sur plusieurs documents';
 
   @override
   String get marketingHomeLandingIssueBoardDocReviewHint =>
-      'Upload PDFs or Word files and get clause-by-clause analysis with cited risks.';
+      'Téléchargez des fichiers PDF ou Word et obtenez une analyse clause par clause avec les risques cités.';
 
   @override
   String get marketingHomeLandingIssueBoardDocReviewRisk =>
-      'Risk flags for unfavorable or missing terms';
+      'Indicateurs de risque pour des termes défavorables ou manquants';
 
   @override
   String get marketingHomeLandingIssueBoardDraftExamplesChequeBounceLabel =>
-      'Cheque Bounce Complaint';
+      'Vérifier la plainte de rebond';
 
   @override
   String get marketingHomeLandingIssueBoardDraftExamplesChequeBounceSubtitle =>
-      'Criminal · NI Act §138';
+      'Pénal · Loi NI §138';
 
   @override
   String get marketingHomeLandingIssueBoardDraftExamplesChequeBounceTag =>
-      'Recovery';
+      'Récupération';
 
   @override
   String get marketingHomeLandingIssueBoardDraftExamplesDivorcePetitionLabel =>
-      'Divorce Petition';
+      'Demande de divorce';
 
   @override
   String
   get marketingHomeLandingIssueBoardDraftExamplesDivorcePetitionSubtitle =>
-      'Family · HMA §13';
+      'Famille · HMA §13';
 
   @override
   String get marketingHomeLandingIssueBoardDraftExamplesDivorcePetitionTag =>
-      'Family';
+      'Famille';
 
   @override
   String get marketingHomeLandingIssueBoardDraftExamplesFederalComplaintLabel =>
-      'Federal Civil Complaint';
+      'Plainte civile fédérale';
 
   @override
   String
   get marketingHomeLandingIssueBoardDraftExamplesFederalComplaintSubtitle =>
-      'Civil · FRCP Rule 8';
+      'Civil · Règle 8 du FRCP';
 
   @override
   String get marketingHomeLandingIssueBoardDraftExamplesFederalComplaintTag =>
-      'Federal';
+      'Fédéral';
 
   @override
   String get marketingHomeLandingIssueBoardDraftExamplesHint =>
-      'Popular templates lawyers draft every day — sign up free to generate yours.';
+      'Des modèles populaires que les avocats rédigent chaque jour : inscrivez-vous gratuitement pour générer le vôtre.';
 
   @override
   String get marketingHomeLandingIssueBoardDraftExamplesMotionToDismissLabel =>
-      '12(b)(6) Motion to Dismiss';
+      '12(b)(6) Requête en rejet';
 
   @override
   String
   get marketingHomeLandingIssueBoardDraftExamplesMotionToDismissSubtitle =>
-      'Civil · FRCP Rule 12';
+      'Civil · Règle 12 du FRCP';
 
   @override
   String get marketingHomeLandingIssueBoardDraftExamplesMotionToDismissTag =>
-      'Motion';
+      'Mouvement';
 
   @override
   String get marketingHomeLandingIssueBoardDraftExamplesRegularBailLabel =>
-      'Regular Bail Application';
+      'Demande de libération sous caution régulière';
 
   @override
   String get marketingHomeLandingIssueBoardDraftExamplesRegularBailSubtitle =>
-      'Criminal · BNSS §480';
+      'Pénal · BNSS §480';
 
   @override
   String get marketingHomeLandingIssueBoardDraftExamplesRegularBailTag =>
-      'Bail';
+      'Caution';
 
   @override
   String get marketingHomeLandingIssueBoardDraftExamplesWritPetitionLabel =>
-      'Writ Petition (High Court)';
+      'Requête écrite (Haute Cour)';
 
   @override
   String get marketingHomeLandingIssueBoardDraftExamplesWritPetitionSubtitle =>
-      'Constitutional · Art. 226';
+      'Constitutionnel · Art. 226';
 
   @override
   String get marketingHomeLandingIssueBoardDraftExamplesWritPetitionTag =>
-      'Writ';
+      'Ordonnance';
 
   @override
   String marketingHomeLandingIssueBoardEnterAtLeastChars(String count) {
-    return 'Enter at least $count characters';
+    return 'Saisissez au moins $count caractères';
   }
 
   @override
   String get marketingHomeLandingIssueBoardFooterIssueCheck1 =>
-      'Free initial check';
+      'Vérification initiale gratuite';
 
   @override
   String get marketingHomeLandingIssueBoardFooterIssueCheck2 =>
-      'Applicable law identified';
+      'Loi applicable identifiée';
 
   @override
   String get marketingHomeLandingIssueBoardFooterIssueCheck3 =>
-      'Document guidance included';
+      'Document d\'orientation inclus';
 
   @override
   String get marketingHomeLandingIssueBoardFooterResearch1 =>
-      'Authority-backed answer';
+      'Réponse soutenue par l\'autorité';
 
   @override
   String get marketingHomeLandingIssueBoardFooterResearch2 =>
-      'Relevant cases and statutes';
+      'Affaires et lois pertinentes';
 
   @override
-  String get marketingHomeLandingIssueBoardFooterResearch3 => 'Clear citations';
+  String get marketingHomeLandingIssueBoardFooterResearch3 =>
+      'Citations claires';
 
   @override
   String get marketingHomeLandingIssueBoardFreePreview => 'Aperçu gratuit';
 
   @override
   String get marketingHomeLandingIssueBoardHelperIssueCheck =>
-      'You can write in your own words. The more relevant detail you provide, the more useful the analysis will be.';
+      'Vous pouvez écrire avec vos propres mots. Plus vous fournissez de détails pertinents, plus l’analyse sera utile.';
 
   @override
   String get marketingHomeLandingIssueBoardHelperResearch =>
-      'Include the jurisdiction and specific issue for more precise results.';
+      'Incluez la juridiction et le problème spécifique pour des résultats plus précis.';
 
   @override
   String get marketingHomeLandingIssueBoardLanguageSubtitle =>
-      'We\'ll deliver your legal analysis in the language you choose.';
+      'Nous vous livrerons votre analyse juridique dans la langue de votre choix.';
 
   @override
   String get marketingHomeLandingIssueBoardLanguageSubtitleIndia =>
-      'We\'ll deliver your legal analysis in the language you choose.';
+      'Nous vous livrerons votre analyse juridique dans la langue de votre choix.';
 
   @override
   String get marketingHomeLandingIssueBoardLanguageTitle =>
-      'Which language do you prefer?';
+      'Quelle langue préférez-vous ?';
 
   @override
-  String get marketingHomeLandingIssueBoardOtherLanguages => 'Other languages';
+  String get marketingHomeLandingIssueBoardOtherLanguages => 'Autres langues';
 
   @override
   String get marketingHomeLandingIssueBoardOtherLanguagesPlaceholder =>
-      'Select a language';
+      'Sélectionnez une langue';
 
   @override
   String get marketingHomeLandingIssueBoardPlaceholderDocumentReview =>
-      'Describe the document or paste key clauses you want reviewed.';
+      'Décrivez le document ou collez les clauses clés que vous souhaitez réviser.';
 
   @override
   String get marketingHomeLandingIssueBoardPlaceholderDrafting =>
-      'Describe the document you need drafted — type, parties, and key terms.';
+      'Décrivez le document dont vous avez besoin – type, parties et termes clés.';
 
   @override
   String get marketingHomeLandingIssueBoardPlaceholderIssueCheck =>
-      'Describe what happened, who was involved, important dates, and what you want to achieve.';
+      'Décrivez ce qui s\'est passé, qui a été impliqué, les dates importantes et ce que vous souhaitez réaliser.';
 
   @override
   String get marketingHomeLandingIssueBoardPlaceholderResearch =>
-      'Enter the legal question you want researched…';
+      'Entrez la question juridique sur laquelle vous souhaitez faire des recherches…';
 
   @override
-  String get marketingHomeLandingIssueBoardRegionIndia => 'India';
+  String get marketingHomeLandingIssueBoardRegionIndia => 'Inde';
 
   @override
-  String get marketingHomeLandingIssueBoardRegionLabel => 'Jurisdiction';
+  String get marketingHomeLandingIssueBoardRegionLabel => 'Juridiction';
 
   @override
-  String get marketingHomeLandingIssueBoardRegionUnitedStates =>
-      'United States';
+  String get marketingHomeLandingIssueBoardRegionUnitedStates => 'États-Unis';
+
+  @override
+  String get marketingHomeLandingIssueBoardResearchExamplesBnss101Label =>
+      'Quand la police peut-elle arrêter sans mandat ?';
+
+  @override
+  String get marketingHomeLandingIssueBoardResearchExamplesBnss101Subtitle =>
+      'Pénal · BNSS §101';
+
+  @override
+  String get marketingHomeLandingIssueBoardResearchExamplesBnss101Tag => 'Inde';
+
+  @override
+  String
+  get marketingHomeLandingIssueBoardResearchExamplesContactDraftingLabel =>
+      'Clauses essentielles dans un contrat de service';
+
+  @override
+  String
+  get marketingHomeLandingIssueBoardResearchExamplesContactDraftingSubtitle =>
+      'Commercial · Droit des contrats';
+
+  @override
+  String get marketingHomeLandingIssueBoardResearchExamplesContactDraftingTag =>
+      'Rédaction';
+
+  @override
+  String get marketingHomeLandingIssueBoardResearchExamplesFrcp12Label =>
+      '12(b)(6) requête en rejet de la norme';
+
+  @override
+  String get marketingHomeLandingIssueBoardResearchExamplesFrcp12Subtitle =>
+      'Civil · Règle 12 du FRCP';
+
+  @override
+  String get marketingHomeLandingIssueBoardResearchExamplesFrcp12Tag =>
+      'Fédéral';
+
+  @override
+  String get marketingHomeLandingIssueBoardResearchExamplesKeLabourLabel =>
+      'Recours pour licenciement abusif';
+
+  @override
+  String get marketingHomeLandingIssueBoardResearchExamplesKeLabourSubtitle =>
+      'Travail · Loi sur l\'emploi au Kenya';
+
+  @override
+  String get marketingHomeLandingIssueBoardResearchExamplesKeLabourTag =>
+      'Kenya';
+
+  @override
+  String get marketingHomeLandingIssueBoardResearchExamplesSection138Label =>
+      'Vérifier les exigences en matière d\'avis de rebond';
+
+  @override
+  String get marketingHomeLandingIssueBoardResearchExamplesSection138Subtitle =>
+      'Pénal · Loi NI §138';
+
+  @override
+  String get marketingHomeLandingIssueBoardResearchExamplesSection138Tag =>
+      'Récupération';
+
+  @override
+  String get marketingHomeLandingIssueBoardResearchExamplesUkEmploymentLabel =>
+      'Délais de licenciement abusif';
+
+  @override
+  String
+  get marketingHomeLandingIssueBoardResearchExamplesUkEmploymentSubtitle =>
+      'Emploi · Royaume-Uni ERA 1996';
+
+  @override
+  String get marketingHomeLandingIssueBoardResearchExamplesUkEmploymentTag =>
+      'ROYAUME-UNI';
+
+  @override
+  String get marketingHomeLandingIssueBoardResearchLockedHint =>
+      'Exemples de questions de recherche que les avocats posent quotidiennement : inscrivez-vous gratuitement pour essayer.';
 
   @override
   String get marketingHomeLandingIssueBoardResearchTeaserUnavailable =>
-      'Research preview is not available on this API yet. Run the local backend (port 4000) or deploy the latest API.';
+      'L\'aperçu de la recherche n\'est pas encore disponible sur cette API. Exécutez le backend local (port 4000) ou déployez la dernière API.';
 
   @override
   String get marketingHomeLandingIssueBoardResearchThisQuestion =>
-      'Research this question';
+      'Recherchez cette question';
 
   @override
   String get marketingHomeLandingIssueBoardResultsIn2Min =>
@@ -12537,68 +13118,71 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get marketingHomeLandingIssueBoardSignUpToUnlock =>
-      'Sign up free to unlock';
+      'Inscrivez-vous gratuitement pour débloquer';
 
   @override
   String get marketingHomeLandingIssueBoardSubtitle =>
-      'Décrivez-le dans un langage simple : notre IA lira les faits, citera la loi et vous dira exactement où vous en êtes.';
+      'Recherchez une question, comprenez votre situation, rédigez un document ou révisez un contrat : dites-le-nous dans un langage simple et nous citerons la loi qui s\'applique.';
 
   @override
   String get marketingHomeLandingIssueBoardSubtitleDocumentReview =>
-      'Upload a contract or filing — we\'ll flag risks, gaps, and key clauses.';
+      'Téléchargez un contrat ou un dossier : nous signalerons les risques, les lacunes et les clauses clés.';
 
   @override
   String get marketingHomeLandingIssueBoardSubtitleDrafting =>
-      'Generate notices, agreements, petitions, and more — grounded in applicable law.';
+      'Générez des avis, des accords, des pétitions et bien plus encore, fondés sur la loi applicable.';
 
   @override
   String get marketingHomeLandingIssueBoardSubtitleIssueCheck =>
-      'Tell us what happened. Umbrella will identify the key legal issues, explain your options, and guide you toward the documents you may need.';
+      'Racontez-nous ce qui s\'est passé. Umbrella identifiera les principales questions juridiques, expliquera vos options et vous guidera vers les documents dont vous pourriez avoir besoin.';
 
   @override
   String get marketingHomeLandingIssueBoardSubtitleResearch =>
-      'Ask a focused legal question and receive a structured answer supported by relevant legislation, cases, and citations.';
+      'Posez une question juridique ciblée et recevez une réponse structurée étayée par la législation, les affaires et les citations pertinentes.';
 
   @override
   String get marketingHomeLandingIssueBoardTaskDocumentReview =>
-      'Review a Document';
+      'Réviser un document';
 
   @override
-  String get marketingHomeLandingIssueBoardTaskDrafting => 'Draft a Document';
+  String get marketingHomeLandingIssueBoardTaskDrafting =>
+      'Rédiger un document';
 
   @override
-  String get marketingHomeLandingIssueBoardTaskIssueCheck => 'Issue Checker';
+  String get marketingHomeLandingIssueBoardTaskIssueCheck =>
+      'Vérificateur de problèmes';
 
   @override
-  String get marketingHomeLandingIssueBoardTaskResearch => 'Legal Research';
+  String get marketingHomeLandingIssueBoardTaskResearch =>
+      'Recherche juridique';
 
   @override
   String get marketingHomeLandingIssueBoardTaskSelectLabel =>
-      'What would you like to do?';
+      'Qu\'aimeriez-vous faire ?';
 
   @override
   String get marketingHomeLandingIssueBoardTitle =>
-      'Quelle est votre situation juridique ?';
+      'Pour quoi avez-vous besoin d’aide ?';
 
   @override
   String get marketingHomeLandingIssueBoardTitleDocumentReview =>
-      'Review a document';
+      'Réviser un document';
 
   @override
   String get marketingHomeLandingIssueBoardTitleDrafting =>
-      'Draft a legal document';
+      'Rédiger un document juridique';
 
   @override
   String get marketingHomeLandingIssueBoardTitleIssueCheck =>
-      'Understand your legal situation';
+      'Comprendre votre situation juridique';
 
   @override
   String get marketingHomeLandingIssueBoardTitleResearch =>
-      'Research a legal question';
+      'Rechercher une question juridique';
 
   @override
   String get marketingHomeLandingIssueBoardTryFreeSignUp =>
-      'Sign up free to try';
+      'Inscrivez-vous gratuitement pour essayer';
 
   @override
   String get marketingHomePlatformBadge => 'La plateforme';
@@ -12643,11 +13227,11 @@ class AppLocalizationsFr extends AppLocalizations {
   String get marketingHomeResearchProgressAboutOneMin => '· ~1 min';
 
   @override
-  String get marketingHomeResearchProgressAlmostThere => '· almost there…';
+  String get marketingHomeResearchProgressAlmostThere => '· presque là…';
 
   @override
   String get marketingHomeResearchProgressDeepCitationNote =>
-      'Verified Research performs deep citation checks — this can take a few minutes.';
+      'Verified Research effectue des vérifications approfondies des citations – cela peut prendre quelques minutes.';
 
   @override
   String get marketingHomeResearchProgressDraftReadyBanner =>
@@ -12658,10 +13242,10 @@ class AppLocalizationsFr extends AppLocalizations {
       'Prêt pour le brouillon – vérifications de l\'exactitude en cours…';
 
   @override
-  String get marketingHomeResearchProgressModeFast => 'Fast';
+  String get marketingHomeResearchProgressModeFast => 'Rapide';
 
   @override
-  String get marketingHomeResearchProgressModeVerified => 'Verified';
+  String get marketingHomeResearchProgressModeVerified => 'Vérifié';
 
   @override
   String get marketingHomeResearchProgressPhaseStallNote =>
@@ -12669,11 +13253,11 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get marketingHomeResearchProgressRefiningTitle =>
-      'Refining with context…';
+      'Affiner avec le contexte…';
 
   @override
   String get marketingHomeResearchProgressRunningTitle =>
-      'Running legal research';
+      'Mener des recherches juridiques';
 
   @override
   String get marketingHomeResearchProgressStepAuditDraftDetail =>
@@ -12685,31 +13269,31 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get marketingHomeResearchProgressStepAuditFinal =>
-      'Final citation audit pass…';
+      'Réussite finale de l’audit des citations…';
 
   @override
   String get marketingHomeResearchProgressStepAuditLabel =>
-      'Running citation audit';
+      'Exécution d\'un audit de citation';
 
   @override
   String get marketingHomeResearchProgressStepAuditLabeling =>
-      'Labelling unverified citations before delivery…';
+      'Étiquetage des citations non vérifiées avant livraison…';
 
   @override
   String get marketingHomeResearchProgressStepCitationsFabricated =>
-      'Checking for fabricated or irrelevant case citations…';
+      'Vérification des citations de cas fabriquées ou non pertinentes…';
 
   @override
   String get marketingHomeResearchProgressStepCitationsLabel =>
-      'Verifying citations';
+      'Vérification des citations';
 
   @override
   String get marketingHomeResearchProgressStepCitationsStatute =>
-      'Validating statute references…';
+      'Validation des références statutaires…';
 
   @override
   String get marketingHomeResearchProgressStepCitationsUnsupported =>
-      'Removing unsupported claims…';
+      'Suppression des revendications non fondées…';
 
   @override
   String get marketingHomeResearchProgressStepCorpusDetailGeneric =>
@@ -12717,175 +13301,174 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get marketingHomeResearchProgressStepCorpusDetailIn =>
-      'Scanning India Code, BNSS, BNS, and BSA databases';
+      'Analyse des bases de données India Code, BNSS, BNS et BSA';
 
   @override
   String marketingHomeResearchProgressStepCorpusDetailInAct(String act) {
-    return 'Scanning $act and related India Code databases';
+    return 'Analyse de $act et des bases de données India Code associées';
   }
 
   @override
   String get marketingHomeResearchProgressStepCorpusDetailUs =>
-      'Scanning USC, CFR, and federal rule databases';
+      'Analyse des bases de données USC, CFR et des règles fédérales';
 
   @override
   String get marketingHomeResearchProgressStepCorpusLabel =>
-      'Searching statute corpus';
+      'Recherche dans le corpus des lois';
 
   @override
   String get marketingHomeResearchProgressStepCrossCheckDedupe =>
-      'De-duplicating overlapping authorities…';
+      'Déduplication des autorités qui se chevauchent…';
 
   @override
   String get marketingHomeResearchProgressStepCrossCheckLabel =>
-      'Cross-checking retrieved sources';
+      'Recoupement des sources récupérées';
 
   @override
   String get marketingHomeResearchProgressStepCrossCheckMerge =>
-      'Merging corpus hits with live authority results…';
+      'Fusion des hits du corpus avec les résultats d\'autorité en direct…';
 
   @override
   String get marketingHomeResearchProgressStepDeepAgentEval =>
-      'Evaluating tool results…';
+      'Évaluation des résultats des outils…';
 
   @override
   String get marketingHomeResearchProgressStepDeepAgentLabel =>
-      'Running deep research agent';
+      'Agent de recherche approfondie en cours d\'exécution';
 
   @override
   String get marketingHomeResearchProgressStepDeepAgentPlan =>
-      'Planning next retrieval pass…';
+      'Planification de la prochaine passe de récupération…';
 
   @override
   String get marketingHomeResearchProgressStepDeepAgentReact =>
-      'ReAct loop: searching web, statutes, and case law…';
+      'Boucle ReAct : recherche sur le web, les statuts et la jurisprudence…';
 
   @override
   String get marketingHomeResearchProgressStepDraftLabel =>
-      'Drafting the legal memo';
+      'Rédaction de la note juridique';
 
   @override
   String get marketingHomeResearchProgressStepDraftStructure =>
-      'Structuring the legal analysis…';
+      'Structurer l’analyse juridique…';
 
   @override
   String get marketingHomeResearchProgressStepDraftSummary =>
-      'Adding plain-language summary…';
+      'Ajout d\'un résumé en langage simple…';
 
   @override
   String get marketingHomeResearchProgressStepDraftWeave =>
-      'Weaving authorities into a clear answer…';
+      'Intégrer les autorités dans une réponse claire…';
 
   @override
   String get marketingHomeResearchProgressStepFinalizeDrift =>
-      'Applying drift detection and compliance rules…';
+      'Application des règles de détection des dérives et de conformité…';
 
   @override
   String get marketingHomeResearchProgressStepFinalizeLabel =>
-      'Finalising substance checks';
+      'Finalisation des contrôles de substances';
 
   @override
   String get marketingHomeResearchProgressStepFinalizePreview =>
-      'Preparing your preview excerpt…';
+      'Préparation de votre extrait d’aperçu…';
 
   @override
-  String get marketingHomeResearchProgressStepFinalizeReady => 'Almost ready…';
+  String get marketingHomeResearchProgressStepFinalizeReady => 'Presque prêt…';
 
   @override
   String get marketingHomeResearchProgressStepGroundAmendments =>
-      'Checking for amendments and notifications…';
+      'Vérification des modifications et des notifications…';
 
   @override
   String get marketingHomeResearchProgressStepGroundCitations =>
-      'Verifying section numbers and citations…';
+      'Vérification des numéros de section et des citations…';
 
   @override
-  String get marketingHomeResearchProgressStepGroundLabel =>
-      'Grounding the analysis';
+  String get marketingHomeResearchProgressStepGroundLabel => 'Fonder l’analyse';
 
   @override
   String get marketingHomeResearchProgressStepGroundPin =>
-      'Pinning retrieved text against authoritative sources…';
+      'Épingler le texte récupéré par rapport à des sources faisant autorité…';
 
   @override
   String marketingHomeResearchProgressStepGroundPinProvision(String provision) {
-    return 'Pinning $provision against authoritative sources…';
+    return 'Épingler $provision contre des sources faisant autorité…';
   }
 
   @override
   String get marketingHomeResearchProgressStepGroundVerify =>
-      'Verifying section text against corpus…';
+      'Vérification du texte de la section par rapport au corpus…';
 
   @override
   String get marketingHomeResearchProgressStepParseDetail =>
-      'Identifying jurisdiction, provisions, and intent';
+      'Identifier la juridiction, les dispositions et l’intention';
 
   @override
   String marketingHomeResearchProgressStepParseDetailProvision(
     String provision,
   ) {
-    return 'Identifying $provision and related provisions';
+    return 'Identifier $provision et les dispositions associées';
   }
 
   @override
   String get marketingHomeResearchProgressStepParseLabel =>
-      'Parsing your legal question';
+      'Analyser votre question juridique';
 
   @override
   String get marketingHomeResearchProgressStepPredecessorCrpcBnss =>
-      'Cross-checking CrPC → BNSS section remaps';
+      'Recoupement des remappages de section CrPC → BNSS';
 
   @override
   String marketingHomeResearchProgressStepPredecessorCrpcBnssSection(
     String section,
   ) {
-    return 'Cross-checking CrPC → BNSS remaps for Section $section';
+    return 'Vérification croisée des remappages CrPC → BNSS pour la section $section';
   }
 
   @override
   String get marketingHomeResearchProgressStepPredecessorGeneric =>
-      'Cross-checking predecessor statute mappings';
+      'Vérification croisée des mappages des lois précédentes';
 
   @override
   String get marketingHomeResearchProgressStepPredecessorLabel =>
-      'Verifying predecessor provisions';
+      'Vérification des dispositions antérieures';
 
   @override
   String get marketingHomeResearchProgressStepRetrieveCases =>
-      'Matching case law that cites this provision…';
+      'Jurisprudence correspondante qui cite cette disposition…';
 
   @override
   String get marketingHomeResearchProgressStepRetrieveCommentary =>
-      'Pulling authoritative commentary…';
+      'Tirer des commentaires faisant autorité…';
 
   @override
   String marketingHomeResearchProgressStepRetrieveFetch(String provision) {
-    return 'Fetching $provision from statute corpus…';
+    return 'Récupération de $provision à partir du corpus de statuts…';
   }
 
   @override
   String get marketingHomeResearchProgressStepRetrieveLabel =>
-      'Retrieving authorities';
+      'Récupération des autorités';
 
   @override
   String get marketingHomeResearchProgressStepRetrieveMatch =>
-      'Matching statutory sections to your question…';
+      'Faire correspondre les articles statutaires à votre question…';
 
   @override
   String get marketingHomeResearchProgressStepRetrieveRank =>
-      'Ranking related sections and commentary…';
+      'Sections liées au classement et commentaires…';
 
   @override
   String get marketingHomeResearchProgressStepRetrieveRankCases =>
-      'Ranking case law by relevance…';
+      'Classement de la jurisprudence par pertinence…';
 
   @override
   String get marketingHomeResearchProgressStillWorking =>
-      '· toujours en cours…';
+      '· je travaille toujours…';
 
   @override
   String get marketingHomeResearchProgressTakingLonger =>
-      '· taking longer than usual';
+      '· prend plus de temps que d\'habitude';
 
   @override
   String get marketingHomeResearchProgressVerifiedDurationHint =>
@@ -13046,19 +13629,18 @@ class AppLocalizationsFr extends AppLocalizations {
       'Estimation illustrative basée sur des faits énoncés. Ce n’est pas une prédiction légale.';
 
   @override
-  String get marketingIndiaUsUkKenyaAndGrowing =>
-      'Inde · États-Unis · Royaume-Uni · Kenya – et en croissance';
+  String get marketingIndiaUsUkKenyaAndGrowing => 'Tous les pays du monde';
 
   @override
   String get marketingInstantAnswers => 'Réponses instantanées';
 
   @override
   String get marketingIssueCheckerMetaDescription =>
-      'Décrivez votre problème juridique et obtenez un aperçu gratuit de l\'IA avec des conseils spécifiques à chaque pays pour l\'Inde, les États-Unis, le Kenya et le Royaume-Uni.';
+      'Décrivez votre problème juridique dans n\'importe quel pays. Obtenez un aperçu gratuit de l\'IA avec les lois réelles, le niveau de risque et les prochaines étapes – des conseils juridiques adaptés aux juridictions du monde entier.';
 
   @override
   String get marketingIssueCheckerMetaTitle =>
-      'Vérificateur de problèmes juridiques gratuit';
+      'Vérificateur de problèmes juridiques gratuit – Global Legal AI';
 
   @override
   String get marketingKenyaLandlordAmpTenant =>
@@ -13066,44 +13648,44 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get marketingLawyersMetaDescription =>
-      'Browse vetted lawyers worldwide. Start with free AI legal clarity — connect to licensed counsel in your jurisdiction when you need formal advice.';
+      'Parcourez les avocats sélectionnés dans le monde entier. Commencez par une clarté juridique gratuite sur l’IA : connectez-vous à un avocat agréé dans votre juridiction lorsque vous avez besoin de conseils formels.';
 
   @override
   String get marketingLawyersMetaTitle =>
-      'Find a Lawyer — When You\'re Ready for Human Review';
+      'Trouvez un avocat – Lorsque vous êtes prêt pour un examen humain';
 
   @override
   String get marketingLearnMoreMetaDescription =>
-      'Legal clarity without the billable hour. AI document drafting, contract review, legal research, and a full law firm OS — available in every country.';
+      'Clarté juridique sans heure facturable. Rédaction de documents par l’IA, révision de contrats, recherche juridique et système d’exploitation complet pour cabinet d’avocats – disponibles dans tous les pays.';
 
   @override
   String get marketingLearnMoreMetaTitle =>
-      'How Umbrella Works — Global Legal Intelligence Platform';
+      'Comment fonctionne Umbrella – Plateforme mondiale de renseignements juridiques';
 
   @override
   String get marketingLegal => 'Légal';
 
   @override
-  String get marketingLegalAiBadge => 'Global Legal AI';
+  String get marketingLegalAiBadge => 'IA juridique mondiale';
 
   @override
-  String get marketingLegalAiCompareLink => 'Browse all solutions';
+  String get marketingLegalAiCompareLink => 'Parcourez toutes les solutions';
 
   @override
   String get marketingLegalAiCompareSubtitle =>
-      'Document drafting, contract review, legal research, and firm automation — one global platform.';
+      'Rédaction de documents, révision de contrats, recherche juridique et automatisation d\'entreprise : une seule plateforme mondiale.';
 
   @override
   String get marketingLegalAiCompareTitle =>
-      'Explore all legal AI capabilities';
+      'Explorez toutes les capacités juridiques de l\'IA';
 
   @override
   String get marketingLegalAiDifferentSubtitle =>
-      'Built for legal context from day one — not a chatbot wrapper.';
+      'Conçu pour le contexte juridique dès le premier jour – et non pour un chatbot.';
 
   @override
   String get marketingLegalAiDifferentTitle =>
-      'Why Umbrella is different from generic Legal AI';
+      'Pourquoi Umbrella est différent de l\'IA juridique générique';
 
   @override
   String get marketingLegalAiFaqItems =>
@@ -13111,53 +13693,58 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get marketingLegalAiFaqTitle =>
-      'Legal AI — frequently asked questions';
+      'IA juridique – questions fréquemment posées';
 
   @override
-  String get marketingLegalAiFinalCtaPrimary => 'Start free — issue checker';
+  String get marketingLegalAiFinalCtaPrimary =>
+      'Démarrez gratuitement – ​​vérificateur de problèmes';
 
   @override
-  String get marketingLegalAiFinalCtaSecondary => 'Explore firm platform';
+  String get marketingLegalAiFinalCtaSecondary =>
+      'Explorer la plateforme du cabinet';
 
   @override
   String get marketingLegalAiFinalCtaSubtitle =>
-      'Free issue checker for individuals. Free trial for law firms.';
+      'Vérificateur de problèmes gratuit pour les particuliers. Essai gratuit pour les cabinets d\'avocats.';
 
   @override
   String get marketingLegalAiFinalCtaTitle =>
-      'Try Legal AI that cites real law';
+      'Essayez l\'IA juridique qui cite la vraie loi';
 
   @override
-  String get marketingLegalAiGuidesLink => 'Browse all legal guides';
+  String get marketingLegalAiGuidesLink =>
+      'Parcourez tous les guides juridiques';
 
   @override
   String get marketingLegalAiGuidesSubtitle =>
-      'Educational overviews on common legal topics — always verify with a licensed attorney.';
+      'Aperçus pédagogiques sur des sujets juridiques courants – vérifiez toujours auprès d’un avocat agréé.';
 
   @override
-  String get marketingLegalAiGuidesTitle => 'Legal guides by jurisdiction';
+  String get marketingLegalAiGuidesTitle => 'Guides juridiques par juridiction';
 
   @override
-  String get marketingLegalAiHeroCtaPrimary => 'Try free legal AI checker';
+  String get marketingLegalAiHeroCtaPrimary =>
+      'Essayez le vérificateur d\'IA légal gratuit';
 
   @override
-  String get marketingLegalAiHeroCtaSecondary => 'Legal AI for law firms';
+  String get marketingLegalAiHeroCtaSecondary =>
+      'IA juridique pour les cabinets d\'avocats';
 
   @override
   String get marketingLegalAiHeroSubtitle =>
-      'Most legal tools give confident answers with no sources. Umbrella retrieves jurisdiction-specific statutes and case law, drafts documents, reviews contracts, and runs your entire firm — in every country.';
+      'La plupart des outils juridiques donnent des réponses fiables sans aucune source. Umbrella récupère les lois et la jurisprudence spécifiques aux juridictions, rédige des documents, examine les contrats et gère l\'ensemble de votre entreprise, dans chaque pays.';
 
   @override
   String get marketingLegalAiHeroTitle =>
-      'Legal AI that cites real law — everywhere';
+      'Une IA juridique qui cite la vraie loi, partout';
 
   @override
   String get marketingLegalAiMetaDescription =>
-      'Umbrella is the global legal AI platform: real citations, AI document drafting, contract review, legal research, and a complete law firm OS — available in every country worldwide.';
+      'Umbrella est la plateforme mondiale d\'IA juridique : citations réelles, rédaction de documents IA, révision de contrats, recherche juridique et système d\'exploitation complet pour cabinet d\'avocats, disponible dans tous les pays du monde.';
 
   @override
   String get marketingLegalAiMetaTitle =>
-      'Legal AI Platform — Global Legal Intelligence for Everyone';
+      'Plateforme d\'IA juridique – Une intelligence juridique mondiale pour tous';
 
   @override
   String get marketingLegalAiPillars =>
@@ -13168,32 +13755,33 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get marketingLegalAiUseCasesSubtitle =>
-      'From first question to firm-wide automation.';
+      'De la première question à l’automatisation à l’échelle de l’entreprise.';
 
   @override
-  String get marketingLegalAiUseCasesTitle => 'Legal AI use cases';
+  String get marketingLegalAiUseCasesTitle =>
+      'Cas d\'utilisation de l\'IA juridique';
 
   @override
   String get marketingLegalAiWhatIsBody1 =>
-      'Legal AI uses large language models plus legal databases to help people understand rights, review documents, and plan next steps. Unlike general chatbots, purpose-built legal AI should ground answers in applicable law, respect jurisdiction boundaries, and clearly distinguish information from formal legal advice.';
+      'L\'IA juridique utilise de grands modèles linguistiques ainsi que des bases de données juridiques pour aider les utilisateurs à comprendre leurs droits, à examiner des documents et à planifier les prochaines étapes. Contrairement aux chatbots généraux, l’IA juridique spécialement conçue doit fonder les réponses sur la loi applicable, respecter les limites de juridiction et distinguer clairement les informations des conseils juridiques formels.';
 
   @override
   String get marketingLegalAiWhatIsBody2 =>
-      'Umbrella combines retrieval-augmented generation (RAG) over indexed statutes and case law with matter-aware workflows — so consumers get guided analysis and firms get a Copilot that understands client context, billing, and compliance.';
+      'Umbrella combine la génération augmentée par récupération (RAG) sur les lois et la jurisprudence indexées avec des flux de travail sensibles au sujet — afin que les consommateurs bénéficient d\'une analyse guidée et que les entreprises disposent d\'un copilote qui comprend le contexte, la facturation et la conformité du client.';
 
   @override
-  String get marketingLegalAiWhatIsTitle => 'What is Legal AI?';
+  String get marketingLegalAiWhatIsTitle => 'Qu’est-ce que l’IA juridique ?';
 
   @override
   String get marketingLegalDisclaimer => 'Mentions légales';
 
   @override
   String get marketingLegalFormsMetaDescription =>
-      'AI-powered legal document drafting: demand letters, contracts, notices, and pleadings — jurisdiction-aware templates for any country.';
+      'Rédaction de documents juridiques basée sur l\'IA : mises en demeure, contrats, avis et plaidoiries – modèles adaptés à la juridiction pour n\'importe quel pays.';
 
   @override
   String get marketingLegalFormsMetaTitle =>
-      'Legal Document Drafting & Forms — Global Templates';
+      'Rédaction et formulaires de documents juridiques – Modèles globaux';
 
   @override
   String get marketingLive => 'En direct';
@@ -13222,24 +13810,25 @@ class AppLocalizationsFr extends AppLocalizations {
   String get marketingPricingPageAiCreditsTitle => 'À propos des crédits IA :';
 
   @override
-  String get marketingPricingPageAudienceConsumers => 'Consumers';
+  String get marketingPricingPageAudienceConsumers => 'Consommateurs';
 
   @override
-  String get marketingPricingPageAudienceLawyers => 'Law firms';
+  String get marketingPricingPageAudienceLawyers => 'Cabinets d\'avocats';
 
   @override
   String get marketingPricingPageConsumerDescription =>
       'Conseils juridiques en libre-service et révision facultative par un avocat – aucun compte d\'entreprise requis.';
 
   @override
-  String get marketingPricingPageContactSales => 'Contact sales';
+  String get marketingPricingPageContactSales =>
+      'Contacter le service commercial';
 
   @override
-  String get marketingPricingPageContactUs => 'Contact us';
+  String get marketingPricingPageContactUs => 'Contactez-nous';
 
   @override
   String get marketingPricingPageCreditsFootnote =>
-      'AI credits scale with model usage.';
+      'Les crédits d’IA évoluent en fonction de l’utilisation du modèle.';
 
   @override
   String get marketingPricingPageCurrentPlan => 'Forfait actuel';
@@ -13250,14 +13839,14 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get marketingPricingPageDetectingLocation =>
-      'Detecting your location…';
+      'Détection de votre position…';
 
   @override
-  String get marketingPricingPageDowngrade => 'Downgrade';
+  String get marketingPricingPageDowngrade => 'Rétrograder';
 
   @override
   String get marketingPricingPageEnterpriseFeatures =>
-      'SSO · SCIM · Data residency · Dedicated SLA';
+      'SSO · SCIM · Résidence des données · SLA dédié';
 
   @override
   String get marketingPricingPageEnterprisePrompt =>
@@ -13269,11 +13858,11 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get marketingPricingPageFindingBestPricing =>
-      'Finding the best pricing for your region';
+      'Trouver les meilleurs tarifs pour votre région';
 
   @override
   String get marketingPricingPageFirmPlansSubtitle =>
-      'Scalable per-seat pricing for teams';
+      'Tarification par siège évolutive pour les équipes';
 
   @override
   String marketingPricingPageForConsumers(String currency) {
@@ -13281,7 +13870,7 @@ class AppLocalizationsFr extends AppLocalizations {
   }
 
   @override
-  String get marketingPricingPageFreePlan => 'Free';
+  String get marketingPricingPageFreePlan => 'Gratuit';
 
   @override
   String marketingPricingPageGeoDenied(String currency) {
@@ -13297,16 +13886,16 @@ class AppLocalizationsFr extends AppLocalizations {
   }
 
   @override
-  String get marketingPricingPageLoadingPlans => 'Loading plans…';
+  String get marketingPricingPageLoadingPlans => 'Chargement des plans…';
 
   @override
-  String get marketingPricingPageManageInStripe => 'Manage in Stripe';
+  String get marketingPricingPageManageInStripe => 'Gérer dans Stripe';
 
   @override
-  String get marketingPricingPageManagePlan => 'Manage plan';
+  String get marketingPricingPageManagePlan => 'Gérer le forfait';
 
   @override
-  String get marketingPricingPageMostPopular => 'Most Popular';
+  String get marketingPricingPageMostPopular => 'Les plus populaires';
 
   @override
   String get marketingPricingPageNew => 'Nouveau';
@@ -13324,7 +13913,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String marketingPricingPageShowingPricesFor(String country) {
-    return 'Showing prices for <strong>$country</strong>';
+    return 'Affichage des prix pour <strong>$country</strong>';
   }
 
   @override
@@ -13339,17 +13928,17 @@ class AppLocalizationsFr extends AppLocalizations {
       'Des conseils gratuits aux consommateurs à l\'IA à l\'échelle du cabinet, y compris l\'offre <strong>Solo</strong> pour les avocats indépendants.';
 
   @override
-  String get marketingPricingPageSwitchPlan => 'Switch plan';
+  String get marketingPricingPageSwitchPlan => 'Changer de forfait';
 
   @override
   String get marketingPricingPageTitle => 'Tarifs';
 
   @override
   String get marketingPricingPageTransparentPricingBadge =>
-      'Transparent pricing · No hidden fees';
+      'Tarification transparente · Pas de frais cachés';
 
   @override
-  String get marketingPricingPageUpgrade => 'Upgrade';
+  String get marketingPricingPageUpgrade => 'Mise à niveau';
 
   @override
   String marketingPricingPageViewUsPricing(String currency) {
@@ -13366,57 +13955,59 @@ class AppLocalizationsFr extends AppLocalizations {
   String get marketingPrivate => 'Privé';
 
   @override
-  String get marketingSeoGlobalAllSolutions => 'All solutions';
+  String get marketingSeoGlobalAllSolutions => 'Toutes les solutions';
 
   @override
   String get marketingSeoGlobalAvailability =>
-      'Available in every country — auto-detects your jurisdiction and applies local law.';
+      'Disponible dans tous les pays : détecte automatiquement votre juridiction et applique la loi locale.';
 
   @override
-  String get marketingSeoGlobalBadge => 'Available worldwide';
+  String get marketingSeoGlobalBadge => 'Disponible dans le monde entier';
 
   @override
-  String get marketingSeoGlobalConsumerCta => 'Try free — issue checker';
+  String get marketingSeoGlobalConsumerCta =>
+      'Essayez gratuitement – vérificateur de problèmes';
 
   @override
   String get marketingSeoGlobalDualAudienceTitle =>
-      'Built for everyone who touches legal work';
+      'Conçu pour tous ceux qui touchent au travail juridique';
 
   @override
-  String get marketingSeoGlobalFaqTitle => 'Frequently asked questions';
+  String get marketingSeoGlobalFaqTitle => 'Questions fréquemment posées';
 
   @override
-  String get marketingSeoGlobalFeaturesTitle => 'What you get';
+  String get marketingSeoGlobalFeaturesTitle => 'Ce que vous obtenez';
 
   @override
-  String get marketingSeoGlobalFirmCta => 'Platform for law firms';
+  String get marketingSeoGlobalFirmCta =>
+      'Plateforme pour les cabinets d\'avocats';
 
   @override
-  String get marketingSeoGlobalRelatedSolutions => 'Related capabilities';
+  String get marketingSeoGlobalRelatedSolutions => 'Capacités associées';
 
   @override
   String get marketingSeoPillarsContractanalysisBody1 =>
-      'Umbrella delivers contract analysis powered by retrieval-augmented generation over legal corpora — with verifiable citations, matter-aware context, and jurisdiction auto-detection for every country.';
+      'Umbrella fournit une analyse des contrats alimentée par une génération augmentée par récupération sur des corpus juridiques – avec des citations vérifiables, un contexte sensible et une détection automatique des juridictions pour chaque pays.';
 
   @override
   String get marketingSeoPillarsContractanalysisBody2 =>
-      'Individuals use it for free. Law firms deploy it across every matter with AI Copilot, billing, and workflow automation — one global platform.';
+      'Les particuliers l\'utilisent gratuitement. Les cabinets d’avocats le déploient dans tous les domaines avec AI Copilot, la facturation et l’automatisation des flux de travail – une plateforme mondiale.';
 
   @override
   String get marketingSeoPillarsContractanalysisBodyTitle =>
-      'The best contract analysis platform';
+      'La meilleure plateforme d\'analyse de contrats';
 
   @override
   String get marketingSeoPillarsContractanalysisCardDescription =>
-      'Global contract analysis with real citations — for individuals and law firms.';
+      'Analyse globale des contrats avec de véritables citations — pour les particuliers et les cabinets d\'avocats.';
 
   @override
   String get marketingSeoPillarsContractanalysisCtaPrimary =>
-      'Analyze a contract';
+      'Analyser un contrat';
 
   @override
   String get marketingSeoPillarsContractanalysisDualAudience =>
-      'Individuals get free contract analysis. Firms automate it across every matter worldwide.';
+      'Les particuliers bénéficient d’une analyse de contrat gratuite. Les entreprises l\'automatisent dans tous les domaines du monde entier.';
 
   @override
   String get marketingSeoPillarsContractanalysisFaqItems =>
@@ -13428,15 +14019,15 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get marketingSeoPillarsContractanalysisFeaturesSubtitle =>
-      'Built for real legal work.';
+      'Conçu pour un véritable travail juridique.';
 
   @override
   String get marketingSeoPillarsContractanalysisHeroSubtitle =>
-      'The most capable contract analysis platform — grounded in real statutes and case law, auto-detects your jurisdiction, available worldwide.';
+      'La plateforme d\'analyse de contrats la plus performante, fondée sur des lois et des jurisprudences réelles, détecte automatiquement votre juridiction, disponible dans le monde entier.';
 
   @override
   String get marketingSeoPillarsContractanalysisHeroTitle =>
-      'AI contract analysis — beyond surface-level review';
+      'Analyse des contrats par l\'IA – au-delà de l\'examen superficiel';
 
   @override
   String get marketingSeoPillarsContractanalysisKeywords =>
@@ -13444,38 +14035,39 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get marketingSeoPillarsContractanalysisMetaDescription =>
-      'Umbrella contract analysis: AI-powered, jurisdiction-aware, with real citations — available in every country worldwide for individuals and law firms.';
+      'Analyse des contrats généraux : basée sur l\'IA, sensible aux juridictions, avec de véritables citations – disponible dans tous les pays du monde pour les particuliers et les cabinets d\'avocats.';
 
   @override
   String get marketingSeoPillarsContractanalysisMetaTitle =>
-      'Contract Analysis — Global Legal AI Platform';
+      'Analyse des contrats — Plateforme mondiale d\'IA juridique';
 
   @override
   String get marketingSeoPillarsContractanalysisShortTitle =>
-      'Contract Analysis';
+      'Analyse du contrat';
 
   @override
   String get marketingSeoPillarsContractreviewBody1 =>
-      'Umbrella delivers contract review powered by retrieval-augmented generation over legal corpora — with verifiable citations, matter-aware context, and jurisdiction auto-detection for every country.';
+      'Umbrella propose une révision des contrats alimentée par une génération augmentée par récupération sur les corpus juridiques – avec des citations vérifiables, un contexte sensible et une détection automatique de la juridiction pour chaque pays.';
 
   @override
   String get marketingSeoPillarsContractreviewBody2 =>
-      'Individuals use it for free. Law firms deploy it across every matter with AI Copilot, billing, and workflow automation — one global platform.';
+      'Les particuliers l\'utilisent gratuitement. Les cabinets d’avocats le déploient dans tous les domaines avec AI Copilot, la facturation et l’automatisation des flux de travail – une plateforme mondiale.';
 
   @override
   String get marketingSeoPillarsContractreviewBodyTitle =>
-      'The best contract review platform';
+      'La meilleure plateforme de révision de contrats';
 
   @override
   String get marketingSeoPillarsContractreviewCardDescription =>
-      'Global contract review with real citations — for individuals and law firms.';
+      'Examen global des contrats avec de véritables citations — pour les particuliers et les cabinets d\'avocats.';
 
   @override
-  String get marketingSeoPillarsContractreviewCtaPrimary => 'Review a contract';
+  String get marketingSeoPillarsContractreviewCtaPrimary =>
+      'Réviser un contrat';
 
   @override
   String get marketingSeoPillarsContractreviewDualAudience =>
-      'Individuals get free contract review. Firms automate it across every matter worldwide.';
+      'Les particuliers bénéficient d’un examen gratuit de leur contrat. Les entreprises l\'automatisent dans tous les domaines du monde entier.';
 
   @override
   String get marketingSeoPillarsContractreviewFaqItems =>
@@ -13487,15 +14079,15 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get marketingSeoPillarsContractreviewFeaturesSubtitle =>
-      'Built for real legal work.';
+      'Conçu pour un véritable travail juridique.';
 
   @override
   String get marketingSeoPillarsContractreviewHeroSubtitle =>
-      'The most capable contract review platform — grounded in real statutes and case law, auto-detects your jurisdiction, available worldwide.';
+      'La plateforme d\'examen des contrats la plus performante, fondée sur des lois et une jurisprudence réelles, détecte automatiquement votre juridiction, disponible dans le monde entier.';
 
   @override
   String get marketingSeoPillarsContractreviewHeroTitle =>
-      'AI contract review — every clause, every risk';
+      'Examen des contrats par l\'IA : chaque clause, chaque risque';
 
   @override
   String get marketingSeoPillarsContractreviewKeywords =>
@@ -13503,37 +14095,38 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get marketingSeoPillarsContractreviewMetaDescription =>
-      'Umbrella contract review: AI-powered, jurisdiction-aware, with real citations — available in every country worldwide for individuals and law firms.';
+      'Examen général des contrats : alimenté par l\'IA, sensible aux juridictions, avec de véritables citations – disponible dans tous les pays du monde pour les particuliers et les cabinets d\'avocats.';
 
   @override
   String get marketingSeoPillarsContractreviewMetaTitle =>
-      'Contract Review — Global Legal AI Platform';
+      'Examen des contrats — Plateforme mondiale d\'IA juridique';
 
   @override
-  String get marketingSeoPillarsContractreviewShortTitle => 'Contract Review';
+  String get marketingSeoPillarsContractreviewShortTitle => 'Examen du contrat';
 
   @override
   String get marketingSeoPillarsDocumentreviewBody1 =>
-      'Umbrella delivers document review powered by retrieval-augmented generation over legal corpora — with verifiable citations, matter-aware context, and jurisdiction auto-detection for every country.';
+      'Umbrella propose une analyse documentaire basée sur une génération de corpus juridiques optimisée par la récupération, avec des citations vérifiables, un contexte sensible et une détection automatique des juridictions pour chaque pays.';
 
   @override
   String get marketingSeoPillarsDocumentreviewBody2 =>
-      'Individuals use it for free. Law firms deploy it across every matter with AI Copilot, billing, and workflow automation — one global platform.';
+      'Les particuliers l\'utilisent gratuitement. Les cabinets d’avocats le déploient dans tous les domaines avec AI Copilot, la facturation et l’automatisation des flux de travail – une plateforme mondiale.';
 
   @override
   String get marketingSeoPillarsDocumentreviewBodyTitle =>
-      'The best document review platform';
+      'La meilleure plateforme de révision de documents';
 
   @override
   String get marketingSeoPillarsDocumentreviewCardDescription =>
-      'Global document review with real citations — for individuals and law firms.';
+      'Examen global de documents avec de véritables citations — pour les particuliers et les cabinets d\'avocats.';
 
   @override
-  String get marketingSeoPillarsDocumentreviewCtaPrimary => 'Upload a document';
+  String get marketingSeoPillarsDocumentreviewCtaPrimary =>
+      'Télécharger un document';
 
   @override
   String get marketingSeoPillarsDocumentreviewDualAudience =>
-      'Individuals get free document review. Firms automate it across every matter worldwide.';
+      'Les particuliers bénéficient d’un examen gratuit des documents. Les entreprises l\'automatisent dans tous les domaines du monde entier.';
 
   @override
   String get marketingSeoPillarsDocumentreviewFaqItems =>
@@ -13545,15 +14138,15 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get marketingSeoPillarsDocumentreviewFeaturesSubtitle =>
-      'Built for real legal work.';
+      'Conçu pour un véritable travail juridique.';
 
   @override
   String get marketingSeoPillarsDocumentreviewHeroSubtitle =>
-      'The most capable document review platform — grounded in real statutes and case law, auto-detects your jurisdiction, available worldwide.';
+      'La plateforme d\'examen de documents la plus performante, fondée sur des lois et une jurisprudence réelles, détecte automatiquement votre juridiction, disponible dans le monde entier.';
 
   @override
   String get marketingSeoPillarsDocumentreviewHeroTitle =>
-      'Legal document review — AI reads every page';
+      'Examen des documents juridiques : l\'IA lit chaque page';
 
   @override
   String get marketingSeoPillarsDocumentreviewKeywords =>
@@ -13561,38 +14154,39 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get marketingSeoPillarsDocumentreviewMetaDescription =>
-      'Umbrella document review: AI-powered, jurisdiction-aware, with real citations — available in every country worldwide for individuals and law firms.';
+      'Examen général des documents : alimenté par l\'IA, sensible aux juridictions, avec de véritables citations – disponible dans tous les pays du monde pour les particuliers et les cabinets d\'avocats.';
 
   @override
   String get marketingSeoPillarsDocumentreviewMetaTitle =>
-      'Document Review — Global Legal AI Platform';
+      'Examen de documents — Plateforme mondiale d\'IA juridique';
 
   @override
-  String get marketingSeoPillarsDocumentreviewShortTitle => 'Document Review';
+  String get marketingSeoPillarsDocumentreviewShortTitle =>
+      'Examen des documents';
 
   @override
   String get marketingSeoPillarsLawfirmsoftwareBody1 =>
-      'Umbrella delivers law firm software powered by retrieval-augmented generation over legal corpora — with verifiable citations, matter-aware context, and jurisdiction auto-detection for every country.';
+      'Umbrella fournit un logiciel pour cabinet d\'avocats alimenté par une génération augmentée par récupération sur des corpus juridiques - avec des citations vérifiables, un contexte sensible et une détection automatique de la juridiction pour chaque pays.';
 
   @override
   String get marketingSeoPillarsLawfirmsoftwareBody2 =>
-      'Individuals use it for free. Law firms deploy it across every matter with AI Copilot, billing, and workflow automation — one global platform.';
+      'Les particuliers l\'utilisent gratuitement. Les cabinets d’avocats le déploient dans tous les domaines avec AI Copilot, la facturation et l’automatisation des flux de travail – une plateforme mondiale.';
 
   @override
   String get marketingSeoPillarsLawfirmsoftwareBodyTitle =>
-      'The best law firm software platform';
+      'La meilleure plateforme logicielle pour cabinet d\'avocats';
 
   @override
   String get marketingSeoPillarsLawfirmsoftwareCardDescription =>
-      'Global law firm software with real citations — for individuals and law firms.';
+      'Logiciel mondial pour cabinet d\'avocats avec de véritables citations — pour les particuliers et les cabinets d\'avocats.';
 
   @override
   String get marketingSeoPillarsLawfirmsoftwareCtaPrimary =>
-      'Explore firm platform';
+      'Explorer la plateforme du cabinet';
 
   @override
   String get marketingSeoPillarsLawfirmsoftwareDualAudience =>
-      'Individuals get free law firm software. Firms automate it across every matter worldwide.';
+      'Les particuliers bénéficient d\'un logiciel gratuit pour cabinet d\'avocats. Les entreprises l\'automatisent dans tous les domaines du monde entier.';
 
   @override
   String get marketingSeoPillarsLawfirmsoftwareFaqItems =>
@@ -13604,15 +14198,15 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get marketingSeoPillarsLawfirmsoftwareFeaturesSubtitle =>
-      'Built for real legal work.';
+      'Conçu pour un véritable travail juridique.';
 
   @override
   String get marketingSeoPillarsLawfirmsoftwareHeroSubtitle =>
-      'The most capable law firm software platform — grounded in real statutes and case law, auto-detects your jurisdiction, available worldwide.';
+      'La plateforme logicielle de cabinet d\'avocats la plus performante, fondée sur des lois et des jurisprudences réelles, détecte automatiquement votre juridiction, disponible dans le monde entier.';
 
   @override
   String get marketingSeoPillarsLawfirmsoftwareHeroTitle =>
-      'Law firm software built for the AI era';
+      'Un logiciel pour cabinet d\'avocats conçu pour l\'ère de l\'IA';
 
   @override
   String get marketingSeoPillarsLawfirmsoftwareKeywords =>
@@ -13620,39 +14214,39 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get marketingSeoPillarsLawfirmsoftwareMetaDescription =>
-      'Umbrella law firm software: AI-powered, jurisdiction-aware, with real citations — available in every country worldwide for individuals and law firms.';
+      'Logiciel pour cabinet d\'avocats parapluie : alimenté par l\'IA, sensible aux juridictions, avec de véritables citations – disponible dans tous les pays du monde pour les particuliers et les cabinets d\'avocats.';
 
   @override
   String get marketingSeoPillarsLawfirmsoftwareMetaTitle =>
-      'Law Firm Software — Global Legal AI Platform';
+      'Logiciel pour cabinet d\'avocats — Plateforme mondiale d\'IA juridique';
 
   @override
   String get marketingSeoPillarsLawfirmsoftwareShortTitle =>
-      'Law Firm Software';
+      'Logiciel pour cabinet d\'avocats';
 
   @override
   String get marketingSeoPillarsLegalassistantBody1 =>
-      'Umbrella delivers ai legal assistant powered by retrieval-augmented generation over legal corpora — with verifiable citations, matter-aware context, and jurisdiction auto-detection for every country.';
+      'Umbrella fournit un assistant juridique IA alimenté par une génération augmentée par récupération sur des corpus juridiques – avec des citations vérifiables, un contexte sensible et une détection automatique de la juridiction pour chaque pays.';
 
   @override
   String get marketingSeoPillarsLegalassistantBody2 =>
-      'Individuals use it for free. Law firms deploy it across every matter with AI Copilot, billing, and workflow automation — one global platform.';
+      'Les particuliers l\'utilisent gratuitement. Les cabinets d’avocats le déploient dans tous les domaines avec AI Copilot, la facturation et l’automatisation des flux de travail – une plateforme mondiale.';
 
   @override
   String get marketingSeoPillarsLegalassistantBodyTitle =>
-      'The best ai legal assistant platform';
+      'La meilleure plateforme d\'assistant juridique IA';
 
   @override
   String get marketingSeoPillarsLegalassistantCardDescription =>
-      'Global ai legal assistant with real citations — for individuals and law firms.';
+      'Assistant juridique mondial par intelligence artificielle avec de vraies citations — pour les particuliers et les cabinets d\'avocats.';
 
   @override
   String get marketingSeoPillarsLegalassistantCtaPrimary =>
-      'Ask a legal question';
+      'Posez une question juridique';
 
   @override
   String get marketingSeoPillarsLegalassistantDualAudience =>
-      'Individuals get free ai legal assistant. Firms automate it across every matter worldwide.';
+      'Les particuliers bénéficient d’un assistant juridique gratuit. Les entreprises l\'automatisent dans tous les domaines du monde entier.';
 
   @override
   String get marketingSeoPillarsLegalassistantFaqItems =>
@@ -13664,15 +14258,15 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get marketingSeoPillarsLegalassistantFeaturesSubtitle =>
-      'Built for real legal work.';
+      'Conçu pour un véritable travail juridique.';
 
   @override
   String get marketingSeoPillarsLegalassistantHeroSubtitle =>
-      'The most capable ai legal assistant platform — grounded in real statutes and case law, auto-detects your jurisdiction, available worldwide.';
+      'La plateforme d\'assistant juridique IA la plus performante, fondée sur des lois et des jurisprudences réelles, détecte automatiquement votre juridiction, disponible dans le monde entier.';
 
   @override
   String get marketingSeoPillarsLegalassistantHeroTitle =>
-      'AI legal assistant — real answers, real citations';
+      'Assistant juridique IA – vraies réponses, vraies citations';
 
   @override
   String get marketingSeoPillarsLegalassistantKeywords =>
@@ -13680,38 +14274,39 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get marketingSeoPillarsLegalassistantMetaDescription =>
-      'Umbrella ai legal assistant: AI-powered, jurisdiction-aware, with real citations — available in every country worldwide for individuals and law firms.';
+      'Assistant juridique Umbrella ai : alimenté par l\'IA, sensible aux juridictions, avec de véritables citations - disponible dans tous les pays du monde pour les particuliers et les cabinets d\'avocats.';
 
   @override
   String get marketingSeoPillarsLegalassistantMetaTitle =>
-      'AI Legal Assistant — Global Legal AI Platform';
+      'Assistant juridique IA — Plateforme mondiale d\'IA juridique';
 
   @override
   String get marketingSeoPillarsLegalassistantShortTitle =>
-      'AI Legal Assistant';
+      'Assistante juridique IA';
 
   @override
   String get marketingSeoPillarsLegalcopilotBody1 =>
-      'Umbrella delivers legal copilot powered by retrieval-augmented generation over legal corpora — with verifiable citations, matter-aware context, and jurisdiction auto-detection for every country.';
+      'Umbrella propose un copilote juridique alimenté par une génération augmentée par récupération sur des corpus juridiques – avec des citations vérifiables, un contexte sensible à l\'affaire et une détection automatique des juridictions pour chaque pays.';
 
   @override
   String get marketingSeoPillarsLegalcopilotBody2 =>
-      'Individuals use it for free. Law firms deploy it across every matter with AI Copilot, billing, and workflow automation — one global platform.';
+      'Les particuliers l\'utilisent gratuitement. Les cabinets d’avocats le déploient dans tous les domaines avec AI Copilot, la facturation et l’automatisation des flux de travail – une plateforme mondiale.';
 
   @override
   String get marketingSeoPillarsLegalcopilotBodyTitle =>
-      'The best legal copilot platform';
+      'La meilleure plateforme de copilote légale';
 
   @override
   String get marketingSeoPillarsLegalcopilotCardDescription =>
-      'Global legal copilot with real citations — for individuals and law firms.';
+      'Copilote juridique mondial avec de véritables citations — pour les particuliers et les cabinets d\'avocats.';
 
   @override
-  String get marketingSeoPillarsLegalcopilotCtaPrimary => 'Try Legal Copilot';
+  String get marketingSeoPillarsLegalcopilotCtaPrimary =>
+      'Essayez le copilote légal';
 
   @override
   String get marketingSeoPillarsLegalcopilotDualAudience =>
-      'Individuals get free legal copilot. Firms automate it across every matter worldwide.';
+      'Les particuliers bénéficient d’un copilote légal gratuit. Les entreprises l\'automatisent dans tous les domaines du monde entier.';
 
   @override
   String get marketingSeoPillarsLegalcopilotFaqItems =>
@@ -13723,15 +14318,15 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get marketingSeoPillarsLegalcopilotFeaturesSubtitle =>
-      'Built for real legal work.';
+      'Conçu pour un véritable travail juridique.';
 
   @override
   String get marketingSeoPillarsLegalcopilotHeroSubtitle =>
-      'The most capable legal copilot platform — grounded in real statutes and case law, auto-detects your jurisdiction, available worldwide.';
+      'La plateforme de copilote juridique la plus performante, fondée sur des lois et une jurisprudence réelles, détecte automatiquement votre juridiction, disponible dans le monde entier.';
 
   @override
   String get marketingSeoPillarsLegalcopilotHeroTitle =>
-      'Legal Copilot — AI that knows your cases';
+      'Legal Copilot – Une IA qui connaît vos dossiers';
 
   @override
   String get marketingSeoPillarsLegalcopilotKeywords =>
@@ -13739,38 +14334,38 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get marketingSeoPillarsLegalcopilotMetaDescription =>
-      'Umbrella legal copilot: AI-powered, jurisdiction-aware, with real citations — available in every country worldwide for individuals and law firms.';
+      'Copilote juridique parapluie : alimenté par l\'IA, sensible aux juridictions, avec de véritables citations – disponible dans tous les pays du monde pour les particuliers et les cabinets d\'avocats.';
 
   @override
   String get marketingSeoPillarsLegalcopilotMetaTitle =>
-      'Legal Copilot — Global Legal AI Platform';
+      'Legal Copilot — Plateforme mondiale d’IA juridique';
 
   @override
-  String get marketingSeoPillarsLegalcopilotShortTitle => 'Legal Copilot';
+  String get marketingSeoPillarsLegalcopilotShortTitle => 'Copilote juridique';
 
   @override
   String get marketingSeoPillarsLegaldocumentdraftingBody1 =>
-      'Umbrella delivers legal document drafting powered by retrieval-augmented generation over legal corpora — with verifiable citations, matter-aware context, and jurisdiction auto-detection for every country.';
+      'Umbrella permet une rédaction de documents juridiques basée sur la génération de corpus juridiques augmentée par récupération - avec des citations vérifiables, un contexte sensible et une détection automatique des juridictions pour chaque pays.';
 
   @override
   String get marketingSeoPillarsLegaldocumentdraftingBody2 =>
-      'Individuals use it for free. Law firms deploy it across every matter with AI Copilot, billing, and workflow automation — one global platform.';
+      'Les particuliers l\'utilisent gratuitement. Les cabinets d’avocats le déploient dans tous les domaines avec AI Copilot, la facturation et l’automatisation des flux de travail – une plateforme mondiale.';
 
   @override
   String get marketingSeoPillarsLegaldocumentdraftingBodyTitle =>
-      'The best legal document drafting platform';
+      'La meilleure plateforme de rédaction de documents juridiques';
 
   @override
   String get marketingSeoPillarsLegaldocumentdraftingCardDescription =>
-      'Global legal document drafting with real citations — for individuals and law firms.';
+      'Rédaction de documents juridiques mondiaux avec de véritables citations — pour les particuliers et les cabinets d\'avocats.';
 
   @override
   String get marketingSeoPillarsLegaldocumentdraftingCtaPrimary =>
-      'Start drafting';
+      'Commencer à rédiger';
 
   @override
   String get marketingSeoPillarsLegaldocumentdraftingDualAudience =>
-      'Individuals get free legal document drafting. Firms automate it across every matter worldwide.';
+      'Les particuliers bénéficient d’une rédaction gratuite de documents juridiques. Les entreprises l\'automatisent dans tous les domaines du monde entier.';
 
   @override
   String get marketingSeoPillarsLegaldocumentdraftingFaqItems =>
@@ -13782,15 +14377,15 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get marketingSeoPillarsLegaldocumentdraftingFeaturesSubtitle =>
-      'Built for real legal work.';
+      'Conçu pour un véritable travail juridique.';
 
   @override
   String get marketingSeoPillarsLegaldocumentdraftingHeroSubtitle =>
-      'The most capable legal document drafting platform — grounded in real statutes and case law, auto-detects your jurisdiction, available worldwide.';
+      'La plateforme de rédaction de documents juridiques la plus performante, fondée sur des lois et une jurisprudence réelles, détecte automatiquement votre juridiction, disponible dans le monde entier.';
 
   @override
   String get marketingSeoPillarsLegaldocumentdraftingHeroTitle =>
-      'Legal document drafting — AI that cites real law';
+      'Rédaction de documents juridiques – Une IA qui cite la vraie loi';
 
   @override
   String get marketingSeoPillarsLegaldocumentdraftingKeywords =>
@@ -13798,39 +14393,39 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get marketingSeoPillarsLegaldocumentdraftingMetaDescription =>
-      'Umbrella legal document drafting: AI-powered, jurisdiction-aware, with real citations — available in every country worldwide for individuals and law firms.';
+      'Rédaction de documents juridiques généraux : alimentée par l\'IA, sensible aux juridictions, avec de véritables citations - disponible dans tous les pays du monde pour les particuliers et les cabinets d\'avocats.';
 
   @override
   String get marketingSeoPillarsLegaldocumentdraftingMetaTitle =>
-      'Legal Document Drafting — Global Legal AI Platform';
+      'Rédaction de documents juridiques — Plateforme mondiale d\'IA juridique';
 
   @override
   String get marketingSeoPillarsLegaldocumentdraftingShortTitle =>
-      'Legal Document Drafting';
+      'Rédaction de documents juridiques';
 
   @override
   String get marketingSeoPillarsLegalduediligenceBody1 =>
-      'Umbrella delivers legal due diligence powered by retrieval-augmented generation over legal corpora — with verifiable citations, matter-aware context, and jurisdiction auto-detection for every country.';
+      'Umbrella assure une diligence raisonnable juridique alimentée par une génération augmentée par récupération sur les corpus juridiques – avec des citations vérifiables, un contexte sensible et une détection automatique de la juridiction pour chaque pays.';
 
   @override
   String get marketingSeoPillarsLegalduediligenceBody2 =>
-      'Individuals use it for free. Law firms deploy it across every matter with AI Copilot, billing, and workflow automation — one global platform.';
+      'Les particuliers l\'utilisent gratuitement. Les cabinets d’avocats le déploient dans tous les domaines avec AI Copilot, la facturation et l’automatisation des flux de travail – une plateforme mondiale.';
 
   @override
   String get marketingSeoPillarsLegalduediligenceBodyTitle =>
-      'The best legal due diligence platform';
+      'La meilleure plateforme de due diligence juridique';
 
   @override
   String get marketingSeoPillarsLegalduediligenceCardDescription =>
-      'Global legal due diligence with real citations — for individuals and law firms.';
+      'Due diligence juridique mondiale avec de véritables citations — pour les particuliers et les cabinets d’avocats.';
 
   @override
   String get marketingSeoPillarsLegalduediligenceCtaPrimary =>
-      'Start due diligence review';
+      'Commencer l’examen de diligence raisonnable';
 
   @override
   String get marketingSeoPillarsLegalduediligenceDualAudience =>
-      'Individuals get free legal due diligence. Firms automate it across every matter worldwide.';
+      'Les particuliers bénéficient d’une diligence raisonnable juridique gratuite. Les entreprises l\'automatisent dans tous les domaines du monde entier.';
 
   @override
   String get marketingSeoPillarsLegalduediligenceFaqItems =>
@@ -13842,15 +14437,15 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get marketingSeoPillarsLegalduediligenceFeaturesSubtitle =>
-      'Built for real legal work.';
+      'Conçu pour un véritable travail juridique.';
 
   @override
   String get marketingSeoPillarsLegalduediligenceHeroSubtitle =>
-      'The most capable legal due diligence platform — grounded in real statutes and case law, auto-detects your jurisdiction, available worldwide.';
+      'La plateforme de diligence raisonnable la plus performante, fondée sur des lois et des jurisprudences réelles, détecte automatiquement votre juridiction, disponible dans le monde entier.';
 
   @override
   String get marketingSeoPillarsLegalduediligenceHeroTitle =>
-      'AI legal due diligence — faster, deeper, cited';
+      'Due diligence juridique en matière d’IA : plus rapide, plus approfondie, citée';
 
   @override
   String get marketingSeoPillarsLegalduediligenceKeywords =>
@@ -13858,39 +14453,39 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get marketingSeoPillarsLegalduediligenceMetaDescription =>
-      'Umbrella legal due diligence: AI-powered, jurisdiction-aware, with real citations — available in every country worldwide for individuals and law firms.';
+      'Diligence juridique générale : alimentée par l\'IA, sensible aux juridictions, avec de véritables citations - disponible dans tous les pays du monde pour les particuliers et les cabinets d\'avocats.';
 
   @override
   String get marketingSeoPillarsLegalduediligenceMetaTitle =>
-      'Legal Due Diligence — Global Legal AI Platform';
+      'Diligence juridique — Plateforme mondiale d’IA juridique';
 
   @override
   String get marketingSeoPillarsLegalduediligenceShortTitle =>
-      'Legal Due Diligence';
+      'Diligence juridique';
 
   @override
   String get marketingSeoPillarsLegalissueanalysisBody1 =>
-      'Umbrella delivers legal issue analysis powered by retrieval-augmented generation over legal corpora — with verifiable citations, matter-aware context, and jurisdiction auto-detection for every country.';
+      'Umbrella fournit une analyse des problèmes juridiques alimentée par une génération augmentée par récupération sur des corpus juridiques – avec des citations vérifiables, un contexte sensible à l\'affaire et une détection automatique de la juridiction pour chaque pays.';
 
   @override
   String get marketingSeoPillarsLegalissueanalysisBody2 =>
-      'Individuals use it for free. Law firms deploy it across every matter with AI Copilot, billing, and workflow automation — one global platform.';
+      'Les particuliers l\'utilisent gratuitement. Les cabinets d’avocats le déploient dans tous les domaines avec AI Copilot, la facturation et l’automatisation des flux de travail – une plateforme mondiale.';
 
   @override
   String get marketingSeoPillarsLegalissueanalysisBodyTitle =>
-      'The best legal issue analysis platform';
+      'La meilleure plateforme d\'analyse de problèmes juridiques';
 
   @override
   String get marketingSeoPillarsLegalissueanalysisCardDescription =>
-      'Global legal issue analysis with real citations — for individuals and law firms.';
+      'Analyse des problèmes juridiques mondiaux avec de véritables citations — pour les particuliers et les cabinets d\'avocats.';
 
   @override
   String get marketingSeoPillarsLegalissueanalysisCtaPrimary =>
-      'Analyze my legal issue';
+      'Analyser mon problème juridique';
 
   @override
   String get marketingSeoPillarsLegalissueanalysisDualAudience =>
-      'Individuals get free legal issue analysis. Firms automate it across every matter worldwide.';
+      'Les particuliers bénéficient d’une analyse gratuite des problèmes juridiques. Les entreprises l\'automatisent dans tous les domaines du monde entier.';
 
   @override
   String get marketingSeoPillarsLegalissueanalysisFaqItems =>
@@ -13902,15 +14497,15 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get marketingSeoPillarsLegalissueanalysisFeaturesSubtitle =>
-      'Built for real legal work.';
+      'Conçu pour un véritable travail juridique.';
 
   @override
   String get marketingSeoPillarsLegalissueanalysisHeroSubtitle =>
-      'The most capable legal issue analysis platform — grounded in real statutes and case law, auto-detects your jurisdiction, available worldwide.';
+      'La plateforme d\'analyse des problèmes juridiques la plus performante, fondée sur des lois et des jurisprudences réelles, détecte automatiquement votre juridiction, disponible dans le monde entier.';
 
   @override
   String get marketingSeoPillarsLegalissueanalysisHeroTitle =>
-      'Legal issue analysis — know where you stand';
+      'Analyse des problèmes juridiques : sachez où vous en êtes';
 
   @override
   String get marketingSeoPillarsLegalissueanalysisKeywords =>
@@ -13918,39 +14513,39 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get marketingSeoPillarsLegalissueanalysisMetaDescription =>
-      'Umbrella legal issue analysis: AI-powered, jurisdiction-aware, with real citations — available in every country worldwide for individuals and law firms.';
+      'Analyse générale des questions juridiques : basée sur l\'IA, sensible aux juridictions, avec de véritables citations – disponible dans tous les pays du monde pour les particuliers et les cabinets d\'avocats.';
 
   @override
   String get marketingSeoPillarsLegalissueanalysisMetaTitle =>
-      'Legal Issue Analysis — Global Legal AI Platform';
+      'Analyse des questions juridiques — Plateforme mondiale d\'IA juridique';
 
   @override
   String get marketingSeoPillarsLegalissueanalysisShortTitle =>
-      'Legal Issue Analysis';
+      'Analyse des questions juridiques';
 
   @override
   String get marketingSeoPillarsLegalresearchBody1 =>
-      'Umbrella delivers legal research powered by retrieval-augmented generation over legal corpora — with verifiable citations, matter-aware context, and jurisdiction auto-detection for every country.';
+      'Umbrella propose des recherches juridiques alimentées par une génération augmentée par récupération sur des corpus juridiques – avec des citations vérifiables, un contexte sensible et une détection automatique des juridictions pour chaque pays.';
 
   @override
   String get marketingSeoPillarsLegalresearchBody2 =>
-      'Individuals use it for free. Law firms deploy it across every matter with AI Copilot, billing, and workflow automation — one global platform.';
+      'Les particuliers l\'utilisent gratuitement. Les cabinets d’avocats le déploient dans tous les domaines avec AI Copilot, la facturation et l’automatisation des flux de travail – une plateforme mondiale.';
 
   @override
   String get marketingSeoPillarsLegalresearchBodyTitle =>
-      'The best legal research platform';
+      'La meilleure plateforme de recherche juridique';
 
   @override
   String get marketingSeoPillarsLegalresearchCardDescription =>
-      'Global legal research with real citations — for individuals and law firms.';
+      'Recherche juridique mondiale avec de véritables citations — pour les particuliers et les cabinets d\'avocats.';
 
   @override
   String get marketingSeoPillarsLegalresearchCtaPrimary =>
-      'Research my legal issue';
+      'Rechercher mon problème juridique';
 
   @override
   String get marketingSeoPillarsLegalresearchDualAudience =>
-      'Individuals get free legal research. Firms automate it across every matter worldwide.';
+      'Les particuliers bénéficient de recherches juridiques gratuites. Les entreprises l\'automatisent dans tous les domaines du monde entier.';
 
   @override
   String get marketingSeoPillarsLegalresearchFaqItems =>
@@ -13962,15 +14557,15 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get marketingSeoPillarsLegalresearchFeaturesSubtitle =>
-      'Built for real legal work.';
+      'Conçu pour un véritable travail juridique.';
 
   @override
   String get marketingSeoPillarsLegalresearchHeroSubtitle =>
-      'The most capable legal research platform — grounded in real statutes and case law, auto-detects your jurisdiction, available worldwide.';
+      'La plateforme de recherche juridique la plus performante, fondée sur des lois et des jurisprudences réelles, détecte automatiquement votre juridiction, disponible dans le monde entier.';
 
   @override
   String get marketingSeoPillarsLegalresearchHeroTitle =>
-      'Legal research AI — find the law that applies to you';
+      'IA de recherche juridique : trouvez la loi qui s\'applique à vous';
 
   @override
   String get marketingSeoPillarsLegalresearchKeywords =>
@@ -13978,38 +14573,39 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get marketingSeoPillarsLegalresearchMetaDescription =>
-      'Umbrella legal research: AI-powered, jurisdiction-aware, with real citations — available in every country worldwide for individuals and law firms.';
+      'Recherche juridique générale : basée sur l\'IA, sensible aux juridictions, avec de véritables citations – disponible dans tous les pays du monde pour les particuliers et les cabinets d\'avocats.';
 
   @override
   String get marketingSeoPillarsLegalresearchMetaTitle =>
-      'Legal Research — Global Legal AI Platform';
+      'Recherche juridique — Plateforme mondiale d\'IA juridique';
 
   @override
-  String get marketingSeoPillarsLegalresearchShortTitle => 'Legal Research';
+  String get marketingSeoPillarsLegalresearchShortTitle =>
+      'Recherche juridique';
 
   @override
   String get marketingSeoPillarsLegalworkflowautomationBody1 =>
-      'Umbrella delivers workflow automation powered by retrieval-augmented generation over legal corpora — with verifiable citations, matter-aware context, and jurisdiction auto-detection for every country.';
+      'Umbrella offre une automatisation des flux de travail alimentée par une génération augmentée par récupération sur des corpus juridiques – avec des citations vérifiables, un contexte sensible et une détection automatique des juridictions pour chaque pays.';
 
   @override
   String get marketingSeoPillarsLegalworkflowautomationBody2 =>
-      'Individuals use it for free. Law firms deploy it across every matter with AI Copilot, billing, and workflow automation — one global platform.';
+      'Les particuliers l\'utilisent gratuitement. Les cabinets d’avocats le déploient dans tous les domaines avec AI Copilot, la facturation et l’automatisation des flux de travail – une plateforme mondiale.';
 
   @override
   String get marketingSeoPillarsLegalworkflowautomationBodyTitle =>
-      'The best workflow automation platform';
+      'La meilleure plateforme d\'automatisation des flux de travail';
 
   @override
   String get marketingSeoPillarsLegalworkflowautomationCardDescription =>
-      'Global workflow automation with real citations — for individuals and law firms.';
+      'Automatisation globale des flux de travail avec de véritables citations — pour les particuliers et les cabinets d\'avocats.';
 
   @override
   String get marketingSeoPillarsLegalworkflowautomationCtaPrimary =>
-      'Automate your firm';
+      'Automatisez votre entreprise';
 
   @override
   String get marketingSeoPillarsLegalworkflowautomationDualAudience =>
-      'Individuals get free workflow automation. Firms automate it across every matter worldwide.';
+      'Les particuliers bénéficient d’une automatisation gratuite des flux de travail. Les entreprises l\'automatisent dans tous les domaines du monde entier.';
 
   @override
   String get marketingSeoPillarsLegalworkflowautomationFaqItems =>
@@ -14021,15 +14617,15 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get marketingSeoPillarsLegalworkflowautomationFeaturesSubtitle =>
-      'Built for real legal work.';
+      'Conçu pour un véritable travail juridique.';
 
   @override
   String get marketingSeoPillarsLegalworkflowautomationHeroSubtitle =>
-      'The most capable workflow automation platform — grounded in real statutes and case law, auto-detects your jurisdiction, available worldwide.';
+      'La plateforme d\'automatisation des flux de travail la plus performante, fondée sur des lois et des jurisprudences réelles, détecte automatiquement votre juridiction, disponible dans le monde entier.';
 
   @override
   String get marketingSeoPillarsLegalworkflowautomationHeroTitle =>
-      'Legal workflow automation — from intake to invoice';
+      'Automatisation du flux de travail juridique — de la réception à la facture';
 
   @override
   String get marketingSeoPillarsLegalworkflowautomationKeywords =>
@@ -14037,39 +14633,39 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get marketingSeoPillarsLegalworkflowautomationMetaDescription =>
-      'Umbrella workflow automation: AI-powered, jurisdiction-aware, with real citations — available in every country worldwide for individuals and law firms.';
+      'Automatisation globale des flux de travail : alimentée par l\'IA, sensible aux juridictions, avec de véritables citations - disponible dans tous les pays du monde pour les particuliers et les cabinets d\'avocats.';
 
   @override
   String get marketingSeoPillarsLegalworkflowautomationMetaTitle =>
-      'Workflow Automation — Global Legal AI Platform';
+      'Automatisation des flux de travail — Plateforme mondiale d\'IA juridique';
 
   @override
   String get marketingSeoPillarsLegalworkflowautomationShortTitle =>
-      'Workflow Automation';
+      'Automatisation du flux de travail';
 
   @override
   String get marketingSeoPillarsPracticemanagementBody1 =>
-      'Umbrella delivers practice management powered by retrieval-augmented generation over legal corpora — with verifiable citations, matter-aware context, and jurisdiction auto-detection for every country.';
+      'Umbrella offre une gestion des pratiques basée sur une génération augmentée par récupération sur des corpus juridiques – avec des citations vérifiables, un contexte sensible et une détection automatique des juridictions pour chaque pays.';
 
   @override
   String get marketingSeoPillarsPracticemanagementBody2 =>
-      'Individuals use it for free. Law firms deploy it across every matter with AI Copilot, billing, and workflow automation — one global platform.';
+      'Les particuliers l\'utilisent gratuitement. Les cabinets d’avocats le déploient dans tous les domaines avec AI Copilot, la facturation et l’automatisation des flux de travail – une plateforme mondiale.';
 
   @override
   String get marketingSeoPillarsPracticemanagementBodyTitle =>
-      'The best practice management platform';
+      'La plateforme de gestion des meilleures pratiques';
 
   @override
   String get marketingSeoPillarsPracticemanagementCardDescription =>
-      'Global practice management with real citations — for individuals and law firms.';
+      'Gestion globale de cabinets avec de véritables citations — pour les particuliers et les cabinets d\'avocats.';
 
   @override
   String get marketingSeoPillarsPracticemanagementCtaPrimary =>
-      'Manage your practice';
+      'Gérez votre pratique';
 
   @override
   String get marketingSeoPillarsPracticemanagementDualAudience =>
-      'Individuals get free practice management. Firms automate it across every matter worldwide.';
+      'Les particuliers bénéficient d’une gestion gratuite de la pratique. Les entreprises l\'automatisent dans tous les domaines du monde entier.';
 
   @override
   String get marketingSeoPillarsPracticemanagementFaqItems =>
@@ -14081,15 +14677,15 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get marketingSeoPillarsPracticemanagementFeaturesSubtitle =>
-      'Built for real legal work.';
+      'Conçu pour un véritable travail juridique.';
 
   @override
   String get marketingSeoPillarsPracticemanagementHeroSubtitle =>
-      'The most capable practice management platform — grounded in real statutes and case law, auto-detects your jurisdiction, available worldwide.';
+      'La plateforme de gestion de cabinet la plus performante, fondée sur des lois et une jurisprudence réelles, détecte automatiquement votre juridiction, disponible dans le monde entier.';
 
   @override
   String get marketingSeoPillarsPracticemanagementHeroTitle =>
-      'Practice management — reimagined with AI';
+      'Gestion de cabinet – réinventée avec l’IA';
 
   @override
   String get marketingSeoPillarsPracticemanagementKeywords =>
@@ -14097,55 +14693,56 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get marketingSeoPillarsPracticemanagementMetaDescription =>
-      'Umbrella practice management: AI-powered, jurisdiction-aware, with real citations — available in every country worldwide for individuals and law firms.';
+      'Gestion globale des cabinets : alimentée par l\'IA, sensible aux juridictions, avec de véritables citations – disponible dans tous les pays du monde pour les particuliers et les cabinets d\'avocats.';
 
   @override
   String get marketingSeoPillarsPracticemanagementMetaTitle =>
-      'Practice Management — Global Legal AI Platform';
+      'Gestion de cabinet — Plateforme mondiale d\'IA juridique';
 
   @override
   String get marketingSeoPillarsPracticemanagementShortTitle =>
-      'Practice Management';
+      'Gestion de la pratique';
 
   @override
   String get marketingSiteDescription =>
-      'Vérifiez gratuitement votre problème juridique aux États-Unis, au Royaume-Uni et au Royaume-Uni. Les cabinets d’avocats bénéficient d’un copilote IA sensible aux enjeux, de la recherche, de la facturation et de l’automatisation de la pratique.';
+      'Umbrella est une IA juridique mondiale : vérificateur de problèmes gratuit avec de vraies citations, rédaction de documents IA, révision de contrats, recherche juridique et système d\'exploitation complet pour cabinet d\'avocats - disponible dans le monde entier.';
 
   @override
   String get marketingSiteName => 'Umbrella';
 
   @override
   String get marketingSiteTagline =>
-      'Comprenez votre problème juridique. Gérez votre entreprise avec l\'IA.';
+      'La plateforme mondiale d\'IA juridique : comprenez n\'importe quelle situation, rédigez n\'importe quel document, dirigez n\'importe quelle entreprise.';
 
   @override
   String get marketingSiteTitle =>
-      'Umbrella – Conseils juridiques sur l’IA et système d’exploitation du cabinet';
+      'Umbrella — Plateforme mondiale d\'IA juridique';
 
   @override
   String get marketingSolutionsHubBadge => 'Solutions';
 
   @override
   String get marketingSolutionsHubClosing =>
-      'One platform. Every country. Individuals and law firms.';
+      'Une seule plateforme. Chaque pays. Particuliers et cabinets d\'avocats.';
 
   @override
-  String get marketingSolutionsHubLearnMore => 'Learn more';
+  String get marketingSolutionsHubLearnMore => 'Apprendre encore plus';
 
   @override
   String get marketingSolutionsHubMetaDescription =>
-      'Explore Umbrella\'s global legal AI solutions: document drafting, contract review, legal research, law firm software, legal copilot, and workflow automation — worldwide.';
+      'Explorez les solutions mondiales d\'IA juridique d\'Umbrella : rédaction de documents, révision de contrats, recherche juridique, logiciels pour cabinets d\'avocats, copilote juridique et automatisation des flux de travail, dans le monde entier.';
 
   @override
   String get marketingSolutionsHubMetaTitle =>
-      'Legal AI Solutions — Document Drafting, Research, Contract Review & More';
+      'Solutions d\'IA juridique – Rédaction de documents, recherche, révision de contrats et plus encore';
 
   @override
   String get marketingSolutionsHubSubtitle =>
-      'From your first legal question to running an entire global practice — document drafting, contract review, legal research, and firm automation in one platform.';
+      'De votre première question juridique à la gestion d\'un cabinet mondial entier : rédaction de documents, révision de contrats, recherche juridique et automatisation du cabinet sur une seule plateforme.';
 
   @override
-  String get marketingSolutionsHubTitle => 'Legal AI for every legal task';
+  String get marketingSolutionsHubTitle =>
+      'L\'IA juridique pour chaque tâche juridique';
 
   @override
   String get marketingSplashForEveryone => 'Pour tout le monde.';
@@ -14183,68 +14780,70 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get marketingSubscriptionSuccessActivating =>
-      'Activating your subscription…';
+      'Activation de votre abonnement…';
 
   @override
   String get marketingSubscriptionSuccessActivatingHint =>
-      'Confirming payment and updating your plan.';
+      'Confirmation du paiement et mise à jour de votre forfait.';
 
   @override
-  String get marketingSubscriptionSuccessActiveBadge => 'Active';
+  String get marketingSubscriptionSuccessActiveBadge => 'Actif';
 
   @override
   String get marketingSubscriptionSuccessBody =>
-      'Your plan is active and credits have been added to your account.';
+      'Votre forfait est actif et des crédits ont été ajoutés à votre compte.';
 
   @override
   String get marketingSubscriptionSuccessConfirmFailed =>
-      'We couldn\'t confirm your subscription automatically. Open Plan & usage to check your status, or contact support if it still shows Free.';
+      'Nous n\'avons pas pu confirmer votre abonnement automatiquement. Ouvrez Plan et utilisation pour vérifier votre statut, ou contactez l\'assistance s\'il affiche toujours Gratuit.';
 
   @override
-  String get marketingSubscriptionSuccessCredits => 'Included AI credits';
+  String get marketingSubscriptionSuccessCredits => 'Crédits IA inclus';
 
   @override
   String marketingSubscriptionSuccessCreditsAdded(String count) {
-    return '+$count credits added to your account';
+    return '+$count crédits ajoutés à votre compte';
   }
 
   @override
   String get marketingSubscriptionSuccessPendingDeploy =>
-      'Payment received. Your subscription is being processed — this usually takes under a minute.';
+      'Paiement reçu. Votre abonnement est en cours de traitement – ​​cela prend généralement moins d’une minute.';
 
   @override
   String get marketingSubscriptionSuccessPendingHint =>
-      'If Plan & usage still shows Free after a few minutes, refresh the page or contact support with your checkout session ID.';
+      'Si Plan et utilisation s\'affichent toujours Gratuit après quelques minutes, actualisez la page ou contactez l\'assistance avec votre identifiant de session de paiement.';
 
   @override
-  String get marketingSubscriptionSuccessPerMonth => 'month';
+  String get marketingSubscriptionSuccessPerMonth => 'mois';
 
   @override
   String get marketingSubscriptionSuccessPlan => 'Plan';
 
   @override
-  String get marketingSubscriptionSuccessPrice => 'Price';
+  String get marketingSubscriptionSuccessPrice => 'Prix';
 
   @override
-  String get marketingSubscriptionSuccessRenews => 'Next billing date';
+  String get marketingSubscriptionSuccessRenews =>
+      'Prochaine date de facturation';
 
   @override
-  String get marketingSubscriptionSuccessSyncing => 'Syncing your plan…';
+  String get marketingSubscriptionSuccessSyncing =>
+      'Synchronisation de votre forfait…';
 
   @override
   String get marketingSubscriptionSuccessSyncingHint =>
-      'Payment received — checking that your subscription is active.';
+      'Paiement reçu — vérification que votre abonnement est actif.';
 
   @override
   String get marketingSubscriptionSuccessTitle => 'Abonnement confirmé';
 
   @override
   String get marketingSubscriptionSuccessWebhookHint =>
-      'Payment received. Your plan may take a moment to update — check Plan & usage shortly.';
+      'Paiement reçu. La mise à jour de votre forfait peut prendre un moment : vérifiez le forfait et l\'utilisation sous peu.';
 
   @override
   String marketingSubscriptionSuccessWelcome(String plan) {
-    return 'Welcome to $plan';
+    return 'Bienvenue à $plan';
   }
 
   @override
@@ -14279,11 +14878,11 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get marketingUploadDocumentMetaDescription =>
-      'Upload contracts, notices, or agreements for AI clause-level review. Jurisdiction-aware legal document analysis — available in every country.';
+      'Téléchargez des contrats, des avis ou des accords pour un examen au niveau des clauses AI. Analyse des documents juridiques tenant compte des juridictions — disponible dans tous les pays.';
 
   @override
   String get marketingUploadDocumentMetaTitle =>
-      'AI Document Review & Contract Analysis — Global';
+      'Examen des documents IA et analyse des contrats – Global';
 
   @override
   String get marketingWelcomeHeadline =>
@@ -14309,23 +14908,32 @@ class AppLocalizationsFr extends AppLocalizations {
       'Votre juridiction. Votre loi.';
 
   @override
-  String get matterIntelligenceAiDraft => 'AI Draft';
+  String get matterIntelligenceAiDraft => 'Brouillon IA';
 
   @override
   String get matterIntelligenceClarificationRequired =>
-      'A few details will improve your matches';
+      'Quelques détails amélioreront vos matchs';
 
   @override
-  String get matterIntelligenceConfidence => 'Confidence';
+  String get matterIntelligenceConfidence => 'Confiance';
 
   @override
-  String get matterIntelligenceDocumentMatches => 'Document matches';
+  String get matterIntelligenceDocumentMatches =>
+      'Correspondances de documents';
 
   @override
-  String get matterIntelligenceDraftNow => 'Draft now';
+  String get matterIntelligenceDocumentsYouRequested =>
+      'Documents que vous avez demandés';
 
   @override
-  String get matterIntelligenceDraftOne => 'Draft';
+  String get matterIntelligenceDocumentsYouRequestedHint =>
+      'Ceux-ci correspondent aux documents nommés dans votre demande de rédaction. Sélectionnez ce que vous souhaitez rédiger – nous les ouvrirons dans l’ordre.';
+
+  @override
+  String get matterIntelligenceDraftNow => 'Brouillon maintenant';
+
+  @override
+  String get matterIntelligenceDraftOne => 'Brouillon';
 
   @override
   String matterIntelligenceDraftSelected(num count) {
@@ -14335,72 +14943,109 @@ class AppLocalizationsFr extends AppLocalizations {
       other: '# selected documents',
       one: '# selected document',
     );
-    return 'Draft $_temp0';
+    return 'Projet $_temp0';
   }
 
   @override
-  String get matterIntelligenceGenerateNow => 'Generate now';
+  String get matterIntelligenceGenerateNow => 'Générer maintenant';
 
   @override
   String get matterIntelligenceGenerateNowTitle =>
-      'Skip the form — generate immediately';
+      'Ignorer le formulaire - générer immédiatement';
 
   @override
-  String get matterIntelligenceIssues => 'Issues identified';
+  String get matterIntelligenceIssues => 'Problèmes identifiés';
 
   @override
-  String get matterIntelligenceLoading => 'Analyzing your request…';
+  String get matterIntelligenceLoading => 'Analyse de votre demande…';
 
   @override
-  String get matterIntelligenceLowConfidenceBadge => 'Low confidence';
+  String get matterIntelligenceLowConfidenceBadge => 'Faible confiance';
 
   @override
   String get matterIntelligenceLowConfidenceBanner =>
-      'We\'re not fully confident about this classification. Add more detail to improve document matches.';
+      'Nous ne sommes pas entièrement confiants quant à ce classement. Ajoutez plus de détails pour améliorer les correspondances de documents.';
 
   @override
   String matterIntelligenceMatchPercent(String percent) {
-    return '$percent% match';
+    return '$percent % de correspondance';
   }
 
   @override
-  String get matterIntelligenceNextBestAction => 'Next best action';
+  String get matterIntelligenceNextBestAction => 'Meilleure action suivante';
 
   @override
-  String get matterIntelligenceOtherMatches => 'Other matches';
+  String get matterIntelligenceOpposingPartyFilingSet =>
+      'Dépôts des parties adverses';
 
   @override
-  String get matterIntelligenceRecommendedActions => 'Recommended actions';
+  String get matterIntelligenceOpposingPartyFilingSetHint =>
+      'Documents que l’autre partie peut déposer en réponse. Facultatif – à inclure si vous souhaitez préparer une contre-stratégie.';
 
   @override
-  String get matterIntelligenceRecommendedFilingSet => 'Recommended filing set';
+  String get matterIntelligenceOtherMatches => 'Autres matchs';
+
+  @override
+  String get matterIntelligencePickAlternative =>
+      'Choisissez la correspondance la plus proche';
+
+  @override
+  String get matterIntelligenceProvisionalMatch =>
+      'Forum déduit – confirmer avant de rédiger';
+
+  @override
+  String get matterIntelligenceRecommendedActions => 'Actions recommandées';
+
+  @override
+  String get matterIntelligenceRecommendedDocuments => 'Documents recommandés';
+
+  @override
+  String get matterIntelligenceRecommendedDocumentsHint =>
+      'Sur base de votre demande de rédaction';
+
+  @override
+  String get matterIntelligenceRecommendedFilingSet =>
+      'Ensemble de classement recommandé';
 
   @override
   String get matterIntelligenceRecommendedFilingSetHint =>
-      'Select the documents you need. We\'ll open each draft in order so you can review and finalize.';
+      'Sélectionnez les documents dont vous avez besoin. Nous ouvrirons chaque brouillon dans l’ordre afin que vous puissiez l’examiner et le finaliser.';
 
   @override
-  String get matterIntelligenceRefineDescription => 'Refine description';
+  String get matterIntelligenceRefineDescription => 'Affiner la description';
 
   @override
-  String get matterIntelligenceRefreshSuggestions => 'Refresh suggestions';
+  String get matterIntelligenceRefreshSuggestions =>
+      'Actualiser les suggestions';
 
   @override
-  String get matterIntelligenceRefreshingOverlay => 'Refreshing…';
+  String get matterIntelligenceRefreshingOverlay => 'Rafraîchissant…';
 
   @override
   String get matterIntelligenceSubtitle =>
-      'AI-inferred practice area, forum, and recommended next steps';
+      'Domaine de pratique déduit de l\'IA, forum et prochaines étapes recommandées';
+
+  @override
+  String get matterIntelligenceSuggestedForum => 'Forum suggéré';
 
   @override
   String get matterIntelligenceSuggestionsStuck =>
-      'Suggestions are taking longer than usual.';
+      'Les suggestions prennent plus de temps que d\'habitude.';
 
   @override
-  String get matterIntelligenceTitle => 'Matter intelligence';
+  String get matterIntelligenceTitle => 'Intelligence matière';
 
   @override
-  String get matterIntelligenceUpdatingSuggestions => 'Updating suggestions…';
+  String get matterIntelligenceUnmappedRequestedDocs =>
+      'Impossible de correspondre automatiquement';
+
+  @override
+  String get matterIntelligenceUnmappedRequestedDocsHint =>
+      'Nous les avons trouvés dans votre demande, mais nous n\'avons pas encore pu les mapper à un modèle. Choisissez l’option la plus proche ci-dessous.';
+
+  @override
+  String get matterIntelligenceUpdatingSuggestions =>
+      'Mise à jour des suggestions…';
 
   @override
   String get matters15551234567 => '+1 555 123 4567';
@@ -14443,7 +15088,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get mattersAddPartyForConflictCheck =>
-      'Ajoutez au moins une partie pour lancer le contrôle de conflits';
+      'Ajoutez au moins une partie pour exécuter une vérification des conflits';
 
   @override
   String get mattersAddTask => 'Ajouter une tâche';
@@ -14660,7 +15305,7 @@ class AppLocalizationsFr extends AppLocalizations {
       'Vérifiez les citations invérifiables';
 
   @override
-  String get mattersCheckingConflict => 'Contrôle des conflits…';
+  String get mattersCheckingConflict => 'Vérification des conflits…';
 
   @override
   String get mattersChooseATeamMember => 'Choisissez un membre de l\'équipe';
@@ -14772,18 +15417,18 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get mattersConflictCheckDescription =>
-      'Vérifiez les parties par rapport aux clients et dossiers existants avant d\'ouvrir le dossier.';
+      'Filtrez les parties par rapport aux clients et aux dossiers existants avant d\'ouvrir le dossier.';
 
   @override
   String get mattersConflictCheckPartyHint =>
-      'Ajoutez des parties à l\'étape Base pour activer le contrôle de conflits.';
+      'Ajoutez des parties à l’étape Bases pour activer le filtrage des conflits.';
 
   @override
   String get mattersConflictCheckRequiredError =>
       'Exécutez une vérification des conflits et résolvez tous les indicateurs avant de créer le problème.';
 
   @override
-  String get mattersConflictCheckTitle => 'Contrôle de conflits';
+  String get mattersConflictCheckTitle => 'Vérification des conflits';
 
   @override
   String get mattersConnectThisMatterToACourtCaseToTrackProceedings =>
@@ -15212,7 +15857,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get mattersFastResearchTypicalTime =>
-      'Réponse rapide — généralement moins d\'une minute';
+      'Réponse rapide – généralement moins d\'une minute';
 
   @override
   String mattersFilenameUploaded(String fileName) {
@@ -15233,8 +15878,11 @@ class AppLocalizationsFr extends AppLocalizations {
   String get mattersFilingType => 'Type de dépôt *';
 
   @override
+  String get mattersFilters => 'Filtres';
+
+  @override
   String get mattersFormsPickerDescription =>
-      'Sélectionnez les formulaires gouvernementaux ou les modèles standard applicables à ce sujet. Les formulaires sélectionnés seront pré-attachés à l’atelier des dossiers.';
+      'Sélectionnez les formulaires gouvernementaux ou les modèles standard applicables à ce sujet. Les formulaires sélectionnés seront pré-joints dans les documents.';
 
   @override
   String mattersFormsSelectedCount(num count) {
@@ -15343,19 +15991,19 @@ class AppLocalizationsFr extends AppLocalizations {
       'Questions spécifiques au domaine de pratique qui remplissent les champs de fusion et aident l\'IA à rédiger des documents';
 
   @override
-  String get mattersIntakeStepBackground => 'Contexte';
+  String get mattersIntakeStepBackground => 'Arrière-plan';
 
   @override
-  String get mattersIntakeStepBasics => 'Base';
+  String get mattersIntakeStepBasics => 'Les bases';
 
   @override
-  String get mattersIntakeStepReview => 'Révision';
+  String get mattersIntakeStepReview => 'Revoir';
 
   @override
   String get mattersIntakeStepSpecifics => 'Détails';
 
   @override
-  String get mattersIntakeStepType => 'Type';
+  String get mattersIntakeStepType => 'Taper';
 
   @override
   String get mattersIntakeSubtitle =>
@@ -15586,7 +16234,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get mattersNoAdditionalFieldsForType =>
-      'Aucun champ supplémentaire pour ce type de dossier';
+      'Aucun champ supplémentaire pour ce type de sujet';
 
   @override
   String get mattersNoAvailableHelpers => 'Aucune aide disponible';
@@ -15659,7 +16307,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get mattersNoStandardFormsFound =>
-      'Aucun formulaire standard trouvé pour ce domaine de pratique et cette juridiction. Vous pouvez toujours continuer : les formulaires peuvent être joints ultérieurement à partir de l\'atelier du sujet.';
+      'Aucun formulaire standard trouvé pour ce domaine de pratique et cette juridiction. Vous pouvez toujours continuer : les formulaires peuvent être joints ultérieurement à partir des documents.';
 
   @override
   String get mattersNoStrategyMemosYet => 'Pas encore de mémos stratégiques';
@@ -15891,6 +16539,10 @@ class AppLocalizationsFr extends AppLocalizations {
       'Testaments, successions et homologation';
 
   @override
+  String get mattersPremiumModelResearchHint =>
+      'Les modèles Premium peuvent prendre un peu plus de temps.';
+
+  @override
   String get mattersPrescribedForms => 'Formulaires prescrits';
 
   @override
@@ -15902,6 +16554,9 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get mattersPrintDocument => 'Imprimer';
+
+  @override
+  String get mattersPromptRefinePreparing => 'Préparation de votre invite…';
 
   @override
   String get mattersProvider => 'Fournisseur';
@@ -16009,6 +16664,9 @@ class AppLocalizationsFr extends AppLocalizations {
   String get mattersResearchProgressTitle => 'Mener des recherches juridiques';
 
   @override
+  String get mattersResearchPromptTitle => 'Question de recherche';
+
+  @override
   String get mattersResearchQuestionMinLength =>
       'Saisissez une question de recherche (min 3 caractères).';
 
@@ -16055,7 +16713,8 @@ class AppLocalizationsFr extends AppLocalizations {
   String get mattersRun => 'Courir';
 
   @override
-  String get mattersRunConflictCheck => 'Lancer le contrôle de conflits';
+  String get mattersRunConflictCheck =>
+      'Exécuter une vérification des conflits';
 
   @override
   String get mattersRunKickoff => 'Exécuter le coup d\'envoi';
@@ -16457,7 +17116,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get mattersVerifiedResearchTypicalTime =>
-      'Recherche vérifiée — généralement 2–5 minutes';
+      'Recherche vérifiée – généralement 2 à 5 minutes';
 
   @override
   String get mattersVisibleToPortalClients =>
@@ -16490,7 +17149,17 @@ class AppLocalizationsFr extends AppLocalizations {
   String get mattersWorkspaceAi => 'AI';
 
   @override
+  String get mattersWorkspaceBackToMatter => 'Retour à la matière';
+
+  @override
   String get mattersWorkspaceBilling => 'Facturation';
+
+  @override
+  String get mattersWorkspaceCaseTools => 'Outils de cas';
+
+  @override
+  String get mattersWorkspaceCloseEvidenceDetails =>
+      'Fermer les détails des preuves';
 
   @override
   String get mattersWorkspaceCourt => 'Tribunal';
@@ -16502,10 +17171,54 @@ class AppLocalizationsFr extends AppLocalizations {
   String get mattersWorkspaceDocuments => 'Documents';
 
   @override
+  String get mattersWorkspaceDraft => 'Brouillon';
+
+  @override
+  String get mattersWorkspaceEnterFullscreen => 'Entrez en plein écran';
+
+  @override
   String get mattersWorkspaceEvidence => 'Preuve';
 
   @override
+  String get mattersWorkspaceEvidenceMap => 'Carte des preuves';
+
+  @override
+  String get mattersWorkspaceEvidenceMapDescription =>
+      'Retracez les problèmes, les faits, les documents et les contradictions dans une seule vue.';
+
+  @override
+  String get mattersWorkspaceExitFullscreen => 'Quitter le plein écran';
+
+  @override
+  String get mattersWorkspaceLitigation => 'Litige';
+
+  @override
   String get mattersWorkspaceMeetings => 'Réunions';
+
+  @override
+  String get mattersWorkspaceMore => 'Plus';
+
+  @override
+  String get mattersWorkspaceNavigationLabel => 'Espace de travail de matière';
+
+  @override
+  String mattersWorkspaceNodeCount(num count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '# nodes',
+      one: '# node',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get mattersWorkspaceOpenMore => 'Ouvrir plus de sections de sujets';
+
+  @override
+  String mattersWorkspaceOpenNavigation(String section) {
+    return 'Navigation en matière ouverte. Section actuelle : $section';
+  }
 
   @override
   String get mattersWorkspaceOpponent => 'Adversaire';
@@ -16514,7 +17227,36 @@ class AppLocalizationsFr extends AppLocalizations {
   String get mattersWorkspaceOutcome => 'Résultat';
 
   @override
+  String get mattersWorkspaceOverview => 'Aperçu';
+
+  @override
   String get mattersWorkspaceParties => 'Fêtes';
+
+  @override
+  String get mattersWorkspacePeopleMoney => 'Les gens et l\'argent';
+
+  @override
+  String get mattersWorkspaceQuickAi => 'IA rapide';
+
+  @override
+  String get mattersWorkspaceRelatedMatterTools =>
+      'Outils relatifs aux sujets connexes';
+
+  @override
+  String get mattersWorkspaceResearchCanvas => 'Toile de recherche';
+
+  @override
+  String get mattersWorkspaceResearchPanes => 'Volets de toile de recherche';
+
+  @override
+  String get mattersWorkspaceResearchUnavailable =>
+      'Impossible d\'ouvrir le canevas de recherche.';
+
+  @override
+  String get mattersWorkspaceSectionsTitle => 'Sections du sujet';
+
+  @override
+  String get mattersWorkspaceSimilarCases => 'Cas similaires';
 
   @override
   String get mattersWorkspaceStrategy => 'Stratégie';
@@ -16523,7 +17265,10 @@ class AppLocalizationsFr extends AppLocalizations {
   String get mattersWorkspaceTasks => 'Tâches';
 
   @override
-  String get mattersWorkspaceWorkbench => 'Établi';
+  String get mattersWorkspaceWork => 'Travail';
+
+  @override
+  String get mattersWorkspaceWorkbench => 'IA rapide';
 
   @override
   String get mattersWrite => 'Écrire';
@@ -16534,7 +17279,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get mobileCreditsExhaustedWebOnly =>
-      'Vous n\'avez plus de crédits IA. Rechargez ou mettez à niveau votre forfait sur umbrella.okaylegal.ai — les achats intégrés ne sont pas disponibles sur mobile.';
+      'Vous n’avez plus de crédits IA. Rechargez ou mettez à niveau votre forfait sur parapluie.okaylegal.ai – les achats intégrés ne sont pas disponibles sur mobile.';
 
   @override
   String get portalAction => 'Action';
@@ -16807,6 +17552,71 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get portalYourTasks => 'Vos tâches';
+
+  @override
+  String promptRefineAutoFillCountdownAria(String seconds) {
+    return '$seconds secondes restantes pour annuler';
+  }
+
+  @override
+  String get promptRefineAutoFillHint =>
+      'Annuler restaure votre invite d\'origine';
+
+  @override
+  String promptRefineAutoFilledDescription(String seconds) {
+    return 'Continuer dans ${seconds}s — annulez pour conserver votre original.';
+  }
+
+  @override
+  String get promptRefineAutoFilledTitle => 'Rapide raffiné';
+
+  @override
+  String get promptRefineContinueRefined =>
+      'Continuer avec une invite raffinée';
+
+  @override
+  String get promptRefineDescription =>
+      'Nous avons réorganisé votre description pour des résultats d\'IA plus clairs. Modifiez si nécessaire, puis continuez.';
+
+  @override
+  String get promptRefineHintDocument => 'Document';
+
+  @override
+  String get promptRefineHintJurisdiction => 'Juridiction';
+
+  @override
+  String get promptRefineHintParty => 'Faire la fête';
+
+  @override
+  String get promptRefineHintStatute => 'Loi';
+
+  @override
+  String get promptRefinePreparing => 'Préparation de votre invite…';
+
+  @override
+  String get promptRefineRefinedLabel => 'Invite raffinée';
+
+  @override
+  String promptRefineStartingDrafting(String seconds) {
+    return 'Début de la rédaction dans ${seconds}s…';
+  }
+
+  @override
+  String promptRefineStartingResearch(String seconds) {
+    return 'Début des recherches dans les $seconds…';
+  }
+
+  @override
+  String get promptRefineTitle => 'Invite raffinée';
+
+  @override
+  String get promptRefineUndo => 'Défaire';
+
+  @override
+  String get promptRefineUseOriginal => 'Utilisez plutôt l\'original';
+
+  @override
+  String get promptRefineYourOriginal => 'Votre invite d\'origine';
 
   @override
   String get sectionFinderNetworkBadge =>
@@ -17113,7 +17923,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get settingsDeleteAccountConfirmBody =>
-      'Vos données personnelles seront supprimées ou anonymisées sous 30 jours, sous réserve des obligations légales de conservation.';
+      'Vos données personnelles seront supprimées ou anonymisées dans un délai de 30 jours, sous réserve des exigences légales de conservation.';
 
   @override
   String get settingsDeleteAccountConfirmTitle =>
@@ -17121,10 +17931,10 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get settingsDeleteAccountDescription =>
-      'Supprimez définitivement votre compte Umbrella et les données personnelles associées. Cette action est irréversible.';
+      'Supprimez définitivement votre compte Umbrella et les données personnelles associées. Cette action ne peut pas être annulée.';
 
   @override
-  String get settingsDeleteAccountEmailLabel => 'Confirmez votre e-mail';
+  String get settingsDeleteAccountEmailLabel => 'Confirmez votre email';
 
   @override
   String get settingsDeleteAccountEmailMismatch =>
@@ -17135,11 +17945,11 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get settingsDeleteAccountError =>
-      'Impossible de supprimer le compte. Réessayez ou écrivez à support@odaflow.com.';
+      'Impossible de supprimer le compte. Réessayez ou envoyez un e-mail à support@odaflow.com.';
 
   @override
   String get settingsDeleteAccountFormDescription =>
-      'Les utilisateurs connectés peuvent supprimer définitivement leur compte ci-dessous. Cette action est irréversible.';
+      'Les utilisateurs connectés peuvent supprimer définitivement leur compte ci-dessous. Cette action ne peut pas être annulée.';
 
   @override
   String get settingsDeleteAccountFormHeading =>
@@ -17147,7 +17957,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get settingsDeleteAccountSettingsHint =>
-      'Supprimer définitivement votre compte et vos données personnelles';
+      'Supprimez définitivement votre compte et vos données personnelles';
 
   @override
   String get settingsDeleteAccountSubmit => 'Supprimer mon compte';
@@ -17479,16 +18289,16 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get settingsPlanUsageActivePageSubtitle =>
-      'Your active plan, credits and billing';
+      'Votre forfait actif, vos crédits et votre facturation';
 
   @override
   String settingsPlanUsageActivePlanDescription(String credits) {
-    return '$credits AI credits per month included with your plan';
+    return '$credits crédits IA par mois inclus dans votre forfait';
   }
 
   @override
   String settingsPlanUsageAiModelDescription(String credits) {
-    return 'Auto utilise un modèle moins coûteux. Premium vous permet de choisir un modèle d\'IA (OpenAI ou Claude) — échelle de crédits en fonction des jetons utilisés et du coût du modèle (~$credits crédit par message typique).';
+    return 'Auto utilise un modèle moins coûteux. Premium vous permet de choisir un modèle GPT : échelle de crédits en fonction des jetons utilisés et du coût du modèle (~$credits crédit par message typique).';
   }
 
   @override
@@ -17510,24 +18320,24 @@ class AppLocalizationsFr extends AppLocalizations {
   }
 
   @override
-  String get settingsPlanUsageFreeBadge => 'Free';
+  String get settingsPlanUsageFreeBadge => 'Gratuit';
 
   @override
   String settingsPlanUsageFreeCreditsDescription(String count) {
-    return '$count signup credits included';
+    return 'Crédits d\'inscription $count inclus';
   }
 
   @override
   String settingsPlanUsageFreeCreditsRemaining(String remaining) {
-    return '$remaining credits remaining';
+    return '$remaining crédits restants';
   }
 
   @override
   String get settingsPlanUsageFreePageSubtitle =>
-      'Your free plan, credits and upgrade options';
+      'Votre forfait gratuit, vos crédits et vos options de mise à niveau';
 
   @override
-  String get settingsPlanUsageFreePlan => 'Free';
+  String get settingsPlanUsageFreePlan => 'Gratuit';
 
   @override
   String settingsPlanUsageMeterTooltip(
@@ -17555,7 +18365,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get settingsPlanUsageSubscribedBanner =>
-      'Your subscription is active. Credits and plan limits have been updated.';
+      'Votre abonnement est actif. Les crédits et les limites du forfait ont été mis à jour.';
 
   @override
   String settingsPlanUsageTopUpCredits(String count) {
@@ -17875,86 +18685,87 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get tutorialsAccountingPaymentsHelpB1 =>
-      'Match payments to invoices for clean AR.';
+      'Faites correspondre les paiements aux factures pour une RA propre.';
 
   @override
   String get tutorialsAccountingPaymentsHelpB2 =>
-      'Trust payments follow separate approval flows.';
+      'Les paiements en fiducie suivent des flux d\'approbation distincts.';
 
   @override
-  String get tutorialsAccountingPaymentsHelpTitle => 'Payments';
+  String get tutorialsAccountingPaymentsHelpTitle => 'Paiements';
 
   @override
   String get tutorialsAccountingPaymentsListBody =>
-      'Record client payments against invoices and track unallocated amounts.';
+      'Enregistrez les paiements des clients par rapport aux factures et suivez les montants non alloués.';
 
   @override
-  String get tutorialsAccountingPaymentsListTitle => 'Payment records';
+  String get tutorialsAccountingPaymentsListTitle => 'Dossiers de paiement';
 
   @override
   String get tutorialsAccountingStatementsHelpB1 =>
-      'Run statements before month-end close.';
+      'Exécutez les relevés avant la clôture de fin de mois.';
 
   @override
   String get tutorialsAccountingStatementsHelpB2 =>
-      'PDF statements can be emailed from the matter.';
+      'Les déclarations PDF peuvent être envoyées par courrier électronique à partir du sujet.';
 
   @override
-  String get tutorialsAccountingStatementsHelpTitle => 'Statements';
+  String get tutorialsAccountingStatementsHelpTitle => 'Déclarations';
 
   @override
   String get tutorialsAccountingStatementsListBody =>
-      'Generate and send account statements summarising open invoices and credits.';
+      'Générez et envoyez des relevés de compte récapitulant les factures et crédits ouverts.';
 
   @override
-  String get tutorialsAccountingStatementsListTitle => 'Client statements';
+  String get tutorialsAccountingStatementsListTitle =>
+      'Déclarations des clients';
 
   @override
   String get tutorialsAgentsHelpB1 =>
-      'Agents are triggered by automations or manual runs.';
+      'Les agents sont déclenchés par des automatisations ou des exécutions manuelles.';
 
   @override
   String get tutorialsAgentsHelpB2 =>
-      'Failed jobs can be retried from the job detail panel.';
+      'Les tâches ayant échoué peuvent être réessayées à partir du panneau de détails de la tâche.';
 
   @override
-  String get tutorialsAgentsHelpTitle => 'AI agents';
+  String get tutorialsAgentsHelpTitle => 'Agents IA';
 
   @override
   String get tutorialsAgentsJobsBody =>
-      'Background AI agents run research, drafting, and diligence tasks. Track status and outputs here.';
+      'Les agents d’IA en arrière-plan effectuent des tâches de recherche, de rédaction et de diligence. Suivez l’état et les sorties ici.';
 
   @override
-  String get tutorialsAgentsJobsTitle => 'Agent jobs';
+  String get tutorialsAgentsJobsTitle => 'Emplois d\'agent';
 
   @override
   String get tutorialsAiCommandCenterCardsBody =>
-      'Each card links to the underlying queue—leads, drafts, matters, or billing.';
+      'Chaque carte est liée à la file d\'attente sous-jacente : pistes, brouillons, problèmes ou facturation.';
 
   @override
-  String get tutorialsAiCommandCenterCardsTitle => 'Operational cards';
+  String get tutorialsAiCommandCenterCardsTitle => 'Cartes opérationnelles';
 
   @override
   String get tutorialsAiCommandCenterHeaderBody =>
-      'Monitor AI workload, pending reviews, high-risk matters, and credit spend across the firm.';
+      'Surveillez la charge de travail de l\'IA, les examens en attente, les questions à haut risque et les dépenses en crédits dans l\'ensemble de l\'entreprise.';
 
   @override
-  String get tutorialsAiCommandCenterHeaderTitle => 'AI command center';
+  String get tutorialsAiCommandCenterHeaderTitle => 'Centre de commande IA';
 
   @override
   String get tutorialsAiCommandCenterHelpB1 =>
-      'Check daily for drafts awaiting lawyer approval.';
+      'Vérifiez quotidiennement les brouillons en attente de l’approbation de l’avocat.';
 
   @override
   String get tutorialsAiCommandCenterHelpB2 =>
-      'Watch credit usage against your plan allocation.';
+      'Surveillez l\'utilisation du crédit par rapport à l\'allocation de votre plan.';
 
   @override
   String get tutorialsAiCommandCenterHelpB3 =>
-      'Partner admins see firm-wide metrics.';
+      'Les administrateurs partenaires voient les statistiques à l\'échelle de l\'entreprise.';
 
   @override
-  String get tutorialsAiCommandCenterHelpTitle => 'Command center';
+  String get tutorialsAiCommandCenterHelpTitle => 'Centre de commandement';
 
   @override
   String get tutorialsAlertsHelpB1 =>
@@ -17976,39 +18787,39 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get tutorialsAutomationsHeaderBody =>
-      'When/then rules connect triggers (new matter, document upload, deadline) to tasks, agents, and billing—no code required.';
+      'Les règles Quand/Alors connectent les déclencheurs (nouveau sujet, téléchargement de document, date limite) aux tâches, aux agents et à la facturation, aucun code n\'est requis.';
 
   @override
-  String get tutorialsAutomationsHeaderTitle => 'Automations';
+  String get tutorialsAutomationsHeaderTitle => 'Automatisations';
 
   @override
   String get tutorialsAutomationsHelpB1 =>
-      'Start with intake and deadline recipes.';
+      'Commencez par les recettes d’admission et de date limite.';
 
   @override
   String get tutorialsAutomationsHelpB2 =>
-      'Link automations to AI agents for async work.';
+      'Liez les automatisations aux agents IA pour le travail asynchrone.';
 
   @override
   String get tutorialsAutomationsHelpB3 =>
-      'Monitor last-run status on each recipe card.';
+      'Surveillez l’état de la dernière exécution sur chaque fiche de recette.';
 
   @override
-  String get tutorialsAutomationsHelpTitle => 'Automations';
+  String get tutorialsAutomationsHelpTitle => 'Automatisations';
 
   @override
   String get tutorialsAutomationsRecipesBody =>
-      'Install tested automations in one click. Revert to defaults anytime without losing your data.';
+      'Installez des automatisations testées en un clic. Revenez aux valeurs par défaut à tout moment sans perdre vos données.';
 
   @override
-  String get tutorialsAutomationsRecipesTitle => 'Recommended recipes';
+  String get tutorialsAutomationsRecipesTitle => 'Recettes recommandées';
 
   @override
   String get tutorialsBillingHeaderBody =>
-      'Start here for invoices, pre-bill review, payments, statements, and firm subscription settings.';
+      'Commencez ici pour les factures, l\'examen préalable à la facture, les paiements, les relevés et les paramètres d\'abonnement ferme.';
 
   @override
-  String get tutorialsBillingHeaderTitle => 'Billing overview';
+  String get tutorialsBillingHeaderTitle => 'Aperçu de la facturation';
 
   @override
   String get tutorialsBillingHelpB1 =>
@@ -18020,7 +18831,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get tutorialsBillingHelpB3 =>
-      'Link time entries and expenses to matters for accurate invoices.';
+      'Reliez les entrées de temps et les dépenses aux dossiers pour obtenir des factures précises.';
 
   @override
   String get tutorialsBillingHelpTitle => 'Facturation';
@@ -18034,17 +18845,17 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get tutorialsBillingInvoicesBody =>
-      'Filter by status, search by number, and open any invoice to send, record payment, or export LEDES.';
+      'Filtrez par statut, recherchez par numéro et ouvrez n\'importe quelle facture pour envoyer, enregistrer le paiement ou exporter des LEDES.';
 
   @override
-  String get tutorialsBillingInvoicesTitle => 'Invoice list';
+  String get tutorialsBillingInvoicesTitle => 'Liste des factures';
 
   @override
   String get tutorialsBillingLinksBody =>
-      'Each card opens a focused workflow—subscription, invoices, pre-bill, payments, or finance reports.';
+      'Chaque carte ouvre un flux de travail ciblé : abonnement, factures, pré-facture, paiements ou rapports financiers.';
 
   @override
-  String get tutorialsBillingLinksTitle => 'Billing shortcuts';
+  String get tutorialsBillingLinksTitle => 'Raccourcis de facturation';
 
   @override
   String get tutorialsCalendarCreateBody =>
@@ -18199,410 +19010,424 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get tutorialsConsumerDashboardActionsBody =>
-      'Vérifiez un problème, téléchargez des documents, consultez des rapports ou demandez un examen par un avocat.';
+      'Démarrez une vérification de problème, téléchargez des documents, effectuez des recherches, rédigez une lettre ou engagez un avocat, tout cela à partir de ces raccourcis.';
 
   @override
-  String get tutorialsConsumerDashboardActionsTitle => 'Actions rapides';
+  String get tutorialsConsumerDashboardActionsTitle => 'Que faire ensuite';
 
   @override
   String get tutorialsConsumerDashboardCasesBody =>
-      'Consultez les affaires juridiques actives et leur statut en un coup d\'œil.';
+      'Les crédits, les dossiers actifs, les rapports et la juridiction apparaissent ici afin que vous sachiez où vous en êtes en un coup d\'œil.';
 
   @override
-  String get tutorialsConsumerDashboardCasesTitle => 'Vos cas';
+  String get tutorialsConsumerDashboardCasesTitle => 'Votre instantané';
 
   @override
   String get tutorialsConsumerDashboardHelpB1 =>
-      'L’IA crédite la vérification des problèmes et l’analyse des documents.';
+      'L’IA accorde des crédits à la vérification des problèmes, à la recherche et à l’analyse des documents.';
 
   @override
   String get tutorialsConsumerDashboardHelpB2 =>
-      'Ouvrez un dossier pour envoyer un message à votre avocat ou payer des factures.';
+      'Ouvrez un dossier pour envoyer un message à votre avocat, télécharger des fichiers ou payer des factures.';
 
   @override
   String get tutorialsConsumerDashboardHelpB3 =>
-      'Top up credits from Subscription before a long research or review session.';
+      'Rechargez les crédits de l\'abonnement avant une longue session de recherche ou de révision.';
 
   @override
   String get tutorialsConsumerDashboardHelpTitle => 'Maison';
 
   @override
   String get tutorialsConsumerDocumentDraftingHelpB1 =>
-      'Start with a clear description of who the document is for and what it should accomplish.';
+      'Commencez par une description claire de la personne à qui le document est destiné et de ce qu’il doit accomplir.';
 
   @override
   String get tutorialsConsumerDocumentDraftingHelpB2 =>
-      'Review every clause carefully before sending or signing.';
+      'Lisez attentivement chaque clause avant de l’envoyer ou de la signer.';
 
   @override
   String get tutorialsConsumerDocumentDraftingHelpB3 =>
-      'Save drafts to a case so your lawyer can edit them.';
+      'Enregistrez les brouillons dans un dossier afin que votre avocat puisse les modifier.';
 
   @override
-  String get tutorialsConsumerDocumentDraftingHelpTitle => 'Document drafting';
+  String get tutorialsConsumerDocumentDraftingHelpTitle =>
+      'Rédaction de documents';
 
   @override
   String get tutorialsConsumerDocumentDraftingIntroBody =>
-      'Describe what you need—a notice, agreement, or application—and Umbrella suggests the right form and helps you fill it in.';
+      'Décrivez ce dont vous avez besoin (un avis, un accord ou une demande) et Umbrella vous suggère le bon formulaire et vous aide à le remplir.';
 
   @override
   String get tutorialsConsumerDocumentDraftingIntroTitle =>
-      'Draft legal documents';
+      'Rédiger des documents juridiques';
 
   @override
   String get tutorialsConsumerDocumentDraftingWorkspaceBody =>
-      'Answer a few questions, review AI-generated text, and download or share the finished document.';
+      'Répondez à quelques questions, examinez le texte généré par l\'IA et téléchargez ou partagez le document final.';
 
   @override
   String get tutorialsConsumerDocumentDraftingWorkspaceTitle =>
-      'Guided drafting';
+      'Rédaction guidée';
 
   @override
   String get tutorialsConsumerDocumentReviewAnalyzeBody =>
-      'Pick an AI model and click Analyse. Results highlight risks, key terms, and suggested amendments.';
+      'Choisissez un modèle d\'IA et cliquez sur Analyser. Les résultats mettent en évidence les risques, les termes clés et les modifications suggérées.';
 
   @override
-  String get tutorialsConsumerDocumentReviewAnalyzeTitle => 'Run the analysis';
+  String get tutorialsConsumerDocumentReviewAnalyzeTitle =>
+      'Exécuter l\'analyse';
 
   @override
   String get tutorialsConsumerDocumentReviewHelpB1 =>
-      'Use Single mode for one contract; Tabular mode to compare many files.';
+      'Utilisez le mode unique pour un contrat ; Mode tabulaire pour comparer de nombreux fichiers.';
 
   @override
   String get tutorialsConsumerDocumentReviewHelpB2 =>
-      'Save reviews to revisit before signing.';
+      'Enregistrez les avis pour les revoir avant de signer.';
 
   @override
   String get tutorialsConsumerDocumentReviewHelpB3 =>
-      'Share results with your lawyer for formal advice on high-stakes documents.';
+      'Partagez les résultats avec votre avocat pour obtenir des conseils formels sur les documents à enjeux élevés.';
 
   @override
-  String get tutorialsConsumerDocumentReviewHelpTitle => 'Document review';
+  String get tutorialsConsumerDocumentReviewHelpTitle => 'Examen des documents';
 
   @override
   String get tutorialsConsumerDocumentReviewUploadBody =>
-      'Drop a PDF, Word file, or paste text. Umbrella flags risky clauses and suggests improvements.';
+      'Déposez un fichier PDF, Word ou collez du texte. Umbrella signale les clauses risquées et suggère des améliorations.';
 
   @override
-  String get tutorialsConsumerDocumentReviewUploadTitle => 'Upload or paste';
+  String get tutorialsConsumerDocumentReviewUploadTitle =>
+      'Télécharger ou coller';
 
   @override
   String get tutorialsConsumerFindLawyerHelpB1 =>
-      'Switch country if you need counsel in another jurisdiction.';
+      'Changez de pays si vous avez besoin d’un avocat dans une autre juridiction.';
 
   @override
   String get tutorialsConsumerFindLawyerHelpB2 =>
-      'Booking creates a record you can link to a case later.';
+      'La réservation crée un enregistrement que vous pourrez lier à un cas ultérieurement.';
 
   @override
   String get tutorialsConsumerFindLawyerHelpB3 =>
-      'Your issue-check reports help lawyers understand your situation faster.';
+      'Vos rapports de vérification des problèmes aident les avocats à comprendre votre situation plus rapidement.';
 
   @override
-  String get tutorialsConsumerFindLawyerHelpTitle => 'Find a lawyer';
+  String get tutorialsConsumerFindLawyerHelpTitle => 'Trouver un avocat';
 
   @override
   String get tutorialsConsumerFindLawyerResultsBody =>
-      'Review profiles, practice areas, and jurisdictions. Book a consultation when you are ready to talk.';
+      'Examinez les profils, les domaines de pratique et les juridictions. Réservez une consultation lorsque vous êtes prêt à parler.';
 
   @override
-  String get tutorialsConsumerFindLawyerResultsTitle => 'Compare & book';
+  String get tutorialsConsumerFindLawyerResultsTitle => 'Comparez & réservez';
 
   @override
   String get tutorialsConsumerFindLawyerSearchBody =>
-      'Search by name or practice area and filter by country. Every listed lawyer is verified on Umbrella.';
+      'Recherchez par nom ou domaine de pratique et filtrez par pays. Chaque avocat répertorié est vérifié sur Umbrella.';
 
   @override
-  String get tutorialsConsumerFindLawyerSearchTitle => 'Find the right lawyer';
+  String get tutorialsConsumerFindLawyerSearchTitle => 'Trouvez le bon avocat';
 
   @override
   String get tutorialsConsumerFirAnalysisHelpB1 =>
-      'Share results with your lawyer through a case.';
+      'Partagez les résultats avec votre avocat à travers une affaire.';
 
   @override
   String get tutorialsConsumerFirAnalysisHelpB2 =>
-      'For emergencies, contact a lawyer immediately.';
+      'En cas d’urgence, contactez immédiatement un avocat.';
 
   @override
-  String get tutorialsConsumerFirAnalysisHelpTitle => 'FIR help';
+  String get tutorialsConsumerFirAnalysisHelpTitle => 'Aide du FIR';
 
   @override
   String get tutorialsConsumerFirAnalysisIntroBody =>
-      'Upload an FIR to see offences charged, bail options, and practical next steps.';
+      'Téléchargez un FIR pour connaître les infractions accusées, les options de mise en liberté sous caution et les prochaines étapes pratiques.';
 
   @override
-  String get tutorialsConsumerFirAnalysisIntroTitle => 'Understand your FIR';
+  String get tutorialsConsumerFirAnalysisIntroTitle => 'Comprendre votre FIR';
 
   @override
   String get tutorialsConsumerFirAnalysisUploadBody =>
-      'Photo or PDF of the FIR works. Analysis is private to your account.';
+      'Photo ou PDF des travaux du FIR. L\'analyse est privée sur votre compte.';
 
   @override
-  String get tutorialsConsumerFirAnalysisUploadTitle => 'Upload document';
+  String get tutorialsConsumerFirAnalysisUploadTitle =>
+      'Télécharger un document';
 
   @override
-  String get tutorialsConsumerIndiaDraftingHelpB1 => 'India jurisdiction only.';
+  String get tutorialsConsumerIndiaDraftingHelpB1 =>
+      'Juridiction indienne uniquement.';
 
   @override
   String get tutorialsConsumerIndiaDraftingHelpB2 =>
-      'Save to a case for your lawyer to edit.';
+      'Enregistrez-le dans un dossier que votre avocat pourra modifier.';
 
   @override
-  String get tutorialsConsumerIndiaDraftingHelpTitle => 'India drafts';
+  String get tutorialsConsumerIndiaDraftingHelpTitle => 'Drafts indiens';
 
   @override
   String get tutorialsConsumerIndiaDraftingIntroBody =>
-      'Starting-point drafts for bail, maintenance, consumer complaints, and legal notices under BNS/BNSS/BSA 2023.';
+      'Projets de point de départ pour la caution, la pension alimentaire, les plaintes des consommateurs et les mentions légales sous BNS/BNSS/BSA 2023.';
 
   @override
-  String get tutorialsConsumerIndiaDraftingIntroTitle => 'India court drafts';
+  String get tutorialsConsumerIndiaDraftingIntroTitle =>
+      'Projets judiciaires indiens';
 
   @override
   String get tutorialsConsumerIndiaDraftingWorkspaceBody =>
-      'Pick a template, describe your facts, and download a draft for lawyer review.';
+      'Choisissez un modèle, décrivez vos faits et téléchargez une ébauche pour examen par un avocat.';
 
   @override
-  String get tutorialsConsumerIndiaDraftingWorkspaceTitle => 'Choose a format';
+  String get tutorialsConsumerIndiaDraftingWorkspaceTitle =>
+      'Choisissez un format';
 
   @override
   String get tutorialsConsumerLawyerReviewHelpB1 =>
-      'Fees vary by country and issue type.';
+      'Les frais varient selon le pays et le type de problème.';
 
   @override
   String get tutorialsConsumerLawyerReviewHelpB2 =>
-      'A verified lawyer responds through your case messages.';
+      'Un avocat vérifié répond via les messages de votre dossier.';
 
   @override
   String get tutorialsConsumerLawyerReviewHelpB3 =>
-      'Not a substitute for emergency legal counsel.';
+      'Cela ne remplace pas un conseil juridique d’urgence.';
 
   @override
-  String get tutorialsConsumerLawyerReviewHelpTitle => 'Lawyer review';
+  String get tutorialsConsumerLawyerReviewHelpTitle => 'Examen d\'un avocat';
 
   @override
   String get tutorialsConsumerLawyerReviewRequestBody =>
-      'Upgrade an AI report to a verified lawyer-reviewed opinion for your specific situation.';
+      'Améliorez un rapport d\'IA en une opinion vérifiée et révisée par un avocat pour votre situation spécifique.';
 
   @override
   String get tutorialsConsumerLawyerReviewRequestTitle =>
-      'Request formal review';
+      'Demander un examen formel';
 
   @override
   String get tutorialsConsumerMarketplaceHelpB1 =>
-      'Prices and turnaround vary by service.';
+      'Les prix et les délais varient selon le service.';
 
   @override
   String get tutorialsConsumerMarketplaceHelpB2 =>
-      'Purchases link to your Umbrella account for tracking.';
+      'Les achats sont liés à votre compte Umbrella pour le suivi.';
 
   @override
-  String get tutorialsConsumerMarketplaceHelpTitle => 'Marketplace';
+  String get tutorialsConsumerMarketplaceHelpTitle => 'Marché';
 
   @override
   String get tutorialsConsumerMarketplaceSkusBody =>
-      'Browse fixed-price offerings—document review, consultation, compliance checks—from verified professionals.';
+      'Parcourez les offres à prix fixe (examen de documents, consultation, contrôles de conformité) proposées par des professionnels vérifiés.';
 
   @override
-  String get tutorialsConsumerMarketplaceSkusTitle => 'Legal services';
+  String get tutorialsConsumerMarketplaceSkusTitle => 'Services juridiques';
 
   @override
   String get tutorialsConsumerPlanUsageHelpB1 =>
-      'Heavy research and document review consume more credits than quick checks.';
+      'Les recherches approfondies et l\'examen de documents consomment plus de crédits que les vérifications rapides.';
 
   @override
   String get tutorialsConsumerPlanUsageHelpB2 =>
-      'Upgrade or buy packs from Subscription when you are running low.';
+      'Mettez à niveau ou achetez des packs avec abonnement lorsque votre niveau est bas.';
 
   @override
-  String get tutorialsConsumerPlanUsageHelpTitle => 'Plan & usage';
+  String get tutorialsConsumerPlanUsageHelpTitle => 'Forfait et utilisation';
 
   @override
   String get tutorialsConsumerPlanUsageUsageBody =>
-      'See remaining credits, recent usage by feature, and adjust your default AI model or top-up settings.';
+      'Consultez les crédits restants, l\'utilisation récente par fonctionnalité et ajustez votre modèle d\'IA par défaut ou vos paramètres de recharge.';
 
   @override
-  String get tutorialsConsumerPlanUsageUsageTitle => 'Credits & usage';
+  String get tutorialsConsumerPlanUsageUsageTitle => 'Crédits et utilisation';
 
   @override
   String get tutorialsConsumerReportsHelpB1 =>
-      'Reports link to the case they were created from.';
+      'Les rapports renvoient au cas à partir duquel ils ont été créés.';
 
   @override
   String get tutorialsConsumerReportsHelpB2 =>
-      'Request lawyer review for formal advice on a report.';
+      'Demandez l’examen d’un avocat pour obtenir des conseils formels sur un rapport.';
 
   @override
-  String get tutorialsConsumerReportsHelpTitle => 'Reports';
+  String get tutorialsConsumerReportsHelpTitle => 'Rapports';
 
   @override
   String get tutorialsConsumerReportsListBody =>
-      'AI issue-check and analysis reports across all your cases—open any to read or share with a lawyer.';
+      'Rapports de vérification et d\'analyse des problèmes par l\'IA pour tous vos dossiers : ouvrez-en un pour le lire ou le partager avec un avocat.';
 
   @override
-  String get tutorialsConsumerReportsListTitle => 'Your reports';
+  String get tutorialsConsumerReportsListTitle => 'Vos rapports';
 
   @override
   String get tutorialsConsumerResearchHelpB1 =>
-      'Research uses AI credits—check your balance on the dashboard.';
+      'La recherche utilise des crédits d\'IA : vérifiez votre solde sur le tableau de bord.';
 
   @override
   String get tutorialsConsumerResearchHelpB2 =>
-      'Save useful answers to a case for your lawyer to review.';
+      'Enregistrez les réponses utiles à un cas pour que votre avocat puisse les examiner.';
 
   @override
   String get tutorialsConsumerResearchHelpB3 =>
-      'This is general information, not formal legal advice—request a lawyer review when decisions matter.';
+      'Il s’agit d’informations générales et non de conseils juridiques formels : demandez l’avis d’un avocat lorsque les décisions sont importantes.';
 
   @override
-  String get tutorialsConsumerResearchHelpTitle => 'Legal research';
+  String get tutorialsConsumerResearchHelpTitle => 'Recherche juridique';
 
   @override
   String get tutorialsConsumerResearchQueryBody =>
-      'Ask in plain language about your situation. Include your country and key facts for better answers.';
+      'Renseignez-vous en langage simple sur votre situation. Incluez votre pays et les faits clés pour de meilleures réponses.';
 
   @override
-  String get tutorialsConsumerResearchQueryTitle => 'Research your question';
+  String get tutorialsConsumerResearchQueryTitle => 'Recherchez votre question';
 
   @override
   String get tutorialsConsumerResearchSourcesBody =>
-      'Choose which statutes and case law to search. Fewer sources often means faster, clearer results.';
+      'Choisissez les lois et la jurisprudence à rechercher. Moins de sources signifie souvent des résultats plus rapides et plus clairs.';
 
   @override
-  String get tutorialsConsumerResearchSourcesTitle => 'Pick trusted sources';
+  String get tutorialsConsumerResearchSourcesTitle =>
+      'Choisissez des sources fiables';
 
   @override
   String get tutorialsConsumerRightsCheckerHelpB1 =>
-      'General guidance only, not legal advice.';
+      'Des conseils généraux uniquement, pas des conseils juridiques.';
 
   @override
   String get tutorialsConsumerRightsCheckerHelpB2 =>
-      'Start an issue check or find a lawyer for your case.';
+      'Commencez une vérification du problème ou trouvez un avocat pour votre cas.';
 
   @override
-  String get tutorialsConsumerRightsCheckerHelpTitle => 'Rights checker';
+  String get tutorialsConsumerRightsCheckerHelpTitle =>
+      'Vérificateur de droits';
 
   @override
   String get tutorialsConsumerRightsCheckerScenariosBody =>
-      'Pick a scenario—housing, employment, debt, police—to see your rights and recommended steps.';
+      'Choisissez un scénario (logement, emploi, dette, police) pour connaître vos droits et les étapes recommandées.';
 
   @override
-  String get tutorialsConsumerRightsCheckerScenariosTitle => 'Know your rights';
+  String get tutorialsConsumerRightsCheckerScenariosTitle =>
+      'Connaissez vos droits';
 
   @override
   String get tutorialsConsumerSectionFinderHelpB1 =>
-      'Useful for understanding police reports and FIRs.';
+      'Utile pour comprendre les rapports de police et les FIR.';
 
   @override
   String get tutorialsConsumerSectionFinderHelpB2 =>
-      'Verify against official bare acts before relying in court.';
+      'Vérifiez les actes officiels avant de vous adresser au tribunal.';
 
   @override
-  String get tutorialsConsumerSectionFinderHelpTitle => 'Section finder';
+  String get tutorialsConsumerSectionFinderHelpTitle => 'Recherche de section';
 
   @override
   String get tutorialsConsumerSectionFinderWorkspaceBody =>
-      'Look up Indian penal and procedural sections with IPC→BNS crosswalks in plain language.';
+      'Recherchez les sections pénales et procédurales indiennes avec les passages pour piétons IPC → BNS en langage simple.';
 
   @override
-  String get tutorialsConsumerSectionFinderWorkspaceTitle => 'Find a section';
+  String get tutorialsConsumerSectionFinderWorkspaceTitle =>
+      'Trouver une rubrique';
 
   @override
   String get tutorialsConsumerSettingsConsentFormBody =>
-      'Control whether your data helps improve prompts, evaluation, or model training.';
+      'Contrôlez si vos données contribuent à améliorer les invites, l\'évaluation ou la formation de modèles.';
 
   @override
-  String get tutorialsConsumerSettingsConsentFormTitle => 'Data & AI consent';
+  String get tutorialsConsumerSettingsConsentFormTitle =>
+      'Consentement aux données et à l\'IA';
 
   @override
   String get tutorialsConsumerSettingsConsentHelpB1 =>
-      'You can opt out anytime.';
+      'Vous pouvez vous désinscrire à tout moment.';
 
   @override
   String get tutorialsConsumerSettingsConsentHelpB2 =>
-      'Core features work without training consent.';
+      'Les fonctionnalités de base fonctionnent sans consentement de formation.';
 
   @override
-  String get tutorialsConsumerSettingsConsentHelpTitle => 'Data consent';
+  String get tutorialsConsumerSettingsConsentHelpTitle =>
+      'Consentement aux données';
 
   @override
   String get tutorialsConsumerSettingsHelpB1 =>
-      'Contrôlez la manière dont vos données sont utilisées pour les fonctionnalités d\'IA.';
+      'Contrôlez la manière dont vos données sont utilisées pour la formation et l’analyse de l’IA.';
 
   @override
   String get tutorialsConsumerSettingsHelpB2 =>
-      'Mettez à jour vos coordonnées afin que votre avocat puisse vous joindre.';
+      'Gardez vos coordonnées à jour afin que votre avocat puisse vous joindre.';
 
   @override
   String get tutorialsConsumerSettingsHelpB3 =>
-      'Review data consent before enabling advanced AI features.';
+      'Vérifiez le consentement aux données avant d’activer les fonctionnalités avancées d’IA.';
 
   @override
   String get tutorialsConsumerSettingsHelpTitle => 'Paramètres';
 
   @override
   String get tutorialsConsumerSettingsHubBody =>
-      'Gérez le profil, la confidentialité, le consentement aux données et les préférences de notification.';
+      'Mettez à jour le profil, les méthodes de paiement, les préférences de confidentialité et le consentement aux données pour les fonctionnalités d\'IA.';
 
   @override
   String get tutorialsConsumerSettingsHubTitle => 'Paramètres du compte';
 
   @override
   String get tutorialsConsumerSettingsPaymentHelpB1 =>
-      'Keep a valid card to avoid service interruptions.';
+      'Conservez une carte valide pour éviter les interruptions de service.';
 
   @override
   String get tutorialsConsumerSettingsPaymentHelpB2 =>
-      'Receipts appear in your subscription history.';
+      'Les reçus apparaissent dans votre historique d\'abonnement.';
 
   @override
-  String get tutorialsConsumerSettingsPaymentHelpTitle => 'Payment methods';
+  String get tutorialsConsumerSettingsPaymentHelpTitle => 'Modes de paiement';
 
   @override
   String get tutorialsConsumerSettingsPaymentMethodsBody =>
-      'Manage cards for subscriptions and credit top-ups. Auto top-up uses your default method.';
+      'Gérez les cartes pour les abonnements et les recharges de crédit. La recharge automatique utilise votre méthode par défaut.';
 
   @override
-  String get tutorialsConsumerSettingsPaymentMethodsTitle => 'Payment methods';
+  String get tutorialsConsumerSettingsPaymentMethodsTitle =>
+      'Modes de paiement';
 
   @override
   String get tutorialsConsumerSubscriptionHelpB1 =>
-      'Les crédits sont reportés selon les conditions de votre forfait.';
+      'Vérifiez le plan et l\'utilisation pour une répartition détaillée du crédit.';
 
   @override
   String get tutorialsConsumerSubscriptionHelpB2 =>
-      'Activez la recharge automatique pour éviter les interruptions.';
+      'Activez la recharge automatique avant les semaines chargées en délais.';
 
   @override
   String get tutorialsConsumerSubscriptionHelpB3 =>
-      'Plus plans include more monthly credits and priority support.';
+      'Les forfaits Plus incluent plus de crédits mensuels et une assistance prioritaire.';
 
   @override
   String get tutorialsConsumerSubscriptionHelpTitle => 'Abonnement';
 
   @override
   String get tutorialsConsumerSubscriptionPlansBody =>
-      'Choisissez un abonnement ou achetez des packs de crédits AI pour des vérifications et des analyses d\'émission.';
+      'Comparez les forfaits gratuits et Plus, achetez des packs de crédits et gérez la recharge automatique afin que les fonctionnalités d\'IA ne s\'arrêtent jamais en cours de tâche.';
 
   @override
   String get tutorialsConsumerSubscriptionPlansTitle => 'Forfaits et crédits';
 
   @override
   String get tutorialsContractsDashboardBody =>
-      'Track contract status, renewals, obligations, and linked matters in one dashboard.';
+      'Suivez l’état des contrats, les renouvellements, les obligations et les questions liées dans un seul tableau de bord.';
 
   @override
-  String get tutorialsContractsDashboardTitle => 'Contract lifecycle';
+  String get tutorialsContractsDashboardTitle => 'Cycle de vie du contrat';
 
   @override
   String get tutorialsContractsHelpB1 =>
-      'Upload executed contracts for AI extraction of key dates.';
+      'Téléchargez les contrats exécutés pour l’extraction IA des dates clés.';
 
   @override
   String get tutorialsContractsHelpB2 =>
-      'Set renewal alerts to avoid missed deadlines.';
+      'Définissez des alertes de renouvellement pour éviter les délais manqués.';
 
   @override
-  String get tutorialsContractsHelpTitle => 'Contracts';
+  String get tutorialsContractsHelpTitle => 'Contrats';
 
   @override
   String get tutorialsControlsBack => 'Dos';
@@ -18623,28 +19448,29 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get tutorialsCopilotAuditHelpB1 =>
-      'Filter by user, matter, or action type.';
+      'Filtrez par utilisateur, sujet ou type d\'action.';
 
   @override
   String get tutorialsCopilotAuditHelpB2 =>
-      'Export logs for firm governance reviews.';
+      'Exportez les journaux pour les examens de la gouvernance de l’entreprise.';
 
   @override
-  String get tutorialsCopilotAuditHelpTitle => 'Copilot audit';
+  String get tutorialsCopilotAuditHelpTitle => 'Audit copilote';
 
   @override
   String get tutorialsCopilotAuditListBody =>
-      'Review AI actions proposed and executed by Copilot across matters for compliance.';
+      'Examinez les actions d’IA proposées et exécutées par Copilot sur tous les sujets pour vérifier leur conformité.';
 
   @override
-  String get tutorialsCopilotAuditListTitle => 'Copilot audit log';
+  String get tutorialsCopilotAuditListTitle => 'Journal d\'audit du copilote';
 
   @override
   String get tutorialsDashboardAlertsBody =>
-      'Examinez les lacunes KYC, les approbations de confiance et les risques liés aux délais qui nécessitent une attention particulière aujourd\'hui.';
+      'Les lacunes KYC, les approbations de confiance et les risques liés aux délais apparaissent ici en premier. Résolvez les problèmes critiques avant qu’ils n’atteignent les dates de facturation ou d’audience.';
 
   @override
-  String get tutorialsDashboardAlertsTitle => 'Articles urgents';
+  String get tutorialsDashboardAlertsTitle =>
+      'A besoin d\'attention aujourd\'hui';
 
   @override
   String get tutorialsDashboardHelpB1 =>
@@ -18663,14 +19489,14 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get tutorialsDashboardKpisBody =>
-      'Ces cartes récapitulent les dossiers actifs, les tâches en retard, les pistes et les revenus pour la fenêtre horaire sélectionnée.';
+      'Sujets actifs, tâches en retard, valeur du pipeline et revenus pour Aujourd\'hui, Semaine ou Mois : changez la plage dans l\'en-tête.';
 
   @override
   String get tutorialsDashboardKpisTitle => 'Instantané ferme';
 
   @override
   String get tutorialsDashboardOnboardingBody =>
-      'Effectuez ces véritables étapes de configuration (exécutez une recherche AI, ajoutez un client, ouvrez un dossier) pour activer votre espace de travail.';
+      'Les partenaires voient ici les étapes de configuration (effectuer une recherche, ajouter un client, ouvrir un dossier) pour activer pleinement votre espace de travail.';
 
   @override
   String get tutorialsDashboardOnboardingTitle =>
@@ -18678,39 +19504,39 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get tutorialsDashboardTasksBody =>
-      'Les tâches qui vous sont assignées apparaissent ici. Cliquez pour mettre à jour le statut ou ouvrir le sujet lié.';
+      'Tâches qui vous sont assignées avec des dates d\'échéance. Cliquez sur n’importe quelle ligne pour mettre à jour le statut ou accéder au sujet lié.';
 
   @override
-  String get tutorialsDashboardTasksTitle => 'Vos tâches';
+  String get tutorialsDashboardTasksTitle => 'Votre file d\'attente de tâches';
 
   @override
   String get tutorialsDocumentReviewAnalyzeBody =>
-      'Choose Single or Tabular mode, pick an AI model, then analyse. Save results to a matter or client file.';
+      'Choisissez le mode Simple ou Tabulaire, choisissez un modèle d\'IA, puis analysez. Enregistrez les résultats dans un dossier ou un dossier client.';
 
   @override
-  String get tutorialsDocumentReviewAnalyzeTitle => 'Run analysis';
+  String get tutorialsDocumentReviewAnalyzeTitle => 'Exécuter une analyse';
 
   @override
   String get tutorialsDocumentReviewHelpB1 =>
-      'Tabular mode compares clauses across multiple files.';
+      'Le mode tabulaire compare les clauses de plusieurs fichiers.';
 
   @override
   String get tutorialsDocumentReviewHelpB2 =>
-      'Always verify AI suggestions before filing.';
+      'Vérifiez toujours les suggestions de l’IA avant de déposer.';
 
   @override
   String get tutorialsDocumentReviewHelpB3 =>
-      'Export annotated reviews as PDF.';
+      'Exportez les avis annotés au format PDF.';
 
   @override
-  String get tutorialsDocumentReviewHelpTitle => 'Document review';
+  String get tutorialsDocumentReviewHelpTitle => 'Examen des documents';
 
   @override
   String get tutorialsDocumentReviewUploadBody =>
-      'Drop contracts, pleadings, or agreements. Umbrella flags risky clauses and suggests amendments.';
+      'Abandonnez les contrats, les plaidoiries ou les accords. Umbrella signale les clauses risquées et suggère des amendements.';
 
   @override
-  String get tutorialsDocumentReviewUploadTitle => 'Upload or paste';
+  String get tutorialsDocumentReviewUploadTitle => 'Télécharger ou coller';
 
   @override
   String get tutorialsDocumentsHelpB1 =>
@@ -18757,32 +19583,32 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get tutorialsEvidenceHelpB1 =>
-      'Add items with clear titles for bundle indexing.';
+      'Ajoutez des éléments avec des titres clairs pour l\'indexation des bundles.';
 
   @override
   String get tutorialsEvidenceHelpB2 =>
-      'Review privilege before sharing with opposing counsel.';
+      'Examinez le privilège avant de le partager avec l’avocat de la partie adverse.';
 
   @override
   String get tutorialsEvidenceHelpB3 =>
-      'Open the matter workbench for AI-assisted chronology.';
+      'Ouvrez le sujet Quick AI pour une chronologie assistée par l\'IA.';
 
   @override
-  String get tutorialsEvidenceHelpTitle => 'Evidence vault';
+  String get tutorialsEvidenceHelpTitle => 'Coffre-fort de preuves';
 
   @override
   String get tutorialsEvidenceListBody =>
-      'Track items, privilege flags, and readiness cards. Export bundles when preparing for court.';
+      'Suivez les éléments, les indicateurs de privilèges et les cartes de préparation. Exportez des lots lors de la préparation du tribunal.';
 
   @override
-  String get tutorialsEvidenceListTitle => 'Evidence register';
+  String get tutorialsEvidenceListTitle => 'Registre des preuves';
 
   @override
   String get tutorialsEvidenceMatterBody =>
-      'Evidence is always scoped to a matter. Select the case before adding exhibits or chronology items.';
+      'La preuve est toujours limitée à un sujet. Sélectionnez le cas avant d\'ajouter des pièces à conviction ou des éléments de chronologie.';
 
   @override
-  String get tutorialsEvidenceMatterTitle => 'Link to a matter';
+  String get tutorialsEvidenceMatterTitle => 'Lien vers un sujet';
 
   @override
   String get tutorialsExpensesCreateBody =>
@@ -18821,28 +19647,28 @@ class AppLocalizationsFr extends AppLocalizations {
   String get tutorialsFinanceHelpTitle => 'Finance';
 
   @override
-  String get tutorialsFirAnalysisHelpB1 => 'India jurisdiction only.';
+  String get tutorialsFirAnalysisHelpB1 => 'Juridiction indienne uniquement.';
 
   @override
   String get tutorialsFirAnalysisHelpB2 =>
-      'Save analysis to a matter for team collaboration.';
+      'Enregistrez l’analyse dans un sujet pour la collaboration en équipe.';
 
   @override
-  String get tutorialsFirAnalysisHelpTitle => 'FIR analysis';
+  String get tutorialsFirAnalysisHelpTitle => 'Analyse FIR';
 
   @override
   String get tutorialsFirAnalysisIntroBody =>
-      'Upload a First Information Report to extract facts, offences, bail posture, and suggested next steps.';
+      'Téléchargez un premier rapport d\'information pour extraire les faits, les infractions, la situation de mise en liberté sous caution et les prochaines étapes suggérées.';
 
   @override
-  String get tutorialsFirAnalysisIntroTitle => 'FIR intelligence';
+  String get tutorialsFirAnalysisIntroTitle => 'Renseignement FIR';
 
   @override
   String get tutorialsFirAnalysisUploadBody =>
-      'PDF or image uploads are parsed and structured for review and export.';
+      'Les téléchargements de PDF ou d\'images sont analysés et structurés pour examen et exportation.';
 
   @override
-  String get tutorialsFirAnalysisUploadTitle => 'Upload FIR';
+  String get tutorialsFirAnalysisUploadTitle => 'Télécharger le FIR';
 
   @override
   String get tutorialsHelpActions => 'Actes';
@@ -18882,31 +19708,33 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get tutorialsHomeActionsBody =>
-      'Each card opens a focused tool. Use task patterns above for common research and drafting prompts.';
+      'Chaque carte ouvre un outil ciblé. Utilisez les modèles de tâches ci-dessus pour les invites courantes de recherche et de rédaction.';
 
   @override
-  String get tutorialsHomeActionsTitle => 'Start any workflow';
+  String get tutorialsHomeActionsTitle =>
+      'Démarrez n’importe quel flux de travail';
 
   @override
   String get tutorialsHomeHeaderBody =>
-      'Your launch pad for drafting, research, review, and matter work—personalised to your role and jurisdiction.';
+      'Votre rampe de lancement pour la rédaction, la recherche, la révision et le travail sur des dossiers, personnalisée en fonction de votre rôle et de votre juridiction.';
 
   @override
-  String get tutorialsHomeHeaderTitle => 'Quick actions hub';
+  String get tutorialsHomeHeaderTitle => 'Centre d\'actions rapides';
 
   @override
   String get tutorialsHomeHelpB1 =>
-      'Open the full Dashboard for KPIs and overdue work.';
+      'Ouvrez le tableau de bord complet pour les KPI et les travaux en retard.';
 
   @override
-  String get tutorialsHomeHelpB2 => '⌘K jumps here or to any page instantly.';
+  String get tutorialsHomeHelpB2 =>
+      '⌘K saute instantanément ici ou vers n\'importe quelle page.';
 
   @override
   String get tutorialsHomeHelpB3 =>
-      'India-specific tools (Section Finder, FIR) appear when your jurisdiction is IN.';
+      'Des outils spécifiques à l\'Inde (Section Finder, FIR) apparaissent lorsque votre juridiction est IN.';
 
   @override
-  String get tutorialsHomeHelpTitle => 'Quick actions';
+  String get tutorialsHomeHelpTitle => 'Actions rapides';
 
   @override
   String get tutorialsInboxHelpB1 =>
@@ -18927,28 +19755,29 @@ class AppLocalizationsFr extends AppLocalizations {
   String get tutorialsInboxListTitle => 'Boîte de réception';
 
   @override
-  String get tutorialsIndiaDraftingHelpB1 => 'Always review before filing.';
+  String get tutorialsIndiaDraftingHelpB1 =>
+      'Vérifiez toujours avant de déposer.';
 
   @override
   String get tutorialsIndiaDraftingHelpB2 =>
-      'Formats sync with the mobile app catalog.';
+      'Les formats se synchronisent avec le catalogue d\'applications mobiles.';
 
   @override
-  String get tutorialsIndiaDraftingHelpTitle => 'India drafting';
+  String get tutorialsIndiaDraftingHelpTitle => 'Rédaction en Inde';
 
   @override
   String get tutorialsIndiaDraftingIntroBody =>
-      'Bail applications, legal notices, consumer complaints, and more—grounded in BNS/BNSS/BSA 2023.';
+      'Demandes de libération sous caution, avis juridiques, plaintes de consommateurs et bien plus encore, fondés sur BNS/BNSS/BSA 2023.';
 
   @override
-  String get tutorialsIndiaDraftingIntroTitle => 'India court drafts';
+  String get tutorialsIndiaDraftingIntroTitle => 'Projets judiciaires indiens';
 
   @override
   String get tutorialsIndiaDraftingWorkspaceBody =>
-      'Choose a template, fill facts, and generate a first draft for lawyer review.';
+      'Choisissez un modèle, remplissez les faits et générez une première ébauche pour examen par un avocat.';
 
   @override
-  String get tutorialsIndiaDraftingWorkspaceTitle => 'Pick a format';
+  String get tutorialsIndiaDraftingWorkspaceTitle => 'Choisissez un format';
 
   @override
   String get tutorialsIntakeAiModelBody =>
@@ -19001,22 +19830,22 @@ class AppLocalizationsFr extends AppLocalizations {
   String get tutorialsIntakeWizardTitle => 'Accueil des clients';
 
   @override
-  String get tutorialsLabelsAccountingPayments => 'Payments';
+  String get tutorialsLabelsAccountingPayments => 'Paiements';
 
   @override
-  String get tutorialsLabelsAccountingStatements => 'Statements';
+  String get tutorialsLabelsAccountingStatements => 'Déclarations';
 
   @override
-  String get tutorialsLabelsAgents => 'AI agents';
+  String get tutorialsLabelsAgents => 'Agents IA';
 
   @override
-  String get tutorialsLabelsAiCommandCenter => 'AI command center';
+  String get tutorialsLabelsAiCommandCenter => 'Centre de commande IA';
 
   @override
   String get tutorialsLabelsAlerts => 'Alertes';
 
   @override
-  String get tutorialsLabelsAutomations => 'Automations';
+  String get tutorialsLabelsAutomations => 'Automatisations';
 
   @override
   String get tutorialsLabelsBilling => 'Facturation';
@@ -19043,64 +19872,68 @@ class AppLocalizationsFr extends AppLocalizations {
   String get tutorialsLabelsConsumerDashboard => 'Maison de consommation';
 
   @override
-  String get tutorialsLabelsConsumerDocumentDrafting => 'Document drafting';
+  String get tutorialsLabelsConsumerDocumentDrafting =>
+      'Rédaction de documents';
 
   @override
-  String get tutorialsLabelsConsumerDocumentReview => 'Document review';
+  String get tutorialsLabelsConsumerDocumentReview => 'Examen des documents';
 
   @override
-  String get tutorialsLabelsConsumerFindLawyer => 'Find a lawyer';
+  String get tutorialsLabelsConsumerFindLawyer => 'Trouver un avocat';
 
   @override
-  String get tutorialsLabelsConsumerFirAnalysis => 'FIR analysis';
+  String get tutorialsLabelsConsumerFirAnalysis => 'Analyse FIR';
 
   @override
-  String get tutorialsLabelsConsumerIndiaDrafting => 'India court drafts';
+  String get tutorialsLabelsConsumerIndiaDrafting =>
+      'Projets judiciaires indiens';
 
   @override
-  String get tutorialsLabelsConsumerLawyerReview => 'Lawyer review';
+  String get tutorialsLabelsConsumerLawyerReview => 'Examen d\'un avocat';
 
   @override
-  String get tutorialsLabelsConsumerMarketplace => 'Legal marketplace';
+  String get tutorialsLabelsConsumerMarketplace => 'Marché légal';
 
   @override
-  String get tutorialsLabelsConsumerPlanUsage => 'Plan & usage';
+  String get tutorialsLabelsConsumerPlanUsage => 'Forfait et utilisation';
 
   @override
-  String get tutorialsLabelsConsumerReports => 'Reports';
+  String get tutorialsLabelsConsumerReports => 'Rapports';
 
   @override
-  String get tutorialsLabelsConsumerResearch => 'Legal research';
+  String get tutorialsLabelsConsumerResearch => 'Recherche juridique';
 
   @override
-  String get tutorialsLabelsConsumerRightsChecker => 'Rights checker';
+  String get tutorialsLabelsConsumerRightsChecker => 'Vérificateur de droits';
 
   @override
-  String get tutorialsLabelsConsumerSectionFinder => 'Section finder';
+  String get tutorialsLabelsConsumerSectionFinder => 'Recherche de section';
 
   @override
   String get tutorialsLabelsConsumerSettings => 'Paramètres du compte';
 
   @override
-  String get tutorialsLabelsConsumerSettingsDataConsent => 'Data consent';
+  String get tutorialsLabelsConsumerSettingsDataConsent =>
+      'Consentement aux données';
 
   @override
-  String get tutorialsLabelsConsumerSettingsPaymentMethods => 'Payment methods';
+  String get tutorialsLabelsConsumerSettingsPaymentMethods =>
+      'Modes de paiement';
 
   @override
   String get tutorialsLabelsConsumerSubscription => 'Abonnement';
 
   @override
-  String get tutorialsLabelsContracts => 'Contracts';
+  String get tutorialsLabelsContracts => 'Contrats';
 
   @override
-  String get tutorialsLabelsCopilotAudit => 'Copilot audit';
+  String get tutorialsLabelsCopilotAudit => 'Audit copilote';
 
   @override
   String get tutorialsLabelsDashboard => 'Tableau de bord';
 
   @override
-  String get tutorialsLabelsDocumentReview => 'Document review';
+  String get tutorialsLabelsDocumentReview => 'Examen des documents';
 
   @override
   String get tutorialsLabelsDocuments => 'Documents';
@@ -19109,7 +19942,7 @@ class AppLocalizationsFr extends AppLocalizations {
   String get tutorialsLabelsEsign => 'Signature électronique';
 
   @override
-  String get tutorialsLabelsEvidence => 'Evidence vault';
+  String get tutorialsLabelsEvidence => 'Coffre-fort de preuves';
 
   @override
   String get tutorialsLabelsExpenses => 'Dépenses';
@@ -19118,16 +19951,16 @@ class AppLocalizationsFr extends AppLocalizations {
   String get tutorialsLabelsFinance => 'Finance';
 
   @override
-  String get tutorialsLabelsFirAnalysis => 'FIR analysis';
+  String get tutorialsLabelsFirAnalysis => 'Analyse FIR';
 
   @override
-  String get tutorialsLabelsHome => 'Quick actions';
+  String get tutorialsLabelsHome => 'Actions rapides';
 
   @override
   String get tutorialsLabelsInbox => 'Boîte de réception';
 
   @override
-  String get tutorialsLabelsIndiaDrafting => 'India drafting';
+  String get tutorialsLabelsIndiaDrafting => 'Rédaction en Inde';
 
   @override
   String get tutorialsLabelsIntake => 'Admission';
@@ -19139,7 +19972,7 @@ class AppLocalizationsFr extends AppLocalizations {
   String get tutorialsLabelsLeads => 'Conduit';
 
   @override
-  String get tutorialsLabelsLegalForms => 'Legal forms';
+  String get tutorialsLabelsLegalForms => 'Formes juridiques';
 
   @override
   String get tutorialsLabelsMatters => 'Importe';
@@ -19154,37 +19987,37 @@ class AppLocalizationsFr extends AppLocalizations {
   String get tutorialsLabelsMeetings => 'Réunions';
 
   @override
-  String get tutorialsLabelsMonitors => 'Regulatory monitors';
+  String get tutorialsLabelsMonitors => 'Veilleuses réglementaires';
 
   @override
-  String get tutorialsLabelsOnboarding => 'Firm onboarding';
+  String get tutorialsLabelsOnboarding => 'Intégration ferme';
 
   @override
   String get tutorialsLabelsPage => 'Tour de page';
 
   @override
-  String get tutorialsLabelsPreBill => 'Pre-bill review';
+  String get tutorialsLabelsPreBill => 'Examen avant la facturation';
 
   @override
-  String get tutorialsLabelsProfile => 'Your profile';
+  String get tutorialsLabelsProfile => 'Votre profil';
 
   @override
-  String get tutorialsLabelsQueues => 'Work queues';
+  String get tutorialsLabelsQueues => 'Files d\'attente de travail';
 
   @override
-  String get tutorialsLabelsReferrals => 'Referrals';
+  String get tutorialsLabelsReferrals => 'Références';
 
   @override
-  String get tutorialsLabelsReports => 'Firm analytics';
+  String get tutorialsLabelsReports => 'Analyse du cabinet';
 
   @override
   String get tutorialsLabelsResearch => 'Recherche';
 
   @override
-  String get tutorialsLabelsSavedDrafts => 'Saved drafts';
+  String get tutorialsLabelsSavedDrafts => 'Brouillons enregistrés';
 
   @override
-  String get tutorialsLabelsSectionFinder => 'Section finder';
+  String get tutorialsLabelsSectionFinder => 'Recherche de section';
 
   @override
   String get tutorialsLabelsSettings => 'Paramètres';
@@ -19208,7 +20041,7 @@ class AppLocalizationsFr extends AppLocalizations {
   String get tutorialsLabelsTrust => 'Comptabilité fiduciaire';
 
   @override
-  String get tutorialsLabelsUsDrafting => 'US drafting';
+  String get tutorialsLabelsUsDrafting => 'rédaction américaine';
 
   @override
   String get tutorialsLabelsVault => 'Sauter';
@@ -19251,32 +20084,33 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get tutorialsLegalFormsHelpB1 =>
-      'Saved drafts appear in Saved Drafts.';
+      'Les brouillons enregistrés apparaissent dans Brouillons enregistrés.';
 
   @override
   String get tutorialsLegalFormsHelpB2 =>
-      'Link outputs to matters for billing and audit.';
+      'Liez les résultats aux sujets de facturation et d’audit.';
 
   @override
   String get tutorialsLegalFormsHelpB3 =>
-      'Use India or US drafting for court-specific formats.';
+      'Utilisez la rédaction indienne ou américaine pour les formats spécifiques aux tribunaux.';
 
   @override
-  String get tutorialsLegalFormsHelpTitle => 'Legal forms';
+  String get tutorialsLegalFormsHelpTitle => 'Formes juridiques';
 
   @override
   String get tutorialsLegalFormsIntroBody =>
-      'Browse 10,000+ court and government forms across US, UK, Kenya, and India—or describe what you need and draft with AI.';
+      'Parcourez plus de 10 000 formulaires judiciaires et gouvernementaux aux États-Unis, au Royaume-Uni, au Kenya et en Inde, ou décrivez ce dont vous avez besoin et rédigez-le avec l\'IA.';
 
   @override
-  String get tutorialsLegalFormsIntroTitle => 'Official form catalog';
+  String get tutorialsLegalFormsIntroTitle =>
+      'Catalogue de formulaires officiel';
 
   @override
   String get tutorialsLegalFormsWorkspaceBody =>
-      'Search the catalog, answer guided questions, and generate a filled draft ready for review.';
+      'Recherchez dans le catalogue, répondez aux questions guidées et générez un brouillon rempli prêt à être révisé.';
 
   @override
-  String get tutorialsLegalFormsWorkspaceTitle => 'Draft workspace';
+  String get tutorialsLegalFormsWorkspaceTitle => 'Espace de travail brouillon';
 
   @override
   String get tutorialsMattersCreateBody =>
@@ -19316,10 +20150,10 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get tutorialsMattersDetailWorkbenchBody =>
-      'Ouvrez l\'atelier pour une conversation IA, une rédaction et des suggestions d\'étapes suivantes à l\'échelle du sujet.';
+      'Ouvrez Quick AI pour un chat, une rédaction et des suggestions d\'étapes suivantes liées à un sujet.';
 
   @override
-  String get tutorialsMattersDetailWorkbenchTitle => 'Établi d\'IA';
+  String get tutorialsMattersDetailWorkbenchTitle => 'IA IA rapide';
 
   @override
   String get tutorialsMattersFilterBody =>
@@ -19334,7 +20168,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get tutorialsMattersHelpB2 =>
-      'Ouvrez l\'atelier AI à partir d\'un sujet de rédaction et de recherche.';
+      'Ouvrez l\'AI Quick AI à partir d\'un sujet de rédaction et de recherche.';
 
   @override
   String get tutorialsMattersHelpB3 =>
@@ -19406,155 +20240,159 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get tutorialsMonitorsCreateBody =>
-      'Track regulatory changes by jurisdiction and topic. Umbrella summarises alerts when laws update.';
+      'Suivez les changements réglementaires par juridiction et par sujet. Umbrella résume les alertes lorsque les lois sont mises à jour.';
 
   @override
-  String get tutorialsMonitorsCreateTitle => 'Create a monitor';
+  String get tutorialsMonitorsCreateTitle => 'Créer un moniteur';
 
   @override
   String get tutorialsMonitorsHelpB1 =>
-      'Start with your primary jurisdiction and top practice areas.';
+      'Commencez par votre juridiction principale et vos principaux domaines de pratique.';
 
   @override
   String get tutorialsMonitorsHelpB2 =>
-      'Critical alerts can surface on your dashboard and in notifications.';
+      'Des alertes critiques peuvent apparaître sur votre tableau de bord et dans les notifications.';
 
   @override
   String get tutorialsMonitorsHelpB3 =>
-      'Ask Copilot to explain how a regulatory change affects open matters.';
+      'Demandez à Copilot d\'expliquer comment un changement réglementaire affecte les affaires en cours.';
 
   @override
-  String get tutorialsMonitorsHelpTitle => 'Regulatory monitors';
+  String get tutorialsMonitorsHelpTitle => 'Veilleuses réglementaires';
 
   @override
   String get tutorialsMonitorsListBody =>
-      'Toggle monitors on or off, open details for alert history, and adjust topics as your practice evolves.';
+      'Activez ou désactivez les moniteurs, ouvrez les détails de l\'historique des alertes et ajustez les sujets à mesure que votre pratique évolue.';
 
   @override
-  String get tutorialsMonitorsListTitle => 'Your monitors';
+  String get tutorialsMonitorsListTitle => 'Vos moniteurs';
 
   @override
   String get tutorialsOnboardingHelpB1 =>
-      'Partners should finish all steps before inviting associates.';
+      'Les partenaires doivent terminer toutes les étapes avant d\'inviter des associés.';
 
   @override
   String get tutorialsOnboardingHelpB2 =>
-      'You can return here anytime from Settings.';
+      'Vous pouvez revenir ici à tout moment depuis les paramètres.';
 
   @override
-  String get tutorialsOnboardingHelpTitle => 'Onboarding';
+  String get tutorialsOnboardingHelpTitle => 'Intégration';
 
   @override
   String get tutorialsOnboardingWizardBody =>
-      'Complete profile, billing, team invites, and AI policy steps to activate your workspace.';
+      'Complétez les étapes de profil, de facturation, d\'invitations d\'équipe et de politique d\'IA pour activer votre espace de travail.';
 
   @override
-  String get tutorialsOnboardingWizardTitle => 'Firm setup';
+  String get tutorialsOnboardingWizardTitle => 'Configuration ferme';
 
   @override
   String get tutorialsPreBillHelpB1 =>
-      'Approve pre-bills before generating final invoices.';
+      'Approuvez les pré-factures avant de générer les factures finales.';
 
   @override
-  String get tutorialsPreBillHelpB2 => 'Flag entries that need partner review.';
+  String get tutorialsPreBillHelpB2 =>
+      'Signalez les entrées qui nécessitent un examen par un partenaire.';
 
   @override
-  String get tutorialsPreBillHelpTitle => 'Pre-bill';
+  String get tutorialsPreBillHelpTitle => 'Pré-facture';
 
   @override
   String get tutorialsPreBillWorkspaceBody =>
-      'Review time entries and expenses before invoicing. Edit narratives, write-offs, and splits here.';
+      'Vérifiez les entrées de temps et les dépenses avant de facturer. Modifiez les récits, les radiations et les fractionnements ici.';
 
   @override
-  String get tutorialsPreBillWorkspaceTitle => 'Pre-bill review';
+  String get tutorialsPreBillWorkspaceTitle => 'Examen avant la facturation';
 
   @override
   String get tutorialsProfileFormBody =>
-      'Update name, contact details, notification preferences, and password.';
+      'Mettez à jour le nom, les coordonnées, les préférences de notification et le mot de passe.';
 
   @override
-  String get tutorialsProfileFormTitle => 'Your profile';
+  String get tutorialsProfileFormTitle => 'Votre profil';
 
   @override
   String get tutorialsProfileHelpB1 =>
-      'Keep phone current for urgent deadline alerts.';
+      'Gardez votre téléphone à jour pour les alertes urgentes sur les délais.';
 
   @override
   String get tutorialsProfileHelpB2 =>
-      'Role and permissions are managed by firm admins.';
+      'Le rôle et les autorisations sont gérés par les administrateurs de l\'entreprise.';
 
   @override
-  String get tutorialsProfileHelpTitle => 'Profile';
+  String get tutorialsProfileHelpTitle => 'Profil';
 
   @override
   String get tutorialsQueuesGridBody =>
-      'Intake, billing, and task queues show what needs action across the firm—click through to resolve items.';
+      'Les files d\'attente d\'admission, de facturation et de tâches indiquent ce qui nécessite une action dans l\'entreprise : cliquez pour résoudre les éléments.';
 
   @override
-  String get tutorialsQueuesGridTitle => 'Work queues';
+  String get tutorialsQueuesGridTitle => 'Files d\'attente de travail';
 
   @override
   String get tutorialsQueuesHelpB1 =>
-      'Check intake queue daily for new matters awaiting setup.';
+      'Vérifiez quotidiennement la file d\'attente d\'admission pour détecter les nouveaux problèmes en attente de configuration.';
 
   @override
   String get tutorialsQueuesHelpB2 =>
-      'Finance roles see billing approval queues here.';
+      'Les rôles financiers voient les files d’attente d’approbation de facturation ici.';
 
   @override
-  String get tutorialsQueuesHelpTitle => 'Queues';
+  String get tutorialsQueuesHelpTitle => 'Files d\'attente';
 
   @override
   String get tutorialsReferralsHelpB1 =>
-      'Track pending and completed referrals here.';
+      'Suivez les références en attente et terminées ici.';
 
   @override
-  String get tutorialsReferralsHelpB2 => 'Referral credits apply to AI usage.';
+  String get tutorialsReferralsHelpB2 =>
+      'Les crédits de parrainage s’appliquent à l’utilisation de l’IA.';
 
   @override
-  String get tutorialsReferralsHelpTitle => 'Referrals';
+  String get tutorialsReferralsHelpTitle => 'Références';
 
   @override
   String get tutorialsReferralsShareBody =>
-      'Share your referral link. Earn credits when new firms or consumers sign up and subscribe.';
+      'Partagez votre lien de parrainage. Gagnez des crédits lorsque de nouvelles entreprises ou consommateurs s\'inscrivent et s\'abonnent.';
 
   @override
-  String get tutorialsReferralsShareTitle => 'Refer colleagues';
+  String get tutorialsReferralsShareTitle => 'Référez des collègues';
 
   @override
   String get tutorialsReportsHeaderBody =>
-      'Utilisation, realisation, collections, and pipeline metrics compared to industry benchmarks.';
+      'Mesures d\'utilisation, de réalisation, de collecte et de pipeline par rapport aux références du secteur.';
 
   @override
-  String get tutorialsReportsHeaderTitle => 'Firm analytics';
+  String get tutorialsReportsHeaderTitle => 'Analyse du cabinet';
 
   @override
-  String get tutorialsReportsHelpB1 => 'Export summaries for partner meetings.';
+  String get tutorialsReportsHelpB1 =>
+      'Exportez des résumés pour les réunions des partenaires.';
 
   @override
   String get tutorialsReportsHelpB2 =>
-      'Compare outcome benchmarks when you have enough closed matters.';
+      'Comparez les critères de résultats lorsque vous avez suffisamment de dossiers clos.';
 
   @override
-  String get tutorialsReportsHelpB3 => 'Requires Professional plan or higher.';
+  String get tutorialsReportsHelpB3 =>
+      'Nécessite un plan Professionnel ou supérieur.';
 
   @override
-  String get tutorialsReportsHelpTitle => 'Reports';
+  String get tutorialsReportsHelpTitle => 'Rapports';
 
   @override
   String get tutorialsReportsKpisBody =>
-      'Green indicators beat targets. Drill into finance or matters from linked cards below.';
+      'Les indicateurs verts dépassent les objectifs. Explorez les finances ou les questions à partir des cartes liées ci-dessous.';
 
   @override
-  String get tutorialsReportsKpisTitle => 'Performance KPIs';
+  String get tutorialsReportsKpisTitle => 'KPI de performances';
 
   @override
   String get tutorialsResearchHelpB1 =>
-      'Soyez précis sur la juridiction et la structure des faits pour de meilleures citations.';
+      'Utilisez le mode Vérifié lorsque la précision est importante ; Mode rapide pour une orientation rapide.';
 
   @override
   String get tutorialsResearchHelpB2 =>
-      'L\'utilisation de l\'IA est comptabilisée dans le solde créditeur de votre entreprise.';
+      'La recherche utilise le solde créditeur IA de votre entreprise.';
 
   @override
   String get tutorialsResearchHelpB3 =>
@@ -19565,60 +20403,61 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get tutorialsResearchQueryBody =>
-      'Posez une question juridique pour votre juridiction. Les réponses incluent des citations que vous pouvez vérifier.';
+      'Décrivez la question juridique et la juridiction. Soyez précis sur les faits : de meilleures entrées produisent de meilleures citations.';
 
   @override
-  String get tutorialsResearchQueryTitle => 'Recherche juridique';
+  String get tutorialsResearchQueryTitle => 'Posez votre question de recherche';
 
   @override
   String get tutorialsResearchResultsBody =>
-      'Enregistrez la recherche dans un sujet ou exportez des citations sous forme de brouillons.';
+      'Après avoir effectué des recherches, vérifiez les citations ici. Enregistrez dans un sujet ou exportez sous forme de brouillons.';
 
   @override
-  String get tutorialsResearchResultsTitle => 'Résultats cités';
+  String get tutorialsResearchResultsTitle => 'Examiner les réponses citées';
 
   @override
   String get tutorialsResearchSourcesBody =>
-      'Pick statutes, case law, and firm vault sources to include. Narrow sources for faster, more focused answers.';
+      'Choisissez les lois, la jurisprudence et les sources du coffre-fort du cabinet à inclure. Affinez les sources pour des réponses plus rapides et plus ciblées.';
 
   @override
-  String get tutorialsResearchSourcesTitle => 'Choose knowledge sources';
+  String get tutorialsResearchSourcesTitle =>
+      'Choisissez des sources de connaissances';
 
   @override
   String get tutorialsSavedDraftsHelpB1 =>
-      'Drafts are tenant-scoped and auditable.';
+      'Les brouillons sont limités au locataire et vérifiables.';
 
   @override
   String get tutorialsSavedDraftsHelpB2 =>
-      'Open a draft to continue editing or export.';
+      'Ouvrez un brouillon pour poursuivre la modification ou l\'exportation.';
 
   @override
-  String get tutorialsSavedDraftsHelpTitle => 'Saved drafts';
+  String get tutorialsSavedDraftsHelpTitle => 'Brouillons enregistrés';
 
   @override
   String get tutorialsSavedDraftsListBody =>
-      'Resume any saved AI draft from legal forms, India/US drafting, or Copilot.';
+      'Reprenez tout projet d\'IA enregistré à partir de formulaires juridiques, de rédaction Inde/États-Unis ou de Copilot.';
 
   @override
-  String get tutorialsSavedDraftsListTitle => 'Draft history';
+  String get tutorialsSavedDraftsListTitle => 'Historique du brouillon';
 
   @override
   String get tutorialsSectionFinderHelpB1 =>
-      'Verify results against official bare acts before citing.';
+      'Vérifiez les résultats par rapport aux actes officiels avant de les citer.';
 
   @override
   String get tutorialsSectionFinderHelpB2 =>
-      'Export lookup results into matter drafts.';
+      'Exportez les résultats de la recherche dans des brouillons de sujet.';
 
   @override
-  String get tutorialsSectionFinderHelpTitle => 'Section finder';
+  String get tutorialsSectionFinderHelpTitle => 'Recherche de section';
 
   @override
   String get tutorialsSectionFinderWorkspaceBody =>
-      'Search IPC→BNS, CrPC→BNSS crosswalks, or US code sections. Popular queries help you get started quickly.';
+      'Recherchez les passages pour piétons IPC → BNS, CrPC → BNSS ou les sections de code américain. Les requêtes populaires vous aident à démarrer rapidement.';
 
   @override
-  String get tutorialsSectionFinderWorkspaceTitle => 'Look up sections';
+  String get tutorialsSectionFinderWorkspaceTitle => 'Rechercher des sections';
 
   @override
   String get tutorialsSettingsHelpB1 =>
@@ -19806,21 +20645,22 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get tutorialsUsDraftingHelpB1 =>
-      'Confirm local court rules before filing.';
+      'Confirmez les règles du tribunal local avant de déposer.';
 
   @override
   String get tutorialsUsDraftingHelpB2 =>
-      'Save drafts to matters for time tracking.';
+      'Enregistrez les brouillons dans les dossiers pour le suivi du temps.';
 
   @override
-  String get tutorialsUsDraftingHelpTitle => 'US drafting';
+  String get tutorialsUsDraftingHelpTitle => 'rédaction américaine';
 
   @override
   String get tutorialsUsDraftingWorkspaceBody =>
-      'Federal and state motion templates with jurisdiction-aware prompts and citation helpers.';
+      'Modèles de motions fédérales et étatiques avec invites et aides à la citation tenant compte des juridictions.';
 
   @override
-  String get tutorialsUsDraftingWorkspaceTitle => 'US court drafting';
+  String get tutorialsUsDraftingWorkspaceTitle =>
+      'Rédaction du tribunal américain';
 
   @override
   String get tutorialsVaultHelpB1 =>
@@ -19842,19 +20682,19 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get tutorialsWelcomeB1 =>
-      'Trouvez des clients, des dossiers et la facturation en quelques secondes';
+      'Aller n\'importe où avec la recherche ou ⌘K';
 
   @override
   String get tutorialsWelcomeB2 =>
-      'Utilisez AI Copilot pour une aide contextuelle';
+      'Copilot comprend la page sur laquelle vous vous trouvez';
 
   @override
   String get tutorialsWelcomeB3 =>
-      'Rejouez les visites à tout moment depuis l\'aide';
+      'Rejouez n’importe quelle visite guidée de l’aide chaque fois que vous avez besoin d’un rappel';
 
   @override
   String get tutorialsWelcomeBody =>
-      'Faites une visite rapide pour apprendre à naviguer dans l’espace de travail de votre entreprise.';
+      'Une visite guidée de deux minutes vous montre où trouver les clients, les dossiers, la facturation et AI Copilot.';
 
   @override
   String get tutorialsWelcomeSkip => 'Passer pour l\'instant';

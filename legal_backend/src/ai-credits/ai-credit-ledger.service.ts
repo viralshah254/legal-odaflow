@@ -49,54 +49,52 @@ export class AICreditLedgerService {
   }
 
   async credit(input: CreditLedgerInput) {
-    const entry = await this.prisma.aICreditLedger.create({
-      data: {
-        userId: input.userId,
-        tenantId: input.tenantId,
-        eventType: 'CREDIT',
-        taskType: input.taskType,
-        credits: input.credits,
-        costUsd: input.costUsd !== undefined ? new Prisma.Decimal(input.costUsd) : undefined,
-        metadata: input.metadata,
-      },
+    if (!Number.isSafeInteger(input.credits) || input.credits < 0) {
+      throw new Error('Credits must be a non-negative safe integer');
+    }
+    if (!input.tenantId && !input.userId) throw new Error('A credit wallet is required');
+    return this.prisma.$transaction(async (tx) => {
+      const entry = await tx.aICreditLedger.create({
+        data: {
+          userId: input.userId,
+          tenantId: input.tenantId,
+          eventType: 'CREDIT',
+          taskType: input.taskType,
+          credits: input.credits,
+          costUsd: input.costUsd !== undefined ? new Prisma.Decimal(input.costUsd) : undefined,
+          metadata: input.metadata,
+        },
+      });
+
+      if (input.userId && !input.tenantId) {
+        const updated = await tx.consumerProfile.updateMany({
+          where: { userId: input.userId },
+          data: { aiCreditsRemaining: { increment: input.credits } },
+        });
+        if (updated.count !== 1) throw new Error('Consumer credit wallet not found');
+      }
+
+      if (input.tenantId) {
+        await tx.tenant.update({
+          where: { id: input.tenantId },
+          data: { aiCreditsRemaining: { increment: input.credits } },
+        });
+      }
+
+      return entry;
     });
-
-    if (input.userId && !input.tenantId) {
-      await this.prisma.consumerProfile.updateMany({
-        where: { userId: input.userId },
-        data: { aiCreditsRemaining: { increment: input.credits } },
-      });
-    }
-
-    if (input.tenantId) {
-      await this.prisma.tenant.update({
-        where: { id: input.tenantId },
-        data: { aiCreditsRemaining: { increment: input.credits } },
-      });
-    }
-
-    return entry;
   }
 
   async debit(input: CreditLedgerInput) {
-    return this.prisma.aICreditLedger.create({
-      data: {
-        userId: input.userId,
-        tenantId: input.tenantId,
-        eventType: 'DEBIT',
-        taskType: input.taskType,
-        credits: input.credits,
-        costUsd: input.costUsd !== undefined ? new Prisma.Decimal(input.costUsd) : undefined,
-        metadata: input.metadata,
-      },
-    });
+    const result = await this.assertAndDebit(input);
+    return result.entry;
   }
 
   async getLedgerBalance(params: { userId?: string; tenantId?: string }): Promise<number> {
-    const where = {
-      userId: params.userId,
-      tenantId: params.tenantId,
-    };
+    if (!params.tenantId && !params.userId) return 0;
+    const where = params.tenantId
+      ? { tenantId: params.tenantId }
+      : { userId: params.userId, tenantId: null };
 
     const entries = await this.prisma.aICreditLedger.findMany({ where });
     return entries.reduce(
@@ -113,7 +111,7 @@ export class AICreditLedgerService {
         where: { userId: params.userId },
       });
       if (profile) {
-        return Math.max(ledgerBalance, profile.aiCreditsRemaining);
+        return profile.aiCreditsRemaining;
       }
     }
 
@@ -123,7 +121,7 @@ export class AICreditLedgerService {
         select: { aiCreditsRemaining: true, billingPlan: true },
       });
       if (tenant) {
-        return Math.max(ledgerBalance, tenant.aiCreditsRemaining);
+        return tenant.aiCreditsRemaining;
       }
     }
 
@@ -135,54 +133,42 @@ export class AICreditLedgerService {
     tenantId?: string;
     taskType: string;
     credits?: number;
+    costUsd?: number;
     metadata?: Prisma.InputJsonValue;
   }) {
     const cost = params.credits ?? getCreditCost(params.taskType);
-    const balance = await this.getBalance({
-      userId: params.userId,
-      tenantId: params.tenantId,
-    });
-
-    if (balance < cost) {
-      throw new ForbiddenException(
-        `Insufficient AI credits (${balance} available, ${cost} required for ${params.taskType})`,
-      );
+    if (!Number.isSafeInteger(cost) || cost < 0) {
+      throw new Error('Credits must be a non-negative safe integer');
     }
-
-    const entry = await this.debit({
-      userId: params.userId,
-      tenantId: params.tenantId,
-      taskType: params.taskType,
-      credits: cost,
-      metadata: params.metadata,
-    });
-
-    if (params.userId && !params.tenantId) {
-      const profile = await this.prisma.consumerProfile.findUnique({
-        where: { userId: params.userId },
+    if (!params.tenantId && !params.userId) {
+      throw new ForbiddenException('A credit wallet is required');
+    }
+    // Conditional decrement serializes competing spenders at the wallet row.
+    // The ledger entry and wallet mutation commit or roll back together.
+    const result = await this.prisma.$transaction(async (tx) => {
+      const updated = params.tenantId
+        ? await tx.tenant.updateMany({
+            where: { id: params.tenantId, aiCreditsRemaining: { gte: cost } },
+            data: { aiCreditsRemaining: { decrement: cost } },
+          })
+        : await tx.consumerProfile.updateMany({
+            where: { userId: params.userId, aiCreditsRemaining: { gte: cost } },
+            data: { aiCreditsRemaining: { decrement: cost } },
+          });
+      if (updated.count !== 1) throw new ForbiddenException('Insufficient AI credits');
+      const entry = await tx.aICreditLedger.create({
+        data: {
+          userId: params.userId, tenantId: params.tenantId,
+          eventType: 'DEBIT', taskType: params.taskType,
+          credits: cost, metadata: params.metadata,
+          costUsd: params.costUsd === undefined ? undefined : new Prisma.Decimal(params.costUsd),
+        },
       });
-      if (profile && profile.aiCreditsRemaining >= cost) {
-        await this.prisma.consumerProfile.update({
-          where: { userId: params.userId },
-          data: { aiCreditsRemaining: { decrement: cost } },
-        });
-      }
-    }
-
-    if (params.tenantId) {
-      const tenant = await this.prisma.tenant.findUnique({
-        where: { id: params.tenantId },
-        select: { aiCreditsRemaining: true },
-      });
-      if (tenant && tenant.aiCreditsRemaining >= cost) {
-        await this.prisma.tenant.update({
-          where: { id: params.tenantId },
-          data: { aiCreditsRemaining: { decrement: cost } },
-        });
-      }
-    }
-
-    const result = { entry, creditsDebited: cost, balanceAfter: balance - cost };
+      const wallet = params.tenantId
+        ? await tx.tenant.findUniqueOrThrow({ where: { id: params.tenantId } })
+        : await tx.consumerProfile.findUniqueOrThrow({ where: { userId: params.userId } });
+      return { entry, creditsDebited: cost, balanceAfter: wallet.aiCreditsRemaining };
+    });
     this.publishCreditBalanceUpdate(params, result.balanceAfter);
     await this.runPostDebitHooks({
       userId: params.userId,

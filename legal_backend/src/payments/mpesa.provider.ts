@@ -1,4 +1,4 @@
-import { Injectable, OnModuleInit } from '@nestjs/common';
+import { Injectable, OnModuleInit, ServiceUnavailableException } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { createHmac, randomBytes, timingSafeEqual } from 'crypto';
 import { assertProductionConfigured } from '@/common/utils/production-guard';
@@ -56,6 +56,9 @@ export class MpesaProvider implements PaymentGateway, OnModuleInit {
 
     const phone = input.metadata?.phone ?? input.metadata?.msisdn;
     if (!consumerKey || !consumerSecret || !shortcode || !passkey) {
+      if (this.configService.get<string>('NODE_ENV') === 'production') {
+        throw new ServiceUnavailableException('M-Pesa is unavailable until its payment credentials are configured.');
+      }
       return {
         provider: this.providerName,
         providerPaymentId: `mpesa_mock_${randomBytes(8).toString('hex')}`,

@@ -90,6 +90,8 @@ async function processResearchJob(job: Job<AiAgentJobPayload>) {
         matterId: params.matterId as string | undefined,
         selectedDocumentIds: params.selectedDocumentIds as string[] | undefined,
         selectedSavedResearchIds: params.selectedSavedResearchIds as string[] | undefined,
+        contextScope: params.contextScope as 'SELECTED' | 'MATTER' | 'FOLDERS' | undefined,
+        selectedFolderIds: params.selectedFolderIds as string[] | undefined,
         countryCode,
         jurisdiction,
         practiceArea: params.practiceArea as string | undefined,

@@ -52,7 +52,7 @@ describe("citation review dialog helpers", () => {
     const script = `
       import { createElement } from "react";
       import { renderToStaticMarkup } from "react-dom/server";
-      import { CitationReviewTaskDetails } from "./components/research/citation-review-dialog.tsx";
+      import CitationReviewTaskDetailsModule from "./components/research/citation-review-dialog.tsx"; const { CitationReviewTaskDetails } = CitationReviewTaskDetailsModule;
       const task = ${JSON.stringify(task)};
       const requestedTask = ${JSON.stringify(requested)};
       process.stdout.write(renderToStaticMarkup(

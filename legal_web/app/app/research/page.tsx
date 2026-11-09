@@ -416,6 +416,8 @@ export default function LegalResearchPage() {
   const [knowledgeSources, setKnowledgeSources] = useState<KnowledgeSource[]>(DEFAULT_KNOWLEDGE_SOURCES)
   const [selectedDocumentIds, setSelectedDocumentIds] = useState<string[]>([])
   const [selectedSavedResearchIds, setSelectedSavedResearchIds] = useState<string[]>([])
+  const [contextScope, setContextScope] = useState<"SELECTED" | "MATTER" | "FOLDERS">("MATTER")
+  const [selectedFolderIds, setSelectedFolderIds] = useState<string[]>([])
   const [challengeCitation, setChallengeCitation] = useState<{ title: string; source: string; url?: string } | null>(null)
 
   // Conversation thread state
@@ -859,6 +861,8 @@ export default function LegalResearchPage() {
         matterId,
         selectedDocumentIds,
         selectedSavedResearchIds,
+        contextScope: matterId ? contextScope : undefined,
+        selectedFolderIds,
         ...(countryCode === "IN"
           ? (() => {
               const resolved = resolveResearchOutputLanguage(outputLanguage)
@@ -1059,6 +1063,8 @@ export default function LegalResearchPage() {
         matterId,
         selectedDocumentIds,
         selectedSavedResearchIds,
+        contextScope: matterId ? contextScope : undefined,
+        selectedFolderIds,
       }
 
       let res: LegalResearchResponse
@@ -1559,7 +1565,7 @@ export default function LegalResearchPage() {
                   <p className="mt-1 text-sm font-medium">
                     {aiModelMode === "PREMIUM" ? "Premium" : "Auto"}
                   </p>
-                  {result.modelName && <p className="truncate text-[11px] text-muted-foreground">{result.modelName}</p>}
+
                 </div>
                 <div className="rounded-lg border bg-card px-3 py-2">
                   <p className="text-[10px] font-semibold uppercase tracking-wide text-muted-foreground">Confidence</p>
@@ -1818,6 +1824,7 @@ export default function LegalResearchPage() {
                   onConfirm={(selection) => setWorkContext(selection)}
                 />
                 <ResearchContextBar
+                  matterScope={Boolean(matterId)}
                   countryCode={countryCode}
                   jurisdiction={jurisdiction}
                   onJurisdictionChange={({ countryCode: code, jurisdiction: nextJurisdiction }) => {
@@ -1976,6 +1983,11 @@ export default function LegalResearchPage() {
                     matterId={matterId}
                     selectedDocumentIds={selectedDocumentIds}
                     selectedSavedResearchIds={selectedSavedResearchIds}
+                    contextScope={contextScope}
+                    onContextScopeChange={setContextScope}
+                    selectedFolderIds={selectedFolderIds}
+                    onSelectedFolderIdsChange={setSelectedFolderIds}
+                    onMatterCountryChange={setCountryCode}
                     onSelectedDocumentIdsChange={setSelectedDocumentIds}
                     onSelectedSavedResearchIdsChange={setSelectedSavedResearchIds}
                   />

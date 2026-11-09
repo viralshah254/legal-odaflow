@@ -11,6 +11,8 @@ export interface ActStructureReferenceEntry {
   manifestActId: string;
   registryActId?: string;
   sourcePdf: string;
+  sourceSha256?: string;
+  coverage?: 'EXTRACTED_READABLE_PROVISIONS';
   structure: {
     sections?: ActStructureUnitRef;
     articles?: ActStructureUnitRef;
@@ -66,7 +68,7 @@ export function isProvisionIdValid(
       return {
         valid: false,
         structure,
-        message: `Order ${orderId} does not exist (${orders.count} Orders, ends at Order ${orders.lastId})`,
+        message: `Order ${orderId} is unavailable in the bundled source extraction. Verify it against an authoritative source.`,
       };
     }
     return { valid: true, structure };
@@ -79,7 +81,7 @@ export function isProvisionIdValid(
       return {
         valid: false,
         structure,
-        message: `Schedule ${schedId} does not exist (${schedules.count} Schedules)`,
+        message: `Schedule ${schedId} is unavailable in the bundled source extraction. Verify it against an authoritative source.`,
       };
     }
     return { valid: true, structure };
@@ -91,7 +93,7 @@ export function isProvisionIdValid(
     return {
       valid: false,
       structure,
-      message: `${unit} ${key} does not exist (${sections.count} ${unit.toLowerCase()}s, ends at ${sections.lastId})`,
+      message: `${unit} ${key} is unavailable in the bundled source extraction. Verify it against an authoritative source.`,
     };
   }
 

@@ -39,7 +39,7 @@ export class UserDraftStyleController {
     return this.service.getPresets();
   }
 
-  /** POST /users/me/draft-style/samples — upload one sample document (free, max 4) */
+  /** POST /users/me/draft-style/samples — upload one sample document (free, max 10) */
   @Post('samples')
   @UseInterceptors(
     FileInterceptor('file', {
@@ -75,7 +75,7 @@ export class UserDraftStyleController {
     return this.service.removeSample(user.id, index);
   }
 
-  /** POST /users/me/draft-style/analyze — charges 500 credits, extracts style */
+  /** POST /users/me/draft-style/analyze — charges recorded usage, extracts style */
   @Post('analyze')
   analyzeStyle(@CurrentUser() user: RequestUser) {
     return this.service.analyzeStyle(user.id);

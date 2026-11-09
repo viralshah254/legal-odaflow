@@ -1,6 +1,6 @@
 import { Injectable, Logger, Optional } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
-import pLimit from 'p-limit';
+import pLimit from '@/common/utils/concurrency-limit';
 import { CacheService } from '@/cache/cache.service';
 import { hashPrompt } from '@/common/utils/prompt-hash.util';
 import { IndiaKanoonConnector } from '@/legal-sources/connectors/india-kanoon.connector';

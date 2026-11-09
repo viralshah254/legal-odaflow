@@ -238,7 +238,8 @@ function runDeploymentInBackground(commitInfo, imageTag = "latest") {
     "sh", "-c", "apk add --no-cache bash curl >/dev/null && bash ./deploy-from-dockerhub.sh",
   ];
 
-  console.log(`📜 Running: docker ${dockerArgs.join(" ")}`);
+  // Environment assignments contain credentials; never serialize dockerArgs.
+  console.log(`📜 Starting deployment runner for image ${imageTag}`);
 
   const deployProcess = spawn("docker", dockerArgs, {
     detached: true,

@@ -7,6 +7,7 @@
  */
 import { copyFileSync, existsSync, mkdirSync, readFileSync, readdirSync, writeFileSync } from 'fs';
 import { join, resolve } from 'path';
+import { createHash } from 'crypto';
 import pdfParse from 'pdf-parse';
 import {
   INDIA_ACTS_SOURCE_DIR,
@@ -38,6 +39,8 @@ interface PdfMapEntry {
 }
 
 interface StructureReferenceEntry {
+  sourceSha256: string;
+  coverage: 'EXTRACTED_READABLE_PROVISIONS';
   manifestActId: string;
   registryActId?: string;
   sourcePdf: string;
@@ -171,6 +174,8 @@ export async function runGenerateStructure(): Promise<void> {
       manifestActId: entry.manifestActId,
       registryActId: entry.registryActId ?? resolveIngestActId(entry.manifestActId, 'IN'),
       sourcePdf: entry.bundledPath,
+      sourceSha256: createHash('sha256').update(readFileSync(absPath)).digest('hex'),
+      coverage: 'EXTRACTED_READABLE_PROVISIONS',
       structure,
       sectionCount: structure.sections?.count ?? structure.articles?.count ?? provisions.length,
       orderCount: structure.orders?.count,

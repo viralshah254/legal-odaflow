@@ -3814,11 +3814,47 @@ abstract class AppLocalizations {
   /// **'Active matters'**
   String get clientsActiveMatters;
 
+  /// No description provided for @clientsActivityDocumentAdded.
+  ///
+  /// In en, this message translates to:
+  /// **'Document added'**
+  String get clientsActivityDocumentAdded;
+
+  /// No description provided for @clientsActivityKycDocumentReceived.
+  ///
+  /// In en, this message translates to:
+  /// **'KYC document received'**
+  String get clientsActivityKycDocumentReceived;
+
+  /// No description provided for @clientsActivityMatterUpdated.
+  ///
+  /// In en, this message translates to:
+  /// **'Matter updated'**
+  String get clientsActivityMatterUpdated;
+
+  /// No description provided for @clientsActivityMeetingRecorded.
+  ///
+  /// In en, this message translates to:
+  /// **'Meeting recorded'**
+  String get clientsActivityMeetingRecorded;
+
+  /// No description provided for @clientsActivityProfileUpdated.
+  ///
+  /// In en, this message translates to:
+  /// **'Client profile updated'**
+  String get clientsActivityProfileUpdated;
+
   /// No description provided for @clientsAddClient.
   ///
   /// In en, this message translates to:
   /// **'Add client'**
   String get clientsAddClient;
+
+  /// No description provided for @clientsAddContactPerson.
+  ///
+  /// In en, this message translates to:
+  /// **'Add contact person'**
+  String get clientsAddContactPerson;
 
   /// No description provided for @clientsAddFirstClient.
   ///
@@ -3844,17 +3880,47 @@ abstract class AppLocalizations {
   /// **'Add New Client'**
   String get clientsAddNewClient2;
 
+  /// No description provided for @clientsAddPerson.
+  ///
+  /// In en, this message translates to:
+  /// **'Add person'**
+  String get clientsAddPerson;
+
   /// No description provided for @clientsAddress.
   ///
   /// In en, this message translates to:
   /// **'Address'**
   String get clientsAddress;
 
+  /// No description provided for @clientsAddressPlaceholder.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter the client’s address'**
+  String get clientsAddressPlaceholder;
+
+  /// No description provided for @clientsAllDocumentTypes.
+  ///
+  /// In en, this message translates to:
+  /// **'All document types'**
+  String get clientsAllDocumentTypes;
+
+  /// No description provided for @clientsArchiveDocumentDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'This document will be archived and removed from the client file.'**
+  String get clientsArchiveDocumentDescription;
+
   /// No description provided for @clientsAskCopilot.
   ///
   /// In en, this message translates to:
   /// **'Ask Copilot'**
   String get clientsAskCopilot;
+
+  /// No description provided for @clientsAuthorizedContact.
+  ///
+  /// In en, this message translates to:
+  /// **'Authorized contact'**
+  String get clientsAuthorizedContact;
 
   /// No description provided for @clientsBasicClientDetails.
   ///
@@ -3910,11 +3976,47 @@ abstract class AppLocalizations {
   /// **'Client Details'**
   String get clientsClientDetails2;
 
+  /// No description provided for @clientsClientDocuments.
+  ///
+  /// In en, this message translates to:
+  /// **'Client documents'**
+  String get clientsClientDocuments;
+
+  /// No description provided for @clientsClientDocumentsDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Files stored for this client, including documents linked to matters.'**
+  String get clientsClientDocumentsDescription;
+
   /// No description provided for @clientsClientInformation.
   ///
   /// In en, this message translates to:
   /// **'Client Information'**
   String get clientsClientInformation;
+
+  /// No description provided for @clientsClientLevelFile.
+  ///
+  /// In en, this message translates to:
+  /// **'Client-level file'**
+  String get clientsClientLevelFile;
+
+  /// No description provided for @clientsClientLevelFiles.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, one {# client-level file} other {# client-level files}}'**
+  String clientsClientLevelFiles(num count);
+
+  /// No description provided for @clientsClientLevelFilesDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Documents associated directly with this client.'**
+  String get clientsClientLevelFilesDescription;
+
+  /// No description provided for @clientsClientLevelRequest.
+  ///
+  /// In en, this message translates to:
+  /// **'Client-level request'**
+  String get clientsClientLevelRequest;
 
   /// No description provided for @clientsClientName.
   ///
@@ -3988,6 +4090,12 @@ abstract class AppLocalizations {
   /// **'Company name'**
   String get clientsCompanyName;
 
+  /// No description provided for @clientsCompleteProfileFields.
+  ///
+  /// In en, this message translates to:
+  /// **'Complete the client profile by adding: {fields}.'**
+  String clientsCompleteProfileFields(String fields);
+
   /// No description provided for @clientsConflictCheckRequired.
   ///
   /// In en, this message translates to:
@@ -4000,11 +4108,53 @@ abstract class AppLocalizations {
   /// **'Contact Information'**
   String get clientsContactInformation;
 
+  /// No description provided for @clientsContactNamePlaceholder.
+  ///
+  /// In en, this message translates to:
+  /// **'Contact name'**
+  String get clientsContactNamePlaceholder;
+
+  /// No description provided for @clientsContactNumber.
+  ///
+  /// In en, this message translates to:
+  /// **'Contact {number}'**
+  String clientsContactNumber(String number);
+
+  /// No description provided for @clientsContactPeople.
+  ///
+  /// In en, this message translates to:
+  /// **'Contact people'**
+  String get clientsContactPeople;
+
+  /// No description provided for @clientsContactPeopleDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Directors, officers, and authorized contacts for this client.'**
+  String get clientsContactPeopleDescription;
+
+  /// No description provided for @clientsContactPersonNumber.
+  ///
+  /// In en, this message translates to:
+  /// **'Contact person {number}'**
+  String clientsContactPersonNumber(String number);
+
+  /// No description provided for @clientsContactRolePlaceholder.
+  ///
+  /// In en, this message translates to:
+  /// **'Role or title'**
+  String get clientsContactRolePlaceholder;
+
   /// No description provided for @clientsContacts.
   ///
   /// In en, this message translates to:
   /// **'Contacts'**
   String get clientsContacts;
+
+  /// No description provided for @clientsCopyInviteFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Could not copy the portal invite.'**
+  String get clientsCopyInviteFailed;
 
   /// No description provided for @clientsCouldNotLoadClients.
   ///
@@ -4024,6 +4174,12 @@ abstract class AppLocalizations {
   /// **'Country Code'**
   String get clientsCountryCode;
 
+  /// No description provided for @clientsCountryCodePlaceholder.
+  ///
+  /// In en, this message translates to:
+  /// **'For example, KE'**
+  String get clientsCountryCodePlaceholder;
+
   /// No description provided for @clientsCreateClient.
   ///
   /// In en, this message translates to:
@@ -4035,6 +4191,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Create a new client profile'**
   String get clientsCreateClientProfile;
+
+  /// No description provided for @clientsCreateMatter.
+  ///
+  /// In en, this message translates to:
+  /// **'Create matter'**
+  String get clientsCreateMatter;
 
   /// No description provided for @clientsCreating.
   ///
@@ -4048,11 +4210,83 @@ abstract class AppLocalizations {
   /// **'Creating...'**
   String get clientsCreatingClient;
 
+  /// No description provided for @clientsDeadlineAndRisk.
+  ///
+  /// In en, this message translates to:
+  /// **'Deadline and risk'**
+  String get clientsDeadlineAndRisk;
+
+  /// No description provided for @clientsDocumentAssociation.
+  ///
+  /// In en, this message translates to:
+  /// **'Document association'**
+  String get clientsDocumentAssociation;
+
+  /// No description provided for @clientsDocumentOpenFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Could not open the document.'**
+  String get clientsDocumentOpenFailed;
+
+  /// No description provided for @clientsDocumentRemoveFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Could not remove the document.'**
+  String get clientsDocumentRemoveFailed;
+
+  /// No description provided for @clientsDocumentRemoved.
+  ///
+  /// In en, this message translates to:
+  /// **'Document removed'**
+  String get clientsDocumentRemoved;
+
+  /// No description provided for @clientsDocumentRequestFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Could not send the document request.'**
+  String get clientsDocumentRequestFailed;
+
+  /// No description provided for @clientsDocumentRequestSent.
+  ///
+  /// In en, this message translates to:
+  /// **'Document request sent'**
+  String get clientsDocumentRequestSent;
+
+  /// No description provided for @clientsDocumentTypeOptional.
+  ///
+  /// In en, this message translates to:
+  /// **'Document type (optional)'**
+  String get clientsDocumentTypeOptional;
+
+  /// No description provided for @clientsDocumentUploadFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Could not upload the document.'**
+  String get clientsDocumentUploadFailed;
+
+  /// No description provided for @clientsDocumentUploaded.
+  ///
+  /// In en, this message translates to:
+  /// **'Document uploaded'**
+  String get clientsDocumentUploaded;
+
+  /// No description provided for @clientsDocumentsLoadFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Could not load client documents.'**
+  String get clientsDocumentsLoadFailed;
+
   /// No description provided for @clientsDocumentsMobileHint.
   ///
   /// In en, this message translates to:
   /// **'Firm document library support is coming to mobile.'**
   String get clientsDocumentsMobileHint;
+
+  /// No description provided for @clientsDownloadDocument.
+  ///
+  /// In en, this message translates to:
+  /// **'Download {name}'**
+  String clientsDownloadDocument(String name);
 
   /// No description provided for @clientsEdit.
   ///
@@ -4126,6 +4360,12 @@ abstract class AppLocalizations {
   /// **'Failed to update client'**
   String get clientsFailedToUpdateShort;
 
+  /// No description provided for @clientsFilterDocumentType.
+  ///
+  /// In en, this message translates to:
+  /// **'Filter by document type'**
+  String get clientsFilterDocumentType;
+
   /// No description provided for @clientsIndividual.
   ///
   /// In en, this message translates to:
@@ -4137,6 +4377,18 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'KYC'**
   String get clientsKyc;
+
+  /// No description provided for @clientsKycChecking.
+  ///
+  /// In en, this message translates to:
+  /// **'Checking KYC'**
+  String get clientsKycChecking;
+
+  /// No description provided for @clientsKycChecklistReady.
+  ///
+  /// In en, this message translates to:
+  /// **'KYC checklist is ready'**
+  String get clientsKycChecklistReady;
 
   /// No description provided for @clientsKycDocuments.
   ///
@@ -4150,11 +4402,41 @@ abstract class AppLocalizations {
   /// **'Upload and manage KYC documents for {name}'**
   String clientsKycDocumentsDescription(String name);
 
+  /// No description provided for @clientsKycInitFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Could not set up the KYC checklist.'**
+  String get clientsKycInitFailed;
+
+  /// No description provided for @clientsKycLoadFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Could not load KYC information.'**
+  String get clientsKycLoadFailed;
+
   /// No description provided for @clientsKycMissingBadge.
   ///
   /// In en, this message translates to:
   /// **'KYC missing'**
   String get clientsKycMissingBadge;
+
+  /// No description provided for @clientsKycNeedsAttention.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, one {# KYC item needs attention} other {# KYC items need attention}}'**
+  String clientsKycNeedsAttention(num count);
+
+  /// No description provided for @clientsKycNotSetUp.
+  ///
+  /// In en, this message translates to:
+  /// **'KYC not set up'**
+  String get clientsKycNotSetUp;
+
+  /// No description provided for @clientsKycSetupDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Set up the required identity and compliance documents for this client.'**
+  String get clientsKycSetupDescription;
 
   /// No description provided for @clientsKycStatus.
   ///
@@ -4162,17 +4444,77 @@ abstract class AppLocalizations {
   /// **'KYC status'**
   String get clientsKycStatus;
 
+  /// No description provided for @clientsKycUnavailable.
+  ///
+  /// In en, this message translates to:
+  /// **'KYC unavailable'**
+  String get clientsKycUnavailable;
+
+  /// No description provided for @clientsKycUpToDate.
+  ///
+  /// In en, this message translates to:
+  /// **'KYC up to date'**
+  String get clientsKycUpToDate;
+
   /// No description provided for @clientsLinkedMattersCount.
   ///
   /// In en, this message translates to:
   /// **'{count, plural, one {# linked matter} other {# linked matters}}'**
   String clientsLinkedMattersCount(num count);
 
+  /// No description provided for @clientsLoadingClientRecord.
+  ///
+  /// In en, this message translates to:
+  /// **'Loading client record…'**
+  String get clientsLoadingClientRecord;
+
+  /// No description provided for @clientsLoadingDocuments.
+  ///
+  /// In en, this message translates to:
+  /// **'Loading documents…'**
+  String get clientsLoadingDocuments;
+
+  /// No description provided for @clientsLoadingKyc.
+  ///
+  /// In en, this message translates to:
+  /// **'Loading KYC…'**
+  String get clientsLoadingKyc;
+
+  /// No description provided for @clientsLoadingMatters.
+  ///
+  /// In en, this message translates to:
+  /// **'Loading matters…'**
+  String get clientsLoadingMatters;
+
   /// No description provided for @clientsManageRelationships.
   ///
   /// In en, this message translates to:
   /// **'Manage your client relationships'**
   String get clientsManageRelationships;
+
+  /// No description provided for @clientsMatterLinked.
+  ///
+  /// In en, this message translates to:
+  /// **'Matter linked'**
+  String get clientsMatterLinked;
+
+  /// No description provided for @clientsMatterLinkedFiles.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, one {# matter-linked file} other {# matter-linked files}}'**
+  String clientsMatterLinkedFiles(num count);
+
+  /// No description provided for @clientsMatterLinkedFilesDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Documents associated with this client’s matters.'**
+  String get clientsMatterLinkedFilesDescription;
+
+  /// No description provided for @clientsMattersLoadFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Could not load client matters.'**
+  String get clientsMattersLoadFailed;
 
   /// No description provided for @clientsName.
   ///
@@ -4198,6 +4540,78 @@ abstract class AppLocalizations {
   /// **'New client'**
   String get clientsNewClient;
 
+  /// No description provided for @clientsNextActionCompleteProfile.
+  ///
+  /// In en, this message translates to:
+  /// **'Complete the client profile'**
+  String get clientsNextActionCompleteProfile;
+
+  /// No description provided for @clientsNextActionCompleteProfileDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Add the missing contact details so the firm has a complete client record.'**
+  String get clientsNextActionCompleteProfileDescription;
+
+  /// No description provided for @clientsNextActionCreateMatter.
+  ///
+  /// In en, this message translates to:
+  /// **'Create the first matter'**
+  String get clientsNextActionCreateMatter;
+
+  /// No description provided for @clientsNextActionCreateMatterDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Start a matter to connect work, documents, deadlines, and billing to this client.'**
+  String get clientsNextActionCreateMatterDescription;
+
+  /// No description provided for @clientsNextActionOpenKyc.
+  ///
+  /// In en, this message translates to:
+  /// **'Open KYC'**
+  String get clientsNextActionOpenKyc;
+
+  /// No description provided for @clientsNextActionOpenMatters.
+  ///
+  /// In en, this message translates to:
+  /// **'Open matters'**
+  String get clientsNextActionOpenMatters;
+
+  /// No description provided for @clientsNextActionReviewKyc.
+  ///
+  /// In en, this message translates to:
+  /// **'Review KYC'**
+  String get clientsNextActionReviewKyc;
+
+  /// No description provided for @clientsNextActionReviewKycDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, one {Review # KYC item that needs attention.} other {Review # KYC items that need attention.}}'**
+  String clientsNextActionReviewKycDescription(num count);
+
+  /// No description provided for @clientsNextActionReviewRisk.
+  ///
+  /// In en, this message translates to:
+  /// **'Review high-risk matters'**
+  String get clientsNextActionReviewRisk;
+
+  /// No description provided for @clientsNextActionReviewRiskDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, one {Review # matter with a high risk score.} other {Review # matters with high risk scores.}}'**
+  String clientsNextActionReviewRiskDescription(num count);
+
+  /// No description provided for @clientsNextActionSetupKyc.
+  ///
+  /// In en, this message translates to:
+  /// **'Set up KYC'**
+  String get clientsNextActionSetupKyc;
+
+  /// No description provided for @clientsNextActionSetupKycDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Create the KYC checklist and begin collecting the required documents.'**
+  String get clientsNextActionSetupKycDescription;
+
   /// No description provided for @clientsNextContacts.
   ///
   /// In en, this message translates to:
@@ -4209,6 +4623,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'No active tenant selected.'**
   String get clientsNoActiveTenant;
+
+  /// No description provided for @clientsNoClientLevelFiles.
+  ///
+  /// In en, this message translates to:
+  /// **'No client-level files.'**
+  String get clientsNoClientLevelFiles;
 
   /// No description provided for @clientsNoClients.
   ///
@@ -4228,6 +4648,30 @@ abstract class AppLocalizations {
   /// **'No clients match \"{query}\".'**
   String clientsNoClientsMatch(String query);
 
+  /// No description provided for @clientsNoContactPeopleYet.
+  ///
+  /// In en, this message translates to:
+  /// **'No contact people added yet.'**
+  String get clientsNoContactPeopleYet;
+
+  /// No description provided for @clientsNoDeadline.
+  ///
+  /// In en, this message translates to:
+  /// **'No deadline'**
+  String get clientsNoDeadline;
+
+  /// No description provided for @clientsNoDocumentsYet.
+  ///
+  /// In en, this message translates to:
+  /// **'No documents yet'**
+  String get clientsNoDocumentsYet;
+
+  /// No description provided for @clientsNoDocumentsYetDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Upload the first document to start the client file.'**
+  String get clientsNoDocumentsYetDescription;
+
   /// No description provided for @clientsNoKycChecklist.
   ///
   /// In en, this message translates to:
@@ -4246,11 +4690,53 @@ abstract class AppLocalizations {
   /// **'Create a matter and link it to this client.'**
   String get clientsNoLinkedMattersHint;
 
+  /// No description provided for @clientsNoMatchingDocuments.
+  ///
+  /// In en, this message translates to:
+  /// **'No matching documents'**
+  String get clientsNoMatchingDocuments;
+
+  /// No description provided for @clientsNoMatchingDocumentsDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Try a different search or document type.'**
+  String get clientsNoMatchingDocumentsDescription;
+
+  /// No description provided for @clientsNoMatchingMatters.
+  ///
+  /// In en, this message translates to:
+  /// **'No matching matters'**
+  String get clientsNoMatchingMatters;
+
+  /// No description provided for @clientsNoMatchingMattersDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Try a different search.'**
+  String get clientsNoMatchingMattersDescription;
+
+  /// No description provided for @clientsNoMatterLinkedFiles.
+  ///
+  /// In en, this message translates to:
+  /// **'No matter-linked files.'**
+  String get clientsNoMatterLinkedFiles;
+
   /// No description provided for @clientsNoMattersForClient.
   ///
   /// In en, this message translates to:
   /// **'No matters found for this client'**
   String get clientsNoMattersForClient;
+
+  /// No description provided for @clientsNoMattersForClientDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Create a matter to start tracking work for this client.'**
+  String get clientsNoMattersForClientDescription;
+
+  /// No description provided for @clientsNoOpenAction.
+  ///
+  /// In en, this message translates to:
+  /// **'No open action'**
+  String get clientsNoOpenAction;
 
   /// No description provided for @clientsNoSearchResults.
   ///
@@ -4276,6 +4762,78 @@ abstract class AppLocalizations {
   /// **'Open'**
   String get clientsOpen;
 
+  /// No description provided for @clientsOpenAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Open action'**
+  String get clientsOpenAction;
+
+  /// No description provided for @clientsOpenClientActions.
+  ///
+  /// In en, this message translates to:
+  /// **'Open client actions'**
+  String get clientsOpenClientActions;
+
+  /// No description provided for @clientsOpenComplianceQueue.
+  ///
+  /// In en, this message translates to:
+  /// **'Open compliance queue'**
+  String get clientsOpenComplianceQueue;
+
+  /// No description provided for @clientsOpenKycSetup.
+  ///
+  /// In en, this message translates to:
+  /// **'Set up KYC'**
+  String get clientsOpenKycSetup;
+
+  /// No description provided for @clientsOpenSection.
+  ///
+  /// In en, this message translates to:
+  /// **'Open {section}'**
+  String clientsOpenSection(String section);
+
+  /// No description provided for @clientsOverviewNextAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Next action'**
+  String get clientsOverviewNextAction;
+
+  /// No description provided for @clientsOverviewNextActionDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'The most useful step to move this client forward.'**
+  String get clientsOverviewNextActionDescription;
+
+  /// No description provided for @clientsOverviewNoNextAction.
+  ///
+  /// In en, this message translates to:
+  /// **'No action is required right now.'**
+  String get clientsOverviewNoNextAction;
+
+  /// No description provided for @clientsOverviewNoRecentActivity.
+  ///
+  /// In en, this message translates to:
+  /// **'No recent activity yet.'**
+  String get clientsOverviewNoRecentActivity;
+
+  /// No description provided for @clientsOverviewRecentActivity.
+  ///
+  /// In en, this message translates to:
+  /// **'Recent activity'**
+  String get clientsOverviewRecentActivity;
+
+  /// No description provided for @clientsOverviewRecentActivityDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Latest updates across this client’s matters and records.'**
+  String get clientsOverviewRecentActivityDescription;
+
+  /// No description provided for @clientsOwner.
+  ///
+  /// In en, this message translates to:
+  /// **'Owner'**
+  String get clientsOwner;
+
   /// No description provided for @clientsPhone.
   ///
   /// In en, this message translates to:
@@ -4293,6 +4851,66 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'A client with this phone number may already exist.'**
   String get clientsPhoneDuplicateWarning;
+
+  /// No description provided for @clientsPortalInvite.
+  ///
+  /// In en, this message translates to:
+  /// **'Portal invite'**
+  String get clientsPortalInvite;
+
+  /// No description provided for @clientsPortalInviteCopied.
+  ///
+  /// In en, this message translates to:
+  /// **'Portal invite copied'**
+  String get clientsPortalInviteCopied;
+
+  /// No description provided for @clientsPortalInviteCreated.
+  ///
+  /// In en, this message translates to:
+  /// **'Portal invite created'**
+  String get clientsPortalInviteCreated;
+
+  /// No description provided for @clientsPortalInviteCreatedCopied.
+  ///
+  /// In en, this message translates to:
+  /// **'Portal invite created and copied'**
+  String get clientsPortalInviteCreatedCopied;
+
+  /// No description provided for @clientsPortalInviteFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Could not create the portal invite.'**
+  String get clientsPortalInviteFailed;
+
+  /// No description provided for @clientsPortalInviteReady.
+  ///
+  /// In en, this message translates to:
+  /// **'Client portal invite ready'**
+  String get clientsPortalInviteReady;
+
+  /// No description provided for @clientsPortalInviteSecurity.
+  ///
+  /// In en, this message translates to:
+  /// **'Share this secure link only with the intended client.'**
+  String get clientsPortalInviteSecurity;
+
+  /// No description provided for @clientsPortalInviteUrl.
+  ///
+  /// In en, this message translates to:
+  /// **'Portal invite URL'**
+  String get clientsPortalInviteUrl;
+
+  /// No description provided for @clientsPreviewDocument.
+  ///
+  /// In en, this message translates to:
+  /// **'Preview {name}'**
+  String clientsPreviewDocument(String name);
+
+  /// No description provided for @clientsProfileComplete.
+  ///
+  /// In en, this message translates to:
+  /// **'Profile complete'**
+  String get clientsProfileComplete;
 
   /// No description provided for @clientsProfileIncomplete.
   ///
@@ -4324,6 +4942,78 @@ abstract class AppLocalizations {
   /// **'All matters associated with this client'**
   String get clientsRelatedMattersDescription;
 
+  /// No description provided for @clientsRemoveClientDocumentDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Remove {name} from the client file? The document will be archived.'**
+  String clientsRemoveClientDocumentDescription(String name);
+
+  /// No description provided for @clientsRemoveClientDocumentTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Remove client document?'**
+  String get clientsRemoveClientDocumentTitle;
+
+  /// No description provided for @clientsRemoveContactPerson.
+  ///
+  /// In en, this message translates to:
+  /// **'Remove contact person {number}'**
+  String clientsRemoveContactPerson(String number);
+
+  /// No description provided for @clientsRemoveDocument.
+  ///
+  /// In en, this message translates to:
+  /// **'Remove {name}'**
+  String clientsRemoveDocument(String name);
+
+  /// No description provided for @clientsRemoveDocumentAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Remove document'**
+  String get clientsRemoveDocumentAction;
+
+  /// No description provided for @clientsRequestDocument.
+  ///
+  /// In en, this message translates to:
+  /// **'Request document'**
+  String get clientsRequestDocument;
+
+  /// No description provided for @clientsRequestDocumentDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Ask the client to provide a document through the secure portal.'**
+  String get clientsRequestDocumentDescription;
+
+  /// No description provided for @clientsRequestDocumentPlaceholder.
+  ///
+  /// In en, this message translates to:
+  /// **'For example, proof of address'**
+  String get clientsRequestDocumentPlaceholder;
+
+  /// No description provided for @clientsRequestDocumentTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Requested document'**
+  String get clientsRequestDocumentTitle;
+
+  /// No description provided for @clientsRiskScore.
+  ///
+  /// In en, this message translates to:
+  /// **'Risk {score}'**
+  String clientsRiskScore(String score);
+
+  /// No description provided for @clientsRoleTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Role or title'**
+  String get clientsRoleTitle;
+
+  /// No description provided for @clientsSaveBasicAndCompleteLater.
+  ///
+  /// In en, this message translates to:
+  /// **'Save basic details and complete later'**
+  String get clientsSaveBasicAndCompleteLater;
+
   /// No description provided for @clientsSaveChanges.
   ///
   /// In en, this message translates to:
@@ -4354,6 +5044,18 @@ abstract class AppLocalizations {
   /// **'Search clients'**
   String get clientsSearchClientsLabel;
 
+  /// No description provided for @clientsSearchDocuments.
+  ///
+  /// In en, this message translates to:
+  /// **'Search documents'**
+  String get clientsSearchDocuments;
+
+  /// No description provided for @clientsSearchMatters.
+  ///
+  /// In en, this message translates to:
+  /// **'Search matters'**
+  String get clientsSearchMatters;
+
   /// No description provided for @clientsSearchPlaceholder.
   ///
   /// In en, this message translates to:
@@ -4371,6 +5073,54 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Select or add a client (optional)'**
   String get clientsSelectOrAddClient;
+
+  /// No description provided for @clientsSendRequest.
+  ///
+  /// In en, this message translates to:
+  /// **'Send request'**
+  String get clientsSendRequest;
+
+  /// No description provided for @clientsSortDeadline.
+  ///
+  /// In en, this message translates to:
+  /// **'Upcoming deadline'**
+  String get clientsSortDeadline;
+
+  /// No description provided for @clientsSortMatters.
+  ///
+  /// In en, this message translates to:
+  /// **'Sort matters'**
+  String get clientsSortMatters;
+
+  /// No description provided for @clientsSortRecentlyUpdated.
+  ///
+  /// In en, this message translates to:
+  /// **'Recently updated'**
+  String get clientsSortRecentlyUpdated;
+
+  /// No description provided for @clientsSortRisk.
+  ///
+  /// In en, this message translates to:
+  /// **'Highest risk'**
+  String get clientsSortRisk;
+
+  /// No description provided for @clientsSortTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Title'**
+  String get clientsSortTitle;
+
+  /// No description provided for @clientsStage.
+  ///
+  /// In en, this message translates to:
+  /// **'Stage'**
+  String get clientsStage;
+
+  /// No description provided for @clientsStatsClientFiles.
+  ///
+  /// In en, this message translates to:
+  /// **'Client files'**
+  String get clientsStatsClientFiles;
 
   /// No description provided for @clientsStatsHighRisk.
   ///
@@ -4516,6 +5266,24 @@ abstract class AppLocalizations {
   /// **'Unable to create client.'**
   String get clientsUnableToCreateClient;
 
+  /// No description provided for @clientsUnassigned.
+  ///
+  /// In en, this message translates to:
+  /// **'Unassigned'**
+  String get clientsUnassigned;
+
+  /// No description provided for @clientsUploadFirstDocument.
+  ///
+  /// In en, this message translates to:
+  /// **'Upload first document'**
+  String get clientsUploadFirstDocument;
+
+  /// No description provided for @clientsUploadProgress.
+  ///
+  /// In en, this message translates to:
+  /// **'Upload progress: {progress}%'**
+  String clientsUploadProgress(String progress);
+
   /// No description provided for @clientsUs.
   ///
   /// In en, this message translates to:
@@ -4527,6 +5295,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'view existing client'**
   String get clientsViewExistingClient;
+
+  /// No description provided for @clientsWorkspaceSections.
+  ///
+  /// In en, this message translates to:
+  /// **'Client workspace sections'**
+  String get clientsWorkspaceSections;
 
   /// No description provided for @common000.
   ///
@@ -5038,6 +5812,12 @@ abstract class AppLocalizations {
   /// **'Confidentiality'**
   String get commonConfidentiality;
 
+  /// No description provided for @commonConfirm.
+  ///
+  /// In en, this message translates to:
+  /// **'Confirm'**
+  String get commonConfirm;
+
   /// No description provided for @commonConfirmCountry.
   ///
   /// In en, this message translates to:
@@ -5091,6 +5871,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Copilot & Research model'**
   String get commonCopilotResearchModel;
+
+  /// No description provided for @commonCopy.
+  ///
+  /// In en, this message translates to:
+  /// **'Copy'**
+  String get commonCopy;
 
   /// No description provided for @commonCopyCitation.
   ///
@@ -7040,6 +7826,12 @@ abstract class AppLocalizations {
   /// **'Reject lead'**
   String get commonRejectLead;
 
+  /// No description provided for @commonRemove.
+  ///
+  /// In en, this message translates to:
+  /// **'Remove'**
+  String get commonRemove;
+
   /// No description provided for @commonRepresentationBeforeCourtsOrTribunals.
   ///
   /// In en, this message translates to:
@@ -7646,6 +8438,12 @@ abstract class AppLocalizations {
   /// **'Unable to load AI usage.'**
   String get commonUnableToLoadAiUsage;
 
+  /// No description provided for @commonUnavailable.
+  ///
+  /// In en, this message translates to:
+  /// **'Unavailable'**
+  String get commonUnavailable;
+
   /// No description provided for @commonUnitedKingdom.
   ///
   /// In en, this message translates to:
@@ -7675,6 +8473,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Upgrade to Professional'**
   String get commonUpgradeToProfessional;
+
+  /// No description provided for @commonUpload.
+  ///
+  /// In en, this message translates to:
+  /// **'Upload'**
+  String get commonUpload;
 
   /// No description provided for @commonUploadADocumentTemplate.
   ///
@@ -11606,13 +12410,13 @@ abstract class AppLocalizations {
   /// No description provided for @dashboardOnboardingMatterDescription.
   ///
   /// In en, this message translates to:
-  /// **'Create a matter to begin tracking a case'**
+  /// **'Set up a matter to begin tracking the case'**
   String get dashboardOnboardingMatterDescription;
 
   /// No description provided for @dashboardOnboardingMatterLabel.
   ///
   /// In en, this message translates to:
-  /// **'Open a matter'**
+  /// **'Create your first matter'**
   String get dashboardOnboardingMatterLabel;
 
   /// No description provided for @dashboardOnboardingProgress.
@@ -12316,72 +13120,6 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'What we understood'**
   String get docuDraftWhatWeUnderstood;
-
-  /// No description provided for @promptRefineTitle.
-  ///
-  /// In en, this message translates to:
-  /// **'Refined prompt'**
-  String get promptRefineTitle;
-
-  /// No description provided for @promptRefineDescription.
-  ///
-  /// In en, this message translates to:
-  /// **'We reorganized your description for clearer AI results. Edit if needed, then continue.'**
-  String get promptRefineDescription;
-
-  /// No description provided for @promptRefineYourOriginal.
-  ///
-  /// In en, this message translates to:
-  /// **'Your original prompt'**
-  String get promptRefineYourOriginal;
-
-  /// No description provided for @promptRefineRefinedLabel.
-  ///
-  /// In en, this message translates to:
-  /// **'Refined prompt'**
-  String get promptRefineRefinedLabel;
-
-  /// No description provided for @promptRefineContinueRefined.
-  ///
-  /// In en, this message translates to:
-  /// **'Continue with refined prompt'**
-  String get promptRefineContinueRefined;
-
-  /// No description provided for @promptRefineUseOriginal.
-  ///
-  /// In en, this message translates to:
-  /// **'Use original instead'**
-  String get promptRefineUseOriginal;
-
-  /// No description provided for @promptRefineHintJurisdiction.
-  ///
-  /// In en, this message translates to:
-  /// **'Jurisdiction'**
-  String get promptRefineHintJurisdiction;
-
-  /// No description provided for @promptRefineHintDocument.
-  ///
-  /// In en, this message translates to:
-  /// **'Document'**
-  String get promptRefineHintDocument;
-
-  /// No description provided for @promptRefineHintParty.
-  ///
-  /// In en, this message translates to:
-  /// **'Party'**
-  String get promptRefineHintParty;
-
-  /// No description provided for @promptRefineHintStatute.
-  ///
-  /// In en, this message translates to:
-  /// **'Statute'**
-  String get promptRefineHintStatute;
-
-  /// No description provided for @promptRefinePreparing.
-  ///
-  /// In en, this message translates to:
-  /// **'Preparing your prompt…'**
-  String get promptRefinePreparing;
 
   /// No description provided for @draftingAccuracyAuditTitle.
   ///
@@ -17208,6 +17946,12 @@ abstract class AppLocalizations {
   /// **'Trust'**
   String get lawyerNavTrust;
 
+  /// No description provided for @lawyerNavTrustAccounts.
+  ///
+  /// In en, this message translates to:
+  /// **'Trust Accounts'**
+  String get lawyerNavTrustAccounts;
+
   /// No description provided for @lawyerNavVault.
   ///
   /// In en, this message translates to:
@@ -17469,7 +18213,7 @@ abstract class AppLocalizations {
   /// No description provided for @lawyerOpenMatterWorkbench.
   ///
   /// In en, this message translates to:
-  /// **'Open matter workbench'**
+  /// **'Open Quick AI'**
   String get lawyerOpenMatterWorkbench;
 
   /// No description provided for @lawyerOpenTaskDetails.
@@ -22147,6 +22891,121 @@ abstract class AppLocalizations {
   /// **'United States'**
   String get marketingHomeLandingIssueBoardRegionUnitedStates;
 
+  /// No description provided for @marketingHomeLandingIssueBoardResearchExamplesBnss101Label.
+  ///
+  /// In en, this message translates to:
+  /// **'When can police arrest without a warrant?'**
+  String get marketingHomeLandingIssueBoardResearchExamplesBnss101Label;
+
+  /// No description provided for @marketingHomeLandingIssueBoardResearchExamplesBnss101Subtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Criminal · BNSS §101'**
+  String get marketingHomeLandingIssueBoardResearchExamplesBnss101Subtitle;
+
+  /// No description provided for @marketingHomeLandingIssueBoardResearchExamplesBnss101Tag.
+  ///
+  /// In en, this message translates to:
+  /// **'India'**
+  String get marketingHomeLandingIssueBoardResearchExamplesBnss101Tag;
+
+  /// No description provided for @marketingHomeLandingIssueBoardResearchExamplesContactDraftingLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Essential clauses in a service agreement'**
+  String get marketingHomeLandingIssueBoardResearchExamplesContactDraftingLabel;
+
+  /// No description provided for @marketingHomeLandingIssueBoardResearchExamplesContactDraftingSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Commercial · Contract law'**
+  String
+  get marketingHomeLandingIssueBoardResearchExamplesContactDraftingSubtitle;
+
+  /// No description provided for @marketingHomeLandingIssueBoardResearchExamplesContactDraftingTag.
+  ///
+  /// In en, this message translates to:
+  /// **'Drafting'**
+  String get marketingHomeLandingIssueBoardResearchExamplesContactDraftingTag;
+
+  /// No description provided for @marketingHomeLandingIssueBoardResearchExamplesFrcp12Label.
+  ///
+  /// In en, this message translates to:
+  /// **'12(b)(6) motion to dismiss standard'**
+  String get marketingHomeLandingIssueBoardResearchExamplesFrcp12Label;
+
+  /// No description provided for @marketingHomeLandingIssueBoardResearchExamplesFrcp12Subtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Civil · FRCP Rule 12'**
+  String get marketingHomeLandingIssueBoardResearchExamplesFrcp12Subtitle;
+
+  /// No description provided for @marketingHomeLandingIssueBoardResearchExamplesFrcp12Tag.
+  ///
+  /// In en, this message translates to:
+  /// **'Federal'**
+  String get marketingHomeLandingIssueBoardResearchExamplesFrcp12Tag;
+
+  /// No description provided for @marketingHomeLandingIssueBoardResearchExamplesKeLabourLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Wrongful termination remedies'**
+  String get marketingHomeLandingIssueBoardResearchExamplesKeLabourLabel;
+
+  /// No description provided for @marketingHomeLandingIssueBoardResearchExamplesKeLabourSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Labour · Kenya Employment Act'**
+  String get marketingHomeLandingIssueBoardResearchExamplesKeLabourSubtitle;
+
+  /// No description provided for @marketingHomeLandingIssueBoardResearchExamplesKeLabourTag.
+  ///
+  /// In en, this message translates to:
+  /// **'Kenya'**
+  String get marketingHomeLandingIssueBoardResearchExamplesKeLabourTag;
+
+  /// No description provided for @marketingHomeLandingIssueBoardResearchExamplesSection138Label.
+  ///
+  /// In en, this message translates to:
+  /// **'Cheque bounce notice requirements'**
+  String get marketingHomeLandingIssueBoardResearchExamplesSection138Label;
+
+  /// No description provided for @marketingHomeLandingIssueBoardResearchExamplesSection138Subtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Criminal · NI Act §138'**
+  String get marketingHomeLandingIssueBoardResearchExamplesSection138Subtitle;
+
+  /// No description provided for @marketingHomeLandingIssueBoardResearchExamplesSection138Tag.
+  ///
+  /// In en, this message translates to:
+  /// **'Recovery'**
+  String get marketingHomeLandingIssueBoardResearchExamplesSection138Tag;
+
+  /// No description provided for @marketingHomeLandingIssueBoardResearchExamplesUkEmploymentLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Unfair dismissal time limits'**
+  String get marketingHomeLandingIssueBoardResearchExamplesUkEmploymentLabel;
+
+  /// No description provided for @marketingHomeLandingIssueBoardResearchExamplesUkEmploymentSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Employment · UK ERA 1996'**
+  String get marketingHomeLandingIssueBoardResearchExamplesUkEmploymentSubtitle;
+
+  /// No description provided for @marketingHomeLandingIssueBoardResearchExamplesUkEmploymentTag.
+  ///
+  /// In en, this message translates to:
+  /// **'UK'**
+  String get marketingHomeLandingIssueBoardResearchExamplesUkEmploymentTag;
+
+  /// No description provided for @marketingHomeLandingIssueBoardResearchLockedHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Sample research questions lawyers ask every day — sign up free to try.'**
+  String get marketingHomeLandingIssueBoardResearchLockedHint;
+
   /// No description provided for @marketingHomeLandingIssueBoardResearchTeaserUnavailable.
   ///
   /// In en, this message translates to:
@@ -25007,6 +25866,18 @@ abstract class AppLocalizations {
   /// **'Document matches'**
   String get matterIntelligenceDocumentMatches;
 
+  /// No description provided for @matterIntelligenceDocumentsYouRequested.
+  ///
+  /// In en, this message translates to:
+  /// **'Documents you requested'**
+  String get matterIntelligenceDocumentsYouRequested;
+
+  /// No description provided for @matterIntelligenceDocumentsYouRequestedHint.
+  ///
+  /// In en, this message translates to:
+  /// **'These match the documents named in your drafting request. Select what to draft — we\'ll open each in order.'**
+  String get matterIntelligenceDocumentsYouRequestedHint;
+
   /// No description provided for @matterIntelligenceDraftNow.
   ///
   /// In en, this message translates to:
@@ -25073,17 +25944,53 @@ abstract class AppLocalizations {
   /// **'Next best action'**
   String get matterIntelligenceNextBestAction;
 
+  /// No description provided for @matterIntelligenceOpposingPartyFilingSet.
+  ///
+  /// In en, this message translates to:
+  /// **'Opposing party filings'**
+  String get matterIntelligenceOpposingPartyFilingSet;
+
+  /// No description provided for @matterIntelligenceOpposingPartyFilingSetHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Documents the other side may file in response. Optional — include if you want to prepare counter-strategy.'**
+  String get matterIntelligenceOpposingPartyFilingSetHint;
+
   /// No description provided for @matterIntelligenceOtherMatches.
   ///
   /// In en, this message translates to:
   /// **'Other matches'**
   String get matterIntelligenceOtherMatches;
 
+  /// No description provided for @matterIntelligencePickAlternative.
+  ///
+  /// In en, this message translates to:
+  /// **'Pick closest match'**
+  String get matterIntelligencePickAlternative;
+
+  /// No description provided for @matterIntelligenceProvisionalMatch.
+  ///
+  /// In en, this message translates to:
+  /// **'Forum inferred — confirm before drafting'**
+  String get matterIntelligenceProvisionalMatch;
+
   /// No description provided for @matterIntelligenceRecommendedActions.
   ///
   /// In en, this message translates to:
   /// **'Recommended actions'**
   String get matterIntelligenceRecommendedActions;
+
+  /// No description provided for @matterIntelligenceRecommendedDocuments.
+  ///
+  /// In en, this message translates to:
+  /// **'Recommended documents'**
+  String get matterIntelligenceRecommendedDocuments;
+
+  /// No description provided for @matterIntelligenceRecommendedDocumentsHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Based on your drafting request'**
+  String get matterIntelligenceRecommendedDocumentsHint;
 
   /// No description provided for @matterIntelligenceRecommendedFilingSet.
   ///
@@ -25121,6 +26028,12 @@ abstract class AppLocalizations {
   /// **'AI-inferred practice area, forum, and recommended next steps'**
   String get matterIntelligenceSubtitle;
 
+  /// No description provided for @matterIntelligenceSuggestedForum.
+  ///
+  /// In en, this message translates to:
+  /// **'Suggested forum'**
+  String get matterIntelligenceSuggestedForum;
+
   /// No description provided for @matterIntelligenceSuggestionsStuck.
   ///
   /// In en, this message translates to:
@@ -25132,6 +26045,18 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Matter intelligence'**
   String get matterIntelligenceTitle;
+
+  /// No description provided for @matterIntelligenceUnmappedRequestedDocs.
+  ///
+  /// In en, this message translates to:
+  /// **'Couldn\'t match automatically'**
+  String get matterIntelligenceUnmappedRequestedDocs;
+
+  /// No description provided for @matterIntelligenceUnmappedRequestedDocsHint.
+  ///
+  /// In en, this message translates to:
+  /// **'We found these in your request but couldn\'t map them to a template yet. Pick the closest option below.'**
+  String get matterIntelligenceUnmappedRequestedDocsHint;
 
   /// No description provided for @matterIntelligenceUpdatingSuggestions.
   ///
@@ -26609,10 +27534,16 @@ abstract class AppLocalizations {
   /// **'Filing type *'**
   String get mattersFilingType;
 
+  /// No description provided for @mattersFilters.
+  ///
+  /// In en, this message translates to:
+  /// **'Filters'**
+  String get mattersFilters;
+
   /// No description provided for @mattersFormsPickerDescription.
   ///
   /// In en, this message translates to:
-  /// **'Select applicable government forms or standard templates for this matter. Selected forms will be pre-attached to the matter workbench.'**
+  /// **'Select applicable government forms or standard templates for this matter. Selected forms will be pre-attached in Documents.'**
   String get mattersFormsPickerDescription;
 
   /// No description provided for @mattersFormsSelectedCount.
@@ -27368,7 +28299,7 @@ abstract class AppLocalizations {
   /// No description provided for @mattersNoStandardFormsFound.
   ///
   /// In en, this message translates to:
-  /// **'No standard forms found for this practice area and jurisdiction. You can still proceed — forms can be attached later from the matter workbench.'**
+  /// **'No standard forms found for this practice area and jurisdiction. You can still proceed — forms can be attached later from Documents.'**
   String get mattersNoStandardFormsFound;
 
   /// No description provided for @mattersNoStrategyMemosYet.
@@ -27773,6 +28704,12 @@ abstract class AppLocalizations {
   /// **'Wills, Estates & Probate'**
   String get mattersPracticeAreasWillsEstatesProbate;
 
+  /// No description provided for @mattersPremiumModelResearchHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Premium models may take a little longer.'**
+  String get mattersPremiumModelResearchHint;
+
   /// No description provided for @mattersPrescribedForms.
   ///
   /// In en, this message translates to:
@@ -27796,6 +28733,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Print'**
   String get mattersPrintDocument;
+
+  /// No description provided for @mattersPromptRefinePreparing.
+  ///
+  /// In en, this message translates to:
+  /// **'Preparing your prompt…'**
+  String get mattersPromptRefinePreparing;
 
   /// No description provided for @mattersProvider.
   ///
@@ -27970,6 +28913,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Running legal research'**
   String get mattersResearchProgressTitle;
+
+  /// No description provided for @mattersResearchPromptTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Research question'**
+  String get mattersResearchPromptTitle;
 
   /// No description provided for @mattersResearchQuestionMinLength.
   ///
@@ -28805,11 +29754,29 @@ abstract class AppLocalizations {
   /// **'AI'**
   String get mattersWorkspaceAi;
 
+  /// No description provided for @mattersWorkspaceBackToMatter.
+  ///
+  /// In en, this message translates to:
+  /// **'Back to matter'**
+  String get mattersWorkspaceBackToMatter;
+
   /// No description provided for @mattersWorkspaceBilling.
   ///
   /// In en, this message translates to:
   /// **'Billing'**
   String get mattersWorkspaceBilling;
+
+  /// No description provided for @mattersWorkspaceCaseTools.
+  ///
+  /// In en, this message translates to:
+  /// **'Case tools'**
+  String get mattersWorkspaceCaseTools;
+
+  /// No description provided for @mattersWorkspaceCloseEvidenceDetails.
+  ///
+  /// In en, this message translates to:
+  /// **'Close evidence details'**
+  String get mattersWorkspaceCloseEvidenceDetails;
 
   /// No description provided for @mattersWorkspaceCourt.
   ///
@@ -28829,17 +29796,83 @@ abstract class AppLocalizations {
   /// **'Documents'**
   String get mattersWorkspaceDocuments;
 
+  /// No description provided for @mattersWorkspaceDraft.
+  ///
+  /// In en, this message translates to:
+  /// **'Draft'**
+  String get mattersWorkspaceDraft;
+
+  /// No description provided for @mattersWorkspaceEnterFullscreen.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter fullscreen'**
+  String get mattersWorkspaceEnterFullscreen;
+
   /// No description provided for @mattersWorkspaceEvidence.
   ///
   /// In en, this message translates to:
   /// **'Evidence'**
   String get mattersWorkspaceEvidence;
 
+  /// No description provided for @mattersWorkspaceEvidenceMap.
+  ///
+  /// In en, this message translates to:
+  /// **'Evidence map'**
+  String get mattersWorkspaceEvidenceMap;
+
+  /// No description provided for @mattersWorkspaceEvidenceMapDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Trace issues, facts, documents, and contradictions in one view.'**
+  String get mattersWorkspaceEvidenceMapDescription;
+
+  /// No description provided for @mattersWorkspaceExitFullscreen.
+  ///
+  /// In en, this message translates to:
+  /// **'Exit fullscreen'**
+  String get mattersWorkspaceExitFullscreen;
+
+  /// No description provided for @mattersWorkspaceLitigation.
+  ///
+  /// In en, this message translates to:
+  /// **'Litigation'**
+  String get mattersWorkspaceLitigation;
+
   /// No description provided for @mattersWorkspaceMeetings.
   ///
   /// In en, this message translates to:
   /// **'Meetings'**
   String get mattersWorkspaceMeetings;
+
+  /// No description provided for @mattersWorkspaceMore.
+  ///
+  /// In en, this message translates to:
+  /// **'More'**
+  String get mattersWorkspaceMore;
+
+  /// No description provided for @mattersWorkspaceNavigationLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Matter workspace'**
+  String get mattersWorkspaceNavigationLabel;
+
+  /// No description provided for @mattersWorkspaceNodeCount.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, one {# node} other {# nodes}}'**
+  String mattersWorkspaceNodeCount(num count);
+
+  /// No description provided for @mattersWorkspaceOpenMore.
+  ///
+  /// In en, this message translates to:
+  /// **'Open more matter sections'**
+  String get mattersWorkspaceOpenMore;
+
+  /// No description provided for @mattersWorkspaceOpenNavigation.
+  ///
+  /// In en, this message translates to:
+  /// **'Open matter navigation. Current section: {section}'**
+  String mattersWorkspaceOpenNavigation(String section);
 
   /// No description provided for @mattersWorkspaceOpponent.
   ///
@@ -28853,11 +29886,65 @@ abstract class AppLocalizations {
   /// **'Outcome'**
   String get mattersWorkspaceOutcome;
 
+  /// No description provided for @mattersWorkspaceOverview.
+  ///
+  /// In en, this message translates to:
+  /// **'Overview'**
+  String get mattersWorkspaceOverview;
+
   /// No description provided for @mattersWorkspaceParties.
   ///
   /// In en, this message translates to:
   /// **'Parties'**
   String get mattersWorkspaceParties;
+
+  /// No description provided for @mattersWorkspacePeopleMoney.
+  ///
+  /// In en, this message translates to:
+  /// **'People & money'**
+  String get mattersWorkspacePeopleMoney;
+
+  /// No description provided for @mattersWorkspaceQuickAi.
+  ///
+  /// In en, this message translates to:
+  /// **'Quick AI'**
+  String get mattersWorkspaceQuickAi;
+
+  /// No description provided for @mattersWorkspaceRelatedMatterTools.
+  ///
+  /// In en, this message translates to:
+  /// **'Related matter tools'**
+  String get mattersWorkspaceRelatedMatterTools;
+
+  /// No description provided for @mattersWorkspaceResearchCanvas.
+  ///
+  /// In en, this message translates to:
+  /// **'Research canvas'**
+  String get mattersWorkspaceResearchCanvas;
+
+  /// No description provided for @mattersWorkspaceResearchPanes.
+  ///
+  /// In en, this message translates to:
+  /// **'Research canvas panes'**
+  String get mattersWorkspaceResearchPanes;
+
+  /// No description provided for @mattersWorkspaceResearchUnavailable.
+  ///
+  /// In en, this message translates to:
+  /// **'Unable to open Research canvas.'**
+  String get mattersWorkspaceResearchUnavailable;
+
+  /// No description provided for @mattersWorkspaceSectionsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Matter sections'**
+  String get mattersWorkspaceSectionsTitle;
+
+  /// No description provided for @mattersWorkspaceSimilarCases.
+  ///
+  /// In en, this message translates to:
+  /// **'Similar cases'**
+  String get mattersWorkspaceSimilarCases;
 
   /// No description provided for @mattersWorkspaceStrategy.
   ///
@@ -28871,10 +29958,16 @@ abstract class AppLocalizations {
   /// **'Tasks'**
   String get mattersWorkspaceTasks;
 
+  /// No description provided for @mattersWorkspaceWork.
+  ///
+  /// In en, this message translates to:
+  /// **'Work'**
+  String get mattersWorkspaceWork;
+
   /// No description provided for @mattersWorkspaceWorkbench.
   ///
   /// In en, this message translates to:
-  /// **'Workbench'**
+  /// **'Quick AI'**
   String get mattersWorkspaceWorkbench;
 
   /// No description provided for @mattersWrite.
@@ -29410,6 +30503,114 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Your tasks'**
   String get portalYourTasks;
+
+  /// No description provided for @promptRefineAutoFillCountdownAria.
+  ///
+  /// In en, this message translates to:
+  /// **'{seconds} seconds remaining to undo'**
+  String promptRefineAutoFillCountdownAria(String seconds);
+
+  /// No description provided for @promptRefineAutoFillHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Undo restores your original prompt'**
+  String get promptRefineAutoFillHint;
+
+  /// No description provided for @promptRefineAutoFilledDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Continuing in {seconds}s — undo to keep your original.'**
+  String promptRefineAutoFilledDescription(String seconds);
+
+  /// No description provided for @promptRefineAutoFilledTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Prompt refined'**
+  String get promptRefineAutoFilledTitle;
+
+  /// No description provided for @promptRefineContinueRefined.
+  ///
+  /// In en, this message translates to:
+  /// **'Continue with refined prompt'**
+  String get promptRefineContinueRefined;
+
+  /// No description provided for @promptRefineDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'We reorganized your description for clearer AI results. Edit if needed, then continue.'**
+  String get promptRefineDescription;
+
+  /// No description provided for @promptRefineHintDocument.
+  ///
+  /// In en, this message translates to:
+  /// **'Document'**
+  String get promptRefineHintDocument;
+
+  /// No description provided for @promptRefineHintJurisdiction.
+  ///
+  /// In en, this message translates to:
+  /// **'Jurisdiction'**
+  String get promptRefineHintJurisdiction;
+
+  /// No description provided for @promptRefineHintParty.
+  ///
+  /// In en, this message translates to:
+  /// **'Party'**
+  String get promptRefineHintParty;
+
+  /// No description provided for @promptRefineHintStatute.
+  ///
+  /// In en, this message translates to:
+  /// **'Statute'**
+  String get promptRefineHintStatute;
+
+  /// No description provided for @promptRefinePreparing.
+  ///
+  /// In en, this message translates to:
+  /// **'Preparing your prompt…'**
+  String get promptRefinePreparing;
+
+  /// No description provided for @promptRefineRefinedLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Refined prompt'**
+  String get promptRefineRefinedLabel;
+
+  /// No description provided for @promptRefineStartingDrafting.
+  ///
+  /// In en, this message translates to:
+  /// **'Starting drafting in {seconds}s…'**
+  String promptRefineStartingDrafting(String seconds);
+
+  /// No description provided for @promptRefineStartingResearch.
+  ///
+  /// In en, this message translates to:
+  /// **'Starting research in {seconds}s…'**
+  String promptRefineStartingResearch(String seconds);
+
+  /// No description provided for @promptRefineTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Refined prompt'**
+  String get promptRefineTitle;
+
+  /// No description provided for @promptRefineUndo.
+  ///
+  /// In en, this message translates to:
+  /// **'Undo'**
+  String get promptRefineUndo;
+
+  /// No description provided for @promptRefineUseOriginal.
+  ///
+  /// In en, this message translates to:
+  /// **'Use original instead'**
+  String get promptRefineUseOriginal;
+
+  /// No description provided for @promptRefineYourOriginal.
+  ///
+  /// In en, this message translates to:
+  /// **'Your original prompt'**
+  String get promptRefineYourOriginal;
 
   /// No description provided for @sectionFinderNetworkBadge.
   ///
@@ -30620,7 +31821,7 @@ abstract class AppLocalizations {
   /// No description provided for @settingsPlanUsageAiModelDescription.
   ///
   /// In en, this message translates to:
-  /// **'Auto uses a lower-cost model. Premium lets you pick an AI model (OpenAI or Claude) — credits scale with tokens used and model cost (~{credits} credit per typical message).'**
+  /// **'Auto uses a lower-cost model. Premium lets you pick a GPT model — credits scale with tokens used and model cost (~{credits} credit per typical message).'**
   String settingsPlanUsageAiModelDescription(String credits);
 
   /// No description provided for @settingsPlanUsageAiModelTitle.
@@ -32747,7 +33948,7 @@ abstract class AppLocalizations {
   /// No description provided for @tutorialsEvidenceHelpB3.
   ///
   /// In en, this message translates to:
-  /// **'Open the matter workbench for AI-assisted chronology.'**
+  /// **'Open the matter Quick AI for AI-assisted chronology.'**
   String get tutorialsEvidenceHelpB3;
 
   /// No description provided for @tutorialsEvidenceHelpTitle.
@@ -33749,13 +34950,13 @@ abstract class AppLocalizations {
   /// No description provided for @tutorialsMattersDetailWorkbenchBody.
   ///
   /// In en, this message translates to:
-  /// **'Open the workbench for matter-scoped AI chat, drafting, and suggested next steps.'**
+  /// **'Open the Quick AI for matter-scoped AI chat, drafting, and suggested next steps.'**
   String get tutorialsMattersDetailWorkbenchBody;
 
   /// No description provided for @tutorialsMattersDetailWorkbenchTitle.
   ///
   /// In en, this message translates to:
-  /// **'AI workbench'**
+  /// **'AI Quick AI'**
   String get tutorialsMattersDetailWorkbenchTitle;
 
   /// No description provided for @tutorialsMattersFilterBody.
@@ -33779,7 +34980,7 @@ abstract class AppLocalizations {
   /// No description provided for @tutorialsMattersHelpB2.
   ///
   /// In en, this message translates to:
-  /// **'Open the AI workbench from a matter for drafting and research.'**
+  /// **'Open the AI Quick AI from a matter for drafting and research.'**
   String get tutorialsMattersHelpB2;
 
   /// No description provided for @tutorialsMattersHelpB3.

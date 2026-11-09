@@ -5,7 +5,7 @@ function renderSidebar(items: unknown[], withFocus = true): string {
   const script = `
     import { createElement } from "react";
     import { renderToStaticMarkup } from "react-dom/server";
-    import { FiledResearchSidebar } from "./components/smart-workspace/filed-research-sidebar.tsx";
+    import FiledResearchSidebarModule from "./components/smart-workspace/filed-research-sidebar.tsx"; const { FiledResearchSidebar } = FiledResearchSidebarModule;
     process.stdout.write(renderToStaticMarkup(createElement(FiledResearchSidebar, {
       items: ${JSON.stringify(items)},
       ${withFocus ? "onFocusOnCanvas: () => undefined," : ""}

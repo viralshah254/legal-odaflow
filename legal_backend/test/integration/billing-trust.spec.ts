@@ -41,7 +41,7 @@ describe('Billing trust integration', () => {
       invoice: { create: jest.fn() },
     } as any;
 
-    const service = new InvoicesService(prisma, {} as any, {} as any);
+    const service = new InvoicesService(prisma, {} as any, {} as any, {} as any);
 
     await expect(
       service.create('tenant_1', {
@@ -68,7 +68,7 @@ describe('Billing trust integration', () => {
       invoice: { create: jest.fn() },
     } as any;
 
-    const service = new InvoicesService(prisma, {} as any, {} as any);
+    const service = new InvoicesService(prisma, {} as any, {} as any, {} as any);
 
     await expect(
       service.createFromApprovedTime('tenant_1', { matterId: 'matter_1' }),

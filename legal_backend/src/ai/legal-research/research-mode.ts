@@ -1,3 +1,4 @@
+import { AI_USAGE_COST_MULTIPLIER, computeCreditsFromProviderCost } from '@/ai-credits/credit-pricing.util';
 export type LegalResearchMode = 'FAST' | 'DEEP' | 'GUIDANCE';
 
 export function isGuidanceResearch(mode?: string): boolean {
@@ -143,18 +144,14 @@ export function researchMustStartSynthesisByMs(mode?: string): number {
   return 22_000;
 }
 
-export const RESEARCH_COST_MARKUP = 1.5;
+export const RESEARCH_COST_MARKUP = AI_USAGE_COST_MULTIPLIER;
 
 export function computeResearchCreditsFromCost(
   providerCostUsd: number,
   creditUsdValue = 0.01,
-  minCredits = 1,
+  _minCredits = 0,
 ): number {
-  if (!(providerCostUsd > 0) || !(creditUsdValue > 0)) {
-    return minCredits;
-  }
-  const markedUp = Number((providerCostUsd * RESEARCH_COST_MARKUP).toFixed(6));
-  return Math.max(minCredits, Math.ceil(markedUp / creditUsdValue));
+  return computeCreditsFromProviderCost(providerCostUsd, creditUsdValue);
 }
 
 export function buildFallbackResearchMemo(input: {

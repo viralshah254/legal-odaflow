@@ -11,7 +11,7 @@ import { Building2, Users, Shield, FileText, Bell, CreditCard, UserPlus, Sparkle
 import { FirmProfileDialog } from "@/components/settings/firm-profile-dialog"
 import { AddUsersDialog } from "@/components/settings/add-users-dialog"
 import { DraftingStyleSetupDialog } from "@/components/settings/drafting-style-dialog"
-import { getUserDraftStyle, STYLE_ANALYSIS_CREDITS, type UserDraftStyleState } from "@/lib/api/user-draft-style"
+import { getUserDraftStyle, type UserDraftStyleState } from "@/lib/api/user-draft-style"
 import { useRouter } from "next/navigation"
 import { useTenant } from "@/lib/contexts/tenant-context"
 import { useApiData } from "@/lib/hooks/use-api-data"
@@ -168,13 +168,13 @@ export default function SettingsPage() {
               ) : (
                 <>
                   <p className="text-sm text-muted-foreground">
-                    Not set up yet. Upload 3–4 of your past drafts to get started.
+                    Not set up yet. Upload at least 5 different drafts you wrote to get started.
                   </p>
                   <div className="flex items-center gap-2">
                     <Button size="sm" onClick={() => setDraftStyleOpen(true)}>
                       Set up my style
                     </Button>
-                    <span className="text-xs text-muted-foreground">{STYLE_ANALYSIS_CREDITS} credits · one-time</span>
+                    <span className="text-xs text-muted-foreground">Charged by actual usage</span>
                   </div>
                 </>
               )}

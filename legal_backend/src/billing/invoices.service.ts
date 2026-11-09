@@ -90,46 +90,55 @@ export class InvoicesService {
     }
     await this.ensureNoUnapprovedBillableTime(tenantId, dto.matterId);
 
-    const entries = await this.prisma.timeEntry.findMany({
-      where: {
-        tenantId,
-        matterId: dto.matterId,
-        billable: true,
-        status: 'APPROVED',
-      },
-    });
+    // Serializable isolation prevents concurrent invoices claiming the same time.
+    const { invoice, entries } = await this.prisma.$transaction(async (tx) => {
+      const entries = await tx.timeEntry.findMany({
+        where: {
+          tenantId,
+          matterId: dto.matterId,
+          billable: true,
+          status: 'APPROVED',
+        },
+      });
 
-    if (entries.length === 0) {
-      throw new BadRequestException('No approved billable time entries found for this matter');
-    }
+      if (entries.length === 0) {
+        throw new BadRequestException('No approved billable time entries found for this matter');
+      }
 
-    const amount = entries.reduce((sum, entry) => {
-      const rate = entry.rate ? Number(entry.rate.toString()) : 0;
-      return sum + (entry.minutes / 60) * rate;
-    }, 0);
+      if (entries.some((entry) => entry.rate == null || new Prisma.Decimal(entry.rate).isNegative())) {
+        throw new BadRequestException('Every billable time entry must have a confirmed non-negative rate');
+      }
+      const amount = entries.reduce((sum, entry) =>
+        sum.plus(new Prisma.Decimal(entry.rate!).times(entry.minutes).dividedBy(60)),
+        new Prisma.Decimal(0),
+      ).toDecimalPlaces(2);
 
-    const clientId = dto.clientId ?? matter.clientId ?? undefined;
-    const currency = dto.currency ?? 'USD';
-    const invoiceNumber =
-      dto.invoiceNumber ?? `INV-TIME-${Date.now().toString(36).toUpperCase()}`;
+      const clientId = dto.clientId ?? matter.clientId ?? undefined;
+      const currency = dto.currency ?? 'USD';
+      const invoiceNumber =
+        dto.invoiceNumber ?? `INV-TIME-${Date.now().toString(36).toUpperCase()}`;
 
-    const invoice = await this.prisma.invoice.create({
-      data: {
-        tenantId,
-        clientId,
-        matterId: dto.matterId,
-        invoiceNumber,
-        amount: new Prisma.Decimal(Math.round(amount * 100) / 100),
-        currency: currency.toUpperCase(),
-        dueDate: dto.dueDate,
-        status: INVOICE_STATUSES.DRAFT,
-      },
-    });
+      const invoice = await tx.invoice.create({
+        data: {
+          tenantId,
+          clientId,
+          matterId: dto.matterId,
+          invoiceNumber,
+          amount,
+          metadata: { timeEntryIds: entries.map((entry) => entry.id) },
+          currency: currency.toUpperCase(),
+          dueDate: dto.dueDate,
+          status: INVOICE_STATUSES.DRAFT,
+        },
+      });
 
-    await this.prisma.timeEntry.updateMany({
-      where: { id: { in: entries.map((entry) => entry.id) } },
-      data: { status: 'INVOICED' },
-    });
+      await tx.timeEntry.updateMany({
+        where: { tenantId, status: 'APPROVED', id: { in: entries.map((entry) => entry.id) } },
+        data: { status: 'INVOICED' },
+      });
+
+      return { invoice, entries };
+    }, { isolationLevel: Prisma.TransactionIsolationLevel.Serializable });
 
     this.realtime.publishToTenant(tenantId, REALTIME_EVENTS.INVOICE_UPDATED, {
       entityId: invoice.id,

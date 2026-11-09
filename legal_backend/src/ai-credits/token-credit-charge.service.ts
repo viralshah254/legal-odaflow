@@ -2,17 +2,14 @@ import { Injectable } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { PrismaService } from '@/prisma/prisma.service';
 import {
-  getModelCostSync,
+  getModelCostForUsage,
   TYPICAL_COPILOT_INPUT_TOKENS,
   TYPICAL_COPILOT_OUTPUT_TOKENS,
 } from '@/ai/model-costs.config';
-import { getCreditCost } from './credit-costs';
 import {
   computeCreditsFromProviderCost,
-  DEFAULT_CREDIT_USD_VALUE,
   estimateTokenCostUsd,
 } from './credit-pricing.util';
-import { computeResearchCreditsFromCost } from '@/ai/legal-research/research-mode';
 import { CreditPricingService } from './credit-pricing.service';
 
 export interface TokenCreditEstimate {
@@ -37,8 +34,7 @@ export class TokenCreditChargeService {
   }
 
   isTokenBased(): boolean {
-    const mode = this.configService.get<string>('AI_CHARGE_MODE', 'token_based');
-    return mode !== 'flat';
+    return true;
   }
 
   async resolveBillingPlan(tenantId?: string, userId?: string): Promise<string | null> {
@@ -64,18 +60,16 @@ export class TokenCreditChargeService {
   computeCreditsFromProviderCost(
     providerCostUsd: number,
     minCredits = 1,
-    maxCredits?: number,
+    _maxCredits?: number,
     billingPlan?: string | null,
   ): number {
-    let credits = computeCreditsFromProviderCost(
+    const credits = computeCreditsFromProviderCost(
       providerCostUsd,
       this.creditPricing.getCreditUsdValue(),
       this.getNetMarginPercent(billingPlan),
       minCredits,
     );
-    if (maxCredits != null) {
-      credits = Math.min(credits, maxCredits);
-    }
+    // A budget cap belongs before execution; never truncate recorded usage charges.
     return credits;
   }
 
@@ -90,7 +84,7 @@ export class TokenCreditChargeService {
   }): TokenCreditEstimate {
     const inputTokens = params.inputTokens ?? TYPICAL_COPILOT_INPUT_TOKENS;
     const outputTokens = params.outputTokens ?? TYPICAL_COPILOT_OUTPUT_TOKENS;
-    const costs = getModelCostSync(params.modelName);
+    const costs = getModelCostForUsage(params.modelName, inputTokens);
     const providerCostUsd = estimateTokenCostUsd(
       costs.inputPer1M,
       costs.outputPer1M,
@@ -119,6 +113,7 @@ export class TokenCreditChargeService {
     inputTokens: number;
     outputTokens: number;
     taskType?: string;
+    providerCostUsd?: number;
     minCredits?: number;
     maxCredits?: number;
     tenantId?: string;
@@ -128,38 +123,14 @@ export class TokenCreditChargeService {
     const billingPlan =
       params.billingPlan ?? (await this.resolveBillingPlan(params.tenantId, params.userId));
 
-    if (!this.isTokenBased()) {
-      const flat = getCreditCost(params.taskType ?? 'LAWYER_MATTER_QA');
-      return {
-        providerCostUsd: 0,
-        credits: flat,
-        inputTokens: params.inputTokens,
-        outputTokens: params.outputTokens,
-        modelName: params.modelName,
-        netMarginPercent: this.getNetMarginPercent(billingPlan),
-      };
-    }
-
-    const providerCostUsd = estimateTokenCostUsd(
-      getModelCostSync(params.modelName).inputPer1M,
-      getModelCostSync(params.modelName).outputPer1M,
+    const rates = getModelCostForUsage(params.modelName, params.inputTokens);
+    const providerCostUsd = params.providerCostUsd ?? estimateTokenCostUsd(
+      rates.inputPer1M,
+      rates.outputPer1M,
       params.inputTokens,
       params.outputTokens,
     );
-    const taskFloor = getCreditCost(params.taskType ?? 'LAWYER_MATTER_QA');
-    const credits =
-      params.taskType === 'LEGAL_RESEARCH'
-        ? computeResearchCreditsFromCost(
-            providerCostUsd,
-            this.creditPricing.getCreditUsdValue() || DEFAULT_CREDIT_USD_VALUE,
-            params.minCredits ?? taskFloor,
-          )
-        : this.computeCreditsFromProviderCost(
-            providerCostUsd,
-            params.minCredits ?? taskFloor,
-            params.maxCredits,
-            billingPlan,
-          );
+    const credits = this.computeCreditsFromProviderCost(providerCostUsd);
     return {
       providerCostUsd,
       credits,

@@ -387,6 +387,7 @@ Basis: breach of supply contract dated 1 January 2026.
         caseRecordVersion: 1,
         playbookVersion: '1.0.0',
         draftHash,
+        evidenceRevision: 'e1', courtProfileId: 'court-1', contentRevision: 1, releaseDigest: 'release-1',
         userId: 'u1',
       });
       const stale = await humanReview.isApprovalValid({
@@ -396,6 +397,7 @@ Basis: breach of supply contract dated 1 January 2026.
         caseRecordVersion: 2,
         playbookVersion: '1.0.0',
         draftHash,
+        evidenceRevision: 'e1', courtProfileId: 'court-1', contentRevision: 1, releaseDigest: 'release-1',
       });
       expect(stale.valid).toBe(false);
     });

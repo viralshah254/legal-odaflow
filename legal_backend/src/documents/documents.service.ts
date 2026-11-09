@@ -1,3 +1,4 @@
+import { researchExcerpt } from './research-excerpts';
 import {
   BadRequestException,
   ForbiddenException,
@@ -52,6 +53,7 @@ export interface ResearchContextDocument {
   updatedAt: Date;
   extractedText: string;
   truncated: boolean;
+  folderId?: string | null;
 }
 
 @Injectable()
@@ -500,7 +502,7 @@ export class DocumentsService {
     matterId: string,
     userId: string,
     role?: string,
-  ): Promise<Array<{ id: string; fileName: string; updatedAt: Date; hasExtractedText: boolean }>> {
+  ): Promise<Array<{ id: string; fileName: string; updatedAt: Date; hasExtractedText: boolean; folderId: string | null }>> {
     await this.matterAccess.ensureMatterAccess(tenantId, userId, matterId, role);
     const documents = await this.prisma.document.findMany({
       where: { tenantId, matterId, status: 'ACTIVE' },
@@ -524,6 +526,7 @@ export class DocumentsService {
             id: document.id,
             fileName: document.fileName,
             updatedAt: document.updatedAt,
+            folderId: document.folderId,
             hasExtractedText: Boolean(document.extractedText?.trim()),
           };
         } catch {
@@ -540,7 +543,7 @@ export class DocumentsService {
     userId: string,
     role: string | undefined,
     selectedDocumentIds: string[],
-    caps: { perItemChars: number; totalChars: number },
+    caps: { perItemChars: number; totalChars: number; query?: string },
   ): Promise<ResearchContextDocument[]> {
     const ids = [...new Set(selectedDocumentIds.filter(Boolean))];
     if (ids.length === 0) return [];
@@ -569,12 +572,16 @@ export class DocumentsService {
       const document = byId.get(id)!;
       await this.assertDocumentAccess(tenantId, document, userId, role, 'READ');
       const decrypted = this.decryptDocumentText(document).extractedText?.trim() ?? '';
-      const allowance = Math.min(Math.max(0, caps.perItemChars), remaining);
-      const extractedText = decrypted.slice(0, allowance);
+      // Reserve a fair share for later sources instead of giving the first
+      // uploads the entire prompt budget. Search the complete authorized text.
+      const left = ids.length - result.length;
+      const allowance = Math.min(Math.max(0, caps.perItemChars), Math.floor(remaining / left));
+      const extractedText = researchExcerpt(decrypted, caps.query, allowance);
       result.push({
         id: document.id,
         fileName: document.fileName,
         updatedAt: document.updatedAt,
+        folderId: document.folderId,
         extractedText,
         truncated: decrypted.length > extractedText.length,
       });
@@ -591,11 +598,13 @@ export class DocumentsService {
     dto: UpdateDocumentMetadataDto,
   ) {
     const existing = await this.getTenantDocument(tenantId, documentId, userId, role);
+    await this.assertDocumentAccess(tenantId, existing, userId, role, 'WRITE');
     const targetMatterId =
       dto.matterId !== undefined ? dto.matterId : existing.matterId;
     let resolvedClientId: string | null | undefined = dto.clientId;
 
     if (targetMatterId) {
+      if (targetMatterId !== existing.matterId) await this.matterAccess.ensureMatterWriteAccess(tenantId, userId, targetMatterId, role);
       const matter = await this.ensureMatter(tenantId, targetMatterId);
       if (dto.clientId !== undefined && dto.clientId !== matter.clientId) {
         throw new BadRequestException('Document client must match the selected matter');
@@ -610,6 +619,16 @@ export class DocumentsService {
       }
     }
 
+    if (dto.folderId) {
+      const folder = await this.prisma.documentFolder.findFirst({ where: { id: dto.folderId, tenantId } });
+      if (!folder || (folder.matterId ?? null) !== (targetMatterId ?? null)) {
+        throw new BadRequestException('Document folder must belong to the selected matter');
+      }
+      if (!targetMatterId && folder.clientId && folder.clientId !== (resolvedClientId ?? existing.clientId)) {
+        throw new BadRequestException('Document folder must belong to the selected client');
+      }
+      await this.assertDocumentAccess(tenantId, { ...existing, matterId: targetMatterId, folderId: dto.folderId }, userId, role, 'WRITE');
+    }
     const document = await this.prisma.document.update({
       where: { id: documentId },
       data: {
@@ -949,37 +968,49 @@ export class DocumentsService {
     role: string | undefined,
     requiredLevel: 'READ' | 'WRITE',
   ) {
-    if (document.uploadedById === userId) {
-      return;
+    // Explicit restrictions apply even to the uploader. A child document or
+    // folder grant cannot override a restricted ancestor's policy.
+    if (document.matterId) {
+      if (requiredLevel === 'WRITE') await this.matterAccess.ensureMatterWriteAccess(tenantId, userId, document.matterId, role);
+      else await this.matterAccess.ensureMatterAccess(tenantId, userId, document.matterId, role);
     }
-
+    const folderIds: string[] = [];
+    let current = document.folderId;
+    while (current) {
+      if (folderIds.includes(current) || folderIds.length >= 64) {
+        throw new ForbiddenException('Invalid document folder hierarchy');
+      }
+      folderIds.push(current);
+      const folder = await this.prisma.documentFolder.findFirst({
+        where: { id: current, tenantId },
+        select: { parentId: true },
+      });
+      if (!folder) throw new ForbiddenException('Document folder is not available');
+      current = folder.parentId;
+    }
     const rules = await this.prisma.documentAccessRule.findMany({
       where: {
         tenantId,
-        OR: [{ documentId: document.id }, { folderId: document.folderId ?? undefined }],
+        OR: [
+          { documentId: document.id },
+          ...(folderIds.length ? [{ folderId: { in: folderIds } }] : []),
+        ],
       },
     });
-
-    if (rules.length > 0) {
-      const hasAccess = rules.some((rule) => {
-        const level = rule.accessLevel.toUpperCase();
-        if (requiredLevel === 'WRITE' && level !== 'WRITE' && level !== 'ADMIN') {
-          return false;
-        }
-        if (rule.userId && rule.userId === userId) {
-          return true;
-        }
-        if (rule.role && role && rule.role === role) {
-          return true;
-        }
-        return false;
-      });
-
-      if (!hasAccess) {
-        throw new ForbiddenException('Document access denied by access rule');
-      }
-      return;
+    const scopes = new Map<string, typeof rules>();
+    for (const rule of rules) {
+      const key = rule.documentId ? `document:${rule.documentId}` : `folder:${rule.folderId}`;
+      scopes.set(key, [...(scopes.get(key) ?? []), rule]);
     }
+    for (const scopedRules of scopes.values()) {
+      const allowed = scopedRules.some((rule) => {
+        const level = rule.accessLevel.toUpperCase();
+        if (requiredLevel === 'WRITE' && level !== 'WRITE' && level !== 'ADMIN') return false;
+        return Boolean((rule.userId && rule.userId === userId) || (rule.role && role && rule.role === role));
+      });
+      if (!allowed) throw new ForbiddenException('Document access denied by access rule');
+    }
+    if (rules.length > 0 || document.uploadedById === userId) return;
 
     if (await this.hasDefaultDocumentAccess(tenantId, document, userId, role)) {
       return;

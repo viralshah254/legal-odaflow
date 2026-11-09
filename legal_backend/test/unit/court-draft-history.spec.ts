@@ -14,7 +14,7 @@ describe('CourtDraftHistoryService', () => {
     },
   };
 
-  const service = new CourtDraftHistoryService(prisma as never);
+  const service = new CourtDraftHistoryService(prisma as never, {} as never, { assertClientMatterLink: jest.fn().mockResolvedValue({ clientName: 'Acme Corp' }), assertClientReadable: jest.fn() } as never);
 
   beforeEach(() => {
     jest.clearAllMocks();

@@ -35,6 +35,7 @@ Prepare:
 `.trim();
 
 const employmentProfile = {
+  country: 'IN', remedies: [], issues: [], documentTypes: [], confidence: 1,
   practiceArea: 'employment_labour',
   subPracticeArea: 'wrongful_termination',
   nature: 'dispute' as const,

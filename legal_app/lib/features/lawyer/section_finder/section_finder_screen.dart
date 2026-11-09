@@ -1,3 +1,4 @@
+import '../../../core/config/app_config.dart';
 import 'dart:async';
 
 import 'package:flutter/material.dart';
@@ -19,7 +20,8 @@ const _accentColor = Color(0xFFEA580C);
 // ─── Screen ────────────────────────────────────────────────────────────────────
 
 class SectionFinderScreen extends ConsumerStatefulWidget {
-  const SectionFinderScreen({super.key});
+  const SectionFinderScreen({super.key, this.matterId});
+  final String? matterId;
 
   @override
   ConsumerState<SectionFinderScreen> createState() =>
@@ -30,6 +32,9 @@ class _SectionFinderScreenState extends ConsumerState<SectionFinderScreen> {
   final _queryController = TextEditingController();
   final _scrollController = ScrollController();
 
+  String? _countryCode;
+  bool _scopeReady = false;
+  static const _supported = ['IN', 'US', 'GB', 'KE'];
   bool _loading = false;
   String? _error;
   SectionFinderResult? _result;
@@ -38,13 +43,36 @@ class _SectionFinderScreenState extends ConsumerState<SectionFinderScreen> {
   @override
   void initState() {
     super.initState();
-    _loadPopular();
+    _initializeScope();
+  }
+
+  Future<void> _initializeScope() async {
+    final user = ref.read(authControllerProvider).session?.user;
+    var country = user?.countryCode;
+    if (widget.matterId != null) {
+      try {
+        if (user?.tenantId == null) throw ApiException('Firm context is required.');
+        final matter = await ref.read(mattersApiProvider).getMatterDetail(tenantId: user!.tenantId!, matterId: widget.matterId!);
+        country = matter.countryCode;
+      } catch (_) {
+        if (mounted) setState(() => _error = 'Matter country is unavailable. Reopen the matter and retry.');
+        return;
+      }
+    }
+    if (!mounted) return;
+    setState(() {
+      _countryCode = country?.toUpperCase();
+      _scopeReady = _supported.contains(_countryCode);
+    });
+    if (_scopeReady) await _loadPopular();
   }
 
   Future<void> _loadPopular() async {
+    if (!_scopeReady || _countryCode == null) return;
     try {
-      final popular = await ref.read(aiApiProvider).getPopularSections();
-      if (mounted) setState(() => _popularQueries = popular);
+      final country = _countryCode!;
+      final popular = await ref.read(aiApiProvider).getPopularSections(countryCode: country);
+      if (mounted && country == _countryCode) setState(() => _popularQueries = popular);
     } catch (_) {
       // Popular chips are optional — ignore failures.
     }
@@ -59,7 +87,7 @@ class _SectionFinderScreenState extends ConsumerState<SectionFinderScreen> {
 
   Future<void> _search(String query) async {
     final q = query.trim();
-    if (q.isEmpty) return;
+    if (q.isEmpty || !_scopeReady || _countryCode == null) return;
     _queryController.text = q;
     FocusScope.of(context).unfocus();
     setState(() {
@@ -71,6 +99,8 @@ class _SectionFinderScreenState extends ConsumerState<SectionFinderScreen> {
       final locale = Localizations.localeOf(context).languageCode;
       final result = await ref.read(aiApiProvider).runSectionFinder(
             query: q,
+            countryCode: _countryCode!,
+            matterId: widget.matterId,
             locale: locale,
           );
       if (mounted) {
@@ -116,12 +146,32 @@ class _SectionFinderScreenState extends ConsumerState<SectionFinderScreen> {
           AiToolFeatureHeader(
             icon: Icons.menu_book_outlined,
             title: l10n.sectionFinderTitle,
-            subtitle: l10n.sectionFinderSubtitle,
+            subtitle: _countryCode == 'IN' ? l10n.sectionFinderSubtitle : 'Find statutory provisions for ${_countryCode ?? 'a selected country'}.',
             accentColor: _accentColor,
           ),
 
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
+            child: DropdownButtonFormField<String>(
+              initialValue: _countryCode,
+              key: ValueKey(_countryCode),
+              decoration: const InputDecoration(labelText: 'Legal country'),
+              items: {..._supported, if (_countryCode != null) _countryCode!}.map((code) => DropdownMenuItem(value: code, child: Text(AppConfig.countryNames[code] ?? code))).toList(),
+              onChanged: widget.matterId != null || _loading ? null : (country) {
+                setState(() { _countryCode = country; _scopeReady = _supported.contains(country); _result = null; _popularQueries = []; });
+                _loadPopular();
+              },
+            ),
+          ),
+          if (!_scopeReady)
+            Padding(
+              padding: const EdgeInsets.all(12),
+              child: Text(_countryCode == null ? 'Choose the legal country before looking up a provision.' : 'Section lookup is not yet supported for $_countryCode. Another country will not be substituted.'),
+            ),
+
           // Search bar + always-visible popular chips
           _SearchBar(
+            countryCode: _scopeReady ? _countryCode : null,
             controller: _queryController,
             accentColor: _accentColor,
             popularQueries: _popularQueries,
@@ -148,7 +198,7 @@ class _SectionFinderScreenState extends ConsumerState<SectionFinderScreen> {
                               accentColor: _accentColor,
                               onResearch: (q) {
                                 context.go(
-                                    '/lawyer/research?q=${Uri.encodeComponent(q)}');
+                                    '/lawyer/research?q=${Uri.encodeComponent(q)}${widget.matterId == null ? '' : '&matterId=${Uri.encodeComponent(widget.matterId!)}'}');
                               },
                             )
                           : _EmptyView(
@@ -168,6 +218,7 @@ class _SectionFinderScreenState extends ConsumerState<SectionFinderScreen> {
 class _SearchBar extends ConsumerStatefulWidget {
   const _SearchBar({
     required this.controller,
+    required this.countryCode,
     required this.accentColor,
     required this.onSearch,
     this.popularQueries = const [],
@@ -175,6 +226,7 @@ class _SearchBar extends ConsumerStatefulWidget {
   });
 
   final TextEditingController controller;
+  final String? countryCode;
   final Color accentColor;
   final List<PopularSectionQuery> popularQueries;
   final ValueChanged<String> onSearch;
@@ -224,7 +276,7 @@ class _SearchBarState extends ConsumerState<_SearchBar> {
     _debounceTimer?.cancel();
     final q = widget.controller.text.trim();
 
-    if (q.length < _minSuggestChars) {
+    if (widget.countryCode == null || q.length < _minSuggestChars) {
       setState(() {
         _suggestions = [];
         _showSuggestions = false;
@@ -240,12 +292,26 @@ class _SearchBarState extends ConsumerState<_SearchBar> {
     );
   }
 
+  @override
+  void didUpdateWidget(covariant _SearchBar oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    if (oldWidget.countryCode != widget.countryCode) {
+      _debounceTimer?.cancel();
+      _requestGeneration++;
+      _suggestions = [];
+      _showSuggestions = false;
+      _loadingSuggestions = false;
+    }
+  }
+
   Future<void> _fetchSuggestions(String q) async {
+    final country = widget.countryCode;
+    if (country == null) return;
     final generation = ++_requestGeneration;
     setState(() => _loadingSuggestions = true);
 
     try {
-      final items = await ref.read(aiApiProvider).suggestSection(q);
+      final items = await ref.read(aiApiProvider).suggestSection(q, countryCode: country);
       if (!mounted || generation != _requestGeneration) return;
       if (widget.controller.text.trim() != q) return;
 

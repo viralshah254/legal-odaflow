@@ -34,6 +34,8 @@ export interface SimilarCase {
   verificationStatus: CaseVerificationStatus;
   /** Optional richer card fields for lawyer UI. */
   keyHolding?: string | null;
+  outcome?: string | null;
+  proceduralStage?: string | null;
   relevantPassage?: string | null;
   whyItMatters?: string | null;
   factualSimilarity?: string | null;

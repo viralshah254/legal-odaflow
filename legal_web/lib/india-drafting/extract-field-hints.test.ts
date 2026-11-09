@@ -165,7 +165,7 @@ A CT scan was performed on 13 March 2025.
     expect(hints.opposingParty).toContain("Dr. Kavita Rao")
     expect(hints.opposingParty).toContain("SecureCare Health Insurance Ltd")
     expect(hints.parties?.plaintiffs).toEqual([
-      { name: "Riya Desai", role: "petitioner" },
+      { name: "Riya Desai", role: "complainant" },
     ])
     expect(hints.parties?.defendants).toHaveLength(4)
     expect(hints.courtName).toBe(

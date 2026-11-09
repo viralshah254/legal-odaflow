@@ -142,11 +142,12 @@ describe('statute-lookup golden queries', () => {
     expect(badSeeds).toHaveLength(0);
   });
 
-  it('loads India sources manifest with COI_2024 primary PDF', () => {
+  it('loads official Constitution PDF with the retained COI_2024 fallback', () => {
     const manifest = loadIndiaSourcesManifest();
     expect(manifest.acts.length).toBeGreaterThanOrEqual(6);
     const constitution = findManifestAct('constitution');
-    expect(constitution?.primaryPdfUrl).toMatch(/COI_2024\.pdf/i);
+    expect(constitution?.primaryPdfUrl).toMatch(/^https:\/\/cdnbbsr\.s3waas\.gov\.in\/.+\.pdf$/i);
+    expect(constitution?.fallbackPdfUrl).toMatch(/COI_2024\.pdf/i);
     expect(constitution?.editionDate).toBe('2024-05-01');
     expect(constitution?.amendmentCount).toBe(106);
     expect(constitution?.pendingAmendments?.[0]?.bill).toMatch(/131st/i);
@@ -256,11 +257,11 @@ describe('Your Lordships mirror catalog', () => {
     }
   });
 
-  it('marks YL personal law acts as tier-2 mirror, not primary', () => {
+  it('keeps official personal-law sources primary and YL entries as mirrors', () => {
     const manifest = loadIndiaSourcesManifest();
     for (const actId of ['hindu-adoption', 'hindu-succession', 'muslim-dissolution', 'muslim-marriages-registration', 'muslim-women-divorce']) {
       const entry = manifest.acts.find((a) => a.actId === actId);
-      expect(entry?.sourceAuthority).toBe('yourlordships-mirror');
+      expect(['india-code', 'yourlordships-mirror']).toContain(entry?.sourceAuthority);
       expect(entry?.sourceTier).toBe('mirror');
     }
   });
@@ -286,7 +287,8 @@ describe('Your Lordships mirror catalog', () => {
     const constitutionEntry = manifest.acts.find((a) => a.actId === 'constitution');
     expect(constitutionEntry?.sourceAuthority).toBe('legislative-department');
     expect(constitutionEntry?.sourceTier).toBe('primary');
-    expect(constitutionEntry?.primaryPdfUrl).toMatch(/COI_2024\.pdf/);
+    expect(constitutionEntry?.fallbackPdfUrl).toMatch(/COI_2024\.pdf/);
+    expect(constitutionEntry?.primaryPdfUrl).toMatch(/^https:\/\/cdnbbsr\.s3waas\.gov\.in\//);
   });
 });
 

@@ -46,4 +46,24 @@ describe('SimilarCasesService', () => {
     expect(result).toHaveLength(1);
     expect(result[0]?.authorityId).toBe('direct');
   });
+
+  it('does not present a summary as a holding or guess an outcome and rejects invalid dates', () => {
+    const source = authority('direct', 'Partner A v. Partner B', 'The court enforced the arbitration clause in the parties partnership deed.');
+    source.decisionDate = 'invalid';
+    const [result] = service.extractAndRank([source], query, 'IN');
+    expect(result.year).toBeNull();
+    expect(result.keyHolding).toBeNull();
+    expect(result.outcome).toBeNull();
+  });
+
+  it('carries an anchored holding and sourced procedural outcome without treating an interim order as a final result', () => {
+    const source = authority('direct', 'Partner A v. Partner B', 'The court enforced the arbitration clause in the parties partnership deed.');
+    source.sourcePassages = [{ text: 'The arbitration clause is enforceable.', paragraph: '18', sourcePinpoint: true, classification: 'HOLDING' }];
+    source.sourceProvenance = { dispositionComplete: true } as any;
+    source.proceduralPosture = { stage: 'INTERLOCUTORY_APPEAL', disposition: 'Remanded for reconsideration', finalJudgment: false };
+    const [result] = service.extractAndRank([source], query, 'IN');
+    expect(result.keyHolding).toBe('The arbitration clause is enforceable.');
+    expect(result.outcome).toBe('Remanded for reconsideration');
+    expect(result.proceduralStage).toBe('INTERLOCUTORY_APPEAL');
+  });
 });

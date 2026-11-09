@@ -259,7 +259,7 @@ describe('Authority enrichment — Meera Shah specific-performance regression', 
       expect(bank.some((c) => /readiness|Srinivasa/i.test(c.title + c.proposition))).toBe(true);
     });
 
-    it('verifies curated cases against draft propositions with relevance pass', () => {
+    it('verifies curated cases against their exact supported propositions', () => {
       const verifier = makeVerifier();
       const plan = planner.buildPlan({
         documentKind: 'india_civil_plaint',
@@ -272,13 +272,18 @@ describe('Authority enrichment — Meera Shah specific-performance regression', 
       );
 
       const curated = resolveCuratedEnrichBank('india_civil_plaint', MEERA_FACTS);
-      const records = verifier.verifyCurated(curated, props, MEERA_DRAFT, plan);
+      const supportedProps = curated.map((candidate, index) => ({
+        ...props[0], id: `supported-${index}`, proposition: candidate.proposition,
+        issue: candidate.areas[0] ?? 'general', topics: candidate.areas,
+      }));
+      const records = verifier.verifyCurated(curated, supportedProps, MEERA_DRAFT, plan);
       const passed = records.filter((r) => !r.excluded && r.relevanceStatus === 'pass');
       expect(passed.length).toBeGreaterThanOrEqual(1);
       expect(passed.some((r) => /Vidyanadam|Srinivasa|Suraj Lamp|Dalpat/i.test(r.title))).toBe(true);
       for (const r of passed) {
         expect(r.authorityType).toBe('case');
-        expect(r.currentLawStatus).toBe('good_law');
+        // Curated identity/relevance does not establish subsequent judicial treatment.
+        expect(r.currentLawStatus).toBe('unknown');
       }
     });
   });

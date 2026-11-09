@@ -27,11 +27,13 @@ export class GeminiCompletionAdapter {
   }
 
   defaultModelName(): string {
-    return (
+    const configured = (
       this.configService.get<string>('GEMINI_MODEL')?.trim() ||
-      this.configService.get<string>('AI_LEGAL_FAST_MODEL')?.trim() ||
-      'gemini-2.5-flash'
+      this.configService.get<string>('AI_LEGAL_FAST_MODEL')?.trim()
     );
+    // Legacy task routing commonly names another provider's model. It is not
+    // a valid Google model ID. Explicit Google selections remain respected.
+    return configured?.startsWith('gemini-') ? configured : 'gemini-3.8-flash';
   }
 
   private async createClient(): Promise<GoogleGenAIClient> {
@@ -62,6 +64,8 @@ export class GeminiCompletionAdapter {
     messages: LlmMessage[];
     temperature?: number;
     maxTokens?: number;
+    signal?: AbortSignal;
+    responseFormat?: { type: string; json_schema?: { schema: Record<string, unknown> } };
   }): Promise<LlmCompletionResult> {
     const client = await this.createClient();
     const modelName =
@@ -84,6 +88,9 @@ export class GeminiCompletionAdapter {
       model: modelName,
       contents,
       config: {
+        abortSignal: params.signal,
+        responseMimeType: params.responseFormat ? 'application/json' : undefined,
+        responseJsonSchema: params.responseFormat?.json_schema?.schema,
         temperature: params.temperature ?? 0.2,
         maxOutputTokens: params.maxTokens ?? 4096,
         systemInstruction: system || undefined,
@@ -91,10 +98,9 @@ export class GeminiCompletionAdapter {
     });
 
     const text = response.text ?? '';
-    const inputTokens = Math.ceil(
-      params.messages.reduce((sum, m) => sum + m.content.length, 0) / 4,
-    );
-    const outputTokens = Math.ceil(text.length / 4);
+    const usage = response.usageMetadata;
+    const inputTokens = usage?.promptTokenCount ?? 0;
+    const outputTokens = (usage?.candidatesTokenCount ?? 0) + (usage?.thoughtsTokenCount ?? 0);
 
     return {
       content: text,
@@ -102,8 +108,35 @@ export class GeminiCompletionAdapter {
       outputTokens,
       provider: 'google',
       modelName,
-      finishReason: text ? 'stop' : 'unknown',
+      finishReason: response.candidates?.[0]?.finishReason === 'MAX_TOKENS' ? 'max_tokens' : text ? 'stop' : 'unknown',
     };
+  }
+
+  async completeWithTools(params: {
+    modelName: string;
+    messages: LlmMessage[];
+    tools: Array<{ name: string; description: string; parameters: Record<string, unknown> }>;
+    temperature?: number;
+  }): Promise<{ toolName: string | null; toolArgs: Record<string, unknown>; textContent: string }> {
+    const client = await this.createClient();
+    const response = await client.models.generateContent({
+      model: params.modelName,
+      contents: params.messages.filter((m) => m.role !== 'system').map((m) => ({
+        role: m.role === 'assistant' ? 'model' : 'user', parts: [{ text: m.content }],
+      })),
+      config: {
+        systemInstruction: params.messages.filter((m) => m.role === 'system').map((m) => m.content).join('\n\n'),
+        temperature: params.temperature ?? 0.2,
+        tools: [{ functionDeclarations: params.tools.map((tool) => ({
+          name: tool.name, description: tool.description, parametersJsonSchema: tool.parameters,
+        })) }],
+      },
+    });
+    const call = response.functionCalls?.[0];
+    if (call && !params.tools.some((tool) => tool.name === call.name)) {
+      throw new ServiceUnavailableException('Invalid tool response');
+    }
+    return { toolName: call?.name ?? null, toolArgs: call?.args ?? {}, textContent: response.text ?? '' };
   }
 
   /**
@@ -215,11 +248,11 @@ export class GeminiCompletionAdapter {
     const text = response.text ?? '';
     return {
       content: text,
-      inputTokens: Math.ceil(params.messages.reduce((s, m) => s + m.content.length, 0) / 4),
-      outputTokens: Math.ceil(text.length / 4),
+      inputTokens: response.usageMetadata?.promptTokenCount ?? 0,
+      outputTokens: (response.usageMetadata?.candidatesTokenCount ?? 0) + (response.usageMetadata?.thoughtsTokenCount ?? 0),
       provider: 'google',
       modelName,
-      finishReason: text ? 'stop' : 'unknown',
+      finishReason: response.candidates?.[0]?.finishReason === 'MAX_TOKENS' ? 'max_tokens' : text ? 'stop' : 'unknown',
     };
   }
 }

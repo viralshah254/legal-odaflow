@@ -1,11 +1,12 @@
-import { Injectable } from '@nestjs/common';
+import { ForbiddenException, Injectable } from '@nestjs/common';
 import { PrismaService } from '@/prisma/prisma.service';
+import { EthicalWallService } from '@/platform/security/ethical-wall.service';
 
 const FULL_ACCESS_ROLES = new Set(['FIRM_ADMIN', 'PARTNER', 'PARTNER_ADMIN']);
 
 @Injectable()
 export class MatterAccessService {
-  constructor(private readonly prisma: PrismaService) {}
+  constructor(private readonly prisma: PrismaService, private readonly ethicalWalls: EthicalWallService) {}
 
   hasFullAccess(role?: string): boolean {
     return role ? FULL_ACCESS_ROLES.has(role) : false;
@@ -16,8 +17,20 @@ export class MatterAccessService {
     userId: string,
     role?: string,
   ): Promise<string[] | null> {
+    const walls = await this.prisma.ethicalWall.findMany({
+      where: { tenantId, status: 'active', restrictedUserIds: { has: userId } },
+      select: { protectedMatterIds: true, protectedClientIds: true },
+    });
+    const blocked = new Set(walls.flatMap((wall) => wall.protectedMatterIds));
+    const clients = [...new Set(walls.flatMap((wall) => wall.protectedClientIds))];
+    if (clients.length) {
+      const protectedMatters = await this.prisma.matter.findMany({ where: { tenantId, clientId: { in: clients } }, select: { id: true } });
+      protectedMatters.forEach((matter) => blocked.add(matter.id));
+    }
     if (this.hasFullAccess(role)) {
-      return null;
+      if (!blocked.size) return null;
+      const allowed = await this.prisma.matter.findMany({ where: { tenantId, id: { notIn: [...blocked] } }, select: { id: true } });
+      return allowed.map((matter) => matter.id);
     }
 
     const rows = await this.prisma.matterAccess.findMany({
@@ -25,7 +38,7 @@ export class MatterAccessService {
       select: { matterId: true },
     });
 
-    return rows.map((row) => row.matterId);
+    return rows.map((row) => row.matterId).filter((id) => !blocked.has(id));
   }
 
   async getAccessibleClientIds(
@@ -33,11 +46,8 @@ export class MatterAccessService {
     userId: string,
     role?: string,
   ): Promise<string[] | null> {
-    if (this.hasFullAccess(role)) {
-      return null;
-    }
-
     const matterIds = await this.getAccessibleMatterIds(tenantId, userId, role);
+    if (matterIds === null) return null;
     if (!matterIds || matterIds.length === 0) {
       return [];
     }
@@ -62,6 +72,10 @@ export class MatterAccessService {
     matterId: string,
     role?: string,
   ): Promise<void> {
+    const matter = await this.prisma.matter.findFirst({ where: { id: matterId, tenantId }, select: { id: true, clientId: true } });
+    if (!matter) throw new ForbiddenException('Matter access denied');
+    const wall = await this.ethicalWalls.checkAccess(tenantId, userId, matterId, matter.clientId ?? undefined);
+    if (!wall.allowed) throw new ForbiddenException('Matter access denied by ethical wall');
     if (this.hasFullAccess(role)) {
       return;
     }
@@ -73,7 +87,16 @@ export class MatterAccessService {
     });
 
     if (!access || access.tenantId !== tenantId) {
-      throw new Error('Matter access denied');
+      throw new ForbiddenException('Matter access denied');
+    }
+  }
+
+  async ensureMatterWriteAccess(tenantId: string, userId: string, matterId: string, role?: string): Promise<void> {
+    await this.ensureMatterAccess(tenantId, userId, matterId, role);
+    if (this.hasFullAccess(role)) return;
+    const grant = await this.prisma.matterAccess.findUnique({ where: { matterId_userId: { matterId, userId } } });
+    if (!grant || grant.tenantId !== tenantId || !['WRITE', 'FULL', 'FULL_CASE_SUPPORT', 'OWNER'].includes(grant.accessLevel)) {
+      throw new ForbiddenException('Matter write access required');
     }
   }
 }

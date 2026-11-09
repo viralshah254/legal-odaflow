@@ -51,24 +51,24 @@ describe('Document drafting credit pricing', () => {
     expect(DRAFT_CREDIT_ROUTES.matterDraftWithAi).toContain('/draft-with-ai');
   });
 
-  it('charges 2 credits for Find & Draft search', () => {
-    expect(getCreditCost(AI_TASK_TYPES.DRAFT_INTENT_SEARCH)).toBe(2);
+  it('retains the intent-search preflight estimate', () => {
+    expect(getCreditCost(AI_TASK_TYPES.DRAFT_INTENT_SEARCH)).toBe(5);
   });
 
-  it('enforces 15-credit minimum for all full draft task types', () => {
+  it('settles draft usage at twice cost without fixed minimums', () => {
     for (const taskType of [
       AI_TASK_TYPES.DOCUMENT_DRAFT,
       AI_TASK_TYPES.TEMPLATE_DRAFT,
       AI_TASK_TYPES.INDIA_COURT_DRAFT,
     ]) {
-      expect(getCreditCost(taskType)).toBe(FULL_AI_DRAFT_MIN_CREDITS);
+      expect(getCreditCost(taskType)).toBeGreaterThan(0);
       const tokenCharge = computeCreditsFromProviderCost(
         0.002,
         0.01,
         40,
         getCreditCost(taskType),
       );
-      expect(tokenCharge).toBeGreaterThanOrEqual(FULL_AI_DRAFT_MIN_CREDITS);
+      expect(tokenCharge).toBe(1);
     }
   });
 
@@ -104,7 +104,7 @@ describe('AI credits — research and document review routes', () => {
     expect(RESEARCH_CREDIT_ROUTES.copilotChat).toContain('/copilot/chat');
   });
 
-  it('charges LEGAL_RESEARCH at 30 credits per spec', () => {
-    expect(getCreditCost(AI_TASK_TYPES.LEGAL_RESEARCH)).toBe(30);
+  it('retains a one-credit research preflight estimate', () => {
+    expect(getCreditCost(AI_TASK_TYPES.LEGAL_RESEARCH)).toBe(1);
   });
 });

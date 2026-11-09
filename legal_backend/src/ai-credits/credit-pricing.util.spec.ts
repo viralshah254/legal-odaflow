@@ -61,18 +61,21 @@ describe('credit-pricing.util', () => {
     expect(proPlus!.aiCredits / creditsPerMessage).toBeLessThanOrEqual(messagesAtFullBurn + 1);
   });
 
-  it('computes credits from provider cost with net margin', () => {
-    expect(computeCreditsFromProviderCost(0.01, 0.01, 30)).toBe(2);
-    expect(computeCreditsFromProviderCost(0.042, 0.01, 30)).toBe(6);
+  it('charges twice provider cost regardless of legacy margins and floors', () => {
+    expect(computeCreditsFromProviderCost(0.042, 0.01, 30)).toBe(9);
+    expect(computeCreditsFromProviderCost(0.008, 0.01, 20, 40)).toBe(2);
+    expect(computeCreditsFromProviderCost(0.016, 0.01, 20)).toBe(4);
+    expect(computeCreditsFromProviderCost(0, 0.01, 20, 40)).toBe(0);
+    expect(computeCreditsFromProviderCost(0.035, 0.01)).toBe(7);
   });
 
-  it('applies 20% net markup for drafting usage charges', () => {
-    // $0.01 provider cost, $0.01/credit, 20% net → budget/credit = 0.008 → ceil(0.01/0.008) = 2
-    expect(computeCreditsFromProviderCost(0.01, 0.01, 20)).toBe(2);
-    // $0.008 exact → 1 credit at 20% margin
-    expect(computeCreditsFromProviderCost(0.008, 0.01, 20)).toBe(1);
-    // $0.016 → ceil(0.016/0.008) = 2
-    expect(computeCreditsFromProviderCost(0.016, 0.01, 20)).toBe(2);
+  it('rejects invalid accounting inputs instead of silently charging a floor', () => {
+    for (const cost of [NaN, Infinity, -1]) {
+      expect(() => computeCreditsFromProviderCost(cost)).toThrow();
+    }
+    for (const value of [0, -1, NaN, Infinity]) {
+      expect(() => computeCreditsFromProviderCost(0.01, value)).toThrow();
+    }
   });
 
   it('estimates token cost from model rates', () => {

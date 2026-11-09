@@ -34,12 +34,12 @@ describe('AI credit costs', () => {
     expect(getCreditCost(AI_TASK_TYPES.DRAFT_VERIFICATION_FIX)).toBe(1);
   });
 
-  it('enforces task floor even when provider cost is tiny', () => {
+  it('charges recorded cost without a legacy task floor', () => {
     const credits = computeCreditsFromProviderCost(0.001, 0.01, 40, FULL_AI_DRAFT_MIN_CREDITS);
-    expect(credits).toBe(FULL_AI_DRAFT_MIN_CREDITS);
+    expect(credits).toBe(1);
   });
 
-  it('computes verification-fix credits with 20 percent net margin', () => {
-    expect(computeCreditsFromProviderCost(0.016, 0.01, 20, getCreditCost(AI_TASK_TYPES.DRAFT_VERIFICATION_FIX))).toBe(2);
+  it('computes verification-fix credits at twice provider cost', () => {
+    expect(computeCreditsFromProviderCost(0.016, 0.01, 20, getCreditCost(AI_TASK_TYPES.DRAFT_VERIFICATION_FIX))).toBe(4);
   });
 });

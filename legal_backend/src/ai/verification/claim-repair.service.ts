@@ -42,20 +42,39 @@ export class ClaimRepairService {
     audits: ClaimAudit[],
     draft?: LegalResearchDraft,
   ): string {
-    // Verification findings carry claim status — do not prefix inline lawyer memo text.
-    void audits;
-    void draft;
-    return markdown;
+    if (!draft) return markdown;
+    let repaired = markdown;
+    const claims = draft.issues.flatMap((issue) => issue.propositions);
+    for (const audit of audits) {
+      const claim = claims.find((item) => item.claimId === audit.claimId);
+      if (!claim || !claim.text.trim() || audit.action === 'KEEP') continue;
+      const replacement = audit.action === 'REMOVE'
+        ? '[Unsupported proposition withheld pending source verification.]'
+        : this.repairClaim(claim, {
+            ...audit,
+            action: audit.action === 'ESCALATE' ? 'QUALIFY' : audit.action,
+          }).claim.text;
+      // Replace every occurrence, including repetition in the direct answer.
+      let next = this.replaceExactClaim(repaired, claim.text, replacement);
+      if (audit.action === 'REMOVE') {
+        while (next !== repaired) {
+          repaired = next;
+          next = this.replaceExactClaim(repaired, claim.text, replacement);
+        }
+      }
+      repaired = next;
+    }
+    return repaired;
   }
 
   private replaceExactClaim(markdown: string, claimText: string, replacement: string): string {
-    if (markdown.includes(claimText)) return markdown.replace(claimText, replacement);
+    if (markdown.includes(claimText)) return markdown.split(claimText).join(replacement);
     const compact = claimText.replace(/\s+/g, ' ').trim();
     const escaped = compact
       .split(' ')
       .map((part) => part.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'))
       .join('\\s+');
-    return markdown.replace(new RegExp(escaped, 'i'), replacement);
+    return markdown.replace(new RegExp(escaped, 'gi'), replacement);
   }
 
   private qualifierFor(audit: ClaimAudit): string {

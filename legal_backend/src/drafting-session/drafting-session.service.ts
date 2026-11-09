@@ -845,7 +845,7 @@ export class DraftingSessionService {
       outputTokens,
     );
     const baseCredits = computeCreditsFromProviderCost(providerCostUsd, DEFAULT_CREDIT_USD_VALUE, 0, minCredits);
-    return Math.max(minCredits, Math.ceil(baseCredits * markupMultiplier));
+    return baseCredits; // Shared usage pricing already applies the 2× markup.
   }
 
   private async editSelection(

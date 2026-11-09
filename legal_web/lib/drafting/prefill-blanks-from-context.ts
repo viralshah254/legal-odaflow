@@ -100,6 +100,8 @@ export function resolveBlankValueFromContext(
   const court = ctx.courtName?.trim() || hints.courtName || ""
   const facts = extractCaseFacts(ctx.caseDetails ?? "")
 
+  if (/\bcomplainant\s*\/\s*state\b/.test(key)) return opposing
+
   if (
     /\b(accused|applicant|client|petitioner|deponent|applicant[-–]?accused|complainant)\b/.test(
       key,

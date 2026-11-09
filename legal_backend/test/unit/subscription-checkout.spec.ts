@@ -141,7 +141,7 @@ describe('TenantsService.createCreditTopupCheckout – error propagation', () =>
           stripeCustomerId: null,
         }),
       },
-      tenantUser: { findUnique: jest.fn().mockResolvedValue({ role: 'ADMIN' }) },
+      tenantUser: { findUnique: jest.fn().mockResolvedValue({ role: 'FIRM_ADMIN', status: 'ACTIVE' }) },
       user: { findUnique: jest.fn().mockResolvedValue({ id: 'user_1', email: 'a@example.com' }) },
     } as any;
 

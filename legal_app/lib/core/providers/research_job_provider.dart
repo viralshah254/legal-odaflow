@@ -68,6 +68,8 @@ class ResearchJobController extends StateNotifier<ResearchJobState> {
   final Ref _ref;
   Timer? _timer;
   bool _cancelled = false;
+  bool _pollInFlight = false;
+  int _pollGeneration = 0;
 
   static const _pollInterval = Duration(seconds: 2);
 
@@ -76,6 +78,7 @@ class ResearchJobController extends StateNotifier<ResearchJobState> {
     required String countryCode,
     String? jurisdiction,
     String? matterId,
+    String contextScope = 'SELECTED',
     String? practiceArea,
     String? tenantId,
     String researchMode = 'DEEP',
@@ -93,6 +96,7 @@ class ResearchJobController extends StateNotifier<ResearchJobState> {
       countryCode: countryCode,
       jurisdiction: jurisdiction,
       matterId: matterId,
+      contextScope: contextScope,
       practiceArea: practiceArea,
       tenantId: tenantId,
       researchMode: researchMode,
@@ -128,16 +132,18 @@ class ResearchJobController extends StateNotifier<ResearchJobState> {
 
   void _startPolling({required String jobId, required String tenantId}) {
     _timer?.cancel();
-    _timer = Timer.periodic(_pollInterval, (_) => _poll(jobId, tenantId));
-    unawaited(_poll(jobId, tenantId));
+    final generation = _pollGeneration;
+    _timer = Timer.periodic(_pollInterval, (_) => _poll(jobId, tenantId, generation));
+    unawaited(_poll(jobId, tenantId, generation));
   }
 
-  Future<void> _poll(String jobId, String tenantId) async {
-    if (_cancelled) return;
+  Future<void> _poll(String jobId, String tenantId, int generation) async {
+    if (_cancelled || _pollInFlight || generation != _pollGeneration) return;
+    _pollInFlight = true;
     try {
       final agents = _ref.read(agentsApiProvider);
       final job = await agents.getAgentJob(tenantId: tenantId, jobId: jobId);
-      if (_cancelled) return;
+      if (_cancelled || generation != _pollGeneration) return;
 
       final progress = job.researchProgress;
       String? partial;
@@ -188,12 +194,15 @@ class ResearchJobController extends StateNotifier<ResearchJobState> {
         progress: progress,
         partialMarkdown: partial,
       );
-    } catch (e, st) {
-      debugPrint('[ResearchJobController] poll error: $e\n$st');
+    } catch (e) {
+      debugPrint('[ResearchJobController] poll error: ${e.runtimeType}');
+    } finally {
+      _pollInFlight = false;
     }
   }
 
   void cancelPolling() {
+    _pollGeneration++;
     _timer?.cancel();
     _timer = null;
   }

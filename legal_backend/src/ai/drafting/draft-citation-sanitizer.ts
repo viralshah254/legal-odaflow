@@ -59,14 +59,14 @@ export type UnverifiedCitationMode = 'strip' | 'mark';
 
 /**
  * Handle citation-like spans not backed by retrieved authorities.
- * Default `mark` keeps the citation and appends an unverified marker (generate→verify).
+ * Default `strip` withholds citations that have not been verified against retrieved authorities.
  * `strip` replaces the span with the disclaimer (legacy / fail-closed export).
  */
 export function stripUnverifiedCitations(
   text: string,
   authorities: CitationAuthority[],
   extraVerified: string[] = [],
-  mode: UnverifiedCitationMode = 'mark',
+  mode: UnverifiedCitationMode = 'strip',
 ): StripUnverifiedCitationsResult {
   const stripped: StrippedCitation[] = [];
   const known = [

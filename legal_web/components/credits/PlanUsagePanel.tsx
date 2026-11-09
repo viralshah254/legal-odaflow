@@ -476,10 +476,10 @@ export function PlanUsagePanel({
               value={premiumModelId}
               onChange={(e) => setPremiumModelId(e.target.value)}
             >
-              {(wallet.availablePremiumModels ?? [{ modelId: "gpt-5.6-sol", label: "GPT-5.6 Sol" }]).map(
-                (m) => (
+              {(wallet.availablePremiumModels ?? [{ modelId: "gpt-5.6-sol", label: "Advanced reasoning" }]).map(
+                (m, index) => (
                   <option key={m.modelId} value={m.modelId}>
-                    {m.label}
+                    {`Advanced reasoning ${index + 1}`}
                     {"costTier" in m && m.costTier ? ` · ${tierLabel(m.costTier as string)}` : ""}
                   </option>
                 ),
@@ -525,10 +525,10 @@ export function PlanUsagePanel({
             value={deepAnalysisPremiumModelId}
             onChange={(e) => setDeepAnalysisPremiumModelId(e.target.value)}
           >
-            {(wallet.availablePremiumModels ?? [{ modelId: "gpt-5.6-sol", label: "GPT-5.6 Sol" }]).map(
-              (m) => (
+            {(wallet.availablePremiumModels ?? [{ modelId: "gpt-5.6-sol", label: "Advanced reasoning" }]).map(
+              (m, index) => (
                 <option key={m.modelId} value={m.modelId}>
-                  {m.label}
+                  {`Advanced reasoning ${index + 1}`}
                   {"costTier" in m && m.costTier ? ` · ${tierLabel(m.costTier as string)}` : ""}
                 </option>
               ),

@@ -9,7 +9,7 @@ describe('Draft archetype golden matrix', () => {
       {} as never,
     );
     const result = harness.runDraftArchetypeGoldenBenchmark();
-    expect(result.passed).toBe(true);
+    expect(result.passed ? [] : result.details).toEqual([]);
     expect(result.score).toBeGreaterThanOrEqual(0.95);
   });
 });

@@ -1,3 +1,4 @@
+import { DraftKindPlaybookService } from '@/ai/drafting/playbooks/draft-kind-playbook.service';
 import { Test } from '@nestjs/testing';
 import { BadRequestException } from '@nestjs/common';
 import { IndiaDraftService } from '@/ai/india-draft/india-draft.service';
@@ -54,6 +55,7 @@ describe('IndiaDraftService', () => {
     const moduleRef = await Test.createTestingModule({
       providers: [
         IndiaDraftService,
+        DraftKindPlaybookService,
         DraftProceduralRouterService,
         { provide: LlmCompletionService, useValue: { complete: jest.fn() } },
         {
@@ -62,11 +64,12 @@ describe('IndiaDraftService', () => {
         },
         {
           provide: AICreditLedgerService,
-          useValue: { assertSufficientBalance: jest.fn().mockResolvedValue(undefined) },
+          useValue: { assertAndDebit: jest.fn().mockResolvedValue({ creditsDebited: 1 }), assertSufficientBalance: jest.fn().mockResolvedValue(undefined) },
         },
         {
           provide: AiUsageRecorderService,
           useValue: {
+            recordAfterFlatDebit: jest.fn().mockResolvedValue({ chargedCredits: 1 }),
             recordTokenUsage: jest.fn().mockResolvedValue({ chargedCredits: 1 }),
           },
         },
@@ -151,7 +154,7 @@ describe('IndiaDraftService', () => {
           useValue: { track: jest.fn() },
         },
       ],
-    }).compile();
+    }).useMocker(() => ({})).compile();
 
     service = moduleRef.get(IndiaDraftService);
   });

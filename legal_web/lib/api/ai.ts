@@ -485,10 +485,13 @@ function normalizeLegalResearchResponse(
 }
 
 export interface MatterResearchContextResponse {
+  folders?: Array<{ id: string; name: string; parentId: string | null }>
   matter: {
     id: string
     title: string
     factsSummary?: string | null
+    countryCode?: string
+    jurisdiction?: string | null
     updatedAt: string
   }
   documents: Array<{

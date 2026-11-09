@@ -6,10 +6,11 @@ import { ReferralsModule } from '@/referrals/referrals.module';
 import { AccountBillingController } from './account-billing.controller';
 import { PricingController, SubscriptionsController } from './subscriptions.controller';
 import { SubscriptionsService } from './subscriptions.service';
+import { ProfessionalPricingController } from './professional-pricing.controller';
 
 @Module({
   imports: [forwardRef(() => PaymentsModule), CostMonitoringModule, ReferralsModule],
-  controllers: [SubscriptionsController, PricingController, AccountBillingController],
+  controllers: [SubscriptionsController, PricingController, AccountBillingController, ProfessionalPricingController],
   providers: [SubscriptionsService, CurrencyFxService],
   exports: [SubscriptionsService, CurrencyFxService],
 })

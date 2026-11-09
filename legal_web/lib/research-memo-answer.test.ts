@@ -11,7 +11,7 @@ function renderTaskMemo(taskKind: string): string {
   const script = `
     import { createElement } from "react";
     import { renderToStaticMarkup } from "react-dom/server";
-    import { ResearchMemoAnswer } from "./components/research/research-memo-answer.tsx";
+    import ResearchMemoAnswerModule from "./components/research/research-memo-answer.tsx"; const { ResearchMemoAnswer } = ResearchMemoAnswerModule;
     const result = {
       answer: "Fallback answer",
       citations: [],
@@ -42,7 +42,7 @@ function renderKenyaCitation(): string {
   const script = `
     import { createElement } from "react";
     import { renderToStaticMarkup } from "react-dom/server";
-    import { ResearchMemoAnswer } from "./components/research/research-memo-answer.tsx";
+    import ResearchMemoAnswerModule from "./components/research/research-memo-answer.tsx"; const { ResearchMemoAnswer } = ResearchMemoAnswerModule;
     const result = {
       answer: "See Example v State [2024] KESC 12 (KLR).",
       citations: [{
@@ -66,6 +66,9 @@ function renderKenyaCitation(): string {
     { cwd: process.cwd(), encoding: "utf8" },
   )
 }
+
+// These integration checks launch a fresh TSX/React process; allow cold startup.
+vi.setConfig({ testTimeout: 15000 })
 
 describe("research memo follow-on data", () => {
   it("normalizes legacy strings without losing their original values", () => {

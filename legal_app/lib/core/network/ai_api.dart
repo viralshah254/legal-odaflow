@@ -26,6 +26,7 @@ class AiApi {
     required String countryCode,
     String? jurisdiction,
     String? matterId,
+    String contextScope = 'SELECTED',
     String? practiceArea,
     String? tenantId,
     String researchMode = 'FAST',
@@ -46,7 +47,10 @@ class AiApi {
       'aiModelMode': aiModelMode,
       if (jurisdiction != null && jurisdiction.isNotEmpty)
         'jurisdiction': jurisdiction,
-      if (matterId != null && matterId.isNotEmpty) 'matterId': matterId,
+      if (matterId != null && matterId.isNotEmpty) ...{
+        'matterId': matterId,
+        'contextScope': contextScope,
+      },
       if (practiceArea != null && practiceArea.isNotEmpty)
         'practiceArea': practiceArea,
       if (premiumModelId != null && premiumModelId.isNotEmpty)
@@ -110,6 +114,7 @@ class AiApi {
     required String countryCode,
     String? jurisdiction,
     String? matterId,
+    String contextScope = 'SELECTED',
     String? practiceArea,
     String? tenantId,
     String researchMode = 'FAST',
@@ -130,7 +135,10 @@ class AiApi {
       'aiModelMode': aiModelMode,
       if (jurisdiction != null && jurisdiction.isNotEmpty)
         'jurisdiction': jurisdiction,
-      if (matterId != null && matterId.isNotEmpty) 'matterId': matterId,
+      if (matterId != null && matterId.isNotEmpty) ...{
+        'matterId': matterId,
+        'contextScope': contextScope,
+      },
       if (practiceArea != null && practiceArea.isNotEmpty)
         'practiceArea': practiceArea,
       if (premiumModelId != null && premiumModelId.isNotEmpty)
@@ -330,14 +338,17 @@ class AiApi {
 
   Future<SectionFinderResult> runSectionFinder({
     required String query,
+    required String countryCode,
+    String? matterId,
     String? locale,
   }) async {
-    debugPrint('[AiApi] GET /legal-sources/section-finder q=$query');
+    debugPrint('[AiApi] GET /legal-sources/section-finder country=$countryCode');
     final response = await _client.dio.get<Map<String, dynamic>>(
       '/legal-sources/section-finder',
       queryParameters: {
         'q': query,
-        'countryCode': 'IN',
+        if (matterId != null) 'matterId': matterId,
+        'countryCode': countryCode.toUpperCase(),
         if (locale != null && locale.isNotEmpty && locale != 'en') 'locale': locale,
       },
     );
@@ -347,13 +358,14 @@ class AiApi {
   Future<List<SectionFinderSuggestion>> suggestSection(
     String q, {
     int limit = 10,
+    required String countryCode,
   }) async {
-    debugPrint('[AiApi] GET /legal-sources/section-finder/suggest q=$q');
+    debugPrint('[AiApi] GET /legal-sources/section-finder/suggest country=$countryCode');
     final response = await _client.dio.get<List<dynamic>>(
       '/legal-sources/section-finder/suggest',
       queryParameters: {
         'q': q,
-        'countryCode': 'IN',
+        'countryCode': countryCode.toUpperCase(),
         'limit': limit,
       },
     );
@@ -364,11 +376,11 @@ class AiApi {
         .toList();
   }
 
-  Future<List<PopularSectionQuery>> getPopularSections({int limit = 10}) async {
+  Future<List<PopularSectionQuery>> getPopularSections({int limit = 10, required String countryCode}) async {
     debugPrint('[AiApi] GET /legal-sources/section-finder/popular');
     final response = await _client.dio.get<List<dynamic>>(
       '/legal-sources/section-finder/popular',
-      queryParameters: {'countryCode': 'IN', 'limit': limit},
+      queryParameters: {'countryCode': countryCode.toUpperCase(), 'limit': limit},
     );
     final data = response.data ?? [];
     return data

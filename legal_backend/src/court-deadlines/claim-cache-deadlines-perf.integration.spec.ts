@@ -130,7 +130,7 @@ describe('C19 – Court deadlines and limitation periods', () => {
 
   // ── calculateLimitationPeriod ─────────────────────────────────────────────
 
-  it('skips creation when limitation deadline already exists', async () => {
+  it('requires a legal trigger even when a deadline exists', async () => {
     mockPrisma.matter.findFirst.mockResolvedValue({
       id: 'm-1',
       countryCode: 'KE',
@@ -144,11 +144,11 @@ describe('C19 – Court deadlines and limitation periods', () => {
 
     const result = await svc.calculateLimitationPeriod('tenant-1', 'm-1');
     expect(result.calculated).toBe(false);
-    expect(result.reason).toContain('already exists');
+    expect(result.reason).toContain('legal trigger date');
     expect(mockPrisma.courtDeadline.create).not.toHaveBeenCalled();
   });
 
-  it('creates limitation deadline when none exists', async () => {
+  it('does not create limitation deadlines from matter creation dates', async () => {
     const matterCreatedAt = new Date('2026-01-01');
     mockPrisma.matter.findFirst.mockResolvedValue({
       id: 'm-2',
@@ -164,16 +164,9 @@ describe('C19 – Court deadlines and limitation periods', () => {
     });
 
     const result = await svc.calculateLimitationPeriod('tenant-1', 'm-2');
-    expect(result.calculated).toBe(true);
-    expect(result.daysFromCreation).toBe(2190); // KE: 6yr
-    expect(mockPrisma.courtDeadline.create).toHaveBeenCalledWith(
-      expect.objectContaining({
-        data: expect.objectContaining({
-          deadlineType: 'LIMITATION',
-          ruleReference: expect.stringContaining('Limitation of Actions Act'),
-        }),
-      }),
-    );
+    expect(result.calculated).toBe(false);
+    expect(result.reason).toContain('legal trigger date');
+    expect(mockPrisma.courtDeadline.create).not.toHaveBeenCalled();
   });
 });
 

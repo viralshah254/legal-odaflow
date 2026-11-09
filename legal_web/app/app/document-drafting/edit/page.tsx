@@ -61,9 +61,9 @@ const ACCEPTED_FORMATS = [
 ]
 
 function resolveEditModelLabel(selectedText: string, instruction: string): string {
-  if (selectedText && instruction.length < 120) return "DeepSeek Chat"
-  if (!selectedText) return "GPT-5.4 mini"
-  return "GPT-5.4 mini"
+  if (selectedText && instruction.length < 120) return "Quick edit"
+  if (!selectedText) return "Document edit"
+  return "Document edit"
 }
 
 function EditPageInner() {

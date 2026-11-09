@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-23T21:05:13.779Z",
+  "updatedAt": "2026-11-09T01:33:36.028Z",
   "sources": [
     "legal_web/app/app/india-drafting/page.tsx — QUICK_KINDS",
     "legal_web/messages/en.json — dashboard.aiSearch.prompts (IN/US/KE/GB)",
@@ -52,7 +52,7 @@
     {
       "id": "in-draft-bail-bnss-480",
       "slug": "in-draft-bail-bnss-480",
-      "title": "Regular bail application (BNSS §480)",
+      "title": "Regular bail application (BNSS §480 / §483)",
       "description": "Draft bail application for non-bailable offence.",
       "targetFeature": "draft",
       "jurisdiction": "IN",
@@ -62,20 +62,26 @@
       ],
       "tags": [
         "bail",
-        "bnss-480"
+        "bnss-480",
+        "bnss-483"
       ],
       "statuteRefs": [
         {
           "countryCode": "IN",
           "actId": "bnss",
           "section": "480"
+        },
+        {
+          "countryCode": "IN",
+          "actId": "bnss",
+          "section": "483"
         }
       ],
       "prefill": {
         "kind": "india_regular_bail_bnss_480",
         "label": "Regular Bail Application",
         "countryCode": "IN",
-        "details": "Accused arrested in FIR for non-bailable offence. First-time offender. Seek regular bail under BNSS §480 citing co-operation with investigation."
+        "details": "Accused arrested in FIR for non-bailable offence. First-time offender. Seek regular bail under the forum-resolved BNSS bail provision (§480 before Magistrate; §483 before Sessions/High Court) citing co-operation with investigation."
       },
       "scope": "system",
       "sortOrder": 2

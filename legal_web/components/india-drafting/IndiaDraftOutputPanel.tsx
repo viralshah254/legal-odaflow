@@ -759,9 +759,7 @@ export function IndiaDraftOutputPanel({
     tableOfAuthorities: verifiedToaLines.length > 0 ? verifiedToaLines : undefined,
   }
 
-  const modelLabel = modelUsed
-    ? modelUsed.includes("opus") ? "Claude Opus" : modelUsed.includes("sonnet") ? "Claude Sonnet" : modelUsed.includes("gpt") ? "GPT" : modelUsed
-    : null
+  const modelLabel = modelUsed ? "OkayLegal drafting" : null
 
   return (
     <div className="flex flex-col gap-2 flex-1 min-h-0">

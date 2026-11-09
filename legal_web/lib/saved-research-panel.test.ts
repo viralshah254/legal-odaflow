@@ -5,7 +5,7 @@ function renderPanel(items: unknown[]): string {
   const script = `
     import { createElement } from "react";
     import { renderToStaticMarkup } from "react-dom/server";
-    import { SavedResearchPanel } from "./components/research/saved-research-panel.tsx";
+    import SavedResearchPanelModule from "./components/research/saved-research-panel.tsx"; const { SavedResearchPanel } = SavedResearchPanelModule;
     process.stdout.write(renderToStaticMarkup(createElement(SavedResearchPanel, {
       items: ${JSON.stringify(items)},
       loading: false,

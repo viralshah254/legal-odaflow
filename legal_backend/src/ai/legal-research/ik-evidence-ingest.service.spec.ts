@@ -2,13 +2,27 @@ import { IkEvidenceIngestService } from './ik-evidence-ingest.service';
 import { LegalEvidencePackService } from './legal-evidence-pack.service';
 import { IndiaKanoonQueryBuilderService } from './india-kanoon-query-builder.service';
 
+function withOutcome(connector: { search: jest.Mock; [key: string]: unknown }) {
+  return { ...connector, searchWithOutcome: async (request: unknown) => {
+    const results = await connector.search(request);
+    return { results, hitCount: results?.length ?? 0, status: results?.length ? 'searched' : 'no_hits' };
+  } };
+}
+
 describe('IkEvidenceIngestService', () => {
   const packService = new LegalEvidencePackService();
   const queryBuilder = new IndiaKanoonQueryBuilderService();
 
   it('plans issue + statute + procedural queries', () => {
-    const connector = { isConfigured: () => false, search: jest.fn() };
-    const service = new IkEvidenceIngestService(connector as never, packService, queryBuilder);
+    const connector = { isCircuitOpen: () => false, isConfigured: () => false, search: jest.fn() };
+    const outcomeConnector = {
+      ...connector,
+      searchWithOutcome: async (request: unknown) => {
+        const results = await connector.search(request);
+        return { results, hitCount: results?.length ?? 0, status: results?.length ? 'searched' : 'no_hits' };
+      },
+    };
+    const service = new IkEvidenceIngestService(outcomeConnector as never, packService, queryBuilder);
     const plan = service.planQueries({
       query: 'BNS 351 intimidation bail',
       practiceArea: 'criminal',
@@ -21,7 +35,7 @@ describe('IkEvidenceIngestService', () => {
 
   it('merges IK cases into evidence pack without marking verified', async () => {
     const connector = {
-      isConfigured: () => true,
+      isCircuitOpen: () => false, isConfigured: () => true,
       search: jest.fn().mockResolvedValue([
         {
           id: 'ik-99',
@@ -48,7 +62,14 @@ describe('IkEvidenceIngestService', () => {
         'The Supreme Court held that bail requires flight risk assessment and witness tampering analysis.',
       ),
     };
-    const service = new IkEvidenceIngestService(connector as never, packService, queryBuilder);
+    const outcomeConnector = {
+      ...connector,
+      searchWithOutcome: async (request: unknown) => {
+        const results = await connector.search(request);
+        return { results, hitCount: results?.length ?? 0, status: results?.length ? 'searched' : 'no_hits' };
+      },
+    };
+    const service = new IkEvidenceIngestService(outcomeConnector as never, packService, queryBuilder);
     const { authorities, packDelta } = await service.retrieveAndIngest({
       query: 'bail flight risk',
       limitPerQuery: 2,
@@ -69,7 +90,7 @@ describe('IkEvidenceIngestService', () => {
 
   it('keeps quote fallback passages unnumbered instead of inventing judicial paragraphs', async () => {
     const connector = {
-      isConfigured: () => true,
+      isCircuitOpen: () => false, isConfigured: () => true,
       search: jest.fn().mockResolvedValue([
         {
           id: 'ik-100',
@@ -95,7 +116,7 @@ describe('IkEvidenceIngestService', () => {
         .mockResolvedValue('A source excerpt concerning bail safeguards and witness intimidation.'),
     };
     const service = new IkEvidenceIngestService(
-      connector as never,
+      withOutcome(connector) as never,
       packService,
       queryBuilder,
     );
@@ -109,7 +130,7 @@ describe('IkEvidenceIngestService', () => {
 
   it('rejects off-topic IK candidates before admission or pack creation', async () => {
     const connector = {
-      isConfigured: () => true,
+      isCircuitOpen: () => false, isConfigured: () => true,
       search: jest.fn().mockResolvedValue([
         {
           id: 'ik-101',
@@ -130,7 +151,7 @@ describe('IkEvidenceIngestService', () => {
         .mockResolvedValue('Building permission depends on zoning and municipal regulations.'),
     };
     const service = new IkEvidenceIngestService(
-      connector as never,
+      withOutcome(connector) as never,
       packService,
       queryBuilder,
     );
@@ -164,7 +185,7 @@ describe('IkEvidenceIngestService', () => {
 
   it('runs one bounded unsupported-claim repair pass and returns only new admissions', async () => {
     const connector = {
-      isConfigured: () => true,
+      isCircuitOpen: () => false, isConfigured: () => true,
       search: jest.fn().mockResolvedValue([
         {
           id: 'ik-201',
@@ -198,7 +219,7 @@ describe('IkEvidenceIngestService', () => {
       ),
     };
     const service = new IkEvidenceIngestService(
-      connector as never,
+      withOutcome(connector) as never,
       packService,
       queryBuilder,
     );
@@ -265,9 +286,9 @@ describe('IkEvidenceIngestService', () => {
   });
 
   it('rejects attempts to invoke a second unsupported-claim repair pass', async () => {
-    const connector = { isConfigured: () => true, search: jest.fn() };
+    const connector = { isCircuitOpen: () => false, isConfigured: () => true, search: jest.fn() };
     const service = new IkEvidenceIngestService(
-      connector as never,
+      withOutcome(connector) as never,
       packService,
       queryBuilder,
     );

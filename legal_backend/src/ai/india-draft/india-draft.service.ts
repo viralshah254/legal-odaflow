@@ -246,6 +246,17 @@ export class IndiaDraftService {
     dto: GenerateIndiaDraftDto,
     ctx: DraftAuthContext,
   ): Promise<GenerateIndiaDraftResult> {
+    const preDraftGate = this.documentDependency.checkPreDraft(ensureIndiaDraftKind(dto.kind), [
+      dto.caseDetails,
+      dto.attachmentContext ?? '',
+    ]);
+    if (!preDraftGate.canProceed) {
+      throw new BadRequestException({
+        message: preDraftGate.message ?? 'Missing required inputs before drafting',
+        missingInputs: preDraftGate.missingInputs,
+      });
+    }
+
     // Preflight intake gate for filing-grade kinds
     let routingKind = ensureIndiaDraftKind(dto.kind);
     if (dto.bundleMode && (dto.bundleIndex ?? 0) === 0) {
@@ -456,16 +467,6 @@ export class IndiaDraftService {
     });
     const effectiveKind = respectUserSelection ? userKind : routerResult.recommendedKind;
 
-    const preDraftGate = this.documentDependency.checkPreDraft(userKind, [
-      dto.caseDetails,
-      dto.attachmentContext ?? '',
-    ]);
-    if (!preDraftGate.canProceed) {
-      throw new BadRequestException({
-        message: preDraftGate.message ?? 'Missing required inputs before drafting',
-        missingInputs: preDraftGate.missingInputs,
-      });
-    }
 
     const formatPrompt =
       dto.kind === 'india_form_catalog'
@@ -2156,14 +2157,19 @@ EXPLANATION: <brief note>`;
       currentFinishReason = continuation.finishReason;
       count++;
 
-      // Charge continuation credits (15 per pass, non-fatal if it fails)
+      // Meter continuation usage using the same 2× provider-cost policy.
       try {
-        const { getCreditCost } = await import('@/ai-credits/credit-costs');
+        const continuationCharge = this.computeVerificationFixCharge({
+          modelName,
+          inputTokens: continuation.inputTokens,
+          outputTokens: continuation.outputTokens,
+        });
         await this.creditLedger.debit({
           userId,
           tenantId,
           taskType: AI_TASK_TYPES.DRAFT_CONTINUATION,
-          credits: getCreditCost(AI_TASK_TYPES.DRAFT_CONTINUATION),
+          credits: continuationCharge.credits,
+          costUsd: continuationCharge.providerCostUsd,
           metadata: { continuationPass: count, modelName },
         });
       } catch {

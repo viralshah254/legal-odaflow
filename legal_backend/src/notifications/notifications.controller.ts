@@ -2,6 +2,7 @@ import {
   Body,
   Controller,
   Delete,
+  ForbiddenException,
   Get,
   Param,
   Patch,
@@ -26,7 +27,8 @@ export class NotificationsController {
   constructor(private readonly notificationsService: NotificationsService) {}
 
   @Post()
-  create(@TenantId() tenantId: string, @Body() dto: CreateNotificationDto) {
+  create(@TenantId() tenantId: string, @CurrentUser() user: RequestUser, @Body() dto: CreateNotificationDto) {
+    if (dto.userId !== user.id) throw new ForbiddenException('Use an authorized workflow to notify another user');
     return this.notificationsService.create(tenantId, dto);
   }
 
@@ -41,8 +43,9 @@ export class NotificationsController {
     @Query('isRead') isRead?: string,
     @Query('type') type?: string,
   ) {
+    if (userId && userId !== user.id) throw new ForbiddenException('Notification access denied');
     if (userId || isRead || type) {
-      return this.notificationsService.findAll(tenantId, userId, isRead, type);
+      return this.notificationsService.findAll(tenantId, user.id, isRead, type);
     }
 
     return this.notificationsService.getInbox(
@@ -67,7 +70,7 @@ export class NotificationsController {
   ) {
     return this.notificationsService.registerDeviceToken(user.id, {
       ...dto,
-      tenantId: dto.tenantId ?? tenantId,
+      tenantId,
     });
   }
 
@@ -79,7 +82,7 @@ export class NotificationsController {
   ) {
     return this.notificationsService.registerDeviceToken(user.id, {
       ...dto,
-      tenantId: dto.tenantId ?? tenantId,
+      tenantId,
     });
   }
 
@@ -108,17 +111,19 @@ export class NotificationsController {
   @Get(':notificationId')
   findOne(
     @TenantId() tenantId: string,
+    @CurrentUser() user: RequestUser,
     @Param('notificationId') notificationId: string,
   ) {
-    return this.notificationsService.findOne(tenantId, notificationId);
+    return this.notificationsService.findOne(tenantId, notificationId, user.id);
   }
 
   @Patch(':notificationId')
   update(
     @TenantId() tenantId: string,
+    @CurrentUser() user: RequestUser,
     @Param('notificationId') notificationId: string,
     @Body() dto: UpdateNotificationDto,
   ) {
-    return this.notificationsService.update(tenantId, notificationId, dto);
+    return this.notificationsService.update(tenantId, notificationId, dto, user.id);
   }
 }

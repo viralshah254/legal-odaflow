@@ -1,3 +1,5 @@
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import '../../core/providers/app_providers.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -14,15 +16,29 @@ import '../../l10n/app_localizations.dart';
 /// Call this before any action that sends user data to a third-party AI
 /// provider, per Apple App Store guidelines 5.1.1(i) and 5.1.2(i).
 Future<bool> requireAiInferenceConsent(BuildContext context) async {
-  final alreadyGranted = await AiInferenceConsentStorage.hasGranted();
-  if (alreadyGranted) return true;
-
   if (!context.mounted) return false;
-
+  final container = ProviderScope.containerOf(context, listen: false);
+  final user = container.read(authControllerProvider).session?.user;
+  final scope = '${user?.id ?? 'guest'}:${user?.tenantId ?? 'personal'}';
+  late String policyVersion;
+  late List<String> providers;
+  try {
+    final response = await container.read(apiClientProvider).dio.get<Map<String, dynamic>>('/ai/processing-disclosure');
+    policyVersion = response.data?['version'] as String? ?? '';
+    providers = (response.data?['providers'] as List<dynamic>? ?? []).whereType<String>().toList();
+    if (policyVersion.isEmpty || providers.isEmpty) return false;
+  } catch (_) {
+    if (context.mounted) {
+      ScaffoldMessenger.maybeOf(context)?.showSnackBar(const SnackBar(content: Text('AI privacy information is unavailable. Please retry before sending your data.')));
+    }
+    return false;
+  }
+  if (await AiInferenceConsentStorage.hasGranted(scope: scope, policyVersion: policyVersion)) return true;
+  if (!context.mounted) return false;
   final granted = await showDialog<bool>(
     context: context,
     barrierDismissible: false,
-    builder: (context) => const AiInferenceConsentDialog(),
+    builder: (context) => AiInferenceConsentDialog(providers: providers, policyVersion: policyVersion, scope: scope),
   );
 
   return granted == true;
@@ -30,7 +46,10 @@ Future<bool> requireAiInferenceConsent(BuildContext context) async {
 
 /// Blocking dialog shown once per install before the first AI feature use.
 class AiInferenceConsentDialog extends StatelessWidget {
-  const AiInferenceConsentDialog({super.key});
+  const AiInferenceConsentDialog({super.key, required this.providers, required this.policyVersion, required this.scope});
+  final List<String> providers;
+  final String policyVersion;
+  final String scope;
 
   Future<void> _openUrl(String path) async {
     final base = AppConfig.webBaseUrl.replaceAll(RegExp(r'/$'), '');
@@ -91,7 +110,7 @@ class AiInferenceConsentDialog extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: [
             const SizedBox(height: 8),
-            Text(l10n.aiConsentDialogBody, style: bodyStyle),
+            Text('To perform the AI work you request, Umbrella sends your questions, instructions, authorized matter facts, document excerpts, research and draft text to the recipients below. Audio is sent when you use transcription. Inference permission does not grant permission to train models.', style: bodyStyle),
             const SizedBox(height: 10),
             Container(
               padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
@@ -111,7 +130,7 @@ class AiInferenceConsentDialog extends StatelessWidget {
                   const SizedBox(width: 8),
                   Expanded(
                     child: Text(
-                      l10n.aiConsentDialogProviders,
+                      providers.join(', '),
                       style: theme.textTheme.bodySmall?.copyWith(
                         color: colorScheme.onSurface,
                         fontWeight: FontWeight.w500,
@@ -153,14 +172,14 @@ class AiInferenceConsentDialog extends StatelessWidget {
       actions: [
         TextButton(
           onPressed: () async {
-            await AiInferenceConsentStorage.setGranted(false);
+            await AiInferenceConsentStorage.setGranted(false, scope: scope, policyVersion: policyVersion);
             if (context.mounted) Navigator.of(context).pop(false);
           },
           child: Text(l10n.aiConsentDialogDecline),
         ),
         FilledButton(
           onPressed: () async {
-            await AiInferenceConsentStorage.setGranted(true);
+            await AiInferenceConsentStorage.setGranted(true, scope: scope, policyVersion: policyVersion);
             if (context.mounted) Navigator.of(context).pop(true);
           },
           child: Text(l10n.aiConsentDialogAgree),

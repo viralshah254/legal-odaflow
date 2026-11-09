@@ -148,12 +148,14 @@ export class AiCreditEnforcementService {
     tenantId?: string;
     taskType: string;
     modelName: string;
+    providerCostUsd?: number;
     inputTokens: number;
     outputTokens: number;
     metadata?: Prisma.InputJsonValue;
   }) {
     const usageCharge = await this.tokenCreditCharge.computeCreditsForUsage({
       modelName: params.modelName,
+      providerCostUsd: params.providerCostUsd,
       inputTokens: params.inputTokens,
       outputTokens: params.outputTokens,
       taskType: params.taskType,
@@ -185,6 +187,7 @@ export class AiCreditEnforcementService {
       tenantId: params.tenantId,
       taskType: params.taskType,
       credits: usageCharge.credits,
+      costUsd: usageCharge.providerCostUsd,
       metadata: {
         ...baseMetadata,
         modelName: params.modelName,

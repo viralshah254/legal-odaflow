@@ -12,7 +12,7 @@ describe("research answer display helpers", () => {
       .toBe("Answer.")
   })
 
-  it("strips triple-check verification dumps from answer markdown", () => {
+  it("preserves verification findings in answer markdown", () => {
     const memo = [
       "## Executive answer",
       "No — parties cannot waive the Act wholesale.",
@@ -24,16 +24,16 @@ describe("research answer display helpers", () => {
       "Section 23 bars unlawful objects.",
     ].join("\n")
 
-    expect(sanitizeResearchAnswer(memo)).not.toMatch(/Triple-check verification/i)
+    expect(sanitizeResearchAnswer(memo)).toMatch(/Triple-check verification/i)
     expect(sanitizeResearchAnswer(memo)).toContain("Executive answer")
     expect(sanitizeResearchAnswer(memo)).toContain("Section 23 bars unlawful objects")
   })
 
-  it("strips inline unsupported-claim prefixes", () => {
+  it("preserves inline unsupported-claim warnings", () => {
     expect(
       sanitizeResearchAnswer(
         "Unsupported by retrieved passages unless counsel verifies independently: Parties may not contract out.",
       ),
-    ).toBe("Parties may not contract out.")
+    ).toBe("Unsupported by retrieved passages unless counsel verifies independently: Parties may not contract out.")
   })
 })

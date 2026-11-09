@@ -334,6 +334,8 @@ export interface LegalResearchRequest {
   selectedDocumentIds?: string[]
   /** Explicit filed research authorized for this run. Empty means no prior research text. */
   selectedSavedResearchIds?: string[]
+  contextScope?: "SELECTED" | "MATTER" | "FOLDERS"
+  selectedFolderIds?: string[]
   aiModelMode?: "AUTO" | "PREMIUM"
   premiumModelId?: string
   researchMode?: "FAST" | "DEEP" | "GUIDANCE"
@@ -351,6 +353,10 @@ export interface LegalResearchRequest {
 export type CaseVerificationStatus = "verified" | "needs_verification" | "source_only"
 
 export interface SimilarCase {
+  keyHolding?: string | null
+  outcome?: string | null
+  proceduralStage?: string | null
+  relevantPassage?: string | null
   authorityId: string
   title: string
   citation: string | null

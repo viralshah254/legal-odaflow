@@ -80,9 +80,8 @@ export function extractSectionRefs(text: string, countryCode?: string): string[]
 
 function deriveBrief(authority: RetrievedAuthority): { year: string | null; court: string | null } {
   const ext = authority as unknown as Record<string, unknown>;
-  const year = ext.decisionDate
-    ? String(new Date(ext.decisionDate as string).getFullYear())
-    : null;
+  const parsedYear = ext.decisionDate ? new Date(ext.decisionDate as string).getUTCFullYear() : authority.decisionYear;
+  const year = parsedYear && Number.isFinite(parsedYear) ? String(parsedYear) : null;
   const court = (ext.court as string | null | undefined) ?? null;
   return { year, court };
 }
@@ -249,7 +248,13 @@ export class SimilarCasesService {
         bindingWeight: bindingWeight(a, countryCode),
         confidence: Math.min(total, 1),
         verificationStatus: verificationStatus(a),
-        keyHolding: a.summary ? a.summary.slice(0, 280) : null,
+        // A search/seed summary is not a judgment holding. Use a classified,
+        // source-anchored passage; do not invent an outcome from keywords.
+        keyHolding: a.sourcePassages?.find((passage) =>
+          passage.sourcePinpoint && ['HOLDING', 'RATIO'].includes(passage.classification ?? ''),
+        )?.text ?? null,
+        outcome: a.sourceProvenance?.dispositionComplete ? a.proceduralPosture?.disposition ?? null : null,
+        proceduralStage: a.proceduralPosture?.stage ?? null,
         relevantPassage: a.fullText ? a.fullText.slice(0, 400) : a.summary?.slice(0, 400) ?? null,
         whyItMatters: relevanceReason,
         caseScoreBreakdown: breakdown,

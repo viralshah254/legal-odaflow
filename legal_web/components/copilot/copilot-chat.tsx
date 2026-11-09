@@ -388,10 +388,10 @@ export function CopilotChat({ externalSession, onSessionLoaded }: CopilotChatPro
             value={premiumModelId}
             onChange={(e) => setPremiumModelId(e.target.value)}
           >
-            {(creditWallet?.wallet.availablePremiumModels ?? [{ modelId: "gpt-4.1", label: "GPT-4.1" }]).map(
-              (m) => (
+            {(creditWallet?.wallet.availablePremiumModels ?? [{ modelId: "gpt-4.1", label: "Advanced reasoning" }]).map(
+              (m, index) => (
                 <option key={m.modelId} value={m.modelId}>
-                  {m.label}
+                  {`Advanced reasoning ${index + 1}`}
                   {m.estimatedCreditsTypical != null ? ` (~${m.estimatedCreditsTypical} credits/msg)` : ""}
                 </option>
               ),

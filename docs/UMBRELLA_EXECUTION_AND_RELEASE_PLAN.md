@@ -1,0 +1,122 @@
+# Umbrella implementation and sustainable launch plan
+
+Date: 9 November 2026, Africa/Nairobi. The user authorized completion of planning followed by implementation and testing. The completed fixes in the other chats are the baseline; preserve their edits. This execution record supplements the country workflow, firm workflow and regional pricing documents.
+
+## Final product and commercial defaults
+
+Implement the published target prices in the regional subscription strategy through a versioned catalog, without rewriting existing subscriptions or activating unconfigured store products. India and Kenya use fixed local list prices; other countries use global pricing until an explicit regional pack exists. Legal capability, billing region, interface language and data location remain separate. Unknown legal coverage never becomes another country's law.
+
+Retain current consumers as a distinct audience. Do not move them into the professional $100 package. Trial and promotional AI are acquisition expenses with a firm global budget, not an indefinitely renewing entitlement funded by hoped-for conversion. The current 50-credit daily consumer grant can cost up to $0.25/provider/day at the proposed denomination and 2× rule: 1,000 daily users can consume $7,500/month before infrastructure. Add acquisition-budget enforcement before scaling free acquisition.
+
+An initial professional trial lasts 14 days, has a one-time 100-credit allowance, no recurring free grant, verified identity and abuse limits. Cap total promotional provider exposure at a configurable monthly budget; stop new grants when exhausted while preserving existing customer files. Never silently create a chargeable subscription at trial end.
+
+Initial capacity targets to validate against measured cost:
+
+| Package | Stored source documents | Included storage | Simultaneous AI jobs | Ordinary batch upload |
+|---|---:|---:|---:|---:|
+| Solo | 2,000 | 10 GB | 2 | 50 files |
+| Solo Pro | 5,000 | 25 GB | 3 | 100 files |
+| Firm Team | 20,000 shared | 100 GB | 6 shared | 250 files |
+| Firm Growth | 50,000 shared | 250 GB | 12 shared | 500 files |
+
+Document counts refer to unique source documents; versions and exports consume storage. Per-file conversion limits, OCR/page cost, archive extraction and maximum nesting need server-enforced bounds. Do not delete client files at a subscription limit: stop additional ingestion, show usage and offer reviewed storage/bulk-processing options. Proposed storage add-on prices must be published only after measured storage, backup, indexing and egress cost; do not promise unlimited retention or unlimited processing.
+
+Core confidentiality and correct legal verification apply at every tier. Increasing spend does not buy permission to bypass a wall or release unsupported claims. Enterprise operational promises, support hours and recovery objectives are contractual only after the operating system can meet them.
+
+## Profitability and cash controls
+
+Measure cash contribution using realized revenue after store/processor deductions, refunds, taxes payable and discounts, minus provider costs, search/OCR, storage/backup/egress, messaging, attributable support and other direct costs. Promotional cloud credits are recorded separately so expiry cannot make an apparently profitable plan collapse.
+
+Define monthly fixed operating burn F and weighted direct contribution per paid account C from actual cohorts. Break-even paid accounts are ceil(F/C), provided C is positive. As an illustration only, $1,000 fixed burn and $65 contribution need 16 accounts; this is not a statement of Umbrella's current costs. Maintain base, heavy-use and provider-credit-expiry scenarios and review cash runway weekly during pilot.
+
+Enforce: provider/project budgets; tenant/user/matter budgets; concurrency; atomic spend reservations; idempotent settlement; explicit expensive-work confirmation; no automatic top-up by default; costed retries; and cancellation. Alert operators before provider quota exhaustion without exposing client content. Store fees are recovered in purchase price; identical work consumes identical credits across devices.
+
+Global Solo includes 1,000 monthly credits and at most $5 provider usage under the 2× rule. Its annual price remains $1,200 to preserve the $100/month floor. Regional allowance uses the catalog's fixed FX version and 20% retail-budget allocation. Freeze allowance for the customer's committed term. Set top-up price floors, minimum proceeds and a 70% normal-use direct contribution target; reject any catalog quote that fails its own declared margin floor. Measure whether allowances buy a useful complete matter journey before launch.
+
+## Store readiness and account setup
+
+Prepare a machine-readable product manifest containing catalog version, legal entity/app identifier, bundle/package identity, audience, product type, interval, regional price, tax category, entitlement key and credits/seats. Confirm existing App Store Connect and Play Console identities before adding products. Retain existing product IDs and contracts; never reuse a consumable ID for a subscription.
+
+Store products remain unavailable until native purchase UI, signed server validation, lifecycle notifications, restore/manage, account-linking and duplicate-subscription protection exist. Return a non-purchasable quote when a product or fee profile is missing rather than falling back to a hosted WebView or invented FX price. Individual subscriptions, firm contracts, AI top-ups and legal-service invoices have separate product/payment treatment.
+
+Use sandbox and license-test accounts for purchase success, pending, decline, renewal, grace/account hold, expiry, upgrade/downgrade, refund, revocation, restore, reinstall, account switch and repeated/out-of-order notifications. Verify India, Kenya, US and GB prices and transaction fees against actual settlement expectations. Review approved fee programs and storefront-specific link/payment rules at configuration time. No production store publication is implied by local catalog implementation.
+
+Account setup inventory: store developer agreements and business verification; tax/banking; support/privacy/terms and deletion URLs; public website and app links; Apple sign-in identity where applicable; APNs/FCM entitlements and keys; Google OAuth and Microsoft app registrations with minimal calendar scopes; webhook HTTPS endpoints and signing secrets; transactional email domain authentication; data processing/subprocessor register; production service accounts; backup destinations and operator alerts. Check existence without printing secrets; create concrete scoped setup tasks for unavailable accounts rather than fabricate activation.
+
+## Worldwide operation and country readiness
+
+Make account access, secure files, neutral summarization and collaboration usable worldwide where the service can legally operate, with Unicode, international names/addresses, E.164 phone handling, timezone-aware dates and accessible localization. Record supported/limited/unavailable capabilities per legal country and feature. Do not claim universal legal accuracy or primary-law coverage. IP and travel never rewrite a matter or a billing contract.
+
+Use primary-source packs with explicit country/subdivision/court, temporal versions, source rights, freshness, citation convention, supported document kinds and approved deadline rules. Pilot IN and KE on reviewed document packs, then independently validate US/GB and UG. Other countries remain explicit limited coverage while their packs mature. Sanctions/export/distribution and payment availability are release-policy inputs, not an excuse to silently substitute law.
+
+## Research and drafting speed and quality
+
+Instrument retrieval, context assembly, synthesis, verification, repair, persistence and export with durations and usage. Benchmark the actual route used by the UI, not only a new engine behind an unused flag. Use synthetic non-confidential cases for connectivity canaries and source-backed lawyer-reviewed fixtures for quality.
+
+Remove avoidable sequential I/O using bounded concurrency; keep task-wide search budgets deterministic. Reuse validated exact-section lookups and request-local evidence, deduplicate repeated authority checks, and preserve dependency order between draft sections. Avoid per-section repeat retrieval when the same evidence pack suffices. Reverification must assess changed final content and cannot be skipped for a faster completion badge.
+
+Show job acknowledgement and progress immediately. Research should surface retrieval/progress within two seconds on the agreed environment, and substantive output as soon as the task permits; complex exhaustive document review remains a longer workflow with coverage tracking. Record p50/p95/p99 and time to first useful content. Initial candidate targets are 30–60 seconds for ordinary scoped research and 60–120 seconds for an ordinary supported draft, measured after a deployed baseline; do not represent these as achieved SLAs.
+
+Quality checks cover correct client side, sourced facts, current/historical law, official case identity and citation, exact holding/paraphrase, adverse authority, procedural outcome, relief, annexures and rendered format. Unsupported material is retrieved, repaired or withheld; the UI should make the next useful action clear. No claim that the system outperforms every law firm is defensible without a specified benchmark and independent review.
+
+## Execution sequence and release evidence
+
+1. Preserve completed fixes and record type/test baseline, deployment/network limits and current UI routes.
+2. Implement deterministic regional catalog/quote economics and explicit non-purchasable store states.
+3. Address research cache privacy/freshness and actual serial verification latency before enabling broader matter retrieval.
+4. Extend matter legal context, authorized multi-file/folder retrieval, source manifests and connected draft/research linking.
+5. Enforce permissions and approval states across APIs, jobs, notifications and mobile; add regression tests before broadening automation.
+6. Modernize web/mobile journeys and test real local services, then CRM/calendar/reminder durability and entitlements.
+7. Enable curated knowledge promotion only after source rights, confidentiality and revocation tests.
+8. Release internally under flags; inspect actual research/drafts and exports; measure cost and quality; then expand by tenant and capability.
+
+Each completed slice records changed files, tests, actual running environment, observed latency/quality and remaining release gates. Never mark the overall plan done because a subset compiles. Local builds, database migrations, provider connectivity, lawyer acceptance, store publication and production deployment are distinct evidence gates.
+
+## Confirmed account and provider release issues
+
+App Store Connect currently lists Umbrella Ai, app ID 6778037932, version 1.0 with build 1.0.6 rejected. The visible review record identifies digital purchases outside IAP and insufficient disclosure/permission for third-party AI processing. Correct native purchases, privacy disclosures and review notes before resubmission. Store products, prices, agreements and publication have not been changed during this work.
+
+The configured Google Developer API key can list models. A synthetic generation request to the configured gemini-2.5-flash returned 404 with a model-retirement explanation for new users. Two synthetic gemini-3.8-flash attempts returned 503, and a gemini-3.1-pro-preview attempt returned 429. These establish specific availability/quota gates; they do not establish successful legal generation or that Google Cloud promotional credits pay for Developer API requests. Check the intended project, paid data handling, quota and authentication mode before production enablement. No private matter material was used for these canaries.
+
+Google's published standard rate card lists gemini-3.8-flash at $0.75/$3.75 per million input/output tokens through 31 December 2026 and $1.50/$7.50 from 1 January 2027. The implementation includes the date change. The 3.1 Pro preview long-context tier applies above 200,000 input tokens. Cached tokens, grounding/tool fees and complete task settlement remain separate accounting work. Source: [Google API pricing](https://ai.google.dev/gemini-api/docs/pricing).
+
+A fresh historical migration chain fails at 20260701120000_add_agent_workflow_run_step_results because AgentWorkflowRun has not been created by an earlier migration. Do not edit already applied migration checksums to hide this. The current schema loads into a separate empty local test database, enabling functional testing; repairing and validating the production migration/baseline path remains a release requirement.
+
+The original iOS build directory is under a synced Desktop folder. Xcode reports Finder/file-provider metadata on a generated framework as incompatible with code signing. A temporary source copy under /private/tmp is used to verify simulator execution without changing signing identities or the user's synced sources. Flutter also regenerated localization outputs and migrated the iOS application delegate to the current UIScene lifecycle; review those generated/platform changes with the app build.
+
+## Execution status
+
+Implemented source changes include bounded concurrent authority checks, actor/evidence-sensitive research cache identity with a short shortcut lifetime, matter-country inheritance, selected/whole-matter/folder document scopes with relevant excerpts, inherited folder restrictions, central ethical-wall enforcement, distinct matter write access, scoped calendar and notification access, versioned recipient disclosure, account-scoped mobile inference permission, mobile matter-to-research linking, provenance-aware similar-case fields and a non-purchasable versioned pricing catalog with fee/economics calculations. The new catalog deliberately does not mutate existing contracts or route unconfigured products into legacy checkout.
+
+This is the first implementation tranche, not completion of the entire master plan. Remaining major work includes native store billing and server entitlements, final regional FX/product mappings, task-wide receipts/reservations and reconciliation, canonical representation history, exhaustive indexed matter retrieval and derivative ACLs, immutable approval workflows across channels, durable reminder delivery and external calendar synchronization, the remaining CRM/mobile parity journeys, governed knowledge promotion and independent legal quality acceptance. Existing Google embedding/transcription migration and a successful real-provider legal benchmark remain open.
+
+### Local validation, 9 November 2026
+
+- Backend production compilation passed after the access-control and country changes. Full Jest run: 340 suites passed, one skipped; 2,108 tests passed, three skipped and two todo; four snapshots passed.
+- Web unit run: 411 tests passed across 80 files; TypeScript check passed. A separate production build is tracked below; development-server startup alone is not production-build evidence.
+- Flutter analysis: no issues. Complete mobile suite: 51 tests passed. This run includes a real fix for timestamp-derived operation-key collisions: UUID v4 bytes now come from `Random.secure()`.
+- The iOS simulator launched the app from an isolated temporary source copy to avoid synced-directory code-signing metadata. The welcome screen was inspected. Authentication and a successful provider-backed legal output were not established by this launch.
+- Dedicated local Postgres/Redis backed the functional API tests. The original historical migration failure remains separate from the current-schema test database.
+- Mobile statutory lookup, suggestions and popular queries now preserve the requested legal country; attached matters inherit their country. Unsupported countries receive an explicit limited-coverage state. A request-level regression checks KE, US and GB. Country changes invalidate stale suggestions; statutory-result-to-research navigation retains the attached matter.
+
+The store release remains blocked on native purchases/server entitlements and final privacy review. The provider-backed legal quality and latency acceptance gate remains open after the documented 404/503/429 responses; deterministic fixtures and passing tests cannot substitute for a successful real-output benchmark.
+
+The rebuilt backend also passed all five real local API smoke checks: authorized country/nested document inventory; matter calendar create/read; notification recipient isolation; ethical-wall denial even for an administrator; and regional catalog quotes with unconfigured checkout disabled. Two separate real-database wallet tests passed concurrent-spend limits and ledger-failure rollback. Test records were synthetic and cleaned by the scripts.
+
+Web production validation completed successfully: optimized compilation, lint/type validation, all 233 static pages and build traces finished with exit code 0. Non-blocking warnings remain for the Twitter image runtime export, Sentry error-handler/config modernization and Next.js TypeScript project-reference support. The development web server returned HTTP 200.
+
+### Release preparation follow-up
+
+Remote `main` matched local HEAD `9200f231` before release preparation. The deployed backend host is on older source `d10121fa`; its running app uses the same hosted Neon database audited here. Production currently selects the OpenAI routing policy and explicitly names the retired Google 2.5 model; no production provider settings were changed.
+
+Read-only Prisma status reports exactly one pending migration: `20261018_umbrella_u01_u10`. A dedicated empty local database rehearsal applied that SQL twice to synthetic old-schema rows, preserved existing draft content and enforced tenant/user/operation-scoped request uniqueness. This is a narrow migration rehearsal, not a restored-production-data test. Schema comparison also found pre-existing drift; aggregate inspection found 37 duplicate jurisdiction-form key groups and zero duplicate non-null invitation-token groups. No legal forms were deleted/merged and no additional unique constraint was forced over ambiguous data.
+
+Automatic approval review rejected a full hosted-database export to `/private/tmp/umbrella-release-20261109` because confidential legal records and the local destination need explicit approval. No export or production migration ran. An explicit backup choice was requested; production migration and the deployment-triggering main push remain held pending that response and validation. The project's migration runbook requires a verified backup before apply.
+
+A public court-hosted Arnesh Kumar judgment was fetched and readability/identity checked for live model canaries. Google returned 503. The existing configured-provider path fell back to DeepSeek and produced accused research, complainant research and a draft in approximately 13.3s, 15.5s and 10.5s respectively. All had case identity and token usage; only accused research included the exact requested primary-source URL. The other two failed the source-link check. These were adapter-level historical 2014 scenarios, not the complete application route, independently verified current-law outputs or lawyer acceptance. Source: https://aphc.gov.in/docs/imp_judgements/Arnesh%20Kumar%20Vs.%20State%20of%20Bihar.pdf .
+
+Additional release fixes: unconfigured production M-Pesa now fails closed instead of returning a development payment ID; production e-sign fallback denial has regression coverage; the no-mock scan excludes test files and documents the tested development-only/production-rejection paths; deployment logging no longer serializes Docker credential arguments. The latter source fix still needs installation in the webhook service. The generated statute inventory now records PDF SHA-256 and explicitly describes readable extracted coverage; missing local provisions are described as source-extraction gaps, not nonexistent law. This inventory is not an independent statement of statutory completeness.
+
+Latest validation: backend production build passed; 342 Jest suites and 2,117 tests passed (one skipped suite, three skipped tests, two todo; four snapshots passed). The no-mock, 116-act generated-inventory and strict taxonomy gates passed. The task catalog was regenerated from current source (436 patterns). Web/Word type checks and the earlier complete web/mobile runs remain applicable; no web/mobile Dart source changed in this release-preparation follow-up.
+
+Android release compilation completed successfully in 381.6 seconds and produced a 109.8 MB local APK targeting `https://api.okaylegal.ai/api/v1`; no store upload occurred. Flutter added its current Android compatibility flags. Gradle/AGP/Kotlin future-support warnings remain modernization work. Public read-only checks returned HTTP 200 for `https://api.okaylegal.ai/api/v1/health`, `https://legal-api.odaflow.com/api/v1/health` and `https://okaylegal.ai/`. These checks describe the pre-release deployment; the new candidate is not live.

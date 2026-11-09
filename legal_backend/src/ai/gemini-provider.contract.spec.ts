@@ -121,8 +121,8 @@ describe('C08 – GeminiCompletionAdapter.complete()', () => {
     expect(result.modelName).toBe('gemini-2.5-pro');
   });
 
-  it('returns estimated token counts', async () => {
-    googleGenAIMock.generateContent.mockResolvedValue({ text: 'Short answer.' });
+  it('returns provider token counts including thinking', async () => {
+    googleGenAIMock.generateContent.mockResolvedValue({ text: 'Short answer.', usageMetadata: { promptTokenCount: 12, candidatesTokenCount: 8, thoughtsTokenCount: 10 } });
 
     const adapter = apiKeyAdapter();
     const result = await adapter.complete({
@@ -130,8 +130,8 @@ describe('C08 – GeminiCompletionAdapter.complete()', () => {
       messages: [{ role: 'user', content: 'Hello world' }],
     });
 
-    expect(result.inputTokens).toBeGreaterThan(0);
-    expect(result.outputTokens).toBeGreaterThan(0);
+    expect(result.inputTokens).toBe(12);
+    expect(result.outputTokens).toBe(18);
   });
 
   it('propagates provider error — does not return empty success', async () => {

@@ -33,10 +33,12 @@ describe('DocumentsService client/matter integrity', () => {
         }),
       },
       client: { findFirst: jest.fn() },
+      documentAccessRule: { findMany: jest.fn().mockResolvedValue([]) },
     };
     const service = Object.create(DocumentsService.prototype) as DocumentsService;
     Object.assign(service, {
       prisma,
+      matterAccess: { ensureMatterWriteAccess: jest.fn().mockResolvedValue(undefined) },
       encryption: { decryptStringFromStorage: (value: string | null) => value },
     });
     return { service, prisma };

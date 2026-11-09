@@ -28,11 +28,23 @@ export class DraftArchetypeRouterService {
       .sort((a, b) => (b.priority ?? 0) - (a.priority ?? 0));
 
     if (matches.length === 0) {
-      const archetype = input.documentKind
-        ? kindToArchetype(input.documentKind)
+      // Recognize an explicit procedural request even when no offence-specific
+      // curated row matches. This recommends a document, never a legal section.
+      const proceduralKinds: Array<[RegExp, string]> = input.jurisdiction === 'IN' ? [
+        [/\bhabeas corpus\b/i, 'india_habeas_corpus_petition'],
+        [/\bspecial leave petition\b|\bSLP\b/i, 'india_slp_draft'],
+        [/\bdischarge\b/i, 'india_discharge_application_bnss_250'],
+        [/\bappeal against conviction\b|\bcriminal appeal\b/i, 'india_criminal_appeal'],
+        [/\blegal notice\b/i, 'india_legal_notice'],
+        [/\bcivil suit\b|\bcivil plaint\b/i, 'india_civil_plaint'],
+      ] : [];
+      const recommendedKind = input.documentKind ?? proceduralKinds.find(([pattern]) => pattern.test(input.caseDetails))?.[1];
+      const archetype = recommendedKind
+        ? kindToArchetype(recommendedKind)
         : 'other';
       return {
         matched: false,
+        recommendedKind,
         archetype,
         register: archetypeToRegister(archetype),
         substantiveSections: [],

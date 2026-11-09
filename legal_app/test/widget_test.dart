@@ -1,3 +1,7 @@
+import 'package:go_router/go_router.dart';
+import 'package:umbrella/core/tutorials/tutorial_theme.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:umbrella/l10n/app_localizations.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -10,23 +14,42 @@ import 'package:umbrella/features/lawyer/clients/clients_list_screen.dart';
 import 'package:umbrella/features/lawyer/matters/create_matter_screen.dart';
 import 'package:umbrella/features/settings/privacy_security_screen.dart';
 
+Widget localizedApp(Widget home) {
+  final router = GoRouter(routes: [
+    GoRoute(path: '/', builder: (_, __) => UmbrellaShowcaseScope(builder: (_) => home)),
+    GoRoute(path: '/auth', builder: (_, __) => const Scaffold(body: Text('Authentication entry'))),
+  ]);
+  addTearDown(router.dispose);
+  return MaterialApp.router(
+    localizationsDelegates: AppLocalizations.localizationsDelegates,
+    supportedLocales: AppLocalizations.supportedLocales,
+    locale: const Locale('en'),
+    routerConfig: router,
+  );
+}
+
 void main() {
+  TestWidgetsFlutterBinding.ensureInitialized();
+  setUp(() => SharedPreferences.setMockInitialValues({}));
   testWidgets('Welcome screen shows sign-in, sign-up, and preview actions', (
     tester,
   ) async {
-    await tester.pumpWidget(const MaterialApp(home: WelcomeScreen()));
+    await tester.pumpWidget(localizedApp(const WelcomeScreen()));
 
-    expect(find.text('Your legal brain'), findsOneWidget);
-    expect(find.text('Sign In'), findsOneWidget);
-    expect(find.text('Create Account'), findsOneWidget);
-    expect(find.text('Try for free - no account needed'), findsOneWidget);
+    expect(find.text('Legal clarity'), findsOneWidget);
+    expect(find.text('Get started'), findsOneWidget);
+    expect(find.text('Try for free'), findsOneWidget);
+    expect(find.text('no account needed'), findsOneWidget);
+    await tester.tap(find.text('Get started'));
+    await tester.pumpAndSettle();
+    expect(find.text('Authentication entry'), findsOneWidget);
   });
 
   testWidgets('Sign-up screen starts with account type choices', (
     tester,
   ) async {
     await tester.pumpWidget(
-      const ProviderScope(child: MaterialApp(home: SignUpScreen())),
+      ProviderScope(child: localizedApp(const SignUpScreen(initialEmail: 'test@example.invalid'))),
     );
 
     expect(find.text('How will you use Umbrella?'), findsOneWidget);
@@ -35,9 +58,9 @@ void main() {
   });
 
   testWidgets('Privacy security screen shows mobile controls', (tester) async {
-    await tester.pumpWidget(const MaterialApp(home: PrivacySecurityScreen()));
+    await tester.pumpWidget(localizedApp(const PrivacySecurityScreen()));
 
-    expect(find.text('Privacy & Security'), findsOneWidget);
+    expect(find.text('Privacy & security'), findsOneWidget);
     expect(find.text('Secure token storage'), findsOneWidget);
     expect(find.text('Biometrics readiness'), findsOneWidget);
   });
@@ -69,7 +92,7 @@ void main() {
             ],
           ),
         ],
-        child: const MaterialApp(home: BillingScreen()),
+        child: localizedApp(const BillingScreen()),
       ),
     );
     await tester.pumpAndSettle();
@@ -80,7 +103,7 @@ void main() {
     expect(find.text('INV-1'), findsOneWidget);
   });
 
-  testWidgets('Create matter screen shows core fields', (tester) async {
+  testWidgets('Create matter screen starts with classification and practice area', (tester) async {
     await tester.pumpWidget(
       ProviderScope(
         overrides: [
@@ -88,13 +111,13 @@ void main() {
             (ref) async => const [FirmClient(id: 'client_1', name: 'Acme Ltd')],
           ),
         ],
-        child: const MaterialApp(home: CreateMatterScreen()),
+        child: localizedApp(const CreateMatterScreen()),
       ),
     );
     await tester.pumpAndSettle();
 
     expect(find.text('New matter'), findsOneWidget);
-    expect(find.text('Matter title'), findsOneWidget);
+    expect(find.text('Classification'), findsOneWidget);
     expect(find.text('Practice area'), findsOneWidget);
   });
 }

@@ -74,17 +74,28 @@ export const MODEL_COSTS: Record<string, ModelCostRates> = {
   },
   'gemini-2.5-flash': {
     provider: 'google',
-    inputPer1M: 0.15,
-    outputPer1M: 0.6,
+    inputPer1M: 0.30,
+    outputPer1M: 2.50,
     tier: 'mid',
     label: 'Gemini 2.5 Flash',
   },
   'gemini-2.5-pro': {
     provider: 'google',
     inputPer1M: 1.25,
-    outputPer1M: 5.0,
+    outputPer1M: 10.0,
     tier: 'premium',
     label: 'Gemini 2.5 Pro',
+  },
+  // Standard Developer API rates, checked 2026-11-09 against
+  // https://ai.google.dev/gemini-api/docs/pricing . Date/long-context variants
+  // are resolved by getModelCostForUsage, never by an unpriced model fallback.
+  'gemini-3.8-flash': {
+    provider: 'google', inputPer1M: 0.75, outputPer1M: 3.75,
+    tier: 'mid', label: 'Gemini 3.8 Flash',
+  },
+  'gemini-3.1-pro-preview': {
+    provider: 'google', inputPer1M: 2, outputPer1M: 12,
+    tier: 'premium', label: 'Gemini 3.1 Pro Preview',
   },
   'gpt-4o-mini': {
     provider: 'openai',
@@ -232,6 +243,19 @@ export function getModelCostSync(modelName: string): ModelCostRates {
 }
 
 export type ModelTier = ModelCostRates['tier'];
+
+/** Standard text usage rates. Provider-specific discounts, cached tokens,
+ * grounding and storage remain separate receipt components. */
+export function getModelCostForUsage(modelName: string, inputTokens: number, at = new Date()): ModelCostRates {
+  const rates = getModelCostSync(modelName);
+  if (normalizeModelId(modelName) === 'gemini-3.8-flash' && at >= new Date('2027-01-01T00:00:00Z')) {
+    return { ...rates, inputPer1M: 1.5, outputPer1M: 7.5 };
+  }
+  if (normalizeModelId(modelName) === 'gemini-3.1-pro-preview' && inputTokens > 200_000) {
+    return { ...rates, inputPer1M: 4, outputPer1M: 18 };
+  }
+  return rates;
+}
 
 /**
  * Capability ordering for the tiers. "reasoning" and "premium" are both
