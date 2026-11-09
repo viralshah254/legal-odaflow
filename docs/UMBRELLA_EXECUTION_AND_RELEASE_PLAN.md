@@ -184,3 +184,6 @@ The corrected remote run passed Flutter analysis/tests and reached Android packa
 
 
 The next unchanged backend CI attempt failed dependency installation on a GitHub-hosted FFmpeg license download returning HTTP 504, after the previous complete backend run passed. The installed GitHub credential cannot manually rerun Actions jobs (HTTP 403). Backend dependency installation in monorepo CI now retries at most three times, still failing the job if all attempts fail; validation/tests remain unchanged. This addresses the observed transient external binary download failure rather than treating it as a source regression.
+
+
+The latest floating Flutter stable (3.47.9) additionally rejects Gradle below 8.14, while this project's locally validated Flutter is 3.44.8. Both CI Flutter jobs are now pinned to that exact tested version, with Java 17 retained. A coordinated Flutter/Gradle/AGP upgrade remains modernization work rather than silently changing the SDK on every run.
