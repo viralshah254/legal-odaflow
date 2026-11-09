@@ -66,7 +66,7 @@ export function AddUsersDialog({ open, onOpenChange, onUsersAdded }: AddUsersDia
         <DialogHeader>
           <DialogTitle>{t("add_users_to_subscription")}</DialogTitle>
           <DialogDescription>
-            Add additional users to your subscription. You'll be charged a pro-rata amount for the remaining billing period.
+            Add additional users to your subscription. You&apos;ll be charged a pro-rata amount for the remaining billing period.
           </DialogDescription>
         </DialogHeader>
         <div className="space-y-4 py-4">

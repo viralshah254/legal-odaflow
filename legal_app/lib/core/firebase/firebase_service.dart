@@ -126,7 +126,7 @@ class FirebaseService {
   static Future<String?> getFcmToken() async {
     if (!isConfigured || !_initialized || kIsWeb) return null;
     try {
-      return FirebaseMessaging.instance.getToken();
+      return await FirebaseMessaging.instance.getToken();
     } catch (_) {
       return null;
     }

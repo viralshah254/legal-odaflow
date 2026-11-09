@@ -151,7 +151,7 @@ export function UploadMeetingModal({
         <DialogHeader>
           <DialogTitle>{t("upload_recording")}</DialogTitle>
           <DialogDescription>
-            Upload an audio or video file (.mp3, .m4a, .wav, .mp4). We'll generate a transcript and smart notes.
+            Upload an audio or video file (.mp3, .m4a, .wav, .mp4). We&apos;ll generate a transcript and smart notes.
           </DialogDescription>
         </DialogHeader>
         <div className="grid gap-4 py-4">

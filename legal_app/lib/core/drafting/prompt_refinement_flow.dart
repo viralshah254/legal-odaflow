@@ -36,7 +36,7 @@ Future<String?> runPromptRefinementFlow({
       return trimmed;
     }
 
-    return showPromptRefineSheet(
+    return await showPromptRefineSheet(
       context: context,
       originalPrompt: result.originalPrompt,
       refinedPrompt: result.refinedPrompt,

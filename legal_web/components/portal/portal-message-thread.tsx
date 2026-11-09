@@ -23,9 +23,6 @@ type PortalMessageThreadProps = {
 }
 
 function groupBySubject(messages: PortalMessage[]) {
-  const t = useTranslations("portal")
-  const tCommon = useTranslations("common")
-  const tLawyer = useTranslations("lawyer")
   const threads = new Map<string, PortalMessage[]>()
   for (const message of messages) {
     const key = message.subject.trim().toLowerCase()

@@ -207,7 +207,7 @@ export default function EnterpriseSettingsPage() {
                   <p><strong>Option 1 — Microsoft 365 Admin Centre (recommended):</strong></p>
                   <ol className="list-decimal ml-4 space-y-1">
                     <li>Open Microsoft 365 Admin Centre → Settings → Integrated apps</li>
-                    <li>Click "Upload custom apps" → paste the Manifest URL above</li>
+                    <li>{'Click "Upload custom apps" → paste the Manifest URL above'}</li>
                     <li>Deploy to your chosen user groups</li>
                   </ol>
                   <p className="mt-2"><strong>Option 2 — Sideload for testing:</strong></p>
@@ -259,7 +259,7 @@ export default function EnterpriseSettingsPage() {
                 Regulatory Monitors
               </CardTitle>
               <CardDescription>
-                Global settings for the firm's always-on regulatory intelligence scanning.
+                Global settings for the firm&apos;s always-on regulatory intelligence scanning.
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-5">

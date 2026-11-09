@@ -328,7 +328,7 @@ export function WorkflowSuggestionSheet({
         {filtered.length === 0 && (
           <div className="flex flex-col items-center py-12 text-center">
             <SearchCode className="h-8 w-8 text-muted-foreground mb-3" />
-            <p className="text-sm text-muted-foreground">No workflows match "{search}"</p>
+            <p className="text-sm text-muted-foreground">No workflows match &quot;{search}&quot;</p>
           </div>
         )}
       </SheetContent>

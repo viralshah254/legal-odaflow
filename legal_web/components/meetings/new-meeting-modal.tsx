@@ -238,7 +238,7 @@ export function NewMeetingModal({
         <DialogHeader>
           <DialogTitle>{t("new_meeting_recording")}</DialogTitle>
           <DialogDescription>
-            Start an in-app recording. You can also join a Zoom or Teams call in another window—we'll capture your microphone.
+            Start an in-app recording. You can also join a Zoom or Teams call in another window—we&apos;ll capture your microphone.
           </DialogDescription>
         </DialogHeader>
         <div className="grid gap-4 py-4">

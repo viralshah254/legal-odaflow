@@ -29,7 +29,6 @@ const eventTypeColors: Record<NonNullable<CalendarDisplayEvent["type"]>, string>
 }
 
 function eventColor(type?: CalendarDisplayEvent["type"]) {
-  const t = useTranslations("common")
   return eventTypeColors[type ?? "Other"]
 }
 

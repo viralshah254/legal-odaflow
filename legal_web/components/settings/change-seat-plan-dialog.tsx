@@ -185,7 +185,7 @@ export function ChangeSeatPlanDialog({
           )}>
             <div className="flex items-center gap-2 font-medium mb-1">
               {changeType === "upgrade" ? <ArrowUp className="h-4 w-4" /> : <ArrowDown className="h-4 w-4" />}
-              {changeType === "upgrade" ? "Upgrading" : "Downgrading"} {userName}'s seat
+              {changeType === "upgrade" ? "Upgrading" : "Downgrading"} {userName}&apos;s seat
             </div>
             {changeType === "upgrade" ? (
               <p>
@@ -202,7 +202,7 @@ export function ChangeSeatPlanDialog({
 
         {selected === currentPlan && (
           <div className="flex items-center gap-2 rounded-lg px-4 py-3 text-sm border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 text-muted-foreground">
-            <Minus className="h-4 w-4" /> This is already {userName}'s current plan.
+            <Minus className="h-4 w-4" /> This is already {userName}&apos;s current plan.
           </div>
         )}
 

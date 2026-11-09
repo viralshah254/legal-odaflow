@@ -214,7 +214,7 @@ export function FirmBenchmarksDashboard({
             <div>
               <p className="text-xs font-semibold text-primary">AI insight</p>
               <p className="text-xs text-muted-foreground mt-0.5">
-                Outcome data is only surfaced after lawyer approval. Navigate to any matter's Outcome tab to run analysis and approve results before they appear here.
+                Outcome data is only surfaced after lawyer approval. Navigate to any matter&apos;s Outcome tab to run analysis and approve results before they appear here.
               </p>
             </div>
           </div>

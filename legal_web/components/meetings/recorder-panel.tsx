@@ -176,7 +176,7 @@ export function RecorderPanel({ meeting, onClose, onNavigateToMeeting }: Recorde
         )}
         {error && <p className="text-sm text-destructive">{error}</p>}
         <p className="text-xs text-muted-foreground">
-          Tip: You can join a Zoom or Teams call in another window; we'll capture your microphone.
+          Tip: You can join a Zoom or Teams call in another window; we&apos;ll capture your microphone.
         </p>
       </CardContent>
     </Card>
