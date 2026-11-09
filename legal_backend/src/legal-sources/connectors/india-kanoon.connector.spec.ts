@@ -1,4 +1,5 @@
 import { ConfigService } from '@nestjs/config';
+import { Logger } from '@nestjs/common';
 import {
   IndiaKanoonConnector,
   extractIndiaKanoonPassages,
@@ -40,6 +41,7 @@ describe('IndiaKanoonConnector failure controls', () => {
   });
 
   it('opens a short circuit after a provider authorization failure', async () => {
+    const warn = jest.spyOn(Logger.prototype, 'warn').mockImplementation(() => undefined);
     global.fetch = jest.fn(async () => new Response('', { status: 403 })) as typeof fetch;
     const connector = new IndiaKanoonConnector(
       new ConfigService({
@@ -49,7 +51,8 @@ describe('IndiaKanoonConnector failure controls', () => {
       }),
     );
 
-    await connector.search({ query: 'arbitration limitation' });
+    await connector.search({ query: 'PRIVATE_CLIENT_MATTER_QUERY' });
+    expect(JSON.stringify(warn.mock.calls)).not.toContain('PRIVATE_CLIENT_MATTER_QUERY');
     expect(connector.isCircuitOpen()).toBe(true);
     const second = await connector.searchWithOutcome({
       query: 'arbitration adverse authority',

@@ -265,7 +265,7 @@ export class IkEvidenceIngestService {
         };
         diagnostics.push(diagnostic);
         this.logger.log(
-          `IK ingest status=${diagnostic.status} query="${q.slice(0, 160)}" count=${hits.length} admitted=${queryAdmitted} rejected=${queryRejected} rejectionReasons=${JSON.stringify(rejectionReasons)}`,
+          `IK ingest status=${diagnostic.status} queryChars=${q.length} count=${hits.length} admitted=${queryAdmitted} rejected=${queryRejected} rejectionReasons=${JSON.stringify(rejectionReasons)}`,
         );
       } catch (err) {
         hadError = true;

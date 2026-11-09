@@ -916,7 +916,7 @@ export class LegalRetrievalOrchestrator {
                 message: outcome.errorMessage,
               });
               this.logger.log(
-                `IK orchestrator status=${outcome.status} query="${diagnosticQuery}" count=${outcome.hitCount}`,
+                `IK orchestrator status=${outcome.status} queryChars=${diagnosticQuery.length} count=${outcome.hitCount}`,
               );
               for (const ik of outcome.results) {
                 const court = normalizeCourtMetadata(ik.court);
@@ -951,7 +951,7 @@ export class LegalRetrievalOrchestrator {
                 message: String(err),
               });
               this.logger.warn(
-                `IK orchestrator status=error query="${diagnosticQuery}" count=0 reason="${String(err)}"`,
+                `IK orchestrator status=error queryChars=${diagnosticQuery.length} count=0 errorType=${err instanceof Error ? err.name : 'unknown'}`,
               );
               if (this.indiaKanoon.isCircuitOpen()) break;
             }

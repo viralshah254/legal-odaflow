@@ -135,7 +135,7 @@ export class DraftingV2MetricsService {
         JSON.stringify({
           event: 'draft_v2_warnings',
           draftId: meta.draftId,
-          overallWarnings: verificationReport.overallWarnings,
+          warningCount: verificationReport.overallWarnings.length,
           requiresLawyerReview: verificationReport.requiresLawyerReview,
         }),
       );
@@ -156,10 +156,12 @@ export class DraftingV2MetricsService {
     v2RepairCount: number;
     divergenceDetails: string[];
   }): void {
+    const { divergenceDetails, ...metadata } = params;
     this.logger.log(
       JSON.stringify({
         event: 'draft_v2_shadow_comparison',
-        ...params,
+        ...metadata,
+        divergenceCount: divergenceDetails.length,
       }),
     );
   }
@@ -175,8 +177,9 @@ export class DraftingV2MetricsService {
     success: boolean;
     failureReason?: string;
   }): void {
+    const { failureReason, ...metadata } = params;
     this.logger.log(
-      JSON.stringify({ event: 'draft_v2_repair', ...params }),
+      JSON.stringify({ event: 'draft_v2_repair', ...metadata, hasFailureReason: Boolean(failureReason) }),
     );
   }
 }

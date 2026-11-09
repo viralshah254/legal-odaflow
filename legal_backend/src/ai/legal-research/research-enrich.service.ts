@@ -478,7 +478,7 @@ export class ResearchEnrichService {
               existingAuthorities: authorities,
             });
             this.logger.log(
-              `[enrich] IK authorities=${ik.authorities.length} for query="${query.slice(0, 80)}"`,
+              `[enrich] IK authorities=${ik.authorities.length} for queryChars=${query.length}`,
             );
             if (ik.authorities.length > 0) {
               const merged = new Map(authorities.map((a) => [a.id, a]));
@@ -504,7 +504,7 @@ export class ResearchEnrichService {
               existingAuthorities: authorities,
             });
             this.logger.log(
-              `[enrich] KE authorities=${ke.authorities.length} admitted status=${ke.searchStatus} for query="${query.slice(0, 80)}"`,
+              `[enrich] KE authorities=${ke.authorities.length} admitted status=${ke.searchStatus} for queryChars=${query.length}`,
             );
             if (ke.authorities.length > 0) {
               const merged = new Map(authorities.map((a) => [a.id, a]));

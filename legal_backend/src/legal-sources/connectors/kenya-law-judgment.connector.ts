@@ -358,7 +358,7 @@ export class KenyaLawJudgmentConnector {
         });
         if (!res.ok) {
           this.logger.warn(
-            `Kenya Law search returned ${res.status} for "${params.query}" (attempt ${attempt})`,
+            `Kenya Law search returned ${res.status} queryChars=${params.query.length} (attempt ${attempt})`,
           );
           if (
             isKenyaLawRetryableStatus(res.status) &&
@@ -379,7 +379,7 @@ export class KenyaLawJudgmentConnector {
       } catch (err) {
         const message = err instanceof Error ? err.message : String(err);
         this.logger.warn(
-          `Kenya Law search failed for "${params.query}" (attempt ${attempt}): ${message}`,
+          `Kenya Law search failed queryChars=${params.query.length} (attempt ${attempt}): ${message}`,
         );
         if (attempt < KenyaLawJudgmentConnector.MAX_SEARCH_ATTEMPTS) {
           await kenyaLawThrottleBackoff(503, attempt);

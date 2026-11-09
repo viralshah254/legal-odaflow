@@ -191,7 +191,7 @@ export class IndiaKanoonConnector {
           );
         }
         this.logger.warn(
-          `India Kanoon search returned ${searchRes.status} for query="${params.query.slice(0, 80)}"`,
+          `India Kanoon search returned ${searchRes.status} for queryChars=${params.query.length}`,
         );
         return {
           ...emptyConnectorOutcome(status, `HTTP ${searchRes.status}`),
@@ -205,11 +205,11 @@ export class IndiaKanoonConnector {
       const rawHitCount = data?.found ?? docs.length;
       if (docs.length === 0) {
         this.logger.debug(
-          `India Kanoon search returned 0 docs (found=${rawHitCount}) query="${params.query.slice(0, 80)}"`,
+          `India Kanoon search returned 0 docs (found=${rawHitCount}) queryChars=${params.query.length}`,
         );
       } else {
         this.logger.debug(
-          `India Kanoon search docs=${docs.length} found=${rawHitCount} query="${params.query.slice(0, 60)}"`,
+          `India Kanoon search docs=${docs.length} found=${rawHitCount} queryChars=${params.query.length}`,
         );
       }
 
@@ -221,7 +221,7 @@ export class IndiaKanoonConnector {
       if (fetchFullText) {
         const withText = results.filter((r) => (r.fullText?.length ?? 0) > 0).length;
         this.logger.log(
-          `India Kanoon search hits=${results.length} fullText=${withText} query="${params.query.slice(0, 60)}"`,
+          `India Kanoon search hits=${results.length} fullText=${withText} queryChars=${params.query.length}`,
         );
       }
 
