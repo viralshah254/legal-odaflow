@@ -268,3 +268,34 @@ describe('sanitizeForPrompt', () => {
     expect(sanitizeForPrompt('a'.repeat(500))!.length).toBeLessThanOrEqual(120);
   });
 });
+
+
+describe('research learning disable control', () => {
+  const restore = (value: string | undefined) => {
+    if (value === undefined) delete process.env.DISABLE_TRAINING_PIPELINE;
+    else process.env.DISABLE_TRAINING_PIPELINE = value;
+  };
+  it('does not retain new private signals when learning is disabled', async () => {
+    const previous = process.env.DISABLE_TRAINING_PIPELINE;
+    const prisma = makePrisma();
+    try {
+      process.env.DISABLE_TRAINING_PIPELINE = '1';
+      await new ResearchLearningService(prisma as never).record({ tenantId: 'firm', countryCode: 'IN', verificationStatus: 'needs_review', unsupportedClaims: ['Private matter fact'] });
+      expect(prisma.researchVerificationOutcome.create).not.toHaveBeenCalled();
+    } finally { restore(previous); }
+  });
+  it('withholds cached global guidance as soon as learning is disabled', async () => {
+    const previous = process.env.DISABLE_TRAINING_PIPELINE;
+    const prisma = makePrisma();
+    prisma.researchPromptPreference.findUnique.mockResolvedValue({ guidance: ['Use approved sources.'], avoidPatterns: [], retrievalHints: [], sampleCount: 4 });
+    const service = new ResearchLearningService(prisma as never);
+    try {
+      delete process.env.DISABLE_TRAINING_PIPELINE;
+      expect(await service.buildPromptBlock('IN')).not.toBeNull();
+      prisma.researchPromptPreference.findUnique.mockClear();
+      process.env.DISABLE_TRAINING_PIPELINE = '1';
+      expect(await service.buildPromptBlock('IN')).toBeNull();
+      expect(prisma.researchPromptPreference.findUnique).not.toHaveBeenCalled();
+    } finally { restore(previous); }
+  });
+});

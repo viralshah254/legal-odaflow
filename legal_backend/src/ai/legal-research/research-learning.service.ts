@@ -58,6 +58,7 @@ export class ResearchLearningService {
 
   /** Persist one run's verification signals. Never throws into the caller. */
   async record(input: RecordResearchOutcomeInput): Promise<void> {
+    if (process.env.DISABLE_TRAINING_PIPELINE === '1') return;
     if (!this.prisma) return;
     const countryCode = normalizeCode(input.countryCode);
     if (!countryCode) return;
@@ -167,6 +168,7 @@ export class ResearchLearningService {
    * guidance is layered on top of country-wide guidance.
    */
   async buildPromptBlock(countryCode: string, legalDomain?: string): Promise<string | null> {
+    if (process.env.DISABLE_TRAINING_PIPELINE === '1') return null;
     if (!this.prisma) return null;
     const country = normalizeCode(countryCode);
     if (!country) return null;

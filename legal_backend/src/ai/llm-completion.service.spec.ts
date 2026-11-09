@@ -180,4 +180,3 @@ describe('LlmCompletionService timeout', () => {
     ).rejects.toThrow(/deadline|aborted|timed out/i);
   });
 });
-

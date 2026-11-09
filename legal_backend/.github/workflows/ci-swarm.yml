@@ -7,12 +7,27 @@ on:
 jobs:
   docker-build-and-push:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 30
     if: github.ref == 'refs/heads/main' && github.event_name == 'push'
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+
+      - name: Set up Node for release validation
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+
+      - name: Validate backend before publishing
+        env:
+          NODE_OPTIONS: --max-old-space-size=4096
+        run: |
+          npm ci
+          npm run check:no-mock
+          npm run build
+          npm test -- --runInBand
 
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v4
@@ -92,11 +107,11 @@ jobs:
               }
             }')
 
-          echo "🔍 Webhook URL: ${WEBHOOK_URL}"
+          echo "Webhook target configured."
           echo "🔍 Webhook secret configured: $([ -n "${WEBHOOK_SECRET}" ] && echo yes || echo no)"
 
           SIGNATURE=$(echo -n "${WEBHOOK_PAYLOAD}" | openssl dgst -sha256 -hmac "${WEBHOOK_SECRET}" -binary | xxd -p -c 256)
-          echo "🔍 Calculated signature: sha256=${SIGNATURE}"
+          echo "Webhook signature generated."
 
           echo "🚀 Sending webhook request..."
           HTTP_CODE=$(curl -sS -o /tmp/webhook-response.json -w "%{http_code}" -X POST "${WEBHOOK_URL}" \

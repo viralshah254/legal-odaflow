@@ -189,4 +189,3 @@ interface EnrichCaseLawsRequest {
   rawFacts?: string;
   mode?: 'case_laws' | 'sections' | 'both';
 }
-
