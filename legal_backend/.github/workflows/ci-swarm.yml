@@ -134,3 +134,26 @@ jobs:
             echo "Webhook returned HTTP ${HTTP_CODE}"
             exit 1
           fi
+
+      - name: Verify live API version and readiness
+        timeout-minutes: 8
+        env:
+          EXPECTED_SHA: ${{ github.sha }}
+        run: |
+          deadline=$((SECONDS + 420))
+          while [ "$SECONDS" -lt "$deadline" ]; do
+            if version=$(curl -fsS --max-time 10 https://api.okaylegal.ai/api/v1/health/version); then
+              actual=$(echo "$version" | jq -r '.gitCommit // empty')
+              if [ "$actual" = "$EXPECTED_SHA" ]; then
+                if readiness=$(curl -fsS --max-time 10 https://api.okaylegal.ai/api/v1/health/readiness); then
+                  if [ "$(echo "$readiness" | jq -r '.status // empty')" = "ok" ]; then
+                    echo "Verified live API commit and readiness: $actual"
+                    exit 0
+                  fi
+                fi
+              fi
+            fi
+            sleep 10
+          done
+          echo "The expected API version did not become ready before the deployment deadline."
+          exit 1

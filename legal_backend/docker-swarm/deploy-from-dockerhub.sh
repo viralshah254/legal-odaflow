@@ -131,12 +131,18 @@ if [ ! -f "$ENV_FILE" ]; then
   log_error "App .env not found at ${ENV_FILE} — set HOST_PROJECT_ROOT on the deploy runner"
   exit 1
 fi
+MIGRATION_HELPER="${HOST_PROJECT_ROOT:-/home/ubuntu/legal_backend}/deployment/migrate-production.cjs"
+if [ ! -f "$SCRIPT_DIR/../deployment/migrate-production.cjs" ]; then
+  log_error "Migration helper is missing — aborting deployment"
+  exit 1
+fi
 MIGRATE_NETWORK="${STACK_NAME}_legal-network"
 if docker run --rm \
   --network "$MIGRATE_NETWORK" \
   -v "${ENV_FILE}:/usr/app/.env:ro" \
+  -v "${MIGRATION_HELPER}:/usr/app/.release/migrate-production.cjs:ro" \
   "$FULL_IMAGE" \
-  npx prisma migrate deploy; then
+  node /usr/app/.release/migrate-production.cjs; then
   log_success "Database migrations applied"
 else
   log_error "Database migration failed — aborting deployment"
