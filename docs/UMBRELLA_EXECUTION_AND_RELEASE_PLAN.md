@@ -181,3 +181,6 @@ Workspace CI exposed inherited missing ESLint setup and two newer-Flutter async 
 
 
 The corrected remote run passed Flutter analysis/tests and reached Android packaging, which exposed the runner selecting Java 25.0.5 against Gradle 8.12. CI now explicitly installs Temurin Java 17 before Flutter, avoiding dependence on the runner's changing default JDK. This is a CI environment correction, not a store-signing or publication change.
+
+
+The next unchanged backend CI attempt failed dependency installation on a GitHub-hosted FFmpeg license download returning HTTP 504, after the previous complete backend run passed. The installed GitHub credential cannot manually rerun Actions jobs (HTTP 403). Backend dependency installation in monorepo CI now retries at most three times, still failing the job if all attempts fail; validation/tests remain unchanged. This addresses the observed transient external binary download failure rather than treating it as a source regression.

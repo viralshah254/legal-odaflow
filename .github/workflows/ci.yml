@@ -18,7 +18,13 @@ jobs:
           node-version: "22"
           cache: npm
           cache-dependency-path: legal_backend/package-lock.json
-      - run: npm ci
+      - name: Install backend dependencies (retry transient binary downloads)
+        run: |
+          for attempt in 1 2 3; do
+            if npm ci; then exit 0; fi
+            if [ "$attempt" -eq 3 ]; then exit 1; fi
+            sleep 5
+          done
       - run: npm run prisma:generate
       - run: npm run check:no-mock
       - run: npm run validate:india-act-structure
