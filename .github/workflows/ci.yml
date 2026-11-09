@@ -18,6 +18,14 @@ jobs:
           node-version: "22"
           cache: npm
           cache-dependency-path: legal_backend/package-lock.json
+      - name: Provision FFmpeg for tests
+        run: |
+          if ! command -v ffmpeg >/dev/null; then
+            sudo apt-get update
+            sudo apt-get install --no-install-recommends -y ffmpeg
+          fi
+          echo "FFMPEG_BIN=$(command -v ffmpeg)" >> "$GITHUB_ENV"
+          ffmpeg -version
       - name: Install backend dependencies (retry transient binary downloads)
         run: |
           for attempt in 1 2 3; do
@@ -78,4 +86,21 @@ jobs:
       - run: flutter pub get
       - run: flutter analyze
       - run: flutter test
+      - name: Fetch and verify pinned Gradle distribution
+        run: |
+          # The public release URL returned 504; use the official release-asset API.
+          archive="$RUNNER_TEMP/umbrella-gradle-8.12-all.zip"
+          curl --fail --location --retry 3 --retry-all-errors --max-time 600 \
+            -H 'Accept: application/octet-stream' \
+            https://api.github.com/repos/gradle/gradle-distributions/releases/assets/214739944 \
+            --output "$archive"
+          echo "7ebdac923867a3cec0098302416d1e3c6c0c729fc4e2e05c10637a8af33a76c5  $archive" | sha256sum --check
+          python3 - <<'PYGRADLE'
+          import os
+          from pathlib import Path
+          p = Path('android/gradle/wrapper/gradle-wrapper.properties')
+          lines = p.read_text().splitlines()
+          uri = Path(os.environ['RUNNER_TEMP'], 'umbrella-gradle-8.12-all.zip').as_uri()
+          p.write_text('\n'.join('distributionUrl=' + uri if line.startswith('distributionUrl=') else line for line in lines) + '\n')
+          PYGRADLE
       - run: flutter build apk --release --dart-define=API_URL=https://legal-api.odaflow.com/api/v1

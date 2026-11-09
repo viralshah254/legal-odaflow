@@ -187,3 +187,10 @@ The next unchanged backend CI attempt failed dependency installation on a GitHub
 
 
 The latest floating Flutter stable (3.47.9) additionally rejects Gradle below 8.14, while this project's locally validated Flutter is 3.44.8. Both CI Flutter jobs are now pinned to that exact tested version, with Java 17 retained. A coordinated Flutter/Gradle/AGP upgrade remains modernization work rather than silently changing the SDK on every run.
+
+
+### Hosting correction and external binary provisioning
+
+Vercel's connected production project had rootDirectory=null and failed NEXT_NO_VERSION because the repository root has no Next.js package. After preserving a restricted settings snapshot, its root was corrected to legal_web and the tested Git main SHA 4aabad59 was deployed directly from GitHub. The deployment reached READY and https://legal.odaflow.com/ returned HTTP 200. No local env file was uploaded. Existing production domains and other settings were retained.
+
+CI's remaining failures were upstream HTTP 504s downloading GitHub release assets, including Gradle's all-distribution redirect and FFmpeg even after retries. Monorepo backend CI now provisions a real FFmpeg executable and uses ffmpeg-static's documented-in-source FFMPEG_BIN override; install scripts and tests still run. Android CI fetches the same official Gradle 8.12 archive through its official GitHub release-asset API, verifies SHA-256 7ebdac923867a3cec0098302416d1e3c6c0c729fc4e2e05c10637a8af33a76c5 from the Gradle checksum endpoint, and points only that CI checkout to the verified local archive. The wrapper now also pins that checksum for ordinary downloads. YAML and shell syntax validated. No third-party binary mirror or verification bypass is used.
