@@ -1575,8 +1575,10 @@ export class DraftResearchGroundingService {
         merged.set(a.id, a);
       }
 
-      for (const query of retrievalQueries) {
-        const retrieval = await this.retrieval.retrieve({
+      // Bound connector pressure while avoiding a separate full network wait per issue.
+      // Merge in query order to retain deterministic ranking and deduplication.
+      for (let offset = 0; offset < retrievalQueries.length; offset += 3) {
+        const batch = await Promise.all(retrievalQueries.slice(offset, offset + 3).map((query) => this.retrieval.retrieve({
           query,
           countryCode: input.countryCode,
           jurisdiction: input.jurisdiction,
@@ -1586,30 +1588,32 @@ export class DraftResearchGroundingService {
           limit: 12,
           supplementLive: true,
           knowledgeSources: input.knowledgeSources,
-        });
-        if (retrieval.confidence === 'high') retrievalConfidence = 'high';
-        else if (retrieval.confidence === 'medium' && retrievalConfidence !== 'high') {
-          retrievalConfidence = 'medium';
-        }
-        for (const a of retrieval.authorities) {
-          const authorityTypeNorm = (a.authorityType ?? '').toUpperCase();
-          const isCaseLaw =
-            a.sourceTier === 'case_law' ||
-            authorityTypeNorm === 'CASE' ||
-            authorityTypeNorm === 'CASE_LAW';
-          // Also include firm-vault entries that are clearly case law (judgment excerpts
-          // stored in the firm's precedent vault) — previously these were dropped because
-          // their sourceTier is 'firm' rather than 'case_law'.
-          const isFirmCaseLaw =
-            a.sourceTier === 'firm' &&
-            (authorityTypeNorm === 'CASE' || authorityTypeNorm === 'CASE_LAW');
-          const includeCase =
-            retrieveCaseLaw &&
-            (isCaseLaw || isFirmCaseLaw);
-          if (includeCase) {
-            // Treatment filter: exclude overruled cases from drafting context.
-            if (a.treatmentStatus === 'overruled' || a.treatmentStatus === 'repealed') continue;
-            merged.set(a.id, a);
+        })));
+        for (const retrieval of batch) {
+          if (retrieval.confidence === 'high') retrievalConfidence = 'high';
+          else if (retrieval.confidence === 'medium' && retrievalConfidence !== 'high') {
+            retrievalConfidence = 'medium';
+          }
+          for (const a of retrieval.authorities) {
+            const authorityTypeNorm = (a.authorityType ?? '').toUpperCase();
+            const isCaseLaw =
+              a.sourceTier === 'case_law' ||
+              authorityTypeNorm === 'CASE' ||
+              authorityTypeNorm === 'CASE_LAW';
+            // Also include firm-vault entries that are clearly case law (judgment excerpts
+            // stored in the firm's precedent vault) — previously these were dropped because
+            // their sourceTier is 'firm' rather than 'case_law'.
+            const isFirmCaseLaw =
+              a.sourceTier === 'firm' &&
+              (authorityTypeNorm === 'CASE' || authorityTypeNorm === 'CASE_LAW');
+            const includeCase =
+              retrieveCaseLaw &&
+              (isCaseLaw || isFirmCaseLaw);
+            if (includeCase) {
+              // Treatment filter: exclude overruled cases from drafting context.
+              if (a.treatmentStatus === 'overruled' || a.treatmentStatus === 'repealed') continue;
+              merged.set(a.id, a);
+            }
           }
         }
       }

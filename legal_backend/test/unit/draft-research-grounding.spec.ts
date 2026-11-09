@@ -63,6 +63,27 @@ describe('DraftResearchGroundingService', () => {
     expect(result.verifiedAuthoritiesBlock).toContain('(2021) 2 SCC 324');
   });
 
+  it('searches independent issue queries concurrently with at most three active connector requests', async () => {
+    let active = 0;
+    let maximum = 0;
+    retrieval.retrieve.mockImplementation(async () => {
+      active++;
+      maximum = Math.max(maximum, active);
+      await new Promise<void>((resolve) => setImmediate(resolve));
+      active--;
+      return { authorities: [mockAuthority], confidence: 'high' };
+    });
+    const result = await service.buildGrounding({
+      kind: 'india_maintenance_order_revision', countryCode: 'IN', tenantId: 't1', userId: 'u1',
+      caseDetails: 'Maintenance quantum dispute and financial disclosure',
+      extraRetrievalQueries: Array.from({ length: 8 }, (_, i) => `Independent issue ${i} maintenance authority`),
+    });
+    expect(retrieval.retrieve.mock.calls.length).toBeGreaterThan(3);
+    expect(maximum).toBe(3);
+    expect(active).toBe(0);
+    expect(result.authorities.some((a) => a.id === mockAuthority.id)).toBe(true);
+  });
+
   it('returns placeholder instruction when no authorities retrieved', () => {
     const block = service.buildVerifiedAuthoritiesBlock([]);
     expect(block).toContain('[AUTHORITY TO BE ADDED]');

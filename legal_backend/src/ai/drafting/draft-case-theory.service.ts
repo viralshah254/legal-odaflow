@@ -103,8 +103,10 @@ export class DraftCaseTheoryService {
           { role: 'user', content: user },
         ],
         temperature: 0.2,
-        maxTokens: 2500,
-        reasoningEffort: 'high',
+        maxTokens: 4000,
+        reasoningEffort: 'low',
+        responseFormat: { type: 'json_object' },
+        timeoutMs: 15_000,
       });
 
       const parsed = this.parseJson(completion.content);

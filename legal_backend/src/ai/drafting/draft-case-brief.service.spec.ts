@@ -27,6 +27,17 @@ cash recovery disputed. Seek regular bail under BNSS §480/§483.`;
     expect(briefService.buildRetrievalQueries(brief, 'india_regular_bail_bnss_480').length).toBeGreaterThan(2);
   });
 
+  it('does not turn missing-intake prose into FIR or arrest dates', () => {
+    const brief = briefService.extract(
+      'No offence, FIR, court, personal facts, dates or evidence has been provided. Discuss a historical arrest safeguard.',
+      'india_regular_bail_bnss_480',
+    );
+    expect(brief.proceduralHistory.firDate).toBeUndefined();
+    expect(brief.proceduralHistory.arrestDate).toBeUndefined();
+    expect(brief.blanks.firDate).toBe(true);
+    expect(brief.missingCriticalFields).toContain('firDate');
+  });
+
   it('flags wrong FIR date, investigation ongoing, and Section 173 misuse', () => {
     const brief = briefService.extract(rohanFacts, 'india_regular_bail_bnss_480');
     const badDraft = `Petitioner seeks bail. FIR dated 19 February 2026. Investigation is still ongoing.

@@ -392,7 +392,7 @@ export class DraftCaseBriefService {
       const raw = m[1].trim();
       const embedded = raw.match(DATE_RE);
       if (embedded) return embedded[0];
-      if (raw.length <= 40) return raw;
+      // Unparsed prose is not a date; preserve the missing-intake gate.
     }
     return null;
   }

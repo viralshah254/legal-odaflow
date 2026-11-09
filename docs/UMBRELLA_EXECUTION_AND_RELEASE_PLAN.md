@@ -153,3 +153,12 @@ An actual local authenticated research request used a disposable Kenyan-profile 
 The repeated real route returned 5,039 characters in 16.3 seconds (retrieval 7.8s; synthesis 7.2s), used the matter country IN despite profile/request KE, identified Arnesh Kumar, preserved the provisional-bail order made absolute, and omitted the unrelated titles/disclaimer seen in the earlier run. It remains DRAFT_NOT_VERIFIED: independent paragraph/citation verification and current-law treatment were not established. This is a limited historical public-source test, not a claim of filing readiness, comprehensive research coverage, or better-than-lawyer performance. Five retrieved citation records still require relevance/verification review; retrieved records must not be equated with authorities relied upon.
 
 The live webhook's mounted source was patched with a restricted rollback copy to stop Docker argument/credential logging and use the host-compatible Docker 29.5.2 client. The original pinned webhook image was retained; health and mounted source were verified. No manual workflow dispatch or registry publication was used for that operational patch.
+
+
+### Draft route follow-up
+
+The real draft endpoint correctly rejected missing applicant intake, but its response exposed a date extractor accepting ordinary prose as FIR/arrest dates. Only recognized date shapes are now accepted; missing dates remain missing and continue to block incomplete filing intake. A regression test uses the exact prose failure pattern.
+
+A fictional, explicitly supplied-facts regular-bail request exceeded the 240-second client test deadline. Tracing showed sequential issue searches (up to twelve full connector waits) and a case-theory high-reasoning call that returned unusable JSON. Independent searches now run in bounded batches of three, retaining deterministic merge order. The optional case-theory call uses JSON mode, a 15-second deadline and low reasoning effort with a larger visible-output allowance; its existing brief-derived fallback remains explicit. A concurrency test confirms all issue searches run with no more than three active requests. Production build, no-mock check and all 342 suites / 2,124 tests passed (one skipped suite, three skipped tests, two todo, four snapshots).
+
+The completed temporary restore container/volume and incomplete preliminary archive were removed after validation; the approved complete restricted backup remains retained. Store publication and subscriptions remain outside this release authorization.
