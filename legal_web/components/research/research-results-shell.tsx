@@ -1,5 +1,7 @@
 "use client"
 
+import { useTranslations } from "next-intl"
+import { isResearchVerifiedForDisplay } from "@/lib/api/verification"
 import { useMemo, useState, type ComponentProps } from "react"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import {
@@ -83,7 +85,6 @@ function authorityBadges(citation: Citation, result: LegalResearchResponse): str
   )
   if (tc?.state === "verified") badges.push("Verified")
   if (tc?.state === "corrected") badges.push("Corrected")
-  if (tc?.agreementCount && tc.agreementCount >= 2) badges.push("Controlling")
   return badges
 }
 
@@ -97,10 +98,16 @@ export function ResearchResultsShell({
   onResearchSeparately,
   className,
 }: ResearchResultsShellProps) {
+  const tProgress = useTranslations("marketing.home.researchProgress")
   const [tab, setTab] = useState("answer")
   const [drawerCitation, setDrawerCitation] = useState<Citation | null>(null)
   const bottomLine = useMemo(() => bottomLineText(result), [result])
-  const keyAuthorities = citations.slice(0, 5)
+  // Retrieved candidates remain inspectable in the source tabs. Promote them
+  // in the summary only when the answer passed the reliance gate.
+  const keyAuthorities = isResearchVerifiedForDisplay(
+    result.publicationState, undefined, result.citationAudit?.safeForReliance,
+  ) && !result.analyticalMode && result.relianceMode !== "analytical-guidance"
+    ? citations.slice(0, 5) : []
 
   return (
     <div className={cn("space-y-4", className)}>
@@ -126,7 +133,7 @@ export function ResearchResultsShell({
             <>
               <span>·</span>
               <span>
-                {result.researchMode === "DEEP" ? "Verified research" : "Fast guidance"}
+                {result.researchMode === "DEEP" ? tProgress("modeVerified") : "Fast guidance"}
               </span>
             </>
           )}
