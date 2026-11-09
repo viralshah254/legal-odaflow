@@ -193,15 +193,18 @@ export class FinalAssemblyService {
     const hasMixedReview = sections.some((s) =>
       ['needs_review', 'limited_sources'].includes(s.verificationStatus),
     );
+    const hasMissingFacts = /\[(?:BLANK|PLACEHOLDER|AUTHORITY GAP)\b|\{\{[^}]+\}\}/i.test(draft);
     const hasFactBlockers = overallWarnings.some((w) =>
       /fact_coverage:|procedural_timeline:|fact_fidelity:/i.test(w),
     );
     const requiresLawyerReview =
       hasFailures ||
+      hasMixedReview ||
+      hasMissingFacts ||
       hasFactBlockers ||
       overallWarnings.some((w) => /Legal safety|hallucin/i.test(w));
 
-    const overallStatus = hasFailures || hasFactBlockers
+    const overallStatus = hasFailures || hasFactBlockers || hasMissingFacts
       ? 'needs_review'
       : hasMixedReview
         ? 'limited_sources'
@@ -223,6 +226,18 @@ export class FinalAssemblyService {
     };
   }
 
+
+  /** A later content revision invalidates checks on the previous text. */
+  applyFinalReview(report: VerificationReport, revised: boolean, blockingWarnings: string[]): void {
+    report.overallWarnings.push(...blockingWarnings);
+    if (!revised && blockingWarnings.length === 0) return;
+    report.status = 'needs_review';
+    report.canCertify = false;
+    report.certificationLabel = 'needs_review';
+    report.requiresLawyerReview = true;
+    if (revised) report.overallWarnings.push('Final text was revised after section verification; revalidation and lawyer review are required.');
+    report.overallWarnings = [...new Set(report.overallWarnings)];
+  }
 
   private gradeFromScore(score: number): ConfidenceReport['overallGrade'] {
     if (score >= 80) return 'high';

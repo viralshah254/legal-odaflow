@@ -467,12 +467,12 @@ export class DraftEngineV2Service {
       allowRevision: !skipResearchGrounding,
     });
     if (coherence.revisedDraft) assembled.draft = coherence.revisedDraft;
-    for (const issue of coherence.issues) {
-      if (issue.severity !== 'BLOCKER' && issue.severity !== 'HIGH') continue;
-      assembled.verificationReport.overallWarnings.push(
-        `Coherence [${issue.category}]: ${issue.explanation}`,
-      );
-    }
+    this.finalAssembly.applyFinalReview(
+      assembled.verificationReport,
+      Boolean(coherence.revisedDraft),
+      coherence.issues.filter((issue) => issue.severity === 'BLOCKER' || issue.severity === 'HIGH')
+        .map((issue) => `Coherence [${issue.category}]: ${issue.explanation}`),
+    );
 
     const similarCases = this.similarCasesService.extractAndRank(
       researchGroundingResult.authorities,
