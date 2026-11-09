@@ -1748,6 +1748,7 @@ export default function LegalResearchPage() {
                 </div>
                 <WorkContextStartDialog
                   open={workContextOpen}
+                  countryCode={countryCode}
                   onClose={() => setWorkContextOpen(false)}
                   onConfirm={(selection) => setWorkContext(selection)}
                 />

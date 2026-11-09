@@ -25,6 +25,9 @@ import { TourProvider } from "@/lib/contexts/tour-context"
 import { PageHelpPanel } from "@/components/tutorials/page-help-panel"
 import { IntroOfferProvider } from "@/components/marketing/intro-offer-provider"
 import { usePushNotifications } from "@/hooks/use-push-notifications"
+import { ResolvedWorkContextProvider } from "@/lib/contexts/work-context"
+import { useAuth } from "@/lib/contexts/auth-context"
+import { useTenant } from "@/lib/contexts/tenant-context"
 import { AiModelProvider } from "@/lib/contexts/ai-model-context"
 
 function AppLayoutContent({ children }: { children: React.ReactNode }) {
@@ -92,17 +95,21 @@ export default function AppShellLayout({
 }) {
   const t = useTranslations("common")
   void t
+  const { user } = useAuth()
+  const { activeTenantId } = useTenant()
   return (
     <RoleProvider>
       <CopilotProvider>
         <RealtimeProvider>
           <AppUserBridge>
-            <AiModelProvider>
-              <TourProvider zone="lawyer">
-                <AppLayoutContent>{children}</AppLayoutContent>
-                <IntroOfferProvider />
-              </TourProvider>
-            </AiModelProvider>
+            <ResolvedWorkContextProvider key={`${user?.id ?? "anonymous"}:${activeTenantId ?? "none"}`}>
+              <AiModelProvider>
+                <TourProvider zone="lawyer">
+                  <AppLayoutContent>{children}</AppLayoutContent>
+                  <IntroOfferProvider />
+                </TourProvider>
+              </AiModelProvider>
+            </ResolvedWorkContextProvider>
           </AppUserBridge>
         </RealtimeProvider>
       </CopilotProvider>
