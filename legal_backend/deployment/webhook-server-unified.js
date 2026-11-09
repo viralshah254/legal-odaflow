@@ -234,7 +234,7 @@ function runDeploymentInBackground(commitInfo, imageTag = "latest") {
     "-e", `API_URL=${process.env.API_URL || "http://127.0.0.1:4000"}`,
     "-e", `HOST_PROJECT_ROOT=${HOST_PROJECT_ROOT}`,
     "-e", `IMAGE_TAG=${imageTag}`,
-    "docker:24-cli",
+    "docker:29.5.2-cli",
     "sh", "-c", "apk add --no-cache bash curl >/dev/null && bash ./deploy-from-dockerhub.sh",
   ];
 
