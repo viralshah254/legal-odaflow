@@ -25,6 +25,8 @@ jobs:
       - run: npm run export:task-patterns-catalog
       - run: npm run audit:taxonomy-coverage -- --strict
       - run: npm run build
+      - name: Cross-client API source contracts
+        run: npm test -- --runInBand --runTestsByPath test/contract/mobile-api-paths.spec.ts test/contract/web-api-paths.spec.ts
       - name: Matter Intelligence test gate
         run: npm test -- --testPathPattern="matter-intelligence|mi-intake|contract/matter"
       - name: Security regression tests

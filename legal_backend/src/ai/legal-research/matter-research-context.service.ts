@@ -216,7 +216,7 @@ export class MatterResearchContextService {
       ...blocks.filter(Boolean),
       'END AUTHORIZED MATTER CONTEXT',
     ].join('\n\n');
-    return { promptContext, countryCode: matter.countryCode, jurisdiction: matter.jurisdiction };
+    return { promptContext, countryCode: matter.countryCode, jurisdiction: matter.jurisdiction, documentCount: selectedDocuments.length };
   }
 
   private async getAuthorizedMatter(actor: MatterResearchActor, matterId: string) {

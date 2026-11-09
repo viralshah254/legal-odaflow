@@ -8,6 +8,14 @@ describe('Authorized document excerpts', () => {
     expect(excerpt).toContain('Extracted text characters');
     expect(excerpt.length).toBeLessThanOrEqual(1600);
   });
+  it('retains the final order when high-scoring earlier passages crowd out disposition', () => {
+    const text = 'Arrest safeguards police necessity reasons. '.repeat(500) +
+      'Paragraph 18. The appeal is allowed and provisional bail is made absolute.';
+    const excerpt = researchExcerpt(text, 'arrest safeguards police necessity reasons and actual disposition', 6000);
+    expect(excerpt).toContain('provisional bail is made absolute');
+    expect(excerpt).toContain('Arrest safeguards');
+    expect(excerpt.length).toBeLessThanOrEqual(6000);
+  });
   it('preserves a short source without invented page metadata and handles multilingual queries', () => {
     expect(researchExcerpt('Short original source.', 'source', 100)).toBe('Short original source.');
     expect(researchExcerpt('विषय '.repeat(1000) + 'गवाह पहचान प्रमाण', 'गवाह पहचान', 500)).toContain('गवाह पहचान');

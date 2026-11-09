@@ -14,6 +14,11 @@ export function researchExcerpt(text: string, query: string | undefined, budget:
     const score = terms.reduce((total, term) => total + (chunk.includes(term) ? 1 : 0), 0);
     candidates.push({ start, end, score });
   }
+  // Outcome questions need the dispositive ending even when repeated issue words
+  // give earlier passages a higher lexical score. Keep the normal source offsets.
+  if (/\b(outcome|disposition|relief|final order|final decision|appeal allowed|appeal dismissed)\b/i.test(query ?? '')) {
+    candidates.unshift({ start: Math.max(0, text.length - width), end: text.length, score: Number.MAX_SAFE_INTEGER });
+  }
   const chosen: typeof candidates = [];
   let remaining = budget;
   for (const candidate of candidates.sort((a, b) => b.score - a.score || a.start - b.start)) {

@@ -20,14 +20,15 @@ jobs:
           node-version: "22"
           cache: npm
 
-      - name: Validate backend before publishing
+      - name: Validate standalone backend before publishing
         env:
           NODE_OPTIONS: --max-old-space-size=4096
         run: |
           npm ci
           npm run check:no-mock
           npm run build
-          npm test -- --runInBand
+          # Sibling web/mobile source contracts run in monorepo CI, which has those checkouts.
+          npm test -- --runInBand --testPathIgnorePatterns='test/contract/(mobile|web)-api-paths.spec.ts$'
 
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v4

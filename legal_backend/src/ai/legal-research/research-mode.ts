@@ -18,7 +18,10 @@ export function shouldIgnorePremiumOverride(mode?: string): boolean {
   return isFastResearch(mode);
 }
 
-export function researchDeadlineMs(mode?: string): number {
+export function researchDeadlineMs(mode?: string, contextChars = 0): number {
+  if (contextChars > LONG_RESEARCH_QUERY_CHARS) {
+    return mode === 'GUIDANCE' ? 30_000 : mode === 'FAST' ? 60_000 : 90_000;
+  }
   if (mode === 'GUIDANCE') return 15_000;
   if (mode === 'FAST') return 25_000;
   return 60_000;
@@ -37,7 +40,10 @@ export const RESEARCH_PROMPT_QUERY_MAX_CHARS = 6_000;
 export const CALM_RESEARCH_FALLBACK_REASON =
   'Here is a first-pass note from the question and contract text. A fuller memo was not ready in time.';
 
-export function researchSynthesisTimeoutMs(mode?: string, queryChars = 0): number {
+export function researchSynthesisTimeoutMs(mode?: string, queryChars = 0, contextChars = 0): number {
+  if (contextChars > LONG_RESEARCH_QUERY_CHARS) {
+    return mode === 'GUIDANCE' ? 20_000 : mode === 'FAST' ? 45_000 : 60_000;
+  }
   const base = mode === 'GUIDANCE' ? 10_000 : mode === 'FAST' ? 12_000 : 28_000;
   if (queryChars > LONG_RESEARCH_QUERY_CHARS && (mode === 'GUIDANCE' || mode === 'FAST')) {
     return researchDeadlineMs(mode);

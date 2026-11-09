@@ -216,6 +216,15 @@ describe('StructuredResearchSynthesisService', () => {
           authorityType: 'STATUTE',
           summary: 'Personal data processing principles.',
         },
+        {
+          id: 'unrelated',
+          title: 'Publisher translation disclaimer '.repeat(30) + 'Unrelated Case v State',
+          citation: 'Unrelated Case (2024)',
+          sourceName: 'Court publisher',
+          sourceTier: 'primary',
+          authorityType: 'CASE',
+          summary: 'An unrelated retrieved judgment.',
+        },
       ],
     });
 
@@ -229,6 +238,8 @@ describe('StructuredResearchSynthesisService', () => {
       synthesisMode: 'FAST',
     });
 
+    expect(result.outputMarkdown).not.toContain('Publisher translation disclaimer');
+    expect(result.outputMarkdown).not.toContain('Unrelated Case');
     expect(result.usedStructuredPlan).toBe(true);
     expect(result.outputMarkdown).toContain('## Short Answer');
     expect(result.outputMarkdown).not.toContain('## Bottom line');

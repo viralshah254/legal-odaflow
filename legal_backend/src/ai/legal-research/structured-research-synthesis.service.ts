@@ -1221,17 +1221,20 @@ export class StructuredResearchSynthesisService {
         : `## Detailed legal analysis\n\n${analysis}`,
     ];
     if (!/##\s*Table of authorities/i.test(analysisMarkdown)) {
-      const toa = [
-        ...pack.statutes.slice(0, 8).map(
-          (s) => `- ${s.actName || s.heading || s.evidenceId}`,
-        ),
-        ...pack.authorities.slice(0, 8).map(
-          (c) => `- ${c.title || c.citation || c.evidenceId}`,
-        ),
+      // Retrieval candidates are not automatically authorities relied upon by a memo.
+      // Include only identities actually discussed, deduplicate statute sections,
+      // and avoid turning scraped publisher boilerplate into an authority title.
+      const mentioned = (value: string | undefined) =>
+        Boolean(value && value.length >= 4 && value.length <= 240 &&
+          analysisMarkdown.toLocaleLowerCase().includes(value.toLocaleLowerCase()));
+      const labels = [
+        ...pack.statutes.filter((s) => mentioned(s.actName) || mentioned(s.heading))
+          .map((s) => s.actName || s.heading || s.evidenceId),
+        ...pack.authorities.filter((c) => mentioned(c.title) || mentioned(c.citation))
+          .map((c) => c.title && c.title.length <= 240 ? c.title : c.citation || c.evidenceId),
       ];
-      if (toa.length > 0) {
-        sections.push(`## Table of authorities\n\n${toa.join('\n')}`);
-      }
+      const toa = [...new Set(labels)].slice(0, 16).map((label) => `- ${label}`);
+      sections.push(`## Table of authorities\n\n${toa.length ? toa.join('\n') : 'No retrieved authority was expressly identified in this analysis. Verify primary sources before reliance.'}`);
     }
     if (verificationNotes?.length) {
       sections.push(

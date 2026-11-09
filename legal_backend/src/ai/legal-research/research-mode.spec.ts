@@ -91,3 +91,19 @@ describe('research-mode', () => {
     expect(computeResearchCreditsFromCost(0, 0.01)).toBe(0);
   });
 });
+
+
+describe('substantial authorized matter context', () => {
+  it('gives a short question with a judgment time to produce a substantive answer', () => {
+    expect(researchDeadlineMs('FAST', 12000)).toBe(60000);
+    expect(researchSynthesisTimeoutMs('FAST', 200, 12000)).toBe(45000);
+    expect(researchSynthesisTimeoutMs('FAST')).toBe(12000);
+  });
+  it('retains bounded mode budgets for document work', () => {
+    for (const mode of ['GUIDANCE', 'FAST', 'DEEP']) {
+      expect(researchSynthesisTimeoutMs(mode, 200, 20000)).toBeLessThan(researchDeadlineMs(mode, 20000));
+    }
+    expect(researchDeadlineMs('GUIDANCE')).toBe(15000);
+    expect(researchDeadlineMs('FAST')).toBe(25000);
+  });
+});

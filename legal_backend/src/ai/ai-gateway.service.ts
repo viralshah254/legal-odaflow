@@ -1985,14 +1985,14 @@ export class AiGatewayService {
     return supplemented;
   }
 
-  /** 60s-path defaults: Guidance 10s, Fast 12s, Verified 28s. Long queries use the mode deadline. */
-  private resolveLegalSynthesisTimeoutMs(researchMode: string, queryChars = 0): number {
+  /** Keep quick progress signals separate from the deadline for substantial matter evidence. */
+  private resolveLegalSynthesisTimeoutMs(researchMode: string, queryChars = 0, contextChars = 0): number {
     const parseMs = (raw: string | undefined, fallback: number): number => {
       const n = Number(raw);
       return Number.isFinite(n) && n > 0 ? n : fallback;
     };
-    const budget = researchSynthesisTimeoutMs(researchMode, queryChars);
-    if (queryChars > LONG_RESEARCH_QUERY_CHARS && isFastResearch(researchMode)) {
+    const budget = researchSynthesisTimeoutMs(researchMode, queryChars, contextChars);
+    if (Math.max(queryChars, contextChars) > LONG_RESEARCH_QUERY_CHARS && isFastResearch(researchMode)) {
       return budget;
     }
     if (researchMode === 'DEEP') {
@@ -2704,8 +2704,8 @@ export class AiGatewayService {
       query: input.query,
       classification,
       jurisdictions: [input.jurisdiction, country.code].filter(Boolean) as string[],
-      matterContextTokens: estimateTokens(input.query),
-      suppliedDocumentCount: 0,
+      matterContextTokens: estimateTokens(input.authorizedMatterContext ?? ''),
+      suppliedDocumentCount: matterContext?.documentCount ?? 0,
     });
     if (
       shouldForceDeepForThinJurisdiction({
@@ -4296,7 +4296,8 @@ export class AiGatewayService {
 
     retrieveMs = Date.now() - retrieveStart;
     const startedAt = Date.now();
-    const deadlineAt = researchStartedAt + researchDeadlineMs(researchMode);
+    const authorizedContextChars = input.authorizedMatterContext?.length ?? 0;
+    const deadlineAt = researchStartedAt + researchDeadlineMs(researchMode, authorizedContextChars);
     if (Date.now() - researchStartedAt > researchMustStartSynthesisByMs(researchMode)) {
       this.logger.warn(
         `Retrieval exceeded ${researchMustStartSynthesisByMs(researchMode)}ms — synthesizing with admitted authorities`,
@@ -4317,8 +4318,8 @@ export class AiGatewayService {
       query: input.query,
       classification,
       jurisdictions: [input.jurisdiction, country.code].filter(Boolean) as string[],
-      matterContextTokens: estimateTokens(input.query),
-      suppliedDocumentCount: 0,
+      matterContextTokens: estimateTokens(input.authorizedMatterContext ?? ''),
+      suppliedDocumentCount: matterContext?.documentCount ?? 0,
     });
     let preliminaryComplexity = preScore.complexity;
     if (isFastResearch(researchMode) && preliminaryComplexity !== 'QUICK') {
@@ -4341,7 +4342,7 @@ export class AiGatewayService {
     if (this.llmCompletion.isModelConfigured(legalModelRoute.synthesisModel) || this.llmCompletion.isModelConfigured(route.modelName)) {
       const remainingDeadlineMs = Math.max(4_000, deadlineAt - Date.now());
       const synthesisTimeoutMs = Math.min(
-        this.resolveLegalSynthesisTimeoutMs(researchMode, input.query.length),
+        this.resolveLegalSynthesisTimeoutMs(researchMode, input.query.length, authorizedContextChars),
         remainingDeadlineMs,
       );
       const progressSignalMs = Math.min(
@@ -4390,8 +4391,8 @@ export class AiGatewayService {
           await this.updateResearchJobProgress(
             input.agentJobId,
             'generating',
-            input.query.length > LONG_RESEARCH_QUERY_CHARS
-              ? 'Still drafting — long contracts can take a bit longer.'
+            Math.max(input.query.length, authorizedContextChars) > LONG_RESEARCH_QUERY_CHARS
+              ? 'Still drafting — reviewing substantial matter evidence can take a bit longer.'
               : 'Still drafting your research note.',
           );
           const generated = await Promise.race([synthesisPromise, hardTimeout]);
