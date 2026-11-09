@@ -1,3 +1,4 @@
+import { withinResearchBudget } from '@/common/utils/research-execution-budget';
 import { Injectable, Logger, Optional } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import pLimit from '@/common/utils/concurrency-limit';
@@ -164,7 +165,7 @@ export class LegalRetrievalOrchestrator {
       ].join('|'),
     );
     const cacheKey = this.cacheService.buildKey('legal:retrieval', [
-      'v3-strict-case-relevance',
+      'v5-relevant-source-provenance',
       input.countryCode,
       input.jurisdiction ?? 'all',
       queryHash,
@@ -315,7 +316,8 @@ export class LegalRetrievalOrchestrator {
       input.knowledgeSources.includes('case_law');
     const forceLiveRegulations =
       input.countryCode.toUpperCase() === 'IN' &&
-      input.knowledgeSources?.includes('regulations') === true;
+      input.knowledgeSources?.includes('regulations') === true &&
+      /\b(?:rbi|banks?|banking|lending|loans?|credit|payments?|upi|nbfc|securities|securitisation|securitization|finance|financial)\b/i.test(input.query);
     if (
       allowLive &&
       input.supplementLive !== false &&
@@ -692,18 +694,23 @@ export class LegalRetrievalOrchestrator {
       diagnostics?: NonNullable<LegalRetrievalResult['connectorDiagnostics']>;
     },
   ): Promise<RetrievedAuthority[]> {
+    const isRelevant = (authority: RetrievedAuthority) =>
+      assessCandidateRelevance(authority, input).admitted;
+    const needsCurrentLawEvidence = /\b(?:current|latest|recent|amendments?|commencement|regulatory requirements)\b/i.test(input.query);
     const hasEnoughLocal =
-      authorities.length >= LegalRetrievalOrchestrator.MIN_AUTHORITIES;
+      authorities.filter(isRelevant).length >= LegalRetrievalOrchestrator.MIN_AUTHORITIES;
     // Only short-circuit when we're NOT explicitly asked for case law. Without this,
     // ≥3 statute hits prevent Kanoon/CourtListener from ever running.
     const forceRegulations =
       input.countryCode.toUpperCase() === 'IN' &&
-      input.knowledgeSources?.includes('regulations') === true;
+      input.knowledgeSources?.includes('regulations') === true &&
+      /\b(?:rbi|banks?|banking|lending|loans?|credit|payments?|upi|nbfc|securities|securitisation|securitization|finance|financial)\b/i.test(input.query);
     if (
       hasEnoughLocal &&
       !input.isBareActQuery &&
       !input.forceCaseLaw &&
-      !forceRegulations
+      !forceRegulations &&
+      !needsCurrentLawEvidence
     ) {
       return authorities;
     }
@@ -793,9 +800,10 @@ export class LegalRetrievalOrchestrator {
       }
     };
 
+    const countryPartialHits: RetrievedAuthority[] = [];
     const runCountryConnector = async (): Promise<RetrievedAuthority[]> => {
       const startedAt = Date.now();
-      const hits: RetrievedAuthority[] = [];
+      const hits = countryPartialHits;
 
       if (country === 'IN' && allowCaseLaw && this.licensedCaseLaw?.isConfigured()) {
         const licensedStartedAt = Date.now();
@@ -934,6 +942,8 @@ export class LegalRetrievalOrchestrator {
                   court: court.court,
                   decisionDate: ik.decisionDate,
                   courtTierRank: court.courtTierRank,
+                  sourcePassages: ik.passages,
+                  sourceProvenance: ik.sourceProvenance,
                 });
               }
               if (
@@ -1016,7 +1026,7 @@ export class LegalRetrievalOrchestrator {
         }
       }
 
-      if (country === 'IN' && this.escr.isConfigured()) {
+      if (country === 'IN' && this.escr.isConfigured() && (!this.tavilySearch.isConfigured() || this.tavilySearch.isCircuitOpen())) {
         const escrRows: EscrSearchHit[] = [];
         const escrSettled = await Promise.allSettled(
           connectorQueries.slice(0, 2).map((q) =>
@@ -1256,10 +1266,10 @@ export class LegalRetrievalOrchestrator {
 
     const runTavilyConnector = async (): Promise<RetrievedAuthority[]> => {
       const startedAt = Date.now();
-      const caseLawHits = supplemented.filter((authority) => authority.sourceTier === 'case_law');
+      const caseLawHits = supplemented.filter((authority) => authority.sourceTier === 'case_law' && isRelevant(authority));
       const ikProviderFailed = input.diagnostics?.some(
         (d) =>
-          d.provider === 'india-kanoon' &&
+          d.provider.startsWith('india-kanoon') &&
           (d.status === 'unauthorized' ||
             d.status === 'timeout' ||
             d.status === 'circuit_open' ||
@@ -1271,7 +1281,8 @@ export class LegalRetrievalOrchestrator {
         (country === 'IN' || country === 'KE');
       const needsTavily =
         input.isBareActQuery ||
-        supplemented.length < LegalRetrievalOrchestrator.MIN_AUTHORITIES ||
+        supplemented.filter(isRelevant).length < LegalRetrievalOrchestrator.MIN_AUTHORITIES ||
+        needsCurrentLawEvidence ||
         needsOfficialCaseLawFallback;
       if (
         (!allowWeb && !needsOfficialCaseLawFallback) ||
@@ -1299,7 +1310,7 @@ export class LegalRetrievalOrchestrator {
 
       const hits: RetrievedAuthority[] = [];
       const tavilyQueries = connectorQueries.slice(0, input.isFastMode ? 1 : 2);
-      for (const q of tavilyQueries) {
+      await Promise.all(tavilyQueries.map(async (q) => {
         if (this.tavilySearch.isCircuitOpen()) {
           input.diagnostics?.push({
             provider: needsOfficialCaseLawFallback ? 'tavily-case-law-fallback' : 'tavily',
@@ -1307,7 +1318,7 @@ export class LegalRetrievalOrchestrator {
             hitCount: hits.length,
             message: 'Short-circuited remaining Tavily queries after circuit open',
           });
-          break;
+          return;
         }
         try {
           const rows = await withTimeout(
@@ -1357,7 +1368,7 @@ export class LegalRetrievalOrchestrator {
         } catch (err) {
           this.logger.warn(`Tavily query failed: ${String(err)}`);
         }
-      }
+      }));
       input.diagnostics?.push({
         provider: needsOfficialCaseLawFallback ? 'tavily-case-law-fallback' : 'tavily',
         status: this.tavilySearch.isCircuitOpen() && hits.length === 0 ? 'circuit_open' : 'searched',
@@ -1377,7 +1388,7 @@ export class LegalRetrievalOrchestrator {
       (country === 'US' && this.courtListener.isConfigured()) ||
       country === 'KE';
     const caseLawCount = supplemented.filter(
-      (authority) => authority.sourceTier === 'case_law',
+      (authority) => authority.sourceTier === 'case_law' && isRelevant(authority),
     ).length;
     const tavilyEligible =
       !input.skipTavilyInFast &&
@@ -1386,19 +1397,24 @@ export class LegalRetrievalOrchestrator {
       this.tavilySearch.isConfigured() &&
       (allowWeb || (country === 'IN' && allowCaseLaw) || (country === 'KE' && allowCaseLaw)) &&
       (input.isBareActQuery ||
-        supplemented.length < LegalRetrievalOrchestrator.MIN_AUTHORITIES ||
+        supplemented.filter(isRelevant).length < LegalRetrievalOrchestrator.MIN_AUTHORITIES ||
+        needsCurrentLawEvidence ||
         (country === 'IN' && allowCaseLaw && caseLawCount < 2) ||
         (country === 'KE' && allowCaseLaw && caseLawCount < 2));
 
+    const boundedCountrySearch = () => withinResearchBudget(12_000, runCountryConnector).catch(() => {
+      input.diagnostics?.push({ provider: country === 'IN' ? 'india-live' : country === 'KE' ? 'kenyalaw' : 'country-connector', status: 'timeout', hitCount: countryPartialHits.filter(isRelevant).length });
+      return countryPartialHits.filter(isRelevant);
+    });
     if (countryEligible && tavilyEligible) {
       const [countryHits, tavilyHits] = await Promise.all([
-        runCountryConnector(),
+        boundedCountrySearch(),
         runTavilyConnector(),
       ]);
       mergeHits(countryHits);
       mergeHits(tavilyHits);
     } else if (countryEligible) {
-      mergeHits(await runCountryConnector());
+      mergeHits(await boundedCountrySearch());
     } else if (tavilyEligible) {
       mergeHits(await runTavilyConnector());
     }

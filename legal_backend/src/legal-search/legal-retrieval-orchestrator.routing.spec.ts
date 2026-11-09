@@ -12,6 +12,7 @@ jest.mock('p-limit', () => ({
 
 function buildOrchestrator(options?: {
   indiaKanoon?: Record<string, unknown>;
+  tavily?: Record<string, unknown>;
   rbi?: Record<string, unknown>;
   licensed?: Record<string, unknown>;
   kenyaLaw?: Record<string, unknown>;
@@ -32,10 +33,10 @@ function buildOrchestrator(options?: {
       searchJudgments: jest.fn().mockResolvedValue([]),
       searchLegislation: jest.fn().mockResolvedValue([]),
     }) as never,
-    {
+    (options?.tavily ?? {
       isConfigured: () => false,
       isCircuitOpen: () => false,
-    } as never,
+    }) as never,
     {
       scheduleIndiaKanoonPersist: jest.fn(),
       scheduleKenyaPersist: jest.fn(),
@@ -53,6 +54,41 @@ function buildOrchestrator(options?: {
 }
 
 describe('LegalRetrievalOrchestrator live source routing', () => {
+  it('preserves relevant completed hits when later connector queries exceed the stage budget', async () => {
+    jest.useFakeTimers();
+    try {
+      const search = jest.fn().mockResolvedValueOnce({ status: 'searched', hitCount: 1, results: [{
+        id: 'ik-completed', title: 'Employer v Employee', citation: '2020 SCC 123', court: 'Supreme Court of India',
+        sourceUrl: 'https://indiankanoon.org/doc/123/', summary: 'Employee resignation notice is governed by employment terms.',
+        fullText: 'We hold that employee resignation requires notice under the employment terms. The appeal is dismissed.',
+        judges: [], decisionDate: null,
+      }] }).mockImplementation(() => new Promise(() => {}));
+      const orchestrator = buildOrchestrator({ indiaKanoon: { isConfigured: () => true, isCircuitOpen: () => false, searchWithOutcome: search } });
+      const result = (orchestrator as any).supplementWithLiveConnectors([], {
+        countryCode: 'IN', query: 'employee resignation notice', forceCaseLaw: true, knowledgeSources: ['case_law'],
+      });
+      await jest.advanceTimersByTimeAsync(12001);
+      expect((await result).some((authority: { id: string }) => authority.id === 'ik-completed')).toBe(true);
+    } finally { jest.clearAllTimers(); jest.useRealTimers(); }
+  });
+
+  it('still searches live sources when a full local result set is irrelevant to the question', async () => {
+    const search = jest.fn().mockResolvedValue([{
+      id: 'crypto-law', title: 'Virtual Asset Service Providers Act', citation: null,
+      sourceUrl: 'https://new.kenyalaw.org/akn/ke/act/2025/24/eng', court: null,
+      summary: 'Cryptocurrency virtual asset service providers in Kenya must comply with current regulatory requirements under this Act.',
+      judges: [], decisionDate: null,
+    }]);
+    const orchestrator = buildOrchestrator({ tavily: { isConfigured: () => true, isCircuitOpen: () => false, search } });
+    const local = [1, 2, 3].map((n) => ({ id: `aviation-${n}`, title: 'Civil Aviation Training Regulations', citation: null,
+      sourceName: 'Kenya Law', sourceTier: 'primary', summary: 'Current regulatory requirements for training aviation personnel and financial fees.', fullText: null }));
+    const results = await (orchestrator as any).supplementWithLiveConnectors(local, {
+      countryCode: 'KE', query: 'What are the current laws and regulatory requirements for cryptocurrency in Kenya?', knowledgeSources: ['web'],
+    });
+    expect(search).toHaveBeenCalled();
+    expect(results.some((a: { id: string }) => a.id === 'crypto-law')).toBe(true);
+  });
+
   it('routes UPI case-law research through doctypes-filtered IK queries', async () => {
     const rawQuestion =
       'My client says a UPI transfer was unauthorised. Please write a detailed essay explaining every possible remedy and all facts.';

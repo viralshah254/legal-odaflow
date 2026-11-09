@@ -39,7 +39,7 @@ type Props = {
   countryCode?: string;
 };
 
-export function WorkContextStartDialog({ open, onClose, onConfirm, countryCode = "IN" }: Props) {
+export function WorkContextStartDialog({ open, onClose, onConfirm, countryCode }: Props) {
   const { startWork, loading, error: ctxError } = useResolvedWorkContext();
 
   const [mode, setMode] = useState<"existing" | "new" | "unassigned">("existing");
@@ -153,7 +153,7 @@ export function WorkContextStartDialog({ open, onClose, onConfirm, countryCode =
           </button>
           <button
             type="button"
-            disabled={loading}
+            disabled={loading || !countryCode}
             className="rounded bg-primary px-3 py-1 text-sm text-primary-foreground disabled:opacity-50"
             onClick={() => void confirm()}
           >

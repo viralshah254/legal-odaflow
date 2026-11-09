@@ -39,7 +39,7 @@ class DetectCountryService {
 
   String normalizeCountryCode(String? code) {
     final upper = code?.toUpperCase();
-    if (upper != null && AppConfig.supportedCountryCodes.contains(upper)) {
+    if (upper != null && RegExp(r'^[A-Z]{2}$').hasMatch(upper) && upper != 'XX' && upper != 'ZZ') {
       return upper;
     }
     return _fallbackCountry;
@@ -81,7 +81,7 @@ class DetectCountryService {
       final region = locale.countryCode?.toUpperCase();
       if (region != null &&
           region.isNotEmpty &&
-          AppConfig.supportedCountryCodes.contains(region)) {
+          RegExp(r'^[A-Z]{2}$').hasMatch(region) && region != 'XX' && region != 'ZZ') {
         return _result(region, 'locale');
       }
     }
@@ -116,12 +116,12 @@ class DetectCountryService {
   Future<DetectedCountry?> detectFromBackend() async {
     try {
       final response = await _client.dio.get<Map<String, dynamic>>(
-        '/geo/detect',
+        '/geo/client',
       );
       final data = response.data;
       if (data == null) return null;
       final rawCode = data['countryCode'] as String?;
-      if (rawCode == null || rawCode.isEmpty) return null;
+      if (rawCode == null || rawCode.isEmpty || rawCode == 'XX' || rawCode == 'ZZ') return null;
       return DetectedCountry(
         countryCode: normalizeCountryCode(rawCode),
         countryName:
@@ -148,7 +148,7 @@ class DetectCountryService {
       );
       final data = response.data;
       final rawCode = data?['country_code'] as String?;
-      if (rawCode == null || rawCode.isEmpty) return null;
+      if (rawCode == null || rawCode.isEmpty || rawCode == 'XX' || rawCode == 'ZZ') return null;
       final normalized = normalizeCountryCode(rawCode);
       final rawRegion = data?['region'] as String?;
       final jurisdiction =

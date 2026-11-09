@@ -9,6 +9,7 @@
  * (research, draft, export) share the same context.
  */
 
+import { useDetectedCountry } from "@/lib/contexts/country-context";
 import { useState } from "react";
 import { useResolvedWorkContext, useMatter } from "@/lib/contexts/work-context";
 import { WorkContextStartDialog } from "./work-context-start-dialog";
@@ -24,7 +25,9 @@ type Props = {
   className?: string;
 };
 
-export function WorkContextBar({ countryCode = "IN", className }: Props) {
+export function WorkContextBar({ countryCode: selectedCountry, className }: Props) {
+  const { countryCode: workspaceCountry } = useDetectedCountry();
+  const countryCode = selectedCountry || workspaceCountry;
   const { resolved, loading, clear } = useResolvedWorkContext();
   const { matterId, clientId } = useMatter();
   const [dialogOpen, setDialogOpen] = useState(false);

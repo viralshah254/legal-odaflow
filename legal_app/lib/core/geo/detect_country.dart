@@ -38,9 +38,10 @@ String _localeCountryCode() {
   return '';
 }
 
-/// Priority: stored preference → session country → device locale → IN.
+/// Explicit catalog choice → current location → account → device locale.
 Future<String> detectSupportedCountry({
   String? sessionCountryCode,
+  String? currentLocationCountryCode,
 }) async {
   final stored = await readLegalFormsCountryFilter();
   if (stored != null && stored.isNotEmpty) {
@@ -48,6 +49,11 @@ Future<String> detectSupportedCountry({
     if (supportedDraftCountries.contains(stored.toUpperCase())) {
       return stored.toUpperCase();
     }
+  }
+
+  final location = currentLocationCountryCode?.toUpperCase();
+  if (location != null && RegExp(r'^[A-Z]{2}$').hasMatch(location) && location != 'XX' && location != 'ZZ') {
+    return supportedDraftCountries.contains(location) ? location : 'ALL';
   }
 
   final session = sessionCountryCode?.toUpperCase();
@@ -66,7 +72,10 @@ Future<String> detectSupportedCountry({
 Future<String> detectSupportedCountryFromRef(Ref ref) async {
   final sessionCountry =
       ref.read(authControllerProvider).session?.user.countryCode;
-  return detectSupportedCountry(sessionCountryCode: sessionCountry);
+  final location = await ref.read(workCountryProvider.future);
+  return detectSupportedCountry(
+    sessionCountryCode: sessionCountry, currentLocationCountryCode: location,
+  );
 }
 
 const draftCountryPickerOptions = <({String code, String label})>[

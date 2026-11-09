@@ -253,6 +253,7 @@ export class IkEvidenceIngestService {
             relevanceReason: relevance.reason,
             relevanceGate: 'admitted',
             sourcePassages: hit.passages,
+            sourceProvenance: hit.sourceProvenance,
           });
         }
         const diagnostic: IkQueryDiagnostic = {

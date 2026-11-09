@@ -98,6 +98,8 @@ export function ResolvedWorkContextProvider({
 
   const startWork = useCallback(
     async (params: StartWorkParams): Promise<ResolvedWorkContext> => {
+      const countryCode = params.countryCode?.trim().toUpperCase();
+      if (!countryCode) throw new Error("Select a jurisdiction before starting work.");
       setState((s) => ({ ...s, loading: true, error: null }));
 
       // B05 fix: generate a fresh operationRequestKey per submit.
@@ -107,7 +109,6 @@ export function ResolvedWorkContextProvider({
         typeof crypto !== "undefined" && typeof crypto.randomUUID === "function"
           ? crypto.randomUUID()
           : Math.random().toString(36).slice(2) + Date.now().toString(36);
-      const countryCode = params.countryCode ?? "IN";
 
       let result: StartWorkResult;
       try {
@@ -201,7 +202,7 @@ export function useMatter(): {
   return {
     matterId: ctx?.resolved?.matterId ?? null,
     clientId: ctx?.resolved?.clientId ?? null,
-    countryCode: ctx?.resolved?.countryCode ?? "IN",
+    countryCode: ctx?.resolved?.countryCode ?? "",
     scopeKey: ctx?.resolved?.scopeKey ?? null,
   };
 }

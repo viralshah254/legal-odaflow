@@ -43,7 +43,7 @@ const AFRICA_COMMON_LAW_DOMAINS = [
 ];
 
 const LEGAL_DOMAINS: Record<string, string[]> = {
-  KE: ['kenyalaw.org', 'africanlii.org', 'eaclii.org', 'icourts.go.ke', 'bailii.org', 'ulii.org'],
+  KE: ['kenyalaw.org', 'centralbank.go.ke', 'africanlii.org', 'eaclii.org', 'icourts.go.ke', 'bailii.org', 'ulii.org'],
   UG: [
     'ulii.org',
     'africanlii.org',
@@ -65,6 +65,7 @@ const LEGAL_DOMAINS: Record<string, string[]> = {
     'main.sci.gov.in',
     'indiankanoon.org',
     'indiacode.nic.in',
+    'labour.gov.in',
     'legislative.gov.in',
     'ncrb.gov.in',
     'mha.gov.in',
@@ -112,16 +113,24 @@ export class TavilySearchConnector {
       return [];
     }
 
-    const domains =
-      (params.countryCode && LEGAL_DOMAINS[params.countryCode.toUpperCase()]) ||
-      LEGAL_DOMAINS.DEFAULT;
+    const requestedCountry = params.countryCode?.trim().toUpperCase().split('-')[0];
+    const country = requestedCountry === 'UK' ? 'GB' : requestedCountry;
+    const domains = country ? LEGAL_DOMAINS[country] : LEGAL_DOMAINS.DEFAULT;
+    let countryName = country;
+    if (country && !domains) {
+      try { countryName = new Intl.DisplayNames(['en'], { type: 'region' }).of(country) ?? country; } catch { /* retain requested country */ }
+    }
+    // An explicit unsupported country uses scoped discovery, never another
+    // jurisdiction's India/US/common-law domain defaults.
+    const query = country && !domains
+      ? `${params.query} — jurisdiction: ${countryName} (${country})` : params.query;
 
     try {
       const body = {
         api_key: apiKey,
-        query: params.query,
+        query,
         search_depth: 'advanced',
-        include_domains: domains,
+        ...(domains?.length ? { include_domains: domains } : {}),
         max_results: params.limit ?? 6,
         include_answer: false,
         include_raw_content: false,

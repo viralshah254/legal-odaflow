@@ -62,7 +62,14 @@ class _LegalFormsScreenState extends ConsumerState<LegalFormsScreen> {
     super.initState();
     final user = ref.read(authControllerProvider).session?.user;
     _countryCode = user?.countryCode?.toUpperCase() ?? 'IN';
-    _load();
+    _initializeCountry();
+  }
+
+  Future<void> _initializeCountry() async {
+    final country = await ref.read(workCountryProvider.future);
+    if (!mounted) return;
+    setState(() => _countryCode = country);
+    await _load();
   }
 
   @override

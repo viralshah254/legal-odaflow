@@ -150,8 +150,8 @@ export function normalizeToSupportedCountry(
   countryCode: string | null | undefined,
 ): string {
   if (!countryCode) return ""
-  const upper = countryCode.toUpperCase()
-  return upper.length === 2 ? upper : ""
+  const upper = countryCode.trim().toUpperCase()
+  return /^[A-Z]{2}$/.test(upper) && !["ZZ", "XX"].includes(upper) ? upper : ""
 }
 
 /** Persist the user's country to localStorage. Set userConfirmed when the user manually picks a country. */
@@ -205,8 +205,10 @@ export function resolveWorkspaceCountryCode(input: {
   tenantPrimary?: string | null
   profile?: string | null
   confirmedOverride?: string | null
+  currentLocation?: string | null
 }): string {
   return (
+    normalizeToSupportedCountry(input.currentLocation) ||
     normalizeToSupportedCountry(input.confirmedOverride) ||
     normalizeToSupportedCountry(input.tenantPrimary) ||
     normalizeToSupportedCountry(input.profile) ||

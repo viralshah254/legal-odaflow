@@ -37,6 +37,7 @@ class _LegalResearchScreenState extends ConsumerState<LegalResearchScreen> {
   final _queryFieldKey = GlobalKey();
 
   late String _countryCode;
+  bool _countryManuallySelected = false;
   String? _jurisdiction;
   String _researchMode = 'DEEP';
   String _aiModelMode = 'PREMIUM';
@@ -107,7 +108,7 @@ class _LegalResearchScreenState extends ConsumerState<LegalResearchScreen> {
     super.initState();
     final user = ref.read(authControllerProvider).session?.user;
     _countryCode = user?.countryCode?.toUpperCase() ?? AppConfig.defaultCountry;
-    _matterContextReady = widget.matterId == null;
+    _matterContextReady = false;
     if (widget.matterId == null) {
       _applyDetectedLocation();
     } else {
@@ -156,13 +157,16 @@ class _LegalResearchScreenState extends ConsumerState<LegalResearchScreen> {
     ref.read(detectedLocationProvider.future).then((detected) {
       if (!mounted) return;
       setState(() {
-        _countryCode = detected.countryCode;
-        if (detected.jurisdiction != null && _jurisdiction == null) {
-          _jurisdiction = detected.jurisdiction;
+        if (!_countryManuallySelected) {
+          _countryCode = detected.countryCode;
+          if (detected.jurisdiction != null && _jurisdiction == null) {
+            _jurisdiction = detected.jurisdiction;
+          }
         }
+        _matterContextReady = true;
       });
     }).catchError((_) {
-      // keep profile-seeded country on detection failure
+      if (mounted) setState(() => _matterContextReady = true);
     });
   }
 
@@ -429,6 +433,7 @@ class _LegalResearchScreenState extends ConsumerState<LegalResearchScreen> {
                   onChanged: widget.matterId != null ? null : (v) {
                     if (v != null) {
                       setState(() {
+                        _countryManuallySelected = true;
                         _countryCode = v;
                         _jurisdiction = null;
                       });

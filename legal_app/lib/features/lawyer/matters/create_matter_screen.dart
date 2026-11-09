@@ -118,6 +118,7 @@ class _CreateMatterScreenState extends ConsumerState<CreateMatterScreen> {
   final Set<String> _selectedFormIds = {};
   String _formSearch = '';
   String? _selectedCountry;
+  bool _countryManuallySelected = false;
   String? _selectedStateJurisdiction;
 
   @override
@@ -125,6 +126,10 @@ class _CreateMatterScreenState extends ConsumerState<CreateMatterScreen> {
     super.initState();
     _clientId = widget.initialClientId;
     _selectedCountry = _countryCode;
+    ref.read(workCountryProvider.future).then((country) {
+      if (!mounted || _countryManuallySelected) return;
+      setState(() => _selectedCountry = country);
+    });
     _formSearchController.addListener(_onFormSearchChanged);
     _opposingPartyController.addListener(_invalidateConflictCheck);
     if (widget.initialClientId != null) {
@@ -192,7 +197,7 @@ class _CreateMatterScreenState extends ConsumerState<CreateMatterScreen> {
       .toList();
 
   String get _countryCode =>
-      ref.read(authControllerProvider).session?.user.countryCode ??
+      _selectedCountry ?? ref.read(authControllerProvider).session?.user.countryCode ??
       AppConfig.defaultCountry;
 
   List<Map<String, String?>> get _partiesForConflict {
@@ -511,6 +516,7 @@ class _CreateMatterScreenState extends ConsumerState<CreateMatterScreen> {
                   selectedCountry: _selectedCountry,
                   onCountryChanged: (country) {
                     setState(() {
+                      _countryManuallySelected = true;
                       _selectedCountry = country;
                       _selectedStateJurisdiction = null;
                       _jurisdictionController.text = '';
@@ -978,7 +984,7 @@ class _StepBasics extends StatelessWidget {
                 value: null,
                 child: Text('Select country'),
               ),
-              ...AppConfig.supportedCountryCodes.map((code) {
+              ...{...AppConfig.supportedCountryCodes, if (selectedCountry != null) selectedCountry!}.map((code) {
                 return DropdownMenuItem<String?>(
                   value: code,
                   child: Text(AppConfig.countryNames[code] ?? code),

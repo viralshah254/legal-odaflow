@@ -1,3 +1,4 @@
+import { assessCandidateRelevance } from '@/legal-search/retrieval-relevance';
 import { assertResearchBudgetActive, withinResearchBudget } from '@/common/utils/research-execution-budget';
 import { canAnalyzeSuppliedDocuments } from './legal-research/supplied-document-analysis.policy';
 import { filterAuthoritiesByResearchDate } from './legal-research/research-temporal-scope';
@@ -1802,7 +1803,7 @@ export class AiGatewayService {
    * This busts the cache for all existing research entries so users get fresh
    * results with the new improvements rather than stale pre-upgrade cached output.
    */
-  private static readonly RESEARCH_SYSTEM_VERSION = 'v14-20261109-bounded-verified';
+  private static readonly RESEARCH_SYSTEM_VERSION = 'v17-20261109-verified-source-pipeline';
 
   /** Minimum authorities before we reach out to live connectors for grounding. */
   private static readonly MIN_AUTHORITIES_FOR_GROUNDING = 3;
@@ -2579,9 +2580,9 @@ export class AiGatewayService {
         : input.researchMode === 'DEEP'
           ? 'DEEP'
           : 'FAST';
-    // ChatGPT-style path: never wait on an intelligence-map LLM or source APIs.
+    // Skip speculative intelligence-map hops; only Guidance skips sources.
     const skipInventingHops = true;
-    const skipSourceApis = true;
+    const skipSourceApis = isGuidanceResearch(researchMode);
     input = { ...input, researchMode };
     let analyticalModeDecision: AnalyticalModeDecision = {
       enabled: false,
@@ -2929,6 +2930,8 @@ export class AiGatewayService {
     );
 
     const retrieveStart = Date.now();
+    const retrievalBudgetRemaining = () => Math.max(0,
+      researchRetrievalBudgetMs(researchMode) - (Date.now() - retrieveStart));
     const emptyRetrieval: import('@/legal-search/legal-retrieval.types').LegalRetrievalResult = {
       authorities: [],
       isBareActQuery: false,
@@ -2939,7 +2942,7 @@ export class AiGatewayService {
     };
     const retrieval = skipSourceApis || isGuidanceResearch(researchMode)
       ? emptyRetrieval
-      : await this.retrievalOrchestrator.retrieve({
+      : await withinResearchBudget(retrievalBudgetRemaining(), () => this.retrievalOrchestrator.retrieve({
       query: retrievalQuery,
       countryCode: country.code,
       jurisdiction: input.jurisdiction ?? miProfile?.jurisdiction,
@@ -2957,7 +2960,7 @@ export class AiGatewayService {
       researchMode: researchMode === 'GUIDANCE' ? 'FAST' : researchMode,
       skipTavilyInFast,
       ...structuredRetrievalContext,
-    });
+    })).catch(() => ({ ...emptyRetrieval, connectorDiagnostics: [{ provider: 'retrieval', status: 'timeout', hitCount: 0 }] }));
     retrieveMs += Date.now() - retrieveStart;
     executableResearchPlan = {
       ...executableResearchPlan,
@@ -3118,7 +3121,7 @@ export class AiGatewayService {
     const sufficiency = evaluateSufficiency(authorities);
     let issueGaps = sufficiency.criticalGaps;
 
-    if (!skipSourceApis && !sufficiency.passed) {
+    if (!skipSourceApis && !sufficiency.passed && retrievalBudgetRemaining() > 0) {
       // Step 1: targeted deterministic expansion for identified gaps.
       const targetedQueries = this.gapQueryBuilder.build({
         criticalGaps: sufficiency.criticalGaps,
@@ -3130,8 +3133,8 @@ export class AiGatewayService {
       if (targetedQueries.length > 0) {
         try {
           const gapRetrieveStart = Date.now();
-          const expansions = await Promise.all(
-            targetedQueries.slice(0, researchMode === 'DEEP' ? 3 : 2).map((query) =>
+          const expansions = await withinResearchBudget(Math.min(4000, retrievalBudgetRemaining()), () => Promise.all(
+            targetedQueries.slice(0, 1).map((query) =>
               this.retrievalOrchestrator.retrieve({
                 query,
                 countryCode: country.code,
@@ -3148,7 +3151,7 @@ export class AiGatewayService {
                 ...structuredRetrievalContext,
               }),
             ),
-          );
+          ));
           retrieveMs += Date.now() - gapRetrieveStart;
           const mergedMap = new Map<string, RetrievedAuthority>(
             authorities.map((a) => [a.id, a]),
@@ -3239,8 +3242,7 @@ export class AiGatewayService {
       isTavilyFailedInDiagnostics(sourceDiagnostics) || this.tavilySearch.isCircuitOpen();
     let prismaPoolSaturated = false;
     const enrichBudgetMs = researchRetrievalBudgetMs(researchMode);
-    const enrichStartedAt = Date.now();
-    const enrichBudgetRemaining = () => Math.max(0, enrichBudgetMs - (Date.now() - enrichStartedAt));
+    const enrichBudgetRemaining = retrievalBudgetRemaining;
 
     // AI-first: resolve MODEL_KNOWLEDGE candidates via targeted live retrieval
     // instead of open-ended ReAct as the default enrich path.
@@ -3648,7 +3650,7 @@ export class AiGatewayService {
         ...legalSectionRoute.governingSections.map((section) => section.label),
       ],
     };
-    authorities = await withinResearchBudget(4_000, () => this.pinResolvedSectionAuthorities(
+    authorities = await withinResearchBudget(Math.min(4_000, retrievalBudgetRemaining()), () => this.pinResolvedSectionAuthorities(
       authorities, legalSectionRoute, country.code,
     )).catch(() => authorities);
 
@@ -3658,7 +3660,7 @@ export class AiGatewayService {
     let adaptiveSectionsAdded: string[] = [];
     {
       try {
-        const sfContext = await withinResearchBudget(4_000, () => this.researchSectionFinderGrounding.buildContext(
+        const sfContext = await withinResearchBudget(Math.min(4_000, retrievalBudgetRemaining()), () => this.researchSectionFinderGrounding.buildContext(
           input.query, classification.legalDomain, country.code,
         ));
         sectionFinderPromptBlock = sfContext.promptBlock;
@@ -3725,7 +3727,7 @@ export class AiGatewayService {
       enrichBudgetRemaining() > 0
     ) {
       try {
-        const ik = await this.ikEvidenceIngest.retrieveAndIngest({
+        const ik = await withinResearchBudget(retrievalBudgetRemaining(), () => this.ikEvidenceIngest.retrieveAndIngest({
           query: input.query,
           practiceArea: input.practiceArea,
           legalDomain: classification.legalDomain,
@@ -3734,7 +3736,7 @@ export class AiGatewayService {
           maxQueries: 2,
           existingAuthorities: authorities,
           ...ikStructuredContext,
-        });
+        }));
         caseLawSearchStatus = ik.searchStatus;
         sourceDiagnostics.push(
           ...ik.diagnostics.map((diagnostic) => ({
@@ -3837,10 +3839,11 @@ export class AiGatewayService {
       researchMode === 'DEEP' &&
       country.code === 'KE' &&
       wantsCaseLaw &&
-      needsTargetedKeGap
+      needsTargetedKeGap &&
+      retrievalBudgetRemaining() > 0
     ) {
       try {
-        const ke = await this.keEvidenceIngest.retrieveAndIngest({
+        const ke = await withinResearchBudget(retrievalBudgetRemaining(), () => this.keEvidenceIngest.retrieveAndIngest({
           query: input.query,
           practiceArea: input.practiceArea,
           legalDomain: classification.legalDomain,
@@ -3849,7 +3852,7 @@ export class AiGatewayService {
           maxQueries: researchMode === 'DEEP' ? 5 : 2,
           existingAuthorities: authorities,
           ...ikStructuredContext,
-        });
+        }));
         caseLawSearchStatus = ke.searchStatus;
         sourceDiagnostics.push(
           ...ke.diagnostics.map((diagnostic) => ({
@@ -3905,7 +3908,7 @@ export class AiGatewayService {
       wantsCaseLaw ||
       intelligenceMap.likelyCases.length > 0 ||
       (taskProfile.evidenceBundle?.targetCases ?? 0) > 0;
-    if (caseLawRelevant && (similarCases.length === 0 || isCaseLawProviderFailureStatus(caseLawSearchStatus))) {
+    if (caseLawRelevant && retrievalBudgetRemaining() > 0 && (similarCases.length === 0 || isCaseLawProviderFailureStatus(caseLawSearchStatus))) {
       let recoveryLeads: NonNullable<LawyerResearchResult['unverifiedResearchLeads']> = [];
       // Recovery runs wherever we have an official source to ground it: a
       // dedicated connector (IN/KE) or the official-publisher web fallback
@@ -3916,7 +3919,7 @@ export class AiGatewayService {
         country.code === 'KE' ||
         hasOfficialCaseSources(country.code)
       ) {
-        const recovery = await withinResearchBudget(taskProfile.kind === 'GENERAL_RESEARCH' ? 6_000 : 12_000, () => this.caseLawRecovery.recover({
+        const recovery = await withinResearchBudget(Math.min(retrievalBudgetRemaining(), taskProfile.kind === 'GENERAL_RESEARCH' ? 6_000 : 12_000), () => this.caseLawRecovery.recover({
           ...structuredRetrievalContext,
           query: input.query,
           countryCode: country.code,
@@ -3982,7 +3985,11 @@ export class AiGatewayService {
               })),
           ];
     }
-    authorities = filterAuthoritiesByResearchDate(authorities, input.asOfDate);
+    authorities = filterAuthoritiesByResearchDate(authorities, input.asOfDate)
+      .filter((authority) => assessCandidateRelevance(authority, {
+        ...structuredRetrievalContext, query: input.query,
+        countryCode: country.code, jurisdiction: input.jurisdiction,
+      }).admitted);
     similarCases = this.similarCasesService.extractAndRank(authorities, input.query, country.code,
       taskProfile.evidenceBundle?.targetCases ?? 3, { ...structuredRetrievalContext, jurisdiction: input.jurisdiction });
     unverifiedResearchLeads = unverifiedResearchLeads?.filter(lead => filterAuthoritiesByResearchDate([{
@@ -4150,7 +4157,7 @@ export class AiGatewayService {
         list.findIndex((candidate) => candidate.id === authority.id) === index,
     );
     const checkPack = filterAuthoritiesToCheckPack(presentationAuthorities, input.query);
-    const writePack = checkPack.length > 0 ? checkPack : presentationAuthorities.slice(0, 8);
+    const writePack = checkPack;
 
     // Current-law / treatment gate for material authorities before synthesis.
     const currentLawTreatments = this.currentLawChecker.assess({
@@ -4515,7 +4522,7 @@ export class AiGatewayService {
       outputMarkdown: sanitizeResearchOutputMarkdown(sanitizedResearch.outputMarkdown),
     };
     if (
-      (researchMode === 'GUIDANCE' || researchMode === 'FAST') &&
+      researchMode === 'GUIDANCE' &&
       !/\*Unverified AI guidance/i.test(result.outputMarkdown)
     ) {
       result = {
@@ -4524,17 +4531,8 @@ export class AiGatewayService {
           result.outputMarkdown +
           '\n\n---\n*Unverified AI guidance — model knowledge only.*',
       };
-    } else if (
-      researchMode === 'DEEP' &&
-      !/\*AI self-check/i.test(result.outputMarkdown)
-    ) {
-      result = {
-        ...result,
-        outputMarkdown:
-          result.outputMarkdown +
-          '\n\n---\n*AI self-check — no live retrieval or citation audit ran. Lawyer review required.*',
-      };
     }
+
     llmMs = Date.now() - llmStart;
 
     const jurisdictionNotice =

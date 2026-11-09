@@ -26,6 +26,16 @@ void main() {
       expect(await detectSupportedCountry(sessionCountryCode: 'US'), 'GB');
     });
 
+    test('travel location wins while explicit catalog choices remain authoritative', () async {
+      expect(await detectSupportedCountry(sessionCountryCode: 'IN', currentLocationCountryCode: 'KE'), 'KE');
+      await persistLegalFormsCountryFilter('GB');
+      expect(await detectSupportedCountry(sessionCountryCode: 'IN', currentLocationCountryCode: 'KE'), 'GB');
+    });
+
+    test('unsupported catalog location never silently becomes India', () async {
+      expect(await detectSupportedCountry(sessionCountryCode: 'IN', currentLocationCountryCode: 'FR'), 'ALL');
+    });
+
     test('uses session country when no stored value', () async {
       expect(await detectSupportedCountry(sessionCountryCode: 'KE'), 'KE');
     });

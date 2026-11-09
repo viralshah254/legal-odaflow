@@ -39,6 +39,10 @@ export function extractNamedCaseTitles(text: string): string[] {
 export function isQuoteableCaseAuthority(authority: RetrievedAuthority): boolean {
   const url = authority.sourceUrl ?? '';
   const text = (authority.fullText ?? authority.summary ?? '').trim();
+  // PDF running headers and search-index labels are not case identities.
+  // Keep unidentified hits as discovery leads, never cite them as judgments.
+  if (authority.sourceTier === 'case_law' && !authority.citation?.trim() &&
+      !/\bv\.?\s|\bvs\.?\s|\bin re\b|\bin the matter of\b/i.test(authority.title)) return false;
   return /^https?:\/\//i.test(url) && text.length >= 80;
 }
 

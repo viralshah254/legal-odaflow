@@ -65,6 +65,14 @@ describe('named-authority-check-pack', () => {
     expect(pack.map((a) => a.id)).toEqual(['sf-480', 'escr-1']);
   });
 
+  it('does not treat an official PDF running header as an identified case', () => {
+    expect(isQuoteableCaseAuthority(caseAuth({ id: 'header-only',
+      title: 'http://JUDIS.NIC.IN SUPREME COURT OF INDIA Page 1 of 9',
+      sourceUrl: 'https://api.sci.gov.in/jonew/judis/7483.pdf',
+      fullText: 'The court considered notice and resignation under the employment contract. '.repeat(3),
+    }))).toBe(false);
+  });
+
   it('requires URL plus quoteable text for a case', () => {
     expect(
       isQuoteableCaseAuthority(

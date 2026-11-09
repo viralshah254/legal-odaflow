@@ -103,6 +103,14 @@ final detectedLocationProvider = FutureProvider<DetectedCountry>((ref) async {
   return detected;
 });
 
+/// Location-aware default for new work. Existing matters retain their country.
+final workCountryProvider = FutureProvider<String>((ref) async {
+  final account = ref.watch(authControllerProvider).session?.user.countryCode;
+  final location = await ref.watch(detectedLocationProvider.future);
+  return location.source != 'default'
+      ? location.countryCode : account ?? AppConfig.defaultCountry;
+});
+
 final creditsRepositoryProvider = Provider<CreditsRepository>((ref) {
   return CreditsRepository(ref.watch(apiClientProvider));
 });

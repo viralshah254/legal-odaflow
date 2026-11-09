@@ -18,6 +18,12 @@ describe('IndiaKanoonConnector passage parsing', () => {
     ]);
   });
 
+  it('preserves paragraph anchors inside nested judgment containers', () => {
+    const passages = extractIndiaKanoonPassages('<div class="judgments"><div class="body"><p id="para_17">We therefore hold that the employment notice clause governs resignation.</p><p id="para_18">The appeal is dismissed for the reasons stated above.</p></div></div>');
+    expect(passages.map((passage) => passage.paragraph)).toEqual(['17', '18']);
+    expect(passages.every((passage) => passage.sourcePinpoint)).toBe(true);
+  });
+
   it('does not invent a pinpoint for unnumbered source blocks', () => {
     const passages = extractIndiaKanoonPassages(
       '<p>The judgment discusses the governing rule in enough detail to be useful evidence.</p>',
@@ -33,6 +39,31 @@ describe('IndiaKanoonConnector passage parsing', () => {
 });
 
 describe('IndiaKanoonConnector failure controls', () => {
+  it('never creates full-document provenance from a search snippet', async () => {
+    global.fetch = jest.fn(async () => new Response(JSON.stringify({ docs: [{ tid: 123,
+      title: 'Employer v Employee', headline: 'The appeal is dismissed. Employment notice applies.' }], found: 1 }), {
+      status: 200, headers: { 'Content-Type': 'application/json' },
+    })) as typeof fetch;
+    const connector = new IndiaKanoonConnector(new ConfigService({ INDIA_KANOON_API_KEY: 'test-key' }));
+    const [result] = await connector.search({ query: 'employee notice', skipEnrich: true });
+    expect(result.sourceProvenance).toBeUndefined();
+    expect(result.fullText).toBeUndefined();
+    expect(global.fetch).toHaveBeenCalledTimes(1);
+  });
+
+  it('retains the fetched document provenance and source paragraph anchors through enrichment', async () => {
+    global.fetch = jest.fn(async (url) => new Response(JSON.stringify(String(url).includes('/search/')
+      ? { docs: [{ tid: 123, title: 'Employer v Employee' }], found: 1 }
+      : { doc: '<p id="para_12">We therefore hold that resignation is governed by the employment terms.</p><p id="para_13">The appeal is dismissed.</p>' }), {
+      status: 200, headers: { 'Content-Type': 'application/json' },
+    })) as typeof fetch;
+    const connector = new IndiaKanoonConnector(new ConfigService({ INDIA_KANOON_API_KEY: 'test-key' }));
+    const [result] = await connector.search({ query: 'employee resignation', fetchFullText: true });
+    expect(result.sourceProvenance).toMatchObject({ provider: 'Indian Kanoon API', completeness: 'COMPLETE', authoritativeStatus: 'AGGREGATOR', paragraphNumberingIntegrity: 'INTACT', dispositionComplete: true });
+    expect(result.sourceProvenance?.documentHash).toMatch(/^[a-f0-9]{64}$/);
+    expect(result.passages?.[0].paragraph).toBe('12');
+  });
+
   const originalFetch = global.fetch;
 
   afterEach(() => {

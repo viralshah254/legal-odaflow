@@ -53,6 +53,12 @@ async function main() {
     assert(response.ok, `Research failed: ${response.status}`);
     assert.equal(result.researchMode, 'DEEP', 'Never silently downgrade the selected mode');
     assert(!result.degraded && result.provider !== 'fallback', 'A timeout fallback is not a passing benchmark');
+    if (process.env.VERIFIED_QA_REQUIRE_GROUNDED === '1') {
+      assert((result.citations?.length ?? 0) > 0, 'Verified research must retrieve relevant sources when providers are available');
+      assert(['RESEARCH_BACKED', 'READY_FOR_LAWYER_REVIEW', 'VERIFIED_WITH_LIMITATIONS'].includes(result.publicationState), 'The grounded quality gate requires an audited research result, not an unverified draft');
+      assert(result.dimensions?.relevance?.state && result.dimensions.relevance.state !== 'NOT_APPLICABLE', 'Verified mode must execute source verification rather than a model-only bypass');
+      assert(result.dimensions?.identity?.state && result.dimensions.identity.state !== 'NOT_APPLICABLE', 'Citation identity checks are required');
+    }
     assert(markdown.length > 1000, 'A useful answer or clarification is required');
     assert(!/unable to generate a response/i.test(markdown));
     assert(elapsedMs < (asyncMode ? 90000 : 65000), 'Verified research must finish within the bounded request budget');

@@ -27,6 +27,11 @@ describe("resolveAccountCountryCode", () => {
 })
 
 describe("resolveWorkspaceCountryCode", () => {
+  it("uses current location for new work while travelling, with account as fallback", () => {
+    expect(resolveWorkspaceCountryCode({ currentLocation: "KE", tenantPrimary: "IN", profile: "IN" })).toBe("KE")
+    expect(resolveWorkspaceCountryCode({ confirmedOverride: "GB", currentLocation: "KE", tenantPrimary: "IN" })).toBe("KE")
+    expect(resolveWorkspaceCountryCode({ currentLocation: "ZZ", tenantPrimary: "IN" })).toBe("IN")
+  })
   it("uses India tenant over a stale US profile for chrome", () => {
     expect(
       resolveWorkspaceCountryCode({ tenantPrimary: "IN", profile: "US" }),

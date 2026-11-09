@@ -1,3 +1,6 @@
+import { parseDocument, DomUtils } from 'htmlparser2';
+import { createHash } from 'node:crypto';
+import type { SourceProvenance } from '@/legal-search/legal-retrieval.types';
 import { researchRequestSignal } from '@/common/utils/research-execution-budget';
 import { Injectable, Logger } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
@@ -33,6 +36,7 @@ export interface IndiaKanoonResult {
   fragmentText?: string | null;
   /** Source-preserved judgment paragraphs. `paragraph` is present only when supplied by the source. */
   passages?: IndiaKanoonPassage[];
+  sourceProvenance?: SourceProvenance;
 }
 
 export interface IndiaKanoonPassage {
@@ -313,6 +317,7 @@ export class IndiaKanoonConnector {
     let court = doc.docsource ?? null;
     let fullText: string | null = null;
     let passages: IndiaKanoonPassage[] = [];
+    let sourceProvenance: SourceProvenance | undefined;
 
     if (doc.publishdate) {
       const d = new Date(doc.publishdate);
@@ -362,7 +367,21 @@ export class IndiaKanoonConnector {
           const body = detail.doc ?? detail.data ?? detail.judgment ?? '';
           if (typeof body === 'string' && body.trim().length > 0) {
             passages = extractIndiaKanoonPassages(body);
-            fullText = htmlToText(body).slice(0, 100_000);
+            const documentText = htmlToText(body);
+            fullText = documentText.slice(0, 100_000);
+            const numbered = passages.filter((passage) => passage.sourcePinpoint);
+            sourceProvenance = {
+              provider: 'Indian Kanoon API', retrievedAt: new Date().toISOString(),
+              canonicalIdentity: `ik-${doc.tid}`, canonicalUrl: sourceUrl,
+              documentHash: createHash('sha256').update(documentText).digest('hex'),
+              completeness: documentText.length <= 100_000 ? 'COMPLETE' : 'PARTIAL',
+              extractionMethod: 'STRUCTURED_API', authoritativeStatus: 'AGGREGATOR',
+              paragraphNumberingIntegrity: numbered.length > 0
+                ? new Set(numbered.map((passage) => passage.paragraph)).size === numbered.length ? 'INTACT' : 'CORRUPT'
+                : 'UNKNOWN',
+              dispositionComplete: documentText.length <= 100_000 && /(?:appeal|petition|application|suit)\s+(?:(?:is|are|stands?|hereby)\s+)*(?:allowed|dismissed|disposed)|(?:appeal|petition)\s+(?:fails?|succeeds?)/i.test(documentText.slice(-4000)),
+              extractorVersion: 'india-kanoon-document-v1',
+            };
           }
         }
       }
@@ -385,6 +404,7 @@ export class IndiaKanoonConnector {
       fullText,
       treatmentHint,
       passages,
+      sourceProvenance,
     };
   }
 
@@ -431,16 +451,20 @@ function htmlToText(value: string): string {
 export function extractIndiaKanoonPassages(html: string): IndiaKanoonPassage[] {
   const passages: IndiaKanoonPassage[] = [];
   const seen = new Set<string>();
-  const blockPattern = /<(p|div|blockquote)\b([^>]*)>([\s\S]*?)<\/\1>/gi;
+  const blockTags = new Set(['p', 'div', 'blockquote']);
+  const document = parseDocument(html);
+  const blocks = DomUtils.findAll((node) => blockTags.has(node.name), document.children);
 
-  for (const match of html.matchAll(blockPattern)) {
-    const attributes = match[2] ?? '';
-    const text = htmlToText(match[3] ?? '');
+  for (const node of blocks) {
+    const attributePinpoint = Object.entries(node.attribs)
+      .filter(([name]) => /^(?:id|name|data-para(?:graph)?)$/i.test(name))
+      .map(([, value]) => value.match(/^(?:para(?:graph)?|p)?[_:\-\s]*(\d+[A-Za-z]?)$/i)?.[1])
+      .find(Boolean);
+    // Wrappers must not consume nested source-numbered paragraphs.
+    if (!attributePinpoint && DomUtils.findOne((child) => blockTags.has(child.name), node.children)) continue;
+    const text = htmlToText(DomUtils.getInnerHTML(node));
     if (text.length < 30) continue;
-
-    const attributePinpoint = attributes.match(
-      /\b(?:id|name|data-para(?:graph)?)\s*=\s*["'](?:para(?:graph)?|p)?[_:\-\s]*(\d+[A-Za-z]?)["']/i,
-    )?.[1];
+    if (!attributePinpoint && passages.some((passage) => passage.sourcePinpoint && passage.text.includes(text))) continue;
     const textualPinpoint = text.match(/^\s*(?:para(?:graph)?\s*)?(?:\(|\[)?(\d+[A-Za-z]?)(?:\)|\]|[.:])\s+/i)?.[1];
     const paragraph = attributePinpoint ?? textualPinpoint;
     const key = `${paragraph ?? ''}:${text}`;

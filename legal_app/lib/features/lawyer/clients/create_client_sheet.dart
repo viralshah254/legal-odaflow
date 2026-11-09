@@ -33,9 +33,8 @@ Future<FirmClient?> showCreateClientSheet(
   final tenantId = ref.read(authControllerProvider).session?.user.tenantId;
   if (tenantId == null || tenantId.isEmpty) return null;
 
-  final defaultCountry =
-      ref.read(authControllerProvider).session?.user.countryCode?.toUpperCase() ??
-          AppConfig.defaultCountry;
+  final defaultCountry = await ref.read(workCountryProvider.future);
+  if (!context.mounted) return null;
 
   return showModalBottomSheet<FirmClient>(
     context: context,
@@ -348,7 +347,7 @@ class _CreateClientSheetState extends ConsumerState<_CreateClientSheet> {
                       const SizedBox(height: 6),
                       FormDropdown<String>(
                         value: _countryCode,
-                        items: AppConfig.supportedCountryCodes
+                        items: {...AppConfig.supportedCountryCodes, _countryCode}
                             .map(
                               (code) => DropdownMenuItem(
                                 value: code,

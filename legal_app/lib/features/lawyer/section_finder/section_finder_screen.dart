@@ -48,7 +48,8 @@ class _SectionFinderScreenState extends ConsumerState<SectionFinderScreen> {
 
   Future<void> _initializeScope() async {
     final user = ref.read(authControllerProvider).session?.user;
-    var country = user?.countryCode;
+    var country = widget.matterId == null
+        ? await ref.read(workCountryProvider.future) : user?.countryCode;
     if (widget.matterId != null) {
       try {
         if (user?.tenantId == null) throw ApiException('Firm context is required.');

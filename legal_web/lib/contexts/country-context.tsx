@@ -47,7 +47,6 @@ function effectiveWorkspaceCountry(
   tenantPrimaryCountry?: string | null,
 ): string {
   return resolveWorkspaceCountryCode({
-    confirmedOverride: getStoredCountryIfConfirmed(),
     tenantPrimary: tenantPrimaryCountry,
     profile:
       ("legalLocation" in profile
@@ -102,7 +101,12 @@ export function CountryProvider({ children }: { children: React.ReactNode }) {
         const ipLocation = await detectIpLocation()
         if (sessionOverrideRef.current) return
 
-        const activeCountry = nextProfileCountry || WORKSPACE_FALLBACK_COUNTRY
+        const activeCountry = resolveWorkspaceCountryCode({
+          confirmedOverride: getStoredCountryIfConfirmed(),
+          currentLocation: ipLocation?.countryCode,
+          profile: nextProfileCountry,
+          tenantPrimary: activeTenant?.tenant.primaryCountry,
+        }) || WORKSPACE_FALLBACK_COUNTRY
 
         const nextIpCountry = (ipLocation?.countryCode as CountryCode | null) ?? null
         const nextIpRegion = ipLocation?.region ?? null
@@ -121,8 +125,12 @@ export function CountryProvider({ children }: { children: React.ReactNode }) {
 
           setCountryCodeState(activeCountry as CountryCode)
           setCountryName(getCountryName(activeCountry))
-          setDetectedRegion(nextProfileRegion || sameCountryIpRegion)
-          setDetectionSource(nextProfileCountry ? profileSource : "default")
+          setDetectedRegion(sameCountryIpRegion || (activeCountry === nextProfileCountry ? nextProfileRegion : null))
+          setDetectionSource(
+            nextIpCountry === activeCountry ? "ip"
+              : getStoredCountryIfConfirmed() ? "stored"
+              : nextProfileCountry ? profileSource : "default",
+          )
         }
         return
       }

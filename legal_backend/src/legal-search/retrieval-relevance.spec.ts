@@ -1,6 +1,22 @@
 import { assessCandidateRelevance } from './retrieval-relevance';
 
 describe('assessCandidateRelevance', () => {
+  it('rejects unrelated official sources for a single-subject employment question', () => {
+    const query = 'Under India employment law what is the required notice period for an employee discontinuing work?';
+    const result = assessCandidateRelevance({ title: '[2026] 1 SCR 467', citation: null,
+      summary: 'The required notice period for appellate proceedings was considered under the applicable procedural law.', fullText: null,
+    }, { query, countryCode: 'IN' });
+    expect(result.admitted).toBe(false);
+    expect(result.rejectionCode).toBe('MISSING_SUBJECT_ANCHOR');
+  });
+
+  it('does not use aviation regulations as crypto authority merely because financial terms overlap', () => {
+    const result = assessCandidateRelevance({ title: 'Civil Aviation Training Regulations', citation: null,
+      summary: 'Current laws and regulatory requirements for fees and financial transactions in Kenya.', fullText: null,
+    }, { query: 'What are the current laws and regulatory requirements for cryptocurrency in Kenya?', countryCode: 'KE' });
+    expect(result.admitted).toBe(false);
+  });
+
   it('admits candidates matching a planned statute and issue', () => {
     const result = assessCandidateRelevance(
       {

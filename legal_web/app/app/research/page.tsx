@@ -84,17 +84,10 @@ import { useAiModel } from "@/lib/contexts/ai-model-context"
 import { CitationReviewDialog } from "@/components/research/citation-review-dialog"
 import { ResearchActionsToolbar } from "@/components/research/research-actions-toolbar"
 import { ResearchContextBar } from "@/components/research/research-context-bar"
-import { JurisdictionMismatchDialog } from "@/components/research/jurisdiction-mismatch-dialog"
 import { VoiceDictationButton } from "@/components/voice/voice-dictation-button"
 import { useDetectedCountry } from "@/lib/contexts/country-context"
 import { normalizeToSupportedCountry, getCountryName } from "@/lib/geo/detect-country"
 import { isAllRegionsSelection, ALL_REGIONS_VALUE, matchRegionToJurisdictionList } from "@/lib/geo/country-states"
-import {
-  persistResearchJurisdictionChoice,
-  readResearchJurisdictionChoice,
-  resolveJurisdictionChoice,
-  type JurisdictionChoice,
-} from "@/lib/geo/jurisdiction-mismatch"
 import {
   findResearchCountry,
   useResearchCountries,
@@ -143,7 +136,9 @@ import {
   WorkContextStartDialog,
   type WorkContextSelection,
 } from "@/components/work-context/work-context-start-dialog"
-import { startWorkContext } from "@/lib/api/work-context"
+import { getMatter } from "@/lib/api/matters"
+import { useResolvedWorkContext } from "@/lib/contexts/work-context"
+import { resolveResearchMatterId } from "@/lib/legal-research/work-scope"
 import { AnalyticsEvents } from "@/lib/analytics/events"
 import { trackResearchEvent } from "@/lib/analytics/research-events"
 import { researchTaskLabel } from "@/lib/research/research-task-sections"
@@ -296,19 +291,14 @@ export default function LegalResearchPage() {
   const tCommon = useTranslations("common")
   const tResearchProgress = useTranslations("marketing.home.researchProgress")
   const tErr = useTranslations("errors")
-  const { activeTenantId, activeTenant } = useTenant()
+  const { activeTenantId } = useTenant()
+  const { resolved: resolvedWorkContext } = useResolvedWorkContext()
   const { toast } = useToast()
 
   const {
     countryCode: profileCountryCode,
     detectedRegion,
     isLoading: countryLoading,
-    profileCountryCode: accountCountryCode,
-    profileRegion: accountRegion,
-    ipCountryCode,
-    ipRegion,
-    hasJurisdictionMismatch: jurisdictionMismatch,
-    setCountryCode: _setSessionCountryCode,
   } = useDetectedCountry()
 
   const { countries: researchCountries } = useResearchCountries()
@@ -321,11 +311,9 @@ export default function LegalResearchPage() {
     () => (urlCountry || "") as CountryCode,
   )
   const [jurisdiction, setJurisdiction] = useState(ALL_REGIONS_VALUE)
-  const [mismatchDialogOpen, setMismatchDialogOpen] = useState(false)
   const [workContextOpen, setWorkContextOpen] = useState(false)
   const [workContext, setWorkContext] = useState<WorkContextSelection | null>(null)
   const countryManuallySet = useRef(Boolean(urlCountry))
-  const mismatchPrompted = useRef(false)
   const [query, setQuery] = useState(() => searchParams.get("q") ?? "")
   const { mode: aiModelMode, modelId: premiumModelId, setAiModel } = useAiModel()
   const [loading, setLoading] = useState(false)
@@ -391,7 +379,11 @@ export default function LegalResearchPage() {
   const upgradeAttempted = useRef(false)
   const [pendingUpgrade, setPendingUpgrade] = useState(false)
 
-  const matterId = searchParams.get("matterId") ?? undefined
+  const matterId = resolveResearchMatterId({
+    selection: workContext, requestedMatterId: searchParams.get("matterId"),
+    contextMatterId: resolvedWorkContext?.matterId,
+  })
+  const [matterScopeReady, setMatterScopeReady] = useState(!matterId)
   const queryReady = query.trim().length >= 10
   const intentPreview = useMemo(() => inferAdaptiveResearchPreview(query), [query])
   const selectedTaskKind =
@@ -560,16 +552,16 @@ export default function LegalResearchPage() {
     [researchCountries],
   )
 
-  // Sync country from URL, then tenant / profile (unless user has already chosen)
+  // Explicit work jurisdiction wins; otherwise use the location-aware workspace default.
   useEffect(() => {
+    if (matterId) return
     if (urlCountry) {
       countryManuallySet.current = true
       setCountryCode(urlCountry as CountryCode)
       return
     }
     if (countryManuallySet.current) return
-    const tenantCountry = normalizeToSupportedCountry(activeTenant?.tenant.primaryCountry)
-    const nextCountry = tenantCountry || profileCountryCode
+    const nextCountry = profileCountryCode
     if (!countryLoading && nextCountry) {
       setCountryCode(nextCountry as CountryCode)
       if (detectedRegion && isAllRegionsSelection(jurisdiction) && nextCountry === profileCountryCode) {
@@ -582,58 +574,28 @@ export default function LegalResearchPage() {
       }
     }
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [urlCountry, countryLoading, profileCountryCode, detectedRegion, researchCountries, activeTenant?.tenant.primaryCountry])
+  }, [urlCountry, countryLoading, profileCountryCode, detectedRegion, researchCountries, matterId])
 
-  // Prompt once when profile jurisdiction differs from IP location
   useEffect(() => {
-    if (urlCountry) return
-    if (countryManuallySet.current) return
-    if (countryLoading || mismatchPrompted.current) return
-    if (!jurisdictionMismatch || !accountCountryCode || !ipCountryCode) return
-
-    const priorChoice = readResearchJurisdictionChoice()
-    if (priorChoice) {
-      mismatchPrompted.current = true
-      const resolved = resolveJurisdictionChoice(
-        priorChoice,
-        { countryCode: accountCountryCode, region: accountRegion },
-        { countryCode: ipCountryCode, region: ipRegion },
-      )
+    if (!matterId) { setMatterScopeReady(true); return }
+    setMatterScopeReady(false)
+    if (!activeTenantId) return
+    let cancelled = false
+    void getMatter(activeTenantId, matterId).then((matter) => {
+      if (cancelled) return
+      const code = normalizeToSupportedCountry(matter.countryCode)
+      if (!code) throw new Error("Confirm the matter country before research.")
       countryManuallySet.current = true
-      applyResearchLocation(resolved.countryCode, resolved.region)
-      return
-    }
+      applyResearchLocation(code, matter.jurisdiction)
+      setMatterScopeReady(true)
+    }).catch((error: unknown) => {
+      if (!cancelled) setError(error instanceof Error ? error.message : String(error))
+    })
+    return () => { cancelled = true }
+  }, [activeTenantId, matterId, applyResearchLocation])
 
-    mismatchPrompted.current = true
-    setMismatchDialogOpen(true)
-  }, [
-    accountCountryCode,
-    accountRegion,
-    applyResearchLocation,
-    countryLoading,
-    ipCountryCode,
-    ipRegion,
-    jurisdictionMismatch,
-    urlCountry,
-  ])
-
-  function handleJurisdictionChoice(choice: JurisdictionChoice) {
-    if (!accountCountryCode || !ipCountryCode) return
-    persistResearchJurisdictionChoice(choice)
-    const resolved = resolveJurisdictionChoice(
-      choice,
-      { countryCode: accountCountryCode, region: accountRegion },
-      { countryCode: ipCountryCode, region: ipRegion },
-    )
-    countryManuallySet.current = true
-    applyResearchLocation(resolved.countryCode, resolved.region)
-    setMismatchDialogOpen(false)
-  }
-
-  function handleJurisdictionMismatchDismiss() {
-    persistResearchJurisdictionChoice("profile")
-    setMismatchDialogOpen(false)
-  }
+  // The shared country provider already resolves travel-aware defaults. The
+  // jurisdiction control still lets lawyers explicitly use a different country.
 
   useEffect(() => {
     if (!countryCode) return
@@ -763,6 +725,7 @@ export default function LegalResearchPage() {
   }
 
   async function runResearch(acceptedQuery?: string) {
+    if (!matterScopeReady || !countryCode || (!matterId && countryLoading)) return
     const effectiveQuery = (acceptedQuery ?? query).trim()
     if (effectiveQuery.length < 10) return
     setLoading(true)
@@ -1750,7 +1713,11 @@ export default function LegalResearchPage() {
                   open={workContextOpen}
                   countryCode={countryCode}
                   onClose={() => setWorkContextOpen(false)}
-                  onConfirm={(selection) => setWorkContext(selection)}
+                  onConfirm={(selection) => {
+                    setWorkContext(selection)
+                    countryManuallySet.current = true
+                    applyResearchLocation(selection.countryCode, null)
+                  }}
                 />
                 <ResearchContextBar
                   matterScope={Boolean(matterId)}
@@ -1991,7 +1958,7 @@ export default function LegalResearchPage() {
                   <Button
                     className="w-full gap-2 bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary/70 h-11 text-sm font-semibold shadow-sm"
                     loading={loading || promptRefine.loading || promptRefine.pendingProceed}
-                    disabled={!queryReady || loading || promptRefine.loading || promptRefine.pendingProceed}
+                    disabled={!queryReady || !matterScopeReady || !countryCode || (!matterId && countryLoading) || loading || promptRefine.loading || promptRefine.pendingProceed}
                     onClick={() => void handleResearchClick()}
                   >
                     {loading || promptRefine.loading || promptRefine.pendingProceed ? (
@@ -2353,15 +2320,7 @@ export default function LegalResearchPage() {
         tenantId={activeTenantId ?? undefined}
       />
 
-      {accountCountryCode && ipCountryCode && (
-        <JurisdictionMismatchDialog
-          open={mismatchDialogOpen}
-          profile={{ countryCode: accountCountryCode, region: accountRegion }}
-          ip={{ countryCode: ipCountryCode, region: ipRegion }}
-          onChoose={handleJurisdictionChoice}
-          onDismiss={handleJurisdictionMismatchDismiss}
-        />
-      )}
+
 
     </div>
   )

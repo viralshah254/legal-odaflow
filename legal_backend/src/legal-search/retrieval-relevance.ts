@@ -100,12 +100,14 @@ const SUBJECT_ANCHOR_GROUPS: string[][] = [
   ['cheque', 'dishonour', 'dishonor'],
   ['trademark', 'copyright', 'patent'],
   ['privacy', 'data'],
+  ['crypto', 'cryptocurrency', 'bitcoin', 'blockchain', 'virtualasset'],
   ['tax', 'gst', 'income'],
   ['contract', 'waiver', 'consideration', 'unlawful', 'unenforceable'],
 ];
 
 function matchedSubjectAnchors(value: string): string[] {
   const valueTokens = new Set(tokens(value));
+  if (/\bvirtual[\s-]+assets?\b/i.test(value)) valueTokens.add("crypto");
   return SUBJECT_ANCHOR_GROUPS
     .filter((group) => group.some((token) => valueTokens.has(stem(token))))
     .map((group) => group[0]);
@@ -210,7 +212,7 @@ export function assessCandidateRelevance(
   const subjectPairMatched =
     requiredSubjectAnchors.length >= 2 && missingSubjectAnchors.length === 0;
   const nearMissThreshold = options.nearMissThreshold ?? 0.18;
-  if (requiredSubjectAnchors.length >= 2 && missingSubjectAnchors.length > 0) {
+  if (requiredSubjectAnchors.length >= 1 && missingSubjectAnchors.length > 0) {
     const queryOverlapEarly = overlap(queryTokens, corpusTokens);
     if (options.relaxSubjectAnchor && queryOverlapEarly >= nearMissThreshold) {
       // Defer hard rejection — caller may hydrate full text and rerank.

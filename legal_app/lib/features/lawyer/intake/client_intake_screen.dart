@@ -45,6 +45,7 @@ class _ClientIntakeScreenState extends ConsumerState<ClientIntakeScreen> {
   // ── Step 0 ──
   final _issueCtrl = TextEditingController();
   late String _countryCode;
+  bool _countryManuallySelected = false;
   String? _jurisdiction;
   bool _classifying = false;
   String? _classifyError;
@@ -86,7 +87,7 @@ class _ClientIntakeScreenState extends ConsumerState<ClientIntakeScreen> {
   Future<void> _detectLocation() async {
     try {
       final detected = await ref.read(detectedLocationProvider.future);
-      if (!mounted) return;
+      if (!mounted || _countryManuallySelected) return;
       setState(() {
         _countryCode = detected.countryCode;
         if (detected.jurisdiction != null) _jurisdiction = detected.jurisdiction;
@@ -352,6 +353,7 @@ class _ClientIntakeScreenState extends ConsumerState<ClientIntakeScreen> {
                   jurisdictions: _jurisdictions,
                   onCountryChanged: (v) {
                     setState(() {
+                      _countryManuallySelected = true;
                       _countryCode = v;
                       _jurisdiction = null;
                     });
@@ -633,7 +635,7 @@ class _Step0IssueDetailsState extends State<_Step0IssueDetails> {
             const SizedBox(height: 6),
             FormDropdown<String>(
               value: widget.countryCode,
-              items: AppConfig.supportedCountryCodes.map((code) {
+              items: {...AppConfig.supportedCountryCodes, widget.countryCode}.map((code) {
                 return DropdownMenuItem(
                   value: code,
                   child: Text(localizedCountryName(l10n, code)),
