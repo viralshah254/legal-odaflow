@@ -299,5 +299,10 @@
   "empty_messages_description": "இந்த வழக்கைப் பற்றிய வழக்கறிஞர்களின் செய்திகள் மற்றும் ஆதரவு இங்கே தோன்றும்.",
   "empty_payments_description": "அறிக்கைகள், வழக்கறிஞர் மதிப்பாய்வு மற்றும் சந்தாக்களுக்கான கட்டணங்கள் இங்கே தோன்றும்.",
   "applies_to_account_changes_future": "உங்கள் கணக்கிற்கு பொருந்தும். மாற்றங்கள் எதிர்கால செயலாக்கத்தை பாதிக்கின்றன.",
-  "control_case_data_for_ai_improvement": "AI மேம்பாட்டிற்கு உங்கள் வழக்குத் தரவு எவ்வாறு பயன்படுத்தப்படலாம் என்பதைக் கட்டுப்படுத்தவும். இயல்புநிலை முடக்கத்தில் உள்ளது."
+  "control_case_data_for_ai_improvement": "AI மேம்பாட்டிற்கு உங்கள் வழக்குத் தரவு எவ்வாறு பயன்படுத்தப்படலாம் என்பதைக் கட்டுப்படுத்தவும். இயல்புநிலை முடக்கத்தில் உள்ளது.",
+  "auto_renewing": "Renews automatically",
+  "subscription_auto_renew_hint": "Your subscription renews until cancelled. Manage renewal and cancellation through your billing provider.",
+  "manage_plan": "Manage plan",
+  "cancel_subscription": "Cancel subscription",
+  "your_current_plan": "Your current plan"
 }

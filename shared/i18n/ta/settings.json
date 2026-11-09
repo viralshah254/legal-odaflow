@@ -303,5 +303,18 @@
   "deleteAccountSubmitting": "நீக்குகிறது…",
   "deleteAccountSubmit": "எனது கணக்கை நீக்கு",
   "privacyRightToErasure": "அழிக்கும் உரிமை",
-  "privacyRightToErasureBody": "உங்கள் கணக்கு மற்றும் தனிப்பட்ட தரவை நிரந்தரமாக நீக்கக் கோரவும்."
+  "privacyRightToErasureBody": "உங்கள் கணக்கு மற்றும் தனிப்பட்ட தரவை நிரந்தரமாக நீக்கக் கோரவும்.",
+  "logo_on_exports": "Logo on exports",
+  "logo_on_exports_enabled": "Enabled",
+  "logo_on_exports_disabled": "Disabled",
+  "logo_upload_error": "The logo could not be uploaded. Please try again.",
+  "firm_logo": "Firm logo",
+  "firm_logo_description": "Add the logo used for your firm branding.",
+  "logo_uploading": "Uploading logo…",
+  "change_logo": "Change logo",
+  "upload_logo": "Upload logo",
+  "remove_logo": "Remove logo",
+  "logo_hint": "Choose an image under 2 MB.",
+  "show_logo_on_exports": "Show logo on exports",
+  "show_logo_on_exports_description": "Include the firm logo on supported exported documents."
 }

@@ -91,6 +91,14 @@
     "proceduralRouteDetail": "ભલામણ કરેલ {recommended} — {selected} નો ઉપયોગ કરીને",
     "governingSections": "સંચાલક વિભાગો",
     "researchAuthorities": "{count} સત્તાવાળાઓ પુનઃપ્રાપ્ત{deep} · વિશ્વાસ {confidence}",
-    "deepSearchSuffix": "(ઊંડી શોધ)"
+    "deepSearchSuffix": "(ઊંડી શોધ)",
+    "lawyerReady": "Ready for lawyer review",
+    "readyForLawyerReview": "Ready for lawyer review",
+    "canCertifyShort": "Eligible for review sign-off",
+    "passageSupportedShort": "passages supported",
+    "factCoverage": "Fact coverage",
+    "missingDefenceFacts": "Defence facts to confirm",
+    "autoAppliedFixes": "Applied corrections",
+    "timelineWarnings": "Timeline checks to review"
   }
 }

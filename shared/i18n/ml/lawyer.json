@@ -442,5 +442,11 @@
     "urgencyMediumDesc": "ഏതാനും ആഴ്ചകൾക്കുള്ളിൽ",
     "urgencyHighDesc": "ദിവസങ്ങൾക്കുള്ളിൽ",
     "urgencyUrgentDesc": "അടിയന്തിര ശ്രദ്ധ ആവശ്യമാണ്"
-  }
+  },
+  "noEvidenceYet": "No evidence has been added yet.",
+  "suggested_time": "Suggested time entries",
+  "suggested_time_description": "Review suggested work and duration before adding a time entry.",
+  "no_suggested_time": "No time suggestions yet.",
+  "approve_suggestion": "Approve suggestion",
+  "dismiss_suggestion": "Dismiss suggestion"
 }

@@ -101,6 +101,8 @@
     "publishedToClientPortal": "கிளையன்ட் போர்ட்டலில் வெளியிடப்பட்டது",
     "taskReopened": "பணி மீண்டும் திறக்கப்பட்டது",
     "taskCompleted": "பணி முடிந்தது",
-    "pleaseTryAgain": "மீண்டும் முயற்சிக்கவும்."
+    "pleaseTryAgain": "மீண்டும் முயற்சிக்கவும்.",
+    "docketSynced": "Court docket synced",
+    "docketSyncFailed": "Court docket could not be synced"
   }
 }

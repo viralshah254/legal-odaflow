@@ -7,5 +7,7 @@
   "dialogDecline": "இப்போது இல்லை",
   "dialogAgree": "நான் ஒப்புக்கொள்கிறேன்",
   "settingsTitle": "AI அனுமான ஒப்புதல்",
-  "settingsDescription": "ஒப்புதல் மீட்டமைவு. அடுத்த AI அம்சத்திற்கு முன் உங்களிடம் மீண்டும் கேட்கப்படும்."
+  "settingsDescription": "ஒப்புதல் மீட்டமைவு. அடுத்த AI அம்சத்திற்கு முன் உங்களிடம் மீண்டும் கேட்கப்படும்.",
+  "processingUnavailable": "AI privacy information is unavailable. Please retry before sending your data.",
+  "processingBody": "To perform the AI work you request, Umbrella sends your questions, instructions, authorized matter facts, document excerpts, research and draft text to the recipients below. Audio is sent when you use transcription. Inference permission does not grant permission to train models."
 }

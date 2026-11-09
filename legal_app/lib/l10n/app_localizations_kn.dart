@@ -578,6 +578,14 @@ class AppLocalizationsKn extends AppLocalizations {
   String get aiConsentDialogTitle => 'AI ಪ್ರಕ್ರಿಯೆಗೆ ಒಪ್ಪಿಗೆ';
 
   @override
+  String get aiConsentProcessingBody =>
+      'To perform the AI work you request, Umbrella sends your questions, instructions, authorized matter facts, document excerpts, research and draft text to the recipients below. Audio is sent when you use transcription. Inference permission does not grant permission to train models.';
+
+  @override
+  String get aiConsentProcessingUnavailable =>
+      'AI privacy information is unavailable. Please retry before sending your data.';
+
+  @override
   String get aiConsentSettingsDescription =>
       'ಸಮ್ಮತಿ ಮರುಹೊಂದಿಸುವಿಕೆ. ಮುಂದಿನ AI ವೈಶಿಷ್ಟ್ಯದ ಮೊದಲು ನಿಮ್ಮನ್ನು ಮತ್ತೆ ಕೇಳಲಾಗುತ್ತದೆ.';
 
@@ -663,6 +671,12 @@ class AppLocalizationsKn extends AppLocalizations {
   @override
   String get authChooseWorkspace =>
       'ಇಂದು ನಿಮಗೆ ಸರಿಹೊಂದುವ ಕಾರ್ಯಕ್ಷೇತ್ರವನ್ನು ಆಯ್ಕೆಮಾಡಿ.';
+
+  @override
+  String get authClientPerk1 => 'Understand your legal issue';
+
+  @override
+  String get authClientPerk2 => 'Keep your documents and next steps together';
 
   @override
   String get authCompleteProfileDescription =>
@@ -897,6 +911,12 @@ class AppLocalizationsKn extends AppLocalizations {
       'ವಕೀಲ - ನಾನು ಕಾನೂನು ಸಂಸ್ಥೆಯನ್ನು ನಡೆಸುತ್ತಿದ್ದೇನೆ';
 
   @override
+  String get authLawyerPerk1 => 'Organize clients, matters and documents';
+
+  @override
+  String get authLawyerPerk2 => 'Research and draft with matter context';
+
+  @override
   String get authLegalIntelligencenforEveryone =>
       'ಕಾನೂನು ಬುದ್ಧಿಮತ್ತೆ,\\nಎಲ್ಲರಿಗೂ.';
 
@@ -1052,6 +1072,15 @@ class AppLocalizationsKn extends AppLocalizations {
   String get authPasswordsDontMatch => 'ಪಾಸ್‌ವರ್ಡ್‌ಗಳು ಹೊಂದಿಕೆಯಾಗುತ್ತಿಲ್ಲ';
 
   @override
+  String get authPathSummaryLawFirm => 'Law firm workspace';
+
+  @override
+  String get authPathSummaryLegalHelp => 'Personal legal help';
+
+  @override
+  String get authPathSummarySoloLawyer => 'Solo lawyer workspace';
+
+  @override
   String get authPhone => 'ಫೋನ್';
 
   @override
@@ -1072,6 +1101,10 @@ class AppLocalizationsKn extends AppLocalizations {
 
   @override
   String get authPrivate => 'ಖಾಸಗಿ';
+
+  @override
+  String get authProspectPrefillHint =>
+      'Details from your link have been filled in. Review them before continuing.';
 
   @override
   String authRefInviteBanner(String name) {
@@ -1146,6 +1179,13 @@ class AppLocalizationsKn extends AppLocalizations {
 
   @override
   String get authSignUp => 'ಸೈನ್ ಅಪ್ ಮಾಡಿ';
+
+  @override
+  String get authSignUpAccountDescription =>
+      'Set up your sign-in details to continue.';
+
+  @override
+  String get authSignUpAccountTitle => 'Create your account';
 
   @override
   String get authSignUpDescription => 'ಅಂಬ್ರೆಲಾದೊಂದಿಗೆ ಪ್ರಾರಂಭಿಸಿ';
@@ -2043,7 +2083,7 @@ class AppLocalizationsKn extends AppLocalizations {
   String get clientsAddClient => 'ಕ್ಲೈಂಟ್ ಸೇರಿಸಿ';
 
   @override
-  String get clientsAddContactPerson => 'Add contact person';
+  String get clientsAddContactPerson => 'ಸಂಪರ್ಕ ವ್ಯಕ್ತಿಯನ್ನು ಸೇರಿಸಿ';
 
   @override
   String get clientsAddFirstClient => 'ನಿಮ್ಮ ಮೊದಲ ಕ್ಲೈಂಟ್ ಅನ್ನು ಸೇರಿಸಿ';
@@ -2198,7 +2238,7 @@ class AppLocalizationsKn extends AppLocalizations {
   String get clientsContactInformation => 'ಸಂಪರ್ಕ ಮಾಹಿತಿ';
 
   @override
-  String get clientsContactNamePlaceholder => 'Contact name';
+  String get clientsContactNamePlaceholder => 'ಸಂಪರ್ಕ ಹೆಸರು';
 
   @override
   String clientsContactNumber(String number) {
@@ -2214,11 +2254,11 @@ class AppLocalizationsKn extends AppLocalizations {
 
   @override
   String clientsContactPersonNumber(String number) {
-    return 'Contact person $number';
+    return 'ವ್ಯಕ್ತಿಯನ್ನು ಸಂಪರ್ಕಿಸಿ $number';
   }
 
   @override
-  String get clientsContactRolePlaceholder => 'Role or title';
+  String get clientsContactRolePlaceholder => 'ಪಾತ್ರ ಅಥವಾ ಶೀರ್ಷಿಕೆ';
 
   @override
   String get clientsContacts => 'ಸಂಪರ್ಕಗಳು';
@@ -2247,7 +2287,7 @@ class AppLocalizationsKn extends AppLocalizations {
   String get clientsCreateClientProfile => 'ಹೊಸ ಕ್ಲೈಂಟ್ ಪ್ರೊಫೈಲ್ ಅನ್ನು ರಚಿಸಿ';
 
   @override
-  String get clientsCreateMatter => 'Create matter';
+  String get clientsCreateMatter => 'ವಸ್ತುವನ್ನು ರಚಿಸಿ';
 
   @override
   String get clientsCreating => 'ರಚಿಸಲಾಗುತ್ತಿದೆ...';
@@ -2724,7 +2764,7 @@ class AppLocalizationsKn extends AppLocalizations {
 
   @override
   String clientsRemoveContactPerson(String number) {
-    return 'Remove contact person $number';
+    return 'ಸಂಪರ್ಕ ವ್ಯಕ್ತಿಯನ್ನು ತೆಗೆದುಹಾಕಿ $number';
   }
 
   @override
@@ -2758,7 +2798,7 @@ class AppLocalizationsKn extends AppLocalizations {
 
   @override
   String get clientsSaveBasicAndCompleteLater =>
-      'Save basic details and complete later';
+      'ಮೂಲ ವಿವರಗಳನ್ನು ಉಳಿಸಿ ಮತ್ತು ನಂತರ ಪೂರ್ಣಗೊಳಿಸಿ';
 
   @override
   String get clientsSaveChanges => 'ಬದಲಾವಣೆಗಳನ್ನು ಉಳಿಸಿ';
@@ -3082,6 +3122,9 @@ class AppLocalizationsKn extends AppLocalizations {
 
   @override
   String get commonAuto => 'ಆಟೋ';
+
+  @override
+  String get commonAvailableOnProfessional => 'Available on Professional';
 
   @override
   String get commonBack => 'ಹಿಂದೆ';
@@ -3461,6 +3504,11 @@ class AppLocalizationsKn extends AppLocalizations {
   String get commonFamilyMatrimonial => 'ಕುಟುಂಬ ಮತ್ತು ವೈವಾಹಿಕ';
 
   @override
+  String commonFeatureRequiresProfessional(String feature) {
+    return '$feature requires a Professional plan.';
+  }
+
+  @override
   String get commonFile => 'ಫೈಲ್';
 
   @override
@@ -3566,6 +3614,9 @@ class AppLocalizationsKn extends AppLocalizations {
 
   @override
   String get commonImmigration => 'ವಲಸೆ';
+
+  @override
+  String get commonImportMeeting => 'Import meeting';
 
   @override
   String get commonIncludeDocuments => 'ದಾಖಲೆಗಳನ್ನು ಸೇರಿಸಿ';
@@ -3818,6 +3869,10 @@ class AppLocalizationsKn extends AppLocalizations {
 
   @override
   String get commonMeetingsFilterRecording => 'ರೆಕಾರ್ಡಿಂಗ್';
+
+  @override
+  String get commonMeetingsLoadFailed =>
+      'Meetings could not be loaded. Please try again.';
 
   @override
   String commonMeetingsPageOf(String page, String totalPages) {
@@ -4163,6 +4218,9 @@ class AppLocalizationsKn extends AppLocalizations {
       'ಹುಡುಕಲು ಮತ್ತು ಪರಿಶೀಲಿಸಲು ಸಭೆಯ ಪ್ರತಿಗಳನ್ನು ರೆಕಾರ್ಡ್ ಮಾಡಿ ಅಥವಾ ಆಮದು ಮಾಡಿ.';
 
   @override
+  String get commonRecordTranscript => 'Record and transcribe';
+
+  @override
   String get commonRef => 'Ref';
 
   @override
@@ -4271,6 +4329,82 @@ class AppLocalizationsKn extends AppLocalizations {
 
   @override
   String get commonRejectLead => 'ಮುನ್ನಡೆಯನ್ನು ತಿರಸ್ಕರಿಸಿ';
+
+  @override
+  String get commonReleaseAccessibleFolders =>
+      'Folders with accessible documents';
+
+  @override
+  String get commonReleaseActualUsage => 'Based on actual usage';
+
+  @override
+  String get commonReleaseAllMatterDocuments =>
+      'All authorized matter documents';
+
+  @override
+  String get commonReleaseEvidenceScope => 'Evidence scope';
+
+  @override
+  String get commonReleaseFinalCharge => 'Final charge';
+
+  @override
+  String get commonReleaseHoldingPassage => 'Holding passage';
+
+  @override
+  String get commonReleaseLegalCountry => 'Legal country';
+
+  @override
+  String get commonReleaseLoadingTasks => 'Loading tasks…';
+
+  @override
+  String get commonReleaseMatterJurisdiction =>
+      'Jurisdiction follows this matter. Change it in matter settings.';
+
+  @override
+  String get commonReleaseNewTask => 'New task';
+
+  @override
+  String get commonReleaseNoAccessibleFolders =>
+      'No accessible document folders.';
+
+  @override
+  String get commonReleaseNoTasks => 'No tasks match this view.';
+
+  @override
+  String get commonReleaseOpenMatterTasks => 'Open matter tasks';
+
+  @override
+  String get commonReleaseOutcome => 'Outcome:';
+
+  @override
+  String get commonReleaseSectionFinder => 'Section Finder';
+
+  @override
+  String get commonReleaseSelectFirmTasks => 'Select a firm to view tasks.';
+
+  @override
+  String get commonReleaseSelectedDocuments => 'Selected documents only';
+
+  @override
+  String get commonReleaseSelectedFolders =>
+      'Selected folders and their subfolders';
+
+  @override
+  String get commonReleaseShowCompleted => 'Show completed';
+
+  @override
+  String get commonReleaseTasksDescription =>
+      'Your firm’s work, with the earliest deadlines first.';
+
+  @override
+  String get commonReleaseTasksLoadFailed =>
+      'Tasks could not be loaded. Please refresh and try again.';
+
+  @override
+  String get commonReleaseTasksTitle => 'Tasks';
+
+  @override
+  String get commonReleaseUsageBased => 'Charged by actual usage';
 
   @override
   String get commonRemove => 'ತೆಗೆದುಹಾಕಿ';
@@ -4616,11 +4750,20 @@ class AppLocalizationsKn extends AppLocalizations {
   String get commonUniversalDisclaimer => 'ಸಾರ್ವತ್ರಿಕ ಹಕ್ಕು ನಿರಾಕರಣೆ';
 
   @override
+  String commonUpgradeExistingPlanDescription(String plan, String feature) {
+    return 'Upgrade from $plan to unlock $feature.';
+  }
+
+  @override
   String get commonUpgradeToPlusForAFullAiBudget =>
       'ಪೂರ್ಣ AI ಬಜೆಟ್‌ಗಾಗಿ ಪ್ಲಸ್‌ಗೆ ಅಪ್‌ಗ್ರೇಡ್ ಮಾಡಿ';
 
   @override
   String get commonUpgradeToProfessional => 'ವೃತ್ತಿಪರರಿಗೆ ಅಪ್‌ಗ್ರೇಡ್ ಮಾಡಿ';
+
+  @override
+  String get commonUpgradeToUnlockOnProfessional =>
+      'Upgrade to Professional to unlock';
 
   @override
   String get commonUpload => 'ಅಪ್ಲೋಡ್ ಮಾಡಿ';
@@ -4813,6 +4956,9 @@ class AppLocalizationsKn extends AppLocalizations {
   String get consumerAuto => 'ಆಟೋ';
 
   @override
+  String get consumerAutoRenewing => 'Renews automatically';
+
+  @override
   String get consumerAvailableModels => 'ಲಭ್ಯವಿರುವ ಮಾದರಿಗಳು';
 
   @override
@@ -4837,6 +4983,9 @@ class AppLocalizationsKn extends AppLocalizations {
 
   @override
   String get consumerCancel => 'ರದ್ದುಮಾಡಿ';
+
+  @override
+  String get consumerCancelSubscription => 'Cancel subscription';
 
   @override
   String get consumerCase => 'ಪ್ರಕರಣ';
@@ -5176,6 +5325,9 @@ class AppLocalizationsKn extends AppLocalizations {
 
   @override
   String get consumerManageDataConsent => 'ಡೇಟಾ ಸಮ್ಮತಿಯನ್ನು ನಿರ್ವಹಿಸಿ';
+
+  @override
+  String get consumerManagePlan => 'Manage plan';
 
   @override
   String get consumerMatterProgress => 'ವಿಷಯ ಪ್ರಗತಿ';
@@ -5618,6 +5770,10 @@ class AppLocalizationsKn extends AppLocalizations {
       'ಚಂದಾದಾರಿಕೆಯನ್ನು ಸಕ್ರಿಯಗೊಳಿಸಲಾಗಿದೆ!';
 
   @override
+  String get consumerSubscriptionAutoRenewHint =>
+      'Your subscription renews until cancelled. Manage renewal and cancellation through your billing provider.';
+
+  @override
   String get consumerSubscriptionPlans => 'ಚಂದಾದಾರಿಕೆ ಯೋಜನೆಗಳು';
 
   @override
@@ -5741,6 +5897,9 @@ class AppLocalizationsKn extends AppLocalizations {
   @override
   String get consumerYourAigeneratedLegalPreviewsAndReports =>
       'ನಿಮ್ಮ AI-ರಚಿಸಿದ ಕಾನೂನು ಪೂರ್ವವೀಕ್ಷಣೆಗಳು ಮತ್ತು ವರದಿಗಳು';
+
+  @override
+  String get consumerYourCurrentPlan => 'Your current plan';
 
   @override
   String get consumerYourLegalReports => 'ನಿಮ್ಮ ಕಾನೂನು ವರದಿಗಳು';
@@ -6492,6 +6651,77 @@ class AppLocalizationsKn extends AppLocalizations {
 
   @override
   String get dashboardAiProfitability => 'AI ಲಾಭದಾಯಕತೆ';
+
+  @override
+  String get dashboardAiReviewAuthor => 'Author';
+
+  @override
+  String get dashboardAiReviewEmpty =>
+      'No AI outputs are waiting for lawyer review.';
+
+  @override
+  String get dashboardAiReviewJurisdiction => 'Jurisdiction';
+
+  @override
+  String get dashboardAiReviewLoadError => 'Failed to load review queue';
+
+  @override
+  String get dashboardAiReviewMarkReviewed => 'Mark reviewed';
+
+  @override
+  String get dashboardAiReviewMatter => 'Matter';
+
+  @override
+  String get dashboardAiReviewOpenWorkspace => 'Open workspace';
+
+  @override
+  String get dashboardAiReviewPreview => 'Preview';
+
+  @override
+  String get dashboardAiReviewPreviewTruncated =>
+      'Open the workspace for the full output.';
+
+  @override
+  String get dashboardAiReviewQueueDescription =>
+      'Review, open the source workspace, or mark as reviewed when signed off.';
+
+  @override
+  String dashboardAiReviewQueueTitle(num count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '# items awaiting review',
+      one: '# item awaiting review',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get dashboardAiReviewSubtitle =>
+      'AI outputs flagged for lawyer review before client use';
+
+  @override
+  String get dashboardAiReviewTitle => 'AI review queue';
+
+  @override
+  String get dashboardAiReviewUnknownAuthor => 'Unknown';
+
+  @override
+  String get dashboardAiReviewUnverified => 'Unverified';
+
+  @override
+  String get dashboardAiSearchIntakeBriefPlaceholder =>
+      'Describe the issue, key dates and the help needed.';
+
+  @override
+  String get dashboardAiSearchIntakeClientPlaceholder => 'Client name';
+
+  @override
+  String get dashboardAiSearchIntakeCta => 'Start intake';
+
+  @override
+  String get dashboardAiSearchIntakeSubtitle =>
+      'Start with the client and a short description of the matter.';
 
   @override
   String get dashboardAiSearchPlaceholder =>
@@ -7334,9 +7564,15 @@ class AppLocalizationsKn extends AppLocalizations {
   String get draftingAccuracyAuditTitle => 'ನಿಖರತೆಯ ಲೆಕ್ಕಪರಿಶೋಧನೆ';
 
   @override
+  String get draftingAccuracyAutoAppliedFixes => 'Applied corrections';
+
+  @override
   String draftingAccuracyAutoCorrected(String count) {
     return '$count ಸ್ವಯಂ-ಸರಿಪಡಿಸಲಾಗಿದೆ';
   }
+
+  @override
+  String get draftingAccuracyCanCertifyShort => 'Eligible for review sign-off';
 
   @override
   String get draftingAccuracyCitationsVerifiedShort =>
@@ -7355,16 +7591,28 @@ class AppLocalizationsKn extends AppLocalizations {
   }
 
   @override
+  String get draftingAccuracyFactCoverage => 'Fact coverage';
+
+  @override
   String get draftingAccuracyFactsPendingShort => 'ಬಾಕಿ ಉಳಿದಿರುವ ಸಂಗತಿಗಳು';
 
   @override
   String get draftingAccuracyGoverningSections => 'ಆಡಳಿತ ವಿಭಾಗಗಳು';
 
   @override
+  String get draftingAccuracyLawyerReady => 'Ready for lawyer review';
+
+  @override
   String get draftingAccuracyLimitedCorpus => 'ಕಾರ್ಪಸ್‌ನಲ್ಲಿ ಸೀಮಿತ ಮೂಲಗಳು';
 
   @override
+  String get draftingAccuracyMissingDefenceFacts => 'Defence facts to confirm';
+
+  @override
   String get draftingAccuracyNeedsReview => 'ವಕೀಲರ ಪರಿಶೀಲನೆ ಅಗತ್ಯವಿದೆ';
+
+  @override
+  String get draftingAccuracyPassageSupportedShort => 'passages supported';
 
   @override
   String get draftingAccuracyProceduralRouteConfirmed =>
@@ -7377,6 +7625,9 @@ class AppLocalizationsKn extends AppLocalizations {
   ) {
     return '$recommended ಅನ್ನು ಶಿಫಾರಸು ಮಾಡಲಾಗಿದೆ — $selected ಬಳಸಿ';
   }
+
+  @override
+  String get draftingAccuracyReadyForLawyerReview => 'Ready for lawyer review';
 
   @override
   String draftingAccuracyResearchAuthorities(
@@ -7428,6 +7679,9 @@ class AppLocalizationsKn extends AppLocalizations {
   String draftingAccuracyStrippedCitations(String count) {
     return '$count ಪರಿಶೀಲಿಸದ ಉಲ್ಲೇಖ(ಗಳು) ಡ್ರಾಫ್ಟ್‌ನಿಂದ ತೆಗೆದುಹಾಕಲಾಗಿದೆ';
   }
+
+  @override
+  String get draftingAccuracyTimelineWarnings => 'Timeline checks to review';
 
   @override
   String get draftingAccuracyVerifiedForFiling => 'ಸಲ್ಲಿಸಲು ಪರಿಶೀಲಿಸಲಾಗಿದೆ';
@@ -7739,6 +7993,12 @@ class AppLocalizationsKn extends AppLocalizations {
 
   @override
   String get errorsToastDocketEntryAdded => 'ಡಾಕೆಟ್ ಪ್ರವೇಶವನ್ನು ಸೇರಿಸಲಾಗಿದೆ';
+
+  @override
+  String get errorsToastDocketSyncFailed => 'Court docket could not be synced';
+
+  @override
+  String get errorsToastDocketSynced => 'Court docket synced';
 
   @override
   String get errorsToastDocumentArchived => 'ಡಾಕ್ಯುಮೆಂಟ್ ಆರ್ಕೈವ್ ಮಾಡಲಾಗಿದೆ';
@@ -8104,6 +8364,10 @@ class AppLocalizationsKn extends AppLocalizations {
   String get issueCheckerClientName => 'ಗ್ರಾಹಕರ ಹೆಸರು *';
 
   @override
+  String get issueCheckerClientNameCannotBeSelf =>
+      'Enter the client name, or choose to act for yourself.';
+
+  @override
   String get issueCheckerComplexMatter => 'ಸಂಕೀರ್ಣ ವಿಷಯ';
 
   @override
@@ -8193,6 +8457,17 @@ class AppLocalizationsKn extends AppLocalizations {
   String issueCheckerDetectedCountryChange(String country) {
     return 'ನಾವು $country ಪತ್ತೆಹಚ್ಚಿದ್ದೇವೆ. ಅಗತ್ಯವಿದ್ದರೆ ಅದನ್ನು ಬದಲಾಯಿಸಿ.';
   }
+
+  @override
+  String issueCheckerDetectedCountryRegionChange(
+    String country,
+    String region,
+  ) {
+    return 'Detected $country · $region. Change this if the issue belongs elsewhere.';
+  }
+
+  @override
+  String get issueCheckerDetecting => 'Detecting…';
 
   @override
   String get issueCheckerDetectingLocation =>
@@ -9423,6 +9698,9 @@ class AppLocalizationsKn extends AppLocalizations {
   String get lawyerApproval => 'ಅನುಮೋದನೆ';
 
   @override
+  String get lawyerApproveSuggestion => 'Approve suggestion';
+
+  @override
   String get lawyerApproved => 'ಅನುಮೋದಿಸಲಾಗಿದೆ';
 
   @override
@@ -9633,6 +9911,9 @@ class AppLocalizationsKn extends AppLocalizations {
   @override
   String get lawyerDisbursementRequestsAwaitingApproval =>
       'ವಿತರಣೆಯ ವಿನಂತಿಗಳು ಅನುಮೋದನೆಗಾಗಿ ಕಾಯುತ್ತಿವೆ.';
+
+  @override
+  String get lawyerDismissSuggestion => 'Dismiss suggestion';
 
   @override
   String get lawyerDocumentDetail => 'ಡಾಕ್ಯುಮೆಂಟ್ ವಿವರ';
@@ -10126,6 +10407,9 @@ class AppLocalizationsKn extends AppLocalizations {
   String get lawyerNoEvidenceItems => 'ಯಾವುದೇ ಪುರಾವೆ ಅಂಶಗಳಿಲ್ಲ';
 
   @override
+  String get lawyerNoEvidenceYet => 'No evidence has been added yet.';
+
+  @override
   String get lawyerNoExpensesRecordedYet =>
       'ಯಾವುದೇ ವೆಚ್ಚವನ್ನು ಇನ್ನೂ ದಾಖಲಿಸಲಾಗಿಲ್ಲ';
 
@@ -10186,6 +10470,9 @@ class AppLocalizationsKn extends AppLocalizations {
 
   @override
   String get lawyerNoSpecificMatter => 'ನಿರ್ದಿಷ್ಟ ವಿಷಯವಿಲ್ಲ';
+
+  @override
+  String get lawyerNoSuggestedTime => 'No time suggestions yet.';
 
   @override
   String get lawyerNoTeamMembersFound => 'ಯಾವುದೇ ತಂಡದ ಸದಸ್ಯರು ಕಂಡುಬಂದಿಲ್ಲ.';
@@ -10473,6 +10760,13 @@ class AppLocalizationsKn extends AppLocalizations {
 
   @override
   String get lawyerSubmitted => 'ಸಲ್ಲಿಸಲಾಗಿದೆ';
+
+  @override
+  String get lawyerSuggestedTime => 'Suggested time entries';
+
+  @override
+  String get lawyerSuggestedTimeDescription =>
+      'Review suggested work and duration before adding a time entry.';
 
   @override
   String get lawyerSummary => 'ಸಾರಾಂಶ';
@@ -13173,11 +13467,18 @@ class AppLocalizationsKn extends AppLocalizations {
   String get marketingHomeResearchProgressModeFast => 'ವೇಗವಾಗಿ';
 
   @override
+  String get marketingHomeResearchProgressModeGuidance => 'AI only';
+
+  @override
   String get marketingHomeResearchProgressModeVerified => 'ಪರಿಶೀಲಿಸಲಾಗಿದೆ';
 
   @override
   String get marketingHomeResearchProgressPhaseStallNote =>
       'ಇನ್ನೂ ಕಾರ್ಯನಿರ್ವಹಿಸುತ್ತಿದೆ - ಬ್ಯಾಕೆಂಡ್ ಈ ಹಂತವನ್ನು ಪ್ರಕ್ರಿಯೆಗೊಳಿಸುತ್ತಿದೆ. ದೊಡ್ಡ ಪ್ರಶ್ನೆಗಳು ಕೆಲವು ನಿಮಿಷಗಳನ್ನು ತೆಗೆದುಕೊಳ್ಳಬಹುದು.';
+
+  @override
+  String get marketingHomeResearchProgressPhaseStallNoteVerified =>
+      'Still working — the backend is processing this step. Large queries can take a few minutes.';
 
   @override
   String get marketingHomeResearchProgressRefiningTitle =>
@@ -13330,6 +13631,41 @@ class AppLocalizationsKn extends AppLocalizations {
       'ಕಾರ್ಪಸ್ ವಿರುದ್ಧ ವಿಭಾಗದ ಪಠ್ಯವನ್ನು ಪರಿಶೀಲಿಸಲಾಗುತ್ತಿದೆ...';
 
   @override
+  String get marketingHomeResearchProgressStepGuidanceDraftDetail =>
+      'Writing a first-pass answer from the question and contract';
+
+  @override
+  String get marketingHomeResearchProgressStepGuidanceDraftLabel =>
+      'Drafting the note';
+
+  @override
+  String get marketingHomeResearchProgressStepGuidanceReadDetail =>
+      'Identifying the issue, jurisdiction, and contract facts';
+
+  @override
+  String get marketingHomeResearchProgressStepGuidanceReadLabel =>
+      'Reading your question';
+
+  @override
+  String get marketingHomeResearchProgressStepGuidanceReadyDetail =>
+      'Preparing the research note';
+
+  @override
+  String get marketingHomeResearchProgressStepGuidanceReadyLabel => 'Ready';
+
+  @override
+  String get marketingHomeResearchProgressStepLiveRetrieveDetail =>
+      'Checking AI-named authorities against live/corpus sources';
+
+  @override
+  String get marketingHomeResearchProgressStepLiveRetrieveFailover =>
+      'Retrying available connectors when a source is down';
+
+  @override
+  String get marketingHomeResearchProgressStepLiveRetrieveLabel =>
+      'Checking live and corpus sources';
+
+  @override
   String get marketingHomeResearchProgressStepParseDetail =>
       'ನ್ಯಾಯವ್ಯಾಪ್ತಿ, ನಿಬಂಧನೆಗಳು ಮತ್ತು ಉದ್ದೇಶವನ್ನು ಗುರುತಿಸುವುದು';
 
@@ -13343,6 +13679,18 @@ class AppLocalizationsKn extends AppLocalizations {
   @override
   String get marketingHomeResearchProgressStepParseLabel =>
       'ನಿಮ್ಮ ಕಾನೂನು ಪ್ರಶ್ನೆಯನ್ನು ಪಾರ್ಸ್ ಮಾಡಲಾಗುತ್ತಿದೆ';
+
+  @override
+  String get marketingHomeResearchProgressStepPlanMapDetail =>
+      'Identifying issues, likely statutes, and retrieval queries';
+
+  @override
+  String get marketingHomeResearchProgressStepPlanMapLabel =>
+      'Planning the research map';
+
+  @override
+  String get marketingHomeResearchProgressStepPlanMapQueries =>
+      'Expanding search queries from the research plan';
 
   @override
   String get marketingHomeResearchProgressStepPredecessorCrpcBnss =>
@@ -13391,6 +13739,13 @@ class AppLocalizationsKn extends AppLocalizations {
   @override
   String get marketingHomeResearchProgressStepRetrieveRankCases =>
       'ಪ್ರಸ್ತುತತೆಯ ಮೂಲಕ ಕೇಸ್ ಕಾನೂನನ್ನು ಶ್ರೇಣೀಕರಿಸುವುದು…';
+
+  @override
+  String get marketingHomeResearchProgressStepSelfCheckDetail =>
+      'Attacking weak assumptions in the same draft';
+
+  @override
+  String get marketingHomeResearchProgressStepSelfCheckLabel => 'Self-check';
 
   @override
   String get marketingHomeResearchProgressStillWorking =>
@@ -15065,6 +15420,19 @@ class AppLocalizationsKn extends AppLocalizations {
       'AI ನಿಮ್ಮ ವಿಷಯವನ್ನು ವಿಶ್ಲೇಷಿಸುತ್ತಿದೆ...';
 
   @override
+  String get mattersAiProgressAnalysing =>
+      'Analysing the available information';
+
+  @override
+  String get mattersAiProgressGenerating => 'Preparing the response';
+
+  @override
+  String get mattersAiProgressReading => 'Reading the matter context';
+
+  @override
+  String get mattersAiProgressRetrieving => 'Retrieving relevant sources';
+
+  @override
   String get mattersAiResponseFailed =>
       'AI ಪ್ರತಿಕ್ರಿಯೆ ಪಡೆಯಲು ವಿಫಲವಾಗಿದೆ. ದಯವಿಟ್ಟು ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.';
 
@@ -15097,6 +15465,9 @@ class AppLocalizationsKn extends AppLocalizations {
 
   @override
   String get mattersAnalyzing => 'ವಿಶ್ಲೇಷಿಸಲಾಗುತ್ತಿದೆ...';
+
+  @override
+  String get mattersAnswered => 'Answered';
 
   @override
   String mattersAnsweredProgress(String answered, String total) {
@@ -15439,6 +15810,17 @@ class AppLocalizationsKn extends AppLocalizations {
 
   @override
   String get mattersCreatingMatterEllipsis => 'ವಿಷಯವನ್ನು ರಚಿಸಲಾಗುತ್ತಿದೆ...';
+
+  @override
+  String mattersCreditsUsed(num count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '# credits used',
+      one: '# credit used',
+    );
+    return '$_temp0';
+  }
 
   @override
   String get mattersCriticalRisk => 'ಕ್ರಿಟಿಕಲ್ ರಿಸ್ಕ್';
@@ -15873,6 +16255,10 @@ class AppLocalizationsKn extends AppLocalizations {
   @override
   String get mattersGrantAccessToTeamMembersWithReadonlyOrWritePermiss =>
       'ಓದಲು-ಮಾತ್ರ ಅಥವಾ ಬರೆಯಲು ಅನುಮತಿಗಳೊಂದಿಗೆ ತಂಡದ ಸದಸ್ಯರಿಗೆ ಪ್ರವೇಶವನ್ನು ನೀಡಿ';
+
+  @override
+  String get mattersGuidanceResearchTypicalTime =>
+      'AI guidance only — usually under 15 seconds';
 
   @override
   String get mattersHiddenFromPortalClients =>
@@ -16508,6 +16894,9 @@ class AppLocalizationsKn extends AppLocalizations {
   String mattersReasoningStep(String step, String tool) {
     return 'ಹಂತ $step: $tool';
   }
+
+  @override
+  String get mattersRecentActivity => 'Recent activity';
 
   @override
   String get mattersRecommendedNextSteps =>
@@ -17238,6 +17627,9 @@ class AppLocalizationsKn extends AppLocalizations {
   String get portalConsentawarePortal => 'ಸಮ್ಮತಿ-ಅರಿವಿನ ಪೋರ್ಟಲ್:';
 
   @override
+  String get portalContinueToPortal => 'Continue to portal';
+
+  @override
   String get portalCurrentStageAndStatusForYourMatters =>
       'ನಿಮ್ಮ ವಿಷಯಗಳಿಗೆ ಪ್ರಸ್ತುತ ಹಂತ ಮತ್ತು ಸ್ಥಿತಿ';
 
@@ -17288,6 +17680,18 @@ class AppLocalizationsKn extends AppLocalizations {
 
   @override
   String get portalInstructions => 'ಸೂಚನೆಗಳು';
+
+  @override
+  String get portalInviteLinkRequiredDescription =>
+      'Open the invitation link shared by your law firm to access the client portal.';
+
+  @override
+  String get portalInviteLinkRequiredHelp =>
+      'Ask your law firm for a new invitation if your link is missing or has expired.';
+
+  @override
+  String get portalInviteLinkSignInDescription =>
+      'Continue using your invitation to access the information shared with you.';
 
   @override
   String get portalInvoices => 'ಇನ್ವಾಯ್ಸ್ಗಳು';
@@ -17647,6 +18051,9 @@ class AppLocalizationsKn extends AppLocalizations {
   String get settingsCancel => 'ರದ್ದುಮಾಡಿ';
 
   @override
+  String get settingsChangeLogo => 'Change logo';
+
+  @override
   String get settingsChangeRegion => 'ಪ್ರದೇಶವನ್ನು ಬದಲಾಯಿಸಿ';
 
   @override
@@ -17965,6 +18372,13 @@ class AppLocalizationsKn extends AppLocalizations {
       'ಸಂಸ್ಥೆಯ ಡೇಟಾ ಮತ್ತು ತರಬೇತಿ ಸಮ್ಮತಿ';
 
   @override
+  String get settingsFirmLogo => 'Firm logo';
+
+  @override
+  String get settingsFirmLogoDescription =>
+      'Add the logo used for your firm branding.';
+
+  @override
   String get settingsFirmName => 'ಸಂಸ್ಥೆಯ ಹೆಸರು *';
 
   @override
@@ -18074,6 +18488,25 @@ class AppLocalizationsKn extends AppLocalizations {
 
   @override
   String get settingsLocationLabel => 'ಸ್ಥಳ';
+
+  @override
+  String get settingsLogoHint => 'Choose an image under 2 MB.';
+
+  @override
+  String get settingsLogoOnExports => 'Logo on exports';
+
+  @override
+  String get settingsLogoOnExportsDisabled => 'Disabled';
+
+  @override
+  String get settingsLogoOnExportsEnabled => 'Enabled';
+
+  @override
+  String get settingsLogoUploadError =>
+      'The logo could not be uploaded. Please try again.';
+
+  @override
+  String get settingsLogoUploading => 'Uploading logo…';
 
   @override
   String get settingsManageAiConsent => 'AI ಸಮ್ಮತಿಯನ್ನು ನಿರ್ವಹಿಸಿ';
@@ -18370,6 +18803,9 @@ class AppLocalizationsKn extends AppLocalizations {
   String get settingsRegionUpdated => 'ಪ್ರದೇಶವನ್ನು ನವೀಕರಿಸಲಾಗಿದೆ';
 
   @override
+  String get settingsRemoveLogo => 'Remove logo';
+
+  @override
   String get settingsRequestExport => 'ರಫ್ತು ಮಾಡಲು ವಿನಂತಿಸಿ';
 
   @override
@@ -18442,6 +18878,13 @@ class AppLocalizationsKn extends AppLocalizations {
   @override
   String get settingsSettingsDescription =>
       'ನಿಮ್ಮ ಪ್ರೊಫೈಲ್, AI ಬಳಕೆ, ಗೌಪ್ಯತೆ ಮತ್ತು ಆದ್ಯತೆಗಳನ್ನು ನಿರ್ವಹಿಸಿ.';
+
+  @override
+  String get settingsShowLogoOnExports => 'Show logo on exports';
+
+  @override
+  String get settingsShowLogoOnExportsDescription =>
+      'Include the firm logo on supported exported documents.';
 
   @override
   String get settingsSingleSignonSaml => 'ಏಕ ಸೈನ್-ಆನ್ (SAML)';
@@ -18527,6 +18970,9 @@ class AppLocalizationsKn extends AppLocalizations {
   @override
   String get settingsUpdateYourFirmInformationAndBranding =>
       'ನಿಮ್ಮ ಸಂಸ್ಥೆಯ ಮಾಹಿತಿ ಮತ್ತು ಬ್ರ್ಯಾಂಡಿಂಗ್ ಅನ್ನು ನವೀಕರಿಸಿ';
+
+  @override
+  String get settingsUploadLogo => 'Upload logo';
 
   @override
   String get settingsUsageLedger => 'ಬಳಕೆಯ ಲೆಡ್ಜರ್';

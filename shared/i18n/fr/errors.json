@@ -101,6 +101,8 @@
     "publishedToClientPortal": "Publié sur le portail client",
     "taskReopened": "Tâche rouverte",
     "taskCompleted": "Tâche terminée",
-    "pleaseTryAgain": "Veuillez réessayer."
+    "pleaseTryAgain": "Veuillez réessayer.",
+    "docketSynced": "Court docket synced",
+    "docketSyncFailed": "Court docket could not be synced"
   }
 }

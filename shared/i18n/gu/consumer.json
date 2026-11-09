@@ -299,5 +299,10 @@
   "empty_messages_description": "વકીલોના સંદેશાઓ અને આ કેસ વિશે સમર્થન અહીં દેખાશે.",
   "empty_payments_description": "રિપોર્ટ્સ, વકીલ સમીક્ષા અને સબ્સ્ક્રિપ્શન્સ માટેની ચૂકવણી અહીં દેખાશે.",
   "applies_to_account_changes_future": "તમારા એકાઉન્ટ પર લાગુ થાય છે. ફેરફારો ભવિષ્યની પ્રક્રિયાને અસર કરે છે.",
-  "control_case_data_for_ai_improvement": "AI સુધારણા માટે તમારા કેસ ડેટાનો ઉપયોગ કેવી રીતે થઈ શકે તે નિયંત્રિત કરો. ડિફોલ્ટ બંધ છે."
+  "control_case_data_for_ai_improvement": "AI સુધારણા માટે તમારા કેસ ડેટાનો ઉપયોગ કેવી રીતે થઈ શકે તે નિયંત્રિત કરો. ડિફોલ્ટ બંધ છે.",
+  "auto_renewing": "Renews automatically",
+  "subscription_auto_renew_hint": "Your subscription renews until cancelled. Manage renewal and cancellation through your billing provider.",
+  "manage_plan": "Manage plan",
+  "cancel_subscription": "Cancel subscription",
+  "your_current_plan": "Your current plan"
 }

@@ -1,5 +1,7 @@
 "use client"
 
+
+import { useTranslations } from "next-intl"
 import { getMatterResearchContext } from "@/lib/api/ai"
 import { resolveSectionFinderCountry } from "@/lib/section-finder-country"
 import { useState, useRef, useEffect, useCallback } from "react"
@@ -393,6 +395,7 @@ interface SectionFinderWorkspaceProps {
 }
 
 export function SectionFinderWorkspace({ context = "lawyer" }: SectionFinderWorkspaceProps) {
+  const tRelease = useTranslations("common.release")
   const { countryCode: detectedCountry, isLoading: countryLoading } = useDetectedCountry()
   const { activeTenantId } = useTenant()
   const { locale } = useLocale()
@@ -591,7 +594,7 @@ export function SectionFinderWorkspace({ context = "lawyer" }: SectionFinderWork
   if (!countryReady) {
     return (
       <section className="mx-auto max-w-3xl space-y-4 rounded-xl border bg-card p-6" aria-live="polite">
-        <h1 className="text-xl font-semibold">Section Finder</h1>
+        <h1 className="text-xl font-semibold">{tRelease("sectionFinder")}</h1>
         <p className="text-sm text-muted-foreground">
           {matterIdFromUrl && !matterCountry && !matterContextError
             ? "Loading the matter's legal country…"

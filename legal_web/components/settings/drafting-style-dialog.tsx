@@ -1,5 +1,7 @@
 "use client"
 
+
+import { useTranslations } from "next-intl"
 import { useCallback, useEffect, useRef, useState } from "react"
 import {
   Dialog,
@@ -60,6 +62,7 @@ export function DraftingStyleSetupDialog({
   onOpenChange,
   onStyleReady,
 }: DraftingStyleSetupDialogProps) {
+  const tRelease = useTranslations("common.release")
   const [step, setStep] = useState<Step>("setup")
   const [styleState, setStyleState] = useState<UserDraftStyleState | null>(null)
   const [slots, setSlots] = useState<(SampleSlot | null)[]>(
@@ -327,8 +330,7 @@ export function DraftingStyleSetupDialog({
                   <Progress value={(filledCount / MAX_SAMPLES) * 100} className="h-1.5" />
                 </div>
                 <Badge variant="secondary" className="shrink-0 font-mono text-[10px]">
-                  Based on actual usage
-                </Badge>
+                  {tRelease("actualUsage")}</Badge>
               </div>
 
               {error && (
@@ -374,7 +376,7 @@ export function DraftingStyleSetupDialog({
               <div className="rounded-lg border p-4 space-y-3">
                 <div className="flex items-center justify-between text-sm">
                   <span className="text-muted-foreground">Credit cost</span>
-                  <span className="font-semibold">Based on actual usage</span>
+                  <span className="font-semibold">{tRelease("actualUsage")}</span>
                 </div>
                 <div className="flex items-center justify-between text-sm">
                   <span className="text-muted-foreground">Your balance</span>
@@ -383,7 +385,7 @@ export function DraftingStyleSetupDialog({
                   </span>
                 </div>
                 <div className="border-t pt-3 flex items-center justify-between text-sm font-medium">
-                  <span>Final charge</span>
+                  <span>{tRelease("finalCharge")}</span>
                   <span className={canAfford ? "" : "text-destructive"}>
                     Calculated after analysis
                   </span>

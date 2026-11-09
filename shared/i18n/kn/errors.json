@@ -101,6 +101,8 @@
     "publishedToClientPortal": "ಕ್ಲೈಂಟ್ ಪೋರ್ಟಲ್‌ಗೆ ಪ್ರಕಟಿಸಲಾಗಿದೆ",
     "taskReopened": "ಕಾರ್ಯವನ್ನು ಪುನಃ ತೆರೆಯಲಾಗಿದೆ",
     "taskCompleted": "ಕಾರ್ಯ ಪೂರ್ಣಗೊಂಡಿದೆ",
-    "pleaseTryAgain": "ದಯವಿಟ್ಟು ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ."
+    "pleaseTryAgain": "ದಯವಿಟ್ಟು ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.",
+    "docketSynced": "Court docket synced",
+    "docketSyncFailed": "Court docket could not be synced"
   }
 }

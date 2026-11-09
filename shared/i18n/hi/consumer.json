@@ -299,5 +299,10 @@
   "empty_messages_description": "इस मामले के बारे में वकीलों और समर्थन के संदेश यहां दिखाई देंगे।",
   "empty_payments_description": "रिपोर्ट, वकील समीक्षा और सदस्यता के लिए भुगतान यहां दिखाई देंगे।",
   "applies_to_account_changes_future": "आपके खाते पर लागू होता है. परिवर्तन भविष्य की प्रक्रिया को प्रभावित करते हैं।",
-  "control_case_data_for_ai_improvement": "नियंत्रित करें कि एआई सुधार के लिए आपके केस डेटा का उपयोग कैसे किया जा सकता है। डिफ़ॉल्ट बंद है."
+  "control_case_data_for_ai_improvement": "नियंत्रित करें कि एआई सुधार के लिए आपके केस डेटा का उपयोग कैसे किया जा सकता है। डिफ़ॉल्ट बंद है.",
+  "auto_renewing": "Renews automatically",
+  "subscription_auto_renew_hint": "Your subscription renews until cancelled. Manage renewal and cancellation through your billing provider.",
+  "manage_plan": "Manage plan",
+  "cancel_subscription": "Cancel subscription",
+  "your_current_plan": "Your current plan"
 }

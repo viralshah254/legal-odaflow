@@ -661,5 +661,14 @@
   "checkingConflict": "विवादों की जाँच हो रही है...",
   "runConflictCheck": "विरोध जाँच चलाएँ",
   "researchPromptTitle": "प्रश्न का अनुसंधान",
-  "premiumModelResearchHint": "प्रीमियम मॉडल में थोड़ा अधिक समय लग सकता है।"
+  "premiumModelResearchHint": "प्रीमियम मॉडल में थोड़ा अधिक समय लग सकता है।",
+  "guidanceResearchTypicalTime": "AI guidance only — usually under 15 seconds",
+  "answered": "Answered",
+  "ai_progress_reading": "Reading the matter context",
+  "ai_progress_retrieving": "Retrieving relevant sources",
+  "ai_progress_analysing": "Analysing the available information",
+  "ai_progress_generating": "Preparing the response",
+  "credits_used": "{count, plural, one {# credit used} other {# credits used}}",
+  "recent_activity": "Recent activity",
+  "matter_type": "Matter type"
 }

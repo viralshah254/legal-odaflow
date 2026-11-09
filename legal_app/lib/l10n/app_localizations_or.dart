@@ -578,6 +578,14 @@ class AppLocalizationsOr extends AppLocalizations {
   String get aiConsentDialogTitle => 'AI ପ୍ରକ୍ରିୟାକରଣ ସମ୍ମତି |';
 
   @override
+  String get aiConsentProcessingBody =>
+      'To perform the AI work you request, Umbrella sends your questions, instructions, authorized matter facts, document excerpts, research and draft text to the recipients below. Audio is sent when you use transcription. Inference permission does not grant permission to train models.';
+
+  @override
+  String get aiConsentProcessingUnavailable =>
+      'AI privacy information is unavailable. Please retry before sending your data.';
+
+  @override
   String get aiConsentSettingsDescription =>
       'ସମ୍ମତି ପୁନ et ସେଟ୍ କରନ୍ତୁ | ପରବର୍ତ୍ତୀ AI ବ feature ଶିଷ୍ଟ୍ୟ ପୂର୍ବରୁ ଆପଣଙ୍କୁ ପୁନର୍ବାର ପଚରାଯିବ |';
 
@@ -663,6 +671,12 @@ class AppLocalizationsOr extends AppLocalizations {
   @override
   String get authChooseWorkspace =>
       'ଆଜି ଆପଣଙ୍କୁ ଫିଟ୍ କରୁଥିବା କାର୍ଯ୍ୟକ୍ଷେତ୍ର ବାଛନ୍ତୁ |';
+
+  @override
+  String get authClientPerk1 => 'Understand your legal issue';
+
+  @override
+  String get authClientPerk2 => 'Keep your documents and next steps together';
 
   @override
   String get authCompleteProfileDescription =>
@@ -896,6 +910,12 @@ class AppLocalizationsOr extends AppLocalizations {
   String get authLawyerOption => 'ଓକିଲ - ମୁଁ ଏକ ଆଇନ ସଂସ୍ଥା ଚଳାଉଛି |';
 
   @override
+  String get authLawyerPerk1 => 'Organize clients, matters and documents';
+
+  @override
+  String get authLawyerPerk2 => 'Research and draft with matter context';
+
+  @override
   String get authLegalIntelligencenforEveryone =>
       'ଆଇନଗତ ବୁଦ୍ଧି, ସମସ୍ତଙ୍କ ପାଇଁ |';
 
@@ -1051,6 +1071,15 @@ class AppLocalizationsOr extends AppLocalizations {
   String get authPasswordsDontMatch => 'ପାସୱାର୍ଡ ମେଳ ଖାଉ ନାହିଁ |';
 
   @override
+  String get authPathSummaryLawFirm => 'Law firm workspace';
+
+  @override
+  String get authPathSummaryLegalHelp => 'Personal legal help';
+
+  @override
+  String get authPathSummarySoloLawyer => 'Solo lawyer workspace';
+
+  @override
   String get authPhone => 'ଫୋନ୍ |';
 
   @override
@@ -1071,6 +1100,10 @@ class AppLocalizationsOr extends AppLocalizations {
 
   @override
   String get authPrivate => 'ବ୍ୟକ୍ତିଗତ';
+
+  @override
+  String get authProspectPrefillHint =>
+      'Details from your link have been filled in. Review them before continuing.';
 
   @override
   String authRefInviteBanner(String name) {
@@ -1144,6 +1177,13 @@ class AppLocalizationsOr extends AppLocalizations {
 
   @override
   String get authSignUp => 'ସାଇନ୍ ଅପ୍ କରନ୍ତୁ |';
+
+  @override
+  String get authSignUpAccountDescription =>
+      'Set up your sign-in details to continue.';
+
+  @override
+  String get authSignUpAccountTitle => 'Create your account';
 
   @override
   String get authSignUpDescription => 'ଛତା ସହିତ ଆରମ୍ଭ କରନ୍ତୁ |';
@@ -2038,7 +2078,7 @@ class AppLocalizationsOr extends AppLocalizations {
   String get clientsAddClient => 'କ୍ଲାଏଣ୍ଟ ଯୋଡନ୍ତୁ |';
 
   @override
-  String get clientsAddContactPerson => 'Add contact person';
+  String get clientsAddContactPerson => 'ଯୋଗାଯୋଗ ବ୍ୟକ୍ତି ଯୋଡନ୍ତୁ |';
 
   @override
   String get clientsAddFirstClient => 'ଆପଣଙ୍କର ପ୍ରଥମ କ୍ଲାଏଣ୍ଟ ଯୋଡନ୍ତୁ |';
@@ -2193,7 +2233,7 @@ class AppLocalizationsOr extends AppLocalizations {
   String get clientsContactInformation => 'ଯୋଗାଯୋଗ ସୂଚନା';
 
   @override
-  String get clientsContactNamePlaceholder => 'Contact name';
+  String get clientsContactNamePlaceholder => 'ଯୋଗାଯୋଗ ନାମ';
 
   @override
   String clientsContactNumber(String number) {
@@ -2209,11 +2249,11 @@ class AppLocalizationsOr extends AppLocalizations {
 
   @override
   String clientsContactPersonNumber(String number) {
-    return 'Contact person $number';
+    return 'ବ୍ୟକ୍ତିଙ୍କ ସହିତ ଯୋଗାଯୋଗ କରନ୍ତୁ $number';
   }
 
   @override
-  String get clientsContactRolePlaceholder => 'Role or title';
+  String get clientsContactRolePlaceholder => 'ଭୂମିକା କିମ୍ବା ଆଖ୍ୟା |';
 
   @override
   String get clientsContacts => 'ସମ୍ପର୍କଗୁଡିକ';
@@ -2242,7 +2282,7 @@ class AppLocalizationsOr extends AppLocalizations {
       'ଏକ ନୂତନ କ୍ଲାଏଣ୍ଟ ପ୍ରୋଫାଇଲ୍ ସୃଷ୍ଟି କରନ୍ତୁ |';
 
   @override
-  String get clientsCreateMatter => 'Create matter';
+  String get clientsCreateMatter => 'ବିଷୟ ସୃଷ୍ଟି କରନ୍ତୁ |';
 
   @override
   String get clientsCreating => 'ସୃଷ୍ଟି…';
@@ -2575,8 +2615,7 @@ class AppLocalizationsOr extends AppLocalizations {
       'ଏକ ଭିନ୍ନ ସନ୍ଧାନ ଚେଷ୍ଟା କରନ୍ତୁ |';
 
   @override
-  String get clientsNoMatterLinkedFiles =>
-      'କ matter ଣସି ବିଷୟ-ଲିଙ୍କ୍ ଫାଇଲ୍ ନାହିଁ |';
+  String get clientsNoMatterLinkedFiles => 'କୌଣସି ବିଷୟ-ଲିଙ୍କ୍ ଫାଇଲ୍ ନାହିଁ |';
 
   @override
   String get clientsNoMattersForClient =>
@@ -2719,7 +2758,7 @@ class AppLocalizationsOr extends AppLocalizations {
 
   @override
   String clientsRemoveContactPerson(String number) {
-    return 'Remove contact person $number';
+    return 'ଯୋଗାଯୋଗ ବ୍ୟକ୍ତି $number ଅପସାରଣ କରନ୍ତୁ |';
   }
 
   @override
@@ -2754,7 +2793,7 @@ class AppLocalizationsOr extends AppLocalizations {
 
   @override
   String get clientsSaveBasicAndCompleteLater =>
-      'Save basic details and complete later';
+      'ମ basic ଳିକ ବିବରଣୀ ସଞ୍ଚୟ କରନ୍ତୁ ଏବଂ ପରେ ସମ୍ପୂର୍ଣ୍ଣ କରନ୍ତୁ |';
 
   @override
   String get clientsSaveChanges => 'ପରିବର୍ତ୍ତନଗୁଡିକ ସଞ୍ଚୟ କରନ୍ତୁ |';
@@ -3077,6 +3116,9 @@ class AppLocalizationsOr extends AppLocalizations {
 
   @override
   String get commonAuto => 'ଅଟୋ |';
+
+  @override
+  String get commonAvailableOnProfessional => 'Available on Professional';
 
   @override
   String get commonBack => 'ପଛକୁ';
@@ -3457,6 +3499,11 @@ class AppLocalizationsOr extends AppLocalizations {
   String get commonFamilyMatrimonial => 'ପରିବାର ଏବଂ ମାଟ୍ରିମୋନିଆଲ୍ |';
 
   @override
+  String commonFeatureRequiresProfessional(String feature) {
+    return '$feature requires a Professional plan.';
+  }
+
+  @override
   String get commonFile => 'ଫାଇଲ୍ |';
 
   @override
@@ -3565,6 +3612,9 @@ class AppLocalizationsOr extends AppLocalizations {
   String get commonImmigration => 'ଇମିଗ୍ରେସନ';
 
   @override
+  String get commonImportMeeting => 'Import meeting';
+
+  @override
   String get commonIncludeDocuments => 'ଡକ୍ୟୁମେଣ୍ଟ୍ ଅନ୍ତର୍ଭୂକ୍ତ କରନ୍ତୁ |';
 
   @override
@@ -3619,7 +3669,7 @@ class AppLocalizationsOr extends AppLocalizations {
 
   @override
   String get commonIntroOfferSubtitle =>
-      'ସ୍ୱାଗତ ଅଫର - ଯେକ any ଣସି ଦେୟ ଯୋଜନାରେ ସଞ୍ଚୟ କରନ୍ତୁ | ଚେକଆଉଟ୍ ରେ ରିହାତି ସ୍ୱୟଂଚାଳିତ ଭାବରେ ପ୍ରଯୁଜ୍ୟ |';
+      'ସ୍ୱାଗତ ଅଫର - ଯେକୌଣସି ଦେୟ ଯୋଜନାରେ ସଞ୍ଚୟ କରନ୍ତୁ | ଚେକଆଉଟ୍ ରେ ରିହାତି ସ୍ୱୟଂଚାଳିତ ଭାବରେ ପ୍ରଯୁଜ୍ୟ |';
 
   @override
   String commonIntroOfferTitle(String percent) {
@@ -3814,6 +3864,10 @@ class AppLocalizationsOr extends AppLocalizations {
 
   @override
   String get commonMeetingsFilterRecording => 'ରେକର୍ଡିଂ';
+
+  @override
+  String get commonMeetingsLoadFailed =>
+      'Meetings could not be loaded. Please try again.';
 
   @override
   String commonMeetingsPageOf(String page, String totalPages) {
@@ -4159,6 +4213,9 @@ class AppLocalizationsOr extends AppLocalizations {
       'ସନ୍ଧାନ ଏବଂ ସମୀକ୍ଷା ପାଇଁ ମିଟିଂ ଟ୍ରାନ୍ସକ୍ରିପସନ୍ ରେକର୍ଡ କିମ୍ବା ଆମଦାନୀ କରନ୍ତୁ |';
 
   @override
+  String get commonRecordTranscript => 'Record and transcribe';
+
+  @override
   String get commonRef => 'ରେଫ';
 
   @override
@@ -4265,6 +4322,82 @@ class AppLocalizationsOr extends AppLocalizations {
 
   @override
   String get commonRejectLead => 'ଲିଡ୍ ପ୍ରତ୍ୟାଖ୍ୟାନ କରନ୍ତୁ |';
+
+  @override
+  String get commonReleaseAccessibleFolders =>
+      'Folders with accessible documents';
+
+  @override
+  String get commonReleaseActualUsage => 'Based on actual usage';
+
+  @override
+  String get commonReleaseAllMatterDocuments =>
+      'All authorized matter documents';
+
+  @override
+  String get commonReleaseEvidenceScope => 'Evidence scope';
+
+  @override
+  String get commonReleaseFinalCharge => 'Final charge';
+
+  @override
+  String get commonReleaseHoldingPassage => 'Holding passage';
+
+  @override
+  String get commonReleaseLegalCountry => 'Legal country';
+
+  @override
+  String get commonReleaseLoadingTasks => 'Loading tasks…';
+
+  @override
+  String get commonReleaseMatterJurisdiction =>
+      'Jurisdiction follows this matter. Change it in matter settings.';
+
+  @override
+  String get commonReleaseNewTask => 'New task';
+
+  @override
+  String get commonReleaseNoAccessibleFolders =>
+      'No accessible document folders.';
+
+  @override
+  String get commonReleaseNoTasks => 'No tasks match this view.';
+
+  @override
+  String get commonReleaseOpenMatterTasks => 'Open matter tasks';
+
+  @override
+  String get commonReleaseOutcome => 'Outcome:';
+
+  @override
+  String get commonReleaseSectionFinder => 'Section Finder';
+
+  @override
+  String get commonReleaseSelectFirmTasks => 'Select a firm to view tasks.';
+
+  @override
+  String get commonReleaseSelectedDocuments => 'Selected documents only';
+
+  @override
+  String get commonReleaseSelectedFolders =>
+      'Selected folders and their subfolders';
+
+  @override
+  String get commonReleaseShowCompleted => 'Show completed';
+
+  @override
+  String get commonReleaseTasksDescription =>
+      'Your firm’s work, with the earliest deadlines first.';
+
+  @override
+  String get commonReleaseTasksLoadFailed =>
+      'Tasks could not be loaded. Please refresh and try again.';
+
+  @override
+  String get commonReleaseTasksTitle => 'Tasks';
+
+  @override
+  String get commonReleaseUsageBased => 'Charged by actual usage';
 
   @override
   String get commonRemove => 'ଅପସାରଣ କରନ୍ତୁ |';
@@ -4610,11 +4743,20 @@ class AppLocalizationsOr extends AppLocalizations {
   String get commonUniversalDisclaimer => 'ସର୍ବଭାରତୀୟ ପ୍ରତ୍ୟାଖ୍ୟାନ |';
 
   @override
+  String commonUpgradeExistingPlanDescription(String plan, String feature) {
+    return 'Upgrade from $plan to unlock $feature.';
+  }
+
+  @override
   String get commonUpgradeToPlusForAFullAiBudget =>
       'ସମ୍ପୂର୍ଣ୍ଣ AI ବଜେଟ୍ ପାଇଁ ପ୍ଲସ୍ କୁ ଅପଗ୍ରେଡ୍ କରନ୍ତୁ |';
 
   @override
   String get commonUpgradeToProfessional => 'ପ୍ରଫେସନାଲ୍ କୁ ଅପଗ୍ରେଡ୍ କରନ୍ତୁ |';
+
+  @override
+  String get commonUpgradeToUnlockOnProfessional =>
+      'Upgrade to Professional to unlock';
 
   @override
   String get commonUpload => 'ଅପଲୋଡ୍ କରନ୍ତୁ |';
@@ -4808,6 +4950,9 @@ class AppLocalizationsOr extends AppLocalizations {
   String get consumerAuto => 'ଅଟୋ |';
 
   @override
+  String get consumerAutoRenewing => 'Renews automatically';
+
+  @override
   String get consumerAvailableModels => 'ଉପଲବ୍ଧ ମଡେଲଗୁଡିକ |';
 
   @override
@@ -4832,6 +4977,9 @@ class AppLocalizationsOr extends AppLocalizations {
 
   @override
   String get consumerCancel => 'ବାତିଲ୍ କରନ୍ତୁ |';
+
+  @override
+  String get consumerCancelSubscription => 'Cancel subscription';
 
   @override
   String get consumerCase => 'ମାମଲା';
@@ -5168,6 +5316,9 @@ class AppLocalizationsOr extends AppLocalizations {
 
   @override
   String get consumerManageDataConsent => 'ଡାଟା ସମ୍ମତି ପରିଚାଳନା କରନ୍ତୁ |';
+
+  @override
+  String get consumerManagePlan => 'Manage plan';
 
   @override
   String get consumerMatterProgress => 'ବିଷୟ ପ୍ରଗତି |';
@@ -5611,6 +5762,10 @@ class AppLocalizationsOr extends AppLocalizations {
   String get consumerSubscriptionActivated => 'ସଦସ୍ୟତା ସକ୍ରିୟ!';
 
   @override
+  String get consumerSubscriptionAutoRenewHint =>
+      'Your subscription renews until cancelled. Manage renewal and cancellation through your billing provider.';
+
+  @override
   String get consumerSubscriptionPlans => 'ସଦସ୍ୟତା ଯୋଜନା';
 
   @override
@@ -5726,6 +5881,9 @@ class AppLocalizationsOr extends AppLocalizations {
   @override
   String get consumerYourAigeneratedLegalPreviewsAndReports =>
       'ଆପଣଙ୍କର AI- ଉତ୍ପାଦିତ ଆଇନଗତ ପୂର୍ବାବଲୋକନ ଏବଂ ରିପୋର୍ଟଗୁଡିକ |';
+
+  @override
+  String get consumerYourCurrentPlan => 'Your current plan';
 
   @override
   String get consumerYourLegalReports => 'ଆପଣଙ୍କର ଆଇନଗତ ରିପୋର୍ଟଗୁଡିକ |';
@@ -6478,6 +6636,77 @@ class AppLocalizationsOr extends AppLocalizations {
 
   @override
   String get dashboardAiProfitability => 'AI ଲାଭଦାୟକତା |';
+
+  @override
+  String get dashboardAiReviewAuthor => 'Author';
+
+  @override
+  String get dashboardAiReviewEmpty =>
+      'No AI outputs are waiting for lawyer review.';
+
+  @override
+  String get dashboardAiReviewJurisdiction => 'Jurisdiction';
+
+  @override
+  String get dashboardAiReviewLoadError => 'Failed to load review queue';
+
+  @override
+  String get dashboardAiReviewMarkReviewed => 'Mark reviewed';
+
+  @override
+  String get dashboardAiReviewMatter => 'Matter';
+
+  @override
+  String get dashboardAiReviewOpenWorkspace => 'Open workspace';
+
+  @override
+  String get dashboardAiReviewPreview => 'Preview';
+
+  @override
+  String get dashboardAiReviewPreviewTruncated =>
+      'Open the workspace for the full output.';
+
+  @override
+  String get dashboardAiReviewQueueDescription =>
+      'Review, open the source workspace, or mark as reviewed when signed off.';
+
+  @override
+  String dashboardAiReviewQueueTitle(num count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '# items awaiting review',
+      one: '# item awaiting review',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get dashboardAiReviewSubtitle =>
+      'AI outputs flagged for lawyer review before client use';
+
+  @override
+  String get dashboardAiReviewTitle => 'AI review queue';
+
+  @override
+  String get dashboardAiReviewUnknownAuthor => 'Unknown';
+
+  @override
+  String get dashboardAiReviewUnverified => 'Unverified';
+
+  @override
+  String get dashboardAiSearchIntakeBriefPlaceholder =>
+      'Describe the issue, key dates and the help needed.';
+
+  @override
+  String get dashboardAiSearchIntakeClientPlaceholder => 'Client name';
+
+  @override
+  String get dashboardAiSearchIntakeCta => 'Start intake';
+
+  @override
+  String get dashboardAiSearchIntakeSubtitle =>
+      'Start with the client and a short description of the matter.';
 
   @override
   String get dashboardAiSearchPlaceholder =>
@@ -7319,9 +7548,15 @@ class AppLocalizationsOr extends AppLocalizations {
   String get draftingAccuracyAuditTitle => 'ସଠିକତା ଅଡିଟ୍ |';
 
   @override
+  String get draftingAccuracyAutoAppliedFixes => 'Applied corrections';
+
+  @override
   String draftingAccuracyAutoCorrected(String count) {
     return '$count ସ୍ auto ତ - ସଂଶୋଧିତ |';
   }
+
+  @override
+  String get draftingAccuracyCanCertifyShort => 'Eligible for review sign-off';
 
   @override
   String get draftingAccuracyCitationsVerifiedShort =>
@@ -7340,16 +7575,28 @@ class AppLocalizationsOr extends AppLocalizations {
   }
 
   @override
+  String get draftingAccuracyFactCoverage => 'Fact coverage';
+
+  @override
   String get draftingAccuracyFactsPendingShort => 'ବିଚାରାଧୀନ ତଥ୍ୟ';
 
   @override
   String get draftingAccuracyGoverningSections => 'ଶାସନ ବିଭାଗ';
 
   @override
+  String get draftingAccuracyLawyerReady => 'Ready for lawyer review';
+
+  @override
   String get draftingAccuracyLimitedCorpus => 'କର୍ପସରେ ସୀମିତ ଉତ୍ସ |';
 
   @override
+  String get draftingAccuracyMissingDefenceFacts => 'Defence facts to confirm';
+
+  @override
   String get draftingAccuracyNeedsReview => 'ଓକିଲ ସମୀକ୍ଷା ଆବଶ୍ୟକ କରନ୍ତି |';
+
+  @override
+  String get draftingAccuracyPassageSupportedShort => 'passages supported';
 
   @override
   String get draftingAccuracyProceduralRouteConfirmed =>
@@ -7362,6 +7609,9 @@ class AppLocalizationsOr extends AppLocalizations {
   ) {
     return '$recommended ସୁପାରିଶ କରାଯାଇଛି - $selected ବ୍ୟବହାର କରି |';
   }
+
+  @override
+  String get draftingAccuracyReadyForLawyerReview => 'Ready for lawyer review';
 
   @override
   String draftingAccuracyResearchAuthorities(
@@ -7412,6 +7662,9 @@ class AppLocalizationsOr extends AppLocalizations {
   String draftingAccuracyStrippedCitations(String count) {
     return '$count ଯାଞ୍ଚ ହୋଇନଥିବା ଉଦ୍ଧୃତି (ଗୁଡିକ) ଡ୍ରାଫ୍ଟରୁ ଅପସାରିତ |';
   }
+
+  @override
+  String get draftingAccuracyTimelineWarnings => 'Timeline checks to review';
 
   @override
   String get draftingAccuracyVerifiedForFiling => 'ଦାଖଲ ପାଇଁ ଯାଞ୍ଚ କରାଯାଇଛି |';
@@ -7726,6 +7979,12 @@ class AppLocalizationsOr extends AppLocalizations {
 
   @override
   String get errorsToastDocketEntryAdded => 'ଡକେଟ୍ ଏଣ୍ଟ୍ରି ଯୋଡା ଯାଇଛି |';
+
+  @override
+  String get errorsToastDocketSyncFailed => 'Court docket could not be synced';
+
+  @override
+  String get errorsToastDocketSynced => 'Court docket synced';
 
   @override
   String get errorsToastDocumentArchived => 'ଡକ୍ୟୁମେଣ୍ଟ୍ ଆର୍କାଇଭ୍ |';
@@ -8079,6 +8338,10 @@ class AppLocalizationsOr extends AppLocalizations {
   String get issueCheckerClientName => 'ଗ୍ରାହକଙ୍କ ନାମ *';
 
   @override
+  String get issueCheckerClientNameCannotBeSelf =>
+      'Enter the client name, or choose to act for yourself.';
+
+  @override
   String get issueCheckerComplexMatter => 'ଜଟିଳ ବିଷୟ |';
 
   @override
@@ -8168,6 +8431,17 @@ class AppLocalizationsOr extends AppLocalizations {
   String issueCheckerDetectedCountryChange(String country) {
     return 'ଆମେ $country ଚିହ୍ନଟ କଲୁ | ଆବଶ୍ୟକ ହେଲେ ଏହାକୁ ପରିବର୍ତ୍ତନ କରନ୍ତୁ |';
   }
+
+  @override
+  String issueCheckerDetectedCountryRegionChange(
+    String country,
+    String region,
+  ) {
+    return 'Detected $country · $region. Change this if the issue belongs elsewhere.';
+  }
+
+  @override
+  String get issueCheckerDetecting => 'Detecting…';
 
   @override
   String get issueCheckerDetectingLocation => 'ତୁମର ଅବସ୍ଥାନ ଚିହ୍ନଟ…';
@@ -9388,6 +9662,9 @@ class AppLocalizationsOr extends AppLocalizations {
   String get lawyerApproval => 'ଅନୁମୋଦନ';
 
   @override
+  String get lawyerApproveSuggestion => 'Approve suggestion';
+
+  @override
   String get lawyerApproved => 'ଅନୁମୋଦିତ';
 
   @override
@@ -9599,6 +9876,9 @@ class AppLocalizationsOr extends AppLocalizations {
   @override
   String get lawyerDisbursementRequestsAwaitingApproval =>
       'ଅନୁମୋଦନକୁ ଅପେକ୍ଷା ବଣ୍ଟନ ଅନୁରୋଧ |';
+
+  @override
+  String get lawyerDismissSuggestion => 'Dismiss suggestion';
 
   @override
   String get lawyerDocumentDetail => 'ଡକ୍ୟୁମେଣ୍ଟ୍ ବିବରଣୀ';
@@ -10090,6 +10370,9 @@ class AppLocalizationsOr extends AppLocalizations {
   String get lawyerNoEvidenceItems => 'କିଛି ପ୍ରମାଣ ଆଇଟମ୍ ନାହିଁ |';
 
   @override
+  String get lawyerNoEvidenceYet => 'No evidence has been added yet.';
+
+  @override
   String get lawyerNoExpensesRecordedYet =>
       'ଏପର୍ଯ୍ୟନ୍ତ କିଛି ଖର୍ଚ୍ଚ ରେକର୍ଡ ହୋଇନାହିଁ |';
 
@@ -10152,6 +10435,9 @@ class AppLocalizationsOr extends AppLocalizations {
 
   @override
   String get lawyerNoSpecificMatter => 'କିଛି ନିର୍ଦ୍ଦିଷ୍ଟ ବିଷୟ ନୁହେଁ |';
+
+  @override
+  String get lawyerNoSuggestedTime => 'No time suggestions yet.';
 
   @override
   String get lawyerNoTeamMembersFound => 'ଦଳର ସଦସ୍ୟମାନେ କିଛି ପାଇଲେ ନାହିଁ |';
@@ -10441,6 +10727,13 @@ class AppLocalizationsOr extends AppLocalizations {
   String get lawyerSubmitted => 'ଦାଖଲ |';
 
   @override
+  String get lawyerSuggestedTime => 'Suggested time entries';
+
+  @override
+  String get lawyerSuggestedTimeDescription =>
+      'Review suggested work and duration before adding a time entry.';
+
+  @override
   String get lawyerSummary => 'ସାରାଂଶ';
 
   @override
@@ -10672,7 +10965,7 @@ class AppLocalizationsOr extends AppLocalizations {
 
   @override
   String get legalDataConsentCountryKenyaBody =>
-      'କେନିଆ (ଡାଟା ସୁରକ୍ଷା ଆଇନ 2019): ସ୍ୱୟଂଚାଳିତ ପ୍ରକ୍ରିୟାକରଣ ଏବଂ ପ୍ରୋଫାଇଲ୍ ପ୍ରକାଶ ହେବା ଆବଶ୍ୟକ; ଡାଟା ବିଷୟଗୁଡ଼ିକର ଆପତ୍ତି କରିବାର ଅଧିକାର ଅଛି | ଯେକ any ଣସି AI ତାଲିମ ବ୍ୟବହାର ପାଇଁ ସମ୍ମତି ପୃଥକ ଭାବରେ ପ୍ରାପ୍ତ ହୁଏ ଏବଂ ଡକ୍ୟୁମେଣ୍ଟ୍ ହୁଏ |';
+      'କେନିଆ (ଡାଟା ସୁରକ୍ଷା ଆଇନ 2019): ସ୍ୱୟଂଚାଳିତ ପ୍ରକ୍ରିୟାକରଣ ଏବଂ ପ୍ରୋଫାଇଲ୍ ପ୍ରକାଶ ହେବା ଆବଶ୍ୟକ; ଡାଟା ବିଷୟଗୁଡ଼ିକର ଆପତ୍ତି କରିବାର ଅଧିକାର ଅଛି | ଯେକୌଣସି AI ତାଲିମ ବ୍ୟବହାର ପାଇଁ ସମ୍ମତି ପୃଥକ ଭାବରେ ପ୍ରାପ୍ତ ହୁଏ ଏବଂ ଡକ୍ୟୁମେଣ୍ଟ୍ ହୁଏ |';
 
   @override
   String get legalDataConsentCountryUSBody =>
@@ -10684,7 +10977,7 @@ class AppLocalizationsOr extends AppLocalizations {
 
   @override
   String get legalDataConsentDefaultHeading =>
-      'ଡିଫଲ୍ଟ: ଆପଣଙ୍କର ତଥ୍ୟ ଉପରେ କ training ଣସି ତାଲିମ ନାହିଁ |';
+      'ଡିଫଲ୍ଟ: ଆପଣଙ୍କର ତଥ୍ୟ ଉପରେ କୌଣସି ତାଲିମ ନାହିଁ |';
 
   @override
   String get legalDataConsentDescription =>
@@ -10707,7 +11000,7 @@ class AppLocalizationsOr extends AppLocalizations {
 
   @override
   String get legalDataConsentNeverUsedBody =>
-      'ନିମ୍ନଲିଖିତ ତଥ୍ୟ କ any ଣସି ପରିସ୍ଥିତିରେ AI ତାଲିମ ପାଇଁ ବ୍ୟବହୃତ ହୁଏ ନାହିଁ, ଅପ୍ଟ-ଇନ୍ ସହିତ: (କ) ବିଲିଂ ସୂଚନା ଏବଂ ଦେୟ କାର୍ଡ ତଥ୍ୟ; (ଖ) ସଂପୂର୍ଣ୍ଣ ଅଜ୍ଞାତତା ବିନା ସମ୍ପୂର୍ଣ୍ଣ କ୍ଲାଏଣ୍ଟ ନାମ, ଜାତୀୟ ID ସଂଖ୍ୟା, ପାସପୋର୍ଟ ନମ୍ବର, କିମ୍ବା ବାୟୋମେଟ୍ରିକ୍ ତଥ୍ୟ; (ଗ) ଆଇନଗତ ବୃତ୍ତିଗତ ଅଧିକାର ଦ୍ୱାରା ସୁରକ୍ଷିତ ଯୋଗାଯୋଗ, ଯେପର୍ଯ୍ୟନ୍ତ ଅଧିକାରଧାରୀ ସ୍ପଷ୍ଟ ଲିଖିତ ସମ୍ମତି ପ୍ରଦାନ କରନ୍ତି ନାହିଁ; (ଘ) ଏକ ଆଇନଗତ ଧାରଣା କିମ୍ବା ସକ୍ରିୟ ମକଦ୍ଦମା ଅଧୀନରେ ଥିବା ତଥ୍ୟ; ()) ସ୍ୱାସ୍ଥ୍ୟ କିମ୍ବା ଚିକିତ୍ସା ତଥ୍ୟ; (ଚ) 18 ବର୍ଷରୁ କମ୍ ଉପଭୋକ୍ତାଙ୍କ ତଥ୍ୟ |';
+      'ନିମ୍ନଲିଖିତ ତଥ୍ୟ କୌଣସି ପରିସ୍ଥିତିରେ AI ତାଲିମ ପାଇଁ ବ୍ୟବହୃତ ହୁଏ ନାହିଁ, ଅପ୍ଟ-ଇନ୍ ସହିତ: (କ) ବିଲିଂ ସୂଚନା ଏବଂ ଦେୟ କାର୍ଡ ତଥ୍ୟ; (ଖ) ସଂପୂର୍ଣ୍ଣ ଅଜ୍ଞାତତା ବିନା ସମ୍ପୂର୍ଣ୍ଣ କ୍ଲାଏଣ୍ଟ ନାମ, ଜାତୀୟ ID ସଂଖ୍ୟା, ପାସପୋର୍ଟ ନମ୍ବର, କିମ୍ବା ବାୟୋମେଟ୍ରିକ୍ ତଥ୍ୟ; (ଗ) ଆଇନଗତ ବୃତ୍ତିଗତ ଅଧିକାର ଦ୍ୱାରା ସୁରକ୍ଷିତ ଯୋଗାଯୋଗ, ଯେପର୍ଯ୍ୟନ୍ତ ଅଧିକାରଧାରୀ ସ୍ପଷ୍ଟ ଲିଖିତ ସମ୍ମତି ପ୍ରଦାନ କରନ୍ତି ନାହିଁ; (ଘ) ଏକ ଆଇନଗତ ଧାରଣା କିମ୍ବା ସକ୍ରିୟ ମକଦ୍ଦମା ଅଧୀନରେ ଥିବା ତଥ୍ୟ; ()) ସ୍ୱାସ୍ଥ୍ୟ କିମ୍ବା ଚିକିତ୍ସା ତଥ୍ୟ; (ଚ) 18 ବର୍ଷରୁ କମ୍ ଉପଭୋକ୍ତାଙ୍କ ତଥ୍ୟ |';
 
   @override
   String get legalDataConsentNeverUsedHeading =>
@@ -10715,7 +11008,7 @@ class AppLocalizationsOr extends AppLocalizations {
 
   @override
   String get legalDataConsentOptInAnonymize =>
-      'ସମସ୍ତ ଅପ୍ଟ-ଇନ୍ ଡାଟା କ any ଣସି ତାଲିମ ପାଇପଲାଇନରେ ପ୍ରବେଶ କରିବା ପୂର୍ବରୁ ଅଜ୍ଞାତକରଣ (ବ୍ୟକ୍ତିଗତ ପରିଚାୟକ ଅପସାରଣ) ଏବଂ ଛଦ୍ମନାମକରଣ (ନାମ, ସଂସ୍ଥା ଏବଂ ସିନ୍ଥେଟିକ୍ ଟୋକେନ୍ ସହିତ କେସ୍ ରେଫରେନ୍ସ) ଦେଇଥାଏ | ବେନାମୀକରଣ ସ୍ୱୟଂଚାଳିତ ସ୍କାନିଂ ଦ୍ୱାରା ଏବଂ ସୂକ୍ଷ୍ମ-ଟ୍ୟୁନିଂ ପାଇଁ, ମାନୁଆଲ୍ ସ୍ପଟ୍-ଚେକ୍ ଦ୍ୱାରା ଯାଞ୍ଚ କରାଯାଇଥାଏ |';
+      'ସମସ୍ତ ଅପ୍ଟ-ଇନ୍ ଡାଟା କୌଣସି ତାଲିମ ପାଇପଲାଇନରେ ପ୍ରବେଶ କରିବା ପୂର୍ବରୁ ଅଜ୍ଞାତକରଣ (ବ୍ୟକ୍ତିଗତ ପରିଚାୟକ ଅପସାରଣ) ଏବଂ ଛଦ୍ମନାମକରଣ (ନାମ, ସଂସ୍ଥା ଏବଂ ସିନ୍ଥେଟିକ୍ ଟୋକେନ୍ ସହିତ କେସ୍ ରେଫରେନ୍ସ) ଦେଇଥାଏ | ବେନାମୀକରଣ ସ୍ୱୟଂଚାଳିତ ସ୍କାନିଂ ଦ୍ୱାରା ଏବଂ ସୂକ୍ଷ୍ମ-ଟ୍ୟୁନିଂ ପାଇଁ, ମାନୁଆଲ୍ ସ୍ପଟ୍-ଚେକ୍ ଦ୍ୱାରା ଯାଞ୍ଚ କରାଯାଇଥାଏ |';
 
   @override
   String get legalDataConsentOptInEval =>
@@ -10760,14 +11053,14 @@ class AppLocalizationsOr extends AppLocalizations {
 
   @override
   String get legalDataConsentWhatIsTrainingBody =>
-      'ଏହି ପ୍ରସଙ୍ଗରେ AI ପ୍ରଶିକ୍ଷଣର ଅର୍ଥ ହେଉଛି ତୁମର ତଥ୍ୟ ବ୍ୟବହାର କରିବା - ଅଜ୍ଞାତକରଣ ଏବଂ ଛଦ୍ମନାମ ପରେ - AI ମଡେଲଗୁଡିକର ସଠିକତା, ପ୍ରାସଙ୍ଗିକତା, କିମ୍ବା ନିରାପତ୍ତାକୁ ଉନ୍ନତ କରିବା ପାଇଁ ଯାହା ଛତା ବ features ଶିଷ୍ଟ୍ୟକୁ ଶକ୍ତି ପ୍ରଦାନ କରେ | ଏହାର ଅର୍ଥ କ any ଣସି ତୃତୀୟ ପକ୍ଷ ସହିତ ଚିହ୍ନଟ ଯୋଗ୍ୟ କ୍ଲାଏଣ୍ଟ ତଥ୍ୟ ବାଣ୍ଟିବା | ଟ୍ରେନିଂ ପାଇପଲାଇନଗୁଡିକ ଡାଟା ପ୍ରକ୍ରିୟାକରଣ ଚୁକ୍ତିନାମା ଅନୁଯାୟୀ DVTech Ventures କିମ୍ବା ଏହାର ଚୁକ୍ତିଭିତ୍ତିକ AI ପ୍ରଦାନକାରୀଙ୍କ ଦ୍ୱାରା ପରିଚାଳିତ |';
+      'ଏହି ପ୍ରସଙ୍ଗରେ AI ପ୍ରଶିକ୍ଷଣର ଅର୍ଥ ହେଉଛି ତୁମର ତଥ୍ୟ ବ୍ୟବହାର କରିବା - ଅଜ୍ଞାତକରଣ ଏବଂ ଛଦ୍ମନାମ ପରେ - AI ମଡେଲଗୁଡିକର ସଠିକତା, ପ୍ରାସଙ୍ଗିକତା, କିମ୍ବା ନିରାପତ୍ତାକୁ ଉନ୍ନତ କରିବା ପାଇଁ ଯାହା ଛତା ବ features ଶିଷ୍ଟ୍ୟକୁ ଶକ୍ତି ପ୍ରଦାନ କରେ | ଏହାର ଅର୍ଥ କୌଣସି ତୃତୀୟ ପକ୍ଷ ସହିତ ଚିହ୍ନଟ ଯୋଗ୍ୟ କ୍ଲାଏଣ୍ଟ ତଥ୍ୟ ବାଣ୍ଟିବା | ଟ୍ରେନିଂ ପାଇପଲାଇନଗୁଡିକ ଡାଟା ପ୍ରକ୍ରିୟାକରଣ ଚୁକ୍ତିନାମା ଅନୁଯାୟୀ DVTech Ventures କିମ୍ବା ଏହାର ଚୁକ୍ତିଭିତ୍ତିକ AI ପ୍ରଦାନକାରୀଙ୍କ ଦ୍ୱାରା ପରିଚାଳିତ |';
 
   @override
   String get legalDataConsentWhatIsTrainingHeading => '2। AI ତାଲିମର ଅର୍ଥ |';
 
   @override
   String get legalDataConsentWithdrawBody =>
-      'ଖାତା ସେଟିଂସମୂହ କିମ୍ବା support@odaflow.com ଇମେଲ କରି ଆପଣ ଯେକ time ଣସି ସମୟରେ ଆପଣଙ୍କର ସମ୍ମତି ପ୍ରତ୍ୟାହାର କରିପାରିବେ | ପ୍ରତ୍ୟାହାର ପରେ: (କ) ଆପଣଙ୍କ ଆକାଉଣ୍ଟରୁ ଆଉ କ data ଣସି ତଥ୍ୟ କ training ଣସି ତାଲିମ ପାଇପଲାଇନରେ ପ୍ରବେଶ କରିବ ନାହିଁ; (ଖ) ପୂର୍ବରୁ ଅଜ୍ଞାତ ତଥ୍ୟ ଯାହା ଏକ ତାଲିମପ୍ରାପ୍ତ ମଡେଲରେ ଅନ୍ତର୍ଭୂକ୍ତ ହୋଇସାରିଛି ସେହି ମଡେଲରୁ ଅପସାରଣ କରାଯାଇପାରିବ ନାହିଁ (ଯେପରି ଅଜ୍ଞାତ ଏଗ୍ରିଗେଟ୍ ତଥ୍ୟ ସହିତ GDPR ରିସିଟାଲ୍ 26 ସହିତ ସମାନ) (ଗ) ଆପଣଙ୍କର ତଥ୍ୟ ଧାରଣ କରିଥିବା ଯେକ pending ଣସି ବିଚାରାଧୀନ ତାଲିମ ବ୍ୟାଚ୍ 30 ଦିନ ମଧ୍ୟରେ ଶୁଦ୍ଧ ହୋଇଯିବ; (ଘ) 5 ବ୍ୟବସାୟ ଦିନ ମଧ୍ୟରେ ଆପଣ ଇମେଲ ମାଧ୍ୟମରେ ପ୍ରତ୍ୟାହାରର ନିଶ୍ଚିତକରଣ ଗ୍ରହଣ କରିବେ |';
+      'ଖାତା ସେଟିଂସମୂହ କିମ୍ବା support@odaflow.com ଇମେଲ କରି ଆପଣ ଯେକ time ଣସି ସମୟରେ ଆପଣଙ୍କର ସମ୍ମତି ପ୍ରତ୍ୟାହାର କରିପାରିବେ | ପ୍ରତ୍ୟାହାର ପରେ: (କ) ଆପଣଙ୍କ ଆକାଉଣ୍ଟରୁ ଆଉ କ data ଣସି ତଥ୍ୟ କୌଣସି ତାଲିମ ପାଇପଲାଇନରେ ପ୍ରବେଶ କରିବ ନାହିଁ; (ଖ) ପୂର୍ବରୁ ଅଜ୍ଞାତ ତଥ୍ୟ ଯାହା ଏକ ତାଲିମପ୍ରାପ୍ତ ମଡେଲରେ ଅନ୍ତର୍ଭୂକ୍ତ ହୋଇସାରିଛି ସେହି ମଡେଲରୁ ଅପସାରଣ କରାଯାଇପାରିବ ନାହିଁ (ଯେପରି ଅଜ୍ଞାତ ଏଗ୍ରିଗେଟ୍ ତଥ୍ୟ ସହିତ GDPR ରିସିଟାଲ୍ 26 ସହିତ ସମାନ) (ଗ) ଆପଣଙ୍କର ତଥ୍ୟ ଧାରଣ କରିଥିବା ଯେକ pending ଣସି ବିଚାରାଧୀନ ତାଲିମ ବ୍ୟାଚ୍ 30 ଦିନ ମଧ୍ୟରେ ଶୁଦ୍ଧ ହୋଇଯିବ; (ଘ) 5 ବ୍ୟବସାୟ ଦିନ ମଧ୍ୟରେ ଆପଣ ଇମେଲ ମାଧ୍ୟମରେ ପ୍ରତ୍ୟାହାରର ନିଶ୍ଚିତକରଣ ଗ୍ରହଣ କରିବେ |';
 
   @override
   String get legalDataConsentWithdrawHeading => '8। ସମ୍ମତି ପ୍ରତ୍ୟାହାର';
@@ -10923,7 +11216,7 @@ class AppLocalizationsOr extends AppLocalizations {
 
   @override
   String get legalDisclaimerNoPrivilegeBody =>
-      'ଆମ୍ବ୍ରଲାଙ୍କ AI ସହିତ ଯୋଗାଯୋଗ କ any ଣସି ପ୍ରାଧିକରଣରେ ଆଟର୍ଣ୍ଣି-କ୍ଲାଏଣ୍ଟ ସୁବିଧା କିମ୍ବା ଆଇନଗତ ବୃତ୍ତିଗତ ଅଧିକାର ଦ୍ୱାରା ସୁରକ୍ଷିତ ନୁହେଁ | ପ୍ଲାଟଫର୍ମରେ ସୂଚନା ଦାଖଲ କରନ୍ତୁ ନାହିଁ ଯାହାକୁ ଆପଣ ଅଧିକାର ଅଧୀନରେ ସୁରକ୍ଷା ଦେବାକୁ ଚାହୁଁଛନ୍ତି | ଯଦି ଆପଣ ଉମ୍ବ୍ରେଲା ମାର୍କେଟପ୍ଲେସ୍ ମାଧ୍ୟମରେ ଏକ ଲାଇସେନ୍ସପ୍ରାପ୍ତ ଓକିଲଙ୍କୁ ନିୟୋଜିତ କରନ୍ତି, ଏକ ଅଧିକାର ପ୍ରାପ୍ତ ଚୁକ୍ତିନାମା ଅନୁଯାୟୀ ସେହି ଓକିଲଙ୍କ ସହ ଆପଣଙ୍କର ଯୋଗାଯୋଗ ସଂଲଗ୍ନ ହୋଇପାରେ, କିନ୍ତୁ ଆପଣଙ୍କର ପୂର୍ବ AI ପାରସ୍ପରିକ କ୍ରିୟା ସହିତ ନୁହେଁ |';
+      'ଆମ୍ବ୍ରଲାଙ୍କ AI ସହିତ ଯୋଗାଯୋଗ କୌଣସି ପ୍ରାଧିକରଣରେ ଆଟର୍ଣ୍ଣି-କ୍ଲାଏଣ୍ଟ ସୁବିଧା କିମ୍ବା ଆଇନଗତ ବୃତ୍ତିଗତ ଅଧିକାର ଦ୍ୱାରା ସୁରକ୍ଷିତ ନୁହେଁ | ପ୍ଲାଟଫର୍ମରେ ସୂଚନା ଦାଖଲ କରନ୍ତୁ ନାହିଁ ଯାହାକୁ ଆପଣ ଅଧିକାର ଅଧୀନରେ ସୁରକ୍ଷା ଦେବାକୁ ଚାହୁଁଛନ୍ତି | ଯଦି ଆପଣ ଉମ୍ବ୍ରେଲା ମାର୍କେଟପ୍ଲେସ୍ ମାଧ୍ୟମରେ ଏକ ଲାଇସେନ୍ସପ୍ରାପ୍ତ ଓକିଲଙ୍କୁ ନିୟୋଜିତ କରନ୍ତି, ଏକ ଅଧିକାର ପ୍ରାପ୍ତ ଚୁକ୍ତିନାମା ଅନୁଯାୟୀ ସେହି ଓକିଲଙ୍କ ସହ ଆପଣଙ୍କର ଯୋଗାଯୋଗ ସଂଲଗ୍ନ ହୋଇପାରେ, କିନ୍ତୁ ଆପଣଙ୍କର ପୂର୍ବ AI ପାରସ୍ପରିକ କ୍ରିୟା ସହିତ ନୁହେଁ |';
 
   @override
   String get legalDisclaimerNoPrivilegeHeading =>
@@ -11242,14 +11535,14 @@ class AppLocalizationsOr extends AppLocalizations {
 
   @override
   String get legalTermsAccountBody =>
-      'ଆପଣ ନିଶ୍ଚିତ ଭାବରେ ସଠିକ୍ ଏବଂ ସଂପୂର୍ଣ୍ଣ ପଞ୍ଜୀକରଣ ସୂଚନା ପ୍ରଦାନ କରିବେ ଏବଂ ଏହାକୁ ଅଦ୍ୟତନ କରିବେ | ତୁମର ପରିଚୟପତ୍ରର ଗୋପନୀୟତା ବଜାୟ ରଖିବା ଏବଂ ତୁମର ଖାତା ଅନ୍ତର୍ଗତ ସମସ୍ତ କାର୍ଯ୍ୟକଳାପ ପାଇଁ ତୁମେ ଦାୟୀ | Support@odaflow.com ରେ କ any ଣସି ଅନଧିକୃତ ପ୍ରବେଶ ବିଷୟରେ ତୁମେ ତୁରନ୍ତ ଆମକୁ ସୂଚିତ କର | ଖାତାକୁ ଅକ୍ଷମ କରିବାର ଅଧିକାର ଆମେ ସଂରକ୍ଷିତ, ଯାହା ଏହି ସର୍ତ୍ତଗୁଡିକର ଉଲ୍ଲଂଘନ କରେ କିମ୍ବା ଆମେ ଯୁକ୍ତିଯୁକ୍ତ ଭାବରେ ସନ୍ଦେହ କରୁଛୁ |';
+      'ଆପଣ ନିଶ୍ଚିତ ଭାବରେ ସଠିକ୍ ଏବଂ ସଂପୂର୍ଣ୍ଣ ପଞ୍ଜୀକରଣ ସୂଚନା ପ୍ରଦାନ କରିବେ ଏବଂ ଏହାକୁ ଅଦ୍ୟତନ କରିବେ | ତୁମର ପରିଚୟପତ୍ରର ଗୋପନୀୟତା ବଜାୟ ରଖିବା ଏବଂ ତୁମର ଖାତା ଅନ୍ତର୍ଗତ ସମସ୍ତ କାର୍ଯ୍ୟକଳାପ ପାଇଁ ତୁମେ ଦାୟୀ | Support@odaflow.com ରେ କୌଣସି ଅନଧିକୃତ ପ୍ରବେଶ ବିଷୟରେ ତୁମେ ତୁରନ୍ତ ଆମକୁ ସୂଚିତ କର | ଖାତାକୁ ଅକ୍ଷମ କରିବାର ଅଧିକାର ଆମେ ସଂରକ୍ଷିତ, ଯାହା ଏହି ସର୍ତ୍ତଗୁଡିକର ଉଲ୍ଲଂଘନ କରେ କିମ୍ବା ଆମେ ଯୁକ୍ତିଯୁକ୍ତ ଭାବରେ ସନ୍ଦେହ କରୁଛୁ |';
 
   @override
   String get legalTermsAccountHeading => 'ଖାତା ପଞ୍ଜିକରଣ';
 
   @override
   String get legalTermsAgreementBody =>
-      'ଏକ ଆକାଉଣ୍ଟ୍ ସୃଷ୍ଟି କରି କିମ୍ବା ଯେକ any ଣସି ଛତା ସେବା ବ୍ୟବହାର କରି, ଆପଣ ଏହି ସର୍ତ୍ତାବଳୀରେ ବନ୍ଧା ହେବାକୁ ରାଜି ହୁଅନ୍ତି | ଯଦି ଆପଣ ଏକ ଆଇନ ସଂସ୍ଥା, କମ୍ପାନୀ କିମ୍ବା ଅନ୍ୟାନ୍ୟ ଆଇନଗତ ସଂସ୍ଥା ତରଫରୁ ପ୍ଲାଟଫର୍ମ ବ୍ୟବହାର କରୁଛନ୍ତି, ତେବେ ଆପଣ ପ୍ରତିନିଧିତ୍ୱ କରୁଛନ୍ତି ଯେ ସେହି ସଂସ୍ଥାକୁ ବାନ୍ଧିବା ପାଇଁ ଆପଣଙ୍କର ଅଧିକାର ଅଛି | ଯଦି ଆପଣ ଏହି ସର୍ତ୍ତାବଳୀ ଗ୍ରହଣ କରନ୍ତି ନାହିଁ, ତେବେ ଆପଣ ପ୍ଲାଟଫର୍ମ ବ୍ୟବହାର କରିବା ଉଚିତ୍ ନୁହେଁ | ଉପଭୋକ୍ତାମାନେ ଅତିକମରେ 18 ବର୍ଷ ହୋଇଥିବା ଆବଶ୍ୟକ |';
+      'ଏକ ଆକାଉଣ୍ଟ୍ ସୃଷ୍ଟି କରି କିମ୍ବା ଯେକୌଣସି ଛତା ସେବା ବ୍ୟବହାର କରି, ଆପଣ ଏହି ସର୍ତ୍ତାବଳୀରେ ବନ୍ଧା ହେବାକୁ ରାଜି ହୁଅନ୍ତି | ଯଦି ଆପଣ ଏକ ଆଇନ ସଂସ୍ଥା, କମ୍ପାନୀ କିମ୍ବା ଅନ୍ୟାନ୍ୟ ଆଇନଗତ ସଂସ୍ଥା ତରଫରୁ ପ୍ଲାଟଫର୍ମ ବ୍ୟବହାର କରୁଛନ୍ତି, ତେବେ ଆପଣ ପ୍ରତିନିଧିତ୍ୱ କରୁଛନ୍ତି ଯେ ସେହି ସଂସ୍ଥାକୁ ବାନ୍ଧିବା ପାଇଁ ଆପଣଙ୍କର ଅଧିକାର ଅଛି | ଯଦି ଆପଣ ଏହି ସର୍ତ୍ତାବଳୀ ଗ୍ରହଣ କରନ୍ତି ନାହିଁ, ତେବେ ଆପଣ ପ୍ଲାଟଫର୍ମ ବ୍ୟବହାର କରିବା ଉଚିତ୍ ନୁହେଁ | ଉପଭୋକ୍ତାମାନେ ଅତିକମରେ 18 ବର୍ଷ ହୋଇଥିବା ଆବଶ୍ୟକ |';
 
   @override
   String get legalTermsAgreementHeading => '1';
@@ -11308,7 +11601,7 @@ class AppLocalizationsOr extends AppLocalizations {
 
   @override
   String get legalTermsIPContentBody =>
-      'ଆପଣ ପ୍ଲାଟଫର୍ମରେ ଦାଖଲ କରିଥିବା ସମସ୍ତ ବିଷୟବସ୍ତୁର ମାଲିକାନା ବଜାୟ ରଖିବେ | ବିଷୟବସ୍ତୁ ଦାଖଲ କରି ଆପଣ DVTech Ventures କୁ ଏକ ବିଶ୍ worldwide ବ୍ୟାପୀ, ରୟାଲଟିମୁକ୍ତ, ଅଣ-ଏକ୍ସକ୍ଲୁସିଭ୍ ଲାଇସେନ୍ସ ପ୍ରଦାନ କରନ୍ତି, କେବଳ ସେବା ଯୋଗାଇବା ପାଇଁ ଆପଣଙ୍କର ବିଷୟବସ୍ତୁକୁ ପ୍ରକ୍ରିୟାକରଣ, ସଂରକ୍ଷଣ ଏବଂ ପ୍ରଦର୍ଶନ କରିବାକୁ | ଯଦି ଆପଣ ଡାଟା ଏବଂ AI ସମ୍ମତି ନୀତି ଅନୁଯାୟୀ ଚୟନ ନକରନ୍ତି ତେବେ ଏହି ଲାଇସେନ୍ସ AI ତାଲିମକୁ ବିସ୍ତାର କରେ ନାହିଁ |';
+      'ଆପଣ ପ୍ଲାଟଫର୍ମରେ ଦାଖଲ କରିଥିବା ସମସ୍ତ ବିଷୟବସ୍ତୁର ମାଲିକାନା ବଜାୟ ରଖିବେ | ବିଷୟବସ୍ତୁ ଦାଖଲ କରି ଆପଣ DVTech Ventures କୁ ଏକ ବିଶ୍ୱବ୍ୟାପୀ, ରୟାଲଟିମୁକ୍ତ, ଅଣ-ଏକ୍ସକ୍ଲୁସିଭ୍ ଲାଇସେନ୍ସ ପ୍ରଦାନ କରନ୍ତି, କେବଳ ସେବା ଯୋଗାଇବା ପାଇଁ ଆପଣଙ୍କର ବିଷୟବସ୍ତୁକୁ ପ୍ରକ୍ରିୟାକରଣ, ସଂରକ୍ଷଣ ଏବଂ ପ୍ରଦର୍ଶନ କରିବାକୁ | ଯଦି ଆପଣ ଡାଟା ଏବଂ AI ସମ୍ମତି ନୀତି ଅନୁଯାୟୀ ଚୟନ ନକରନ୍ତି ତେବେ ଏହି ଲାଇସେନ୍ସ AI ତାଲିମକୁ ବିସ୍ତାର କରେ ନାହିଁ |';
 
   @override
   String get legalTermsIPHeading => '12। ବ Intell ଦ୍ଧିକ ଗୁଣ |';
@@ -11319,7 +11612,7 @@ class AppLocalizationsOr extends AppLocalizations {
 
   @override
   String get legalTermsIndemnityBody =>
-      'କ୍ଷତିହୀନ DVTech ଭେଞ୍ଚର ଏବଂ ଏହାର ଅଧିକାରୀ, ନିର୍ଦ୍ଦେଶକ, କର୍ମଚାରୀ, ଏବଂ ଏଜେଣ୍ଟମାନଙ୍କୁ ଯେକ claims ଣସି ଦାବି, କ୍ଷତି, କ୍ଷତି, ଏବଂ ଖର୍ଚ୍ଚ (ଯୁକ୍ତିଯୁକ୍ତ ଆଇନଗତ ଫି ଅନ୍ତର୍ଭୂକ୍ତ କରି) କ୍ଷତିପୂରଣ, ପ୍ରତିରକ୍ଷା ଏବଂ ଧାରଣ କରିବାକୁ ଆପଣ ରାଜି ହୋଇଛନ୍ତି: (କ) ଏହି ସର୍ତ୍ତଗୁଡିକର ଉଲ୍ଲଂଘନ କରି ପ୍ଲାଟଫର୍ମର ବ୍ୟବହାର; (ଖ) ଯେକ any ଣସି ପ୍ରଯୁଜ୍ୟ ଆଇନର ଉଲ୍ଲଂଘନ; (ଗ) ତୁମେ ଦାଖଲ କରିଥିବା ବିଷୟବସ୍ତୁ ଯାହା ଏକ ତୃତୀୟ ପକ୍ଷର ଅଧିକାରକୁ ଉଲ୍ଲଂଘନ କରେ; (ଘ) ପ୍ଲାଟଫର୍ମ ବ୍ୟବହାର କରି ତୁମ ଗ୍ରାହକଙ୍କୁ ପ୍ରଦାନ କରୁଥିବା ଆଇନଗତ ପରାମର୍ଶ କିମ୍ବା ସେବା |';
+      'କ୍ଷତିହୀନ DVTech ଭେଞ୍ଚର ଏବଂ ଏହାର ଅଧିକାରୀ, ନିର୍ଦ୍ଦେଶକ, କର୍ମଚାରୀ, ଏବଂ ଏଜେଣ୍ଟମାନଙ୍କୁ ଯେକ claims ଣସି ଦାବି, କ୍ଷତି, କ୍ଷତି, ଏବଂ ଖର୍ଚ୍ଚ (ଯୁକ୍ତିଯୁକ୍ତ ଆଇନଗତ ଫି ଅନ୍ତର୍ଭୂକ୍ତ କରି) କ୍ଷତିପୂରଣ, ପ୍ରତିରକ୍ଷା ଏବଂ ଧାରଣ କରିବାକୁ ଆପଣ ରାଜି ହୋଇଛନ୍ତି: (କ) ଏହି ସର୍ତ୍ତଗୁଡିକର ଉଲ୍ଲଂଘନ କରି ପ୍ଲାଟଫର୍ମର ବ୍ୟବହାର; (ଖ) ଯେକୌଣସି ପ୍ରଯୁଜ୍ୟ ଆଇନର ଉଲ୍ଲଂଘନ; (ଗ) ତୁମେ ଦାଖଲ କରିଥିବା ବିଷୟବସ୍ତୁ ଯାହା ଏକ ତୃତୀୟ ପକ୍ଷର ଅଧିକାରକୁ ଉଲ୍ଲଂଘନ କରେ; (ଘ) ପ୍ଲାଟଫର୍ମ ବ୍ୟବହାର କରି ତୁମ ଗ୍ରାହକଙ୍କୁ ପ୍ରଦାନ କରୁଥିବା ଆଇନଗତ ପରାମର୍ଶ କିମ୍ବା ସେବା |';
 
   @override
   String get legalTermsIndemnityHeading => '17। କ୍ଷତିପୂରଣ';
@@ -11340,7 +11633,7 @@ class AppLocalizationsOr extends AppLocalizations {
 
   @override
   String get legalTermsNotLawFirmBody =>
-      'ଛତା ଏକ ଟେକ୍ନୋଲୋଜି ପ୍ଲାଟଫର୍ମ, ଏକ ଆଇନ ସଂସ୍ଥା ନୁହେଁ | DVTech Ventures ଆଇନଗତ ପରାମର୍ଶ କିମ୍ବା ଆଇନଗତ ପ୍ରତିନିଧିତ୍ୱ ପ୍ରଦାନ କରେ ନାହିଁ | ପ୍ଲାଟଫର୍ମର ବ୍ୟବହାର ଆପଣଙ୍କ ଏବଂ DVTech Ventures ମଧ୍ୟରେ ଏକ ଆଟର୍ଣ୍ଣି-କ୍ଲାଏଣ୍ଟ ସମ୍ପର୍କ ସୃଷ୍ଟି କରେ ନାହିଁ | ଓକିଲ ମାର୍କେଟପ୍ଲେସ୍ ଆପଣଙ୍କୁ ସ୍ independent ାଧୀନ ଲାଇସେନ୍ସପ୍ରାପ୍ତ ଓକିଲମାନଙ୍କ ସହିତ ସଂଯୋଗ କରେ; ମାର୍କେଟପ୍ଲେସ୍ ଓକିଲଙ୍କ ସହିତ ଯେକ any ଣସି ଯୋଗଦାନ ତୁମ ଏବଂ ସେହି ଓକିଲଙ୍କ ମଧ୍ୟରେ ପୃଥକ ପୃଥକ ଚୁକ୍ତିନାମା ଦ୍ୱାରା ପରିଚାଳିତ |';
+      'ଛତା ଏକ ଟେକ୍ନୋଲୋଜି ପ୍ଲାଟଫର୍ମ, ଏକ ଆଇନ ସଂସ୍ଥା ନୁହେଁ | DVTech Ventures ଆଇନଗତ ପରାମର୍ଶ କିମ୍ବା ଆଇନଗତ ପ୍ରତିନିଧିତ୍ୱ ପ୍ରଦାନ କରେ ନାହିଁ | ପ୍ଲାଟଫର୍ମର ବ୍ୟବହାର ଆପଣଙ୍କ ଏବଂ DVTech Ventures ମଧ୍ୟରେ ଏକ ଆଟର୍ଣ୍ଣି-କ୍ଲାଏଣ୍ଟ ସମ୍ପର୍କ ସୃଷ୍ଟି କରେ ନାହିଁ | ଓକିଲ ମାର୍କେଟପ୍ଲେସ୍ ଆପଣଙ୍କୁ ସ୍ independent ାଧୀନ ଲାଇସେନ୍ସପ୍ରାପ୍ତ ଓକିଲମାନଙ୍କ ସହିତ ସଂଯୋଗ କରେ; ମାର୍କେଟପ୍ଲେସ୍ ଓକିଲଙ୍କ ସହିତ ଯେକୌଣସି ଯୋଗଦାନ ତୁମ ଏବଂ ସେହି ଓକିଲଙ୍କ ମଧ୍ୟରେ ପୃଥକ ପୃଥକ ଚୁକ୍ତିନାମା ଦ୍ୱାରା ପରିଚାଳିତ |';
 
   @override
   String get legalTermsNotLawFirmHeading => '10। ଏକ ଆଇନ ସଂସ୍ଥା ନୁହେଁ |';
@@ -11371,7 +11664,7 @@ class AppLocalizationsOr extends AppLocalizations {
 
   @override
   String get legalTermsSeverabilityBody =>
-      'ଯଦି ଏହି ସର୍ତ୍ତାବଳୀର କ provision ଣସି ବ୍ୟବସ୍ଥା ଅନାବଶ୍ୟକ ବୋଲି ଜଣାପଡେ, ଅବଶିଷ୍ଟ ବ୍ୟବସ୍ଥା ସମ୍ପୂର୍ଣ୍ଣ ବଳବତ୍ତର ରହିବ | କ any ଣସି ଅଧିକାରକୁ କାର୍ଯ୍ୟକାରୀ କରିବାରେ ଆମର ବିଫଳତା ସେହି ଅଧିକାରର ଛାଡ ନୁହେଁ | ଏହି ସର୍ତ୍ତାବଳୀ, ଗୋପନୀୟତା ନୀତି ଏବଂ ଡାଟା ଏବଂ AI ସମ୍ମତି ନୀତି ସହିତ, ପ୍ଲାଟଫର୍ମ ସମ୍ବନ୍ଧରେ ତୁମ ଏବଂ DVTech Ventures ମଧ୍ୟରେ ସମ୍ପୂର୍ଣ୍ଣ ଚୁକ୍ତିନାମା ଗଠନ କରେ |';
+      'ଯଦି ଏହି ସର୍ତ୍ତାବଳୀର କ provision ଣସି ବ୍ୟବସ୍ଥା ଅନାବଶ୍ୟକ ବୋଲି ଜଣାପଡେ, ଅବଶିଷ୍ଟ ବ୍ୟବସ୍ଥା ସମ୍ପୂର୍ଣ୍ଣ ବଳବତ୍ତର ରହିବ | କୌଣସି ଅଧିକାରକୁ କାର୍ଯ୍ୟକାରୀ କରିବାରେ ଆମର ବିଫଳତା ସେହି ଅଧିକାରର ଛାଡ ନୁହେଁ | ଏହି ସର୍ତ୍ତାବଳୀ, ଗୋପନୀୟତା ନୀତି ଏବଂ ଡାଟା ଏବଂ AI ସମ୍ମତି ନୀତି ସହିତ, ପ୍ଲାଟଫର୍ମ ସମ୍ବନ୍ଧରେ ତୁମ ଏବଂ DVTech Ventures ମଧ୍ୟରେ ସମ୍ପୂର୍ଣ୍ଣ ଚୁକ୍ତିନାମା ଗଠନ କରେ |';
 
   @override
   String get legalTermsSeverabilityHeading => '19 ଜେନେରାଲ୍';
@@ -11407,7 +11700,7 @@ class AppLocalizationsOr extends AppLocalizations {
   String get marketingAiLegalAnalysis => 'AI ଆଇନଗତ ବିଶ୍ଳେଷଣ |';
 
   @override
-  String get marketingAnywhereChip => 'ଯେକ where ଣସି ଠାରେ |';
+  String get marketingAnywhereChip => 'ଯେକୌଣସି ସ୍ଥାନରେ |';
 
   @override
   String get marketingBasedOnRentRestrictionActCap296AndLawOfContractAc =>
@@ -11817,7 +12110,7 @@ class AppLocalizationsOr extends AppLocalizations {
 
   @override
   String get marketingCountryPagesOtherMarkets =>
-      'ବ regions ଶିଷ୍ଟ୍ୟଯୁକ୍ତ ଅଞ୍ଚଳ - ବିଶ୍ worldwide ବ୍ୟାପୀ ଉପଲବ୍ଧ |';
+      'ବ regions ଶିଷ୍ଟ୍ୟଯୁକ୍ତ ଅଞ୍ଚଳ - ବିଶ୍ୱବ୍ୟାପୀ ଉପଲବ୍ଧ |';
 
   @override
   String get marketingCountryPagesUsBadge => 'ଆଇନଗତ AI ଯୁକ୍ତରାଷ୍ଟ୍ର';
@@ -12314,7 +12607,7 @@ class AppLocalizationsOr extends AppLocalizations {
 
   @override
   String get marketingForLawyersStep1Desc =>
-      'ଯେକ any ଣସି କ୍ଲାଏଣ୍ଟ କଲ୍ କ୍ୟାପଚର କରନ୍ତୁ କିମ୍ବା ଏକ ବିଦ୍ୟମାନ ରେକର୍ଡିଂ ଅପଲୋଡ୍ କରନ୍ତୁ | ଛତା ସ୍ୱୟଂଚାଳିତ ଭାବରେ ଆକ୍ସନ୍ ଆଇଟମ୍ଗୁଡ଼ିକୁ ଟ୍ରାନ୍ସକ୍ରିପ୍ସ କରେ ଏବଂ ବାହାର କରେ |';
+      'ଯେକୌଣସି କ୍ଲାଏଣ୍ଟ କଲ୍ କ୍ୟାପଚର କରନ୍ତୁ କିମ୍ବା ଏକ ବିଦ୍ୟମାନ ରେକର୍ଡିଂ ଅପଲୋଡ୍ କରନ୍ତୁ | ଛତା ସ୍ୱୟଂଚାଳିତ ଭାବରେ ଆକ୍ସନ୍ ଆଇଟମ୍ଗୁଡ଼ିକୁ ଟ୍ରାନ୍ସକ୍ରିପ୍ସ କରେ ଏବଂ ବାହାର କରେ |';
 
   @override
   String get marketingForLawyersStep1Title =>
@@ -13141,11 +13434,18 @@ class AppLocalizationsOr extends AppLocalizations {
   String get marketingHomeResearchProgressModeFast => 'ଦ୍ରୁତ';
 
   @override
+  String get marketingHomeResearchProgressModeGuidance => 'AI only';
+
+  @override
   String get marketingHomeResearchProgressModeVerified => 'ଯାଞ୍ଚ ହୋଇଛି |';
 
   @override
   String get marketingHomeResearchProgressPhaseStallNote =>
       'ତଥାପି କାର୍ଯ୍ୟ କରୁଛି - ବ୍ୟାକେଣ୍ଡ୍ ଏହି ପଦକ୍ଷେପକୁ ପ୍ରକ୍ରିୟାକରଣ କରୁଛି | ବଡ଼ ପ୍ରଶ୍ନଗୁଡିକ କିଛି ମିନିଟ୍ ନେଇପାରେ |';
+
+  @override
+  String get marketingHomeResearchProgressPhaseStallNoteVerified =>
+      'Still working — the backend is processing this step. Large queries can take a few minutes.';
 
   @override
   String get marketingHomeResearchProgressRefiningTitle =>
@@ -13298,6 +13598,41 @@ class AppLocalizationsOr extends AppLocalizations {
       'କର୍ପସ ବିରୋଧରେ ବିଭାଗ ପାଠ ଯାଞ୍ଚ କରୁଛି…';
 
   @override
+  String get marketingHomeResearchProgressStepGuidanceDraftDetail =>
+      'Writing a first-pass answer from the question and contract';
+
+  @override
+  String get marketingHomeResearchProgressStepGuidanceDraftLabel =>
+      'Drafting the note';
+
+  @override
+  String get marketingHomeResearchProgressStepGuidanceReadDetail =>
+      'Identifying the issue, jurisdiction, and contract facts';
+
+  @override
+  String get marketingHomeResearchProgressStepGuidanceReadLabel =>
+      'Reading your question';
+
+  @override
+  String get marketingHomeResearchProgressStepGuidanceReadyDetail =>
+      'Preparing the research note';
+
+  @override
+  String get marketingHomeResearchProgressStepGuidanceReadyLabel => 'Ready';
+
+  @override
+  String get marketingHomeResearchProgressStepLiveRetrieveDetail =>
+      'Checking AI-named authorities against live/corpus sources';
+
+  @override
+  String get marketingHomeResearchProgressStepLiveRetrieveFailover =>
+      'Retrying available connectors when a source is down';
+
+  @override
+  String get marketingHomeResearchProgressStepLiveRetrieveLabel =>
+      'Checking live and corpus sources';
+
+  @override
   String get marketingHomeResearchProgressStepParseDetail =>
       'ଅଧିକାର, ବ୍ୟବସ୍ଥା, ଏବଂ ଉଦ୍ଦେଶ୍ୟ ଚିହ୍ନଟ କରିବା |';
 
@@ -13311,6 +13646,18 @@ class AppLocalizationsOr extends AppLocalizations {
   @override
   String get marketingHomeResearchProgressStepParseLabel =>
       'ତୁମର ଆଇନଗତ ପ୍ରଶ୍ନ ବିଶ୍ଳେଷଣ କରିବା |';
+
+  @override
+  String get marketingHomeResearchProgressStepPlanMapDetail =>
+      'Identifying issues, likely statutes, and retrieval queries';
+
+  @override
+  String get marketingHomeResearchProgressStepPlanMapLabel =>
+      'Planning the research map';
+
+  @override
+  String get marketingHomeResearchProgressStepPlanMapQueries =>
+      'Expanding search queries from the research plan';
 
   @override
   String get marketingHomeResearchProgressStepPredecessorCrpcBnss =>
@@ -13359,6 +13706,13 @@ class AppLocalizationsOr extends AppLocalizations {
   @override
   String get marketingHomeResearchProgressStepRetrieveRankCases =>
       'ପ୍ରାସଙ୍ଗିକତା ଅନୁଯାୟୀ କେସ୍ ଆଇନ୍ ର୍ୟାଙ୍କିଙ୍ଗ୍…';
+
+  @override
+  String get marketingHomeResearchProgressStepSelfCheckDetail =>
+      'Attacking weak assumptions in the same draft';
+
+  @override
+  String get marketingHomeResearchProgressStepSelfCheckLabel => 'Self-check';
 
   @override
   String get marketingHomeResearchProgressStillWorking => '· ତଥାପି କାମ କରୁଛି…';
@@ -13437,7 +13791,7 @@ class AppLocalizationsOr extends AppLocalizations {
 
   @override
   String get marketingHomeTestimonialsTitleHighlight =>
-      'ବିଶ୍ worldwide ବ୍ୟାପୀ ବ୍ୟକ୍ତିବିଶେଷ |';
+      'ବିଶ୍ୱବ୍ୟାପୀ ବ୍ୟକ୍ତିବିଶେଷ |';
 
   @override
   String get marketingHomeTrustItems =>
@@ -13536,7 +13890,7 @@ class AppLocalizationsOr extends AppLocalizations {
 
   @override
   String get marketingIssueCheckerMetaDescription =>
-      'ଯେକ any ଣସି ଦେଶରେ ଆପଣଙ୍କର ଆଇନଗତ ସମସ୍ୟା ବର୍ଣ୍ଣନା କରନ୍ତୁ | ପ୍ରକୃତ ନିୟମ, ବିପଦ ସ୍ତର, ଏବଂ ପରବର୍ତ୍ତୀ ପଦକ୍ଷେପଗୁଡିକ ସହିତ ଏକ ମାଗଣା AI ପୂର୍ବାବଲୋକନ ପ୍ରାପ୍ତ କରନ୍ତୁ - ବିଶ୍ worldwide ବ୍ୟାପୀ ପ୍ରାଧିକରଣ-ସଚେତନ ଆଇନଗତ ମାର୍ଗଦର୍ଶନ |';
+      'ଯେକୌଣସି ଦେଶରେ ଆପଣଙ୍କର ଆଇନଗତ ସମସ୍ୟା ବର୍ଣ୍ଣନା କରନ୍ତୁ | ପ୍ରକୃତ ନିୟମ, ବିପଦ ସ୍ତର, ଏବଂ ପରବର୍ତ୍ତୀ ପଦକ୍ଷେପଗୁଡିକ ସହିତ ଏକ ମାଗଣା AI ପୂର୍ବାବଲୋକନ ପ୍ରାପ୍ତ କରନ୍ତୁ - ବିଶ୍ୱବ୍ୟାପୀ ପ୍ରାଧିକରଣ-ସଚେତନ ଆଇନଗତ ମାର୍ଗଦର୍ଶନ |';
 
   @override
   String get marketingIssueCheckerMetaTitle =>
@@ -13548,7 +13902,7 @@ class AppLocalizationsOr extends AppLocalizations {
 
   @override
   String get marketingLawyersMetaDescription =>
-      'ବିଶ୍ worldwide ବ୍ୟାପୀ ଭେଟେଟେଡ୍ ଓକିଲ ବ୍ରାଉଜ୍ କରନ୍ତୁ | ମାଗଣା AI ଆଇନଗତ ସ୍ୱଚ୍ଛତା ସହିତ ଆରମ୍ଭ କରନ୍ତୁ - ଯେତେବେଳେ ଆପଣ ଆନୁଷ୍ଠାନିକ ପରାମର୍ଶ ଆବଶ୍ୟକ କରନ୍ତି ସେତେବେଳେ ଆପଣଙ୍କର ଅଧିକାରରେ ଲାଇସେନ୍ସପ୍ରାପ୍ତ ପରାମର୍ଶଦାତା ସହିତ ସଂଯୋଗ କରନ୍ତୁ |';
+      'ବିଶ୍ୱବ୍ୟାପୀ ଭେଟେଟେଡ୍ ଓକିଲ ବ୍ରାଉଜ୍ କରନ୍ତୁ | ମାଗଣା AI ଆଇନଗତ ସ୍ୱଚ୍ଛତା ସହିତ ଆରମ୍ଭ କରନ୍ତୁ - ଯେତେବେଳେ ଆପଣ ଆନୁଷ୍ଠାନିକ ପରାମର୍ଶ ଆବଶ୍ୟକ କରନ୍ତି ସେତେବେଳେ ଆପଣଙ୍କର ଅଧିକାରରେ ଲାଇସେନ୍ସପ୍ରାପ୍ତ ପରାମର୍ଶଦାତା ସହିତ ସଂଯୋଗ କରନ୍ତୁ |';
 
   @override
   String get marketingLawyersMetaTitle =>
@@ -13675,7 +14029,7 @@ class AppLocalizationsOr extends AppLocalizations {
 
   @override
   String get marketingLegalFormsMetaDescription =>
-      'AI- ଚାଳିତ ଆଇନଗତ ଡକ୍ୟୁମେଣ୍ଟ ଡ୍ରାଫ୍ଟ: ଚିଠି, ଚୁକ୍ତିନାମା, ବିଜ୍ଞପ୍ତି, ଏବଂ ନିବେଦନ - ଯେକ any ଣସି ଦେଶ ପାଇଁ ଅଧିକାର-ସଚେତନ ଟେମ୍ପଲେଟ୍ |';
+      'AI- ଚାଳିତ ଆଇନଗତ ଡକ୍ୟୁମେଣ୍ଟ ଡ୍ରାଫ୍ଟ: ଚିଠି, ଚୁକ୍ତିନାମା, ବିଜ୍ଞପ୍ତି, ଏବଂ ନିବେଦନ - ଯେକୌଣସି ଦେଶ ପାଇଁ ଅଧିକାର-ସଚେତନ ଟେମ୍ପଲେଟ୍ |';
 
   @override
   String get marketingLegalFormsMetaTitle =>
@@ -13858,7 +14212,7 @@ class AppLocalizationsOr extends AppLocalizations {
       'ପ୍ରତ୍ୟେକ ଦେଶରେ ଉପଲବ୍ଧ - ଆପଣଙ୍କର ଅଧିକାରକୁ ଅଟୋ-ଚିହ୍ନଟ କରେ ଏବଂ ସ୍ଥାନୀୟ ନିୟମ ପ୍ରୟୋଗ କରେ |';
 
   @override
-  String get marketingSeoGlobalBadge => 'ବିଶ୍ worldwide ବ୍ୟାପୀ ଉପଲବ୍ଧ |';
+  String get marketingSeoGlobalBadge => 'ବିଶ୍ୱବ୍ୟାପୀ ଉପଲବ୍ଧ |';
 
   @override
   String get marketingSeoGlobalConsumerCta =>
@@ -13902,7 +14256,7 @@ class AppLocalizationsOr extends AppLocalizations {
 
   @override
   String get marketingSeoPillarsContractanalysisDualAudience =>
-      'ବ୍ୟକ୍ତିମାନେ ମାଗଣା ଚୁକ୍ତି ବିଶ୍ଳେଷଣ ପାଆନ୍ତି | ସଂସ୍ଥାଗୁଡ଼ିକ ଏହାକୁ ବିଶ୍ worldwide ବ୍ୟାପୀ ପ୍ରତ୍ୟେକ ବିଷୟ ମଧ୍ୟରେ ସ୍ୱୟଂଚାଳିତ କରନ୍ତି |';
+      'ବ୍ୟକ୍ତିମାନେ ମାଗଣା ଚୁକ୍ତି ବିଶ୍ଳେଷଣ ପାଆନ୍ତି | ସଂସ୍ଥାଗୁଡ଼ିକ ଏହାକୁ ବିଶ୍ୱବ୍ୟାପୀ ପ୍ରତ୍ୟେକ ବିଷୟ ମଧ୍ୟରେ ସ୍ୱୟଂଚାଳିତ କରନ୍ତି |';
 
   @override
   String get marketingSeoPillarsContractanalysisFaqItems =>
@@ -13918,7 +14272,7 @@ class AppLocalizationsOr extends AppLocalizations {
 
   @override
   String get marketingSeoPillarsContractanalysisHeroSubtitle =>
-      'ସବୁଠାରୁ ଦକ୍ଷ ଚୁକ୍ତି ବିଶ୍ଳେଷଣ ପ୍ଲାଟଫର୍ମ - ପ୍ରକୃତ ନିୟମ ଏବଂ କେସ୍ ଆଇନରେ ଆଧାରିତ, ଆପଣଙ୍କର ଅଧିକାରକୁ ସ୍ auto ତ - ଚିହ୍ନଟ କରେ, ବିଶ୍ worldwide ବ୍ୟାପୀ ଉପଲବ୍ଧ |';
+      'ସବୁଠାରୁ ଦକ୍ଷ ଚୁକ୍ତି ବିଶ୍ଳେଷଣ ପ୍ଲାଟଫର୍ମ - ପ୍ରକୃତ ନିୟମ ଏବଂ କେସ୍ ଆଇନରେ ଆଧାରିତ, ଆପଣଙ୍କର ଅଧିକାରକୁ ସ୍ auto ତ - ଚିହ୍ନଟ କରେ, ବିଶ୍ୱବ୍ୟାପୀ ଉପଲବ୍ଧ |';
 
   @override
   String get marketingSeoPillarsContractanalysisHeroTitle =>
@@ -13962,7 +14316,7 @@ class AppLocalizationsOr extends AppLocalizations {
 
   @override
   String get marketingSeoPillarsContractreviewDualAudience =>
-      'ବ୍ୟକ୍ତିମାନେ ମାଗଣା ଚୁକ୍ତିନାମା ସମୀକ୍ଷା କରନ୍ତି | ସଂସ୍ଥାଗୁଡ଼ିକ ଏହାକୁ ବିଶ୍ worldwide ବ୍ୟାପୀ ପ୍ରତ୍ୟେକ ବିଷୟ ମଧ୍ୟରେ ସ୍ୱୟଂଚାଳିତ କରନ୍ତି |';
+      'ବ୍ୟକ୍ତିମାନେ ମାଗଣା ଚୁକ୍ତିନାମା ସମୀକ୍ଷା କରନ୍ତି | ସଂସ୍ଥାଗୁଡ଼ିକ ଏହାକୁ ବିଶ୍ୱବ୍ୟାପୀ ପ୍ରତ୍ୟେକ ବିଷୟ ମଧ୍ୟରେ ସ୍ୱୟଂଚାଳିତ କରନ୍ତି |';
 
   @override
   String get marketingSeoPillarsContractreviewFaqItems =>
@@ -13978,7 +14332,7 @@ class AppLocalizationsOr extends AppLocalizations {
 
   @override
   String get marketingSeoPillarsContractreviewHeroSubtitle =>
-      'ସବୁଠାରୁ ଦକ୍ଷ ଚୁକ୍ତିନାମା ସମୀକ୍ଷା ପ୍ଲାଟଫର୍ମ - ପ୍ରକୃତ ନିୟମ ଏବଂ କେସ୍ ଆଇନରେ ଆଧାରିତ, ଆପଣଙ୍କର ଅଧିକାରକୁ ସ୍ auto ତ - ଚିହ୍ନଟ କରେ, ବିଶ୍ worldwide ବ୍ୟାପୀ ଉପଲବ୍ଧ |';
+      'ସବୁଠାରୁ ଦକ୍ଷ ଚୁକ୍ତିନାମା ସମୀକ୍ଷା ପ୍ଲାଟଫର୍ମ - ପ୍ରକୃତ ନିୟମ ଏବଂ କେସ୍ ଆଇନରେ ଆଧାରିତ, ଆପଣଙ୍କର ଅଧିକାରକୁ ସ୍ auto ତ - ଚିହ୍ନଟ କରେ, ବିଶ୍ୱବ୍ୟାପୀ ଉପଲବ୍ଧ |';
 
   @override
   String get marketingSeoPillarsContractreviewHeroTitle =>
@@ -14022,7 +14376,7 @@ class AppLocalizationsOr extends AppLocalizations {
 
   @override
   String get marketingSeoPillarsDocumentreviewDualAudience =>
-      'ବ୍ୟକ୍ତିମାନେ ମାଗଣା ଡକ୍ୟୁମେଣ୍ଟ ସମୀକ୍ଷା ପାଆନ୍ତି | ସଂସ୍ଥାଗୁଡ଼ିକ ଏହାକୁ ବିଶ୍ worldwide ବ୍ୟାପୀ ପ୍ରତ୍ୟେକ ବିଷୟ ମଧ୍ୟରେ ସ୍ୱୟଂଚାଳିତ କରନ୍ତି |';
+      'ବ୍ୟକ୍ତିମାନେ ମାଗଣା ଡକ୍ୟୁମେଣ୍ଟ ସମୀକ୍ଷା ପାଆନ୍ତି | ସଂସ୍ଥାଗୁଡ଼ିକ ଏହାକୁ ବିଶ୍ୱବ୍ୟାପୀ ପ୍ରତ୍ୟେକ ବିଷୟ ମଧ୍ୟରେ ସ୍ୱୟଂଚାଳିତ କରନ୍ତି |';
 
   @override
   String get marketingSeoPillarsDocumentreviewFaqItems =>
@@ -14038,7 +14392,7 @@ class AppLocalizationsOr extends AppLocalizations {
 
   @override
   String get marketingSeoPillarsDocumentreviewHeroSubtitle =>
-      'ସବୁଠାରୁ ଦକ୍ଷ ଡକ୍ୟୁମେଣ୍ଟ ସମୀକ୍ଷା ପ୍ଲାଟଫର୍ମ - ପ୍ରକୃତ ନିୟମ ଏବଂ କେସ୍ ଆଇନରେ ଆଧାରିତ, ଆପଣଙ୍କର ଅଧିକାରକୁ ସ୍ auto ତ - ଚିହ୍ନଟ କରେ, ବିଶ୍ worldwide ବ୍ୟାପୀ ଉପଲବ୍ଧ |';
+      'ସବୁଠାରୁ ଦକ୍ଷ ଡକ୍ୟୁମେଣ୍ଟ ସମୀକ୍ଷା ପ୍ଲାଟଫର୍ମ - ପ୍ରକୃତ ନିୟମ ଏବଂ କେସ୍ ଆଇନରେ ଆଧାରିତ, ଆପଣଙ୍କର ଅଧିକାରକୁ ସ୍ auto ତ - ଚିହ୍ନଟ କରେ, ବିଶ୍ୱବ୍ୟାପୀ ଉପଲବ୍ଧ |';
 
   @override
   String get marketingSeoPillarsDocumentreviewHeroTitle =>
@@ -14082,7 +14436,7 @@ class AppLocalizationsOr extends AppLocalizations {
 
   @override
   String get marketingSeoPillarsLawfirmsoftwareDualAudience =>
-      'ବ୍ୟକ୍ତିମାନେ ମାଗଣା ଆଇନ ଫାର୍ମ ସଫ୍ଟୱେର୍ ପାଆନ୍ତି | ସଂସ୍ଥାଗୁଡ଼ିକ ଏହାକୁ ବିଶ୍ worldwide ବ୍ୟାପୀ ପ୍ରତ୍ୟେକ ବିଷୟ ମଧ୍ୟରେ ସ୍ୱୟଂଚାଳିତ କରନ୍ତି |';
+      'ବ୍ୟକ୍ତିମାନେ ମାଗଣା ଆଇନ ଫାର୍ମ ସଫ୍ଟୱେର୍ ପାଆନ୍ତି | ସଂସ୍ଥାଗୁଡ଼ିକ ଏହାକୁ ବିଶ୍ୱବ୍ୟାପୀ ପ୍ରତ୍ୟେକ ବିଷୟ ମଧ୍ୟରେ ସ୍ୱୟଂଚାଳିତ କରନ୍ତି |';
 
   @override
   String get marketingSeoPillarsLawfirmsoftwareFaqItems =>
@@ -14098,7 +14452,7 @@ class AppLocalizationsOr extends AppLocalizations {
 
   @override
   String get marketingSeoPillarsLawfirmsoftwareHeroSubtitle =>
-      'ସବୁଠାରୁ ଦକ୍ଷ ଆଇନ ଫାର୍ମ ସଫ୍ଟୱେର୍ ପ୍ଲାଟଫର୍ମ - ପ୍ରକୃତ ନିୟମ ଏବଂ କେସ୍ ଆଇନରେ ଆଧାରିତ, ଆପଣଙ୍କର ଅଧିକାରକୁ ସ୍ auto ତ - ଚିହ୍ନଟ କରେ, ବିଶ୍ worldwide ବ୍ୟାପୀ ଉପଲବ୍ଧ |';
+      'ସବୁଠାରୁ ଦକ୍ଷ ଆଇନ ଫାର୍ମ ସଫ୍ଟୱେର୍ ପ୍ଲାଟଫର୍ମ - ପ୍ରକୃତ ନିୟମ ଏବଂ କେସ୍ ଆଇନରେ ଆଧାରିତ, ଆପଣଙ୍କର ଅଧିକାରକୁ ସ୍ auto ତ - ଚିହ୍ନଟ କରେ, ବିଶ୍ୱବ୍ୟାପୀ ଉପଲବ୍ଧ |';
 
   @override
   String get marketingSeoPillarsLawfirmsoftwareHeroTitle =>
@@ -14142,7 +14496,7 @@ class AppLocalizationsOr extends AppLocalizations {
 
   @override
   String get marketingSeoPillarsLegalassistantDualAudience =>
-      'ବ୍ୟକ୍ତିମାନେ ମାଗଣା ଆଇ ଆଇନ ସହାୟକ ହୁଅନ୍ତି | ସଂସ୍ଥାଗୁଡ଼ିକ ଏହାକୁ ବିଶ୍ worldwide ବ୍ୟାପୀ ପ୍ରତ୍ୟେକ ବିଷୟ ମଧ୍ୟରେ ସ୍ୱୟଂଚାଳିତ କରନ୍ତି |';
+      'ବ୍ୟକ୍ତିମାନେ ମାଗଣା ଆଇ ଆଇନ ସହାୟକ ହୁଅନ୍ତି | ସଂସ୍ଥାଗୁଡ଼ିକ ଏହାକୁ ବିଶ୍ୱବ୍ୟାପୀ ପ୍ରତ୍ୟେକ ବିଷୟ ମଧ୍ୟରେ ସ୍ୱୟଂଚାଳିତ କରନ୍ତି |';
 
   @override
   String get marketingSeoPillarsLegalassistantFaqItems =>
@@ -14158,7 +14512,7 @@ class AppLocalizationsOr extends AppLocalizations {
 
   @override
   String get marketingSeoPillarsLegalassistantHeroSubtitle =>
-      'ସବୁଠାରୁ ଦକ୍ଷ ଆଇ ଲିଗାଲ୍ ଆସିଷ୍ଟାଣ୍ଟ ପ୍ଲାଟଫର୍ମ - ପ୍ରକୃତ ନିୟମ ଏବଂ କେସ୍ ଆଇନରେ ଆଧାରିତ, ଆପଣଙ୍କର ଅଧିକାରକୁ ସ୍ auto ତ - ଚିହ୍ନଟ କରେ, ବିଶ୍ worldwide ବ୍ୟାପୀ ଉପଲବ୍ଧ |';
+      'ସବୁଠାରୁ ଦକ୍ଷ ଆଇ ଲିଗାଲ୍ ଆସିଷ୍ଟାଣ୍ଟ ପ୍ଲାଟଫର୍ମ - ପ୍ରକୃତ ନିୟମ ଏବଂ କେସ୍ ଆଇନରେ ଆଧାରିତ, ଆପଣଙ୍କର ଅଧିକାରକୁ ସ୍ auto ତ - ଚିହ୍ନଟ କରେ, ବିଶ୍ୱବ୍ୟାପୀ ଉପଲବ୍ଧ |';
 
   @override
   String get marketingSeoPillarsLegalassistantHeroTitle =>
@@ -14201,7 +14555,7 @@ class AppLocalizationsOr extends AppLocalizations {
 
   @override
   String get marketingSeoPillarsLegalcopilotDualAudience =>
-      'ବ୍ୟକ୍ତିମାନେ ମାଗଣା ଆଇନଗତ କପିଲଟ୍ ପାଆନ୍ତି | ସଂସ୍ଥାଗୁଡ଼ିକ ଏହାକୁ ବିଶ୍ worldwide ବ୍ୟାପୀ ପ୍ରତ୍ୟେକ ବିଷୟ ମଧ୍ୟରେ ସ୍ୱୟଂଚାଳିତ କରନ୍ତି |';
+      'ବ୍ୟକ୍ତିମାନେ ମାଗଣା ଆଇନଗତ କପିଲଟ୍ ପାଆନ୍ତି | ସଂସ୍ଥାଗୁଡ଼ିକ ଏହାକୁ ବିଶ୍ୱବ୍ୟାପୀ ପ୍ରତ୍ୟେକ ବିଷୟ ମଧ୍ୟରେ ସ୍ୱୟଂଚାଳିତ କରନ୍ତି |';
 
   @override
   String get marketingSeoPillarsLegalcopilotFaqItems =>
@@ -14217,7 +14571,7 @@ class AppLocalizationsOr extends AppLocalizations {
 
   @override
   String get marketingSeoPillarsLegalcopilotHeroSubtitle =>
-      'ସବୁଠାରୁ ଦକ୍ଷ ଆଇନଗତ କପିଲଟ୍ ପ୍ଲାଟଫର୍ମ - ପ୍ରକୃତ ନିୟମ ଏବଂ କେସ୍ ଆଇନରେ ଆଧାରିତ, ଆପଣଙ୍କର ଅଧିକାରକୁ ସ୍ auto ତ - ଚିହ୍ନଟ କରେ, ବିଶ୍ worldwide ବ୍ୟାପୀ ଉପଲବ୍ଧ |';
+      'ସବୁଠାରୁ ଦକ୍ଷ ଆଇନଗତ କପିଲଟ୍ ପ୍ଲାଟଫର୍ମ - ପ୍ରକୃତ ନିୟମ ଏବଂ କେସ୍ ଆଇନରେ ଆଧାରିତ, ଆପଣଙ୍କର ଅଧିକାରକୁ ସ୍ auto ତ - ଚିହ୍ନଟ କରେ, ବିଶ୍ୱବ୍ୟାପୀ ଉପଲବ୍ଧ |';
 
   @override
   String get marketingSeoPillarsLegalcopilotHeroTitle =>
@@ -14260,7 +14614,7 @@ class AppLocalizationsOr extends AppLocalizations {
 
   @override
   String get marketingSeoPillarsLegaldocumentdraftingDualAudience =>
-      'ବ୍ୟକ୍ତିମାନେ ମାଗଣା ଆଇନଗତ ଡକ୍ୟୁମେଣ୍ଟ ଡ୍ରାଫ୍ଟ ପାଆନ୍ତି | ସଂସ୍ଥାଗୁଡ଼ିକ ଏହାକୁ ବିଶ୍ worldwide ବ୍ୟାପୀ ପ୍ରତ୍ୟେକ ବିଷୟ ମଧ୍ୟରେ ସ୍ୱୟଂଚାଳିତ କରନ୍ତି |';
+      'ବ୍ୟକ୍ତିମାନେ ମାଗଣା ଆଇନଗତ ଡକ୍ୟୁମେଣ୍ଟ ଡ୍ରାଫ୍ଟ ପାଆନ୍ତି | ସଂସ୍ଥାଗୁଡ଼ିକ ଏହାକୁ ବିଶ୍ୱବ୍ୟାପୀ ପ୍ରତ୍ୟେକ ବିଷୟ ମଧ୍ୟରେ ସ୍ୱୟଂଚାଳିତ କରନ୍ତି |';
 
   @override
   String get marketingSeoPillarsLegaldocumentdraftingFaqItems =>
@@ -14276,7 +14630,7 @@ class AppLocalizationsOr extends AppLocalizations {
 
   @override
   String get marketingSeoPillarsLegaldocumentdraftingHeroSubtitle =>
-      'ସବୁଠାରୁ ଦକ୍ଷ ଆଇନଗତ ଡକ୍ୟୁମେଣ୍ଟ୍ ଡ୍ରାଫ୍ଟ ପ୍ଲାଟଫର୍ମ - ପ୍ରକୃତ ନିୟମ ଏବଂ କେସ୍ ଆଇନରେ ଆଧାରିତ, ଆପଣଙ୍କର ଅଧିକାରକୁ ସ୍ auto ତ - ଚିହ୍ନଟ କରେ, ବିଶ୍ worldwide ବ୍ୟାପୀ ଉପଲବ୍ଧ |';
+      'ସବୁଠାରୁ ଦକ୍ଷ ଆଇନଗତ ଡକ୍ୟୁମେଣ୍ଟ୍ ଡ୍ରାଫ୍ଟ ପ୍ଲାଟଫର୍ମ - ପ୍ରକୃତ ନିୟମ ଏବଂ କେସ୍ ଆଇନରେ ଆଧାରିତ, ଆପଣଙ୍କର ଅଧିକାରକୁ ସ୍ auto ତ - ଚିହ୍ନଟ କରେ, ବିଶ୍ୱବ୍ୟାପୀ ଉପଲବ୍ଧ |';
 
   @override
   String get marketingSeoPillarsLegaldocumentdraftingHeroTitle =>
@@ -14320,7 +14674,7 @@ class AppLocalizationsOr extends AppLocalizations {
 
   @override
   String get marketingSeoPillarsLegalduediligenceDualAudience =>
-      'ବ୍ୟକ୍ତିବିଶେଷ ମାଗଣା ଆଇନଗତ ଯତ୍ନଶୀଳ ହୁଅନ୍ତି | ସଂସ୍ଥାଗୁଡ଼ିକ ଏହାକୁ ବିଶ୍ worldwide ବ୍ୟାପୀ ପ୍ରତ୍ୟେକ ବିଷୟ ମଧ୍ୟରେ ସ୍ୱୟଂଚାଳିତ କରନ୍ତି |';
+      'ବ୍ୟକ୍ତିବିଶେଷ ମାଗଣା ଆଇନଗତ ଯତ୍ନଶୀଳ ହୁଅନ୍ତି | ସଂସ୍ଥାଗୁଡ଼ିକ ଏହାକୁ ବିଶ୍ୱବ୍ୟାପୀ ପ୍ରତ୍ୟେକ ବିଷୟ ମଧ୍ୟରେ ସ୍ୱୟଂଚାଳିତ କରନ୍ତି |';
 
   @override
   String get marketingSeoPillarsLegalduediligenceFaqItems =>
@@ -14336,7 +14690,7 @@ class AppLocalizationsOr extends AppLocalizations {
 
   @override
   String get marketingSeoPillarsLegalduediligenceHeroSubtitle =>
-      'ସବୁଠାରୁ ଦକ୍ଷ ଆଇନଗତ ଯତ୍ନଶୀଳ ପ୍ଲାଟଫର୍ମ - ପ୍ରକୃତ ନିୟମ ଏବଂ କେସ୍ ଆଇନରେ ଆଧାରିତ, ଆପଣଙ୍କର ଅଧିକାରକୁ ସ୍ auto ତ - ଚିହ୍ନଟ କରେ, ବିଶ୍ worldwide ବ୍ୟାପୀ ଉପଲବ୍ଧ |';
+      'ସବୁଠାରୁ ଦକ୍ଷ ଆଇନଗତ ଯତ୍ନଶୀଳ ପ୍ଲାଟଫର୍ମ - ପ୍ରକୃତ ନିୟମ ଏବଂ କେସ୍ ଆଇନରେ ଆଧାରିତ, ଆପଣଙ୍କର ଅଧିକାରକୁ ସ୍ auto ତ - ଚିହ୍ନଟ କରେ, ବିଶ୍ୱବ୍ୟାପୀ ଉପଲବ୍ଧ |';
 
   @override
   String get marketingSeoPillarsLegalduediligenceHeroTitle =>
@@ -14380,7 +14734,7 @@ class AppLocalizationsOr extends AppLocalizations {
 
   @override
   String get marketingSeoPillarsLegalissueanalysisDualAudience =>
-      'ବ୍ୟକ୍ତିମାନେ ମାଗଣା ଆଇନଗତ ସମସ୍ୟା ବିଶ୍ଳେଷଣ ପାଆନ୍ତି | ସଂସ୍ଥାଗୁଡ଼ିକ ଏହାକୁ ବିଶ୍ worldwide ବ୍ୟାପୀ ପ୍ରତ୍ୟେକ ବିଷୟ ମଧ୍ୟରେ ସ୍ୱୟଂଚାଳିତ କରନ୍ତି |';
+      'ବ୍ୟକ୍ତିମାନେ ମାଗଣା ଆଇନଗତ ସମସ୍ୟା ବିଶ୍ଳେଷଣ ପାଆନ୍ତି | ସଂସ୍ଥାଗୁଡ଼ିକ ଏହାକୁ ବିଶ୍ୱବ୍ୟାପୀ ପ୍ରତ୍ୟେକ ବିଷୟ ମଧ୍ୟରେ ସ୍ୱୟଂଚାଳିତ କରନ୍ତି |';
 
   @override
   String get marketingSeoPillarsLegalissueanalysisFaqItems =>
@@ -14396,7 +14750,7 @@ class AppLocalizationsOr extends AppLocalizations {
 
   @override
   String get marketingSeoPillarsLegalissueanalysisHeroSubtitle =>
-      'ସବୁଠାରୁ ଦକ୍ଷ ଆଇନଗତ ସମସ୍ୟା ବିଶ୍ଳେଷଣ ପ୍ଲାଟଫର୍ମ - ପ୍ରକୃତ ନିୟମ ଏବଂ କେସ୍ ଆଇନରେ ଆଧାରିତ, ଆପଣଙ୍କର ଅଧିକାରକୁ ସ୍ auto ତ - ଚିହ୍ନଟ କରେ, ବିଶ୍ worldwide ବ୍ୟାପୀ ଉପଲବ୍ଧ |';
+      'ସବୁଠାରୁ ଦକ୍ଷ ଆଇନଗତ ସମସ୍ୟା ବିଶ୍ଳେଷଣ ପ୍ଲାଟଫର୍ମ - ପ୍ରକୃତ ନିୟମ ଏବଂ କେସ୍ ଆଇନରେ ଆଧାରିତ, ଆପଣଙ୍କର ଅଧିକାରକୁ ସ୍ auto ତ - ଚିହ୍ନଟ କରେ, ବିଶ୍ୱବ୍ୟାପୀ ଉପଲବ୍ଧ |';
 
   @override
   String get marketingSeoPillarsLegalissueanalysisHeroTitle =>
@@ -14440,7 +14794,7 @@ class AppLocalizationsOr extends AppLocalizations {
 
   @override
   String get marketingSeoPillarsLegalresearchDualAudience =>
-      'ବ୍ୟକ୍ତିମାନେ ମାଗଣା ଆଇନଗତ ଅନୁସନ୍ଧାନ ପାଆନ୍ତି | ସଂସ୍ଥାଗୁଡ଼ିକ ଏହାକୁ ବିଶ୍ worldwide ବ୍ୟାପୀ ପ୍ରତ୍ୟେକ ବିଷୟ ମଧ୍ୟରେ ସ୍ୱୟଂଚାଳିତ କରନ୍ତି |';
+      'ବ୍ୟକ୍ତିମାନେ ମାଗଣା ଆଇନଗତ ଅନୁସନ୍ଧାନ ପାଆନ୍ତି | ସଂସ୍ଥାଗୁଡ଼ିକ ଏହାକୁ ବିଶ୍ୱବ୍ୟାପୀ ପ୍ରତ୍ୟେକ ବିଷୟ ମଧ୍ୟରେ ସ୍ୱୟଂଚାଳିତ କରନ୍ତି |';
 
   @override
   String get marketingSeoPillarsLegalresearchFaqItems =>
@@ -14456,7 +14810,7 @@ class AppLocalizationsOr extends AppLocalizations {
 
   @override
   String get marketingSeoPillarsLegalresearchHeroSubtitle =>
-      'ସବୁଠାରୁ ଦକ୍ଷ ଆଇନଗତ ଅନୁସନ୍ଧାନ ପ୍ଲାଟଫର୍ମ - ପ୍ରକୃତ ନିୟମ ଏବଂ କେସ୍ ଆଇନରେ ଆଧାରିତ, ଆପଣଙ୍କର ଅଧିକାରକୁ ସ୍ auto ତ - ଚିହ୍ନଟ କରେ, ବିଶ୍ worldwide ବ୍ୟାପୀ ଉପଲବ୍ଧ |';
+      'ସବୁଠାରୁ ଦକ୍ଷ ଆଇନଗତ ଅନୁସନ୍ଧାନ ପ୍ଲାଟଫର୍ମ - ପ୍ରକୃତ ନିୟମ ଏବଂ କେସ୍ ଆଇନରେ ଆଧାରିତ, ଆପଣଙ୍କର ଅଧିକାରକୁ ସ୍ auto ତ - ଚିହ୍ନଟ କରେ, ବିଶ୍ୱବ୍ୟାପୀ ଉପଲବ୍ଧ |';
 
   @override
   String get marketingSeoPillarsLegalresearchHeroTitle =>
@@ -14499,7 +14853,7 @@ class AppLocalizationsOr extends AppLocalizations {
 
   @override
   String get marketingSeoPillarsLegalworkflowautomationDualAudience =>
-      'ବ୍ୟକ୍ତିମାନେ ମାଗଣା ୱାର୍କଫ୍ଲୋ ସ୍ୱୟଂଚାଳିତ ହୁଅନ୍ତି | ସଂସ୍ଥାଗୁଡ଼ିକ ଏହାକୁ ବିଶ୍ worldwide ବ୍ୟାପୀ ପ୍ରତ୍ୟେକ ବିଷୟ ମଧ୍ୟରେ ସ୍ୱୟଂଚାଳିତ କରନ୍ତି |';
+      'ବ୍ୟକ୍ତିମାନେ ମାଗଣା ୱାର୍କଫ୍ଲୋ ସ୍ୱୟଂଚାଳିତ ହୁଅନ୍ତି | ସଂସ୍ଥାଗୁଡ଼ିକ ଏହାକୁ ବିଶ୍ୱବ୍ୟାପୀ ପ୍ରତ୍ୟେକ ବିଷୟ ମଧ୍ୟରେ ସ୍ୱୟଂଚାଳିତ କରନ୍ତି |';
 
   @override
   String get marketingSeoPillarsLegalworkflowautomationFaqItems =>
@@ -14515,7 +14869,7 @@ class AppLocalizationsOr extends AppLocalizations {
 
   @override
   String get marketingSeoPillarsLegalworkflowautomationHeroSubtitle =>
-      'ସବୁଠାରୁ ଦକ୍ଷ ୱାର୍କଫ୍ଲୋ ସ୍ୱୟଂଚାଳିତ ପ୍ଲାଟଫର୍ମ - ପ୍ରକୃତ ନିୟମ ଏବଂ କେସ୍ ଆଇନରେ ଆଧାରିତ, ଆପଣଙ୍କର ଅଧିକାରକୁ ସ୍ auto ତ - ଚିହ୍ନଟ କରେ, ବିଶ୍ worldwide ବ୍ୟାପୀ ଉପଲବ୍ଧ |';
+      'ସବୁଠାରୁ ଦକ୍ଷ ୱାର୍କଫ୍ଲୋ ସ୍ୱୟଂଚାଳିତ ପ୍ଲାଟଫର୍ମ - ପ୍ରକୃତ ନିୟମ ଏବଂ କେସ୍ ଆଇନରେ ଆଧାରିତ, ଆପଣଙ୍କର ଅଧିକାରକୁ ସ୍ auto ତ - ଚିହ୍ନଟ କରେ, ବିଶ୍ୱବ୍ୟାପୀ ଉପଲବ୍ଧ |';
 
   @override
   String get marketingSeoPillarsLegalworkflowautomationHeroTitle =>
@@ -14559,7 +14913,7 @@ class AppLocalizationsOr extends AppLocalizations {
 
   @override
   String get marketingSeoPillarsPracticemanagementDualAudience =>
-      'ବ୍ୟକ୍ତିମାନେ ମାଗଣା ଅଭ୍ୟାସ ପରିଚାଳନା ପାଆନ୍ତି | ସଂସ୍ଥାଗୁଡ଼ିକ ଏହାକୁ ବିଶ୍ worldwide ବ୍ୟାପୀ ପ୍ରତ୍ୟେକ ବିଷୟ ମଧ୍ୟରେ ସ୍ୱୟଂଚାଳିତ କରନ୍ତି |';
+      'ବ୍ୟକ୍ତିମାନେ ମାଗଣା ଅଭ୍ୟାସ ପରିଚାଳନା ପାଆନ୍ତି | ସଂସ୍ଥାଗୁଡ଼ିକ ଏହାକୁ ବିଶ୍ୱବ୍ୟାପୀ ପ୍ରତ୍ୟେକ ବିଷୟ ମଧ୍ୟରେ ସ୍ୱୟଂଚାଳିତ କରନ୍ତି |';
 
   @override
   String get marketingSeoPillarsPracticemanagementFaqItems =>
@@ -14575,7 +14929,7 @@ class AppLocalizationsOr extends AppLocalizations {
 
   @override
   String get marketingSeoPillarsPracticemanagementHeroSubtitle =>
-      'ସବୁଠାରୁ ଦକ୍ଷ ଅଭ୍ୟାସ ପରିଚାଳନା ପ୍ଲାଟଫର୍ମ - ପ୍ରକୃତ ନିୟମ ଏବଂ କେସ୍ ଆଇନରେ ଆଧାରିତ, ଆପଣଙ୍କର ଅଧିକାରକୁ ସ୍ auto ତ - ଚିହ୍ନଟ କରେ, ବିଶ୍ worldwide ବ୍ୟାପୀ ଉପଲବ୍ଧ |';
+      'ସବୁଠାରୁ ଦକ୍ଷ ଅଭ୍ୟାସ ପରିଚାଳନା ପ୍ଲାଟଫର୍ମ - ପ୍ରକୃତ ନିୟମ ଏବଂ କେସ୍ ଆଇନରେ ଆଧାରିତ, ଆପଣଙ୍କର ଅଧିକାରକୁ ସ୍ auto ତ - ଚିହ୍ନଟ କରେ, ବିଶ୍ୱବ୍ୟାପୀ ଉପଲବ୍ଧ |';
 
   @override
   String get marketingSeoPillarsPracticemanagementHeroTitle =>
@@ -14623,7 +14977,7 @@ class AppLocalizationsOr extends AppLocalizations {
 
   @override
   String get marketingSolutionsHubMetaDescription =>
-      'Umbrella ର ବିଶ୍ legal ସ୍ତରୀୟ ଆଇନଗତ AI ସମାଧାନଗୁଡିକ ଅନୁସନ୍ଧାନ କରନ୍ତୁ: ଡକ୍ୟୁମେଣ୍ଟ୍ ଡ୍ରାଫ୍ଟ, ଚୁକ୍ତିନାମା ସମୀକ୍ଷା, ଆଇନ ଅନୁସନ୍ଧାନ, ଆଇନ ଫାର୍ମ ସଫ୍ଟୱେର୍, ଲିଗାଲ୍ କପିଲଟ୍, ଏବଂ ୱାର୍କଫ୍ଲୋ ଅଟୋମେସନ୍ - ବିଶ୍ worldwide ବ୍ୟାପୀ |';
+      'Umbrella ର ବିଶ୍ legal ସ୍ତରୀୟ ଆଇନଗତ AI ସମାଧାନଗୁଡିକ ଅନୁସନ୍ଧାନ କରନ୍ତୁ: ଡକ୍ୟୁମେଣ୍ଟ୍ ଡ୍ରାଫ୍ଟ, ଚୁକ୍ତିନାମା ସମୀକ୍ଷା, ଆଇନ ଅନୁସନ୍ଧାନ, ଆଇନ ଫାର୍ମ ସଫ୍ଟୱେର୍, ଲିଗାଲ୍ କପିଲଟ୍, ଏବଂ ୱାର୍କଫ୍ଲୋ ଅଟୋମେସନ୍ - ବିଶ୍ୱବ୍ୟାପୀ |';
 
   @override
   String get marketingSolutionsHubMetaTitle =>
@@ -15029,6 +15383,19 @@ class AppLocalizationsOr extends AppLocalizations {
   String get mattersAiIsAnalyzingYourMatter => 'AI ତୁମର ବିଷୟ ବିଶ୍ଳେଷଣ କରୁଛି…';
 
   @override
+  String get mattersAiProgressAnalysing =>
+      'Analysing the available information';
+
+  @override
+  String get mattersAiProgressGenerating => 'Preparing the response';
+
+  @override
+  String get mattersAiProgressReading => 'Reading the matter context';
+
+  @override
+  String get mattersAiProgressRetrieving => 'Retrieving relevant sources';
+
+  @override
   String get mattersAiResponseFailed =>
       'AI ପ୍ରତିକ୍ରିୟା ପାଇବାରେ ବିଫଳ | ଦୟାକରି ପୁନର୍ବାର ଚେଷ୍ଟା କରନ୍ତୁ |';
 
@@ -15061,6 +15428,9 @@ class AppLocalizationsOr extends AppLocalizations {
 
   @override
   String get mattersAnalyzing => 'ବିଶ୍ଳେଷଣ…';
+
+  @override
+  String get mattersAnswered => 'Answered';
 
   @override
   String mattersAnsweredProgress(String answered, String total) {
@@ -15404,6 +15774,17 @@ class AppLocalizationsOr extends AppLocalizations {
 
   @override
   String get mattersCreatingMatterEllipsis => 'ବସ୍ତୁ ସୃଷ୍ଟି…';
+
+  @override
+  String mattersCreditsUsed(num count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '# credits used',
+      one: '# credit used',
+    );
+    return '$_temp0';
+  }
 
   @override
   String get mattersCriticalRisk => 'ଗୁରୁତର ବିପଦ |';
@@ -15839,6 +16220,10 @@ class AppLocalizationsOr extends AppLocalizations {
   @override
   String get mattersGrantAccessToTeamMembersWithReadonlyOrWritePermiss =>
       'କେବଳ ପଠନୀୟ କିମ୍ବା ଲେଖିବା ଅନୁମତି ସହିତ ଦଳ ସଦସ୍ୟଙ୍କୁ ପ୍ରବେଶ ଅନୁମତି ଦିଅନ୍ତୁ |';
+
+  @override
+  String get mattersGuidanceResearchTypicalTime =>
+      'AI guidance only — usually under 15 seconds';
 
   @override
   String get mattersHiddenFromPortalClients =>
@@ -16474,6 +16859,9 @@ class AppLocalizationsOr extends AppLocalizations {
   String mattersReasoningStep(String step, String tool) {
     return 'ପଦକ୍ଷେପ $step: $tool';
   }
+
+  @override
+  String get mattersRecentActivity => 'Recent activity';
 
   @override
   String get mattersRecommendedNextSteps =>
@@ -17201,6 +17589,9 @@ class AppLocalizationsOr extends AppLocalizations {
   String get portalConsentawarePortal => 'ସମ୍ମତି-ସଚେତନ ପୋର୍ଟାଲ୍:';
 
   @override
+  String get portalContinueToPortal => 'Continue to portal';
+
+  @override
   String get portalCurrentStageAndStatusForYourMatters =>
       'ତୁମର ବିଷୟ ପାଇଁ ସାମ୍ପ୍ରତିକ ପର୍ଯ୍ୟାୟ ଏବଂ ସ୍ଥିତି |';
 
@@ -17250,6 +17641,18 @@ class AppLocalizationsOr extends AppLocalizations {
 
   @override
   String get portalInstructions => 'ନିର୍ଦ୍ଦେଶାବଳୀ';
+
+  @override
+  String get portalInviteLinkRequiredDescription =>
+      'Open the invitation link shared by your law firm to access the client portal.';
+
+  @override
+  String get portalInviteLinkRequiredHelp =>
+      'Ask your law firm for a new invitation if your link is missing or has expired.';
+
+  @override
+  String get portalInviteLinkSignInDescription =>
+      'Continue using your invitation to access the information shared with you.';
 
   @override
   String get portalInvoices => 'ଇନଭଏସ୍ |';
@@ -17608,6 +18011,9 @@ class AppLocalizationsOr extends AppLocalizations {
   String get settingsCancel => 'ବାତିଲ୍ କରନ୍ତୁ |';
 
   @override
+  String get settingsChangeLogo => 'Change logo';
+
+  @override
   String get settingsChangeRegion => 'ଅଞ୍ଚଳ ପରିବର୍ତ୍ତନ କରନ୍ତୁ |';
 
   @override
@@ -17927,6 +18333,13 @@ class AppLocalizationsOr extends AppLocalizations {
       'ଦୃ data ତଥ୍ୟ ଏବଂ ତାଲିମ ସମ୍ମତି |';
 
   @override
+  String get settingsFirmLogo => 'Firm logo';
+
+  @override
+  String get settingsFirmLogoDescription =>
+      'Add the logo used for your firm branding.';
+
+  @override
   String get settingsFirmName => 'ଫାର୍ମ ନାମ *';
 
   @override
@@ -18037,6 +18450,25 @@ class AppLocalizationsOr extends AppLocalizations {
   String get settingsLocationLabel => 'ଅବସ୍ଥାନ';
 
   @override
+  String get settingsLogoHint => 'Choose an image under 2 MB.';
+
+  @override
+  String get settingsLogoOnExports => 'Logo on exports';
+
+  @override
+  String get settingsLogoOnExportsDisabled => 'Disabled';
+
+  @override
+  String get settingsLogoOnExportsEnabled => 'Enabled';
+
+  @override
+  String get settingsLogoUploadError =>
+      'The logo could not be uploaded. Please try again.';
+
+  @override
+  String get settingsLogoUploading => 'Uploading logo…';
+
+  @override
   String get settingsManageAiConsent => 'AI ସମ୍ମତି ପରିଚାଳନା କରନ୍ତୁ |';
 
   @override
@@ -18116,7 +18548,7 @@ class AppLocalizationsOr extends AppLocalizations {
 
   @override
   String get settingsNoTrainingOnFirmDataAiOptout =>
-      'ଦୃ firm ତଥ୍ୟ ଉପରେ କ training ଣସି ତାଲିମ ନାହିଁ (AI ଅପ୍ଟ-ଆଉଟ୍)';
+      'ଦୃ firm ତଥ୍ୟ ଉପରେ କୌଣସି ତାଲିମ ନାହିଁ (AI ଅପ୍ଟ-ଆଉଟ୍)';
 
   @override
   String get settingsNoTrainingWithoutConsent => 'ସମ୍ମତି ବିନା କିଛି ପ୍ରଶିକ୍ଷଣ |';
@@ -18330,6 +18762,9 @@ class AppLocalizationsOr extends AppLocalizations {
   String get settingsRegionUpdated => 'ଅଞ୍ଚଳ ଅଦ୍ୟତନ ହୋଇଛି |';
 
   @override
+  String get settingsRemoveLogo => 'Remove logo';
+
+  @override
   String get settingsRequestExport => 'ରପ୍ତାନି ପାଇଁ ଅନୁରୋଧ |';
 
   @override
@@ -18403,6 +18838,13 @@ class AppLocalizationsOr extends AppLocalizations {
   @override
   String get settingsSettingsDescription =>
       'ଆପଣଙ୍କର ପ୍ରୋଫାଇଲ୍, AI ବ୍ୟବହାର, ଗୋପନୀୟତା, ଏବଂ ପସନ୍ଦଗୁଡିକ ପରିଚାଳନା କରନ୍ତୁ |';
+
+  @override
+  String get settingsShowLogoOnExports => 'Show logo on exports';
+
+  @override
+  String get settingsShowLogoOnExportsDescription =>
+      'Include the firm logo on supported exported documents.';
 
   @override
   String get settingsSingleSignonSaml => 'ଏକକ ସାଇନ୍-ଅନ୍ (SAML)';
@@ -18487,6 +18929,9 @@ class AppLocalizationsOr extends AppLocalizations {
   @override
   String get settingsUpdateYourFirmInformationAndBranding =>
       'ଆପଣଙ୍କର ଦୃ firm ସୂଚନା ଏବଂ ବ୍ରାଣ୍ଡିଂ ଅପଡେଟ୍ କରନ୍ତୁ |';
+
+  @override
+  String get settingsUploadLogo => 'Upload logo';
 
   @override
   String get settingsUsageLedger => 'ବ୍ୟବହାର ଲିଜର୍ |';
@@ -18709,7 +19154,7 @@ class AppLocalizationsOr extends AppLocalizations {
 
   @override
   String get tutorialsBillingInvoicesBody =>
-      'ସ୍ଥିତି ଅନୁଯାୟୀ ଫିଲ୍ଟର୍ କରନ୍ତୁ, ସଂଖ୍ୟା ଅନୁଯାୟୀ ସନ୍ଧାନ କରନ୍ତୁ, ଏବଂ LEDES ପଠାଇବା, ରେକର୍ଡ କରିବା କିମ୍ବା ରପ୍ତାନି କରିବାକୁ ଯେକ any ଣସି ଇନଭଏସ୍ ଖୋଲନ୍ତୁ |';
+      'ସ୍ଥିତି ଅନୁଯାୟୀ ଫିଲ୍ଟର୍ କରନ୍ତୁ, ସଂଖ୍ୟା ଅନୁଯାୟୀ ସନ୍ଧାନ କରନ୍ତୁ, ଏବଂ LEDES ପଠାଇବା, ରେକର୍ଡ କରିବା କିମ୍ବା ରପ୍ତାନି କରିବାକୁ ଯେକୌଣସି ଇନଭଏସ୍ ଖୋଲନ୍ତୁ |';
 
   @override
   String get tutorialsBillingInvoicesTitle => 'ଇନଭଏସ୍ ତାଲିକା |';
@@ -18912,7 +19357,7 @@ class AppLocalizationsOr extends AppLocalizations {
 
   @override
   String get tutorialsConsumerDocumentDraftingHelpB3 =>
-      'ଏକ ମାମଲାରେ ଡ୍ରାଫ୍ଟ ସଞ୍ଚୟ କରନ୍ତୁ ଯାହା ଦ୍ your ାରା ଆପଣଙ୍କର ଓକିଲ ସେଗୁଡିକ ସଂପାଦନ କରିପାରିବେ |';
+      'ଏକ ମାମଲାରେ ଡ୍ରାଫ୍ଟ ସଞ୍ଚୟ କରନ୍ତୁ ଯାହା ଦ୍ୱାରା ଆପଣଙ୍କର ଓକିଲ ସେଗୁଡିକ ସଂପାଦନ କରିପାରିବେ |';
 
   @override
   String get tutorialsConsumerDocumentDraftingHelpTitle =>
@@ -19117,7 +19562,7 @@ class AppLocalizationsOr extends AppLocalizations {
 
   @override
   String get tutorialsConsumerReportsListBody =>
-      'ଆପଣଙ୍କର ସମସ୍ତ ମାମଲାରେ AI ଇସୁ-ଯାଞ୍ଚ ଏବଂ ବିଶ୍ଳେଷଣ ରିପୋର୍ଟଗୁଡିକ - ଜଣେ ଓକିଲଙ୍କ ସହ ପ read ିବାକୁ କିମ୍ବା ଅଂଶୀଦାର କରିବାକୁ ଯେକ any ଣସି ଖୋଲନ୍ତୁ |';
+      'ଆପଣଙ୍କର ସମସ୍ତ ମାମଲାରେ AI ଇସୁ-ଯାଞ୍ଚ ଏବଂ ବିଶ୍ଳେଷଣ ରିପୋର୍ଟଗୁଡିକ - ଜଣେ ଓକିଲଙ୍କ ସହ ପ read ିବାକୁ କିମ୍ବା ଅଂଶୀଦାର କରିବାକୁ ଯେକୌଣସି ଖୋଲନ୍ତୁ |';
 
   @override
   String get tutorialsConsumerReportsListTitle => 'ତୁମର ରିପୋର୍ଟଗୁଡିକ';
@@ -19215,7 +19660,7 @@ class AppLocalizationsOr extends AppLocalizations {
 
   @override
   String get tutorialsConsumerSettingsHelpB2 =>
-      'ସମ୍ପ୍ରତି ଯୋଗାଯୋଗ ବିବରଣୀ ରଖନ୍ତୁ ଯାହା ଦ୍ your ାରା ଆପଣଙ୍କର ଓକିଲ ଆପଣଙ୍କ ପାଖରେ ପହଞ୍ଚି ପାରିବେ |';
+      'ସମ୍ପ୍ରତି ଯୋଗାଯୋଗ ବିବରଣୀ ରଖନ୍ତୁ ଯାହା ଦ୍ୱାରା ଆପଣଙ୍କର ଓକିଲ ଆପଣଙ୍କ ପାଖରେ ପହଞ୍ଚି ପାରିବେ |';
 
   @override
   String get tutorialsConsumerSettingsHelpB3 =>
@@ -19570,7 +20015,7 @@ class AppLocalizationsOr extends AppLocalizations {
 
   @override
   String get tutorialsHomeActionsTitle =>
-      'ଯେକ any ଣସି କାର୍ଯ୍ୟ ପ୍ରବାହ ଆରମ୍ଭ କରନ୍ତୁ |';
+      'ଯେକୌଣସି କାର୍ଯ୍ୟ ପ୍ରବାହ ଆରମ୍ଭ କରନ୍ତୁ |';
 
   @override
   String get tutorialsHomeHeaderBody =>

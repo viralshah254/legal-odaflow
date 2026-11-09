@@ -91,6 +91,14 @@
     "proceduralRouteDetail": "ਸਿਫਾਰਸ਼ੀ {recommended} — {selected} ਦੀ ਵਰਤੋਂ ਕਰਕੇ",
     "governingSections": "ਗਵਰਨਿੰਗ ਸੈਕਸ਼ਨ",
     "researchAuthorities": "{count} ਅਧਿਕਾਰੀਆਂ ਨੇ ਮੁੜ ਪ੍ਰਾਪਤ ਕੀਤਾ{deep} · ਵਿਸ਼ਵਾਸ {confidence}",
-    "deepSearchSuffix": "(ਡੂੰਘੀ ਖੋਜ)"
+    "deepSearchSuffix": "(ਡੂੰਘੀ ਖੋਜ)",
+    "lawyerReady": "Ready for lawyer review",
+    "readyForLawyerReview": "Ready for lawyer review",
+    "canCertifyShort": "Eligible for review sign-off",
+    "passageSupportedShort": "passages supported",
+    "factCoverage": "Fact coverage",
+    "missingDefenceFacts": "Defence facts to confirm",
+    "autoAppliedFixes": "Applied corrections",
+    "timelineWarnings": "Timeline checks to review"
   }
 }

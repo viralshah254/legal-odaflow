@@ -84,5 +84,9 @@
   "uploaded": "अपलोड केले",
   "sign_in_description": "तुमच्या लॉ फर्म फाइलवर असलेल्या ईमेल पत्त्यासह साइन इन करा.",
   "signing_in": "साइन इन करत आहे...",
-  "unable_to_sign_in": "साइन इन करण्यात अक्षम. तुमचा ईमेल तपासा आणि पुन्हा प्रयत्न करा."
+  "unable_to_sign_in": "साइन इन करण्यात अक्षम. तुमचा ईमेल तपासा आणि पुन्हा प्रयत्न करा.",
+  "invite_link_required_description": "Open the invitation link shared by your law firm to access the client portal.",
+  "invite_link_required_help": "Ask your law firm for a new invitation if your link is missing or has expired.",
+  "invite_link_sign_in_description": "Continue using your invitation to access the information shared with you.",
+  "continue_to_portal": "Continue to portal"
 }

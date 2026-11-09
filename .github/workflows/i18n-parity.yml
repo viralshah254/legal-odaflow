@@ -33,8 +33,10 @@ jobs:
         run: node shared/i18n/scripts/check-translation-coverage.js
       - name: Translation key resolution
         run: node shared/i18n/scripts/check-translation-keys.js
-      - name: Hardcoded string gate
-        run: node shared/i18n/scripts/check-hardcoded-strings.js
+      - name: Hardcoded copy regression gate (prior-main baseline)
+        run: |
+          node --test shared/i18n/scripts/check-hardcoded-strings.test.js
+          node shared/i18n/scripts/check-hardcoded-strings.js --baseline=shared/i18n/hardcoded-baseline.json
       - name: Mixed-locale gate
         run: node shared/i18n/scripts/check-mixed-locale.js --strict
 

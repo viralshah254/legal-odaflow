@@ -368,5 +368,7 @@
   "microFlowFactsHelper": "നിങ്ങളുടെ സ്വന്തം വാക്കുകളിൽ എഴുതാം. നിങ്ങൾ നൽകുന്ന കൂടുതൽ പ്രസക്തമായ വിശദാംശങ്ങൾ, വിശകലനം കൂടുതൽ ഉപയോഗപ്രദമാകും.",
   "checkMySituation": "എൻ്റെ അവസ്ഥ പരിശോധിക്കുക",
   "enterAtLeastChars": "കുറഞ്ഞത് {count} പ്രതീകങ്ങളെങ്കിലും നൽകുക",
-  "charCount": "{current} / {max} പ്രതീകങ്ങൾ"
+  "charCount": "{current} / {max} പ്രതീകങ്ങൾ",
+  "detectedCountryRegionChange": "Detected {country} · {region}. Change this if the issue belongs elsewhere.",
+  "clientNameCannotBeSelf": "Enter the client name, or choose to act for yourself."
 }

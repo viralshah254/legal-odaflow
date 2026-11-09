@@ -91,6 +91,14 @@
     "proceduralRouteDetail": "{recommended} பரிந்துரைக்கப்படுகிறது — {selected} ஐப் பயன்படுத்துகிறது",
     "governingSections": "ஆளும் பிரிவுகள்",
     "researchAuthorities": "{count} அதிகாரிகள் மீட்டெடுக்கப்பட்டனர்{deep} · நம்பிக்கை {confidence}",
-    "deepSearchSuffix": "(ஆழமான தேடல்)"
+    "deepSearchSuffix": "(ஆழமான தேடல்)",
+    "lawyerReady": "Ready for lawyer review",
+    "readyForLawyerReview": "Ready for lawyer review",
+    "canCertifyShort": "Eligible for review sign-off",
+    "passageSupportedShort": "passages supported",
+    "factCoverage": "Fact coverage",
+    "missingDefenceFacts": "Defence facts to confirm",
+    "autoAppliedFixes": "Applied corrections",
+    "timelineWarnings": "Timeline checks to review"
   }
 }

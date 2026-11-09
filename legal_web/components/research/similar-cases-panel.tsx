@@ -1,5 +1,7 @@
 "use client"
 
+
+import { useTranslations } from "next-intl"
 import { useEffect, useState } from "react"
 import { ExternalLink, ChevronDown, Scale, Copy, CheckCircle2, AlertTriangle, ShieldCheck } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
@@ -83,6 +85,7 @@ function CopyCitation({ text }: { text: string }) {
 // ── Single case card ────────────────────────────────────────────────────────
 
 function CaseCard({ c, index }: { c: SimilarCase; index: number }) {
+  const tRelease = useTranslations("common.release")
   const sourceName = c.court ?? (c.sourceUrl ? "View judgment" : null)
 
   return (
@@ -149,12 +152,12 @@ function CaseCard({ c, index }: { c: SimilarCase; index: number }) {
 
         {c.keyHolding && (
           <div className="rounded-md border bg-muted/20 p-2.5 text-xs">
-            <p className="mb-1 font-semibold">Holding passage</p>
+            <p className="mb-1 font-semibold">{tRelease("holdingPassage")}</p>
             <p className="whitespace-pre-wrap leading-relaxed">{c.keyHolding}</p>
           </div>
         )}
         <div className="text-xs leading-relaxed">
-          <span className="font-semibold">Outcome: </span>
+          <span className="font-semibold">{tRelease("outcome")}</span>
           {c.outcome || "Not established by the retrieved material. Open the judgment to confirm."}
           {c.proceduralStage && <span className="text-muted-foreground"> · {c.proceduralStage.replaceAll("_", " ").toLowerCase()}</span>}
         </div>

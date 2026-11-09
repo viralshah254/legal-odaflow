@@ -91,6 +91,14 @@
     "proceduralRouteDetail": "Recommended {recommended} — using {selected}",
     "governingSections": "Governing sections",
     "researchAuthorities": "{count} authorities retrieved{deep} · confidence {confidence}",
-    "deepSearchSuffix": " (deep search)"
+    "deepSearchSuffix": " (deep search)",
+    "lawyerReady": "Ready for lawyer review",
+    "readyForLawyerReview": "Ready for lawyer review",
+    "canCertifyShort": "Eligible for review sign-off",
+    "passageSupportedShort": "passages supported",
+    "factCoverage": "Fact coverage",
+    "missingDefenceFacts": "Defence facts to confirm",
+    "autoAppliedFixes": "Applied corrections",
+    "timelineWarnings": "Timeline checks to review"
   }
 }

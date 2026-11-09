@@ -299,5 +299,10 @@
   "empty_messages_description": "এই গোচৰৰ বিষয়ে অধিবক্তাৰ বাৰ্তা আৰু সমৰ্থন ইয়াত দেখা যাব।",
   "empty_payments_description": "প্ৰতিবেদন, উকীল পৰ্যালোচনা, আৰু চাবস্ক্ৰিপচনৰ বাবে পেমেণ্ট ইয়াত দেখা যাব।",
   "applies_to_account_changes_future": "আপোনাৰ একাউণ্টত প্ৰযোজ্য। পৰিৱৰ্তনে ভৱিষ্যতৰ প্ৰক্ৰিয়াকৰণত প্ৰভাৱ পেলায়।",
-  "control_case_data_for_ai_improvement": "আপোনাৰ কেছ ডাটা AI উন্নতিৰ বাবে কেনেকৈ ব্যৱহাৰ কৰিব পাৰি নিয়ন্ত্ৰণ কৰক। অবিকল্পিত বন্ধ।"
+  "control_case_data_for_ai_improvement": "আপোনাৰ কেছ ডাটা AI উন্নতিৰ বাবে কেনেকৈ ব্যৱহাৰ কৰিব পাৰি নিয়ন্ত্ৰণ কৰক। অবিকল্পিত বন্ধ।",
+  "auto_renewing": "Renews automatically",
+  "subscription_auto_renew_hint": "Your subscription renews until cancelled. Manage renewal and cancellation through your billing provider.",
+  "manage_plan": "Manage plan",
+  "cancel_subscription": "Cancel subscription",
+  "your_current_plan": "Your current plan"
 }

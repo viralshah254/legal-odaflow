@@ -299,5 +299,10 @@
   "empty_messages_description": "Messages from lawyers and support about this case will appear here.",
   "empty_payments_description": "Payments for reports, lawyer review, and subscriptions will appear here.",
   "applies_to_account_changes_future": "Applies to your account. Changes affect future processing.",
-  "control_case_data_for_ai_improvement": "Control how your case data may be used for AI improvement. Default is off."
+  "control_case_data_for_ai_improvement": "Control how your case data may be used for AI improvement. Default is off.",
+  "auto_renewing": "Renews automatically",
+  "subscription_auto_renew_hint": "Your subscription renews until cancelled. Manage renewal and cancellation through your billing provider.",
+  "manage_plan": "Manage plan",
+  "cancel_subscription": "Cancel subscription",
+  "your_current_plan": "Your current plan"
 }

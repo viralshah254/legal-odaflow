@@ -101,6 +101,8 @@
     "publishedToClientPortal": "क्लाइंट पोर्टल पर प्रकाशित",
     "taskReopened": "कार्य पुनः खोला गया",
     "taskCompleted": "कार्य पूरा हो गया",
-    "pleaseTryAgain": "कृपया पुन: प्रयास करें।"
+    "pleaseTryAgain": "कृपया पुन: प्रयास करें।",
+    "docketSynced": "Court docket synced",
+    "docketSyncFailed": "Court docket could not be synced"
   }
 }

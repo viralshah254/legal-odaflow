@@ -84,5 +84,9 @@
   "uploaded": "ಅಪ್‌ಲೋಡ್ ಮಾಡಲಾಗಿದೆ",
   "sign_in_description": "ನಿಮ್ಮ ಕಾನೂನು ಸಂಸ್ಥೆಯು ಫೈಲ್‌ನಲ್ಲಿರುವ ಇಮೇಲ್ ವಿಳಾಸದೊಂದಿಗೆ ಸೈನ್ ಇನ್ ಮಾಡಿ.",
   "signing_in": "ಸೈನ್ ಇನ್ ಮಾಡಲಾಗುತ್ತಿದೆ...",
-  "unable_to_sign_in": "ಸೈನ್ ಇನ್ ಮಾಡಲು ಸಾಧ್ಯವಾಗುತ್ತಿಲ್ಲ. ನಿಮ್ಮ ಇಮೇಲ್ ಪರಿಶೀಲಿಸಿ ಹಾಗೂ ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ."
+  "unable_to_sign_in": "ಸೈನ್ ಇನ್ ಮಾಡಲು ಸಾಧ್ಯವಾಗುತ್ತಿಲ್ಲ. ನಿಮ್ಮ ಇಮೇಲ್ ಪರಿಶೀಲಿಸಿ ಹಾಗೂ ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.",
+  "invite_link_required_description": "Open the invitation link shared by your law firm to access the client portal.",
+  "invite_link_required_help": "Ask your law firm for a new invitation if your link is missing or has expired.",
+  "invite_link_sign_in_description": "Continue using your invitation to access the information shared with you.",
+  "continue_to_portal": "Continue to portal"
 }

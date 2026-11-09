@@ -661,5 +661,14 @@
   "checkingConflict": "വൈരുദ്ധ്യങ്ങൾ പരിശോധിക്കുന്നു...",
   "runConflictCheck": "വൈരുദ്ധ്യ പരിശോധന നടത്തുക",
   "researchPromptTitle": "ഗവേഷണ ചോദ്യം",
-  "premiumModelResearchHint": "പ്രീമിയം മോഡലുകൾക്ക് കുറച്ച് സമയമെടുത്തേക്കാം."
+  "premiumModelResearchHint": "പ്രീമിയം മോഡലുകൾക്ക് കുറച്ച് സമയമെടുത്തേക്കാം.",
+  "guidanceResearchTypicalTime": "AI guidance only — usually under 15 seconds",
+  "answered": "Answered",
+  "ai_progress_reading": "Reading the matter context",
+  "ai_progress_retrieving": "Retrieving relevant sources",
+  "ai_progress_analysing": "Analysing the available information",
+  "ai_progress_generating": "Preparing the response",
+  "credits_used": "{count, plural, one {# credit used} other {# credits used}}",
+  "recent_activity": "Recent activity",
+  "matter_type": "Matter type"
 }

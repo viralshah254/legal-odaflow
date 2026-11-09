@@ -299,5 +299,10 @@
   "empty_messages_description": "ଓକିଲଙ୍କ ବାର୍ତ୍ତା ଏବଂ ଏହି ମାମଲା ବିଷୟରେ ସମର୍ଥନ ଏଠାରେ ଦେଖାଯିବ |",
   "empty_payments_description": "ରିପୋର୍ଟ, ଓକିଲ ସମୀକ୍ଷା ଏବଂ ସଦସ୍ୟତା ପାଇଁ ଦେୟ ଏଠାରେ ଦେଖାଯିବ |",
   "applies_to_account_changes_future": "ଆପଣଙ୍କ ଖାତାରେ ପ୍ରଯୁଜ୍ୟ | ପରିବର୍ତ୍ତନ ଭବିଷ୍ୟତ ପ୍ରକ୍ରିୟାକରଣକୁ ପ୍ରଭାବିତ କରେ |",
-  "control_case_data_for_ai_improvement": "AI ଉନ୍ନତି ପାଇଁ ଆପଣଙ୍କର କେସ୍ ଡାଟା କିପରି ବ୍ୟବହାର କରାଯାଇପାରିବ ନିୟନ୍ତ୍ରଣ କରନ୍ତୁ | ଡିଫଲ୍ଟ ବନ୍ଦ ଅଛି |"
+  "control_case_data_for_ai_improvement": "AI ଉନ୍ନତି ପାଇଁ ଆପଣଙ୍କର କେସ୍ ଡାଟା କିପରି ବ୍ୟବହାର କରାଯାଇପାରିବ ନିୟନ୍ତ୍ରଣ କରନ୍ତୁ | ଡିଫଲ୍ଟ ବନ୍ଦ ଅଛି |",
+  "auto_renewing": "Renews automatically",
+  "subscription_auto_renew_hint": "Your subscription renews until cancelled. Manage renewal and cancellation through your billing provider.",
+  "manage_plan": "Manage plan",
+  "cancel_subscription": "Cancel subscription",
+  "your_current_plan": "Your current plan"
 }

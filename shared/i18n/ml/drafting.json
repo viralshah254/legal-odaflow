@@ -91,6 +91,14 @@
     "proceduralRouteDetail": "ശുപാർശ ചെയ്യുന്നത് {recommended} — {selected} ഉപയോഗിക്കുന്നു",
     "governingSections": "ഭരണ വിഭാഗങ്ങൾ",
     "researchAuthorities": "{count} അധികാരികൾ വീണ്ടെടുത്തു{deep} · ആത്മവിശ്വാസം {confidence}",
-    "deepSearchSuffix": "(ആഴത്തിലുള്ള തിരയൽ)"
+    "deepSearchSuffix": "(ആഴത്തിലുള്ള തിരയൽ)",
+    "lawyerReady": "Ready for lawyer review",
+    "readyForLawyerReview": "Ready for lawyer review",
+    "canCertifyShort": "Eligible for review sign-off",
+    "passageSupportedShort": "passages supported",
+    "factCoverage": "Fact coverage",
+    "missingDefenceFacts": "Defence facts to confirm",
+    "autoAppliedFixes": "Applied corrections",
+    "timelineWarnings": "Timeline checks to review"
   }
 }

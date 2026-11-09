@@ -303,5 +303,18 @@
   "deleteAccountSubmitting": "মুছে ফেলা হচ্ছে...",
   "deleteAccountSubmit": "আমার অ্যাকাউন্ট মুছে দিন",
   "privacyRightToErasure": "মুছে ফেলার অধিকার",
-  "privacyRightToErasureBody": "আপনার অ্যাকাউন্ট এবং ব্যক্তিগত ডেটা স্থায়ীভাবে মুছে ফেলার অনুরোধ করুন।"
+  "privacyRightToErasureBody": "আপনার অ্যাকাউন্ট এবং ব্যক্তিগত ডেটা স্থায়ীভাবে মুছে ফেলার অনুরোধ করুন।",
+  "logo_on_exports": "Logo on exports",
+  "logo_on_exports_enabled": "Enabled",
+  "logo_on_exports_disabled": "Disabled",
+  "logo_upload_error": "The logo could not be uploaded. Please try again.",
+  "firm_logo": "Firm logo",
+  "firm_logo_description": "Add the logo used for your firm branding.",
+  "logo_uploading": "Uploading logo…",
+  "change_logo": "Change logo",
+  "upload_logo": "Upload logo",
+  "remove_logo": "Remove logo",
+  "logo_hint": "Choose an image under 2 MB.",
+  "show_logo_on_exports": "Show logo on exports",
+  "show_logo_on_exports_description": "Include the firm logo on supported exported documents."
 }

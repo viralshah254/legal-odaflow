@@ -91,6 +91,14 @@
     "proceduralRouteDetail": "{recommended} ସୁପାରିଶ କରାଯାଇଛି - {selected} ବ୍ୟବହାର କରି |",
     "governingSections": "ଶାସନ ବିଭାଗ",
     "researchAuthorities": "{count} କର୍ତ୍ତୃପକ୍ଷ ପୁନରୁଦ୍ଧାର {deep} · ଆତ୍ମବିଶ୍ୱାସ {confidence}",
-    "deepSearchSuffix": "(ଗଭୀର ସନ୍ଧାନ)"
+    "deepSearchSuffix": "(ଗଭୀର ସନ୍ଧାନ)",
+    "lawyerReady": "Ready for lawyer review",
+    "readyForLawyerReview": "Ready for lawyer review",
+    "canCertifyShort": "Eligible for review sign-off",
+    "passageSupportedShort": "passages supported",
+    "factCoverage": "Fact coverage",
+    "missingDefenceFacts": "Defence facts to confirm",
+    "autoAppliedFixes": "Applied corrections",
+    "timelineWarnings": "Timeline checks to review"
   }
 }

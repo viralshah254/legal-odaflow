@@ -155,7 +155,7 @@ class _SectionFinderScreenState extends ConsumerState<SectionFinderScreen> {
             child: DropdownButtonFormField<String>(
               initialValue: _countryCode,
               key: ValueKey(_countryCode),
-              decoration: const InputDecoration(labelText: 'Legal country'),
+              decoration: InputDecoration(labelText: l10n.commonReleaseLegalCountry),
               items: {..._supported, if (_countryCode != null) _countryCode!}.map((code) => DropdownMenuItem(value: code, child: Text(AppConfig.countryNames[code] ?? code))).toList(),
               onChanged: widget.matterId != null || _loading ? null : (country) {
                 setState(() { _countryCode = country; _scopeReady = _supported.contains(country); _result = null; _popularQueries = []; });

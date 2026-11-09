@@ -29,7 +29,7 @@ Future<bool> requireAiInferenceConsent(BuildContext context) async {
     if (policyVersion.isEmpty || providers.isEmpty) return false;
   } catch (_) {
     if (context.mounted) {
-      ScaffoldMessenger.maybeOf(context)?.showSnackBar(const SnackBar(content: Text('AI privacy information is unavailable. Please retry before sending your data.')));
+      ScaffoldMessenger.maybeOf(context)?.showSnackBar(SnackBar(content: Text(AppLocalizations.of(context).aiConsentProcessingUnavailable)));
     }
     return false;
   }
@@ -110,7 +110,7 @@ class AiInferenceConsentDialog extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: [
             const SizedBox(height: 8),
-            Text('To perform the AI work you request, Umbrella sends your questions, instructions, authorized matter facts, document excerpts, research and draft text to the recipients below. Audio is sent when you use transcription. Inference permission does not grant permission to train models.', style: bodyStyle),
+            Text(l10n.aiConsentProcessingBody, style: bodyStyle),
             const SizedBox(height: 10),
             Container(
               padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),

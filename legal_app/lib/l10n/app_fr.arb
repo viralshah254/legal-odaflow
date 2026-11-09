@@ -189,6 +189,8 @@
   "aiConsentDialogProviders": "Fournisseurs : OpenAI, DeepSeek et Deepgram (transcription).",
   "aiConsentDialogPurpose": "Vous pouvez retirer votre consentement à tout moment dans les paramètres de confidentialité et de sécurité. Sans consentement, les fonctionnalités d’IA ne seront pas disponibles.",
   "aiConsentDialogTitle": "Consentement au traitement de l'IA",
+  "aiConsentProcessingBody": "To perform the AI work you request, Umbrella sends your questions, instructions, authorized matter facts, document excerpts, research and draft text to the recipients below. Audio is sent when you use transcription. Inference permission does not grant permission to train models.",
+  "aiConsentProcessingUnavailable": "AI privacy information is unavailable. Please retry before sending your data.",
   "aiConsentSettingsDescription": "Consentement réinitialisé. Il vous sera demandé à nouveau avant la prochaine fonctionnalité IA.",
   "aiConsentSettingsTitle": "Consentement à l'inférence IA",
   "auth254712345678": "+254712345678",
@@ -215,6 +217,8 @@
   "authCheckDeviceLocation": "Vérifier l'emplacement de l'appareil",
   "authCheckingLocation": "Vérification de l'emplacement...",
   "authChooseWorkspace": "Choisissez l'espace de travail qui vous convient aujourd'hui.",
+  "authClientPerk1": "Understand your legal issue",
+  "authClientPerk2": "Keep your documents and next steps together",
   "authCompleteProfileDescription": "Quelques détails pour aménager votre espace de travail juridique. Votre email est déjà vérifié.",
   "authCompleteSignUp": "Inscription complète",
   "authCompletingSignIn": "Finalisation de la connexion…",
@@ -293,6 +297,8 @@
   "authLawFirm": "Cabinet d'avocats",
   "authLawyerIRunALawFirm": "Avocat — Je dirige un cabinet d'avocats",
   "authLawyerOption": "Avocat — Je dirige un cabinet d'avocats",
+  "authLawyerPerk1": "Organize clients, matters and documents",
+  "authLawyerPerk2": "Research and draft with matter context",
   "authLegalIntelligencenforEveryone": "L'intelligence juridique,\\npour tous.",
   "authLoading": "Chargement...",
   "authLocationCheckDescription": "Umbrella vérifie l'emplacement de votre appareil avant de vous inscrire afin que les conseils juridiques commencent dans la bonne juridiction.",
@@ -352,6 +358,9 @@
   "authPasswordTooWeak": "Le mot de passe est trop faible. Utilisez une phrase secrète plus longue et moins prévisible.",
   "authPasswordsDoNotMatch": "Les mots de passe ne correspondent pas",
   "authPasswordsDontMatch": "Les mots de passe ne correspondent pas",
+  "authPathSummaryLawFirm": "Law firm workspace",
+  "authPathSummaryLegalHelp": "Personal legal help",
+  "authPathSummarySoloLawyer": "Solo lawyer workspace",
   "authPhone": "Téléphone",
   "authPhoneE164": "Téléphone (E.164)",
   "authPhoneHint": "Incluez votre numéro de téléphone mobile – utilisé pour la récupération de compte et la mise en correspondance d’avocats.",
@@ -359,6 +368,7 @@
   "authPhoneTab": "Téléphone",
   "authPracticeNameOptional": "Nom du cabinet (facultatif)",
   "authPrivate": "Privé",
+  "authProspectPrefillHint": "Details from your link have been filled in. Review them before continuing.",
   "authRefInviteBanner": "Vous avez été invité par <strong>{name}</strong>. Obtenez 40 % de réduction sur votre premier mois en vous abonnant.",
   "@authRefInviteBanner": {
     "placeholders": {
@@ -388,6 +398,8 @@
   "authSignInWithFirebase": "Connectez-vous avec Firebase",
   "authSignOut": "se déconnecter",
   "authSignUp": "S'inscrire",
+  "authSignUpAccountDescription": "Set up your sign-in details to continue.",
+  "authSignUpAccountTitle": "Create your account",
   "authSignUpDescription": "Commencez avec Umbrella",
   "authSignUpTermsPrefix": "En créant un compte, vous acceptez nos",
   "authSignUpTitle": "Créez votre compte",
@@ -722,7 +734,7 @@
   "clientsActivityMeetingRecorded": "Réunion enregistrée",
   "clientsActivityProfileUpdated": "Profil client mis à jour",
   "clientsAddClient": "Ajouter un client",
-  "clientsAddContactPerson": "Add contact person",
+  "clientsAddContactPerson": "Ajouter une personne à contacter",
   "clientsAddFirstClient": "Ajoutez votre premier client",
   "clientsAddFirstClientDescription": "Ajoutez votre premier client pour commencer à gérer les relations.",
   "clientsAddNewClient": "Ajouter un nouveau client",
@@ -772,7 +784,7 @@
   },
   "clientsConflictCheckRequired": "Exécutez une vérification des conflits et résolvez tous les indicateurs avant de créer le client.",
   "clientsContactInformation": "Coordonnées",
-  "clientsContactNamePlaceholder": "Contact name",
+  "clientsContactNamePlaceholder": "Nom du contact",
   "clientsContactNumber": "Contacter {number}",
   "@clientsContactNumber": {
     "placeholders": {
@@ -783,7 +795,7 @@
   },
   "clientsContactPeople": "Contacter des personnes",
   "clientsContactPeopleDescription": "Directeurs, dirigeants et contacts autorisés pour ce client.",
-  "clientsContactPersonNumber": "Contact person {number}",
+  "clientsContactPersonNumber": "Personne à contacter {number}",
   "@clientsContactPersonNumber": {
     "placeholders": {
     "number": {
@@ -791,7 +803,7 @@
     }
     }
   },
-  "clientsContactRolePlaceholder": "Role or title",
+  "clientsContactRolePlaceholder": "Rôle ou titre",
   "clientsContacts": "Contacts",
   "clientsCopyInviteFailed": "Impossible de copier l'invitation au portail.",
   "clientsCouldNotLoadClients": "Impossible de charger les clients.",
@@ -800,7 +812,7 @@
   "clientsCountryCodePlaceholder": "Par exemple, KE",
   "clientsCreateClient": "Créer un client",
   "clientsCreateClientProfile": "Créer un nouveau profil client",
-  "clientsCreateMatter": "Create matter",
+  "clientsCreateMatter": "Créer de la matière",
   "clientsCreating": "Création…",
   "clientsCreatingClient": "Création...",
   "clientsDeadlineAndRisk": "Délai et risque",
@@ -976,7 +988,7 @@
     }
   },
   "clientsRemoveClientDocumentTitle": "Supprimer le document client ?",
-  "clientsRemoveContactPerson": "Remove contact person {number}",
+  "clientsRemoveContactPerson": "Supprimer la personne à contacter {number}",
   "@clientsRemoveContactPerson": {
     "placeholders": {
     "number": {
@@ -1006,7 +1018,7 @@
     }
   },
   "clientsRoleTitle": "Rôle ou titre",
-  "clientsSaveBasicAndCompleteLater": "Save basic details and complete later",
+  "clientsSaveBasicAndCompleteLater": "Enregistrez les détails de base et complétez plus tard",
   "clientsSaveChanges": "Enregistrer les modifications",
   "clientsSaving": "Économie…",
   "clientsSearchByNameOrEmail": "Rechercher par nom ou par email…",
@@ -1116,6 +1128,7 @@
   "commonAskCopilot": "Demandez à Copilot…",
   "commonAuthentication": "Authentification",
   "commonAuto": "Auto",
+  "commonAvailableOnProfessional": "Available on Professional",
   "commonBack": "Dos",
   "commonBackToIssueChecker": "Retour au vérificateur de problèmes",
   "commonBackToPricing": "Retour aux tarifs",
@@ -1262,6 +1275,14 @@
   "commonExtractFacts": "Extraire des faits",
   "commonFailedE": "Échec : $e",
   "commonFamilyMatrimonial": "Famille et mariage",
+  "commonFeatureRequiresProfessional": "{feature} requires a Professional plan.",
+  "@commonFeatureRequiresProfessional": {
+    "placeholders": {
+    "feature": {
+      "type": "String"
+    }
+    }
+  },
   "commonFile": "Déposer",
   "commonFindALawyer": "Trouver un avocat",
   "commonFindLegalHelp": "Trouver de l'aide juridique",
@@ -1296,6 +1317,7 @@
   "commonHtml": "HTML",
   "commonIfYouOptInYouMaySeparatelyEnable": "Si vous vous inscrivez, vous pouvez activer séparément :",
   "commonImmigration": "Immigration",
+  "commonImportMeeting": "Import meeting",
   "commonIncludeDocuments": "Inclure des documents",
   "commonIncludedUsage": "Utilisation incluse",
   "commonIndia": "Inde",
@@ -1410,6 +1432,7 @@
   "commonMeetingsFilterProcessing": "Traitement",
   "commonMeetingsFilterReady": "Prêt",
   "commonMeetingsFilterRecording": "Enregistrement",
+  "commonMeetingsLoadFailed": "Meetings could not be loaded. Please try again.",
   "commonMeetingsPageOf": "Page {page} de {totalPages}",
   "@commonMeetingsPageOf": {
     "placeholders": {
@@ -1552,6 +1575,7 @@
   "commonRecommendedPath": "Chemin recommandé",
   "commonRecordANewExpenseForTheFirm": "Enregistrer une nouvelle dépense pour l'entreprise",
   "commonRecordOrImportMeetingTranscripts": "Enregistrez ou importez des transcriptions de réunions pour les rechercher et les réviser.",
+  "commonRecordTranscript": "Record and transcribe",
   "commonRef": "Réf",
   "commonReferEarn": "Parrainez et gagnez",
   "commonReferEarn2": "Parrainez et gagnez",
@@ -1584,6 +1608,29 @@
   "commonRefresh": "Rafraîchir",
   "commonReject": "Rejeter",
   "commonRejectLead": "Rejeter le prospect",
+  "commonReleaseAccessibleFolders": "Folders with accessible documents",
+  "commonReleaseActualUsage": "Based on actual usage",
+  "commonReleaseAllMatterDocuments": "All authorized matter documents",
+  "commonReleaseEvidenceScope": "Evidence scope",
+  "commonReleaseFinalCharge": "Final charge",
+  "commonReleaseHoldingPassage": "Holding passage",
+  "commonReleaseLegalCountry": "Legal country",
+  "commonReleaseLoadingTasks": "Loading tasks…",
+  "commonReleaseMatterJurisdiction": "Jurisdiction follows this matter. Change it in matter settings.",
+  "commonReleaseNewTask": "New task",
+  "commonReleaseNoAccessibleFolders": "No accessible document folders.",
+  "commonReleaseNoTasks": "No tasks match this view.",
+  "commonReleaseOpenMatterTasks": "Open matter tasks",
+  "commonReleaseOutcome": "Outcome:",
+  "commonReleaseSectionFinder": "Section Finder",
+  "commonReleaseSelectFirmTasks": "Select a firm to view tasks.",
+  "commonReleaseSelectedDocuments": "Selected documents only",
+  "commonReleaseSelectedFolders": "Selected folders and their subfolders",
+  "commonReleaseShowCompleted": "Show completed",
+  "commonReleaseTasksDescription": "Your firm’s work, with the earliest deadlines first.",
+  "commonReleaseTasksLoadFailed": "Tasks could not be loaded. Please refresh and try again.",
+  "commonReleaseTasksTitle": "Tasks",
+  "commonReleaseUsageBased": "Charged by actual usage",
   "commonRemove": "Retirer",
   "commonRepresentationBeforeCourtsOrTribunals": "Représentation devant les cours ou tribunaux",
   "commonRequestConsultation": "Demander une consultation",
@@ -1721,8 +1768,20 @@
   "commonUnitedKingdom": "Royaume-Uni",
   "commonUnitedStates": "États-Unis",
   "commonUniversalDisclaimer": "Avis de non-responsabilité universel",
+  "commonUpgradeExistingPlanDescription": "Upgrade from {plan} to unlock {feature}.",
+  "@commonUpgradeExistingPlanDescription": {
+    "placeholders": {
+    "plan": {
+      "type": "String"
+    },
+    "feature": {
+      "type": "String"
+    }
+    }
+  },
   "commonUpgradeToPlusForAFullAiBudget": "Passez à Plus pour un budget IA complet",
   "commonUpgradeToProfessional": "Passer au Professionnel",
+  "commonUpgradeToUnlockOnProfessional": "Upgrade to Professional to unlock",
   "commonUpload": "Télécharger",
   "commonUploadADocumentTemplate": "Télécharger un modèle de document",
   "commonUploadALegalDocument": "Télécharger un document juridique",
@@ -1807,6 +1866,7 @@
   "consumerAppliesToAccountChangesFuture": "S'applique à votre compte. Les modifications affectent le traitement futur.",
   "consumerAttachDocumentsToACaseForOcrAndAiAnalysis": "Joignez des documents à un dossier pour une analyse OCR et IA.",
   "consumerAuto": "Auto",
+  "consumerAutoRenewing": "Renews automatically",
   "consumerAvailableModels": "Modèles disponibles",
   "consumerAwaitingDocumentsOrInfo": "En attente de documents ou d'informations",
   "consumerBackToDashboard": "Retour au tableau de bord",
@@ -1815,6 +1875,7 @@
   "consumerBuyCredits": "Acheter des crédits",
   "consumerBuyCredits2": "Acheter des crédits",
   "consumerCancel": "Annuler",
+  "consumerCancelSubscription": "Cancel subscription",
   "consumerCase": "Cas",
   "consumerCaseClosed": "Affaire classée",
   "consumerCaseDetails": "Détails du cas",
@@ -1958,6 +2019,7 @@
   "consumerLoading": "Chargement...",
   "consumerLoadingPlanUsage": "Plan de chargement et utilisation…",
   "consumerManageDataConsent": "Gérer le consentement aux données",
+  "consumerManagePlan": "Manage plan",
   "consumerMatterProgress": "Progrès de la matière",
   "consumerMatterResolved": "Problème résolu",
   "consumerMessages": "Messages",
@@ -2138,6 +2200,7 @@
   "consumerStartIssueCheck": "Lancer une vérification des problèmes",
   "consumerStarterPlan": "Plan de démarrage",
   "consumerSubscriptionActivated": "Abonnement activé !",
+  "consumerSubscriptionAutoRenewHint": "Your subscription renews until cancelled. Manage renewal and cancellation through your billing provider.",
   "consumerSubscriptionPlans": "Plans d'abonnement",
   "consumerSubscriptionsAreNotEnabled": "Les abonnements ne sont pas activés.",
   "consumerTopUp": "Recharge",
@@ -2181,6 +2244,7 @@
   "consumerWorking": "Traitement…",
   "consumerYourAccountInformation": "Informations sur votre compte",
   "consumerYourAigeneratedLegalPreviewsAndReports": "Vos aperçus et rapports juridiques générés par l'IA",
+  "consumerYourCurrentPlan": "Your current plan",
   "consumerYourLegalReports": "Vos rapports juridiques",
   "copilotAction": "Action:",
   "copilotAddStep": "Ajouter une étape…",
@@ -2433,6 +2497,25 @@
   "dashboardAiCosts": "Coûts de l'IA",
   "dashboardAiLogs": "Journaux d'IA",
   "dashboardAiProfitability": "Rentabilité de l'IA",
+  "dashboardAiReviewAuthor": "Author",
+  "dashboardAiReviewEmpty": "No AI outputs are waiting for lawyer review.",
+  "dashboardAiReviewJurisdiction": "Jurisdiction",
+  "dashboardAiReviewLoadError": "Failed to load review queue",
+  "dashboardAiReviewMarkReviewed": "Mark reviewed",
+  "dashboardAiReviewMatter": "Matter",
+  "dashboardAiReviewOpenWorkspace": "Open workspace",
+  "dashboardAiReviewPreview": "Preview",
+  "dashboardAiReviewPreviewTruncated": "Open the workspace for the full output.",
+  "dashboardAiReviewQueueDescription": "Review, open the source workspace, or mark as reviewed when signed off.",
+  "dashboardAiReviewQueueTitle": "{count, plural, one {# item awaiting review} other {# items awaiting review}}",
+  "dashboardAiReviewSubtitle": "AI outputs flagged for lawyer review before client use",
+  "dashboardAiReviewTitle": "AI review queue",
+  "dashboardAiReviewUnknownAuthor": "Unknown",
+  "dashboardAiReviewUnverified": "Unverified",
+  "dashboardAiSearchIntakeBriefPlaceholder": "Describe the issue, key dates and the help needed.",
+  "dashboardAiSearchIntakeClientPlaceholder": "Client name",
+  "dashboardAiSearchIntakeCta": "Start intake",
+  "dashboardAiSearchIntakeSubtitle": "Start with the client and a short description of the matter.",
   "dashboardAiSearchPlaceholder": "À quelle question juridique souhaitez-vous répondre ?",
   "dashboardAiSearchPromptsDefault": "Contract dispute,Employment issue,Property matter,Debt recovery",
   "dashboardAiSearchPromptsGB": "Unfair dismissal,GDPR data breach,Tenancy deposit,Consumer rights",
@@ -2804,6 +2887,7 @@
   "docuDraftWhatToDraft": "Que veux-tu rédiger ?",
   "docuDraftWhatWeUnderstood": "Ce que nous avons compris",
   "draftingAccuracyAuditTitle": "Audit de précision",
+  "draftingAccuracyAutoAppliedFixes": "Applied corrections",
   "draftingAccuracyAutoCorrected": "{count} corrigé automatiquement",
   "@draftingAccuracyAutoCorrected": {
     "placeholders": {
@@ -2812,6 +2896,7 @@
     }
     }
   },
+  "draftingAccuracyCanCertifyShort": "Eligible for review sign-off",
   "draftingAccuracyCitationsVerifiedShort": "citations vérifiées",
   "draftingAccuracyCompleteMissingFacts": "Terminé : complétez les faits manquants",
   "draftingAccuracyDeepSearchSuffix": "(recherche approfondie)",
@@ -2823,10 +2908,14 @@
     }
     }
   },
+  "draftingAccuracyFactCoverage": "Fact coverage",
   "draftingAccuracyFactsPendingShort": "faits en attente",
   "draftingAccuracyGoverningSections": "Sections dirigeantes",
+  "draftingAccuracyLawyerReady": "Ready for lawyer review",
   "draftingAccuracyLimitedCorpus": "Sources limitées dans le corpus",
+  "draftingAccuracyMissingDefenceFacts": "Defence facts to confirm",
   "draftingAccuracyNeedsReview": "Nécessite un examen par un avocat",
+  "draftingAccuracyPassageSupportedShort": "passages supported",
   "draftingAccuracyProceduralRouteConfirmed": "Voie procédurale confirmée",
   "draftingAccuracyProceduralRouteDetail": "{recommended} recommandé — en utilisant {selected}",
   "@draftingAccuracyProceduralRouteDetail": {
@@ -2839,6 +2928,7 @@
     }
     }
   },
+  "draftingAccuracyReadyForLawyerReview": "Ready for lawyer review",
   "draftingAccuracyResearchAuthorities": "{count} autorités récupérées{deep} · confiance {confidence}",
   "@draftingAccuracyResearchAuthorities": {
     "placeholders": {
@@ -2872,6 +2962,7 @@
     }
     }
   },
+  "draftingAccuracyTimelineWarnings": "Timeline checks to review",
   "draftingAccuracyVerifiedForFiling": "Vérifié pour le dépôt",
   "draftingEditAiPanel": "Modification de l'IA",
   "draftingEditApplyEdit": "Appliquer la modification IA",
@@ -2995,6 +3086,8 @@
   "errorsToastCourtCaseLinked": "Affaire judiciaire liée",
   "errorsToastDiligenceReviewStarted": "L'examen de diligence a commencé",
   "errorsToastDocketEntryAdded": "Entrée de dossier ajoutée",
+  "errorsToastDocketSyncFailed": "Court docket could not be synced",
+  "errorsToastDocketSynced": "Court docket synced",
   "errorsToastDocumentArchived": "Document archivé",
   "errorsToastDocumentLinked": "Document lié",
   "errorsToastDocumentUploaded": "Document téléchargé",
@@ -3119,6 +3212,7 @@
   "issueCheckerClientDetails": "Détails du client",
   "issueCheckerClientMatterIntake": "Prise de dossiers clients",
   "issueCheckerClientName": "Nom du client *",
+  "issueCheckerClientNameCannotBeSelf": "Enter the client name, or choose to act for yourself.",
   "issueCheckerComplexMatter": "Sujet complexe",
   "issueCheckerComplexMatterFirmGuidance": "Cette affaire présente une complexité ou un risque élevé. Envisagez de faire appel à un avocat spécialisé ou à un membre senior de l’équipe.",
   "issueCheckerConfidentialNotSharedWithTheClientPreview": "Confidentiel : non partagé avec l'aperçu client.",
@@ -3158,6 +3252,18 @@
     }
     }
   },
+  "issueCheckerDetectedCountryRegionChange": "Detected {country} · {region}. Change this if the issue belongs elsewhere.",
+  "@issueCheckerDetectedCountryRegionChange": {
+    "placeholders": {
+    "country": {
+      "type": "String"
+    },
+    "region": {
+      "type": "String"
+    }
+    }
+  },
+  "issueCheckerDetecting": "Detecting…",
   "issueCheckerDetectingLocation": "Détection de votre position…",
   "issueCheckerDocsAnalyzed": "{count, plural, one {# document analyzed} other {# documents analyzed}}",
   "issueCheckerDocuments2": "Documents :",
@@ -3545,6 +3651,7 @@
   "lawyerAnalysisHistory": "Historique d'analyse",
   "lawyerAnyAgentJob": "N'importe quel travail d'agent",
   "lawyerApproval": "Approbation",
+  "lawyerApproveSuggestion": "Approve suggestion",
   "lawyerApproved": "Approuvé",
   "lawyerArchiveDocument": "Archiver un document ?",
   "lawyerAskCopilot": "Demandez au copilote",
@@ -3613,6 +3720,7 @@
   "lawyerDescription": "Description",
   "lawyerDisbursement": "Décaissement",
   "lawyerDisbursementRequestsAwaitingApproval": "Demandes de décaissement en attente d’approbation.",
+  "lawyerDismissSuggestion": "Dismiss suggestion",
   "lawyerDocumentDetail": "Détail du document",
   "lawyerDocumentLibrary": "Bibliothèque de documents",
   "lawyerDraft": "Brouillon",
@@ -3775,6 +3883,7 @@
   "lawyerNoClientGeneral": "Aucun client (général)",
   "lawyerNoDocumentsFound": "Aucun document trouvé.",
   "lawyerNoEvidenceItems": "Aucun élément de preuve",
+  "lawyerNoEvidenceYet": "No evidence has been added yet.",
   "lawyerNoExpensesRecordedYet": "Aucune dépense enregistrée pour l'instant",
   "lawyerNoExtraFiltersForThisTrigger": "Aucun filtre supplémentaire pour ce déclencheur.",
   "lawyerNoFirmWorkspace": "Pas d'espace de travail ferme",
@@ -3794,6 +3903,7 @@
   "lawyerNoPendingApprovals": "Aucune approbation en attente",
   "lawyerNoSourceTraceAvailable": "Aucune trace source disponible.",
   "lawyerNoSpecificMatter": "Pas de sujet particulier",
+  "lawyerNoSuggestedTime": "No time suggestions yet.",
   "lawyerNoTeamMembersFound": "Aucun membre de l'équipe trouvé.",
   "lawyerNotYetAnalyzed": "Pas encore analysé",
   "lawyerNote": "Note:",
@@ -3884,6 +3994,8 @@
   "lawyerStrategyOptionsAbcDescription": "Options A/B/C, parcours recommandé, délais.",
   "lawyerStrengthsForOurClient": "Points forts pour notre client",
   "lawyerSubmitted": "Soumis",
+  "lawyerSuggestedTime": "Suggested time entries",
+  "lawyerSuggestedTimeDescription": "Review suggested work and duration before adding a time entry.",
   "lawyerSummary": "Résumé",
   "lawyerTaskDetails": "Détails de la tâche",
   "lawyerTaskTitle": "Titre de la tâche",
@@ -4692,8 +4804,10 @@
   "marketingHomeResearchProgressDraftReadyBanner": "Projet de note prêt – exécution de l'audit final des citations…",
   "marketingHomeResearchProgressDraftVerifyingBanner": "Prêt pour le brouillon – vérifications de l'exactitude en cours…",
   "marketingHomeResearchProgressModeFast": "Rapide",
+  "marketingHomeResearchProgressModeGuidance": "AI only",
   "marketingHomeResearchProgressModeVerified": "Vérifié",
   "marketingHomeResearchProgressPhaseStallNote": "Fonctionne toujours – le backend traite cette étape. Les requêtes volumineuses peuvent prendre quelques minutes.",
+  "marketingHomeResearchProgressPhaseStallNoteVerified": "Still working — the backend is processing this step. Large queries can take a few minutes.",
   "marketingHomeResearchProgressRefiningTitle": "Affiner avec le contexte…",
   "marketingHomeResearchProgressRunningTitle": "Mener des recherches juridiques",
   "marketingHomeResearchProgressStepAuditDraftDetail": "Réussite finale de l'audit de citation - votre brouillon est visible ci-dessous.",
@@ -4745,6 +4859,15 @@
     }
   },
   "marketingHomeResearchProgressStepGroundVerify": "Vérification du texte de la section par rapport au corpus…",
+  "marketingHomeResearchProgressStepGuidanceDraftDetail": "Writing a first-pass answer from the question and contract",
+  "marketingHomeResearchProgressStepGuidanceDraftLabel": "Drafting the note",
+  "marketingHomeResearchProgressStepGuidanceReadDetail": "Identifying the issue, jurisdiction, and contract facts",
+  "marketingHomeResearchProgressStepGuidanceReadLabel": "Reading your question",
+  "marketingHomeResearchProgressStepGuidanceReadyDetail": "Preparing the research note",
+  "marketingHomeResearchProgressStepGuidanceReadyLabel": "Ready",
+  "marketingHomeResearchProgressStepLiveRetrieveDetail": "Checking AI-named authorities against live/corpus sources",
+  "marketingHomeResearchProgressStepLiveRetrieveFailover": "Retrying available connectors when a source is down",
+  "marketingHomeResearchProgressStepLiveRetrieveLabel": "Checking live and corpus sources",
   "marketingHomeResearchProgressStepParseDetail": "Identifier la juridiction, les dispositions et l’intention",
   "marketingHomeResearchProgressStepParseDetailProvision": "Identifier {provision} et les dispositions associées",
   "@marketingHomeResearchProgressStepParseDetailProvision": {
@@ -4755,6 +4878,9 @@
     }
   },
   "marketingHomeResearchProgressStepParseLabel": "Analyser votre question juridique",
+  "marketingHomeResearchProgressStepPlanMapDetail": "Identifying issues, likely statutes, and retrieval queries",
+  "marketingHomeResearchProgressStepPlanMapLabel": "Planning the research map",
+  "marketingHomeResearchProgressStepPlanMapQueries": "Expanding search queries from the research plan",
   "marketingHomeResearchProgressStepPredecessorCrpcBnss": "Recoupement des remappages de section CrPC → BNSS",
   "marketingHomeResearchProgressStepPredecessorCrpcBnssSection": "Vérification croisée des remappages CrPC → BNSS pour la section {section}",
   "@marketingHomeResearchProgressStepPredecessorCrpcBnssSection": {
@@ -4780,6 +4906,8 @@
   "marketingHomeResearchProgressStepRetrieveMatch": "Faire correspondre les articles statutaires à votre question…",
   "marketingHomeResearchProgressStepRetrieveRank": "Sections liées au classement et commentaires…",
   "marketingHomeResearchProgressStepRetrieveRankCases": "Classement de la jurisprudence par pertinence…",
+  "marketingHomeResearchProgressStepSelfCheckDetail": "Attacking weak assumptions in the same draft",
+  "marketingHomeResearchProgressStepSelfCheckLabel": "Self-check",
   "marketingHomeResearchProgressStillWorking": "· je travaille toujours…",
   "marketingHomeResearchProgressTakingLonger": "· prend plus de temps que d'habitude",
   "marketingHomeResearchProgressVerifiedDurationHint": "· généralement 1 à 3 minutes",
@@ -5298,6 +5426,10 @@
   "mattersAiDraftingSubtitle": "Remplir les champs du modèle à partir du contexte du sujet et compléter les clauses juridiques.",
   "mattersAiIsAnalyzingTheOpposingPartysPosition": "AI analyse la position de la partie adverse…",
   "mattersAiIsAnalyzingYourMatter": "L’IA analyse votre affaire…",
+  "mattersAiProgressAnalysing": "Analysing the available information",
+  "mattersAiProgressGenerating": "Preparing the response",
+  "mattersAiProgressReading": "Reading the matter context",
+  "mattersAiProgressRetrieving": "Retrieving relevant sources",
   "mattersAiResponseFailed": "Impossible d'obtenir la réponse de l'IA. Veuillez réessayer.",
   "mattersAigeneratedDocuments": "Documents générés par l'IA",
   "mattersAllAssignees": "Tous les assignés",
@@ -5309,6 +5441,7 @@
   "mattersAllStatuses": "Tous les statuts",
   "mattersAnalyzeOpponent": "Analyser l'adversaire",
   "mattersAnalyzing": "Analyser…",
+  "mattersAnswered": "Answered",
   "mattersAnsweredProgress": "{answered} sur {total} a répondu",
   "@mattersAnsweredProgress": {
     "placeholders": {
@@ -5447,6 +5580,7 @@
   "mattersCreating": "Création…",
   "mattersCreatingMatter": "Création...",
   "mattersCreatingMatterEllipsis": "Créer de la matière…",
+  "mattersCreditsUsed": "{count, plural, one {# credit used} other {# credits used}}",
   "mattersCriticalRisk": "Risque critique",
   "mattersDate": "Date",
   "mattersDate2": "Date *",
@@ -5622,6 +5756,7 @@
   "mattersGenerateWhenReady": "Vérifiez que les modèles sont fournis et que les champs obligatoires sont remplis, puis réessayez.",
   "mattersGenerating": "Générateur…",
   "mattersGrantAccessToTeamMembersWithReadonlyOrWritePermiss": "Accorder l'accès aux membres de l'équipe avec des autorisations en lecture seule ou en écriture",
+  "mattersGuidanceResearchTypicalTime": "AI guidance only — usually under 15 seconds",
   "mattersHiddenFromPortalClients": "Masqué des clients du portail",
   "mattersHideReasoning": "Masquer le raisonnement",
   "mattersHighRisk": "Risque élevé",
@@ -5706,6 +5841,7 @@
   "mattersMatterTitle": "Titre du sujet",
   "mattersMatterTitleRequired": "Le titre du sujet est requis",
   "mattersMatterType": "Type de sujet",
+  "mattersMatterType2": "Matter type",
   "mattersMatterTypeLabel": "Type de sujet",
   "mattersMediumRisk": "Risque moyen",
   "mattersMeetingsAndRecordings": "Réunions et enregistrements",
@@ -5877,6 +6013,7 @@
     }
     }
   },
+  "mattersRecentActivity": "Recent activity",
   "mattersRecommendedNextSteps": "Prochaines étapes recommandées",
   "mattersRecordFirstMeeting": "Enregistrer la première réunion",
   "mattersRecordFirstMeetingDescription": "Capturez une consultation ou un appel stratégique et joignez-le à la chronologie de ce sujet.",
@@ -6237,6 +6374,7 @@
   "portalComments": "Commentaires",
   "portalConsentPortalDescription": "les messages, téléchargements, rapports, factures et paiements restent liés à votre dossier juridique.",
   "portalConsentawarePortal": "Portail sensible au consentement :",
+  "portalContinueToPortal": "Continue to portal",
   "portalCurrentStageAndStatusForYourMatters": "Stade et statut actuels de vos dossiers",
   "portalDescription": "Description",
   "portalDetails": "Détails",
@@ -6253,6 +6391,9 @@
   "portalFirmCommunications": "Communications fermes",
   "portalFullName": "Nom et prénom",
   "portalInstructions": "Instructions",
+  "portalInviteLinkRequiredDescription": "Open the invitation link shared by your law firm to access the client portal.",
+  "portalInviteLinkRequiredHelp": "Ask your law firm for a new invitation if your link is missing or has expired.",
+  "portalInviteLinkSignInDescription": "Continue using your invitation to access the information shared with you.",
   "portalInvoices": "Factures",
   "portalInvoicesAndReceipts": "Factures et reçus",
   "portalJaneClient": "Jeanne Cliente",
@@ -6389,6 +6530,7 @@
   "settingsBuyCredits": "Acheter des crédits",
   "settingsCalendarEmailMeetingsEsignAndAccounting": "Calendrier, courrier électronique, réunions, signature électronique et comptabilité",
   "settingsCancel": "Annuler",
+  "settingsChangeLogo": "Change logo",
   "settingsChangeRegion": "Changer de région",
   "settingsChangeRegionHint": "Sélectionnez le pays dont les lois et les tarifs s'appliquent à votre compte",
   "settingsCheckingFirmTrainingPreferences": "Vérification de la formation actuelle de l'entreprise et des préférences de traitement de l'IA.",
@@ -6491,6 +6633,8 @@
   "settingsFirmAccount": "Compte ferme",
   "settingsFirmComplianceSettingsAndAuditVisibility": "Paramètres de conformité du cabinet et visibilité des audits",
   "settingsFirmDataTrainingConsent": "Données fermes et consentement à la formation",
+  "settingsFirmLogo": "Firm logo",
+  "settingsFirmLogoDescription": "Add the logo used for your firm branding.",
   "settingsFirmName": "Nom de l'entreprise *",
   "settingsFirmNameLabel": "Nom de l'entreprise",
   "settingsFirmPoliciesEthicalWallsAndAiUsageRules": "Politiques fermes, murs éthiques et règles d'utilisation de l'IA",
@@ -6526,6 +6670,12 @@
   "settingsLoadingPermissions": "Chargement des autorisations…",
   "settingsLocation": "Emplacement *",
   "settingsLocationLabel": "Emplacement",
+  "settingsLogoHint": "Choose an image under 2 MB.",
+  "settingsLogoOnExports": "Logo on exports",
+  "settingsLogoOnExportsDisabled": "Disabled",
+  "settingsLogoOnExportsEnabled": "Enabled",
+  "settingsLogoUploadError": "The logo could not be uploaded. Please try again.",
+  "settingsLogoUploading": "Uploading logo…",
   "settingsManageAiConsent": "Gérer le consentement de l'IA",
   "settingsManageBilling": "Gérer la facturation",
   "settingsManageDataConsent": "Gérer le consentement aux données",
@@ -6701,6 +6851,7 @@
   "settingsRecentTenantscopedEvents": "Événements récents à l’échelle des locataires",
   "settingsRegionUpdateFailed": "Impossible de mettre à jour la région. Veuillez réessayer.",
   "settingsRegionUpdated": "Région mise à jour",
+  "settingsRemoveLogo": "Remove logo",
   "settingsRequestExport": "Demander l'exportation",
   "settingsRequireApprovalForMatterSharing": "Exiger une approbation pour le partage de sujets",
   "settingsRestrictedUserIds": "ID utilisateur restreints",
@@ -6723,6 +6874,8 @@
   "settingsSelected": "Choisi:",
   "settingsSensitiveLabels": "Étiquettes sensibles",
   "settingsSettingsDescription": "Gérez votre profil, votre utilisation de l'IA, votre confidentialité et vos préférences.",
+  "settingsShowLogoOnExports": "Show logo on exports",
+  "settingsShowLogoOnExportsDescription": "Include the firm logo on supported exported documents.",
   "settingsSingleSignonSaml": "Authentification unique (SAML)",
   "settingsSmsNotifications": "Notifications SMS",
   "settingsSsoUrl": "URL SSO",
@@ -6748,6 +6901,7 @@
   "settingsUnableToWithdrawConsent": "Impossible de retirer le consentement.",
   "settingsUniversalDisclaimerText": "Texte de clause de non-responsabilité universelle",
   "settingsUpdateYourFirmInformationAndBranding": "Mettez à jour les informations et l'image de marque de votre entreprise",
+  "settingsUploadLogo": "Upload logo",
   "settingsUsageLedger": "Grand livre d'utilisation",
   "settingsUseAnonymizedDataForImprovement": "Utiliser des données anonymisées pour l’amélioration",
   "settingsUserid1Userid2": "ID utilisateur1, ID utilisateur2",

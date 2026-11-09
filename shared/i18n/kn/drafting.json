@@ -91,6 +91,14 @@
     "proceduralRouteDetail": "{recommended} ಅನ್ನು ಶಿಫಾರಸು ಮಾಡಲಾಗಿದೆ — {selected} ಬಳಸಿ",
     "governingSections": "ಆಡಳಿತ ವಿಭಾಗಗಳು",
     "researchAuthorities": "{count} ಅಧಿಕಾರಿಗಳು ಹಿಂಪಡೆದಿದ್ದಾರೆ{deep} · ವಿಶ್ವಾಸ {confidence}",
-    "deepSearchSuffix": "(ಆಳವಾದ ಹುಡುಕಾಟ)"
+    "deepSearchSuffix": "(ಆಳವಾದ ಹುಡುಕಾಟ)",
+    "lawyerReady": "Ready for lawyer review",
+    "readyForLawyerReview": "Ready for lawyer review",
+    "canCertifyShort": "Eligible for review sign-off",
+    "passageSupportedShort": "passages supported",
+    "factCoverage": "Fact coverage",
+    "missingDefenceFacts": "Defence facts to confirm",
+    "autoAppliedFixes": "Applied corrections",
+    "timelineWarnings": "Timeline checks to review"
   }
 }

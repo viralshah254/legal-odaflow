@@ -299,5 +299,10 @@
   "empty_messages_description": "ഈ കേസിനെക്കുറിച്ചുള്ള അഭിഭാഷകരുടെ സന്ദേശങ്ങളും പിന്തുണയും ഇവിടെ ദൃശ്യമാകും.",
   "empty_payments_description": "റിപ്പോർട്ടുകൾ, അഭിഭാഷക അവലോകനം, സബ്‌സ്‌ക്രിപ്‌ഷനുകൾ എന്നിവയ്‌ക്കുള്ള പേയ്‌മെൻ്റുകൾ ഇവിടെ ദൃശ്യമാകും.",
   "applies_to_account_changes_future": "നിങ്ങളുടെ അക്കൗണ്ടിന് ബാധകമാണ്. മാറ്റങ്ങൾ ഭാവിയിലെ പ്രോസസ്സിംഗിനെ ബാധിക്കുന്നു.",
-  "control_case_data_for_ai_improvement": "AI മെച്ചപ്പെടുത്തലിനായി നിങ്ങളുടെ കേസ് ഡാറ്റ എങ്ങനെ ഉപയോഗിക്കാമെന്നത് നിയന്ത്രിക്കുക. ഡിഫോൾട്ട് ഓഫാണ്."
+  "control_case_data_for_ai_improvement": "AI മെച്ചപ്പെടുത്തലിനായി നിങ്ങളുടെ കേസ് ഡാറ്റ എങ്ങനെ ഉപയോഗിക്കാമെന്നത് നിയന്ത്രിക്കുക. ഡിഫോൾട്ട് ഓഫാണ്.",
+  "auto_renewing": "Renews automatically",
+  "subscription_auto_renew_hint": "Your subscription renews until cancelled. Manage renewal and cancellation through your billing provider.",
+  "manage_plan": "Manage plan",
+  "cancel_subscription": "Cancel subscription",
+  "your_current_plan": "Your current plan"
 }

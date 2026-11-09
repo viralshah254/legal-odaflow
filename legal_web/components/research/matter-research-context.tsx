@@ -1,5 +1,7 @@
 "use client"
 
+
+import { useTranslations } from "next-intl"
 import { useEffect, useState } from "react"
 import { FileText, FolderSearch, Loader2 } from "lucide-react"
 import {
@@ -39,6 +41,7 @@ export function MatterResearchContext({
   onSelectedFolderIdsChange,
   onMatterCountryChange,
 }: MatterResearchContextProps) {
+  const tRelease = useTranslations("common.release")
   const [context, setContext] = useState<MatterResearchContextResponse | null>(null)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
@@ -118,22 +121,22 @@ export function MatterResearchContext({
 
       {onContextScopeChange && (
         <label className="block space-y-1 text-xs font-medium">
-          <span>Evidence scope</span>
+          <span>{tRelease("evidenceScope")}</span>
           <select
-            aria-label="Evidence scope"
+            aria-label={tRelease("evidenceScope")}
             className="w-full rounded-md border bg-background px-2 py-2"
             value={contextScope}
             onChange={(event) => onContextScopeChange(event.target.value as "SELECTED" | "MATTER" | "FOLDERS")}
           >
-            <option value="MATTER">All authorized matter documents</option>
-            <option value="FOLDERS">Selected folders and their subfolders</option>
-            <option value="SELECTED">Selected documents only</option>
+            <option value="MATTER">{tRelease("allMatterDocuments")}</option>
+            <option value="FOLDERS">{tRelease("selectedFolders")}</option>
+            <option value="SELECTED">{tRelease("selectedDocuments")}</option>
           </select>
         </label>
       )}
       {contextScope === "FOLDERS" && (
         <fieldset className="space-y-2 text-xs">
-          <legend className="font-medium">Folders with accessible documents</legend>
+          <legend className="font-medium">{tRelease("accessibleFolders")}</legend>
           {(context.folders ?? []).map((folder) => (
             <label key={folder.id} className="flex items-center gap-2">
               <Checkbox checked={selectedFolderIds.includes(folder.id)} onCheckedChange={(checked) =>
@@ -142,7 +145,7 @@ export function MatterResearchContext({
               {folder.name}
             </label>
           ))}
-          {!context.folders?.length && <p className="text-muted-foreground">No accessible document folders.</p>}
+          {!context.folders?.length && <p className="text-muted-foreground">{tRelease("noAccessibleFolders")}</p>}
         </fieldset>
       )}
       <p className="rounded-md bg-background px-2.5 py-2 text-xs font-medium" aria-live="polite">

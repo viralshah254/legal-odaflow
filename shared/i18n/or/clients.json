@@ -173,7 +173,7 @@
   "noClientLevelFiles": "କ୍ଲାଏଣ୍ଟ ସ୍ତରୀୟ ଫାଇଲଗୁଡ଼ିକ କିଛି ନାହିଁ |",
   "matterLinkedFiles": "{count, plural, one {# matter-linked file} other {# matter-linked files}}",
   "matterLinkedFilesDescription": "ଏହି ଗ୍ରାହକଙ୍କ ବିଷୟ ସହିତ ଜଡିତ ଡକ୍ୟୁମେଣ୍ଟ୍ |",
-  "noMatterLinkedFiles": "କ matter ଣସି ବିଷୟ-ଲିଙ୍କ୍ ଫାଇଲ୍ ନାହିଁ |",
+  "noMatterLinkedFiles": "କୌଣସି ବିଷୟ-ଲିଙ୍କ୍ ଫାଇଲ୍ ନାହିଁ |",
   "matterLinked": "ବିଷୟ ଲିଙ୍କ୍ |",
   "previewDocument": "ପୂର୍ବାବଲୋକନ {name}",
   "downloadDocument": "{name} ଡାଉନଲୋଡ୍ କରନ୍ତୁ |",

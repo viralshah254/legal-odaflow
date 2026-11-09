@@ -101,6 +101,8 @@
     "publishedToClientPortal": "ക്ലയൻ്റ് പോർട്ടലിൽ പ്രസിദ്ധീകരിച്ചു",
     "taskReopened": "ടാസ്ക് വീണ്ടും തുറന്നു",
     "taskCompleted": "ടാസ്ക് പൂർത്തിയായി",
-    "pleaseTryAgain": "ദയവായി വീണ്ടും ശ്രമിക്കുക."
+    "pleaseTryAgain": "ദയവായി വീണ്ടും ശ്രമിക്കുക.",
+    "docketSynced": "Court docket synced",
+    "docketSyncFailed": "Court docket could not be synced"
   }
 }

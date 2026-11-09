@@ -91,6 +91,14 @@
     "proceduralRouteDetail": "अनुशंसित {recommended} - {selected} का उपयोग करना",
     "governingSections": "शासी अनुभाग",
     "researchAuthorities": "{count} प्राधिकारियों ने पुनर्प्राप्त किया{deep} · विश्वास {confidence}",
-    "deepSearchSuffix": "(गहरी खोज)"
+    "deepSearchSuffix": "(गहरी खोज)",
+    "lawyerReady": "Ready for lawyer review",
+    "readyForLawyerReview": "Ready for lawyer review",
+    "canCertifyShort": "Eligible for review sign-off",
+    "passageSupportedShort": "passages supported",
+    "factCoverage": "Fact coverage",
+    "missingDefenceFacts": "Defence facts to confirm",
+    "autoAppliedFixes": "Applied corrections",
+    "timelineWarnings": "Timeline checks to review"
   }
 }

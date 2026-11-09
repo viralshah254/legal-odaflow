@@ -299,5 +299,10 @@
   "empty_messages_description": "এই মামলার বিষয়ে আইনজীবীদের বার্তা এবং সমর্থন এখানে উপস্থিত হবে৷",
   "empty_payments_description": "রিপোর্ট, আইনজীবী পর্যালোচনা, এবং সদস্যতার জন্য অর্থপ্রদান এখানে প্রদর্শিত হবে.",
   "applies_to_account_changes_future": "আপনার অ্যাকাউন্টে প্রযোজ্য। পরিবর্তন ভবিষ্যতে প্রক্রিয়াকরণ প্রভাবিত করে।",
-  "control_case_data_for_ai_improvement": "AI উন্নতির জন্য আপনার কেস ডেটা কীভাবে ব্যবহার করা যেতে পারে তা নিয়ন্ত্রণ করুন। ডিফল্ট বন্ধ আছে।"
+  "control_case_data_for_ai_improvement": "AI উন্নতির জন্য আপনার কেস ডেটা কীভাবে ব্যবহার করা যেতে পারে তা নিয়ন্ত্রণ করুন। ডিফল্ট বন্ধ আছে।",
+  "auto_renewing": "Renews automatically",
+  "subscription_auto_renew_hint": "Your subscription renews until cancelled. Manage renewal and cancellation through your billing provider.",
+  "manage_plan": "Manage plan",
+  "cancel_subscription": "Cancel subscription",
+  "your_current_plan": "Your current plan"
 }

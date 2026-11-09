@@ -84,5 +84,9 @@
   "uploaded": "Hochgeladen",
   "sign_in_description": "Melden Sie sich mit der E-Mail-Adresse an, die bei Ihrer Anwaltskanzlei hinterlegt ist.",
   "signing_in": "Anmelden…",
-  "unable_to_sign_in": "Anmeldung nicht möglich. Überprüfen Sie Ihre E-Mails und versuchen Sie es erneut."
+  "unable_to_sign_in": "Anmeldung nicht möglich. Überprüfen Sie Ihre E-Mails und versuchen Sie es erneut.",
+  "invite_link_required_description": "Open the invitation link shared by your law firm to access the client portal.",
+  "invite_link_required_help": "Ask your law firm for a new invitation if your link is missing or has expired.",
+  "invite_link_sign_in_description": "Continue using your invitation to access the information shared with you.",
+  "continue_to_portal": "Continue to portal"
 }

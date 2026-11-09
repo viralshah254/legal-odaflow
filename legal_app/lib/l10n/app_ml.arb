@@ -189,6 +189,8 @@
   "aiConsentDialogProviders": "ദാതാക്കൾ: OpenAI, DeepSeek, Deepgram (ട്രാൻസ്ക്രിപ്ഷൻ).",
   "aiConsentDialogPurpose": "നിങ്ങൾക്ക് എപ്പോൾ വേണമെങ്കിലും സ്വകാര്യത, സുരക്ഷാ ക്രമീകരണങ്ങളിൽ സമ്മതം പിൻവലിക്കാം. സമ്മതമില്ലാതെ, AI ഫീച്ചറുകൾ ലഭ്യമാകില്ല.",
   "aiConsentDialogTitle": "AI പ്രോസസ്സിംഗ് സമ്മതം",
+  "aiConsentProcessingBody": "To perform the AI work you request, Umbrella sends your questions, instructions, authorized matter facts, document excerpts, research and draft text to the recipients below. Audio is sent when you use transcription. Inference permission does not grant permission to train models.",
+  "aiConsentProcessingUnavailable": "AI privacy information is unavailable. Please retry before sending your data.",
   "aiConsentSettingsDescription": "സമ്മതം റീസെറ്റ്. അടുത്ത AI ഫീച്ചറിന് മുമ്പ് നിങ്ങളോട് വീണ്ടും ചോദിക്കും.",
   "aiConsentSettingsTitle": "AI അനുമാന സമ്മതം",
   "auth254712345678": "+254712345678",
@@ -215,6 +217,8 @@
   "authCheckDeviceLocation": "ഉപകരണ ലൊക്കേഷൻ പരിശോധിക്കുക",
   "authCheckingLocation": "ലൊക്കേഷൻ പരിശോധിക്കുന്നു...",
   "authChooseWorkspace": "ഇന്ന് നിങ്ങൾക്ക് അനുയോജ്യമായ ജോലിസ്ഥലം തിരഞ്ഞെടുക്കുക.",
+  "authClientPerk1": "Understand your legal issue",
+  "authClientPerk2": "Keep your documents and next steps together",
   "authCompleteProfileDescription": "നിങ്ങളുടെ നിയമപരമായ വർക്ക്‌സ്‌പേസ് സജ്ജീകരിക്കുന്നതിനുള്ള കുറച്ച് വിശദാംശങ്ങൾ. നിങ്ങളുടെ ഇമെയിൽ ഇതിനകം സ്ഥിരീകരിച്ചു.",
   "authCompleteSignUp": "സൈൻ അപ്പ് പൂർത്തിയാക്കുക",
   "authCompletingSignIn": "സൈൻ ഇൻ പൂർത്തിയാക്കുന്നു...",
@@ -293,6 +297,8 @@
   "authLawFirm": "നിയമ സ്ഥാപനം",
   "authLawyerIRunALawFirm": "അഭിഭാഷകൻ - ഞാൻ ഒരു നിയമ സ്ഥാപനം നടത്തുന്നു",
   "authLawyerOption": "അഭിഭാഷകൻ - ഞാൻ ഒരു നിയമ സ്ഥാപനം നടത്തുന്നു",
+  "authLawyerPerk1": "Organize clients, matters and documents",
+  "authLawyerPerk2": "Research and draft with matter context",
   "authLegalIntelligencenforEveryone": "നിയമപരമായ ബുദ്ധി,\\nഎല്ലാവർക്കും.",
   "authLoading": "ലോഡ് ചെയ്യുന്നു...",
   "authLocationCheckDescription": "സൈൻ അപ്പ് ചെയ്യുന്നതിന് മുമ്പ് കുട നിങ്ങളുടെ ഉപകരണ ലൊക്കേഷൻ പരിശോധിക്കുന്നു, അതിനാൽ നിയമപരമായ മാർഗ്ഗനിർദ്ദേശം ശരിയായ അധികാരപരിധിയിൽ ആരംഭിക്കും.",
@@ -352,6 +358,9 @@
   "authPasswordTooWeak": "പാസ്‌വേഡ് വളരെ ദുർബലമാണ്. ദൈർഘ്യമേറിയതും പ്രവചിക്കാനാകാത്തതുമായ പാസ്‌ഫ്രെയ്‌സ് ഉപയോഗിക്കുക.",
   "authPasswordsDoNotMatch": "പാസ്‌വേഡുകൾ പൊരുത്തപ്പെടുന്നില്ല",
   "authPasswordsDontMatch": "പാസ്‌വേഡുകൾ പൊരുത്തപ്പെടുന്നില്ല",
+  "authPathSummaryLawFirm": "Law firm workspace",
+  "authPathSummaryLegalHelp": "Personal legal help",
+  "authPathSummarySoloLawyer": "Solo lawyer workspace",
   "authPhone": "ഫോൺ",
   "authPhoneE164": "ഫോൺ (E.164)",
   "authPhoneHint": "നിങ്ങളുടെ മൊബൈൽ നമ്പർ ഉൾപ്പെടുത്തുക — അക്കൗണ്ട് വീണ്ടെടുക്കുന്നതിനും വക്കീൽ പൊരുത്തപ്പെടുത്തലിനും ഉപയോഗിക്കുന്നു.",
@@ -359,6 +368,7 @@
   "authPhoneTab": "ഫോൺ",
   "authPracticeNameOptional": "പരിശീലനത്തിൻ്റെ പേര് (ഓപ്ഷണൽ)",
   "authPrivate": "സ്വകാര്യം",
+  "authProspectPrefillHint": "Details from your link have been filled in. Review them before continuing.",
   "authRefInviteBanner": "നിങ്ങളെ <strong>{name}</strong> ക്ഷണിച്ചു. നിങ്ങൾ വരിക്കാരാകുമ്പോൾ നിങ്ങളുടെ ആദ്യ മാസം 40% കിഴിവ് നേടുക.",
   "@authRefInviteBanner": {
     "placeholders": {
@@ -388,6 +398,8 @@
   "authSignInWithFirebase": "Firebase ഉപയോഗിച്ച് സൈൻ ഇൻ ചെയ്യുക",
   "authSignOut": "സൈൻ ഔട്ട്",
   "authSignUp": "സൈൻ അപ്പ് ചെയ്യുക",
+  "authSignUpAccountDescription": "Set up your sign-in details to continue.",
+  "authSignUpAccountTitle": "Create your account",
   "authSignUpDescription": "കുട ഉപയോഗിച്ച് ആരംഭിക്കുക",
   "authSignUpTermsPrefix": "ഒരു അക്കൗണ്ട് സൃഷ്‌ടിക്കുന്നതിലൂടെ, നിങ്ങൾ ഞങ്ങളുടെത് അംഗീകരിക്കുന്നു",
   "authSignUpTitle": "നിങ്ങളുടെ അക്കൗണ്ട് സൃഷ്ടിക്കുക",
@@ -722,7 +734,7 @@
   "clientsActivityMeetingRecorded": "മീറ്റിംഗ് രേഖപ്പെടുത്തി",
   "clientsActivityProfileUpdated": "ക്ലയൻ്റ് പ്രൊഫൈൽ അപ്ഡേറ്റ് ചെയ്തു",
   "clientsAddClient": "ക്ലയൻ്റ് ചേർക്കുക",
-  "clientsAddContactPerson": "Add contact person",
+  "clientsAddContactPerson": "കോൺടാക്റ്റ് വ്യക്തിയെ ചേർക്കുക",
   "clientsAddFirstClient": "നിങ്ങളുടെ ആദ്യ ക്ലയൻ്റ് ചേർക്കുക",
   "clientsAddFirstClientDescription": "ബന്ധങ്ങൾ കൈകാര്യം ചെയ്യാൻ ആരംഭിക്കുന്നതിന് നിങ്ങളുടെ ആദ്യ ക്ലയൻ്റിനെ ചേർക്കുക.",
   "clientsAddNewClient": "പുതിയ ക്ലയൻ്റ് ചേർക്കുക",
@@ -772,7 +784,7 @@
   },
   "clientsConflictCheckRequired": "ക്ലയൻ്റ് സൃഷ്ടിക്കുന്നതിന് മുമ്പ് ഒരു വൈരുദ്ധ്യ പരിശോധന നടത്തി ഏതെങ്കിലും ഫ്ലാഗുകൾ പരിഹരിക്കുക.",
   "clientsContactInformation": "ബന്ധപ്പെടാനുള്ള വിവരങ്ങൾ",
-  "clientsContactNamePlaceholder": "Contact name",
+  "clientsContactNamePlaceholder": "ബന്ധപ്പെടാനുള്ള പേര്",
   "clientsContactNumber": "{number} ബന്ധപ്പെടുക",
   "@clientsContactNumber": {
     "placeholders": {
@@ -783,7 +795,7 @@
   },
   "clientsContactPeople": "ആളുകളെ ബന്ധപ്പെടുക",
   "clientsContactPeopleDescription": "ഈ ക്ലയൻ്റിനായുള്ള ഡയറക്ടർമാർ, ഓഫീസർമാർ, അംഗീകൃത കോൺടാക്റ്റുകൾ.",
-  "clientsContactPersonNumber": "Contact person {number}",
+  "clientsContactPersonNumber": "വ്യക്തിയെ ബന്ധപ്പെടുക {number}",
   "@clientsContactPersonNumber": {
     "placeholders": {
     "number": {
@@ -791,7 +803,7 @@
     }
     }
   },
-  "clientsContactRolePlaceholder": "Role or title",
+  "clientsContactRolePlaceholder": "റോൾ അല്ലെങ്കിൽ തലക്കെട്ട്",
   "clientsContacts": "ബന്ധങ്ങൾ",
   "clientsCopyInviteFailed": "പോർട്ടൽ ക്ഷണം പകർത്താൻ കഴിഞ്ഞില്ല.",
   "clientsCouldNotLoadClients": "ക്ലയൻ്റുകളെ ലോഡ് ചെയ്യാനായില്ല.",
@@ -800,7 +812,7 @@
   "clientsCountryCodePlaceholder": "ഉദാഹരണത്തിന്, കെ.ഇ",
   "clientsCreateClient": "ക്ലയൻ്റ് സൃഷ്ടിക്കുക",
   "clientsCreateClientProfile": "ഒരു പുതിയ ക്ലയൻ്റ് പ്രൊഫൈൽ സൃഷ്ടിക്കുക",
-  "clientsCreateMatter": "Create matter",
+  "clientsCreateMatter": "ദ്രവ്യം സൃഷ്ടിക്കുക",
   "clientsCreating": "സൃഷ്‌ടിക്കുന്നു...",
   "clientsCreatingClient": "സൃഷ്ടിക്കുന്നു...",
   "clientsDeadlineAndRisk": "സമയപരിധിയും അപകടസാധ്യതയും",
@@ -976,7 +988,7 @@
     }
   },
   "clientsRemoveClientDocumentTitle": "ക്ലയൻ്റ് പ്രമാണം നീക്കം ചെയ്യണോ?",
-  "clientsRemoveContactPerson": "Remove contact person {number}",
+  "clientsRemoveContactPerson": "കോൺടാക്റ്റ് വ്യക്തിയെ നീക്കം ചെയ്യുക {number}",
   "@clientsRemoveContactPerson": {
     "placeholders": {
     "number": {
@@ -1006,7 +1018,7 @@
     }
   },
   "clientsRoleTitle": "റോൾ അല്ലെങ്കിൽ തലക്കെട്ട്",
-  "clientsSaveBasicAndCompleteLater": "Save basic details and complete later",
+  "clientsSaveBasicAndCompleteLater": "അടിസ്ഥാന വിശദാംശങ്ങൾ സംരക്ഷിച്ച് പിന്നീട് പൂർത്തിയാക്കുക",
   "clientsSaveChanges": "മാറ്റങ്ങൾ സംരക്ഷിക്കുക",
   "clientsSaving": "സംരക്ഷിക്കുന്നു...",
   "clientsSearchByNameOrEmail": "പേരോ ഇമെയിൽ വഴിയോ തിരയുക...",
@@ -1116,6 +1128,7 @@
   "commonAskCopilot": "കോപൈലറ്റിനോട് ചോദിക്കൂ...",
   "commonAuthentication": "പ്രാമാണീകരണം",
   "commonAuto": "ഓട്ടോ",
+  "commonAvailableOnProfessional": "Available on Professional",
   "commonBack": "തിരികെ",
   "commonBackToIssueChecker": "ഇഷ്യൂ ചെക്കറിലേക്ക് മടങ്ങുക",
   "commonBackToPricing": "വിലനിർണ്ണയത്തിലേക്ക് മടങ്ങുക",
@@ -1262,6 +1275,14 @@
   "commonExtractFacts": "വസ്തുതകൾ വേർതിരിച്ചെടുക്കുക",
   "commonFailedE": "പരാജയപ്പെട്ടു: $e",
   "commonFamilyMatrimonial": "കുടുംബവും മാട്രിമോണിയലും",
+  "commonFeatureRequiresProfessional": "{feature} requires a Professional plan.",
+  "@commonFeatureRequiresProfessional": {
+    "placeholders": {
+    "feature": {
+      "type": "String"
+    }
+    }
+  },
   "commonFile": "ഫയൽ",
   "commonFindALawyer": "ഒരു അഭിഭാഷകനെ കണ്ടെത്തുക",
   "commonFindLegalHelp": "നിയമസഹായം കണ്ടെത്തുക",
@@ -1296,6 +1317,7 @@
   "commonHtml": "HTML",
   "commonIfYouOptInYouMaySeparatelyEnable": "നിങ്ങൾ തിരഞ്ഞെടുക്കുകയാണെങ്കിൽ, നിങ്ങൾക്ക് വെവ്വേറെ പ്രവർത്തനക്ഷമമാക്കാം:",
   "commonImmigration": "കുടിയേറ്റം",
+  "commonImportMeeting": "Import meeting",
   "commonIncludeDocuments": "രേഖകൾ ഉൾപ്പെടുത്തുക",
   "commonIncludedUsage": "ഉൾപ്പെടുത്തിയ ഉപയോഗം",
   "commonIndia": "ഇന്ത്യ",
@@ -1410,6 +1432,7 @@
   "commonMeetingsFilterProcessing": "പ്രോസസ്സിംഗ്",
   "commonMeetingsFilterReady": "തയ്യാറാണ്",
   "commonMeetingsFilterRecording": "റെക്കോർഡിംഗ്",
+  "commonMeetingsLoadFailed": "Meetings could not be loaded. Please try again.",
   "commonMeetingsPageOf": "പേജ് {page} / {totalPages}",
   "@commonMeetingsPageOf": {
     "placeholders": {
@@ -1552,6 +1575,7 @@
   "commonRecommendedPath": "ശുപാർശ ചെയ്ത പാത",
   "commonRecordANewExpenseForTheFirm": "സ്ഥാപനത്തിന് ഒരു പുതിയ ചെലവ് രേഖപ്പെടുത്തുക",
   "commonRecordOrImportMeetingTranscripts": "തിരയാനും അവലോകനം ചെയ്യാനും മീറ്റിംഗ് ട്രാൻസ്ക്രിപ്റ്റുകൾ റെക്കോർഡ് ചെയ്യുക അല്ലെങ്കിൽ ഇറക്കുമതി ചെയ്യുക.",
+  "commonRecordTranscript": "Record and transcribe",
   "commonRef": "റഫ",
   "commonReferEarn": "റഫർ ചെയ്‌ത് സമ്പാദിക്കുക",
   "commonReferEarn2": "റഫർ ചെയ്‌ത് സമ്പാദിക്കുക",
@@ -1584,6 +1608,29 @@
   "commonRefresh": "പുതുക്കുക",
   "commonReject": "നിരസിക്കുക",
   "commonRejectLead": "ലീഡ് നിരസിക്കുക",
+  "commonReleaseAccessibleFolders": "Folders with accessible documents",
+  "commonReleaseActualUsage": "Based on actual usage",
+  "commonReleaseAllMatterDocuments": "All authorized matter documents",
+  "commonReleaseEvidenceScope": "Evidence scope",
+  "commonReleaseFinalCharge": "Final charge",
+  "commonReleaseHoldingPassage": "Holding passage",
+  "commonReleaseLegalCountry": "Legal country",
+  "commonReleaseLoadingTasks": "Loading tasks…",
+  "commonReleaseMatterJurisdiction": "Jurisdiction follows this matter. Change it in matter settings.",
+  "commonReleaseNewTask": "New task",
+  "commonReleaseNoAccessibleFolders": "No accessible document folders.",
+  "commonReleaseNoTasks": "No tasks match this view.",
+  "commonReleaseOpenMatterTasks": "Open matter tasks",
+  "commonReleaseOutcome": "Outcome:",
+  "commonReleaseSectionFinder": "Section Finder",
+  "commonReleaseSelectFirmTasks": "Select a firm to view tasks.",
+  "commonReleaseSelectedDocuments": "Selected documents only",
+  "commonReleaseSelectedFolders": "Selected folders and their subfolders",
+  "commonReleaseShowCompleted": "Show completed",
+  "commonReleaseTasksDescription": "Your firm’s work, with the earliest deadlines first.",
+  "commonReleaseTasksLoadFailed": "Tasks could not be loaded. Please refresh and try again.",
+  "commonReleaseTasksTitle": "Tasks",
+  "commonReleaseUsageBased": "Charged by actual usage",
   "commonRemove": "നീക്കം ചെയ്യുക",
   "commonRepresentationBeforeCourtsOrTribunals": "കോടതികൾക്കോ ​​ട്രൈബ്യൂണലുകൾക്കോ ​​മുമ്പാകെയുള്ള പ്രാതിനിധ്യം",
   "commonRequestConsultation": "കൺസൾട്ടേഷൻ അഭ്യർത്ഥിക്കുക",
@@ -1721,8 +1768,20 @@
   "commonUnitedKingdom": "യുണൈറ്റഡ് കിംഗ്ഡം",
   "commonUnitedStates": "യുണൈറ്റഡ് സ്റ്റേറ്റ്സ്",
   "commonUniversalDisclaimer": "സാർവത്രിക നിരാകരണം",
+  "commonUpgradeExistingPlanDescription": "Upgrade from {plan} to unlock {feature}.",
+  "@commonUpgradeExistingPlanDescription": {
+    "placeholders": {
+    "plan": {
+      "type": "String"
+    },
+    "feature": {
+      "type": "String"
+    }
+    }
+  },
   "commonUpgradeToPlusForAFullAiBudget": "പൂർണ്ണമായ AI ബഡ്ജറ്റിനായി പ്ലസ്-ലേക്ക് അപ്‌ഗ്രേഡ് ചെയ്യുക",
   "commonUpgradeToProfessional": "പ്രൊഫഷണലായി അപ്‌ഗ്രേഡ് ചെയ്യുക",
+  "commonUpgradeToUnlockOnProfessional": "Upgrade to Professional to unlock",
   "commonUpload": "അപ്‌ലോഡ് ചെയ്യുക",
   "commonUploadADocumentTemplate": "ഒരു ഡോക്യുമെൻ്റ് ടെംപ്ലേറ്റ് അപ്‌ലോഡ് ചെയ്യുക",
   "commonUploadALegalDocument": "ഒരു നിയമ പ്രമാണം അപ്‌ലോഡ് ചെയ്യുക",
@@ -1807,6 +1866,7 @@
   "consumerAppliesToAccountChangesFuture": "നിങ്ങളുടെ അക്കൗണ്ടിന് ബാധകമാണ്. മാറ്റങ്ങൾ ഭാവിയിലെ പ്രോസസ്സിംഗിനെ ബാധിക്കുന്നു.",
   "consumerAttachDocumentsToACaseForOcrAndAiAnalysis": "OCR, AI വിശകലനത്തിനായി ഒരു കേസിലേക്ക് പ്രമാണങ്ങൾ അറ്റാച്ചുചെയ്യുക.",
   "consumerAuto": "ഓട്ടോ",
+  "consumerAutoRenewing": "Renews automatically",
   "consumerAvailableModels": "ലഭ്യമായ മോഡലുകൾ",
   "consumerAwaitingDocumentsOrInfo": "രേഖകളോ വിവരങ്ങളോ കാത്തിരിക്കുന്നു",
   "consumerBackToDashboard": "ഡാഷ്‌ബോർഡിലേക്ക് മടങ്ങുക",
@@ -1815,6 +1875,7 @@
   "consumerBuyCredits": "ക്രെഡിറ്റുകൾ വാങ്ങുക",
   "consumerBuyCredits2": "ക്രെഡിറ്റുകൾ വാങ്ങുക",
   "consumerCancel": "റദ്ദാക്കുക",
+  "consumerCancelSubscription": "Cancel subscription",
   "consumerCase": "കേസ്",
   "consumerCaseClosed": "കേസ് അവസാനിപ്പിച്ചു",
   "consumerCaseDetails": "കേസ് വിശദാംശങ്ങൾ",
@@ -1958,6 +2019,7 @@
   "consumerLoading": "ലോഡ് ചെയ്യുന്നു...",
   "consumerLoadingPlanUsage": "പ്ലാനും ഉപയോഗവും ലോഡുചെയ്യുന്നു...",
   "consumerManageDataConsent": "ഡാറ്റ സമ്മതം നിയന്ത്രിക്കുക",
+  "consumerManagePlan": "Manage plan",
   "consumerMatterProgress": "കാര്യ പുരോഗതി",
   "consumerMatterResolved": "സംഗതി പരിഹരിച്ചു",
   "consumerMessages": "സന്ദേശങ്ങൾ",
@@ -2138,6 +2200,7 @@
   "consumerStartIssueCheck": "ഒരു പ്രശ്ന പരിശോധന ആരംഭിക്കുക",
   "consumerStarterPlan": "സ്റ്റാർട്ടർ പ്ലാൻ",
   "consumerSubscriptionActivated": "സബ്സ്ക്രിപ്ഷൻ സജീവമാക്കി!",
+  "consumerSubscriptionAutoRenewHint": "Your subscription renews until cancelled. Manage renewal and cancellation through your billing provider.",
   "consumerSubscriptionPlans": "സബ്സ്ക്രിപ്ഷൻ പ്ലാനുകൾ",
   "consumerSubscriptionsAreNotEnabled": "സബ്‌സ്‌ക്രിപ്‌ഷനുകൾ പ്രവർത്തനക്ഷമമാക്കിയിട്ടില്ല.",
   "consumerTopUp": "ടോപ്പ്-അപ്പ്",
@@ -2181,6 +2244,7 @@
   "consumerWorking": "പ്രോസസ്സ് ചെയ്യുന്നു...",
   "consumerYourAccountInformation": "നിങ്ങളുടെ അക്കൗണ്ട് വിവരങ്ങൾ",
   "consumerYourAigeneratedLegalPreviewsAndReports": "നിങ്ങൾ AI സൃഷ്ടിച്ച നിയമപരമായ പ്രിവ്യൂകളും റിപ്പോർട്ടുകളും",
+  "consumerYourCurrentPlan": "Your current plan",
   "consumerYourLegalReports": "നിങ്ങളുടെ നിയമ റിപ്പോർട്ടുകൾ",
   "copilotAction": "പ്രവർത്തനം:",
   "copilotAddStep": "ഘട്ടം ചേർക്കുക...",
@@ -2433,6 +2497,25 @@
   "dashboardAiCosts": "AI ചെലവുകൾ",
   "dashboardAiLogs": "AI ലോഗുകൾ",
   "dashboardAiProfitability": "AI ലാഭക്ഷമത",
+  "dashboardAiReviewAuthor": "Author",
+  "dashboardAiReviewEmpty": "No AI outputs are waiting for lawyer review.",
+  "dashboardAiReviewJurisdiction": "Jurisdiction",
+  "dashboardAiReviewLoadError": "Failed to load review queue",
+  "dashboardAiReviewMarkReviewed": "Mark reviewed",
+  "dashboardAiReviewMatter": "Matter",
+  "dashboardAiReviewOpenWorkspace": "Open workspace",
+  "dashboardAiReviewPreview": "Preview",
+  "dashboardAiReviewPreviewTruncated": "Open the workspace for the full output.",
+  "dashboardAiReviewQueueDescription": "Review, open the source workspace, or mark as reviewed when signed off.",
+  "dashboardAiReviewQueueTitle": "{count, plural, one {# item awaiting review} other {# items awaiting review}}",
+  "dashboardAiReviewSubtitle": "AI outputs flagged for lawyer review before client use",
+  "dashboardAiReviewTitle": "AI review queue",
+  "dashboardAiReviewUnknownAuthor": "Unknown",
+  "dashboardAiReviewUnverified": "Unverified",
+  "dashboardAiSearchIntakeBriefPlaceholder": "Describe the issue, key dates and the help needed.",
+  "dashboardAiSearchIntakeClientPlaceholder": "Client name",
+  "dashboardAiSearchIntakeCta": "Start intake",
+  "dashboardAiSearchIntakeSubtitle": "Start with the client and a short description of the matter.",
   "dashboardAiSearchPlaceholder": "എന്ത് നിയമപരമായ ചോദ്യമാണ് നിങ്ങൾക്ക് ഉത്തരം നൽകേണ്ടത്?",
   "dashboardAiSearchPromptsDefault": "Contract dispute,Employment issue,Property matter,Debt recovery",
   "dashboardAiSearchPromptsGB": "Unfair dismissal,GDPR data breach,Tenancy deposit,Consumer rights",
@@ -2804,6 +2887,7 @@
   "docuDraftWhatToDraft": "നിങ്ങൾക്ക് എന്താണ് ഡ്രാഫ്റ്റ് ചെയ്യേണ്ടത്?",
   "docuDraftWhatWeUnderstood": "ഞങ്ങൾ മനസ്സിലാക്കിയത്",
   "draftingAccuracyAuditTitle": "കൃത്യത ഓഡിറ്റ്",
+  "draftingAccuracyAutoAppliedFixes": "Applied corrections",
   "draftingAccuracyAutoCorrected": "{count} സ്വയമേവ ശരിയാക്കി",
   "@draftingAccuracyAutoCorrected": {
     "placeholders": {
@@ -2812,6 +2896,7 @@
     }
     }
   },
+  "draftingAccuracyCanCertifyShort": "Eligible for review sign-off",
   "draftingAccuracyCitationsVerifiedShort": "അവലംബങ്ങൾ പരിശോധിച്ചു",
   "draftingAccuracyCompleteMissingFacts": "പൂർത്തിയാക്കുക - നഷ്‌ടമായ വസ്തുതകൾ പൂരിപ്പിക്കുക",
   "draftingAccuracyDeepSearchSuffix": "(ആഴത്തിലുള്ള തിരയൽ)",
@@ -2823,10 +2908,14 @@
     }
     }
   },
+  "draftingAccuracyFactCoverage": "Fact coverage",
   "draftingAccuracyFactsPendingShort": "വസ്‌തുതകൾ തീർച്ചപ്പെടുത്തിയിട്ടില്ല",
   "draftingAccuracyGoverningSections": "ഭരണ വിഭാഗങ്ങൾ",
+  "draftingAccuracyLawyerReady": "Ready for lawyer review",
   "draftingAccuracyLimitedCorpus": "കോർപ്പസിൽ പരിമിതമായ ഉറവിടങ്ങൾ",
+  "draftingAccuracyMissingDefenceFacts": "Defence facts to confirm",
   "draftingAccuracyNeedsReview": "വക്കീൽ അവലോകനം ആവശ്യമാണ്",
+  "draftingAccuracyPassageSupportedShort": "passages supported",
   "draftingAccuracyProceduralRouteConfirmed": "നടപടിക്രമ റൂട്ട് സ്ഥിരീകരിച്ചു",
   "draftingAccuracyProceduralRouteDetail": "ശുപാർശ ചെയ്യുന്നത് {recommended} — {selected} ഉപയോഗിക്കുന്നു",
   "@draftingAccuracyProceduralRouteDetail": {
@@ -2839,6 +2928,7 @@
     }
     }
   },
+  "draftingAccuracyReadyForLawyerReview": "Ready for lawyer review",
   "draftingAccuracyResearchAuthorities": "{count} അധികാരികൾ വീണ്ടെടുത്തു{deep} · ആത്മവിശ്വാസം {confidence}",
   "@draftingAccuracyResearchAuthorities": {
     "placeholders": {
@@ -2872,6 +2962,7 @@
     }
     }
   },
+  "draftingAccuracyTimelineWarnings": "Timeline checks to review",
   "draftingAccuracyVerifiedForFiling": "ഫയൽ ചെയ്യുന്നതിന് പരിശോധിച്ചുറപ്പിച്ചു",
   "draftingEditAiPanel": "AI എഡിറ്റ്",
   "draftingEditApplyEdit": "AI എഡിറ്റ് പ്രയോഗിക്കുക",
@@ -2995,6 +3086,8 @@
   "errorsToastCourtCaseLinked": "കോടതി കേസ് ബന്ധപ്പെട്ടിരിക്കുന്നു",
   "errorsToastDiligenceReviewStarted": "ജാഗ്രതാ അവലോകനം ആരംഭിച്ചു",
   "errorsToastDocketEntryAdded": "ഡോക്കറ്റ് എൻട്രി ചേർത്തു",
+  "errorsToastDocketSyncFailed": "Court docket could not be synced",
+  "errorsToastDocketSynced": "Court docket synced",
   "errorsToastDocumentArchived": "പ്രമാണം ആർക്കൈവ് ചെയ്തു",
   "errorsToastDocumentLinked": "പ്രമാണം ലിങ്ക് ചെയ്‌തു",
   "errorsToastDocumentUploaded": "ഡോക്യുമെൻ്റ് അപ്ലോഡ് ചെയ്തു",
@@ -3119,6 +3212,7 @@
   "issueCheckerClientDetails": "ക്ലയൻ്റ് വിശദാംശങ്ങൾ",
   "issueCheckerClientMatterIntake": "ഉപഭോക്തൃ കാര്യം കഴിക്കൽ",
   "issueCheckerClientName": "ഉപഭോക്താവിൻ്റെ പേര് *",
+  "issueCheckerClientNameCannotBeSelf": "Enter the client name, or choose to act for yourself.",
   "issueCheckerComplexMatter": "സങ്കീർണ്ണമായ കാര്യം",
   "issueCheckerComplexMatterFirmGuidance": "ഈ കേസിന് ഉയർന്ന സങ്കീർണ്ണതയോ അപകടസാധ്യതയോ ഉണ്ട്. സ്പെഷ്യലിസ്റ്റ് കൗൺസലോ ഒരു മുതിർന്ന ടീം അംഗമോ ഉൾപ്പെടുന്നത് പരിഗണിക്കുക.",
   "issueCheckerConfidentialNotSharedWithTheClientPreview": "രഹസ്യാത്മകം — ക്ലയൻ്റ് പ്രിവ്യൂവുമായി പങ്കിട്ടിട്ടില്ല.",
@@ -3158,6 +3252,18 @@
     }
     }
   },
+  "issueCheckerDetectedCountryRegionChange": "Detected {country} · {region}. Change this if the issue belongs elsewhere.",
+  "@issueCheckerDetectedCountryRegionChange": {
+    "placeholders": {
+    "country": {
+      "type": "String"
+    },
+    "region": {
+      "type": "String"
+    }
+    }
+  },
+  "issueCheckerDetecting": "Detecting…",
   "issueCheckerDetectingLocation": "നിങ്ങളുടെ ലൊക്കേഷൻ കണ്ടെത്തുന്നു...",
   "issueCheckerDocsAnalyzed": "{count, plural, one {# document analyzed} other {# documents analyzed}}",
   "issueCheckerDocuments2": "പ്രമാണങ്ങൾ:",
@@ -3545,6 +3651,7 @@
   "lawyerAnalysisHistory": "വിശകലന ചരിത്രം",
   "lawyerAnyAgentJob": "ഏതെങ്കിലും ഏജൻ്റ് ജോലി",
   "lawyerApproval": "അംഗീകാരം",
+  "lawyerApproveSuggestion": "Approve suggestion",
   "lawyerApproved": "അംഗീകരിച്ചു",
   "lawyerArchiveDocument": "പ്രമാണം ആർക്കൈവ് ചെയ്യണോ?",
   "lawyerAskCopilot": "കോപൈലറ്റിനോട് ചോദിക്കൂ",
@@ -3613,6 +3720,7 @@
   "lawyerDescription": "വിവരണം",
   "lawyerDisbursement": "വിതരണം",
   "lawyerDisbursementRequestsAwaitingApproval": "വിതരണ അഭ്യർത്ഥനകൾ അംഗീകാരത്തിനായി കാത്തിരിക്കുന്നു.",
+  "lawyerDismissSuggestion": "Dismiss suggestion",
   "lawyerDocumentDetail": "പ്രമാണത്തിൻ്റെ വിശദാംശങ്ങൾ",
   "lawyerDocumentLibrary": "ഡോക്യുമെൻ്റ് ലൈബ്രറി",
   "lawyerDraft": "ഡ്രാഫ്റ്റ്",
@@ -3775,6 +3883,7 @@
   "lawyerNoClientGeneral": "ക്ലയൻ്റ് ഇല്ല (പൊതുവായത്)",
   "lawyerNoDocumentsFound": "രേഖകളൊന്നും കണ്ടെത്തിയില്ല.",
   "lawyerNoEvidenceItems": "തെളിവ് ഇനങ്ങൾ ഇല്ല",
+  "lawyerNoEvidenceYet": "No evidence has been added yet.",
   "lawyerNoExpensesRecordedYet": "ഇതുവരെ ചെലവുകളൊന്നും രേഖപ്പെടുത്തിയിട്ടില്ല",
   "lawyerNoExtraFiltersForThisTrigger": "ഈ ട്രിഗറിന് അധിക ഫിൽട്ടറുകളൊന്നുമില്ല.",
   "lawyerNoFirmWorkspace": "ഉറച്ച ജോലിസ്ഥലമില്ല",
@@ -3794,6 +3903,7 @@
   "lawyerNoPendingApprovals": "തീർപ്പുകൽപ്പിക്കാത്ത അംഗീകാരങ്ങളൊന്നുമില്ല",
   "lawyerNoSourceTraceAvailable": "ഉറവിടം ലഭ്യമല്ല.",
   "lawyerNoSpecificMatter": "പ്രത്യേക കാര്യമില്ല",
+  "lawyerNoSuggestedTime": "No time suggestions yet.",
   "lawyerNoTeamMembersFound": "ടീം അംഗങ്ങളെ കണ്ടെത്തിയില്ല.",
   "lawyerNotYetAnalyzed": "ഇതുവരെ വിശകലനം ചെയ്തിട്ടില്ല",
   "lawyerNote": "കുറിപ്പ്:",
@@ -3884,6 +3994,8 @@
   "lawyerStrategyOptionsAbcDescription": "ഓപ്‌ഷനുകൾ A/B/C, ശുപാർശ ചെയ്‌ത പാത, സമയപരിധി.",
   "lawyerStrengthsForOurClient": "ഞങ്ങളുടെ ക്ലയൻ്റിനുള്ള ശക്തി",
   "lawyerSubmitted": "സമർപ്പിച്ചു",
+  "lawyerSuggestedTime": "Suggested time entries",
+  "lawyerSuggestedTimeDescription": "Review suggested work and duration before adding a time entry.",
   "lawyerSummary": "സംഗ്രഹം",
   "lawyerTaskDetails": "ടാസ്ക് വിശദാംശങ്ങൾ",
   "lawyerTaskTitle": "ടാസ്ക് ശീർഷകം",
@@ -4692,8 +4804,10 @@
   "marketingHomeResearchProgressDraftReadyBanner": "ഡ്രാഫ്റ്റ് മെമ്മോ തയ്യാറാണ് — അന്തിമ അവലംബ ഓഡിറ്റ് നടക്കുന്നു...",
   "marketingHomeResearchProgressDraftVerifyingBanner": "ഡ്രാഫ്റ്റ് തയ്യാറാണ് - കൃത്യത പരിശോധനകൾ നടത്തുന്നു...",
   "marketingHomeResearchProgressModeFast": "വേഗം",
+  "marketingHomeResearchProgressModeGuidance": "AI only",
   "marketingHomeResearchProgressModeVerified": "പരിശോധിച്ചുറപ്പിച്ചു",
   "marketingHomeResearchProgressPhaseStallNote": "ഇപ്പോഴും പ്രവർത്തിക്കുന്നു - ബാക്കെൻഡ് ഈ ഘട്ടം പ്രോസസ്സ് ചെയ്യുന്നു. വലിയ ചോദ്യങ്ങൾക്ക് കുറച്ച് മിനിറ്റ് എടുത്തേക്കാം.",
+  "marketingHomeResearchProgressPhaseStallNoteVerified": "Still working — the backend is processing this step. Large queries can take a few minutes.",
   "marketingHomeResearchProgressRefiningTitle": "സന്ദർഭത്തിനനുസരിച്ച് പരിഷ്കരിക്കുന്നു...",
   "marketingHomeResearchProgressRunningTitle": "നിയമ ഗവേഷണം നടത്തുന്നു",
   "marketingHomeResearchProgressStepAuditDraftDetail": "അന്തിമ ഉദ്ധരണി ഓഡിറ്റ് പാസ് - നിങ്ങളുടെ ഡ്രാഫ്റ്റ് താഴെ കാണാം.",
@@ -4745,6 +4859,15 @@
     }
   },
   "marketingHomeResearchProgressStepGroundVerify": "കോർപ്പസിനെതിരെ സെക്ഷൻ ടെക്‌സ്‌റ്റ് പരിശോധിക്കുന്നു...",
+  "marketingHomeResearchProgressStepGuidanceDraftDetail": "Writing a first-pass answer from the question and contract",
+  "marketingHomeResearchProgressStepGuidanceDraftLabel": "Drafting the note",
+  "marketingHomeResearchProgressStepGuidanceReadDetail": "Identifying the issue, jurisdiction, and contract facts",
+  "marketingHomeResearchProgressStepGuidanceReadLabel": "Reading your question",
+  "marketingHomeResearchProgressStepGuidanceReadyDetail": "Preparing the research note",
+  "marketingHomeResearchProgressStepGuidanceReadyLabel": "Ready",
+  "marketingHomeResearchProgressStepLiveRetrieveDetail": "Checking AI-named authorities against live/corpus sources",
+  "marketingHomeResearchProgressStepLiveRetrieveFailover": "Retrying available connectors when a source is down",
+  "marketingHomeResearchProgressStepLiveRetrieveLabel": "Checking live and corpus sources",
   "marketingHomeResearchProgressStepParseDetail": "അധികാരപരിധി, വ്യവസ്ഥകൾ, ഉദ്ദേശ്യം എന്നിവ തിരിച്ചറിയൽ",
   "marketingHomeResearchProgressStepParseDetailProvision": "{provision} ഉം അനുബന്ധ വ്യവസ്ഥകളും തിരിച്ചറിയുന്നു",
   "@marketingHomeResearchProgressStepParseDetailProvision": {
@@ -4755,6 +4878,9 @@
     }
   },
   "marketingHomeResearchProgressStepParseLabel": "നിങ്ങളുടെ നിയമപരമായ ചോദ്യം പാഴ്‌സ് ചെയ്യുന്നു",
+  "marketingHomeResearchProgressStepPlanMapDetail": "Identifying issues, likely statutes, and retrieval queries",
+  "marketingHomeResearchProgressStepPlanMapLabel": "Planning the research map",
+  "marketingHomeResearchProgressStepPlanMapQueries": "Expanding search queries from the research plan",
   "marketingHomeResearchProgressStepPredecessorCrpcBnss": "CrPC → BNSS സെക്ഷൻ റീമാപ്പുകൾ ക്രോസ് ചെക്കിംഗ്",
   "marketingHomeResearchProgressStepPredecessorCrpcBnssSection": "{section} വിഭാഗത്തിനായുള്ള CrPC → BNSS റീമാപ്പുകൾ ക്രോസ്-ചെക്കിംഗ്",
   "@marketingHomeResearchProgressStepPredecessorCrpcBnssSection": {
@@ -4780,6 +4906,8 @@
   "marketingHomeResearchProgressStepRetrieveMatch": "നിങ്ങളുടെ ചോദ്യവുമായി നിയമാനുസൃത വിഭാഗങ്ങൾ പൊരുത്തപ്പെടുത്തുന്നു...",
   "marketingHomeResearchProgressStepRetrieveRank": "ബന്ധപ്പെട്ട വിഭാഗങ്ങളും കമൻ്ററിയും റാങ്ക് ചെയ്യുന്നു...",
   "marketingHomeResearchProgressStepRetrieveRankCases": "പ്രസക്തി അനുസരിച്ച് കേസ് നിയമത്തെ റാങ്ക് ചെയ്യുന്നു...",
+  "marketingHomeResearchProgressStepSelfCheckDetail": "Attacking weak assumptions in the same draft",
+  "marketingHomeResearchProgressStepSelfCheckLabel": "Self-check",
   "marketingHomeResearchProgressStillWorking": "· ഇപ്പോഴും പ്രവർത്തിക്കുന്നു…",
   "marketingHomeResearchProgressTakingLonger": "· സാധാരണയേക്കാൾ കൂടുതൽ സമയം എടുക്കുന്നു",
   "marketingHomeResearchProgressVerifiedDurationHint": "· സാധാരണയായി 1-3 മിനിറ്റ്",
@@ -5298,6 +5426,10 @@
   "mattersAiDraftingSubtitle": "കാര്യ സന്ദർഭത്തിൽ നിന്ന് ടെംപ്ലേറ്റ് ഫീൽഡുകൾ പൂരിപ്പിക്കുകയും നിയമപരമായ ക്ലോസുകൾ പൂർത്തിയാക്കുകയും ചെയ്യുന്നു.",
   "mattersAiIsAnalyzingTheOpposingPartysPosition": "AI എതിർകക്ഷിയുടെ നിലപാട് വിശകലനം ചെയ്യുന്നു...",
   "mattersAiIsAnalyzingYourMatter": "AI നിങ്ങളുടെ കാര്യം വിശകലനം ചെയ്യുന്നു...",
+  "mattersAiProgressAnalysing": "Analysing the available information",
+  "mattersAiProgressGenerating": "Preparing the response",
+  "mattersAiProgressReading": "Reading the matter context",
+  "mattersAiProgressRetrieving": "Retrieving relevant sources",
   "mattersAiResponseFailed": "AI പ്രതികരണം നേടുന്നതിൽ പരാജയപ്പെട്ടു. ദയവായി വീണ്ടും ശ്രമിക്കുക.",
   "mattersAigeneratedDocuments": "AI- സൃഷ്ടിച്ച രേഖകൾ",
   "mattersAllAssignees": "എല്ലാ അസൈനികളും",
@@ -5309,6 +5441,7 @@
   "mattersAllStatuses": "എല്ലാ സ്റ്റാറ്റസുകളും",
   "mattersAnalyzeOpponent": "എതിരാളിയെ വിശകലനം ചെയ്യുക",
   "mattersAnalyzing": "വിശകലനം ചെയ്യുന്നു...",
+  "mattersAnswered": "Answered",
   "mattersAnsweredProgress": "{answered} / {total} ഉത്തരം നൽകി",
   "@mattersAnsweredProgress": {
     "placeholders": {
@@ -5447,6 +5580,7 @@
   "mattersCreating": "സൃഷ്‌ടിക്കുന്നു...",
   "mattersCreatingMatter": "സൃഷ്ടിക്കുന്നു...",
   "mattersCreatingMatterEllipsis": "പദാർത്ഥം സൃഷ്ടിക്കുന്നു...",
+  "mattersCreditsUsed": "{count, plural, one {# credit used} other {# credits used}}",
   "mattersCriticalRisk": "ക്രിട്ടിക്കൽ റിസ്ക്",
   "mattersDate": "തീയതി",
   "mattersDate2": "തീയതി *",
@@ -5622,6 +5756,7 @@
   "mattersGenerateWhenReady": "ടെംപ്ലേറ്റുകൾ നൽകിയിട്ടുണ്ടെന്നും ആവശ്യമായ ഫീൽഡുകൾ പൂരിപ്പിച്ചിട്ടുണ്ടെന്നും പരിശോധിച്ച് വീണ്ടും ശ്രമിക്കുക.",
   "mattersGenerating": "സൃഷ്ടിക്കുന്നു...",
   "mattersGrantAccessToTeamMembersWithReadonlyOrWritePermiss": "വായന-മാത്രം അല്ലെങ്കിൽ എഴുതാനുള്ള അനുമതികളോടെ ടീം അംഗങ്ങൾക്ക് ആക്സസ് അനുവദിക്കുക",
+  "mattersGuidanceResearchTypicalTime": "AI guidance only — usually under 15 seconds",
   "mattersHiddenFromPortalClients": "പോർട്ടൽ ക്ലയൻ്റുകളിൽ നിന്ന് മറച്ചിരിക്കുന്നു",
   "mattersHideReasoning": "ന്യായവാദം മറയ്ക്കുക",
   "mattersHighRisk": "ഉയർന്ന റിസ്ക്",
@@ -5706,6 +5841,7 @@
   "mattersMatterTitle": "കാര്യത്തിൻ്റെ തലക്കെട്ട്",
   "mattersMatterTitleRequired": "കാര്യത്തിൻ്റെ തലക്കെട്ട് ആവശ്യമാണ്",
   "mattersMatterType": "പദാർത്ഥത്തിൻ്റെ തരം",
+  "mattersMatterType2": "Matter type",
   "mattersMatterTypeLabel": "പദാർത്ഥത്തിൻ്റെ തരം",
   "mattersMediumRisk": "ഇടത്തരം റിസ്ക്",
   "mattersMeetingsAndRecordings": "മീറ്റിംഗുകളും റെക്കോർഡിംഗുകളും",
@@ -5877,6 +6013,7 @@
     }
     }
   },
+  "mattersRecentActivity": "Recent activity",
   "mattersRecommendedNextSteps": "ശുപാർശ ചെയ്ത തുടർ നടപടികൾ",
   "mattersRecordFirstMeeting": "ആദ്യ മീറ്റിംഗ് രേഖപ്പെടുത്തുക",
   "mattersRecordFirstMeetingDescription": "ഒരു കൺസൾട്ടേഷൻ അല്ലെങ്കിൽ സ്ട്രാറ്റജി കോൾ ക്യാപ്‌ചർ ചെയ്‌ത് ഈ വിഷയ ടൈംലൈനിലേക്ക് അത് അറ്റാച്ചുചെയ്യുക.",
@@ -6237,6 +6374,7 @@
   "portalComments": "അഭിപ്രായങ്ങൾ",
   "portalConsentPortalDescription": "സന്ദേശങ്ങൾ, അപ്‌ലോഡുകൾ, റിപ്പോർട്ടുകൾ, ഇൻവോയ്‌സുകൾ, പേയ്‌മെൻ്റുകൾ എന്നിവ നിങ്ങളുടെ നിയമപരമായ ഫയലുമായി ബന്ധപ്പെട്ടിരിക്കുന്നു.",
   "portalConsentawarePortal": "സമ്മതമറിയിക്കുന്ന പോർട്ടൽ:",
+  "portalContinueToPortal": "Continue to portal",
   "portalCurrentStageAndStatusForYourMatters": "നിങ്ങളുടെ കാര്യങ്ങൾക്കുള്ള നിലവിലെ ഘട്ടവും നിലയും",
   "portalDescription": "വിവരണം",
   "portalDetails": "വിശദാംശങ്ങൾ",
@@ -6253,6 +6391,9 @@
   "portalFirmCommunications": "ഉറച്ച ആശയവിനിമയങ്ങൾ",
   "portalFullName": "പൂർണ്ണമായ പേര്",
   "portalInstructions": "നിർദ്ദേശങ്ങൾ",
+  "portalInviteLinkRequiredDescription": "Open the invitation link shared by your law firm to access the client portal.",
+  "portalInviteLinkRequiredHelp": "Ask your law firm for a new invitation if your link is missing or has expired.",
+  "portalInviteLinkSignInDescription": "Continue using your invitation to access the information shared with you.",
   "portalInvoices": "ഇൻവോയ്സുകൾ",
   "portalInvoicesAndReceipts": "ഇൻവോയ്സുകളും രസീതുകളും",
   "portalJaneClient": "ജെയ്ൻ ക്ലയൻ്റ്",
@@ -6389,6 +6530,7 @@
   "settingsBuyCredits": "ക്രെഡിറ്റുകൾ വാങ്ങുക",
   "settingsCalendarEmailMeetingsEsignAndAccounting": "കലണ്ടർ, ഇമെയിൽ, മീറ്റിംഗുകൾ, ഇ-സൈൻ, അക്കൗണ്ടിംഗ്",
   "settingsCancel": "റദ്ദാക്കുക",
+  "settingsChangeLogo": "Change logo",
   "settingsChangeRegion": "പ്രദേശം മാറ്റുക",
   "settingsChangeRegionHint": "നിങ്ങളുടെ അക്കൗണ്ടിന് നിയമങ്ങളും വിലയും ബാധകമാകുന്ന രാജ്യം തിരഞ്ഞെടുക്കുക",
   "settingsCheckingFirmTrainingPreferences": "നിലവിലെ സ്ഥാപന പരിശീലനവും AI പ്രോസസ്സിംഗ് മുൻഗണനകളും പരിശോധിക്കുന്നു.",
@@ -6491,6 +6633,8 @@
   "settingsFirmAccount": "ഉറച്ച അക്കൗണ്ട്",
   "settingsFirmComplianceSettingsAndAuditVisibility": "ഉറച്ച പാലിക്കൽ ക്രമീകരണങ്ങളും ഓഡിറ്റ് ദൃശ്യപരതയും",
   "settingsFirmDataTrainingConsent": "സ്ഥിരമായ ഡാറ്റയും പരിശീലന സമ്മതവും",
+  "settingsFirmLogo": "Firm logo",
+  "settingsFirmLogoDescription": "Add the logo used for your firm branding.",
   "settingsFirmName": "സ്ഥാപനത്തിൻ്റെ പേര് *",
   "settingsFirmNameLabel": "സ്ഥാപനത്തിൻ്റെ പേര്",
   "settingsFirmPoliciesEthicalWallsAndAiUsageRules": "ഉറച്ച നയങ്ങൾ, നൈതിക മതിലുകൾ, AI ഉപയോഗ നിയമങ്ങൾ",
@@ -6526,6 +6670,12 @@
   "settingsLoadingPermissions": "അനുമതികൾ ലോഡുചെയ്യുന്നു...",
   "settingsLocation": "സ്ഥാനം *",
   "settingsLocationLabel": "സ്ഥാനം",
+  "settingsLogoHint": "Choose an image under 2 MB.",
+  "settingsLogoOnExports": "Logo on exports",
+  "settingsLogoOnExportsDisabled": "Disabled",
+  "settingsLogoOnExportsEnabled": "Enabled",
+  "settingsLogoUploadError": "The logo could not be uploaded. Please try again.",
+  "settingsLogoUploading": "Uploading logo…",
   "settingsManageAiConsent": "AI സമ്മതം മാനേജ് ചെയ്യുക",
   "settingsManageBilling": "ബില്ലിംഗ് നിയന്ത്രിക്കുക",
   "settingsManageDataConsent": "ഡാറ്റ സമ്മതം നിയന്ത്രിക്കുക",
@@ -6701,6 +6851,7 @@
   "settingsRecentTenantscopedEvents": "സമീപകാല വാടകക്കാരൻ്റെ പരിധിയിലുള്ള ഇവൻ്റുകൾ",
   "settingsRegionUpdateFailed": "പ്രദേശം അപ്ഡേറ്റ് ചെയ്യാനായില്ല. ദയവായി വീണ്ടും ശ്രമിക്കുക.",
   "settingsRegionUpdated": "മേഖല അപ്ഡേറ്റ് ചെയ്തു",
+  "settingsRemoveLogo": "Remove logo",
   "settingsRequestExport": "കയറ്റുമതി അഭ്യർത്ഥിക്കുക",
   "settingsRequireApprovalForMatterSharing": "കാര്യം പങ്കിടുന്നതിന് അംഗീകാരം ആവശ്യമാണ്",
   "settingsRestrictedUserIds": "നിയന്ത്രിത ഉപയോക്തൃ ഐഡികൾ",
@@ -6723,6 +6874,8 @@
   "settingsSelected": "തിരഞ്ഞെടുത്തത്:",
   "settingsSensitiveLabels": "സെൻസിറ്റീവ് ലേബലുകൾ",
   "settingsSettingsDescription": "നിങ്ങളുടെ പ്രൊഫൈൽ, AI ഉപയോഗം, സ്വകാര്യത, മുൻഗണനകൾ എന്നിവ നിയന്ത്രിക്കുക.",
+  "settingsShowLogoOnExports": "Show logo on exports",
+  "settingsShowLogoOnExportsDescription": "Include the firm logo on supported exported documents.",
   "settingsSingleSignonSaml": "ഒറ്റ സൈൻ-ഓൺ (SAML)",
   "settingsSmsNotifications": "SMS അറിയിപ്പുകൾ",
   "settingsSsoUrl": "SSO URL",
@@ -6748,6 +6901,7 @@
   "settingsUnableToWithdrawConsent": "സമ്മതം പിൻവലിക്കാനായില്ല.",
   "settingsUniversalDisclaimerText": "സാർവത്രിക നിരാകരണ വാചകം",
   "settingsUpdateYourFirmInformationAndBranding": "നിങ്ങളുടെ ഉറച്ച വിവരങ്ങളും ബ്രാൻഡിംഗും അപ്ഡേറ്റ് ചെയ്യുക",
+  "settingsUploadLogo": "Upload logo",
   "settingsUsageLedger": "ഉപയോഗ ലെഡ്ജർ",
   "settingsUseAnonymizedDataForImprovement": "മെച്ചപ്പെടുത്താൻ അജ്ഞാത ഡാറ്റ ഉപയോഗിക്കുക",
   "settingsUserid1Userid2": "userId1, userId2",

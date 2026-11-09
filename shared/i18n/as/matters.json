@@ -661,5 +661,14 @@
   "checkingConflict": "সংঘাত পরীক্ষা...",
   "runConflictCheck": "সংঘাত পৰীক্ষা চলাওক",
   "researchPromptTitle": "গৱেষণামূলক প্ৰশ্ন",
-  "premiumModelResearchHint": "প্ৰিমিয়াম মডেলত অলপ বেছি সময় লাগিব পাৰে।"
+  "premiumModelResearchHint": "প্ৰিমিয়াম মডেলত অলপ বেছি সময় লাগিব পাৰে।",
+  "guidanceResearchTypicalTime": "AI guidance only — usually under 15 seconds",
+  "answered": "Answered",
+  "ai_progress_reading": "Reading the matter context",
+  "ai_progress_retrieving": "Retrieving relevant sources",
+  "ai_progress_analysing": "Analysing the available information",
+  "ai_progress_generating": "Preparing the response",
+  "credits_used": "{count, plural, one {# credit used} other {# credits used}}",
+  "recent_activity": "Recent activity",
+  "matter_type": "Matter type"
 }

@@ -570,7 +570,35 @@
     "meetings_scope_client": "এই ক্লায়েন্ট জন্য মিটিং",
     "meetings_scope_matter": "এই বিষয়ে মিটিং",
     "no_meetings_match_filters": "কোনো মিটিং আপনার ফিল্টার মেলে না",
-    "prev": "আগের"
+    "prev": "আগের",
+    "record_transcript": "Record and transcribe",
+    "import_meeting": "Import meeting",
+    "meetings_load_failed": "Meetings could not be loaded. Please try again.",
+    "release": {
+      "usageBased": "Charged by actual usage",
+      "tasksTitle": "Tasks",
+      "tasksDescription": "Your firm’s work, with the earliest deadlines first.",
+      "newTask": "New task",
+      "selectFirmTasks": "Select a firm to view tasks.",
+      "loadingTasks": "Loading tasks…",
+      "tasksLoadFailed": "Tasks could not be loaded. Please refresh and try again.",
+      "noTasks": "No tasks match this view.",
+      "openMatterTasks": "Open matter tasks",
+      "showCompleted": "Show completed",
+      "evidenceScope": "Evidence scope",
+      "allMatterDocuments": "All authorized matter documents",
+      "selectedFolders": "Selected folders and their subfolders",
+      "selectedDocuments": "Selected documents only",
+      "accessibleFolders": "Folders with accessible documents",
+      "noAccessibleFolders": "No accessible document folders.",
+      "matterJurisdiction": "Jurisdiction follows this matter. Change it in matter settings.",
+      "holdingPassage": "Holding passage",
+      "outcome": "Outcome:",
+      "sectionFinder": "Section Finder",
+      "actualUsage": "Based on actual usage",
+      "finalCharge": "Final charge",
+      "legalCountry": "Legal country"
+    }
   },
   "auth": {
     "signIn": "সাইন ইন করুন",
@@ -784,7 +812,17 @@
     "completingSignIn": "সাইন-ইন সম্পূর্ণ হচ্ছে...",
     "oauthRedirectFailed": "আমরা Apple/Google সাইন-ইন শেষ করতে পারিনি। আবার চেষ্টা করুন.",
     "oauthCompletingTooLong": "সাইন-ইন প্রত্যাশার চেয়ে বেশি সময় নিচ্ছে৷ আপনি আবার চেষ্টা করতে পারেন.",
-    "tryAgain": "আবার চেষ্টা করুন"
+    "tryAgain": "আবার চেষ্টা করুন",
+    "pathSummaryLawFirm": "Law firm workspace",
+    "pathSummarySoloLawyer": "Solo lawyer workspace",
+    "pathSummaryLegalHelp": "Personal legal help",
+    "signUpAccountTitle": "Create your account",
+    "signUpAccountDescription": "Set up your sign-in details to continue.",
+    "prospectPrefillHint": "Details from your link have been filled in. Review them before continuing.",
+    "lawyerPerk1": "Organize clients, matters and documents",
+    "lawyerPerk2": "Research and draft with matter context",
+    "clientPerk1": "Understand your legal issue",
+    "clientPerk2": "Keep your documents and next steps together"
   },
   "marketing": {
     "4565": "45-65%",
@@ -3028,7 +3066,9 @@
     "microFlowFactsHelper": "নিজের ভাষায় লিখতে পারেন। আপনি যত বেশি প্রাসঙ্গিক বিশদ প্রদান করবেন, বিশ্লেষণ তত বেশি কার্যকর হবে।",
     "checkMySituation": "আমার অবস্থা পরীক্ষা করুন",
     "enterAtLeastChars": "কমপক্ষে {count} অক্ষর লিখুন",
-    "charCount": "{current} / {max} অক্ষর"
+    "charCount": "{current} / {max} অক্ষর",
+    "detectedCountryRegionChange": "Detected {country} · {region}. Change this if the issue belongs elsewhere.",
+    "clientNameCannotBeSelf": "Enter the client name, or choose to act for yourself."
   },
   "consumer": {
     "nav": {
@@ -3331,7 +3371,12 @@
     "empty_messages_description": "এই মামলার বিষয়ে আইনজীবীদের বার্তা এবং সমর্থন এখানে উপস্থিত হবে৷",
     "empty_payments_description": "রিপোর্ট, আইনজীবী পর্যালোচনা, এবং সদস্যতার জন্য অর্থপ্রদান এখানে প্রদর্শিত হবে.",
     "applies_to_account_changes_future": "আপনার অ্যাকাউন্টে প্রযোজ্য। পরিবর্তন ভবিষ্যতে প্রক্রিয়াকরণ প্রভাবিত করে।",
-    "control_case_data_for_ai_improvement": "AI উন্নতির জন্য আপনার কেস ডেটা কীভাবে ব্যবহার করা যেতে পারে তা নিয়ন্ত্রণ করুন। ডিফল্ট বন্ধ আছে।"
+    "control_case_data_for_ai_improvement": "AI উন্নতির জন্য আপনার কেস ডেটা কীভাবে ব্যবহার করা যেতে পারে তা নিয়ন্ত্রণ করুন। ডিফল্ট বন্ধ আছে।",
+    "auto_renewing": "Renews automatically",
+    "subscription_auto_renew_hint": "Your subscription renews until cancelled. Manage renewal and cancellation through your billing provider.",
+    "manage_plan": "Manage plan",
+    "cancel_subscription": "Cancel subscription",
+    "your_current_plan": "Your current plan"
   },
   "lawyer": {
     "nav": {
@@ -3777,7 +3822,13 @@
       "urgencyMediumDesc": "কয়েক সপ্তাহের মধ্যে",
       "urgencyHighDesc": "দিনের মধ্যে",
       "urgencyUrgentDesc": "অবিলম্বে মনোযোগ প্রয়োজন"
-    }
+    },
+    "noEvidenceYet": "No evidence has been added yet.",
+    "suggested_time": "Suggested time entries",
+    "suggested_time_description": "Review suggested work and duration before adding a time entry.",
+    "no_suggested_time": "No time suggestions yet.",
+    "approve_suggestion": "Approve suggestion",
+    "dismiss_suggestion": "Dismiss suggestion"
   },
   "admin": {
     "title": "অ্যাডমিন",
@@ -4410,7 +4461,20 @@
     "deleteAccountSubmitting": "মুছে ফেলা হচ্ছে...",
     "deleteAccountSubmit": "আমার অ্যাকাউন্ট মুছে দিন",
     "privacyRightToErasure": "মুছে ফেলার অধিকার",
-    "privacyRightToErasureBody": "আপনার অ্যাকাউন্ট এবং ব্যক্তিগত ডেটা স্থায়ীভাবে মুছে ফেলার অনুরোধ করুন।"
+    "privacyRightToErasureBody": "আপনার অ্যাকাউন্ট এবং ব্যক্তিগত ডেটা স্থায়ীভাবে মুছে ফেলার অনুরোধ করুন।",
+    "logo_on_exports": "Logo on exports",
+    "logo_on_exports_enabled": "Enabled",
+    "logo_on_exports_disabled": "Disabled",
+    "logo_upload_error": "The logo could not be uploaded. Please try again.",
+    "firm_logo": "Firm logo",
+    "firm_logo_description": "Add the logo used for your firm branding.",
+    "logo_uploading": "Uploading logo…",
+    "change_logo": "Change logo",
+    "upload_logo": "Upload logo",
+    "remove_logo": "Remove logo",
+    "logo_hint": "Choose an image under 2 MB.",
+    "show_logo_on_exports": "Show logo on exports",
+    "show_logo_on_exports_description": "Include the firm logo on supported exported documents."
   },
   "billing": {
     "title": "বিলিং",
@@ -5490,7 +5554,15 @@
     "checkingConflict": "দ্বন্দ্ব পরীক্ষা করা হচ্ছে...",
     "runConflictCheck": "দ্বন্দ্ব চেক চালান",
     "researchPromptTitle": "গবেষণা প্রশ্ন",
-    "premiumModelResearchHint": "প্রিমিয়াম মডেলের জন্য একটু বেশি সময় লাগতে পারে।"
+    "premiumModelResearchHint": "প্রিমিয়াম মডেলের জন্য একটু বেশি সময় লাগতে পারে।",
+    "answered": "Answered",
+    "ai_progress_reading": "Reading the matter context",
+    "ai_progress_retrieving": "Retrieving relevant sources",
+    "ai_progress_analysing": "Analysing the available information",
+    "ai_progress_generating": "Preparing the response",
+    "credits_used": "{count, plural, one {# credit used} other {# credits used}}",
+    "recent_activity": "Recent activity",
+    "matter_type": "Matter type"
   },
   "clients": {
     "title": "ক্লায়েন্ট",
@@ -5842,7 +5914,11 @@
     "uploaded": "আপলোড করা হয়েছে",
     "sign_in_description": "আপনার আইন সংস্থার ফাইলে থাকা ইমেল ঠিকানা দিয়ে সাইন ইন করুন।",
     "signing_in": "সাইন ইন করা হচ্ছে...",
-    "unable_to_sign_in": "সাইন ইন করতে অক্ষম৷ আপনার ইমেল চেক করুন এবং আবার চেষ্টা করুন৷"
+    "unable_to_sign_in": "সাইন ইন করতে অক্ষম৷ আপনার ইমেল চেক করুন এবং আবার চেষ্টা করুন৷",
+    "invite_link_required_description": "Open the invitation link shared by your law firm to access the client portal.",
+    "invite_link_required_help": "Ask your law firm for a new invitation if your link is missing or has expired.",
+    "invite_link_sign_in_description": "Continue using your invitation to access the information shared with you.",
+    "continue_to_portal": "Continue to portal"
   },
   "errors": {
     "generic": "কিছু ভুল হয়েছে",
@@ -5947,7 +6023,9 @@
       "publishedToClientPortal": "ক্লায়েন্ট পোর্টালে প্রকাশিত",
       "taskReopened": "টাস্ক আবার খোলা হয়েছে",
       "taskCompleted": "কাজ সম্পন্ন হয়েছে",
-      "pleaseTryAgain": "আবার চেষ্টা করুন."
+      "pleaseTryAgain": "আবার চেষ্টা করুন.",
+      "docketSynced": "Court docket synced",
+      "docketSyncFailed": "Court docket could not be synced"
     }
   },
   "dashboard": {
@@ -6103,7 +6181,11 @@
           "Tenancy deposit",
           "Consumer rights"
         ]
-      }
+      },
+      "intakeSubtitle": "Start with the client and a short description of the matter.",
+      "intakeBriefPlaceholder": "Describe the issue, key dates and the help needed.",
+      "intakeClientPlaceholder": "Client name",
+      "intakeCta": "Start intake"
     },
     "dailyBrief": {
       "title": "আপনার দৈনন্দিন সংক্ষিপ্ত",
@@ -7504,7 +7586,15 @@
       "proceduralRouteDetail": "প্রস্তাবিত {recommended} — {selected} ব্যবহার করে",
       "governingSections": "শাসন ​​বিভাগ",
       "researchAuthorities": "{count} কর্তৃপক্ষ পুনরুদ্ধার করেছে{deep} · আস্থা {confidence}",
-      "deepSearchSuffix": "(গভীর অনুসন্ধান)"
+      "deepSearchSuffix": "(গভীর অনুসন্ধান)",
+      "lawyerReady": "Ready for lawyer review",
+      "readyForLawyerReview": "Ready for lawyer review",
+      "canCertifyShort": "Eligible for review sign-off",
+      "passageSupportedShort": "passages supported",
+      "factCoverage": "Fact coverage",
+      "missingDefenceFacts": "Defence facts to confirm",
+      "autoAppliedFixes": "Applied corrections",
+      "timelineWarnings": "Timeline checks to review"
     }
   },
   "matterIntelligence": {
@@ -7555,7 +7645,9 @@
     "dialogDecline": "এখন না",
     "dialogAgree": "আমি রাজি",
     "settingsTitle": "এআই অনুমান সম্মতি",
-    "settingsDescription": "সম্মতি রিসেট। পরবর্তী AI বৈশিষ্ট্যের আগে আপনাকে আবার জিজ্ঞাসা করা হবে।"
+    "settingsDescription": "সম্মতি রিসেট। পরবর্তী AI বৈশিষ্ট্যের আগে আপনাকে আবার জিজ্ঞাসা করা হবে।",
+    "processingUnavailable": "AI privacy information is unavailable. Please retry before sending your data.",
+    "processingBody": "To perform the AI work you request, Umbrella sends your questions, instructions, authorized matter facts, document excerpts, research and draft text to the recipients below. Audio is sent when you use transcription. Inference permission does not grant permission to train models."
   },
   "docuDraft": {
     "title": "ডকু ড্রাফ্ট",

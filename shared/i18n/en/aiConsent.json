@@ -7,5 +7,7 @@
   "dialogDecline": "Not now",
   "dialogAgree": "I agree",
   "settingsTitle": "AI inference consent",
-  "settingsDescription": "Consent reset. You will be asked again before the next AI feature."
+  "settingsDescription": "Consent reset. You will be asked again before the next AI feature.",
+  "processingUnavailable": "AI privacy information is unavailable. Please retry before sending your data.",
+  "processingBody": "To perform the AI work you request, Umbrella sends your questions, instructions, authorized matter facts, document excerpts, research and draft text to the recipients below. Audio is sent when you use transcription. Inference permission does not grant permission to train models."
 }

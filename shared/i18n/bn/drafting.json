@@ -91,6 +91,14 @@
     "proceduralRouteDetail": "প্রস্তাবিত {recommended} — {selected} ব্যবহার করে",
     "governingSections": "শাসন ​​বিভাগ",
     "researchAuthorities": "{count} কর্তৃপক্ষ পুনরুদ্ধার করেছে{deep} · আস্থা {confidence}",
-    "deepSearchSuffix": "(গভীর অনুসন্ধান)"
+    "deepSearchSuffix": "(গভীর অনুসন্ধান)",
+    "lawyerReady": "Ready for lawyer review",
+    "readyForLawyerReview": "Ready for lawyer review",
+    "canCertifyShort": "Eligible for review sign-off",
+    "passageSupportedShort": "passages supported",
+    "factCoverage": "Fact coverage",
+    "missingDefenceFacts": "Defence facts to confirm",
+    "autoAppliedFixes": "Applied corrections",
+    "timelineWarnings": "Timeline checks to review"
   }
 }

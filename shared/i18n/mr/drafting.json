@@ -91,6 +91,14 @@
     "proceduralRouteDetail": "शिफारस केलेले {recommended} — {selected} वापरून",
     "governingSections": "शासित विभाग",
     "researchAuthorities": "{count} अधिकाऱ्यांनी पुनर्प्राप्त{deep} · आत्मविश्वास {confidence}",
-    "deepSearchSuffix": "(खोल शोध)"
+    "deepSearchSuffix": "(खोल शोध)",
+    "lawyerReady": "Ready for lawyer review",
+    "readyForLawyerReview": "Ready for lawyer review",
+    "canCertifyShort": "Eligible for review sign-off",
+    "passageSupportedShort": "passages supported",
+    "factCoverage": "Fact coverage",
+    "missingDefenceFacts": "Defence facts to confirm",
+    "autoAppliedFixes": "Applied corrections",
+    "timelineWarnings": "Timeline checks to review"
   }
 }

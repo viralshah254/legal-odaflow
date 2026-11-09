@@ -7,5 +7,7 @@
   "dialogDecline": "এখন না",
   "dialogAgree": "আমি রাজি",
   "settingsTitle": "এআই অনুমান সম্মতি",
-  "settingsDescription": "সম্মতি রিসেট। পরবর্তী AI বৈশিষ্ট্যের আগে আপনাকে আবার জিজ্ঞাসা করা হবে।"
+  "settingsDescription": "সম্মতি রিসেট। পরবর্তী AI বৈশিষ্ট্যের আগে আপনাকে আবার জিজ্ঞাসা করা হবে।",
+  "processingUnavailable": "AI privacy information is unavailable. Please retry before sending your data.",
+  "processingBody": "To perform the AI work you request, Umbrella sends your questions, instructions, authorized matter facts, document excerpts, research and draft text to the recipients below. Audio is sent when you use transcription. Inference permission does not grant permission to train models."
 }

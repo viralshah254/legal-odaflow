@@ -299,5 +299,10 @@
   "empty_messages_description": "Les messages des avocats et le soutien concernant cette affaire apparaîtront ici.",
   "empty_payments_description": "Les paiements pour les rapports, les révisions par les avocats et les abonnements apparaîtront ici.",
   "applies_to_account_changes_future": "S'applique à votre compte. Les modifications affectent le traitement futur.",
-  "control_case_data_for_ai_improvement": "Contrôlez la manière dont les données de votre dossier peuvent être utilisées pour améliorer l’IA. La valeur par défaut est désactivée."
+  "control_case_data_for_ai_improvement": "Contrôlez la manière dont les données de votre dossier peuvent être utilisées pour améliorer l’IA. La valeur par défaut est désactivée.",
+  "auto_renewing": "Renews automatically",
+  "subscription_auto_renew_hint": "Your subscription renews until cancelled. Manage renewal and cancellation through your billing provider.",
+  "manage_plan": "Manage plan",
+  "cancel_subscription": "Cancel subscription",
+  "your_current_plan": "Your current plan"
 }

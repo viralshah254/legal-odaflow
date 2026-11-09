@@ -189,6 +189,8 @@
   "aiConsentDialogProviders": "ਪ੍ਰਦਾਤਾ: ਓਪਨਏਆਈ, ਡੀਪਸੀਕ, ਅਤੇ ਦੀਪਗ੍ਰਾਮ (ਲਿਪੀਕਰਣ)।",
   "aiConsentDialogPurpose": "ਤੁਸੀਂ ਪਰਦੇਦਾਰੀ ਅਤੇ ਸੁਰੱਖਿਆ ਸੈਟਿੰਗਾਂ ਵਿੱਚ ਕਿਸੇ ਵੀ ਸਮੇਂ ਸਹਿਮਤੀ ਵਾਪਸ ਲੈ ਸਕਦੇ ਹੋ। ਸਹਿਮਤੀ ਤੋਂ ਬਿਨਾਂ, AI ਵਿਸ਼ੇਸ਼ਤਾਵਾਂ ਉਪਲਬਧ ਨਹੀਂ ਹੋਣਗੀਆਂ।",
   "aiConsentDialogTitle": "AI ਪ੍ਰੋਸੈਸਿੰਗ ਸਹਿਮਤੀ",
+  "aiConsentProcessingBody": "To perform the AI work you request, Umbrella sends your questions, instructions, authorized matter facts, document excerpts, research and draft text to the recipients below. Audio is sent when you use transcription. Inference permission does not grant permission to train models.",
+  "aiConsentProcessingUnavailable": "AI privacy information is unavailable. Please retry before sending your data.",
   "aiConsentSettingsDescription": "ਸਹਿਮਤੀ ਰੀਸੈੱਟ। ਅਗਲੀ AI ਵਿਸ਼ੇਸ਼ਤਾ ਤੋਂ ਪਹਿਲਾਂ ਤੁਹਾਨੂੰ ਦੁਬਾਰਾ ਪੁੱਛਿਆ ਜਾਵੇਗਾ।",
   "aiConsentSettingsTitle": "AI ਅਨੁਮਾਨ ਸਹਿਮਤੀ",
   "auth254712345678": "+254712345678",
@@ -215,6 +217,8 @@
   "authCheckDeviceLocation": "ਡਿਵਾਈਸ ਦੀ ਸਥਿਤੀ ਦੀ ਜਾਂਚ ਕਰੋ",
   "authCheckingLocation": "ਟਿਕਾਣੇ ਦੀ ਜਾਂਚ ਕੀਤੀ ਜਾ ਰਹੀ ਹੈ...",
   "authChooseWorkspace": "ਉਹ ਵਰਕਸਪੇਸ ਚੁਣੋ ਜੋ ਅੱਜ ਤੁਹਾਡੇ ਲਈ ਫਿੱਟ ਹੋਵੇ।",
+  "authClientPerk1": "Understand your legal issue",
+  "authClientPerk2": "Keep your documents and next steps together",
   "authCompleteProfileDescription": "ਤੁਹਾਡੇ ਕਨੂੰਨੀ ਵਰਕਸਪੇਸ ਨੂੰ ਸਥਾਪਤ ਕਰਨ ਲਈ ਕੁਝ ਵੇਰਵੇ। ਤੁਹਾਡੀ ਈਮੇਲ ਪਹਿਲਾਂ ਹੀ ਪ੍ਰਮਾਣਿਤ ਹੈ।",
   "authCompleteSignUp": "ਸਾਈਨ ਅੱਪ ਪੂਰਾ ਕਰੋ",
   "authCompletingSignIn": "ਸਾਈਨ-ਇਨ ਪੂਰਾ ਕੀਤਾ ਜਾ ਰਿਹਾ ਹੈ...",
@@ -293,6 +297,8 @@
   "authLawFirm": "ਕਾਨੂੰਨ ਫਰਮ",
   "authLawyerIRunALawFirm": "ਵਕੀਲ - ਮੈਂ ਇੱਕ ਲਾਅ ਫਰਮ ਚਲਾਉਂਦਾ ਹਾਂ",
   "authLawyerOption": "ਵਕੀਲ - ਮੈਂ ਇੱਕ ਲਾਅ ਫਰਮ ਚਲਾਉਂਦਾ ਹਾਂ",
+  "authLawyerPerk1": "Organize clients, matters and documents",
+  "authLawyerPerk2": "Research and draft with matter context",
   "authLegalIntelligencenforEveryone": "ਕਨੂੰਨੀ ਖੁਫੀਆ ਜਾਣਕਾਰੀ,\\nਹਰ ਕਿਸੇ ਲਈ।",
   "authLoading": "ਲੋਡ ਕੀਤਾ ਜਾ ਰਿਹਾ ਹੈ...",
   "authLocationCheckDescription": "ਛਤਰੀ ਸਾਈਨ-ਅੱਪ ਕਰਨ ਤੋਂ ਪਹਿਲਾਂ ਤੁਹਾਡੀ ਡਿਵਾਈਸ ਦੀ ਸਥਿਤੀ ਦੀ ਜਾਂਚ ਕਰਦੀ ਹੈ ਤਾਂ ਜੋ ਕਾਨੂੰਨੀ ਮਾਰਗਦਰਸ਼ਨ ਸਹੀ ਅਧਿਕਾਰ ਖੇਤਰ ਵਿੱਚ ਸ਼ੁਰੂ ਹੋਵੇ।",
@@ -352,6 +358,9 @@
   "authPasswordTooWeak": "ਪਾਸਵਰਡ ਬਹੁਤ ਕਮਜ਼ੋਰ ਹੈ। ਇੱਕ ਲੰਬਾ, ਘੱਟ ਅਨੁਮਾਨ ਲਗਾਉਣ ਯੋਗ ਗੁਪਤਕੋਡ ਵਰਤੋ।",
   "authPasswordsDoNotMatch": "ਪਾਸਵਰਡ ਮੇਲ ਨਹੀਂ ਖਾਂਦੇ",
   "authPasswordsDontMatch": "ਪਾਸਵਰਡ ਮੇਲ ਨਹੀਂ ਖਾਂਦੇ",
+  "authPathSummaryLawFirm": "Law firm workspace",
+  "authPathSummaryLegalHelp": "Personal legal help",
+  "authPathSummarySoloLawyer": "Solo lawyer workspace",
   "authPhone": "ਫ਼ੋਨ",
   "authPhoneE164": "ਫ਼ੋਨ (E.164)",
   "authPhoneHint": "ਆਪਣਾ ਮੋਬਾਈਲ ਨੰਬਰ ਸ਼ਾਮਲ ਕਰੋ — ਖਾਤਾ ਰਿਕਵਰੀ ਅਤੇ ਵਕੀਲ ਮੈਚਿੰਗ ਲਈ ਵਰਤਿਆ ਜਾਂਦਾ ਹੈ।",
@@ -359,6 +368,7 @@
   "authPhoneTab": "ਫ਼ੋਨ",
   "authPracticeNameOptional": "ਅਭਿਆਸ ਦਾ ਨਾਮ (ਵਿਕਲਪਿਕ)",
   "authPrivate": "ਨਿਜੀ",
+  "authProspectPrefillHint": "Details from your link have been filled in. Review them before continuing.",
   "authRefInviteBanner": "ਤੁਹਾਨੂੰ <strong>{name}</strong> ਦੁਆਰਾ ਸੱਦਾ ਦਿੱਤਾ ਗਿਆ ਸੀ। ਗਾਹਕ ਬਣਨ 'ਤੇ ਆਪਣੇ ਪਹਿਲੇ ਮਹੀਨੇ 40% ਦੀ ਛੋਟ ਪ੍ਰਾਪਤ ਕਰੋ।",
   "@authRefInviteBanner": {
     "placeholders": {
@@ -388,6 +398,8 @@
   "authSignInWithFirebase": "ਫਾਇਰਬੇਸ ਨਾਲ ਸਾਈਨ ਇਨ ਕਰੋ",
   "authSignOut": "ਸਾਇਨ ਆਉਟ",
   "authSignUp": "ਸਾਇਨ ਅਪ",
+  "authSignUpAccountDescription": "Set up your sign-in details to continue.",
+  "authSignUpAccountTitle": "Create your account",
   "authSignUpDescription": "ਛਤਰੀ ਨਾਲ ਸ਼ੁਰੂਆਤ ਕਰੋ",
   "authSignUpTermsPrefix": "ਇੱਕ ਖਾਤਾ ਬਣਾ ਕੇ, ਤੁਸੀਂ ਸਾਡੇ ਨਾਲ ਸਹਿਮਤ ਹੋ",
   "authSignUpTitle": "ਆਪਣਾ ਖਾਤਾ ਬਣਾਓ",
@@ -722,7 +734,7 @@
   "clientsActivityMeetingRecorded": "ਮੀਟਿੰਗ ਰਿਕਾਰਡ ਕੀਤੀ ਗਈ",
   "clientsActivityProfileUpdated": "ਕਲਾਇੰਟ ਪ੍ਰੋਫਾਈਲ ਅੱਪਡੇਟ ਕੀਤਾ ਗਿਆ",
   "clientsAddClient": "ਕਲਾਇੰਟ ਸ਼ਾਮਲ ਕਰੋ",
-  "clientsAddContactPerson": "Add contact person",
+  "clientsAddContactPerson": "ਸੰਪਰਕ ਵਿਅਕਤੀ ਨੂੰ ਸ਼ਾਮਲ ਕਰੋ",
   "clientsAddFirstClient": "ਆਪਣਾ ਪਹਿਲਾ ਕਲਾਇੰਟ ਸ਼ਾਮਲ ਕਰੋ",
   "clientsAddFirstClientDescription": "ਰਿਸ਼ਤਿਆਂ ਦਾ ਪ੍ਰਬੰਧਨ ਸ਼ੁਰੂ ਕਰਨ ਲਈ ਆਪਣੇ ਪਹਿਲੇ ਕਲਾਇੰਟ ਨੂੰ ਸ਼ਾਮਲ ਕਰੋ।",
   "clientsAddNewClient": "ਨਵਾਂ ਕਲਾਇੰਟ ਸ਼ਾਮਲ ਕਰੋ",
@@ -772,7 +784,7 @@
   },
   "clientsConflictCheckRequired": "ਕਲਾਇੰਟ ਬਣਾਉਣ ਤੋਂ ਪਹਿਲਾਂ ਇੱਕ ਵਿਵਾਦ ਜਾਂਚ ਚਲਾਓ ਅਤੇ ਕਿਸੇ ਵੀ ਫਲੈਗ ਨੂੰ ਹੱਲ ਕਰੋ।",
   "clientsContactInformation": "ਸੰਪਰਕ ਜਾਣਕਾਰੀ",
-  "clientsContactNamePlaceholder": "Contact name",
+  "clientsContactNamePlaceholder": "ਸੰਪਰਕ ਦਾ ਨਾਮ",
   "clientsContactNumber": "ਸੰਪਰਕ ਕਰੋ {number}",
   "@clientsContactNumber": {
     "placeholders": {
@@ -783,7 +795,7 @@
   },
   "clientsContactPeople": "ਲੋਕਾਂ ਨਾਲ ਸੰਪਰਕ ਕਰੋ",
   "clientsContactPeopleDescription": "ਇਸ ਕਲਾਇੰਟ ਲਈ ਡਾਇਰੈਕਟਰ, ਅਧਿਕਾਰੀ ਅਤੇ ਅਧਿਕਾਰਤ ਸੰਪਰਕ।",
-  "clientsContactPersonNumber": "Contact person {number}",
+  "clientsContactPersonNumber": "ਸੰਪਰਕ ਵਿਅਕਤੀ {number}",
   "@clientsContactPersonNumber": {
     "placeholders": {
     "number": {
@@ -791,7 +803,7 @@
     }
     }
   },
-  "clientsContactRolePlaceholder": "Role or title",
+  "clientsContactRolePlaceholder": "ਭੂਮਿਕਾ ਜਾਂ ਸਿਰਲੇਖ",
   "clientsContacts": "ਸੰਪਰਕ",
   "clientsCopyInviteFailed": "ਪੋਰਟਲ ਸੱਦੇ ਨੂੰ ਕਾਪੀ ਨਹੀਂ ਕੀਤਾ ਜਾ ਸਕਿਆ।",
   "clientsCouldNotLoadClients": "ਕਲਾਇੰਟਸ ਨੂੰ ਲੋਡ ਨਹੀਂ ਕੀਤਾ ਜਾ ਸਕਿਆ।",
@@ -800,7 +812,7 @@
   "clientsCountryCodePlaceholder": "ਉਦਾਹਰਨ ਲਈ, ਕੇ.ਈ",
   "clientsCreateClient": "ਕਲਾਇੰਟ ਬਣਾਓ",
   "clientsCreateClientProfile": "ਇੱਕ ਨਵਾਂ ਕਲਾਇੰਟ ਪ੍ਰੋਫਾਈਲ ਬਣਾਓ",
-  "clientsCreateMatter": "Create matter",
+  "clientsCreateMatter": "ਮਾਮਲਾ ਬਣਾਓ",
   "clientsCreating": "ਬਣਾਇਆ ਜਾ ਰਿਹਾ ਹੈ...",
   "clientsCreatingClient": "ਬਣਾਇਆ ਜਾ ਰਿਹਾ ਹੈ...",
   "clientsDeadlineAndRisk": "ਡੈੱਡਲਾਈਨ ਅਤੇ ਜੋਖਮ",
@@ -976,7 +988,7 @@
     }
   },
   "clientsRemoveClientDocumentTitle": "ਕੀ ਕਲਾਇੰਟ ਦਸਤਾਵੇਜ਼ ਨੂੰ ਹਟਾਉਣਾ ਹੈ?",
-  "clientsRemoveContactPerson": "Remove contact person {number}",
+  "clientsRemoveContactPerson": "ਸੰਪਰਕ ਵਿਅਕਤੀ ਨੂੰ ਹਟਾਓ {number}",
   "@clientsRemoveContactPerson": {
     "placeholders": {
     "number": {
@@ -1006,7 +1018,7 @@
     }
   },
   "clientsRoleTitle": "ਭੂਮਿਕਾ ਜਾਂ ਸਿਰਲੇਖ",
-  "clientsSaveBasicAndCompleteLater": "Save basic details and complete later",
+  "clientsSaveBasicAndCompleteLater": "ਮੂਲ ਵੇਰਵਿਆਂ ਨੂੰ ਸੁਰੱਖਿਅਤ ਕਰੋ ਅਤੇ ਬਾਅਦ ਵਿੱਚ ਪੂਰਾ ਕਰੋ",
   "clientsSaveChanges": "ਤਬਦੀਲੀਆਂ ਨੂੰ ਸੁਰੱਖਿਅਤ ਕਰੋ",
   "clientsSaving": "ਰੱਖਿਅਤ ਕੀਤਾ ਜਾ ਰਿਹਾ ਹੈ...",
   "clientsSearchByNameOrEmail": "ਨਾਮ ਜਾਂ ਈਮੇਲ ਦੁਆਰਾ ਖੋਜੋ…",
@@ -1116,6 +1128,7 @@
   "commonAskCopilot": "ਕੋਪਾਇਲਟ ਨੂੰ ਪੁੱਛੋ...",
   "commonAuthentication": "ਪ੍ਰਮਾਣਿਕਤਾ",
   "commonAuto": "ਆਟੋ",
+  "commonAvailableOnProfessional": "Available on Professional",
   "commonBack": "ਵਾਪਸ",
   "commonBackToIssueChecker": "ਜਾਰੀ ਚੈਕਰ 'ਤੇ ਵਾਪਸ ਜਾਓ",
   "commonBackToPricing": "ਕੀਮਤ 'ਤੇ ਵਾਪਸ ਜਾਓ",
@@ -1262,6 +1275,14 @@
   "commonExtractFacts": "ਤੱਥਾਂ ਨੂੰ ਐਕਸਟਰੈਕਟ ਕਰੋ",
   "commonFailedE": "ਅਸਫਲ: $e",
   "commonFamilyMatrimonial": "ਪਰਿਵਾਰ ਅਤੇ ਵਿਆਹ",
+  "commonFeatureRequiresProfessional": "{feature} requires a Professional plan.",
+  "@commonFeatureRequiresProfessional": {
+    "placeholders": {
+    "feature": {
+      "type": "String"
+    }
+    }
+  },
   "commonFile": "ਫਾਈਲ",
   "commonFindALawyer": "ਕੋਈ ਵਕੀਲ ਲੱਭੋ",
   "commonFindLegalHelp": "ਕਾਨੂੰਨੀ ਮਦਦ ਲੱਭੋ",
@@ -1296,6 +1317,7 @@
   "commonHtml": "HTML",
   "commonIfYouOptInYouMaySeparatelyEnable": "ਜੇਕਰ ਤੁਸੀਂ ਚੋਣ ਕਰਦੇ ਹੋ, ਤਾਂ ਤੁਸੀਂ ਵੱਖਰੇ ਤੌਰ 'ਤੇ ਯੋਗ ਕਰ ਸਕਦੇ ਹੋ:",
   "commonImmigration": "ਇਮੀਗ੍ਰੇਸ਼ਨ",
+  "commonImportMeeting": "Import meeting",
   "commonIncludeDocuments": "ਦਸਤਾਵੇਜ਼ ਸ਼ਾਮਲ ਕਰੋ",
   "commonIncludedUsage": "ਵਰਤੋਂ ਸ਼ਾਮਲ ਹੈ",
   "commonIndia": "ਭਾਰਤ",
@@ -1410,6 +1432,7 @@
   "commonMeetingsFilterProcessing": "ਪ੍ਰੋਸੈਸਿੰਗ",
   "commonMeetingsFilterReady": "ਤਿਆਰ ਹੈ",
   "commonMeetingsFilterRecording": "ਰਿਕਾਰਡਿੰਗ",
+  "commonMeetingsLoadFailed": "Meetings could not be loaded. Please try again.",
   "commonMeetingsPageOf": "ਪੰਨਾ {page} ਦਾ {totalPages}",
   "@commonMeetingsPageOf": {
     "placeholders": {
@@ -1552,6 +1575,7 @@
   "commonRecommendedPath": "ਸਿਫਾਰਸ਼ੀ ਮਾਰਗ",
   "commonRecordANewExpenseForTheFirm": "ਫਰਮ ਲਈ ਇੱਕ ਨਵਾਂ ਖਰਚਾ ਰਿਕਾਰਡ ਕਰੋ",
   "commonRecordOrImportMeetingTranscripts": "ਖੋਜ ਅਤੇ ਸਮੀਖਿਆ ਕਰਨ ਲਈ ਮੀਟਿੰਗ ਪ੍ਰਤੀਲਿਪੀਆਂ ਨੂੰ ਰਿਕਾਰਡ ਜਾਂ ਆਯਾਤ ਕਰੋ।",
+  "commonRecordTranscript": "Record and transcribe",
   "commonRef": "Ref",
   "commonReferEarn": "ਵੇਖੋ ਅਤੇ ਕਮਾਓ",
   "commonReferEarn2": "ਵੇਖੋ ਅਤੇ ਕਮਾਓ",
@@ -1584,6 +1608,29 @@
   "commonRefresh": "ਤਾਜ਼ਾ ਕਰੋ",
   "commonReject": "ਅਸਵੀਕਾਰ ਕਰੋ",
   "commonRejectLead": "ਲੀਡ ਨੂੰ ਅਸਵੀਕਾਰ ਕਰੋ",
+  "commonReleaseAccessibleFolders": "Folders with accessible documents",
+  "commonReleaseActualUsage": "Based on actual usage",
+  "commonReleaseAllMatterDocuments": "All authorized matter documents",
+  "commonReleaseEvidenceScope": "Evidence scope",
+  "commonReleaseFinalCharge": "Final charge",
+  "commonReleaseHoldingPassage": "Holding passage",
+  "commonReleaseLegalCountry": "Legal country",
+  "commonReleaseLoadingTasks": "Loading tasks…",
+  "commonReleaseMatterJurisdiction": "Jurisdiction follows this matter. Change it in matter settings.",
+  "commonReleaseNewTask": "New task",
+  "commonReleaseNoAccessibleFolders": "No accessible document folders.",
+  "commonReleaseNoTasks": "No tasks match this view.",
+  "commonReleaseOpenMatterTasks": "Open matter tasks",
+  "commonReleaseOutcome": "Outcome:",
+  "commonReleaseSectionFinder": "Section Finder",
+  "commonReleaseSelectFirmTasks": "Select a firm to view tasks.",
+  "commonReleaseSelectedDocuments": "Selected documents only",
+  "commonReleaseSelectedFolders": "Selected folders and their subfolders",
+  "commonReleaseShowCompleted": "Show completed",
+  "commonReleaseTasksDescription": "Your firm’s work, with the earliest deadlines first.",
+  "commonReleaseTasksLoadFailed": "Tasks could not be loaded. Please refresh and try again.",
+  "commonReleaseTasksTitle": "Tasks",
+  "commonReleaseUsageBased": "Charged by actual usage",
   "commonRemove": "ਹਟਾਓ",
   "commonRepresentationBeforeCourtsOrTribunals": "ਅਦਾਲਤਾਂ ਜਾਂ ਟ੍ਰਿਬਿਊਨਲਾਂ ਅੱਗੇ ਨੁਮਾਇੰਦਗੀ",
   "commonRequestConsultation": "ਸਲਾਹ ਲਈ ਬੇਨਤੀ ਕਰੋ",
@@ -1721,8 +1768,20 @@
   "commonUnitedKingdom": "ਯੁਨਾਇਟੇਡ ਕਿਂਗਡਮ",
   "commonUnitedStates": "ਸੰਯੁਕਤ ਰਾਜ",
   "commonUniversalDisclaimer": "ਸਰਬ-ਵਿਆਪਕ ਬੇਦਾਅਵਾ",
+  "commonUpgradeExistingPlanDescription": "Upgrade from {plan} to unlock {feature}.",
+  "@commonUpgradeExistingPlanDescription": {
+    "placeholders": {
+    "plan": {
+      "type": "String"
+    },
+    "feature": {
+      "type": "String"
+    }
+    }
+  },
   "commonUpgradeToPlusForAFullAiBudget": "ਪੂਰੇ AI ਬਜਟ ਲਈ ਪਲੱਸ 'ਤੇ ਅੱਪਗ੍ਰੇਡ ਕਰੋ",
   "commonUpgradeToProfessional": "ਪ੍ਰੋਫੈਸ਼ਨਲ ਵਿੱਚ ਅੱਪਗ੍ਰੇਡ ਕਰੋ",
+  "commonUpgradeToUnlockOnProfessional": "Upgrade to Professional to unlock",
   "commonUpload": "ਅੱਪਲੋਡ ਕਰੋ",
   "commonUploadADocumentTemplate": "ਇੱਕ ਦਸਤਾਵੇਜ਼ ਟੈਮਪਲੇਟ ਅੱਪਲੋਡ ਕਰੋ",
   "commonUploadALegalDocument": "ਇੱਕ ਕਾਨੂੰਨੀ ਦਸਤਾਵੇਜ਼ ਅੱਪਲੋਡ ਕਰੋ",
@@ -1807,6 +1866,7 @@
   "consumerAppliesToAccountChangesFuture": "ਤੁਹਾਡੇ ਖਾਤੇ 'ਤੇ ਲਾਗੂ ਹੁੰਦਾ ਹੈ। ਤਬਦੀਲੀਆਂ ਭਵਿੱਖ ਦੀ ਪ੍ਰਕਿਰਿਆ ਨੂੰ ਪ੍ਰਭਾਵਿਤ ਕਰਦੀਆਂ ਹਨ।",
   "consumerAttachDocumentsToACaseForOcrAndAiAnalysis": "OCR ਅਤੇ AI ਵਿਸ਼ਲੇਸ਼ਣ ਲਈ ਕਿਸੇ ਕੇਸ ਨਾਲ ਦਸਤਾਵੇਜ਼ ਨੱਥੀ ਕਰੋ।",
   "consumerAuto": "ਆਟੋ",
+  "consumerAutoRenewing": "Renews automatically",
   "consumerAvailableModels": "ਉਪਲਬਧ ਮਾਡਲ",
   "consumerAwaitingDocumentsOrInfo": "ਦਸਤਾਵੇਜ਼ਾਂ ਜਾਂ ਜਾਣਕਾਰੀ ਦੀ ਉਡੀਕ ਕੀਤੀ ਜਾ ਰਹੀ ਹੈ",
   "consumerBackToDashboard": "ਡੈਸ਼ਬੋਰਡ 'ਤੇ ਵਾਪਸ ਜਾਓ",
@@ -1815,6 +1875,7 @@
   "consumerBuyCredits": "ਕ੍ਰੈਡਿਟ ਖਰੀਦੋ",
   "consumerBuyCredits2": "ਕ੍ਰੈਡਿਟ ਖਰੀਦੋ",
   "consumerCancel": "ਰੱਦ ਕਰੋ",
+  "consumerCancelSubscription": "Cancel subscription",
   "consumerCase": "ਕੇਸ",
   "consumerCaseClosed": "ਕੇਸ ਬੰਦ",
   "consumerCaseDetails": "ਕੇਸ ਦੇ ਵੇਰਵੇ",
@@ -1958,6 +2019,7 @@
   "consumerLoading": "ਲੋਡ ਕੀਤਾ ਜਾ ਰਿਹਾ ਹੈ...",
   "consumerLoadingPlanUsage": "ਯੋਜਨਾ ਅਤੇ ਵਰਤੋਂ ਨੂੰ ਲੋਡ ਕੀਤਾ ਜਾ ਰਿਹਾ ਹੈ...",
   "consumerManageDataConsent": "ਡਾਟਾ ਸਹਿਮਤੀ ਦਾ ਪ੍ਰਬੰਧਨ ਕਰੋ",
+  "consumerManagePlan": "Manage plan",
   "consumerMatterProgress": "ਮਾਮਲੇ ਦੀ ਤਰੱਕੀ",
   "consumerMatterResolved": "ਮਾਮਲਾ ਹੱਲ ਹੋ ਗਿਆ",
   "consumerMessages": "ਸੁਨੇਹੇ",
@@ -2138,6 +2200,7 @@
   "consumerStartIssueCheck": "ਇੱਕ ਮੁੱਦੇ ਦੀ ਜਾਂਚ ਸ਼ੁਰੂ ਕਰੋ",
   "consumerStarterPlan": "ਸਟਾਰਟਰ ਪਲਾਨ",
   "consumerSubscriptionActivated": "ਗਾਹਕੀ ਕਿਰਿਆਸ਼ੀਲ ਕੀਤੀ ਗਈ!",
+  "consumerSubscriptionAutoRenewHint": "Your subscription renews until cancelled. Manage renewal and cancellation through your billing provider.",
   "consumerSubscriptionPlans": "ਗਾਹਕੀ ਯੋਜਨਾਵਾਂ",
   "consumerSubscriptionsAreNotEnabled": "ਗਾਹਕੀਆਂ ਯੋਗ ਨਹੀਂ ਹਨ।",
   "consumerTopUp": "ਟੌਪ-ਅੱਪ",
@@ -2181,6 +2244,7 @@
   "consumerWorking": "ਪ੍ਰਕਿਰਿਆ ਕੀਤੀ ਜਾ ਰਹੀ ਹੈ...",
   "consumerYourAccountInformation": "ਤੁਹਾਡੀ ਖਾਤਾ ਜਾਣਕਾਰੀ",
   "consumerYourAigeneratedLegalPreviewsAndReports": "ਤੁਹਾਡੀਆਂ AI ਦੁਆਰਾ ਤਿਆਰ ਕਾਨੂੰਨੀ ਝਲਕ ਅਤੇ ਰਿਪੋਰਟਾਂ",
+  "consumerYourCurrentPlan": "Your current plan",
   "consumerYourLegalReports": "ਤੁਹਾਡੀਆਂ ਕਾਨੂੰਨੀ ਰਿਪੋਰਟਾਂ",
   "copilotAction": "ਕਾਰਵਾਈ:",
   "copilotAddStep": "ਕਦਮ ਸ਼ਾਮਲ ਕਰੋ...",
@@ -2433,6 +2497,25 @@
   "dashboardAiCosts": "AI ਲਾਗਤਾਂ",
   "dashboardAiLogs": "AI ਲੌਗਸ",
   "dashboardAiProfitability": "AI ਮੁਨਾਫਾ",
+  "dashboardAiReviewAuthor": "Author",
+  "dashboardAiReviewEmpty": "No AI outputs are waiting for lawyer review.",
+  "dashboardAiReviewJurisdiction": "Jurisdiction",
+  "dashboardAiReviewLoadError": "Failed to load review queue",
+  "dashboardAiReviewMarkReviewed": "Mark reviewed",
+  "dashboardAiReviewMatter": "Matter",
+  "dashboardAiReviewOpenWorkspace": "Open workspace",
+  "dashboardAiReviewPreview": "Preview",
+  "dashboardAiReviewPreviewTruncated": "Open the workspace for the full output.",
+  "dashboardAiReviewQueueDescription": "Review, open the source workspace, or mark as reviewed when signed off.",
+  "dashboardAiReviewQueueTitle": "{count, plural, one {# item awaiting review} other {# items awaiting review}}",
+  "dashboardAiReviewSubtitle": "AI outputs flagged for lawyer review before client use",
+  "dashboardAiReviewTitle": "AI review queue",
+  "dashboardAiReviewUnknownAuthor": "Unknown",
+  "dashboardAiReviewUnverified": "Unverified",
+  "dashboardAiSearchIntakeBriefPlaceholder": "Describe the issue, key dates and the help needed.",
+  "dashboardAiSearchIntakeClientPlaceholder": "Client name",
+  "dashboardAiSearchIntakeCta": "Start intake",
+  "dashboardAiSearchIntakeSubtitle": "Start with the client and a short description of the matter.",
   "dashboardAiSearchPlaceholder": "ਤੁਹਾਨੂੰ ਕਿਹੜੇ ਕਾਨੂੰਨੀ ਸਵਾਲ ਦਾ ਜਵਾਬ ਚਾਹੀਦਾ ਹੈ?",
   "dashboardAiSearchPromptsDefault": "Contract dispute,Employment issue,Property matter,Debt recovery",
   "dashboardAiSearchPromptsGB": "Unfair dismissal,GDPR data breach,Tenancy deposit,Consumer rights",
@@ -2804,6 +2887,7 @@
   "docuDraftWhatToDraft": "ਤੁਸੀਂ ਕੀ ਖਰੜਾ ਤਿਆਰ ਕਰਨਾ ਚਾਹੁੰਦੇ ਹੋ?",
   "docuDraftWhatWeUnderstood": "ਜੋ ਅਸੀਂ ਸਮਝਿਆ",
   "draftingAccuracyAuditTitle": "ਸ਼ੁੱਧਤਾ ਆਡਿਟ",
+  "draftingAccuracyAutoAppliedFixes": "Applied corrections",
   "draftingAccuracyAutoCorrected": "{count} ਸਵੈ-ਸਹੀ",
   "@draftingAccuracyAutoCorrected": {
     "placeholders": {
@@ -2812,6 +2896,7 @@
     }
     }
   },
+  "draftingAccuracyCanCertifyShort": "Eligible for review sign-off",
   "draftingAccuracyCitationsVerifiedShort": "ਹਵਾਲੇ ਪ੍ਰਮਾਣਿਤ",
   "draftingAccuracyCompleteMissingFacts": "ਸੰਪੂਰਨ — ਗੁੰਮ ਤੱਥਾਂ ਨੂੰ ਭਰੋ",
   "draftingAccuracyDeepSearchSuffix": "(ਡੂੰਘੀ ਖੋਜ)",
@@ -2823,10 +2908,14 @@
     }
     }
   },
+  "draftingAccuracyFactCoverage": "Fact coverage",
   "draftingAccuracyFactsPendingShort": "ਤੱਥ ਲੰਬਿਤ ਹਨ",
   "draftingAccuracyGoverningSections": "ਗਵਰਨਿੰਗ ਸੈਕਸ਼ਨ",
+  "draftingAccuracyLawyerReady": "Ready for lawyer review",
   "draftingAccuracyLimitedCorpus": "ਕਾਰਪਸ ਵਿੱਚ ਸੀਮਤ ਸਰੋਤ",
+  "draftingAccuracyMissingDefenceFacts": "Defence facts to confirm",
   "draftingAccuracyNeedsReview": "ਵਕੀਲ ਦੀ ਸਮੀਖਿਆ ਦੀ ਲੋੜ ਹੈ",
+  "draftingAccuracyPassageSupportedShort": "passages supported",
   "draftingAccuracyProceduralRouteConfirmed": "ਵਿਧੀਗਤ ਰੂਟ ਦੀ ਪੁਸ਼ਟੀ ਕੀਤੀ ਗਈ",
   "draftingAccuracyProceduralRouteDetail": "ਸਿਫਾਰਸ਼ੀ {recommended} — {selected} ਦੀ ਵਰਤੋਂ ਕਰਕੇ",
   "@draftingAccuracyProceduralRouteDetail": {
@@ -2839,6 +2928,7 @@
     }
     }
   },
+  "draftingAccuracyReadyForLawyerReview": "Ready for lawyer review",
   "draftingAccuracyResearchAuthorities": "{count} ਅਧਿਕਾਰੀਆਂ ਨੇ ਮੁੜ ਪ੍ਰਾਪਤ ਕੀਤਾ{deep} · ਵਿਸ਼ਵਾਸ {confidence}",
   "@draftingAccuracyResearchAuthorities": {
     "placeholders": {
@@ -2872,6 +2962,7 @@
     }
     }
   },
+  "draftingAccuracyTimelineWarnings": "Timeline checks to review",
   "draftingAccuracyVerifiedForFiling": "ਦਾਇਰ ਕਰਨ ਲਈ ਤਸਦੀਕ ਕੀਤਾ",
   "draftingEditAiPanel": "AI ਸੰਪਾਦਨ",
   "draftingEditApplyEdit": "AI ਸੰਪਾਦਨ ਲਾਗੂ ਕਰੋ",
@@ -2995,6 +3086,8 @@
   "errorsToastCourtCaseLinked": "ਅਦਾਲਤੀ ਕੇਸ ਨਾਲ ਜੁੜਿਆ ਹੋਇਆ ਹੈ",
   "errorsToastDiligenceReviewStarted": "ਮਿਹਨਤ ਦੀ ਸਮੀਖਿਆ ਸ਼ੁਰੂ ਕੀਤੀ",
   "errorsToastDocketEntryAdded": "ਡੌਕਟ ਐਂਟਰੀ ਸ਼ਾਮਲ ਕੀਤੀ ਗਈ",
+  "errorsToastDocketSyncFailed": "Court docket could not be synced",
+  "errorsToastDocketSynced": "Court docket synced",
   "errorsToastDocumentArchived": "ਦਸਤਾਵੇਜ਼ ਪੁਰਾਲੇਖਬੱਧ ਕੀਤਾ ਗਿਆ",
   "errorsToastDocumentLinked": "ਦਸਤਾਵੇਜ਼ ਲਿੰਕ ਕੀਤਾ ਗਿਆ",
   "errorsToastDocumentUploaded": "ਦਸਤਾਵੇਜ਼ ਅੱਪਲੋਡ ਕੀਤਾ ਗਿਆ",
@@ -3119,6 +3212,7 @@
   "issueCheckerClientDetails": "ਗਾਹਕ ਵੇਰਵੇ",
   "issueCheckerClientMatterIntake": "ਗ੍ਰਾਹਕ ਪਦਾਰਥ ਦਾ ਦਾਖਲਾ",
   "issueCheckerClientName": "ਗਾਹਕ ਦਾ ਨਾਮ *",
+  "issueCheckerClientNameCannotBeSelf": "Enter the client name, or choose to act for yourself.",
   "issueCheckerComplexMatter": "ਗੁੰਝਲਦਾਰ ਮਾਮਲਾ",
   "issueCheckerComplexMatterFirmGuidance": "ਇਸ ਕੇਸ ਵਿੱਚ ਉੱਚੀ ਜਟਿਲਤਾ ਜਾਂ ਜੋਖਮ ਹੈ। ਮਾਹਰ ਸਲਾਹਕਾਰ ਜਾਂ ਟੀਮ ਦੇ ਸੀਨੀਅਰ ਮੈਂਬਰ ਨੂੰ ਸ਼ਾਮਲ ਕਰਨ ਬਾਰੇ ਵਿਚਾਰ ਕਰੋ।",
   "issueCheckerConfidentialNotSharedWithTheClientPreview": "ਗੁਪਤ — ਕਲਾਇੰਟ ਪ੍ਰੀਵਿਊ ਨਾਲ ਸਾਂਝਾ ਨਹੀਂ ਕੀਤਾ ਗਿਆ।",
@@ -3158,6 +3252,18 @@
     }
     }
   },
+  "issueCheckerDetectedCountryRegionChange": "Detected {country} · {region}. Change this if the issue belongs elsewhere.",
+  "@issueCheckerDetectedCountryRegionChange": {
+    "placeholders": {
+    "country": {
+      "type": "String"
+    },
+    "region": {
+      "type": "String"
+    }
+    }
+  },
+  "issueCheckerDetecting": "Detecting…",
   "issueCheckerDetectingLocation": "ਤੁਹਾਡੇ ਟਿਕਾਣੇ ਦਾ ਪਤਾ ਲਗਾਇਆ ਜਾ ਰਿਹਾ ਹੈ...",
   "issueCheckerDocsAnalyzed": "{count, plural, one {# document analyzed} other {# documents analyzed}}",
   "issueCheckerDocuments2": "ਦਸਤਾਵੇਜ਼:",
@@ -3545,6 +3651,7 @@
   "lawyerAnalysisHistory": "ਵਿਸ਼ਲੇਸ਼ਣ ਇਤਿਹਾਸ",
   "lawyerAnyAgentJob": "ਕੋਈ ਵੀ ਏਜੰਟ ਨੌਕਰੀ",
   "lawyerApproval": "ਪ੍ਰਵਾਨਗੀ",
+  "lawyerApproveSuggestion": "Approve suggestion",
   "lawyerApproved": "ਨੂੰ ਮਨਜ਼ੂਰੀ ਦਿੱਤੀ",
   "lawyerArchiveDocument": "ਦਸਤਾਵੇਜ਼ ਨੂੰ ਆਰਕਾਈਵ ਕਰਨਾ ਹੈ?",
   "lawyerAskCopilot": "ਕੋਪਾਇਲਟ ਨੂੰ ਪੁੱਛੋ",
@@ -3613,6 +3720,7 @@
   "lawyerDescription": "ਵਰਣਨ",
   "lawyerDisbursement": "ਵੰਡ",
   "lawyerDisbursementRequestsAwaitingApproval": "ਵੰਡ ਬੇਨਤੀਆਂ ਮਨਜ਼ੂਰੀ ਦੀ ਉਡੀਕ ਕਰ ਰਹੀਆਂ ਹਨ।",
+  "lawyerDismissSuggestion": "Dismiss suggestion",
   "lawyerDocumentDetail": "ਦਸਤਾਵੇਜ਼ ਦਾ ਵੇਰਵਾ",
   "lawyerDocumentLibrary": "ਦਸਤਾਵੇਜ਼ ਲਾਇਬ੍ਰੇਰੀ",
   "lawyerDraft": "ਡਰਾਫਟ",
@@ -3775,6 +3883,7 @@
   "lawyerNoClientGeneral": "ਕੋਈ ਗਾਹਕ ਨਹੀਂ (ਆਮ)",
   "lawyerNoDocumentsFound": "ਕੋਈ ਦਸਤਾਵੇਜ਼ ਨਹੀਂ ਮਿਲੇ।",
   "lawyerNoEvidenceItems": "ਕੋਈ ਸਬੂਤ ਚੀਜ਼ਾਂ ਨਹੀਂ",
+  "lawyerNoEvidenceYet": "No evidence has been added yet.",
   "lawyerNoExpensesRecordedYet": "ਅਜੇ ਤੱਕ ਕੋਈ ਖਰਚਾ ਦਰਜ ਨਹੀਂ ਕੀਤਾ ਗਿਆ",
   "lawyerNoExtraFiltersForThisTrigger": "ਇਸ ਟਰਿੱਗਰ ਲਈ ਕੋਈ ਵਾਧੂ ਫਿਲਟਰ ਨਹੀਂ ਹਨ।",
   "lawyerNoFirmWorkspace": "ਕੋਈ ਪੱਕਾ ਵਰਕਸਪੇਸ ਨਹੀਂ",
@@ -3794,6 +3903,7 @@
   "lawyerNoPendingApprovals": "ਕੋਈ ਬਕਾਇਆ ਮਨਜ਼ੂਰੀਆਂ ਨਹੀਂ ਹਨ",
   "lawyerNoSourceTraceAvailable": "ਕੋਈ ਸਰੋਤ ਟਰੇਸ ਉਪਲਬਧ ਨਹੀਂ ਹੈ।",
   "lawyerNoSpecificMatter": "ਕੋਈ ਖਾਸ ਗੱਲ ਨਹੀਂ",
+  "lawyerNoSuggestedTime": "No time suggestions yet.",
   "lawyerNoTeamMembersFound": "ਕੋਈ ਟੀਮ ਮੈਂਬਰ ਨਹੀਂ ਮਿਲਿਆ।",
   "lawyerNotYetAnalyzed": "ਅਜੇ ਤੱਕ ਵਿਸ਼ਲੇਸ਼ਣ ਨਹੀਂ ਕੀਤਾ ਗਿਆ",
   "lawyerNote": "ਨੋਟ:",
@@ -3884,6 +3994,8 @@
   "lawyerStrategyOptionsAbcDescription": "ਵਿਕਲਪ A/B/C, ਸਿਫ਼ਾਰਸ਼ੀ ਮਾਰਗ, ਸਮਾਂ-ਸੀਮਾਵਾਂ।",
   "lawyerStrengthsForOurClient": "ਸਾਡੇ ਗਾਹਕ ਲਈ ਤਾਕਤ",
   "lawyerSubmitted": "ਪੇਸ਼ ਕੀਤਾ",
+  "lawyerSuggestedTime": "Suggested time entries",
+  "lawyerSuggestedTimeDescription": "Review suggested work and duration before adding a time entry.",
   "lawyerSummary": "ਸੰਖੇਪ",
   "lawyerTaskDetails": "ਕਾਰਜ ਵੇਰਵੇ",
   "lawyerTaskTitle": "ਕਾਰਜ ਸਿਰਲੇਖ",
@@ -4692,8 +4804,10 @@
   "marketingHomeResearchProgressDraftReadyBanner": "ਡਰਾਫਟ ਮੀਮੋ ਤਿਆਰ — ਅੰਤਿਮ ਹਵਾਲਾ ਆਡਿਟ ਚੱਲ ਰਿਹਾ ਹੈ...",
   "marketingHomeResearchProgressDraftVerifyingBanner": "ਡਰਾਫਟ ਤਿਆਰ — ਸ਼ੁੱਧਤਾ ਜਾਂਚ ਚੱਲ ਰਹੀ ਹੈ...",
   "marketingHomeResearchProgressModeFast": "ਤੇਜ਼",
+  "marketingHomeResearchProgressModeGuidance": "AI only",
   "marketingHomeResearchProgressModeVerified": "ਪ੍ਰਮਾਣਿਤ",
   "marketingHomeResearchProgressPhaseStallNote": "ਅਜੇ ਵੀ ਕੰਮ ਕਰ ਰਿਹਾ ਹੈ — ਬੈਕਐਂਡ ਇਸ ਪਗ 'ਤੇ ਪ੍ਰਕਿਰਿਆ ਕਰ ਰਿਹਾ ਹੈ। ਵੱਡੀਆਂ ਪੁੱਛਗਿੱਛਾਂ ਵਿੱਚ ਕੁਝ ਮਿੰਟ ਲੱਗ ਸਕਦੇ ਹਨ।",
+  "marketingHomeResearchProgressPhaseStallNoteVerified": "Still working — the backend is processing this step. Large queries can take a few minutes.",
   "marketingHomeResearchProgressRefiningTitle": "ਸੰਦਰਭ ਨਾਲ ਸੁਧਾਰਿਆ ਜਾ ਰਿਹਾ ਹੈ...",
   "marketingHomeResearchProgressRunningTitle": "ਕਾਨੂੰਨੀ ਖੋਜ ਚੱਲ ਰਹੀ ਹੈ",
   "marketingHomeResearchProgressStepAuditDraftDetail": "ਅੰਤਮ ਹਵਾਲਾ ਆਡਿਟ ਪਾਸ — ਤੁਹਾਡਾ ਡਰਾਫਟ ਹੇਠਾਂ ਦਿਖਾਈ ਦੇ ਰਿਹਾ ਹੈ।",
@@ -4745,6 +4859,15 @@
     }
   },
   "marketingHomeResearchProgressStepGroundVerify": "ਕਾਰਪਸ ਦੇ ਵਿਰੁੱਧ ਸੈਕਸ਼ਨ ਟੈਕਸਟ ਦੀ ਪੁਸ਼ਟੀ ਕੀਤੀ ਜਾ ਰਹੀ ਹੈ...",
+  "marketingHomeResearchProgressStepGuidanceDraftDetail": "Writing a first-pass answer from the question and contract",
+  "marketingHomeResearchProgressStepGuidanceDraftLabel": "Drafting the note",
+  "marketingHomeResearchProgressStepGuidanceReadDetail": "Identifying the issue, jurisdiction, and contract facts",
+  "marketingHomeResearchProgressStepGuidanceReadLabel": "Reading your question",
+  "marketingHomeResearchProgressStepGuidanceReadyDetail": "Preparing the research note",
+  "marketingHomeResearchProgressStepGuidanceReadyLabel": "Ready",
+  "marketingHomeResearchProgressStepLiveRetrieveDetail": "Checking AI-named authorities against live/corpus sources",
+  "marketingHomeResearchProgressStepLiveRetrieveFailover": "Retrying available connectors when a source is down",
+  "marketingHomeResearchProgressStepLiveRetrieveLabel": "Checking live and corpus sources",
   "marketingHomeResearchProgressStepParseDetail": "ਅਧਿਕਾਰ ਖੇਤਰ, ਵਿਵਸਥਾਵਾਂ ਅਤੇ ਇਰਾਦੇ ਦੀ ਪਛਾਣ ਕਰਨਾ",
   "marketingHomeResearchProgressStepParseDetailProvision": "{provision} ਅਤੇ ਸੰਬੰਧਿਤ ਵਿਵਸਥਾਵਾਂ ਦੀ ਪਛਾਣ ਕਰਨਾ",
   "@marketingHomeResearchProgressStepParseDetailProvision": {
@@ -4755,6 +4878,9 @@
     }
   },
   "marketingHomeResearchProgressStepParseLabel": "ਤੁਹਾਡੇ ਕਨੂੰਨੀ ਸਵਾਲ ਨੂੰ ਪਾਰਸ ਕਰ ਰਿਹਾ ਹੈ",
+  "marketingHomeResearchProgressStepPlanMapDetail": "Identifying issues, likely statutes, and retrieval queries",
+  "marketingHomeResearchProgressStepPlanMapLabel": "Planning the research map",
+  "marketingHomeResearchProgressStepPlanMapQueries": "Expanding search queries from the research plan",
   "marketingHomeResearchProgressStepPredecessorCrpcBnss": "ਕ੍ਰਾਸ-ਚੈਕਿੰਗ CrPC → BNSS ਸੈਕਸ਼ਨ ਰੀਮੈਪ",
   "marketingHomeResearchProgressStepPredecessorCrpcBnssSection": "ਸੈਕਸ਼ਨ {section} ਲਈ ਕਰਾਸ-ਚੈਕਿੰਗ CrPC → BNSS ਰੀਮੈਪ",
   "@marketingHomeResearchProgressStepPredecessorCrpcBnssSection": {
@@ -4780,6 +4906,8 @@
   "marketingHomeResearchProgressStepRetrieveMatch": "ਤੁਹਾਡੇ ਸਵਾਲ ਨਾਲ ਵਿਧਾਨਕ ਭਾਗਾਂ ਦਾ ਮੇਲ ਕਰ ਰਿਹਾ ਹੈ...",
   "marketingHomeResearchProgressStepRetrieveRank": "ਸੰਬੰਧਿਤ ਭਾਗਾਂ ਅਤੇ ਟਿੱਪਣੀਆਂ ਨੂੰ ਦਰਜਾਬੰਦੀ…",
   "marketingHomeResearchProgressStepRetrieveRankCases": "ਪ੍ਰਸੰਗਿਕਤਾ ਦੁਆਰਾ ਕੇਸ ਕਾਨੂੰਨ ਨੂੰ ਦਰਜਾਬੰਦੀ…",
+  "marketingHomeResearchProgressStepSelfCheckDetail": "Attacking weak assumptions in the same draft",
+  "marketingHomeResearchProgressStepSelfCheckLabel": "Self-check",
   "marketingHomeResearchProgressStillWorking": "· ਅਜੇ ਵੀ ਕੰਮ ਕਰ ਰਿਹਾ ਹੈ...",
   "marketingHomeResearchProgressTakingLonger": "· ਆਮ ਨਾਲੋਂ ਜ਼ਿਆਦਾ ਸਮਾਂ ਲੈਣਾ",
   "marketingHomeResearchProgressVerifiedDurationHint": "· ਆਮ ਤੌਰ 'ਤੇ 1-3 ਮਿੰਟ",
@@ -5298,6 +5426,10 @@
   "mattersAiDraftingSubtitle": "ਮਾਮਲੇ ਦੇ ਸੰਦਰਭ ਤੋਂ ਟੈਂਪਲੇਟ ਖੇਤਰਾਂ ਨੂੰ ਭਰਨਾ ਅਤੇ ਕਾਨੂੰਨੀ ਧਾਰਾਵਾਂ ਨੂੰ ਪੂਰਾ ਕਰਨਾ।",
   "mattersAiIsAnalyzingTheOpposingPartysPosition": "AI ਵਿਰੋਧੀ ਪਾਰਟੀ ਦੀ ਸਥਿਤੀ ਦਾ ਵਿਸ਼ਲੇਸ਼ਣ ਕਰ ਰਿਹਾ ਹੈ...",
   "mattersAiIsAnalyzingYourMatter": "AI ਤੁਹਾਡੇ ਮਾਮਲੇ ਦਾ ਵਿਸ਼ਲੇਸ਼ਣ ਕਰ ਰਿਹਾ ਹੈ...",
+  "mattersAiProgressAnalysing": "Analysing the available information",
+  "mattersAiProgressGenerating": "Preparing the response",
+  "mattersAiProgressReading": "Reading the matter context",
+  "mattersAiProgressRetrieving": "Retrieving relevant sources",
   "mattersAiResponseFailed": "AI ਜਵਾਬ ਪ੍ਰਾਪਤ ਕਰਨ ਵਿੱਚ ਅਸਫਲ। ਕਿਰਪਾ ਕਰਕੇ ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ।",
   "mattersAigeneratedDocuments": "AI ਦੁਆਰਾ ਤਿਆਰ ਕੀਤੇ ਦਸਤਾਵੇਜ਼",
   "mattersAllAssignees": "ਸਾਰੇ ਸੌਂਪੇ ਗਏ",
@@ -5309,6 +5441,7 @@
   "mattersAllStatuses": "ਸਾਰੀਆਂ ਸਥਿਤੀਆਂ",
   "mattersAnalyzeOpponent": "ਵਿਰੋਧੀ ਦਾ ਵਿਸ਼ਲੇਸ਼ਣ ਕਰੋ",
   "mattersAnalyzing": "ਵਿਸ਼ਲੇਸ਼ਣ ਕੀਤਾ ਜਾ ਰਿਹਾ ਹੈ...",
+  "mattersAnswered": "Answered",
   "mattersAnsweredProgress": "{answered} ਵਿੱਚੋਂ {total} ਨੇ ਜਵਾਬ ਦਿੱਤਾ",
   "@mattersAnsweredProgress": {
     "placeholders": {
@@ -5447,6 +5580,7 @@
   "mattersCreating": "ਬਣਾਇਆ ਜਾ ਰਿਹਾ ਹੈ...",
   "mattersCreatingMatter": "ਬਣਾਇਆ ਜਾ ਰਿਹਾ ਹੈ...",
   "mattersCreatingMatterEllipsis": "ਮਾਮਲਾ ਬਣਾਇਆ ਜਾ ਰਿਹਾ ਹੈ...",
+  "mattersCreditsUsed": "{count, plural, one {# credit used} other {# credits used}}",
   "mattersCriticalRisk": "ਨਾਜ਼ੁਕ ਜੋਖਮ",
   "mattersDate": "ਮਿਤੀ",
   "mattersDate2": "ਮਿਤੀ *",
@@ -5622,6 +5756,7 @@
   "mattersGenerateWhenReady": "ਜਾਂਚ ਕਰੋ ਕਿ ਟੈਂਪਲੇਟਾਂ ਦਾ ਪ੍ਰਬੰਧ ਕੀਤਾ ਗਿਆ ਹੈ ਅਤੇ ਲੋੜੀਂਦੇ ਖੇਤਰ ਭਰੇ ਗਏ ਹਨ, ਫਿਰ ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ।",
   "mattersGenerating": "ਤਿਆਰ ਕੀਤਾ ਜਾ ਰਿਹਾ ਹੈ...",
   "mattersGrantAccessToTeamMembersWithReadonlyOrWritePermiss": "ਸਿਰਫ਼-ਪੜ੍ਹਨ ਜਾਂ ਲਿਖਣ ਦੀ ਇਜਾਜ਼ਤ ਦੇ ਨਾਲ ਟੀਮ ਦੇ ਮੈਂਬਰਾਂ ਨੂੰ ਪਹੁੰਚ ਦਿਓ",
+  "mattersGuidanceResearchTypicalTime": "AI guidance only — usually under 15 seconds",
   "mattersHiddenFromPortalClients": "ਪੋਰਟਲ ਗਾਹਕਾਂ ਤੋਂ ਲੁਕਿਆ ਹੋਇਆ",
   "mattersHideReasoning": "ਤਰਕ ਲੁਕਾਓ",
   "mattersHighRisk": "ਉੱਚ ਜੋਖਮ",
@@ -5706,6 +5841,7 @@
   "mattersMatterTitle": "ਮਾਮਲਾ ਸਿਰਲੇਖ",
   "mattersMatterTitleRequired": "ਮਾਮਲੇ ਦਾ ਸਿਰਲੇਖ ਲੋੜੀਂਦਾ ਹੈ",
   "mattersMatterType": "ਮਾਮਲੇ ਦੀ ਕਿਸਮ",
+  "mattersMatterType2": "Matter type",
   "mattersMatterTypeLabel": "ਮਾਮਲੇ ਦੀ ਕਿਸਮ",
   "mattersMediumRisk": "ਮੱਧਮ ਜੋਖਮ",
   "mattersMeetingsAndRecordings": "ਮੀਟਿੰਗਾਂ ਅਤੇ ਰਿਕਾਰਡਿੰਗਾਂ",
@@ -5877,6 +6013,7 @@
     }
     }
   },
+  "mattersRecentActivity": "Recent activity",
   "mattersRecommendedNextSteps": "ਅਗਲੇ ਕਦਮਾਂ ਦੀ ਸਿਫ਼ਾਰਸ਼ ਕੀਤੀ",
   "mattersRecordFirstMeeting": "ਪਹਿਲੀ ਮੁਲਾਕਾਤ ਰਿਕਾਰਡ ਕਰੋ",
   "mattersRecordFirstMeetingDescription": "ਸਲਾਹ-ਮਸ਼ਵਰੇ ਜਾਂ ਰਣਨੀਤੀ ਕਾਲ ਨੂੰ ਕੈਪਚਰ ਕਰੋ ਅਤੇ ਇਸਨੂੰ ਇਸ ਮਾਮਲੇ ਦੀ ਸਮਾਂਰੇਖਾ ਨਾਲ ਜੋੜੋ।",
@@ -6237,6 +6374,7 @@
   "portalComments": "ਟਿੱਪਣੀਆਂ",
   "portalConsentPortalDescription": "ਸੁਨੇਹੇ, ਅੱਪਲੋਡ, ਰਿਪੋਰਟਾਂ, ਇਨਵੌਇਸ, ਅਤੇ ਭੁਗਤਾਨ ਤੁਹਾਡੀ ਕਾਨੂੰਨੀ ਫਾਈਲ ਨਾਲ ਜੁੜੇ ਰਹਿੰਦੇ ਹਨ।",
   "portalConsentawarePortal": "ਸਹਿਮਤੀ-ਜਾਣੂ ਪੋਰਟਲ:",
+  "portalContinueToPortal": "Continue to portal",
   "portalCurrentStageAndStatusForYourMatters": "ਤੁਹਾਡੇ ਮਾਮਲਿਆਂ ਲਈ ਮੌਜੂਦਾ ਪੜਾਅ ਅਤੇ ਸਥਿਤੀ",
   "portalDescription": "ਵਰਣਨ",
   "portalDetails": "ਵੇਰਵੇ",
@@ -6253,6 +6391,9 @@
   "portalFirmCommunications": "ਫਰਮ ਸੰਚਾਰ",
   "portalFullName": "ਪੂਰਾ ਨਾਂਮ",
   "portalInstructions": "ਹਦਾਇਤਾਂ",
+  "portalInviteLinkRequiredDescription": "Open the invitation link shared by your law firm to access the client portal.",
+  "portalInviteLinkRequiredHelp": "Ask your law firm for a new invitation if your link is missing or has expired.",
+  "portalInviteLinkSignInDescription": "Continue using your invitation to access the information shared with you.",
   "portalInvoices": "ਚਲਾਨ",
   "portalInvoicesAndReceipts": "ਚਲਾਨ ਅਤੇ ਰਸੀਦਾਂ",
   "portalJaneClient": "ਜੇਨ ਕਲਾਇੰਟ",
@@ -6389,6 +6530,7 @@
   "settingsBuyCredits": "ਕ੍ਰੈਡਿਟ ਖਰੀਦੋ",
   "settingsCalendarEmailMeetingsEsignAndAccounting": "ਕੈਲੰਡਰ, ਈਮੇਲ, ਮੀਟਿੰਗਾਂ, ਈ-ਸਾਈਨ, ਅਤੇ ਲੇਖਾਕਾਰੀ",
   "settingsCancel": "ਰੱਦ ਕਰੋ",
+  "settingsChangeLogo": "Change logo",
   "settingsChangeRegion": "ਖੇਤਰ ਬਦਲੋ",
   "settingsChangeRegionHint": "ਉਹ ਦੇਸ਼ ਚੁਣੋ ਜਿਸ ਦੇ ਕਾਨੂੰਨ ਅਤੇ ਕੀਮਤਾਂ ਤੁਹਾਡੇ ਖਾਤੇ 'ਤੇ ਲਾਗੂ ਹੁੰਦੀਆਂ ਹਨ",
   "settingsCheckingFirmTrainingPreferences": "ਮੌਜੂਦਾ ਫਰਮ ਸਿਖਲਾਈ ਅਤੇ ਏਆਈ ਪ੍ਰੋਸੈਸਿੰਗ ਤਰਜੀਹਾਂ ਦੀ ਜਾਂਚ ਕਰ ਰਿਹਾ ਹੈ।",
@@ -6491,6 +6633,8 @@
   "settingsFirmAccount": "ਫਰਮ ਖਾਤਾ",
   "settingsFirmComplianceSettingsAndAuditVisibility": "ਫਰਮ ਪਾਲਣਾ ਸੈਟਿੰਗ ਅਤੇ ਆਡਿਟ ਦਿੱਖ",
   "settingsFirmDataTrainingConsent": "ਪੱਕਾ ਡੇਟਾ ਅਤੇ ਸਿਖਲਾਈ ਦੀ ਸਹਿਮਤੀ",
+  "settingsFirmLogo": "Firm logo",
+  "settingsFirmLogoDescription": "Add the logo used for your firm branding.",
   "settingsFirmName": "ਫਰਮ ਦਾ ਨਾਮ *",
   "settingsFirmNameLabel": "ਫਰਮ ਨਾਮ",
   "settingsFirmPoliciesEthicalWallsAndAiUsageRules": "ਪੱਕੀ ਨੀਤੀਆਂ, ਨੈਤਿਕ ਕੰਧਾਂ, ਅਤੇ AI ਵਰਤੋਂ ਦੇ ਨਿਯਮ",
@@ -6526,6 +6670,12 @@
   "settingsLoadingPermissions": "ਇਜਾਜ਼ਤਾਂ ਲੋਡ ਕੀਤੀਆਂ ਜਾ ਰਹੀਆਂ ਹਨ...",
   "settingsLocation": "ਟਿਕਾਣਾ *",
   "settingsLocationLabel": "ਟਿਕਾਣਾ",
+  "settingsLogoHint": "Choose an image under 2 MB.",
+  "settingsLogoOnExports": "Logo on exports",
+  "settingsLogoOnExportsDisabled": "Disabled",
+  "settingsLogoOnExportsEnabled": "Enabled",
+  "settingsLogoUploadError": "The logo could not be uploaded. Please try again.",
+  "settingsLogoUploading": "Uploading logo…",
   "settingsManageAiConsent": "AI ਸਹਿਮਤੀ ਦਾ ਪ੍ਰਬੰਧਨ ਕਰੋ",
   "settingsManageBilling": "ਬਿਲਿੰਗ ਦਾ ਪ੍ਰਬੰਧਨ ਕਰੋ",
   "settingsManageDataConsent": "ਡਾਟਾ ਸਹਿਮਤੀ ਦਾ ਪ੍ਰਬੰਧਨ ਕਰੋ",
@@ -6701,6 +6851,7 @@
   "settingsRecentTenantscopedEvents": "ਹਾਲੀਆ ਕਿਰਾਏਦਾਰ-ਸਕੋਪ ਵਾਲੇ ਇਵੈਂਟ",
   "settingsRegionUpdateFailed": "ਖੇਤਰ ਅੱਪਡੇਟ ਨਹੀਂ ਕੀਤਾ ਜਾ ਸਕਿਆ। ਕਿਰਪਾ ਕਰਕੇ ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ।",
   "settingsRegionUpdated": "ਖੇਤਰ ਅੱਪਡੇਟ ਕੀਤਾ ਗਿਆ",
+  "settingsRemoveLogo": "Remove logo",
   "settingsRequestExport": "ਨਿਰਯਾਤ ਲਈ ਬੇਨਤੀ ਕਰੋ",
   "settingsRequireApprovalForMatterSharing": "ਮਾਮਲਾ ਸਾਂਝਾ ਕਰਨ ਲਈ ਮਨਜ਼ੂਰੀ ਦੀ ਲੋੜ ਹੈ",
   "settingsRestrictedUserIds": "ਪ੍ਰਤਿਬੰਧਿਤ ਉਪਭੋਗਤਾ ਆਈ.ਡੀ",
@@ -6723,6 +6874,8 @@
   "settingsSelected": "ਚੁਣਿਆ ਗਿਆ:",
   "settingsSensitiveLabels": "ਸੰਵੇਦਨਸ਼ੀਲ ਲੇਬਲ",
   "settingsSettingsDescription": "ਆਪਣੀ ਪ੍ਰੋਫਾਈਲ, AI ਵਰਤੋਂ, ਗੋਪਨੀਯਤਾ ਅਤੇ ਤਰਜੀਹਾਂ ਦਾ ਪ੍ਰਬੰਧਨ ਕਰੋ।",
+  "settingsShowLogoOnExports": "Show logo on exports",
+  "settingsShowLogoOnExportsDescription": "Include the firm logo on supported exported documents.",
   "settingsSingleSignonSaml": "ਸਿੰਗਲ ਸਾਈਨ-ਆਨ (SAML)",
   "settingsSmsNotifications": "SMS ਸੂਚਨਾਵਾਂ",
   "settingsSsoUrl": "SSO URL",
@@ -6748,6 +6901,7 @@
   "settingsUnableToWithdrawConsent": "ਸਹਿਮਤੀ ਵਾਪਸ ਲੈਣ ਵਿੱਚ ਅਸਮਰੱਥ।",
   "settingsUniversalDisclaimerText": "ਯੂਨੀਵਰਸਲ ਬੇਦਾਅਵਾ ਟੈਕਸਟ",
   "settingsUpdateYourFirmInformationAndBranding": "ਆਪਣੀ ਫਰਮ ਜਾਣਕਾਰੀ ਅਤੇ ਬ੍ਰਾਂਡਿੰਗ ਨੂੰ ਅਪਡੇਟ ਕਰੋ",
+  "settingsUploadLogo": "Upload logo",
   "settingsUsageLedger": "ਵਰਤੋਂ ਬਹੀ",
   "settingsUseAnonymizedDataForImprovement": "ਸੁਧਾਰ ਲਈ ਅਗਿਆਤ ਡੇਟਾ ਦੀ ਵਰਤੋਂ ਕਰੋ",
   "settingsUserid1Userid2": "userId1, userId2",

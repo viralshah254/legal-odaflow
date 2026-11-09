@@ -368,5 +368,7 @@
   "microFlowFactsHelper": "নিজৰ ভাষাত লিখিব পাৰে। আপুনি যিমানেই প্ৰাসংগিক বিৱৰণ দিব সিমানেই বিশ্লেষণটো উপযোগী হ’ব।",
   "checkMySituation": "মোৰ অৱস্থা পৰীক্ষা কৰক",
   "enterAtLeastChars": "অন্ততঃ {count} আখৰ দিয়ক",
-  "charCount": "{current} / {max} আখৰ"
+  "charCount": "{current} / {max} আখৰ",
+  "detectedCountryRegionChange": "Detected {country} · {region}. Change this if the issue belongs elsewhere.",
+  "clientNameCannotBeSelf": "Enter the client name, or choose to act for yourself."
 }

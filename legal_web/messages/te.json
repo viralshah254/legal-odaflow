@@ -570,7 +570,35 @@
     "meetings_scope_client": "ఈ క్లయింట్ కోసం సమావేశాలు",
     "meetings_scope_matter": "ఈ విషయమై సమావేశాలు",
     "no_meetings_match_filters": "మీ ఫిల్టర్‌లకు ఏ సమావేశాలు సరిపోలలేదు",
-    "prev": "మునుపటి"
+    "prev": "మునుపటి",
+    "record_transcript": "Record and transcribe",
+    "import_meeting": "Import meeting",
+    "meetings_load_failed": "Meetings could not be loaded. Please try again.",
+    "release": {
+      "usageBased": "Charged by actual usage",
+      "tasksTitle": "Tasks",
+      "tasksDescription": "Your firm’s work, with the earliest deadlines first.",
+      "newTask": "New task",
+      "selectFirmTasks": "Select a firm to view tasks.",
+      "loadingTasks": "Loading tasks…",
+      "tasksLoadFailed": "Tasks could not be loaded. Please refresh and try again.",
+      "noTasks": "No tasks match this view.",
+      "openMatterTasks": "Open matter tasks",
+      "showCompleted": "Show completed",
+      "evidenceScope": "Evidence scope",
+      "allMatterDocuments": "All authorized matter documents",
+      "selectedFolders": "Selected folders and their subfolders",
+      "selectedDocuments": "Selected documents only",
+      "accessibleFolders": "Folders with accessible documents",
+      "noAccessibleFolders": "No accessible document folders.",
+      "matterJurisdiction": "Jurisdiction follows this matter. Change it in matter settings.",
+      "holdingPassage": "Holding passage",
+      "outcome": "Outcome:",
+      "sectionFinder": "Section Finder",
+      "actualUsage": "Based on actual usage",
+      "finalCharge": "Final charge",
+      "legalCountry": "Legal country"
+    }
   },
   "auth": {
     "signIn": "సైన్ ఇన్ చేయండి",
@@ -784,7 +812,17 @@
     "completingSignIn": "సైన్-ఇన్‌ను పూర్తి చేస్తోంది...",
     "oauthRedirectFailed": "మేము Apple/Google సైన్-ఇన్‌ని పూర్తి చేయలేకపోయాము. దయచేసి మళ్లీ ప్రయత్నించండి.",
     "oauthCompletingTooLong": "సైన్ ఇన్ చేయడానికి ఊహించిన దాని కంటే ఎక్కువ సమయం పడుతోంది. మీరు మళ్లీ ప్రయత్నించవచ్చు.",
-    "tryAgain": "మళ్లీ ప్రయత్నించండి"
+    "tryAgain": "మళ్లీ ప్రయత్నించండి",
+    "pathSummaryLawFirm": "Law firm workspace",
+    "pathSummarySoloLawyer": "Solo lawyer workspace",
+    "pathSummaryLegalHelp": "Personal legal help",
+    "signUpAccountTitle": "Create your account",
+    "signUpAccountDescription": "Set up your sign-in details to continue.",
+    "prospectPrefillHint": "Details from your link have been filled in. Review them before continuing.",
+    "lawyerPerk1": "Organize clients, matters and documents",
+    "lawyerPerk2": "Research and draft with matter context",
+    "clientPerk1": "Understand your legal issue",
+    "clientPerk2": "Keep your documents and next steps together"
   },
   "marketing": {
     "4565": "45–65%",
@@ -3028,7 +3066,9 @@
     "microFlowFactsHelper": "మీరు మీ స్వంత మాటలలో వ్రాయవచ్చు. మీరు అందించే మరింత సంబంధిత వివరాలు, విశ్లేషణ మరింత ఉపయోగకరంగా ఉంటుంది.",
     "checkMySituation": "నా పరిస్థితిని తనిఖీ చేయండి",
     "enterAtLeastChars": "కనీసం {count} అక్షరాలను నమోదు చేయండి",
-    "charCount": "{current} / {max} అక్షరాలు"
+    "charCount": "{current} / {max} అక్షరాలు",
+    "detectedCountryRegionChange": "Detected {country} · {region}. Change this if the issue belongs elsewhere.",
+    "clientNameCannotBeSelf": "Enter the client name, or choose to act for yourself."
   },
   "consumer": {
     "nav": {
@@ -3331,7 +3371,12 @@
     "empty_messages_description": "ఈ కేసు గురించి న్యాయవాదులు మరియు మద్దతు నుండి సందేశాలు ఇక్కడ కనిపిస్తాయి.",
     "empty_payments_description": "నివేదికలు, న్యాయవాది సమీక్ష మరియు సభ్యత్వాల చెల్లింపులు ఇక్కడ కనిపిస్తాయి.",
     "applies_to_account_changes_future": "మీ ఖాతాకు వర్తిస్తుంది. మార్పులు భవిష్యత్ ప్రాసెసింగ్‌ను ప్రభావితం చేస్తాయి.",
-    "control_case_data_for_ai_improvement": "AI మెరుగుదల కోసం మీ కేసు డేటాను ఎలా ఉపయోగించవచ్చో నియంత్రించండి. డిఫాల్ట్ ఆఫ్‌లో ఉంది."
+    "control_case_data_for_ai_improvement": "AI మెరుగుదల కోసం మీ కేసు డేటాను ఎలా ఉపయోగించవచ్చో నియంత్రించండి. డిఫాల్ట్ ఆఫ్‌లో ఉంది.",
+    "auto_renewing": "Renews automatically",
+    "subscription_auto_renew_hint": "Your subscription renews until cancelled. Manage renewal and cancellation through your billing provider.",
+    "manage_plan": "Manage plan",
+    "cancel_subscription": "Cancel subscription",
+    "your_current_plan": "Your current plan"
   },
   "lawyer": {
     "nav": {
@@ -3777,7 +3822,13 @@
       "urgencyMediumDesc": "కొన్ని వారాల్లోనే",
       "urgencyHighDesc": "రోజుల్లోనే",
       "urgencyUrgentDesc": "తక్షణ శ్రద్ధ అవసరం"
-    }
+    },
+    "noEvidenceYet": "No evidence has been added yet.",
+    "suggested_time": "Suggested time entries",
+    "suggested_time_description": "Review suggested work and duration before adding a time entry.",
+    "no_suggested_time": "No time suggestions yet.",
+    "approve_suggestion": "Approve suggestion",
+    "dismiss_suggestion": "Dismiss suggestion"
   },
   "admin": {
     "title": "అడ్మిన్",
@@ -4410,7 +4461,20 @@
     "deleteAccountSubmitting": "తొలగిస్తోంది...",
     "deleteAccountSubmit": "నా ఖాతాను తొలగించు",
     "privacyRightToErasure": "తొలగించే హక్కు",
-    "privacyRightToErasureBody": "మీ ఖాతా మరియు వ్యక్తిగత డేటాను శాశ్వతంగా తొలగించమని అభ్యర్థించండి."
+    "privacyRightToErasureBody": "మీ ఖాతా మరియు వ్యక్తిగత డేటాను శాశ్వతంగా తొలగించమని అభ్యర్థించండి.",
+    "logo_on_exports": "Logo on exports",
+    "logo_on_exports_enabled": "Enabled",
+    "logo_on_exports_disabled": "Disabled",
+    "logo_upload_error": "The logo could not be uploaded. Please try again.",
+    "firm_logo": "Firm logo",
+    "firm_logo_description": "Add the logo used for your firm branding.",
+    "logo_uploading": "Uploading logo…",
+    "change_logo": "Change logo",
+    "upload_logo": "Upload logo",
+    "remove_logo": "Remove logo",
+    "logo_hint": "Choose an image under 2 MB.",
+    "show_logo_on_exports": "Show logo on exports",
+    "show_logo_on_exports_description": "Include the firm logo on supported exported documents."
   },
   "billing": {
     "title": "బిల్లింగ్",
@@ -5490,7 +5554,15 @@
     "checkingConflict": "వైరుధ్యాలను తనిఖీ చేస్తోంది...",
     "runConflictCheck": "సంఘర్షణ తనిఖీని అమలు చేయండి",
     "researchPromptTitle": "పరిశోధన ప్రశ్న",
-    "premiumModelResearchHint": "ప్రీమియం మోడల్‌లకు కొంచెం ఎక్కువ సమయం పట్టవచ్చు."
+    "premiumModelResearchHint": "ప్రీమియం మోడల్‌లకు కొంచెం ఎక్కువ సమయం పట్టవచ్చు.",
+    "answered": "Answered",
+    "ai_progress_reading": "Reading the matter context",
+    "ai_progress_retrieving": "Retrieving relevant sources",
+    "ai_progress_analysing": "Analysing the available information",
+    "ai_progress_generating": "Preparing the response",
+    "credits_used": "{count, plural, one {# credit used} other {# credits used}}",
+    "recent_activity": "Recent activity",
+    "matter_type": "Matter type"
   },
   "clients": {
     "title": "క్లయింట్లు",
@@ -5842,7 +5914,11 @@
     "uploaded": "అప్‌లోడ్ చేయబడింది",
     "sign_in_description": "మీ న్యాయ సంస్థ ఫైల్‌లో ఉన్న ఇమెయిల్ చిరునామాతో సైన్ ఇన్ చేయండి.",
     "signing_in": "సైన్ ఇన్ చేస్తోంది...",
-    "unable_to_sign_in": "సైన్ ఇన్ చేయడం సాధ్యపడలేదు. మీ ఇమెయిల్‌ని తనిఖీ చేసి, మళ్లీ ప్రయత్నించండి."
+    "unable_to_sign_in": "సైన్ ఇన్ చేయడం సాధ్యపడలేదు. మీ ఇమెయిల్‌ని తనిఖీ చేసి, మళ్లీ ప్రయత్నించండి.",
+    "invite_link_required_description": "Open the invitation link shared by your law firm to access the client portal.",
+    "invite_link_required_help": "Ask your law firm for a new invitation if your link is missing or has expired.",
+    "invite_link_sign_in_description": "Continue using your invitation to access the information shared with you.",
+    "continue_to_portal": "Continue to portal"
   },
   "errors": {
     "generic": "ఏదో తప్పు జరిగింది",
@@ -5947,7 +6023,9 @@
       "publishedToClientPortal": "క్లయింట్ పోర్టల్‌లో ప్రచురించబడింది",
       "taskReopened": "టాస్క్ మళ్లీ తెరవబడింది",
       "taskCompleted": "టాస్క్ పూర్తయింది",
-      "pleaseTryAgain": "దయచేసి మళ్లీ ప్రయత్నించండి."
+      "pleaseTryAgain": "దయచేసి మళ్లీ ప్రయత్నించండి.",
+      "docketSynced": "Court docket synced",
+      "docketSyncFailed": "Court docket could not be synced"
     }
   },
   "dashboard": {
@@ -6103,7 +6181,11 @@
           "Tenancy deposit",
           "Consumer rights"
         ]
-      }
+      },
+      "intakeSubtitle": "Start with the client and a short description of the matter.",
+      "intakeBriefPlaceholder": "Describe the issue, key dates and the help needed.",
+      "intakeClientPlaceholder": "Client name",
+      "intakeCta": "Start intake"
     },
     "dailyBrief": {
       "title": "మీ రోజువారీ సంక్షిప్త సమాచారం",
@@ -7504,7 +7586,15 @@
       "proceduralRouteDetail": "సిఫార్సు చేయబడింది {recommended} — ఉపయోగించి {selected}",
       "governingSections": "పాలక విభాగాలు",
       "researchAuthorities": "{count} అధికారులు తిరిగి పొందారు{deep} · విశ్వాసం {confidence}",
-      "deepSearchSuffix": "(లోతైన శోధన)"
+      "deepSearchSuffix": "(లోతైన శోధన)",
+      "lawyerReady": "Ready for lawyer review",
+      "readyForLawyerReview": "Ready for lawyer review",
+      "canCertifyShort": "Eligible for review sign-off",
+      "passageSupportedShort": "passages supported",
+      "factCoverage": "Fact coverage",
+      "missingDefenceFacts": "Defence facts to confirm",
+      "autoAppliedFixes": "Applied corrections",
+      "timelineWarnings": "Timeline checks to review"
     }
   },
   "matterIntelligence": {
@@ -7555,7 +7645,9 @@
     "dialogDecline": "ఇప్పుడు కాదు",
     "dialogAgree": "నేను అంగీకరిస్తున్నాను",
     "settingsTitle": "AI అనుమితి సమ్మతి",
-    "settingsDescription": "సమ్మతి రీసెట్. తదుపరి AI ఫీచర్‌కి ముందు మీరు మళ్లీ అడగబడతారు."
+    "settingsDescription": "సమ్మతి రీసెట్. తదుపరి AI ఫీచర్‌కి ముందు మీరు మళ్లీ అడగబడతారు.",
+    "processingUnavailable": "AI privacy information is unavailable. Please retry before sending your data.",
+    "processingBody": "To perform the AI work you request, Umbrella sends your questions, instructions, authorized matter facts, document excerpts, research and draft text to the recipients below. Audio is sent when you use transcription. Inference permission does not grant permission to train models."
   },
   "docuDraft": {
     "title": "డాక్యుమెంట్ డ్రాఫ్ట్",

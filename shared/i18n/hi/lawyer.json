@@ -442,5 +442,11 @@
     "urgencyMediumDesc": "कुछ ही हफ्तों में",
     "urgencyHighDesc": "कुछ ही दिनों में",
     "urgencyUrgentDesc": "तत्काल ध्यान देने की जरूरत है"
-  }
+  },
+  "noEvidenceYet": "No evidence has been added yet.",
+  "suggested_time": "Suggested time entries",
+  "suggested_time_description": "Review suggested work and duration before adding a time entry.",
+  "no_suggested_time": "No time suggestions yet.",
+  "approve_suggestion": "Approve suggestion",
+  "dismiss_suggestion": "Dismiss suggestion"
 }

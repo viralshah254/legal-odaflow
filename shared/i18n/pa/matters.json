@@ -661,5 +661,14 @@
   "checkingConflict": "ਵਿਵਾਦਾਂ ਦੀ ਜਾਂਚ ਕੀਤੀ ਜਾ ਰਹੀ ਹੈ...",
   "runConflictCheck": "ਅਪਵਾਦ ਜਾਂਚ ਚਲਾਓ",
   "researchPromptTitle": "ਖੋਜ ਸਵਾਲ",
-  "premiumModelResearchHint": "ਪ੍ਰੀਮੀਅਮ ਮਾਡਲਾਂ ਵਿੱਚ ਥੋੜ੍ਹਾ ਸਮਾਂ ਲੱਗ ਸਕਦਾ ਹੈ।"
+  "premiumModelResearchHint": "ਪ੍ਰੀਮੀਅਮ ਮਾਡਲਾਂ ਵਿੱਚ ਥੋੜ੍ਹਾ ਸਮਾਂ ਲੱਗ ਸਕਦਾ ਹੈ।",
+  "guidanceResearchTypicalTime": "AI guidance only — usually under 15 seconds",
+  "answered": "Answered",
+  "ai_progress_reading": "Reading the matter context",
+  "ai_progress_retrieving": "Retrieving relevant sources",
+  "ai_progress_analysing": "Analysing the available information",
+  "ai_progress_generating": "Preparing the response",
+  "credits_used": "{count, plural, one {# credit used} other {# credits used}}",
+  "recent_activity": "Recent activity",
+  "matter_type": "Matter type"
 }

@@ -151,7 +151,11 @@
         "Tenancy deposit",
         "Consumer rights"
       ]
-    }
+    },
+    "intakeSubtitle": "Start with the client and a short description of the matter.",
+    "intakeBriefPlaceholder": "Describe the issue, key dates and the help needed.",
+    "intakeClientPlaceholder": "Client name",
+    "intakeCta": "Start intake"
   },
   "dailyBrief": {
     "title": "તમારું દૈનિક સંક્ષિપ્ત",

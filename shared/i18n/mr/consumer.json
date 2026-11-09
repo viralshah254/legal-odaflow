@@ -299,5 +299,10 @@
   "empty_messages_description": "या खटल्याबद्दल वकिलांचे संदेश आणि समर्थन येथे दिसतील.",
   "empty_payments_description": "अहवाल, वकील पुनरावलोकन आणि सदस्यतांसाठी देयके येथे दिसतील.",
   "applies_to_account_changes_future": "तुमच्या खात्यावर लागू होते. बदल भविष्यातील प्रक्रियेवर परिणाम करतात.",
-  "control_case_data_for_ai_improvement": "एआय सुधारण्यासाठी तुमचा केस डेटा कसा वापरला जाऊ शकतो ते नियंत्रित करा. डीफॉल्ट बंद आहे."
+  "control_case_data_for_ai_improvement": "एआय सुधारण्यासाठी तुमचा केस डेटा कसा वापरला जाऊ शकतो ते नियंत्रित करा. डीफॉल्ट बंद आहे.",
+  "auto_renewing": "Renews automatically",
+  "subscription_auto_renew_hint": "Your subscription renews until cancelled. Manage renewal and cancellation through your billing provider.",
+  "manage_plan": "Manage plan",
+  "cancel_subscription": "Cancel subscription",
+  "your_current_plan": "Your current plan"
 }

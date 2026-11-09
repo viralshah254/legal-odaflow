@@ -189,6 +189,8 @@
   "aiConsentDialogProviders": "வழங்குநர்கள்: OpenAI, DeepSeek மற்றும் Deepgram (டிரான்ஸ்கிரிப்ஷன்).",
   "aiConsentDialogPurpose": "தனியுரிமை மற்றும் பாதுகாப்பு அமைப்புகளில் எப்போது வேண்டுமானாலும் நீங்கள் ஒப்புதலை திரும்பப் பெறலாம். ஒப்புதல் இல்லாமல், AI அம்சங்கள் கிடைக்காது.",
   "aiConsentDialogTitle": "AI செயலாக்க ஒப்புதல்",
+  "aiConsentProcessingBody": "To perform the AI work you request, Umbrella sends your questions, instructions, authorized matter facts, document excerpts, research and draft text to the recipients below. Audio is sent when you use transcription. Inference permission does not grant permission to train models.",
+  "aiConsentProcessingUnavailable": "AI privacy information is unavailable. Please retry before sending your data.",
   "aiConsentSettingsDescription": "ஒப்புதல் மீட்டமைவு. அடுத்த AI அம்சத்திற்கு முன் உங்களிடம் மீண்டும் கேட்கப்படும்.",
   "aiConsentSettingsTitle": "AI அனுமான ஒப்புதல்",
   "auth254712345678": "+254712345678",
@@ -215,6 +217,8 @@
   "authCheckDeviceLocation": "சாதனத்தின் இருப்பிடத்தைச் சரிபார்க்கவும்",
   "authCheckingLocation": "இருப்பிடத்தைச் சரிபார்க்கிறது...",
   "authChooseWorkspace": "இன்று உங்களுக்கு ஏற்ற பணியிடத்தை தேர்வு செய்யவும்.",
+  "authClientPerk1": "Understand your legal issue",
+  "authClientPerk2": "Keep your documents and next steps together",
   "authCompleteProfileDescription": "உங்கள் சட்டப் பணியிடத்தை அமைப்பதற்கான சில விவரங்கள். உங்கள் மின்னஞ்சல் ஏற்கனவே சரிபார்க்கப்பட்டது.",
   "authCompleteSignUp": "முழுமையான பதிவு",
   "authCompletingSignIn": "உள்நுழைவை நிறைவு செய்கிறது…",
@@ -293,6 +297,8 @@
   "authLawFirm": "சட்ட நிறுவனம்",
   "authLawyerIRunALawFirm": "வழக்கறிஞர் - நான் ஒரு சட்ட நிறுவனத்தை நடத்துகிறேன்",
   "authLawyerOption": "வழக்கறிஞர் - நான் ஒரு சட்ட நிறுவனத்தை நடத்துகிறேன்",
+  "authLawyerPerk1": "Organize clients, matters and documents",
+  "authLawyerPerk2": "Research and draft with matter context",
   "authLegalIntelligencenforEveryone": "சட்ட அறிவு,\\nஅனைவருக்கும்.",
   "authLoading": "ஏற்றுகிறது...",
   "authLocationCheckDescription": "பதிவு செய்வதற்கு முன் குடை உங்கள் சாதனத்தின் இருப்பிடத்தைச் சரிபார்க்கும், எனவே சட்ட வழிகாட்டுதல் சரியான அதிகார வரம்பில் தொடங்கும்.",
@@ -352,6 +358,9 @@
   "authPasswordTooWeak": "கடவுச்சொல் மிகவும் பலவீனமாக உள்ளது. நீண்ட, குறைவாக யூகிக்கக்கூடிய கடவுச்சொற்றொடரைப் பயன்படுத்தவும்.",
   "authPasswordsDoNotMatch": "கடவுச்சொற்கள் பொருந்தவில்லை",
   "authPasswordsDontMatch": "கடவுச்சொற்கள் பொருந்தவில்லை",
+  "authPathSummaryLawFirm": "Law firm workspace",
+  "authPathSummaryLegalHelp": "Personal legal help",
+  "authPathSummarySoloLawyer": "Solo lawyer workspace",
   "authPhone": "தொலைபேசி",
   "authPhoneE164": "தொலைபேசி (E.164)",
   "authPhoneHint": "உங்கள் மொபைல் எண்ணைச் சேர்க்கவும் — கணக்கு மீட்பு மற்றும் வழக்கறிஞர் பொருத்தம் பயன்படுத்தப்படும்.",
@@ -359,6 +368,7 @@
   "authPhoneTab": "தொலைபேசி",
   "authPracticeNameOptional": "பயிற்சி பெயர் (விரும்பினால்)",
   "authPrivate": "தனியார்",
+  "authProspectPrefillHint": "Details from your link have been filled in. Review them before continuing.",
   "authRefInviteBanner": "நீங்கள் <strong>{name}</strong> ஆல் அழைக்கப்பட்டீர்கள். நீங்கள் குழுசேரும் போது உங்கள் முதல் மாதத்தில் 40% தள்ளுபடியைப் பெறுங்கள்.",
   "@authRefInviteBanner": {
     "placeholders": {
@@ -388,6 +398,8 @@
   "authSignInWithFirebase": "Firebase மூலம் உள்நுழையவும்",
   "authSignOut": "வெளியேறு",
   "authSignUp": "பதிவு செய்யவும்",
+  "authSignUpAccountDescription": "Set up your sign-in details to continue.",
+  "authSignUpAccountTitle": "Create your account",
   "authSignUpDescription": "குடையுடன் தொடங்குங்கள்",
   "authSignUpTermsPrefix": "கணக்கை உருவாக்குவதன் மூலம், எங்களின் கணக்கை ஏற்கிறீர்கள்",
   "authSignUpTitle": "உங்கள் கணக்கை உருவாக்கவும்",
@@ -722,7 +734,7 @@
   "clientsActivityMeetingRecorded": "சந்திப்பு பதிவு செய்யப்பட்டது",
   "clientsActivityProfileUpdated": "வாடிக்கையாளர் சுயவிவரம் புதுப்பிக்கப்பட்டது",
   "clientsAddClient": "வாடிக்கையாளரைச் சேர்க்கவும்",
-  "clientsAddContactPerson": "Add contact person",
+  "clientsAddContactPerson": "தொடர்பு நபரைச் சேர்க்கவும்",
   "clientsAddFirstClient": "உங்கள் முதல் வாடிக்கையாளரைச் சேர்க்கவும்",
   "clientsAddFirstClientDescription": "உறவுகளை நிர்வகிக்கத் தொடங்க உங்கள் முதல் வாடிக்கையாளரைச் சேர்க்கவும்.",
   "clientsAddNewClient": "புதிய வாடிக்கையாளரைச் சேர்க்கவும்",
@@ -772,7 +784,7 @@
   },
   "clientsConflictCheckRequired": "கிளையண்டை உருவாக்கும் முன், மோதல் சரிபார்ப்பை இயக்கவும் மற்றும் ஏதேனும் கொடிகளை தீர்க்கவும்.",
   "clientsContactInformation": "தொடர்பு தகவல்",
-  "clientsContactNamePlaceholder": "Contact name",
+  "clientsContactNamePlaceholder": "தொடர்பு பெயர்",
   "clientsContactNumber": "தொடர்பு {number}",
   "@clientsContactNumber": {
     "placeholders": {
@@ -783,7 +795,7 @@
   },
   "clientsContactPeople": "மக்களைத் தொடர்பு கொள்ளுங்கள்",
   "clientsContactPeopleDescription": "இந்த வாடிக்கையாளருக்கான இயக்குநர்கள், அதிகாரிகள் மற்றும் அங்கீகரிக்கப்பட்ட தொடர்புகள்.",
-  "clientsContactPersonNumber": "Contact person {number}",
+  "clientsContactPersonNumber": "நபர் {number}",
   "@clientsContactPersonNumber": {
     "placeholders": {
     "number": {
@@ -791,7 +803,7 @@
     }
     }
   },
-  "clientsContactRolePlaceholder": "Role or title",
+  "clientsContactRolePlaceholder": "பாத்திரம் அல்லது தலைப்பு",
   "clientsContacts": "தொடர்புகள்",
   "clientsCopyInviteFailed": "போர்டல் அழைப்பை நகலெடுக்க முடியவில்லை.",
   "clientsCouldNotLoadClients": "வாடிக்கையாளர்களை ஏற்ற முடியவில்லை.",
@@ -800,7 +812,7 @@
   "clientsCountryCodePlaceholder": "உதாரணமாக, கே.ஈ",
   "clientsCreateClient": "வாடிக்கையாளரை உருவாக்கவும்",
   "clientsCreateClientProfile": "புதிய கிளையன்ட் சுயவிவரத்தை உருவாக்கவும்",
-  "clientsCreateMatter": "Create matter",
+  "clientsCreateMatter": "பொருளை உருவாக்குங்கள்",
   "clientsCreating": "உருவாக்குகிறது…",
   "clientsCreatingClient": "உருவாக்குகிறது...",
   "clientsDeadlineAndRisk": "காலக்கெடு மற்றும் ஆபத்து",
@@ -976,7 +988,7 @@
     }
   },
   "clientsRemoveClientDocumentTitle": "கிளையன்ட் ஆவணத்தை அகற்றவா?",
-  "clientsRemoveContactPerson": "Remove contact person {number}",
+  "clientsRemoveContactPerson": "தொடர்பு நபரை அகற்று {number}",
   "@clientsRemoveContactPerson": {
     "placeholders": {
     "number": {
@@ -1006,7 +1018,7 @@
     }
   },
   "clientsRoleTitle": "பாத்திரம் அல்லது தலைப்பு",
-  "clientsSaveBasicAndCompleteLater": "Save basic details and complete later",
+  "clientsSaveBasicAndCompleteLater": "அடிப்படை விவரங்களைச் சேமித்து பின்னர் முடிக்கவும்",
   "clientsSaveChanges": "மாற்றங்களைச் சேமிக்கவும்",
   "clientsSaving": "சேமிக்கிறது…",
   "clientsSearchByNameOrEmail": "பெயர் அல்லது மின்னஞ்சல் மூலம் தேடவும்…",
@@ -1116,6 +1128,7 @@
   "commonAskCopilot": "காபிலட்டிடம் கேளுங்கள்...",
   "commonAuthentication": "அங்கீகாரம்",
   "commonAuto": "ஆட்டோ",
+  "commonAvailableOnProfessional": "Available on Professional",
   "commonBack": "மீண்டும்",
   "commonBackToIssueChecker": "வெளியீட்டு சரிபார்ப்பிற்குத் திரும்பு",
   "commonBackToPricing": "விலை நிர்ணயத்திற்குத் திரும்பு",
@@ -1262,6 +1275,14 @@
   "commonExtractFacts": "உண்மைகளை பிரித்தெடுக்கவும்",
   "commonFailedE": "தோல்வி: $e",
   "commonFamilyMatrimonial": "குடும்பம் & திருமணம்",
+  "commonFeatureRequiresProfessional": "{feature} requires a Professional plan.",
+  "@commonFeatureRequiresProfessional": {
+    "placeholders": {
+    "feature": {
+      "type": "String"
+    }
+    }
+  },
   "commonFile": "கோப்பு",
   "commonFindALawyer": "ஒரு வழக்கறிஞரைக் கண்டுபிடி",
   "commonFindLegalHelp": "சட்ட உதவியைக் கண்டறியவும்",
@@ -1296,6 +1317,7 @@
   "commonHtml": "HTML",
   "commonIfYouOptInYouMaySeparatelyEnable": "நீங்கள் தேர்வுசெய்தால், நீங்கள் தனித்தனியாக இயக்கலாம்:",
   "commonImmigration": "குடியேற்றம்",
+  "commonImportMeeting": "Import meeting",
   "commonIncludeDocuments": "ஆவணங்களைச் சேர்க்கவும்",
   "commonIncludedUsage": "பயன்பாடு அடங்கும்",
   "commonIndia": "இந்தியா",
@@ -1410,6 +1432,7 @@
   "commonMeetingsFilterProcessing": "செயலாக்கம்",
   "commonMeetingsFilterReady": "தயார்",
   "commonMeetingsFilterRecording": "பதிவு செய்தல்",
+  "commonMeetingsLoadFailed": "Meetings could not be loaded. Please try again.",
   "commonMeetingsPageOf": "பக்கம் {page} இல் {totalPages}",
   "@commonMeetingsPageOf": {
     "placeholders": {
@@ -1552,6 +1575,7 @@
   "commonRecommendedPath": "பரிந்துரைக்கப்பட்ட பாதை",
   "commonRecordANewExpenseForTheFirm": "நிறுவனத்திற்கான புதிய செலவை பதிவு செய்யுங்கள்",
   "commonRecordOrImportMeetingTranscripts": "தேட மற்றும் மதிப்பாய்வு செய்ய மீட்டிங் டிரான்ஸ்கிரிப்ட்களை பதிவு செய்யவும் அல்லது இறக்குமதி செய்யவும்.",
+  "commonRecordTranscript": "Record and transcribe",
   "commonRef": "Ref",
   "commonReferEarn": "பார்க்கவும் & சம்பாதிக்கவும்",
   "commonReferEarn2": "பார்க்கவும் & சம்பாதிக்கவும்",
@@ -1584,6 +1608,29 @@
   "commonRefresh": "புதுப்பிக்கவும்",
   "commonReject": "நிராகரிக்கவும்",
   "commonRejectLead": "முன்னணி நிராகரிக்கவும்",
+  "commonReleaseAccessibleFolders": "Folders with accessible documents",
+  "commonReleaseActualUsage": "Based on actual usage",
+  "commonReleaseAllMatterDocuments": "All authorized matter documents",
+  "commonReleaseEvidenceScope": "Evidence scope",
+  "commonReleaseFinalCharge": "Final charge",
+  "commonReleaseHoldingPassage": "Holding passage",
+  "commonReleaseLegalCountry": "Legal country",
+  "commonReleaseLoadingTasks": "Loading tasks…",
+  "commonReleaseMatterJurisdiction": "Jurisdiction follows this matter. Change it in matter settings.",
+  "commonReleaseNewTask": "New task",
+  "commonReleaseNoAccessibleFolders": "No accessible document folders.",
+  "commonReleaseNoTasks": "No tasks match this view.",
+  "commonReleaseOpenMatterTasks": "Open matter tasks",
+  "commonReleaseOutcome": "Outcome:",
+  "commonReleaseSectionFinder": "Section Finder",
+  "commonReleaseSelectFirmTasks": "Select a firm to view tasks.",
+  "commonReleaseSelectedDocuments": "Selected documents only",
+  "commonReleaseSelectedFolders": "Selected folders and their subfolders",
+  "commonReleaseShowCompleted": "Show completed",
+  "commonReleaseTasksDescription": "Your firm’s work, with the earliest deadlines first.",
+  "commonReleaseTasksLoadFailed": "Tasks could not be loaded. Please refresh and try again.",
+  "commonReleaseTasksTitle": "Tasks",
+  "commonReleaseUsageBased": "Charged by actual usage",
   "commonRemove": "அகற்று",
   "commonRepresentationBeforeCourtsOrTribunals": "நீதிமன்றங்கள் அல்லது தீர்ப்பாயங்களின் முன் பிரதிநிதித்துவம்",
   "commonRequestConsultation": "ஆலோசனையைக் கோருங்கள்",
@@ -1721,8 +1768,20 @@
   "commonUnitedKingdom": "ஐக்கிய இராச்சியம்",
   "commonUnitedStates": "அமெரிக்கா",
   "commonUniversalDisclaimer": "உலகளாவிய மறுப்பு",
+  "commonUpgradeExistingPlanDescription": "Upgrade from {plan} to unlock {feature}.",
+  "@commonUpgradeExistingPlanDescription": {
+    "placeholders": {
+    "plan": {
+      "type": "String"
+    },
+    "feature": {
+      "type": "String"
+    }
+    }
+  },
   "commonUpgradeToPlusForAFullAiBudget": "முழு AI பட்ஜெட்டுக்கு பிளஸ்ஸுக்கு மேம்படுத்தவும்",
   "commonUpgradeToProfessional": "நிபுணத்துவத்திற்கு மேம்படுத்தவும்",
+  "commonUpgradeToUnlockOnProfessional": "Upgrade to Professional to unlock",
   "commonUpload": "பதிவேற்றவும்",
   "commonUploadADocumentTemplate": "ஆவண டெம்ப்ளேட்டைப் பதிவேற்றவும்",
   "commonUploadALegalDocument": "சட்டப்பூர்வ ஆவணத்தைப் பதிவேற்றவும்",
@@ -1807,6 +1866,7 @@
   "consumerAppliesToAccountChangesFuture": "உங்கள் கணக்கிற்கு பொருந்தும். மாற்றங்கள் எதிர்கால செயலாக்கத்தை பாதிக்கின்றன.",
   "consumerAttachDocumentsToACaseForOcrAndAiAnalysis": "OCR மற்றும் AI பகுப்பாய்வுக்கான வழக்கில் ஆவணங்களை இணைக்கவும்.",
   "consumerAuto": "ஆட்டோ",
+  "consumerAutoRenewing": "Renews automatically",
   "consumerAvailableModels": "கிடைக்கும் மாதிரிகள்",
   "consumerAwaitingDocumentsOrInfo": "ஆவணங்கள் அல்லது தகவலுக்காக காத்திருக்கிறது",
   "consumerBackToDashboard": "டாஷ்போர்டுக்குத் திரும்பு",
@@ -1815,6 +1875,7 @@
   "consumerBuyCredits": "கடன் வாங்கவும்",
   "consumerBuyCredits2": "கடன்களை வாங்கவும்",
   "consumerCancel": "ரத்து செய்",
+  "consumerCancelSubscription": "Cancel subscription",
   "consumerCase": "வழக்கு",
   "consumerCaseClosed": "வழக்கு மூடப்பட்டது",
   "consumerCaseDetails": "வழக்கு விவரங்கள்",
@@ -1958,6 +2019,7 @@
   "consumerLoading": "ஏற்றுகிறது...",
   "consumerLoadingPlanUsage": "திட்டம் & பயன்பாடு ஏற்றப்படுகிறது…",
   "consumerManageDataConsent": "தரவு ஒப்புதலை நிர்வகிக்கவும்",
+  "consumerManagePlan": "Manage plan",
   "consumerMatterProgress": "மேட்டர் முன்னேற்றம்",
   "consumerMatterResolved": "விஷயம் தீர்க்கப்பட்டது",
   "consumerMessages": "செய்திகள்",
@@ -2138,6 +2200,7 @@
   "consumerStartIssueCheck": "சிக்கல் சரிபார்ப்பைத் தொடங்கவும்",
   "consumerStarterPlan": "ஸ்டார்டர் திட்டம்",
   "consumerSubscriptionActivated": "சந்தா செயல்படுத்தப்பட்டது!",
+  "consumerSubscriptionAutoRenewHint": "Your subscription renews until cancelled. Manage renewal and cancellation through your billing provider.",
   "consumerSubscriptionPlans": "சந்தா திட்டங்கள்",
   "consumerSubscriptionsAreNotEnabled": "சந்தாக்கள் இயக்கப்படவில்லை.",
   "consumerTopUp": "டாப்-அப்",
@@ -2181,6 +2244,7 @@
   "consumerWorking": "செயலாக்குகிறது…",
   "consumerYourAccountInformation": "உங்கள் கணக்கு தகவல்",
   "consumerYourAigeneratedLegalPreviewsAndReports": "உங்களின் AI உருவாக்கிய சட்ட முன்னோட்டங்கள் மற்றும் அறிக்கைகள்",
+  "consumerYourCurrentPlan": "Your current plan",
   "consumerYourLegalReports": "உங்கள் சட்ட அறிக்கைகள்",
   "copilotAction": "செயல்:",
   "copilotAddStep": "படி சேர்…",
@@ -2433,6 +2497,25 @@
   "dashboardAiCosts": "AI செலவுகள்",
   "dashboardAiLogs": "AI பதிவுகள்",
   "dashboardAiProfitability": "AI லாபம்",
+  "dashboardAiReviewAuthor": "Author",
+  "dashboardAiReviewEmpty": "No AI outputs are waiting for lawyer review.",
+  "dashboardAiReviewJurisdiction": "Jurisdiction",
+  "dashboardAiReviewLoadError": "Failed to load review queue",
+  "dashboardAiReviewMarkReviewed": "Mark reviewed",
+  "dashboardAiReviewMatter": "Matter",
+  "dashboardAiReviewOpenWorkspace": "Open workspace",
+  "dashboardAiReviewPreview": "Preview",
+  "dashboardAiReviewPreviewTruncated": "Open the workspace for the full output.",
+  "dashboardAiReviewQueueDescription": "Review, open the source workspace, or mark as reviewed when signed off.",
+  "dashboardAiReviewQueueTitle": "{count, plural, one {# item awaiting review} other {# items awaiting review}}",
+  "dashboardAiReviewSubtitle": "AI outputs flagged for lawyer review before client use",
+  "dashboardAiReviewTitle": "AI review queue",
+  "dashboardAiReviewUnknownAuthor": "Unknown",
+  "dashboardAiReviewUnverified": "Unverified",
+  "dashboardAiSearchIntakeBriefPlaceholder": "Describe the issue, key dates and the help needed.",
+  "dashboardAiSearchIntakeClientPlaceholder": "Client name",
+  "dashboardAiSearchIntakeCta": "Start intake",
+  "dashboardAiSearchIntakeSubtitle": "Start with the client and a short description of the matter.",
   "dashboardAiSearchPlaceholder": "நீங்கள் எந்த சட்டக் கேள்விக்கு பதிலளிக்க வேண்டும்?",
   "dashboardAiSearchPromptsDefault": "Contract dispute,Employment issue,Property matter,Debt recovery",
   "dashboardAiSearchPromptsGB": "Unfair dismissal,GDPR data breach,Tenancy deposit,Consumer rights",
@@ -2804,6 +2887,7 @@
   "docuDraftWhatToDraft": "நீங்கள் என்ன வரைவு செய்ய விரும்புகிறீர்கள்?",
   "docuDraftWhatWeUnderstood": "நமக்கு என்ன புரிந்தது",
   "draftingAccuracyAuditTitle": "துல்லிய தணிக்கை",
+  "draftingAccuracyAutoAppliedFixes": "Applied corrections",
   "draftingAccuracyAutoCorrected": "{count} தானாக சரி செய்யப்பட்டது",
   "@draftingAccuracyAutoCorrected": {
     "placeholders": {
@@ -2812,6 +2896,7 @@
     }
     }
   },
+  "draftingAccuracyCanCertifyShort": "Eligible for review sign-off",
   "draftingAccuracyCitationsVerifiedShort": "மேற்கோள்கள் சரிபார்க்கப்பட்டன",
   "draftingAccuracyCompleteMissingFacts": "முழுமையானது - விடுபட்ட உண்மைகளை நிரப்பவும்",
   "draftingAccuracyDeepSearchSuffix": "(ஆழமான தேடல்)",
@@ -2823,10 +2908,14 @@
     }
     }
   },
+  "draftingAccuracyFactCoverage": "Fact coverage",
   "draftingAccuracyFactsPendingShort": "நிலுவையில் உள்ள உண்மைகள்",
   "draftingAccuracyGoverningSections": "ஆளும் பிரிவுகள்",
+  "draftingAccuracyLawyerReady": "Ready for lawyer review",
   "draftingAccuracyLimitedCorpus": "கார்பஸில் வரையறுக்கப்பட்ட ஆதாரங்கள்",
+  "draftingAccuracyMissingDefenceFacts": "Defence facts to confirm",
   "draftingAccuracyNeedsReview": "வழக்கறிஞர் மறுஆய்வு தேவை",
+  "draftingAccuracyPassageSupportedShort": "passages supported",
   "draftingAccuracyProceduralRouteConfirmed": "நடைமுறை வழி உறுதிப்படுத்தப்பட்டது",
   "draftingAccuracyProceduralRouteDetail": "{recommended} பரிந்துரைக்கப்படுகிறது — {selected} ஐப் பயன்படுத்துகிறது",
   "@draftingAccuracyProceduralRouteDetail": {
@@ -2839,6 +2928,7 @@
     }
     }
   },
+  "draftingAccuracyReadyForLawyerReview": "Ready for lawyer review",
   "draftingAccuracyResearchAuthorities": "{count} அதிகாரிகள் மீட்டெடுக்கப்பட்டனர்{deep} · நம்பிக்கை {confidence}",
   "@draftingAccuracyResearchAuthorities": {
     "placeholders": {
@@ -2872,6 +2962,7 @@
     }
     }
   },
+  "draftingAccuracyTimelineWarnings": "Timeline checks to review",
   "draftingAccuracyVerifiedForFiling": "தாக்கல் செய்ய சரிபார்க்கப்பட்டது",
   "draftingEditAiPanel": "AI திருத்தம்",
   "draftingEditApplyEdit": "AI திருத்தத்தைப் பயன்படுத்தவும்",
@@ -2995,6 +3086,8 @@
   "errorsToastCourtCaseLinked": "நீதிமன்ற வழக்கு இணைக்கப்பட்டுள்ளது",
   "errorsToastDiligenceReviewStarted": "விடாமுயற்சி ஆய்வு தொடங்கியது",
   "errorsToastDocketEntryAdded": "டாக்கெட் நுழைவு சேர்க்கப்பட்டது",
+  "errorsToastDocketSyncFailed": "Court docket could not be synced",
+  "errorsToastDocketSynced": "Court docket synced",
   "errorsToastDocumentArchived": "ஆவணம் காப்பகப்படுத்தப்பட்டது",
   "errorsToastDocumentLinked": "ஆவணம் இணைக்கப்பட்டது",
   "errorsToastDocumentUploaded": "ஆவணம் பதிவேற்றப்பட்டது",
@@ -3119,6 +3212,7 @@
   "issueCheckerClientDetails": "வாடிக்கையாளர் விவரங்கள்",
   "issueCheckerClientMatterIntake": "வாடிக்கையாளர் பொருள் உட்கொள்ளல்",
   "issueCheckerClientName": "வாடிக்கையாளர் பெயர் *",
+  "issueCheckerClientNameCannotBeSelf": "Enter the client name, or choose to act for yourself.",
   "issueCheckerComplexMatter": "சிக்கலான விஷயம்",
   "issueCheckerComplexMatterFirmGuidance": "இந்த வழக்கு சிக்கலான அல்லது ஆபத்தை அதிகரித்துள்ளது. சிறப்பு ஆலோசகர் அல்லது மூத்த குழு உறுப்பினரை ஈடுபடுத்துவதைக் கவனியுங்கள்.",
   "issueCheckerConfidentialNotSharedWithTheClientPreview": "ரகசியமானது - கிளையன்ட் மாதிரிக்காட்சியுடன் பகிரப்படவில்லை.",
@@ -3158,6 +3252,18 @@
     }
     }
   },
+  "issueCheckerDetectedCountryRegionChange": "Detected {country} · {region}. Change this if the issue belongs elsewhere.",
+  "@issueCheckerDetectedCountryRegionChange": {
+    "placeholders": {
+    "country": {
+      "type": "String"
+    },
+    "region": {
+      "type": "String"
+    }
+    }
+  },
+  "issueCheckerDetecting": "Detecting…",
   "issueCheckerDetectingLocation": "உங்கள் இருப்பிடத்தைக் கண்டறிகிறது…",
   "issueCheckerDocsAnalyzed": "{count, plural, one {# document analyzed} other {# documents analyzed}}",
   "issueCheckerDocuments2": "ஆவணங்கள்:",
@@ -3545,6 +3651,7 @@
   "lawyerAnalysisHistory": "பகுப்பாய்வு வரலாறு",
   "lawyerAnyAgentJob": "எந்த ஏஜென்ட் வேலையும்",
   "lawyerApproval": "ஒப்புதல்",
+  "lawyerApproveSuggestion": "Approve suggestion",
   "lawyerApproved": "அங்கீகரிக்கப்பட்டது",
   "lawyerArchiveDocument": "ஆவணத்தை காப்பகப்படுத்தவா?",
   "lawyerAskCopilot": "காபிலட்டிடம் கேளுங்கள்",
@@ -3613,6 +3720,7 @@
   "lawyerDescription": "விளக்கம்",
   "lawyerDisbursement": "விநியோகம்",
   "lawyerDisbursementRequestsAwaitingApproval": "வழங்கல் கோரிக்கைகள் ஒப்புதலுக்காகக் காத்திருக்கின்றன.",
+  "lawyerDismissSuggestion": "Dismiss suggestion",
   "lawyerDocumentDetail": "ஆவண விவரம்",
   "lawyerDocumentLibrary": "ஆவண நூலகம்",
   "lawyerDraft": "வரைவு",
@@ -3775,6 +3883,7 @@
   "lawyerNoClientGeneral": "வாடிக்கையாளர் இல்லை (பொது)",
   "lawyerNoDocumentsFound": "ஆவணங்கள் எதுவும் கிடைக்கவில்லை.",
   "lawyerNoEvidenceItems": "ஆதாரப் பொருட்கள் இல்லை",
+  "lawyerNoEvidenceYet": "No evidence has been added yet.",
   "lawyerNoExpensesRecordedYet": "இதுவரை செலவுகள் எதுவும் பதிவு செய்யப்படவில்லை",
   "lawyerNoExtraFiltersForThisTrigger": "இந்த தூண்டுதலுக்கு கூடுதல் வடிப்பான்கள் இல்லை.",
   "lawyerNoFirmWorkspace": "உறுதியான பணியிடம் இல்லை",
@@ -3794,6 +3903,7 @@
   "lawyerNoPendingApprovals": "நிலுவையில் உள்ள அனுமதிகள் இல்லை",
   "lawyerNoSourceTraceAvailable": "ஆதாரத் தடயம் எதுவும் கிடைக்கவில்லை.",
   "lawyerNoSpecificMatter": "குறிப்பிட்ட விஷயம் இல்லை",
+  "lawyerNoSuggestedTime": "No time suggestions yet.",
   "lawyerNoTeamMembersFound": "குழு உறுப்பினர்கள் இல்லை.",
   "lawyerNotYetAnalyzed": "இன்னும் பகுப்பாய்வு செய்யப்படவில்லை",
   "lawyerNote": "குறிப்பு:",
@@ -3884,6 +3994,8 @@
   "lawyerStrategyOptionsAbcDescription": "விருப்பங்கள் A/B/C, பரிந்துரைக்கப்பட்ட பாதை, காலக்கெடு.",
   "lawyerStrengthsForOurClient": "எங்கள் வாடிக்கையாளருக்கான பலம்",
   "lawyerSubmitted": "சமர்ப்பிக்கப்பட்டது",
+  "lawyerSuggestedTime": "Suggested time entries",
+  "lawyerSuggestedTimeDescription": "Review suggested work and duration before adding a time entry.",
   "lawyerSummary": "சுருக்கம்",
   "lawyerTaskDetails": "பணி விவரங்கள்",
   "lawyerTaskTitle": "பணி தலைப்பு",
@@ -4692,8 +4804,10 @@
   "marketingHomeResearchProgressDraftReadyBanner": "வரைவு குறிப்பு தயார் — இறுதி மேற்கோள் தணிக்கை இயங்குகிறது…",
   "marketingHomeResearchProgressDraftVerifyingBanner": "வரைவு தயாராக உள்ளது - துல்லியம் சரிபார்ப்புகளை இயக்குகிறது…",
   "marketingHomeResearchProgressModeFast": "வேகமாக",
+  "marketingHomeResearchProgressModeGuidance": "AI only",
   "marketingHomeResearchProgressModeVerified": "சரிபார்க்கப்பட்டது",
   "marketingHomeResearchProgressPhaseStallNote": "இன்னும் வேலை செய்கிறது - பின்தளம் இந்த படிநிலையை செயல்படுத்துகிறது. பெரிய கேள்விகளுக்கு சில நிமிடங்கள் ஆகலாம்.",
+  "marketingHomeResearchProgressPhaseStallNoteVerified": "Still working — the backend is processing this step. Large queries can take a few minutes.",
   "marketingHomeResearchProgressRefiningTitle": "சூழலுடன் செம்மைப்படுத்துகிறது…",
   "marketingHomeResearchProgressRunningTitle": "சட்ட ஆராய்ச்சியை நடத்துதல்",
   "marketingHomeResearchProgressStepAuditDraftDetail": "இறுதி மேற்கோள் தணிக்கை அனுமதி - உங்கள் வரைவு கீழே தெரியும்.",
@@ -4745,6 +4859,15 @@
     }
   },
   "marketingHomeResearchProgressStepGroundVerify": "கார்பஸுக்கு எதிரான பிரிவு உரையைச் சரிபார்க்கிறது…",
+  "marketingHomeResearchProgressStepGuidanceDraftDetail": "Writing a first-pass answer from the question and contract",
+  "marketingHomeResearchProgressStepGuidanceDraftLabel": "Drafting the note",
+  "marketingHomeResearchProgressStepGuidanceReadDetail": "Identifying the issue, jurisdiction, and contract facts",
+  "marketingHomeResearchProgressStepGuidanceReadLabel": "Reading your question",
+  "marketingHomeResearchProgressStepGuidanceReadyDetail": "Preparing the research note",
+  "marketingHomeResearchProgressStepGuidanceReadyLabel": "Ready",
+  "marketingHomeResearchProgressStepLiveRetrieveDetail": "Checking AI-named authorities against live/corpus sources",
+  "marketingHomeResearchProgressStepLiveRetrieveFailover": "Retrying available connectors when a source is down",
+  "marketingHomeResearchProgressStepLiveRetrieveLabel": "Checking live and corpus sources",
   "marketingHomeResearchProgressStepParseDetail": "அதிகார வரம்பு, விதிகள் மற்றும் நோக்கம் ஆகியவற்றைக் கண்டறிதல்",
   "marketingHomeResearchProgressStepParseDetailProvision": "{provision} மற்றும் தொடர்புடைய விதிகளை அடையாளம் காணுதல்",
   "@marketingHomeResearchProgressStepParseDetailProvision": {
@@ -4755,6 +4878,9 @@
     }
   },
   "marketingHomeResearchProgressStepParseLabel": "உங்கள் சட்ட கேள்வியை பாகுபடுத்துகிறது",
+  "marketingHomeResearchProgressStepPlanMapDetail": "Identifying issues, likely statutes, and retrieval queries",
+  "marketingHomeResearchProgressStepPlanMapLabel": "Planning the research map",
+  "marketingHomeResearchProgressStepPlanMapQueries": "Expanding search queries from the research plan",
   "marketingHomeResearchProgressStepPredecessorCrpcBnss": "CrPC → BNSS பிரிவை மறுபரிசீலனை செய்தல்",
   "marketingHomeResearchProgressStepPredecessorCrpcBnssSection": "CrPC → {section} பிரிவிற்கு BNSS மறுபரிசீலனை செய்தல்",
   "@marketingHomeResearchProgressStepPredecessorCrpcBnssSection": {
@@ -4780,6 +4906,8 @@
   "marketingHomeResearchProgressStepRetrieveMatch": "உங்கள் கேள்விக்கு சட்டப்பூர்வ பிரிவுகள் பொருந்துகிறது…",
   "marketingHomeResearchProgressStepRetrieveRank": "தொடர்புடைய பிரிவுகள் மற்றும் வர்ணனைகளை தரவரிசைப்படுத்துதல்…",
   "marketingHomeResearchProgressStepRetrieveRankCases": "வழக்குச் சட்டத்தை பொருத்தத்தின் அடிப்படையில் தரவரிசைப்படுத்துதல்…",
+  "marketingHomeResearchProgressStepSelfCheckDetail": "Attacking weak assumptions in the same draft",
+  "marketingHomeResearchProgressStepSelfCheckLabel": "Self-check",
   "marketingHomeResearchProgressStillWorking": "இன்னும் வேலை செய்கிறது…",
   "marketingHomeResearchProgressTakingLonger": "· வழக்கத்தை விட அதிக நேரம் எடுக்கும்",
   "marketingHomeResearchProgressVerifiedDurationHint": "பொதுவாக 1-3 நிமிடம்",
@@ -5298,6 +5426,10 @@
   "mattersAiDraftingSubtitle": "விஷய சூழலில் இருந்து டெம்ப்ளேட் புலங்களை நிரப்புதல் மற்றும் சட்டப் பிரிவுகளை நிறைவு செய்தல்.",
   "mattersAiIsAnalyzingTheOpposingPartysPosition": "AI எதிர்கட்சியின் நிலையை ஆய்வு செய்கிறது…",
   "mattersAiIsAnalyzingYourMatter": "AI உங்கள் விஷயத்தை பகுப்பாய்வு செய்கிறது…",
+  "mattersAiProgressAnalysing": "Analysing the available information",
+  "mattersAiProgressGenerating": "Preparing the response",
+  "mattersAiProgressReading": "Reading the matter context",
+  "mattersAiProgressRetrieving": "Retrieving relevant sources",
   "mattersAiResponseFailed": "AI பதிலைப் பெறுவதில் தோல்வி. மீண்டும் முயற்சிக்கவும்.",
   "mattersAigeneratedDocuments": "AI உருவாக்கிய ஆவணங்கள்",
   "mattersAllAssignees": "அனைத்து ஒதுக்கப்பட்டவர்கள்",
@@ -5309,6 +5441,7 @@
   "mattersAllStatuses": "அனைத்து நிலைகள்",
   "mattersAnalyzeOpponent": "எதிரியை பகுப்பாய்வு செய்யுங்கள்",
   "mattersAnalyzing": "பகுப்பாய்வு செய்கிறது…",
+  "mattersAnswered": "Answered",
   "mattersAnsweredProgress": "{answered} இல் {total} பதிலளித்தது",
   "@mattersAnsweredProgress": {
     "placeholders": {
@@ -5447,6 +5580,7 @@
   "mattersCreating": "உருவாக்குகிறது…",
   "mattersCreatingMatter": "உருவாக்குகிறது...",
   "mattersCreatingMatterEllipsis": "விஷயத்தை உருவாக்குகிறது…",
+  "mattersCreditsUsed": "{count, plural, one {# credit used} other {# credits used}}",
   "mattersCriticalRisk": "முக்கியமான ஆபத்து",
   "mattersDate": "தேதி",
   "mattersDate2": "தேதி *",
@@ -5622,6 +5756,7 @@
   "mattersGenerateWhenReady": "டெம்ப்ளேட்கள் வழங்கப்பட்டுள்ளதா மற்றும் தேவையான புலங்கள் நிரப்பப்பட்டுள்ளனவா என்பதைச் சரிபார்த்து, மீண்டும் முயலவும்.",
   "mattersGenerating": "உருவாக்குகிறது…",
   "mattersGrantAccessToTeamMembersWithReadonlyOrWritePermiss": "படிக்க மட்டும் அல்லது எழுத அனுமதியுடன் குழு உறுப்பினர்களுக்கு அணுகலை வழங்கவும்",
+  "mattersGuidanceResearchTypicalTime": "AI guidance only — usually under 15 seconds",
   "mattersHiddenFromPortalClients": "போர்டல் வாடிக்கையாளர்களிடமிருந்து மறைக்கப்பட்டது",
   "mattersHideReasoning": "பகுத்தறிவை மறை",
   "mattersHighRisk": "அதிக ஆபத்து",
@@ -5706,6 +5841,7 @@
   "mattersMatterTitle": "தலைப்பு",
   "mattersMatterTitleRequired": "தலைப்பு தேவை",
   "mattersMatterType": "பொருள் வகை",
+  "mattersMatterType2": "Matter type",
   "mattersMatterTypeLabel": "பொருள் வகை",
   "mattersMediumRisk": "நடுத்தர ஆபத்து",
   "mattersMeetingsAndRecordings": "கூட்டங்கள் மற்றும் பதிவுகள்",
@@ -5877,6 +6013,7 @@
     }
     }
   },
+  "mattersRecentActivity": "Recent activity",
   "mattersRecommendedNextSteps": "பரிந்துரைக்கப்பட்ட அடுத்த படிகள்",
   "mattersRecordFirstMeeting": "முதல் சந்திப்பை பதிவு செய்யுங்கள்",
   "mattersRecordFirstMeetingDescription": "ஒரு ஆலோசனை அல்லது மூலோபாய அழைப்பைப் பதிவுசெய்து, அதை இந்த விஷயத்தின் காலவரிசையுடன் இணைக்கவும்.",
@@ -6237,6 +6374,7 @@
   "portalComments": "கருத்துகள்",
   "portalConsentPortalDescription": "செய்திகள், பதிவேற்றங்கள், அறிக்கைகள், இன்வாய்ஸ்கள் மற்றும் பணம் செலுத்துதல் ஆகியவை உங்கள் சட்டக் கோப்புடன் இணைந்திருக்கும்.",
   "portalConsentawarePortal": "ஒப்புதல் விழிப்புணர்வு போர்டல்:",
+  "portalContinueToPortal": "Continue to portal",
   "portalCurrentStageAndStatusForYourMatters": "உங்கள் விஷயங்களுக்கான தற்போதைய நிலை மற்றும் நிலை",
   "portalDescription": "விளக்கம்",
   "portalDetails": "விவரங்கள்",
@@ -6253,6 +6391,9 @@
   "portalFirmCommunications": "உறுதியான தொடர்புகள்",
   "portalFullName": "முழுப் பெயர்",
   "portalInstructions": "வழிமுறைகள்",
+  "portalInviteLinkRequiredDescription": "Open the invitation link shared by your law firm to access the client portal.",
+  "portalInviteLinkRequiredHelp": "Ask your law firm for a new invitation if your link is missing or has expired.",
+  "portalInviteLinkSignInDescription": "Continue using your invitation to access the information shared with you.",
   "portalInvoices": "இன்வாய்ஸ்கள்",
   "portalInvoicesAndReceipts": "இன்வாய்ஸ்கள் மற்றும் ரசீதுகள்",
   "portalJaneClient": "ஜேன் கிளையண்ட்",
@@ -6389,6 +6530,7 @@
   "settingsBuyCredits": "கடன்களை வாங்கவும்",
   "settingsCalendarEmailMeetingsEsignAndAccounting": "நாட்காட்டி, மின்னஞ்சல், கூட்டங்கள், மின் கையொப்பம் மற்றும் கணக்கியல்",
   "settingsCancel": "ரத்து செய்",
+  "settingsChangeLogo": "Change logo",
   "settingsChangeRegion": "பிராந்தியத்தை மாற்றவும்",
   "settingsChangeRegionHint": "உங்கள் கணக்கிற்கு சட்டங்கள் மற்றும் விலைகள் பொருந்தும் நாட்டைத் தேர்ந்தெடுக்கவும்",
   "settingsCheckingFirmTrainingPreferences": "தற்போதைய நிறுவன பயிற்சி மற்றும் AI செயலாக்க விருப்பங்களை சரிபார்க்கிறது.",
@@ -6491,6 +6633,8 @@
   "settingsFirmAccount": "உறுதியான கணக்கு",
   "settingsFirmComplianceSettingsAndAuditVisibility": "உறுதியான இணக்க அமைப்புகள் மற்றும் தணிக்கைத் தெரிவுநிலை",
   "settingsFirmDataTrainingConsent": "உறுதியான தரவு மற்றும் பயிற்சி ஒப்புதல்",
+  "settingsFirmLogo": "Firm logo",
+  "settingsFirmLogoDescription": "Add the logo used for your firm branding.",
   "settingsFirmName": "நிறுவனத்தின் பெயர் *",
   "settingsFirmNameLabel": "நிறுவனத்தின் பெயர்",
   "settingsFirmPoliciesEthicalWallsAndAiUsageRules": "உறுதியான கொள்கைகள், நெறிமுறை சுவர்கள் மற்றும் AI பயன்பாட்டு விதிகள்",
@@ -6526,6 +6670,12 @@
   "settingsLoadingPermissions": "அனுமதிகளை ஏற்றுகிறது…",
   "settingsLocation": "இடம் *",
   "settingsLocationLabel": "இடம்",
+  "settingsLogoHint": "Choose an image under 2 MB.",
+  "settingsLogoOnExports": "Logo on exports",
+  "settingsLogoOnExportsDisabled": "Disabled",
+  "settingsLogoOnExportsEnabled": "Enabled",
+  "settingsLogoUploadError": "The logo could not be uploaded. Please try again.",
+  "settingsLogoUploading": "Uploading logo…",
   "settingsManageAiConsent": "AI ஒப்புதலை நிர்வகிக்கவும்",
   "settingsManageBilling": "பில்லிங் நிர்வகிக்கவும்",
   "settingsManageDataConsent": "தரவு ஒப்புதலை நிர்வகிக்கவும்",
@@ -6701,6 +6851,7 @@
   "settingsRecentTenantscopedEvents": "சமீபத்திய குத்தகைதாரர் நோக்கம் கொண்ட நிகழ்வுகள்",
   "settingsRegionUpdateFailed": "பிராந்தியத்தைப் புதுப்பிக்க முடியவில்லை. மீண்டும் முயற்சிக்கவும்.",
   "settingsRegionUpdated": "பிராந்தியம் புதுப்பிக்கப்பட்டது",
+  "settingsRemoveLogo": "Remove logo",
   "settingsRequestExport": "ஏற்றுமதியை கோருங்கள்",
   "settingsRequireApprovalForMatterSharing": "விஷயத்தைப் பகிர்வதற்கு ஒப்புதல் தேவை",
   "settingsRestrictedUserIds": "கட்டுப்படுத்தப்பட்ட பயனர் ஐடிகள்",
@@ -6723,6 +6874,8 @@
   "settingsSelected": "தேர்ந்தெடுக்கப்பட்டது:",
   "settingsSensitiveLabels": "உணர்திறன் லேபிள்கள்",
   "settingsSettingsDescription": "உங்கள் சுயவிவரம், AI பயன்பாடு, தனியுரிமை மற்றும் விருப்பங்களை நிர்வகிக்கவும்.",
+  "settingsShowLogoOnExports": "Show logo on exports",
+  "settingsShowLogoOnExportsDescription": "Include the firm logo on supported exported documents.",
   "settingsSingleSignonSaml": "ஒற்றை உள்நுழைவு (SAML)",
   "settingsSmsNotifications": "SMS அறிவிப்புகள்",
   "settingsSsoUrl": "SSO URL",
@@ -6748,6 +6901,7 @@
   "settingsUnableToWithdrawConsent": "ஒப்புதலை திரும்பப் பெற முடியவில்லை.",
   "settingsUniversalDisclaimerText": "உலகளாவிய மறுப்பு உரை",
   "settingsUpdateYourFirmInformationAndBranding": "உங்கள் நிறுவனத்தின் தகவல் மற்றும் பிராண்டிங்கைப் புதுப்பிக்கவும்",
+  "settingsUploadLogo": "Upload logo",
   "settingsUsageLedger": "பயன்பாட்டு லெட்ஜர்",
   "settingsUseAnonymizedDataForImprovement": "மேம்படுத்துவதற்கு அநாமதேய தரவைப் பயன்படுத்தவும்",
   "settingsUserid1Userid2": "userId1, userId2",

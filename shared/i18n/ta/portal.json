@@ -84,5 +84,9 @@
   "uploaded": "பதிவேற்றப்பட்டது",
   "sign_in_description": "உங்கள் சட்ட நிறுவனம் கோப்பில் உள்ள மின்னஞ்சல் முகவரியுடன் உள்நுழையவும்.",
   "signing_in": "உள்நுழைகிறது…",
-  "unable_to_sign_in": "உள்நுழைய முடியவில்லை. உங்கள் மின்னஞ்சலைச் சரிபார்த்து மீண்டும் முயலவும்."
+  "unable_to_sign_in": "உள்நுழைய முடியவில்லை. உங்கள் மின்னஞ்சலைச் சரிபார்த்து மீண்டும் முயலவும்.",
+  "invite_link_required_description": "Open the invitation link shared by your law firm to access the client portal.",
+  "invite_link_required_help": "Ask your law firm for a new invitation if your link is missing or has expired.",
+  "invite_link_sign_in_description": "Continue using your invitation to access the information shared with you.",
+  "continue_to_portal": "Continue to portal"
 }

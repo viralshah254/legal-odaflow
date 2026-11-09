@@ -368,5 +368,7 @@
   "microFlowFactsHelper": "নিজের ভাষায় লিখতে পারেন। আপনি যত বেশি প্রাসঙ্গিক বিশদ প্রদান করবেন, বিশ্লেষণ তত বেশি কার্যকর হবে।",
   "checkMySituation": "আমার অবস্থা পরীক্ষা করুন",
   "enterAtLeastChars": "কমপক্ষে {count} অক্ষর লিখুন",
-  "charCount": "{current} / {max} অক্ষর"
+  "charCount": "{current} / {max} অক্ষর",
+  "detectedCountryRegionChange": "Detected {country} · {region}. Change this if the issue belongs elsewhere.",
+  "clientNameCannotBeSelf": "Enter the client name, or choose to act for yourself."
 }

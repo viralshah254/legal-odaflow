@@ -368,5 +368,7 @@
   "microFlowFactsHelper": "உங்கள் சொந்த வார்த்தைகளில் எழுதலாம். நீங்கள் எவ்வளவு பொருத்தமான விவரத்தை வழங்குகிறீர்களோ, அந்த பகுப்பாய்வு மிகவும் பயனுள்ளதாக இருக்கும்.",
   "checkMySituation": "என் நிலைமையைச் சரிபார்க்கவும்",
   "enterAtLeastChars": "குறைந்தது {count} எழுத்துகளை உள்ளிடவும்",
-  "charCount": "{current} / {max} எழுத்துகள்"
+  "charCount": "{current} / {max} எழுத்துகள்",
+  "detectedCountryRegionChange": "Detected {country} · {region}. Change this if the issue belongs elsewhere.",
+  "clientNameCannotBeSelf": "Enter the client name, or choose to act for yourself."
 }

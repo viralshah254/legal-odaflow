@@ -299,5 +299,10 @@
   "empty_messages_description": "ಈ ಪ್ರಕರಣದ ಕುರಿತು ವಕೀಲರು ಮತ್ತು ಬೆಂಬಲದಿಂದ ಸಂದೇಶಗಳು ಇಲ್ಲಿ ಗೋಚರಿಸುತ್ತವೆ.",
   "empty_payments_description": "ವರದಿಗಳು, ವಕೀಲರ ಪರಿಶೀಲನೆ ಮತ್ತು ಚಂದಾದಾರಿಕೆಗಳಿಗಾಗಿ ಪಾವತಿಗಳು ಇಲ್ಲಿ ಗೋಚರಿಸುತ್ತವೆ.",
   "applies_to_account_changes_future": "ನಿಮ್ಮ ಖಾತೆಗೆ ಅನ್ವಯಿಸುತ್ತದೆ. ಬದಲಾವಣೆಗಳು ಭವಿಷ್ಯದ ಪ್ರಕ್ರಿಯೆಯ ಮೇಲೆ ಪರಿಣಾಮ ಬೀರುತ್ತವೆ.",
-  "control_case_data_for_ai_improvement": "AI ಸುಧಾರಣೆಗಾಗಿ ನಿಮ್ಮ ಕೇಸ್ ಡೇಟಾವನ್ನು ಹೇಗೆ ಬಳಸಬಹುದು ಎಂಬುದನ್ನು ನಿಯಂತ್ರಿಸಿ. ಡೀಫಾಲ್ಟ್ ಆಫ್ ಆಗಿದೆ."
+  "control_case_data_for_ai_improvement": "AI ಸುಧಾರಣೆಗಾಗಿ ನಿಮ್ಮ ಕೇಸ್ ಡೇಟಾವನ್ನು ಹೇಗೆ ಬಳಸಬಹುದು ಎಂಬುದನ್ನು ನಿಯಂತ್ರಿಸಿ. ಡೀಫಾಲ್ಟ್ ಆಫ್ ಆಗಿದೆ.",
+  "auto_renewing": "Renews automatically",
+  "subscription_auto_renew_hint": "Your subscription renews until cancelled. Manage renewal and cancellation through your billing provider.",
+  "manage_plan": "Manage plan",
+  "cancel_subscription": "Cancel subscription",
+  "your_current_plan": "Your current plan"
 }

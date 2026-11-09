@@ -84,5 +84,9 @@
   "uploaded": "അപ്‌ലോഡ് ചെയ്തു",
   "sign_in_description": "നിങ്ങളുടെ നിയമ സ്ഥാപനത്തിൻ്റെ ഫയലിലുള്ള ഇമെയിൽ വിലാസം ഉപയോഗിച്ച് സൈൻ ഇൻ ചെയ്യുക.",
   "signing_in": "സൈൻ ഇൻ ചെയ്യുന്നു...",
-  "unable_to_sign_in": "സൈൻ ഇൻ ചെയ്യാനായില്ല. നിങ്ങളുടെ ഇമെയിൽ പരിശോധിച്ച് വീണ്ടും ശ്രമിക്കുക."
+  "unable_to_sign_in": "സൈൻ ഇൻ ചെയ്യാനായില്ല. നിങ്ങളുടെ ഇമെയിൽ പരിശോധിച്ച് വീണ്ടും ശ്രമിക്കുക.",
+  "invite_link_required_description": "Open the invitation link shared by your law firm to access the client portal.",
+  "invite_link_required_help": "Ask your law firm for a new invitation if your link is missing or has expired.",
+  "invite_link_sign_in_description": "Continue using your invitation to access the information shared with you.",
+  "continue_to_portal": "Continue to portal"
 }

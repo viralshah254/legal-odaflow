@@ -189,6 +189,8 @@
   "aiConsentDialogProviders": "فراہم کنندگان: OpenAI، DeepSeek، اور Deepgram (ٹرانسکرپشن)۔",
   "aiConsentDialogPurpose": "آپ رازداری اور سیکیورٹی کی ترتیبات میں کسی بھی وقت رضامندی واپس لے سکتے ہیں۔ رضامندی کے بغیر، AI خصوصیات دستیاب نہیں ہوں گی۔",
   "aiConsentDialogTitle": "AI پروسیسنگ کی رضامندی۔",
+  "aiConsentProcessingBody": "To perform the AI work you request, Umbrella sends your questions, instructions, authorized matter facts, document excerpts, research and draft text to the recipients below. Audio is sent when you use transcription. Inference permission does not grant permission to train models.",
+  "aiConsentProcessingUnavailable": "AI privacy information is unavailable. Please retry before sending your data.",
   "aiConsentSettingsDescription": "رضامندی دوبارہ ترتیب دیں۔ اگلی AI خصوصیت سے پہلے آپ سے دوبارہ پوچھا جائے گا۔",
   "aiConsentSettingsTitle": "AI تخمینہ کی رضامندی۔",
   "auth254712345678": "+254712345678",
@@ -215,6 +217,8 @@
   "authCheckDeviceLocation": "ڈیوائس کا مقام چیک کریں۔",
   "authCheckingLocation": "مقام کی جانچ ہو رہی ہے...",
   "authChooseWorkspace": "کام کی جگہ کا انتخاب کریں جو آج آپ کے لیے موزوں ہو۔",
+  "authClientPerk1": "Understand your legal issue",
+  "authClientPerk2": "Keep your documents and next steps together",
   "authCompleteProfileDescription": "اپنے قانونی ورک اسپیس کو ترتیب دینے کے لیے چند تفصیلات۔ آپ کا ای میل پہلے ہی تصدیق شدہ ہے۔",
   "authCompleteSignUp": "مکمل سائن اپ کریں۔",
   "authCompletingSignIn": "سائن ان مکمل ہو رہا ہے…",
@@ -293,6 +297,8 @@
   "authLawFirm": "قانونی فرم",
   "authLawyerIRunALawFirm": "وکیل - میں ایک قانونی فرم چلاتا ہوں۔",
   "authLawyerOption": "وکیل - میں ایک قانونی فرم چلاتا ہوں۔",
+  "authLawyerPerk1": "Organize clients, matters and documents",
+  "authLawyerPerk2": "Research and draft with matter context",
   "authLegalIntelligencenforEveryone": "قانونی ذہانت،\\nہر کسی کے لیے۔",
   "authLoading": "لوڈ ہو رہا ہے...",
   "authLocationCheckDescription": "Umbrella سائن اپ کرنے سے پہلے آپ کے آلے کی لوکیشن چیک کرتا ہے تاکہ قانونی رہنمائی صحیح دائرہ اختیار میں شروع ہو۔",
@@ -352,6 +358,9 @@
   "authPasswordTooWeak": "پاس ورڈ بہت کمزور ہے۔ ایک لمبا، کم متوقع پاسفریز استعمال کریں۔",
   "authPasswordsDoNotMatch": "پاس ورڈز مماثل نہیں ہیں۔",
   "authPasswordsDontMatch": "پاس ورڈز مماثل نہیں ہیں۔",
+  "authPathSummaryLawFirm": "Law firm workspace",
+  "authPathSummaryLegalHelp": "Personal legal help",
+  "authPathSummarySoloLawyer": "Solo lawyer workspace",
   "authPhone": "فون",
   "authPhoneE164": "فون (E.164)",
   "authPhoneHint": "اپنا موبائل نمبر شامل کریں — اکاؤنٹ کی بازیابی اور وکیل کی مماثلت کے لیے استعمال کیا جاتا ہے۔",
@@ -359,6 +368,7 @@
   "authPhoneTab": "فون",
   "authPracticeNameOptional": "پریکٹس کا نام (اختیاری)",
   "authPrivate": "نجی",
+  "authProspectPrefillHint": "Details from your link have been filled in. Review them before continuing.",
   "authRefInviteBanner": "آپ کو <strong>{name}</strong> نے مدعو کیا تھا۔ سبسکرائب کرنے پر اپنے پہلے مہینے پر 40% چھوٹ حاصل کریں۔",
   "@authRefInviteBanner": {
     "placeholders": {
@@ -388,6 +398,8 @@
   "authSignInWithFirebase": "Firebase کے ساتھ سائن ان کریں۔",
   "authSignOut": "سائن آؤٹ کریں۔",
   "authSignUp": "سائن اپ کریں۔",
+  "authSignUpAccountDescription": "Set up your sign-in details to continue.",
+  "authSignUpAccountTitle": "Create your account",
   "authSignUpDescription": "Umbrella کے ساتھ شروع کریں۔",
   "authSignUpTermsPrefix": "ایک اکاؤنٹ بنا کر، آپ ہماری بات سے اتفاق کرتے ہیں۔",
   "authSignUpTitle": "اپنا اکاؤنٹ بنائیں",
@@ -722,7 +734,7 @@
   "clientsActivityMeetingRecorded": "میٹنگ ریکارڈ کی گئی۔",
   "clientsActivityProfileUpdated": "کلائنٹ پروفائل کو اپ ڈیٹ کر دیا گیا۔",
   "clientsAddClient": "کلائنٹ شامل کریں۔",
-  "clientsAddContactPerson": "Add contact person",
+  "clientsAddContactPerson": "رابطہ شخص شامل کریں۔",
   "clientsAddFirstClient": "اپنا پہلا کلائنٹ شامل کریں۔",
   "clientsAddFirstClientDescription": "تعلقات کا انتظام شروع کرنے کے لیے اپنے پہلے کلائنٹ کو شامل کریں۔",
   "clientsAddNewClient": "نیا کلائنٹ شامل کریں۔",
@@ -772,7 +784,7 @@
   },
   "clientsConflictCheckRequired": "کلائنٹ بنانے سے پہلے تنازعات کی جانچ کریں اور کسی بھی جھنڈے کو حل کریں۔",
   "clientsContactInformation": "رابطہ کی معلومات",
-  "clientsContactNamePlaceholder": "Contact name",
+  "clientsContactNamePlaceholder": "رابطہ کا نام",
   "clientsContactNumber": "رابطہ کریں {number}",
   "@clientsContactNumber": {
     "placeholders": {
@@ -783,7 +795,7 @@
   },
   "clientsContactPeople": "لوگوں سے رابطہ کریں۔",
   "clientsContactPeopleDescription": "ڈائریکٹرز، افسران، اور اس کلائنٹ کے لیے مجاز رابطے۔",
-  "clientsContactPersonNumber": "Contact person {number}",
+  "clientsContactPersonNumber": "رابطہ شخص {number}",
   "@clientsContactPersonNumber": {
     "placeholders": {
     "number": {
@@ -791,7 +803,7 @@
     }
     }
   },
-  "clientsContactRolePlaceholder": "Role or title",
+  "clientsContactRolePlaceholder": "کردار یا عنوان",
   "clientsContacts": "رابطے",
   "clientsCopyInviteFailed": "پورٹل کے دعوت نامے کو کاپی نہیں کیا جا سکا۔",
   "clientsCouldNotLoadClients": "کلائنٹس کو لوڈ نہیں کیا جا سکا۔",
@@ -800,7 +812,7 @@
   "clientsCountryCodePlaceholder": "مثال کے طور پر، KE",
   "clientsCreateClient": "کلائنٹ بنائیں",
   "clientsCreateClientProfile": "ایک نیا کلائنٹ پروفائل بنائیں",
-  "clientsCreateMatter": "Create matter",
+  "clientsCreateMatter": "معاملہ بنائیں",
   "clientsCreating": "تخلیق ہو رہا ہے…",
   "clientsCreatingClient": "تخلیق کر رہا ہے...",
   "clientsDeadlineAndRisk": "آخری تاریخ اور خطرہ",
@@ -976,7 +988,7 @@
     }
   },
   "clientsRemoveClientDocumentTitle": "کلائنٹ کی دستاویز کو ہٹائیں؟",
-  "clientsRemoveContactPerson": "Remove contact person {number}",
+  "clientsRemoveContactPerson": "رابطہ شخص کو ہٹائیں {number}",
   "@clientsRemoveContactPerson": {
     "placeholders": {
     "number": {
@@ -1006,7 +1018,7 @@
     }
   },
   "clientsRoleTitle": "کردار یا عنوان",
-  "clientsSaveBasicAndCompleteLater": "Save basic details and complete later",
+  "clientsSaveBasicAndCompleteLater": "بنیادی تفصیلات محفوظ کریں اور بعد میں مکمل کریں۔",
   "clientsSaveChanges": "تبدیلیاں محفوظ کریں۔",
   "clientsSaving": "محفوظ کر رہا ہے…",
   "clientsSearchByNameOrEmail": "نام یا ای میل کے ذریعے تلاش کریں…",
@@ -1116,6 +1128,7 @@
   "commonAskCopilot": "کوپائلٹ سے پوچھیں…",
   "commonAuthentication": "تصدیق",
   "commonAuto": "آٹو",
+  "commonAvailableOnProfessional": "Available on Professional",
   "commonBack": "پیچھے",
   "commonBackToIssueChecker": "ایشو چیکر پر واپس جائیں۔",
   "commonBackToPricing": "قیمتوں کے تعین پر واپس جائیں۔",
@@ -1262,6 +1275,14 @@
   "commonExtractFacts": "حقائق نکالیں۔",
   "commonFailedE": "ناکام: $e",
   "commonFamilyMatrimonial": "خاندان اور ازدواجی",
+  "commonFeatureRequiresProfessional": "{feature} requires a Professional plan.",
+  "@commonFeatureRequiresProfessional": {
+    "placeholders": {
+    "feature": {
+      "type": "String"
+    }
+    }
+  },
   "commonFile": "فائل",
   "commonFindALawyer": "ایک وکیل تلاش کریں۔",
   "commonFindLegalHelp": "قانونی مدد تلاش کریں۔",
@@ -1296,6 +1317,7 @@
   "commonHtml": "ایچ ٹی ایم ایل",
   "commonIfYouOptInYouMaySeparatelyEnable": "اگر آپ آپٹ ان کرتے ہیں، تو آپ الگ سے فعال کر سکتے ہیں:",
   "commonImmigration": "امیگریشن",
+  "commonImportMeeting": "Import meeting",
   "commonIncludeDocuments": "دستاویزات شامل کریں۔",
   "commonIncludedUsage": "شامل استعمال",
   "commonIndia": "انڈیا",
@@ -1410,6 +1432,7 @@
   "commonMeetingsFilterProcessing": "پروسیسنگ",
   "commonMeetingsFilterReady": "تیار",
   "commonMeetingsFilterRecording": "ریکارڈنگ",
+  "commonMeetingsLoadFailed": "Meetings could not be loaded. Please try again.",
   "commonMeetingsPageOf": "صفحہ {page} از {totalPages}",
   "@commonMeetingsPageOf": {
     "placeholders": {
@@ -1552,6 +1575,7 @@
   "commonRecommendedPath": "تجویز کردہ راستہ",
   "commonRecordANewExpenseForTheFirm": "فرم کے لیے ایک نیا خرچ ریکارڈ کریں۔",
   "commonRecordOrImportMeetingTranscripts": "تلاش اور جائزہ لینے کے لیے میٹنگ ٹرانسکرپٹس کو ریکارڈ یا درآمد کریں۔",
+  "commonRecordTranscript": "Record and transcribe",
   "commonRef": "حوالہ",
   "commonReferEarn": "رجوع کریں اور کمائیں۔",
   "commonReferEarn2": "رجوع کریں اور کمائیں۔",
@@ -1584,6 +1608,29 @@
   "commonRefresh": "ریفریش کریں۔",
   "commonReject": "رد کرنا",
   "commonRejectLead": "لیڈ کو مسترد کریں۔",
+  "commonReleaseAccessibleFolders": "Folders with accessible documents",
+  "commonReleaseActualUsage": "Based on actual usage",
+  "commonReleaseAllMatterDocuments": "All authorized matter documents",
+  "commonReleaseEvidenceScope": "Evidence scope",
+  "commonReleaseFinalCharge": "Final charge",
+  "commonReleaseHoldingPassage": "Holding passage",
+  "commonReleaseLegalCountry": "Legal country",
+  "commonReleaseLoadingTasks": "Loading tasks…",
+  "commonReleaseMatterJurisdiction": "Jurisdiction follows this matter. Change it in matter settings.",
+  "commonReleaseNewTask": "New task",
+  "commonReleaseNoAccessibleFolders": "No accessible document folders.",
+  "commonReleaseNoTasks": "No tasks match this view.",
+  "commonReleaseOpenMatterTasks": "Open matter tasks",
+  "commonReleaseOutcome": "Outcome:",
+  "commonReleaseSectionFinder": "Section Finder",
+  "commonReleaseSelectFirmTasks": "Select a firm to view tasks.",
+  "commonReleaseSelectedDocuments": "Selected documents only",
+  "commonReleaseSelectedFolders": "Selected folders and their subfolders",
+  "commonReleaseShowCompleted": "Show completed",
+  "commonReleaseTasksDescription": "Your firm’s work, with the earliest deadlines first.",
+  "commonReleaseTasksLoadFailed": "Tasks could not be loaded. Please refresh and try again.",
+  "commonReleaseTasksTitle": "Tasks",
+  "commonReleaseUsageBased": "Charged by actual usage",
   "commonRemove": "ہٹا دیں۔",
   "commonRepresentationBeforeCourtsOrTribunals": "عدالتوں یا ٹربیونلز کے سامنے نمائندگی",
   "commonRequestConsultation": "مشاورت کی درخواست کریں۔",
@@ -1721,8 +1768,20 @@
   "commonUnitedKingdom": "برطانیہ",
   "commonUnitedStates": "ریاستہائے متحدہ",
   "commonUniversalDisclaimer": "یونیورسل ڈس کلیمر",
+  "commonUpgradeExistingPlanDescription": "Upgrade from {plan} to unlock {feature}.",
+  "@commonUpgradeExistingPlanDescription": {
+    "placeholders": {
+    "plan": {
+      "type": "String"
+    },
+    "feature": {
+      "type": "String"
+    }
+    }
+  },
   "commonUpgradeToPlusForAFullAiBudget": "مکمل AI بجٹ کے لیے Plus میں اپ گریڈ کریں۔",
   "commonUpgradeToProfessional": "پروفیشنل میں اپ گریڈ کریں۔",
+  "commonUpgradeToUnlockOnProfessional": "Upgrade to Professional to unlock",
   "commonUpload": "اپ لوڈ کریں۔",
   "commonUploadADocumentTemplate": "ایک دستاویز ٹیمپلیٹ اپ لوڈ کریں۔",
   "commonUploadALegalDocument": "ایک قانونی دستاویز اپ لوڈ کریں۔",
@@ -1807,6 +1866,7 @@
   "consumerAppliesToAccountChangesFuture": "آپ کے اکاؤنٹ پر لاگو ہوتا ہے۔ تبدیلیاں مستقبل کی پروسیسنگ کو متاثر کرتی ہیں۔",
   "consumerAttachDocumentsToACaseForOcrAndAiAnalysis": "OCR اور AI تجزیہ کے لیے کسی کیس کے ساتھ دستاویزات منسلک کریں۔",
   "consumerAuto": "آٹو",
+  "consumerAutoRenewing": "Renews automatically",
   "consumerAvailableModels": "دستیاب ماڈلز",
   "consumerAwaitingDocumentsOrInfo": "دستاویزات یا معلومات کا انتظار ہے۔",
   "consumerBackToDashboard": "ڈیش بورڈ پر واپس جائیں۔",
@@ -1815,6 +1875,7 @@
   "consumerBuyCredits": "کریڈٹ خریدیں۔",
   "consumerBuyCredits2": "کریڈٹ خریدیں۔",
   "consumerCancel": "منسوخ کریں۔",
+  "consumerCancelSubscription": "Cancel subscription",
   "consumerCase": "کیس",
   "consumerCaseClosed": "کیس بند",
   "consumerCaseDetails": "کیس کی تفصیلات",
@@ -1958,6 +2019,7 @@
   "consumerLoading": "لوڈ ہو رہا ہے...",
   "consumerLoadingPlanUsage": "پلان اور استعمال لوڈ ہو رہا ہے…",
   "consumerManageDataConsent": "ڈیٹا کی رضامندی کا نظم کریں۔",
+  "consumerManagePlan": "Manage plan",
   "consumerMatterProgress": "معاملے کی پیشرفت",
   "consumerMatterResolved": "معاملہ حل ہو گیا۔",
   "consumerMessages": "پیغامات",
@@ -2138,6 +2200,7 @@
   "consumerStartIssueCheck": "مسئلہ کی جانچ شروع کریں۔",
   "consumerStarterPlan": "سٹارٹر پلان",
   "consumerSubscriptionActivated": "سبسکرپشن چالو!",
+  "consumerSubscriptionAutoRenewHint": "Your subscription renews until cancelled. Manage renewal and cancellation through your billing provider.",
   "consumerSubscriptionPlans": "سبسکرپشن پلانز",
   "consumerSubscriptionsAreNotEnabled": "سبسکرپشنز فعال نہیں ہیں۔",
   "consumerTopUp": "ٹاپ اپ",
@@ -2181,6 +2244,7 @@
   "consumerWorking": "کارروائی ہو رہی ہے…",
   "consumerYourAccountInformation": "آپ کے اکاؤنٹ کی معلومات",
   "consumerYourAigeneratedLegalPreviewsAndReports": "آپ کے AI سے تیار کردہ قانونی پیش نظارہ اور رپورٹس",
+  "consumerYourCurrentPlan": "Your current plan",
   "consumerYourLegalReports": "آپ کی قانونی رپورٹس",
   "copilotAction": "عمل:",
   "copilotAddStep": "قدم شامل کریں…",
@@ -2433,6 +2497,25 @@
   "dashboardAiCosts": "AI کے اخراجات",
   "dashboardAiLogs": "AI لاگز",
   "dashboardAiProfitability": "AI منافع بخشی۔",
+  "dashboardAiReviewAuthor": "Author",
+  "dashboardAiReviewEmpty": "No AI outputs are waiting for lawyer review.",
+  "dashboardAiReviewJurisdiction": "Jurisdiction",
+  "dashboardAiReviewLoadError": "Failed to load review queue",
+  "dashboardAiReviewMarkReviewed": "Mark reviewed",
+  "dashboardAiReviewMatter": "Matter",
+  "dashboardAiReviewOpenWorkspace": "Open workspace",
+  "dashboardAiReviewPreview": "Preview",
+  "dashboardAiReviewPreviewTruncated": "Open the workspace for the full output.",
+  "dashboardAiReviewQueueDescription": "Review, open the source workspace, or mark as reviewed when signed off.",
+  "dashboardAiReviewQueueTitle": "{count, plural, one {# item awaiting review} other {# items awaiting review}}",
+  "dashboardAiReviewSubtitle": "AI outputs flagged for lawyer review before client use",
+  "dashboardAiReviewTitle": "AI review queue",
+  "dashboardAiReviewUnknownAuthor": "Unknown",
+  "dashboardAiReviewUnverified": "Unverified",
+  "dashboardAiSearchIntakeBriefPlaceholder": "Describe the issue, key dates and the help needed.",
+  "dashboardAiSearchIntakeClientPlaceholder": "Client name",
+  "dashboardAiSearchIntakeCta": "Start intake",
+  "dashboardAiSearchIntakeSubtitle": "Start with the client and a short description of the matter.",
   "dashboardAiSearchPlaceholder": "آپ کو کس قانونی سوال کا جواب درکار ہے؟",
   "dashboardAiSearchPromptsDefault": "Contract dispute,Employment issue,Property matter,Debt recovery",
   "dashboardAiSearchPromptsGB": "Unfair dismissal,GDPR data breach,Tenancy deposit,Consumer rights",
@@ -2804,6 +2887,7 @@
   "docuDraftWhatToDraft": "آپ کیا مسودہ تیار کرنا چاہتے ہیں؟",
   "docuDraftWhatWeUnderstood": "جو ہم نے سمجھا",
   "draftingAccuracyAuditTitle": "درستگی کا آڈٹ",
+  "draftingAccuracyAutoAppliedFixes": "Applied corrections",
   "draftingAccuracyAutoCorrected": "{count} خود بخود درست",
   "@draftingAccuracyAutoCorrected": {
     "placeholders": {
@@ -2812,6 +2896,7 @@
     }
     }
   },
+  "draftingAccuracyCanCertifyShort": "Eligible for review sign-off",
   "draftingAccuracyCitationsVerifiedShort": "اقتباسات کی تصدیق",
   "draftingAccuracyCompleteMissingFacts": "مکمل - گمشدہ حقائق کو پُر کریں۔",
   "draftingAccuracyDeepSearchSuffix": "(گہری تلاش)",
@@ -2823,10 +2908,14 @@
     }
     }
   },
+  "draftingAccuracyFactCoverage": "Fact coverage",
   "draftingAccuracyFactsPendingShort": "زیر التواء حقائق",
   "draftingAccuracyGoverningSections": "حکمرانی والے حصے",
+  "draftingAccuracyLawyerReady": "Ready for lawyer review",
   "draftingAccuracyLimitedCorpus": "کارپس میں محدود ذرائع",
+  "draftingAccuracyMissingDefenceFacts": "Defence facts to confirm",
   "draftingAccuracyNeedsReview": "وکیل کا جائزہ لینے کی ضرورت ہے۔",
+  "draftingAccuracyPassageSupportedShort": "passages supported",
   "draftingAccuracyProceduralRouteConfirmed": "طریقہ کار کی تصدیق ہوگئی",
   "draftingAccuracyProceduralRouteDetail": "تجویز کردہ {recommended} — استعمال کرتے ہوئے {selected}",
   "@draftingAccuracyProceduralRouteDetail": {
@@ -2839,6 +2928,7 @@
     }
     }
   },
+  "draftingAccuracyReadyForLawyerReview": "Ready for lawyer review",
   "draftingAccuracyResearchAuthorities": "{count} حکام نے بازیافت کیا{deep} · اعتماد {confidence}",
   "@draftingAccuracyResearchAuthorities": {
     "placeholders": {
@@ -2872,6 +2962,7 @@
     }
     }
   },
+  "draftingAccuracyTimelineWarnings": "Timeline checks to review",
   "draftingAccuracyVerifiedForFiling": "فائل کرنے کے لیے تصدیق شدہ",
   "draftingEditAiPanel": "AI ترمیم",
   "draftingEditApplyEdit": "AI ترمیم کا اطلاق کریں۔",
@@ -2995,6 +3086,8 @@
   "errorsToastCourtCaseLinked": "عدالتی کیس منسلک",
   "errorsToastDiligenceReviewStarted": "مستعدی کا جائزہ لینا شروع کیا۔",
   "errorsToastDocketEntryAdded": "ڈاکٹ اندراج شامل کر دیا گیا۔",
+  "errorsToastDocketSyncFailed": "Court docket could not be synced",
+  "errorsToastDocketSynced": "Court docket synced",
   "errorsToastDocumentArchived": "دستاویز محفوظ کر لی گئی۔",
   "errorsToastDocumentLinked": "دستاویز منسلک ہے۔",
   "errorsToastDocumentUploaded": "دستاویز اپ لوڈ کر دی گئی۔",
@@ -3119,6 +3212,7 @@
   "issueCheckerClientDetails": "کلائنٹ کی تفصیلات",
   "issueCheckerClientMatterIntake": "کلائنٹ کے معاملات کی انٹیک",
   "issueCheckerClientName": "کلائنٹ کا نام *",
+  "issueCheckerClientNameCannotBeSelf": "Enter the client name, or choose to act for yourself.",
   "issueCheckerComplexMatter": "پیچیدہ معاملہ",
   "issueCheckerComplexMatterFirmGuidance": "اس معاملے میں پیچیدگی یا خطرہ بڑھ گیا ہے۔ ماہر مشیر یا ٹیم کے کسی سینئر رکن کو شامل کرنے پر غور کریں۔",
   "issueCheckerConfidentialNotSharedWithTheClientPreview": "خفیہ — کلائنٹ کے پیش منظر کے ساتھ اشتراک نہیں کیا گیا ہے۔",
@@ -3158,6 +3252,18 @@
     }
     }
   },
+  "issueCheckerDetectedCountryRegionChange": "Detected {country} · {region}. Change this if the issue belongs elsewhere.",
+  "@issueCheckerDetectedCountryRegionChange": {
+    "placeholders": {
+    "country": {
+      "type": "String"
+    },
+    "region": {
+      "type": "String"
+    }
+    }
+  },
+  "issueCheckerDetecting": "Detecting…",
   "issueCheckerDetectingLocation": "آپ کے مقام کا پتہ لگایا جا رہا ہے…",
   "issueCheckerDocsAnalyzed": "{count, plural, one {# document analyzed} other {# documents analyzed}}",
   "issueCheckerDocuments2": "دستاویزات:",
@@ -3545,6 +3651,7 @@
   "lawyerAnalysisHistory": "تجزیہ کی تاریخ",
   "lawyerAnyAgentJob": "کوئی بھی ایجنٹ کا کام",
   "lawyerApproval": "منظوری",
+  "lawyerApproveSuggestion": "Approve suggestion",
   "lawyerApproved": "منظور شدہ",
   "lawyerArchiveDocument": "دستاویز کو محفوظ کریں؟",
   "lawyerAskCopilot": "Copilot سے پوچھیں۔",
@@ -3613,6 +3720,7 @@
   "lawyerDescription": "تفصیل",
   "lawyerDisbursement": "تقسیم",
   "lawyerDisbursementRequestsAwaitingApproval": "تقسیم کی درخواستیں منظوری کی منتظر ہیں۔",
+  "lawyerDismissSuggestion": "Dismiss suggestion",
   "lawyerDocumentDetail": "دستاویز کی تفصیل",
   "lawyerDocumentLibrary": "دستاویز کی لائبریری",
   "lawyerDraft": "مسودہ",
@@ -3775,6 +3883,7 @@
   "lawyerNoClientGeneral": "کوئی کلائنٹ نہیں (جنرل)",
   "lawyerNoDocumentsFound": "کوئی دستاویزات نہیں ملے۔",
   "lawyerNoEvidenceItems": "کوئی ثبوت نہیں ہے۔",
+  "lawyerNoEvidenceYet": "No evidence has been added yet.",
   "lawyerNoExpensesRecordedYet": "ابھی تک کوئی اخراجات ریکارڈ نہیں کیے گئے۔",
   "lawyerNoExtraFiltersForThisTrigger": "اس ٹرگر کے لیے کوئی اضافی فلٹرز نہیں ہیں۔",
   "lawyerNoFirmWorkspace": "کوئی مضبوط کام کی جگہ نہیں ہے۔",
@@ -3794,6 +3903,7 @@
   "lawyerNoPendingApprovals": "کوئی زیر التوا منظوری نہیں ہے۔",
   "lawyerNoSourceTraceAvailable": "کوئی ماخذ ٹریس دستیاب نہیں ہے۔",
   "lawyerNoSpecificMatter": "کوئی خاص بات نہیں۔",
+  "lawyerNoSuggestedTime": "No time suggestions yet.",
   "lawyerNoTeamMembersFound": "کوئی ٹیم ممبر نہیں ملا۔",
   "lawyerNotYetAnalyzed": "ابھی تک تجزیہ نہیں ہوا۔",
   "lawyerNote": "نوٹ:",
@@ -3884,6 +3994,8 @@
   "lawyerStrategyOptionsAbcDescription": "اختیارات A/B/C، تجویز کردہ راستہ، آخری تاریخ۔",
   "lawyerStrengthsForOurClient": "ہمارے کلائنٹ کے لیے طاقت",
   "lawyerSubmitted": "جمع کرایا",
+  "lawyerSuggestedTime": "Suggested time entries",
+  "lawyerSuggestedTimeDescription": "Review suggested work and duration before adding a time entry.",
   "lawyerSummary": "خلاصہ",
   "lawyerTaskDetails": "ٹاسک کی تفصیلات",
   "lawyerTaskTitle": "کام کا عنوان",
@@ -4692,8 +4804,10 @@
   "marketingHomeResearchProgressDraftReadyBanner": "مسودہ میمو تیار ہے - حتمی حوالہ آڈٹ چل رہا ہے…",
   "marketingHomeResearchProgressDraftVerifyingBanner": "ڈرافٹ تیار ہے - درستگی کی جانچ چل رہی ہے…",
   "marketingHomeResearchProgressModeFast": "تیز",
+  "marketingHomeResearchProgressModeGuidance": "AI only",
   "marketingHomeResearchProgressModeVerified": "تصدیق شدہ",
   "marketingHomeResearchProgressPhaseStallNote": "ابھی بھی کام کر رہا ہے - پسدید اس مرحلے پر کارروائی کر رہا ہے۔ بڑے سوالات میں چند منٹ لگ سکتے ہیں۔",
+  "marketingHomeResearchProgressPhaseStallNoteVerified": "Still working — the backend is processing this step. Large queries can take a few minutes.",
   "marketingHomeResearchProgressRefiningTitle": "سیاق و سباق کے ساتھ بہتر کیا جا رہا ہے…",
   "marketingHomeResearchProgressRunningTitle": "قانونی تحقیق چل رہی ہے۔",
   "marketingHomeResearchProgressStepAuditDraftDetail": "حتمی حوالہ آڈٹ پاس — آپ کا مسودہ نیچے دکھائی دے رہا ہے۔",
@@ -4745,6 +4859,15 @@
     }
   },
   "marketingHomeResearchProgressStepGroundVerify": "کارپس کے خلاف سیکشن ٹیکسٹ کی تصدیق ہو رہی ہے…",
+  "marketingHomeResearchProgressStepGuidanceDraftDetail": "Writing a first-pass answer from the question and contract",
+  "marketingHomeResearchProgressStepGuidanceDraftLabel": "Drafting the note",
+  "marketingHomeResearchProgressStepGuidanceReadDetail": "Identifying the issue, jurisdiction, and contract facts",
+  "marketingHomeResearchProgressStepGuidanceReadLabel": "Reading your question",
+  "marketingHomeResearchProgressStepGuidanceReadyDetail": "Preparing the research note",
+  "marketingHomeResearchProgressStepGuidanceReadyLabel": "Ready",
+  "marketingHomeResearchProgressStepLiveRetrieveDetail": "Checking AI-named authorities against live/corpus sources",
+  "marketingHomeResearchProgressStepLiveRetrieveFailover": "Retrying available connectors when a source is down",
+  "marketingHomeResearchProgressStepLiveRetrieveLabel": "Checking live and corpus sources",
   "marketingHomeResearchProgressStepParseDetail": "دائرہ اختیار، دفعات، اور ارادے کی نشاندہی کرنا",
   "marketingHomeResearchProgressStepParseDetailProvision": "{provision} اور متعلقہ دفعات کی شناخت کرنا",
   "@marketingHomeResearchProgressStepParseDetailProvision": {
@@ -4755,6 +4878,9 @@
     }
   },
   "marketingHomeResearchProgressStepParseLabel": "آپ کے قانونی سوال کو پارس کرنا",
+  "marketingHomeResearchProgressStepPlanMapDetail": "Identifying issues, likely statutes, and retrieval queries",
+  "marketingHomeResearchProgressStepPlanMapLabel": "Planning the research map",
+  "marketingHomeResearchProgressStepPlanMapQueries": "Expanding search queries from the research plan",
   "marketingHomeResearchProgressStepPredecessorCrpcBnss": "کراس چیکنگ CrPC → BNSS سیکشن ری میپس",
   "marketingHomeResearchProgressStepPredecessorCrpcBnssSection": "سیکشن {section} کے لیے کراس چیکنگ CrPC → BNSS ری میپس",
   "@marketingHomeResearchProgressStepPredecessorCrpcBnssSection": {
@@ -4780,6 +4906,8 @@
   "marketingHomeResearchProgressStepRetrieveMatch": "آپ کے سوال سے قانونی حصوں کو ملا رہا ہے…",
   "marketingHomeResearchProgressStepRetrieveRank": "رینکنگ متعلقہ سیکشنز اور کمنٹری…",
   "marketingHomeResearchProgressStepRetrieveRankCases": "متعلقہ کیس کے قانون کی درجہ بندی…",
+  "marketingHomeResearchProgressStepSelfCheckDetail": "Attacking weak assumptions in the same draft",
+  "marketingHomeResearchProgressStepSelfCheckLabel": "Self-check",
   "marketingHomeResearchProgressStillWorking": "· اب بھی کام کر رہا ہے…",
   "marketingHomeResearchProgressTakingLonger": "معمول سے زیادہ وقت لگ رہا ہے۔",
   "marketingHomeResearchProgressVerifiedDurationHint": "عام طور پر 1–3 منٹ",
@@ -5298,6 +5426,10 @@
   "mattersAiDraftingSubtitle": "مادے کے سیاق و سباق سے ٹیمپلیٹ فیلڈز کو بھرنا اور قانونی شقوں کو مکمل کرنا۔",
   "mattersAiIsAnalyzingTheOpposingPartysPosition": "AI مخالف پارٹی کی پوزیشن کا تجزیہ کر رہا ہے…",
   "mattersAiIsAnalyzingYourMatter": "AI آپ کے معاملے کا تجزیہ کر رہا ہے…",
+  "mattersAiProgressAnalysing": "Analysing the available information",
+  "mattersAiProgressGenerating": "Preparing the response",
+  "mattersAiProgressReading": "Reading the matter context",
+  "mattersAiProgressRetrieving": "Retrieving relevant sources",
   "mattersAiResponseFailed": "AI جواب حاصل کرنے میں ناکام۔ براہ کرم دوبارہ کوشش کریں۔",
   "mattersAigeneratedDocuments": "AI سے تیار کردہ دستاویزات",
   "mattersAllAssignees": "تمام تفویض کردہ",
@@ -5309,6 +5441,7 @@
   "mattersAllStatuses": "تمام سٹیٹس",
   "mattersAnalyzeOpponent": "مخالف کا تجزیہ کریں۔",
   "mattersAnalyzing": "تجزیہ کیا جا رہا ہے…",
+  "mattersAnswered": "Answered",
   "mattersAnsweredProgress": "{answered} میں سے {total} نے جواب دیا۔",
   "@mattersAnsweredProgress": {
     "placeholders": {
@@ -5447,6 +5580,7 @@
   "mattersCreating": "تخلیق ہو رہا ہے…",
   "mattersCreatingMatter": "تخلیق کر رہا ہے...",
   "mattersCreatingMatterEllipsis": "معاملہ پیدا ہو رہا ہے…",
+  "mattersCreditsUsed": "{count, plural, one {# credit used} other {# credits used}}",
   "mattersCriticalRisk": "کریٹیکل رسک",
   "mattersDate": "تاریخ",
   "mattersDate2": "تاریخ *",
@@ -5622,6 +5756,7 @@
   "mattersGenerateWhenReady": "چیک کریں کہ ٹیمپلیٹس فراہم کیے گئے ہیں اور مطلوبہ فیلڈز بھرے گئے ہیں، پھر دوبارہ کوشش کریں۔",
   "mattersGenerating": "پیدا ہو رہا ہے…",
   "mattersGrantAccessToTeamMembersWithReadonlyOrWritePermiss": "صرف پڑھنے یا لکھنے کی اجازت کے ساتھ ٹیم کے اراکین تک رسائی فراہم کریں۔",
+  "mattersGuidanceResearchTypicalTime": "AI guidance only — usually under 15 seconds",
   "mattersHiddenFromPortalClients": "پورٹل کلائنٹس سے پوشیدہ",
   "mattersHideReasoning": "استدلال کو چھپائیں۔",
   "mattersHighRisk": "ہائی رسک",
@@ -5706,6 +5841,7 @@
   "mattersMatterTitle": "موضوع کا عنوان",
   "mattersMatterTitleRequired": "موضوع کا عنوان درکار ہے۔",
   "mattersMatterType": "مادے کی قسم",
+  "mattersMatterType2": "Matter type",
   "mattersMatterTypeLabel": "مادے کی قسم",
   "mattersMediumRisk": "درمیانہ خطرہ",
   "mattersMeetingsAndRecordings": "میٹنگز اور ریکارڈنگز",
@@ -5877,6 +6013,7 @@
     }
     }
   },
+  "mattersRecentActivity": "Recent activity",
   "mattersRecommendedNextSteps": "تجویز کردہ اگلے اقدامات",
   "mattersRecordFirstMeeting": "پہلی ملاقات ریکارڈ کریں۔",
   "mattersRecordFirstMeetingDescription": "مشاورت یا حکمت عملی کال کیپچر کریں اور اسے اس معاملے کی ٹائم لائن سے منسلک کریں۔",
@@ -6237,6 +6374,7 @@
   "portalComments": "تبصرے",
   "portalConsentPortalDescription": "پیغامات، اپ لوڈ، رپورٹس، رسیدیں، اور ادائیگیاں آپ کی قانونی فائل سے منسلک رہتی ہیں۔",
   "portalConsentawarePortal": "رضامندی سے آگاہ پورٹل:",
+  "portalContinueToPortal": "Continue to portal",
   "portalCurrentStageAndStatusForYourMatters": "آپ کے معاملات کا موجودہ مرحلہ اور حیثیت",
   "portalDescription": "تفصیل",
   "portalDetails": "تفصیلات",
@@ -6253,6 +6391,9 @@
   "portalFirmCommunications": "مضبوط مواصلات",
   "portalFullName": "پورا نام",
   "portalInstructions": "ہدایات",
+  "portalInviteLinkRequiredDescription": "Open the invitation link shared by your law firm to access the client portal.",
+  "portalInviteLinkRequiredHelp": "Ask your law firm for a new invitation if your link is missing or has expired.",
+  "portalInviteLinkSignInDescription": "Continue using your invitation to access the information shared with you.",
   "portalInvoices": "رسیدیں",
   "portalInvoicesAndReceipts": "رسیدیں اور رسیدیں",
   "portalJaneClient": "جین کلائنٹ",
@@ -6389,6 +6530,7 @@
   "settingsBuyCredits": "کریڈٹ خریدیں۔",
   "settingsCalendarEmailMeetingsEsignAndAccounting": "کیلنڈر، ای میل، میٹنگز، ای سائن، اور اکاؤنٹنگ",
   "settingsCancel": "منسوخ کریں۔",
+  "settingsChangeLogo": "Change logo",
   "settingsChangeRegion": "علاقہ تبدیل کریں۔",
   "settingsChangeRegionHint": "وہ ملک منتخب کریں جس کے قوانین اور قیمتوں کا اطلاق آپ کے اکاؤنٹ پر ہوتا ہے۔",
   "settingsCheckingFirmTrainingPreferences": "موجودہ فرم کی تربیت اور AI پروسیسنگ کی ترجیحات کی جانچ کرنا۔",
@@ -6491,6 +6633,8 @@
   "settingsFirmAccount": "فرم اکاؤنٹ",
   "settingsFirmComplianceSettingsAndAuditVisibility": "فرم تعمیل کی ترتیبات اور آڈٹ کی مرئیت",
   "settingsFirmDataTrainingConsent": "فرم ڈیٹا اور تربیت کی رضامندی۔",
+  "settingsFirmLogo": "Firm logo",
+  "settingsFirmLogoDescription": "Add the logo used for your firm branding.",
   "settingsFirmName": "فرم کا نام *",
   "settingsFirmNameLabel": "فرم کا نام",
   "settingsFirmPoliciesEthicalWallsAndAiUsageRules": "مضبوط پالیسیاں، اخلاقی دیواریں، اور AI کے استعمال کے اصول",
@@ -6526,6 +6670,12 @@
   "settingsLoadingPermissions": "اجازتیں لوڈ ہو رہی ہیں…",
   "settingsLocation": "مقام*",
   "settingsLocationLabel": "مقام",
+  "settingsLogoHint": "Choose an image under 2 MB.",
+  "settingsLogoOnExports": "Logo on exports",
+  "settingsLogoOnExportsDisabled": "Disabled",
+  "settingsLogoOnExportsEnabled": "Enabled",
+  "settingsLogoUploadError": "The logo could not be uploaded. Please try again.",
+  "settingsLogoUploading": "Uploading logo…",
   "settingsManageAiConsent": "AI رضامندی کا نظم کریں۔",
   "settingsManageBilling": "بلنگ کا نظم کریں۔",
   "settingsManageDataConsent": "ڈیٹا کی رضامندی کا نظم کریں۔",
@@ -6701,6 +6851,7 @@
   "settingsRecentTenantscopedEvents": "کرایہ دار کے دائرہ کار کے حالیہ واقعات",
   "settingsRegionUpdateFailed": "علاقے کو اپ ڈیٹ نہیں کیا جا سکا۔ براہ کرم دوبارہ کوشش کریں۔",
   "settingsRegionUpdated": "علاقہ اپ ڈیٹ ہو گیا۔",
+  "settingsRemoveLogo": "Remove logo",
   "settingsRequestExport": "برآمد کی درخواست کریں۔",
   "settingsRequireApprovalForMatterSharing": "معاملات کے اشتراک کے لیے منظوری درکار ہے۔",
   "settingsRestrictedUserIds": "محدود یوزر آئی ڈیز",
@@ -6723,6 +6874,8 @@
   "settingsSelected": "منتخب کردہ:",
   "settingsSensitiveLabels": "حساس لیبلز",
   "settingsSettingsDescription": "اپنے پروفائل، AI کے استعمال، رازداری اور ترجیحات کا نظم کریں۔",
+  "settingsShowLogoOnExports": "Show logo on exports",
+  "settingsShowLogoOnExportsDescription": "Include the firm logo on supported exported documents.",
   "settingsSingleSignonSaml": "سنگل سائن آن (SAML)",
   "settingsSmsNotifications": "SMS اطلاعات",
   "settingsSsoUrl": "SSO URL",
@@ -6748,6 +6901,7 @@
   "settingsUnableToWithdrawConsent": "رضامندی واپس لینے سے قاصر۔",
   "settingsUniversalDisclaimerText": "یونیورسل ڈس کلیمر ٹیکسٹ",
   "settingsUpdateYourFirmInformationAndBranding": "اپنی فرم کی معلومات اور برانڈنگ کو اپ ڈیٹ کریں۔",
+  "settingsUploadLogo": "Upload logo",
   "settingsUsageLedger": "استعمال کا لیجر",
   "settingsUseAnonymizedDataForImprovement": "بہتری کے لیے گمنام ڈیٹا استعمال کریں۔",
   "settingsUserid1Userid2": "userId1، userId2",

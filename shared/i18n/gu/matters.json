@@ -661,5 +661,14 @@
   "checkingConflict": "વિરોધાભાસ તપાસી રહ્યું છે...",
   "runConflictCheck": "સંઘર્ષ તપાસ ચલાવો",
   "researchPromptTitle": "સંશોધન પ્રશ્ન",
-  "premiumModelResearchHint": "પ્રીમિયમ મોડલ્સમાં થોડો વધુ સમય લાગી શકે છે."
+  "premiumModelResearchHint": "પ્રીમિયમ મોડલ્સમાં થોડો વધુ સમય લાગી શકે છે.",
+  "guidanceResearchTypicalTime": "AI guidance only — usually under 15 seconds",
+  "answered": "Answered",
+  "ai_progress_reading": "Reading the matter context",
+  "ai_progress_retrieving": "Retrieving relevant sources",
+  "ai_progress_analysing": "Analysing the available information",
+  "ai_progress_generating": "Preparing the response",
+  "credits_used": "{count, plural, one {# credit used} other {# credits used}}",
+  "recent_activity": "Recent activity",
+  "matter_type": "Matter type"
 }

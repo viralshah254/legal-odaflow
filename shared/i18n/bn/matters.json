@@ -661,5 +661,14 @@
   "checkingConflict": "দ্বন্দ্ব পরীক্ষা করা হচ্ছে...",
   "runConflictCheck": "দ্বন্দ্ব চেক চালান",
   "researchPromptTitle": "গবেষণা প্রশ্ন",
-  "premiumModelResearchHint": "প্রিমিয়াম মডেলের জন্য একটু বেশি সময় লাগতে পারে।"
+  "premiumModelResearchHint": "প্রিমিয়াম মডেলের জন্য একটু বেশি সময় লাগতে পারে।",
+  "guidanceResearchTypicalTime": "AI guidance only — usually under 15 seconds",
+  "answered": "Answered",
+  "ai_progress_reading": "Reading the matter context",
+  "ai_progress_retrieving": "Retrieving relevant sources",
+  "ai_progress_analysing": "Analysing the available information",
+  "ai_progress_generating": "Preparing the response",
+  "credits_used": "{count, plural, one {# credit used} other {# credits used}}",
+  "recent_activity": "Recent activity",
+  "matter_type": "Matter type"
 }

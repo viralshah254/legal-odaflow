@@ -1,5 +1,7 @@
 "use client"
 
+
+import { useTranslations } from "next-intl"
 import type { CountryCode } from "@/lib/api/types"
 import { JurisdictionSelect } from "@/components/research/jurisdiction-select"
 import { OutputLanguageSelect } from "@/components/research/output-language-select"
@@ -26,6 +28,7 @@ export function ResearchContextBar({
   className,
   matterScope = false,
 }: ResearchContextBarProps) {
+  const tRelease = useTranslations("common.release")
   return (
     <div
       className={cn(
@@ -37,7 +40,7 @@ export function ResearchContextBar({
         {matterScope ? (
           <div className="min-w-0 flex-1 text-xs">
             <p className="font-semibold">Matter law: {countryCode}</p>
-            <p className="mt-1 text-muted-foreground">Jurisdiction follows this matter. Change it in matter settings.</p>
+            <p className="mt-1 text-muted-foreground">{tRelease("matterJurisdiction")}</p>
           </div>
         ) : <JurisdictionSelect
           countryCode={countryCode}

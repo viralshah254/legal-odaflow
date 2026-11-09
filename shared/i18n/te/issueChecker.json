@@ -368,5 +368,7 @@
   "microFlowFactsHelper": "మీరు మీ స్వంత మాటలలో వ్రాయవచ్చు. మీరు అందించే మరింత సంబంధిత వివరాలు, విశ్లేషణ మరింత ఉపయోగకరంగా ఉంటుంది.",
   "checkMySituation": "నా పరిస్థితిని తనిఖీ చేయండి",
   "enterAtLeastChars": "కనీసం {count} అక్షరాలను నమోదు చేయండి",
-  "charCount": "{current} / {max} అక్షరాలు"
+  "charCount": "{current} / {max} అక్షరాలు",
+  "detectedCountryRegionChange": "Detected {country} · {region}. Change this if the issue belongs elsewhere.",
+  "clientNameCannotBeSelf": "Enter the client name, or choose to act for yourself."
 }

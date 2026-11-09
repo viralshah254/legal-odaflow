@@ -91,6 +91,14 @@
     "proceduralRouteDetail": "تجویز کردہ {recommended} — استعمال کرتے ہوئے {selected}",
     "governingSections": "حکمرانی والے حصے",
     "researchAuthorities": "{count} حکام نے بازیافت کیا{deep} · اعتماد {confidence}",
-    "deepSearchSuffix": "(گہری تلاش)"
+    "deepSearchSuffix": "(گہری تلاش)",
+    "lawyerReady": "Ready for lawyer review",
+    "readyForLawyerReview": "Ready for lawyer review",
+    "canCertifyShort": "Eligible for review sign-off",
+    "passageSupportedShort": "passages supported",
+    "factCoverage": "Fact coverage",
+    "missingDefenceFacts": "Defence facts to confirm",
+    "autoAppliedFixes": "Applied corrections",
+    "timelineWarnings": "Timeline checks to review"
   }
 }

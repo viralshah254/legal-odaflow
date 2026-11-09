@@ -188,7 +188,7 @@ export function MatterAIActionCard({ matterId, clientId, matterTitle }: MatterAI
       updateAction(id, { loading: false, result: finalContent, proposedTasks })
       const charged = (res as { creditsCharged?: number }).creditsCharged
       if (charged) {
-        toast({ title: `${charged} ${t("credits_used", { count: charged })}`, duration: 3000 })
+        toast({ title: t("credits_used", { count: charged }), duration: 3000 })
       }
     } catch (err) {
       const errorMsg = handleApiError(err, t("ai_response_failed"))

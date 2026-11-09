@@ -7,5 +7,7 @@
   "dialogDecline": "ବର୍ତ୍ତମାନ ନୁହେଁ |",
   "dialogAgree": "ମୁଁ ରାଜି",
   "settingsTitle": "AI ଭିତ୍ତିଭୂମି ସମ୍ମତି |",
-  "settingsDescription": "ସମ୍ମତି ପୁନ et ସେଟ୍ କରନ୍ତୁ | ପରବର୍ତ୍ତୀ AI ବ feature ଶିଷ୍ଟ୍ୟ ପୂର୍ବରୁ ଆପଣଙ୍କୁ ପୁନର୍ବାର ପଚରାଯିବ |"
+  "settingsDescription": "ସମ୍ମତି ପୁନ et ସେଟ୍ କରନ୍ତୁ | ପରବର୍ତ୍ତୀ AI ବ feature ଶିଷ୍ଟ୍ୟ ପୂର୍ବରୁ ଆପଣଙ୍କୁ ପୁନର୍ବାର ପଚରାଯିବ |",
+  "processingUnavailable": "AI privacy information is unavailable. Please retry before sending your data.",
+  "processingBody": "To perform the AI work you request, Umbrella sends your questions, instructions, authorized matter facts, document excerpts, research and draft text to the recipients below. Audio is sent when you use transcription. Inference permission does not grant permission to train models."
 }

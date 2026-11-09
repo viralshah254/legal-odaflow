@@ -368,5 +368,7 @@
   "microFlowFactsHelper": "ਤੁਸੀਂ ਆਪਣੇ ਸ਼ਬਦਾਂ ਵਿੱਚ ਲਿਖ ਸਕਦੇ ਹੋ। ਜਿੰਨਾ ਜ਼ਿਆਦਾ ਢੁਕਵਾਂ ਵੇਰਵਾ ਤੁਸੀਂ ਪ੍ਰਦਾਨ ਕਰੋਗੇ, ਵਿਸ਼ਲੇਸ਼ਣ ਓਨਾ ਹੀ ਉਪਯੋਗੀ ਹੋਵੇਗਾ।",
   "checkMySituation": "ਮੇਰੀ ਸਥਿਤੀ ਦੀ ਜਾਂਚ ਕਰੋ",
   "enterAtLeastChars": "ਘੱਟੋ-ਘੱਟ {count} ਅੱਖਰ ਦਾਖਲ ਕਰੋ",
-  "charCount": "{current} / {max} ਅੱਖਰ"
+  "charCount": "{current} / {max} ਅੱਖਰ",
+  "detectedCountryRegionChange": "Detected {country} · {region}. Change this if the issue belongs elsewhere.",
+  "clientNameCannotBeSelf": "Enter the client name, or choose to act for yourself."
 }

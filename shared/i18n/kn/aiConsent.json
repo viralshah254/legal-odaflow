@@ -7,5 +7,7 @@
   "dialogDecline": "ಈಗಲ್ಲ",
   "dialogAgree": "ನಾನು ಒಪ್ಪುತ್ತೇನೆ",
   "settingsTitle": "AI ನಿರ್ಣಯದ ಸಮ್ಮತಿ",
-  "settingsDescription": "ಸಮ್ಮತಿ ಮರುಹೊಂದಿಸುವಿಕೆ. ಮುಂದಿನ AI ವೈಶಿಷ್ಟ್ಯದ ಮೊದಲು ನಿಮ್ಮನ್ನು ಮತ್ತೆ ಕೇಳಲಾಗುತ್ತದೆ."
+  "settingsDescription": "ಸಮ್ಮತಿ ಮರುಹೊಂದಿಸುವಿಕೆ. ಮುಂದಿನ AI ವೈಶಿಷ್ಟ್ಯದ ಮೊದಲು ನಿಮ್ಮನ್ನು ಮತ್ತೆ ಕೇಳಲಾಗುತ್ತದೆ.",
+  "processingUnavailable": "AI privacy information is unavailable. Please retry before sending your data.",
+  "processingBody": "To perform the AI work you request, Umbrella sends your questions, instructions, authorized matter facts, document excerpts, research and draft text to the recipients below. Audio is sent when you use transcription. Inference permission does not grant permission to train models."
 }

@@ -368,5 +368,7 @@
   "microFlowFactsHelper": "ଆପଣ ନିଜ ଶବ୍ଦରେ ଲେଖିପାରିବେ | ଆପଣ ଯେତେ ପ୍ରାସଙ୍ଗିକ ବିବରଣୀ ପ୍ରଦାନ କରିବେ, ବିଶ୍ଳେଷଣ ଅଧିକ ଉପଯୋଗୀ ହେବ |",
   "checkMySituation": "ମୋ ପରିସ୍ଥିତି ଯାଞ୍ଚ କରନ୍ତୁ |",
   "enterAtLeastChars": "ଅତିକମରେ {count} ବର୍ଣ୍ଣଗୁଡିକ ପ୍ରବେଶ କରନ୍ତୁ |",
-  "charCount": "{current} / {max} ବର୍ଣ୍ଣଗୁଡିକ |"
+  "charCount": "{current} / {max} ବର୍ଣ୍ଣଗୁଡିକ |",
+  "detectedCountryRegionChange": "Detected {country} · {region}. Change this if the issue belongs elsewhere.",
+  "clientNameCannotBeSelf": "Enter the client name, or choose to act for yourself."
 }

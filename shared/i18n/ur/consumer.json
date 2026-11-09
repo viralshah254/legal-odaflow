@@ -299,5 +299,10 @@
   "empty_messages_description": "وکلاء کے پیغامات اور اس کیس کے بارے میں تعاون یہاں ظاہر ہوگا۔",
   "empty_payments_description": "رپورٹس، وکیل کے جائزے، اور سبسکرپشنز کی ادائیگیاں یہاں ظاہر ہوں گی۔",
   "applies_to_account_changes_future": "آپ کے اکاؤنٹ پر لاگو ہوتا ہے۔ تبدیلیاں مستقبل کی پروسیسنگ کو متاثر کرتی ہیں۔",
-  "control_case_data_for_ai_improvement": "کنٹرول کریں کہ آپ کے کیس کا ڈیٹا AI کی بہتری کے لیے کیسے استعمال کیا جا سکتا ہے۔ ڈیفالٹ آف ہے۔"
+  "control_case_data_for_ai_improvement": "کنٹرول کریں کہ آپ کے کیس کا ڈیٹا AI کی بہتری کے لیے کیسے استعمال کیا جا سکتا ہے۔ ڈیفالٹ آف ہے۔",
+  "auto_renewing": "Renews automatically",
+  "subscription_auto_renew_hint": "Your subscription renews until cancelled. Manage renewal and cancellation through your billing provider.",
+  "manage_plan": "Manage plan",
+  "cancel_subscription": "Cancel subscription",
+  "your_current_plan": "Your current plan"
 }

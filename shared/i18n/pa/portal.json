@@ -84,5 +84,9 @@
   "uploaded": "ਅੱਪਲੋਡ ਕੀਤਾ",
   "sign_in_description": "ਤੁਹਾਡੀ ਲਾਅ ਫਰਮ ਦੀ ਫਾਈਲ 'ਤੇ ਮੌਜੂਦ ਈਮੇਲ ਪਤੇ ਨਾਲ ਸਾਈਨ ਇਨ ਕਰੋ।",
   "signing_in": "ਸਾਈਨ ਇਨ ਕੀਤਾ ਜਾ ਰਿਹਾ ਹੈ...",
-  "unable_to_sign_in": "ਸਾਈਨ ਇਨ ਕਰਨ ਵਿੱਚ ਅਸਮਰੱਥ। ਆਪਣੀ ਈਮੇਲ ਦੀ ਜਾਂਚ ਕਰੋ ਅਤੇ ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ।"
+  "unable_to_sign_in": "ਸਾਈਨ ਇਨ ਕਰਨ ਵਿੱਚ ਅਸਮਰੱਥ। ਆਪਣੀ ਈਮੇਲ ਦੀ ਜਾਂਚ ਕਰੋ ਅਤੇ ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ।",
+  "invite_link_required_description": "Open the invitation link shared by your law firm to access the client portal.",
+  "invite_link_required_help": "Ask your law firm for a new invitation if your link is missing or has expired.",
+  "invite_link_sign_in_description": "Continue using your invitation to access the information shared with you.",
+  "continue_to_portal": "Continue to portal"
 }

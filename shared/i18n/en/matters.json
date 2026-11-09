@@ -662,5 +662,13 @@
   "checkingConflict": "Checking conflicts…",
   "runConflictCheck": "Run conflict check",
   "researchPromptTitle": "Research question",
-  "premiumModelResearchHint": "Premium models may take a little longer."
+  "premiumModelResearchHint": "Premium models may take a little longer.",
+  "answered": "Answered",
+  "ai_progress_reading": "Reading the matter context",
+  "ai_progress_retrieving": "Retrieving relevant sources",
+  "ai_progress_analysing": "Analysing the available information",
+  "ai_progress_generating": "Preparing the response",
+  "credits_used": "{count, plural, one {# credit used} other {# credits used}}",
+  "recent_activity": "Recent activity",
+  "matter_type": "Matter type"
 }

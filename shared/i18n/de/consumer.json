@@ -299,5 +299,10 @@
   "empty_messages_description": "Nachrichten von Anwälten und Unterstützung zu diesem Fall werden hier angezeigt.",
   "empty_payments_description": "Zahlungen für Berichte, Anwaltsprüfungen und Abonnements werden hier angezeigt.",
   "applies_to_account_changes_future": "Gilt für Ihr Konto. Änderungen wirken sich auf die zukünftige Verarbeitung aus.",
-  "control_case_data_for_ai_improvement": "Steuern Sie, wie Ihre Falldaten zur KI-Verbesserung verwendet werden können. Die Standardeinstellung ist deaktiviert."
+  "control_case_data_for_ai_improvement": "Steuern Sie, wie Ihre Falldaten zur KI-Verbesserung verwendet werden können. Die Standardeinstellung ist deaktiviert.",
+  "auto_renewing": "Renews automatically",
+  "subscription_auto_renew_hint": "Your subscription renews until cancelled. Manage renewal and cancellation through your billing provider.",
+  "manage_plan": "Manage plan",
+  "cancel_subscription": "Cancel subscription",
+  "your_current_plan": "Your current plan"
 }

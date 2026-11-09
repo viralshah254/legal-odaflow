@@ -84,5 +84,9 @@
   "uploaded": "అప్‌లోడ్ చేయబడింది",
   "sign_in_description": "మీ న్యాయ సంస్థ ఫైల్‌లో ఉన్న ఇమెయిల్ చిరునామాతో సైన్ ఇన్ చేయండి.",
   "signing_in": "సైన్ ఇన్ చేస్తోంది...",
-  "unable_to_sign_in": "సైన్ ఇన్ చేయడం సాధ్యపడలేదు. మీ ఇమెయిల్‌ని తనిఖీ చేసి, మళ్లీ ప్రయత్నించండి."
+  "unable_to_sign_in": "సైన్ ఇన్ చేయడం సాధ్యపడలేదు. మీ ఇమెయిల్‌ని తనిఖీ చేసి, మళ్లీ ప్రయత్నించండి.",
+  "invite_link_required_description": "Open the invitation link shared by your law firm to access the client portal.",
+  "invite_link_required_help": "Ask your law firm for a new invitation if your link is missing or has expired.",
+  "invite_link_sign_in_description": "Continue using your invitation to access the information shared with you.",
+  "continue_to_portal": "Continue to portal"
 }

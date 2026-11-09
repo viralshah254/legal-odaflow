@@ -101,6 +101,8 @@
     "publishedToClientPortal": "ਕਲਾਇੰਟ ਪੋਰਟਲ 'ਤੇ ਪ੍ਰਕਾਸ਼ਿਤ ਕੀਤਾ ਗਿਆ ਹੈ",
     "taskReopened": "ਕਾਰਜ ਮੁੜ ਖੋਲ੍ਹਿਆ ਗਿਆ",
     "taskCompleted": "ਕੰਮ ਪੂਰਾ ਹੋਇਆ",
-    "pleaseTryAgain": "ਕਿਰਪਾ ਕਰਕੇ ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ।"
+    "pleaseTryAgain": "ਕਿਰਪਾ ਕਰਕੇ ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ।",
+    "docketSynced": "Court docket synced",
+    "docketSyncFailed": "Court docket could not be synced"
   }
 }

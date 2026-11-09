@@ -299,5 +299,10 @@
   "empty_messages_description": "ਇਸ ਕੇਸ ਬਾਰੇ ਵਕੀਲਾਂ ਅਤੇ ਸਮਰਥਨ ਦੇ ਸੁਨੇਹੇ ਇੱਥੇ ਦਿਖਾਈ ਦੇਣਗੇ।",
   "empty_payments_description": "ਰਿਪੋਰਟਾਂ, ਵਕੀਲ ਸਮੀਖਿਆ, ਅਤੇ ਗਾਹਕੀਆਂ ਲਈ ਭੁਗਤਾਨ ਇੱਥੇ ਦਿਖਾਈ ਦੇਣਗੇ।",
   "applies_to_account_changes_future": "ਤੁਹਾਡੇ ਖਾਤੇ 'ਤੇ ਲਾਗੂ ਹੁੰਦਾ ਹੈ। ਤਬਦੀਲੀਆਂ ਭਵਿੱਖ ਦੀ ਪ੍ਰਕਿਰਿਆ ਨੂੰ ਪ੍ਰਭਾਵਿਤ ਕਰਦੀਆਂ ਹਨ।",
-  "control_case_data_for_ai_improvement": "ਕੰਟਰੋਲ ਕਰੋ ਕਿ ਤੁਹਾਡੇ ਕੇਸ ਡੇਟਾ ਨੂੰ AI ਸੁਧਾਰ ਲਈ ਕਿਵੇਂ ਵਰਤਿਆ ਜਾ ਸਕਦਾ ਹੈ। ਡਿਫੌਲਟ ਬੰਦ ਹੈ।"
+  "control_case_data_for_ai_improvement": "ਕੰਟਰੋਲ ਕਰੋ ਕਿ ਤੁਹਾਡੇ ਕੇਸ ਡੇਟਾ ਨੂੰ AI ਸੁਧਾਰ ਲਈ ਕਿਵੇਂ ਵਰਤਿਆ ਜਾ ਸਕਦਾ ਹੈ। ਡਿਫੌਲਟ ਬੰਦ ਹੈ।",
+  "auto_renewing": "Renews automatically",
+  "subscription_auto_renew_hint": "Your subscription renews until cancelled. Manage renewal and cancellation through your billing provider.",
+  "manage_plan": "Manage plan",
+  "cancel_subscription": "Cancel subscription",
+  "your_current_plan": "Your current plan"
 }

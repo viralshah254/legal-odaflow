@@ -1,26 +1,26 @@
 {
-  "generatedAt": "2026-07-26T20:25:57.338Z",
+  "generatedAt": "2026-11-09T04:42:57.472Z",
   "locales": {
     "fr": {
-      "total": 5892,
-      "untranslated": 17,
-      "allowlisted": 169,
-      "pctUntranslated": 0,
+      "total": 6019,
+      "untranslated": 142,
+      "allowlisted": 171,
+      "pctUntranslated": 2,
       "byNamespace": {
         "common": {
-          "total": 565,
-          "identical": 4,
-          "pct": 1
+          "total": 595,
+          "identical": 34,
+          "pct": 6
         },
         "auth": {
-          "total": 212,
-          "identical": 0,
-          "pct": 0
+          "total": 222,
+          "identical": 10,
+          "pct": 5
         },
         "marketing": {
-          "total": 853,
-          "identical": 9,
-          "pct": 1
+          "total": 869,
+          "identical": 25,
+          "pct": 3
         },
         "legalGuides": {
           "total": 19,
@@ -28,19 +28,19 @@
           "pct": 0
         },
         "issueChecker": {
-          "total": 363,
-          "identical": 0,
-          "pct": 0
+          "total": 366,
+          "identical": 3,
+          "pct": 1
         },
         "consumer": {
-          "total": 293,
-          "identical": 0,
-          "pct": 0
+          "total": 298,
+          "identical": 5,
+          "pct": 2
         },
         "lawyer": {
-          "total": 432,
-          "identical": 0,
-          "pct": 0
+          "total": 438,
+          "identical": 6,
+          "pct": 1
         },
         "admin": {
           "total": 127,
@@ -53,9 +53,9 @@
           "pct": 1
         },
         "settings": {
-          "total": 305,
-          "identical": 1,
-          "pct": 0
+          "total": 318,
+          "identical": 14,
+          "pct": 4
         },
         "billing": {
           "total": 226,
@@ -73,9 +73,9 @@
           "pct": 0
         },
         "matters": {
-          "total": 653,
-          "identical": 0,
-          "pct": 0
+          "total": 662,
+          "identical": 8,
+          "pct": 1
         },
         "clients": {
           "total": 250,
@@ -83,19 +83,19 @@
           "pct": 0
         },
         "portal": {
-          "total": 86,
-          "identical": 0,
-          "pct": 0
+          "total": 90,
+          "identical": 4,
+          "pct": 4
         },
         "errors": {
-          "total": 102,
-          "identical": 0,
-          "pct": 0
+          "total": 104,
+          "identical": 2,
+          "pct": 2
         },
         "dashboard": {
-          "total": 231,
-          "identical": 0,
-          "pct": 0
+          "total": 250,
+          "identical": 18,
+          "pct": 7
         },
         "tutorials": {
           "total": 567,
@@ -123,9 +123,9 @@
           "pct": 0
         },
         "drafting": {
-          "total": 84,
-          "identical": 0,
-          "pct": 0
+          "total": 92,
+          "identical": 8,
+          "pct": 9
         },
         "matterIntelligence": {
           "total": 37,
@@ -133,9 +133,9 @@
           "pct": 0
         },
         "aiConsent": {
-          "total": 9,
-          "identical": 0,
-          "pct": 0
+          "total": 11,
+          "identical": 2,
+          "pct": 18
         },
         "docuDraft": {
           "total": 30,
@@ -155,25 +155,25 @@
       }
     },
     "de": {
-      "total": 5892,
-      "untranslated": 20,
-      "allowlisted": 150,
-      "pctUntranslated": 0,
+      "total": 6019,
+      "untranslated": 145,
+      "allowlisted": 152,
+      "pctUntranslated": 2,
       "byNamespace": {
         "common": {
-          "total": 565,
-          "identical": 4,
-          "pct": 1
+          "total": 595,
+          "identical": 34,
+          "pct": 6
         },
         "auth": {
-          "total": 212,
-          "identical": 0,
-          "pct": 0
+          "total": 222,
+          "identical": 10,
+          "pct": 5
         },
         "marketing": {
-          "total": 853,
-          "identical": 4,
-          "pct": 0
+          "total": 869,
+          "identical": 20,
+          "pct": 2
         },
         "legalGuides": {
           "total": 19,
@@ -181,19 +181,19 @@
           "pct": 0
         },
         "issueChecker": {
-          "total": 363,
-          "identical": 0,
-          "pct": 0
+          "total": 366,
+          "identical": 3,
+          "pct": 1
         },
         "consumer": {
-          "total": 293,
-          "identical": 1,
-          "pct": 0
+          "total": 298,
+          "identical": 6,
+          "pct": 2
         },
         "lawyer": {
-          "total": 432,
-          "identical": 0,
-          "pct": 0
+          "total": 438,
+          "identical": 6,
+          "pct": 1
         },
         "admin": {
           "total": 127,
@@ -206,9 +206,9 @@
           "pct": 1
         },
         "settings": {
-          "total": 305,
-          "identical": 1,
-          "pct": 0
+          "total": 318,
+          "identical": 14,
+          "pct": 4
         },
         "billing": {
           "total": 226,
@@ -226,9 +226,9 @@
           "pct": 1
         },
         "matters": {
-          "total": 653,
-          "identical": 0,
-          "pct": 0
+          "total": 662,
+          "identical": 8,
+          "pct": 1
         },
         "clients": {
           "total": 250,
@@ -236,19 +236,19 @@
           "pct": 0
         },
         "portal": {
-          "total": 86,
-          "identical": 0,
-          "pct": 0
+          "total": 90,
+          "identical": 4,
+          "pct": 4
         },
         "errors": {
-          "total": 102,
-          "identical": 0,
-          "pct": 0
+          "total": 104,
+          "identical": 2,
+          "pct": 2
         },
         "dashboard": {
-          "total": 231,
-          "identical": 0,
-          "pct": 0
+          "total": 250,
+          "identical": 18,
+          "pct": 7
         },
         "tutorials": {
           "total": 567,
@@ -276,9 +276,9 @@
           "pct": 0
         },
         "drafting": {
-          "total": 84,
-          "identical": 1,
-          "pct": 1
+          "total": 92,
+          "identical": 9,
+          "pct": 10
         },
         "matterIntelligence": {
           "total": 37,
@@ -286,9 +286,9 @@
           "pct": 0
         },
         "aiConsent": {
-          "total": 9,
-          "identical": 0,
-          "pct": 0
+          "total": 11,
+          "identical": 2,
+          "pct": 18
         },
         "docuDraft": {
           "total": 30,
@@ -308,25 +308,25 @@
       }
     },
     "hi": {
-      "total": 5892,
-      "untranslated": 7,
-      "allowlisted": 72,
-      "pctUntranslated": 0,
+      "total": 6019,
+      "untranslated": 132,
+      "allowlisted": 74,
+      "pctUntranslated": 2,
       "byNamespace": {
         "common": {
-          "total": 565,
-          "identical": 3,
-          "pct": 1
+          "total": 595,
+          "identical": 33,
+          "pct": 6
         },
         "auth": {
-          "total": 212,
-          "identical": 0,
-          "pct": 0
+          "total": 222,
+          "identical": 10,
+          "pct": 5
         },
         "marketing": {
-          "total": 853,
-          "identical": 3,
-          "pct": 0
+          "total": 869,
+          "identical": 19,
+          "pct": 2
         },
         "legalGuides": {
           "total": 19,
@@ -334,19 +334,19 @@
           "pct": 0
         },
         "issueChecker": {
-          "total": 363,
-          "identical": 0,
-          "pct": 0
+          "total": 366,
+          "identical": 3,
+          "pct": 1
         },
         "consumer": {
-          "total": 293,
-          "identical": 0,
-          "pct": 0
+          "total": 298,
+          "identical": 5,
+          "pct": 2
         },
         "lawyer": {
-          "total": 432,
-          "identical": 0,
-          "pct": 0
+          "total": 438,
+          "identical": 6,
+          "pct": 1
         },
         "admin": {
           "total": 127,
@@ -359,9 +359,9 @@
           "pct": 0
         },
         "settings": {
-          "total": 305,
-          "identical": 0,
-          "pct": 0
+          "total": 318,
+          "identical": 13,
+          "pct": 4
         },
         "billing": {
           "total": 226,
@@ -379,9 +379,9 @@
           "pct": 0
         },
         "matters": {
-          "total": 653,
-          "identical": 0,
-          "pct": 0
+          "total": 662,
+          "identical": 8,
+          "pct": 1
         },
         "clients": {
           "total": 250,
@@ -389,19 +389,19 @@
           "pct": 0
         },
         "portal": {
-          "total": 86,
-          "identical": 0,
-          "pct": 0
+          "total": 90,
+          "identical": 4,
+          "pct": 4
         },
         "errors": {
-          "total": 102,
-          "identical": 0,
-          "pct": 0
+          "total": 104,
+          "identical": 2,
+          "pct": 2
         },
         "dashboard": {
-          "total": 231,
-          "identical": 0,
-          "pct": 0
+          "total": 250,
+          "identical": 18,
+          "pct": 7
         },
         "tutorials": {
           "total": 567,
@@ -429,9 +429,9 @@
           "pct": 0
         },
         "drafting": {
-          "total": 84,
-          "identical": 0,
-          "pct": 0
+          "total": 92,
+          "identical": 8,
+          "pct": 9
         },
         "matterIntelligence": {
           "total": 37,
@@ -439,9 +439,9 @@
           "pct": 0
         },
         "aiConsent": {
-          "total": 9,
-          "identical": 0,
-          "pct": 0
+          "total": 11,
+          "identical": 2,
+          "pct": 18
         },
         "docuDraft": {
           "total": 30,
@@ -461,25 +461,25 @@
       }
     },
     "bn": {
-      "total": 5892,
-      "untranslated": 8,
-      "allowlisted": 72,
-      "pctUntranslated": 0,
+      "total": 6019,
+      "untranslated": 133,
+      "allowlisted": 74,
+      "pctUntranslated": 2,
       "byNamespace": {
         "common": {
-          "total": 565,
-          "identical": 4,
-          "pct": 1
+          "total": 595,
+          "identical": 34,
+          "pct": 6
         },
         "auth": {
-          "total": 212,
-          "identical": 0,
-          "pct": 0
+          "total": 222,
+          "identical": 10,
+          "pct": 5
         },
         "marketing": {
-          "total": 853,
-          "identical": 3,
-          "pct": 0
+          "total": 869,
+          "identical": 19,
+          "pct": 2
         },
         "legalGuides": {
           "total": 19,
@@ -487,19 +487,19 @@
           "pct": 0
         },
         "issueChecker": {
-          "total": 363,
-          "identical": 0,
-          "pct": 0
+          "total": 366,
+          "identical": 3,
+          "pct": 1
         },
         "consumer": {
-          "total": 293,
-          "identical": 0,
-          "pct": 0
+          "total": 298,
+          "identical": 5,
+          "pct": 2
         },
         "lawyer": {
-          "total": 432,
-          "identical": 0,
-          "pct": 0
+          "total": 438,
+          "identical": 6,
+          "pct": 1
         },
         "admin": {
           "total": 127,
@@ -512,9 +512,9 @@
           "pct": 0
         },
         "settings": {
-          "total": 305,
-          "identical": 0,
-          "pct": 0
+          "total": 318,
+          "identical": 13,
+          "pct": 4
         },
         "billing": {
           "total": 226,
@@ -532,9 +532,9 @@
           "pct": 0
         },
         "matters": {
-          "total": 653,
-          "identical": 0,
-          "pct": 0
+          "total": 662,
+          "identical": 8,
+          "pct": 1
         },
         "clients": {
           "total": 250,
@@ -542,19 +542,19 @@
           "pct": 0
         },
         "portal": {
-          "total": 86,
-          "identical": 0,
-          "pct": 0
+          "total": 90,
+          "identical": 4,
+          "pct": 4
         },
         "errors": {
-          "total": 102,
-          "identical": 0,
-          "pct": 0
+          "total": 104,
+          "identical": 2,
+          "pct": 2
         },
         "dashboard": {
-          "total": 231,
-          "identical": 0,
-          "pct": 0
+          "total": 250,
+          "identical": 18,
+          "pct": 7
         },
         "tutorials": {
           "total": 567,
@@ -582,9 +582,9 @@
           "pct": 0
         },
         "drafting": {
-          "total": 84,
-          "identical": 0,
-          "pct": 0
+          "total": 92,
+          "identical": 8,
+          "pct": 9
         },
         "matterIntelligence": {
           "total": 37,
@@ -592,9 +592,9 @@
           "pct": 0
         },
         "aiConsent": {
-          "total": 9,
-          "identical": 0,
-          "pct": 0
+          "total": 11,
+          "identical": 2,
+          "pct": 18
         },
         "docuDraft": {
           "total": 30,
@@ -614,25 +614,25 @@
       }
     },
     "te": {
-      "total": 5892,
-      "untranslated": 8,
-      "allowlisted": 87,
-      "pctUntranslated": 0,
+      "total": 6019,
+      "untranslated": 133,
+      "allowlisted": 89,
+      "pctUntranslated": 2,
       "byNamespace": {
         "common": {
-          "total": 565,
-          "identical": 4,
-          "pct": 1
+          "total": 595,
+          "identical": 34,
+          "pct": 6
         },
         "auth": {
-          "total": 212,
-          "identical": 0,
-          "pct": 0
+          "total": 222,
+          "identical": 10,
+          "pct": 5
         },
         "marketing": {
-          "total": 853,
-          "identical": 3,
-          "pct": 0
+          "total": 869,
+          "identical": 19,
+          "pct": 2
         },
         "legalGuides": {
           "total": 19,
@@ -640,19 +640,19 @@
           "pct": 0
         },
         "issueChecker": {
-          "total": 363,
-          "identical": 0,
-          "pct": 0
+          "total": 366,
+          "identical": 3,
+          "pct": 1
         },
         "consumer": {
-          "total": 293,
-          "identical": 0,
-          "pct": 0
+          "total": 298,
+          "identical": 5,
+          "pct": 2
         },
         "lawyer": {
-          "total": 432,
-          "identical": 0,
-          "pct": 0
+          "total": 438,
+          "identical": 6,
+          "pct": 1
         },
         "admin": {
           "total": 127,
@@ -665,9 +665,9 @@
           "pct": 0
         },
         "settings": {
-          "total": 305,
-          "identical": 0,
-          "pct": 0
+          "total": 318,
+          "identical": 13,
+          "pct": 4
         },
         "billing": {
           "total": 226,
@@ -685,9 +685,9 @@
           "pct": 0
         },
         "matters": {
-          "total": 653,
-          "identical": 0,
-          "pct": 0
+          "total": 662,
+          "identical": 8,
+          "pct": 1
         },
         "clients": {
           "total": 250,
@@ -695,19 +695,19 @@
           "pct": 0
         },
         "portal": {
-          "total": 86,
-          "identical": 0,
-          "pct": 0
+          "total": 90,
+          "identical": 4,
+          "pct": 4
         },
         "errors": {
-          "total": 102,
-          "identical": 0,
-          "pct": 0
+          "total": 104,
+          "identical": 2,
+          "pct": 2
         },
         "dashboard": {
-          "total": 231,
-          "identical": 0,
-          "pct": 0
+          "total": 250,
+          "identical": 18,
+          "pct": 7
         },
         "tutorials": {
           "total": 567,
@@ -735,9 +735,9 @@
           "pct": 0
         },
         "drafting": {
-          "total": 84,
-          "identical": 0,
-          "pct": 0
+          "total": 92,
+          "identical": 8,
+          "pct": 9
         },
         "matterIntelligence": {
           "total": 37,
@@ -745,9 +745,9 @@
           "pct": 0
         },
         "aiConsent": {
-          "total": 9,
-          "identical": 0,
-          "pct": 0
+          "total": 11,
+          "identical": 2,
+          "pct": 18
         },
         "docuDraft": {
           "total": 30,
@@ -767,25 +767,25 @@
       }
     },
     "mr": {
-      "total": 5892,
-      "untranslated": 5,
-      "allowlisted": 75,
-      "pctUntranslated": 0,
+      "total": 6019,
+      "untranslated": 130,
+      "allowlisted": 77,
+      "pctUntranslated": 2,
       "byNamespace": {
         "common": {
-          "total": 565,
-          "identical": 4,
-          "pct": 1
+          "total": 595,
+          "identical": 34,
+          "pct": 6
         },
         "auth": {
-          "total": 212,
-          "identical": 0,
-          "pct": 0
+          "total": 222,
+          "identical": 10,
+          "pct": 5
         },
         "marketing": {
-          "total": 853,
-          "identical": 0,
-          "pct": 0
+          "total": 869,
+          "identical": 16,
+          "pct": 2
         },
         "legalGuides": {
           "total": 19,
@@ -793,19 +793,19 @@
           "pct": 0
         },
         "issueChecker": {
-          "total": 363,
-          "identical": 0,
-          "pct": 0
+          "total": 366,
+          "identical": 3,
+          "pct": 1
         },
         "consumer": {
-          "total": 293,
-          "identical": 0,
-          "pct": 0
+          "total": 298,
+          "identical": 5,
+          "pct": 2
         },
         "lawyer": {
-          "total": 432,
-          "identical": 0,
-          "pct": 0
+          "total": 438,
+          "identical": 6,
+          "pct": 1
         },
         "admin": {
           "total": 127,
@@ -818,9 +818,9 @@
           "pct": 0
         },
         "settings": {
-          "total": 305,
-          "identical": 0,
-          "pct": 0
+          "total": 318,
+          "identical": 13,
+          "pct": 4
         },
         "billing": {
           "total": 226,
@@ -838,9 +838,9 @@
           "pct": 0
         },
         "matters": {
-          "total": 653,
-          "identical": 0,
-          "pct": 0
+          "total": 662,
+          "identical": 8,
+          "pct": 1
         },
         "clients": {
           "total": 250,
@@ -848,19 +848,19 @@
           "pct": 0
         },
         "portal": {
-          "total": 86,
-          "identical": 0,
-          "pct": 0
+          "total": 90,
+          "identical": 4,
+          "pct": 4
         },
         "errors": {
-          "total": 102,
-          "identical": 0,
-          "pct": 0
+          "total": 104,
+          "identical": 2,
+          "pct": 2
         },
         "dashboard": {
-          "total": 231,
-          "identical": 0,
-          "pct": 0
+          "total": 250,
+          "identical": 18,
+          "pct": 7
         },
         "tutorials": {
           "total": 567,
@@ -888,9 +888,9 @@
           "pct": 0
         },
         "drafting": {
-          "total": 84,
-          "identical": 0,
-          "pct": 0
+          "total": 92,
+          "identical": 8,
+          "pct": 9
         },
         "matterIntelligence": {
           "total": 37,
@@ -898,9 +898,9 @@
           "pct": 0
         },
         "aiConsent": {
-          "total": 9,
-          "identical": 0,
-          "pct": 0
+          "total": 11,
+          "identical": 2,
+          "pct": 18
         },
         "docuDraft": {
           "total": 30,
@@ -920,25 +920,25 @@
       }
     },
     "ta": {
-      "total": 5892,
-      "untranslated": 8,
-      "allowlisted": 77,
-      "pctUntranslated": 0,
+      "total": 6019,
+      "untranslated": 133,
+      "allowlisted": 79,
+      "pctUntranslated": 2,
       "byNamespace": {
         "common": {
-          "total": 565,
-          "identical": 4,
-          "pct": 1
+          "total": 595,
+          "identical": 34,
+          "pct": 6
         },
         "auth": {
-          "total": 212,
-          "identical": 0,
-          "pct": 0
+          "total": 222,
+          "identical": 10,
+          "pct": 5
         },
         "marketing": {
-          "total": 853,
-          "identical": 3,
-          "pct": 0
+          "total": 869,
+          "identical": 19,
+          "pct": 2
         },
         "legalGuides": {
           "total": 19,
@@ -946,19 +946,19 @@
           "pct": 0
         },
         "issueChecker": {
-          "total": 363,
-          "identical": 0,
-          "pct": 0
+          "total": 366,
+          "identical": 3,
+          "pct": 1
         },
         "consumer": {
-          "total": 293,
-          "identical": 0,
-          "pct": 0
+          "total": 298,
+          "identical": 5,
+          "pct": 2
         },
         "lawyer": {
-          "total": 432,
-          "identical": 0,
-          "pct": 0
+          "total": 438,
+          "identical": 6,
+          "pct": 1
         },
         "admin": {
           "total": 127,
@@ -971,9 +971,9 @@
           "pct": 0
         },
         "settings": {
-          "total": 305,
-          "identical": 0,
-          "pct": 0
+          "total": 318,
+          "identical": 13,
+          "pct": 4
         },
         "billing": {
           "total": 226,
@@ -991,9 +991,9 @@
           "pct": 0
         },
         "matters": {
-          "total": 653,
-          "identical": 0,
-          "pct": 0
+          "total": 662,
+          "identical": 8,
+          "pct": 1
         },
         "clients": {
           "total": 250,
@@ -1001,19 +1001,19 @@
           "pct": 0
         },
         "portal": {
-          "total": 86,
-          "identical": 0,
-          "pct": 0
+          "total": 90,
+          "identical": 4,
+          "pct": 4
         },
         "errors": {
-          "total": 102,
-          "identical": 0,
-          "pct": 0
+          "total": 104,
+          "identical": 2,
+          "pct": 2
         },
         "dashboard": {
-          "total": 231,
-          "identical": 0,
-          "pct": 0
+          "total": 250,
+          "identical": 18,
+          "pct": 7
         },
         "tutorials": {
           "total": 567,
@@ -1041,9 +1041,9 @@
           "pct": 0
         },
         "drafting": {
-          "total": 84,
-          "identical": 0,
-          "pct": 0
+          "total": 92,
+          "identical": 8,
+          "pct": 9
         },
         "matterIntelligence": {
           "total": 37,
@@ -1051,9 +1051,9 @@
           "pct": 0
         },
         "aiConsent": {
-          "total": 9,
-          "identical": 0,
-          "pct": 0
+          "total": 11,
+          "identical": 2,
+          "pct": 18
         },
         "docuDraft": {
           "total": 30,
@@ -1073,25 +1073,25 @@
       }
     },
     "gu": {
-      "total": 5892,
-      "untranslated": 8,
-      "allowlisted": 75,
-      "pctUntranslated": 0,
+      "total": 6019,
+      "untranslated": 133,
+      "allowlisted": 77,
+      "pctUntranslated": 2,
       "byNamespace": {
         "common": {
-          "total": 565,
-          "identical": 4,
-          "pct": 1
+          "total": 595,
+          "identical": 34,
+          "pct": 6
         },
         "auth": {
-          "total": 212,
-          "identical": 0,
-          "pct": 0
+          "total": 222,
+          "identical": 10,
+          "pct": 5
         },
         "marketing": {
-          "total": 853,
-          "identical": 3,
-          "pct": 0
+          "total": 869,
+          "identical": 19,
+          "pct": 2
         },
         "legalGuides": {
           "total": 19,
@@ -1099,19 +1099,19 @@
           "pct": 0
         },
         "issueChecker": {
-          "total": 363,
-          "identical": 0,
-          "pct": 0
+          "total": 366,
+          "identical": 3,
+          "pct": 1
         },
         "consumer": {
-          "total": 293,
-          "identical": 0,
-          "pct": 0
+          "total": 298,
+          "identical": 5,
+          "pct": 2
         },
         "lawyer": {
-          "total": 432,
-          "identical": 0,
-          "pct": 0
+          "total": 438,
+          "identical": 6,
+          "pct": 1
         },
         "admin": {
           "total": 127,
@@ -1124,9 +1124,9 @@
           "pct": 0
         },
         "settings": {
-          "total": 305,
-          "identical": 0,
-          "pct": 0
+          "total": 318,
+          "identical": 13,
+          "pct": 4
         },
         "billing": {
           "total": 226,
@@ -1144,9 +1144,9 @@
           "pct": 0
         },
         "matters": {
-          "total": 653,
-          "identical": 0,
-          "pct": 0
+          "total": 662,
+          "identical": 8,
+          "pct": 1
         },
         "clients": {
           "total": 250,
@@ -1154,19 +1154,19 @@
           "pct": 0
         },
         "portal": {
-          "total": 86,
-          "identical": 0,
-          "pct": 0
+          "total": 90,
+          "identical": 4,
+          "pct": 4
         },
         "errors": {
-          "total": 102,
-          "identical": 0,
-          "pct": 0
+          "total": 104,
+          "identical": 2,
+          "pct": 2
         },
         "dashboard": {
-          "total": 231,
-          "identical": 0,
-          "pct": 0
+          "total": 250,
+          "identical": 18,
+          "pct": 7
         },
         "tutorials": {
           "total": 567,
@@ -1194,9 +1194,9 @@
           "pct": 0
         },
         "drafting": {
-          "total": 84,
-          "identical": 0,
-          "pct": 0
+          "total": 92,
+          "identical": 8,
+          "pct": 9
         },
         "matterIntelligence": {
           "total": 37,
@@ -1204,9 +1204,9 @@
           "pct": 0
         },
         "aiConsent": {
-          "total": 9,
-          "identical": 0,
-          "pct": 0
+          "total": 11,
+          "identical": 2,
+          "pct": 18
         },
         "docuDraft": {
           "total": 30,
@@ -1226,25 +1226,25 @@
       }
     },
     "kn": {
-      "total": 5892,
-      "untranslated": 8,
-      "allowlisted": 82,
-      "pctUntranslated": 0,
+      "total": 6019,
+      "untranslated": 133,
+      "allowlisted": 84,
+      "pctUntranslated": 2,
       "byNamespace": {
         "common": {
-          "total": 565,
-          "identical": 4,
-          "pct": 1
+          "total": 595,
+          "identical": 34,
+          "pct": 6
         },
         "auth": {
-          "total": 212,
-          "identical": 0,
-          "pct": 0
+          "total": 222,
+          "identical": 10,
+          "pct": 5
         },
         "marketing": {
-          "total": 853,
-          "identical": 3,
-          "pct": 0
+          "total": 869,
+          "identical": 19,
+          "pct": 2
         },
         "legalGuides": {
           "total": 19,
@@ -1252,19 +1252,19 @@
           "pct": 0
         },
         "issueChecker": {
-          "total": 363,
-          "identical": 0,
-          "pct": 0
+          "total": 366,
+          "identical": 3,
+          "pct": 1
         },
         "consumer": {
-          "total": 293,
-          "identical": 0,
-          "pct": 0
+          "total": 298,
+          "identical": 5,
+          "pct": 2
         },
         "lawyer": {
-          "total": 432,
-          "identical": 0,
-          "pct": 0
+          "total": 438,
+          "identical": 6,
+          "pct": 1
         },
         "admin": {
           "total": 127,
@@ -1277,9 +1277,9 @@
           "pct": 0
         },
         "settings": {
-          "total": 305,
-          "identical": 0,
-          "pct": 0
+          "total": 318,
+          "identical": 13,
+          "pct": 4
         },
         "billing": {
           "total": 226,
@@ -1297,9 +1297,9 @@
           "pct": 0
         },
         "matters": {
-          "total": 653,
-          "identical": 0,
-          "pct": 0
+          "total": 662,
+          "identical": 8,
+          "pct": 1
         },
         "clients": {
           "total": 250,
@@ -1307,19 +1307,19 @@
           "pct": 0
         },
         "portal": {
-          "total": 86,
-          "identical": 0,
-          "pct": 0
+          "total": 90,
+          "identical": 4,
+          "pct": 4
         },
         "errors": {
-          "total": 102,
-          "identical": 0,
-          "pct": 0
+          "total": 104,
+          "identical": 2,
+          "pct": 2
         },
         "dashboard": {
-          "total": 231,
-          "identical": 0,
-          "pct": 0
+          "total": 250,
+          "identical": 18,
+          "pct": 7
         },
         "tutorials": {
           "total": 567,
@@ -1347,9 +1347,9 @@
           "pct": 0
         },
         "drafting": {
-          "total": 84,
-          "identical": 0,
-          "pct": 0
+          "total": 92,
+          "identical": 8,
+          "pct": 9
         },
         "matterIntelligence": {
           "total": 37,
@@ -1357,9 +1357,9 @@
           "pct": 0
         },
         "aiConsent": {
-          "total": 9,
-          "identical": 0,
-          "pct": 0
+          "total": 11,
+          "identical": 2,
+          "pct": 18
         },
         "docuDraft": {
           "total": 30,
@@ -1379,25 +1379,25 @@
       }
     },
     "ml": {
-      "total": 5892,
-      "untranslated": 9,
-      "allowlisted": 77,
-      "pctUntranslated": 0,
+      "total": 6019,
+      "untranslated": 134,
+      "allowlisted": 79,
+      "pctUntranslated": 2,
       "byNamespace": {
         "common": {
-          "total": 565,
-          "identical": 5,
-          "pct": 1
+          "total": 595,
+          "identical": 35,
+          "pct": 6
         },
         "auth": {
-          "total": 212,
-          "identical": 0,
-          "pct": 0
+          "total": 222,
+          "identical": 10,
+          "pct": 5
         },
         "marketing": {
-          "total": 853,
-          "identical": 3,
-          "pct": 0
+          "total": 869,
+          "identical": 19,
+          "pct": 2
         },
         "legalGuides": {
           "total": 19,
@@ -1405,19 +1405,19 @@
           "pct": 0
         },
         "issueChecker": {
-          "total": 363,
-          "identical": 0,
-          "pct": 0
+          "total": 366,
+          "identical": 3,
+          "pct": 1
         },
         "consumer": {
-          "total": 293,
-          "identical": 0,
-          "pct": 0
+          "total": 298,
+          "identical": 5,
+          "pct": 2
         },
         "lawyer": {
-          "total": 432,
-          "identical": 0,
-          "pct": 0
+          "total": 438,
+          "identical": 6,
+          "pct": 1
         },
         "admin": {
           "total": 127,
@@ -1430,9 +1430,9 @@
           "pct": 0
         },
         "settings": {
-          "total": 305,
-          "identical": 0,
-          "pct": 0
+          "total": 318,
+          "identical": 13,
+          "pct": 4
         },
         "billing": {
           "total": 226,
@@ -1450,9 +1450,9 @@
           "pct": 0
         },
         "matters": {
-          "total": 653,
-          "identical": 0,
-          "pct": 0
+          "total": 662,
+          "identical": 8,
+          "pct": 1
         },
         "clients": {
           "total": 250,
@@ -1460,19 +1460,19 @@
           "pct": 0
         },
         "portal": {
-          "total": 86,
-          "identical": 0,
-          "pct": 0
+          "total": 90,
+          "identical": 4,
+          "pct": 4
         },
         "errors": {
-          "total": 102,
-          "identical": 0,
-          "pct": 0
+          "total": 104,
+          "identical": 2,
+          "pct": 2
         },
         "dashboard": {
-          "total": 231,
-          "identical": 0,
-          "pct": 0
+          "total": 250,
+          "identical": 18,
+          "pct": 7
         },
         "tutorials": {
           "total": 567,
@@ -1500,9 +1500,9 @@
           "pct": 0
         },
         "drafting": {
-          "total": 84,
-          "identical": 0,
-          "pct": 0
+          "total": 92,
+          "identical": 8,
+          "pct": 9
         },
         "matterIntelligence": {
           "total": 37,
@@ -1510,9 +1510,9 @@
           "pct": 0
         },
         "aiConsent": {
-          "total": 9,
-          "identical": 0,
-          "pct": 0
+          "total": 11,
+          "identical": 2,
+          "pct": 18
         },
         "docuDraft": {
           "total": 30,
@@ -1532,25 +1532,25 @@
       }
     },
     "ur": {
-      "total": 5892,
-      "untranslated": 8,
-      "allowlisted": 75,
-      "pctUntranslated": 0,
+      "total": 6019,
+      "untranslated": 133,
+      "allowlisted": 77,
+      "pctUntranslated": 2,
       "byNamespace": {
         "common": {
-          "total": 565,
-          "identical": 4,
-          "pct": 1
+          "total": 595,
+          "identical": 34,
+          "pct": 6
         },
         "auth": {
-          "total": 212,
-          "identical": 0,
-          "pct": 0
+          "total": 222,
+          "identical": 10,
+          "pct": 5
         },
         "marketing": {
-          "total": 853,
-          "identical": 3,
-          "pct": 0
+          "total": 869,
+          "identical": 19,
+          "pct": 2
         },
         "legalGuides": {
           "total": 19,
@@ -1558,19 +1558,19 @@
           "pct": 0
         },
         "issueChecker": {
-          "total": 363,
-          "identical": 0,
-          "pct": 0
+          "total": 366,
+          "identical": 3,
+          "pct": 1
         },
         "consumer": {
-          "total": 293,
-          "identical": 0,
-          "pct": 0
+          "total": 298,
+          "identical": 5,
+          "pct": 2
         },
         "lawyer": {
-          "total": 432,
-          "identical": 0,
-          "pct": 0
+          "total": 438,
+          "identical": 6,
+          "pct": 1
         },
         "admin": {
           "total": 127,
@@ -1583,9 +1583,9 @@
           "pct": 0
         },
         "settings": {
-          "total": 305,
-          "identical": 0,
-          "pct": 0
+          "total": 318,
+          "identical": 13,
+          "pct": 4
         },
         "billing": {
           "total": 226,
@@ -1603,9 +1603,9 @@
           "pct": 0
         },
         "matters": {
-          "total": 653,
-          "identical": 0,
-          "pct": 0
+          "total": 662,
+          "identical": 8,
+          "pct": 1
         },
         "clients": {
           "total": 250,
@@ -1613,19 +1613,19 @@
           "pct": 0
         },
         "portal": {
-          "total": 86,
-          "identical": 0,
-          "pct": 0
+          "total": 90,
+          "identical": 4,
+          "pct": 4
         },
         "errors": {
-          "total": 102,
-          "identical": 0,
-          "pct": 0
+          "total": 104,
+          "identical": 2,
+          "pct": 2
         },
         "dashboard": {
-          "total": 231,
-          "identical": 0,
-          "pct": 0
+          "total": 250,
+          "identical": 18,
+          "pct": 7
         },
         "tutorials": {
           "total": 567,
@@ -1653,9 +1653,9 @@
           "pct": 0
         },
         "drafting": {
-          "total": 84,
-          "identical": 0,
-          "pct": 0
+          "total": 92,
+          "identical": 8,
+          "pct": 9
         },
         "matterIntelligence": {
           "total": 37,
@@ -1663,9 +1663,9 @@
           "pct": 0
         },
         "aiConsent": {
-          "total": 9,
-          "identical": 0,
-          "pct": 0
+          "total": 11,
+          "identical": 2,
+          "pct": 18
         },
         "docuDraft": {
           "total": 30,
@@ -1685,25 +1685,25 @@
       }
     },
     "pa": {
-      "total": 5892,
-      "untranslated": 8,
-      "allowlisted": 77,
-      "pctUntranslated": 0,
+      "total": 6019,
+      "untranslated": 133,
+      "allowlisted": 79,
+      "pctUntranslated": 2,
       "byNamespace": {
         "common": {
-          "total": 565,
-          "identical": 4,
-          "pct": 1
+          "total": 595,
+          "identical": 34,
+          "pct": 6
         },
         "auth": {
-          "total": 212,
-          "identical": 0,
-          "pct": 0
+          "total": 222,
+          "identical": 10,
+          "pct": 5
         },
         "marketing": {
-          "total": 853,
-          "identical": 3,
-          "pct": 0
+          "total": 869,
+          "identical": 19,
+          "pct": 2
         },
         "legalGuides": {
           "total": 19,
@@ -1711,19 +1711,19 @@
           "pct": 0
         },
         "issueChecker": {
-          "total": 363,
-          "identical": 0,
-          "pct": 0
+          "total": 366,
+          "identical": 3,
+          "pct": 1
         },
         "consumer": {
-          "total": 293,
-          "identical": 0,
-          "pct": 0
+          "total": 298,
+          "identical": 5,
+          "pct": 2
         },
         "lawyer": {
-          "total": 432,
-          "identical": 0,
-          "pct": 0
+          "total": 438,
+          "identical": 6,
+          "pct": 1
         },
         "admin": {
           "total": 127,
@@ -1736,9 +1736,9 @@
           "pct": 0
         },
         "settings": {
-          "total": 305,
-          "identical": 0,
-          "pct": 0
+          "total": 318,
+          "identical": 13,
+          "pct": 4
         },
         "billing": {
           "total": 226,
@@ -1756,9 +1756,9 @@
           "pct": 0
         },
         "matters": {
-          "total": 653,
-          "identical": 0,
-          "pct": 0
+          "total": 662,
+          "identical": 8,
+          "pct": 1
         },
         "clients": {
           "total": 250,
@@ -1766,19 +1766,19 @@
           "pct": 0
         },
         "portal": {
-          "total": 86,
-          "identical": 0,
-          "pct": 0
+          "total": 90,
+          "identical": 4,
+          "pct": 4
         },
         "errors": {
-          "total": 102,
-          "identical": 0,
-          "pct": 0
+          "total": 104,
+          "identical": 2,
+          "pct": 2
         },
         "dashboard": {
-          "total": 231,
-          "identical": 0,
-          "pct": 0
+          "total": 250,
+          "identical": 18,
+          "pct": 7
         },
         "tutorials": {
           "total": 567,
@@ -1806,9 +1806,9 @@
           "pct": 0
         },
         "drafting": {
-          "total": 84,
-          "identical": 0,
-          "pct": 0
+          "total": 92,
+          "identical": 8,
+          "pct": 9
         },
         "matterIntelligence": {
           "total": 37,
@@ -1816,9 +1816,9 @@
           "pct": 0
         },
         "aiConsent": {
-          "total": 9,
-          "identical": 0,
-          "pct": 0
+          "total": 11,
+          "identical": 2,
+          "pct": 18
         },
         "docuDraft": {
           "total": 30,
@@ -1838,25 +1838,25 @@
       }
     },
     "or": {
-      "total": 5892,
-      "untranslated": 5,
-      "allowlisted": 76,
-      "pctUntranslated": 0,
+      "total": 6019,
+      "untranslated": 130,
+      "allowlisted": 78,
+      "pctUntranslated": 2,
       "byNamespace": {
         "common": {
-          "total": 565,
-          "identical": 2,
-          "pct": 0
+          "total": 595,
+          "identical": 32,
+          "pct": 5
         },
         "auth": {
-          "total": 212,
-          "identical": 0,
-          "pct": 0
+          "total": 222,
+          "identical": 10,
+          "pct": 5
         },
         "marketing": {
-          "total": 853,
-          "identical": 2,
-          "pct": 0
+          "total": 869,
+          "identical": 18,
+          "pct": 2
         },
         "legalGuides": {
           "total": 19,
@@ -1864,19 +1864,19 @@
           "pct": 0
         },
         "issueChecker": {
-          "total": 363,
-          "identical": 0,
-          "pct": 0
+          "total": 366,
+          "identical": 3,
+          "pct": 1
         },
         "consumer": {
-          "total": 293,
-          "identical": 0,
-          "pct": 0
+          "total": 298,
+          "identical": 5,
+          "pct": 2
         },
         "lawyer": {
-          "total": 432,
-          "identical": 0,
-          "pct": 0
+          "total": 438,
+          "identical": 6,
+          "pct": 1
         },
         "admin": {
           "total": 127,
@@ -1889,9 +1889,9 @@
           "pct": 0
         },
         "settings": {
-          "total": 305,
-          "identical": 0,
-          "pct": 0
+          "total": 318,
+          "identical": 13,
+          "pct": 4
         },
         "billing": {
           "total": 226,
@@ -1909,9 +1909,9 @@
           "pct": 0
         },
         "matters": {
-          "total": 653,
-          "identical": 0,
-          "pct": 0
+          "total": 662,
+          "identical": 8,
+          "pct": 1
         },
         "clients": {
           "total": 250,
@@ -1919,19 +1919,19 @@
           "pct": 0
         },
         "portal": {
-          "total": 86,
-          "identical": 0,
-          "pct": 0
+          "total": 90,
+          "identical": 4,
+          "pct": 4
         },
         "errors": {
-          "total": 102,
-          "identical": 0,
-          "pct": 0
+          "total": 104,
+          "identical": 2,
+          "pct": 2
         },
         "dashboard": {
-          "total": 231,
-          "identical": 0,
-          "pct": 0
+          "total": 250,
+          "identical": 18,
+          "pct": 7
         },
         "tutorials": {
           "total": 567,
@@ -1959,9 +1959,9 @@
           "pct": 0
         },
         "drafting": {
-          "total": 84,
-          "identical": 0,
-          "pct": 0
+          "total": 92,
+          "identical": 8,
+          "pct": 9
         },
         "matterIntelligence": {
           "total": 37,
@@ -1969,9 +1969,9 @@
           "pct": 0
         },
         "aiConsent": {
-          "total": 9,
-          "identical": 0,
-          "pct": 0
+          "total": 11,
+          "identical": 2,
+          "pct": 18
         },
         "docuDraft": {
           "total": 30,
@@ -1991,25 +1991,25 @@
       }
     },
     "as": {
-      "total": 5892,
-      "untranslated": 9,
-      "allowlisted": 55,
-      "pctUntranslated": 0,
+      "total": 6019,
+      "untranslated": 134,
+      "allowlisted": 57,
+      "pctUntranslated": 2,
       "byNamespace": {
         "common": {
-          "total": 565,
-          "identical": 4,
-          "pct": 1
+          "total": 595,
+          "identical": 34,
+          "pct": 6
         },
         "auth": {
-          "total": 212,
-          "identical": 0,
-          "pct": 0
+          "total": 222,
+          "identical": 10,
+          "pct": 5
         },
         "marketing": {
-          "total": 853,
-          "identical": 0,
-          "pct": 0
+          "total": 869,
+          "identical": 16,
+          "pct": 2
         },
         "legalGuides": {
           "total": 19,
@@ -2017,19 +2017,19 @@
           "pct": 0
         },
         "issueChecker": {
-          "total": 363,
-          "identical": 0,
-          "pct": 0
+          "total": 366,
+          "identical": 3,
+          "pct": 1
         },
         "consumer": {
-          "total": 293,
-          "identical": 0,
-          "pct": 0
+          "total": 298,
+          "identical": 5,
+          "pct": 2
         },
         "lawyer": {
-          "total": 432,
-          "identical": 0,
-          "pct": 0
+          "total": 438,
+          "identical": 6,
+          "pct": 1
         },
         "admin": {
           "total": 127,
@@ -2042,9 +2042,9 @@
           "pct": 1
         },
         "settings": {
-          "total": 305,
-          "identical": 0,
-          "pct": 0
+          "total": 318,
+          "identical": 13,
+          "pct": 4
         },
         "billing": {
           "total": 226,
@@ -2062,9 +2062,9 @@
           "pct": 0
         },
         "matters": {
-          "total": 653,
-          "identical": 1,
-          "pct": 0
+          "total": 662,
+          "identical": 9,
+          "pct": 1
         },
         "clients": {
           "total": 250,
@@ -2072,19 +2072,19 @@
           "pct": 0
         },
         "portal": {
-          "total": 86,
-          "identical": 0,
-          "pct": 0
+          "total": 90,
+          "identical": 4,
+          "pct": 4
         },
         "errors": {
-          "total": 102,
-          "identical": 0,
-          "pct": 0
+          "total": 104,
+          "identical": 2,
+          "pct": 2
         },
         "dashboard": {
-          "total": 231,
-          "identical": 0,
-          "pct": 0
+          "total": 250,
+          "identical": 18,
+          "pct": 7
         },
         "tutorials": {
           "total": 567,
@@ -2112,9 +2112,9 @@
           "pct": 0
         },
         "drafting": {
-          "total": 84,
-          "identical": 0,
-          "pct": 0
+          "total": 92,
+          "identical": 8,
+          "pct": 9
         },
         "matterIntelligence": {
           "total": 37,
@@ -2122,9 +2122,9 @@
           "pct": 0
         },
         "aiConsent": {
-          "total": 9,
-          "identical": 1,
-          "pct": 11
+          "total": 11,
+          "identical": 3,
+          "pct": 27
         },
         "docuDraft": {
           "total": 30,
@@ -2145,19 +2145,19 @@
     }
   },
   "summary": {
-    "fr": "0% untranslated (17/5892)",
-    "de": "0% untranslated (20/5892)",
-    "hi": "0% untranslated (7/5892)",
-    "bn": "0% untranslated (8/5892)",
-    "te": "0% untranslated (8/5892)",
-    "mr": "0% untranslated (5/5892)",
-    "ta": "0% untranslated (8/5892)",
-    "gu": "0% untranslated (8/5892)",
-    "kn": "0% untranslated (8/5892)",
-    "ml": "0% untranslated (9/5892)",
-    "ur": "0% untranslated (8/5892)",
-    "pa": "0% untranslated (8/5892)",
-    "or": "0% untranslated (5/5892)",
-    "as": "0% untranslated (9/5892)"
+    "fr": "2% untranslated (142/6019)",
+    "de": "2% untranslated (145/6019)",
+    "hi": "2% untranslated (132/6019)",
+    "bn": "2% untranslated (133/6019)",
+    "te": "2% untranslated (133/6019)",
+    "mr": "2% untranslated (130/6019)",
+    "ta": "2% untranslated (133/6019)",
+    "gu": "2% untranslated (133/6019)",
+    "kn": "2% untranslated (133/6019)",
+    "ml": "2% untranslated (134/6019)",
+    "ur": "2% untranslated (133/6019)",
+    "pa": "2% untranslated (133/6019)",
+    "or": "2% untranslated (130/6019)",
+    "as": "2% untranslated (134/6019)"
   }
 }

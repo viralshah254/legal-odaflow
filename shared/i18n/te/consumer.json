@@ -299,5 +299,10 @@
   "empty_messages_description": "ఈ కేసు గురించి న్యాయవాదులు మరియు మద్దతు నుండి సందేశాలు ఇక్కడ కనిపిస్తాయి.",
   "empty_payments_description": "నివేదికలు, న్యాయవాది సమీక్ష మరియు సభ్యత్వాల చెల్లింపులు ఇక్కడ కనిపిస్తాయి.",
   "applies_to_account_changes_future": "మీ ఖాతాకు వర్తిస్తుంది. మార్పులు భవిష్యత్ ప్రాసెసింగ్‌ను ప్రభావితం చేస్తాయి.",
-  "control_case_data_for_ai_improvement": "AI మెరుగుదల కోసం మీ కేసు డేటాను ఎలా ఉపయోగించవచ్చో నియంత్రించండి. డిఫాల్ట్ ఆఫ్‌లో ఉంది."
+  "control_case_data_for_ai_improvement": "AI మెరుగుదల కోసం మీ కేసు డేటాను ఎలా ఉపయోగించవచ్చో నియంత్రించండి. డిఫాల్ట్ ఆఫ్‌లో ఉంది.",
+  "auto_renewing": "Renews automatically",
+  "subscription_auto_renew_hint": "Your subscription renews until cancelled. Manage renewal and cancellation through your billing provider.",
+  "manage_plan": "Manage plan",
+  "cancel_subscription": "Cancel subscription",
+  "your_current_plan": "Your current plan"
 }

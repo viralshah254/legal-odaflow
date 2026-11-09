@@ -91,6 +91,14 @@
     "proceduralRouteDetail": "পৰামৰ্শ দিয়া হৈছে {recommended} — {selected} ব্যৱহাৰ কৰি",
     "governingSections": "শাসকীয় অংশসমূহ",
     "researchAuthorities": "{count} কৰ্তৃপক্ষই উদ্ধাৰ{deep} · আত্মবিশ্বাস {confidence}",
-    "deepSearchSuffix": "(গভীৰ সন্ধান)"
+    "deepSearchSuffix": "(গভীৰ সন্ধান)",
+    "lawyerReady": "Ready for lawyer review",
+    "readyForLawyerReview": "Ready for lawyer review",
+    "canCertifyShort": "Eligible for review sign-off",
+    "passageSupportedShort": "passages supported",
+    "factCoverage": "Fact coverage",
+    "missingDefenceFacts": "Defence facts to confirm",
+    "autoAppliedFixes": "Applied corrections",
+    "timelineWarnings": "Timeline checks to review"
   }
 }

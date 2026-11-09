@@ -1216,6 +1216,18 @@ abstract class AppLocalizations {
   /// **'AI processing consent'**
   String get aiConsentDialogTitle;
 
+  /// No description provided for @aiConsentProcessingBody.
+  ///
+  /// In en, this message translates to:
+  /// **'To perform the AI work you request, Umbrella sends your questions, instructions, authorized matter facts, document excerpts, research and draft text to the recipients below. Audio is sent when you use transcription. Inference permission does not grant permission to train models.'**
+  String get aiConsentProcessingBody;
+
+  /// No description provided for @aiConsentProcessingUnavailable.
+  ///
+  /// In en, this message translates to:
+  /// **'AI privacy information is unavailable. Please retry before sending your data.'**
+  String get aiConsentProcessingUnavailable;
+
   /// No description provided for @aiConsentSettingsDescription.
   ///
   /// In en, this message translates to:
@@ -1371,6 +1383,18 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Choose the workspace that fits you today.'**
   String get authChooseWorkspace;
+
+  /// No description provided for @authClientPerk1.
+  ///
+  /// In en, this message translates to:
+  /// **'Understand your legal issue'**
+  String get authClientPerk1;
+
+  /// No description provided for @authClientPerk2.
+  ///
+  /// In en, this message translates to:
+  /// **'Keep your documents and next steps together'**
+  String get authClientPerk2;
 
   /// No description provided for @authCompleteProfileDescription.
   ///
@@ -1798,6 +1822,18 @@ abstract class AppLocalizations {
   /// **'Lawyer — I run a law firm'**
   String get authLawyerOption;
 
+  /// No description provided for @authLawyerPerk1.
+  ///
+  /// In en, this message translates to:
+  /// **'Organize clients, matters and documents'**
+  String get authLawyerPerk1;
+
+  /// No description provided for @authLawyerPerk2.
+  ///
+  /// In en, this message translates to:
+  /// **'Research and draft with matter context'**
+  String get authLawyerPerk2;
+
   /// No description provided for @authLegalIntelligencenforEveryone.
   ///
   /// In en, this message translates to:
@@ -2068,6 +2104,24 @@ abstract class AppLocalizations {
   /// **'Passwords do not match'**
   String get authPasswordsDontMatch;
 
+  /// No description provided for @authPathSummaryLawFirm.
+  ///
+  /// In en, this message translates to:
+  /// **'Law firm workspace'**
+  String get authPathSummaryLawFirm;
+
+  /// No description provided for @authPathSummaryLegalHelp.
+  ///
+  /// In en, this message translates to:
+  /// **'Personal legal help'**
+  String get authPathSummaryLegalHelp;
+
+  /// No description provided for @authPathSummarySoloLawyer.
+  ///
+  /// In en, this message translates to:
+  /// **'Solo lawyer workspace'**
+  String get authPathSummarySoloLawyer;
+
   /// No description provided for @authPhone.
   ///
   /// In en, this message translates to:
@@ -2109,6 +2163,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Private'**
   String get authPrivate;
+
+  /// No description provided for @authProspectPrefillHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Details from your link have been filled in. Review them before continuing.'**
+  String get authProspectPrefillHint;
 
   /// No description provided for @authRefInviteBanner.
   ///
@@ -2241,6 +2301,18 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Sign up'**
   String get authSignUp;
+
+  /// No description provided for @authSignUpAccountDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Set up your sign-in details to continue.'**
+  String get authSignUpAccountDescription;
+
+  /// No description provided for @authSignUpAccountTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Create your account'**
+  String get authSignUpAccountTitle;
 
   /// No description provided for @authSignUpDescription.
   ///
@@ -5626,6 +5698,12 @@ abstract class AppLocalizations {
   /// **'Auto'**
   String get commonAuto;
 
+  /// No description provided for @commonAvailableOnProfessional.
+  ///
+  /// In en, this message translates to:
+  /// **'Available on Professional'**
+  String get commonAvailableOnProfessional;
+
   /// No description provided for @commonBack.
   ///
   /// In en, this message translates to:
@@ -6334,6 +6412,12 @@ abstract class AppLocalizations {
   /// **'Family & Matrimonial'**
   String get commonFamilyMatrimonial;
 
+  /// No description provided for @commonFeatureRequiresProfessional.
+  ///
+  /// In en, this message translates to:
+  /// **'{feature} requires a Professional plan.'**
+  String commonFeatureRequiresProfessional(String feature);
+
   /// No description provided for @commonFile.
   ///
   /// In en, this message translates to:
@@ -6537,6 +6621,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Immigration'**
   String get commonImmigration;
+
+  /// No description provided for @commonImportMeeting.
+  ///
+  /// In en, this message translates to:
+  /// **'Import meeting'**
+  String get commonImportMeeting;
 
   /// No description provided for @commonIncludeDocuments.
   ///
@@ -6993,6 +7083,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Recording'**
   String get commonMeetingsFilterRecording;
+
+  /// No description provided for @commonMeetingsLoadFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Meetings could not be loaded. Please try again.'**
+  String get commonMeetingsLoadFailed;
 
   /// No description provided for @commonMeetingsPageOf.
   ///
@@ -7634,6 +7730,12 @@ abstract class AppLocalizations {
   /// **'Record or import meeting transcripts to search and review.'**
   String get commonRecordOrImportMeetingTranscripts;
 
+  /// No description provided for @commonRecordTranscript.
+  ///
+  /// In en, this message translates to:
+  /// **'Record and transcribe'**
+  String get commonRecordTranscript;
+
   /// No description provided for @commonRef.
   ///
   /// In en, this message translates to:
@@ -7825,6 +7927,144 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Reject lead'**
   String get commonRejectLead;
+
+  /// No description provided for @commonReleaseAccessibleFolders.
+  ///
+  /// In en, this message translates to:
+  /// **'Folders with accessible documents'**
+  String get commonReleaseAccessibleFolders;
+
+  /// No description provided for @commonReleaseActualUsage.
+  ///
+  /// In en, this message translates to:
+  /// **'Based on actual usage'**
+  String get commonReleaseActualUsage;
+
+  /// No description provided for @commonReleaseAllMatterDocuments.
+  ///
+  /// In en, this message translates to:
+  /// **'All authorized matter documents'**
+  String get commonReleaseAllMatterDocuments;
+
+  /// No description provided for @commonReleaseEvidenceScope.
+  ///
+  /// In en, this message translates to:
+  /// **'Evidence scope'**
+  String get commonReleaseEvidenceScope;
+
+  /// No description provided for @commonReleaseFinalCharge.
+  ///
+  /// In en, this message translates to:
+  /// **'Final charge'**
+  String get commonReleaseFinalCharge;
+
+  /// No description provided for @commonReleaseHoldingPassage.
+  ///
+  /// In en, this message translates to:
+  /// **'Holding passage'**
+  String get commonReleaseHoldingPassage;
+
+  /// No description provided for @commonReleaseLegalCountry.
+  ///
+  /// In en, this message translates to:
+  /// **'Legal country'**
+  String get commonReleaseLegalCountry;
+
+  /// No description provided for @commonReleaseLoadingTasks.
+  ///
+  /// In en, this message translates to:
+  /// **'Loading tasks…'**
+  String get commonReleaseLoadingTasks;
+
+  /// No description provided for @commonReleaseMatterJurisdiction.
+  ///
+  /// In en, this message translates to:
+  /// **'Jurisdiction follows this matter. Change it in matter settings.'**
+  String get commonReleaseMatterJurisdiction;
+
+  /// No description provided for @commonReleaseNewTask.
+  ///
+  /// In en, this message translates to:
+  /// **'New task'**
+  String get commonReleaseNewTask;
+
+  /// No description provided for @commonReleaseNoAccessibleFolders.
+  ///
+  /// In en, this message translates to:
+  /// **'No accessible document folders.'**
+  String get commonReleaseNoAccessibleFolders;
+
+  /// No description provided for @commonReleaseNoTasks.
+  ///
+  /// In en, this message translates to:
+  /// **'No tasks match this view.'**
+  String get commonReleaseNoTasks;
+
+  /// No description provided for @commonReleaseOpenMatterTasks.
+  ///
+  /// In en, this message translates to:
+  /// **'Open matter tasks'**
+  String get commonReleaseOpenMatterTasks;
+
+  /// No description provided for @commonReleaseOutcome.
+  ///
+  /// In en, this message translates to:
+  /// **'Outcome:'**
+  String get commonReleaseOutcome;
+
+  /// No description provided for @commonReleaseSectionFinder.
+  ///
+  /// In en, this message translates to:
+  /// **'Section Finder'**
+  String get commonReleaseSectionFinder;
+
+  /// No description provided for @commonReleaseSelectFirmTasks.
+  ///
+  /// In en, this message translates to:
+  /// **'Select a firm to view tasks.'**
+  String get commonReleaseSelectFirmTasks;
+
+  /// No description provided for @commonReleaseSelectedDocuments.
+  ///
+  /// In en, this message translates to:
+  /// **'Selected documents only'**
+  String get commonReleaseSelectedDocuments;
+
+  /// No description provided for @commonReleaseSelectedFolders.
+  ///
+  /// In en, this message translates to:
+  /// **'Selected folders and their subfolders'**
+  String get commonReleaseSelectedFolders;
+
+  /// No description provided for @commonReleaseShowCompleted.
+  ///
+  /// In en, this message translates to:
+  /// **'Show completed'**
+  String get commonReleaseShowCompleted;
+
+  /// No description provided for @commonReleaseTasksDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Your firm’s work, with the earliest deadlines first.'**
+  String get commonReleaseTasksDescription;
+
+  /// No description provided for @commonReleaseTasksLoadFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Tasks could not be loaded. Please refresh and try again.'**
+  String get commonReleaseTasksLoadFailed;
+
+  /// No description provided for @commonReleaseTasksTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Tasks'**
+  String get commonReleaseTasksTitle;
+
+  /// No description provided for @commonReleaseUsageBased.
+  ///
+  /// In en, this message translates to:
+  /// **'Charged by actual usage'**
+  String get commonReleaseUsageBased;
 
   /// No description provided for @commonRemove.
   ///
@@ -8462,6 +8702,12 @@ abstract class AppLocalizations {
   /// **'Universal disclaimer'**
   String get commonUniversalDisclaimer;
 
+  /// No description provided for @commonUpgradeExistingPlanDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Upgrade from {plan} to unlock {feature}.'**
+  String commonUpgradeExistingPlanDescription(String plan, String feature);
+
   /// No description provided for @commonUpgradeToPlusForAFullAiBudget.
   ///
   /// In en, this message translates to:
@@ -8473,6 +8719,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Upgrade to Professional'**
   String get commonUpgradeToProfessional;
+
+  /// No description provided for @commonUpgradeToUnlockOnProfessional.
+  ///
+  /// In en, this message translates to:
+  /// **'Upgrade to Professional to unlock'**
+  String get commonUpgradeToUnlockOnProfessional;
 
   /// No description provided for @commonUpload.
   ///
@@ -8810,6 +9062,12 @@ abstract class AppLocalizations {
   /// **'Auto'**
   String get consumerAuto;
 
+  /// No description provided for @consumerAutoRenewing.
+  ///
+  /// In en, this message translates to:
+  /// **'Renews automatically'**
+  String get consumerAutoRenewing;
+
   /// No description provided for @consumerAvailableModels.
   ///
   /// In en, this message translates to:
@@ -8857,6 +9115,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Cancel'**
   String get consumerCancel;
+
+  /// No description provided for @consumerCancelSubscription.
+  ///
+  /// In en, this message translates to:
+  /// **'Cancel subscription'**
+  String get consumerCancelSubscription;
 
   /// No description provided for @consumerCase.
   ///
@@ -9445,6 +9709,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Manage data consent'**
   String get consumerManageDataConsent;
+
+  /// No description provided for @consumerManagePlan.
+  ///
+  /// In en, this message translates to:
+  /// **'Manage plan'**
+  String get consumerManagePlan;
 
   /// No description provided for @consumerMatterProgress.
   ///
@@ -10232,6 +10502,12 @@ abstract class AppLocalizations {
   /// **'Subscription activated!'**
   String get consumerSubscriptionActivated;
 
+  /// No description provided for @consumerSubscriptionAutoRenewHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Your subscription renews until cancelled. Manage renewal and cancellation through your billing provider.'**
+  String get consumerSubscriptionAutoRenewHint;
+
   /// No description provided for @consumerSubscriptionPlans.
   ///
   /// In en, this message translates to:
@@ -10447,6 +10723,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Your AI-generated legal previews and reports'**
   String get consumerYourAigeneratedLegalPreviewsAndReports;
+
+  /// No description provided for @consumerYourCurrentPlan.
+  ///
+  /// In en, this message translates to:
+  /// **'Your current plan'**
+  String get consumerYourCurrentPlan;
 
   /// No description provided for @consumerYourLegalReports.
   ///
@@ -11689,6 +11971,120 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'AI Profitability'**
   String get dashboardAiProfitability;
+
+  /// No description provided for @dashboardAiReviewAuthor.
+  ///
+  /// In en, this message translates to:
+  /// **'Author'**
+  String get dashboardAiReviewAuthor;
+
+  /// No description provided for @dashboardAiReviewEmpty.
+  ///
+  /// In en, this message translates to:
+  /// **'No AI outputs are waiting for lawyer review.'**
+  String get dashboardAiReviewEmpty;
+
+  /// No description provided for @dashboardAiReviewJurisdiction.
+  ///
+  /// In en, this message translates to:
+  /// **'Jurisdiction'**
+  String get dashboardAiReviewJurisdiction;
+
+  /// No description provided for @dashboardAiReviewLoadError.
+  ///
+  /// In en, this message translates to:
+  /// **'Failed to load review queue'**
+  String get dashboardAiReviewLoadError;
+
+  /// No description provided for @dashboardAiReviewMarkReviewed.
+  ///
+  /// In en, this message translates to:
+  /// **'Mark reviewed'**
+  String get dashboardAiReviewMarkReviewed;
+
+  /// No description provided for @dashboardAiReviewMatter.
+  ///
+  /// In en, this message translates to:
+  /// **'Matter'**
+  String get dashboardAiReviewMatter;
+
+  /// No description provided for @dashboardAiReviewOpenWorkspace.
+  ///
+  /// In en, this message translates to:
+  /// **'Open workspace'**
+  String get dashboardAiReviewOpenWorkspace;
+
+  /// No description provided for @dashboardAiReviewPreview.
+  ///
+  /// In en, this message translates to:
+  /// **'Preview'**
+  String get dashboardAiReviewPreview;
+
+  /// No description provided for @dashboardAiReviewPreviewTruncated.
+  ///
+  /// In en, this message translates to:
+  /// **'Open the workspace for the full output.'**
+  String get dashboardAiReviewPreviewTruncated;
+
+  /// No description provided for @dashboardAiReviewQueueDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Review, open the source workspace, or mark as reviewed when signed off.'**
+  String get dashboardAiReviewQueueDescription;
+
+  /// No description provided for @dashboardAiReviewQueueTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, one {# item awaiting review} other {# items awaiting review}}'**
+  String dashboardAiReviewQueueTitle(num count);
+
+  /// No description provided for @dashboardAiReviewSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'AI outputs flagged for lawyer review before client use'**
+  String get dashboardAiReviewSubtitle;
+
+  /// No description provided for @dashboardAiReviewTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'AI review queue'**
+  String get dashboardAiReviewTitle;
+
+  /// No description provided for @dashboardAiReviewUnknownAuthor.
+  ///
+  /// In en, this message translates to:
+  /// **'Unknown'**
+  String get dashboardAiReviewUnknownAuthor;
+
+  /// No description provided for @dashboardAiReviewUnverified.
+  ///
+  /// In en, this message translates to:
+  /// **'Unverified'**
+  String get dashboardAiReviewUnverified;
+
+  /// No description provided for @dashboardAiSearchIntakeBriefPlaceholder.
+  ///
+  /// In en, this message translates to:
+  /// **'Describe the issue, key dates and the help needed.'**
+  String get dashboardAiSearchIntakeBriefPlaceholder;
+
+  /// No description provided for @dashboardAiSearchIntakeClientPlaceholder.
+  ///
+  /// In en, this message translates to:
+  /// **'Client name'**
+  String get dashboardAiSearchIntakeClientPlaceholder;
+
+  /// No description provided for @dashboardAiSearchIntakeCta.
+  ///
+  /// In en, this message translates to:
+  /// **'Start intake'**
+  String get dashboardAiSearchIntakeCta;
+
+  /// No description provided for @dashboardAiSearchIntakeSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Start with the client and a short description of the matter.'**
+  String get dashboardAiSearchIntakeSubtitle;
 
   /// No description provided for @dashboardAiSearchPlaceholder.
   ///
@@ -13127,11 +13523,23 @@ abstract class AppLocalizations {
   /// **'Accuracy audit'**
   String get draftingAccuracyAuditTitle;
 
+  /// No description provided for @draftingAccuracyAutoAppliedFixes.
+  ///
+  /// In en, this message translates to:
+  /// **'Applied corrections'**
+  String get draftingAccuracyAutoAppliedFixes;
+
   /// No description provided for @draftingAccuracyAutoCorrected.
   ///
   /// In en, this message translates to:
   /// **'{count} auto-corrected'**
   String draftingAccuracyAutoCorrected(String count);
+
+  /// No description provided for @draftingAccuracyCanCertifyShort.
+  ///
+  /// In en, this message translates to:
+  /// **'Eligible for review sign-off'**
+  String get draftingAccuracyCanCertifyShort;
 
   /// No description provided for @draftingAccuracyCitationsVerifiedShort.
   ///
@@ -13157,6 +13565,12 @@ abstract class AppLocalizations {
   /// **'{seconds}s elapsed'**
   String draftingAccuracyElapsedSeconds(String seconds);
 
+  /// No description provided for @draftingAccuracyFactCoverage.
+  ///
+  /// In en, this message translates to:
+  /// **'Fact coverage'**
+  String get draftingAccuracyFactCoverage;
+
   /// No description provided for @draftingAccuracyFactsPendingShort.
   ///
   /// In en, this message translates to:
@@ -13169,17 +13583,35 @@ abstract class AppLocalizations {
   /// **'Governing sections'**
   String get draftingAccuracyGoverningSections;
 
+  /// No description provided for @draftingAccuracyLawyerReady.
+  ///
+  /// In en, this message translates to:
+  /// **'Ready for lawyer review'**
+  String get draftingAccuracyLawyerReady;
+
   /// No description provided for @draftingAccuracyLimitedCorpus.
   ///
   /// In en, this message translates to:
   /// **'Limited sources in corpus'**
   String get draftingAccuracyLimitedCorpus;
 
+  /// No description provided for @draftingAccuracyMissingDefenceFacts.
+  ///
+  /// In en, this message translates to:
+  /// **'Defence facts to confirm'**
+  String get draftingAccuracyMissingDefenceFacts;
+
   /// No description provided for @draftingAccuracyNeedsReview.
   ///
   /// In en, this message translates to:
   /// **'Needs lawyer review'**
   String get draftingAccuracyNeedsReview;
+
+  /// No description provided for @draftingAccuracyPassageSupportedShort.
+  ///
+  /// In en, this message translates to:
+  /// **'passages supported'**
+  String get draftingAccuracyPassageSupportedShort;
 
   /// No description provided for @draftingAccuracyProceduralRouteConfirmed.
   ///
@@ -13195,6 +13627,12 @@ abstract class AppLocalizations {
     String recommended,
     String selected,
   );
+
+  /// No description provided for @draftingAccuracyReadyForLawyerReview.
+  ///
+  /// In en, this message translates to:
+  /// **'Ready for lawyer review'**
+  String get draftingAccuracyReadyForLawyerReview;
 
   /// No description provided for @draftingAccuracyResearchAuthorities.
   ///
@@ -13277,6 +13715,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'{count} unverified citation(s) removed from draft'**
   String draftingAccuracyStrippedCitations(String count);
+
+  /// No description provided for @draftingAccuracyTimelineWarnings.
+  ///
+  /// In en, this message translates to:
+  /// **'Timeline checks to review'**
+  String get draftingAccuracyTimelineWarnings;
 
   /// No description provided for @draftingAccuracyVerifiedForFiling.
   ///
@@ -13829,6 +14273,18 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Docket entry added'**
   String get errorsToastDocketEntryAdded;
+
+  /// No description provided for @errorsToastDocketSyncFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Court docket could not be synced'**
+  String get errorsToastDocketSyncFailed;
+
+  /// No description provided for @errorsToastDocketSynced.
+  ///
+  /// In en, this message translates to:
+  /// **'Court docket synced'**
+  String get errorsToastDocketSynced;
 
   /// No description provided for @errorsToastDocumentArchived.
   ///
@@ -14472,6 +14928,12 @@ abstract class AppLocalizations {
   /// **'Client name *'**
   String get issueCheckerClientName;
 
+  /// No description provided for @issueCheckerClientNameCannotBeSelf.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter the client name, or choose to act for yourself.'**
+  String get issueCheckerClientNameCannotBeSelf;
+
   /// No description provided for @issueCheckerComplexMatter.
   ///
   /// In en, this message translates to:
@@ -14621,6 +15083,18 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'We detected {country}. Change it if needed.'**
   String issueCheckerDetectedCountryChange(String country);
+
+  /// No description provided for @issueCheckerDetectedCountryRegionChange.
+  ///
+  /// In en, this message translates to:
+  /// **'Detected {country} · {region}. Change this if the issue belongs elsewhere.'**
+  String issueCheckerDetectedCountryRegionChange(String country, String region);
+
+  /// No description provided for @issueCheckerDetecting.
+  ///
+  /// In en, this message translates to:
+  /// **'Detecting…'**
+  String get issueCheckerDetecting;
 
   /// No description provided for @issueCheckerDetectingLocation.
   ///
@@ -16698,6 +17172,12 @@ abstract class AppLocalizations {
   /// **'Approval'**
   String get lawyerApproval;
 
+  /// No description provided for @lawyerApproveSuggestion.
+  ///
+  /// In en, this message translates to:
+  /// **'Approve suggestion'**
+  String get lawyerApproveSuggestion;
+
   /// No description provided for @lawyerApproved.
   ///
   /// In en, this message translates to:
@@ -17105,6 +17585,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Disbursement requests awaiting approval.'**
   String get lawyerDisbursementRequestsAwaitingApproval;
+
+  /// No description provided for @lawyerDismissSuggestion.
+  ///
+  /// In en, this message translates to:
+  /// **'Dismiss suggestion'**
+  String get lawyerDismissSuggestion;
 
   /// No description provided for @lawyerDocumentDetail.
   ///
@@ -18036,6 +18522,12 @@ abstract class AppLocalizations {
   /// **'No evidence items'**
   String get lawyerNoEvidenceItems;
 
+  /// No description provided for @lawyerNoEvidenceYet.
+  ///
+  /// In en, this message translates to:
+  /// **'No evidence has been added yet.'**
+  String get lawyerNoEvidenceYet;
+
   /// No description provided for @lawyerNoExpensesRecordedYet.
   ///
   /// In en, this message translates to:
@@ -18149,6 +18641,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'No specific matter'**
   String get lawyerNoSpecificMatter;
+
+  /// No description provided for @lawyerNoSuggestedTime.
+  ///
+  /// In en, this message translates to:
+  /// **'No time suggestions yet.'**
+  String get lawyerNoSuggestedTime;
 
   /// No description provided for @lawyerNoTeamMembersFound.
   ///
@@ -18689,6 +19187,18 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Submitted'**
   String get lawyerSubmitted;
+
+  /// No description provided for @lawyerSuggestedTime.
+  ///
+  /// In en, this message translates to:
+  /// **'Suggested time entries'**
+  String get lawyerSuggestedTime;
+
+  /// No description provided for @lawyerSuggestedTimeDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Review suggested work and duration before adding a time entry.'**
+  String get lawyerSuggestedTimeDescription;
 
   /// No description provided for @lawyerSummary.
   ///
@@ -23207,7 +23717,7 @@ abstract class AppLocalizations {
   /// No description provided for @marketingHomeResearchProgressDeepCitationNote.
   ///
   /// In en, this message translates to:
-  /// **'Verified Research performs deep citation checks — this can take a few minutes.'**
+  /// **'Verified Research is running an in-prompt self-check.'**
   String get marketingHomeResearchProgressDeepCitationNote;
 
   /// No description provided for @marketingHomeResearchProgressDraftReadyBanner.
@@ -23228,6 +23738,12 @@ abstract class AppLocalizations {
   /// **'Fast'**
   String get marketingHomeResearchProgressModeFast;
 
+  /// No description provided for @marketingHomeResearchProgressModeGuidance.
+  ///
+  /// In en, this message translates to:
+  /// **'AI only'**
+  String get marketingHomeResearchProgressModeGuidance;
+
   /// No description provided for @marketingHomeResearchProgressModeVerified.
   ///
   /// In en, this message translates to:
@@ -23237,8 +23753,14 @@ abstract class AppLocalizations {
   /// No description provided for @marketingHomeResearchProgressPhaseStallNote.
   ///
   /// In en, this message translates to:
-  /// **'Still working — the backend is processing this step. Large queries can take a few minutes.'**
+  /// **'Still drafting — long contracts can take a bit longer.'**
   String get marketingHomeResearchProgressPhaseStallNote;
+
+  /// No description provided for @marketingHomeResearchProgressPhaseStallNoteVerified.
+  ///
+  /// In en, this message translates to:
+  /// **'Still working — the backend is processing this step. Large queries can take a few minutes.'**
+  String get marketingHomeResearchProgressPhaseStallNoteVerified;
 
   /// No description provided for @marketingHomeResearchProgressRefiningTitle.
   ///
@@ -23462,6 +23984,60 @@ abstract class AppLocalizations {
   /// **'Verifying section text against corpus…'**
   String get marketingHomeResearchProgressStepGroundVerify;
 
+  /// No description provided for @marketingHomeResearchProgressStepGuidanceDraftDetail.
+  ///
+  /// In en, this message translates to:
+  /// **'Writing a first-pass answer from the question and contract'**
+  String get marketingHomeResearchProgressStepGuidanceDraftDetail;
+
+  /// No description provided for @marketingHomeResearchProgressStepGuidanceDraftLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Drafting the note'**
+  String get marketingHomeResearchProgressStepGuidanceDraftLabel;
+
+  /// No description provided for @marketingHomeResearchProgressStepGuidanceReadDetail.
+  ///
+  /// In en, this message translates to:
+  /// **'Identifying the issue, jurisdiction, and contract facts'**
+  String get marketingHomeResearchProgressStepGuidanceReadDetail;
+
+  /// No description provided for @marketingHomeResearchProgressStepGuidanceReadLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Reading your question'**
+  String get marketingHomeResearchProgressStepGuidanceReadLabel;
+
+  /// No description provided for @marketingHomeResearchProgressStepGuidanceReadyDetail.
+  ///
+  /// In en, this message translates to:
+  /// **'Preparing the research note'**
+  String get marketingHomeResearchProgressStepGuidanceReadyDetail;
+
+  /// No description provided for @marketingHomeResearchProgressStepGuidanceReadyLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Ready'**
+  String get marketingHomeResearchProgressStepGuidanceReadyLabel;
+
+  /// No description provided for @marketingHomeResearchProgressStepLiveRetrieveDetail.
+  ///
+  /// In en, this message translates to:
+  /// **'Checking AI-named authorities against live/corpus sources'**
+  String get marketingHomeResearchProgressStepLiveRetrieveDetail;
+
+  /// No description provided for @marketingHomeResearchProgressStepLiveRetrieveFailover.
+  ///
+  /// In en, this message translates to:
+  /// **'Retrying available connectors when a source is down'**
+  String get marketingHomeResearchProgressStepLiveRetrieveFailover;
+
+  /// No description provided for @marketingHomeResearchProgressStepLiveRetrieveLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Checking live and corpus sources'**
+  String get marketingHomeResearchProgressStepLiveRetrieveLabel;
+
   /// No description provided for @marketingHomeResearchProgressStepParseDetail.
   ///
   /// In en, this message translates to:
@@ -23481,6 +24057,24 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Parsing your legal question'**
   String get marketingHomeResearchProgressStepParseLabel;
+
+  /// No description provided for @marketingHomeResearchProgressStepPlanMapDetail.
+  ///
+  /// In en, this message translates to:
+  /// **'Identifying issues, likely statutes, and retrieval queries'**
+  String get marketingHomeResearchProgressStepPlanMapDetail;
+
+  /// No description provided for @marketingHomeResearchProgressStepPlanMapLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Planning the research map'**
+  String get marketingHomeResearchProgressStepPlanMapLabel;
+
+  /// No description provided for @marketingHomeResearchProgressStepPlanMapQueries.
+  ///
+  /// In en, this message translates to:
+  /// **'Expanding search queries from the research plan'**
+  String get marketingHomeResearchProgressStepPlanMapQueries;
 
   /// No description provided for @marketingHomeResearchProgressStepPredecessorCrpcBnss.
   ///
@@ -23550,6 +24144,18 @@ abstract class AppLocalizations {
   /// **'Ranking case law by relevance…'**
   String get marketingHomeResearchProgressStepRetrieveRankCases;
 
+  /// No description provided for @marketingHomeResearchProgressStepSelfCheckDetail.
+  ///
+  /// In en, this message translates to:
+  /// **'Attacking weak assumptions in the same draft'**
+  String get marketingHomeResearchProgressStepSelfCheckDetail;
+
+  /// No description provided for @marketingHomeResearchProgressStepSelfCheckLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Self-check'**
+  String get marketingHomeResearchProgressStepSelfCheckLabel;
+
   /// No description provided for @marketingHomeResearchProgressStillWorking.
   ///
   /// In en, this message translates to:
@@ -23565,7 +24171,7 @@ abstract class AppLocalizations {
   /// No description provided for @marketingHomeResearchProgressVerifiedDurationHint.
   ///
   /// In en, this message translates to:
-  /// **'· usually 1–3 min'**
+  /// **'· usually under 45s'**
   String get marketingHomeResearchProgressVerifiedDurationHint;
 
   /// No description provided for @marketingHomeResearchProgressVerifiedRunningBanner.
@@ -26238,6 +26844,30 @@ abstract class AppLocalizations {
   /// **'AI is analyzing your matter…'**
   String get mattersAiIsAnalyzingYourMatter;
 
+  /// No description provided for @mattersAiProgressAnalysing.
+  ///
+  /// In en, this message translates to:
+  /// **'Analysing the available information'**
+  String get mattersAiProgressAnalysing;
+
+  /// No description provided for @mattersAiProgressGenerating.
+  ///
+  /// In en, this message translates to:
+  /// **'Preparing the response'**
+  String get mattersAiProgressGenerating;
+
+  /// No description provided for @mattersAiProgressReading.
+  ///
+  /// In en, this message translates to:
+  /// **'Reading the matter context'**
+  String get mattersAiProgressReading;
+
+  /// No description provided for @mattersAiProgressRetrieving.
+  ///
+  /// In en, this message translates to:
+  /// **'Retrieving relevant sources'**
+  String get mattersAiProgressRetrieving;
+
   /// No description provided for @mattersAiResponseFailed.
   ///
   /// In en, this message translates to:
@@ -26303,6 +26933,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Analyzing…'**
   String get mattersAnalyzing;
+
+  /// No description provided for @mattersAnswered.
+  ///
+  /// In en, this message translates to:
+  /// **'Answered'**
+  String get mattersAnswered;
 
   /// No description provided for @mattersAnsweredProgress.
   ///
@@ -26904,6 +27540,12 @@ abstract class AppLocalizations {
   /// **'Creating matter…'**
   String get mattersCreatingMatterEllipsis;
 
+  /// No description provided for @mattersCreditsUsed.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, one {# credit used} other {# credits used}}'**
+  String mattersCreditsUsed(num count);
+
   /// No description provided for @mattersCriticalRisk.
   ///
   /// In en, this message translates to:
@@ -27501,7 +28143,7 @@ abstract class AppLocalizations {
   /// No description provided for @mattersFastResearchTypicalTime.
   ///
   /// In en, this message translates to:
-  /// **'Fast Answer — usually under a minute'**
+  /// **'Fast Answer — usually under 25 seconds'**
   String get mattersFastResearchTypicalTime;
 
   /// No description provided for @mattersFilenameUploaded.
@@ -27659,6 +28301,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Grant access to team members with read-only or write permissions'**
   String get mattersGrantAccessToTeamMembersWithReadonlyOrWritePermiss;
+
+  /// No description provided for @mattersGuidanceResearchTypicalTime.
+  ///
+  /// In en, this message translates to:
+  /// **'AI guidance only — usually under 15 seconds'**
+  String get mattersGuidanceResearchTypicalTime;
 
   /// No description provided for @mattersHiddenFromPortalClients.
   ///
@@ -28794,6 +29442,12 @@ abstract class AppLocalizations {
   /// **'Step {step}: {tool}'**
   String mattersReasoningStep(String step, String tool);
 
+  /// No description provided for @mattersRecentActivity.
+  ///
+  /// In en, this message translates to:
+  /// **'Recent activity'**
+  String get mattersRecentActivity;
+
   /// No description provided for @mattersRecommendedNextSteps.
   ///
   /// In en, this message translates to:
@@ -29703,7 +30357,7 @@ abstract class AppLocalizations {
   /// No description provided for @mattersVerifiedResearchTypicalTime.
   ///
   /// In en, this message translates to:
-  /// **'Verified Research — usually 2–5 minutes'**
+  /// **'Verified Research — usually under 60 seconds'**
   String get mattersVerifiedResearchTypicalTime;
 
   /// No description provided for @mattersVisibleToPortalClients.
@@ -30060,6 +30714,12 @@ abstract class AppLocalizations {
   /// **'Consent-aware portal:'**
   String get portalConsentawarePortal;
 
+  /// No description provided for @portalContinueToPortal.
+  ///
+  /// In en, this message translates to:
+  /// **'Continue to portal'**
+  String get portalContinueToPortal;
+
   /// No description provided for @portalCurrentStageAndStatusForYourMatters.
   ///
   /// In en, this message translates to:
@@ -30155,6 +30815,24 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Instructions'**
   String get portalInstructions;
+
+  /// No description provided for @portalInviteLinkRequiredDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Open the invitation link shared by your law firm to access the client portal.'**
+  String get portalInviteLinkRequiredDescription;
+
+  /// No description provided for @portalInviteLinkRequiredHelp.
+  ///
+  /// In en, this message translates to:
+  /// **'Ask your law firm for a new invitation if your link is missing or has expired.'**
+  String get portalInviteLinkRequiredHelp;
+
+  /// No description provided for @portalInviteLinkSignInDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Continue using your invitation to access the information shared with you.'**
+  String get portalInviteLinkSignInDescription;
 
   /// No description provided for @portalInvoices.
   ///
@@ -30804,6 +31482,12 @@ abstract class AppLocalizations {
   /// **'Cancel'**
   String get settingsCancel;
 
+  /// No description provided for @settingsChangeLogo.
+  ///
+  /// In en, this message translates to:
+  /// **'Change logo'**
+  String get settingsChangeLogo;
+
   /// No description provided for @settingsChangeRegion.
   ///
   /// In en, this message translates to:
@@ -31374,6 +32058,18 @@ abstract class AppLocalizations {
   /// **'Firm data & training consent'**
   String get settingsFirmDataTrainingConsent;
 
+  /// No description provided for @settingsFirmLogo.
+  ///
+  /// In en, this message translates to:
+  /// **'Firm logo'**
+  String get settingsFirmLogo;
+
+  /// No description provided for @settingsFirmLogoDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Add the logo used for your firm branding.'**
+  String get settingsFirmLogoDescription;
+
   /// No description provided for @settingsFirmName.
   ///
   /// In en, this message translates to:
@@ -31583,6 +32279,42 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Location'**
   String get settingsLocationLabel;
+
+  /// No description provided for @settingsLogoHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose an image under 2 MB.'**
+  String get settingsLogoHint;
+
+  /// No description provided for @settingsLogoOnExports.
+  ///
+  /// In en, this message translates to:
+  /// **'Logo on exports'**
+  String get settingsLogoOnExports;
+
+  /// No description provided for @settingsLogoOnExportsDisabled.
+  ///
+  /// In en, this message translates to:
+  /// **'Disabled'**
+  String get settingsLogoOnExportsDisabled;
+
+  /// No description provided for @settingsLogoOnExportsEnabled.
+  ///
+  /// In en, this message translates to:
+  /// **'Enabled'**
+  String get settingsLogoOnExportsEnabled;
+
+  /// No description provided for @settingsLogoUploadError.
+  ///
+  /// In en, this message translates to:
+  /// **'The logo could not be uploaded. Please try again.'**
+  String get settingsLogoUploadError;
+
+  /// No description provided for @settingsLogoUploading.
+  ///
+  /// In en, this message translates to:
+  /// **'Uploading logo…'**
+  String get settingsLogoUploading;
 
   /// No description provided for @settingsManageAiConsent.
   ///
@@ -32073,6 +32805,12 @@ abstract class AppLocalizations {
   /// **'Region updated'**
   String get settingsRegionUpdated;
 
+  /// No description provided for @settingsRemoveLogo.
+  ///
+  /// In en, this message translates to:
+  /// **'Remove logo'**
+  String get settingsRemoveLogo;
+
   /// No description provided for @settingsRequestExport.
   ///
   /// In en, this message translates to:
@@ -32204,6 +32942,18 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Manage your profile, AI usage, privacy, and preferences.'**
   String get settingsSettingsDescription;
+
+  /// No description provided for @settingsShowLogoOnExports.
+  ///
+  /// In en, this message translates to:
+  /// **'Show logo on exports'**
+  String get settingsShowLogoOnExports;
+
+  /// No description provided for @settingsShowLogoOnExportsDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Include the firm logo on supported exported documents.'**
+  String get settingsShowLogoOnExportsDescription;
 
   /// No description provided for @settingsSingleSignonSaml.
   ///
@@ -32354,6 +33104,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Update your firm information and branding'**
   String get settingsUpdateYourFirmInformationAndBranding;
+
+  /// No description provided for @settingsUploadLogo.
+  ///
+  /// In en, this message translates to:
+  /// **'Upload logo'**
+  String get settingsUploadLogo;
 
   /// No description provided for @settingsUsageLedger.
   ///

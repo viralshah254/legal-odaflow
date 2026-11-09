@@ -30,6 +30,7 @@ import { ThemeToggle } from "@/components/theme-toggle"
 import { Palette } from "lucide-react"
 
 export default function SettingsPage() {
+  const tRelease = useTranslations("common.release")
   const toFixed = useTranslations("settings")
   const tConsumer = useTranslations("consumer")
   const tCopilot = useTranslations("copilot")
@@ -174,7 +175,7 @@ export default function SettingsPage() {
                     <Button size="sm" onClick={() => setDraftStyleOpen(true)}>
                       Set up my style
                     </Button>
-                    <span className="text-xs text-muted-foreground">Charged by actual usage</span>
+                    <span className="text-xs text-muted-foreground">{tRelease("usageBased")}</span>
                   </div>
                 </>
               )}

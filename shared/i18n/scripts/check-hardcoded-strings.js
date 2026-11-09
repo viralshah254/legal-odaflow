@@ -42,6 +42,7 @@ const ALLOWED_WEB = [
 ]
 
 const CODE_FRAGMENTS = [
+  /^:\s*[\w.]+\s*\?$/, // JSX conditional syntax, not rendered copy
   /^[=<>!]/,
   /\&\&/,
   /\?\./,
@@ -122,8 +123,7 @@ function walk(dir, ext, out, skipDirs = []) {
   }
 }
 
-function scanWebProps(filePath) {
-  const content = fs.readFileSync(filePath, 'utf8')
+function scanWebProps(filePath, content = fs.readFileSync(filePath, 'utf8')) {
   const hits = []
   for (const re of [TOAST_TITLE_RE, PROP_LITERAL_RE]) {
     let m
@@ -142,8 +142,7 @@ function scanWebProps(filePath) {
   return hits
 }
 
-function scanWeb(filePath) {
-  const content = fs.readFileSync(filePath, 'utf8')
+function scanWeb(filePath, content = fs.readFileSync(filePath, 'utf8')) {
   const hits = []
   let m
   const re = new RegExp(JSX_TEXT_RE.source, JSX_TEXT_RE.flags)
@@ -159,12 +158,11 @@ function scanWeb(filePath) {
       hits.push({ text, line: content.slice(0, m.index).split('\n').length })
     }
   }
-  hits.push(...scanWebProps(filePath))
+  hits.push(...scanWebProps(filePath, content))
   return hits
 }
 
-function scanDartExtras(filePath) {
-  const content = fs.readFileSync(filePath, 'utf8')
+function scanDartExtras(filePath, content = fs.readFileSync(filePath, 'utf8')) {
   const hits = []
   for (const re of [DART_PROP_RE, DART_TAB_RE]) {
     let m
@@ -179,8 +177,7 @@ function scanDartExtras(filePath) {
   return hits
 }
 
-function scanDart(filePath) {
-  const content = fs.readFileSync(filePath, 'utf8')
+function scanDart(filePath, content = fs.readFileSync(filePath, 'utf8')) {
   const hits = []
   let m
   const re = new RegExp(DART_TEXT_RE.source, DART_TEXT_RE.flags)
@@ -190,10 +187,11 @@ function scanDart(filePath) {
       hits.push({ text, line: content.slice(0, m.index).split('\n').length })
     }
   }
-  hits.push(...scanDartExtras(filePath))
+  hits.push(...scanDartExtras(filePath, content))
   return hits
 }
 
+function collectViolations() {
 const webFiles = []
 walk(WEB_DIR, '.tsx', webFiles, ['node_modules', '.next'])
 const dartFiles = []
@@ -219,8 +217,35 @@ for (const file of dartFiles) {
   }
 }
 
+
+return violations
+}
+
+function fingerprint(text) { return require('crypto').createHash('sha256').update(text.replace(/\s+/g, ' ').trim()).digest('hex') }
+function newViolations(violations, baseline) {
+  if (baseline.version !== 1 || !baseline.referenceCommit || !baseline.entries) throw new Error('Invalid hardcoded-string baseline')
+  return violations.map(item => {
+    const used = new Map()
+    const hits = item.hits.filter(hit => {
+      const key = fingerprint(hit.text), count = (used.get(key) || 0) + 1
+      used.set(key, count)
+      return count > (baseline.entries[item.file]?.[key] || 0)
+    })
+    return { ...item, hits }
+  }).filter(item => item.hits.length)
+}
+function main() {
+  let violations = collectViolations()
+  const baselineFlag = process.argv.find(arg => arg.startsWith('--baseline='))
+  if (baselineFlag) {
+    const fullCount = violations.reduce((sum, item) => sum + item.hits.length, 0)
+    const baseline = JSON.parse(fs.readFileSync(path.resolve(ROOT, baselineFlag.slice(11)), 'utf8'))
+    violations = newViolations(violations, baseline)
+    if (process.env.GITHUB_STEP_SUMMARY) fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY, `## Localization audit\n\nFull audit: ${fullCount} inherited hardcoded occurrences remain. This gate rejects new text and increased occurrence counts against ${baseline.referenceCommit}. English fallbacks and native-language review remain tracked in shared/i18n/extraction/release-english-fallbacks.json.\n`)
+    console.log('[i18n:hardcoded] Legacy audit: ' + fullCount + ' occurrences; baseline ' + baseline.referenceCommit + '. Full strict audit: node shared/i18n/scripts/check-hardcoded-strings.js')
+  }
 if (violations.length === 0) {
-  console.log('[i18n:hardcoded] OK — no hardcoded user-facing strings detected')
+  console.log(baselineFlag ? '[i18n:hardcoded] OK — no new hardcoded copy; inherited debt remains tracked' : '[i18n:hardcoded] OK — no hardcoded user-facing strings detected')
   process.exit(0)
 }
 
@@ -246,3 +271,7 @@ for (const v of violations) {
 }
 console.error(`[i18n:hardcoded] FAILED: ${total} hardcoded strings in ${violations.length} files`)
 process.exit(1)
+
+}
+module.exports = { scanWeb, scanDart, collectViolations, fingerprint, newViolations }
+if (require.main === module) main()

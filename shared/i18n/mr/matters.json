@@ -661,5 +661,14 @@
   "checkingConflict": "विवाद तपासत आहे...",
   "runConflictCheck": "संघर्ष तपासणी चालवा",
   "researchPromptTitle": "संशोधन प्रश्न",
-  "premiumModelResearchHint": "प्रीमियम मॉडेल्सना थोडा जास्त वेळ लागू शकतो."
+  "premiumModelResearchHint": "प्रीमियम मॉडेल्सना थोडा जास्त वेळ लागू शकतो.",
+  "guidanceResearchTypicalTime": "AI guidance only — usually under 15 seconds",
+  "answered": "Answered",
+  "ai_progress_reading": "Reading the matter context",
+  "ai_progress_retrieving": "Retrieving relevant sources",
+  "ai_progress_analysing": "Analysing the available information",
+  "ai_progress_generating": "Preparing the response",
+  "credits_used": "{count, plural, one {# credit used} other {# credits used}}",
+  "recent_activity": "Recent activity",
+  "matter_type": "Matter type"
 }

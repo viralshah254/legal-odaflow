@@ -661,5 +661,14 @@
   "checkingConflict": "முரண்பாடுகளைச் சரிபார்க்கிறது…",
   "runConflictCheck": "மோதல் சரிபார்ப்பை இயக்கவும்",
   "researchPromptTitle": "ஆராய்ச்சி கேள்வி",
-  "premiumModelResearchHint": "பிரீமியம் மாடல்கள் சிறிது நேரம் ஆகலாம்."
+  "premiumModelResearchHint": "பிரீமியம் மாடல்கள் சிறிது நேரம் ஆகலாம்.",
+  "guidanceResearchTypicalTime": "AI guidance only — usually under 15 seconds",
+  "answered": "Answered",
+  "ai_progress_reading": "Reading the matter context",
+  "ai_progress_retrieving": "Retrieving relevant sources",
+  "ai_progress_analysing": "Analysing the available information",
+  "ai_progress_generating": "Preparing the response",
+  "credits_used": "{count, plural, one {# credit used} other {# credits used}}",
+  "recent_activity": "Recent activity",
+  "matter_type": "Matter type"
 }

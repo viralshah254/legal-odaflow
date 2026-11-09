@@ -147,7 +147,7 @@
   "no_ethical_walls_configured_yet": "ଏପର୍ଯ୍ୟନ୍ତ କ no ଣସି ନ ical ତିକ କାନ୍ଥ ବିନ୍ୟାସ ହୋଇନାହିଁ |",
   "no_ledger_entries_yet": "ଏପର୍ଯ୍ୟନ୍ତ କିଛି ଲିଜର୍ ଏଣ୍ଟ୍ରି ନାହିଁ |",
   "no_sync_attempts_recorded_yet": "ଏପର୍ଯ୍ୟନ୍ତ କ syn ଣସି ସିଙ୍କ୍ ଚେଷ୍ଟା ରେକର୍ଡ ହୋଇନାହିଁ |",
-  "no_training_on_firm_data_ai_opt-out": "ଦୃ firm ତଥ୍ୟ ଉପରେ କ training ଣସି ତାଲିମ ନାହିଁ (AI ଅପ୍ଟ-ଆଉଟ୍)",
+  "no_training_on_firm_data_ai_opt-out": "ଦୃ firm ତଥ୍ୟ ଉପରେ କୌଣସି ତାଲିମ ନାହିଁ (AI ଅପ୍ଟ-ଆଉଟ୍)",
   "no_training_without_consent": "ସମ୍ମତି ବିନା କିଛି ପ୍ରଶିକ୍ଷଣ |",
   "none": "କିଛି ନୁହେଁ |",
   "note": "ଟିପନ୍ତୁ:",
@@ -303,5 +303,18 @@
   "deleteAccountSubmitting": "ବିଲୋପ…",
   "deleteAccountSubmit": "ମୋ ଖାତା ବିଲୋପ କରନ୍ତୁ |",
   "privacyRightToErasure": "ବିଲୋପ କରିବାର ଅଧିକାର |",
-  "privacyRightToErasureBody": "ଆପଣଙ୍କର ଖାତା ଏବଂ ବ୍ୟକ୍ତିଗତ ତଥ୍ୟର ସ୍ଥାୟୀ ବିଲୋପ ପାଇଁ ଅନୁରୋଧ |"
+  "privacyRightToErasureBody": "ଆପଣଙ୍କର ଖାତା ଏବଂ ବ୍ୟକ୍ତିଗତ ତଥ୍ୟର ସ୍ଥାୟୀ ବିଲୋପ ପାଇଁ ଅନୁରୋଧ |",
+  "logo_on_exports": "Logo on exports",
+  "logo_on_exports_enabled": "Enabled",
+  "logo_on_exports_disabled": "Disabled",
+  "logo_upload_error": "The logo could not be uploaded. Please try again.",
+  "firm_logo": "Firm logo",
+  "firm_logo_description": "Add the logo used for your firm branding.",
+  "logo_uploading": "Uploading logo…",
+  "change_logo": "Change logo",
+  "upload_logo": "Upload logo",
+  "remove_logo": "Remove logo",
+  "logo_hint": "Choose an image under 2 MB.",
+  "show_logo_on_exports": "Show logo on exports",
+  "show_logo_on_exports_description": "Include the firm logo on supported exported documents."
 }

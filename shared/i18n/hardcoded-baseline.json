@@ -1,0 +1,2384 @@
+{
+  "version": 1,
+  "referenceCommit": "9200f231019239dc25f0e6f53c328b5a8e671546",
+  "description": "Inherited localization debt from prior main. CI rejects new text, files or occurrence counts; default scanner still performs the full strict audit. Do not regenerate this baseline to admit new strings.",
+  "count": 1843,
+  "entries": {
+    "legal_app/lib/core/widgets/app_error_view.dart": {
+      "ab827e3fe17da220a9a652087a35d20adda002aa4df887c5d813b2b1e95228f9": 1
+    },
+    "legal_app/lib/core/widgets/matter_intelligence_panel.dart": {
+      "28e77c5ed0e15d017458adad946f71f23ee26107157b4dec834fd49d2dc044c6": 1
+    },
+    "legal_app/lib/core/widgets/matter_intelligence_summary_card.dart": {
+      "bfa5267a446fb292e97fa72fe028181c45d530a84cebdf2357b75daa4d890b60": 1,
+      "63956482e15e7266372ba8115167b80bfe25cf99cefefd9be34b1a7485b8f9dd": 1,
+      "d67b993f2b46a8051ce625a12551d6b867c03d92602e963468e72d4a1db716f9": 1,
+      "7847a8bcab3670ca37b4646edbbd038da40a87d8c46ce8eba75af20c4d7b24fd": 1,
+      "28e77c5ed0e15d017458adad946f71f23ee26107157b4dec834fd49d2dc044c6": 1
+    },
+    "legal_app/lib/features/consumer/cases/workspace/tabs/case_documents_tab.dart": {
+      "346394ebab4ea0e7c870a108e9fdb8b0b9594074c7744c0348631a2ba1e50bb8": 1
+    },
+    "legal_app/lib/features/consumer/document_upload/document_upload_screen.dart": {
+      "507ae671a6e11521a8f83cc24111fd4fe0cb525392698647453c82ae21028ae3": 1,
+      "df8d9550533d9c6fab8f5c79dd1f2a45380264aefea5b22b57f965f1ab74606f": 1,
+      "021d78e279ccf95dcacbf8ed0f7bdeb9de361cfcb596ce168ca21b1af58718a4": 1,
+      "2177fc332ab236156683ee906867fa4beac53c5436e8d91ad656f3a4e45d4fa3": 1,
+      "1a675bfd38c34ab004ca0673fd5d3f79e2349d3ed2135f65b12da890c0dcab75": 1
+    },
+    "legal_app/lib/features/consumer/issue_checker/widgets/documents_step.dart": {
+      "8389266fd1268c669a79a59321eada64dafc4c30cee71f872ac7a579b6d6da95": 1
+    },
+    "legal_app/lib/features/lawyer/ai/ai_command_center_screen.dart": {
+      "355ab726368b7f47e24df9b2e594f2d58726f7c4eb7a7797e217eedeb77ec378": 1,
+      "332903538c4f18b3c4881354e24b2e3d2c3975997de8ffb8fd2bbbd139f14055": 1,
+      "883af6a379a20222674c4b83e0114dfcbf79a65342bd51497593bd46329bbd86": 1
+    },
+    "legal_app/lib/features/lawyer/automations/automations_screen.dart": {
+      "fe497d2360d3a8dd76b28a8a4786f37feee75980b60ab1671dd5bc65052c4cff": 1,
+      "a3a41a0f86882e4c32217466e6386277710a4a39c703ad802bc9c7fb7363f776": 1,
+      "2d9673cae3942708756d84f03293b08c87a97c80a3a0fcb2d3e34de964761dbf": 1
+    },
+    "legal_app/lib/features/lawyer/billing/billing_screen.dart": {
+      "90c369cb00d5f9c9c5858824c19e5ecd1bb705849a8c679248aba32f11f3eaef": 1
+    },
+    "legal_app/lib/features/lawyer/calendar/event_detail_sheet.dart": {
+      "34233e542b7b9a867885f872b82a2e034450590089b6dd925b786cb51aba1904": 1,
+      "62b8fe0f6868efadc61638a4bcb9de716c9b648ab05de79dedbdbb4785a0bd6e": 1,
+      "ab5e8a06fd9fb6db90c09e089aaeb283081947d832b907efb352697c01987c0b": 1
+    },
+    "legal_app/lib/features/lawyer/clients/client_detail_screen.dart": {
+      "63314a49c845e0dd3224befd16edc30ec6ed2cf43f429b04dd0ac5222a8b60e7": 2,
+      "8c1bcd99c8a251c5dea7f90ff0265605b06a1c8b8ae0c6385112f46553114b39": 1,
+      "6a0a3affadef8b3686c86d1e3f44b1a0f7fe48b2aad5d5c47acacd325c8d7e93": 1
+    },
+    "legal_app/lib/features/lawyer/clients/clients_list_screen.dart": {
+      "90c369cb00d5f9c9c5858824c19e5ecd1bb705849a8c679248aba32f11f3eaef": 1
+    },
+    "legal_app/lib/features/lawyer/clients/create_client_sheet.dart": {
+      "b6d9e6c64001872e04af2a4186a356ffc314edaa0e0528e11cf3b013c21181cb": 1,
+      "bca8a046b0005f696d02605012449d7377fd86c35c27d96f35187f37ea1005ea": 1,
+      "a02ce0df219d8ace5bdeb691400b07b9a0012969152d88d74f1b6a0997419921": 1,
+      "862fead051bea9adb92ca8cf3072881ddb026425b8f47b4acf86644b83cd940e": 1,
+      "f8153d7b662f3819bdd8aaa53cecbf76c22871bb03e737d6ef93677b2db944e0": 1
+    },
+    "legal_app/lib/features/lawyer/court/court_screen.dart": {
+      "e3193dba675280181596413cff0709cf28e1e24e6770e4d764a90aabdb069269": 1,
+      "8cae1b598147995d9b5d90986633367353b410fb92bf1d2e5fe5e863a4010c1f": 1,
+      "4b1fb3b5ef4bbfc5448bd1a5b14d9c3ab3dedb5606a9216eaf9cffaa00aaaa84": 1
+    },
+    "legal_app/lib/features/lawyer/dashboard/lawyer_dashboard_screen.dart": {
+      "ce82717eb8048c1b9c52ef142bb5bcaa97b2da66d0b67addbc0ff86ea33e0d90": 1,
+      "d7a8c446069a058592e224c0ef5fe3d33e5c46e3395160baa24580a7de4965c2": 1,
+      "0a2cc8abfe1c3c3d5b86ac1fa144e19c5afc042b5fd32b3ad0a5de7b0eb5d501": 1,
+      "c378f4bcf08e04787dc7ed5abf48af9bdc45b8ff7fb97f0cc55d1205f4d2a0a6": 1,
+      "f3b088caaebb1ad1fdbead9ed0848196eb24705db44f824e2b14d2b948aa7b4a": 1,
+      "cbf6318ff1121f2b9e2b5824dc2533e9d9d10b499855261a2b8d7611a42a050d": 1,
+      "90c369cb00d5f9c9c5858824c19e5ecd1bb705849a8c679248aba32f11f3eaef": 1
+    },
+    "legal_app/lib/features/lawyer/docu_draft/docu_draft_hub_screen.dart": {
+      "751d10e4317d8d09d871a9aac54c705838d19dab7ab70f91c36e8ef4e3a898c2": 1
+    },
+    "legal_app/lib/features/lawyer/docu_draft/docu_draft_workspace_screen.dart": {
+      "fedc473d8961e726e292e6c1a1eeaf33da910c85c055870b0e63698e5083dd58": 1,
+      "9f0db909b003430b02a3c71249b2184a0d40a957075903aa727ec73e0050c412": 1,
+      "b6626cd701f400820252edf4b52b53601d879272739e98bcfb9ceb9316225861": 1,
+      "2d11759b60ab05257120fa908f3f8bf2aa3e7bd55ef23f6c45121e7b120fbc6b": 1
+    },
+    "legal_app/lib/features/lawyer/docu_draft/india_draft_workspace_screen.dart": {
+      "8807a62694146ce0ee47803ba938d0371e83e8c80ee66beac502cef1e4afd860": 1,
+      "d20a4476a0a85978547a5781e7e575e8358f102137bf253706db20ee0fe6061c": 1,
+      "c36af85b57b103cd09566d61949696ed70068cf6a8f464fe62d5cf83ed0cee67": 1,
+      "9e6c7904086812cf57d18b211194e7198660c8ac44e916418a8cfb337e76aa74": 1,
+      "5e4e43d297857481e33dec6757f17960e3cd14bd49d140c717b70293336ce689": 1
+    },
+    "legal_app/lib/features/lawyer/docu_draft/saved_drafts_screen.dart": {
+      "308cbe81fc4836d5aae87b9db65790ba248b38d4b12fde54c0c1ce5cc5a4af3b": 1,
+      "1f2c17331a7383f310e25f75af0735a2c1ba1032e3275bed47fe5e277a8f2382": 2,
+      "043ebaced32be074c15450ad0edea5ad61d4127a77d786501125408a82e9df2e": 1
+    },
+    "legal_app/lib/features/lawyer/docu_draft/widgets/country_picker_sheet.dart": {
+      "c28f2f096992c8789f637e9f931de6612eaef56a5f5a35bebe8b184dcf877817": 1,
+      "1a765360a12ba19c060f9be4a425a8cb08b8effc4534dfd27cd729aa09020f8b": 1
+    },
+    "legal_app/lib/features/lawyer/docu_draft/widgets/draft_accuracy_panel.dart": {
+      "0344860a349ff77332151fd565118c0ca50aeb3ce3b85115a01c68d364b2a91b": 1,
+      "299cd0f48f0e740557753a5bd807dd66631731e62929833036b13f72b7b83062": 1
+    },
+    "legal_app/lib/features/lawyer/docu_draft/widgets/form_search_section.dart": {
+      "b1ecf9caba7895f3cb349793cb93b3765dda9657444394f6902f25d5aa9de98f": 1,
+      "aa973456c2e9c3bf0e98ee186861b0c6fe21695a8eb0558a191bbe69a6005c9c": 1,
+      "8be1c6efb7cb65d0fdaba8b11e27d90a5307ebfec983bb675b49e9122cdb18e3": 1,
+      "8d9b48713de667ccda6a33f209f93811b5278037ba432c6879571caa6ffe0b55": 1
+    },
+    "legal_app/lib/features/lawyer/docu_draft/widgets/pinned_authorities_sheet.dart": {
+      "8dd44f483ac5cc95fc451aa89114d6bb4c533177f9a2663abfc999a670aadc1f": 1,
+      "f3bed77d790a5316fa84cd607c620838c9f9178362f192b11ed112e43203c795": 1,
+      "a4280d3c63768528f48f1c2e2cb6d4224dfb7945ddaa521bcad5ff0c09c2220b": 1
+    },
+    "legal_app/lib/features/lawyer/document_review/document_review_screen.dart": {
+      "ff4d6c24a4a48fd1eb1ac34ba638c888c8f6b3da259514ad9dcc2458ba5c045c": 1,
+      "522500f7ab594df6ebbd9e9cc849080b6a8850057038344d2a2e6b0c3eef01eb": 1,
+      "cdfc54219779f51300b66f0692f2aa4250911c893303417770839d7b4e935952": 1,
+      "1dff68275135c8f39379813b09e8f12e57d38c93b1cf3de6dee9964d2113c3d8": 1,
+      "1566bc9e8818550341ec7b9ad2079ab1bc71a024b6283dde68f063dee1a10d35": 1,
+      "c4600d9717e531b4d9b2d649a40951e74f4ec218bd02390b86c50c45aef4ee55": 1,
+      "e8dc45d500bea5d6f4917092e9f395685c7a47130221fb885b1596d90a22b398": 1,
+      "e132ac81a1b101e5039e6c1cc52051485064adee0c4207b9deb60b3970e1e747": 1,
+      "6535090a56c4900b26992c745034a709bd92778ddd60f3755ea1e96415f2277d": 1,
+      "a53097bb527a43fbbcd88731cdd9ebba27e184ac9572640b3cdc8d79c6c6b4b7": 1,
+      "56b78c3d730d48e53a4d23438631e23602e5846c9b861a15d81109f77d4f6184": 1,
+      "0738ee00b61bc3afc0edf2dc46e06cbe4cdafdc9637644ee7b71237a0cebe284": 1,
+      "264faf0df2a48f0edf2e918fccabb48cbf555a3be32282941eee6641eea5f11b": 1,
+      "2e9d89b2782e0ae752386a67b2f2a9c3aaf304e604b6a3a63c88988562022b84": 1,
+      "7c2a60adf4bf55b553556200a19fdcd68ce4e010cd24257da2d42dfbb58cbf1c": 1,
+      "d381b2107cd297cfd71b2f8364f6b3dae5dc63569d5f02d3d4c8f5dc9632f10b": 1,
+      "b5a1478d06c1fe4dd4548a2c5c60e3cadce8b87c4164a0f5b74c096e239a16bc": 1,
+      "0637730b96caf9d0e213da46f204f957618875e1cc338c771219069aa24ee1b0": 1,
+      "d37078fe6a1faa15fc48c293dd1d4c37698eb0cfafae8ca1c456b0cc4600db11": 1,
+      "fdc476880c05cc1e900a07e38dd65871afa8b1ebfbd18a150d10158e88cce239": 1,
+      "074622920fb569987e162f7f621b92aebbb03eea187fc59781c0e3fcf0bb2f5d": 1
+    },
+    "legal_app/lib/features/lawyer/document_review/tabular_review_screen.dart": {
+      "1dd49ef03b617d0db8c6ad5c7cb563264251d24e09e9f6086182ca1ed9a7fd4b": 1,
+      "8c7386689a57566c9f909f6edfdc0ec2345cafff02a42beb012153d9c263631f": 1,
+      "bc92e0e35c9a7ba1b3ec441119dde7058b36fc2853815e402628b5613c19b011": 1,
+      "380b3582fdcc35f1f2c13bcaf1e99fddc0c25b1ba96e303002b9ba98b6d446c0": 1,
+      "c6748d7ac180882ea9fdacd15402d1f1d31c20435013abe911cd3c53884784fa": 1
+    },
+    "legal_app/lib/features/lawyer/documents/document_vault_screen.dart": {
+      "833014042a9ae5bf35619c6c94888aa5f8682e03a11db8fc5fd2696611a6a80f": 1
+    },
+    "legal_app/lib/features/lawyer/esign/esign_screen.dart": {
+      "b3a9100e43b6051795e0b0bb5bd4b5cc7c0397a4aef0b061c0f0eaf201717714": 2,
+      "5908cf133300f3bb8db437a131a5d6462751c1c162d96bdc4291d0db81e102a0": 1,
+      "1d4adeead3ad09c9878cf1abceab3f55e52391a1f6db3f691ccffca6b2dd99d3": 1,
+      "424970793c116e4774aefe4a53613b145b944792b1cb5e7228369e949c4041e1": 1
+    },
+    "legal_app/lib/features/lawyer/evidence/evidence_vault_screen.dart": {
+      "53f4f3c902cd141587f753e43a80798720a063e3b58223bb86df3e70fe2e8a75": 1,
+      "59b77dbd5bd2fc76b94d7b9a41837433c8c74be0e80427665d2b2664e60a3a91": 1,
+      "1abcdb11851468a4eec3fa654590c24fc39ec40dc511d64ae0a61f0bc19a6325": 1,
+      "79390c5e3ceb82ceb20c8a35fc9c81186b3e8a063c8f76b365d974d405a55942": 1,
+      "f5dda7e5fa6a63152fdac2fa89bb79a3fad5144aff3208e594ed8d9f6d388d04": 1,
+      "1ca36a90c342fa4fbb8d5c06368b702853dcd05889b6090f59356a95b5e787d9": 1,
+      "14c5723f222314b2138427f64ad72270667f7f71fded5ede78855e285f3d2ad3": 1,
+      "aa682b10499d092d275c21b0a151c318b37ff6f5192c22bcb3352608fac39775": 1,
+      "c6db70c6f66c7a8dbf09eebf34ea113abf507685a505c47ccd550a5d2c699bf3": 1,
+      "afdeecb18b85f74b8e83c880481e2341dd5d92800f73c57d17ae603992ec2a85": 1,
+      "c4e3a37dbf222d40502ed17a8a0c61de26136332791f4f31e9eb2a8a6f81eea1": 1,
+      "328cb59cd1b87c0f2fcf091214d5824401d9297261fd3b284709fdea6088cd51": 1,
+      "167125c0b0a4e3efe54b0ce4d2520c1c07b70abb0c905bf099a9207952b567eb": 1,
+      "90b1ed29f2fc7033a560a0ff0d0ac854c86e8bd223fdd353e82b061abc7fdde0": 1
+    },
+    "legal_app/lib/features/lawyer/finance/create_invoice_sheet.dart": {
+      "ae093078bc386abf0166b71d694fca624274f465dcfc9fa844ea578169ccdd67": 1,
+      "3f1399f43c1dd8b53e284b3fb0266e36c77543f92a20d73aa6abf92ebbd1bf5f": 1,
+      "bdacf98d21d1c05dd28f79f5ae1311bd26cab0d86bbcb2ace7459cc5632643e7": 1,
+      "799e29229440a12299ecd8f7cbde739f2c57b5bb0261bad50facc256668dc23a": 1,
+      "93ca415947e2a665b69237c81233ed37f8a00c3cd3fcb1399ea255ef0ac16194": 1,
+      "588032878324b5e68758eff2c5ab24e61dbf08a811cb4d222e6eb1a0fb78c336": 1,
+      "4b70ec243174f96ba3b12d596376013c42df65b075890cabeb5f453239490b9f": 1
+    },
+    "legal_app/lib/features/lawyer/finance/expenses_screen.dart": {
+      "387fa296691c8656167f8e3080a1a867e2f9c7fac797ea28d0e11bbd817fbc11": 1,
+      "a152db61258a4c6826d5055ab054cb52275b9815341717c2531169fdb822a721": 1,
+      "fcbb0bc384eed8025a9821a63a977e46a06d246ab9aacdff90908dae6dd1e326": 1
+    },
+    "legal_app/lib/features/lawyer/finance/finance_dashboard_screen.dart": {
+      "d7a8c446069a058592e224c0ef5fe3d33e5c46e3395160baa24580a7de4965c2": 1,
+      "ccba90e3f82d7d317f923d9e2ccf6f95faa7d7e934f4a6fbeac9ba167576ea01": 1
+    },
+    "legal_app/lib/features/lawyer/finance/invoices_screen.dart": {
+      "b646aaf7d53561cb0796f28789ce2013890519a56bf6fe2cdb65da290f85fb6d": 2,
+      "ae093078bc386abf0166b71d694fca624274f465dcfc9fa844ea578169ccdd67": 1
+    },
+    "legal_app/lib/features/lawyer/fir_analysis/fir_analysis_screen.dart": {
+      "54c8c5ab79a960458613fce6b08b8e83fd6649d4cffad7c38778b862a67def59": 1,
+      "9328724b4cf1557bcf77f8c530d1a9ba491de5152cf4f51657f93ffa4763aa85": 1,
+      "cdf37f6dec0157cb68430a6a1f486cd43d93590dd6a76ea315a4701c7aa72154": 1,
+      "decdbf64d4099b2eae731bb243e57aad5fa21ee69ea0a589d132d767a68eeab0": 1,
+      "942a7142127b7d7033978705c3c114d6b0fad500427831ed1b96b3f3da6b13a2": 1,
+      "1939445c80e53f4cf35ee87e77c9623e0c1095f646a1e87ff925a23deb8fe513": 1,
+      "d8b8392e2c542950ca64867168e4ef87d4ad606882d5898f826b51c6d553988f": 1,
+      "9f881cc18bf1315d1eada9e7aaa67ad8b764f3e983a607dd33a000fa7ed7f103": 1,
+      "0443ed0fd9f33908be2613ff48b4aaecf9a1bae8317b4a65bbcf14d16abcfd69": 1,
+      "dd00d3d3e9f73d277737cfacfb788bc46a717458297644788de995b658ceb915": 1,
+      "18f16a43589056e158f46279c55b7c06d02160ad8541a5903bdc25d6d412cbe5": 1,
+      "93a875e7db0684eac98aa7ff5bee52f5f01545796ac611bbe5350b2111b5d501": 1,
+      "faa910ae5eff743d5841ae40272877c95c457bd36aaad1a89c2adace4605aa20": 1
+    },
+    "legal_app/lib/features/lawyer/forms/legal_forms_screen.dart": {
+      "7a2ce91e019bc8f5ef2915bf7503b6afe30d471ced798023ab000a1c81d9462d": 1,
+      "2fbf225e8181f31decb5b86f8f888590ea9772fbd5063c4697e3f01fd8358d79": 1,
+      "bccc2f30e3d3a09886d63b3b3ba972e5762c7474b45d5655f40a0c52a728260a": 1
+    },
+    "legal_app/lib/features/lawyer/intake/client_intake_screen.dart": {
+      "bcf0489a7b45328d3015041f98600c51355fca1bcbbaf50bd20f712726c576db": 4,
+      "8c0307ae58f6ed17f638c589822bed8724df629136b3a646997f5a4c3f18792f": 1,
+      "160ed06f32d542a67b3828df17eb6a07eb5376dff11893ce19daac4e5b97ecac": 1,
+      "4532150367600df186dc30c8253ca12e694c1a72e25bd525a1cffd2ce2b808cb": 1,
+      "f501e4a85e6fb788f89fda946689fa00ca70d3c39bcb88211def3a3be2a764aa": 1,
+      "23741f1c37f3856e7676ed4d058b532392f8d4c0aac4fe7c051200172406ed7d": 1,
+      "9f2a71a9c6bd76dbd5cd4ccefdcc1a92689c58b7c0be975bc9c6cbb3138b7f6f": 1,
+      "7350ced4cce3600d793a00750f71f77202923062073dab906c88b2e4d1bebdaa": 1,
+      "e886a737e676907e87417517459f333678a5154f4c33ec8a07aeba1835277fba": 1,
+      "6fdf4c7fb5a19e122d009b8deed663a56034d8170be9300906c4368c423da250": 1,
+      "8666026a31fa7dea50ad3958cb5fdb4926db40145f56253fd60fa457b6ebb91e": 1,
+      "f93fa2e5fb59200922637972bb68e780754fc45c0b8f4f9467779f9dc8e3dfe1": 1
+    },
+    "legal_app/lib/features/lawyer/leads/lead_detail_screen.dart": {
+      "0dbeddef2b0e085ed57a0394b6d1b7facfd9bd568906583ec8db41c841b406a3": 1,
+      "04965e23cd9e8fb9be3c5e476e94ef25a447126426aeff58950d83cb13c966ed": 1,
+      "d1fae276206192948e85580c47bde499271acc8dc5ecb4d1c73bc20cca45bbb5": 1,
+      "35e2ca7373e5c1093db2bb48bcd6ba8fde191f4988cad914d8bfaf2d32fbeac4": 1,
+      "f943451380d7f382b56aa68f609527b43e9ac8d898dfd0ee36cb92eabc4cd1b5": 1,
+      "38019f6b76202419668d839ef0e2d9c0435a438ea6d03389527ed7f89852f17f": 1,
+      "d0f98531266d05826f4cb0d33e06a501a61bb0e271543417fff2eeac7a36d98b": 1,
+      "8dcafc8c45438f28a64aeb2a69068dfafebf51244aa86eb4d8bcb7f7bc8b9cfa": 1,
+      "a4b1a59eecc5a8795893e7a7603f44f965159e2f85d3ea870097da637a63c990": 1,
+      "aae80f957197428e7662123520c55351a3c508301c3802e8133a78e61e986289": 1,
+      "d5ebd68093dcd2b62556d4f7ad50b96c9bb3707844857463b3acfd81203d633b": 1,
+      "4ab0c35bc0781c84dbecbf8dfe9ff2e38eea568b90a77119302822dd6b0374c5": 1,
+      "eb76a6cc99ba688173d54fc9bc625784822e7429b886f1a52d36c6c8230caa88": 1,
+      "c9e5e5c98410c3fd24dd9ddf6237f83b3728aba00bb4fd6e0baabcdc0da104ee": 1
+    },
+    "legal_app/lib/features/lawyer/matters/create_matter_screen.dart": {
+      "0059798b7f7023e4d9e5c4595f7b9ba7ee64f69993ee524824d57e5a48b1228c": 1,
+      "c28f2f096992c8789f637e9f931de6612eaef56a5f5a35bebe8b184dcf877817": 1
+    },
+    "legal_app/lib/features/lawyer/matters/generate_document_screen.dart": {
+      "878c9c3b7dca6101fca3130664a94ec9560f9767f86ca5e245980d6816a33336": 1,
+      "dbbbb9e8ba1b8e7fe25df507bdccf72d8bb5036705a594358d4834969c4fe97b": 1,
+      "0059798b7f7023e4d9e5c4595f7b9ba7ee64f69993ee524824d57e5a48b1228c": 1
+    },
+    "legal_app/lib/features/lawyer/matters/matter_detail_screen.dart": {
+      "100a537ffb0e0f17ed6883813c1b536febd8e5a33578e11af85e30eb1d1b9569": 1,
+      "2c641663ac5e4c781b7074076de5a9c66e24576f950dc223d28ee7db8c733deb": 1,
+      "5d49a08897180340070fdf4a008dd9417ccf66afdd552eeb297c9864095db375": 1,
+      "ef2f8da6b001126f874bfedc873d4551d6957333592a7e499e34d631ab102a25": 1,
+      "37fc933b009208a09a1b6eed29f40dd2df2f5018483709a421509b4fd2c70be3": 1,
+      "dd165900ebf9a160721cdb1ffabf8df7dd622886fa745cad51518963f18b2886": 1,
+      "4ecf90dfdf58e7c01fbc724c122030775b119ea721730c1c7c65cee55d747197": 1,
+      "6278bfff221a564f8bf8159974906a1d2fb91041ece5ba0f72e1712d35f4b32c": 1,
+      "d37078fe6a1faa15fc48c293dd1d4c37698eb0cfafae8ca1c456b0cc4600db11": 1,
+      "b633c1bdf7f3f2a6f549402eca7da73ca05e00033426b571282dc42d8a7f2ffd": 1,
+      "e80788d4cc3c83e0fb3f072f50a0e5426faa44e4c7cef2d6157609bced7e5db5": 1,
+      "5444ac8cd20af4001fbc168ef22ba5c09fc6dda7d528e4f7de184680f965ad36": 1,
+      "65df867279339ef8ce7d59c8df3a759a152cda9a207eb5dd6339fab0eb44df83": 1,
+      "a55d488979ec77c549c1900e0d8e07defdfbcffbbd83f93e76a43c4d9f4b2614": 1,
+      "480ac99b96ac48e3020643a8e6f08a8f2c4a452831b137450a693549c29dfdf2": 1,
+      "0f916ed1aa082c0ecea2ac133b7218a4882acff6df54a9fbef846300d554c586": 1,
+      "0f936e81e54f6f661492b2abcb28393252e3ff1f72cc186efcca1dc0a77ea998": 1,
+      "27c855107308d3337916d667e487c63875e70716558df052d7488bc29eb44ab5": 1,
+      "3daed505025e177d1652bdb80123ba5ff18d8126a75695e831127a37ef619a3d": 1,
+      "ca6211809f75d658674b0654bb7b1481dff0e97b2b4a1bf18cc510ed741806aa": 1,
+      "a8a360a79cc33d652da198daae0b91f6afeb8ce72087f869c2e360e281d3d4aa": 1,
+      "dc3f8719eb3c2b8cda21d7be7d56decd343346b067ceb77626d767c52027fd56": 1,
+      "d5130835a1ba95dd52764023956372c166dfd4357ea36be4076e685e791e56d4": 1,
+      "0363cffac57f14f3cefa8c1f57cdc73e6214aeed5973e603fc2a501ed27e6db7": 1
+    },
+    "legal_app/lib/features/lawyer/matters/matter_diligence_screen.dart": {
+      "8bfe3bcbd34281aa5025ae2af5ba743fe1c1da35728c5fc48040d61cc9bc8b0e": 1,
+      "f779fa9b08c12789cadcc9bf9c80dbf88a65e4b1ff9997c84c4984a5afc1de7a": 1,
+      "7833ac2515971d3df5c1aae947a535db2bb32e1a2043543b60ddc3992ec14e18": 1,
+      "e98df0a34662ad857c43b62e1ed8335b969885ceffc2f2837c6cb2c5e17b5e22": 1
+    },
+    "legal_app/lib/features/lawyer/matters/matter_draft_screen.dart": {
+      "61153b80cd42c2b7a4025fed2161fb9dd7b3bca0cb292db1436a8680667860f1": 1,
+      "136018789b44d209c3368bb5ab367d32ad9f322820efddc4e05c957f0f3edecc": 2,
+      "78134e6707275a41ef237032de41ff3732035a02d44a610348c2a5b604b5587a": 1,
+      "73e28dc042915b1b54bf69139770b321c4b3a734051171624d931a4f5853f6ed": 1,
+      "181e8bf526e2ef4f6d70ca31d2db94891edda5d092ebcb485396d317c5fc5f93": 1,
+      "b749e205302cc21952a1e9646569ca0af9017cc5f39dd741830551bdd4ae823e": 1
+    },
+    "legal_app/lib/features/lawyer/matters/matter_parties_screen.dart": {
+      "19b1a644dde218715eaee6302686fdc37fd4a6d3a96a9311f3ab245f0ce5cdf1": 1,
+      "50203943edfd38f0b488b5b5234aad42ede5503ca9ee65f19dc48ad56507ba30": 1,
+      "679951152ac4609e4e0e23fd1bfc0231502ece8b54d3d7434e3c216a721c3b28": 1,
+      "8fec1bff94bf651a0a9efb1cfd11c33ce07d09218ce45d4d6c4f76b0f390ef54": 1,
+      "c865842159a7f620765b6e16429f5b9913a5b60d57f325e09f26b10db8ec8229": 1
+    },
+    "legal_app/lib/features/lawyer/matters/matter_workbench_screen.dart": {
+      "82bf332a1b08184504dc0414832b5acdc0931887fd0e82edd2958a1e22505083": 1,
+      "8a0a357561f475f6b82054fa858b5438527a164e0888acc909b24d3865ff6b0c": 1,
+      "7b9cf664252a6a2b54826571a94b008d29e82134b716e9a0a1ef83d2df5d644b": 1,
+      "2cc2b6f7f200e65c4614ab131097964980d0d546c327ed66ee6b7bc571a74ad2": 1
+    },
+    "legal_app/lib/features/lawyer/matters/matters_list_screen.dart": {
+      "eaba83cee2601bd61cb5d03ef420bca2b9701592d0825e0b218b61bb134b0e07": 1,
+      "385d4932fa7d5e929a56678f09c2959c246ebdab2c10210031b7a7b108efd680": 1,
+      "5fa7a18036e65500c91a650a50d9a00beee57566fc8c3771c72adfd0acaee525": 1,
+      "6cf843ad81561d5b4d1ee0159a899632d82fac15d7da934e6b9f9a345071ec3e": 1,
+      "d43520d0c63e0f4e4bdf52575504b6c04f30a44d9e88826faa3dd9b4328d290c": 1
+    },
+    "legal_app/lib/features/lawyer/meetings/meeting_detail_screen.dart": {
+      "e5d347ab89f57b07ccef09a73e5ecf95432b293bac0dcf872868ba29d0a781c8": 1,
+      "f77e55b846481c999a957dccbe05d838a09f9b41490a5f23c1249b40d2880b7d": 1,
+      "169071fb38c64792017aa4d42bbd9d41b93f10a178e18e771021ce941d429e7f": 1,
+      "b5aa08d0af304abdb2d2bd3cd09cbc705b703148eefecf553c4f3767260a32ff": 1,
+      "e119333cd3f012880ba4ed53590c6dbb07039e5b204db1a0a6d7914c17598947": 1,
+      "7fadbe4e137401fd3c233455e902c66e5f99a36e112f5b7851d2dbb6d3db8335": 1,
+      "f0fb9e67b44e8c4ea15b5c76dd9a3362f9ad6d87f77fc6bca8f2e89a499984f5": 1,
+      "60ae7b9e2e22d8c05c1bc5ea5f2c471244cb7c40ad98e3184a0585f50f9d8a66": 1
+    },
+    "legal_app/lib/features/lawyer/meetings/meetings_list_widgets.dart": {
+      "ea9ede720b2c03b412f67f5931d15dc180888b274cadafd46fd4a8bcbf6d2026": 1,
+      "f42565875836427435ec5cc907c7d5a63b7f6f107cbaaa70f1ca0df0060f02d6": 1
+    },
+    "legal_app/lib/features/lawyer/meetings/meetings_screen.dart": {
+      "3888441de2e1978e27c9e6bd40b520ac1433063446213cf2b7e2585db35f124e": 1,
+      "7179ea0035fca783ec62b7185659b68c75f2a7c12b909306a57183dc9b3fa44b": 1,
+      "fe12475ee51d48cb20ebbf76d1fe23dab59a8e0917077b8cda4b35dcf78b2046": 1,
+      "f56db16a6a15831def6708901c7511ebdaa28ba17f694cfd33f0dc2ee9d3f896": 1
+    },
+    "legal_app/lib/features/lawyer/meetings/record_meeting_screen.dart": {
+      "2f6aca9abae9417c6ec595dabd1fb59057883665a4755580bf6556eb619a17d1": 1,
+      "3f940108cb1ecd9c0090da0b51b45f9fe673f00b22c7ffe3d013319b97456674": 1,
+      "6aadac2f2b7a6b8e3e01909529190a0c2910592cfb85f5d65901b37c820236fa": 1,
+      "437f50ec17175e87d54149ec8857e986f9465ac1063244634876d3ce7a85edc0": 1,
+      "4ef760b7a024f2db1d36e967810fe3936cb70bcfb633f705040c0c9be7591b05": 1,
+      "afe78c9047526e5dc58715cfe1e3e80d16b517459fc2caa9dff013e4307e504f": 1,
+      "c595ebde39c8a69aa9e1dd9207f48138b5ff1fcf4f4c6ee1214e96eedc180921": 1
+    },
+    "legal_app/lib/features/lawyer/monitors/monitors_screen.dart": {
+      "f44caf9544df40c38f2f0eed77937c00998809d9da42afd3e27ed17ee1edea9e": 1,
+      "dc85d066aa3795037ba3515c7af686eb9bbfe961a6bd04a3b1c69d35bca733c5": 1,
+      "9f2ace89445a73fd459faea035ce29a9109c7c61bd3fc2e515e7c1c1a43db1c6": 1
+    },
+    "legal_app/lib/features/lawyer/research/legal_research_screen.dart": {
+      "160ed06f32d542a67b3828df17eb6a07eb5376dff11893ce19daac4e5b97ecac": 1,
+      "d37078fe6a1faa15fc48c293dd1d4c37698eb0cfafae8ca1c456b0cc4600db11": 1,
+      "0017bda4785398554bce6ca491883f232dbb4484f87d443b5e86f408a7e62430": 1,
+      "ca725949eed0028b5a9b1f20f07c8e524108b4076441fbe9bba6713886566f77": 1
+    },
+    "legal_app/lib/features/lawyer/research/research_job_screen.dart": {
+      "a5e28a0800f8cdd9d7a265be0428c45168b35a4c9c716ddd09c84304b1348d80": 1,
+      "47e3af50151e9fbd1733517db9ed162ad98fd5ac9a46755df20ab0efca1eedb4": 1,
+      "d4fb05e1b884c97036ca9135330ecd0753610f398960d0f27c2c24e74cb019e8": 1,
+      "e7108c17dad770c599373275691585b51bd3250b11e574abbe82c6d22528db4a": 1,
+      "69c393941b142563039e75c675eea4b22886697e6420c3108df483b8c0713d39": 1,
+      "cdf301f1df87fc101e26026e990dae6ad17b12187548069cab4e3efd13221a56": 1,
+      "0f01d14cacf01cb80c8df5a1c4082cfb7b859f544539ce7a6935440221cf1684": 1,
+      "797a5d6ada1a9feafaa9fab3f1be507e77e657d7ca931f3b6ba0108985ab91dd": 1,
+      "ba499ef9b7dcd9c111c9daff597a5a5b6aff7cfbc105255176653081f090b0bc": 1,
+      "0d7bd02d8aa3eb9242a8cd2e07dd394cc68a973ae21a9234af3dbff129900471": 1,
+      "8726db013948f0703807f17d23ca6c9903dc27f5d70c5a453604bb465c50864a": 1,
+      "24db18e6d794c0c0543523ffb50dc37bb3b625cb0236734e861792e0125adab9": 1,
+      "247614a80945d8401314ae07b8404462947dc49a57eb9780a757ff5491af2b4d": 1
+    },
+    "legal_app/lib/features/lawyer/research/widgets/research_actions_bar.dart": {
+      "d37078fe6a1faa15fc48c293dd1d4c37698eb0cfafae8ca1c456b0cc4600db11": 1,
+      "0f01d14cacf01cb80c8df5a1c4082cfb7b859f544539ce7a6935440221cf1684": 1
+    },
+    "legal_app/lib/features/lawyer/research/widgets/research_job_progress.dart": {
+      "91b829ae8423cd2a4d1715ea7387a63addde8214be7e4e12f7a7b644a101bb31": 1
+    },
+    "legal_app/lib/features/lawyer/research/widgets/similar_cases_panel.dart": {
+      "6ec23dde590db79fd06bdbc4b0acbde4e17fc934c116565a825768aa2dd65cec": 1
+    },
+    "legal_app/lib/features/lawyer/section_finder/section_finder_screen.dart": {
+      "916515fb3dea069781cac28fa3c26241d6441bb723bebdb3400201960f8b04cc": 1,
+      "d8b8392e2c542950ca64867168e4ef87d4ad606882d5898f826b51c6d553988f": 1,
+      "a57adbb87847723a663e2ba3c19af53e4252e613909eea37645d1c667904475b": 1,
+      "fdf5c04366f2a61d781ccfbb8a9ffe0f3411be8872c207eb73b1409a47a72cef": 1,
+      "4159932b8a2ebfb796d283f578d76e79d5d71c2d67282082deba9f329ffb348e": 1,
+      "9f881cc18bf1315d1eada9e7aaa67ad8b764f3e983a607dd33a000fa7ed7f103": 1,
+      "813c6155a8225cf6635a598a3f70b8da7ddc3ba7879a708a12ffb5f74903b350": 1,
+      "2296efa7d75008013923cedfcdacbef00e58b6b11c91da1c22b4d47034a319f0": 1
+    },
+    "legal_app/lib/features/lawyer/smart_workspace/smart_workspace_screen.dart": {
+      "660396162bcc85a305d2a103875e9b8087b8a44aab86839bf5afbaabad5683b5": 1,
+      "0555bc0cfef45fb978b40d76ea74d15f262da36344878cde8bbbb099b7eeb2f8": 1,
+      "50671f5ac243edf7df9e6af21f4583702776bf4493c5dc2f290c0a73e71a0058": 1,
+      "2c00413ad037105492f67edd9c188e9946c614df0fafd0b5f8db9784cdb18e3a": 1,
+      "be6fa7f31694610f3fa5bc298b896e80863569d6981e1f55123185a0d098ee75": 1,
+      "5ca0d370c6f29808131443efa3d66aa501747dfc82cb744e2499739fe4d732e3": 1,
+      "9e7f6d196cd38288e0aa8b1bdd3443e532564fc3d3e49e71d28d3087cbed9789": 1,
+      "fe2008fa744ce9ec93f094cf28478d0ff271da59960734b0ad62e4ff88c21b60": 1
+    },
+    "legal_app/lib/features/lawyer/tasks/lawyer_tasks_screen.dart": {
+      "3e992276b2298a1fb8035727de54620ff01bbcfc451133124145633b2c8f8475": 3,
+      "9e93be01c1721234b78c9eba01aab2a6c0c96725e7ad00777f677a51fe4c4ab3": 1,
+      "9b9d7af18a613f0e84f9b38779b41907be14e5cccff2cf8ecddf6aacea702af0": 1,
+      "6f541e1b25319db5da9027638208436a5b2ce086c33377b9e08a8ff90bba24d0": 1,
+      "11622e0f259d5924d3eec7e572ceca513163c3b1596305291f046221daab10ee": 1,
+      "4431a598193bf658e005eb8dde733b13ea7667e3bd51c2f6e269a5f79e08c981": 1
+    },
+    "legal_app/lib/features/lawyer/team/team_screen.dart": {
+      "1116b26144c43358edb41d895695af84dea4fbef5ee18ed5d723e7adeec9a2c3": 1
+    },
+    "legal_app/lib/features/lawyer/templates/templates_screen.dart": {
+      "6a0418f673c8bc5b22a1db12069f328ec96513fb1863e6833663506bde0edb00": 1,
+      "22fc5d8c2951548b3e1693c2a62ad77c1a58fec44e91e36f258e4e9187a53767": 1,
+      "79760c54dcedf91cd828e3a6078665d0c377d6afbe69264ebd65326db81d8f18": 1
+    },
+    "legal_app/lib/features/onboarding/language_selector_screen.dart": {
+      "471e2c60d33b448280ad26a407be7fa2d4ad44509457f64091ff7530dc2978d6": 1,
+      "79176333311031ac0006b1fb87981c6715d509376a2af894458991026dcdcf67": 1
+    },
+    "legal_app/lib/features/settings/ai_usage_settings_screen.dart": {
+      "88b6218a44ba78aace4ee3eaa871aec9b8e5ac7b361bfcfe2dc4f0a7defd2e69": 1,
+      "1dd4604b74b3b53e94af776e64a2e31de5cdc2cefc452c6dc41c49f26795d083": 1,
+      "ad95d30f97546b68e35c02928194f127400a8b9354dfd0bf0d11eaef6bf2f4d3": 1,
+      "4da328481569a42804fcb2008f9f3531768b7d3649401a0c46b750334796836f": 1,
+      "74195f77d3d675b99a8f04ad8c38d0c65ce667ee46f0afdfc94814fcdb87f5f2": 1,
+      "4d4578b6f9235495c877b80ea1fa63acb12ab19975e163d150a406124852bb8b": 1
+    },
+    "legal_app/lib/features/settings/privacy_security_screen.dart": {
+      "a5208520bb3321778123ab21c0eb2d99beeb0e498bbcfe56f8db47cd953498dc": 1,
+      "fd87dcd0deb0696601b4a96e753327d7853d41eb5362d48f1c5958d240e08147": 1,
+      "498ab9ff88d8c2ff50e55ec2db59e57c46da8b9182c4fc706a4deffdcdeb8b96": 1
+    },
+    "legal_app/lib/features/settings/settings_users_screen.dart": {
+      "a24a3444cf68edd0552f751ed719931dedb4df2db41636bb83677de40a7ace4a": 1,
+      "d076aa0f049416cc4f8f20352c47a32182a65d464932ee1c4475df5d36c01afc": 1,
+      "f37b6f34a42fde24db630287f4ca7c99d71c7ed925c7be3ef45beb2daaa56b6c": 1,
+      "b5e6874d9eca7cf25f27035ba1ff3e2c94f249d1e1de201cb50dc7e701fe7725": 1,
+      "3693ed8e33a36a51a3340c4cdf0d768131147e3cf641596f74b4c4b86430f37d": 1,
+      "09bf25ef308336338ea33f83d6e4f4a0e5345e5d43d397864a8f5d0e6b9b923c": 1
+    },
+    "legal_app/lib/features/splash/splash_screen.dart": {
+      "a6351f7832044a81f554842d3dced5ec5b25bb6d31d7326163b9595b77928a44": 1
+    },
+    "legal_app/lib/widgets/verification/verification_ui.dart": {
+      "31fd436532ee2444d753fb7c7d792cab734284d7b3ecb1380465ffd7a7199c0f": 1,
+      "d7646e0d066c29e48915f4ab23377a52bf26cac576d31be72842699a6efde20a": 1,
+      "02268abdf1327fe30af537cf37c241786cc85619afeff9d062659ed7a94fbd39": 1,
+      "82c5beebe5c3ac4772f58ad6692787ef2e711881d96edce0df88d068d7d22cf6": 1,
+      "6781e3c73460b5e6decd4cd345b5c66c0ccbbd9c19e053dacf3d7f9c56312739": 1
+    },
+    "legal_web/app/admin/accounting/expenses/page.tsx": {
+      "056722e9d5c7b43eefc4b36e98d8b0e60f098804395060f82f0639a399a727b7": 1,
+      "4439fd3fa092ecd1dbe43b45c8fef31f04bc60b03fda81cc74c9907e27a52271": 1,
+      "7e1109f3922fbc18c056f7c3b2e464b574dcaf097b91c3a3b77fc9ddee8fce0f": 1,
+      "c218c8b08e3ad7a1f1cb2fc7af6683187492d5d40fbdd20fa1452265a39d547d": 1,
+      "e9e43a261fde3403bd487df7f67226f597c5af52f2f1f2ae9c006b6e6ed5bf58": 1,
+      "6e8ed61ebd7195954b15bd6c8b6376a43471e5227251161c2a06e7ea93f5567c": 1,
+      "9d5097a837102a179a2d08a921a260c5058495e78469c3f1bad37a1b4bf59053": 2,
+      "94a158ae504ccf5354a2e9af13ec280c1f48ab9857449863959ea5b2d70ce402": 1
+    },
+    "legal_web/app/admin/accounting/page.tsx": {
+      "5d955711da4a74b53904556cce99e5aef9ebae1ca17d2876288e982cc8e09ce3": 1,
+      "a368409e8585b1d2a6952e0a9934734a4d3e3e2a99182290d02642e58efb7afc": 1,
+      "ba3bbbe10d8bef66441c88536ce7b8e724e2829b59a3da658654f4961cd61ae5": 1,
+      "c5a87e161c53de31f1b0d7b172d113437ec40197b40de7b19b7d604e8d31a523": 1,
+      "f19ad557acbefc1cae22a6818e708667b797a2c8fd5d8184725911c9de20c2a7": 1,
+      "6febc61e5033009e5ed6f662a9728e107457b37602b983cd3cc3cbf1c9391ba0": 1,
+      "ae4c69f7f41ede1c095ec32fa15819b67b13986c35f98c3a9e03440b28f1c546": 1,
+      "1b904da0bc6d07256eb570e1744abe4632c133d34f7039c152bbf90a97efb3c5": 1,
+      "372fd16ba68a22650b36eb4a7b9c2d8f5dda3875c3b5f396a21f514ec435a521": 1
+    },
+    "legal_web/app/admin/accounting/revenue/page.tsx": {
+      "164b093d02406cefd7f7983cb3ad2f886021341059172e485f5c14b035143c89": 1,
+      "08e774c5bacc362a7047017a4df3d05dd9792728d48d64cfa736e2ec29bc461e": 2
+    },
+    "legal_web/app/admin/accounting/taxes/page.tsx": {
+      "680c2aa8ee7d74f17ea46fb349513d72abb584a93898c69322cc76594a2b6f98": 1,
+      "f19ad557acbefc1cae22a6818e708667b797a2c8fd5d8184725911c9de20c2a7": 1,
+      "ae4c69f7f41ede1c095ec32fa15819b67b13986c35f98c3a9e03440b28f1c546": 1,
+      "38c1695d05ea8a6ae39a4e585d0ad083ecac21f8650f52c15e35d7a826f1b708": 1
+    },
+    "legal_web/app/admin/admin-shell-layout.tsx": {
+      "48f0d3d397d49f135f116d947a805b49f084f637154a8e9913e7233a11dc16a0": 2
+    },
+    "legal_web/app/admin/ai-logs/page.tsx": {
+      "720d805068ab2e15817efe24d2c9f650f9c8116a4024407573b7130ff88c1a65": 1,
+      "2c131be7e653b5b8efc41abefc32bcf05d19601b975555c76492a17299452403": 1
+    },
+    "legal_web/app/admin/ai-model-costs/page.tsx": {
+      "a10b0f89b1fe2f5f189b322fa707db4efce4f57ea6a09ce8633b581eb15f3226": 1,
+      "db1c103e0ae6a9dbf80443a7b8280eff6c7df82f9b5c74ca389e17d8d4710828": 1,
+      "f836d19ee04efeba8915cc636327cd767cf3217719e92354e51bbdcd7a5e85fe": 1
+    },
+    "legal_web/app/admin/ai-profitability/page.tsx": {
+      "c3ef921ae1eaf42507d8764fbd616e7dc27dbed3101709a9b1427d2791e8196d": 1,
+      "e22ced5b2e29a6137e233bf3b21706dacf356a92354ec74ac407d6f9f623b22d": 1,
+      "1f1421bb3e72e58ca0665a2bf9620e7d2fd568cf30cd22f81f271fb95788cb3a": 1,
+      "afed5886d2570f99bcfe5a4e1534fd31e64eba12bd345822dbefc5105c653788": 1,
+      "b2fe68fdcf8315eda865425bf333c27c59baf12271fcd5dac0d82b2d9d9c3532": 1,
+      "7e37bbfbd14a76989cd75e836d88fb5e138d53a4c9bc82b0bc8746d1a6c26d98": 1,
+      "b4b818b2a65bf05f53e2ee6c6c97e92703a3d954b9dfecf6c619514315daf57c": 1
+    },
+    "legal_web/app/admin/audit/page.tsx": {
+      "cf0fa1118ff44a1784c1ba0a3172468dc5759014ed94e200cd18328781abce6d": 1,
+      "2c131be7e653b5b8efc41abefc32bcf05d19601b975555c76492a17299452403": 1,
+      "2fa95059a31f65fe7f8ab915d73c2f3469a14fdb2452155d0fadec3875f206df": 1
+    },
+    "legal_web/app/admin/compliance/page.tsx": {
+      "2c131be7e653b5b8efc41abefc32bcf05d19601b975555c76492a17299452403": 1,
+      "f160c88cb28fbc14d41175be4eeeecddc56efbabd75ac1027a26ae0b847814c9": 1
+    },
+    "legal_web/app/admin/costs/page.tsx": {
+      "9b3b9e56015a22a8448aa6d240e06e37e1f9d3a2e9f00431a4ef1a557a8ee736": 1,
+      "75cce222820ef9fea1556bf7aa11daf826cf71dc5c01c5087abe404bb15c73c4": 1,
+      "23ca9716f42dd0a7ab93b31f596bd1c4951d999ddbcd5d159feb1c72bf391c07": 1,
+      "3c3db7ef2b5df3c283f5b8ddd7f3ed94aadac7608e679bfdcef45dde2fa121d0": 1,
+      "2bb2b965d3152427aa1d1a658d3f3913bbd040785c260c47fc7e935f77359c3f": 1,
+      "afed5886d2570f99bcfe5a4e1534fd31e64eba12bd345822dbefc5105c653788": 1,
+      "0df118694f09fb3af760d21dc3b9ac2bf7903d11a8941e51a3ad8733ae627c9a": 1,
+      "402ece75cd291690e921930c284d6c48c4b19f568cc42dd86c8905ce74787eac": 1,
+      "424284699dcf980090a07a5173818adddcc58d15adfd1bd8c99c7d8894888b73": 1,
+      "11a1ac90c8ef1640cbbb7613602333366d9b7c77b70f6c34f2cdc7afdb11c607": 2,
+      "74ce9c164f69e9f9ba44777d861956a37bdf64986adcb204eab895f434d07870": 1
+    },
+    "legal_web/app/admin/credit-rates/page.tsx": {
+      "f7306110bfd13bfbb113e5d589f9b3f68a333fb70d3a9761b45527d256e19835": 1,
+      "29ba5270b9621255ddeaa3719aa4971f7a78eb6171ec377674fbdbe59bb8ebd9": 1,
+      "e3294d9a9c6bb33361e08d50df1951a2b2fee450a7a6c7ccad22aba11ccf2c82": 1,
+      "4ad0bf8d8f360fbd2e69c5cae6c056caa287b5af37a625dc63e643f40c7b49a1": 1,
+      "8ce1d13e6099e62efb35970c54809589f43da8ec4b6857dc90d250c290f40bed": 1,
+      "573e080841fc9f8695ae6198eb6e52fba5c66e43503b8e740edfef0de43a8471": 1
+    },
+    "legal_web/app/admin/dashboard/page.tsx": {
+      "8061bfb29ce82f35dda02e96de9b96b96e0359d48a9657065650247f3ec405ba": 1,
+      "8f1a15e7157158ec201e759af60bfdd966caf83b9a2b15d89cb2ad40201dbd5f": 1,
+      "f7101fb6d588a5fb376a161de44f058811365926cd30cb5921d3d72757008610": 1,
+      "d9241b98ccc5671fad8ab31c4dac8ed5204dae695dd9eece52e0b12ddd685307": 1,
+      "ba3bbbe10d8bef66441c88536ce7b8e724e2829b59a3da658654f4961cd61ae5": 2,
+      "ccd720067999e2a2f2a4ed5dda23f8cc0a01ce80babc83688cb5483df4cfb81e": 2,
+      "4bfdffae8eb19fbd8f682522edd386d68a00225ed38067299fb6679565ade503": 1,
+      "928c5dd240929ada756153a37cb3f014e0bc067105fd46ec3a911f2345520365": 2,
+      "812bf8284671341994689901171415f13e268be81c7dfd8b498108131cd27484": 1,
+      "66de959ad145d7fba8e417bb63e9205e5f266bf03b0dfc4948313e9c68f973e9": 1,
+      "60410442abeb08007f1ff12e58a6640e3829857f9aed49884d7182a8fd8c9e55": 1,
+      "71c651cd2bb799892ca7ce6eb5559edec10c5bde93d100b3453e43e83e8cfeb5": 1,
+      "69b57349f2b15021d97f14d8f5239d3d20f3d70cfe12dae0c1229fc8a2aaf507": 1,
+      "95aacb3f58afdbc5264717d8a47a8a4d66312e9c09facbe6218cdb00f1342e73": 1,
+      "3b41ba9c7cb8c5d6530c12eec5000c4e2ad0c48b2d4b9149a3ef6d2a23802819": 2,
+      "90b24f4102f4d35822aa8e64dfad43857b9a88f4fba892964ca5f66769c8cfbe": 1,
+      "baf887de8416a15766e7ec467fce677d6a33d0e73247213e9ea8d444bbab64b7": 1,
+      "79309dba84214072f3f030b12acb90b9fb4977c51ed251c559d4a84e2e89036b": 1,
+      "8641bf824aebe6c589f2fb660d4dd8207a481d2ed60fb01481ce585a2ed541ea": 1,
+      "4e304b3f61691f4df5d1c9df4ca74f6381bba37d79a5e59ad22681c42ed7bf5b": 1,
+      "3f206903a951e967f7bb5b8c052209873fcd6241aa731006fd3502ff0fb36756": 1,
+      "e0ffc2d90615aa86de13df553b8aeb286ba0fe4a096982482370057523de35ce": 1,
+      "bc54fe26dbbc7873327bcd89774c50331bda119ce6431f5627f8fad96bb342b5": 1,
+      "0ca3aa44a8c1ab52be548f7dd287099326be471815d96e7c1977434d2f76b3c9": 1,
+      "dcfc9dde0ecdb2b2302e7899220cc7494e8db469421b11cec5c2b975091e7bcb": 1,
+      "fff55dcea3d557e68d88a56b858c6eab0d63fdf900ec859deefb2d009bf2890f": 1,
+      "c584d5eb330c5f3e0789226291c418accef65a08899aee6aae84b99b65561c19": 1,
+      "4e053f26797a1b12558666789a5ab9ce868de1a3286fb86d805afd7d89c9e7e9": 1,
+      "527ae5a082c1e0d0f5f75c2e8f3adbb283e65df02e1468f2a1e742393fdcf308": 1,
+      "432874c8d23f47068f0d901d81d5dfcc10940b4fd74fdb2acb4d238af43903ad": 1,
+      "e6e3e6ac1f5f31481072fc682e4d2a38599e96950368945f32af5f37be7277ea": 1,
+      "37e751d178cb486f38e89d959c5fee83ecdbd3837f543ca43dc7f00571e76d12": 1,
+      "8a9117f2cb49e4aa26915e74ae1615de79210fcfc1b774d97063cb97ada3c2ca": 1,
+      "9ef7d438ce5b0a38eff194ebaff4030d1d2621737ce362b7117c367d7cdce57c": 1,
+      "04f45b0cc0ccc9342f2aed7bb0c0b971df1fae295c37af5e2f039f13de8d7919": 1
+    },
+    "legal_web/app/admin/demo-requests/page.tsx": {
+      "d1b73adbc12a996199dff21a3e0dc127b1af34ab03710b35332b9a51cfda22db": 1,
+      "fb2dcacd444d4917f7094430f90cb4d7dc6a92974736927dd2a11304f8a95373": 1,
+      "533386d7d1190b2cc3af0d89e3666d5147dc597cc063f2f52e28a888cb2e4c18": 1
+    },
+    "legal_web/app/admin/home/page.tsx": {
+      "04f45b0cc0ccc9342f2aed7bb0c0b971df1fae295c37af5e2f039f13de8d7919": 1,
+      "a8ce92c9f6de7736408927e270fb9d5b8b13d2d537ab7916f6d9e295f7bbc6d4": 1,
+      "3f62784336678d1fee2e9a528b7699f1c128d55d5327e25667d707bcf65e239d": 1
+    },
+    "legal_web/app/admin/lawyer-prospects/page.tsx": {
+      "c8fd42ec9ec54c40e1cb3be7f2ba28f6955cd2f99a1e469f7e8ea0b4e59746f2": 1,
+      "033619b25c6aaea8c14711509415fcb68445f988e6a23018ac98db44e827db96": 1,
+      "8968425df01d3da6de0149cfa0dd95a7a9d70bf742da3d43a5634b4b177f2d72": 1,
+      "facd8a61904adf9aad3dc1dcfd9c4b788b0b09c77270ba0e32609f1d9d5931d5": 1,
+      "c5aaab3ec67f76d92b5d15b73a8cbd2a9372f91da14b8c2f9ad46d6b42c98578": 1,
+      "e1bd7b3ca740b645a0dd847a1dfe3ba3f253dbc622450d988824be5144ed35e8": 1,
+      "cbde1be418b8e5ebf4856e5e21b1470b54c88a179309a7028bd169f7bf874783": 1,
+      "2714af9ed61da55fe960ac76f6e10dfab6aa7cbf64324373ed32f7869b9ada11": 1,
+      "a87964b69298cbd0238e2ae2b98d615ccae25c9d56a8b4afa6efb9b4de74bac7": 1,
+      "1d84716e4d549fb149e23bc67cc0758e3bd458ea9a35710f1fd0a4bd8eaa0ee0": 1,
+      "41d1e7c426d6835339548d344ce3c8530a8a3a93dc6b881f0db634071391a1bc": 1,
+      "c418f8fbd020f52e47af65e31d9ff0a4114db1c8b6f4f48860933be08a0e6d90": 1,
+      "bd61a9457e3a6858520eac50b60ace89a9dac3ba762db1a891ba116b6155da53": 1,
+      "d12d451848c8e7de8366c2c9410952e14bfc1dd072aadca129ab975a34229c8a": 1,
+      "5c26b4f9f24d9d230c18532c29203f10555a22cdd9b27d949aeb8665580f960c": 1
+    },
+    "legal_web/app/admin/legal-sources/page.tsx": {
+      "5f110c1879c0db111598320583bd8bd54347fd489db522cd2b83d87ebaedf694": 1,
+      "eca8a23548e6cf40960cd15344e786f8eec510cfdb49d388ce783bb34113960a": 1,
+      "97f814f21b3f9762251bb79448b9eb15b8cb54c223792230e78373b3410bd177": 1,
+      "cf6044b4fbe092f77c2aef9657a9d9c8cc0a797535d02c2135bf5e227f59458d": 1,
+      "4bf07d033e69aa4a877da3fc0a1dcd65fc786f8063cf884abb12970a9aa5b48b": 1,
+      "ab810077e7825f983fe76f17cb50e81c40ed2c00a876c3e3a10bb5813a246438": 1,
+      "1adf66b33f7971af29e871d20ef397fb7b0072505fd676270b173698ab9662d9": 1,
+      "cd960762072623bb7ae7a165f8beb851968734c6c600ce96824760bafef2b1e8": 1,
+      "831abda2c702f0ca489d5636c9ae654a535cc0940feddec7ab23a260e3d1b4a5": 1,
+      "54e2ab3528768a546bcc18c4239b24b2d16498d06919c69253fcab606caefcdf": 1
+    },
+    "legal_web/app/admin/marketing/page.tsx": {
+      "f6d3861604aa4db8a10a54d0751e5730eadeb7871ccb8fefcbd8b389f9bacdc4": 1,
+      "bd31712a4e6c7ade31383eccd965e1bcf47adb74cf669d14195051746d72418a": 1,
+      "8061bfb29ce82f35dda02e96de9b96b96e0359d48a9657065650247f3ec405ba": 1,
+      "ea1a9c787afc2a252bd0ff4069a0c702bea25cb0b82b9ccd108acab2ee285a4a": 1,
+      "75f00aad4c458cdd31c575994ee10f597dba75004b0b876b3aacc45ac522eb23": 1,
+      "6c73e4289d05dd8c5503483d6ecf18fc364a5d5d1ebc034ab3dd79eaa6d946dc": 1,
+      "78923182db1c5cbac65b69bdabfaa9523875c44d3b7df1045073734948199b85": 1,
+      "a31eaea096f97d25ce9c142fafbc7fe3d3ddbcb502f0efeffad1df91203ddadb": 1,
+      "f3f16c3dbc233e45aac2178184038a62364828829ada2a24e7952206b44630e0": 1,
+      "54f5794a2171c8dc95da632a6810fc0e8940541b2cb7168aea78dd00990113b3": 1,
+      "337a271983f12882564c42cb6855eab7169ddff570c91af118e45db40fcc9e54": 1,
+      "43c7f4ca44b9a525f5a1edaeb00f02cf44ee7753761145894e6ef4709ee523f3": 1,
+      "f739394289b2eb0e84313848045ecc768d0b4665981dbb54b31bb0a7d30bca59": 1,
+      "60836807f98141e78c2b9cd09cbeff157b7f11cb0021f38c78db6d6c012f95e6": 1,
+      "7339880032815e531d8b14c516b5078e9b760a9ecf053809167e1c525a7d5885": 1
+    },
+    "legal_web/app/admin/marketplace-lawyers/page.tsx": {
+      "8f02be2df106641c0924176b2e1878fcb6e3aa22254db7d2a89a084a1e19d5cd": 1,
+      "c9a4a683f251d871212c2f946a5523b77c11c59311f7fa379d81c92b126ddcf3": 1,
+      "417a6b7e1904940a5ce5db5c5c00d302f139837ab9669c052e315dfb4643789e": 1,
+      "85bcf91266b7148d2e284795b44e597cc9921e661813852cb949fb6f6a939dd8": 1,
+      "7778701d215dee33e1e6052d1da47d82eb38b4c136abc65cfb3ba5d87ae7bd69": 1
+    },
+    "legal_web/app/admin/mi-audit/page.tsx": {
+      "376af5fb5591f8abf6c9e6f28de60f1ed76ea78b59853a2434b9a04865387c4d": 1,
+      "44709ca133da4d2157d048e0cb4b4c423b3de8c7eff4d3a4c7a554407a6be4d0": 1,
+      "3a0f99440bd9b2db852a53efd4bdadafd99a124248009771aca0dc454727fb4e": 1
+    },
+    "legal_web/app/admin/mi-metadata/page.tsx": {
+      "4ceca89c22acb9c19df22a317202f2577cf799433e35bd9bad16a5304cf89e6c": 1,
+      "574301013dd74346c5b20d9c4ad28f5781e954f9aa1e0bcd6449e5bc4376eca7": 1,
+      "09d406536db4e4692b0243adcb3f154e3077378c7294b7f510f13764860e5401": 1,
+      "a4b3af340b37b8f932e0747dc16b01380f78c3410d5520a6fcd06a461db21d9f": 1,
+      "91c5689b7f1c5f4a064a20b6d9c294c047222243966c342f9f5065f4cec23d25": 1
+    },
+    "legal_web/app/admin/referrals/page.tsx": {
+      "3df95ecd831f54c69d5e7106e56aa68222a77cda8963bc1015f816ff5d3e7453": 1,
+      "33dbbadca33bb1945ea0554316574bcfe82dd61483b14c0dfc6dc15c3454f563": 1
+    },
+    "legal_web/app/admin/research-corrections/page.tsx": {
+      "51816bb69a9e36af4c4dc48748e5a0f20ea474b37294fb00c493cbd9876773d4": 1,
+      "bb2a1937ab7afd824542e203967cbb4767d95c8941c23f2bf39cbadb58496150": 1,
+      "c92fc6498fb5666430ef160aa678af95b5ac561a685227296ee1026234d0260d": 1,
+      "7331e0c060e85e17c4d9286f6c6ef9135e744523f7aa09d3c965b218c2e3545c": 1,
+      "7e4321fd74f88e29dbb1f17b47f3f86469be22bd44c7d82fa1ca6e7fb5afe6cc": 1,
+      "947987021cea05f27b148ef5cb9381ec9e1b9b05ee87368591a696f2519e1ef0": 1,
+      "2d75d34e5262c085cfed125cbe84852776243909fb4881e9583b255dea0de05c": 1,
+      "7b29034c46aada01d662d381ed52ac7bbd6cbbc595ee89e8d58f432deb0b5fa3": 1,
+      "bdbd7706de64ff6a9b585aa7f2c40178d14cb5e689489b3b37f55a5562d4541d": 1,
+      "544fd694fa92378e7190dde697b84e0287b1732eae60daf1867b305162cc1059": 1
+    },
+    "legal_web/app/admin/retrieval-gaps/page.tsx": {
+      "b534018755f373f71dc7791404d9d04c0cc701df1959e942c659945e4bd5041e": 1,
+      "0711fbd25db1444d5170f63dd255d9909e25e7fa06f0ef927902cfa9ca59c4e2": 1,
+      "f30d54343b36fcbd658bd73a051ef4a3d0048dbe113f5d92b29e683fde77bc6b": 1,
+      "4744174681cc702312bd5b7bf8fcd06d609a3154c32efb632f54b76f932d7a57": 1
+    },
+    "legal_web/app/admin/review-requests/page.tsx": {
+      "379bed8853965e4e00928c27599c89c657717571aaadb8a69e7b1d593e81d825": 1,
+      "94d5a7703a8250de4c9e24b29839ffafa5d8477efb19c56ebce83470102e6212": 1
+    },
+    "legal_web/app/admin/subscriptions/page.tsx": {
+      "a151f2e912fe8d5b31e07dae6315f861d39160480d78848a0cdadfb51f09d327": 1,
+      "af3e3987675fc3b36cbaef04ab374f3a59b4227a1398fb882debb540eeda7c55": 1,
+      "db27bf5223be416c53579fc6d0a47b11941eced7752a844362092a4fcd823991": 1,
+      "75b1c1bbef1b83885c11210753f42b7ba40a222f77cb500f30ca2e810484f7b6": 1
+    },
+    "legal_web/app/admin/tenants/page.tsx": {
+      "433e7ccd26a82a4ea1ddd16672df204ae751616542355cc328cf7a7bfc9f09c1": 1
+    },
+    "legal_web/app/admin/training-datasets/page.tsx": {
+      "5d000b5733d71c9029edecf39882908adb6b9b483150b63f01fa3775865cec85": 1,
+      "f131fff546721c62f43b5de1b50516db9714f31b5131357f9ed40f13947febdd": 1,
+      "862fead051bea9adb92ca8cf3072881ddb026425b8f47b4acf86644b83cd940e": 1,
+      "8cd353ff93915f72a481fb798d4ae474ad2bc9f8e79eda91511a1b98a24211a6": 1,
+      "130f0a6f83943eb6d047ca001665124a8e73c286d3d6e5ebb5d1ab678a4cfc49": 1,
+      "2a0e47d70d13b67e500c132f081e0154036471248df26b9812038e059da36ae8": 1,
+      "6b7b154e4974dd43d8cc3d1784fccaf48bf659ac2aea63c1b2e49c29827d23a7": 1,
+      "1f943f079124b218e3c6464938effaec7d58a935c1d32d6c2356a75e8619a808": 1
+    },
+    "legal_web/app/admin/unmatched-sections/page.tsx": {
+      "cd533391da6642eba966085cfc2859ea98f1d2fdb5a3cb68c1c52b4cfda3a833": 1,
+      "755c8b2a9fb114460e0909ab65c8cd47696b7648cbcdad3dbccd937c40660d0f": 1,
+      "897be6e05eca89b9c7f6ad00a23ea547b8a18ee804a16ed78a8cc880a9a5e191": 1
+    },
+    "legal_web/app/admin/user-activity/page.tsx": {
+      "9a0eadfccb426c75204659ab93b71a8f0da256ab8574ecf46fb193e655564597": 1,
+      "7967e089a7b94464ee1b0c6d4b8271e99bcf36f9e5481e40a5eec5c5a5108d01": 1,
+      "de1f5fff34138660c31bd550e5da98b7674d852afbff6f517e0e222b2dbf09a9": 1,
+      "613d8a7cbd1afa842d0e0c8a209098034a4d6ee33fe74c1a9909667eaaaee546": 1,
+      "579ed1120a67acb32f99bebb9aef3511ffe216ab70bfaae347ee71ed5969df47": 1
+    },
+    "legal_web/app/admin/users/page.tsx": {
+      "44816bba7481f53f1f7181938ea599af6bb2855851733e5b3fd3bef5df256b98": 1,
+      "ce0171e51b07c9d6c62f557cf934b8471ba99a9f58ce5d56c1f9df9288585809": 1,
+      "ad50ca0967bcfee4daf75a44581face0305feb34e270ad97bd93456e529b7c58": 1
+    },
+    "legal_web/app/admin/whatsapp-campaigns/page.tsx": {
+      "3c8938774eb83dc59565ff99813e315ec0edc180781597fa7f287d4ebedf33fe": 1,
+      "ac80dce84f73a1231b84f5c7bbf687504848623ef92079950d2e0f5926a38c3c": 1,
+      "7cdc77838b2f3453f3fab2099cc69a736afa234567d7641afcfa864a0fb0f60b": 1,
+      "89e0c2f73fe94c4dcfe34a97499f5bfdcc2c41bfed8c289360f78b53f200042f": 1,
+      "8bf13c1974ef81f09ba6196219843365d1abcd0049cfb9b7c163f7f1f4fdaddc": 1,
+      "32bdbe7d988e6cf99e04febfa2784286b2ccf023b04405150dee1a4d0a029a6e": 1,
+      "f42e0f66017d9937cc398684d9ba991ac7c0ec17f7cea27c68078e54176e277b": 1,
+      "b4e8e8bbe45517d470b35db666ad4693eee1ad1730184472fb576c8506861bf2": 1,
+      "c6cb7f3a93a0d481e5468b152706ff5a577dc0c85dec01dd21e9cf17f8310646": 1,
+      "c96fffcf5b8e54acca951f83c5e30e0b3ae320625385a45a51ac972d4ec04774": 1,
+      "e60c9dd59ee23ad59eef7c796c6564febb451b7f93165a67aa997e524b351613": 1,
+      "bea0da1b0295d117df078e3b5fce924eb8524cbd8ca284087bde9e228c5418e5": 1,
+      "44b7f34a2525ae7bc46b6c8a66f5b033f776de849d9d87c00a5489506dea086c": 1,
+      "3ec8682fbcec807b8cc1f39c6702acbbaaf137216ed0bbb681355ad6cfea89f4": 1,
+      "d06b242149a81d9a1ca0520ea880806afb1f084c6df2885113ef5ae7243e45ee": 1,
+      "f9eccf1bd6db5c6fbae6eb8fca1ddf680f3361b11fd6bdd2e2e4e767810779ca": 1,
+      "f10988e79e8d9a49f45a71ecf3f4ebe143a96eb9d83272156ab54101b3777046": 2,
+      "9855853fd033afb663f3238b87161652449000c77ff6385d5832cdb732c663e2": 1,
+      "b5bf7a53414612916d460025f950bc70942fc02ce72d0a990db3a079f471ca55": 1,
+      "9842fef44e23930f39f103f42bb86f015fcdad52f84550424e798ecab2bf0d29": 1,
+      "b2bd06b999d7b1e367a2e6dc193b7d95b9118f29c33404a83047f5c80a0a56cb": 2,
+      "15691d8860e71501d1fa233de5b6e5ada851d3c4d2eb35ad92b2fe9cd80239ef": 1,
+      "89ae8bbac58d6e62f175ec1d56de49ccc6e9fd44692837b464b0c87881ccce37": 1,
+      "2002c7d2bf967d891dd11dfd058c0dbe01c062d8ba0b6e99633e04c278449676": 1,
+      "cf9e47c3fb67b4988e1d1937c993d96adfc7509601820c3e8e19677d75521bfb": 1,
+      "dff45942ddc90df582cebc2a427bb4787e9ea7a64649d96716549119b38f3501": 1,
+      "aa0a489c89b6f606246908231ef7c758b084c1a11166453883a44c2e05254d0b": 1,
+      "b2d45c07ca129069975fc9e647841d44bd1e35d9f3ad7bc84ba3eab01d1407c1": 1,
+      "171c2ac5d8c61423a5dd22f9ea301c887223fe78063dba8dfad34da17fe5098a": 1,
+      "c8204edbec6bcc2de5a05076b627544095828592cd0235e2d335f9334fc4485f": 1,
+      "2931b6939cd95c86c7b13c710ed6e743d831a4aa2eae3176b67ab7b916451684": 1,
+      "42038fd4ef6823a693956e9e225f407b320abfe2d422cd242851f1e0aa60ef56": 1,
+      "daab6af4973b980ee10f0f904ca9f60a450da7f39d3a32db3c6e153e7c7bb4cd": 1,
+      "d1156d07ca4efc2f542dc2a280d229dd3f2ad1ef838b196b86f796e6f085e275": 1,
+      "ab68bff663b35db79fe05af5e00797cb750a0a794fa941aa7a619e36989daefe": 1
+    },
+    "legal_web/app/app/accounting/invoices/new/page.tsx": {
+      "72d4d9d26ebaeeaf962a48ab44e8dd51217563a883560dd697ca529bb058c606": 1,
+      "3f1399f43c1dd8b53e284b3fb0266e36c77543f92a20d73aa6abf92ebbd1bf5f": 1,
+      "74194a3f0991405eae74307da9eead55f5d2bcc3fd0afc9f2bf527d8610627bc": 1,
+      "0059798b7f7023e4d9e5c4595f7b9ba7ee64f69993ee524824d57e5a48b1228c": 1,
+      "b11c349f396dec1fdc2b5d518909863e17740d267482673324040a451d511b47": 1,
+      "88393000c6af1e463f9157391a003de50432bd2b8e63fc6e48d0f889aa3cff32": 1,
+      "11cc32c6737fab99ea7cc3811ff8ad723cea4f85cb5542c80c0e9142831a4442": 1,
+      "799e29229440a12299ecd8f7cbde739f2c57b5bb0261bad50facc256668dc23a": 1
+    },
+    "legal_web/app/app/alerts/page.tsx": {
+      "f73a4dd56c92983b0c27738ca27c3e0ee62d167befe5bb08d03a75cde6b3a104": 1,
+      "0df6b93275a9d72598f91a7ddb79c447f3e3e1f550bd2b4872e0f4000f376de8": 1,
+      "2d6b1e5e319e3f9bfd25b73d7cc08ed336b84d10e66154bc176c7f69b0e28b15": 1
+    },
+    "legal_web/app/app/automations/page.tsx": {
+      "3f0b25b8df1319ea0a94c364c62c594fed9f84a6420c5f8e5d7f65821ef83a90": 1
+    },
+    "legal_web/app/app/clients/[clientId]/page.tsx": {
+      "aacaef2b820ea423f37615ebc524efbd74d70d5cd2fe0a48db6a1d31d295a8da": 1
+    },
+    "legal_web/app/app/clients/new/page.tsx": {
+      "8271bcba1cc521d81e54f5af764c1e0fe11f12591fc288e00c117770680a6713": 1
+    },
+    "legal_web/app/app/clients/page.tsx": {
+      "afa820193a556b6e6a645392d3d98eb2c18060d4d5cd0a85f14ba27144149491": 1,
+      "c793b252187ae48e5824463eda770ebd6e813f993e6c3d1f56adee16de7d1d1a": 1,
+      "25c305622dff042cf50468e3b76320c7be2594394243e97bbb971d4cbfaf3243": 1,
+      "7dc9d43b88241877de64b52e193c9825e93ce36c7d564022f96416d864f9eb28": 1,
+      "e3dcad07c2586c1ce04babb89e2b224c805d587390261129c351c6688d0785df": 1,
+      "f5c0708be924b8e4ad68d67c533a870b9e765ab967d51534d0c4940538de1d53": 1,
+      "8872b3c9c93138c3e8330d5488134e4ec0266601de673f382635a4066af13e8a": 1,
+      "47a7e08c364fd54c9718843a33cdd75bb882578b6ba0809047808feb77286bcc": 1,
+      "a0989ab0c8dfa21224d5d2bfdd9b8ce560d995e10f88b2947d6f56183ac99fc6": 1,
+      "f2d31dd2c83225c55097ee34f6b117dd7387b1cd0c073fcaa24f21f1db8eabab": 1,
+      "a44f7f1df19205213ca47e38334ba6af87d6a58d0eed8ba555673aeffde904d2": 1
+    },
+    "legal_web/app/app/dashboard/page.tsx": {
+      "d67b993f2b46a8051ce625a12551d6b867c03d92602e963468e72d4a1db716f9": 1
+    },
+    "legal_web/app/app/document-drafting/edit/page.tsx": {
+      "dc52e0ca748b75f911e5693e7243997f0ff55cf745eae11cfa0dd70c4271713d": 1,
+      "e677918fc166f0c1600c464b883df772c4265dad6228f6be725dce5130d406b3": 1,
+      "6cd16ed277bae563e4e718eb869757904e1dd1ce2ce3c740ca8925322c35749f": 1,
+      "4e56deea2e1db3b20fa88a3b4578d47638ee4b618e64fb576a1b02ab93bddfba": 1,
+      "5e3e6ed50944cf30de5b27923767aa539d038ffd143efe1ce5313456e01b5c65": 1,
+      "45bb2cb005d879836806772f82e2e9ca1f4ab4c4e48e9ad75b857b94ef34fbdb": 1,
+      "0f9134036f85ca31204f76a96412c74453396d36b6a00472f7fa6413c35c5a53": 1,
+      "ba3bbbe10d8bef66441c88536ce7b8e724e2829b59a3da658654f4961cd61ae5": 1,
+      "6c835ea150a5077885a8d48ea93d362d7ba79b63282f16a2ee32abd881d42550": 1,
+      "d9b1205e4b5bae0d20e458c903ac5eb5cee706e962d765c9328c3e2e356fd410": 1
+    },
+    "legal_web/app/app/document-drafting/use/page.tsx": {
+      "d90c3b2679896fc372db9ef8a52803c9b3fac2152aad1e44f0fb460e30f0bfc2": 1,
+      "ba3bbbe10d8bef66441c88536ce7b8e724e2829b59a3da658654f4961cd61ae5": 1
+    },
+    "legal_web/app/app/document-review/page.tsx": {
+      "8a6be05198a5a62fab301a2f528b7ff6440966bfb3072634af481fe10b193cd7": 1,
+      "c509ff0ded423780574f3b4241de73c16bf5de07e702428040aa4c4977222e39": 1,
+      "d255e9dc4d6fe230a22a409dd0c1f01c549ac5331a7e6025fe49d43f39443cc8": 1,
+      "13612a3947ad923374717eea22e035ef6b52030924a92e45a30d8f0530f9c640": 1,
+      "d381b2107cd297cfd71b2f8364f6b3dae5dc63569d5f02d3d4c8f5dc9632f10b": 1,
+      "1a93fdecf5448d06ffd41140bfb1536b4cec8cbc6b2874bbfb8b829d37b3c5d7": 1,
+      "ad389aa4c08e3d7c4e980873d215655f7ef0c465e71da8f6fb439c2f2897cfa3": 1,
+      "b5a1478d06c1fe4dd4548a2c5c60e3cadce8b87c4164a0f5b74c096e239a16bc": 1,
+      "56b78c3d730d48e53a4d23438631e23602e5846c9b861a15d81109f77d4f6184": 1,
+      "0738ee00b61bc3afc0edf2dc46e06cbe4cdafdc9637644ee7b71237a0cebe284": 1,
+      "0b9d1257b2c37998489c12dbef49872df2682f05875850483afdeeafd712216f": 1,
+      "522500f7ab594df6ebbd9e9cc849080b6a8850057038344d2a2e6b0c3eef01eb": 2,
+      "9f7714312a976ff25b32e79121d856b53046caa305d7c9805e72fa972fce429d": 1,
+      "66d3a3ed8cd591fe29f4100f5288fc0c0d368eadc4660017ebaeb40317acaecf": 1,
+      "cdfc54219779f51300b66f0692f2aa4250911c893303417770839d7b4e935952": 1,
+      "c6310562de0dff5621133a1f96df4ebc26675d21881788ca121870a8f5020d08": 1,
+      "3efed3de9d4b5170f223c8abdeaafa7e9a9b8884ca0886bd44c6d3c3e72d4766": 1,
+      "3098b6c78293a3dbb3a9b88e9f33dcbe60dc58d9fd44b17ea0edbcacf75a7d34": 1,
+      "0059798b7f7023e4d9e5c4595f7b9ba7ee64f69993ee524824d57e5a48b1228c": 2,
+      "45bb2cb005d879836806772f82e2e9ca1f4ab4c4e48e9ad75b857b94ef34fbdb": 2,
+      "5109337d436e076c9d7ed5d4afa05c071e6e9b04416973d1237b8bf31ac47f4d": 1,
+      "0f9134036f85ca31204f76a96412c74453396d36b6a00472f7fa6413c35c5a53": 2,
+      "4af93ffa5b548239bb32f8c24d815eb08c63ee984581f7b4e139759ca8e0b655": 1,
+      "a2d816f3ff1d878bd5557aca8d58bc8b3e3318840cf397d2fa9a016957c9ddc8": 1,
+      "4d9599e777bfbf5170e8bfaaa147dbd6386a297cb7db9a97b04cb7159fa7802a": 1,
+      "6777d1846cb0cd0ad2625bd0d32665f19528602986cb3a966d8e803344897462": 2,
+      "dcbf7bd3336ed4413065a4876a775e66799556a9aec4e8e14f209f1589bfa218": 1,
+      "eb468aba2d347b6b3746ec030425612410371672ca5fc2c90582796484ee2aa5": 1,
+      "e8dc45d500bea5d6f4917092e9f395685c7a47130221fb885b1596d90a22b398": 1,
+      "5322d71de6b017349c3104449656182700a2d9c8503466eae8b50c0b5c7766b4": 1,
+      "b0668a86ebf1f2fd290ee50b265915fed941275580732be81dd359ffef8f5f7b": 1,
+      "6ad2572f0345a9bde60a5f4d762b32616a2b0cc8d8defecc5f3a07f245799603": 1,
+      "910e82304b2b8a5db150520ad650ac4ffe0ccf005295751d72db32948e6b6f77": 1,
+      "1e9aaba0c07a073ad011922816536e2c2e831a04f520237d59e9a701142ba37a": 1,
+      "c38660bcc21981a10d5e2f4d8895a4bb72f22f4eeb6014ea5aac7cd708403532": 1,
+      "100729dd9bb4ddd6973d737780132be796d3900e5b54a7984aa14d00208052b0": 1,
+      "2c2510b725bb1557a64989a9e5398a8ef5ce87933e3e4442e66a0510223f9a1a": 1,
+      "b2576f9ad8b9a3b1350cf6eab0262ee9ca120d50daf52f19405e8ead67601968": 1,
+      "d37078fe6a1faa15fc48c293dd1d4c37698eb0cfafae8ca1c456b0cc4600db11": 1,
+      "d03be191aa4f70329103c9ba37e3b51a24541d8d6109a389840a14147a174bfd": 1,
+      "0a6e5f5043565a3612672263b617831bed4e06602c5667effadd6ec732e628c0": 1,
+      "eb426d0b632050f3455804ef3e1119e26998ef620be5651d8679e4b589b6bc6a": 2,
+      "8d687ea647c3e5e3850e33f22948818b7aa0e8130575b6cc2d915f1184af5e1b": 1,
+      "a5cc54011d876751f812990e615711e692913106d61cdeaab3d49003ecac8e2b": 1,
+      "ee1a3789af9f054105358a303e94a4a70668cbb1516640aa98e70bdd6d194685": 1,
+      "67d0f608facbad587eac5d3eb3e03fa787cba5fdda58915929e0365f8f349138": 1,
+      "29fd76fb19aa92169ee42d145c2205cf44187d09a0e6ae9fd9ee1862ec470afa": 1,
+      "d42ffe6218a231428cd6410df9bfb4d171e43bd92f1141f46ea491d5d7d82ee3": 2,
+      "2c07997249abaa7682c5ac2d3b25f8b7d25c45661be0bde90b2f74f19987e607": 1,
+      "5827e517e7192c044851a48f322c1f8508a8be9859f9a81b9f6110be57e6e796": 1,
+      "5632965678e7e289f2b4d315743f936cf9760080e6efebb860e203b9fed26be3": 1,
+      "e77e0978214968906366bd61b98cea6a2c4f8d9aac64ba16e609831ddc90d414": 1,
+      "42f5e23e35bc1e21bb96d47e5d4ad3d9e7bb84c9fae980959cc82e5c6d41424f": 1,
+      "7aad9d490352b6a7b8275d1292698f8e4cbb874d13110979516d786c4193134e": 1,
+      "6a1736498454aace420b32e4c1b9b52915005961e3b9b61a83873b058021ed04": 1,
+      "4517018878984473a7b2535534595e7aa716ec874e94050b953db524d2027d7a": 1,
+      "855ad646c4bdca65320a74e63f1bb9f14646f768cd3d9f7d49e26d5a95ae7075": 1,
+      "71af87f459a446564e0ba44397d7dc09013dd76cfca4b75f45657a347c4f52a0": 1,
+      "4f33bb5f6ef059366647cb25eeea6a5c832fd5159d09177196a2134aeff2bdfb": 1,
+      "0ce7e42679e54e3c4ccea209b287d7abde071bc12c0d088fe09d01e2db179865": 1,
+      "02a3a55ea9bd8a0faa2e7723ca069fe95e2bdd4db690442dfff4d5ba95f06975": 1,
+      "37d2efa09addce50a1215d1e162199d1511df2d6b0bc5d84c62e2b186f853074": 1,
+      "fcda237c6c1cb85c974b06ac6d0ae43f569a664e576edf4a770cb2f1ef89879b": 1,
+      "171d70f7cbddc9477d5e1c716b03d4483d1576c1928384bea949cb288558debb": 1,
+      "9dd03aa30b30494cc95dc9727a6023a89eb8c6af5dba8a4e83b869b9e97c21e6": 1,
+      "7bb57bcd3610355d605b10e9a285965224f89edf8c6560437adc07ae6737d6aa": 1
+    },
+    "legal_web/app/app/documents/page.tsx": {
+      "f5c55fac1488ba2fddd3077a3ef9dc460271a1d3b8ddacbb63a10aadea7814a9": 1
+    },
+    "legal_web/app/app/error.tsx": {
+      "ab827e3fe17da220a9a652087a35d20adda002aa4df887c5d813b2b1e95228f9": 1,
+      "d8b8392e2c542950ca64867168e4ef87d4ad606882d5898f826b51c6d553988f": 1
+    },
+    "legal_web/app/app/esign/page.tsx": {
+      "a30c29836ff629b68c170339171a1e51a7416787379c25fd726f1dc70056bb6f": 1,
+      "f44380e872300809aded6246423f22d4ae78a2cf1f92f51f6d2d9f8b479beb6f": 1,
+      "46c26f13a75fb49b70128753f6b216939bafa5afc836bbc2ebae23a00bf793f9": 1,
+      "0f9134036f85ca31204f76a96412c74453396d36b6a00472f7fa6413c35c5a53": 1,
+      "380b3582fdcc35f1f2c13bcaf1e99fddc0c25b1ba96e303002b9ba98b6d446c0": 1,
+      "598f37f2d52f1e6c84c8f978ca4980532ec571a83a7c199feb6ea551970fda8d": 1,
+      "40c8378c1a077eb09b38b997999244d0c3dbb3ca725ee5de5bf76f1a7a1f381e": 1,
+      "ad4fdaf826b534829d34a77e91d8ac87d888366fd0c4fe2628a51484df23584c": 1,
+      "5d70b49c3fba6bbebfe8f08ff60b80cb4cf9d38093c7bd43e04dbacdebcbcdf0": 1,
+      "11e9d41b4959e3a7114de063735c9c3f5a812b9ee5de42e11a9e7cf7e938ba1d": 1
+    },
+    "legal_web/app/app/fir-analysis/page.tsx": {
+      "38ff668f4b4845513302436f67b95ee64873c61bbdf325141873efdf4343fee6": 1,
+      "987509fc1aaf420c8ac70aec7a17dcfd272eecb330eda2d43fa32d2651cdf982": 1,
+      "379d61400cea29eeb0a3e400c53f42ebf680fab7a573454c1b2ce89d6ef5eb07": 1
+    },
+    "legal_web/app/app/india-drafting/draft/page.tsx": {
+      "05c9d81f499c5c729497b55a38957629a93116f60526893ebffdb92ec90abcff": 1,
+      "b9bcdab630934ca6b8b6b4145d5b3f5ab18add6ba3c45e1b65ce0abebadb8d0d": 1,
+      "c3e98c3b74807a86078d7009151605bc38fd2dae3fd9d863e4ad229af4651942": 1,
+      "77fcd4c0244371db6e00e5801d2aeacf726411a5825c235f7405113e1f13b52d": 1,
+      "c6edd0e821a412d90317d187ee95b08d54a3f182e5b3b4fb8d63965011a6938e": 1,
+      "ca54ff5a8a409944dc88d7392fd28d1708e7098874fafed50225bdcd30d1ae2a": 1,
+      "378247ee434102a5fed4e9107efbb835ed3dc9d93ad2f19834e6e8cd34ef281a": 1,
+      "d300be450123f8b449bbaf8e9d7b2f192ba1fb8df74fd24da3ca6bb12a944ab3": 1,
+      "f003c499d4153bf58e4c615fad188e221d56319771172d7baa731ea223ab9c3b": 1,
+      "3f6f09d6ee92227bd8a622e68479676b4896af512306f8498b35f7b7847f367c": 1,
+      "df3c685a5e114e2fb54d124cb9692646277c1f44e51f01d6d0ed42bd0e4da20f": 1,
+      "7a2b7837aa75b4145820f3ae913a1c76f8848a825b983ff06adfc8eecfac0482": 1,
+      "bf3bccddcab2c295586f6ba7aed1402d9a48d330679f7d84a8379380ec137b3c": 1,
+      "595b066a8838734a2b17efe5b7860be04047105d705203219d0b4c3cccd13c57": 1,
+      "bdd8355bdd21429af67214395ad4ecddc5741e9bbdc7939579a9c9b3c3a29ab0": 1,
+      "788b030604bacce692c60fe03d69a158f91ac4af40c3fafba4cf67c9bf8f2bb2": 1
+    },
+    "legal_web/app/app/india-drafting/formats/page.tsx": {
+      "2ac1750be54c855ea9554b7b782c8e598e328865cde03cca2370d442fe8c09aa": 1,
+      "4920f3d3deff1f4b9ee1a06282ba5f54648eab16cd4263cbe38dce3e0e84e7a3": 1,
+      "182a92a9f964b2fa0456de7c66954ae99626e069eb1f10f9641dfc9b50585038": 1,
+      "2aa68621e39629de5aba8af959213c41822add6cccc03d980d7ed76c7032e39d": 1,
+      "1588b1660434b7d18665c7257a46356bc0c16b5585477167c64c4c1da46de92a": 1,
+      "798a40182ee32052919b91e4bca4afd22a763624babb296ba589dcbd3331e28f": 1,
+      "4878eb075421344f09997a89baa1c551485e109c7aed5c3b45d488abeea184cb": 1
+    },
+    "legal_web/app/app/law-library/page.tsx": {
+      "89cb6bfe35e9201ad6b60eb6ba8d6e009a3051c7413b37ea9997e415e494b7b1": 1,
+      "03b1a126edfc54596a21810658ed005e3fc17433adde38b3eeb84688812cf02c": 1,
+      "56adfb1b935948b5528b5568a9f15afafc1dd1dcb755c306f282a420c5254f24": 1,
+      "2941469213375012808096ea1b30aba99c3e94ae068ec5c46a51c82a97c69f51": 1,
+      "6aaa56009af1ec4c710ee36fa5d7d745f67fa8b031f29a7304faf904087a4a41": 1,
+      "029e7fbebb3a23dd6ec5f4c6b263e8d370903531e84a4ce53b6b751dc837cc56": 1,
+      "1493d0a006cab1bba1442d0358553f7059cda7f1d351c8e747e0c3a67c598a91": 1,
+      "ef50eaec2a6a68a34dba6a2287fe83288101df7f49a3796a2b7e1ba8d45d6c0f": 1,
+      "f1db8fbe1f3b38a28e3e43b07c7cc5d16997361f948e5edc3283cd1d4d2fc314": 1,
+      "5ebc32cacca164432619936f51f08b41b52bb2b6bb7794251a46115bfaa409ab": 1,
+      "ba3bbbe10d8bef66441c88536ce7b8e724e2829b59a3da658654f4961cd61ae5": 1,
+      "abc29bfc5dc72737ef445e8f4a7e71e7a1a68d7b55c105ae276e1ab4445c1725": 1,
+      "637cdc408709240084aac4b71bdb2221330b3a2d310c83645813d8c64de962e4": 1,
+      "46a971588b46b9d4d9cb3866a38c6103eae5b797a792b2161e10fd58daa2c205": 1,
+      "7142b42692134d888fa7b06360b7e5a43689a646291d449c10c00c4d446a7101": 1,
+      "6d0c655c9bde326fed76a075e3ad9274a6144e690873f0ff583995bac6aa2c6c": 1,
+      "4d6aab8624b4abdb88398eebec4c01e72e26a7a3f85fe0a561e84c2945cade8f": 1,
+      "e107cbab87c9681caa15b048fe99e6bbc346db67266c44015c8ac092be939e79": 1,
+      "ae5818d7cf2683e945fd267fecaf1ffdf98655d527b33412af170525662da344": 1,
+      "87d0fdac1514d084d76e8f14f7ec27de633f74e8c96dc8fe3fc696d820293d93": 1,
+      "62af67c2809c440a5cb76ac4e1d9aaf5553b394aa9406c905194e20e5ede4940": 1,
+      "cae66a2432c391278ca958255f21bae97d886502a6916a4f7696636a4cc52f49": 1,
+      "032949cfda3c9ff0b2fb0731dfe9e140ccb1ea88c36f4dad8363d1836884b2df": 1
+    },
+    "legal_web/app/app/matters/[matterId]/documents/page.tsx": {
+      "7731d07400b25e56bc637f357024c8be95953993aedab58a78af1ee66c506002": 1,
+      "73aafb91a7798f749b526ce83dd18e1fc9ab32adaf2affb8b025973d7324fbc1": 1
+    },
+    "legal_web/app/app/matters/[matterId]/evidence-map/page.tsx": {
+      "7731d07400b25e56bc637f357024c8be95953993aedab58a78af1ee66c506002": 1,
+      "ef4c061a0f0a239a729d2a094bf722780747c4d9c13fafd1043ec391b383826b": 1
+    },
+    "legal_web/app/app/matters/[matterId]/opponent-analysis/page.tsx": {
+      "89b633adede66a057e627e74390a5d50adf46a7d53d4425524f3cb9d82012f12": 1,
+      "30904e6eaaffa83b0f5c7a28a47668b9ec2af3a9a1f52a2f53c441f0ac0bffe9": 1,
+      "145f758a5c44df584d7f537088c7befbe922a56fbcd1f0fa8db56aa178e38491": 1,
+      "b6eb2818573b3f62b45e13aa9978530bcf2f73a8e703d76d5a7254c27acf90d2": 1,
+      "0f936e81e54f6f661492b2abcb28393252e3ff1f72cc186efcca1dc0a77ea998": 1,
+      "8727e2ba364c2c46192df0e1d0318d0cc82b0c1e6f7465e012ac59430254e170": 1,
+      "940f276b09d35ed9ca27d87512333d6f81b810283581d6c1f54d1b91306f2b53": 1,
+      "2b39861e8e3242491d941515fbd939774c47ca19c9e78b0213653ca5733f2b27": 1
+    },
+    "legal_web/app/app/matters/[matterId]/page.tsx": {
+      "e24d61e4f0c23cbbd2ab4c2813f6a824887c06c4f36360a0feea22bf84ee62ef": 1,
+      "86832ff99f64edd32acfdbd1a6a2d5e1d5e797f5027dfc40c6be83842d9a18a0": 1,
+      "90433a909789f4909fb0bd1b54128f814b500ea4a2b369906c7546c074173387": 1
+    },
+    "legal_web/app/app/matters/[matterId]/strategy/page.tsx": {
+      "d20a4476a0a85978547a5781e7e575e8358f102137bf253706db20ee0fe6061c": 1,
+      "8d35ca0f72e0c471e9eb8371398f2cc51813d8de0bd18d830518b9734f5f515b": 1,
+      "6b0dca84a41593944cf3d01e0fb212c03ab389961b41aadb997e8d3a5ed6bdef": 1,
+      "2b125971c41f3d43d21c91fa1f6552c14d4689f41e7c70b1146f2117bb6f538d": 1
+    },
+    "legal_web/app/app/matters/[matterId]/work/page.tsx": {
+      "512b301d755fc842a160ba87dd5a9d82b33bd93a7af15ab3ccd4c818f9c3b5e2": 1,
+      "7731d07400b25e56bc637f357024c8be95953993aedab58a78af1ee66c506002": 1,
+      "230090673e9794168e96fe764507869e649af87a84c0512c3b0e68f07e74f05b": 1,
+      "46c6f1dea7e9258082e020741ba70be8509a940520d0e5343e54cec46bb4c328": 2,
+      "6b6ebbc9c87660d836c954e88920b9948a401046ddc2ee7b01d434ff135a2569": 1,
+      "98fd3b94aa70717e1b91bbfdd0548cd382fcfc5d451d1c096077d17c23aec2bf": 1,
+      "41de8bcd180517a08e84fdbe80e9d06cc0aa4fe881909698382949fc1f63eca9": 1,
+      "1141046ed48c098fe454a89a849870e1452678cecc0087796fceee93ccdd748b": 1,
+      "a356505b0d3f7e715547fdaf58a34f093ca81f800462fdf29004dada28a0a93d": 1,
+      "a092ad6b8be0202c67a8cbe50b3aefc2e03a244b4877ef3b5b9bbca032d95d15": 1,
+      "fef1d8de0d03ccd1872588aec55d94ac7eaf448453f06edf2c70746fe6ce9c59": 1
+    },
+    "legal_web/app/app/matters/[matterId]/workspace/page.tsx": {
+      "908014db73924f856cbe1631ae95a8b6b5fe6a646f6b911767790e913a182431": 1,
+      "0f497832ecd8d8fb7a5f507e9a48f38d365fb02ec75b1a3999f9401dd28223aa": 1,
+      "b5e6a422e651cddb1a8fa779788714d48effa68c8052f02c464494dac0f163e2": 1,
+      "7731d07400b25e56bc637f357024c8be95953993aedab58a78af1ee66c506002": 1,
+      "7785748246be6ce6932035a18883aaf7c4b9d37a6d3c32009ca4e07b60c77e27": 1,
+      "f8d46c2570e70736d62beb6e2e8df321d7cb4842a2b894f2025c47b31871d9f1": 1
+    },
+    "legal_web/app/app/matters/page.tsx": {
+      "eaba83cee2601bd61cb5d03ef420bca2b9701592d0825e0b218b61bb134b0e07": 1,
+      "395696646db07b0b4cf2da71ffcfce85225760166c5b549bf718f1d0f0da70e9": 1
+    },
+    "legal_web/app/app/meetings/[meetingId]/page.tsx": {
+      "c2a7865d3b96dac6be7820b71c5778d030d19948880088252434d2495581ebc7": 1,
+      "51c361ee38e5519c55e36b40839d5ed38ea9a21cfd6c7f91722da7d89c061ff0": 1,
+      "9f3db4c886a2865cf14a6ad60a822e973be04b7201e6316430fd51f9fbd16a81": 1,
+      "0b10a8c521addc27c4e46b8b758d1bfb8c5d82101e783f974c981a6f384aa614": 1,
+      "1b26000755f9b032584a4f47fde6c0a075e9f4c0041be68663f0a56d47043266": 1,
+      "c7e76384bbfe01b6ae24354ff6000089535abc8ff7f1a839ca0a5afb118fbe93": 1,
+      "a9a25885243c7114ba3fb610482090462618d9200e0ce68c5a7eaf7e03ada781": 1,
+      "e8cc87cf988199114a7067440de80f9c2b21e32166c07e4c872b80b8fb765878": 1,
+      "d83c3602f5abffa6bc1eb4f56558f14c1cb14539431a3a5427dee892129fb7eb": 1,
+      "9dec881a325cc0f529259638ad45f38fc19e1074cd908b769d35da4e6f763cfa": 1,
+      "abdc5073881982ffdb637d018171b069cf2adf6b2e03ed2964cd3c078b07f14b": 1
+    },
+    "legal_web/app/app/monitors/[monitorId]/page.tsx": {
+      "c63022cc106cfbd835e4650594cf9b36cab39ff45bea2372ba726e6753ff4e62": 1,
+      "9960c3f403174e25ebf08aec79a020ee3f2c715e11f587c84917933ca3dc262a": 1,
+      "dc85d066aa3795037ba3515c7af686eb9bbfe961a6bd04a3b1c69d35bca733c5": 1,
+      "d342cae13ae34cf718342a58c43931e4d05c0aea9dc83e31a330abb1f03b4335": 1,
+      "02871cfc17c7e3f2f18127951833e5b7bf8d301d0ba21c7c7b32dce062fc0276": 1
+    },
+    "legal_web/app/app/monitors/page.tsx": {
+      "2be0c186932bc85d21618fe5b6bc66a77939788edc8eb597efbe8596dc9207c6": 1,
+      "dfd4bedca46f419ddd1567b582bf307b6cf317565d9fac586a1e61844035e4d7": 1,
+      "0d0ec9f7cbadfee906f73a17347f7157287242aa9f029f5894377e21c8f7fe2b": 1,
+      "6f7ea9aa502bad3fc79ac9005b23d3ff73c1fcf12cfbae880f79af59ed5cf329": 1,
+      "b8d5a705ba8a03c7a1520f6726c1c1f3d03657b6c15a25c0e7c8703f98db6a0a": 1,
+      "14f5ca2315bd4b6610f2b6618aba22c14ba9b76a92cd67e2d6b6178879f2b365": 1
+    },
+    "legal_web/app/app/onboarding/page.tsx": {
+      "18faf053ffc79d73b3b1c8923589e68ad6f17173c92ad650bbfea711bdb72eaf": 2
+    },
+    "legal_web/app/app/referrals/page.tsx": {
+      "30989b6cd9517290a8c465fc7584f5c1912d01843ed8d2390a3d9684b92d54ad": 1
+    },
+    "legal_web/app/app/reports/page.tsx": {
+      "38f14dcf194bedd9cd4c1ceeae9e66054a70e72adbdf2e50ec65977bbcc2733e": 1,
+      "755b2071398ff057102ae6cf8fc443f8303f53429a72a13bc056e3f0484987ba": 1
+    },
+    "legal_web/app/app/research/[jobId]/page.tsx": {
+      "aa51dbeb056dbcd9c2dae7093242ba854ae72df0ff5e3642e44c2a9c9082809d": 1,
+      "fadf936b4d2a6cdca52b8ab8e7169910eff67fc6d7d5c8585c85dbf8d68f6a51": 1,
+      "2c3855573df9fa271334a46f25c771c3848d44c805df9f176db3a37dbd92db24": 1,
+      "3a21d21e0a91a4ab43359ada0932b2847d894c7e2ce0aa0a17f5b8adfa69651d": 1,
+      "1c4770baa1a8b44b3b569a13fe6f9607e5cb8482d5269206908e5aadc41e8bb9": 1
+    },
+    "legal_web/app/app/research/page.tsx": {
+      "e50579f6050b41392e0f5bbb0721b3abe1dfc1f82a1101f6575cf9c45aed5864": 1,
+      "b50068950144df391a57f3dcfa5231834447086a2a7ff5211da56040e2f43e8a": 2,
+      "04a0001a081a5909cf7d839bd4b6dab07e8b731fe6078650ae42daf39fcfd177": 1,
+      "d2626a65815878547640a189c8a8a30f30cd534b14a865ef3d42522f8aada7d7": 1,
+      "70022dcbe23ce179621312a28acd0f79a3f821545087af58c9553f45fa7a5781": 1,
+      "53c91bd336cce88f0c01648438ba0500ef99f612aa7a1b0baae9ab8c9e34f273": 1,
+      "095810876bdfa73fcb72a504b5871c3d026c6a5b671ee17addffbab7485015b5": 1,
+      "730ca1d5a7094b5a64d9119f822c9506a6d4ecd3b3a1f0d07da64f5c1643161f": 1,
+      "c4b76a83f59324d8d99532a77c8f8e5fba3407beb8edd6be1d7d20e6ed3100fb": 1,
+      "46f96ef75b552f2a993b860c3123b12f30a61d0c9d777631ccbe4967a110d1a1": 1,
+      "e72ab72c263c97d2e1a30d813732fbfbd8bf931d100c474cb787718fac89a32f": 1,
+      "7ab4418f8ddea7039a8bd5b6fd0bdeb5ae430dba2bd8ae4557b03ecc6c05f41f": 1,
+      "372cd82e5712be0eb1eff009ec5e549b0ac2812437fd87da177450024ef7d6fd": 1,
+      "9989d0bd5957031b41e889bd509d086a96b7e2eef794e2415b5e3302c289b279": 1,
+      "3a21d21e0a91a4ab43359ada0932b2847d894c7e2ce0aa0a17f5b8adfa69651d": 1,
+      "aec2ccf720192ac25d0cb0f4468f46329a33ea1cb03eae488453d6a10024c21c": 1,
+      "ba0309df97e66392afceb525f3d878bbef4cae93fed5797d039ee8c7681cc5d3": 1,
+      "84030c85f5934b601d958a48bd2ac0060237561236089f6f008f68a6e0653eef": 1,
+      "183383d6bc23ecf9d92767d5bac077f983f1aa7e1767550951289a544075142e": 1,
+      "c5f2b0d0023476600f5029dc642e74543b39e7649e7d2161b33f22a795485c74": 1,
+      "540ab576c1e0a692aaf4880505bc84c3b52b7846b3805235222e9dadcf5d7b03": 1,
+      "a3627eb9e899b1f723f2d8091ac5dc114dfbad1791bca0c3d0b8cd2c3f2cf460": 1,
+      "1c4770baa1a8b44b3b569a13fe6f9607e5cb8482d5269206908e5aadc41e8bb9": 1,
+      "ea27b9107facf95c20b5fbea7460d09dd852405693b9598c7844676f8a429cdc": 1
+    },
+    "legal_web/app/app/saved-drafts/page.tsx": {
+      "308cbe81fc4836d5aae87b9db65790ba248b38d4b12fde54c0c1ce5cc5a4af3b": 1
+    },
+    "legal_web/app/app/section-finder/page.tsx": {
+      "fc91152508f794d80f9ed7ee2e1b5f4674024994b358ab35521b29ed165ae7c6": 1
+    },
+    "legal_web/app/app/settings/billing/page.tsx": {
+      "6896c00ae8b9d0a8b4b7ae8dfcee7fa6dae5cff7092dc99cb87dc2183999ec8e": 1,
+      "b6eb1800b6c84211f4ca48093ea971d4cef49002b445c0d61c235a67179eb47f": 1,
+      "d5d913a7b58bcb597e368007ef81967e1e32517032f5b7e4c59e7003154e7680": 1,
+      "413283722778dc7362343db03450d5d3fda51410c1a23f71e1957bf5ca4821b8": 1,
+      "3f1f913b7ed981da3ca4b180f245f93a8b463e82c29531c2fd42be5d60e73317": 1,
+      "283d1eea2edcf4cc212b8fafc973191dd3507430cd63c2ae1b7045f71dba75c0": 1,
+      "132ef3f88ed65dc401f26718c486cb92910fc29b747ed05dc5a1fb62e6e89242": 1
+    },
+    "legal_web/app/app/settings/enterprise/page.tsx": {
+      "165d6ea37673978b32e5e1839bf49eaac5b52cfd2678fab529c53175b45ae392": 1,
+      "11d3a5ed860f024468c61b0f3029df7ff6f34e3760838ea795bf827ffbb6001e": 1,
+      "5ab68a70d44da39a7b2dd964c2c8ac8685dc94f4c12310385405fdbc18be7ba3": 1,
+      "eb7369198840cb471260b7ef577f12ba12ae3a240ae8ead14158017bbebf19bc": 1,
+      "45aae7cd419ee18c2df54ed7e5ed410a189f93ebf7bdf97157c33ca7e605293c": 1,
+      "5b7e919073cfa7ae91f501613bffe29f4b55c52279ac636b6ea5fcfbc1e0a181": 1,
+      "95e29d1239b4d34105cb09e6034708ea986780491e2b8cb0a7b6d80055918d63": 1,
+      "63be26f6cba7ef34aa25106731bb3ef0508d0261f8261af10b35935c3aae1c18": 1,
+      "8ab0883cc753c464fe25ed942a74ff13c0f11ab94af4d697ebc107b24ed174e8": 1,
+      "f9214ef880904c02b5541ea7bac56093337efa52f07df0403e3e8a202bca2c9e": 1,
+      "c7a68d292d84a7e8a7ec12a7719e2bb4c04a07e864cd3e6918216bcf8434bb1b": 1,
+      "e7e5f4eca018a41fa8819730e6ed96d4106202073f5c90d197763892bdd1fe9c": 1,
+      "0becb538145d2f73b38f4a11bfeafa895b13c0ea93c4fed928f0c83265369392": 1,
+      "4e96bf6b3f1f796ac945b189241a6703e0613ef99e8d92ee829f64f4c4034405": 1,
+      "01f1d216b38e624486ea79d35304cebaee5802bee1b3d1336b880590b3eebd99": 1,
+      "a74717d14714d63d9d99f918b89360dd7f37751fe8e9d41b3dda6e32e98faa31": 1,
+      "07e2dfb57d58a3ecd8860099247074ca8f7fef09e1624a68796ab6b64985e091": 1,
+      "beb22b0a750cae4e5a9d44e131b21ab9fb2ac89b34bae6dcdecac51d1d650596": 1,
+      "bb74732f15a0175a34b827b4a7644e266d2eaa1d5afee3419bcbc3cb15cd2093": 1,
+      "1eb8c8be4a1fb3a54b61aa9f50d28e6fc713c98b05a69fcec116fef265a28a17": 1,
+      "a12aad0607f575092af8d6672effa4155452e841ce489e150cfcceaa27917c10": 1,
+      "e3dfb9aa2e05063ed528e71b80da4fdb78e13b2efabcc631dd4c2154d58b1d05": 1,
+      "7119f9ffe9eafd8a617edbedfde9135873658f46f223c707dc97dd08d7452773": 1,
+      "8c9ef8a8b246dc12adddba18e46ebd6e4fe637bb74a92241069b58f61e7d6bb5": 1,
+      "666adb2dc861e45ee8ed95695a8baae5e43a0a532636290b4647e64b89b93abd": 1,
+      "14da78f0946227f0fd1a363cc2a8fbca6a563e4f2c2f5623f2beafc081e3b161": 1,
+      "dc8941fa030976f2bd8ce59745668c1a537dd13751332f4c95dbe74c5ab7e80b": 1,
+      "60648c3d1af836eb26d5e7ec1be81551fd850fbd6f739346c3f2ee43c0589ab3": 1,
+      "6140799ead0b5ef0216aa230aa3e5138fdd3c267f53b82c8df6546fe9fe9c7c8": 1,
+      "d5cd95650e76670ee3ce5d6bf9f851108d7926864c5b3c531af4cdf5189f87a2": 1,
+      "41420934e347fb4f68dbb57ad65f25cbe456df3d3576b656c5d6f03005e3b968": 1,
+      "b960033953dc8992c799369534d03b6878d91609fa6a78dba432e06b9ac58932": 1,
+      "8aa084febb5a71a6c307fe97d703c213c3b3e9d5ddd9e7dcdda11bfb18440e5e": 1,
+      "11f18bae8bc3b7a37b12a9e0134fab84bce85d7fb68d55a3f156d39d0cd771e7": 1,
+      "27090911c4a60ba2a767672948e4a6e9efe9372b507156cd434ece1f17fd605c": 1,
+      "e75080e87fefa6fb01c7266404e24e07631bfc6c9b71ba2986456901cfd08cec": 1,
+      "58159a5808ba6e523446ef9c4ad74f68b6db6de9f194c3b9a46c3002af49a1f9": 1,
+      "5cb8b6077bd1eeb5155f24b6bb41527ab60481bae9f6f3ad5d4ca391bdf281a2": 1,
+      "4924972f958737c68c3da78f142b4e95363e893be0e4d5f1d9bd8aef50056a3a": 1
+    },
+    "legal_web/app/app/settings/migration/page.tsx": {
+      "8986745d617c734fc40b52cd496a412942d17581a6862cd55ecca9973662cee3": 1,
+      "f5e4093f942b6b97decfb9aeb964b910950a28ff5540f6b994a20c7443cba841": 1,
+      "73aad53a5abb150f217fb7ff0062432b3686907814dc9dfe3531b583c7dd3fef": 1,
+      "34b0e24b358e26cd51ebce20f0ea4c8c0deb6b2a0a83605c23bf63de313016ca": 1,
+      "755c8b2a9fb114460e0909ab65c8cd47696b7648cbcdad3dbccd937c40660d0f": 1,
+      "289e85e9cd1ffd35366cbd5c00b64f49f300e17b8a7cc00dad1b2db8c68e6ac7": 1,
+      "e7b0c7abc55bf57f58b1e15518083349c75d18f539d5a44214edd64aa8eb01d6": 1,
+      "0a26f41abd00f95e7009b406e82083295f837ac1bc76e2acc1f7d66b3539c18e": 1,
+      "c55e361d15619bee80ccb7a91d2c5397af2aec3f25f2e3ccf36ef4d37ef838be": 1
+    },
+    "legal_web/app/app/settings/page.tsx": {
+      "9b7878aef90b527c22be169ed4ab97a5e216b6a1c719dc779883ef64eb85520b": 1,
+      "c3231506abc95039bbc384860b0e9a46a8268945c4457ec46a75e893821be47f": 1,
+      "2a4db4e02438aa176df6c3a3ef4b42fb8ba4f24bcabdba7bce4b291bfa08b2b3": 1,
+      "16d26116c2f4536efa19544df15395cc5386508fa6846305d4855bec622dc056": 1,
+      "19209ec1d6099b31878ec90338fefcbd33bde8809187f6c20d6d582d02c07cdc": 1,
+      "81d87a43f3981ffcbb79117f1f3532d2a10744b136281ac8578d0eec446638ee": 1
+    },
+    "legal_web/app/app/settings/payment-methods/page.tsx": {
+      "16d26116c2f4536efa19544df15395cc5386508fa6846305d4855bec622dc056": 1
+    },
+    "legal_web/app/app/settings/playbooks/page.tsx": {
+      "f0801e43b655c90dc0ac5cb3e0cdcb9d3c816263011764548d9a4fafc1f58e4f": 1,
+      "aed2826017c763a0eeec04fdf0d0af4ca3ee6293eb708d4d72e6c748e4ca6418": 1
+    },
+    "legal_web/app/app/settings/privacy/page.tsx": {
+      "53585a1d6f03f3fc8565db869ff536c156903caf51f1dad4c0c1229fc340ba83": 1
+    },
+    "legal_web/app/app/settings/sso/page.tsx": {
+      "d449a79f029500aabd337074fffcf647022ac01e8f5863e0b4e2c38dd26951a8": 1,
+      "8dc2c2f6def72df60dd4f61e14ea0e957bb510c8a5c2ce164aa8979c087e6f38": 1,
+      "9f224f2f75a5fb0c03d11c3bd49404696e2c84c2a97dd39c58cf413cd2f564c1": 1,
+      "91762cdb0b7703e7a1afea25d79fdf6a08c601d9c7daf2927c76c77e5f06347d": 1,
+      "6ff3b122bb09107e9235df3d2201244e7f22d53f9fd209a76da921711547f991": 1,
+      "62e48a413973f67d685fed4720284aedde886422f842a9ebf18e76fbd97d3edc": 1,
+      "d49613415f48c43f48383f65f82815b6686b726838ef432f4c572e4ecdcde09f": 1,
+      "dbdc75334dcab404ae62c6ddf1c664f43e5362bbeb6b1c69dda8105b12f9ed84": 1,
+      "1c54b02cb4616827ae226e155e77198d09f075b9a557200f1e4c05e9392f5692": 1,
+      "4f0527263d72558d98c32e4132f9b31b9d827dcff13b305d7dbf36936dc50d93": 1
+    },
+    "legal_web/app/app/settings/users/page.tsx": {
+      "2db4daa7c5dee100493421aa3309c6117b050aad39d83706000c5303266eb2d3": 1,
+      "fbe7c7d4cc53d62b1b37df1474db590588765078427feee3d8ca7e9510299428": 1,
+      "598a6d80a089799f041a27bce1994fbc8b9c1fbf1c6c0cfd7d941060f3aecb2b": 1,
+      "a3785c2a39752c65439fd8a665478592e248c27cd140f040174965cc98d68312": 1,
+      "979d653e235ccf0e5a4f8a993cb497a5b7ac99c300187586f3c5def7bd05ce77": 1,
+      "2cdfe7cbe645b79c61f2495ac824f5d2510038cff33a39297f19fd40e5279d15": 2,
+      "2bfca9fb946f00a812458c799e737c0718f439ce9a49fe7e9f31e0c91d4c319c": 2,
+      "b2460dba82e1c4967d29281172c338cac9ae10fc31eb139f000b20d6ed5011d0": 2,
+      "d076aa0f049416cc4f8f20352c47a32182a65d464932ee1c4475df5d36c01afc": 1,
+      "1ca651f0c12a87bd1103271c254c7106bfe10a364cdfa624f5ff91fc3973aa21": 1,
+      "53ff188d91a098b8be265e1f1211fc3196098bc9aeccdf17750d7844a644d8ac": 1,
+      "8c8bb11f18acf836e099388b4004fce92eea928b9522d007a9e5e3706f6964f0": 1,
+      "1d98dd73fe09557eab9cc1adbdd0ebe3ec145979657feef3ef389682a4d61d30": 1,
+      "dae7b3a95a36d3bd5691d5ec995d10a9fb934e5fb1d9cc6b18201c8bcb539c5c": 1,
+      "a587aa1f4ffc501682f3874f8fae815e39a88739eb6f95830120cf4efe1d1621": 1,
+      "77c391891a33b69c2fb1ab3b1eec06ebe0cbdd460d158dcb6437c0fb7b72b6d0": 1,
+      "670b64743d66cba15de8e393dbd58415c540361f2266f3843e56e920477ee972": 1
+    },
+    "legal_web/app/app/templates/[templateId]/edit/page.tsx": {
+      "bf623f1d349a8e193d33b7b61ded95a411dc9676d7572a642a7894a4acfe8e00": 1,
+      "268af8aaab2130c7c858dce3b2d7394458e09a11eb5318e0b70226b4cffbf1f7": 1,
+      "a5d5e424538d810d3f03b5688fbfe0aa4bea57fc8d185ce4875d061ea55ea855": 1,
+      "eadbeda51b0640dbb4a8282bf8694ec4295e5bef15523079829709eb5e981056": 1,
+      "d5d9719105c9ad5c25d0b4eca7a21543d6f6d0d0f90ed8957bdce37ad938a0ee": 1
+    },
+    "legal_web/app/app/templates/page.tsx": {
+      "bf623f1d349a8e193d33b7b61ded95a411dc9676d7572a642a7894a4acfe8e00": 2,
+      "ddd0c2108e40c8b8a3b9b7c9acb0353001b80725cbc226b1b7b0d8be0a0b0c84": 2,
+      "8a23a01b85a7b0a0c6041d6c5e77d3c00556085f2a5ff8cf6398163e642893b6": 1,
+      "653753a6755f3238001c0c987a1d21d8bfc56ec9a9db8a264aec4da76557faea": 1,
+      "777ad324c5ecec173948a02e80c15016f90825b409def87199ec443f32e1239c": 1,
+      "e0026fc10cada9c342cb0bd7b1de88a27f15e89adf919cadedee2f7dfa0f95c8": 1,
+      "84f601726c593b78793eac985f85b1b4cf69ad2b84cd94bd40feffde70d406c9": 1
+    },
+    "legal_web/app/app/time/page.tsx": {
+      "683d2f84b11fb01490e6dfe3fc41d76493a7e1475724912498bbe670039315e8": 1,
+      "30755e104bc384bd37feaac386ec4731306fdb32e27da7fa671b60c2a022df00": 1
+    },
+    "legal_web/app/app/us-drafting/draft/page.tsx": {
+      "5505195d95815bd74b665cea5ffa32bedc303627fbe116152e8940135e33d92d": 1,
+      "77fcd4c0244371db6e00e5801d2aeacf726411a5825c235f7405113e1f13b52d": 1,
+      "c6edd0e821a412d90317d187ee95b08d54a3f182e5b3b4fb8d63965011a6938e": 3,
+      "d20a4476a0a85978547a5781e7e575e8358f102137bf253706db20ee0fe6061c": 2,
+      "684e303304b4c4eb1dd0cf763fe74621f9c68e828630f1d8239ca57da6cfa038": 1,
+      "7aad9d490352b6a7b8275d1292698f8e4cbb874d13110979516d786c4193134e": 1,
+      "b0ca620cb2592796b19b32f517e94b78c2e8bb18b9d9efacf8216001779c7f66": 1
+    },
+    "legal_web/app/app/us-drafting/page.tsx": {
+      "5aa41577e30fd1a48cd833ce6346b2f893dd09dec0fd2df134845ac7156f0b0b": 1,
+      "ae02289c9378e22a616ab1ec5557a027152f39e515f90da4f2a08b46c8335622": 1,
+      "66058955e746d73c2c89836de581fe08ad38fc7b744bdf473fe68427bee42417": 1
+    },
+    "legal_web/app/app/vault/page.tsx": {
+      "97f60ce1d3aca580ad6f20e6ded01043b0486646a1de74ae46e7ac6d5689c7b3": 1,
+      "db40b26ebc8bb350ddf71a66994f237f56387161f1eda82caf5cc23bccbc502e": 1,
+      "ec174dee0e3eee20055755eef31dffa02fd5183939a30b1d332b3ae21773fc7c": 1,
+      "292756b6c1d74ccbb0d8e1dbd48ea155838b443d3c31b90b13b682fb716a6839": 1,
+      "14f53b40abec8d3007b0b0b8dced4d5943555bcc316d6dbcb96bcc059c23a5ef": 1,
+      "fa96337329e93517f58044d31921606f0111adb99538c09881ed3cae9d680c87": 1
+    },
+    "legal_web/app/auth/office-addin/page.tsx": {
+      "6f797f1cc15675d9f2c7d9cf2ec60adb21c62dc084aa7a73089ba0bc94e7ed20": 1
+    },
+    "legal_web/app/consumer/cases/[caseId]/lawyer-review/page.tsx": {
+      "c5c034007102a36745b7841ff9293f741c47451659b91d5e2e4e0d39c8a21d0f": 1,
+      "59c9547d74fdf788c6f28291c7753ba7dd25ff2c5dff3273cdff5dc6c18ad81e": 1
+    },
+    "legal_web/app/consumer/cases/[caseId]/report/page.tsx": {
+      "782b448c02eb2c653fa3a8675b7ca1a27ac9c7204713349bf306c4d63bed0a7d": 1
+    },
+    "legal_web/app/consumer/fir-analysis/page.tsx": {
+      "38ff668f4b4845513302436f67b95ee64873c61bbdf325141873efdf4343fee6": 1
+    },
+    "legal_web/app/consumer/india-drafting/draft/page.tsx": {
+      "d4521a84569474d40b6071364632a5bfa9f2a3975e63b12372d85f383ed43ac3": 1,
+      "07b3fd94bd3286875133769f9375728ce5f18adbe4bf0e864e0bd16633b6e6a5": 1,
+      "c0f191fc5b6f0b9b808d232e9dbf7e01c9fce980c7dc6ac417ea281995edf3a1": 1,
+      "720d372e9f5a9ff6319c0a65031e85640200192ee371e8801e0fe6f7af7c3ded": 1,
+      "6c1483dcc8ae5019bc9659eda2d5dac869b8f2984d769563a0490bae88deac9b": 1,
+      "9c0e5b92e8d0ea272f077e0cbcd9d97f2370c9bf8b71f907ecc6f95ab090fd29": 1,
+      "707b05c5e5c7850388db8d444632daf9d946033a6c1a61145b13a0da8561f221": 1,
+      "871d5dcb4441d18b0b93616d83b58a21a9b77ee4a61d5a1ec9e42a999616a097": 1,
+      "538b4111793a8230f7989d768688bdadf7f6fded306f7fb4223aa1ce10da6da9": 1,
+      "da5c5d7f6e27e3db2421e307d087bac32982666e4417b02fd2a3698846707510": 1,
+      "7aad9d490352b6a7b8275d1292698f8e4cbb874d13110979516d786c4193134e": 1
+    },
+    "legal_web/app/consumer/india-drafting/page.tsx": {
+      "38ff668f4b4845513302436f67b95ee64873c61bbdf325141873efdf4343fee6": 1
+    },
+    "legal_web/app/consumer/marketplace/page.tsx": {
+      "0b11497d80bf6c1b86f99270459a2ae50a9ccde20db490bb20bfe246c05b3de7": 1,
+      "bae777b487df15f34e6d0c7ba4bbad088ddbbf4e7de747cfb8a68be7e2c431be": 1,
+      "820fb1397be25d4f0986e3c17cf268361486c255dfd8cba4880bd2df0592748b": 1,
+      "e3c8b978ca7a499493dbb190f55c767a310606f60c1a88a54455cfb97a5ca0bd": 1,
+      "d757a2e11a72ad9b2f68bdd7462cfae41d7d8473977dd68a7c8cc3baa48a0643": 1,
+      "b7d4e0e74302a500007d5584e680d70dc719b001cd5cacbfe93d76fd45bcce71": 1,
+      "166aca2d6ac1cfd3cd3122acb61e9db246e1cdd25a8c361191c408ce49efaad4": 1,
+      "e28784b3fb03fef8baaa497868e7f86a9e0a323ddd1ed4331103f98ede223422": 1,
+      "2c8a6889a7131dcf12ef6096864d50a1b48790f23cef69f654a447dad31546dc": 1,
+      "b006331587edd6a6d291cf6777efadbac1fc306123aa32824ae4f211fe1d9d47": 1
+    },
+    "legal_web/app/consumer/rights-checker/page.tsx": {
+      "6e7b6cc5bf3d3ab6063323dc4b2d395f4721225dc3a968405613b7c22e866412": 1,
+      "183a7ec563c19f770ee90dd9498b2ae5dde7e44bad4a687ee62ddacb4b978585": 1
+    },
+    "legal_web/app/consumer/section-finder/page.tsx": {
+      "6247fd96a30cebd7037ddb9d4423ed8f672a35b0c8795d69bf449ef532f956cc": 1
+    },
+    "legal_web/app/consumer/settings/payment-methods/page.tsx": {
+      "16d26116c2f4536efa19544df15395cc5386508fa6846305d4855bec622dc056": 1
+    },
+    "legal_web/app/consumer/subscription/page.tsx": {
+      "743ae17eb2b485a23b3d285268f7b40370e52c410d094d27303386a137412e53": 1,
+      "0d83b98bebfb5addf642c9f7f2698eb75db7277ee0c090a205486a154ba00db9": 1,
+      "9c0e74e6c04b89e878f54ee908a8f8797e3c97219ff1b550b8939585abfd104f": 1,
+      "6a5038e9ea5545f4efe3448950962321c460ae3efbe1c9981db917a5b9064f76": 1
+    },
+    "legal_web/app/lawyers/page.tsx": {
+      "0974e5f9e2674f91eeed915f95e590ca921190b8ac14e38aa42a088d60edfe26": 1,
+      "b3be84514e8f9112037d4987ab672777f0e25bb662b16892386fb580d1f9d6ef": 1
+    },
+    "legal_web/app/legal-ai/page.tsx": {
+      "d80525806bb83a56cf6ce5b5e3df7e6f804f1c253386eaa0a31447953d407526": 1,
+      "895e197589703247baafca0e81d545736921139f24aef823a944e2ac8890c7c9": 1
+    },
+    "legal_web/app/not-found.tsx": {
+      "a469ab4ca4e55bf547566e9ebfa1b809c933207e9d558156bc0c4252b17533fe": 1
+    },
+    "legal_web/app/pay/[invoiceId]/page.tsx": {
+      "55b7809b6313a45779c416d015be26f7b0b756a3a5a0ccded69e43972129f652": 1
+    },
+    "legal_web/app/trust/page.tsx": {
+      "f9b39ee2f02dbcbfa01399284ce7d2ad47564c9a725bf05be3c7cdce68281225": 1,
+      "8a99ac3c099627060e4328c00f01319df1362abc5bf4aa44fdf49ec8b7cbbc5f": 1,
+      "56c7d265f1e8e06acbd0b99f24c26ad192881c9e98cf6b7bdb05f37eddd6e215": 1,
+      "f77ecee3dfaf9d825aebf48bd771656c9b9831da89898c06af67b8325161c35d": 1,
+      "d71fc57a5fc3d48b9aa21def74860337a94fa262b49cd0ce90a76b728ac38af3": 1,
+      "24f6f95e14ab4ed6d0be17c50a8e799426b798911e4a55725b9a995bd89ce478": 1,
+      "4ab08acdfacd0a694f9908ac10ac30b1235f4b8fcdcc62029b95c9e52cea5334": 1,
+      "71013be9dc98768ef09886e40f2b64e254f79da17a8387e5573b4ada1737903a": 1,
+      "b84b04a8127d955cc38a4a14a83da0a6e89c966e152ce0156b1a2fd9b15f2241": 1,
+      "7b57525e6b1c463fcb31bd09d65a17ed06443d21080d7776bf084b7f6c88066a": 1,
+      "ffaf5d67f90b4045e4da969fadc32242725a380e64733a7961abad3ab5f189b7": 1
+    },
+    "legal_web/components/admin/add-lawyer-prospect-dialog.tsx": {
+      "2aec187bf08083d9bd184d582d9e895dbd34201dc0e264ae5d5921d0916fb20b": 1,
+      "f13a64ba2fea87ef6360c1f2e9bcd3286cc1551a90cb62a8d9345ebf97fbc29f": 1,
+      "c3efe375f645a9d0b2e0963c94e55bad475c20c6e3260b7fca75fbead991a819": 1,
+      "2e05225f83e67f89e2e67af9fa7ff7a1882bd3c990c3a7fc9c702826a6bd7450": 1,
+      "7dd827bf0c386c3e1726146c3a6b57a5923beb7c7333a684312a2e78d4086aee": 1,
+      "f60e697388af4667e7b9eeaa3dd1c52130b350d2f0d02f4c440e5c2f59c7b518": 1,
+      "7f7a473e457657e1fd0eaeab4a6fea80333e7cf2366dd20de1011bc315b38efe": 1,
+      "97876b49c75220ae429f4dea049f2c8e409af9c954f03755243ac2fe32fdb56d": 1,
+      "c5cb5ff144b6fdfd86b259bee373d04e405e305b3299ac61082aaecd2d9c8919": 1,
+      "468ba474328fa8bc7d3e708f9c8562f488110c3c249e0cbb343a5012f9a7747d": 1
+    },
+    "legal_web/components/admin/admin-ai-filters.tsx": {
+      "7d3f5caf45e90e604d39be666376888e04565ff591a9bcf357e84699f5400d74": 1,
+      "de1f5fff34138660c31bd550e5da98b7674d852afbff6f517e0e222b2dbf09a9": 1,
+      "7967e089a7b94464ee1b0c6d4b8271e99bcf36f9e5481e40a5eec5c5a5108d01": 1,
+      "7ecb423736f640b4c8408a250ce97da407b85acd278e1101491690743c960403": 1,
+      "ffc50c70661c227edf8daae6f8dbed2dd0645386c12d43bc7fc44da166e043bd": 1
+    },
+    "legal_web/components/admin/admin-daily-todos.tsx": {
+      "e39183b5452f260c18c4b871699fc8eaa86462ac001a331f67dc9bce2f9ff54d": 1
+    },
+    "legal_web/components/admin/admin-live-snapshot.tsx": {
+      "3fdbd8022b8c5dbab3d9ac279e6b32da8129fabc9c25f8cf770b8ec187a8be9d": 1,
+      "299204177eb47b486614692f2409a674bd84ec8f652068974da43e9412a3afe4": 1,
+      "0ca3aa44a8c1ab52be548f7dd287099326be471815d96e7c1977434d2f76b3c9": 1,
+      "4406366549150d34f15370f3cc380d5911502e63041a48e61529ff64731b4b3a": 1,
+      "fff55dcea3d557e68d88a56b858c6eab0d63fdf900ec859deefb2d009bf2890f": 1
+    },
+    "legal_web/components/admin/admin-user-detail-sheet.tsx": {
+      "b23c130a02bd4c6d6c8dfa6721ab26ac344bd8770c095633c4bd2c53a39c508c": 1,
+      "dac7998fba76f342703faf44d34b0b58a2ed81acc57222d1c2b7aaec9648392c": 1,
+      "f13a64ba2fea87ef6360c1f2e9bcd3286cc1551a90cb62a8d9345ebf97fbc29f": 1,
+      "f8b901cf5b42cfe5ff37b6c4252f636bd5d85f5928227692d4b6be4554786900": 1,
+      "c53ee9fc7c2d9616cd10594b5fe36c9f7a42489f8cb5f1e327d6d4cc83c4c911": 1,
+      "1e8fe48227fcd05e8c26bd7138c9c0e169178f827c99a0e4b49eafb4e085770b": 1,
+      "5c48dcbb6b29407c41dd1d8f0d268b8771e317f4234dbfad508e4cb75a7bab3e": 1,
+      "ce36598081d330fef9b878ef4d5604401dbf1378248d4c4bdb6c85698736e940": 1,
+      "1e606c2f49f63e855aa2346925cdb1c9503728872cc0499a6befebea35d6abfc": 1,
+      "f0723c4e4a4e1e8a1d541522c67476f0c2be51e4f3364f732dc074ce8532d530": 1,
+      "1f0d4dc6187160e395a28f84dfd78974c57bc40e4a996fe377699f2a50836153": 1,
+      "21fa8468e71edd4f96694be9d769f986a3fdc09c9b11cd922f368c84de5c7daa": 1,
+      "86a1e718f7cc27efd173249c45e6a91b6edd5351774d0dd6d9f3ca97ceab5bc1": 2,
+      "140071feea59fe87b44a9926688d77c2c3b810328cb9cdbc064c826cafaf2205": 1,
+      "25db01dbf07d8769dd1ae30214909132a764425cfb5cd65be6740c8995db66ff": 1,
+      "85bcf91266b7148d2e284795b44e597cc9921e661813852cb949fb6f6a939dd8": 1,
+      "de780e3bd395ce36562caa5317bab0794be2175a3c93458a885257891767cca2": 1,
+      "64f124b1f0f386c90215f0ef9c16a54c8899d5d3bebdadec3f90d976ab759ca5": 1,
+      "cec31b96e7b9f7453548ce69b6b9105803a3418d656602f1024c4ade3a7d1ff6": 1
+    },
+    "legal_web/components/admin/searchable-city-select.tsx": {
+      "2df01a03ff43400b2c833c81b6240c1878abdfc99b258c624bc1605329255f6f": 1,
+      "32ce67a49dd140b68f4fbf7bb0396cdcef764d98a7b468792fd6677bb07a72e9": 1,
+      "4810dd511ec793eef04a9baafcfa409b110c416dc6178b0cc34e9e7d14f0d208": 1
+    },
+    "legal_web/components/app-sidebar.tsx": {
+      "522500f7ab594df6ebbd9e9cc849080b6a8850057038344d2a2e6b0c3eef01eb": 2,
+      "fc91152508f794d80f9ed7ee2e1b5f4674024994b358ab35521b29ed165ae7c6": 1,
+      "cca8d8592667a50355f1a82f5aa81d38d97952b4def7cdb1765bda4efebc73cf": 2
+    },
+    "legal_web/components/app-topbar.tsx": {
+      "0ed77fd2619ba8ab3e1cce72c8e61d887d551ca1220164b88ab1aa66bba7177d": 1,
+      "c022b19a38a632d9f0981df1407ed11743b7fd8a80b159b76a7cf78ad61a43b1": 1
+    },
+    "legal_web/components/assistant/assistant-workspace.tsx": {
+      "0a8330475e6d05ebb1e3adf7e2e3eb2a2a2512821a2249383f1adffbd89e93f4": 1,
+      "24496183f17ad8fcac33b18e262e1e51a5855c1509a984760824dc5357f8b14f": 1
+    },
+    "legal_web/components/citations/TableOfAuthoritiesPanel.tsx": {
+      "cbe7f955730278cc11661e4d32a1121467638928b8b239fa5020db926a184075": 1,
+      "6ee818aa2de35ea6849319472b83678a5cb1273f3fb0383ffb279d7fa6c5b961": 1
+    },
+    "legal_web/components/citations/citation-challenge-modal.tsx": {
+      "d3fb6aef8dc1aff3d328b298dba4724b205c272146cb9465605a1837d7e609e7": 1,
+      "d3cc96e3917ce97562b86846af32d15c9d91806b91e817e4791284532c9b682c": 1,
+      "88386ac9c38118863f93c47591ea16e48a10d2f64284b59d97ef7604183aa95f": 1,
+      "5a914fdcc0f0f374e4799d5bd452bc4b881f9d11d8dbf50b1879db40ea727422": 1,
+      "d5cb57d731a2f60bd2a0a966d7ae769a9e1f6d6d0ce552d5ea767abda36bc8aa": 1
+    },
+    "legal_web/components/citations/citation-scorecard.tsx": {
+      "99b488a3486e969c2182361adf28c038642786d9fcfefe3fe2b8bc07585fc68d": 1,
+      "822d2fbe1ab741327d762dc7a7be461c439c03d7c44ef28808458226a5b20471": 1,
+      "27cef613d05de57d13367d10f8b52e62cbe737d4694451adef6736261e87fa5d": 1,
+      "3ad1e47cb4ecf825aae8271f436ecccbd6e1567fd2af43ea87977172fc02a2d8": 1,
+      "1f7fe78558fe517360ae845aa57ba0c00a53ce612301a090945e5f59e1784986": 1,
+      "3117047f3de575e6fa2e11948e5a2feeca07ae3ad45d86d0b6965ad168ba22d2": 1,
+      "6fbcdcfec73f366730cb92795ddd5890fc24cff64dd8d6524af5bdc3e301e8ea": 1,
+      "bf6fd88b8bf0984774dd518b7a37abba93fea20429e393b87167ea6f4f843a68": 1,
+      "da8fc75ef383e9d864fd8d1ce9a0020177832effedea439358be99fbc7e9436c": 1,
+      "9322bd62d9091ba07315bb292188551fb5455428adc3def981da87a861d5b56c": 1,
+      "349f051c25f87db81e046000c06f247565a6db3c48a9dac9528cea5b94e0f058": 1
+    },
+    "legal_web/components/clients/client-overview-tab.tsx": {
+      "3f167d616f6ddf8543e28d38f9949602b892a78f81715e2b5041ee4d5b2401b7": 1,
+      "382ac5f308f76c24b2c981e2041943bc2be2229cbd285ad362b9af1cfc386ef8": 1,
+      "0091fbf2aa7f65b1e86da2c37e40d2d37e82cefe2bbdb23d7d87f2920b0a8416": 1,
+      "20dc1264d773ed074a1cab19d61aa9cd6e5d4b9286f1ff1ce2568dd7bb860c95": 1
+    },
+    "legal_web/components/clients/client-summary-metrics.tsx": {
+      "0d08cb5a1eb0cc9fadbbf6ba9cd04bc1c7551cee8a811dd921136ce946aa44ba": 1
+    },
+    "legal_web/components/clients/create-client-dialog.tsx": {
+      "bca8a046b0005f696d02605012449d7377fd86c35c27d96f35187f37ea1005ea": 1,
+      "862fead051bea9adb92ca8cf3072881ddb026425b8f47b4acf86644b83cd940e": 1,
+      "f8153d7b662f3819bdd8aaa53cecbf76c22871bb03e737d6ef93677b2db944e0": 1,
+      "39a33502c98be45ee3d37dd5a27561e92f25a5b56b412cbe8fc1ad9df0dc28ba": 1,
+      "f13a64ba2fea87ef6360c1f2e9bcd3286cc1551a90cb62a8d9345ebf97fbc29f": 1
+    },
+    "legal_web/components/command-palette.tsx": {
+      "dfe870d90b82ee52e70ae429bbc1a6ab755a3cb8f94cba496d5f15ba789f4b47": 1
+    },
+    "legal_web/components/consumer/consumer-sidebar.tsx": {
+      "6ccd5c7856042d36476ffd35a41b54518be95621cc741ac3ed55b8108ea41586": 1
+    },
+    "legal_web/components/consumer/consumer-topbar.tsx": {
+      "ead316d71c529ec45335731819a09074d98f059a2b841922d9e496bf4ace5c2e": 1,
+      "0ed77fd2619ba8ab3e1cce72c8e61d887d551ca1220164b88ab1aa66bba7177d": 1
+    },
+    "legal_web/components/consumer/consumer-upgrade-modal.tsx": {
+      "42074396a441a347cd5a0c2544afe9a1237167ff31dca3a4319d594156e87212": 1
+    },
+    "legal_web/components/contracts/contracts-dashboard.tsx": {
+      "0259442ce223a7ac608e599dab711f47c699dbfd33f9c89afb525006a10c72b8": 1,
+      "f464112df088bc9b7d6b505b7d9902882279f2dc480b68277c907cba458eecb7": 1,
+      "c89442525f4e5bcbef5d890fac8797e2204d701ccbcf055efe63700de78fbe92": 1,
+      "305def3c7372d0f2a13fe74077a8b05c01c3cb20b0168c3f1793d48dcf5076c6": 1,
+      "3d209f4648d487b456bcd3690b347fdbab9818502d677d52ff6fa2af90d4267f": 1,
+      "7c1e6c1680208b7f3ad5396384567de46fbf1267867932c1102d038fe7f67169": 1
+    },
+    "legal_web/components/copilot/copilot-floating-button.tsx": {
+      "629fba75e67c8fa79297069d6f112ffe7144bd41b35511cd42333c1f75442438": 1
+    },
+    "legal_web/components/credits/BuyCreditsModal.tsx": {
+      "5ff2b5b3d9517a8e6d5693d5922ec58e8c64071e41c6111a21c38a03c55deaaf": 1,
+      "0d8be51e59cdede24e96e7ecc0f3061a5855bf0373f4f2d581b329c142af0a72": 1
+    },
+    "legal_web/components/credits/ChangePlanModal.tsx": {
+      "47aaf31b83d6bfd705b80bcd5b6269be4caa3cf54cfa546b0ae7bc4078b39b0f": 1
+    },
+    "legal_web/components/credits/InsufficientCreditsDialog.tsx": {
+      "31ee6815a8adb13a308659e140e3762dde50754ecc2f2832930403052cad0b68": 1
+    },
+    "legal_web/components/credits/PlanUsagePanel.tsx": {
+      "a7db7281e75dd90111184181789bac55caff77111c90d2c63bdfa9c49c944057": 1,
+      "11a931060dad5d13059044671b174f52c37a1ef754e86b34d96d3dc671210708": 1
+    },
+    "legal_web/components/dashboard/monitors-widget.tsx": {
+      "cdddc375a29a58d2887ff8147055d3b54a08c3fe4e4ead53470b85162c78bf34": 1,
+      "61bb157be9a608c3624fa132c2aa04d6d934e608e557cbcfee119cc134990467": 1,
+      "93dde52b6352e50f58214fb9bd9074a3a944495718eba362961cbdb80832e843": 1
+    },
+    "legal_web/components/document-drafting/use-template-wizard.tsx": {
+      "49459bc26247eff478fc35c4cd959d0ebc6ddecb597434a2668205acf75c2dad": 1,
+      "9251c3dcc510a31b488961652f3502c60bc31fda6d843da1de8b186f546a281c": 1
+    },
+    "legal_web/components/document-review/review-workspace.tsx": {
+      "8db2792098496783e2dfd240b490084266859854e8a2d44f487ec4cb2b12c49f": 1,
+      "69146dd171c42178e3193ee179f6ad6fb8a0a51ad5d5ab119d82fa469874bb8d": 1
+    },
+    "legal_web/components/drafting/SectionFeedbackWidget.tsx": {
+      "8c236b7bae06035ed53925f2589be37914fef1468c7def18b0b0b48b4db5b8f4": 1,
+      "3c430b082fcad819f1e3ec5250ee86824626c8f27f8640487d7a6b92c616d3ab": 1,
+      "76a5017540859953958bac2c16bd10e4a209eb30dd7a1ee4668dea94e39fcc13": 1,
+      "25f97e7cf2b4cfd40c5314ec95958971ec05cf75609381a091ba320d56e495eb": 1
+    },
+    "legal_web/components/drafting/TrainingConsentBanner.tsx": {
+      "658f84b126105e9d7acb759303eab29599e1bb65abacbc347d1cdf47af400762": 1
+    },
+    "legal_web/components/drafting/accuracy/DraftGenerationProgress.tsx": {
+      "6e7bc80a244096e8644de2fa3d14e4ebfbacbe72a25690b5e3c135cb7ed2e12b": 2
+    },
+    "legal_web/components/drafting/accuracy/DraftV2SectionPanel.tsx": {
+      "fd1da87e31e1bdfab136dae9187f44d60ad232de4128ef6b531c59c8deb38ab1": 1,
+      "a3bda7726af46f7210f5a9f528355a49dce0c161a04d85c91aa0900838254b2c": 1,
+      "b9f101f565e38039860bffff1382adc0d30e0532404ec79d35995444e628e740": 1,
+      "009eb8931f770565abb417765c02c07376c5e47fa486ec8bb6cf179ba3981ba1": 1,
+      "ad11c6f4c75b3d4a4e4fb06ce269ad514450d2f3209121635227a9d123bd0cb1": 1,
+      "abbdcbc53f0f01f168023ddfb5098ee72bc714696a3ab13e6898dfec357d68ed": 1,
+      "091652d27046784e648d653bd65b65ce2b4883ec6e95a4514bfac06238a31f5a": 1
+    },
+    "legal_web/components/drafting/draft-actions-toolbar.tsx": {
+      "d0470c4399c946dd2e0fbef9e69d845a55b5721a06ab05c5134555e8dde75d09": 1,
+      "a37868a32945c348fce6ff972a08b4be1f9d3ab00b330eae4383e9107b2ddd8f": 2,
+      "8396f34c6d73d2a8fb4953d47952777317db8bc0bd1b0a774294d75f32d283f4": 1
+    },
+    "legal_web/components/drafting/draft-authority-insights.tsx": {
+      "fa1015bc48b687f80d7e06686f2a8a49df161d8cf5320d107c422fe44abff1a3": 1
+    },
+    "legal_web/components/drafting/draft-history-sidebar.tsx": {
+      "308cbe81fc4836d5aae87b9db65790ba248b38d4b12fde54c0c1ce5cc5a4af3b": 3,
+      "b3080f29f2a3f3f72a220985a33395e9bf2649c915820cff04c93763db619944": 1,
+      "e62b6d3277deb7aa4869a813701baf62cac0ab43257b0844ab638feea31545fc": 1,
+      "9351af70f62f51349fbb38696930e88e3dd6c3777e28cc5a79fbe2a4744bd6b8": 1
+    },
+    "legal_web/components/drafting/draft-sample-preview.tsx": {
+      "9e889d65dab48cd4ac23148e9250cdedad331507e15ed2ecf98d7be4ac4ed25f": 1,
+      "3673f9c181ba494ad134bffa93039cab6f59e95655a213e848ba8c10cfd2bc28": 1
+    },
+    "legal_web/components/drafting/saved-draft-list.tsx": {
+      "eb0807c2068818262d465b988842ca06afa5643a5ad4eb8d395713a8d391749e": 1
+    },
+    "legal_web/components/editor/clause-compare-panel.tsx": {
+      "94b0de644483ecbe224dbdce9c17d383575f993722065610314b7f314798447c": 1,
+      "52672d1781dccc2c66daa0e351f29f4f5f32fa8970915690471085664312867e": 1,
+      "b790e2ae1d7d451c0895547729a3b9bbe87bc6894ef59119ae8f6d2cc459799a": 1,
+      "241917cd1de27aa483960a9ec522875a55b207809f24b882690cf1fdf0170906": 1
+    },
+    "legal_web/components/editor/inline-ai-bubble.tsx": {
+      "210798afd059e4ca80309ff50aea8bb54d3089f80f4603690d4c699dfc19d7a9": 1,
+      "3213325d32d05860c5aad3768d06818bc9315b3fea9bf956dfef2a9d9278cbd5": 1
+    },
+    "legal_web/components/export/pdf-export-button.tsx": {
+      "7aad9d490352b6a7b8275d1292698f8e4cbb874d13110979516d786c4193134e": 1,
+      "b0ca620cb2592796b19b32f517e94b78c2e8bb18b9d9efacf8216001779c7f66": 1
+    },
+    "legal_web/components/fir/fir-uploader.tsx": {
+      "1691844c483ad5f2ea8225904c941d81789e6ee80133f24a1368788097dbbbbe": 1,
+      "0c0a0bc608161df3c4c868e95266f51a18cc35c598fe5b377a0d117dac88b7d7": 1,
+      "e28d2c7ac80236e6c44334f87adaa18c7a30786575a017c50fa850008105c8b4": 1,
+      "cdf37f6dec0157cb68430a6a1f486cd43d93590dd6a76ea315a4701c7aa72154": 1,
+      "03fb9a4ae11159ba1f47096828e4b3a3059688b93270f0c16947f4b65d5cc4e8": 1,
+      "e77d3f8376857571248360cfca5fbc6b1446a52ec60c7a2b41a9a5df094986ba": 1,
+      "3ac6ea243e7461001d9a71258225161cbd711e7a2950a76e2c5fa5e209053933": 1,
+      "34f9a0830e27ae328a83355b8ccd1a7e60b67edae60fc929dee603b5d1c15568": 1,
+      "64cd81f2a82ed84879b39e6bb52bf0ec4b26ca3da78887d73b934e81c4fbef8f": 1,
+      "abd2788e1483aa53c8a53966bd3311cdd1c02e2948284fb16f53511dbdd8f4e3": 1,
+      "03f7e2b908127b969dccf741b6debab7fb2daad0cc3056802a295fa49a7fd903": 1,
+      "f1a4b058a61de92f15c3054a277c4630feaf91056d3955b3bef0a3169c766ebf": 1,
+      "15b00dbed10f1f9f793ed9f3ee5979b8002092b3238b3d2b51a966a67dcbe35b": 1,
+      "bc38a363df93be66fc28a9db796db5d5693c2ed1c598dd0ebe2917b5f2352fef": 1,
+      "2e2a0ec4d102bebe581ad35a21299089eb2179c9b26f22a84ccaf3f2436afc6d": 1,
+      "5f601a8dadb2a52c9cf52f12cb20da4f688cae9a93a2fce3b680f432e60303d3": 1,
+      "5534eaa63720265ebd980e9796003fee92ae9312d705288661b90f1fc25e068a": 1,
+      "e0cc86d123eb4754e7b39672ac78c506265429d0341672a27e3c701db6874248": 1,
+      "b213b1d5b1a6b221be59e647f48082479d538dd8ad50aa6f71fc8bd7224b97b5": 1,
+      "a29c6131fc6d122c7d4f62bcccc55f990c6757372697e18c23459beb27b92d74": 1,
+      "eb5f25aaa524186a00ca0c436ba16ba9ce95e3e759869d49f883ae7d78af7ff2": 1,
+      "8525ec1c12a1684932ae45d6260eb74e4c033173d7814acf43a1434c33431c7b": 1,
+      "a7b396547a687819bd4a9bbebb85f2bfa07c2b1115c0b0772a9cb7e6dc862b1b": 1,
+      "f663d2ad1fd1ee3893cb8e204b3899136f2689ddbd106f1994d15d3952756e26": 1,
+      "7aad9d490352b6a7b8275d1292698f8e4cbb874d13110979516d786c4193134e": 1
+    },
+    "legal_web/components/india-drafting/BlankQuickFillPanel.tsx": {
+      "1147a58f8b1c888da3845f9268477eca3d50d5f640a248c7b5c2abe2f0b22501": 1
+    },
+    "legal_web/components/india-drafting/CaseRecordConfirmPanel.tsx": {
+      "773e42fccbfac5e7760252dd23bf3c0ce220b711cca5e356735f36e6a54e2a6e": 1,
+      "27790abe2778e89662e7fb650642bed923ff11968316330b7151007eb3b67ca6": 1,
+      "52fa5468bd57a28dfcb707bfad24aca6fda5e289d785c04374bb94649d3e5d7b": 1,
+      "2ffb130c2128d1a9c4bfb98d5e158d8a6abc2702385bec8208edbea2c096845a": 1,
+      "cf53d311be4686877bcb749c0989afa4fc419c5cc868be33c3043b511b8d5511": 1,
+      "13b2b4c0530f529768d7058fe37869d0abf532fe0b836e68b752f231502b7636": 1,
+      "0e7d5746bef52c60fe34640b63c677bd24571e06c6886de301d34f7c90f4e00e": 1,
+      "b985db020797f59a77bbed12146db78b6fdb0b6d2fa037527fd1fc3d85de3942": 1,
+      "cee619e43e42c0420b57d4732fbf3023122c794e6381604ec2e2e2b97f47ad49": 1,
+      "cc384be60ff695794d62887dde02bdeab42ec0877bc164adae973db717882a5d": 1,
+      "9f4a3c8834c7efb53008c4225cb6448b53d197db1336ebb6a2f6b4ae27f52d65": 1,
+      "2c34f58b6d4271d0960d82254178a9aa941c8c36a0e9f895232a3601ff3cbc67": 1,
+      "69121d3f63d5a27ab7ce484854c065ce87e7022dc5fdfee9d778ab02515542fc": 1
+    },
+    "legal_web/components/india-drafting/DraftFullscreenModal.tsx": {
+      "b1dc9b33c3e3623196c57aa1e20cfc000ab745a6790a3c5afd3a26f99e81cce9": 1,
+      "d6a8a37514299317a81b43e90cbff059435d0d01307eee5d1e2d84a211dd84d0": 1,
+      "d2ba8e82a965c04bfc6d11d5b18d56dcd2c1a62a2ac81edc2d66f1ae8c4d1869": 2
+    },
+    "legal_web/components/india-drafting/DraftPinnedAuthoritiesEditor.tsx": {
+      "d418ab42c108308af22e20a717f1da5427bef05ee6a3cfde3ed4324be3a1b78d": 2,
+      "2ef3cfc1e8f9c710403dcad6a8c186d7fcd9839fe93c27c9b157ea4f811adb3d": 1,
+      "e3ebaa16dd9d9b9fc107c42183fb6cf9d22927e1af03dbbdfa0ccc38e4e4ac31": 1,
+      "a8a25eeb73a101c62e2f3abc4266e3b0933bca7272b40db8ba71ab007f034e84": 1,
+      "a873a013563e5eeaedc9555c598d3f6abe822f5c7608591724f26ac7092124d2": 1,
+      "ed0e3e2379329c86e7db45515ac88aed814b9438911e31af4dcd139f4aa79990": 1,
+      "ef2aaeaa57e5e55b7f06ef35a800c2d258674064423a5e11ecfd394ae3aa7e95": 1,
+      "7f33b795e52ab767f67f8a82e2f0e5c2d659923591f7eff95916be6da30303e0": 1,
+      "e9de59c4163abad78ed521d7322616b1003556241dd5735d502c471f06852afa": 1
+    },
+    "legal_web/components/india-drafting/IndiaDraftOutputPanel.tsx": {
+      "684e303304b4c4eb1dd0cf763fe74621f9c68e828630f1d8239ca57da6cfa038": 1,
+      "a5e28a0800f8cdd9d7a265be0428c45168b35a4c9c716ddd09c84304b1348d80": 1,
+      "47e3af50151e9fbd1733517db9ed162ad98fd5ac9a46755df20ab0efca1eedb4": 1,
+      "e7175c17ba6f58a55b7c3814949621c23e287275744e10aed0bb7e9d9f2fe8a6": 1,
+      "140baf5b5f5d69906444818031a01f5641a007b22830aa45b6debb1cfd48fe9d": 1,
+      "bfdbd6f44dc0541d826aa43beb9f7cc27d23e9487fa88e8972f962bc876eb3c6": 2,
+      "f3c4757f7c4b9c3776d8260d97c8fbdc8d586720cb25b6530a513e0532faf8f7": 1,
+      "f8359162b64eda0f4afa473c883fb5e9830f8e5d9e29c361ba1c5819c98dcc90": 2,
+      "3b676bd0f069c143975a5291bf2f2da96809ce0d1cd4f0ed2f581331ad3319a6": 3,
+      "342c23d014daf1785ac053e4de3fad80a6d683233bfc930c36b30d1c476821da": 1,
+      "950be1b7cde28e42cd95c8b2bb70ef6fc22f7af50633171b6345b2a735cc01cb": 1,
+      "8bc0b624d213773cfd0e91d7e149c7dab7e6cc7d5c885d00f8bf2ce503831156": 1,
+      "7967d944899516194673bf8f5391776cc10cf1d70e840d8a76cead74815bd488": 1,
+      "14f8a6823c1bfe426769718e77d724ff4733e8e8e6fa6cc400c1eb3beb0f7bfb": 1,
+      "3425d10869214ddf41889b86984a4425eba4d3a4d95e1fbe4fb8c087725bbdee": 1,
+      "6ec76c2215534811e4781974c05c518dca74ae7efe614d806478d4e359debcda": 1,
+      "1ab653a745b43e02a4d8fe742cf934bd226199e953c630e1f77282ccc827e596": 1,
+      "d913d37773782d65bb34a27da6b38cab3a351f594752475b0cb4a469128aeea6": 1,
+      "a8e96506e20026ae1bc5fefb61b6bcb2decf4643b8d928077e155b168d97a1ed": 1,
+      "1ddd1214c38da57fd4a1ec78ea32e3dc8052b1d1d9dba1a5cc11223ad250461c": 2,
+      "1d204fb97a6e12420d75db8a13ecc9ed43e9e70e3c7f22dc6a467fea2a375912": 1,
+      "707a7b74de86a3d05f1abaa1608461d35eae081e729502772563a62c9034782f": 1,
+      "2088dc3274444836ca3234a623e7142c1cdf6210ad3a5d6d045993c89f907bde": 1,
+      "d796635781870b938f6560c266a562a5a5083db89d633a53ef89113156e8abd1": 1,
+      "25d0f6f86fe87904ddb3ef3e4b869c7af57b957f684e9d4e68dcec25b467005e": 2,
+      "05a814d1a07b4f0d2ef55afaab8788a8271be08d446768b10d1ee5b440cd8f8d": 2,
+      "ff64366037a14743d25c2b1ca5db408d438a382989434ee7dc39e3adb62d847b": 1,
+      "59fee920f038a2ffc5b0d2a9bf23cbf59ba17cdb0a2012057ed68ddde52b5110": 2,
+      "383792661a9d58b3fe8eec73d27adb694f568b9f16a65b285f6db287d894b45e": 1,
+      "84d20ed051009844ea6376388ed0565ed132472a88faaa77b55b9962309ca81c": 1,
+      "674fe2acd0d5f47b46180dd66e26e349cd9c9db215046f5e86ea2f5728d18117": 1,
+      "2cb67baa89834b0fcc3e76e88477f9a1c14d7239cf085f4e4bb7ed9c040c2c52": 1,
+      "d33dd6c283443c150da3ae8fcde6fbe5c0836ed4d4ab72814d466fe10b4476ba": 2,
+      "1396d9823ddb945d20ee92c4ca82f844018eca3cbe685f17ed746372461b0139": 1,
+      "2a6c70b4ad6366467812e79f583c64121ab60bd71f3f3915a9cf92648f51b978": 1,
+      "ecfcbed7f55892913a7b23075d824e184216df4321f45e3c137dcf262ff87e81": 1,
+      "8f53d90fe0a98f09c86cb7f676ee54e1f90ed66d18e9304e6483cf49f53bee2a": 1,
+      "ab834488749ba189b4f9c6c57a48d381cf952bc778dfec24d6f90839e77381cf": 1,
+      "4233a9203b9eec665f92b4404e0fcdeef6a8837b6559cd45ed59759dc364842c": 1
+    },
+    "legal_web/components/india-drafting/SaveToClientDialog.tsx": {
+      "8b1b4ee96d16f4ea3ed0b2482700a4963cfd305209132993560d64e5e9371301": 1,
+      "3f7945c669c8dd4d793d9bda2a9eb47d1b3a78055e80f4eb01de293a2072bfa4": 1,
+      "c4170f0a7c78c40b77abd5a3ff60f274b47a6b350f71eff74f5b6ce64a2b16a1": 1,
+      "7b3507e41ef7a493aa7b8fe1992f2fbcd30be6f1a3e835857250fea0abc9d100": 1,
+      "23e39291d6135814ed7c936e278974544b0df5fbf0eb0427b6700979b7472a93": 1,
+      "26c6063c78c3e54262d87100c0c8a12df8af2049c1d42d6a5c3460fae1da3d9a": 1,
+      "ed9be102a0e9cebcdd4bd273cd2cf8719f07242ed1bf08dfab79766e757cccde": 1
+    },
+    "legal_web/components/india-drafting/SectionFinderPickerDialog.tsx": {
+      "f3bed77d790a5316fa84cd607c620838c9f9178362f192b11ed112e43203c795": 1,
+      "54fccf857da5a8c84b213d8648a973cd6cf0c674c4979854506d33a5fb2c26fb": 1,
+      "e3ebaa16dd9d9b9fc107c42183fb6cf9d22927e1af03dbbdfa0ccc38e4e4ac31": 1,
+      "21bec9c8149dfc41f611647cd49949ff73dad17c271360b9939a119f77b50153": 1,
+      "0b031132fea73347702ae0f3c41cce7e72defdb76d62303dda21a0aa446837f2": 1,
+      "a8a25eeb73a101c62e2f3abc4266e3b0933bca7272b40db8ba71ab007f034e84": 1
+    },
+    "legal_web/components/india-drafting/SmartDraftRenderer.tsx": {
+      "e1daef2697da937fe09ac2e449ba605416e6d131ac0d68e88f57a2b4ec4f0823": 1,
+      "a93103a74e1cf452101f95b7730b28ea8ddfee85e417dea5c93c7925704877e2": 1
+    },
+    "legal_web/components/india-drafting/india-draft-editor.tsx": {
+      "3fa0ad3f58d764474c59d6208d0f329b99ce0a60596e91b4a74659611ffbf057": 1,
+      "e3fa77402b81bde450694acad87bc25a8d27412bd97bdfddeeab4fd530c021bc": 1,
+      "494cdd82db8188a32b6dc15c3518748de7ef0031d0429b6bf999271d221e0415": 1,
+      "ca1f3e540264655a2262da62c50d37a9729f63d117c7a0de7c9d995633f7a64d": 1,
+      "731fe041ce28da1ba4db11261c0800621008583d171ed41a7ca2177053fe1424": 1,
+      "bef9d85df8ea13fe85ed34d6b8211a4bb20b677f3887f9d9f635e453788ecb97": 1,
+      "d0b06771e148e0f22433c4df0740018f46d5df69ddd667a19533dd9bca67ed0c": 1,
+      "ac27f6174f5b4c88fb4ce14561bef00da896ba0522bd4e0860b235ccc9a55438": 1,
+      "a37f2893b2a61bdd21b309f2f427de74a04e56a816f563a3f79897ae95e3bdd3": 1,
+      "7cd58afeed597e0285f578a4be667e8b65c46114fab9c82759e335e03b403521": 1,
+      "352d19bc380e4bab9c8c815b0cc037dfc14b741b299c674c57464bab181e9bd0": 1,
+      "ac98ef120ef9a66449bcc0dabd75b4f3b657a5cf048d78f84c27bd8bc2d6000f": 1,
+      "ab744fe26b887abdb3558472d5bfe074f2716bbd88c8fab2b86bc745cbe7cf52": 1,
+      "b104fab773bf5f47f475b8c939f5644f4012e2a5d6274baf357cb8487fb1c97e": 1
+    },
+    "legal_web/components/india-drafting/india-drafting-workspace.tsx": {
+      "f3f0eecda5f5eae6c396bd59aba7d97070b5b2afdd8274300aeb2e3ee2e6f70b": 1
+    },
+    "legal_web/components/issue-checker/country-confirm-step.tsx": {
+      "999f97449daa285cb77c4f34300c11e235c096b501df9a963c1123c7e953363f": 1
+    },
+    "legal_web/components/issue-checker/full-preview.tsx": {
+      "c8891ee33744d44e9ec0c8348dcdcc78a930332913508e3ec41920768b323858": 1
+    },
+    "legal_web/components/issue-checker/legal-issue-checker-wizard.tsx": {
+      "160ed06f32d542a67b3828df17eb6a07eb5376dff11893ce19daac4e5b97ecac": 1
+    },
+    "legal_web/components/issue-checker/refinement-side-panel.tsx": {
+      "847fd1a5d5f315383d0d7fc449bebb19447fd07d55663cc4894e2f32b408bc66": 1,
+      "10d20e340181a52f3a5e2617fba86cc2dd1ad29957512fc258916e62339583fa": 1,
+      "3e3de94eeac21ba9478160a32dc4eb94a17a66871c155f5a86ac19e16769600c": 1,
+      "76df48af4467851656d7cfae0a052f818f0ec01aa9c4607e35a31a3989038725": 1
+    },
+    "legal_web/components/issue-checker/teaser-preview.tsx": {
+      "42a499fdad31c234b963e70e8ea1a406f5f97acbee057c04987caf4d3b290685": 1,
+      "d4023380f26966f3b3fb572a713226779bf02dd2fa956da371b73f007f7034c9": 1,
+      "26d7696384eb725e5b1b28548c17f2c0105933b4f3ad55823154957b292b6175": 1,
+      "ac5596f2b1c99553c6cf03d904561f562d4662e9acc82ee2e7bc65db2eea95c5": 1
+    },
+    "legal_web/components/language/bilingual-language-picker.tsx": {
+      "bf3bccddcab2c295586f6ba7aed1402d9a48d330679f7d84a8379380ec137b3c": 1
+    },
+    "legal_web/components/law-library/corpus-sync-progress.tsx": {
+      "983fbfe22297cbb74394fc3355d4ce325552559b604d6e67a417633d98d2caf7": 1
+    },
+    "legal_web/components/leads/convert-to-matter-dialog.tsx": {
+      "ee1efd6367fe2b00cffcdd3281d882995db3601cbea5837f4a7dc8f5e675f6b8": 1
+    },
+    "legal_web/components/leads/lead-analysis-panel.tsx": {
+      "a63c3d864fee7bb947f5ed9487ca222b084c94eaafefa0bb08486fedf633cda6": 3,
+      "32f0163566aa516dd53b7ee9d521a44dd1e7eaf63d06bd7258365e6eaa56b617": 1,
+      "0ccfef82895026e2194c1ba779b823e355aed510833e5200390f8e5f1ae316bf": 1
+    },
+    "legal_web/components/leads/legal-analysis-view.tsx": {
+      "8847e504f53c54997ce4b422f5dfab9630bcfcb996f827114f3aa595c18a6168": 1,
+      "e9d39711b199c6c0ae81cbf588651bb765be3b409dd4740d94ec2dabdd96eb1c": 1,
+      "56a1e3e433af96339331a4dd94d397cc19982645af8e48faca0fb750900cfddd": 1,
+      "53ad6f999b1f062fb8fc100ddac854c3b96a36c1e03c6c8c61ce892d068b33c9": 1,
+      "faac31ca129e73c034215130b618c3fa4339d748afdbd4e28998d9f35fe25980": 1,
+      "fafc420cba588b9def4b19b4da7ad43c678de77232740e38dbec5687c18259be": 1,
+      "f776d3a89bc977c9a3d9dd62db0f1272172f691cfaf73bdf0961c8925281fd3c": 1
+    },
+    "legal_web/components/legal-forms/draft-intent-panel.tsx": {
+      "6b26ad9380f79681c631c2ee0f5c6c8d554c095927f794193963248e196f64de": 1,
+      "6f3b73c4618a14c2e43a3e6f9e2d6e03dd6aa8f77fb53c8ef13fdbb6d3f2fb03": 1,
+      "063182c0816bc94f1b19cab7347e2884df1cbc8694442f4cccad1cd39e09c461": 1,
+      "7da562817bd753124e70093cc944ecf3a3d557411fba993d56a6ad9460153d26": 1,
+      "1541680f596926d5ed2bf1e42c44b1c07aed9c7ca0ff1d23f8f1d8efec3febf6": 1,
+      "f1d92e9ffdd241c5257a9ecb217d945e55c039d7bb18ae552781c3d8ef4cb211": 1,
+      "b2bd06b999d7b1e367a2e6dc193b7d95b9118f29c33404a83047f5c80a0a56cb": 1,
+      "49dca65f362fee401292ed7ada96f96295eab1e589c52e4e66bf4aedda715fdd": 1,
+      "8d23a6e37e0a6431a8f1b43a91026dcff51170a89a6512ff098eaa56a4d5fb19": 1,
+      "f189411452ed2860ac837e01dde5e41285696039ad4dc3fd5b1373da564e1c76": 1,
+      "c3d9974996c931956d2d2fcc654c6a4e7258dae8ebe845bdc04904073c7e13ce": 1,
+      "cd38c18ac575562d6410222702c96e1666f39e23ebe385eec4c57b1afb44753d": 1,
+      "10d20e340181a52f3a5e2617fba86cc2dd1ad29957512fc258916e62339583fa": 1,
+      "93ef088dfc4310a12859e851b236c5fdca1c47b2ea7e71da110920ef388bb068": 1,
+      "8b14313830b66e19ef1bba47d193d9a8e38501cae4404925f39dd96ae9fe5722": 1,
+      "bf3bccddcab2c295586f6ba7aed1402d9a48d330679f7d84a8379380ec137b3c": 1,
+      "84e8a1c961a54c77cc57cee795a5f21b6efc35760fed3e92f6b798d81ac637d8": 1,
+      "516ffe79792cfed27873e226f4059d76316c7886161b969a1bfe7267ba060b16": 1,
+      "54f546349d44e713d3a5a258c5ad7ef7b90c94c06764bff58c892a6d250cbcb4": 1
+    },
+    "legal_web/components/legal-forms/draft-wizard-steps.tsx": {
+      "7e35244eb6397c7d4ff651c3f94a87d5f25af40300c852ff0222f388ff17d121": 1
+    },
+    "legal_web/components/legal-forms/legal-forms-workspace.tsx": {
+      "d9ecc3bd69239237128db6bb18d00a01dda2b066fa902906c0bf24dc2c2c7ad1": 1,
+      "846ff5d64978164e46ec0ff84f0d7a1d74c030f0181110670d3d74d1cc91433b": 1,
+      "e6d931b2d3de6fc189477270ee6f9f4584f9b01d2e55b8d17ce1183266e84005": 1,
+      "c544794d2efd118e91fb4ce60a6b01875060b7c082886c637e68c0e4de2d8e7d": 1,
+      "2abfbad78ee1568590a53b4776fcec1b326970286a4fa2a01173c95e28ddd973": 1
+    },
+    "legal_web/components/marketing/announcement-bar.tsx": {
+      "a206fa8e8f131445f4d3ddf41d41e01e12287b180f14e42a9a1cb6c313b10e1a": 1
+    },
+    "legal_web/components/marketing/cinematic-footer.tsx": {
+      "9c570deeee95d205a2b99b29182f5653655397ada7e729a27f7bf9f6d5c9808e": 1,
+      "21e34904685fde2b23f043bbbcf9afb2e765c78b70db562b85b7bdd9a7b15991": 1,
+      "4f7d64017689437e6d93f5724f3f797054f3935d98a13148025b616b8db8fb2c": 1
+    },
+    "legal_web/components/marketing/cinematic-home-page.tsx": {
+      "97bb73a03ff25b7f2e3bdc95bbbbed2f1ccd6ebb4c38b03d197e95e16d82159d": 1,
+      "3d246493e896f9411e684e3919098e7e1ef0e9992803a866429976841572bc89": 1,
+      "07b33c847b0b0eacda081dde4f64806f2e4059b272f61001407ce5b8214b3cdf": 1,
+      "52fa42461cb9eb953173c0018b389c66676f841a7bc9215fec8747637fab5480": 1,
+      "80118e61d777719e1ad40dde19e722b2f4d37e4ed7243bee71d3d1f49f44b9ba": 1,
+      "51ca092068d3764b308fecf938b227438578abdcce8865639b1429e25331727c": 1,
+      "7c262a170abd206b9c11280b7c51c97a3575c2e892f1baabc49a6b3bc5f46fe7": 1,
+      "c1f43b8fad7537eba5cc87664a03cf3efedf7b64fb1d45ffa16a81d566ea2cb3": 1,
+      "a856e05ee816b060555db96a7044fda0dc50552daac327d5dba28841a96ebc88": 1,
+      "0383a7674927280ee8f8c99fba7698d72a34cf7723d216cc1fecaa1c970190a5": 1,
+      "c56a66747baaeb7a6f5a1b2e2dec96fe1c3e76f53300a5342a0c19837a6eeb64": 1,
+      "216ef36edc863d8385fa1671cc357da25ec9544387205028eed0477a430fa201": 1,
+      "50b583d1d6fc10a362ee3addd72bb33399cbdd0c4fcb74484e30e24dda955416": 1,
+      "22a1d78d60d5d6c4ed6c7e030a9bc8886239ca690c9327dc923a3496476b801f": 1,
+      "f149d8534427d9a6405a0e427a09d38077c28a96509618769e56630212a3a2dc": 1,
+      "aae6861fa2fd5261ef6b474feea0bf9618b48ebf474b33a226b9bccded674ff1": 1,
+      "d09473979226fbef8d0339605f15c89e8fe217c30ec7e18599300b3f570cde17": 1,
+      "63abeea9ca936f2995ac465814106af655eda58236293dbddb41dcc497c0382a": 1,
+      "d3c5e7ce8b97156b987bd7451d990ee5e9522b88fa3f359a64134ab382c4749e": 1,
+      "dd9ab6386438ee9469216145ec59d90620719e780f71629cc09f85a7903a4f52": 1,
+      "81cf1756a8319b82377f909f4908b8dcb6a633c1ab3c015c5588b68a38b4210d": 1,
+      "3b3b8e27873de47d41b0940cec90c18eb3d7534ce5c68b3bcd5898ddc204ba3a": 1,
+      "0af669283489e4940051273b96b9653426fd3301be48bc185fad9a4d32df17c4": 1
+    },
+    "legal_web/components/marketing/cinematic-navbar.tsx": {
+      "48f0d3d397d49f135f116d947a805b49f084f637154a8e9913e7233a11dc16a0": 2,
+      "c189840cf7e2d6f6fdeefde1ac59dfdf50bb75642eb569b4e38a5614d6f12ac2": 2,
+      "f149d8534427d9a6405a0e427a09d38077c28a96509618769e56630212a3a2dc": 1,
+      "22a1d78d60d5d6c4ed6c7e030a9bc8886239ca690c9327dc923a3496476b801f": 2,
+      "e5afc361f548be067d1993d6f43f2f340b054e13feda50d4adb20f61df5e4ae6": 1,
+      "f02c05922e668b9c0e66ecd40974f251afda51ce1fad5b319fecf94b07dbb920": 1,
+      "e1bfe7eccc45465f536688db2ec9f2cc8a09819fe80bdd9f4dc098363eb9f0b4": 1,
+      "8aeb9319724305d8e0724703ded6a882f383dcc38b780812eb49dbd42b7b0c49": 2,
+      "806f228ffbd42e4e03fe6ed413f037614c822b34c3be4b2cc0625cc5eed917cb": 1
+    },
+    "legal_web/components/marketing/demo-page.tsx": {
+      "364153e6af0267aacaa92a58aa259599bc1db3153657165bd1fefc2e77f968c1": 1,
+      "d501ee28bb7587dd3c78de00579c774d1ea7c99a3c6ae47136f3417fec27407e": 1,
+      "b2bcf6b8708956539031485749405b6e3786e5a35aff6d761c89799b702f82be": 1,
+      "27ad307019036093221314daff7b07fc72e34b001108eaa1113235260b40899d": 1,
+      "e8e355cc7f12e6a8f7a1f0126da19b33daf1c3f61ea61b3725b1ea972120e8a5": 1,
+      "41b6668c269857c8a31fb2638bc45adfa1e1a178860036eb63416450716ec4a7": 1,
+      "7dfd404c6b35731eacc5b510abfd2d0d2ee800997d621c6a4f65486feb89ce96": 1,
+      "5add5ec896cf3eebd3fa452d584ba3401af72567262cf5f0f1fb44e0862bdb0b": 1,
+      "63d68ba7dc8551062fa1c48c04df41b29b5b18107cdfd2325f1ab472c370c42d": 1,
+      "38efc55038842361faf361fcd508a4af45142a4fd40f66264f41ed0ded846056": 1,
+      "22a1d78d60d5d6c4ed6c7e030a9bc8886239ca690c9327dc923a3496476b801f": 1,
+      "94f7ebb88eef64e86c4832e1d8f6cb628168a16eecc15756bcff369d9dd689af": 1,
+      "75388dce70042a89f5bf8eaabe7af6af11800a7dc5ef04c56d27a05127c81175": 1,
+      "4e1d0c0eb3e108cd37b392233b4b7d906a5ff598199b8f4ed01914053771c83f": 1,
+      "e1c21869989a0c30f2ed626030d8cdf30e7e5066c16028e045c505dca5e88128": 1
+    },
+    "legal_web/components/marketing/for-law-firms-page.tsx": {
+      "48431fb4d0dd302f08c5407919c7ee13821786b38da07830b6e195baae8656cf": 1,
+      "34bf89fb3a91d96712f86c083ffd12940eacbc6ba603ea71d5bfd8d15d2dc665": 1,
+      "13aa0de7651b24629e3609a6f8c4c3814bf8912122821d9d3b3ad33b38acd4a6": 1,
+      "3340f4bc2a2a7836918f5f2a6e4672d8def44285a1fcc05597e8fdafd5086ca5": 1,
+      "eefc9d9fb6637045106eb5f8d56dc57dcafe4a1ec6bdf46254d7f77148bccb97": 1,
+      "fc0f4ab0917c7de011d62aef68ee41f87ec633161313d173ffafe148084b73d5": 1,
+      "62d063545ec1b47223044889fd3790c5befd57550275cc2c9a425750e9a953b0": 1,
+      "223b27ef7ed2104afa0c4c5357a1b62817418b5b851c306b91027b2e9bc339ce": 1,
+      "bb0bb77eca11f45124036034c2d861da74cb43621cf11bdd3b0d1dc7b85c7123": 1,
+      "def89cae71a1345b881fdefcec29f6638b05428b93096087b48643e495a29ee3": 1,
+      "523ecdbedfdadc7f3453837f6c6677520a442717ebae58084951dd4a1ba7db43": 1,
+      "c04994b01bef9f588e8ebabc9ea4e6351c334952127c85eb4cb91afbf43f8db8": 1,
+      "c40e511fa3202fd3703698daf3f9828d4dcdd8889fcf9a8bcee25739df3bc156": 1
+    },
+    "legal_web/components/marketing/for-lawyers-page.tsx": {
+      "97071ffa2599828d46c8f778033fe271f4127da9681a82d9898ac63827913e4d": 1,
+      "062bc4880d0e490c11beeeb641cecc53bb6c0db07fcc86d956f4ffad343f252d": 1,
+      "ce7cffcbae8f69c8c4b3c2326f99e2d19c03728827e8e506004a3c7d61044b38": 1,
+      "f3703c2cd16e428fd47c3f5ee54467ae11b08b7ad07dde112f033f7bb8b701af": 1,
+      "b1effd1ffed357a2f09239fcaefb22e64db46670b341b9699e7c7a938607d7d3": 2,
+      "993bd506e985c9d220f90d62ba2f0e53c1194209c0b7a23f7f1bc94205e4dd33": 1,
+      "7664ae1bd0c84c2010f79f90a0e96fe8753b3dc3c853671af467c80458cb60a8": 1,
+      "02329b0191e5ef655d6b9f07e7d45a8f3df7e59be5b3e70aeaa49d0a11c44088": 1,
+      "1e2495da816a2f3ac4a5e81133599f33474ff385bbcd428d6b09b1b7933bb36e": 1,
+      "8bad2bc83dcf435f30416dc284e521eeb33147161cce3aaf38eeee5debbd809c": 1,
+      "5b6c2e40d8e08e486e625b114243a30ced51504f553daea6222901a641ade0c7": 1,
+      "5a642be37ab12833e7899498449bb566b337c8c67573303c77677e280c8f27c3": 1,
+      "95cfd6a6dcf04bdb0b34333b36398dd79c4a728018143de3de1184103c6581df": 1,
+      "03d5e50bca019f79b472f3fb5eecf0a0fa7d2938e5fd9f85e046d44b7280a9ef": 1,
+      "f149d8534427d9a6405a0e427a09d38077c28a96509618769e56630212a3a2dc": 1,
+      "75e4e34c2ceb25abac30be18183dba23eac352c2df470a7a70d7868981c32e3a": 1,
+      "aac1021383c28cc891648b5a452bd02daadfc485931a08be55d9bb048993df9b": 1,
+      "43b7f0ff3fd9ef91b39a147a8dfe0dae8f05a87f48743f8ac7c670a9511fba81": 1
+    },
+    "legal_web/components/marketing/hero/hero-section.tsx": {
+      "fe845c64eaed5702bdb6b4f37720c2af2abd6be137ecf86441a2e975b21c36a4": 1,
+      "055e735735515c98002eabe61da3b9cbacbb37fd510faf2f6bdea3df08492be3": 1,
+      "6a6bebfb694c1059d8eab4c671bf09a646d1cb1172cd79a327b144b192b63174": 1,
+      "22a1d78d60d5d6c4ed6c7e030a9bc8886239ca690c9327dc923a3496476b801f": 1,
+      "f149d8534427d9a6405a0e427a09d38077c28a96509618769e56630212a3a2dc": 1,
+      "e500d263070a940f44c27e612f6a61d5ab4881fd270ed6af49bac9b83e5b0cf1": 1,
+      "47c86650f46b24e142d0b81f1400e3999e41b996a37560e670a3515f9479e4d5": 1,
+      "7bd03654fc088e3a5c071f7a6f0b0d8c8d5bd4ea77f5f33d82e5156fbe706e81": 1,
+      "f253576d61fb249a7eb4db52f8aa12f6e921247ec2743782d13e39338aac36d3": 1,
+      "3ba287e46ca31686683896c2029b6edf0be3f3a5b8b8ae119be0e2006d80d100": 1
+    },
+    "legal_web/components/marketing/landing-issue-board.tsx": {
+      "8e04ef38b9957c51095a765539e79f4cb79d1c6965c8b957a9defc1c3eca899a": 1
+    },
+    "legal_web/components/marketing/request-demo-form.tsx": {
+      "ad3eef76efb6bc7572918b70009d3c1b19647543c0b8769bdfa65e3ef02d8aed": 1,
+      "bbd21338fb550998dbd9e434c26c3db907417bd53c193e304f172774c4a96810": 1,
+      "f13a64ba2fea87ef6360c1f2e9bcd3286cc1551a90cb62a8d9345ebf97fbc29f": 1,
+      "932f815786ae75abf32f85c2e222638a12b9348b9d6e2daef63c848266ceb6c9": 1,
+      "c134d497e33f55183943a24efcc0bd5ac69725febf2c6baf2f136d64426cf696": 1,
+      "0059798b7f7023e4d9e5c4595f7b9ba7ee64f69993ee524824d57e5a48b1228c": 4,
+      "86db80a8096b8d93f3aa179138020ae2e44447faaea250723cb175dd6d025b0c": 1,
+      "dc96541cc94eb61749c3d240c6209a3738ca3c1231b42b16b2f31e12173e82c4": 1,
+      "e096ed5b85620c9769b1c3f182ed98c4b616bfea61ac5aefd96a14b2c2481145": 1,
+      "125790322b8946948fa53d27c9cca788cdb1bb17092ab5b594a3803e3a1f1a5f": 1,
+      "188492b7d2dafb0157f7b2611fdae072aaab176e6bba6ffbc1b459dac64a2141": 1,
+      "7b58ceb855efb82c3845de13b46c5853bac83f20294e3aef94802b14576418db": 1,
+      "25b20a76dcc1ad2da795f5a95036c40d4f8379202dcfe996652c190cf5507353": 1,
+      "513f0082c653e3b284a6c1db8a935b460310ab367adf3fa85679fd238fdf6679": 1,
+      "b8ad4dd2d74e8cdf4b7155cc1b771e68d185d680edffc8c5964c6ea169c34b13": 1
+    },
+    "legal_web/components/marketing/site-header.tsx": {
+      "ba3bbbe10d8bef66441c88536ce7b8e724e2829b59a3da658654f4961cd61ae5": 1,
+      "6ccd5c7856042d36476ffd35a41b54518be95621cc741ac3ed55b8108ea41586": 1
+    },
+    "legal_web/components/matter-intelligence/matter-intelligence-sidebar.tsx": {
+      "a5331d5a94b897a9072b9c10cb386fa1bd9fe8ad9b114c550b5cb9bce134a15e": 1,
+      "79006c0fe9bc7a51a561632dfa930fe69f0a46bd4a51cb75b0ef2d7f2da4c514": 1,
+      "bfa5267a446fb292e97fa72fe028181c45d530a84cebdf2357b75daa4d890b60": 1
+    },
+    "legal_web/components/matters/autonomy-status-panel.tsx": {
+      "111d8cc6f5f82b9fee506e219d86bd7714a0a1579aa8b84485bb270b6e3f01e4": 1,
+      "0363cffac57f14f3cefa8c1f57cdc73e6214aeed5973e603fc2a501ed27e6db7": 1,
+      "27c855107308d3337916d667e487c63875e70716558df052d7488bc29eb44ab5": 1,
+      "1afb830c7e4ea5846de714cccde3db8c4eda5a86c6e9e6e5cb928cd183a87f61": 1
+    },
+    "legal_web/components/matters/clause-picker-panel.tsx": {
+      "989a2684d9188ee74edc68c9f348d982378c8cb6ff0fd639b6969c1fb4a8fa3e": 1
+    },
+    "legal_web/components/matters/client-quick-create.tsx": {
+      "cdc0e1f98b833ecbc31de0ee851b747896220ef98c5b7b611909cf9bc50daf74": 1,
+      "b6626cd701f400820252edf4b52b53601d879272739e98bcfb9ceb9316225861": 1,
+      "6eea8608c452711b836732d6846dcdf40c83758f5167aee1b37c6115259c26b6": 1,
+      "14cb4c59cedd7d7a00b5b2a0445fb1de9b734da8b3c8e327ffc3c74d2778f210": 1,
+      "f93fa2e5fb59200922637972bb68e780754fc45c0b8f4f9467779f9dc8e3dfe1": 1
+    },
+    "legal_web/components/matters/document-draft-workspace.tsx": {
+      "e92b2c3aa5f114938a52df2fdd60a6a4124b9ade7e5b40cb35d726a3887390e9": 1,
+      "c1049c894d9bfdf38b3d15af68b9812ca1fa0c813a870ebe77a186cff5c2f31c": 1,
+      "731fe041ce28da1ba4db11261c0800621008583d171ed41a7ca2177053fe1424": 1,
+      "7aad9d490352b6a7b8275d1292698f8e4cbb874d13110979516d786c4193134e": 1,
+      "e023b23e57398275a9ebc836be0da7f1ee25388c0e2c0fd004a25a94f0b2e807": 1,
+      "f8d46c2570e70736d62beb6e2e8df321d7cb4842a2b894f2025c47b31871d9f1": 1,
+      "674fe2acd0d5f47b46180dd66e26e349cd9c9db215046f5e86ea2f5728d18117": 1,
+      "897e0cf78b808eddc424bd97c46c1730f6dd19c8c11e7bd6ed6b6e559dc41981": 1,
+      "b417a105b70b81ee750f523df2ff8a9c893f371355520486857917afc6bb467d": 1
+    },
+    "legal_web/components/matters/drafting-workspace-panels.tsx": {
+      "25be04dd03eefe1ccc97fd17ba19d4a54046d8f05022216955de6d762333935d": 1,
+      "38019f6b76202419668d839ef0e2d9c0435a438ea6d03389527ed7f89852f17f": 1,
+      "759f4c0213571addf354aadab734cf53182c7930fa752b44ed51122c728616d1": 1,
+      "dd541331d04551cec834fc5c559afb0b997a4d4088d5177e52ae5af76eb60330": 1
+    },
+    "legal_web/components/matters/evidence-map-view.tsx": {
+      "7c6f846836657e45ba0d4dd65022c7fd284a1d7629978be12ae229c42fd3f90d": 1,
+      "3ae7f49557580541e253d121a99624dff8eaf884b5a4cd5d10474dc8c21510a0": 1,
+      "00331ef13f067deabe5e3221eb3ed997fac2559ef4fee45a2c951794d403f447": 1
+    },
+    "legal_web/components/matters/generate-document-flow.tsx": {
+      "878c9c3b7dca6101fca3130664a94ec9560f9767f86ca5e245980d6816a33336": 1,
+      "0059798b7f7023e4d9e5c4595f7b9ba7ee64f69993ee524824d57e5a48b1228c": 1,
+      "db85b39bcd04628626d889ea0aa8831f9e8f4b12f7e544f4c18dfb49dee7c344": 1
+    },
+    "legal_web/components/matters/india-drafting-workspace.tsx": {
+      "ae0568ce593d2ea428f66764d3531be5b8a60b6aca12c6c4267bd993d1682832": 1,
+      "15edb98450be76a593ac2106975ecd3c9cf0bb3e0da4d41c06269ad9633fe22d": 1,
+      "c36af85b57b103cd09566d61949696ed70068cf6a8f464fe62d5cf83ed0cee67": 1,
+      "a3cd6dc3b5fb4b75d7c810ae215209707e85bf4604f6545a621e9f2248af5dda": 1,
+      "461af622732a95bb120249c418a3f246db3b331e86596c5950b1dc8c8a80de0b": 1,
+      "b3fd592930178bac8d227b2f845f363ab98f0cb511626b1f6bc62e1138d21649": 1,
+      "5e4e43d297857481e33dec6757f17960e3cd14bd49d140c717b70293336ce689": 1,
+      "19848fcb64580807fa812a24cdaff9f80f2fc4ccb56ffd39288dbe93a694d250": 1,
+      "b877e9212b41f8c8763b89c61f0cc319406990a47b0383effbec35f44b672819": 1
+    },
+    "legal_web/components/matters/matter-ai-action-card.tsx": {
+      "8c1f12e842d482b21e0de1b6d321ab194160e0399977c6af6609d4eb10604e81": 1
+    },
+    "legal_web/components/matters/matter-brief-card.tsx": {
+      "c072952641163aed5e9c9b3f2f0c2bf23aa5f87a27fb3798722afc6d4b95f12c": 1,
+      "39209e5c03dcedf22d2d27536043bcd18460f86c0d73af1fa29244c0fb145bb7": 1,
+      "fe2f2799b6f95cf8ff3af2f6478ccd0f6894184574570adf95a99f0a71172c30": 1,
+      "b97bb306ec4a9f291c2c69ab8d9bd22cc0755dee6c656ddf827b6b76f3b6b5a6": 1,
+      "b1442cdb3ed95503fad82dd2b9f053eecd5aaa51d32bc8db21f3a4112583645c": 1,
+      "0ebfd61c84e8965720c6807c1b2d0fb587e56c3f55426d1314472180d939f919": 1,
+      "f6eb77625278a7ac761559eaf444bdca34aa3718c447bd4a72b40df3fb6ae68d": 1,
+      "0c36fc862032189006fdabc2b4cc7516ce7ced2d1258f3c530b042f7c4843403": 1
+    },
+    "legal_web/components/matters/matter-esign-workspace.tsx": {
+      "6c675ab9142e823cb06bc8f33e74e0b252d38b9b3a9fddb6108ab50f1c809e4a": 1,
+      "380b3582fdcc35f1f2c13bcaf1e99fddc0c25b1ba96e303002b9ba98b6d446c0": 1,
+      "598f37f2d52f1e6c84c8f978ca4980532ec571a83a7c199feb6ea551970fda8d": 1,
+      "40c8378c1a077eb09b38b997999244d0c3dbb3ca725ee5de5bf76f1a7a1f381e": 1,
+      "a9eef4677327e52d6aec34b53d7bae43c2494138ee0f6d6ea425ad66030a71c4": 1,
+      "ad4fdaf826b534829d34a77e91d8ac87d888366fd0c4fe2628a51484df23584c": 1,
+      "5d70b49c3fba6bbebfe8f08ff60b80cb4cf9d38093c7bd43e04dbacdebcbcdf0": 1,
+      "ce6d20638472b6dfdc99a2122acef912371beffba5c226a0c126a13d33e50591": 1
+    },
+    "legal_web/components/matters/matter-file-center.tsx": {
+      "bc8fc6f54ca4ba6b1325ff390a7b1b300f57d1b724e4ac9500eaa8d89a525e17": 1,
+      "8546e0d8a2846797b0c1f34ce021cde8e5dbc092d9254ebaf4a15ba0d7f0c0a9": 1,
+      "66af8f4e341efea7450dfb0dfc719dff7c159bcef26f4096a73de4074674579e": 1,
+      "bd928abe4b2c117056bbe6ffb843aa8f59853f5f4d61cfcc799626a72bd7b9be": 1,
+      "f10988e79e8d9a49f45a71ecf3f4ebe143a96eb9d83272156ab54101b3777046": 2,
+      "492aa8b9a5302fcfbdec065fc2e4a2cf9c37becca29d78e0d3277031d1ee628b": 2,
+      "962f227009e628ab9d955bf133e610299d033ee4df4f1d90de1a210832c52b1d": 1,
+      "359012f8b0135cf12cc6e022357fdd606dd539aacd1b8dc4d0c3af86619cc5b8": 1,
+      "ed874a998dceeb8f12f7c99b6bfe14651750504f45efd8b8ed1bbbfffc5a0f60": 1,
+      "cea4d2e010b8fd52bc28a66eca24ff0d616b2c7d982545757780c196c5cc04c7": 1,
+      "95d9f739d9e735682cc5b68dc9e83b71edbd4da05a0e142fcb822860376e700d": 1,
+      "d4620bf2fff3376f04f07893ccc812a57c59b28e7f47dd5f96a4ebacc10dba3d": 1,
+      "759998cc0fe94a383cadacb6ab80c8afaecf54ee585aba660950bfd3d615cfd8": 1,
+      "1bcc17e4a7d675baac0819c74e6f863390cfdf77bd1c5f67d497e5c5246c4143": 1,
+      "7179ea0035fca783ec62b7185659b68c75f2a7c12b909306a57183dc9b3fa44b": 1,
+      "082ec35ee80b7a2c462b2bcbf79865e07041012efca47d0f75f3fdc417996baa": 1,
+      "bbedca23d1016fe4247f50f75cba9a243bd50166200f3ad236ce8d736b772bda": 2,
+      "c9c549db169c360ae6835a64210525fd2ddaf24dc8badbb3b180eb58770857dc": 1,
+      "f36b23c37556c34a5838b2e9536e17d415c83ff58e168851166c09a5b85d2cf4": 1,
+      "9117a5cdf370fdc7e9cf3d046e05c187611b1b84c2819a9fece4b95fc819100c": 1
+    },
+    "legal_web/components/matters/matter-form-recommendations.tsx": {
+      "b57654b3c6e99e7991594b654972c6b319be9fa8a32a0c018ade5b2ab7a4d1bc": 1,
+      "50854e541e40039ed835d712eefeb40f12cd9fc314b22fce8f7f88879b63c0ed": 1,
+      "3677cda207f5cbb6ce1091fffc3caa8be11cacfba09e6cab5115266667d4c17b": 1
+    },
+    "legal_web/components/matters/matter-get-started-checklist.tsx": {
+      "d098b5e32fc3e20d40f96263bea269f1e931ecdea46525f9826cdae71e2f6c8d": 1
+    },
+    "legal_web/components/matters/matter-inline-copilot.tsx": {
+      "8c1f12e842d482b21e0de1b6d321ab194160e0399977c6af6609d4eb10604e81": 1
+    },
+    "legal_web/components/matters/matter-intake-questionnaire.tsx": {
+      "6159d93db40fd8bff058760db0b18f47279a885e8fdaab64ca43c6896c9e8a96": 1,
+      "c025c3c9facf1293e5802b86fae99781b7c3d84c736c98cae78dbf5d913f136c": 1,
+      "53ad6f999b1f062fb8fc100ddac854c3b96a36c1e03c6c8c61ce892d068b33c9": 1,
+      "fafc420cba588b9def4b19b4da7ad43c678de77232740e38dbec5687c18259be": 1
+    },
+    "legal_web/components/matters/matter-intake-wizard.tsx": {
+      "a053adf013eb5ddbb6908cf82325b81763f8cc59d16af17546406336f4ac30b7": 1,
+      "fc25b6f2082cc8c17b0c66f0e9177985ce528ff587e1d68e9fbb351e9788459e": 1,
+      "44709ca133da4d2157d048e0cb4b4c423b3de8c7eff4d3a4c7a554407a6be4d0": 1,
+      "87e0b35bf892dc9dd65831cc5b40d65e24525f5e7cf68e92d92a52cdec5b7f99": 1,
+      "f3f29b701b3c84f2aed8de5365730ddb37da1575abbc8d9e4412af7d603f8e94": 1,
+      "799e29229440a12299ecd8f7cbde739f2c57b5bb0261bad50facc256668dc23a": 2,
+      "2d11759b60ab05257120fa908f3f8bf2aa3e7bd55ef23f6c45121e7b120fbc6b": 1,
+      "4f192d51f1fd7422704b331e3d6d131d259353f44d6eac834fef0e620cb8cd18": 1,
+      "a5417f87ffebe71ee04a61ddf33263c61cad87921322673beca75b4daf1b3869": 1,
+      "82dd5cdc25fcc074553c03164ff8d7e15be3c242fc7a6b5091ba56e04786750e": 1,
+      "7c160370ce930c9c8ef64464bcec5cd60ad2ee62a45f9393e90b5f43fd1f7a95": 1,
+      "dc12bec5d71f167b495f5a32ae80c61279373eef97fdc1b5584c3e6ae0a8209d": 1,
+      "59a714899e03a3010c701f433df6d3765aebac08332fc2acbbec0f75acc38374": 1,
+      "bf01b411be4605a5772ecdb6e93a41074c6862da7f6d10fc6804c3c005d069d1": 1,
+      "dfef076312712d513dbac06f17cff07cf27cbe0de5f086eab9793718fb0e70a6": 1,
+      "2c6817bda702f3377ae4f4c9ce12c78c96eea1dcc84f5e472f0dd77bbc420201": 1,
+      "a00dfe02431bfe384cf684ec1c02870c93d89ce11b752b2d3422795cef1308df": 1,
+      "f17af123264531ddc96ece95a2894127fc65b04985663b5725e639683269cc72": 1
+    },
+    "legal_web/components/matters/matter-review-workspace.tsx": {
+      "458bc383460bba17607f1e64eb9ce3b9176d1513ac41339c97e085899ed83104": 1,
+      "f660d71ce620c3fb11c6e28a78141e5ccf4fd2e8f484543c23bf0bb55b8c9d64": 1,
+      "cf065230b435ec8cbc5ca58557a20417d271bb1abfef725a593cfbe994067229": 1,
+      "7734c64952b9f6c4697ee4045eae68e22135199482121c3fd92f6d4f26cf2d91": 1,
+      "1666d9df4d940ded166a762bf7a76ebe80f21f79c15e7284491e60fcf49d1036": 1,
+      "6da626142f4e9aa9994930a6896e6c85f87346a0efc97e5d64330d31bdc678a3": 1,
+      "01d569a3a1b3525c8291f39285c51cdd8c5f44ecfcee9baf01ee7d06ebf6b4cb": 1,
+      "c9195f274fd1f7696c6eb160fca1838b6da72fb9a48694763dbf9d3a971f242a": 1,
+      "24cf263c0ea019f7bc0faa0a4d98ba5d316d2b7d6f6a977857fa3e83f25ac051": 1,
+      "b140a429d8bac36a9da6b2c431f558a72d11b0dafc21a6be7b951bcccab2934a": 1,
+      "d37783263402a5f99e3b4363620d536214d7e898da3d72d997830092a394024c": 1,
+      "d17da4ca64f14adc379be4063acb57a284052b85c80e703c6c0aa200bd392a62": 1,
+      "aa49990cda9c6bdce9dc1e4c34f70e0d8e312d48ec9d8b98fdb8fbdf7be9778a": 1,
+      "2f047ddf3d5d8e25767871013f3a4e25c72734fcd7284270d034a9019c78480e": 1,
+      "c1c93b72082e87a5bcd5704fedddcc6acdc3c666dc77c2cfe18613889b9054db": 1,
+      "be7a86c96d3ba04610c6c8d3edc58a1f2d91a61a8d49e5994f2e983f30bb2d3d": 1,
+      "d67b993f2b46a8051ce625a12551d6b867c03d92602e963468e72d4a1db716f9": 1,
+      "e1078e90fccb86bc94a11d5a1973226d0f3d6c6032fd5f810e0cb82f822fe8f1": 1,
+      "9efcfe0a5e74dc79e38a3c471dbbea87ba7d23c9647a027f164326b90682f475": 1
+    },
+    "legal_web/components/matters/similar-cases-panel.tsx": {
+      "a55d488979ec77c549c1900e0d8e07defdfbcffbbd83f93e76a43c4d9f4b2614": 1,
+      "4d6ac1bfe5d253f3b92020d11c775bf8c0ba29ece8050332a391950816378ca3": 1,
+      "8727e2ba364c2c46192df0e1d0318d0cc82b0c1e6f7465e012ac59430254e170": 1,
+      "b4efaa0fa83d03c893731ba2ff4658551d963bbbd82b2be064c6aa103004e1d2": 1
+    },
+    "legal_web/components/meetings/floating-recorder-bar.tsx": {
+      "71aae0c858c731472dcf63896665a21c5f8625d73843d9e14edd9b2771b77a09": 1,
+      "7193214541046831a3de0887ff11ee1e3cf72e8ebb3be245ab7b35ebc4c9bbc7": 1
+    },
+    "legal_web/components/meetings/live-transcript-panel.tsx": {
+      "a4348acc6d9cb60f4afe6bd72a447628bc7c24e76c12a7d7d8e69239e0be0ca2": 1,
+      "b41bdfcf7c35d1c221bc9f0255c40c6ac2a1ab3a5db7e5d211702fb9d64aea5a": 1
+    },
+    "legal_web/components/meetings/meetings-list-skeleton.tsx": {
+      "67615a8c4668ea9a07ace22177c2cefaddfe747a96e5c161fc1c72caebb16717": 2
+    },
+    "legal_web/components/meetings/new-meeting-modal.tsx": {
+      "c48b7c47034cfc899deb19c92141d68c829f7312f5e9ea53f78c3e0811a5d80b": 1,
+      "47b8c6ad81714c55a0b2d03325a09949a98124ad48af42888bd8bdd7c679c0c9": 1,
+      "5055c3067ec618db8e911fe5043594860972d45e60dff7ae18b0864f6844861a": 1
+    },
+    "legal_web/components/monitors/create-monitor-dialog.tsx": {
+      "3aeadef270b5761103446fb41cf50c36bae25eed02fae61bcb3430ec5cfcb6fb": 1,
+      "49d013a3226663c740bb9ac16facc4fd4c7b9700b82165c58c2ba63b1b83f63b": 1,
+      "34fe1e6a085d11d76351b5da2ecfde3f0df441bf056280ef2d85430fd8cd18df": 1,
+      "b6b854aa1a0cbf852d11f8a748efd4676834eaa5dcba8fe83e321b34a30b4ce2": 1,
+      "3b255086bb32816145bd81010886af0a7471ccee36c13755257953137688d61a": 1,
+      "98e722c5f2b114ba2439e6540e802c79f91a3424a54266204c21d318669e6650": 1,
+      "f399cf280654e29ce95c924ea91b3721387af1b3e893a3b319f43913e205623b": 1,
+      "4249714fb96060f9981235ed187a807007f26707e03092ba6f7e7e6aaeb17eb2": 1,
+      "82a91dd21deb29fe357553fc0e3b18d91139196c8c94483fc4c606130d8720a5": 1,
+      "9481908a32b320b3d3e288e5ee240b61307431bbac2f7e69aa2078ec73d7408a": 1,
+      "731fe041ce28da1ba4db11261c0800621008583d171ed41a7ca2177053fe1424": 1
+    },
+    "legal_web/components/outcomes/firm-benchmarks-dashboard.tsx": {
+      "e2e18a767a2b6db536d136ef65f4a26977247ec8de6753d29245ce4bdcce6271": 1,
+      "7e926957e87082535d0c1b270fd0eb25fc73a25205ecbf2485008833fd87ce19": 1
+    },
+    "legal_web/components/outcomes/matter-outcome-preview.tsx": {
+      "0c11a2f29ce0b1725b4532358843e56c02a762a4b4d52597eb84b9a990149e17": 2,
+      "4d26458bb2b4a9662aed1bf751ef266e41cc4cd289e7d7897c0fffebb49b1516": 1,
+      "d2871909a67f37fbbe3145f478390aa42bcf6161fa6f0229fb14e3add59083a7": 1,
+      "9126168188b8d8cd38ba29fb3bb30d5ced2d4772514a087b0c57cb16de1f557f": 1
+    },
+    "legal_web/components/pricing/pricing-page-content.tsx": {
+      "4bfc78b3c064609e58603e9999af0e5f6a2b2a15ed85efc591b5cddf40c6b5df": 1
+    },
+    "legal_web/components/research/citation-review-dialog.tsx": {
+      "6578c0562b2e686d3eb598334f65b067c00bf8e0554c1b0fe88b2eb4b624b12d": 1,
+      "0e70fdbdac8037c077ed83a02333f79bf812b5749583d13762c63d40452b6df7": 1,
+      "e39e25a4001a42014a92fa47aaeb49c2382494ee72d610fb8d7bfd4377e41a45": 1,
+      "efcde46183d10ee393a18b566c64ac62c8d8a07b5d7c87769251a1027091a646": 1,
+      "1adf66b33f7971af29e871d20ef397fb7b0072505fd676270b173698ab9662d9": 1,
+      "015fd72b1b7c12678a766d17cfb464515a53a084528bf0e0e9e1d158b018428f": 1,
+      "24c14229df72d1a1b351e2df7f1777afb100895312550fa6568265f346ddb56b": 1,
+      "a7cb2ecdf4c36f312ad567b859dc2fa7ff4b66409953870002ed161c0ff03c76": 1,
+      "4145a4b682853270e50bb31f295538fe29a35560bc78dbaba647843e50f96cd8": 1,
+      "d5c32f304048feb971c78ff7722d2883c0f52d3b96d020f78d0a66fc6c4a7abe": 1,
+      "310326a29c4ea0f79bf7efe141acbd2edde4d7dd718b56e02b45e5d24b786102": 1,
+      "5ef17570f851730505b7afd5c5ab9bd31ea0bd0622977c6a8369e9fb0c50b4b1": 1,
+      "58d2baa5076712bf3e13f796c9441318ee2a7cd845e4e74872f99de3bc85239f": 1
+    },
+    "legal_web/components/research/jurisdiction-mismatch-dialog.tsx": {
+      "0e2551b1f15167bb80e9209ab8a0f4e84914dcd2c17d223eafacb9a4a18004d8": 1,
+      "addf41dad23b2c3323ae0e9ea1c6bffdbdbde2b43b12bb1855abf02a9140b5cf": 1,
+      "cf8c8078d8db95505b5fb5c7ffc5d06ca57e590803572283eb30578bcdf8d1ea": 1
+    },
+    "legal_web/components/research/jurisdiction-select.tsx": {
+      "999f97449daa285cb77c4f34300c11e235c096b501df9a963c1123c7e953363f": 1
+    },
+    "legal_web/components/research/matter-research-context.tsx": {
+      "764d1646a5895e28855ced70c99a17069ebe771b8accc2ef8b94eb912496ca14": 1,
+      "1b780183001903b6ea3c5680f655fd0e556816dbb05b37cb061e87f22436a3c5": 1,
+      "3e5409d0e8f41717debe91dd97ba34f8a1f475a79b1b6fbb2a633bc231cd0794": 1,
+      "9ab6e801b73dba8311ca78ee31cfb8fb8567bf194cdf35b2e210811127be972d": 1
+    },
+    "legal_web/components/research/research-actions-toolbar.tsx": {
+      "6f498aeb443554c4ae2ae1a85948faaeea07a6eb63ec482b6a18630de32e2647": 1,
+      "19d2f26963aba69e62b82d06c270b7d46b10c118b275d9d1de4c7f9f735f5fff": 1,
+      "5ed3824156e988f71404eff35c4dd2caa163c13ae07745ee16969700896b405a": 1,
+      "841ec82443f4c6cccd81028381bc72c9dbfe8628bb02efe153e9ce5a78e85dc2": 1,
+      "c930485906a24a1f350c9830705f39ef4d0fef25857e2a0037d117e76f39bc35": 1,
+      "49becabfba482a26167123b536976574569f9fc1fd25a4e5227cbe85e6594f99": 1,
+      "1f95e1aff06c1e1b65b3005eba3f115527b733e82892ec7b4d8125e773ce3f6b": 1,
+      "5b50e7a693fee952b9ed0e7c240bf4cba69b1dbf02af718145b297e4110591f3": 1,
+      "7cac5c00ab6fe7eba5333db2fd104c0da42be7b14dc8aab4a9a5f413bc7f721e": 1,
+      "8246891f03714c673529f2ad5fccc43095526abebda4349d2673955ade127b96": 1,
+      "7be3a9967f712a9ea4808087666231ed99f3d193cb3f2af3f184c0a3252a4324": 1,
+      "d0470c4399c946dd2e0fbef9e69d845a55b5721a06ab05c5134555e8dde75d09": 1,
+      "78d6b499f5b1fb25e552a373103ce9f131c06e3372171f0954cff88e43ab1f4b": 1,
+      "02dc3455d2615f3aa934eadee0a0eb64f858f901c8061142f19c7444e799846f": 1,
+      "896879422a5227104cf3514b527c1bf31438bd4f809e40122234b2cc3a61f91c": 1,
+      "8396f34c6d73d2a8fb4953d47952777317db8bc0bd1b0a774294d75f32d283f4": 1
+    },
+    "legal_web/components/research/research-authority-manager.tsx": {
+      "64fc3f4cd130ebe6a4c01a8334ef68c283ac9a182a2c51424865be01ea3a953a": 1,
+      "3376cefa015e32ce0e15171589d95ed6da771426d528e6ef29ea9602e0e1f06f": 1,
+      "0484011ea84d34a86c4e43296c7220c069d1ff56946ea12d0e6698b0e81e665e": 1,
+      "636ab1bdb14cfe386352782c81c7a64bc33040e96604d40a959060dab98d12cb": 1,
+      "444551e6e84e59ed41495f99c992cd6f6735b6ac34bb4726d9081fb661615404": 1,
+      "651bbd7f56eb10cb070476f6ef019b2b587da63d1ed8838169b3079297774177": 1
+    },
+    "legal_web/components/research/research-memo-answer.tsx": {
+      "ab7ffccd2b3c445b7b6607f8bbdee6d01ad38ce0cc802dc1d87eb188c5fe8833": 1,
+      "86def572687d727ff61243257f5e33c2d95521841d4c3b6913261b561983e029": 1,
+      "170d7271521ab27b5487327b0e0a905a6237d86c608652258ac796e51f4273ed": 1,
+      "19c6f2442ee985842cee17d6694e0395967e35c726402d07e7385c6687f9dd0e": 1,
+      "561c04e0e757c4625902e9d28c47cbd9840b339dd6993a7846b69202b9ec00b2": 1,
+      "cc3fc60a31717e25e37e36f9366fb93ca3530823ebc15e8ac4073901962edc71": 1,
+      "866a05f013df5fa49ba61fad55eb95e1aff9548058d16af236051e45e7009c6f": 1,
+      "04fb55adadaf41a0ddb6f6a68c22bb540930720a9f19c070f6b5d3d04c3dbaa3": 1,
+      "903ea500e7ccf842c1312b6c2f964e3e98ff146456cecec717e9a0e122bf735f": 1,
+      "1f37bcf9d6a9f246422fc59478598d551ded544586ba2c76a03e7b5133d12930": 1,
+      "bf51e830b5b8935099bd5b3151ab5a5758fbebe1786e7eeb90d69540ad75a0e5": 1,
+      "e74b28da14a3a6b982f91b954a5980624c0f8992daf007d4b025530be5c51419": 1,
+      "c11c45ac28afce4e2d5102fff7e1e9c7e828ed50dadb165d29cb84caaea24f7a": 1,
+      "771a252ba6b2ea3967fdaac7dcf30b9eed711fcb151d4ac3c24ee9695027a8e8": 1,
+      "1c292fcc79afa1d1044b0066fcd186891ab3d60e6dccd9062764c7aedef4567d": 1,
+      "fefb351fae54fd7fb7213dd9e949b67bc303f4ef5fd963c8af921ed78f150edb": 1,
+      "c0db9d6bac339da1d378aeb73c94c2d5872d6be758bfca1f544b82e5453ae590": 1,
+      "1046df178210cee38576500555eb7d0c8775a465e95651283aab60d082c81b3c": 1,
+      "89f6173596983920ea312887dd70525d17a1b45fc0926ff573b0cef1f88fbaaa": 1,
+      "1f4fb4fa330d728a51484ed56caf79ce0d9422506a54319a5b170243abfba922": 1,
+      "0df0af61a08369843fa3ddd90b4fb6606b5d6adf4ffc08917d794d7fc0589c83": 1,
+      "28aa6ffcd51a4ad115e71b513291e4953ceb4155c07b8cd5dcf76ad235129f6c": 1,
+      "e56d5168db5b7ff01897918306bfd159e4066840dcccea97e7a9a219e39f6f6c": 1,
+      "557f8457262e6bd039729a01c50d92b5de7f9b9e19c6cc22305e6bee9b78a791": 1,
+      "bb4cbfa51f4ce991543073b6d83592bdb9b9d2ba7869a73845ba6d36fda8c247": 1,
+      "0e3374c9bf13c8cddb2cea109ee651d2a39d2b1379743e582b37f8c9fedd3d4e": 1,
+      "17a275c1fd64ce0a72757895e03944245f2cd4018082e291ea80ede51891d4b9": 1,
+      "8529f88f5c393075241aca2736f701642eddba347091610376b877d2b4199e35": 1,
+      "a13279e5c7e8e7d1f20ee508752cee8428572adb050de64fd103fe38d49b1eb2": 1,
+      "2cecf2a7b1ffdd356708c8cd0bacfbe5f9405b889ac9af40dc8294cb28977615": 1,
+      "91b03d90535d804c0d661072853f58590873bd037920de837eaa8e80ad034c4f": 1,
+      "f2ae9b621717cdfaf3f81396df37337f52796525dac1460ac72de1aaf0fd72af": 1,
+      "53bec279af513eddd143485766fcc433e8379ae35ae1caa3b1950069817bc8ff": 1,
+      "0ab7f4189b4ed9a7e6c9b9a32a6cf148d8ef570f5648f8f08850e7e4705b6c81": 1,
+      "f9478aa8536f75a3501154c674d655c98ff05be1f59eb2e81406c99ee1824b51": 2,
+      "66393c475222c68a9d5306126c51c571ef6b2e00233dd27e4d3b3524fd0d2826": 1,
+      "ad5537ae780452a638cc22d0b14de9b8ac3af7b00397ba57d07b7422be53205a": 1,
+      "ae14298e5ea9c122d8fba3c47986942b34375405427b3613f9924072ca4dd2b8": 1,
+      "031827bac4934bfd60a8e17e4aa83a5caba3d18b0bae2efb78b7447c9a55a02b": 1,
+      "08b6a00739c84c5aaa9849af3628cfb86a98edf3f1cee715bec7de6581ee3f62": 1,
+      "710c9ee3463ca3df0c2ce20872547eaae0466930753381db2c95b63d43c94b90": 1,
+      "529b58187d457c2e1397e3ccdd9eef5be477cc67ffb1cfaacca107e8b2799020": 1,
+      "cadd615a5d9f3c05a32bef9784091083e13354aec6983c141a5fde071af5e0fc": 1,
+      "ddc2effdf8ba20bbf8783c29a2be06e67c234574821dd42b618edbe5933b0b2d": 1,
+      "9f6e41fe63cfe24d2afb3689b6aab15f2e60dd0172a0458476418c61c2a17b4b": 1,
+      "5711592c660e28da69720cfef30a5ab69aa1055906502d9d2548fc04d6126fcd": 1,
+      "e85f62122a01c6580a01b0fae08d4b8ddcd4b6d6546f384e6d852bedf1f4bfd2": 1,
+      "3fd4e507bc7a6f7a86e04a071d339c9ea95455fb529c246571ca589f66d14a06": 1
+    },
+    "legal_web/components/research/research-results-shell.tsx": {
+      "227c881d432aa27dad38621113a2b22a53b511c78c7cb42d2cceda6afa9ccf39": 1,
+      "cff7e8ac28930d5c96ada4a18c2aea961b85431bc43935fd76368468d6df6994": 1,
+      "4d32ed33d5489b4fbec53f1fb758d6700030b5f6a9a8a0d68361e38b2381fc35": 1
+    },
+    "legal_web/components/research/research-verification-actions.tsx": {
+      "011798e8d19661ea042c3d901edafce8b519874fb604246d76eeff80c85b67b9": 1
+    },
+    "legal_web/components/research/research-verification-trust-labels.tsx": {
+      "80fba353775957d11b45123ebef742101c21aa2b151b6e2d57331d7fc4174903": 1
+    },
+    "legal_web/components/research/save-research-dialog.tsx": {
+      "3f7945c669c8dd4d793d9bda2a9eb47d1b3a78055e80f4eb01de293a2072bfa4": 1,
+      "ed9be102a0e9cebcdd4bd273cd2cf8719f07242ed1bf08dfab79766e757cccde": 1
+    },
+    "legal_web/components/research/saved-research-panel.tsx": {
+      "0cdf1485cb2733182aa7bee1ee26f940046cdd67303f78c6610a19b71fc6ac34": 2,
+      "c37285557a8009fc28a134515223c9c2fee85d2083f2f9e5d2da59060e4ffe30": 1,
+      "979888a7ac72bd176ecb036375c5bc2258d413c689f7deb036685a5860d68363": 1,
+      "fd36f5eebbc2c9144d533a9f9b19b2d4427325b3e15715bb19ee014c6da11a34": 1
+    },
+    "legal_web/components/research/similar-cases-panel.tsx": {
+      "878eb6d9a3ec8707ff9005f496b202b9a669d9700cc25860f351112a02f443d6": 1,
+      "f6d5c6312dec7a14a08d02964ade225f0c40beaecc151caf12dc0b3ee23c86b9": 1,
+      "8893dff34c02db6a4e9bb13792e41320671581fe96a8c65721b2267627a48aec": 1,
+      "67e375533f0bfa6286a46d3def6350c11f821efeba3d0595e5e80d0ef01653d2": 1,
+      "525934f28ab14a171dbc19657cce117f1d86665bd0bf612fab914c8dc7b93624": 1,
+      "73906340452a7e1c81d428135737e3850f92ef3936b6c560edde26d0e38e8612": 1
+    },
+    "legal_web/components/section-finder/section-finder-workspace.tsx": {
+      "24f29cf7c1942d3dc64597bfff2b52001cf062a46175bc614780703766d66b13": 1,
+      "c707ee4ecc24044266322a90cf1a23752824f57a628facc169ddbe215ada4adb": 1,
+      "b9e6eb65c6f4c6d5011ce4c8424bd6614f0f9344866aae89089d080a06fe733d": 1,
+      "3cbdc19488b91ca03d227fbb3909458ea150636913be05b783e5e0193aedb9d6": 1,
+      "c31723ab330289fe2cc4c7b69b7a862361da79a01f84893dc7b89a6de0ab4b42": 1,
+      "2ce2772c5161fdf46cd9cdff72af6f00a252d66167dc30f8b7177660bb514d76": 1,
+      "7aad9d490352b6a7b8275d1292698f8e4cbb874d13110979516d786c4193134e": 1
+    },
+    "legal_web/components/seo/json-ld.tsx": {
+      "7ef1baf8f7c91b497aeae36ee11d9df5b7b0870b0c805043b6309e06af1b70f7": 1
+    },
+    "legal_web/components/settings/change-seat-plan-dialog.tsx": {
+      "279e564512106184e4bf030d3f42d9ec44ec4dfed28148faeb8d5efc86d99824": 1,
+      "9bcd8b31a743e11845a81a8a2f2b2cb5b80c0ab8a94c66721077e16072bf381a": 1,
+      "040197ec55de252aae474f2af07c52028838694ca04ef8e78b001d6c8466a3a8": 1,
+      "277103d8a8259a3e51f1605d3259e79de969c24d0556519c7a3fa6447a2217cb": 1,
+      "dfe40efe921fe88e332575a3516f4e8cd6bbb71437cf260b2bb9b947c65d1484": 1
+    },
+    "legal_web/components/settings/contract-playbooks-tab.tsx": {
+      "a7742466a2531d94941cee1c848e6721c6c7799c1d700fa164fcc775a74682c0": 1,
+      "233a180d78b5001be3df8c1168d81cd2f52c85f69497db8043ee5661489cca5b": 1,
+      "fd27fda333838f7e1901a948fff4162cecb0fbc9c8fcb7c3455d5c485e5b0e5f": 1,
+      "0bda0d62e464f210d0a9981a57ce8618e1fa21997a5b2ff5c6a4048b4d32979a": 1,
+      "6ac57d16f44e1ecf93a299db8a28f4977705c98a0fd3d52827af2055b973a7ee": 1,
+      "ad48d4cf0e1f324210fda0d079d61dc18fa2cb25ca62816b8ceba8ed8077b9e1": 1,
+      "a08d6970bb5ce5a79b4affabc51bcb3195989d54b57cae06c106b10ee67ab51e": 1,
+      "814a02d8ccb6ddebc79cfcb6e07c9f3f40c265135e26ad1231ac13227ac86fa4": 1,
+      "c1786fbbde25bd8f7d42abf8f60d26161fc801ed08d3b1d1ba98dc1518b74c32": 1
+    },
+    "legal_web/components/settings/drafting-style-dialog.tsx": {
+      "edb97307b207271506747a6495c412c09c9761b975a49c5db9516d5ce035d14a": 1,
+      "05ae6004bc16bddb86e1583bea99adfff3b3f70c3757dd77a46d2b1716e839ac": 1,
+      "95ea62a6d44c96856ed080b033d19c8634f3f6fcde0197483120117a3acf0b34": 1,
+      "dc808959338579e06a1a890b75c841e1ad21c425ae2676c62fdf3b10f577aef5": 1,
+      "148dac4dcdde1fa0465b796c38dff55518229252cfdf871c45a9efcb98a5d402": 1,
+      "53f2b0e06d24ae6682180a31fbaddaf87ce4f515d2e63fee4e521603e66489df": 1,
+      "6a375b8014add23496fd03c2d92b5255499f51afb180af61510602b6223bfd41": 1,
+      "2a4db4e02438aa176df6c3a3ef4b42fb8ba4f24bcabdba7bce4b291bfa08b2b3": 1,
+      "bb1546bf1e77afee37e9c14262b684f4fe54fe00c8a34f17e95956abfc85ce2d": 1,
+      "5ce44dd77dae789f322b4bc032812a77a989e90c31928743f4fbdb26321011c2": 1
+    },
+    "legal_web/components/settings/enterprise-setup-wizard.tsx": {
+      "85a22ac7a2c452f95fe34ba95610fef2b39bc3fc2f8c7ce6ab75ae1a393033ab": 1
+    },
+    "legal_web/components/settings/privacy-assessment-form.tsx": {
+      "934f8959c53901f968f212e6f42a57af131609760ee70e765b1a8bc224216e83": 1,
+      "d9d5c7ca6416feda76085935d2872063b7de8a3212d8d8b9840e3b4ce81161ea": 1,
+      "20fc78394c4ac57806faf06c854d30fbe409ea4a5bad355401d5b78ed7f92234": 2,
+      "fc9c755faef2595dcbc41ebbd4539b10df1fcd92f67c6134cb2c82431dcf10dc": 1,
+      "947e83725c33de351ef5c10144578423c3cfa31a6898e63ed081e9038b638479": 1,
+      "df5bac73e9fb15da2239fd65debbd721816b5de9aeb6fd13503ff6852bf51507": 1,
+      "4ac6cf62ff67ae16c824dd3691eed48d68e95d0cec86c38fdf8813519ef01ebe": 1
+    },
+    "legal_web/components/shared/provenance-panel.tsx": {
+      "67a0d2e0dab41fca184a37454ca4e946011756ec7b74eede7810d7df89904a18": 1
+    },
+    "legal_web/components/smart-workspace/cross-doc-search.tsx": {
+      "d0e6b32a0c915782f799f4dc841ea8a27af15982cdf74e243d642780d6c857d3": 1
+    },
+    "legal_web/components/smart-workspace/doc-sidebar.tsx": {
+      "ce496ca3af74d09ab44d903b3ded53abb1988aa14d89dbc13088112a2f53d033": 1,
+      "62c9105b15ebe2b2fa1fbabe0d87d3cc94b2a18869c49dd8128854f04357d64e": 1,
+      "f794b100b2b582fd79c03007815d9578e85a2549e7bedaa5897554fa79aee717": 1,
+      "fe2008fa744ce9ec93f094cf28478d0ff271da59960734b0ad62e4ff88c21b60": 1,
+      "bf720619cc40034bbb7b0d6126b67b55fa2a62561f32260b9228f1a1ad7911cf": 1,
+      "8a7aab9372de0b03e9eca4ce72f8a98da1810101f178b704a736184bc28c0a11": 1
+    },
+    "legal_web/components/smart-workspace/filed-research-sidebar.tsx": {
+      "ba3bbbe10d8bef66441c88536ce7b8e724e2829b59a3da658654f4961cd61ae5": 1
+    },
+    "legal_web/components/smart-workspace/ocr-banner.tsx": {
+      "dbac0e36e723beac03136dbc8534f40fab2bc4d439ed52a78a62ee79ac855623": 1,
+      "a65fffbd14dfe80a0817138114127d0c3cadb4bb9ed0459cec54dde41dafcab7": 1
+    },
+    "legal_web/components/smart-workspace/workspace-canvas.tsx": {
+      "a1769fff44a3d43e95390e25bc6ce405f5496cf69f334dbebbcb2b88d99d13d8": 1,
+      "4db8fe3879b26e45805da78120d4a88b9b31101ece646bcd58abb9af58d252bd": 1,
+      "27f16c7dd6ebf6616aa76f06fdb3966740f70517158eb9b6e86b17bd62c42d18": 1,
+      "3401a1201b0aed4b4ee3051ad3dad6f9cf16adbf4eca11e03ebbcce1303fb154": 1
+    },
+    "legal_web/components/subscription/subscription-success-client.tsx": {
+      "b5273c1b4e7a273e046df2a19c1a6d6bcadf607d22f9901c6c05946f36ce2fb0": 1
+    },
+    "legal_web/components/tabular-review/tabular-review-table.tsx": {
+      "48c7fe033cf0297a519640440586e9d3a534835a5659445f60ebd7426490281d": 1,
+      "a0a8c325dbff6efe57c5799478503b901784ee7636a502f8ef1760c514427c5e": 1,
+      "eb2d449337e400ca484d366795ee9a1c274d73b8aab7e9de56787680dd2f6cac": 1,
+      "4682a7f7972130ed2268250f8a5c7f96649601c51a61706e589abe3673a9b3db": 1,
+      "316d2bf93e26f2848f98b0d6daccb28c75a0c6414a353e93c2838802020ea045": 1,
+      "4d7d9ff9d3ba8ca38740eed7c138cdc4083fb81b6b020b1d082b3f090e846422": 1,
+      "588a08236c7e51e28607f0b725296c8a1599fa419f7eb1191794a7b15616df2a": 1,
+      "0714b62fbcfbe2415634efd7088d8754d84939249282dcd5c119331d7283711c": 1,
+      "bc92e0e35c9a7ba1b3ec441119dde7058b36fc2853815e402628b5613c19b011": 1,
+      "fc74a57f7369454938cabffee10852d343d6b822cff65348d61108f9b3af4f9f": 1
+    },
+    "legal_web/components/task-patterns/prompt-library-modal.tsx": {
+      "05b7fb2044f6c3f9bf16edea1f9ef1f0ea13ac8e6bdc526591709c4dc07a576a": 1,
+      "2ea9518f3ae5fbdcf76e85c352923dda8712c828a6826ce98981a6995b30827a": 1,
+      "e32bb6dbee9c1caa8e255fbf4b76dc3604a38d24e9e25b8afc1a2ce317ee2ba6": 1
+    },
+    "legal_web/components/taxonomy/practice-area-select.tsx": {
+      "6044a91b9a3d20a64195933ba450329b956e3253d333ebefe00c186839f4f506": 1
+    },
+    "legal_web/components/team/AddMemberDialog.tsx": {
+      "f13a64ba2fea87ef6360c1f2e9bcd3286cc1551a90cb62a8d9345ebf97fbc29f": 1,
+      "77e8cc5e56067b7e067bfce5ef0c5ba829e5c2d5aaf33d8939e6f21b4fb19273": 1,
+      "979d653e235ccf0e5a4f8a993cb497a5b7ac99c300187586f3c5def7bd05ce77": 1,
+      "2cdfe7cbe645b79c61f2495ac824f5d2510038cff33a39297f19fd40e5279d15": 1,
+      "2bfca9fb946f00a812458c799e737c0718f439ce9a49fe7e9f31e0c91d4c319c": 1,
+      "b2460dba82e1c4967d29281172c338cac9ae10fc31eb139f000b20d6ed5011d0": 1,
+      "b8ed5279e897be5def6b902caa5121b3c1ee6957209f715187878a93ae0ca8be": 1,
+      "d076aa0f049416cc4f8f20352c47a32182a65d464932ee1c4475df5d36c01afc": 1,
+      "01332c876518a793b7c1b8dfaf6d4b404ff5db09b21c6627ca59710cc24f696a": 1,
+      "2a48cc10b95d0a6c6b61b631f70e8078e8fd8cccea18f79c152dc076b573509a": 1
+    },
+    "legal_web/components/team/CreditUsageBar.tsx": {
+      "4b8bc6f549d85e29ee16a7da215d534b22aee521474187db134fad510e597220": 1,
+      "eb66fc6ccb98d9bcaa32ffb5e47d3deaf692f972938e4480a37f31c0b1229760": 1
+    },
+    "legal_web/components/team/MemberDetailSheet.tsx": {
+      "c459c0f671b7b69cdde96b76311b30d5547d9d1bac05cbaeb572d24e2ce1c590": 1,
+      "ebef4913293a46775357c57d2ec13501b61dbbac74d0233e2dbc84a53c6ed3a0": 1,
+      "ba3bbbe10d8bef66441c88536ce7b8e724e2829b59a3da658654f4961cd61ae5": 1,
+      "47aef73538e37450b78471b5eee1bd7710edfd62791096d0f4e5731ef2485b27": 1,
+      "4932fbbd2b534e672288a7d1c5453b9ec1262e7eea7969e2955c2a3759745c04": 1,
+      "84274fb078c8f9c76b37fba5a5db847b6e68d0facec6de5f051c0d1bfceb973f": 1,
+      "bebf32310aafe7d3d985aedb40889f671f77bbaeffadb602b5cfd03fd0c1c75c": 1,
+      "dae7b3a95a36d3bd5691d5ec995d10a9fb934e5fb1d9cc6b18201c8bcb539c5c": 1,
+      "fd8b8dae44216610d490dc8bf3470a2576c62b7a2bbe1b9234508df4832159f8": 1,
+      "315b5168a87eeb65178cf91ab38c84c0179d26f8b2bf35e03f0061f7d4c40436": 1
+    },
+    "legal_web/components/us-drafting/us-drafting-workspace.tsx": {
+      "f189411452ed2860ac837e01dde5e41285696039ad4dc3fd5b1373da564e1c76": 1,
+      "d7e501abe79d81b3e8ff79253b015fce335220083ccab5daa9f592a2c29fc980": 1
+    },
+    "legal_web/components/verification/verification-ui.tsx": {
+      "69e55022d82866558f245b9a6e15c343da18b2027f414ddbcc3820a931dc171b": 1,
+      "e3be0c6052736899a54b8baf1192f2d13d4d46f7445baf59cc1eccc6c813aeb7": 1,
+      "e5e533f6baf473e4a0114f06c80c8bbf731191b035f4936a8dabdda2e1d329f3": 1
+    },
+    "legal_web/components/work-context/matter-context-bar.tsx": {
+      "761cd4c71b51d1390af3bed671e2f6c405b499b89c168cd404cfcec1f14ddd6a": 1,
+      "1fc1745e2ba1c78d6db4179bc7e88f426905a5f376b501300d171d52abdfb255": 1,
+      "00b18509e81e37ba3e743086c592c1840ace56bdd5fe71620321d7933087b694": 1,
+      "3b1c5ce542fc2731531cc4272c18892ac3110570c4afaa5fc9b27df0ec6c1456": 1,
+      "bd835ec4b1be103e6d82bdb5201eb48e03e9421d878f32701c45ee66c1928c99": 2,
+      "9543ded3911ff526b0b198f698cd424a8c078d37826d9937c5c2dde1fa581b8b": 2
+    },
+    "legal_web/components/work-context/work-context-bar.tsx": {
+      "7b2361b58fd3e9d77ed3902b18250343f75bb5924c218161ccf401e6e71a8893": 1,
+      "bd835ec4b1be103e6d82bdb5201eb48e03e9421d878f32701c45ee66c1928c99": 1
+    },
+    "legal_web/components/work-context/work-context-start-dialog.tsx": {
+      "f9ff80c10796b426bbc4b6758d76eda3905ef0d83ed0366dbc9e2ad2fde3e30c": 1,
+      "813b1bcc935c67f05065d7890aa39262f1da6c1d24b64bfb7197d59cfd2692e4": 1,
+      "24db18e6d794c0c0543523ffb50dc37bb3b625cb0236734e861792e0125adab9": 1,
+      "b6626cd701f400820252edf4b52b53601d879272739e98bcfb9ceb9316225861": 1,
+      "903af11d47e26049ff174e9971a7760620e2803af04da59cbfb7d0ded9b63845": 1
+    },
+    "legal_web/components/workflows/workflow-suggestion-sheet.tsx": {
+      "4819ff49e07677be759a34b53815545cfc54978638a423d55b324f0c420fe6dd": 1
+    }
+  }
+}

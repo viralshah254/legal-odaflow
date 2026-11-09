@@ -570,7 +570,35 @@
     "meetings_scope_client": "ഈ ക്ലയൻ്റിനായുള്ള മീറ്റിംഗുകൾ",
     "meetings_scope_matter": "ഇതിനായി യോഗങ്ങൾ",
     "no_meetings_match_filters": "നിങ്ങളുടെ ഫിൽട്ടറുകളുമായി പൊരുത്തപ്പെടുന്ന മീറ്റിംഗുകളൊന്നുമില്ല",
-    "prev": "മുമ്പത്തെ"
+    "prev": "മുമ്പത്തെ",
+    "record_transcript": "Record and transcribe",
+    "import_meeting": "Import meeting",
+    "meetings_load_failed": "Meetings could not be loaded. Please try again.",
+    "release": {
+      "usageBased": "Charged by actual usage",
+      "tasksTitle": "Tasks",
+      "tasksDescription": "Your firm’s work, with the earliest deadlines first.",
+      "newTask": "New task",
+      "selectFirmTasks": "Select a firm to view tasks.",
+      "loadingTasks": "Loading tasks…",
+      "tasksLoadFailed": "Tasks could not be loaded. Please refresh and try again.",
+      "noTasks": "No tasks match this view.",
+      "openMatterTasks": "Open matter tasks",
+      "showCompleted": "Show completed",
+      "evidenceScope": "Evidence scope",
+      "allMatterDocuments": "All authorized matter documents",
+      "selectedFolders": "Selected folders and their subfolders",
+      "selectedDocuments": "Selected documents only",
+      "accessibleFolders": "Folders with accessible documents",
+      "noAccessibleFolders": "No accessible document folders.",
+      "matterJurisdiction": "Jurisdiction follows this matter. Change it in matter settings.",
+      "holdingPassage": "Holding passage",
+      "outcome": "Outcome:",
+      "sectionFinder": "Section Finder",
+      "actualUsage": "Based on actual usage",
+      "finalCharge": "Final charge",
+      "legalCountry": "Legal country"
+    }
   },
   "auth": {
     "signIn": "സൈൻ ഇൻ",
@@ -784,7 +812,17 @@
     "completingSignIn": "സൈൻ ഇൻ പൂർത്തിയാക്കുന്നു...",
     "oauthRedirectFailed": "Apple/Google സൈൻ-ഇൻ പൂർത്തിയാക്കാൻ ഞങ്ങൾക്ക് കഴിഞ്ഞില്ല. ദയവായി വീണ്ടും ശ്രമിക്കുക.",
     "oauthCompletingTooLong": "സൈൻ ഇൻ പ്രതീക്ഷിച്ചതിലും കൂടുതൽ സമയമെടുക്കുന്നു. നിങ്ങൾക്ക് വീണ്ടും ശ്രമിക്കാം.",
-    "tryAgain": "വീണ്ടും ശ്രമിക്കുക"
+    "tryAgain": "വീണ്ടും ശ്രമിക്കുക",
+    "pathSummaryLawFirm": "Law firm workspace",
+    "pathSummarySoloLawyer": "Solo lawyer workspace",
+    "pathSummaryLegalHelp": "Personal legal help",
+    "signUpAccountTitle": "Create your account",
+    "signUpAccountDescription": "Set up your sign-in details to continue.",
+    "prospectPrefillHint": "Details from your link have been filled in. Review them before continuing.",
+    "lawyerPerk1": "Organize clients, matters and documents",
+    "lawyerPerk2": "Research and draft with matter context",
+    "clientPerk1": "Understand your legal issue",
+    "clientPerk2": "Keep your documents and next steps together"
   },
   "marketing": {
     "4565": "45–65%",
@@ -3028,7 +3066,9 @@
     "microFlowFactsHelper": "നിങ്ങളുടെ സ്വന്തം വാക്കുകളിൽ എഴുതാം. നിങ്ങൾ നൽകുന്ന കൂടുതൽ പ്രസക്തമായ വിശദാംശങ്ങൾ, വിശകലനം കൂടുതൽ ഉപയോഗപ്രദമാകും.",
     "checkMySituation": "എൻ്റെ അവസ്ഥ പരിശോധിക്കുക",
     "enterAtLeastChars": "കുറഞ്ഞത് {count} പ്രതീകങ്ങളെങ്കിലും നൽകുക",
-    "charCount": "{current} / {max} പ്രതീകങ്ങൾ"
+    "charCount": "{current} / {max} പ്രതീകങ്ങൾ",
+    "detectedCountryRegionChange": "Detected {country} · {region}. Change this if the issue belongs elsewhere.",
+    "clientNameCannotBeSelf": "Enter the client name, or choose to act for yourself."
   },
   "consumer": {
     "nav": {
@@ -3331,7 +3371,12 @@
     "empty_messages_description": "ഈ കേസിനെക്കുറിച്ചുള്ള അഭിഭാഷകരുടെ സന്ദേശങ്ങളും പിന്തുണയും ഇവിടെ ദൃശ്യമാകും.",
     "empty_payments_description": "റിപ്പോർട്ടുകൾ, അഭിഭാഷക അവലോകനം, സബ്‌സ്‌ക്രിപ്‌ഷനുകൾ എന്നിവയ്‌ക്കുള്ള പേയ്‌മെൻ്റുകൾ ഇവിടെ ദൃശ്യമാകും.",
     "applies_to_account_changes_future": "നിങ്ങളുടെ അക്കൗണ്ടിന് ബാധകമാണ്. മാറ്റങ്ങൾ ഭാവിയിലെ പ്രോസസ്സിംഗിനെ ബാധിക്കുന്നു.",
-    "control_case_data_for_ai_improvement": "AI മെച്ചപ്പെടുത്തലിനായി നിങ്ങളുടെ കേസ് ഡാറ്റ എങ്ങനെ ഉപയോഗിക്കാമെന്നത് നിയന്ത്രിക്കുക. ഡിഫോൾട്ട് ഓഫാണ്."
+    "control_case_data_for_ai_improvement": "AI മെച്ചപ്പെടുത്തലിനായി നിങ്ങളുടെ കേസ് ഡാറ്റ എങ്ങനെ ഉപയോഗിക്കാമെന്നത് നിയന്ത്രിക്കുക. ഡിഫോൾട്ട് ഓഫാണ്.",
+    "auto_renewing": "Renews automatically",
+    "subscription_auto_renew_hint": "Your subscription renews until cancelled. Manage renewal and cancellation through your billing provider.",
+    "manage_plan": "Manage plan",
+    "cancel_subscription": "Cancel subscription",
+    "your_current_plan": "Your current plan"
   },
   "lawyer": {
     "nav": {
@@ -3777,7 +3822,13 @@
       "urgencyMediumDesc": "ഏതാനും ആഴ്ചകൾക്കുള്ളിൽ",
       "urgencyHighDesc": "ദിവസങ്ങൾക്കുള്ളിൽ",
       "urgencyUrgentDesc": "അടിയന്തിര ശ്രദ്ധ ആവശ്യമാണ്"
-    }
+    },
+    "noEvidenceYet": "No evidence has been added yet.",
+    "suggested_time": "Suggested time entries",
+    "suggested_time_description": "Review suggested work and duration before adding a time entry.",
+    "no_suggested_time": "No time suggestions yet.",
+    "approve_suggestion": "Approve suggestion",
+    "dismiss_suggestion": "Dismiss suggestion"
   },
   "admin": {
     "title": "അഡ്മിൻ",
@@ -4410,7 +4461,20 @@
     "deleteAccountSubmitting": "ഇല്ലാതാക്കുന്നു...",
     "deleteAccountSubmit": "എൻ്റെ അക്കൗണ്ട് ഇല്ലാതാക്കുക",
     "privacyRightToErasure": "മായ്ക്കാനുള്ള അവകാശം",
-    "privacyRightToErasureBody": "നിങ്ങളുടെ അക്കൗണ്ടും വ്യക്തിഗത ഡാറ്റയും ശാശ്വതമായി ഇല്ലാതാക്കാൻ അഭ്യർത്ഥിക്കുക."
+    "privacyRightToErasureBody": "നിങ്ങളുടെ അക്കൗണ്ടും വ്യക്തിഗത ഡാറ്റയും ശാശ്വതമായി ഇല്ലാതാക്കാൻ അഭ്യർത്ഥിക്കുക.",
+    "logo_on_exports": "Logo on exports",
+    "logo_on_exports_enabled": "Enabled",
+    "logo_on_exports_disabled": "Disabled",
+    "logo_upload_error": "The logo could not be uploaded. Please try again.",
+    "firm_logo": "Firm logo",
+    "firm_logo_description": "Add the logo used for your firm branding.",
+    "logo_uploading": "Uploading logo…",
+    "change_logo": "Change logo",
+    "upload_logo": "Upload logo",
+    "remove_logo": "Remove logo",
+    "logo_hint": "Choose an image under 2 MB.",
+    "show_logo_on_exports": "Show logo on exports",
+    "show_logo_on_exports_description": "Include the firm logo on supported exported documents."
   },
   "billing": {
     "title": "ബില്ലിംഗ്",
@@ -5490,7 +5554,15 @@
     "checkingConflict": "വൈരുദ്ധ്യങ്ങൾ പരിശോധിക്കുന്നു...",
     "runConflictCheck": "വൈരുദ്ധ്യ പരിശോധന നടത്തുക",
     "researchPromptTitle": "ഗവേഷണ ചോദ്യം",
-    "premiumModelResearchHint": "പ്രീമിയം മോഡലുകൾക്ക് കുറച്ച് സമയമെടുത്തേക്കാം."
+    "premiumModelResearchHint": "പ്രീമിയം മോഡലുകൾക്ക് കുറച്ച് സമയമെടുത്തേക്കാം.",
+    "answered": "Answered",
+    "ai_progress_reading": "Reading the matter context",
+    "ai_progress_retrieving": "Retrieving relevant sources",
+    "ai_progress_analysing": "Analysing the available information",
+    "ai_progress_generating": "Preparing the response",
+    "credits_used": "{count, plural, one {# credit used} other {# credits used}}",
+    "recent_activity": "Recent activity",
+    "matter_type": "Matter type"
   },
   "clients": {
     "title": "ഉപഭോക്താക്കൾ",
@@ -5842,7 +5914,11 @@
     "uploaded": "അപ്‌ലോഡ് ചെയ്തു",
     "sign_in_description": "നിങ്ങളുടെ നിയമ സ്ഥാപനത്തിൻ്റെ ഫയലിലുള്ള ഇമെയിൽ വിലാസം ഉപയോഗിച്ച് സൈൻ ഇൻ ചെയ്യുക.",
     "signing_in": "സൈൻ ഇൻ ചെയ്യുന്നു...",
-    "unable_to_sign_in": "സൈൻ ഇൻ ചെയ്യാനായില്ല. നിങ്ങളുടെ ഇമെയിൽ പരിശോധിച്ച് വീണ്ടും ശ്രമിക്കുക."
+    "unable_to_sign_in": "സൈൻ ഇൻ ചെയ്യാനായില്ല. നിങ്ങളുടെ ഇമെയിൽ പരിശോധിച്ച് വീണ്ടും ശ്രമിക്കുക.",
+    "invite_link_required_description": "Open the invitation link shared by your law firm to access the client portal.",
+    "invite_link_required_help": "Ask your law firm for a new invitation if your link is missing or has expired.",
+    "invite_link_sign_in_description": "Continue using your invitation to access the information shared with you.",
+    "continue_to_portal": "Continue to portal"
   },
   "errors": {
     "generic": "എന്തോ കുഴപ്പം സംഭവിച്ചു",
@@ -5947,7 +6023,9 @@
       "publishedToClientPortal": "ക്ലയൻ്റ് പോർട്ടലിൽ പ്രസിദ്ധീകരിച്ചു",
       "taskReopened": "ടാസ്ക് വീണ്ടും തുറന്നു",
       "taskCompleted": "ടാസ്ക് പൂർത്തിയായി",
-      "pleaseTryAgain": "ദയവായി വീണ്ടും ശ്രമിക്കുക."
+      "pleaseTryAgain": "ദയവായി വീണ്ടും ശ്രമിക്കുക.",
+      "docketSynced": "Court docket synced",
+      "docketSyncFailed": "Court docket could not be synced"
     }
   },
   "dashboard": {
@@ -6103,7 +6181,11 @@
           "Tenancy deposit",
           "Consumer rights"
         ]
-      }
+      },
+      "intakeSubtitle": "Start with the client and a short description of the matter.",
+      "intakeBriefPlaceholder": "Describe the issue, key dates and the help needed.",
+      "intakeClientPlaceholder": "Client name",
+      "intakeCta": "Start intake"
     },
     "dailyBrief": {
       "title": "നിങ്ങളുടെ ദൈനംദിന സംഗ്രഹം",
@@ -7504,7 +7586,15 @@
       "proceduralRouteDetail": "ശുപാർശ ചെയ്യുന്നത് {recommended} — {selected} ഉപയോഗിക്കുന്നു",
       "governingSections": "ഭരണ വിഭാഗങ്ങൾ",
       "researchAuthorities": "{count} അധികാരികൾ വീണ്ടെടുത്തു{deep} · ആത്മവിശ്വാസം {confidence}",
-      "deepSearchSuffix": "(ആഴത്തിലുള്ള തിരയൽ)"
+      "deepSearchSuffix": "(ആഴത്തിലുള്ള തിരയൽ)",
+      "lawyerReady": "Ready for lawyer review",
+      "readyForLawyerReview": "Ready for lawyer review",
+      "canCertifyShort": "Eligible for review sign-off",
+      "passageSupportedShort": "passages supported",
+      "factCoverage": "Fact coverage",
+      "missingDefenceFacts": "Defence facts to confirm",
+      "autoAppliedFixes": "Applied corrections",
+      "timelineWarnings": "Timeline checks to review"
     }
   },
   "matterIntelligence": {
@@ -7555,7 +7645,9 @@
     "dialogDecline": "ഇപ്പോൾ വേണ്ട",
     "dialogAgree": "ഞാൻ അംഗീകരിക്കുന്നു",
     "settingsTitle": "AI അനുമാന സമ്മതം",
-    "settingsDescription": "സമ്മതം റീസെറ്റ്. അടുത്ത AI ഫീച്ചറിന് മുമ്പ് നിങ്ങളോട് വീണ്ടും ചോദിക്കും."
+    "settingsDescription": "സമ്മതം റീസെറ്റ്. അടുത്ത AI ഫീച്ചറിന് മുമ്പ് നിങ്ങളോട് വീണ്ടും ചോദിക്കും.",
+    "processingUnavailable": "AI privacy information is unavailable. Please retry before sending your data.",
+    "processingBody": "To perform the AI work you request, Umbrella sends your questions, instructions, authorized matter facts, document excerpts, research and draft text to the recipients below. Audio is sent when you use transcription. Inference permission does not grant permission to train models."
   },
   "docuDraft": {
     "title": "ഡോക്യു ഡ്രാഫ്റ്റ്",

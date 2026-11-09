@@ -189,6 +189,8 @@
   "aiConsentDialogProviders": "ప్రొవైడర్లు: OpenAI, DeepSeek మరియు Deepgram (ట్రాన్స్క్రిప్షన్).",
   "aiConsentDialogPurpose": "మీరు గోప్యత & భద్రతా సెట్టింగ్‌లలో ఎప్పుడైనా సమ్మతిని ఉపసంహరించుకోవచ్చు. సమ్మతి లేకుండా, AI ఫీచర్‌లు అందుబాటులో ఉండవు.",
   "aiConsentDialogTitle": "AI ప్రాసెసింగ్ సమ్మతి",
+  "aiConsentProcessingBody": "To perform the AI work you request, Umbrella sends your questions, instructions, authorized matter facts, document excerpts, research and draft text to the recipients below. Audio is sent when you use transcription. Inference permission does not grant permission to train models.",
+  "aiConsentProcessingUnavailable": "AI privacy information is unavailable. Please retry before sending your data.",
   "aiConsentSettingsDescription": "సమ్మతి రీసెట్. తదుపరి AI ఫీచర్‌కి ముందు మీరు మళ్లీ అడగబడతారు.",
   "aiConsentSettingsTitle": "AI అనుమితి సమ్మతి",
   "auth254712345678": "+254712345678",
@@ -215,6 +217,8 @@
   "authCheckDeviceLocation": "పరికరం స్థానాన్ని తనిఖీ చేయండి",
   "authCheckingLocation": "స్థానాన్ని తనిఖీ చేస్తోంది...",
   "authChooseWorkspace": "ఈరోజు మీకు సరిపోయే కార్యస్థలాన్ని ఎంచుకోండి.",
+  "authClientPerk1": "Understand your legal issue",
+  "authClientPerk2": "Keep your documents and next steps together",
   "authCompleteProfileDescription": "మీ చట్టపరమైన కార్యస్థలాన్ని సెటప్ చేయడానికి కొన్ని వివరాలు. మీ ఇమెయిల్ ఇప్పటికే ధృవీకరించబడింది.",
   "authCompleteSignUp": "పూర్తి సైన్ అప్",
   "authCompletingSignIn": "సైన్-ఇన్‌ను పూర్తి చేస్తోంది...",
@@ -293,6 +297,8 @@
   "authLawFirm": "న్యాయ సంస్థ",
   "authLawyerIRunALawFirm": "న్యాయవాది - నేను న్యాయ సంస్థను నడుపుతున్నాను",
   "authLawyerOption": "న్యాయవాది - నేను న్యాయ సంస్థను నడుపుతున్నాను",
+  "authLawyerPerk1": "Organize clients, matters and documents",
+  "authLawyerPerk2": "Research and draft with matter context",
   "authLegalIntelligencenforEveryone": "లీగల్ ఇంటెలిజెన్స్,\\nఅందరికీ.",
   "authLoading": "లోడ్ అవుతోంది...",
   "authLocationCheckDescription": "గొడుగు సైన్-అప్ చేయడానికి ముందు మీ పరికర స్థానాన్ని తనిఖీ చేస్తుంది కాబట్టి న్యాయపరమైన మార్గదర్శకత్వం సరైన అధికార పరిధిలో ప్రారంభమవుతుంది.",
@@ -352,6 +358,9 @@
   "authPasswordTooWeak": "పాస్‌వర్డ్ చాలా బలహీనంగా ఉంది. పొడవైన, తక్కువ ఊహించదగిన పాస్‌ఫ్రేజ్‌ని ఉపయోగించండి.",
   "authPasswordsDoNotMatch": "పాస్‌వర్డ్‌లు సరిపోలడం లేదు",
   "authPasswordsDontMatch": "పాస్‌వర్డ్‌లు సరిపోలడం లేదు",
+  "authPathSummaryLawFirm": "Law firm workspace",
+  "authPathSummaryLegalHelp": "Personal legal help",
+  "authPathSummarySoloLawyer": "Solo lawyer workspace",
   "authPhone": "ఫోన్",
   "authPhoneE164": "ఫోన్ (E.164)",
   "authPhoneHint": "మీ మొబైల్ నంబర్‌ను చేర్చండి — ఖాతా రికవరీ మరియు లాయర్ మ్యాచింగ్ కోసం ఉపయోగించబడుతుంది.",
@@ -359,6 +368,7 @@
   "authPhoneTab": "ఫోన్",
   "authPracticeNameOptional": "అభ్యాసం పేరు (ఐచ్ఛికం)",
   "authPrivate": "ప్రైవేట్",
+  "authProspectPrefillHint": "Details from your link have been filled in. Review them before continuing.",
   "authRefInviteBanner": "మీరు <strong>{name}</strong> ద్వారా ఆహ్వానించబడ్డారు. మీరు సభ్యత్వం పొందినప్పుడు మీ మొదటి నెలలో 40% తగ్గింపు పొందండి.",
   "@authRefInviteBanner": {
     "placeholders": {
@@ -388,6 +398,8 @@
   "authSignInWithFirebase": "Firebaseతో సైన్ ఇన్ చేయండి",
   "authSignOut": "సైన్ అవుట్ చేయండి",
   "authSignUp": "సైన్ అప్ చేయండి",
+  "authSignUpAccountDescription": "Set up your sign-in details to continue.",
+  "authSignUpAccountTitle": "Create your account",
   "authSignUpDescription": "గొడుగుతో ప్రారంభించండి",
   "authSignUpTermsPrefix": "ఖాతాను సృష్టించడం ద్వారా, మీరు మాకి అంగీకరిస్తున్నారు",
   "authSignUpTitle": "మీ ఖాతాను సృష్టించండి",
@@ -722,7 +734,7 @@
   "clientsActivityMeetingRecorded": "సమావేశం రికార్డ్ చేయబడింది",
   "clientsActivityProfileUpdated": "క్లయింట్ ప్రొఫైల్ నవీకరించబడింది",
   "clientsAddClient": "క్లయింట్‌ని జోడించండి",
-  "clientsAddContactPerson": "Add contact person",
+  "clientsAddContactPerson": "పరిచయ వ్యక్తిని జోడించండి",
   "clientsAddFirstClient": "మీ మొదటి క్లయింట్‌ని జోడించండి",
   "clientsAddFirstClientDescription": "సంబంధాల నిర్వహణను ప్రారంభించడానికి మీ మొదటి క్లయింట్‌ను జోడించండి.",
   "clientsAddNewClient": "కొత్త క్లయింట్‌ని జోడించండి",
@@ -772,7 +784,7 @@
   },
   "clientsConflictCheckRequired": "క్లయింట్‌ను సృష్టించే ముందు వైరుధ్య తనిఖీని అమలు చేయండి మరియు ఏవైనా ఫ్లాగ్‌లను పరిష్కరించండి.",
   "clientsContactInformation": "సంప్రదింపు సమాచారం",
-  "clientsContactNamePlaceholder": "Contact name",
+  "clientsContactNamePlaceholder": "సంప్రదింపు పేరు",
   "clientsContactNumber": "సంప్రదించండి {number}",
   "@clientsContactNumber": {
     "placeholders": {
@@ -783,7 +795,7 @@
   },
   "clientsContactPeople": "వ్యక్తులను సంప్రదించండి",
   "clientsContactPeopleDescription": "ఈ క్లయింట్ కోసం డైరెక్టర్లు, అధికారులు మరియు అధీకృత పరిచయాలు.",
-  "clientsContactPersonNumber": "Contact person {number}",
+  "clientsContactPersonNumber": "సంప్రదింపు వ్యక్తి {number}",
   "@clientsContactPersonNumber": {
     "placeholders": {
     "number": {
@@ -791,7 +803,7 @@
     }
     }
   },
-  "clientsContactRolePlaceholder": "Role or title",
+  "clientsContactRolePlaceholder": "పాత్ర లేదా శీర్షిక",
   "clientsContacts": "పరిచయాలు",
   "clientsCopyInviteFailed": "పోర్టల్ ఆహ్వానాన్ని కాపీ చేయడం సాధ్యపడలేదు.",
   "clientsCouldNotLoadClients": "క్లయింట్‌లను లోడ్ చేయడం సాధ్యపడలేదు.",
@@ -800,7 +812,7 @@
   "clientsCountryCodePlaceholder": "ఉదాహరణకు, KE",
   "clientsCreateClient": "క్లయింట్‌ని సృష్టించండి",
   "clientsCreateClientProfile": "కొత్త క్లయింట్ ప్రొఫైల్‌ను సృష్టించండి",
-  "clientsCreateMatter": "Create matter",
+  "clientsCreateMatter": "పదార్థాన్ని సృష్టించండి",
   "clientsCreating": "సృష్టిస్తోంది...",
   "clientsCreatingClient": "సృష్టిస్తోంది...",
   "clientsDeadlineAndRisk": "గడువు మరియు ప్రమాదం",
@@ -976,7 +988,7 @@
     }
   },
   "clientsRemoveClientDocumentTitle": "క్లయింట్ పత్రాన్ని తీసివేయాలా?",
-  "clientsRemoveContactPerson": "Remove contact person {number}",
+  "clientsRemoveContactPerson": "సంప్రదింపు వ్యక్తిని తీసివేయండి {number}",
   "@clientsRemoveContactPerson": {
     "placeholders": {
     "number": {
@@ -1006,7 +1018,7 @@
     }
   },
   "clientsRoleTitle": "పాత్ర లేదా శీర్షిక",
-  "clientsSaveBasicAndCompleteLater": "Save basic details and complete later",
+  "clientsSaveBasicAndCompleteLater": "ప్రాథమిక వివరాలను సేవ్ చేసి, తర్వాత పూర్తి చేయండి",
   "clientsSaveChanges": "మార్పులను సేవ్ చేయండి",
   "clientsSaving": "సేవ్ చేస్తోంది...",
   "clientsSearchByNameOrEmail": "పేరు లేదా ఇమెయిల్ ద్వారా శోధించండి...",
@@ -1116,6 +1128,7 @@
   "commonAskCopilot": "కోపైలట్‌ని అడగండి...",
   "commonAuthentication": "ప్రమాణీకరణ",
   "commonAuto": "ఆటో",
+  "commonAvailableOnProfessional": "Available on Professional",
   "commonBack": "వెనుకకు",
   "commonBackToIssueChecker": "ఇష్యూ చెకర్‌కి తిరిగి వెళ్ళు",
   "commonBackToPricing": "తిరిగి ధరకి",
@@ -1262,6 +1275,14 @@
   "commonExtractFacts": "వాస్తవాలను సంగ్రహించండి",
   "commonFailedE": "విఫలమైంది: $e",
   "commonFamilyMatrimonial": "కుటుంబం & మ్యాట్రిమోని",
+  "commonFeatureRequiresProfessional": "{feature} requires a Professional plan.",
+  "@commonFeatureRequiresProfessional": {
+    "placeholders": {
+    "feature": {
+      "type": "String"
+    }
+    }
+  },
   "commonFile": "ఫైల్",
   "commonFindALawyer": "ఒక న్యాయవాదిని కనుగొనండి",
   "commonFindLegalHelp": "చట్టపరమైన సహాయాన్ని కనుగొనండి",
@@ -1296,6 +1317,7 @@
   "commonHtml": "HTML",
   "commonIfYouOptInYouMaySeparatelyEnable": "మీరు ఎంపిక చేసుకుంటే, మీరు విడిగా ప్రారంభించవచ్చు:",
   "commonImmigration": "ఇమ్మిగ్రేషన్",
+  "commonImportMeeting": "Import meeting",
   "commonIncludeDocuments": "పత్రాలను చేర్చండి",
   "commonIncludedUsage": "వినియోగం చేర్చబడింది",
   "commonIndia": "భారతదేశం",
@@ -1410,6 +1432,7 @@
   "commonMeetingsFilterProcessing": "ప్రాసెసింగ్",
   "commonMeetingsFilterReady": "సిద్ధంగా ఉంది",
   "commonMeetingsFilterRecording": "రికార్డింగ్",
+  "commonMeetingsLoadFailed": "Meetings could not be loaded. Please try again.",
   "commonMeetingsPageOf": "{page}లో {totalPages} పేజీ",
   "@commonMeetingsPageOf": {
     "placeholders": {
@@ -1552,6 +1575,7 @@
   "commonRecommendedPath": "సిఫార్సు చేయబడిన మార్గం",
   "commonRecordANewExpenseForTheFirm": "సంస్థ కోసం కొత్త వ్యయాన్ని నమోదు చేయండి",
   "commonRecordOrImportMeetingTranscripts": "శోధించడానికి మరియు సమీక్షించడానికి మీటింగ్ ట్రాన్స్‌క్రిప్ట్‌లను రికార్డ్ చేయండి లేదా దిగుమతి చేయండి.",
+  "commonRecordTranscript": "Record and transcribe",
   "commonRef": "Ref",
   "commonReferEarn": "సూచించండి & సంపాదించండి",
   "commonReferEarn2": "సూచించండి & సంపాదించండి",
@@ -1584,6 +1608,29 @@
   "commonRefresh": "రిఫ్రెష్ చేయండి",
   "commonReject": "తిరస్కరించు",
   "commonRejectLead": "దారిని తిరస్కరించండి",
+  "commonReleaseAccessibleFolders": "Folders with accessible documents",
+  "commonReleaseActualUsage": "Based on actual usage",
+  "commonReleaseAllMatterDocuments": "All authorized matter documents",
+  "commonReleaseEvidenceScope": "Evidence scope",
+  "commonReleaseFinalCharge": "Final charge",
+  "commonReleaseHoldingPassage": "Holding passage",
+  "commonReleaseLegalCountry": "Legal country",
+  "commonReleaseLoadingTasks": "Loading tasks…",
+  "commonReleaseMatterJurisdiction": "Jurisdiction follows this matter. Change it in matter settings.",
+  "commonReleaseNewTask": "New task",
+  "commonReleaseNoAccessibleFolders": "No accessible document folders.",
+  "commonReleaseNoTasks": "No tasks match this view.",
+  "commonReleaseOpenMatterTasks": "Open matter tasks",
+  "commonReleaseOutcome": "Outcome:",
+  "commonReleaseSectionFinder": "Section Finder",
+  "commonReleaseSelectFirmTasks": "Select a firm to view tasks.",
+  "commonReleaseSelectedDocuments": "Selected documents only",
+  "commonReleaseSelectedFolders": "Selected folders and their subfolders",
+  "commonReleaseShowCompleted": "Show completed",
+  "commonReleaseTasksDescription": "Your firm’s work, with the earliest deadlines first.",
+  "commonReleaseTasksLoadFailed": "Tasks could not be loaded. Please refresh and try again.",
+  "commonReleaseTasksTitle": "Tasks",
+  "commonReleaseUsageBased": "Charged by actual usage",
   "commonRemove": "తొలగించు",
   "commonRepresentationBeforeCourtsOrTribunals": "కోర్టులు లేదా ట్రిబ్యునల్స్ ముందు ప్రాతినిధ్యం",
   "commonRequestConsultation": "సంప్రదింపులను అభ్యర్థించండి",
@@ -1721,8 +1768,20 @@
   "commonUnitedKingdom": "యునైటెడ్ కింగ్‌డమ్",
   "commonUnitedStates": "యునైటెడ్ స్టేట్స్",
   "commonUniversalDisclaimer": "యూనివర్సల్ నిరాకరణ",
+  "commonUpgradeExistingPlanDescription": "Upgrade from {plan} to unlock {feature}.",
+  "@commonUpgradeExistingPlanDescription": {
+    "placeholders": {
+    "plan": {
+      "type": "String"
+    },
+    "feature": {
+      "type": "String"
+    }
+    }
+  },
   "commonUpgradeToPlusForAFullAiBudget": "పూర్తి AI బడ్జెట్ కోసం ప్లస్‌కి అప్‌గ్రేడ్ చేయండి",
   "commonUpgradeToProfessional": "ప్రొఫెషనల్‌కి అప్‌గ్రేడ్ చేయండి",
+  "commonUpgradeToUnlockOnProfessional": "Upgrade to Professional to unlock",
   "commonUpload": "అప్‌లోడ్ చేయండి",
   "commonUploadADocumentTemplate": "డాక్యుమెంట్ టెంప్లేట్‌ను అప్‌లోడ్ చేయండి",
   "commonUploadALegalDocument": "చట్టపరమైన పత్రాన్ని అప్‌లోడ్ చేయండి",
@@ -1807,6 +1866,7 @@
   "consumerAppliesToAccountChangesFuture": "మీ ఖాతాకు వర్తిస్తుంది. మార్పులు భవిష్యత్ ప్రాసెసింగ్‌ను ప్రభావితం చేస్తాయి.",
   "consumerAttachDocumentsToACaseForOcrAndAiAnalysis": "OCR మరియు AI విశ్లేషణ కోసం ఒక కేసుకు పత్రాలను అటాచ్ చేయండి.",
   "consumerAuto": "ఆటో",
+  "consumerAutoRenewing": "Renews automatically",
   "consumerAvailableModels": "అందుబాటులో ఉన్న నమూనాలు",
   "consumerAwaitingDocumentsOrInfo": "పత్రాలు లేదా సమాచారం కోసం వేచి ఉంది",
   "consumerBackToDashboard": "తిరిగి డాష్‌బోర్డ్‌కి",
@@ -1815,6 +1875,7 @@
   "consumerBuyCredits": "క్రెడిట్‌లను కొనుగోలు చేయండి",
   "consumerBuyCredits2": "క్రెడిట్‌లను కొనుగోలు చేయండి",
   "consumerCancel": "రద్దు చేయి",
+  "consumerCancelSubscription": "Cancel subscription",
   "consumerCase": "కేసు",
   "consumerCaseClosed": "కేసు ముగిసింది",
   "consumerCaseDetails": "కేసు వివరాలు",
@@ -1958,6 +2019,7 @@
   "consumerLoading": "లోడ్ అవుతోంది...",
   "consumerLoadingPlanUsage": "ప్లాన్ & వినియోగం లోడ్ అవుతోంది…",
   "consumerManageDataConsent": "డేటా సమ్మతిని నిర్వహించండి",
+  "consumerManagePlan": "Manage plan",
   "consumerMatterProgress": "విషయం పురోగతి",
   "consumerMatterResolved": "విషయం పరిష్కరించబడింది",
   "consumerMessages": "సందేశాలు",
@@ -2138,6 +2200,7 @@
   "consumerStartIssueCheck": "సమస్య తనిఖీని ప్రారంభించండి",
   "consumerStarterPlan": "స్టార్టర్ ప్లాన్",
   "consumerSubscriptionActivated": "సభ్యత్వం సక్రియం చేయబడింది!",
+  "consumerSubscriptionAutoRenewHint": "Your subscription renews until cancelled. Manage renewal and cancellation through your billing provider.",
   "consumerSubscriptionPlans": "సబ్‌స్క్రిప్షన్ ప్లాన్‌లు",
   "consumerSubscriptionsAreNotEnabled": "సభ్యత్వాలు ప్రారంభించబడలేదు.",
   "consumerTopUp": "టాప్-అప్",
@@ -2181,6 +2244,7 @@
   "consumerWorking": "ప్రాసెస్ చేస్తోంది...",
   "consumerYourAccountInformation": "మీ ఖాతా సమాచారం",
   "consumerYourAigeneratedLegalPreviewsAndReports": "మీ AI రూపొందించిన చట్టపరమైన ప్రివ్యూలు మరియు నివేదికలు",
+  "consumerYourCurrentPlan": "Your current plan",
   "consumerYourLegalReports": "మీ చట్టపరమైన నివేదికలు",
   "copilotAction": "చర్య:",
   "copilotAddStep": "దశను జోడించండి…",
@@ -2433,6 +2497,25 @@
   "dashboardAiCosts": "AI ఖర్చులు",
   "dashboardAiLogs": "AI లాగ్‌లు",
   "dashboardAiProfitability": "AI లాభదాయకత",
+  "dashboardAiReviewAuthor": "Author",
+  "dashboardAiReviewEmpty": "No AI outputs are waiting for lawyer review.",
+  "dashboardAiReviewJurisdiction": "Jurisdiction",
+  "dashboardAiReviewLoadError": "Failed to load review queue",
+  "dashboardAiReviewMarkReviewed": "Mark reviewed",
+  "dashboardAiReviewMatter": "Matter",
+  "dashboardAiReviewOpenWorkspace": "Open workspace",
+  "dashboardAiReviewPreview": "Preview",
+  "dashboardAiReviewPreviewTruncated": "Open the workspace for the full output.",
+  "dashboardAiReviewQueueDescription": "Review, open the source workspace, or mark as reviewed when signed off.",
+  "dashboardAiReviewQueueTitle": "{count, plural, one {# item awaiting review} other {# items awaiting review}}",
+  "dashboardAiReviewSubtitle": "AI outputs flagged for lawyer review before client use",
+  "dashboardAiReviewTitle": "AI review queue",
+  "dashboardAiReviewUnknownAuthor": "Unknown",
+  "dashboardAiReviewUnverified": "Unverified",
+  "dashboardAiSearchIntakeBriefPlaceholder": "Describe the issue, key dates and the help needed.",
+  "dashboardAiSearchIntakeClientPlaceholder": "Client name",
+  "dashboardAiSearchIntakeCta": "Start intake",
+  "dashboardAiSearchIntakeSubtitle": "Start with the client and a short description of the matter.",
   "dashboardAiSearchPlaceholder": "మీరు ఏ చట్టపరమైన ప్రశ్నకు సమాధానం ఇవ్వాలి?",
   "dashboardAiSearchPromptsDefault": "Contract dispute,Employment issue,Property matter,Debt recovery",
   "dashboardAiSearchPromptsGB": "Unfair dismissal,GDPR data breach,Tenancy deposit,Consumer rights",
@@ -2804,6 +2887,7 @@
   "docuDraftWhatToDraft": "మీరు ఏమి డ్రాఫ్ట్ చేయాలనుకుంటున్నారు?",
   "docuDraftWhatWeUnderstood": "మేము అర్థం చేసుకున్నది",
   "draftingAccuracyAuditTitle": "ఖచ్చితత్వం ఆడిట్",
+  "draftingAccuracyAutoAppliedFixes": "Applied corrections",
   "draftingAccuracyAutoCorrected": "{count} స్వయంచాలకంగా సరిదిద్దబడింది",
   "@draftingAccuracyAutoCorrected": {
     "placeholders": {
@@ -2812,6 +2896,7 @@
     }
     }
   },
+  "draftingAccuracyCanCertifyShort": "Eligible for review sign-off",
   "draftingAccuracyCitationsVerifiedShort": "అనులేఖనాలు ధృవీకరించబడ్డాయి",
   "draftingAccuracyCompleteMissingFacts": "పూర్తి - తప్పిపోయిన వాస్తవాలను పూరించండి",
   "draftingAccuracyDeepSearchSuffix": "(లోతైన శోధన)",
@@ -2823,10 +2908,14 @@
     }
     }
   },
+  "draftingAccuracyFactCoverage": "Fact coverage",
   "draftingAccuracyFactsPendingShort": "వాస్తవాలు పెండింగ్‌లో ఉన్నాయి",
   "draftingAccuracyGoverningSections": "పాలక విభాగాలు",
+  "draftingAccuracyLawyerReady": "Ready for lawyer review",
   "draftingAccuracyLimitedCorpus": "కార్పస్‌లో పరిమిత మూలాలు",
+  "draftingAccuracyMissingDefenceFacts": "Defence facts to confirm",
   "draftingAccuracyNeedsReview": "న్యాయవాది సమీక్ష అవసరం",
+  "draftingAccuracyPassageSupportedShort": "passages supported",
   "draftingAccuracyProceduralRouteConfirmed": "విధానపరమైన మార్గం నిర్ధారించబడింది",
   "draftingAccuracyProceduralRouteDetail": "సిఫార్సు చేయబడింది {recommended} — ఉపయోగించి {selected}",
   "@draftingAccuracyProceduralRouteDetail": {
@@ -2839,6 +2928,7 @@
     }
     }
   },
+  "draftingAccuracyReadyForLawyerReview": "Ready for lawyer review",
   "draftingAccuracyResearchAuthorities": "{count} అధికారులు తిరిగి పొందారు{deep} · విశ్వాసం {confidence}",
   "@draftingAccuracyResearchAuthorities": {
     "placeholders": {
@@ -2872,6 +2962,7 @@
     }
     }
   },
+  "draftingAccuracyTimelineWarnings": "Timeline checks to review",
   "draftingAccuracyVerifiedForFiling": "దాఖలు చేయడానికి ధృవీకరించబడింది",
   "draftingEditAiPanel": "AI సవరణ",
   "draftingEditApplyEdit": "AI సవరణను వర్తింపజేయండి",
@@ -2995,6 +3086,8 @@
   "errorsToastCourtCaseLinked": "కోర్టు కేసు లింక్ చేయబడింది",
   "errorsToastDiligenceReviewStarted": "శ్రద్ద సమీక్ష ప్రారంభమైంది",
   "errorsToastDocketEntryAdded": "డాకెట్ ఎంట్రీ జోడించబడింది",
+  "errorsToastDocketSyncFailed": "Court docket could not be synced",
+  "errorsToastDocketSynced": "Court docket synced",
   "errorsToastDocumentArchived": "పత్రం ఆర్కైవ్ చేయబడింది",
   "errorsToastDocumentLinked": "పత్రం లింక్ చేయబడింది",
   "errorsToastDocumentUploaded": "పత్రం అప్‌లోడ్ చేయబడింది",
@@ -3119,6 +3212,7 @@
   "issueCheckerClientDetails": "క్లయింట్ వివరాలు",
   "issueCheckerClientMatterIntake": "క్లయింట్ విషయం తీసుకోవడం",
   "issueCheckerClientName": "క్లయింట్ పేరు *",
+  "issueCheckerClientNameCannotBeSelf": "Enter the client name, or choose to act for yourself.",
   "issueCheckerComplexMatter": "సంక్లిష్ట పదార్థం",
   "issueCheckerComplexMatterFirmGuidance": "ఈ కేసు సంక్లిష్టత లేదా ప్రమాదాన్ని పెంచింది. స్పెషలిస్ట్ కౌన్సెల్ లేదా సీనియర్ టీమ్ మెంబర్‌ని చేర్చడాన్ని పరిగణించండి.",
   "issueCheckerConfidentialNotSharedWithTheClientPreview": "గోప్యమైనది — క్లయింట్ ప్రివ్యూతో భాగస్వామ్యం చేయబడలేదు.",
@@ -3158,6 +3252,18 @@
     }
     }
   },
+  "issueCheckerDetectedCountryRegionChange": "Detected {country} · {region}. Change this if the issue belongs elsewhere.",
+  "@issueCheckerDetectedCountryRegionChange": {
+    "placeholders": {
+    "country": {
+      "type": "String"
+    },
+    "region": {
+      "type": "String"
+    }
+    }
+  },
+  "issueCheckerDetecting": "Detecting…",
   "issueCheckerDetectingLocation": "మీ స్థానాన్ని గుర్తిస్తోంది...",
   "issueCheckerDocsAnalyzed": "{count, plural, one {# document analyzed} other {# documents analyzed}}",
   "issueCheckerDocuments2": "పత్రాలు:",
@@ -3545,6 +3651,7 @@
   "lawyerAnalysisHistory": "విశ్లేషణ చరిత్ర",
   "lawyerAnyAgentJob": "ఏదైనా ఏజెంట్ ఉద్యోగం",
   "lawyerApproval": "ఆమోదం",
+  "lawyerApproveSuggestion": "Approve suggestion",
   "lawyerApproved": "ఆమోదించబడింది",
   "lawyerArchiveDocument": "పత్రాన్ని ఆర్కైవ్ చేయాలా?",
   "lawyerAskCopilot": "కోపైలట్‌ని అడగండి",
@@ -3613,6 +3720,7 @@
   "lawyerDescription": "వివరణ",
   "lawyerDisbursement": "వితరణ",
   "lawyerDisbursementRequestsAwaitingApproval": "పంపిణీ అభ్యర్థనలు ఆమోదం కోసం వేచి ఉన్నాయి.",
+  "lawyerDismissSuggestion": "Dismiss suggestion",
   "lawyerDocumentDetail": "పత్రం వివరాలు",
   "lawyerDocumentLibrary": "డాక్యుమెంట్ లైబ్రరీ",
   "lawyerDraft": "డ్రాఫ్ట్",
@@ -3775,6 +3883,7 @@
   "lawyerNoClientGeneral": "క్లయింట్ లేదు (సాధారణ)",
   "lawyerNoDocumentsFound": "పత్రాలు ఏవీ కనుగొనబడలేదు.",
   "lawyerNoEvidenceItems": "ఆధారాలు అంశాలు లేవు",
+  "lawyerNoEvidenceYet": "No evidence has been added yet.",
   "lawyerNoExpensesRecordedYet": "ఖర్చులు ఇంకా నమోదు చేయబడలేదు",
   "lawyerNoExtraFiltersForThisTrigger": "ఈ ట్రిగ్గర్ కోసం అదనపు ఫిల్టర్‌లు లేవు.",
   "lawyerNoFirmWorkspace": "దృఢమైన కార్యస్థలం లేదు",
@@ -3794,6 +3903,7 @@
   "lawyerNoPendingApprovals": "పెండింగ్‌లో ఉన్న అనుమతులు లేవు",
   "lawyerNoSourceTraceAvailable": "సోర్స్ ట్రేస్ ఏదీ అందుబాటులో లేదు.",
   "lawyerNoSpecificMatter": "నిర్దిష్ట విషయం లేదు",
+  "lawyerNoSuggestedTime": "No time suggestions yet.",
   "lawyerNoTeamMembersFound": "బృంద సభ్యులు కనుగొనబడలేదు.",
   "lawyerNotYetAnalyzed": "ఇంకా విశ్లేషించలేదు",
   "lawyerNote": "గమనిక:",
@@ -3884,6 +3994,8 @@
   "lawyerStrategyOptionsAbcDescription": "ఎంపికలు A/B/C, సిఫార్సు చేయబడిన మార్గం, గడువులు.",
   "lawyerStrengthsForOurClient": "మా క్లయింట్ కోసం బలాలు",
   "lawyerSubmitted": "సమర్పించారు",
+  "lawyerSuggestedTime": "Suggested time entries",
+  "lawyerSuggestedTimeDescription": "Review suggested work and duration before adding a time entry.",
   "lawyerSummary": "సారాంశం",
   "lawyerTaskDetails": "టాస్క్ వివరాలు",
   "lawyerTaskTitle": "టాస్క్ టైటిల్",
@@ -4692,8 +4804,10 @@
   "marketingHomeResearchProgressDraftReadyBanner": "డ్రాఫ్ట్ మెమో సిద్ధంగా ఉంది — తుది అనులేఖన ఆడిట్ అమలులో ఉంది…",
   "marketingHomeResearchProgressDraftVerifyingBanner": "చిత్తుప్రతి సిద్ధంగా ఉంది — ఖచ్చితత్వ తనిఖీలను అమలు చేస్తోంది…",
   "marketingHomeResearchProgressModeFast": "వేగంగా",
+  "marketingHomeResearchProgressModeGuidance": "AI only",
   "marketingHomeResearchProgressModeVerified": "ధృవీకరించబడింది",
   "marketingHomeResearchProgressPhaseStallNote": "ఇప్పటికీ పని చేస్తోంది — బ్యాకెండ్ ఈ దశను ప్రాసెస్ చేస్తోంది. పెద్ద ప్రశ్నలకు కొన్ని నిమిషాలు పట్టవచ్చు.",
+  "marketingHomeResearchProgressPhaseStallNoteVerified": "Still working — the backend is processing this step. Large queries can take a few minutes.",
   "marketingHomeResearchProgressRefiningTitle": "సందర్భంతో శుద్ధి చేస్తోంది…",
   "marketingHomeResearchProgressRunningTitle": "చట్టపరమైన పరిశోధనను నడుపుతోంది",
   "marketingHomeResearchProgressStepAuditDraftDetail": "తుది అనులేఖన ఆడిట్ పాస్ — మీ డ్రాఫ్ట్ క్రింద కనిపిస్తుంది.",
@@ -4745,6 +4859,15 @@
     }
   },
   "marketingHomeResearchProgressStepGroundVerify": "కార్పస్‌కి వ్యతిరేకంగా విభాగం వచనాన్ని ధృవీకరిస్తోంది…",
+  "marketingHomeResearchProgressStepGuidanceDraftDetail": "Writing a first-pass answer from the question and contract",
+  "marketingHomeResearchProgressStepGuidanceDraftLabel": "Drafting the note",
+  "marketingHomeResearchProgressStepGuidanceReadDetail": "Identifying the issue, jurisdiction, and contract facts",
+  "marketingHomeResearchProgressStepGuidanceReadLabel": "Reading your question",
+  "marketingHomeResearchProgressStepGuidanceReadyDetail": "Preparing the research note",
+  "marketingHomeResearchProgressStepGuidanceReadyLabel": "Ready",
+  "marketingHomeResearchProgressStepLiveRetrieveDetail": "Checking AI-named authorities against live/corpus sources",
+  "marketingHomeResearchProgressStepLiveRetrieveFailover": "Retrying available connectors when a source is down",
+  "marketingHomeResearchProgressStepLiveRetrieveLabel": "Checking live and corpus sources",
   "marketingHomeResearchProgressStepParseDetail": "అధికార పరిధి, నిబంధనలు మరియు ఉద్దేశాన్ని గుర్తించడం",
   "marketingHomeResearchProgressStepParseDetailProvision": "{provision} మరియు సంబంధిత నిబంధనలను గుర్తించడం",
   "@marketingHomeResearchProgressStepParseDetailProvision": {
@@ -4755,6 +4878,9 @@
     }
   },
   "marketingHomeResearchProgressStepParseLabel": "మీ చట్టపరమైన ప్రశ్నను అన్వయించడం",
+  "marketingHomeResearchProgressStepPlanMapDetail": "Identifying issues, likely statutes, and retrieval queries",
+  "marketingHomeResearchProgressStepPlanMapLabel": "Planning the research map",
+  "marketingHomeResearchProgressStepPlanMapQueries": "Expanding search queries from the research plan",
   "marketingHomeResearchProgressStepPredecessorCrpcBnss": "క్రాస్-చెకింగ్ CrPC → BNSS విభాగం రీమ్యాప్‌లు",
   "marketingHomeResearchProgressStepPredecessorCrpcBnssSection": "క్రాస్-చెకింగ్ CrPC → BNSS విభాగం {section} కోసం రీమ్యాప్‌లు",
   "@marketingHomeResearchProgressStepPredecessorCrpcBnssSection": {
@@ -4780,6 +4906,8 @@
   "marketingHomeResearchProgressStepRetrieveMatch": "మీ ప్రశ్నకు చట్టబద్ధమైన విభాగాలు సరిపోలుతున్నాయి...",
   "marketingHomeResearchProgressStepRetrieveRank": "సంబంధిత విభాగాలు మరియు వ్యాఖ్యానాలకు ర్యాంకింగ్…",
   "marketingHomeResearchProgressStepRetrieveRankCases": "ఔచిత్యాన్ని బట్టి కేస్ లా ర్యాంకింగ్...",
+  "marketingHomeResearchProgressStepSelfCheckDetail": "Attacking weak assumptions in the same draft",
+  "marketingHomeResearchProgressStepSelfCheckLabel": "Self-check",
   "marketingHomeResearchProgressStillWorking": "· ఇంకా పని చేస్తోంది…",
   "marketingHomeResearchProgressTakingLonger": "· సాధారణం కంటే ఎక్కువ సమయం పడుతుంది",
   "marketingHomeResearchProgressVerifiedDurationHint": "· సాధారణంగా 1-3 నిమిషాలు",
@@ -5298,6 +5426,10 @@
   "mattersAiDraftingSubtitle": "పదార్థ సందర్భం నుండి టెంప్లేట్ ఫీల్డ్‌లను పూరించడం మరియు చట్టపరమైన నిబంధనలను పూర్తి చేయడం.",
   "mattersAiIsAnalyzingTheOpposingPartysPosition": "AI ప్రత్యర్థి పార్టీ స్థితిని విశ్లేషిస్తోంది…",
   "mattersAiIsAnalyzingYourMatter": "AI మీ విషయాన్ని విశ్లేషిస్తోంది...",
+  "mattersAiProgressAnalysing": "Analysing the available information",
+  "mattersAiProgressGenerating": "Preparing the response",
+  "mattersAiProgressReading": "Reading the matter context",
+  "mattersAiProgressRetrieving": "Retrieving relevant sources",
   "mattersAiResponseFailed": "AI ప్రతిస్పందనను పొందడంలో విఫలమైంది. దయచేసి మళ్లీ ప్రయత్నించండి.",
   "mattersAigeneratedDocuments": "AI రూపొందించిన పత్రాలు",
   "mattersAllAssignees": "అసైనీలందరూ",
@@ -5309,6 +5441,7 @@
   "mattersAllStatuses": "అన్ని హోదాలు",
   "mattersAnalyzeOpponent": "ప్రత్యర్థిని విశ్లేషించండి",
   "mattersAnalyzing": "విశ్లేషిస్తోంది...",
+  "mattersAnswered": "Answered",
   "mattersAnsweredProgress": "{answered}లో {total} సమాధానమిచ్చారు",
   "@mattersAnsweredProgress": {
     "placeholders": {
@@ -5447,6 +5580,7 @@
   "mattersCreating": "సృష్టిస్తోంది...",
   "mattersCreatingMatter": "సృష్టిస్తోంది...",
   "mattersCreatingMatterEllipsis": "పదార్థాన్ని సృష్టిస్తోంది...",
+  "mattersCreditsUsed": "{count, plural, one {# credit used} other {# credits used}}",
   "mattersCriticalRisk": "క్రిటికల్ రిస్క్",
   "mattersDate": "తేదీ",
   "mattersDate2": "తేదీ *",
@@ -5622,6 +5756,7 @@
   "mattersGenerateWhenReady": "టెంప్లేట్‌లు అందించబడి ఉన్నాయని మరియు అవసరమైన ఫీల్డ్‌లు పూరించబడ్డాయని తనిఖీ చేసి, ఆపై మళ్లీ ప్రయత్నించండి.",
   "mattersGenerating": "ఉత్పత్తి చేస్తోంది...",
   "mattersGrantAccessToTeamMembersWithReadonlyOrWritePermiss": "చదవడానికి మాత్రమే లేదా వ్రాయడానికి అనుమతులతో బృంద సభ్యులకు ప్రాప్యతను మంజూరు చేయండి",
+  "mattersGuidanceResearchTypicalTime": "AI guidance only — usually under 15 seconds",
   "mattersHiddenFromPortalClients": "పోర్టల్ క్లయింట్‌ల నుండి దాచబడింది",
   "mattersHideReasoning": "తార్కికతను దాచండి",
   "mattersHighRisk": "అధిక ప్రమాదం",
@@ -5706,6 +5841,7 @@
   "mattersMatterTitle": "మేటర్ టైటిల్",
   "mattersMatterTitleRequired": "మేటర్ టైటిల్ అవసరం",
   "mattersMatterType": "పదార్థం రకం",
+  "mattersMatterType2": "Matter type",
   "mattersMatterTypeLabel": "పదార్థం రకం",
   "mattersMediumRisk": "మీడియం రిస్క్",
   "mattersMeetingsAndRecordings": "సమావేశాలు & రికార్డింగ్‌లు",
@@ -5877,6 +6013,7 @@
     }
     }
   },
+  "mattersRecentActivity": "Recent activity",
   "mattersRecommendedNextSteps": "తదుపరి దశలను సిఫార్సు చేసింది",
   "mattersRecordFirstMeeting": "మొదటి సమావేశాన్ని రికార్డ్ చేయండి",
   "mattersRecordFirstMeetingDescription": "సంప్రదింపులు లేదా వ్యూహాత్మక కాల్‌ని క్యాప్చర్ చేయండి మరియు ఈ మ్యాటర్ టైమ్‌లైన్‌కి దాన్ని అటాచ్ చేయండి.",
@@ -6237,6 +6374,7 @@
   "portalComments": "వ్యాఖ్యలు",
   "portalConsentPortalDescription": "సందేశాలు, అప్‌లోడ్‌లు, నివేదికలు, ఇన్‌వాయిస్‌లు మరియు చెల్లింపులు మీ చట్టపరమైన ఫైల్‌తో ముడిపడి ఉంటాయి.",
   "portalConsentawarePortal": "సమ్మతి-అవగాహన పోర్టల్:",
+  "portalContinueToPortal": "Continue to portal",
   "portalCurrentStageAndStatusForYourMatters": "మీ విషయాల కోసం ప్రస్తుత దశ మరియు స్థితి",
   "portalDescription": "వివరణ",
   "portalDetails": "వివరాలు",
@@ -6253,6 +6391,9 @@
   "portalFirmCommunications": "సంస్థ కమ్యూనికేషన్లు",
   "portalFullName": "పూర్తి పేరు",
   "portalInstructions": "సూచనలు",
+  "portalInviteLinkRequiredDescription": "Open the invitation link shared by your law firm to access the client portal.",
+  "portalInviteLinkRequiredHelp": "Ask your law firm for a new invitation if your link is missing or has expired.",
+  "portalInviteLinkSignInDescription": "Continue using your invitation to access the information shared with you.",
   "portalInvoices": "ఇన్‌వాయిస్‌లు",
   "portalInvoicesAndReceipts": "ఇన్‌వాయిస్‌లు మరియు రసీదులు",
   "portalJaneClient": "జేన్ క్లయింట్",
@@ -6389,6 +6530,7 @@
   "settingsBuyCredits": "క్రెడిట్‌లను కొనుగోలు చేయండి",
   "settingsCalendarEmailMeetingsEsignAndAccounting": "క్యాలెండర్, ఇమెయిల్, సమావేశాలు, ఇ-సైన్ మరియు అకౌంటింగ్",
   "settingsCancel": "రద్దు చేయి",
+  "settingsChangeLogo": "Change logo",
   "settingsChangeRegion": "ప్రాంతాన్ని మార్చండి",
   "settingsChangeRegionHint": "మీ ఖాతాకు చట్టాలు మరియు ధర వర్తించే దేశాన్ని ఎంచుకోండి",
   "settingsCheckingFirmTrainingPreferences": "ప్రస్తుత సంస్థ శిక్షణ మరియు AI ప్రాసెసింగ్ ప్రాధాన్యతలను తనిఖీ చేస్తోంది.",
@@ -6491,6 +6633,8 @@
   "settingsFirmAccount": "సంస్థ ఖాతా",
   "settingsFirmComplianceSettingsAndAuditVisibility": "సంస్థ సమ్మతి సెట్టింగ్‌లు మరియు ఆడిట్ దృశ్యమానత",
   "settingsFirmDataTrainingConsent": "సంస్థ డేటా & శిక్షణ సమ్మతి",
+  "settingsFirmLogo": "Firm logo",
+  "settingsFirmLogoDescription": "Add the logo used for your firm branding.",
   "settingsFirmName": "సంస్థ పేరు *",
   "settingsFirmNameLabel": "సంస్థ పేరు",
   "settingsFirmPoliciesEthicalWallsAndAiUsageRules": "సంస్థ విధానాలు, నైతిక గోడలు మరియు AI వినియోగ నియమాలు",
@@ -6526,6 +6670,12 @@
   "settingsLoadingPermissions": "అనుమతులను లోడ్ చేస్తోంది…",
   "settingsLocation": "స్థానం *",
   "settingsLocationLabel": "స్థానం",
+  "settingsLogoHint": "Choose an image under 2 MB.",
+  "settingsLogoOnExports": "Logo on exports",
+  "settingsLogoOnExportsDisabled": "Disabled",
+  "settingsLogoOnExportsEnabled": "Enabled",
+  "settingsLogoUploadError": "The logo could not be uploaded. Please try again.",
+  "settingsLogoUploading": "Uploading logo…",
   "settingsManageAiConsent": "AI సమ్మతిని నిర్వహించండి",
   "settingsManageBilling": "బిల్లింగ్ నిర్వహించండి",
   "settingsManageDataConsent": "డేటా సమ్మతిని నిర్వహించండి",
@@ -6701,6 +6851,7 @@
   "settingsRecentTenantscopedEvents": "ఇటీవలి అద్దెదారు-పరిధిలోని ఈవెంట్‌లు",
   "settingsRegionUpdateFailed": "ప్రాంతాన్ని నవీకరించడం సాధ్యపడలేదు. దయచేసి మళ్లీ ప్రయత్నించండి.",
   "settingsRegionUpdated": "ప్రాంతం నవీకరించబడింది",
+  "settingsRemoveLogo": "Remove logo",
   "settingsRequestExport": "ఎగుమతి కోసం అభ్యర్థించండి",
   "settingsRequireApprovalForMatterSharing": "విషయం భాగస్వామ్యం కోసం ఆమోదం అవసరం",
   "settingsRestrictedUserIds": "పరిమితం చేయబడిన వినియోగదారు IDలు",
@@ -6723,6 +6874,8 @@
   "settingsSelected": "ఎంపిక చేయబడింది:",
   "settingsSensitiveLabels": "సున్నితమైన లేబుల్‌లు",
   "settingsSettingsDescription": "మీ ప్రొఫైల్, AI వినియోగం, గోప్యత మరియు ప్రాధాన్యతలను నిర్వహించండి.",
+  "settingsShowLogoOnExports": "Show logo on exports",
+  "settingsShowLogoOnExportsDescription": "Include the firm logo on supported exported documents.",
   "settingsSingleSignonSaml": "సింగిల్ సైన్-ఆన్ (SAML)",
   "settingsSmsNotifications": "SMS నోటిఫికేషన్‌లు",
   "settingsSsoUrl": "SSO URL",
@@ -6748,6 +6901,7 @@
   "settingsUnableToWithdrawConsent": "సమ్మతిని ఉపసంహరించుకోవడం సాధ్యపడలేదు.",
   "settingsUniversalDisclaimerText": "యూనివర్సల్ డిస్‌క్లైమర్ టెక్స్ట్",
   "settingsUpdateYourFirmInformationAndBranding": "మీ సంస్థ సమాచారం మరియు బ్రాండింగ్‌ను నవీకరించండి",
+  "settingsUploadLogo": "Upload logo",
   "settingsUsageLedger": "వినియోగ లెడ్జర్",
   "settingsUseAnonymizedDataForImprovement": "మెరుగుదల కోసం అనామక డేటాను ఉపయోగించండి",
   "settingsUserid1Userid2": "userId1, userId2",

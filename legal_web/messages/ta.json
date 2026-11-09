@@ -570,7 +570,35 @@
     "meetings_scope_client": "இந்த வாடிக்கையாளருக்கான சந்திப்புகள்",
     "meetings_scope_matter": "இதற்கான கூட்டங்கள்",
     "no_meetings_match_filters": "உங்கள் வடிப்பான்களுடன் எந்த சந்திப்புகளும் பொருந்தவில்லை",
-    "prev": "முந்தைய"
+    "prev": "முந்தைய",
+    "record_transcript": "Record and transcribe",
+    "import_meeting": "Import meeting",
+    "meetings_load_failed": "Meetings could not be loaded. Please try again.",
+    "release": {
+      "usageBased": "Charged by actual usage",
+      "tasksTitle": "Tasks",
+      "tasksDescription": "Your firm’s work, with the earliest deadlines first.",
+      "newTask": "New task",
+      "selectFirmTasks": "Select a firm to view tasks.",
+      "loadingTasks": "Loading tasks…",
+      "tasksLoadFailed": "Tasks could not be loaded. Please refresh and try again.",
+      "noTasks": "No tasks match this view.",
+      "openMatterTasks": "Open matter tasks",
+      "showCompleted": "Show completed",
+      "evidenceScope": "Evidence scope",
+      "allMatterDocuments": "All authorized matter documents",
+      "selectedFolders": "Selected folders and their subfolders",
+      "selectedDocuments": "Selected documents only",
+      "accessibleFolders": "Folders with accessible documents",
+      "noAccessibleFolders": "No accessible document folders.",
+      "matterJurisdiction": "Jurisdiction follows this matter. Change it in matter settings.",
+      "holdingPassage": "Holding passage",
+      "outcome": "Outcome:",
+      "sectionFinder": "Section Finder",
+      "actualUsage": "Based on actual usage",
+      "finalCharge": "Final charge",
+      "legalCountry": "Legal country"
+    }
   },
   "auth": {
     "signIn": "உள்நுழைக",
@@ -784,7 +812,17 @@
     "completingSignIn": "உள்நுழைவை நிறைவு செய்கிறது…",
     "oauthRedirectFailed": "Apple/Google உள்நுழைவை எங்களால் முடிக்க முடியவில்லை. மீண்டும் முயற்சிக்கவும்.",
     "oauthCompletingTooLong": "உள்நுழைவு எதிர்பார்த்ததை விட அதிக நேரம் எடுக்கிறது. நீங்கள் மீண்டும் முயற்சி செய்யலாம்.",
-    "tryAgain": "மீண்டும் முயற்சிக்கவும்"
+    "tryAgain": "மீண்டும் முயற்சிக்கவும்",
+    "pathSummaryLawFirm": "Law firm workspace",
+    "pathSummarySoloLawyer": "Solo lawyer workspace",
+    "pathSummaryLegalHelp": "Personal legal help",
+    "signUpAccountTitle": "Create your account",
+    "signUpAccountDescription": "Set up your sign-in details to continue.",
+    "prospectPrefillHint": "Details from your link have been filled in. Review them before continuing.",
+    "lawyerPerk1": "Organize clients, matters and documents",
+    "lawyerPerk2": "Research and draft with matter context",
+    "clientPerk1": "Understand your legal issue",
+    "clientPerk2": "Keep your documents and next steps together"
   },
   "marketing": {
     "4565": "45–65%",
@@ -3028,7 +3066,9 @@
     "microFlowFactsHelper": "உங்கள் சொந்த வார்த்தைகளில் எழுதலாம். நீங்கள் எவ்வளவு பொருத்தமான விவரத்தை வழங்குகிறீர்களோ, அந்த பகுப்பாய்வு மிகவும் பயனுள்ளதாக இருக்கும்.",
     "checkMySituation": "என் நிலைமையைச் சரிபார்க்கவும்",
     "enterAtLeastChars": "குறைந்தது {count} எழுத்துகளை உள்ளிடவும்",
-    "charCount": "{current} / {max} எழுத்துகள்"
+    "charCount": "{current} / {max} எழுத்துகள்",
+    "detectedCountryRegionChange": "Detected {country} · {region}. Change this if the issue belongs elsewhere.",
+    "clientNameCannotBeSelf": "Enter the client name, or choose to act for yourself."
   },
   "consumer": {
     "nav": {
@@ -3331,7 +3371,12 @@
     "empty_messages_description": "இந்த வழக்கைப் பற்றிய வழக்கறிஞர்களின் செய்திகள் மற்றும் ஆதரவு இங்கே தோன்றும்.",
     "empty_payments_description": "அறிக்கைகள், வழக்கறிஞர் மதிப்பாய்வு மற்றும் சந்தாக்களுக்கான கட்டணங்கள் இங்கே தோன்றும்.",
     "applies_to_account_changes_future": "உங்கள் கணக்கிற்கு பொருந்தும். மாற்றங்கள் எதிர்கால செயலாக்கத்தை பாதிக்கின்றன.",
-    "control_case_data_for_ai_improvement": "AI மேம்பாட்டிற்கு உங்கள் வழக்குத் தரவு எவ்வாறு பயன்படுத்தப்படலாம் என்பதைக் கட்டுப்படுத்தவும். இயல்புநிலை முடக்கத்தில் உள்ளது."
+    "control_case_data_for_ai_improvement": "AI மேம்பாட்டிற்கு உங்கள் வழக்குத் தரவு எவ்வாறு பயன்படுத்தப்படலாம் என்பதைக் கட்டுப்படுத்தவும். இயல்புநிலை முடக்கத்தில் உள்ளது.",
+    "auto_renewing": "Renews automatically",
+    "subscription_auto_renew_hint": "Your subscription renews until cancelled. Manage renewal and cancellation through your billing provider.",
+    "manage_plan": "Manage plan",
+    "cancel_subscription": "Cancel subscription",
+    "your_current_plan": "Your current plan"
   },
   "lawyer": {
     "nav": {
@@ -3777,7 +3822,13 @@
       "urgencyMediumDesc": "ஒரு சில வாரங்களுக்குள்",
       "urgencyHighDesc": "நாட்களுக்குள்",
       "urgencyUrgentDesc": "உடனடி கவனம் தேவை"
-    }
+    },
+    "noEvidenceYet": "No evidence has been added yet.",
+    "suggested_time": "Suggested time entries",
+    "suggested_time_description": "Review suggested work and duration before adding a time entry.",
+    "no_suggested_time": "No time suggestions yet.",
+    "approve_suggestion": "Approve suggestion",
+    "dismiss_suggestion": "Dismiss suggestion"
   },
   "admin": {
     "title": "நிர்வாகி",
@@ -4410,7 +4461,20 @@
     "deleteAccountSubmitting": "நீக்குகிறது…",
     "deleteAccountSubmit": "எனது கணக்கை நீக்கு",
     "privacyRightToErasure": "அழிக்கும் உரிமை",
-    "privacyRightToErasureBody": "உங்கள் கணக்கு மற்றும் தனிப்பட்ட தரவை நிரந்தரமாக நீக்கக் கோரவும்."
+    "privacyRightToErasureBody": "உங்கள் கணக்கு மற்றும் தனிப்பட்ட தரவை நிரந்தரமாக நீக்கக் கோரவும்.",
+    "logo_on_exports": "Logo on exports",
+    "logo_on_exports_enabled": "Enabled",
+    "logo_on_exports_disabled": "Disabled",
+    "logo_upload_error": "The logo could not be uploaded. Please try again.",
+    "firm_logo": "Firm logo",
+    "firm_logo_description": "Add the logo used for your firm branding.",
+    "logo_uploading": "Uploading logo…",
+    "change_logo": "Change logo",
+    "upload_logo": "Upload logo",
+    "remove_logo": "Remove logo",
+    "logo_hint": "Choose an image under 2 MB.",
+    "show_logo_on_exports": "Show logo on exports",
+    "show_logo_on_exports_description": "Include the firm logo on supported exported documents."
   },
   "billing": {
     "title": "பில்லிங்",
@@ -5490,7 +5554,15 @@
     "checkingConflict": "முரண்பாடுகளைச் சரிபார்க்கிறது…",
     "runConflictCheck": "மோதல் சரிபார்ப்பை இயக்கவும்",
     "researchPromptTitle": "ஆராய்ச்சி கேள்வி",
-    "premiumModelResearchHint": "பிரீமியம் மாடல்கள் சிறிது நேரம் ஆகலாம்."
+    "premiumModelResearchHint": "பிரீமியம் மாடல்கள் சிறிது நேரம் ஆகலாம்.",
+    "answered": "Answered",
+    "ai_progress_reading": "Reading the matter context",
+    "ai_progress_retrieving": "Retrieving relevant sources",
+    "ai_progress_analysing": "Analysing the available information",
+    "ai_progress_generating": "Preparing the response",
+    "credits_used": "{count, plural, one {# credit used} other {# credits used}}",
+    "recent_activity": "Recent activity",
+    "matter_type": "Matter type"
   },
   "clients": {
     "title": "வாடிக்கையாளர்கள்",
@@ -5842,7 +5914,11 @@
     "uploaded": "பதிவேற்றப்பட்டது",
     "sign_in_description": "உங்கள் சட்ட நிறுவனம் கோப்பில் உள்ள மின்னஞ்சல் முகவரியுடன் உள்நுழையவும்.",
     "signing_in": "உள்நுழைகிறது…",
-    "unable_to_sign_in": "உள்நுழைய முடியவில்லை. உங்கள் மின்னஞ்சலைச் சரிபார்த்து மீண்டும் முயலவும்."
+    "unable_to_sign_in": "உள்நுழைய முடியவில்லை. உங்கள் மின்னஞ்சலைச் சரிபார்த்து மீண்டும் முயலவும்.",
+    "invite_link_required_description": "Open the invitation link shared by your law firm to access the client portal.",
+    "invite_link_required_help": "Ask your law firm for a new invitation if your link is missing or has expired.",
+    "invite_link_sign_in_description": "Continue using your invitation to access the information shared with you.",
+    "continue_to_portal": "Continue to portal"
   },
   "errors": {
     "generic": "ஏதோ தவறாகிவிட்டது",
@@ -5947,7 +6023,9 @@
       "publishedToClientPortal": "கிளையன்ட் போர்ட்டலில் வெளியிடப்பட்டது",
       "taskReopened": "பணி மீண்டும் திறக்கப்பட்டது",
       "taskCompleted": "பணி முடிந்தது",
-      "pleaseTryAgain": "மீண்டும் முயற்சிக்கவும்."
+      "pleaseTryAgain": "மீண்டும் முயற்சிக்கவும்.",
+      "docketSynced": "Court docket synced",
+      "docketSyncFailed": "Court docket could not be synced"
     }
   },
   "dashboard": {
@@ -6103,7 +6181,11 @@
           "Tenancy deposit",
           "Consumer rights"
         ]
-      }
+      },
+      "intakeSubtitle": "Start with the client and a short description of the matter.",
+      "intakeBriefPlaceholder": "Describe the issue, key dates and the help needed.",
+      "intakeClientPlaceholder": "Client name",
+      "intakeCta": "Start intake"
     },
     "dailyBrief": {
       "title": "உங்கள் தினசரி சுருக்கம்",
@@ -7504,7 +7586,15 @@
       "proceduralRouteDetail": "{recommended} பரிந்துரைக்கப்படுகிறது — {selected} ஐப் பயன்படுத்துகிறது",
       "governingSections": "ஆளும் பிரிவுகள்",
       "researchAuthorities": "{count} அதிகாரிகள் மீட்டெடுக்கப்பட்டனர்{deep} · நம்பிக்கை {confidence}",
-      "deepSearchSuffix": "(ஆழமான தேடல்)"
+      "deepSearchSuffix": "(ஆழமான தேடல்)",
+      "lawyerReady": "Ready for lawyer review",
+      "readyForLawyerReview": "Ready for lawyer review",
+      "canCertifyShort": "Eligible for review sign-off",
+      "passageSupportedShort": "passages supported",
+      "factCoverage": "Fact coverage",
+      "missingDefenceFacts": "Defence facts to confirm",
+      "autoAppliedFixes": "Applied corrections",
+      "timelineWarnings": "Timeline checks to review"
     }
   },
   "matterIntelligence": {
@@ -7555,7 +7645,9 @@
     "dialogDecline": "இப்போது இல்லை",
     "dialogAgree": "நான் ஒப்புக்கொள்கிறேன்",
     "settingsTitle": "AI அனுமான ஒப்புதல்",
-    "settingsDescription": "ஒப்புதல் மீட்டமைவு. அடுத்த AI அம்சத்திற்கு முன் உங்களிடம் மீண்டும் கேட்கப்படும்."
+    "settingsDescription": "ஒப்புதல் மீட்டமைவு. அடுத்த AI அம்சத்திற்கு முன் உங்களிடம் மீண்டும் கேட்கப்படும்.",
+    "processingUnavailable": "AI privacy information is unavailable. Please retry before sending your data.",
+    "processingBody": "To perform the AI work you request, Umbrella sends your questions, instructions, authorized matter facts, document excerpts, research and draft text to the recipients below. Audio is sent when you use transcription. Inference permission does not grant permission to train models."
   },
   "docuDraft": {
     "title": "ஆவண வரைவு",

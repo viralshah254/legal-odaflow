@@ -84,5 +84,9 @@
   "uploaded": "আপলোড করা হয়েছে",
   "sign_in_description": "আপনার আইন সংস্থার ফাইলে থাকা ইমেল ঠিকানা দিয়ে সাইন ইন করুন।",
   "signing_in": "সাইন ইন করা হচ্ছে...",
-  "unable_to_sign_in": "সাইন ইন করতে অক্ষম৷ আপনার ইমেল চেক করুন এবং আবার চেষ্টা করুন৷"
+  "unable_to_sign_in": "সাইন ইন করতে অক্ষম৷ আপনার ইমেল চেক করুন এবং আবার চেষ্টা করুন৷",
+  "invite_link_required_description": "Open the invitation link shared by your law firm to access the client portal.",
+  "invite_link_required_help": "Ask your law firm for a new invitation if your link is missing or has expired.",
+  "invite_link_sign_in_description": "Continue using your invitation to access the information shared with you.",
+  "continue_to_portal": "Continue to portal"
 }

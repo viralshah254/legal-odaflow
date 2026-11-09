@@ -101,6 +101,8 @@
     "publishedToClientPortal": "ক্লায়েন্ট পৰ্টেলত প্ৰকাশ কৰা হৈছে",
     "taskReopened": "টাস্ক পুনৰ মুকলি হ’ল",
     "taskCompleted": "কাম সম্পূৰ্ণ হ’ল",
-    "pleaseTryAgain": "অনুগ্ৰহ কৰি পুনৰ চেষ্টা কৰক।"
+    "pleaseTryAgain": "অনুগ্ৰহ কৰি পুনৰ চেষ্টা কৰক।",
+    "docketSynced": "Court docket synced",
+    "docketSyncFailed": "Court docket could not be synced"
   }
 }
