@@ -6,6 +6,7 @@ import {
   signInWithEmailAndPassword,
   createUserWithEmailAndPassword,
   sendPasswordResetEmail,
+  sendEmailVerification,
   fetchSignInMethodsForEmail,
   GoogleAuthProvider,
   OAuthProvider,
@@ -109,11 +110,15 @@ export async function signInWithEmail(
   email: string,
   password: string,
 ) {
-  return signInWithEmailAndPassword(getFirebaseAuth(), email, password)
+  const credential = await signInWithEmailAndPassword(getFirebaseAuth(), email, password)
+  if (!credential.user.emailVerified) await sendEmailVerification(credential.user)
+  return credential
 }
 
 export async function signUpWithEmail(email: string, password: string) {
-  return createUserWithEmailAndPassword(getFirebaseAuth(), email, password)
+  const credential = await createUserWithEmailAndPassword(getFirebaseAuth(), email, password)
+  await sendEmailVerification(credential.user)
+  return credential
 }
 
 /** @deprecated Prefer try-sign-in flow; retained for unified auth email branching. */

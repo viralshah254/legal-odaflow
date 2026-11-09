@@ -20,6 +20,15 @@ jobs:
           node-version: "22"
           cache: npm
 
+      - name: Provision FFmpeg for validation
+        run: |
+          if ! command -v ffmpeg >/dev/null; then
+            sudo apt-get update
+            sudo apt-get install --no-install-recommends -y ffmpeg
+          fi
+          echo "FFMPEG_BIN=$(command -v ffmpeg)" >> "$GITHUB_ENV"
+          ffmpeg -version
+
       - name: Validate standalone backend before publishing
         env:
           NODE_OPTIONS: --max-old-space-size=4096

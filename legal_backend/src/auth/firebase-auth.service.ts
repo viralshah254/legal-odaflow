@@ -42,6 +42,12 @@ export class FirebaseAuthService {
     }
 
     const email = decoded.email?.toLowerCase() ?? null;
+    // A signed token proves the Firebase identity, not ownership of an unverified
+    // email. Never link or provision a legal account from that claim.
+    if (email && decoded.email_verified !== true) {
+      throw new UnauthorizedException('Verify your email address before signing in.');
+    }
+
     const displayName = dto.name ?? decoded.name ?? null;
 
     let user = await this.prisma.user.findFirst({

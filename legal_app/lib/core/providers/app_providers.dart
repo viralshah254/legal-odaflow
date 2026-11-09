@@ -401,10 +401,11 @@ class AuthController extends StateNotifier<AuthState> {
     final auth = FirebaseService.auth;
     if (auth != null) {
       try {
-        await auth.createUserWithEmailAndPassword(
+        final credential = await auth.createUserWithEmailAndPassword(
           email: email.trim(),
           password: password,
         );
+        await credential.user?.sendEmailVerification();
         final idToken = await FirebaseService.getIdToken();
         if (idToken == null || idToken.isEmpty) {
           throw StateError('Missing Firebase ID token after signup.');

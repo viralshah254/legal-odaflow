@@ -103,4 +103,8 @@ jobs:
           uri = Path(os.environ['RUNNER_TEMP'], 'umbrella-gradle-8.12-all.zip').as_uri()
           p.write_text('\n'.join('distributionUrl=' + uri if line.startswith('distributionUrl=') else line for line in lines) + '\n')
           PYGRADLE
+      - name: Provision checksum-verified PDFium for Android
+        run: |
+          python3 -m unittest discover -s tool -p 'test_prepare_ci_pdfium.py'
+          python3 tool/prepare_ci_pdfium.py --destination "$RUNNER_TEMP/umbrella-pdfium"
       - run: flutter build apk --release --dart-define=API_URL=https://legal-api.odaflow.com/api/v1

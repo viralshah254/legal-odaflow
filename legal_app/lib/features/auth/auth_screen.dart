@@ -263,10 +263,13 @@ class _AuthScreenState extends ConsumerState<AuthScreen> {
     final email = _emailController.text.trim();
 
     try {
-      await FirebaseService.auth!.signInWithEmailAndPassword(
+      final credential = await FirebaseService.auth!.signInWithEmailAndPassword(
         email: email,
         password: _passwordController.text,
       );
+      if (credential.user?.emailVerified == false) {
+        await credential.user?.sendEmailVerification();
+      }
       await _completeFirebaseSession();
     } on fb_auth.FirebaseAuthException catch (error) {
       if (isFirebaseAuthUnavailable(error)) {
