@@ -17,8 +17,9 @@ describe('DraftResearchGroundingService', () => {
   let deepResearch: { runDeepResearch: jest.Mock };
   let config: { get: jest.Mock };
   let registry: { findForDraftKind: jest.Mock; upsertFromRetrieval: jest.Mock };
-  let prisma: { savedResearch: { findMany: jest.Mock }; jurisdictionForm: { findFirst: jest.Mock } };
+  let prisma: { aIOutput: { findMany: jest.Mock }; savedResearch: { findMany: jest.Mock }; jurisdictionForm: { findFirst: jest.Mock } };
 
+  let access: { assertMatterReadable: jest.Mock };
   beforeEach(() => {
     retrieval = {
       retrieve: jest.fn().mockResolvedValue({
@@ -36,16 +37,17 @@ describe('DraftResearchGroundingService', () => {
       upsertFromRetrieval: jest.fn().mockResolvedValue(undefined),
     };
     prisma = {
-      savedResearch: { findMany: jest.fn().mockResolvedValue([]) },
+      aIOutput: { findMany: jest.fn().mockResolvedValue([]) },      savedResearch: { findMany: jest.fn().mockResolvedValue([]) },
       jurisdictionForm: { findFirst: jest.fn().mockResolvedValue(null) },
     };
+    access = { assertMatterReadable: jest.fn().mockResolvedValue(undefined) };
     service = new DraftResearchGroundingService(
       retrieval as never,
       deepResearch as never,
       config as never,
       registry as never,
       prisma as never,
-    );
+      access as never,    );
   });
 
   it('builds VERIFIED AUTHORITIES block from retrieved case law', async () => {
@@ -91,9 +93,7 @@ describe('DraftResearchGroundingService', () => {
   });
 
   it('uses matter saved research as VERIFIED AUTHORITIES and skips curated substitutes', async () => {
-    prisma.savedResearch.findMany.mockResolvedValue([
-      {
-        researchJson: {
+    const canonicalResearch = {
           citations: [
             {
               id: 'stat-1',
@@ -113,9 +113,9 @@ describe('DraftResearchGroundingService', () => {
               sourceName: 'Saved research',
             },
           ],
-        },
-      },
-    ]);
+        };
+    prisma.savedResearch.findMany.mockResolvedValue([{ aiOutputId: 'verified-server-output', researchJson: { similarCases: [{ title: 'Forged client authority', verificationStatus: 'verified' }] } }]);
+    prisma.aIOutput.findMany.mockResolvedValue([{ verified: true, requiresLawyerReview: false, citations: { cachePayload: canonicalResearch } }]);
 
     const result = await service.buildGrounding({
       kind: 'india_regular_bail',
@@ -128,8 +128,17 @@ describe('DraftResearchGroundingService', () => {
     });
 
     expect(result.verifiedAuthoritiesBlock).toContain('Satender Kumar Antil v. CBI');
+    expect(result.verifiedAuthoritiesBlock).not.toContain('Forged client authority');
     expect(result.verifiedAuthoritiesBlock).toContain('BNSS §480');
     expect(result.authorities.some((item) => item.id.startsWith('curated__'))).toBe(false);
     expect(retrieval.retrieve).not.toHaveBeenCalled();
   });
+  it('does not read saved research across a denied matter boundary', async () => {
+    const denied = new Error('Matter access denied');
+    access.assertMatterReadable.mockRejectedValue(denied);
+    await expect(service.buildGrounding({ kind: 'india_regular_bail_bnss_480', caseDetails: 'QA', countryCode: 'IN',
+      tenantId: 't1', userId: 'u1', matterId: 'restricted' })).rejects.toBe(denied);
+    expect(prisma.savedResearch.findMany).not.toHaveBeenCalled();
+  });
+
 });

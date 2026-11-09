@@ -335,7 +335,7 @@ export class SectionGeneratorService {
       'CASE DETAILS / FACTS:',
       ctx.caseDetails,
       ctx.attachmentContext
-        ? `\nATTACHED DOCUMENT CONTEXT:\n${ctx.attachmentContext.slice(0, 3000)}`
+        ? `\nATTACHED DOCUMENT CONTEXT:\n${ctx.attachmentContext.slice(0, 36_000)}`
         : '',
       priorContent ? `\n${priorContent}` : '',
       '',
@@ -352,10 +352,22 @@ export class SectionGeneratorService {
           { role: 'system', content: systemPrompt },
           { role: 'user', content: userMessage },
         ],
-        maxTokens: section.maxTokens,
+        // Provider caps include hidden reasoning as well as the visible section.
+        maxTokens: section.maxTokens + (section.modelTier === 'premium' ? 8192 : 2048),
+        timeoutMs: 45_000,
+        ...(section.modelTier !== 'cheap' ? { minTier: 'mid' as const } : {}),
+        reasoningEffort: modelMode === 'PREMIUM' ? 'high'
+          : section.modelTier === 'premium' ? 'medium'
+          : section.modelTier === 'cheap' ? 'low' : 'medium',
         temperature: section.type === 'grounds' || section.type === 'arguments' ? 0.15 : 0.2,
       });
 
+      if (!result.content.trim() || /^unable to generate a response/i.test(result.content.trim())) {
+        throw new Error('Section generation returned no substantive content');
+      }
+      if (result.finishReason === 'max_tokens' || result.finishReason === 'length') {
+        throw new Error('Section generation was truncated; complete section required');
+      }
       return {
         content: result.content.trim(),
         modelUsed: result.modelName,

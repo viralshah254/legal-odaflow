@@ -1,4 +1,4 @@
-import { IsIn, IsOptional, IsString, MinLength } from 'class-validator';
+import { IsInt, Min, Max, IsIn, IsOptional, IsString, MinLength } from 'class-validator';
 
 const CALENDAR_EVENT_TYPES = [
   'MEETING',
@@ -16,6 +16,12 @@ const CALENDAR_EVENT_TYPES = [
 ] as const;
 
 export class CreateCalendarEventDto {
+  @IsOptional()
+  @IsInt()
+  @Min(0)
+  @Max(10080)
+  reminderMinutes?: number | null;
+
   @IsOptional()
   @IsString()
   matterId?: string;

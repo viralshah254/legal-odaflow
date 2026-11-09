@@ -1,3 +1,4 @@
+import { isISO8601 } from 'class-validator';
 import { ArtifactAccessResolver, type AccessActor } from '@/access/artifact-access.resolver';
 import { MatterAccessService } from '@/access/matter-access.service';
 import concurrencyLimit from '@/common/utils/concurrency-limit';
@@ -33,6 +34,8 @@ export class CalendarService {
         matterId: dto.matterId,
         clientId: matter?.clientId ?? dto.clientId,
         userId: actor?.userId,
+        reminderMinutes: dto.reminderMinutes === undefined ? 30 : dto.reminderMinutes,
+        reminderAt: this.reminderTime(dto.startAt, dto.reminderMinutes === undefined ? 30 : dto.reminderMinutes),
         title: dto.title,
         description: dto.description,
         type: dto.type ?? 'MEETING',
@@ -108,7 +111,7 @@ export class CalendarService {
     if (existing.matterId) await this.assertWritableMatter(actor!, existing.matterId);
     if (dto.matterId) await this.assertWritableMatter(actor!, dto.matterId);
     if (dto.clientId) await this.access.assertClientReadable(actor!, dto.clientId);
-    const targetMatterId = dto.matterId ?? existing.matterId;
+    const targetMatterId = dto.matterId !== undefined ? dto.matterId : existing.matterId;
     const matter = targetMatterId ? await this.ensureMatter(tenantId, targetMatterId) : null;
     if (matter && dto.clientId && dto.clientId !== matter.clientId) throw new BadRequestException('Calendar client must match the matter');
     this.validateRange(dto.startAt ?? existing.startAt.toISOString(), dto.endAt ?? existing.endAt.toISOString());
@@ -118,6 +121,10 @@ export class CalendarService {
       data: {
         matterId: dto.matterId,
         clientId: matter?.clientId ?? dto.clientId,
+        ...(dto.startAt !== undefined || dto.reminderMinutes !== undefined ? {
+          reminderMinutes: dto.reminderMinutes === undefined ? existing.reminderMinutes : dto.reminderMinutes,
+          reminderAt: this.reminderTime(dto.startAt ?? existing.startAt.toISOString(), dto.reminderMinutes === undefined ? existing.reminderMinutes : dto.reminderMinutes),
+        } : {}),
         title: dto.title,
         description: dto.description,
         type: dto.type,
@@ -163,11 +170,18 @@ export class CalendarService {
     }
   }
 
+  private reminderTime(startAt: string, minutes: number | null | undefined): Date | null {
+    if (minutes == null) return null;
+    if (!Number.isInteger(minutes) || minutes < 0 || minutes > 10080) throw new BadRequestException('Invalid reminder interval');
+    return new Date(new Date(startAt).getTime() - minutes * 60_000);
+  }
+
   private validateDate(value: string) {
-    if (!Number.isFinite(new Date(value).getTime())) throw new BadRequestException('Invalid calendar date');
+    if (!isISO8601(value, { strict: true, strictSeparator: true }) || !Number.isFinite(new Date(value).getTime())) throw new BadRequestException('Invalid calendar date');
   }
 
   private validateRange(start: string, end: string) {
+    if (![start, end].every(value => /T.*(?:Z|[+-]\d{2}:\d{2})$/i.test(value))) throw new BadRequestException('Calendar timestamps require an explicit timezone');
     this.validateDate(start);
     this.validateDate(end);
     if (new Date(end).getTime() < new Date(start).getTime()) throw new BadRequestException('Calendar end precedes start');

@@ -1,3 +1,4 @@
+import type { PrismaService } from '@/prisma/prisma.service';
 import type { RetrievedAuthority } from '@/legal-search/legal-retrieval.types';
 
 type SimilarCaseLike = {
@@ -149,4 +150,31 @@ export function extractVerifiedAuthoritiesFromSavedResearch(
   }
 
   return out.slice(0, 12);
+}
+
+/** Caller must first authorize the matter. Client-edited SavedResearch JSON is
+ * a note, never the source of a verified authority flag. Read the canonical
+ * server output with the current verification result instead. */
+export async function loadVerifiedMatterResearchAuthorities(
+  prisma: Pick<PrismaService, 'savedResearch' | 'aIOutput'>,
+  actor: { tenantId: string; userId: string; matterId: string },
+): Promise<RetrievedAuthority[]> {
+  const rows = await prisma.savedResearch.findMany({
+    where: { tenantId: actor.tenantId, matterId: actor.matterId }, orderBy: { createdAt: 'desc' }, take: 8,
+    select: { aiOutputId: true },
+  });
+  const ids = [...new Set(rows.flatMap(row => row.aiOutputId ? [row.aiOutputId] : []))];
+  if (!ids.length) return [];
+  const outputs = await prisma.aIOutput.findMany({
+    where: { id: { in: ids }, tenantId: actor.tenantId, taskType: 'LEGAL_RESEARCH', verified: true, requiresLawyerReview: false,
+      OR: [{ matterId: actor.matterId }, { matterId: null, userId: actor.userId }] },
+    select: { verified: true, requiresLawyerReview: true, citations: true },
+  });
+  return extractVerifiedAuthoritiesFromSavedResearch(outputs.flatMap(output => {
+    if (!output.verified || output.requiresLawyerReview) return [];
+    const canonical = asObject(output.citations);
+    if (!canonical) return [];
+    const payload = asObject(canonical.cachePayload);
+    return [payload ?? { citations: canonical.items, similarCases: canonical.similarCases }];
+  }));
 }

@@ -41,6 +41,7 @@ describe('LlmCompletionService OpenAI request compatibility', () => {
       expect.objectContaining({
         model: 'gpt-5.6-luna',
         max_completion_tokens: 100,
+        reasoning_effort: 'medium',
         response_format: { type: 'json_object' },
       }),
     );
@@ -178,5 +179,33 @@ describe('LlmCompletionService timeout', () => {
         timeoutMs: 20,
       }),
     ).rejects.toThrow(/deadline|aborted|timed out/i);
+  });
+});
+
+describe('Responses output integrity', () => {
+  const originalFetch = global.fetch;
+  afterEach(() => { global.fetch = originalFetch; jest.restoreAllMocks(); });
+
+  it.each([
+    { type: 'json_object' as const },
+    { type: 'json_schema' as const, json_schema: { name: 'case_plan', strict: true, schema: { type: 'object', properties: {}, additionalProperties: false } } },
+  ])('preserves structured output constraints on the Responses route: $type', async (responseFormat) => {
+    let body: any;
+    global.fetch = jest.fn(async (_url, init) => {
+      body = JSON.parse(String(init?.body));
+      return new Response(JSON.stringify({ status: 'completed', output: [{ type: 'message', content: [{ type: 'output_text', text: '{}' }] }] }), { status: 200 });
+    }) as typeof fetch;
+    const service = new LlmCompletionService(new ConfigService({ OPENAI_API_KEY: 'test-key', ALLOWED_AI_PROVIDERS: 'openai' }));
+    const result = await service.complete({ modelName: 'gpt-5.6-sol', messages: [{ role: 'user', content: 'Return JSON' }], responseFormat });
+    expect(result.content).toBe('{}');
+    expect(body.text.format).toEqual(responseFormat.type === 'json_schema'
+      ? { type: 'json_schema', ...responseFormat.json_schema } : { type: 'json_object' });
+    expect(body).not.toHaveProperty('response_format');
+  });
+
+  it('never converts reasoning-only output into successful draft text', async () => {
+    global.fetch = jest.fn(async () => new Response(JSON.stringify({ status: 'incomplete', incomplete_details: { reason: 'max_output_tokens' }, output: [{ type: 'reasoning' }], usage: { input_tokens: 20, output_tokens: 3500 } }), { status: 200 })) as typeof fetch;
+    const service = new LlmCompletionService(new ConfigService({ OPENAI_API_KEY: 'test-key', ALLOWED_AI_PROVIDERS: 'openai', AI_LLM_MAX_RETRIES: '1' }));
+    await expect(service.complete({ modelName: 'gpt-5.6-sol', messages: [{ role: 'user', content: 'Draft grounds' }], minTier: 'mid' })).rejects.toThrow();
   });
 });

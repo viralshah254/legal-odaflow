@@ -245,6 +245,7 @@ class AuthController extends StateNotifier<AuthState> {
 
   final Ref _ref;
   StreamSubscription<String>? _fcmRefreshSub;
+  Timer? _bootstrapDeadline;
 
   TokenStorage get _storage => _ref.read(tokenStorageProvider);
   AuthApi get _authApi => _ref.read(authApiProvider);
@@ -282,6 +283,7 @@ class AuthController extends StateNotifier<AuthState> {
   @override
   void dispose() {
     _fcmRefreshSub?.cancel();
+    _bootstrapDeadline?.cancel();
     super.dispose();
   }
 
@@ -300,32 +302,50 @@ class AuthController extends StateNotifier<AuthState> {
   }
 
   Future<void> bootstrap() async {
-    final accessToken = await _storage.getAccessToken();
-    final refreshToken = await _storage.getRefreshToken();
-    final userJson = await _storage.getUserJson();
+    final deadline = Completer<List<String?>>();
+    _bootstrapDeadline = Timer(const Duration(seconds: 10), () {
+      deadline.completeError(TimeoutException('Session storage unavailable'));
+    });
+    try {
+      final stored = await Future.any<List<String?>>([
+        Future.wait([_storage.getAccessToken(), _storage.getRefreshToken(), _storage.getUserJson()]),
+        deadline.future,
+      ]);
+      _bootstrapDeadline?.cancel();
+      if (!mounted) return;
+      final accessToken = stored[0],
+          refreshToken = stored[1],
+          userJson = stored[2];
 
-    if (accessToken == null ||
-        refreshToken == null ||
-        userJson == null ||
-        userJson.isEmpty) {
-      state = state.copyWith(isBootstrapping: false, clearSession: true);
-      return;
+      if (accessToken == null ||
+          refreshToken == null ||
+          userJson == null ||
+          userJson.isEmpty) {
+        state = state.copyWith(isBootstrapping: false, clearSession: true);
+        return;
+      }
+
+      final user = AuthUser.fromJson(
+        jsonDecode(userJson) as Map<String, dynamic>,
+      );
+
+      state = state.copyWith(
+        session: AuthSession(
+          accessToken: accessToken,
+          refreshToken: refreshToken,
+          user: user,
+        ),
+        isBootstrapping: false,
+      );
+      await _hydrateLocaleFromServer(user);
+      await _registerFcmIfAvailable();
+    } catch (_) {
+      // Corrupt/unavailable secure storage must not trap the user on splash.
+      // Preserve stored data and require sign-in; never restore a partial session.
+      if (mounted) state = const AuthState(isBootstrapping: false);
+    } finally {
+      _bootstrapDeadline?.cancel();
     }
-
-    final user = AuthUser.fromJson(
-      jsonDecode(userJson) as Map<String, dynamic>,
-    );
-
-    state = state.copyWith(
-      session: AuthSession(
-        accessToken: accessToken,
-        refreshToken: refreshToken,
-        user: user,
-      ),
-      isBootstrapping: false,
-    );
-    await _hydrateLocaleFromServer(user);
-    await _registerFcmIfAvailable();
   }
 
   Future<void> login({required String email, required String password}) async {

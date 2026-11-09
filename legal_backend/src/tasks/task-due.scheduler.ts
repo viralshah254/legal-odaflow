@@ -1,4 +1,4 @@
-import { Injectable, Logger } from '@nestjs/common';
+import { ForbiddenException, Injectable, Logger } from '@nestjs/common';
 import { Cron, CronExpression } from '@nestjs/schedule';
 import { NotificationsService } from '@/notifications/notifications.service';
 import { PrismaService } from '@/prisma/prisma.service';
@@ -43,7 +43,9 @@ export class TaskDueScheduler {
       }
 
       const overdue = task.dueDate < startOfToday;
-      await this.notificationsService.createAndDispatch({
+      try {
+        await this.notificationsService.createAndDispatch({
+        idempotencyKey: `task-due-${task.id}-${task.dueDate.toISOString()}-${startOfToday.toISOString()}`,
         tenantId: task.tenantId,
         userId: task.assigneeId,
         title: overdue ? 'Task overdue' : 'Task due today',
@@ -58,7 +60,10 @@ export class TaskDueScheduler {
           link: `/app/tasks?highlight=${task.id}`,
         },
       });
-      sent += 1;
+        sent += 1;
+      } catch (error) {
+        if (!(error instanceof ForbiddenException)) this.logger.warn(`Task reminder deferred: ${error instanceof Error ? error.name : 'unknown error'}`);
+      }
     }
 
     this.logger.log(`Task due cron completed: ${sent} notifications sent`);

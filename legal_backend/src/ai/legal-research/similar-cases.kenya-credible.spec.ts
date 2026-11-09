@@ -1,7 +1,7 @@
 import { SimilarCasesService } from './similar-cases.service';
 
 describe('SimilarCasesService Kenya credibility', () => {
-  it('treats Kenya Law sourceName as verified-capable', () => {
+  it('keeps a Kenya Law candidate unverified until exact-document evidence is checked', () => {
     const service = new SimilarCasesService();
     const ranked = service.extractAndRank(
       [
@@ -30,6 +30,6 @@ describe('SimilarCasesService Kenya credibility', () => {
     );
 
     expect(ranked.length).toBeGreaterThan(0);
-    expect(ranked[0]?.verificationStatus).toBe('verified');
+    expect(ranked[0]?.verificationStatus).toBe('needs_verification');
   });
 });

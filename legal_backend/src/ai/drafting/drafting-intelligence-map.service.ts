@@ -59,6 +59,7 @@ export class DraftingIntelligenceMapService {
         jurisdiction: input.jurisdiction,
         legalDomain: input.kind,
         practiceArea: input.practiceArea,
+        planningMode: 'draft',
       });
       return this.toDraftingResult(raw);
     } catch (err) {

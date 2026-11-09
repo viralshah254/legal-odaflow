@@ -152,3 +152,33 @@ describe('EmbeddingService atomic chunk replacement', () => {
     expect(embed.mock.calls.map(([texts]) => texts.length)).toEqual([2, 2]);
   });
 });
+
+describe('embedding tenant boundaries', () => {
+  it('keeps unscoped public searches separate from explicitly scoped firm searches', async () => {
+    const prisma = { embeddingChunk: { findMany: jest.fn().mockResolvedValue([]) }, $queryRaw: jest.fn().mockResolvedValue([]) };
+    const service = new EmbeddingService(prisma as never, { get: (_key: string, fallback: string) => fallback } as never);
+    await service.searchByKeyword('arbitration');
+    expect(prisma.embeddingChunk.findMany.mock.calls[0][0].where.tenantId).toBeNull();
+    await service.searchByKeyword('arbitration', { tenantId: 'firm-a' });
+    expect(prisma.embeddingChunk.findMany.mock.calls[1][0].where.tenantId).toBe('firm-a');
+  });
+  it('applies the same tenant boundary inside the vector query before ranking', async () => {
+    const prisma = { $queryRaw: jest.fn().mockResolvedValue([]) };
+    const service = new EmbeddingService(prisma as never, { get: (key: string, fallback: string) => key === 'AI_ENABLE_RAG' ? 'true' : fallback } as never);
+    jest.spyOn(service, 'embedText').mockResolvedValue([0.1]);
+    await service.searchByVector('private query', { tenantId: 'firm-a' });
+    const [strings, ...values] = prisma.$queryRaw.mock.calls[0];
+    expect(strings.join('?')).toContain('ec."tenantId" IS NULL');
+    expect(strings.join('?')).toMatch(/ec\."tenantId" = [\s\S]*ORDER BY/);
+    expect(values).toContain('firm-a');
+  });
+  it('does not deduplicate one firm’s copy against a different source owner', async () => {
+    const prisma = { contentHash: { findUnique: jest.fn().mockResolvedValue({ hash: 'h' }), upsert: jest.fn() }, embeddingChunk: {
+      findMany: jest.fn().mockResolvedValue([{ modelName: 'm', sourceType: 'firm_knowledge', sourceId: 'other-firm-item@1', chunkIndex: 0 }]),
+      upsert: jest.fn().mockResolvedValue({ id: 'chunk' }),
+    } };
+    const service = new EmbeddingService(prisma as never, { get: () => 'false' } as never);
+    expect(await service.storeChunks([{ tenantId: 'firm-b', sourceType: 'firm_knowledge', sourceId: 'owned-item@1', chunkIndex: 0, content: 'Shared wording, separately owned source.', modelName: 'm' }])).toMatchObject({ stored: 1, skipped: 0 });
+    expect(prisma.embeddingChunk.upsert).toHaveBeenCalledWith(expect.objectContaining({ create: expect.objectContaining({ tenantId: 'firm-b' }), update: expect.objectContaining({ tenantId: 'firm-b' }) }));
+  });
+});

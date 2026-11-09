@@ -167,6 +167,14 @@ export class DraftEngineV2Service {
     ctx: DraftV2Context,
   ): Promise<DraftV2Result> {
     const startMs = Date.now();
+    let stageStarted = startMs;
+    const stageDurationsMs: Record<string, number> = {};
+    const finishStage = (stage: string) => {
+      const now = Date.now();
+      stageDurationsMs[stage] = now - stageStarted;
+      this.logger.log(JSON.stringify({ event: 'draft_v2_stage', stage, durationMs: stageDurationsMs[stage] }));
+      stageStarted = now;
+    };
     const userKind = ensureIndiaDraftKind(dto.kind);
     const respectUserSelection = isExplicitIndiaCatalogKind(userKind);
     const bundleSubsequent = Boolean(dto.bundleMode && (dto.bundleIndex ?? 0) > 0);
@@ -269,49 +277,48 @@ export class DraftEngineV2Service {
       !(dto.pinnedCaseLaws?.length) &&
       !wantsCaseLaw(dto.knowledgeSources);
 
-    // Theory of the case before retrieval — same artifact the unified and v1
-    // engines use, so a lawyer gets the same reasoning whichever path runs.
-    const caseTheory = await this.caseTheory.build({
-      facts: dto.caseDetails ?? '',
-      documentKind: effectiveKind,
-      countryCode: 'IN',
-      jurisdiction: dto.jurisdiction,
-      caseBrief: this.caseBriefService.extract(dto.caseDetails ?? '', effectiveKind),
-      model: DRAFT_ENRICH_MODEL,
-      filingGrade: !skipResearchGrounding,
-    });
+    finishStage('matterIntelligenceAndRouting');
+
+    // Independent planning calls share the same authorized facts; neither consumes
+    // the other's output. Await both together before retrieval.
+    const [caseTheory, mapResult] = await Promise.all([
+      this.caseTheory.build({
+        facts: dto.caseDetails ?? '',
+        documentKind: effectiveKind,
+        countryCode: 'IN',
+        jurisdiction: dto.jurisdiction,
+        caseBrief: this.caseBriefService.extract(dto.caseDetails ?? '', effectiveKind),
+        model: DRAFT_ENRICH_MODEL,
+        filingGrade: !skipResearchGrounding,
+      }),
+      (async () => {
+        let mapQueries: string[] = [];
+        let mapIssues: Array<{ id: string; label: string; kind?: string }> = [];
+        if (!skipResearchGrounding && dto.caseDetails?.trim() && !bundleSubsequent) {
+          try {
+            const draftingMap = await this.draftingIntelligenceMap.buildMap({
+              caseDetails: dto.caseDetails,
+              countryCode: 'IN',
+              jurisdiction: dto.jurisdiction,
+              kind: effectiveKind,
+              practiceArea: matterProfile.practiceArea,
+            });
+            mapQueries = [...new Set([...draftingMap.researchQueries, ...draftingMap.searchHints])].slice(0, 12);
+            mapIssues = draftingMap.issues.map((i) => ({ id: i.id, label: i.label, kind: i.kind }));
+          } catch (err) {
+            this.logger.warn(`Drafting intelligence map skipped: ${err instanceof Error ? err.name : 'unknown error'}`);
+          }
+        }
+        return { mapQueries, mapIssues };
+      })(),
+    ]);
+    const { mapQueries, mapIssues } = mapResult;
     const caseTheoryQueries = this.caseTheory.buildAuthorityQueries(caseTheory, {
       documentKind: effectiveKind,
       jurisdiction: dto.jurisdiction,
     });
 
-    // ── Drafting intelligence map (after MI / before retrieval) ───────────────
-    let mapQueries: string[] = [];
-    let mapIssues: Array<{ id: string; label: string; kind?: string }> = [];
-    if (!skipResearchGrounding && dto.caseDetails?.trim() && !bundleSubsequent) {
-      try {
-        const draftingMap = await this.draftingIntelligenceMap.buildMap({
-          caseDetails: dto.caseDetails,
-          countryCode: 'IN',
-          jurisdiction: dto.jurisdiction,
-          kind: effectiveKind,
-          practiceArea: matterProfile.practiceArea,
-        });
-        mapQueries = [...new Set([...draftingMap.researchQueries, ...draftingMap.searchHints])].slice(
-          0,
-          12,
-        );
-        mapIssues = draftingMap.issues.map((i) => ({
-          id: i.id,
-          label: i.label,
-          kind: i.kind,
-        }));
-      } catch (err) {
-        this.logger.warn(
-          `Drafting intelligence map skipped: ${err instanceof Error ? err.message : String(err)}`,
-        );
-      }
-    }
+    finishStage('planning');
 
     // ── Stage 5: Rule Engine (before planning) ────────────────────────────────
     const ruleResult = this.ruleEngine.evaluate({
@@ -348,6 +355,8 @@ export class DraftEngineV2Service {
       ];
     }
 
+    finishStage('rulesAndLegalGraph');
+
     // ── Stage 4: Multi-source Retrieval (map-driven queries) ──────────────────
     const [statuteGroundingText, researchGroundingResult] = await Promise.all([
       this.groundingService.buildGroundingBlock(
@@ -374,6 +383,7 @@ export class DraftEngineV2Service {
             courtName: dto.courtName,
             tenantId: ctx.tenantId,
             userId: ctx.userId,
+            tenantRole: ctx.tenantRole,
             matterId: dto.matterId,
             proceduralResult: routerResult,
             bundleFastPath: bundleSubsequent,
@@ -387,6 +397,8 @@ export class DraftEngineV2Service {
             extraRetrievalQueries: [...new Set([...caseTheoryQueries, ...mapQueries])].slice(0, 14),
           }),
     ]);
+
+    finishStage('retrieval');
 
     // ── Stage 6: Outline Builder ──────────────────────────────────────────────
     const outline = this.outlineBuilder.build(
@@ -414,6 +426,8 @@ export class DraftEngineV2Service {
       taskType: AI_TASK_TYPES.INDIA_COURT_DRAFT,
     });
 
+    finishStage('outlineAndCreditGate');
+
     // ── Stages 8–11: Generate + Verify + Repair sections ─────────────────────
     const sectionResults = await this.generateAndVerifySections(
       outline,
@@ -422,6 +436,8 @@ export class DraftEngineV2Service {
       docComplexity,
       modelMode,
     );
+
+    finishStage('sections');
 
     // ── Stage 12: Final Assembly ──────────────────────────────────────────────
     // Compute credits
@@ -464,15 +480,22 @@ export class DraftEngineV2Service {
       jurisdiction: dto.jurisdiction,
       caseTheoryPromptBlock: this.caseTheory.buildPromptBlock(caseTheory),
       model: DRAFT_ENRICH_MODEL,
-      allowRevision: !skipResearchGrounding,
+      // Keep section verification attached to the exact generated text. Final
+      // review reports issues; targeted repair is an explicit subsequent action.
+      allowRevision: false,
     });
     if (coherence.revisedDraft) assembled.draft = coherence.revisedDraft;
     this.finalAssembly.applyFinalReview(
       assembled.verificationReport,
       Boolean(coherence.revisedDraft),
-      coherence.issues.filter((issue) => issue.severity === 'BLOCKER' || issue.severity === 'HIGH')
-        .map((issue) => `Coherence [${issue.category}]: ${issue.explanation}`),
+      [
+        ...coherence.issues.filter((issue) => issue.severity === 'BLOCKER' || issue.severity === 'HIGH')
+          .map((issue) => `Coherence [${issue.category}]: ${issue.explanation}`),
+        ...(coherence.degraded ? ['Final coherence review unavailable; lawyer review required.'] : []),
+      ],
     );
+
+    finishStage('assemblyAndFinalReview');
 
     const similarCases = this.similarCasesService.extractAndRank(
       researchGroundingResult.authorities,
@@ -488,6 +511,8 @@ export class DraftEngineV2Service {
         tenantId: ctx.tenantId,
         userId: ctx.userId,
         source: 'india',
+        tenantRole: ctx.tenantRole,
+        matterId: dto.matterId,
         kind: effectiveKind,
         label: plan.documentTitle,
         countryCode: 'IN',
@@ -542,6 +567,7 @@ export class DraftEngineV2Service {
       documentKind: effectiveKind,
       jurisdiction: dto.jurisdiction ?? 'IN',
       latencyMs: Date.now() - startMs,
+      stageDurationsMs,
     });
 
     // Shadow-mode divergence: if MI recommended a different kind, log it

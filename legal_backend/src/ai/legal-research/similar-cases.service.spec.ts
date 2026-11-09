@@ -66,4 +66,32 @@ describe('SimilarCasesService', () => {
     expect(result.outcome).toBe('Remanded for reconsideration');
     expect(result.proceduralStage).toBe('INTERLOCUTORY_APPEAL');
   });
+  it('does not infer verification or binding status from publisher names', () => {
+    const source = authority('direct', 'Partner A v. Partner B', 'The court enforced the arbitration clause in the parties partnership deed.');
+    source.sourceName = 'Supreme Court e-SCR';
+    const [result] = service.extractAndRank([source], query, 'IN');
+    expect(result.verificationStatus).toBe('needs_verification');
+    expect(result.bindingWeight).toBe('persuasive');
+    expect(result.caseScoreBreakdown?.treatmentWeight).toBe(0);
+  });
+
+  it('does not mark foreign or overruled precedent as binding', () => {
+    const source = authority('direct', 'Partner A v. Partner B', 'The court enforced the arbitration clause in the parties partnership deed.');
+    source.precedent = { bindingStatus: 'BINDING', controllingJurisdiction: 'KE' };
+    expect(service.extractAndRank([source], query, 'IN')[0].bindingWeight).not.toBe('binding');
+    source.precedent = { bindingStatus: 'BINDING', controllingJurisdiction: 'IN', treatmentStatus: 'overruled', treatmentVerified: true };
+    expect(service.extractAndRank([source], query, 'IN')[0].bindingWeight).toBe('informational');
+  });
+
+  it('requires exact-document provenance and anchored holding before verified status', () => {
+    const source = authority('direct', 'Partner A v. Partner B', 'The court enforced the arbitration clause in the parties partnership deed.');
+    source.sourceProvenance = { provider: 'official', retrievedAt: '2026-11-09', canonicalIdentity: 'judgment-direct',
+      documentHash: 'sha256:fixture', completeness: 'COMPLETE', dispositionComplete: true,
+      authoritativeStatus: 'OFFICIAL', extractionMethod: 'NATIVE_TEXT' };
+    source.sourcePassages = [{ text: 'The clause is enforceable.', paragraph: '18', sourcePinpoint: true, classification: 'HOLDING' }];
+    expect(service.extractAndRank([source], query, 'IN')[0].verificationStatus).toBe('verified');
+    source.sourceProvenance.missingPages = [2];
+    expect(service.extractAndRank([source], query, 'IN')[0].verificationStatus).toBe('needs_verification');
+  });
+
 });

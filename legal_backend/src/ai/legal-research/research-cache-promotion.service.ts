@@ -33,19 +33,24 @@ export class ResearchCachePromotionService {
         taskType: AI_TASK_TYPES.LEGAL_RESEARCH,
         ...(input.userId ? { userId: input.userId } : {}),
       },
-      select: { id: true, citations: true },
+      select: { id: true, citations: true, verified: true, citationAudit: true },
     });
     if (!output) throw new NotFoundException('Research output not found');
 
     const citations = this.asObject(output.citations);
     const promotion = this.asObject(citations.cachePromotion) as PromotionMetadata;
     const payload = this.asObject(citations.cachePayload);
+    const audit = this.asObject(output.citationAudit);
+    if (output.verified !== true || audit.safeForReliance !== true || payload.degraded === true ||
+        !['RESEARCH_BACKED', 'VERIFIED_WITH_LIMITATIONS', 'READY_FOR_LAWYER_REVIEW'].includes(String(payload.publicationState))) {
+      return false;
+    }
     if (!promotion.cacheKey || Object.keys(payload).length === 0) {
       this.logger.warn(`Research output ${output.id} lacks cache promotion metadata`);
       return false;
     }
 
-    await this.cache.set(promotion.cacheKey, payload);
+    await this.cache.set(promotion.cacheKey, payload, 300);
     await this.prisma.aIOutput.update({
       where: { id: output.id },
       data: {

@@ -58,7 +58,7 @@ const SECTION_SPECS: SectionSpec[] = [
     title: 'PARTIES',
     modelTier: 'cheap',
     maxTokens: 400,
-    dependsOnTypes: ['heading'],
+    dependsOnTypes: [],
     filingGradeOnly: false,
   },
   {
@@ -66,7 +66,7 @@ const SECTION_SPECS: SectionSpec[] = [
     title: 'MAINTAINABILITY AND JURISDICTION',
     modelTier: 'mid',
     maxTokens: 800,
-    dependsOnTypes: ['parties'],
+    dependsOnTypes: ['facts'],
     filingGradeOnly: true,
   },
   {
@@ -74,7 +74,7 @@ const SECTION_SPECS: SectionSpec[] = [
     title: 'FACTS',
     modelTier: 'mid',
     maxTokens: 2000,
-    dependsOnTypes: ['parties'],
+    dependsOnTypes: [],
     filingGradeOnly: false,
   },
   {

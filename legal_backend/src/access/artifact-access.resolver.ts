@@ -21,6 +21,15 @@ export class ArtifactAccessResolver {
     private readonly ethicalWall: EthicalWallService,
   ) {}
 
+  async assertActiveMember(actor: AccessActor): Promise<AccessActor> {
+    const member = await this.prisma.tenantUser.findUnique({
+      where: { tenantId_userId: { tenantId: actor.tenantId, userId: actor.userId } },
+      select: { status: true, role: true },
+    });
+    if (!member || member.status !== 'ACTIVE') throw new ForbiddenException('Active firm membership required');
+    return { tenantId: actor.tenantId, userId: actor.userId, tenantRole: member.role };
+  }
+
   async assertMatterReadable(actor: AccessActor, matterId: string): Promise<void> {
     const matter = await this.prisma.matter.findFirst({
       where: { id: matterId, tenantId: actor.tenantId },

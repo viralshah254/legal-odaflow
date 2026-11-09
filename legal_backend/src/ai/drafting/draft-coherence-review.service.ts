@@ -97,8 +97,10 @@ export class DraftCoherenceReviewService {
           { role: 'user', content: user },
         ],
         temperature: 0.1,
-        maxTokens: input.allowRevision ? 16_000 : 2000,
-        reasoningEffort: 'high',
+        maxTokens: input.allowRevision ? 16_000 : 6000,
+        responseFormat: { type: 'json_object' },
+        timeoutMs: 30_000,
+        reasoningEffort: input.allowRevision ? 'high' : 'medium',
       });
 
       const parsed = this.parseJson(completion.content);

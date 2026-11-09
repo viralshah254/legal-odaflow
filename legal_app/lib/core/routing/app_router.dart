@@ -1,3 +1,4 @@
+import '../../features/lawyer/firm_knowledge/firm_knowledge_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
@@ -128,7 +129,7 @@ final routerProvider = Provider<GoRouter>((ref) {
 
       final session = authState.session;
       if (session != null) {
-        // Let the splash screen handle its own navigation after the timer.
+        // Let the splash screen handle its own navigation when session restoration completes.
         if (isSplash) return null;
 
         if (session.user.mustChangePassword &&
@@ -167,7 +168,7 @@ final routerProvider = Provider<GoRouter>((ref) {
       }
 
       if (isSplash) {
-        // Let SplashScreen drive its own navigation after the 8s timer.
+        // Let SplashScreen drive its own navigation when session restoration completes.
         return null;
       }
 
@@ -424,6 +425,7 @@ final routerProvider = Provider<GoRouter>((ref) {
             path: '/lawyer/trust',
             builder: (context, state) => const TrustScreen(),
           ),
+          GoRoute(path: '/lawyer/firm-knowledge', builder: (context, state) => const FirmKnowledgeScreen()),
           GoRoute(
             path: '/lawyer/calendar',
             builder: (context, state) => const CalendarScreen(),
@@ -960,6 +962,8 @@ class _LawyerNavDrawer extends StatelessWidget {
                     route: '/lawyer/esign',
                     iconColor: const Color(0xFF10B981),
                   ),
+                  const SizedBox(height: 8),
+                  navTile(icon: Icons.local_library_outlined, label: l10n.commonKnowledgeTitle, route: '/lawyer/firm-knowledge', iconColor: const Color(0xFF8B5CF6)),
                   const SizedBox(height: 8),
                   navTile(
                     icon: Icons.library_books_outlined,

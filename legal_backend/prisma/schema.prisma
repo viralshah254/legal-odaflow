@@ -84,6 +84,7 @@ model RefreshToken {
 }
 
 model Tenant {
+  firmKnowledgeItems FirmKnowledgeItem[]
   id                         String    @id @default(cuid())
   name                       String
   type                       String    @default("LAW_FIRM")
@@ -380,6 +381,7 @@ model Client {
 }
 
 model Matter {
+  firmKnowledgeItems FirmKnowledgeItem[]
   id                     String                   @id @default(cuid())
   tenantId               String
   clientId               String?
@@ -687,11 +689,14 @@ model CalendarEvent {
   type        String   @default("MEETING")
   startAt     DateTime
   endAt       DateTime
+  reminderMinutes Int?
+  reminderAt      DateTime?
   createdAt   DateTime @default(now())
   tenant      Tenant   @relation(fields: [tenantId], references: [id], onDelete: Cascade)
   matter      Matter?  @relation(fields: [matterId], references: [id])
   task        Task?    @relation(fields: [taskId], references: [id], onDelete: SetNull)
 
+  @@index([reminderAt])
   @@index([tenantId])
   @@index([tenantId, userId])
   @@index([tenantId, clientId])
@@ -1743,8 +1748,25 @@ model Notification {
   tenant    Tenant   @relation(fields: [tenantId], references: [id], onDelete: Cascade)
   user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
 
+  delivery NotificationDelivery?
+
   @@index([tenantId])
   @@index([userId])
+}
+
+model NotificationDelivery {
+  id             String   @id @default(cuid())
+  notificationId String   @unique
+  status         String   @default("PENDING")
+  attempts       Int      @default(0)
+  nextAttemptAt  DateTime @default(now())
+  completedAt    DateTime?
+  lastErrorClass String?
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+  notification   Notification @relation(fields: [notificationId], references: [id], onDelete: Cascade)
+
+  @@index([status, nextAttemptAt])
 }
 
 model DeviceToken {
@@ -2127,8 +2149,54 @@ model ContentHash {
   @@index([sourceType, sourceId])
 }
 
+model FirmKnowledgeItem {
+  id           String   @id @default(cuid())
+  tenantId     String
+  matterId     String?
+  documentId   String?
+  rightsExpiresAt DateTime?
+  lastEditedById String
+  createdById  String
+  sourceType   String
+  sourceId     String
+  title        String
+  content      String
+  contentHash  String
+  revision     Int      @default(1)
+  rightsBasis  String
+  status       String   @default("PENDING")
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+  tenant Tenant @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+  matter Matter? @relation(fields: [matterId], references: [id], onDelete: Cascade)
+  reviews      FirmKnowledgeReview[]
+
+  @@unique([tenantId, sourceType, sourceId])
+  @@index([tenantId, status])
+  @@index([tenantId, matterId])
+}
+
+model FirmKnowledgeReview {
+  id          String   @id @default(cuid())
+  itemId      String
+  tenantId    String
+  makerId     String
+  scope       Json
+  reviewerId  String
+  decision    String
+  revision    Int
+  contentHash String
+  selfReview  Boolean @default(false)
+  note        String?
+  createdAt   DateTime @default(now())
+  item        FirmKnowledgeItem @relation(fields: [itemId], references: [id], onDelete: Cascade)
+
+  @@index([tenantId, itemId])
+}
+
 model EmbeddingChunk {
   id           String                       @id @default(cuid())
+  tenantId     String?
   sourceType   String
   sourceId     String
   chunkIndex   Int
@@ -2142,6 +2210,7 @@ model EmbeddingChunk {
   createdAt    DateTime                     @default(now())
 
   @@unique([sourceType, sourceId, chunkIndex, modelName])
+  @@index([tenantId])
   @@index([countryCode])
   @@index([contentHash])
 }

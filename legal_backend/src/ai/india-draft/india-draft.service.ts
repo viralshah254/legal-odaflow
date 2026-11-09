@@ -1,3 +1,4 @@
+import { MatterResearchContextService } from '@/ai/legal-research/matter-research-context.service';
 import { Injectable, BadRequestException, Logger, Optional } from '@nestjs/common';
 import { PromptInjectionService } from '@/ai/feedback/prompt-injection.service';
 import { DraftVerificationOutcomeService } from '@/ai/feedback/draft-verification-outcome.service';
@@ -186,6 +187,7 @@ const VERIFICATION_FIX_INSTRUCTIONS = new Set([
 ]);
 
 export interface DraftAuthContext {
+  tenantRole?: string;
   userId: string;
   tenantId: string;
 }
@@ -238,6 +240,7 @@ export class IndiaDraftService {
     @Optional() private readonly verificationOutcomes: DraftVerificationOutcomeService | null,
     @Optional() private readonly draftCorrections: DraftCorrectionService | null,
     @Optional() private readonly draftAuthorityVerification: DraftAuthorityVerificationService | null,
+    private readonly matterContext: MatterResearchContextService,
   ) {}
 
   private readonly FORMAT_SYSTEM_PROMPTS = INDIA_DRAFT_SYSTEM_PROMPTS;
@@ -246,6 +249,22 @@ export class IndiaDraftService {
     dto: GenerateIndiaDraftDto,
     ctx: DraftAuthContext,
   ): Promise<GenerateIndiaDraftResult> {
+    // Resolve authorization and document ACLs before any generation or retrieval.
+    if (dto.matterId) {
+      const context = await this.matterContext.buildContext(ctx, {
+        matterId: dto.matterId,
+        contextScope: 'MATTER',
+        query: dto.caseDetails,
+      });
+      if (context?.countryCode !== 'IN') {
+        throw new BadRequestException('This drafting route supports Indian matters only');
+      }
+      dto = {
+        ...dto,
+        jurisdiction: context.jurisdiction ?? dto.jurisdiction,
+        attachmentContext: [context.promptContext, dto.attachmentContext].filter(Boolean).join('\n\n'),
+      };
+    }
     const preDraftGate = this.documentDependency.checkPreDraft(ensureIndiaDraftKind(dto.kind), [
       dto.caseDetails,
       dto.attachmentContext ?? '',
@@ -312,6 +331,8 @@ export class IndiaDraftService {
             modelMode: v2ModelMode,
             pinnedSections: dto.pinnedSections,
             pinnedCaseLaws: dto.pinnedCaseLaws,
+            matterId: dto.matterId,
+            knowledgeSources: dto.knowledgeSources,
           },
           ctx,
         );
@@ -616,6 +637,7 @@ export class IndiaDraftService {
             jurisdiction: dto.jurisdiction,
             courtName: dto.courtName,
             tenantId: ctx.tenantId,
+            tenantRole: ctx.tenantRole,
             userId: ctx.userId,
             matterId: dto.matterId,
             proceduralResult: routerResult,
@@ -1050,6 +1072,8 @@ ${dto.caseDetails}${attachmentBlock}`;
         tenantId: ctx.tenantId,
         userId: ctx.userId,
         source: dto.kind === 'india_form_catalog' ? 'form_catalog' : 'india',
+        matterId: dto.matterId,
+        tenantRole: ctx.tenantRole,
         kind: effectiveKind,
         label,
         subtitle: dto.authority ?? undefined,
@@ -1647,6 +1671,7 @@ ${dto.caseDetails}${attachmentBlock}`;
             countryCode: 'IN',
             jurisdiction: dto.jurisdiction,
             tenantId: ctx.tenantId,
+            tenantRole: ctx.tenantRole,
             userId: ctx.userId,
             matterId: dto.matterId,
             proceduralResult: routerResult,

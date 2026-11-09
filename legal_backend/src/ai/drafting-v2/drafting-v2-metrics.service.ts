@@ -20,6 +20,7 @@ export interface DraftV2MetricsSnapshot {
   totalOutputTokens: number;
   estimatedCostUsd: number;
   latencyMs: number;
+  stageDurationsMs?: Record<string, number>;
   shadowDivergence?: boolean;
 }
 
@@ -47,6 +48,7 @@ export class DraftingV2MetricsService {
       documentKind: string;
       jurisdiction: string;
       latencyMs: number;
+      stageDurationsMs?: Record<string, number>;
       estimatedCostUsd?: number;
       shadowDivergence?: boolean;
     },
@@ -101,6 +103,7 @@ export class DraftingV2MetricsService {
       totalOutputTokens,
       estimatedCostUsd: meta.estimatedCostUsd ?? 0,
       latencyMs: meta.latencyMs,
+      stageDurationsMs: meta.stageDurationsMs,
       shadowDivergence: meta.shadowDivergence,
     };
 

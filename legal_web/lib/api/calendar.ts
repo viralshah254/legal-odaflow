@@ -13,10 +13,12 @@ export interface ApiCalendarEvent {
   clientId?: string | null
   location?: string | null
   type: string
+  reminderMinutes?: number | null
   createdAt: string
 }
 
 export interface CreateCalendarEventRequest {
+  reminderMinutes?: number | null
   title: string
   description?: string
   startAt: string
@@ -28,6 +30,7 @@ export interface CreateCalendarEventRequest {
 }
 
 export interface UpdateCalendarEventRequest {
+  reminderMinutes?: number | null
   title?: string
   description?: string
   startAt?: string

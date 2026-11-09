@@ -116,7 +116,7 @@ export class DraftJobService implements OnModuleDestroy {
 
     if (dto.matterId) {
       await this.access.assertMatterReadable(
-        { tenantId: dto.tenantId, userId: dto.userId },
+        await this.access.assertActiveMember({ tenantId: dto.tenantId, userId: dto.userId }),
         dto.matterId,
       );
     }

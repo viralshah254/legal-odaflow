@@ -9,10 +9,6 @@ import type {
   SimilarCasesSearchOutcome,
 } from './similar-cases.types';
 
-/** Recognisable official/credible source patterns for case law. */
-const CREDIBLE_CASE_SOURCE_PATTERNS =
-  /indian kanoon|courtlistener|escr|esc ?r|e-scr|sci\.gov\.in|ecourts|supremecourtofpakistan|judis|iclr|bailii|air |scc |eklr|kenya law|kenyalaw|\[\d{4}\]/i;
-
 const STATUTE_TITLE_PATTERN =
   /\b(Act|Code|Rules?|Regulation|Ordinance|Constitution|Appendix)\b/i;
 const STATUTE_SECTION_PATTERN =
@@ -87,16 +83,18 @@ function deriveBrief(authority: RetrievedAuthority): { year: string | null; cour
 }
 
 function verificationStatus(authority: RetrievedAuthority): CaseVerificationStatus {
-  if (
-    authority.sourceTier === 'case_law' &&
-    CREDIBLE_CASE_SOURCE_PATTERNS.test(
-      `${authority.sourceName} ${authority.sourceUrl ?? ''}`,
-    )
-  ) {
-    return 'verified';
-  }
-  if (authority.sourceTier === 'case_law') return 'needs_verification';
-  return 'source_only';
+  const provenance = authority.sourceProvenance;
+  // A familiar publisher name or URL is not evidence that the exact judgment,
+  // holding and disposition have been checked.
+  const anchoredHolding = authority.sourcePassages?.some((passage) =>
+    passage.sourcePinpoint && Boolean(passage.paragraph || passage.page) &&
+    ['HOLDING', 'RATIO'].includes(passage.classification ?? ''),
+  );
+  if (provenance?.canonicalIdentity && provenance.documentHash &&
+      provenance.completeness === 'COMPLETE' && provenance.dispositionComplete &&
+      !provenance.missingPages?.length && provenance.paragraphNumberingIntegrity !== 'CORRUPT' &&
+      anchoredHolding) return 'verified';
+  return authority.sourceTier === 'case_law' ? 'needs_verification' : 'source_only';
 }
 
 function jurisdictionMatchWeight(
@@ -142,21 +140,15 @@ function bindingWeight(
   authority: RetrievedAuthority,
   countryCode: string,
 ): SimilarCase['bindingWeight'] {
-  const src = authority.sourceName.toLowerCase();
-  const title = (authority.title ?? '').toLowerCase();
-  const isSC =
-    src.includes('supreme court') ||
-    title.includes('supreme court') ||
-    src.includes('sc ') ||
-    src.includes('(sc)');
-  const isHC =
-    src.includes('high court') ||
-    title.includes('high court') ||
-    src.includes('(hc)');
-
-  if (isSC) return 'binding';
-  if (isHC) return 'persuasive';
-  if (authority.sourceTier === 'case_law') return 'persuasive';
+  const precedent = authority.precedent;
+  const controllingCountry = precedent?.controllingJurisdiction?.toUpperCase().split(/[-_/]/)[0];
+  const requestedCountry = countryCode.toUpperCase() === 'UK' ? 'GB' : countryCode.toUpperCase();
+  const adverseTreatment = /overruled|reversed|superseded|repealed/i.test(
+    `${authority.treatmentStatus ?? ''} ${precedent?.treatmentStatus ?? ''}`,
+  );
+  if (adverseTreatment || precedent?.bindingStatus === 'NON_PRECEDENTIAL') return 'informational';
+  if (precedent?.bindingStatus === 'BINDING' && controllingCountry === requestedCountry) return 'binding';
+  if (precedent?.bindingStatus === 'PERSUASIVE' || authority.sourceTier === 'case_law') return 'persuasive';
   return 'informational';
 }
 
@@ -198,7 +190,8 @@ export class SimilarCasesService {
       const jurisdictionWeight = jurisdictionMatchWeight(a, countryCode, context.jurisdiction);
       const issueSimilarity = assessment.score * 0.22;
       const factualSimilarity = Math.min(0.18, (a.score ?? 0.4) * 0.18);
-      const treatmentWeight = 0.06; // unknown treatment until current-law graph fills this
+      const treatmentWeight = a.precedent?.treatmentVerified &&
+        /^(good_law|followed|affirmed)$/.test(a.precedent.treatmentStatus ?? '') ? 0.06 : 0;
       const { year } = deriveBrief(a);
       const recencyWeight = recencyScore(year);
       const citationNetworkWeight = citationNetworkHint(a);

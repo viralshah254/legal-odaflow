@@ -196,9 +196,13 @@ export class ResearchIntelligenceMapService {
     legalDomain?: string;
     practiceArea?: string;
     asOfDate?: string;
+    /** Bounded planning mode; candidates still require retrieval and verification. */
+    planningMode?: 'draft';
   }): Promise<ResearchIntelligenceMap> {
     const modelName =
-      this.config.get<string>('AI_LEGAL_COMPLEX_MODEL', 'gpt-5.6-sol') ?? 'gpt-5.6-sol';
+      input.planningMode === 'draft'
+        ? this.config.get<string>('AI_LEGAL_STANDARD_MODEL', 'gpt-5.6-terra') ?? 'gpt-5.6-terra'
+        : this.config.get<string>('AI_LEGAL_COMPLEX_MODEL', 'gpt-5.6-sol') ?? 'gpt-5.6-sol';
 
     const system = [
       'You are the AI research intelligence layer for a global legal research engine.',
@@ -242,7 +246,8 @@ export class ResearchIntelligenceMapService {
           },
         },
         maxTokens: 3500,
-        reasoningEffort: 'high',
+        reasoningEffort: input.planningMode === 'draft' ? 'low' : 'high',
+        ...(input.planningMode === 'draft' ? { timeoutMs: 15_000 } : {}),
       });
 
       const parsed = JSON.parse(result.content) as {

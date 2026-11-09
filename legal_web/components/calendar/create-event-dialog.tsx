@@ -10,6 +10,7 @@ import { Textarea } from "@/components/ui/textarea"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import type { CalendarDisplayEvent } from "@/lib/types/calendar-display"
 import type { CreateCalendarEventRequest } from "@/lib/api/calendar"
+import { listMatters } from "@/lib/api/matters"
 import { listClients } from "@/lib/api/clients"
 import { useTenant } from "@/lib/contexts/tenant-context"
 import { useApiData } from "@/lib/hooks/use-api-data"
@@ -36,6 +37,19 @@ export function CreateEventDialog({ open, onOpenChange, initialDate, onSave }: C
   const [endDate, setEndDate] = useState(initialDate ? format(initialDate, "yyyy-MM-dd") : format(new Date(), "yyyy-MM-dd"))
   const [endTime, setEndTime] = useState(initialDate ? format(new Date(initialDate.getTime() + 60 * 60 * 1000), "HH:mm") : "10:00")
   const [location, setLocation] = useState("")
+  const [matterId, setMatterId] = useState("")
+  const [matterTitle, setMatterTitle] = useState("")
+  const [matterSearch, setMatterSearch] = useState("")
+  const [searchQuery, setSearchQuery] = useState("")
+  const [reminder, setReminder] = useState("30")
+  useEffect(() => {
+    const timer = setTimeout(() => setSearchQuery(matterSearch), 300)
+    return () => clearTimeout(timer)
+  }, [matterSearch])
+  const { data: matters = [], error: mattersError, refetch: refetchMatters } = useApiData(
+    ["matters-for-event", activeTenantId, clientId, searchQuery],
+    { apiFn: () => listMatters(activeTenantId!, { clientId: clientId || undefined, search: searchQuery || undefined, limit: 50 }), enabled: !!activeTenantId && open },
+  )
 
   const { data: clients = [] } = useApiData(
     ["clients-for-event", activeTenantId],
@@ -53,6 +67,10 @@ export function CreateEventDialog({ open, onOpenChange, initialDate, onSave }: C
       setEndDate(format(new Date(), "yyyy-MM-dd"))
       setEndTime("10:00")
       setLocation("")
+      setMatterId("")
+      setMatterTitle("")
+      setMatterSearch("")
+      setReminder("30")
     } else if (initialDate) {
       setStartDate(format(initialDate, "yyyy-MM-dd"))
       setEndDate(format(initialDate, "yyyy-MM-dd"))
@@ -75,6 +93,8 @@ export function CreateEventDialog({ open, onOpenChange, initialDate, onSave }: C
       endAt: endAt.toISOString(),
       clientId: clientId && clientId !== "none" ? clientId : undefined,
       location: location || undefined,
+      matterId: matterId || undefined,
+      reminderMinutes: reminder === "off" ? null : Number(reminder),
     })
 
     onOpenChange(false)
@@ -82,7 +102,7 @@ export function CreateEventDialog({ open, onOpenChange, initialDate, onSave }: C
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="sm:max-w-[500px]">
+      <DialogContent className="sm:max-w-[500px] max-h-[90dvh] overflow-y-auto">
         <DialogHeader>
           <DialogTitle>{t("create_event")}</DialogTitle>
           <DialogDescription>{t("add_a_new_event_to_your_calendar")}</DialogDescription>
@@ -109,7 +129,7 @@ export function CreateEventDialog({ open, onOpenChange, initialDate, onSave }: C
           </div>
           <div className="space-y-2">
             <Label htmlFor="client">{tBilling("client")}</Label>
-            <Select value={clientId || undefined} onValueChange={(value) => setClientId(value === "none" ? "" : value)}>
+            <Select value={clientId || undefined} onValueChange={(value) => { setClientId(value === "none" ? "" : value); setMatterId(""); setMatterTitle("") }}>
               <SelectTrigger>
                 <SelectValue placeholder={t("select_a_client_optional")} />
               </SelectTrigger>
@@ -120,6 +140,35 @@ export function CreateEventDialog({ open, onOpenChange, initialDate, onSave }: C
                     {client.name} ({client.type})
                   </SelectItem>
                 ))}
+              </SelectContent>
+            </Select>
+          </div>
+          <div className="space-y-2">
+            <Label htmlFor="event-matter">{t("calendar_linked_matter")}</Label>
+            <Input aria-label={t("calendar_search_matters")} placeholder={t("calendar_search_matters")} value={matterSearch} onChange={event => setMatterSearch(event.target.value)} />
+            <Select value={matterId || "none"} onValueChange={value => {
+              setMatterId(value === "none" ? "" : value)
+              const matter = matters.find(item => item.id === value)
+              setMatterTitle(matter?.title || "")
+              if (matter?.clientId) setClientId(matter.clientId)
+            }}>
+              <SelectTrigger id="event-matter"><SelectValue /></SelectTrigger>
+              <SelectContent>
+                <SelectItem value="none">{tAdmin("none")}</SelectItem>
+                {matterId && !matters.some(matter => matter.id === matterId) && <SelectItem value={matterId}>{matterTitle}</SelectItem>}
+                {matters.map(matter => <SelectItem key={matter.id} value={matter.id}>{matter.title}</SelectItem>)}
+              </SelectContent>
+            </Select>
+            {mattersError && <Button type="button" variant="ghost" onClick={() => { void refetchMatters() }}>{t("calendar_matters_unavailable")}</Button>}
+          </div>
+          <div className="space-y-2">
+            <Label htmlFor="event-reminder">{t("calendar_reminder")}</Label>
+            <Select value={reminder} onValueChange={setReminder}>
+              <SelectTrigger id="event-reminder"><SelectValue /></SelectTrigger>
+              <SelectContent>
+                <SelectItem value="off">{t("calendar_reminder_off")}</SelectItem>
+                <SelectItem value="0">{t("calendar_reminder_at_start")}</SelectItem>
+                {[15, 30, 60, 1440].map(minutes => <SelectItem key={minutes} value={String(minutes)}>{t("calendar_reminder_minutes", { minutes })}</SelectItem>)}
               </SelectContent>
             </Select>
           </div>

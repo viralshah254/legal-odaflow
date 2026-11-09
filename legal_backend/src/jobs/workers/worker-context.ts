@@ -1,3 +1,4 @@
+import { NotificationVisibilityService } from '@/notifications/notification-visibility.service';
 import { INestApplicationContext } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
 import { AiGatewayService } from '@/ai/ai-gateway.service';
@@ -27,6 +28,7 @@ let appContext: INestApplicationContext | null = null;
 let appContextPromise: Promise<INestApplicationContext> | null = null;
 
 export interface WorkerServices {
+  notificationVisibility: NotificationVisibilityService;
   aiGateway: AiGatewayService;
   llmCompletion: LlmCompletionService;
   automationEngine: AutomationEngineService;
@@ -66,6 +68,7 @@ export async function getWorkerServices(): Promise<WorkerServices> {
   }
 
   return {
+    notificationVisibility: appContext.get(NotificationVisibilityService),
     aiGateway: appContext.get(AiGatewayService),
     llmCompletion: appContext.get(LlmCompletionService),
     automationEngine: appContext.get(AutomationEngineService),

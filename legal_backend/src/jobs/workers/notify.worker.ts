@@ -38,6 +38,7 @@ async function sendFcmToUser(
   try {
     const messaging = app.messaging();
     let sent = 0;
+    let failed = 0;
     const staleTokens: string[] = [];
 
     for (const row of tokens) {
@@ -57,7 +58,7 @@ async function sendFcmToUser(
           code === 'messaging/invalid-registration-token'
         ) {
           staleTokens.push(row.token);
-        }
+        } else { failed++; }
       }
     }
 
@@ -67,7 +68,7 @@ async function sendFcmToUser(
         .catch(() => {});
     }
 
-    return { sent, skipped: false };
+    return { sent, skipped: failed > 0 };
   } catch {
     return { sent: 0, skipped: true };
   }
@@ -78,7 +79,10 @@ async function processNotificationJob(job: Job<NotificationDispatchPayload>) {
 
   if (payload.jobType === AI_JOB_TYPES.DEADLINE_AGENT) {
     const tenantId = payload.tenantId ?? '';
-    const { aiGateway } = await getWorkerServices();
+    const { aiGateway, notificationVisibility } = await getWorkerServices();
+    if (!(await notificationVisibility.canRead({ tenantId, userId: payload.userId, metadata: { matterId: payload.params?.matterId } }))) {
+      return { status: 'skipped', reason: 'source_access_revoked' };
+    }
     const result = await aiGateway.runDeadlineExtraction({
       userId: payload.userId,
       tenantId,
@@ -115,22 +119,37 @@ async function processNotificationJob(job: Job<NotificationDispatchPayload>) {
 
   const notification = await prisma.notification.findUnique({
     where: { id: payload.notificationId },
+    include: { delivery: true },
   });
 
-  if (!notification) {
+  if (!notification || notification.userId !== payload.userId || notification.tenantId !== payload.tenantId) {
     return { status: 'skipped', reason: 'notification_not_found' };
   }
 
-  const fcm = await sendFcmToUser(
-    payload.userId,
-    notification.title,
-    notification.body ?? '',
-    {
-      notificationId: notification.id,
-      type: notification.type,
-      tenantId: notification.tenantId,
-    },
-  );
+  if (notification.delivery && ['DELIVERED', 'NO_DEVICES', 'SKIPPED', 'FAILED'].includes(notification.delivery.status)) {
+    return { status: 'skipped', reason: 'delivery_terminal' };
+  }
+  const { notificationVisibility } = await getWorkerServices();
+  if (!(await notificationVisibility.canRead(notification))) {
+    await prisma.notificationDelivery.updateMany({ where: { notificationId: notification.id }, data: { status: 'SKIPPED', completedAt: new Date(), lastErrorClass: 'SOURCE_ACCESS_REVOKED' } });
+    return { status: 'skipped', reason: 'source_access_revoked' };
+  }
+
+  let fcm: { sent: number; skipped: boolean };
+  try {
+    fcm = await sendFcmToUser(payload.userId, 'Umbrella update', 'Open Umbrella to view your notification.', {
+      notificationId: notification.id, type: notification.type, tenantId: notification.tenantId,
+    });
+    if (fcm.skipped) throw new Error('Push delivery unavailable');
+    await prisma.notificationDelivery.updateMany({ where: { notificationId: notification.id }, data: {
+      status: fcm.sent ? 'DELIVERED' : 'NO_DEVICES', completedAt: new Date(), lastErrorClass: null,
+    } });
+  } catch (error) {
+    if (job.attemptsMade + 1 >= (job.opts.attempts ?? 1)) {
+      await prisma.notificationDelivery.updateMany({ where: { notificationId: notification.id }, data: { status: 'FAILED', completedAt: new Date(), lastErrorClass: 'PUSH_UNAVAILABLE' } });
+    }
+    throw error;
+  }
 
   if (payload.agentJobId) {
     await prisma.agentJob.update({

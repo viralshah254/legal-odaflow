@@ -219,6 +219,7 @@ export class KnowledgeStackService {
         sourceUrl: null as null,
         sourceTier: 'firm' as const,
         authorityType: 'FIRM_MEMORY',
+        userAuthorityStatus: 'FACTUAL_MATERIAL_ONLY' as const,
       };
     });
   }

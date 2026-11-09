@@ -27,7 +27,7 @@ describe('Notification recipient isolation', () => {
   });
   it('filters service reads by recipient as well as tenant', async () => {
     const prisma = { notification: { findFirst: jest.fn().mockResolvedValue(null) } };
-    const service = new NotificationsService(prisma as any, {} as any, {} as any, {} as any);
+    const service = new NotificationsService(prisma as any, {} as any, {} as any, {} as any, {} as any, {} as any);
     await expect(service.findOne('firm', 'notice', 'alice')).rejects.toThrow('not found');
     expect(prisma.notification.findFirst).toHaveBeenCalledWith({ where: { id: 'notice', tenantId: 'firm', userId: 'alice' } });
   });

@@ -1153,6 +1153,20 @@
   "commonBuyCredits": "கடன்களை வாங்கவும்",
   "commonByClient": "வாடிக்கையாளர் மூலம்",
   "commonCalendar": "நாட்காட்டி",
+  "commonCalendarLinkedMatter": "Linked matter (optional)",
+  "commonCalendarMattersUnavailable": "Could not load matters. Try again.",
+  "commonCalendarReminder": "Reminder",
+  "commonCalendarReminderAtStart": "At start time",
+  "commonCalendarReminderMinutes": "{minutes} minutes before",
+  "@commonCalendarReminderMinutes": {
+    "placeholders": {
+    "minutes": {
+      "type": "String"
+    }
+    }
+  },
+  "commonCalendarReminderOff": "No reminder",
+  "commonCalendarSearchMatters": "Search matters",
   "commonCancel": "ரத்து செய்",
   "commonCaptureClientAndIssueDetails": "வாடிக்கையாளர் மற்றும் வெளியீட்டு விவரங்களைப் பிடிக்கவும்",
   "commonCaseBriefPhase1Summary": "வழக்கு சுருக்கம் (கட்டம் 1 சுருக்கம்)",
@@ -1380,6 +1394,60 @@
   "commonJurisdictionscopedAnswersWithCitations": "மேற்கோள்களுடன் அதிகார வரம்புக்கு உட்பட்ட பதில்கள்",
   "commonKenya": "கென்யா",
   "commonKes7350MoAiBudget": "KES 7,350 / mo AI பட்ஜெட்",
+  "commonKnowledgeApprove": "Approve for reuse",
+  "commonKnowledgeContent": "Work product",
+  "commonKnowledgeCount": "Recent items: {count} (up to {limit})",
+  "@commonKnowledgeCount": {
+    "placeholders": {
+    "count": {
+      "type": "String"
+    },
+    "limit": {
+      "type": "String"
+    }
+    }
+  },
+  "commonKnowledgeDescription": "Reviewed work product for reuse within your firm. Linked matter and document permissions still apply; approval does not verify current law.",
+  "commonKnowledgeEmpty": "No knowledge items are visible in this workspace.",
+  "commonKnowledgeError": "Could not complete this action. Refresh the item and try again.",
+  "commonKnowledgeExpired": "Rights expired — renew before reuse",
+  "commonKnowledgeExpiry": "Rights expiry (optional)",
+  "commonKnowledgeFirmWideConfirm": "I confirm this material may be reused by authorized members across the firm.",
+  "commonKnowledgeIndependentReview": "Another partner or firm administrator must review your revision.",
+  "commonKnowledgeNew": "New item",
+  "commonKnowledgeReadOnly": "Your role can view approved knowledge but cannot submit new material.",
+  "commonKnowledgeReject": "Reject",
+  "commonKnowledgeReview": "Review item",
+  "commonKnowledgeReviewHistory": "Review history",
+  "commonKnowledgeReviewNote": "Review note (optional)",
+  "commonKnowledgeRevise": "Revise item",
+  "commonKnowledgeRevision": "Revision {revision}",
+  "@commonKnowledgeRevision": {
+    "placeholders": {
+    "revision": {
+      "type": "String"
+    }
+    }
+  },
+  "commonKnowledgeRevoke": "Withdraw from reuse",
+  "commonKnowledgeRights": "Rights basis",
+  "commonKnowledgeRightsConfirm": "I confirm this firm has rights to use this material internally.",
+  "commonKnowledgeRightsFirm": "Firm-owned work product",
+  "commonKnowledgeRightsLicense": "Licensed for internal use",
+  "commonKnowledgeRightsPublic": "Public-domain material",
+  "commonKnowledgeSaved": "Submitted for review",
+  "commonKnowledgeSelfReviewConfirm": "I am the sole practitioner and confirm I have reviewed this revision.",
+  "commonKnowledgeSourceDocument": "Linked source document (optional)",
+  "commonKnowledgeStatusApproved": "Approved for reuse",
+  "commonKnowledgeStatusIndexFailed": "Preparation needs retry",
+  "commonKnowledgeStatusIndexing": "Preparing for reuse",
+  "commonKnowledgeStatusPending": "Awaiting review",
+  "commonKnowledgeStatusRejected": "Rejected",
+  "commonKnowledgeStatusRevoked": "Withdrawn",
+  "commonKnowledgeStatusUnknown": "Review status unavailable",
+  "commonKnowledgeSubmit": "Submit for review",
+  "commonKnowledgeTitle": "Firm knowledge",
+  "commonKnowledgeUpdated": "Knowledge item updated",
   "commonLanguage": "மொழி",
   "commonLanguageUpdated": "மொழி புதுப்பிக்கப்பட்டது",
   "commonLawyerreviewedUpgrades": "வழக்கறிஞர் மதிப்பாய்வு செய்யப்பட்ட மேம்படுத்தல்கள்",
@@ -3845,6 +3913,7 @@
   "lawyerNavEvidence": "ஆதாரம்",
   "lawyerNavExpenses": "செலவுகள்",
   "lawyerNavFinance": "நிதி",
+  "lawyerNavFirmKnowledge": "Firm knowledge",
   "lawyerNavGroupsAdminSettings": "நிர்வாகம் & அமைப்புகள்",
   "lawyerNavGroupsFilesMoney": "கோப்புகள் & பணம்",
   "lawyerNavGroupsPipeline": "பைப்லைன்",

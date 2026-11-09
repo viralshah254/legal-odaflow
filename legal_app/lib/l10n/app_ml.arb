@@ -1153,6 +1153,20 @@
   "commonBuyCredits": "ക്രെഡിറ്റുകൾ വാങ്ങുക",
   "commonByClient": "ക്ലയൻ്റ് വഴി",
   "commonCalendar": "കലണ്ടർ",
+  "commonCalendarLinkedMatter": "Linked matter (optional)",
+  "commonCalendarMattersUnavailable": "Could not load matters. Try again.",
+  "commonCalendarReminder": "Reminder",
+  "commonCalendarReminderAtStart": "At start time",
+  "commonCalendarReminderMinutes": "{minutes} minutes before",
+  "@commonCalendarReminderMinutes": {
+    "placeholders": {
+    "minutes": {
+      "type": "String"
+    }
+    }
+  },
+  "commonCalendarReminderOff": "No reminder",
+  "commonCalendarSearchMatters": "Search matters",
   "commonCancel": "റദ്ദാക്കുക",
   "commonCaptureClientAndIssueDetails": "ക്ലയൻ്റ് ക്യാപ്‌ചർ ചെയ്‌ത് വിശദാംശങ്ങൾ ഇഷ്യൂ ചെയ്യുക",
   "commonCaseBriefPhase1Summary": "കേസ് സംഗ്രഹം (ഘട്ടം 1 സംഗ്രഹം)",
@@ -1380,6 +1394,60 @@
   "commonJurisdictionscopedAnswersWithCitations": "ഉദ്ധരണികൾക്കൊപ്പം അധികാരപരിധിയിലുള്ള ഉത്തരങ്ങൾ",
   "commonKenya": "കെനിയ",
   "commonKes7350MoAiBudget": "KES 7,350 / മാസം AI ബജറ്റ്",
+  "commonKnowledgeApprove": "Approve for reuse",
+  "commonKnowledgeContent": "Work product",
+  "commonKnowledgeCount": "Recent items: {count} (up to {limit})",
+  "@commonKnowledgeCount": {
+    "placeholders": {
+    "count": {
+      "type": "String"
+    },
+    "limit": {
+      "type": "String"
+    }
+    }
+  },
+  "commonKnowledgeDescription": "Reviewed work product for reuse within your firm. Linked matter and document permissions still apply; approval does not verify current law.",
+  "commonKnowledgeEmpty": "No knowledge items are visible in this workspace.",
+  "commonKnowledgeError": "Could not complete this action. Refresh the item and try again.",
+  "commonKnowledgeExpired": "Rights expired — renew before reuse",
+  "commonKnowledgeExpiry": "Rights expiry (optional)",
+  "commonKnowledgeFirmWideConfirm": "I confirm this material may be reused by authorized members across the firm.",
+  "commonKnowledgeIndependentReview": "Another partner or firm administrator must review your revision.",
+  "commonKnowledgeNew": "New item",
+  "commonKnowledgeReadOnly": "Your role can view approved knowledge but cannot submit new material.",
+  "commonKnowledgeReject": "Reject",
+  "commonKnowledgeReview": "Review item",
+  "commonKnowledgeReviewHistory": "Review history",
+  "commonKnowledgeReviewNote": "Review note (optional)",
+  "commonKnowledgeRevise": "Revise item",
+  "commonKnowledgeRevision": "Revision {revision}",
+  "@commonKnowledgeRevision": {
+    "placeholders": {
+    "revision": {
+      "type": "String"
+    }
+    }
+  },
+  "commonKnowledgeRevoke": "Withdraw from reuse",
+  "commonKnowledgeRights": "Rights basis",
+  "commonKnowledgeRightsConfirm": "I confirm this firm has rights to use this material internally.",
+  "commonKnowledgeRightsFirm": "Firm-owned work product",
+  "commonKnowledgeRightsLicense": "Licensed for internal use",
+  "commonKnowledgeRightsPublic": "Public-domain material",
+  "commonKnowledgeSaved": "Submitted for review",
+  "commonKnowledgeSelfReviewConfirm": "I am the sole practitioner and confirm I have reviewed this revision.",
+  "commonKnowledgeSourceDocument": "Linked source document (optional)",
+  "commonKnowledgeStatusApproved": "Approved for reuse",
+  "commonKnowledgeStatusIndexFailed": "Preparation needs retry",
+  "commonKnowledgeStatusIndexing": "Preparing for reuse",
+  "commonKnowledgeStatusPending": "Awaiting review",
+  "commonKnowledgeStatusRejected": "Rejected",
+  "commonKnowledgeStatusRevoked": "Withdrawn",
+  "commonKnowledgeStatusUnknown": "Review status unavailable",
+  "commonKnowledgeSubmit": "Submit for review",
+  "commonKnowledgeTitle": "Firm knowledge",
+  "commonKnowledgeUpdated": "Knowledge item updated",
   "commonLanguage": "ഭാഷ",
   "commonLanguageUpdated": "ഭാഷ അപ്ഡേറ്റ് ചെയ്തു",
   "commonLawyerreviewedUpgrades": "അഭിഭാഷകർ അവലോകനം ചെയ്‌ത അപ്‌ഗ്രേഡുകൾ",
@@ -3845,6 +3913,7 @@
   "lawyerNavEvidence": "തെളിവ്",
   "lawyerNavExpenses": "ചെലവുകൾ",
   "lawyerNavFinance": "ധനകാര്യം",
+  "lawyerNavFirmKnowledge": "Firm knowledge",
   "lawyerNavGroupsAdminSettings": "അഡ്മിൻ & ക്രമീകരണങ്ങൾ",
   "lawyerNavGroupsFilesMoney": "ഫയലുകളും പണവും",
   "lawyerNavGroupsPipeline": "പൈപ്പ്ലൈൻ",

@@ -34,7 +34,8 @@
     "notifications": "Notifications",
     "lawLibrary": "Bibliothèque de droit",
     "vault": "Sauter",
-    "esign": "Signature électronique"
+    "esign": "Signature électronique",
+    "firmKnowledge": "Firm knowledge"
   },
   "navGroups": {
     "scheduleTime": "Horaire et heure",

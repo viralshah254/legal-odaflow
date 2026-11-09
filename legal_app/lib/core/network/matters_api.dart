@@ -38,13 +38,17 @@ class MattersApi {
   Future<List<FirmMatter>> listMatters({
     required String tenantId,
     String? status,
+    String? search,
+    String? clientId,
   }) async {
     try {
       final response = await _client.dio.get<dynamic>(
         '/matters',
-        queryParameters: status != null && status.isNotEmpty
-            ? {'status': status}
-            : null,
+        queryParameters: {
+          if (status != null && status.isNotEmpty) 'status': status,
+          if (search != null && search.isNotEmpty) 'q': search,
+          if (clientId != null && clientId.isNotEmpty) 'clientId': clientId,
+        },
         options: Options(headers: {'X-Tenant-Id': tenantId}),
       );
       final data = response.data;

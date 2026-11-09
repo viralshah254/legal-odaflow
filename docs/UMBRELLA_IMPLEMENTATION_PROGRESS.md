@@ -73,3 +73,7 @@ Opened the logged-in Safari account and navigated Document Drafting → Personal
 - Personal style: **5 tests passed**, covering the five-sample gate, duplicate samples, atomic analysis claim, usage billing and malformed-profile rejection.
 - Backend, web and Word add-in type checks passed. Whitespace/diff checks passed.
 - Final broad backend run: **330 suites passed, one failed**; 2,060 tests passed, one failed, one skipped and two todo. The sole failure expected the old model-tier error wording. Updated it for the provider-neutral message; its targeted rerun passed all five tests while retaining the no-downgrade assertions. The separately added personal-style suite passed all five tests. No known failing assertions remain across the broad run plus targeted corrections; this is not a claim of a subsequent single all-green full run. All 116 bundled statute PDFs passed their parser quality checks; this suite took 400 seconds under concurrent local validation load.
+
+## 9 November — drafting speed, research trust and governed matter workflows
+
+The current release supersedes earlier red-suite counts above: see [the dated release evidence and remaining acceptance gates](UMBRELLA_RELEASE_20261109.md). Draft speed/provider defects, historical-authority contamination, canonical saved-research trust, durable reminders, matter context propagation, and web/mobile governed firm knowledge have been implemented and tested. External account acceptance, independent legal review and explicitly deferred store launch are not represented as complete.

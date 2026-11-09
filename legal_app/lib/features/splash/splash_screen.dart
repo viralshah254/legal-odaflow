@@ -59,6 +59,8 @@ class _SplashScreenState extends ConsumerState<SplashScreen>
   late final Animation<double> _lineFade;
 
   bool _disposed = false;
+  bool _navigationScheduled = false;
+  ProviderSubscription<AuthState>? _authSubscription;
 
   @override
   void initState() {
@@ -96,9 +98,10 @@ class _SplashScreenState extends ConsumerState<SplashScreen>
       vsync: this,
       duration: const Duration(milliseconds: 5500),
     );
-    _ringRotation = Tween<double>(begin: 0.0, end: 2 * math.pi).animate(
-      CurvedAnimation(parent: _ringController, curve: Curves.linear),
-    );
+    _ringRotation = Tween<double>(
+      begin: 0.0,
+      end: 2 * math.pi,
+    ).animate(CurvedAnimation(parent: _ringController, curve: Curves.linear));
     _ringFade = CurvedAnimation(
       parent: _logoController,
       curve: const Interval(0.4, 1.0, curve: Curves.easeIn),
@@ -108,9 +111,10 @@ class _SplashScreenState extends ConsumerState<SplashScreen>
       vsync: this,
       duration: const Duration(milliseconds: 9000),
     );
-    _ring2Rotation = Tween<double>(begin: 0.0, end: -2 * math.pi).animate(
-      CurvedAnimation(parent: _ring2Controller, curve: Curves.linear),
-    );
+    _ring2Rotation = Tween<double>(
+      begin: 0.0,
+      end: -2 * math.pi,
+    ).animate(CurvedAnimation(parent: _ring2Controller, curve: Curves.linear));
 
     _rippleController = AnimationController(
       vsync: this,
@@ -151,7 +155,11 @@ class _SplashScreenState extends ConsumerState<SplashScreen>
     _lineFade = CurvedAnimation(parent: _lineController, curve: Curves.easeIn);
 
     _runSequence();
-    _navigateWhenReady();
+    _authSubscription = ref.listenManual(
+      authControllerProvider,
+      (_, state) => _navigateWhenReady(state),
+      fireImmediately: true,
+    );
     // Warm location cache in background during splash animation.
     ref.read(detectedLocationProvider.future).ignore();
   }
@@ -193,19 +201,25 @@ class _SplashScreenState extends ConsumerState<SplashScreen>
     }
   }
 
-  Future<void> _navigateWhenReady() async {
-    await Future<void>.delayed(const Duration(seconds: 8));
-    if (!mounted) return;
-
-    final authState = ref.read(authControllerProvider);
-
-    if (authState.session != null) {
-      final user = authState.session!.user;
-      context.go(user.isLawyer ? '/lawyer' : '/consumer');
-      return;
-    }
-
-    context.go('/welcome');
+  void _navigateWhenReady(AuthState state) {
+    if (state.isBootstrapping || _navigationScheduled || !mounted) return;
+    _navigationScheduled = true;
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (!mounted) return;
+      final latest = ref.read(authControllerProvider);
+      if (latest.isBootstrapping) {
+        _navigationScheduled = false;
+        return;
+      }
+      final user = latest.session?.user;
+      context.go(
+        user == null
+            ? '/welcome'
+            : user.isLawyer
+            ? '/lawyer'
+            : '/consumer',
+      );
+    });
   }
 
   List<String> _phrases(AppLocalizations l10n) => [
@@ -218,6 +232,7 @@ class _SplashScreenState extends ConsumerState<SplashScreen>
   @override
   void dispose() {
     _disposed = true;
+    _authSubscription?.close();
     _logoController.dispose();
     _floatController.dispose();
     _glowController.dispose();
@@ -264,12 +279,9 @@ class _SplashScreenState extends ConsumerState<SplashScreen>
                     _rippleController,
                   ]),
                   builder: (context, _) {
-                    final containerSize = size.width * 0.72;
+                    final containerSize = math.min(size.width * 0.72, size.height * 0.42);
                     return Transform.translate(
-                      offset: Offset(
-                        0,
-                        _logoSlide.value + _floatY.value,
-                      ),
+                      offset: Offset(0, _logoSlide.value + _floatY.value),
                       child: Opacity(
                         opacity: _logoFade.value.clamp(0.0, 1.0),
                         child: SizedBox(
@@ -280,9 +292,9 @@ class _SplashScreenState extends ConsumerState<SplashScreen>
                             children: [
                               // Expanding ripple pulse
                               Opacity(
-                                opacity: (_ringFade.value *
-                                        _rippleOpacity.value)
-                                    .clamp(0.0, 1.0),
+                                opacity:
+                                    (_ringFade.value * _rippleOpacity.value)
+                                        .clamp(0.0, 1.0),
                                 child: Transform.scale(
                                   scale: _rippleScale.value,
                                   child: Container(
@@ -291,8 +303,9 @@ class _SplashScreenState extends ConsumerState<SplashScreen>
                                     decoration: BoxDecoration(
                                       shape: BoxShape.circle,
                                       border: Border.all(
-                                        color: AppColors.logoAccent
-                                            .withValues(alpha: 0.5),
+                                        color: AppColors.logoAccent.withValues(
+                                          alpha: 0.5,
+                                        ),
                                         width: 1.5,
                                       ),
                                     ),
@@ -585,13 +598,7 @@ class _ShimmerRingPainter extends CustomPainter {
           stops: const [0.0, 0.4, 0.75, 1.0],
         ).createShader(arcRect);
 
-      canvas.drawArc(
-        arcRect,
-        startAngle,
-        math.pi / 2.8,
-        false,
-        arcPaint,
-      );
+      canvas.drawArc(arcRect, startAngle, math.pi / 2.8, false, arcPaint);
     }
   }
 

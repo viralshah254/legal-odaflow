@@ -237,9 +237,9 @@ export class IndiaDraftController {
     @Body() dto: GenerateIndiaDraftDto,
   ) {
     if (this.unifiedAdapter.isEnabled(tenantId, user.id)) {
-      return this.unifiedAdapter.createJob(dto, { userId: user.id, tenantId });
+      return this.unifiedAdapter.createJob(dto, { userId: user.id, tenantId, tenantRole: user.tenantRole });
     }
-    return this.svc.generateDraft(dto, { userId: user.id, tenantId });
+    return this.svc.generateDraft(dto, { userId: user.id, tenantId, tenantRole: user.tenantRole });
   }
 
   /**
@@ -252,7 +252,7 @@ export class IndiaDraftController {
     @CurrentUser() user: RequestUser,
     @Body() dto: FillBlanksDto,
   ) {
-    return this.svc.fillBlanks(dto, { userId: user.id, tenantId });
+    return this.svc.fillBlanks(dto, { userId: user.id, tenantId, tenantRole: user.tenantRole });
   }
 
   /**
@@ -265,7 +265,7 @@ export class IndiaDraftController {
     @CurrentUser() user: RequestUser,
     @Body() dto: EditIndiaDraftDto,
   ) {
-    return this.svc.editSelection(dto, { userId: user.id, tenantId });
+    return this.svc.editSelection(dto, { userId: user.id, tenantId, tenantRole: user.tenantRole });
   }
 
   @Post('reverify')
@@ -274,7 +274,7 @@ export class IndiaDraftController {
     @CurrentUser() user: RequestUser,
     @Body() dto: ReverifyIndiaDraftDto,
   ) {
-    return this.svc.reverify(dto, { userId: user.id, tenantId });
+    return this.svc.reverify(dto, { userId: user.id, tenantId, tenantRole: user.tenantRole });
   }
 
   @Post('fix-verification')
@@ -283,7 +283,7 @@ export class IndiaDraftController {
     @CurrentUser() user: RequestUser,
     @Body() dto: FixVerificationDto,
   ) {
-    return this.svc.fixVerification(dto, { userId: user.id, tenantId });
+    return this.svc.fixVerification(dto, { userId: user.id, tenantId, tenantRole: user.tenantRole });
   }
 
   /**
@@ -313,7 +313,7 @@ export class IndiaDraftController {
         citationAppendix: released.citationAppendix as ExportIndiaDraftDto['citationAppendix'],
       };
     }
-    return this.svc.exportDraft(exportDto, { userId: user.id, tenantId });
+    return this.svc.exportDraft(exportDto, { userId: user.id, tenantId, tenantRole: user.tenantRole });
   }
 
   /**
@@ -371,7 +371,7 @@ export class IndiaDraftController {
     @CurrentUser() user: RequestUser,
     @Body() dto: RegenerateSectionDto,
   ) {
-    return this.svc.regenerateSection(dto, { userId: user.id, tenantId });
+    return this.svc.regenerateSection(dto, { userId: user.id, tenantId, tenantRole: user.tenantRole });
   }
 
   /**
@@ -384,6 +384,6 @@ export class IndiaDraftController {
     @CurrentUser() user: RequestUser,
     @Body() dto: ResolveCaseLawDto,
   ) {
-    return this.svc.resolveCaseLaw(dto, { userId: user.id, tenantId });
+    return this.svc.resolveCaseLaw(dto, { userId: user.id, tenantId, tenantRole: user.tenantRole });
   }
 }

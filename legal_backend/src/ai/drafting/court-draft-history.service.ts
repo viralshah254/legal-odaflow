@@ -10,10 +10,12 @@ import { HumanReviewService } from './platform/human-review.service';
 import type { DraftVerificationAudit } from './draft-verification.types';
 
 export interface SaveCourtDraftInput {
+  tenantRole?: string;
   tenantId: string;
   userId: string;
   source: 'india' | 'us' | 'form_catalog' | 'drafting_session';
   kind: string;
+  matterId?: string;
   label?: string;
   subtitle?: string;
   category?: string;
@@ -97,6 +99,7 @@ export class CourtDraftHistoryService {
   }
 
   async save(input: SaveCourtDraftInput): Promise<DraftHistoryItem> {
+    if (input.matterId) await this.access.assertMatterReadable(input, input.matterId);
     const title = this.buildTitle(input);
     const verificationStatus =
       input.verificationAudit?.verificationStatus ?? 'limited_sources';
@@ -104,6 +107,7 @@ export class CourtDraftHistoryService {
     const record = await this.prisma.courtDraftRecord.create({
       data: {
         tenantId: input.tenantId,
+        matterId: input.matterId,
         userId: input.userId,
         source: input.source,
         kind: input.kind,

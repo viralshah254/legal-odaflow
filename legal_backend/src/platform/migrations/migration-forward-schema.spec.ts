@@ -230,14 +230,14 @@ describe('C22 – Prisma schema consistency with migration', () => {
 // ---------------------------------------------------------------------------
 
 describe('C22 – Migration history ordering', () => {
-  it('umbrella migration is the most recent', () => {
+  it('new forward migrations follow the umbrella migration', () => {
     const dirs = fs
       .readdirSync(MIGRATIONS_DIR)
       .filter((d) => /^\d{8}/.test(d))
       .sort();
 
-    const latest = dirs[dirs.length - 1];
-    expect(latest).toBe('20261018_umbrella_u01_u10');
+    expect(dirs).toContain('20261018_umbrella_u01_u10');
+    expect(dirs.indexOf('20261109120000_durable_calendar_notifications')).toBeGreaterThan(dirs.indexOf('20261018_umbrella_u01_u10'));
   });
 
   it('migration timestamps are strictly increasing', () => {

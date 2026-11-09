@@ -89,7 +89,8 @@
     "stripe:reconcile": "npx ts-node -r tsconfig-paths/register scripts/reconcile-stripe-subscription.ts",
     "stripe:listen": "bash scripts/stripe-webhook-listen.sh",
     "secrets:webhook": "node scripts/generate-webhook-secrets.js",
-    "secrets:auth": "node scripts/generate-auth-secrets.js"
+    "secrets:auth": "node scripts/generate-auth-secrets.js",
+    "smoke:reminder-recovery": "ts-node --transpile-only -r tsconfig-paths/register scripts/smoke-reminder-recovery.ts"
   },
   "dependencies": {
     "@aws-sdk/client-s3": "^3.1057.0",

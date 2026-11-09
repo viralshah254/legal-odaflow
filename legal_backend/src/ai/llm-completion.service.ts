@@ -481,6 +481,7 @@ export class LlmCompletionService {
         requestBody.max_completion_tokens = params.maxTokens;
       }
     } else if (isGpt5xFamily(params.modelName)) {
+      requestBody.reasoning_effort = effort;
       // GPT-5.x chat models require max_completion_tokens and several hosted
       // variants reject non-default temperature values. Omit temperature.
       if (params.maxTokens != null) {
@@ -512,9 +513,10 @@ export class LlmCompletionService {
       usage?: { prompt_tokens?: number; completion_tokens?: number };
     };
 
-    const content =
-      payload.choices?.[0]?.message?.content ??
-      'Unable to generate a response at this time.';
+    const content = payload.choices?.[0]?.message?.content ?? '';
+    if (!content.trim()) {
+      throw new ServiceUnavailableException({ code: 'EMPTY_MODEL_OUTPUT', message: 'Model returned no visible output' });
+    }
 
     const rawFinish = payload.choices?.[0]?.finish_reason ?? 'unknown';
     const finishReason: LlmFinishReason =
@@ -543,6 +545,7 @@ export class LlmCompletionService {
       maxTokens?: number;
       store?: boolean;
       reasoningEffort?: ReasoningEffort;
+      responseFormat?: LlmResponseFormat;
       signal?: AbortSignal;
     },
   ): Promise<LlmCompletionResult> {
@@ -566,6 +569,12 @@ export class LlmCompletionService {
       max_output_tokens: Math.max(params.maxTokens ?? 8192, 2048),
     };
 
+    if (params.responseFormat) {
+      requestBody.text = { format: params.responseFormat.type === 'json_schema'
+        ? { type: 'json_schema', ...params.responseFormat.json_schema }
+        : { type: 'json_object' } };
+    }
+
     if (systemParts.length > 0) {
       requestBody.instructions = systemParts.map((m) => m.content).join('\n\n');
     }
@@ -585,8 +594,10 @@ export class LlmCompletionService {
     );
 
     const payload = (await response.json()) as OpenAiResponsesPayload;
-    const content =
-      extractResponsesText(payload) || 'Unable to generate a response at this time.';
+    const content = extractResponsesText(payload);
+    if (!content.trim()) {
+      throw new ServiceUnavailableException({ code: 'EMPTY_MODEL_OUTPUT', message: 'Model returned no visible output' });
+    }
 
     const rawStatus = (payload as Record<string, unknown>).status as string | undefined;
     const finishReason: LlmFinishReason =
@@ -652,9 +663,10 @@ export class LlmCompletionService {
       usage?: { prompt_tokens?: number; completion_tokens?: number };
     };
 
-    const content =
-      payload.choices?.[0]?.message?.content ??
-      'Unable to generate a response at this time.';
+    const content = payload.choices?.[0]?.message?.content ?? '';
+    if (!content.trim()) {
+      throw new ServiceUnavailableException({ code: 'EMPTY_MODEL_OUTPUT', message: 'Model returned no visible output' });
+    }
 
     const rawFinish = payload.choices?.[0]?.finish_reason ?? 'unknown';
     const finishReason: LlmFinishReason =

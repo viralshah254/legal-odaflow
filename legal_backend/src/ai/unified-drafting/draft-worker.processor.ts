@@ -1,3 +1,4 @@
+import { ArtifactAccessResolver } from '@/access/artifact-access.resolver';
 import { Injectable, Logger, Optional, OnModuleInit, OnModuleDestroy } from '@nestjs/common';
 import { Worker, Job } from 'bullmq';
 import { ConfigService } from '@nestjs/config';
@@ -60,7 +61,7 @@ import {
   resolveResearchMemoAccuracyMode,
 } from '@/ai/drafting/draft-kind.util';
 import { resolveSkipConfirmRequirement } from './skip-confirm-requirement';
-import { extractVerifiedAuthoritiesFromSavedResearch } from '@/ai/drafting/matter-saved-research-authorities';
+import { extractVerifiedAuthoritiesFromSavedResearch, loadVerifiedMatterResearchAuthorities } from '@/ai/drafting/matter-saved-research-authorities';
 
 @Injectable()
 export class DraftWorkerProcessor implements OnModuleInit, OnModuleDestroy {
@@ -69,6 +70,7 @@ export class DraftWorkerProcessor implements OnModuleInit, OnModuleDestroy {
 
   constructor(
     private readonly configService: ConfigService,
+    private readonly access: ArtifactAccessResolver,
     private readonly prisma: PrismaService,
     private readonly jobService: DraftJobService,
     private readonly draftHistory: CourtDraftHistoryService,
@@ -168,6 +170,10 @@ export class DraftWorkerProcessor implements OnModuleInit, OnModuleDestroy {
     // jurisdiction-agnostic path is the right answer for a country we do not
     // have a corpus for, whereas India's rules would simply be wrong.
     const countryCode = normalizeCountry(jurisdiction) || 'IN';
+    const actor = await this.access.assertActiveMember({ tenantId, userId });
+    if (matterId) await this.access.assertMatterReadable(actor, matterId);
+    const dbJob = await this.prisma.draftJob.findFirst({ where: { id: jobId, tenantId, userId } });
+    if (!dbJob || (dbJob.matterId ?? undefined) !== matterId) throw new Error('Draft job actor or matter mismatch');
 
     let documentKind = payload.documentKind;
     if (
@@ -187,8 +193,6 @@ export class DraftWorkerProcessor implements OnModuleInit, OnModuleDestroy {
     let event = await this.jobService.advanceStage(jobId, 'normalizing');
     this.progressService.emit(event);
 
-    const dbJob = await this.prisma.draftJob.findUnique({ where: { id: jobId } });
-    if (!dbJob) throw new Error(`Job ${jobId} not found in database`);
 
     let normalizedMatter = dbJob.normalizedMatterJson as Record<string, unknown> | null;
     if (!normalizedMatter) {
@@ -296,7 +300,7 @@ export class DraftWorkerProcessor implements OnModuleInit, OnModuleDestroy {
     let sourceRegistry = dbJob.sourceRegistryJson as Record<string, unknown> | null;
     if (!sourceRegistry) {
       const t0 = Date.now();
-      const savedResearchAuthorities = await this.loadMatterSavedResearch(tenantId, matterId);
+      const savedResearchAuthorities = await this.loadMatterSavedResearch(tenantId, userId, matterId);
       const sources = await this.retrieval.retrieveAll({
         matter: normalizedMatter as any,
         proceduralResult: proceduralResult as any,
@@ -1065,17 +1069,12 @@ export class DraftWorkerProcessor implements OnModuleInit, OnModuleDestroy {
 
   private async loadMatterSavedResearch(
     tenantId: string,
+    userId: string,
     matterId?: string,
   ): Promise<ReturnType<typeof extractVerifiedAuthoritiesFromSavedResearch>> {
     if (!matterId || !tenantId) return [];
     try {
-      const rows = await this.prisma.savedResearch.findMany({
-        where: { tenantId, matterId },
-        orderBy: { createdAt: 'desc' },
-        take: 8,
-        select: { researchJson: true },
-      });
-      return extractVerifiedAuthoritiesFromSavedResearch(rows.map((row) => row.researchJson));
+      return await loadVerifiedMatterResearchAuthorities(this.prisma, { tenantId, userId, matterId });
     } catch (err) {
       this.logger.warn(
         `Matter saved-research check pack failed: ${err instanceof Error ? err.message : String(err)}`,

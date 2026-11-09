@@ -14,7 +14,8 @@ describe('CourtDraftHistoryService', () => {
     },
   };
 
-  const service = new CourtDraftHistoryService(prisma as never, {} as never, { assertClientMatterLink: jest.fn().mockResolvedValue({ clientName: 'Acme Corp' }), assertClientReadable: jest.fn() } as never);
+  const access = { assertMatterReadable: jest.fn().mockResolvedValue(undefined), assertClientMatterLink: jest.fn().mockResolvedValue({ clientName: 'Acme Corp' }), assertClientReadable: jest.fn() };
+  const service = new CourtDraftHistoryService(prisma as never, {} as never, access as never);
 
   beforeEach(() => {
     jest.clearAllMocks();
@@ -54,6 +55,7 @@ describe('CourtDraftHistoryService', () => {
       userId: 'u1',
       source: 'india',
       kind: 'india_maintenance_order_revision',
+      matterId: 'm1',
       countryCode: 'IN',
       draftText: 'IN THE HIGH COURT...',
       clientName: 'Ram',
@@ -61,7 +63,8 @@ describe('CourtDraftHistoryService', () => {
       creditsUsed: 15,
     });
 
-    expect(prisma.courtDraftRecord.create).toHaveBeenCalled();
+    expect(access.assertMatterReadable).toHaveBeenCalledWith(expect.objectContaining({ tenantId: 't1', userId: 'u1' }), 'm1');
+    expect(prisma.courtDraftRecord.create).toHaveBeenCalledWith(expect.objectContaining({ data: expect.objectContaining({ matterId: 'm1' }) }));
     expect(item.id).toBe('draft-1');
     expect(item.preview).toContain('IN THE HIGH COURT');
   });
@@ -165,4 +168,12 @@ describe('CourtDraftHistoryService', () => {
     expect(full.draftText).toBe('Full draft body');
     expect(full.caseDetails).toBe('Ram vs Ria');
   });
+  it('fails closed before persisting a draft linked to an inaccessible matter', async () => {
+    const denied = new Error('Matter denied');
+    access.assertMatterReadable.mockRejectedValueOnce(denied);
+    await expect(service.save({ tenantId: 't1', userId: 'u1', source: 'india', kind: 'bail',
+      matterId: 'restricted', countryCode: 'IN', draftText: 'QA' })).rejects.toBe(denied);
+    expect(prisma.courtDraftRecord.create).not.toHaveBeenCalled();
+  });
+
 });

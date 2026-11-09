@@ -1,3 +1,4 @@
+import { MatterResearchContextService } from '@/ai/legal-research/matter-research-context.service';
 import { DraftKindPlaybookService } from '@/ai/drafting/playbooks/draft-kind-playbook.service';
 import { Test } from '@nestjs/testing';
 import { BadRequestException } from '@nestjs/common';
@@ -25,9 +26,11 @@ import { SelectionTrackingService } from '@/ai/matter-intelligence/selection-tra
 describe('IndiaDraftService', () => {
   let service: IndiaDraftService;
   let verification: { addVerifiedCitations: jest.Mock; verify: jest.Mock; buildVerificationExplanation: jest.Mock };
+  let matterContext: { buildContext: jest.Mock };
   let documentDependency: { checkPreDraft: jest.Mock };
 
   beforeEach(async () => {
+    matterContext = { buildContext: jest.fn().mockResolvedValue({ countryCode: 'IN', jurisdiction: 'Delhi', promptContext: 'Authorized multi-document context' }) };
     verification = {
       addVerifiedCitations: jest.fn().mockResolvedValue({
         revisedText: 'Passage with AIR 2010 SC 1 only.',
@@ -55,6 +58,7 @@ describe('IndiaDraftService', () => {
     const moduleRef = await Test.createTestingModule({
       providers: [
         IndiaDraftService,
+        { provide: MatterResearchContextService, useValue: matterContext },
         DraftKindPlaybookService,
         DraftProceduralRouterService,
         { provide: LlmCompletionService, useValue: { complete: jest.fn() } },
@@ -202,4 +206,41 @@ describe('IndiaDraftService', () => {
       expect.arrayContaining(['Employee terminated without notice.']),
     );
   });
+  it('rejects inaccessible matter context before any drafting', async () => {
+    const denied = new Error('Ethical wall restriction');
+    matterContext.buildContext.mockRejectedValue(denied);
+    await expect(service.generateDraft({ kind: 'india_regular_bail_bnss_480', caseDetails: 'QA', matterId: 'restricted' },
+      { userId: 'u1', tenantId: 't1' })).rejects.toBe(denied);
+    expect(documentDependency.checkPreDraft).not.toHaveBeenCalled();
+  });
+
+  it('rejects a non-Indian matter instead of applying Indian law', async () => {
+    matterContext.buildContext.mockResolvedValue({ countryCode: 'KE', promptContext: 'Kenyan matter' });
+    await expect(service.generateDraft({ kind: 'india_regular_bail_bnss_480', caseDetails: 'QA', matterId: 'm1' },
+      { userId: 'u1', tenantId: 't1' })).rejects.toBeInstanceOf(BadRequestException);
+    expect(documentDependency.checkPreDraft).not.toHaveBeenCalled();
+  });
+
+  it('preserves authorized context, matter linkage and source selection through v2 routing', async () => {
+    const state = service as any;
+    const sentinel = new Error('Stop after routing');
+    state.caseBriefService = { extract: jest.fn().mockReturnValue({ intakeIncomplete: false, missingCriticalFields: [] }) };
+    state.cycleMarginGuard = { resolveEffectiveMode: jest.fn().mockResolvedValue({ effectiveMode: 'AUTO' }) };
+    state.draftEngineV2 = { generate: jest.fn().mockRejectedValue(sentinel) };
+    const previous = process.env.DRAFT_ENGINE_V2;
+    process.env.DRAFT_ENGINE_V2 = 'true';
+    try {
+      await expect(service.generateDraft({ kind: 'india_regular_bail_bnss_480', caseDetails: 'Fictional supplied facts',
+        matterId: 'm1', knowledgeSources: ['case_law'], attachmentContext: 'User attachment' },
+        { userId: 'u1', tenantId: 't1', tenantRole: 'FIRM_ADMIN' })).rejects.toBe(sentinel);
+      expect(state.draftEngineV2.generate).toHaveBeenCalledWith(expect.objectContaining({
+        matterId: 'm1', knowledgeSources: ['case_law'], jurisdiction: 'Delhi',
+        attachmentContext: 'Authorized multi-document context\n\nUser attachment',
+      }), { userId: 'u1', tenantId: 't1', tenantRole: 'FIRM_ADMIN' });
+    } finally {
+      if (previous === undefined) delete process.env.DRAFT_ENGINE_V2;
+      else process.env.DRAFT_ENGINE_V2 = previous;
+    }
+  });
+
 });

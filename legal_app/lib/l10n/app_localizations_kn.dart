@@ -3162,6 +3162,30 @@ class AppLocalizationsKn extends AppLocalizations {
   String get commonCalendar => 'ಕ್ಯಾಲೆಂಡರ್';
 
   @override
+  String get commonCalendarLinkedMatter => 'Linked matter (optional)';
+
+  @override
+  String get commonCalendarMattersUnavailable =>
+      'Could not load matters. Try again.';
+
+  @override
+  String get commonCalendarReminder => 'Reminder';
+
+  @override
+  String get commonCalendarReminderAtStart => 'At start time';
+
+  @override
+  String commonCalendarReminderMinutes(String minutes) {
+    return '$minutes minutes before';
+  }
+
+  @override
+  String get commonCalendarReminderOff => 'No reminder';
+
+  @override
+  String get commonCalendarSearchMatters => 'Search matters';
+
+  @override
   String get commonCancel => 'ರದ್ದುಮಾಡಿ';
 
   @override
@@ -3702,6 +3726,130 @@ class AppLocalizationsKn extends AppLocalizations {
 
   @override
   String get commonKes7350MoAiBudget => 'KES 7,350 / mo AI ಬಜೆಟ್';
+
+  @override
+  String get commonKnowledgeApprove => 'Approve for reuse';
+
+  @override
+  String get commonKnowledgeContent => 'Work product';
+
+  @override
+  String commonKnowledgeCount(String count, String limit) {
+    return 'Recent items: $count (up to $limit)';
+  }
+
+  @override
+  String get commonKnowledgeDescription =>
+      'Reviewed work product for reuse within your firm. Linked matter and document permissions still apply; approval does not verify current law.';
+
+  @override
+  String get commonKnowledgeEmpty =>
+      'No knowledge items are visible in this workspace.';
+
+  @override
+  String get commonKnowledgeError =>
+      'Could not complete this action. Refresh the item and try again.';
+
+  @override
+  String get commonKnowledgeExpired => 'Rights expired — renew before reuse';
+
+  @override
+  String get commonKnowledgeExpiry => 'Rights expiry (optional)';
+
+  @override
+  String get commonKnowledgeFirmWideConfirm =>
+      'I confirm this material may be reused by authorized members across the firm.';
+
+  @override
+  String get commonKnowledgeIndependentReview =>
+      'Another partner or firm administrator must review your revision.';
+
+  @override
+  String get commonKnowledgeNew => 'New item';
+
+  @override
+  String get commonKnowledgeReadOnly =>
+      'Your role can view approved knowledge but cannot submit new material.';
+
+  @override
+  String get commonKnowledgeReject => 'Reject';
+
+  @override
+  String get commonKnowledgeReview => 'Review item';
+
+  @override
+  String get commonKnowledgeReviewHistory => 'Review history';
+
+  @override
+  String get commonKnowledgeReviewNote => 'Review note (optional)';
+
+  @override
+  String get commonKnowledgeRevise => 'Revise item';
+
+  @override
+  String commonKnowledgeRevision(String revision) {
+    return 'Revision $revision';
+  }
+
+  @override
+  String get commonKnowledgeRevoke => 'Withdraw from reuse';
+
+  @override
+  String get commonKnowledgeRights => 'Rights basis';
+
+  @override
+  String get commonKnowledgeRightsConfirm =>
+      'I confirm this firm has rights to use this material internally.';
+
+  @override
+  String get commonKnowledgeRightsFirm => 'Firm-owned work product';
+
+  @override
+  String get commonKnowledgeRightsLicense => 'Licensed for internal use';
+
+  @override
+  String get commonKnowledgeRightsPublic => 'Public-domain material';
+
+  @override
+  String get commonKnowledgeSaved => 'Submitted for review';
+
+  @override
+  String get commonKnowledgeSelfReviewConfirm =>
+      'I am the sole practitioner and confirm I have reviewed this revision.';
+
+  @override
+  String get commonKnowledgeSourceDocument =>
+      'Linked source document (optional)';
+
+  @override
+  String get commonKnowledgeStatusApproved => 'Approved for reuse';
+
+  @override
+  String get commonKnowledgeStatusIndexFailed => 'Preparation needs retry';
+
+  @override
+  String get commonKnowledgeStatusIndexing => 'Preparing for reuse';
+
+  @override
+  String get commonKnowledgeStatusPending => 'Awaiting review';
+
+  @override
+  String get commonKnowledgeStatusRejected => 'Rejected';
+
+  @override
+  String get commonKnowledgeStatusRevoked => 'Withdrawn';
+
+  @override
+  String get commonKnowledgeStatusUnknown => 'Review status unavailable';
+
+  @override
+  String get commonKnowledgeSubmit => 'Submit for review';
+
+  @override
+  String get commonKnowledgeTitle => 'Firm knowledge';
+
+  @override
+  String get commonKnowledgeUpdated => 'Knowledge item updated';
 
   @override
   String get commonLanguage => 'ಭಾಷೆ';
@@ -10288,6 +10436,9 @@ class AppLocalizationsKn extends AppLocalizations {
 
   @override
   String get lawyerNavFinance => 'ಹಣಕಾಸು';
+
+  @override
+  String get lawyerNavFirmKnowledge => 'Firm knowledge';
 
   @override
   String get lawyerNavGroupsAdminSettings => 'ನಿರ್ವಹಣೆ ಮತ್ತು ಸೆಟ್ಟಿಂಗ್‌ಗಳು';

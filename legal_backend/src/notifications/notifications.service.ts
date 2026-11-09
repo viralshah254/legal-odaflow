@@ -1,3 +1,8 @@
+import { createHash } from 'node:crypto';
+import { NotificationDeliveryService } from './notification-delivery.service';
+import { NotificationVisibilityService } from './notification-visibility.service';
+import { ForbiddenException } from '@nestjs/common';
+import concurrencyLimit from '@/common/utils/concurrency-limit';
 import { Injectable, Logger, NotFoundException } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { Prisma } from '@prisma/client';
@@ -22,6 +27,8 @@ export class NotificationsService {
     private readonly configService: ConfigService,
     private readonly jobsService: JobsService,
     private readonly realtime: RealtimePublisherService,
+    private readonly visibility: NotificationVisibilityService,
+    private readonly delivery: NotificationDeliveryService,
   ) {}
 
   async create(tenantId: string, dto: CreateNotificationDto) {
@@ -42,7 +49,7 @@ export class NotificationsService {
     type?: string,
     limit = 50,
   ) {
-    return this.prisma.notification.findMany({
+    const notifications = await this.prisma.notification.findMany({
       where: {
         tenantId,
         userId: userId || undefined,
@@ -52,6 +59,9 @@ export class NotificationsService {
       orderBy: { createdAt: 'desc' },
       take: Number.isSafeInteger(limit) && limit > 0 ? Math.min(limit, 100) : 50,
     });
+    const bound = concurrencyLimit(4);
+    const visible = await Promise.all(notifications.map(notification => bound(() => this.visibility.canRead(notification))));
+    return notifications.filter((_, index) => visible[index]);
   }
 
   async getInbox(
@@ -74,7 +84,7 @@ export class NotificationsService {
       where: { id: notificationId, tenantId, ...(userId ? { userId } : {}) },
     });
 
-    if (!notification) {
+    if (!notification || !(await this.visibility.canRead(notification))) {
       throw new NotFoundException('Notification not found');
     }
 
@@ -158,23 +168,36 @@ export class NotificationsService {
     type?: string;
     metadata?: Prisma.InputJsonValue;
     push?: boolean;
+    idempotencyKey?: string;
   }) {
-    const notification = await this.prisma.notification.create({
-      data: {
-        tenantId: input.tenantId,
-        userId: input.userId,
-        title: input.title,
-        body: input.body,
-        type: input.type ?? 'INFO',
-        metadata: input.metadata,
-      },
-    });
-
+    if (!(await this.visibility.canRead(input))) throw new ForbiddenException('Notification source access denied');
+    const id = input.idempotencyKey ? 'notice_' + createHash('sha256').update(JSON.stringify([input.tenantId, input.userId, input.idempotencyKey])).digest('hex') : undefined;
+    const data = {
+      ...(id ? { id } : {}),
+      tenantId: input.tenantId,
+      userId: input.userId,
+      title: input.title,
+      body: input.body,
+      type: input.type ?? 'INFO',
+      metadata: input.metadata,
+      ...(input.push !== false ? { delivery: { create: {} } } : {}),
+    };
+    // Notification and delivery intent commit together. An enqueue failure must
+    // not lose the durable intent or make a successful inbox write look failed.
+    const notification = id
+      ? await this.prisma.notification.upsert({ where: { id }, create: data, update: {} }).catch(async error => {
+          // Nested delivery creation can make Prisma emulate upsert. A competing
+          // scheduler may win the unique ID; use that committed intent.
+          if (error instanceof Prisma.PrismaClientKnownRequestError && error.code === 'P2002') {
+            const existing = await this.prisma.notification.findUnique({ where: { id } });
+            if (existing?.tenantId === input.tenantId && existing.userId === input.userId) return existing;
+          }
+          throw error;
+        })
+      : await this.prisma.notification.create({ data });
     if (input.push !== false) {
-      await this.jobsService.enqueueNotificationDispatch({
-        notificationId: notification.id,
-        userId: input.userId,
-        tenantId: input.tenantId,
+      await this.delivery.enqueue(notification.id).catch(error => {
+        this.logger.warn(`Notification delivery remains pending: ${error instanceof Error ? error.name : 'unknown error'}`);
       });
     }
 
@@ -183,7 +206,7 @@ export class NotificationsService {
       entityId: notification.id,
       action: 'created',
       data: {
-        title: notification.title,
+        title: 'Umbrella update',
         type: notification.type,
       },
     });

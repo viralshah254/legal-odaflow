@@ -160,6 +160,7 @@ const NAV_GROUPS: NavGroup[] = [
     collapsible: true,
     items: [
       { nameKey: "nav.documents", href: "/app/documents", icon: Folder, roles: ["PARTNER_ADMIN", "JUNIOR_PARTNER", "ASSOCIATE"] },
+      { nameKey: "nav.firmKnowledge", href: "/app/firm-knowledge", icon: Library },
       { nameKey: "nav.lawLibrary", href: "/app/law-library", icon: Library, roles: ["PARTNER_ADMIN", "JUNIOR_PARTNER", "ASSOCIATE", "PARALEGAL", "READ_ONLY"] },
       { nameKey: "nav.vault", href: "/app/vault", icon: Archive, roles: ["PARTNER_ADMIN", "JUNIOR_PARTNER", "ASSOCIATE"] },
       { nameKey: "nav.esign", href: "/app/esign", icon: FileSignature, roles: ["PARTNER_ADMIN", "JUNIOR_PARTNER", "ASSOCIATE", "PARALEGAL"] },

@@ -389,6 +389,7 @@ export interface DraftV2Result {
 // ─── Orchestrator inputs ──────────────────────────────────────────────────────
 
 export interface DraftV2Context {
+  tenantRole?: string;
   userId: string;
   tenantId: string;
 }

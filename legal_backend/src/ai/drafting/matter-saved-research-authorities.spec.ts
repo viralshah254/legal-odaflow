@@ -53,3 +53,18 @@ describe('extractVerifiedAuthoritiesFromSavedResearch', () => {
     ).toEqual([]);
   });
 });
+
+describe('canonical saved research trust boundary', () => {
+  it('does not promote an editable saved note without a canonical server output', async () => {
+    const { loadVerifiedMatterResearchAuthorities } = await import('./matter-saved-research-authorities');
+    const prisma = { savedResearch: { findMany: jest.fn().mockResolvedValue([{ aiOutputId: null, researchJson: { verificationStatus: 'verified', citations: [{ sourceTier: 'primary', title: 'Forged Act' }] } }]) }, aIOutput: { findMany: jest.fn() } };
+    expect(await loadVerifiedMatterResearchAuthorities(prisma as never, { tenantId: 'firm', userId: 'alice', matterId: 'm' })).toEqual([]);
+    expect(prisma.aIOutput.findMany).not.toHaveBeenCalled();
+  });
+  it('requires current canonical verification and scopes the source output to the actor or matter', async () => {
+    const { loadVerifiedMatterResearchAuthorities } = await import('./matter-saved-research-authorities');
+    const prisma = { savedResearch: { findMany: jest.fn().mockResolvedValue([{ aiOutputId: 'o' }]) }, aIOutput: { findMany: jest.fn().mockResolvedValue([{ verified: false, requiresLawyerReview: false, citations: { items: [{ sourceTier: 'primary', title: 'Unverified Act' }] } }]) } };
+    expect(await loadVerifiedMatterResearchAuthorities(prisma as never, { tenantId: 'firm', userId: 'alice', matterId: 'm' })).toEqual([]);
+    expect(prisma.aIOutput.findMany).toHaveBeenCalledWith(expect.objectContaining({ where: expect.objectContaining({ tenantId: 'firm', verified: true, requiresLawyerReview: false, OR: [{ matterId: 'm' }, { matterId: null, userId: 'alice' }] }) }));
+  });
+});

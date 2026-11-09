@@ -439,6 +439,9 @@ export class JobsService implements OnModuleDestroy {
           removeOnComplete: 100,
           removeOnFail: 50,
           attempts: bullmqAttemptsForJobType(input.jobType),
+          ...(input.jobType === NOTIFICATION_JOB_TYPES.DISPATCH &&
+            typeof input.payload === 'object' && input.payload !== null && 'notificationId' in input.payload
+            ? { jobId: `notification-${(input.payload as { notificationId: string }).notificationId}`, backoff: { type: 'exponential', delay: 5000 } } : {}),
           ...(input.jobType === AI_JOB_TYPES.MEETING_TRANSCRIBE &&
           typeof input.payload === 'object' &&
           input.payload !== null &&

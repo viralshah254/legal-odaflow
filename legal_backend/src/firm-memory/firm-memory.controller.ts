@@ -1,4 +1,6 @@
-import { BadRequestException, Body, Controller, Get, Post, Query, UseGuards } from '@nestjs/common';
+import { FirmKnowledgeService } from './firm-knowledge.service';
+import { FirmKnowledgeSubmissionDto, FirmKnowledgeReviewDto } from './firm-knowledge.dto';
+import { BadRequestException, Body, Controller, Get, Post, Param, Query, UseGuards } from '@nestjs/common';
 import { CurrentUser } from '@/common/decorators/current-user.decorator';
 import { TenantId } from '@/common/decorators/tenant-id.decorator';
 import { TenantGuard } from '@/common/guards/tenant.guard';
@@ -8,7 +10,7 @@ import { FirmMemoryService } from './firm-memory.service';
 @Controller('firm-memory')
 @UseGuards(TenantGuard)
 export class FirmMemoryController {
-  constructor(private readonly firmMemoryService: FirmMemoryService) {}
+  constructor(private readonly firmMemoryService: FirmMemoryService, private readonly knowledge: FirmKnowledgeService) {}
 
   @Get('search')
   search(
@@ -37,21 +39,34 @@ export class FirmMemoryController {
     @TenantId() tenantId: string,
     @CurrentUser() user: RequestUser,
     @Body()
-    body: {
-      sourceType: 'approved_redline' | 'strategy_memo' | 'meeting_notes' | 'custom';
-      sourceId: string;
-      matterId?: string;
-      title?: string;
-      content: string;
-      practiceArea?: string;
-      jurisdiction?: string;
-      tags?: string[];
-    },
+    body: FirmKnowledgeSubmissionDto,
   ) {
-    if (!body.content?.trim() || !body.sourceType || !body.sourceId) {
-      throw new BadRequestException('sourceType, sourceId, and content are required.');
-    }
-    return this.firmMemoryService.ingest(tenantId, user.id, body);
+    return this.knowledge.submit({ tenantId, userId: user.id, tenantRole: user.tenantRole }, body);
+  }
+
+  @Get('items')
+  listKnowledge(@TenantId() tenantId: string, @CurrentUser() user: RequestUser) {
+    return this.knowledge.list({ tenantId, userId: user.id });
+  }
+
+  @Get('items/:itemId')
+  getKnowledge(@TenantId() tenantId: string, @CurrentUser() user: RequestUser, @Param('itemId') id: string) {
+    return this.knowledge.get({ tenantId, userId: user.id }, id);
+  }
+
+  @Post('items/:itemId/approve')
+  approveKnowledge(@TenantId() tenantId: string, @CurrentUser() user: RequestUser, @Param('itemId') id: string, @Body() review: FirmKnowledgeReviewDto) {
+    return this.knowledge.review({ tenantId, userId: user.id }, id, 'APPROVE', review);
+  }
+
+  @Post('items/:itemId/reject')
+  rejectKnowledge(@TenantId() tenantId: string, @CurrentUser() user: RequestUser, @Param('itemId') id: string, @Body() review: FirmKnowledgeReviewDto) {
+    return this.knowledge.review({ tenantId, userId: user.id }, id, 'REJECT', review);
+  }
+
+  @Post('items/:itemId/revoke')
+  revokeKnowledge(@TenantId() tenantId: string, @CurrentUser() user: RequestUser, @Param('itemId') id: string, @Body() review: FirmKnowledgeReviewDto) {
+    return this.knowledge.review({ tenantId, userId: user.id }, id, 'REVOKE', review);
   }
 
   /**

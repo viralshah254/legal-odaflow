@@ -203,7 +203,7 @@ export class MatterResearchContextService {
       const item = researchById.get(id)!;
       blocks.push(
         append(
-          `[SELECTED FILED RESEARCH | savedResearchId=${item.id} | title=${item.title} | filedAt=${item.createdAt.toISOString()}]`,
+          `[SELECTED FILED RESEARCH | savedResearchId=${item.id} | title=${item.title} | filedAt=${item.createdAt.toISOString()}]\nFiled notes are not independently verified law. Support legal propositions from the current evidence pack.`,
           this.savedResearchSnippet(item.query, item.researchJson),
           MATTER_RESEARCH_CONTEXT_CAPS.savedResearchChars,
         ),

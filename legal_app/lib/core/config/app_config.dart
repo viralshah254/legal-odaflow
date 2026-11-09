@@ -72,7 +72,7 @@ class AppConfig {
 
   static const String webBaseUrl = String.fromEnvironment(
     'WEB_URL',
-    defaultValue: 'http://localhost:3000',
+    defaultValue: 'https://legal.odaflow.com',
   );
 
   /// Base URL for subscription / payment checkout WebView (Stripe, Razorpay, etc.).

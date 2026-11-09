@@ -1,3 +1,5 @@
+import { canAnalyzeSuppliedDocuments } from './legal-research/supplied-document-analysis.policy';
+import { filterAuthoritiesByResearchDate } from './legal-research/research-temporal-scope';
 import { researchCacheIdentity } from './legal-research/research-cache-identity';
 import {
   ForbiddenException,
@@ -1796,7 +1798,7 @@ export class AiGatewayService {
    * This busts the cache for all existing research entries so users get fresh
    * results with the new improvements rather than stale pre-upgrade cached output.
    */
-  private static readonly RESEARCH_SYSTEM_VERSION = 'v12-20260731-approved-cache';
+  private static readonly RESEARCH_SYSTEM_VERSION = 'v13-20261109-temporal-trust';
 
   /** Minimum authorities before we reach out to live connectors for grounding. */
   private static readonly MIN_AUTHORITIES_FOR_GROUNDING = 3;
@@ -2974,7 +2976,7 @@ export class AiGatewayService {
       'Filling authority and evidence gaps (live + corpus)',
     );
     let authorities = this.miAuthorityRanker.rank({
-      authorities: retrieval.authorities,
+      authorities: filterAuthoritiesByResearchDate(retrieval.authorities, input.asOfDate),
       profile: miProfile,
       graph: matterSnapshot?.graph,
     });
@@ -3980,6 +3982,12 @@ export class AiGatewayService {
               })),
           ];
     }
+    authorities = filterAuthoritiesByResearchDate(authorities, input.asOfDate);
+    similarCases = this.similarCasesService.extractAndRank(authorities, input.query, country.code,
+      taskProfile.evidenceBundle?.targetCases ?? 3, { ...structuredRetrievalContext, jurisdiction: input.jurisdiction });
+    unverifiedResearchLeads = unverifiedResearchLeads?.filter(lead => filterAuthoritiesByResearchDate([{
+      id: 'lead', title: lead.title, citation: lead.citation ?? null, summary: null, sourceName: 'unverified', sourceTier: 'case_law',
+    }], input.asOfDate).length > 0);
     const rawCaseLawAuthorityCount = authorities.filter(
       (a) => !isStatuteAuthority(a) && (a.sourceTier === 'case_law' || /\bv\.?\s|\bvs\.?\s/i.test(a.title ?? '')),
     ).length;
@@ -3990,6 +3998,7 @@ export class AiGatewayService {
       rawCaseLawAuthorityCount,
     });
     if (
+      !canAnalyzeSuppliedDocuments(input.query, matterContext?.documentCount ?? 0) &&
       shouldHardAbortOnMissingSimilarCases({
         requireSimilarCases: taskProfile.evidenceBundle?.requireSimilarCases === true,
         similarCasesCount: similarCases.length,
@@ -4163,6 +4172,8 @@ export class AiGatewayService {
 
     const prompt = [
       threadPrompt,
+      canAnalyzeSuppliedDocuments(input.query, matterContext?.documentCount ?? 0) ? 'SOURCE-BOUND DOCUMENT ANALYSIS: Explain only the authorized supplied excerpts. Identify the case and disposition only as stated in those excerpts. External search may be incomplete. Do not invent reporter citations or paragraph numbers, claim independent verification, or equate source analysis with current-law advice.' : '',
+      `TEMPORAL SCOPE: Answer the law as of ${input.asOfDate}. Do not cite later decisions, later reporters, replacement statutes, or current-law mappings as law available on that date. Unknown source dates require an explicit verification gap.`,
       `RESEARCH TASK PROFILE (routing contract):\n${JSON.stringify(taskProfile)}`,
       `CAPABILITY SNAPSHOT (hard confidence ceiling):\n${JSON.stringify(capabilitySnapshot, (key, value) => (key === 'generatedAt' ? undefined : value))}`,
       `EXECUTABLE RESEARCH PLAN (respect dependencies, contrary checks, and stopping states):\n${JSON.stringify(executableResearchPlan, (key, value) => (key === 'generatedAt' ? undefined : value))}`,
@@ -4683,7 +4694,7 @@ export class AiGatewayService {
           for (const authority of repair.authorities) {
             mergedAuthorities.set(authority.id, authority);
           }
-          authorities = [...mergedAuthorities.values()];
+          authorities = filterAuthoritiesByResearchDate([...mergedAuthorities.values()], input.asOfDate);
           similarCases = this.similarCasesService.extractAndRank(
             authorities,
             input.query,
@@ -4811,7 +4822,7 @@ export class AiGatewayService {
           for (const authority of repair.authorities) {
             mergedAuthorities.set(authority.id, authority);
           }
-          authorities = [...mergedAuthorities.values()];
+          authorities = filterAuthoritiesByResearchDate([...mergedAuthorities.values()], input.asOfDate);
           similarCases = this.similarCasesService.extractAndRank(
             authorities,
             input.query,

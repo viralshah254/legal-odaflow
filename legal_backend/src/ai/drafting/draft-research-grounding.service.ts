@@ -1,3 +1,5 @@
+import concurrencyLimit from '@/common/utils/concurrency-limit';
+import { ArtifactAccessResolver } from '@/access/artifact-access.resolver';
 import { Injectable, Logger } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { DeepResearchAgentService } from '@/legal-search/deep-research-agent.service';
@@ -17,7 +19,7 @@ import {
 } from './draft-pinned-authorities';
 import { shouldRetrieveCaseLawForDraft } from './draft-citation-policy';
 import { resolveDraftReadinessPolicy } from './playbooks/draft-readiness-policy';
-import { extractVerifiedAuthoritiesFromSavedResearch } from './matter-saved-research-authorities';
+import { loadVerifiedMatterResearchAuthorities } from './matter-saved-research-authorities';
 import {
   findIndiaCaselawByDraftKind,
   loadIndiaCaselawCorpus,
@@ -25,6 +27,7 @@ import {
 } from '@/legal-sources/load-india-caselaw-corpus';
 
 export interface DraftResearchGroundingInput {
+  tenantRole?: string;
   kind: string;
   caseDetails: string;
   countryCode: string;
@@ -1383,6 +1386,7 @@ export class DraftResearchGroundingService {
     private readonly configService: ConfigService,
     private readonly registry: AuthorityRegistryService,
     private readonly prisma: PrismaService,
+    private readonly access: ArtifactAccessResolver,
   ) {}
 
   private async loadFormLinkedAuthorities(
@@ -1416,14 +1420,11 @@ export class DraftResearchGroundingService {
     input: DraftResearchGroundingInput,
   ): Promise<RetrievedAuthority[]> {
     if (!input.matterId || !input.tenantId) return [];
+    await this.access.assertMatterReadable(input, input.matterId);
     try {
-      const rows = await this.prisma.savedResearch.findMany({
-        where: { tenantId: input.tenantId, matterId: input.matterId },
-        orderBy: { createdAt: 'desc' },
-        take: 8,
-        select: { researchJson: true },
+      return await loadVerifiedMatterResearchAuthorities(this.prisma, {
+        tenantId: input.tenantId, userId: input.userId, matterId: input.matterId,
       });
-      return extractVerifiedAuthoritiesFromSavedResearch(rows.map((row) => row.researchJson));
     } catch (err) {
       this.logger.warn(
         `Matter saved-research grounding failed: ${err instanceof Error ? err.message : String(err)}`,
@@ -1575,21 +1576,25 @@ export class DraftResearchGroundingService {
         merged.set(a.id, a);
       }
 
-      // Bound connector pressure while avoiding a separate full network wait per issue.
-      // Merge in query order to retain deterministic ranking and deduplication.
-      for (let offset = 0; offset < retrievalQueries.length; offset += 3) {
-        const batch = await Promise.all(retrievalQueries.slice(offset, offset + 3).map((query) => this.retrieval.retrieve({
-          query,
-          countryCode: input.countryCode,
-          jurisdiction: input.jurisdiction,
-          practiceArea: isMaintenanceContext(input.kind, input.caseDetails) ? 'Family' : undefined,
-          tenantId: input.tenantId,
-          userId: input.userId,
-          limit: 12,
-          supplementLive: true,
-          knowledgeSources: input.knowledgeSources,
-        })));
-        for (const retrieval of batch) {
+      // Fill each available connector slot as soon as its prior query finishes.
+      // Retain query-order merge and wait for all attempts, including failures.
+      const limit = concurrencyLimit(3);
+      const retrieved = await Promise.allSettled(retrievalQueries.map((query) => limit(() => this.retrieval.retrieve({
+        query,
+        countryCode: input.countryCode,
+        jurisdiction: input.jurisdiction,
+        practiceArea: isMaintenanceContext(input.kind, input.caseDetails) ? 'Family' : undefined,
+        tenantId: input.tenantId,
+        userId: input.userId,
+        limit: 12,
+        supplementLive: true,
+        knowledgeSources: input.knowledgeSources,
+      }))));
+      const failedQueryCount = retrieved.filter((result) => result.status === 'rejected').length;
+      if (failedQueryCount) this.logger.warn(`Draft authority retrieval failed queries=${failedQueryCount}/${retrievalQueries.length}`);
+      for (const result of retrieved) {
+        if (result.status !== 'fulfilled') continue;
+        const retrieval = result.value;
           if (retrieval.confidence === 'high') retrievalConfidence = 'high';
           else if (retrieval.confidence === 'medium' && retrievalConfidence !== 'high') {
             retrievalConfidence = 'medium';
@@ -1616,7 +1621,6 @@ export class DraftResearchGroundingService {
             }
           }
         }
-      }
 
       authorities = rankAuthorities([...merged.values()]);
 

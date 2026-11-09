@@ -5764,6 +5764,48 @@ abstract class AppLocalizations {
   /// **'Calendar'**
   String get commonCalendar;
 
+  /// No description provided for @commonCalendarLinkedMatter.
+  ///
+  /// In en, this message translates to:
+  /// **'Linked matter (optional)'**
+  String get commonCalendarLinkedMatter;
+
+  /// No description provided for @commonCalendarMattersUnavailable.
+  ///
+  /// In en, this message translates to:
+  /// **'Could not load matters. Try again.'**
+  String get commonCalendarMattersUnavailable;
+
+  /// No description provided for @commonCalendarReminder.
+  ///
+  /// In en, this message translates to:
+  /// **'Reminder'**
+  String get commonCalendarReminder;
+
+  /// No description provided for @commonCalendarReminderAtStart.
+  ///
+  /// In en, this message translates to:
+  /// **'At start time'**
+  String get commonCalendarReminderAtStart;
+
+  /// No description provided for @commonCalendarReminderMinutes.
+  ///
+  /// In en, this message translates to:
+  /// **'{minutes} minutes before'**
+  String commonCalendarReminderMinutes(String minutes);
+
+  /// No description provided for @commonCalendarReminderOff.
+  ///
+  /// In en, this message translates to:
+  /// **'No reminder'**
+  String get commonCalendarReminderOff;
+
+  /// No description provided for @commonCalendarSearchMatters.
+  ///
+  /// In en, this message translates to:
+  /// **'Search matters'**
+  String get commonCalendarSearchMatters;
+
   /// No description provided for @commonCancel.
   ///
   /// In en, this message translates to:
@@ -6771,6 +6813,228 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'KES 7,350 / mo AI budget'**
   String get commonKes7350MoAiBudget;
+
+  /// No description provided for @commonKnowledgeApprove.
+  ///
+  /// In en, this message translates to:
+  /// **'Approve for reuse'**
+  String get commonKnowledgeApprove;
+
+  /// No description provided for @commonKnowledgeContent.
+  ///
+  /// In en, this message translates to:
+  /// **'Work product'**
+  String get commonKnowledgeContent;
+
+  /// No description provided for @commonKnowledgeCount.
+  ///
+  /// In en, this message translates to:
+  /// **'Recent items: {count} (up to {limit})'**
+  String commonKnowledgeCount(String count, String limit);
+
+  /// No description provided for @commonKnowledgeDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Reviewed work product for reuse within your firm. Linked matter and document permissions still apply; approval does not verify current law.'**
+  String get commonKnowledgeDescription;
+
+  /// No description provided for @commonKnowledgeEmpty.
+  ///
+  /// In en, this message translates to:
+  /// **'No knowledge items are visible in this workspace.'**
+  String get commonKnowledgeEmpty;
+
+  /// No description provided for @commonKnowledgeError.
+  ///
+  /// In en, this message translates to:
+  /// **'Could not complete this action. Refresh the item and try again.'**
+  String get commonKnowledgeError;
+
+  /// No description provided for @commonKnowledgeExpired.
+  ///
+  /// In en, this message translates to:
+  /// **'Rights expired — renew before reuse'**
+  String get commonKnowledgeExpired;
+
+  /// No description provided for @commonKnowledgeExpiry.
+  ///
+  /// In en, this message translates to:
+  /// **'Rights expiry (optional)'**
+  String get commonKnowledgeExpiry;
+
+  /// No description provided for @commonKnowledgeFirmWideConfirm.
+  ///
+  /// In en, this message translates to:
+  /// **'I confirm this material may be reused by authorized members across the firm.'**
+  String get commonKnowledgeFirmWideConfirm;
+
+  /// No description provided for @commonKnowledgeIndependentReview.
+  ///
+  /// In en, this message translates to:
+  /// **'Another partner or firm administrator must review your revision.'**
+  String get commonKnowledgeIndependentReview;
+
+  /// No description provided for @commonKnowledgeNew.
+  ///
+  /// In en, this message translates to:
+  /// **'New item'**
+  String get commonKnowledgeNew;
+
+  /// No description provided for @commonKnowledgeReadOnly.
+  ///
+  /// In en, this message translates to:
+  /// **'Your role can view approved knowledge but cannot submit new material.'**
+  String get commonKnowledgeReadOnly;
+
+  /// No description provided for @commonKnowledgeReject.
+  ///
+  /// In en, this message translates to:
+  /// **'Reject'**
+  String get commonKnowledgeReject;
+
+  /// No description provided for @commonKnowledgeReview.
+  ///
+  /// In en, this message translates to:
+  /// **'Review item'**
+  String get commonKnowledgeReview;
+
+  /// No description provided for @commonKnowledgeReviewHistory.
+  ///
+  /// In en, this message translates to:
+  /// **'Review history'**
+  String get commonKnowledgeReviewHistory;
+
+  /// No description provided for @commonKnowledgeReviewNote.
+  ///
+  /// In en, this message translates to:
+  /// **'Review note (optional)'**
+  String get commonKnowledgeReviewNote;
+
+  /// No description provided for @commonKnowledgeRevise.
+  ///
+  /// In en, this message translates to:
+  /// **'Revise item'**
+  String get commonKnowledgeRevise;
+
+  /// No description provided for @commonKnowledgeRevision.
+  ///
+  /// In en, this message translates to:
+  /// **'Revision {revision}'**
+  String commonKnowledgeRevision(String revision);
+
+  /// No description provided for @commonKnowledgeRevoke.
+  ///
+  /// In en, this message translates to:
+  /// **'Withdraw from reuse'**
+  String get commonKnowledgeRevoke;
+
+  /// No description provided for @commonKnowledgeRights.
+  ///
+  /// In en, this message translates to:
+  /// **'Rights basis'**
+  String get commonKnowledgeRights;
+
+  /// No description provided for @commonKnowledgeRightsConfirm.
+  ///
+  /// In en, this message translates to:
+  /// **'I confirm this firm has rights to use this material internally.'**
+  String get commonKnowledgeRightsConfirm;
+
+  /// No description provided for @commonKnowledgeRightsFirm.
+  ///
+  /// In en, this message translates to:
+  /// **'Firm-owned work product'**
+  String get commonKnowledgeRightsFirm;
+
+  /// No description provided for @commonKnowledgeRightsLicense.
+  ///
+  /// In en, this message translates to:
+  /// **'Licensed for internal use'**
+  String get commonKnowledgeRightsLicense;
+
+  /// No description provided for @commonKnowledgeRightsPublic.
+  ///
+  /// In en, this message translates to:
+  /// **'Public-domain material'**
+  String get commonKnowledgeRightsPublic;
+
+  /// No description provided for @commonKnowledgeSaved.
+  ///
+  /// In en, this message translates to:
+  /// **'Submitted for review'**
+  String get commonKnowledgeSaved;
+
+  /// No description provided for @commonKnowledgeSelfReviewConfirm.
+  ///
+  /// In en, this message translates to:
+  /// **'I am the sole practitioner and confirm I have reviewed this revision.'**
+  String get commonKnowledgeSelfReviewConfirm;
+
+  /// No description provided for @commonKnowledgeSourceDocument.
+  ///
+  /// In en, this message translates to:
+  /// **'Linked source document (optional)'**
+  String get commonKnowledgeSourceDocument;
+
+  /// No description provided for @commonKnowledgeStatusApproved.
+  ///
+  /// In en, this message translates to:
+  /// **'Approved for reuse'**
+  String get commonKnowledgeStatusApproved;
+
+  /// No description provided for @commonKnowledgeStatusIndexFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Preparation needs retry'**
+  String get commonKnowledgeStatusIndexFailed;
+
+  /// No description provided for @commonKnowledgeStatusIndexing.
+  ///
+  /// In en, this message translates to:
+  /// **'Preparing for reuse'**
+  String get commonKnowledgeStatusIndexing;
+
+  /// No description provided for @commonKnowledgeStatusPending.
+  ///
+  /// In en, this message translates to:
+  /// **'Awaiting review'**
+  String get commonKnowledgeStatusPending;
+
+  /// No description provided for @commonKnowledgeStatusRejected.
+  ///
+  /// In en, this message translates to:
+  /// **'Rejected'**
+  String get commonKnowledgeStatusRejected;
+
+  /// No description provided for @commonKnowledgeStatusRevoked.
+  ///
+  /// In en, this message translates to:
+  /// **'Withdrawn'**
+  String get commonKnowledgeStatusRevoked;
+
+  /// No description provided for @commonKnowledgeStatusUnknown.
+  ///
+  /// In en, this message translates to:
+  /// **'Review status unavailable'**
+  String get commonKnowledgeStatusUnknown;
+
+  /// No description provided for @commonKnowledgeSubmit.
+  ///
+  /// In en, this message translates to:
+  /// **'Submit for review'**
+  String get commonKnowledgeSubmit;
+
+  /// No description provided for @commonKnowledgeTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Firm knowledge'**
+  String get commonKnowledgeTitle;
+
+  /// No description provided for @commonKnowledgeUpdated.
+  ///
+  /// In en, this message translates to:
+  /// **'Knowledge item updated'**
+  String get commonKnowledgeUpdated;
 
   /// No description provided for @commonLanguage.
   ///
@@ -18293,6 +18557,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Finance'**
   String get lawyerNavFinance;
+
+  /// No description provided for @lawyerNavFirmKnowledge.
+  ///
+  /// In en, this message translates to:
+  /// **'Firm knowledge'**
+  String get lawyerNavFirmKnowledge;
 
   /// No description provided for @lawyerNavGroupsAdminSettings.
   ///

@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:intl/intl.dart';
@@ -54,6 +56,15 @@ class _CreateEventSheetState extends ConsumerState<_CreateEventSheet> {
 
   String _type = 'Meeting';
   String? _clientId;
+  String? _matterId;
+  String? _selectedMatterTitle;
+  int? _reminderMinutes = 30;
+  List<FirmMatter> _matters = [];
+  bool _loadingMatters = true;
+  bool _matterLoadError = false;
+  int _matterRequest = 0;
+  Timer? _matterSearchTimer;
+  final _matterSearchCtrl = TextEditingController();
   List<FirmClient> _clients = [];
   bool _loadingClients = true;
   bool _submitting = false;
@@ -75,17 +86,12 @@ class _CreateEventSheetState extends ConsumerState<_CreateEventSheet> {
       _descriptionCtrl.text = existing.description ?? '';
       _type = _normalizeTypeForForm(existing.type);
       _clientId = existing.clientId;
-      _startDate = DateTime(
-        existing.startAt.year,
-        existing.startAt.month,
-        existing.startAt.day,
-      );
+      _matterId = existing.matterId;
+      _selectedMatterTitle = existing.matterTitle;
+      _reminderMinutes = existing.reminderMinutes;
+      _startDate = DateUtils.dateOnly(existing.startAt.toLocal());
       _startTime = TimeOfDay.fromDateTime(existing.startAt.toLocal());
-      _endDate = DateTime(
-        existing.endAt.year,
-        existing.endAt.month,
-        existing.endAt.day,
-      );
+      _endDate = DateUtils.dateOnly(existing.endAt.toLocal());
       _endTime = TimeOfDay.fromDateTime(existing.endAt.toLocal());
     } else {
       final base = widget.initialDate ?? DateTime.now();
@@ -94,11 +100,14 @@ class _CreateEventSheetState extends ConsumerState<_CreateEventSheet> {
       _endDate = _startDate;
       _endTime = const TimeOfDay(hour: 10, minute: 0);
     }
-    _loadClients();
+    unawaited(_loadClients());
+    unawaited(_loadMatters());
   }
 
   @override
   void dispose() {
+    _matterSearchTimer?.cancel();
+    _matterSearchCtrl.dispose();
     _titleCtrl.dispose();
     _descriptionCtrl.dispose();
     super.dispose();
@@ -140,6 +149,18 @@ class _CreateEventSheetState extends ConsumerState<_CreateEventSheet> {
       if (mounted) {
         setState(() => _loadingClients = false);
       }
+    }
+  }
+
+  Future<void> _loadMatters() async {
+    final request = ++_matterRequest;
+    if (mounted) setState(() { _loadingMatters = true; _matterLoadError = false; });
+    try {
+      final matters = await ref.read(mattersApiProvider).listMatters(tenantId: widget.tenantId,
+        search: _matterSearchCtrl.text.trim(), clientId: _clientId);
+      if (mounted && request == _matterRequest) setState(() { _matters = matters; _loadingMatters = false; });
+    } catch (_) {
+      if (mounted && request == _matterRequest) setState(() { _loadingMatters = false; _matterLoadError = true; });
     }
   }
 
@@ -198,6 +219,11 @@ class _CreateEventSheetState extends ConsumerState<_CreateEventSheet> {
             description: _descriptionCtrl.text.trim(),
             type: _type,
             clientId: _clientId,
+            matterId: _matterId,
+            reminderMinutes: _reminderMinutes,
+            updateReminder: true,
+            updateMatterLink: true,
+            updateClientLink: true,
             startAt: startAt,
             endAt: endAt,
           ),
@@ -210,6 +236,8 @@ class _CreateEventSheetState extends ConsumerState<_CreateEventSheet> {
             description: _descriptionCtrl.text.trim(),
             type: _type,
             clientId: _clientId,
+            matterId: _matterId,
+            reminderMinutes: _reminderMinutes,
             startAt: startAt,
             endAt: endAt,
           ),
@@ -299,6 +327,8 @@ class _CreateEventSheetState extends ConsumerState<_CreateEventSheet> {
                     value: null,
                     child: Text(l10n.commonNone),
                   ),
+                  if (_clientId != null && !_clients.any((client) => client.id == _clientId))
+                    DropdownMenuItem<String?>(value: _clientId, child: Text(l10n.billingClient)),
                   ..._clients.map(
                     (client) => DropdownMenuItem<String?>(
                       value: client.id,
@@ -308,8 +338,35 @@ class _CreateEventSheetState extends ConsumerState<_CreateEventSheet> {
                 ],
                 onChanged: _loadingClients
                     ? null
-                    : (value) => setState(() => _clientId = value),
+                    : (value) {
+                        setState(() { _clientId = value; _matterId = null; _selectedMatterTitle = null; });
+                        unawaited(_loadMatters());
+                      },
               ),
+              const SizedBox(height: 12),
+              Text(l10n.commonCalendarLinkedMatter, style: Theme.of(context).textTheme.labelMedium),
+              TextField(controller: _matterSearchCtrl, decoration: InputDecoration(labelText: l10n.commonCalendarSearchMatters),
+                onChanged: (_) { _matterSearchTimer?.cancel(); _matterSearchTimer = Timer(const Duration(milliseconds: 300), () => unawaited(_loadMatters())); }),
+              FormDropdown<String?>(value: _matterId, items: [
+                DropdownMenuItem<String?>(value: null, child: Text(l10n.commonNone)),
+                if (_matterId != null && !_matters.any((matter) => matter.id == _matterId))
+                  DropdownMenuItem<String?>(value: _matterId, child: Text(_selectedMatterTitle ?? l10n.commonCalendarLinkedMatter)),
+                ..._matters.map((matter) => DropdownMenuItem<String?>(value: matter.id, child: Text(matter.title))),
+              ], onChanged: _loadingMatters ? null : (value) {
+                final matches = _matters.where((matter) => matter.id == value);
+                setState(() { _matterId = value; _selectedMatterTitle = matches.isEmpty ? null : matches.first.title;
+                  if (matches.isNotEmpty && matches.first.clientId != null) _clientId = matches.first.clientId; });
+              }),
+              if (_matterLoadError) TextButton(onPressed: () => unawaited(_loadMatters()), child: Text(l10n.commonCalendarMattersUnavailable)),
+              const SizedBox(height: 12),
+              Text(l10n.commonCalendarReminder, style: Theme.of(context).textTheme.labelMedium),
+              FormDropdown<int?>(value: _reminderMinutes, items: [
+                DropdownMenuItem<int?>(value: null, child: Text(l10n.commonCalendarReminderOff)),
+                DropdownMenuItem<int?>(value: 0, child: Text(l10n.commonCalendarReminderAtStart)),
+                ...[15, 30, 60, 1440].map((minutes) => DropdownMenuItem<int?>(value: minutes, child: Text(l10n.commonCalendarReminderMinutes(minutes.toString())))),
+                if (_reminderMinutes != null && ![0, 15, 30, 60, 1440].contains(_reminderMinutes))
+                  DropdownMenuItem<int?>(value: _reminderMinutes, child: Text(l10n.commonCalendarReminderMinutes(_reminderMinutes!.toString()))),
+              ], onChanged: (value) => setState(() => _reminderMinutes = value)),
               const SizedBox(height: 12),
               TextFormField(
                 controller: _descriptionCtrl,

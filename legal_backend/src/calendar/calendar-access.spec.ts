@@ -42,4 +42,18 @@ describe('Calendar confidentiality and validation', () => {
     prisma.calendarEvent.findFirst.mockResolvedValue({ id: 'private', userId: 'bob', matterId: null });
     await expect(service.findOne('firm', 'private', actor)).rejects.toThrow('not found');
   });
+  it('persists the reminder at the correct instant across timezone offsets', async () => {
+    const { prisma, service } = setup();
+    await service.create('firm', { title: 'Timezone QA', startAt: '2026-11-09T09:00:00+03:00', endAt: '2026-11-09T10:00:00+03:00', reminderMinutes: 30 }, actor);
+    expect(prisma.calendarEvent.create.mock.calls[0][0].data.reminderAt).toEqual(new Date('2026-11-09T05:30:00Z'));
+    await expect(service.create('firm', { title: 'Ambiguous', startAt: '2026-11-09T09:00:00', endAt: '2026-11-09T10:00:00' }, actor)).rejects.toThrow('timezone');
+    await expect(service.create('firm', { title: 'Invalid date', startAt: '2026-02-30T09:00:00Z', endAt: '2026-02-30T10:00:00Z' }, actor)).rejects.toThrow('Invalid calendar date');
+  });
+  it('allows explicit reminder opt-out without silently restoring a default', async () => {
+    const { prisma, service } = setup();
+    prisma.calendarEvent.findFirst.mockResolvedValue({ id: 'own', userId: 'alice', matterId: null, startAt: new Date(dates.startAt), endAt: new Date(dates.endAt), reminderMinutes: 30 });
+    await service.update('firm', 'own', { reminderMinutes: null }, actor);
+    expect(prisma.calendarEvent.update.mock.calls[0][0].data).toMatchObject({ reminderMinutes: null, reminderAt: null });
+  });
+
 });

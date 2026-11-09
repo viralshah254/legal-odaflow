@@ -15,6 +15,7 @@ class CalendarEventItem {
     this.taskId,
     this.type,
     this.isTaskDeadline = false,
+    this.reminderMinutes,
   });
 
   final String id;
@@ -28,6 +29,7 @@ class CalendarEventItem {
   final String? taskId;
   final String? type;
   final bool isTaskDeadline;
+  final int? reminderMinutes;
 
   factory CalendarEventItem.fromJson(Map<String, dynamic> json) {
     return CalendarEventItem(
@@ -41,6 +43,7 @@ class CalendarEventItem {
       clientId: json['clientId'] as String?,
       taskId: json['taskId'] as String?,
       type: json['type'] as String?,
+      reminderMinutes: json['reminderMinutes'] as int?,
     );
   }
 
@@ -68,6 +71,7 @@ class CreateCalendarEventInput {
     this.type,
     this.clientId,
     this.matterId,
+    this.reminderMinutes = 30,
   });
 
   final String title;
@@ -77,11 +81,13 @@ class CreateCalendarEventInput {
   final String? type;
   final String? clientId;
   final String? matterId;
+  final int? reminderMinutes;
 
   Map<String, dynamic> toJson() => {
         'title': title,
-        'startAt': startAt.toIso8601String(),
-        'endAt': endAt.toIso8601String(),
+        'reminderMinutes': reminderMinutes,
+        'startAt': startAt.toUtc().toIso8601String(),
+        'endAt': endAt.toUtc().toIso8601String(),
         if (description != null && description!.isNotEmpty) 'description': description,
         if (type != null && type!.isNotEmpty) 'type': type,
         if (clientId != null && clientId!.isNotEmpty) 'clientId': clientId,
@@ -98,6 +104,10 @@ class UpdateCalendarEventInput {
     this.type,
     this.clientId,
     this.matterId,
+    this.reminderMinutes,
+    this.updateReminder = false,
+    this.updateMatterLink = false,
+    this.updateClientLink = false,
   });
 
   final String? title;
@@ -107,15 +117,20 @@ class UpdateCalendarEventInput {
   final String? type;
   final String? clientId;
   final String? matterId;
+  final int? reminderMinutes;
+  final bool updateReminder;
+  final bool updateMatterLink;
+  final bool updateClientLink;
 
   Map<String, dynamic> toJson() => {
         if (title != null) 'title': title,
-        if (startAt != null) 'startAt': startAt!.toIso8601String(),
-        if (endAt != null) 'endAt': endAt!.toIso8601String(),
+        if (updateReminder) 'reminderMinutes': reminderMinutes,
+        if (startAt != null) 'startAt': startAt!.toUtc().toIso8601String(),
+        if (endAt != null) 'endAt': endAt!.toUtc().toIso8601String(),
         if (description != null) 'description': description,
         if (type != null) 'type': type,
-        if (clientId != null) 'clientId': clientId,
-        if (matterId != null) 'matterId': matterId,
+        if (updateClientLink || clientId != null) 'clientId': clientId,
+        if (updateMatterLink || matterId != null) 'matterId': matterId,
       };
 }
 

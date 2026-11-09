@@ -12,6 +12,7 @@ import {
 import { PrismaService } from '@/prisma/prisma.service';
 
 export interface EmbeddingChunkInput {
+  tenantId?: string;
   sourceType: string;
   sourceId: string;
   chunkIndex: number;
@@ -88,7 +89,7 @@ export class EmbeddingService {
     return Math.max(1, Math.ceil(Buffer.byteLength(text, 'utf8') / 2));
   }
 
-  async embedTexts(texts: string[]): Promise<number[][]> {
+  async embedTexts(texts: string[], options?: { signal?: AbortSignal }): Promise<number[][]> {
     if (!isOpenAiConfigured(this.configService) || texts.length === 0) {
       return texts.map(() => []);
     }
@@ -110,6 +111,7 @@ export class EmbeddingService {
             model: resolveOpenAiRequestModel(this.configService, modelName),
             input: texts,
           }),
+          signal: options?.signal,
         },
         'OpenAI embeddings',
         { maxAttempts },
@@ -129,8 +131,8 @@ export class EmbeddingService {
     return (payload.data ?? []).map((row) => row.embedding ?? []);
   }
 
-  async embedText(text: string): Promise<number[]> {
-    const [embedding] = await this.embedTexts([text]);
+  async embedText(text: string, options?: { signal?: AbortSignal }): Promise<number[]> {
+    const [embedding] = await this.embedTexts([text], options);
     return embedding ?? [];
   }
 
@@ -166,9 +168,11 @@ export class EmbeddingService {
     for (let index = 0; index < chunks.length; index += 1) {
       const chunk = chunks[index];
       const contentHash = this.hashContent(chunk.content);
+      const metadata = chunk.metadata && typeof chunk.metadata === 'object' && !Array.isArray(chunk.metadata) ? chunk.metadata as Record<string, unknown> : {};
+      const tenantId = chunk.tenantId ?? (typeof metadata.tenantId === 'string' && metadata.tenantId ? metadata.tenantId : null);
       const existing = await this.findByHash(contentHash);
 
-      if (existing?.chunks.some((row) => row.modelName === chunk.modelName)) {
+      if (existing?.chunks.some((row) => row.modelName === chunk.modelName && row.sourceType === chunk.sourceType && row.sourceId === chunk.sourceId && row.chunkIndex === chunk.chunkIndex)) {
         skipped += 1;
         continue;
       }
@@ -197,6 +201,7 @@ export class EmbeddingService {
           },
         },
         create: {
+          tenantId,
           sourceType: chunk.sourceType,
           sourceId: chunk.sourceId,
           chunkIndex: chunk.chunkIndex,
@@ -208,6 +213,7 @@ export class EmbeddingService {
           metadata: chunk.metadata,
         },
         update: {
+          tenantId,
           content: chunk.content,
           contentHash,
           countryCode: chunk.countryCode?.toUpperCase(),
@@ -326,12 +332,15 @@ export class EmbeddingService {
       )`;
     });
     const embeddingRows = chunks.map((chunk, index) => {
+      const sourceMetadata = chunk.metadata && typeof chunk.metadata === 'object' && !Array.isArray(chunk.metadata) ? chunk.metadata as Record<string, unknown> : {};
+      const tenantId = chunk.tenantId ?? (typeof sourceMetadata.tenantId === 'string' && sourceMetadata.tenantId ? sourceMetadata.tenantId : null);
       const metadata =
         chunk.metadata === undefined
           ? Prisma.sql`NULL`
           : Prisma.sql`${JSON.stringify(chunk.metadata)}::jsonb`;
       return Prisma.sql`(
         ${randomUUID()},
+        ${tenantId},
         ${chunk.sourceType},
         ${chunk.sourceId},
         ${chunk.chunkIndex},
@@ -362,11 +371,12 @@ export class EmbeddingService {
     `;
     const upsertEmbeddingChunks = Prisma.sql`
       INSERT INTO "EmbeddingChunk"
-        ("id", "sourceType", "sourceId", "chunkIndex", "content", "contentHash",
+        ("id", "tenantId", "sourceType", "sourceId", "chunkIndex", "content", "contentHash",
          "countryCode", "jurisdiction", "modelName", "metadata", "embedding")
       VALUES ${Prisma.join(embeddingRows)}
       ON CONFLICT ("sourceType", "sourceId", "chunkIndex", "modelName")
       DO UPDATE SET
+        "tenantId" = EXCLUDED."tenantId",
         "content" = EXCLUDED."content",
         "contentHash" = EXCLUDED."contentHash",
         "countryCode" = EXCLUDED."countryCode",
@@ -388,16 +398,19 @@ export class EmbeddingService {
     return { stored: chunks.length };
   }
 
-  async searchByKeyword(query: string, filters?: { countryCode?: string; limit?: number }) {
+  async searchByKeyword(query: string, filters?: { countryCode?: string; limit?: number; tenantId?: string; termMatch?: boolean }) {
     const normalized = query.trim();
     if (!normalized) {
       return [];
     }
 
+    const terms = [...new Set(normalized.toLowerCase().match(/[\p{L}\p{N}]{2,}/gu) ?? [])].filter(term => !['the', 'and', 'for', 'with', 'from', 'that', 'this', 'what', 'which', 'would', 'should', 'case', 'law'].includes(term)).slice(0, 8);
     return this.prisma.embeddingChunk.findMany({
       where: {
+        tenantId: filters?.tenantId ?? null,
         countryCode: filters?.countryCode?.toUpperCase(),
-        content: { contains: normalized, mode: 'insensitive' },
+        ...(filters?.termMatch && terms.length ? { OR: terms.map(term => ({ content: { contains: term, mode: 'insensitive' as const } })) }
+          : { content: { contains: normalized, mode: 'insensitive' as const } }),
       },
       orderBy: { createdAt: 'desc' },
       take: filters?.limit ?? 20,
@@ -406,14 +419,14 @@ export class EmbeddingService {
 
   async searchByVector(
     query: string,
-    filters?: { countryCode?: string; sourceType?: string; limit?: number; practiceArea?: string },
+    filters?: { countryCode?: string; sourceType?: string; limit?: number; practiceArea?: string; tenantId?: string; timeoutMs?: number },
   ): Promise<VectorSearchResult[]> {
     if (!this.isRagEnabled()) {
       return [];
     }
 
     try {
-      const embedding = await this.embedText(query);
+      const embedding = await this.embedText(query, filters?.timeoutMs ? { signal: AbortSignal.timeout(filters.timeoutMs) } : undefined);
       if (embedding.length === 0) {
         return [];
       }
@@ -421,6 +434,7 @@ export class EmbeddingService {
       const vectorLiteral = this.toVectorLiteral(embedding);
       const limit = filters?.limit ?? 10;
       const countryCode = filters?.countryCode?.toUpperCase();
+      const tenantId = filters?.tenantId ?? null;
       const sourceType = filters?.sourceType ?? null;
       const practiceArea = filters?.practiceArea ?? null;
 
@@ -445,6 +459,7 @@ export class EmbeddingService {
         1 - (ec."embedding" <=> ${vectorLiteral}::vector) AS score
       FROM "EmbeddingChunk" ec
       WHERE ec."embedding" IS NOT NULL
+        AND ((${tenantId}::text IS NULL AND ec."tenantId" IS NULL) OR ec."tenantId" = ${tenantId})
         AND (${countryCode ?? null}::text IS NULL OR ec."countryCode" = ${countryCode ?? null})
         AND (${sourceType}::text IS NULL OR ec."sourceType" = ${sourceType})
         AND (${practiceArea}::text IS NULL OR ec."metadata"->>'practiceArea' = ${practiceArea})
@@ -463,7 +478,7 @@ export class EmbeddingService {
       }));
     } catch (err) {
       this.logger.warn(
-        `Vector search failed (non-critical): ${err instanceof Error ? err.message : String(err)}`,
+        `Vector search failed (non-critical): ${err instanceof Error ? err.name : 'unknown error'}`,
       );
       return [];
     }

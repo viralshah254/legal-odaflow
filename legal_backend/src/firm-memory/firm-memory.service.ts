@@ -1,3 +1,5 @@
+import { ArtifactAccessResolver } from '@/access/artifact-access.resolver';
+import { DocumentsService } from '@/documents/documents.service';
 import { Injectable, Logger } from '@nestjs/common';
 import { MatterAccessService } from '@/access/matter-access.service';
 import { EmbeddingService } from '@/embeddings/embedding.service';
@@ -28,6 +30,8 @@ export class FirmMemoryService {
     private readonly prisma: PrismaService,
     private readonly matterAccess: MatterAccessService,
     private readonly embeddingService: EmbeddingService,
+    private readonly access: ArtifactAccessResolver,
+    private readonly documents: DocumentsService,
   ) {}
 
   async search(
@@ -43,10 +47,11 @@ export class FirmMemoryService {
     }
 
     try {
-      return await this.searchInternal(tenantId, userId, role, normalized, limit);
+      const actor = await this.access.assertActiveMember({ tenantId, userId });
+      return await this.searchInternal(tenantId, userId, actor.tenantRole, normalized, limit);
     } catch (err) {
       this.logger.warn(
-        `Firm memory search failed (non-critical): ${err instanceof Error ? err.message : String(err)}`,
+        `Firm memory search failed (non-critical): ${err instanceof Error ? err.name : 'unknown error'}`,
       );
       return { query: normalized, hits: [] };
     }
@@ -65,13 +70,10 @@ export class FirmMemoryService {
       role,
     );
 
-    const vectorHits = await this.embeddingService.searchByVector(normalized, {
-      limit: limit * 3,
-    });
-
-    const keywordHits = await this.embeddingService.searchByKeyword(normalized, {
-      limit: limit * 3,
-    });
+    const [vectorHits, keywordHits] = await Promise.all([
+      this.embeddingService.searchByVector(normalized, { tenantId, limit: limit * 3, timeoutMs: 2000 }),
+      this.embeddingService.searchByKeyword(normalized, { tenantId, limit: limit * 3, termMatch: true }),
+    ]);
 
     const merged = [...vectorHits, ...keywordHits];
     const seen = new Set<string>();
@@ -107,12 +109,22 @@ export class FirmMemoryService {
       if (
         accessibleMatterIds !== null &&
         !resolved.matterId &&
+        hit.sourceType !== 'firm_knowledge' &&
         !MATTER_ARTIFACT_SOURCE_TYPES.includes(
           hit.sourceType as (typeof MATTER_ARTIFACT_SOURCE_TYPES)[number],
         )
       ) {
         continue;
       }
+
+      try {
+        const actor = { tenantId, userId, tenantRole: role };
+        if (resolved.matterId) await this.access.assertMatterReadable(actor, resolved.matterId);
+        if (hit.sourceType === 'matter_document') await this.documents.getTenantDocument(tenantId, hit.sourceId, userId, role);
+        if (hit.sourceType === 'firm_knowledge' && 'documentId' in resolved && resolved.documentId) {
+          await this.documents.getTenantDocument(tenantId, String(resolved.documentId), userId, role);
+        }
+      } catch { continue; }
 
       enriched.push({
         id: hit.id,
@@ -158,46 +170,6 @@ export class FirmMemoryService {
    * Write-path: embed and store approved work product into the firm memory index.
    * Future searches will retrieve this content when relevant to new matters.
    */
-  async ingest(
-    tenantId: string,
-    _userId: string,
-    payload: {
-      sourceType: string;
-      sourceId: string;
-      matterId?: string;
-      title?: string;
-      content: string;
-      practiceArea?: string;
-      jurisdiction?: string;
-      tags?: string[];
-    },
-  ): Promise<{ ingested: boolean; chunkCount: number }> {
-    try {
-      const rawChunks = this.chunkContent(payload.content);
-      const modelName = this.embeddingService.getEmbeddingModel();
-      const chunks = rawChunks.map((content, i) => ({
-        sourceType: payload.sourceType,
-        sourceId: payload.sourceId,
-        chunkIndex: i,
-        content,
-        jurisdiction: payload.jurisdiction,
-        modelName,
-        metadata: {
-          tenantId,
-          matterId: payload.matterId ?? null,
-          title: payload.title ?? null,
-          practiceArea: payload.practiceArea ?? null,
-          tags: payload.tags ?? [],
-        },
-      }));
-      const result = await this.embeddingService.storeChunks(chunks);
-      return { ingested: true, chunkCount: result.stored };
-    } catch (err) {
-      this.logger.warn(`Firm memory ingest failed for ${payload.sourceId}: ${String(err)}`);
-      return { ingested: false, chunkCount: 0 };
-    }
-  }
-
   /**
    * Compare a draft clause against firm precedents from memory + synthesize market position.
    * Returns firm precedent hits + a brief market-position summary.
@@ -263,8 +235,17 @@ export class FirmMemoryService {
     tenantId: string,
     sourceType: string,
     sourceId: string,
-  ): Promise<{ tenantId: string; matterId: string | null; title?: string } | null> {
+  ): Promise<{ tenantId: string; matterId: string | null; title?: string; documentId?: string | null } | null> {
     switch (sourceType) {
+      case 'firm_knowledge': {
+        const match = /^(.+)@(\d+)$/.exec(sourceId);
+        if (!match) return null;
+        const item = await this.prisma.firmKnowledgeItem.findFirst({ where: {
+          id: match[1], tenantId, revision: Number(match[2]), status: 'APPROVED',
+          OR: [{ rightsExpiresAt: null }, { rightsExpiresAt: { gt: new Date() } }],
+        }, select: { tenantId: true, matterId: true, documentId: true, title: true } });
+        return item;
+      }
       case 'matter_fact': {
         const fact = await this.prisma.matterFact.findFirst({
           where: { id: sourceId, tenantId },
