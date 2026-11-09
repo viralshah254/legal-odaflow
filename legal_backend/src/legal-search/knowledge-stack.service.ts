@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { Inject, Injectable, forwardRef } from '@nestjs/common';
 import { FirmMemoryService } from '@/firm-memory/firm-memory.service';
 import { PrismaService } from '@/prisma/prisma.service';
 import { HybridSearchService } from '@/legal-sources/search/hybrid-search.service';
@@ -40,6 +40,7 @@ export class KnowledgeStackService {
   constructor(
     private readonly hybridSearch: HybridSearchService,
     private readonly bareActLookup: BareActLookupService,
+    @Inject(forwardRef(() => FirmMemoryService))
     private readonly firmMemory: FirmMemoryService,
     private readonly prisma: PrismaService,
     private readonly citationFirstLookup: CitationFirstLookupService,

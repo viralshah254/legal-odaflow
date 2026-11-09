@@ -1,4 +1,4 @@
-import { BadRequestException, ConflictException, ForbiddenException, Injectable, NotFoundException } from '@nestjs/common';
+import { BadRequestException, ConflictException, ForbiddenException, Inject, Injectable, NotFoundException, forwardRef } from '@nestjs/common';
 import { createHash, randomUUID } from 'node:crypto';
 import { ArtifactAccessResolver, AccessActor } from '@/access/artifact-access.resolver';
 import { MatterAccessService } from '@/access/matter-access.service';

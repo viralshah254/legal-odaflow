@@ -1,5 +1,7 @@
 "use client"
 
+import { pollResearchUntilDone } from "@/lib/legal-research/job-polling"
+
 import { useTranslations } from "next-intl"
 import { useState, useRef, useEffect, useCallback, useMemo } from "react"
 import { useSearchParams } from "next/navigation"
@@ -174,13 +176,6 @@ const POLL_MS = 2000
 const QUEUE_WAIT_TIMEOUT_MS = 60_000
 const VERIFIED_RESEARCH_MODE = "DEEP" as const
 
-function isResearchWorkerUnavailableError(error: unknown): boolean {
-  return (
-    error instanceof Error &&
-    error.message.includes("No research worker claimed this job")
-  )
-}
-
 async function runResearchViaJobOrSync(
   request: Parameters<typeof runLegalResearch>[0],
   tenantId: string,
@@ -191,26 +186,10 @@ async function runResearchViaJobOrSync(
     complete: boolean
   }) => void,
 ): Promise<LegalResearchResponse> {
-  try {
-    const { jobId } = await startLegalResearchJob(request, tenantId)
-    return await waitForResearchJob(tenantId, jobId, onUpdate)
-  } catch (error) {
-    if (!isResearchWorkerUnavailableError(error)) throw error
-    onUpdate({
-      phase: "generating",
-      message: "Research worker unavailable — running inline",
-      result: null,
-      complete: false,
-    })
-    const inline = await runLegalResearch(request, tenantId)
-    onUpdate({
-      phase: "completed",
-      message: undefined,
-      result: inline,
-      complete: true,
-    })
-    return inline
-  }
+  const { jobId } = await startLegalResearchJob(request, tenantId)
+  // Never start an automatic duplicate inline request after queue/poll timeout.
+  return waitForResearchJob(tenantId, jobId, onUpdate)
+
 }
 
 function questionDetails(question: LegalResearchUnansweredQuestion, index: number) {
@@ -268,79 +247,27 @@ async function waitForResearchJob(
     error?: string
   }) => void,
 ): Promise<LegalResearchResponse> {
-  return new Promise((resolve, reject) => {
-    let settled = false
-    const waitStartedAt = Date.now()
-
-    const poll = async () => {
-      if (settled) return
-      try {
-        const job = await getAgentJob(tenantId, jobId)
-        const paramsObj =
-          job.payload && typeof job.payload === "object"
-            ? (job.payload as Record<string, unknown>)
-            : {}
-        const progress = getResearchJobProgress(paramsObj)
-        const parsed = parseResearchJobResult(
-          job.result && typeof job.result === "object"
-            ? (job.result as Record<string, unknown>)
-            : null,
-        )
-        const complete = job.status === "COMPLETED"
-        const failed = job.status === "FAILED"
-        const mappedPhase = mapProgressPhase(progress?.phase)
-        const waitingForWorker =
-          !mappedPhase &&
-          !complete &&
-          !failed &&
-          (job.status === "QUEUED" || job.status === "PROCESSING")
-
-        if (waitingForWorker && Date.now() - waitStartedAt >= QUEUE_WAIT_TIMEOUT_MS) {
-          settled = true
-          clearInterval(interval)
-          reject(
-            new Error(
-              "No research worker claimed this job within 60 seconds. Please retry after the worker is online.",
-            ),
-          )
-          return
-        }
-
-        onUpdate({
-          phase:
-            mappedPhase ??
-            (job.status === "QUEUED" || job.status === "PROCESSING" ? "queued" : undefined),
-          message:
-            progress?.message ??
-            (job.status === "QUEUED" ? "Waiting for a research worker" : undefined),
-          result: parsed,
-          complete,
-          failed,
-          error: failed
-            ? sanitizeResearchJobError(job.error ?? "Research job failed")
-            : undefined,
-        })
-
-        if (complete) {
-          settled = true
-          clearInterval(interval)
-          if (parsed) resolve(parsed)
-          else reject(new Error("Research completed without a result"))
-        } else if (failed) {
-          settled = true
-          clearInterval(interval)
-          reject(new Error(sanitizeResearchJobError(job.error ?? "Research job failed")))
-        }
-      } catch (err) {
-        settled = true
-        clearInterval(interval)
-        reject(err instanceof Error ? err : new Error(String(err)))
-      }
+  const waitStartedAt = Date.now()
+  return pollResearchUntilDone(async (signal) => {
+    const job = await getAgentJob(tenantId, jobId, signal)
+    if (signal.aborted) return undefined
+    const payload = job.payload && typeof job.payload === "object" ? job.payload as Record<string, unknown> : {}
+    const progress = getResearchJobProgress(payload)
+    const parsed = parseResearchJobResult(job.result && typeof job.result === "object" ? job.result as Record<string, unknown> : null)
+    const complete = job.status === "COMPLETED", failed = job.status === "FAILED"
+    const phase = mapProgressPhase(progress?.phase)
+    if (!phase && !complete && !failed && Date.now() - waitStartedAt >= QUEUE_WAIT_TIMEOUT_MS) {
+      throw new Error("No research worker claimed this job. Check research history before retrying; no duplicate request was started.")
     }
-
-    void poll()
-    const interval = setInterval(() => void poll(), POLL_MS)
-  })
+    onUpdate({ phase: phase ?? "queued", message: progress?.message, result: parsed, complete, failed,
+      error: failed ? sanitizeResearchJobError(job.error ?? "Research job failed") : undefined })
+    if (failed) throw new Error(sanitizeResearchJobError(job.error ?? "Research job failed"))
+    if (complete) {
+      if (!parsed) throw new Error("Research completed without a result")
+      return parsed
+    }
+    return undefined
+  }, { timeoutMs: 120_000, intervalMs: POLL_MS })
 }
 
 const QUERY_PLACEHOLDER =
@@ -367,6 +294,7 @@ export default function LegalResearchPage() {
   const t = useTranslations("matters")
   const tPromptRefine = useTranslations("promptRefine")
   const tCommon = useTranslations("common")
+  const tResearchProgress = useTranslations("marketing.home.researchProgress")
   const tErr = useTranslations("errors")
   const { activeTenantId, activeTenant } = useTenant()
   const { toast } = useToast()
@@ -2021,7 +1949,7 @@ export default function LegalResearchPage() {
                         <span className="flex items-center gap-1.5 text-xs font-semibold">
                           <ShieldCheck className="h-3.5 w-3.5" /> Verified
                         </span>
-                        <span className="mt-0.5 block text-[10px] text-muted-foreground">AI self-check · under 45s</span>
+                        <span className="mt-0.5 block text-[10px] text-muted-foreground">{tResearchProgress("verifiedModeHint")}</span>
                       </button>
                       <button
                         type="button"
@@ -2034,7 +1962,7 @@ export default function LegalResearchPage() {
                         <span className="flex items-center gap-1.5 text-xs font-semibold">
                           <Zap className="h-3.5 w-3.5" /> Fast
                         </span>
-                        <span className="mt-0.5 block text-[10px] text-muted-foreground">About 20s · model knowledge</span>
+                        <span className="mt-0.5 block text-[10px] text-muted-foreground">{tResearchProgress("fastModeHint")}</span>
                       </button>
                       <button
                         type="button"
@@ -2047,7 +1975,7 @@ export default function LegalResearchPage() {
                         <span className="flex items-center gap-1.5 text-xs font-semibold">
                           <Sparkles className="h-3.5 w-3.5" /> AI only
                         </span>
-                        <span className="mt-0.5 block text-[10px] text-muted-foreground">Single pass · usually under 15s</span>
+                        <span className="mt-0.5 block text-[10px] text-muted-foreground">{tResearchProgress("guidanceModeHint")}</span>
                       </button>
                     </div>
                   </div>
@@ -2055,7 +1983,7 @@ export default function LegalResearchPage() {
                   <div className="flex items-center gap-2">
                     <span className="text-xs font-medium text-muted-foreground shrink-0">Model</span>
                     <div className="flex-1">
-                      <AiModelPicker />
+                      <AiModelPicker stageRouting />
                     </div>
                   </div>
 
@@ -2137,7 +2065,7 @@ export default function LegalResearchPage() {
             <CardContent className="px-4 pb-4 space-y-2">
               {[
                 "Be specific about jurisdiction and fact pattern for better citations.",
-                "Verified Research adds an in-prompt self-check — usually under 45 seconds.",
+                "Verified mode requests an AI self-check; source verification may remain incomplete.",
                 "Your country is auto-detected and synced across all features.",
               ].map((tip, i) => (
                 <div key={i} className="flex gap-2 text-xs text-muted-foreground">
@@ -2198,7 +2126,7 @@ export default function LegalResearchPage() {
               <CardContent className="px-4 pb-4 space-y-2">
                 {[
                   "Be specific about jurisdiction and fact pattern for better citations.",
-                  "Verified Research adds an in-prompt self-check — usually under 45 seconds.",
+                  "Verified mode requests an AI self-check; source verification may remain incomplete.",
                   "Select a state or region when local rules matter; otherwise choose All regions.",
                 ].map((tip, i) => (
                   <div key={i} className="flex gap-2 text-xs text-muted-foreground">

@@ -1,3 +1,4 @@
+import { pollResearchUntilDone } from "@/lib/legal-research/job-polling"
 import {
   extractFollowUpQuestionsFromMarkdown,
   sanitizeResearchAnswer,
@@ -523,11 +524,12 @@ export async function runLegalResearch(
   data: LegalResearchRequest,
   tenantId?: string,
 ): Promise<LegalResearchResponse> {
-  const raw = await apiFetch<BackendLegalResearchResponse>("/ai/research", {
+  const raw = await pollResearchUntilDone(signal => apiFetch<BackendLegalResearchResponse>("/ai/research", {
+    signal,
     method: "POST",
     body: data,
     tenantId,
-  })
+  }), { timeoutMs: 90_000 })
   return normalizeLegalResearchResponse(raw)
 }
 
@@ -535,11 +537,12 @@ export async function startLegalResearchJob(
   data: LegalResearchRequest,
   tenantId?: string,
 ): Promise<{ jobId: string }> {
-  return apiFetch<{ jobId: string }>("/ai/research/async", {
+  return pollResearchUntilDone(signal => apiFetch<{ jobId: string }>("/ai/research/async", {
+    signal,
     method: "POST",
     body: data,
     tenantId,
-  })
+  }), { timeoutMs: 15_000 })
 }
 
 export function parseResearchJobResult(

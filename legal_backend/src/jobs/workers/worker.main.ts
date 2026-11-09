@@ -22,7 +22,7 @@ import { createSearchIndexWorker } from './search-index.worker';
 import { createSummaryWorker } from './summary.worker';
 import { createWhatsappSendWorker } from './whatsapp-send.worker';
 import { createGooglePlacesScrapeWorker } from './google-places-scrape.worker';
-import { closeWorkerServices } from './worker-context';
+import { closeWorkerServices, getWorkerServices } from './worker-context';
 import { QUEUE_NAMES } from '../jobs.constants';
 
 const prisma = new PrismaClient();
@@ -44,6 +44,8 @@ async function markAgentJobFailed(job: Job | undefined, error: Error) {
 }
 
 async function bootstrap() {
+  // Resolve the actual service graph before advertising or claiming work.
+  await getWorkerServices();
   const workers = [
     { name: QUEUE_NAMES.OCR, worker: createOcrWorker() },
     { name: QUEUE_NAMES.AI_HIGH, worker: createResearchWorker() },

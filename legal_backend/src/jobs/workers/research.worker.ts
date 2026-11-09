@@ -37,7 +37,8 @@ async function processResearchJob(job: Job<AiAgentJobPayload>) {
     data: { status: 'PROCESSING', attempts: { increment: 1 } },
   });
 
-  const { aiGateway, automationEngine, legalLocation } = await getWorkerServices();
+  const { aiGateway, automationEngine, legalLocation, artifactAccess } = await getWorkerServices();
+  const currentActor = await artifactAccess.assertActiveMember({ tenantId: payload.tenantId, userId: payload.userId });
 
   const resolvedLocation = params.countryCode
     ? {
@@ -86,7 +87,7 @@ async function processResearchJob(job: Job<AiAgentJobPayload>) {
       research = await aiGateway.runLawyerLegalResearch({
         userId: payload.userId,
         tenantId: payload.tenantId,
-        tenantRole: params.tenantRole as string | undefined,
+        tenantRole: currentActor.tenantRole,
         matterId: params.matterId as string | undefined,
         selectedDocumentIds: params.selectedDocumentIds as string[] | undefined,
         selectedSavedResearchIds: params.selectedSavedResearchIds as string[] | undefined,

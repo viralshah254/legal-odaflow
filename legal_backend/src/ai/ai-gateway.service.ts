@@ -1,3 +1,4 @@
+import { assertResearchBudgetActive, withinResearchBudget } from '@/common/utils/research-execution-budget';
 import { canAnalyzeSuppliedDocuments } from './legal-research/supplied-document-analysis.policy';
 import { filterAuthoritiesByResearchDate } from './legal-research/research-temporal-scope';
 import { researchCacheIdentity } from './legal-research/research-cache-identity';
@@ -1607,6 +1608,7 @@ export class AiGatewayService {
     phase: ResearchJobPhase,
     message?: string,
   ): Promise<void> {
+    assertResearchBudgetActive();
     if (!agentJobId) return;
     try {
       const job = await this.prisma.agentJob.findUnique({
@@ -1672,6 +1674,7 @@ export class AiGatewayService {
     agentJobId: string | undefined,
     draft: Record<string, unknown>,
   ): Promise<void> {
+    assertResearchBudgetActive();
     if (!agentJobId) return;
     try {
       await this.prisma.agentJob.update({
@@ -1716,6 +1719,7 @@ export class AiGatewayService {
     promptHash: string;
     mode: string;
   }): Promise<string | undefined> {
+    assertResearchBudgetActive();
     const { cached, userId, tenantId, matterId, query, promptHash, mode } = params;
 
     if (cached.aiOutputId) {
@@ -1798,7 +1802,7 @@ export class AiGatewayService {
    * This busts the cache for all existing research entries so users get fresh
    * results with the new improvements rather than stale pre-upgrade cached output.
    */
-  private static readonly RESEARCH_SYSTEM_VERSION = 'v13-20261109-temporal-trust';
+  private static readonly RESEARCH_SYSTEM_VERSION = 'v14-20261109-bounded-verified';
 
   /** Minimum authorities before we reach out to live connectors for grounding. */
   private static readonly MIN_AUTHORITIES_FOR_GROUNDING = 3;
@@ -2395,7 +2399,7 @@ export class AiGatewayService {
     input: LawyerResearchInput,
   ): Promise<LawyerResearchResult> {
     try {
-      return await this.executeLawyerLegalResearch(input);
+      return await withinResearchBudget(researchDeadlineMs(input.researchMode, input.matterId ? LONG_RESEARCH_QUERY_CHARS + 1 : 0), () => this.executeLawyerLegalResearch(input));
     } catch (err) {
       // Invalid context and denied access must never become a successful-looking
       // fallback memo. Preserve actionable client errors and queue failure state.
@@ -2676,8 +2680,8 @@ export class AiGatewayService {
     // Stage 1 — classify the query (jurisdiction, domain, issue type, current-law need).
     await this.updateResearchJobProgress(
       input.agentJobId,
-      'generating',
-      'Drafting the research note',
+      'classifying',
+      'Reading the question and identifying its legal scope',
     );
     const classifyStart = Date.now();
     const classification = this.researchClassifier.classify({
@@ -2790,8 +2794,8 @@ export class AiGatewayService {
 
     await this.updateResearchJobProgress(
       input.agentJobId,
-      'generating',
-      'Drafting the research note',
+      'planning',
+      'Preparing the research scope',
     );
 
     const miProfile = matterSnapshot?.profile;
@@ -2920,8 +2924,8 @@ export class AiGatewayService {
 
     await this.updateResearchJobProgress(
       input.agentJobId,
-      'generating',
-      'Drafting the research note',
+      'retrieving',
+      'Checking available legal sources',
     );
 
     const retrieveStart = Date.now();
@@ -3644,11 +3648,9 @@ export class AiGatewayService {
         ...legalSectionRoute.governingSections.map((section) => section.label),
       ],
     };
-    authorities = await this.pinResolvedSectionAuthorities(
-      authorities,
-      legalSectionRoute,
-      country.code,
-    );
+    authorities = await withinResearchBudget(4_000, () => this.pinResolvedSectionAuthorities(
+      authorities, legalSectionRoute, country.code,
+    )).catch(() => authorities);
 
     // Statute grounding for every jurisdiction: the Section Finder corpus for
     // IN/KE, the statute registry elsewhere. No country runs unanchored.
@@ -3656,11 +3658,9 @@ export class AiGatewayService {
     let adaptiveSectionsAdded: string[] = [];
     {
       try {
-        const sfContext = await this.researchSectionFinderGrounding.buildContext(
-          input.query,
-          classification.legalDomain,
-          country.code,
-        );
+        const sfContext = await withinResearchBudget(4_000, () => this.researchSectionFinderGrounding.buildContext(
+          input.query, classification.legalDomain, country.code,
+        ));
         sectionFinderPromptBlock = sfContext.promptBlock;
         adaptiveSectionsAdded = sfContext.verifiedSectionLabels.slice(
           0,
@@ -3916,7 +3916,7 @@ export class AiGatewayService {
         country.code === 'KE' ||
         hasOfficialCaseSources(country.code)
       ) {
-        const recovery = await this.caseLawRecovery.recover({
+        const recovery = await withinResearchBudget(taskProfile.kind === 'GENERAL_RESEARCH' ? 6_000 : 12_000, () => this.caseLawRecovery.recover({
           ...structuredRetrievalContext,
           query: input.query,
           countryCode: country.code,
@@ -3926,12 +3926,12 @@ export class AiGatewayService {
           existingAuthorities: authorities,
           allowInventingHops: !skipInventingHops,
           maxQueries:
-            isIndiaTenantEvictionQuery(input.query)
+            taskProfile.kind === 'GENERAL_RESEARCH' ? 2 : isIndiaTenantEvictionQuery(input.query)
               ? 4
               : researchMode === 'DEEP'
                 ? 10
                 : 6,
-        });
+        })).catch(() => ({ authorities, unverifiedLeads: [], diagnostics: [{ provider: 'case-recovery', status: 'deadline_exceeded', hitCount: 0 }] }));
         if (recovery.diagnostics.length > 0) {
           sourceDiagnostics.push(
             ...recovery.diagnostics.map((diagnostic) => ({
@@ -4171,6 +4171,7 @@ export class AiGatewayService {
       this.researchCorrectionService.buildApprovedCorrectionsPromptBlock(approvedCorrections);
 
     const prompt = [
+      input.desiredOutput === 'ANSWER' ? 'CONCISE ANSWER: Aim for 350–600 words. Answer the stated question directly, distinguish materially different scenarios, identify missing facts, and retain source/current-law caveats. Do not duplicate the same analysis across multiple headings or invent a universal rule when the applicable instrument is unspecified.' : '',
       threadPrompt,
       canAnalyzeSuppliedDocuments(input.query, matterContext?.documentCount ?? 0) ? 'SOURCE-BOUND DOCUMENT ANALYSIS: Explain only the authorized supplied excerpts. Identify the case and disposition only as stated in those excerpts. External search may be incomplete. Do not invent reporter citations or paragraph numbers, claim independent verification, or equate source analysis with current-law advice.' : '',
       `TEMPORAL SCOPE: Answer the law as of ${input.asOfDate}. Do not cite later decisions, later reporters, replacement statutes, or current-law mappings as law available on that date. Unknown source dates require an explicit verification gap.`,
@@ -5710,6 +5711,7 @@ export class AiGatewayService {
 
     let chargedCredits = 0;
     let automaticEnrichmentCredits = 0;
+    assertResearchBudgetActive();
     try {
       if (result.provider !== 'mock') {
         const tokenDebit = await this.creditEnforcement.debitForTokenUsage({
@@ -5849,6 +5851,7 @@ export class AiGatewayService {
     this.logger.log(
       `[research-timing] classify=${classifyMs}ms preflight=${preflightMs}ms retrieve=${retrieveMs}ms llm=${llmMs}ms verify=${verifyMs}ms postProcess=${postProcessMs}ms total=${totalMs}ms mode=${researchMode} country=${country.code}`,
     );
+    assertResearchBudgetActive();
     await this.cacheService.set(earlyIndexKey, fullResult, 300).catch((err) =>
       this.logger.warn(
         `[runLawyerLegalResearch] early index cache set failed (non-critical): ${
@@ -7912,7 +7915,7 @@ Only include legally meaningful deadlines specific to this practice area and jur
       // A verified memo answered by an economy model is worse than no memo:
       // the badge says verified while the reasoning quietly got cheaper.
       minTier: synthesisMode === 'DEEP' ? 'mid' : undefined,
-      reasoningEffort: synthesisMode === 'FAST' ? 'low' : 'medium',
+      reasoningEffort: synthesisMode === 'FAST' || (input.desiredOutput === 'ANSWER' && !input.matterId) ? 'low' : 'medium',
       maxTokens:
         synthesisMode === 'FAST'
           ? Math.max(4000, Math.min(5000, legalModelRoute?.maxOutputTokens ?? route.maxOutputTokens))

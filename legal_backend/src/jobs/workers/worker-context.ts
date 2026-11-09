@@ -1,3 +1,4 @@
+import { ArtifactAccessResolver } from '@/access/artifact-access.resolver';
 import { NotificationVisibilityService } from '@/notifications/notification-visibility.service';
 import { INestApplicationContext } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
@@ -28,6 +29,7 @@ let appContext: INestApplicationContext | null = null;
 let appContextPromise: Promise<INestApplicationContext> | null = null;
 
 export interface WorkerServices {
+  artifactAccess: ArtifactAccessResolver;
   notificationVisibility: NotificationVisibilityService;
   aiGateway: AiGatewayService;
   llmCompletion: LlmCompletionService;
@@ -56,6 +58,7 @@ export async function getWorkerServices(): Promise<WorkerServices> {
   if (!appContext) {
     appContextPromise ??= NestFactory.createApplicationContext(WorkerAppModule, {
       logger: ['error', 'warn', 'log'],
+      abortOnError: false,
     }).then((created) => {
       appContext = created;
       return created;
@@ -68,6 +71,7 @@ export async function getWorkerServices(): Promise<WorkerServices> {
   }
 
   return {
+    artifactAccess: appContext.get(ArtifactAccessResolver),
     notificationVisibility: appContext.get(NotificationVisibilityService),
     aiGateway: appContext.get(AiGatewayService),
     llmCompletion: appContext.get(LlmCompletionService),

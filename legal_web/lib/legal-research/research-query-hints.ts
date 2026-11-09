@@ -183,15 +183,17 @@ export function buildDeepResearchSteps(
   countryCode: string,
   t: ResearchProgressTranslator,
 ) {
-  const steps = buildGuidanceResearchSteps(query, countryCode, t)
+  const { parseStep, retrieveStep, draftStep } = researchStepContext(query, countryCode, t)
   return [
-    steps[0],
-    steps[1],
+    parseStep,
+    retrieveStep,
+    draftStep,
     {
       id: "selfcheck",
       label: t("stepSelfCheckLabel"),
       detail: t("stepSelfCheckDetail"),
     },
-    steps[2],
+    { id: "finalize", label: t("stepFinalizeLabel"), detail: t("stepGuidanceReadyDetail") },
+    { id: "ready", label: t("stepGuidanceReadyLabel"), detail: t("stepGuidanceReadyDetail") },
   ]
 }

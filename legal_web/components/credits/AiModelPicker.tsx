@@ -1,6 +1,7 @@
 "use client"
 
 import { useEffect, useState } from "react"
+import { useTranslations } from "next-intl"
 import { Check, ChevronDown, Crown, Loader2, Zap } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import {
@@ -38,9 +39,12 @@ interface AiModelPickerProps {
   className?: string
   /** Compact layout — hides the usage bars */
   compact?: boolean
+  /** Workflow stages can route above the wallet default. */
+  stageRouting?: boolean
 }
 
-export function AiModelPicker({ onChange, className, compact = false }: AiModelPickerProps) {
+export function AiModelPicker({ onChange, className, compact = false, stageRouting = false }: AiModelPickerProps) {
+  const tProgress = useTranslations("marketing.home.researchProgress")
   const {
     mode: modelMode,
     modelId: premiumModelId,
@@ -188,7 +192,7 @@ export function AiModelPicker({ onChange, className, compact = false }: AiModelP
       {modelMode === "AUTO" && (
         <p className="text-xs text-muted-foreground">
           Auto selects the best-value model for each task.
-          {walletMeta?.autoModelName ? ` Currently: ${walletMeta.autoModelName}.` : ""}
+          {stageRouting ? tProgress("modelRoutingNote") : walletMeta?.autoModelName ? ` Default: ${walletMeta.autoModelName}.` : ""}
         </p>
       )}
     </div>

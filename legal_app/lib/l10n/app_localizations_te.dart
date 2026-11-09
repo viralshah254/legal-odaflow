@@ -13564,14 +13564,14 @@ class AppLocalizationsTe extends AppLocalizations {
   String get marketingHomePricingPreviewTitle => 'ఒక వేదిక. సాధారణ ధర.';
 
   @override
-  String get marketingHomeResearchProgressAboutOneMin => '· ~1 నిమి';
+  String get marketingHomeResearchProgressAboutOneMin => '· processing';
 
   @override
-  String get marketingHomeResearchProgressAlmostThere => '· దాదాపు అక్కడ...';
+  String get marketingHomeResearchProgressAlmostThere => '· processing';
 
   @override
   String get marketingHomeResearchProgressDeepCitationNote =>
-      'ధృవీకరించబడిన పరిశోధన లోతైన అనులేఖన తనిఖీలను నిర్వహిస్తుంది - దీనికి కొన్ని నిమిషాలు పట్టవచ్చు.';
+      'Verified mode includes an AI self-check; this does not certify sources.';
 
   @override
   String get marketingHomeResearchProgressDraftReadyBanner =>
@@ -13582,17 +13582,29 @@ class AppLocalizationsTe extends AppLocalizations {
       'చిత్తుప్రతి సిద్ధంగా ఉంది — ఖచ్చితత్వ తనిఖీలను అమలు చేస్తోంది…';
 
   @override
+  String get marketingHomeResearchProgressFastModeHint =>
+      'Quick answer · limited source checks';
+
+  @override
+  String get marketingHomeResearchProgressGuidanceModeHint =>
+      'Single pass · no source verification';
+
+  @override
   String get marketingHomeResearchProgressModeFast => 'వేగంగా';
 
   @override
   String get marketingHomeResearchProgressModeGuidance => 'AI only';
 
   @override
-  String get marketingHomeResearchProgressModeVerified => 'ధృవీకరించబడింది';
+  String get marketingHomeResearchProgressModeVerified => 'Verified mode';
+
+  @override
+  String get marketingHomeResearchProgressModelRoutingNote =>
+      'Actual models depend on the research stage; the result records the model used.';
 
   @override
   String get marketingHomeResearchProgressPhaseStallNote =>
-      'ఇప్పటికీ పని చేస్తోంది — బ్యాకెండ్ ఈ దశను ప్రాసెస్ చేస్తోంది. పెద్ద ప్రశ్నలకు కొన్ని నిమిషాలు పట్టవచ్చు.';
+      'This stage is taking longer than expected. The latest server status is shown below.';
 
   @override
   String get marketingHomeResearchProgressPhaseStallNoteVerified =>
@@ -13750,7 +13762,7 @@ class AppLocalizationsTe extends AppLocalizations {
 
   @override
   String get marketingHomeResearchProgressStepGuidanceDraftDetail =>
-      'Writing a first-pass answer from the question and contract';
+      'Writing an answer from the question and available context';
 
   @override
   String get marketingHomeResearchProgressStepGuidanceDraftLabel =>
@@ -13758,7 +13770,7 @@ class AppLocalizationsTe extends AppLocalizations {
 
   @override
   String get marketingHomeResearchProgressStepGuidanceReadDetail =>
-      'Identifying the issue, jurisdiction, and contract facts';
+      'Identifying the issue, jurisdiction and supplied facts';
 
   @override
   String get marketingHomeResearchProgressStepGuidanceReadLabel =>
@@ -13860,10 +13872,11 @@ class AppLocalizationsTe extends AppLocalizations {
 
   @override
   String get marketingHomeResearchProgressStepSelfCheckDetail =>
-      'Attacking weak assumptions in the same draft';
+      'Labelling source limitations and verification gaps';
 
   @override
-  String get marketingHomeResearchProgressStepSelfCheckLabel => 'Self-check';
+  String get marketingHomeResearchProgressStepSelfCheckLabel =>
+      'Reviewing answer status';
 
   @override
   String get marketingHomeResearchProgressStillWorking =>
@@ -13875,11 +13888,19 @@ class AppLocalizationsTe extends AppLocalizations {
 
   @override
   String get marketingHomeResearchProgressVerifiedDurationHint =>
-      '· సాధారణంగా 1-3 నిమిషాలు';
+      '· timing depends on the task';
+
+  @override
+  String get marketingHomeResearchProgressVerifiedModeHint =>
+      'AI self-check · source gaps flagged';
 
   @override
   String get marketingHomeResearchProgressVerifiedRunningBanner =>
-      'ధృవీకరించబడిన పరిశోధన లోతైన పునరుద్ధరణ మరియు అనులేఖన తనిఖీలను అమలు చేస్తుంది - దీనికి కొన్ని నిమిషాలు పట్టవచ్చు.';
+      'Verified mode requests an AI self-check. Unverified sources remain flagged.';
+
+  @override
+  String get marketingHomeResearchProgressWaitingForServer =>
+      'Waiting for the server to report progress…';
 
   @override
   String get marketingHomeStatsBadge => 'సంఖ్యలు';

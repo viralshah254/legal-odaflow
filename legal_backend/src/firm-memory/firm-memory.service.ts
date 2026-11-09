@@ -1,6 +1,6 @@
 import { ArtifactAccessResolver } from '@/access/artifact-access.resolver';
 import { DocumentsService } from '@/documents/documents.service';
-import { Injectable, Logger } from '@nestjs/common';
+import { Inject, Injectable, Logger, forwardRef } from '@nestjs/common';
 import { MatterAccessService } from '@/access/matter-access.service';
 import { EmbeddingService } from '@/embeddings/embedding.service';
 import { PrismaService } from '@/prisma/prisma.service';
@@ -31,6 +31,7 @@ export class FirmMemoryService {
     private readonly matterAccess: MatterAccessService,
     private readonly embeddingService: EmbeddingService,
     private readonly access: ArtifactAccessResolver,
+    @Inject(forwardRef(() => DocumentsService))
     private readonly documents: DocumentsService,
   ) {}
 

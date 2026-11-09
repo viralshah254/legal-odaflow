@@ -54,3 +54,23 @@ Local migrations were transactionally rollback-rehearsed. The existing approved 
 3. Native Apple/Google subscriptions, tax/store price tiers, receipts, refunds and publication; these remain under the user's explicit later-authorization boundary. Existing pricing strategy and cost/usage settlement work must be reconciled against provider invoices before claims of guaranteed profitability.
 4. Country-by-country primary-law/date/version coverage and deadline rule acceptance. Worldwide account access is distinct from verified worldwide legal coverage.
 5. New localization keys currently have English fallbacks across the available locale catalogs; native legal-language review is pending. Historical empty-database migration-chain debt remains separate from the tested forward deployment path.
+
+## Verified-mode latency and umbrella domain follow-up
+
+The user's screenshot showed `umbrella.okaylegal.ai` at 380 seconds. That hostname belonged to a different Vercel project and an August 27 standalone `legal_web` deployment (`39c26b2…`), rather than the tested monorepo release. Its project domain was moved to the current production project; both production domains subsequently served identical build assets. Production API CORS accepts the umbrella origin. No DNS, customer records or database schema were changed.
+
+The exact employment-notice question is retained as a non-confidential fixture in `legal_backend/scripts/smoke-verified-employment-research.ts`. On the current backend the baseline DEEP/AUTO request took 52.8 seconds and degraded to a synthesis-timeout fallback. After correction, direct execution took 39.9 seconds with substantive output; the real async submission → isolated Redis → initialized worker → authorized status-polling journey took 36.7 seconds, returning 7,711 characters. The queued run used `gpt-5.6-terra`, retained DEEP mode, had 24ms queue wait and did not degrade. These are individual samples, not a latency SLA.
+
+Corrections:
+
+- Enforce a request-local research deadline with cancellation propagated to model calls, retries and source HTTP requests. Optional case recovery and section grounding have smaller stage budgets. Expired execution is checked before publishing progress/results, caching and billing.
+- Keep the professional model floor while using concise, lower-reasoning synthesis for ordinary ANSWER requests without matter evidence. Missing facts and source caveats remain in the answer.
+- Fix provider-level circular dependency injection that prevented the actual worker service graph from initializing. Worker startup now resolves that graph before claiming work. Worker initialization errors reject rather than terminating Nest implicitly. Queued execution rechecks current tenant membership/role.
+- Preserve degraded/verification flags across job serialization. Verified mode requests an AI self-check; it does not mean independent source verification succeeded.
+- Serialize browser polls, cap waiting even when a status request stalls, abort late polls, and avoid automatically launching a duplicate inline research request. Queue/timeout messages direct the user to history before retrying.
+- Show real server stages, never infer completed work from elapsed time, remove unsupported speed promises and the irrelevant long-contract stall message, and explain that research-stage routing can differ from the wallet's default model.
+- Expose only frontend commit and public backend origin through uncached `/api/release`. Run `scripts/verify-umbrella-release.mjs` with the expected full frontend/backend SHAs after deployment to verify both domains and backend readiness.
+
+The queued answer correctly retained source gaps and lawyer-review requirements. External source access was incomplete (including a configured India Kanoon connector returning HTTP 403); this release does not claim that the employment-law propositions or current treatment were independently verified. Source access controls were respected. New locale keys have English fallbacks pending native-language review.
+
+Final local gates for this follow-up: backend build and 355 suites / 2,199 active tests passed (3 existing skips, 2 todo, 4 snapshots); web production build and 85 files / 422 tests passed; mobile analyzer and 60 tests passed; localization parity and the no-new-hardcoded-copy gate passed. Browser submission deadlines also cover stalled auth preparation before fetch starts. Worker graph initialization and the exact-question queued journey were exercised against isolated local PostgreSQL/Redis, with production-equivalent model settings; no production customer identity was created or client case used.

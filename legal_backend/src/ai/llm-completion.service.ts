@@ -1,3 +1,4 @@
+import { researchRequestSignal } from '@/common/utils/research-execution-budget';
 import {
   BadRequestException,
   HttpException,
@@ -257,7 +258,7 @@ export class LlmCompletionService {
     timeoutMs?: number;
     signal?: AbortSignal;
   }): Promise<LlmCompletionResult> {
-    const timeout = this.bindTimeout(params.timeoutMs, params.signal);
+    const timeout = this.bindTimeout(params.timeoutMs, researchRequestSignal(undefined, params.signal));
     try {
       return await this.completeWithBoundSignal({ ...params, signal: timeout.signal });
     } catch (err) {

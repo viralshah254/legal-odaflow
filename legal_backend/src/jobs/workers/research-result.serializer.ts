@@ -38,6 +38,8 @@ export function serializeResearchJobResult(
     provider: research.provider,
     modelName: research.modelName,
     researchMode: research.researchMode,
+    degraded: research.degraded ?? false,
+    verificationStatus: research.verificationStatus,
     citationAudit: research.citationAudit ?? null,
     findings: research.findings ?? [],
     propositions: research.propositions ?? [],

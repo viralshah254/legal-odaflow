@@ -1,3 +1,4 @@
+import { researchRequestSignal } from '@/common/utils/research-execution-budget';
 import { Injectable, Logger } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 
@@ -75,7 +76,7 @@ export class EscrConnector {
   async listMetadataFiles(year: number): Promise<string[]> {
     try {
       const res = await fetch(`${AWS_INDEX_BASE}/year=${year}/metadata.index.json`, {
-        signal: AbortSignal.timeout(30_000),
+        signal: researchRequestSignal(30_000),
       });
       if (!res.ok) {
         this.logger.warn(`e-SCR AWS index returned ${res.status} for year=${year}`);
@@ -98,7 +99,7 @@ export class EscrConnector {
     const path = metadataFile.replace(/\.json$/i, '');
     const url = `${AWS_METADATA_BASE}/year=${year}/${metadataFile}`;
     try {
-      const res = await fetch(url, { signal: AbortSignal.timeout(20_000) });
+      const res = await fetch(url, { signal: researchRequestSignal(20_000) });
       if (!res.ok) return null;
       const data = (await res.json()) as AwsMetadataJson;
       return this.parseMetadata(data, path);
@@ -209,7 +210,7 @@ export class EscrConnector {
     const file = `${hit.metadataPath}.json`;
     const url = `${AWS_METADATA_BASE}/year=${year}/${file}`;
     try {
-      const res = await fetch(url, { signal: AbortSignal.timeout(25_000) });
+      const res = await fetch(url, { signal: researchRequestSignal(25_000) });
       if (!res.ok) return null;
       const data = (await res.json()) as AwsMetadataJson;
       const parsed = parseRawHtml(data.raw_html ?? '');

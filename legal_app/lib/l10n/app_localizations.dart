@@ -23975,19 +23975,19 @@ abstract class AppLocalizations {
   /// No description provided for @marketingHomeResearchProgressAboutOneMin.
   ///
   /// In en, this message translates to:
-  /// **'· ~1 min'**
+  /// **'· processing'**
   String get marketingHomeResearchProgressAboutOneMin;
 
   /// No description provided for @marketingHomeResearchProgressAlmostThere.
   ///
   /// In en, this message translates to:
-  /// **'· almost there…'**
+  /// **'· processing'**
   String get marketingHomeResearchProgressAlmostThere;
 
   /// No description provided for @marketingHomeResearchProgressDeepCitationNote.
   ///
   /// In en, this message translates to:
-  /// **'Verified Research is running an in-prompt self-check.'**
+  /// **'Verified mode includes an AI self-check; this does not certify sources.'**
   String get marketingHomeResearchProgressDeepCitationNote;
 
   /// No description provided for @marketingHomeResearchProgressDraftReadyBanner.
@@ -24001,6 +24001,18 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Draft ready — running accuracy checks…'**
   String get marketingHomeResearchProgressDraftVerifyingBanner;
+
+  /// No description provided for @marketingHomeResearchProgressFastModeHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Quick answer · limited source checks'**
+  String get marketingHomeResearchProgressFastModeHint;
+
+  /// No description provided for @marketingHomeResearchProgressGuidanceModeHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Single pass · no source verification'**
+  String get marketingHomeResearchProgressGuidanceModeHint;
 
   /// No description provided for @marketingHomeResearchProgressModeFast.
   ///
@@ -24017,13 +24029,19 @@ abstract class AppLocalizations {
   /// No description provided for @marketingHomeResearchProgressModeVerified.
   ///
   /// In en, this message translates to:
-  /// **'Verified'**
+  /// **'Verified mode'**
   String get marketingHomeResearchProgressModeVerified;
+
+  /// No description provided for @marketingHomeResearchProgressModelRoutingNote.
+  ///
+  /// In en, this message translates to:
+  /// **'Actual models depend on the research stage; the result records the model used.'**
+  String get marketingHomeResearchProgressModelRoutingNote;
 
   /// No description provided for @marketingHomeResearchProgressPhaseStallNote.
   ///
   /// In en, this message translates to:
-  /// **'Still drafting — long contracts can take a bit longer.'**
+  /// **'This stage is taking longer than expected. The latest server status is shown below.'**
   String get marketingHomeResearchProgressPhaseStallNote;
 
   /// No description provided for @marketingHomeResearchProgressPhaseStallNoteVerified.
@@ -24257,7 +24275,7 @@ abstract class AppLocalizations {
   /// No description provided for @marketingHomeResearchProgressStepGuidanceDraftDetail.
   ///
   /// In en, this message translates to:
-  /// **'Writing a first-pass answer from the question and contract'**
+  /// **'Writing an answer from the question and available context'**
   String get marketingHomeResearchProgressStepGuidanceDraftDetail;
 
   /// No description provided for @marketingHomeResearchProgressStepGuidanceDraftLabel.
@@ -24269,7 +24287,7 @@ abstract class AppLocalizations {
   /// No description provided for @marketingHomeResearchProgressStepGuidanceReadDetail.
   ///
   /// In en, this message translates to:
-  /// **'Identifying the issue, jurisdiction, and contract facts'**
+  /// **'Identifying the issue, jurisdiction and supplied facts'**
   String get marketingHomeResearchProgressStepGuidanceReadDetail;
 
   /// No description provided for @marketingHomeResearchProgressStepGuidanceReadLabel.
@@ -24417,13 +24435,13 @@ abstract class AppLocalizations {
   /// No description provided for @marketingHomeResearchProgressStepSelfCheckDetail.
   ///
   /// In en, this message translates to:
-  /// **'Attacking weak assumptions in the same draft'**
+  /// **'Labelling source limitations and verification gaps'**
   String get marketingHomeResearchProgressStepSelfCheckDetail;
 
   /// No description provided for @marketingHomeResearchProgressStepSelfCheckLabel.
   ///
   /// In en, this message translates to:
-  /// **'Self-check'**
+  /// **'Reviewing answer status'**
   String get marketingHomeResearchProgressStepSelfCheckLabel;
 
   /// No description provided for @marketingHomeResearchProgressStillWorking.
@@ -24441,14 +24459,26 @@ abstract class AppLocalizations {
   /// No description provided for @marketingHomeResearchProgressVerifiedDurationHint.
   ///
   /// In en, this message translates to:
-  /// **'· usually under 45s'**
+  /// **'· timing depends on the task'**
   String get marketingHomeResearchProgressVerifiedDurationHint;
+
+  /// No description provided for @marketingHomeResearchProgressVerifiedModeHint.
+  ///
+  /// In en, this message translates to:
+  /// **'AI self-check · source gaps flagged'**
+  String get marketingHomeResearchProgressVerifiedModeHint;
 
   /// No description provided for @marketingHomeResearchProgressVerifiedRunningBanner.
   ///
   /// In en, this message translates to:
-  /// **'Verified Research runs deeper retrieval and citation checks — this can take a few minutes.'**
+  /// **'Verified mode requests an AI self-check. Unverified sources remain flagged.'**
   String get marketingHomeResearchProgressVerifiedRunningBanner;
+
+  /// No description provided for @marketingHomeResearchProgressWaitingForServer.
+  ///
+  /// In en, this message translates to:
+  /// **'Waiting for the server to report progress…'**
+  String get marketingHomeResearchProgressWaitingForServer;
 
   /// No description provided for @marketingHomeStatsBadge.
   ///

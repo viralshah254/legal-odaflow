@@ -48,17 +48,6 @@ export interface LegalResearchProgressProps {
   phaseMessage?: string
 }
 
-function stepDelay(stepIdx: number, researchMode: "FAST" | "DEEP" | "GUIDANCE", pace: "default" | "relaxed") {
-  if (pace === "relaxed") {
-    if (stepIdx < 2) return 3500
-    if (stepIdx < 5) return 5500
-    return 7000
-  }
-
-  if (researchMode === "DEEP" && stepIdx === 2) return 4000
-  return 2800
-}
-
 export function LegalResearchProgress({
   active,
   query = "",
@@ -66,7 +55,6 @@ export function LegalResearchProgress({
   researchMode = "FAST",
   isPriorContext = false,
   className,
-  pace = "default",
   complete = false,
   hasDraft = false,
   phase,
@@ -115,15 +103,9 @@ export function LegalResearchProgress({
   }, [active, query, researchMode])
 
   useEffect(() => {
-    if (!active || phase) return
-
-    const delay = stepDelay(stepIdx, researchMode, pace)
-    const t = setTimeout(() => {
-      setStepIdx((i) => Math.min(i + 1, steps.length - 1))
-      setDetailRotation(0)
-    }, delay)
-    return () => clearTimeout(t)
-  }, [active, stepIdx, steps.length, researchMode, pace, phase])
+    // Without a server phase, report waiting rather than inventing completed work.
+    if (active && !phase) setStepIdx(0)
+  }, [active, phase])
 
   useEffect(() => {
     if (!active || !phase) return
@@ -139,13 +121,13 @@ export function LegalResearchProgress({
       classifying: 0,
       preflight: 0,
       planning: 0,
-      retrieving: 0,
-      resolving: 0,
-      enriching: 0,
+      retrieving: indexOf("retrieve", 0),
+      resolving: indexOf("retrieve", 0),
+      enriching: indexOf("retrieve", 0),
       generating: draftIdx,
-      verifying: researchMode === "DEEP" ? selfCheckIdx : readyIdx,
-      citation_audit: readyIdx,
-      finalizing: readyIdx,
+      verifying: researchMode === "DEEP" ? selfCheckIdx : indexOf("finalize", Math.max(0, readyIdx - 1)),
+      citation_audit: indexOf("finalize", Math.max(0, readyIdx - 1)),
+      finalizing: indexOf("finalize", Math.max(0, readyIdx - 1)),
       completed: readyIdx,
     }
     let next = phaseMap[phase] ?? 0
@@ -182,13 +164,14 @@ export function LegalResearchProgress({
 
   if (!active) return null
 
-  const rawProgress = Math.round(((stepIdx + 1) / steps.length) * 100)
+  const rawProgress = phase ? Math.round((stepIdx / Math.max(1, steps.length - 1)) * 100) : 0
   const progressCap = hasDraft && !complete ? 95 : 90
   const progress = complete ? 100 : Math.min(rawProgress, progressCap)
   const activeStep = steps[stepIdx]
 
   const activeDetail = (() => {
     if (phaseMessage) return phaseMessage
+    if (!phase) return tProgress("waitingForServer")
     if (!activeStep) return undefined
     const rotating = activeStep.rotatingDetails
     if (rotating?.length) {
@@ -223,21 +206,7 @@ export function LegalResearchProgress({
         </div>
         <div className="flex items-center gap-2 shrink-0">
           <span className="text-xs text-muted-foreground tabular-nums">{elapsed}s</span>
-          {pace === "relaxed" && elapsed < 45 && (
-            <span className="text-xs text-muted-foreground hidden sm:inline">
-              {tProgress("aboutOneMin")}
-            </span>
-          )}
-          {pace === "relaxed" && elapsed >= 45 && elapsed < 90 && (
-            <span className="text-xs text-muted-foreground hidden sm:inline">
-              {tProgress("almostThere")}
-            </span>
-          )}
-          {researchMode === "DEEP" && (
-            <span className="text-xs text-muted-foreground hidden sm:inline">
-              {elapsed >= 50 ? tProgress("stillWorking") : tProgress("verifiedDurationHint")}
-            </span>
-          )}
+
         </div>
       </div>
 

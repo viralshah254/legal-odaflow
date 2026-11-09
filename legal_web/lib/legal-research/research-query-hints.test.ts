@@ -18,9 +18,9 @@ describe("research progress steps", () => {
     expect(fast.every((step) => !step.rotatingDetails?.length)).toBe(true)
   })
 
-  it("adds a same-call self-check step for Verified only", () => {
+  it("reports actual source, drafting and review stages for Verified", () => {
     const deep = buildDeepResearchSteps("What can I do about unpaid invoices?", "KE", t)
-    expect(deep.map((step) => step.id)).toEqual(["parse", "draft", "selfcheck", "ready"])
-    expect(deep.some((step) => step.id === "retrieve" || step.id === "audit")).toBe(false)
+    expect(deep.map((step) => step.id)).toEqual(["parse", "retrieve", "draft", "selfcheck", "finalize", "ready"])
+    expect(deep.some((step) => step.id === "retrieve")).toBe(true)
   })
 })

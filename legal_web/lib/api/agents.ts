@@ -13,6 +13,6 @@ export async function listAgentJobs(tenantId: string, limit = 25): Promise<Agent
   return apiFetch<AgentJob[]>(`/agents/jobs?limit=${limit}`, { tenantId })
 }
 
-export async function getAgentJob(tenantId: string, jobId: string): Promise<AgentJob> {
-  return apiFetch<AgentJob>(`/agents/jobs/${jobId}`, { tenantId })
+export async function getAgentJob(tenantId: string, jobId: string, signal?: AbortSignal): Promise<AgentJob> {
+  return apiFetch<AgentJob>(`/agents/jobs/${jobId}`, { tenantId, signal })
 }

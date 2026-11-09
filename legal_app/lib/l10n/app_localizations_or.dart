@@ -13564,14 +13564,14 @@ class AppLocalizationsOr extends AppLocalizations {
   String get marketingHomePricingPreviewTitle => 'ଗୋଟିଏ ପ୍ଲାଟଫର୍ମ | ସରଳ ମୂଲ୍ୟ';
 
   @override
-  String get marketingHomeResearchProgressAboutOneMin => '· ~ 1 ମିନିଟ୍';
+  String get marketingHomeResearchProgressAboutOneMin => '· processing';
 
   @override
-  String get marketingHomeResearchProgressAlmostThere => '· ପ୍ରାୟ ସେଠାରେ…';
+  String get marketingHomeResearchProgressAlmostThere => '· processing';
 
   @override
   String get marketingHomeResearchProgressDeepCitationNote =>
-      'ଯାଞ୍ଚ ହୋଇଥିବା ଅନୁସନ୍ଧାନ ଗଭୀର ଉଦ୍ଧୃତି ଯାଞ୍ଚ କରିଥାଏ - ଏହା କିଛି ମିନିଟ୍ ନେଇପାରେ |';
+      'Verified mode includes an AI self-check; this does not certify sources.';
 
   @override
   String get marketingHomeResearchProgressDraftReadyBanner =>
@@ -13582,17 +13582,29 @@ class AppLocalizationsOr extends AppLocalizations {
       'ଡ୍ରାଫ୍ଟ ପ୍ରସ୍ତୁତ - ଚାଲୁଥିବା ସଠିକତା ଯାଞ୍ଚ…';
 
   @override
+  String get marketingHomeResearchProgressFastModeHint =>
+      'Quick answer · limited source checks';
+
+  @override
+  String get marketingHomeResearchProgressGuidanceModeHint =>
+      'Single pass · no source verification';
+
+  @override
   String get marketingHomeResearchProgressModeFast => 'ଦ୍ରୁତ';
 
   @override
   String get marketingHomeResearchProgressModeGuidance => 'AI only';
 
   @override
-  String get marketingHomeResearchProgressModeVerified => 'ଯାଞ୍ଚ ହୋଇଛି |';
+  String get marketingHomeResearchProgressModeVerified => 'Verified mode';
+
+  @override
+  String get marketingHomeResearchProgressModelRoutingNote =>
+      'Actual models depend on the research stage; the result records the model used.';
 
   @override
   String get marketingHomeResearchProgressPhaseStallNote =>
-      'ତଥାପି କାର୍ଯ୍ୟ କରୁଛି - ବ୍ୟାକେଣ୍ଡ୍ ଏହି ପଦକ୍ଷେପକୁ ପ୍ରକ୍ରିୟାକରଣ କରୁଛି | ବଡ଼ ପ୍ରଶ୍ନଗୁଡିକ କିଛି ମିନିଟ୍ ନେଇପାରେ |';
+      'This stage is taking longer than expected. The latest server status is shown below.';
 
   @override
   String get marketingHomeResearchProgressPhaseStallNoteVerified =>
@@ -13750,7 +13762,7 @@ class AppLocalizationsOr extends AppLocalizations {
 
   @override
   String get marketingHomeResearchProgressStepGuidanceDraftDetail =>
-      'Writing a first-pass answer from the question and contract';
+      'Writing an answer from the question and available context';
 
   @override
   String get marketingHomeResearchProgressStepGuidanceDraftLabel =>
@@ -13758,7 +13770,7 @@ class AppLocalizationsOr extends AppLocalizations {
 
   @override
   String get marketingHomeResearchProgressStepGuidanceReadDetail =>
-      'Identifying the issue, jurisdiction, and contract facts';
+      'Identifying the issue, jurisdiction and supplied facts';
 
   @override
   String get marketingHomeResearchProgressStepGuidanceReadLabel =>
@@ -13860,10 +13872,11 @@ class AppLocalizationsOr extends AppLocalizations {
 
   @override
   String get marketingHomeResearchProgressStepSelfCheckDetail =>
-      'Attacking weak assumptions in the same draft';
+      'Labelling source limitations and verification gaps';
 
   @override
-  String get marketingHomeResearchProgressStepSelfCheckLabel => 'Self-check';
+  String get marketingHomeResearchProgressStepSelfCheckLabel =>
+      'Reviewing answer status';
 
   @override
   String get marketingHomeResearchProgressStillWorking => '· ତଥାପି କାମ କରୁଛି…';
@@ -13874,11 +13887,19 @@ class AppLocalizationsOr extends AppLocalizations {
 
   @override
   String get marketingHomeResearchProgressVerifiedDurationHint =>
-      '· ସାଧାରଣତ– –-min ମିନିଟ୍ |';
+      '· timing depends on the task';
+
+  @override
+  String get marketingHomeResearchProgressVerifiedModeHint =>
+      'AI self-check · source gaps flagged';
 
   @override
   String get marketingHomeResearchProgressVerifiedRunningBanner =>
-      'ଯାଞ୍ଚ ହୋଇଥିବା ଅନୁସନ୍ଧାନ ଗଭୀର ପୁନରୁଦ୍ଧାର ଏବଂ ଉଦ୍ଧୃତି ଯାଞ୍ଚ କରେ - ଏହା କିଛି ମିନିଟ୍ ନେଇପାରେ |';
+      'Verified mode requests an AI self-check. Unverified sources remain flagged.';
+
+  @override
+  String get marketingHomeResearchProgressWaitingForServer =>
+      'Waiting for the server to report progress…';
 
   @override
   String get marketingHomeStatsBadge => 'ସଂଖ୍ୟାଗୁଡିକ';

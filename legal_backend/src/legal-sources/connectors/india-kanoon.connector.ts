@@ -1,3 +1,4 @@
+import { researchRequestSignal } from '@/common/utils/research-execution-budget';
 import { Injectable, Logger } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import {
@@ -161,7 +162,7 @@ export class IndiaKanoonConnector {
           'Content-Type': 'application/x-www-form-urlencoded',
         },
         body: searchBody.toString(),
-        signal: AbortSignal.timeout(10_000),
+        signal: researchRequestSignal(10_000),
       });
 
       if (!searchRes.ok) {
@@ -267,7 +268,7 @@ export class IndiaKanoonConnector {
           'Content-Type': 'application/x-www-form-urlencoded',
         },
         body: new URLSearchParams({ formInput: formInput.trim().slice(0, 200) }).toString(),
-        signal: AbortSignal.timeout(10_000),
+        signal: researchRequestSignal(10_000),
       });
 
       if (!res.ok) return null;
@@ -329,7 +330,7 @@ export class IndiaKanoonConnector {
           'Content-Type': 'application/x-www-form-urlencoded',
         },
         body: new URLSearchParams({ type: 'json' }).toString(),
-        signal: AbortSignal.timeout(fetchFullText ? 15_000 : 8_000),
+        signal: researchRequestSignal(fetchFullText ? 15_000 : 8_000),
       });
 
       if (docRes.ok) {

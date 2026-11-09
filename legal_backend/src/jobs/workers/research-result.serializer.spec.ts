@@ -45,6 +45,13 @@ describe('serializeResearchJobResult', () => {
     );
   });
 
+  it('preserves incomplete verification and degraded output instead of implying success', () => {
+    const result = serializeResearchJobResult({ outputMarkdown: 'Review required', degraded: true,
+      verificationStatus: 'insufficient', publicationState: 'VERIFICATION_UNAVAILABLE', requiresLawyerReview: true,
+    } as LawyerResearchResult, { query: 'public QA', countryCode: 'IN', queueWaitMs: 1 });
+    expect(result).toMatchObject({ degraded: true, verificationStatus: 'insufficient', publicationState: 'VERIFICATION_UNAVAILABLE', requiresLawyerReview: true });
+  });
+
   it('rejects a stale worker result that resolved to an incompatible task', () => {
     expect(() =>
       serializeResearchJobResult(

@@ -1,3 +1,4 @@
+import { researchRequestSignal } from '@/common/utils/research-execution-budget';
 import { Injectable, Logger } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 
@@ -131,7 +132,7 @@ export class TavilySearchConnector {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(body),
-        signal: AbortSignal.timeout(12_000),
+        signal: researchRequestSignal(12_000),
       });
 
       if (!res.ok) {
