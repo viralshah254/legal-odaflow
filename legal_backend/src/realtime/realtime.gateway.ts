@@ -13,7 +13,7 @@ import { ConfigService } from '@nestjs/config';
 import { Server, Socket } from 'socket.io';
 import { createAdapter } from '@socket.io/redis-adapter';
 import { createClient } from 'redis';
-import { parseCorsOrigins } from '@/common/utils/cors-origins.util';
+import { resolveCorsOrigin } from '@/common/utils/cors-origins.util';
 import { RealtimeAuthService } from './realtime-auth.service';
 import { RealtimePublisherService } from './realtime-publisher.service';
 import { PresenceService } from './presence.service';
@@ -35,7 +35,7 @@ interface AuthenticatedSocket extends Socket {
 @WebSocketGateway({
   namespace: '/realtime',
   cors: {
-    origin: parseCorsOrigins(),
+    origin: resolveCorsOrigin,
     credentials: true,
   },
 })

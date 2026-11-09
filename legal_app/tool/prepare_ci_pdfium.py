@@ -14,6 +14,7 @@ from urllib.parse import unquote, urljoin, urlparse
 from urllib.request import Request, urlopen
 
 ASSETS = {
+    'x86': (258151971, '330995565b210345e2a1417c8249137f2836b6458bfe17473e8f5f905adf5df7'),
     'arm': (258151976, '67d783faea256ea6c3bc7f8eedeafe4218d9cebe597fb6d75b42c6ed271e5554'),
     'arm64': (258151975, '09efe62016209f6456c201591e14dcdf6c222b41b3d157f5f41df2ee4ce40b1b'),
     'x64': (258151974, 'd16754427c72a056c7431ca707abf6ff07ff4625168e11d9220deb77ee3ce88e'),
