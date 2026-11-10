@@ -107,4 +107,4 @@ jobs:
         run: |
           python3 -m unittest discover -s tool -p 'test_prepare_ci_pdfium.py'
           python3 tool/prepare_ci_pdfium.py --destination "$RUNNER_TEMP/umbrella-pdfium"
-      - run: flutter build apk --release --dart-define=API_URL=https://legal-api.odaflow.com/api/v1
+      - run: flutter build apk --release --dart-define=API_URL=https://api.okaylegal.ai/api/v1

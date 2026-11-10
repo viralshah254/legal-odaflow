@@ -60,7 +60,7 @@ class AppConfig {
 
   static const String apiBaseUrl = String.fromEnvironment(
     'API_URL',
-    defaultValue: 'https://legal-api.odaflow.com/api/v1',
+    defaultValue: 'https://api.okaylegal.ai/api/v1',
   );
 
   /// Socket.IO origin for live meeting captions (same host as [apiBaseUrl], no /api/v1).

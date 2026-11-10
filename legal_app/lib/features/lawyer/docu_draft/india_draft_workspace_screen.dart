@@ -377,17 +377,6 @@ class _SectionItemState extends State<_SectionItem> {
                         ),
                       ),
                   ],
-                  if (widget.section.modelUsed != null)
-                    Padding(
-                      padding: const EdgeInsets.only(left: 12, right: 12, bottom: 8),
-                      child: Text(
-                        'via ${widget.section.modelUsed}',
-                        style: TextStyle(
-                          fontSize: 10,
-                          color: theme.colorScheme.onSurface.withValues(alpha: 0.4),
-                        ),
-                      ),
-                    ),
                 ],
               ),
             ),

@@ -183,9 +183,6 @@ function SectionEditor({
                   )}
                 </div>
                 <div className="flex items-center gap-3">
-                  {section.modelUsed && (
-                    <span className="text-xs text-muted-foreground">via {section.modelUsed}</span>
-                  )}
                   {section.content && (
                     <SectionFeedbackWidget
                       sectionType={section.sectionType}
