@@ -12,7 +12,6 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog"
 import { Button } from "@/components/ui/button"
-import { Badge } from "@/components/ui/badge"
 import { estimateCreditTask, type CreditEstimateResponse } from "@/lib/api/credits"
 
 interface CreditEstimateModalProps {
@@ -99,12 +98,6 @@ export function CreditEstimateModal({
                 <p className="text-muted-foreground text-xs mb-1">{t("your_balance")}</p>
                 <p className="text-xl font-bold">{estimate.balance} credits</p>
               </div>
-            </div>
-
-            <div className="flex items-center gap-2 text-sm text-muted-foreground">
-              <span>{t("model")}</span>
-              <Badge variant="outline">{estimate.modelTier}</Badge>
-              <span className="truncate">{estimate.modelName}</span>
             </div>
 
             <p className="text-sm text-muted-foreground">

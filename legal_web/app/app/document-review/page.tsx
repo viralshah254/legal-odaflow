@@ -627,11 +627,6 @@ function OverviewTab({
           <div className="flex-1 space-y-2">
             <div className="flex items-center gap-2 flex-wrap">
               <Badge variant="outline">{result.documentType}</Badge>
-              {result.modelName && (
-                <Badge variant="secondary" className="text-xs">
-                  {result.modelName}
-                </Badge>
-              )}
               {result.creditsUsed !== undefined && (
                 <Badge variant="secondary" className="text-xs">
                   {result.creditsUsed} credits

@@ -1,3 +1,5 @@
+import { researchRequestSignal, assertResearchBudgetActive } from '@/common/utils/research-execution-budget';
+import { parseDocument, DomUtils } from 'htmlparser2';
 import { Injectable, Logger, Optional } from '@nestjs/common';
 import { mkdtempSync, readdirSync, readFileSync, rmSync, writeFileSync } from 'fs';
 import { tmpdir } from 'os';
@@ -49,7 +51,9 @@ export class KenyaLawConnector {
   }
 
   async fetchActDocument(sourceUrl: string): Promise<KenyaLawActDocument | null> {
-    if (!sourceUrl.includes('kenyalaw.org')) {
+    let allowed = false;
+    try { const url = new URL(sourceUrl); allowed = url.protocol === 'https:' && ['kenyalaw.org', 'www.kenyalaw.org', 'new.kenyalaw.org'].includes(url.hostname) && !url.username && !url.password; } catch {}
+    if (!allowed) {
       return null;
     }
 
@@ -225,10 +229,11 @@ export class KenyaLawConnector {
     let lastError: unknown;
 
     for (let attempt = 1; attempt <= 3; attempt += 1) {
+      assertResearchBudgetActive();
       try {
         await kenyaLawRateLimit();
         const res = await fetch(sourceUrl, {
-          signal: AbortSignal.timeout(KenyaLawConnector.TIMEOUT_MS),
+          signal: researchRequestSignal(KenyaLawConnector.TIMEOUT_MS),
           headers: kenyaLawFetchHeaders(),
         });
         if (isKenyaLawRetryableStatus(res.status) && attempt < 3) {
@@ -283,35 +288,20 @@ export function parseKenyaLawAknHtmlSections(
   body: string,
   sourceUrl: string,
 ): StatuteSectionFetchResult[] {
-  const sections: StatuteSectionFetchResult[] = [];
-  const sectionStartRe = /<section\b[^>]*class="akn-section"[^>]*>/gi;
-  const starts = [...body.matchAll(sectionStartRe)];
-
-  for (let i = 0; i < starts.length; i += 1) {
-    const startIdx = starts[i].index ?? 0;
-    const endIdx = i + 1 < starts.length ? (starts[i + 1].index ?? body.length) : body.length;
-    const chunk = body.slice(startIdx, endIdx);
-    const openingTag = chunk.match(/^<section\b[^>]*>/)?.[0] ?? '';
-
-    const num =
-      extractSectionNumFromId(openingTag) ?? extractSectionNumFromHeading(chunk);
-    if (!num) continue;
-
-    const heading = extractSectionHeading(chunk);
-    const fullText = extractSectionText(chunk);
-    if (fullText.length < 8) continue;
-
-    sections.push({
-      section: num,
-      title: heading ? `Section ${num} — ${heading}` : `Section ${num}`,
-      summary: fullText.slice(0, 400),
-      fullText,
-      sourceUrl,
-      sourceName: 'Kenya Law',
+  const document = parseDocument(body);
+  return DomUtils.findAll(node => node.name === 'section' && /(?:^|\s)akn-section(?:\s|$)/.test(node.attribs?.class ?? ''), document.children)
+    .flatMap(node => {
+      const numNode = DomUtils.findOne(child => /(?:^|\s)akn-num(?:\s|$)/.test(child.attribs?.class ?? ''), node.children, true);
+      const headingNode = DomUtils.findOne(child => child.name === 'h3' || /(?:^|\s)akn-heading(?:\s|$)/.test(child.attribs?.class ?? ''), node.children, true);
+      const section = node.attribs?.id?.match(/(?:__)?sec_([^_]+)/)?.[1] ??
+        (numNode ? DomUtils.textContent(numNode).replace(/[.\s]+$/g, '') : undefined) ??
+        (headingNode ? DomUtils.textContent(headingNode).match(/^\s*(\d+[A-Za-z]?)/)?.[1] : undefined);
+      const paragraphs = DomUtils.findAll(child => /(?:^|\s)akn-p(?:\s|$)/.test(child.attribs?.class ?? ''), node.children);
+      const fullText = (paragraphs.length ? paragraphs.map(child => DomUtils.textContent(child)).join('\n\n') : DomUtils.textContent(node)).trim();
+      if (!section || fullText.length < 8) return [];
+      const heading = headingNode ? DomUtils.textContent(headingNode).replace(/\s+/g, ' ').trim() : '';
+      return [{ section, title: heading || `Section ${section}`, summary: fullText.slice(0, 400), fullText, sourceUrl, sourceName: 'Kenya Law' }];
     });
-  }
-
-  return sections;
 }
 
 function extractSectionNumFromId(openingTag: string): string | undefined {

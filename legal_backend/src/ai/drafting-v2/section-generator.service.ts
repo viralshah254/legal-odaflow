@@ -4,7 +4,7 @@
  * Generates each `SectionPlan` independently with a focused, bounded prompt.
  *
  * Model assignment:
- *   - `cheap`   → DEFAULT_AUTO_MODEL (gpt-5.4-mini)  — heading, parties, verification, annexures
+ *   - `cheap`   → DRAFT_ENRICH_MODEL (premium floor)  — heading, parties, verification, annexures
  *   - `mid`     → DRAFT_ENRICH_MODEL (gpt-5.6-terra) — facts, law, maintainability, prayer
  *   - `premium` → DRAFT_PREMIUM_MODEL (gpt-5.6-sol)  — grounds, arguments
  */
@@ -14,7 +14,7 @@ import { buildLegalTerminologyBlock } from '@/ai/drafting/legal-latin-corpus';
 import { LlmCompletionService } from '@/ai/llm-completion.service';
 import { PromptInjectionService } from '@/ai/feedback/prompt-injection.service';
 import { FineTunedModelResolverService } from '@/ai/feedback/fine-tuned-model-resolver.service';
-import { DEFAULT_AUTO_MODEL, DRAFT_PREMIUM_MODEL, DRAFT_ENRICH_MODEL } from '@/ai/model-costs.config';
+import { DRAFT_PREMIUM_MODEL, DRAFT_ENRICH_MODEL } from '@/ai/model-costs.config';
 import { LEGAL_ACCURACY_PROTOCOL, INDIA_COURT_PLEADING_PROTOCOL } from '@/ai/drafting/legal-accuracy-protocol';
 import type {
   SectionPlan,
@@ -68,39 +68,15 @@ Use numbered paragraphs within each ground.`,
 /**
  * Resolve the model for a section tier, respecting document complexity and quality mode.
  *
- * - PREMIUM mode: always use the highest model for each tier (no cost savings).
- * - simple complexity: cap everything at mini/economy — no Terra/Sol needed.
- * - standard + complex: Sol for premium (grounds/arguments); Terra for mid; mini for cheap.
+ * Every complexity and legacy model mode uses premium models.
+ * Grounds/arguments use Sol; other sections use Terra.
  */
-function modelForTierWithComplexity(
+export function modelForTierWithComplexity(
   tier: 'cheap' | 'mid' | 'premium',
-  complexity: 'simple' | 'standard' | 'complex',
-  modelMode: 'AUTO' | 'PREMIUM' = 'AUTO',
+  _complexity: 'simple' | 'standard' | 'complex',
+  _modelMode: 'AUTO' | 'PREMIUM' = 'PREMIUM',
 ): string {
-  if (modelMode === 'PREMIUM') {
-    // Higher accuracy mode: full tiering with best models
-    switch (tier) {
-      case 'premium': return DRAFT_PREMIUM_MODEL;
-      case 'mid':     return DRAFT_ENRICH_MODEL;
-      default:        return DEFAULT_AUTO_MODEL;
-    }
-  }
-
-  switch (complexity) {
-    case 'simple':
-      // Simple forms: cheap model everywhere — catalog forms, notices, agreements
-      return DEFAULT_AUTO_MODEL;
-
-    case 'standard':
-    case 'complex':
-    default:
-      // Serious drafting: Sol for grounds/arguments; Terra for mid; mini for boilerplate
-      switch (tier) {
-        case 'premium': return DRAFT_PREMIUM_MODEL;
-        case 'mid':     return DRAFT_ENRICH_MODEL;
-        default:        return DEFAULT_AUTO_MODEL;
-      }
-  }
+  return tier === 'premium' ? DRAFT_PREMIUM_MODEL : DRAFT_ENRICH_MODEL;
 }
 
 /** @deprecated Use modelForTierWithComplexity */
@@ -355,10 +331,8 @@ export class SectionGeneratorService {
         // Provider caps include hidden reasoning as well as the visible section.
         maxTokens: section.maxTokens + (section.modelTier === 'premium' ? 8192 : 2048),
         timeoutMs: 45_000,
-        ...(section.modelTier !== 'cheap' ? { minTier: 'mid' as const } : {}),
-        reasoningEffort: modelMode === 'PREMIUM' ? 'high'
-          : section.modelTier === 'premium' ? 'medium'
-          : section.modelTier === 'cheap' ? 'low' : 'medium',
+        minTier: 'premium',
+        reasoningEffort: section.modelTier === 'premium' ? 'medium' : 'low',
         temperature: section.type === 'grounds' || section.type === 'arguments' ? 0.15 : 0.2,
       });
 

@@ -1,4 +1,5 @@
 import {
+  focusNamedCaseEvidence,
   AUTHORITY_GAP_MARKER,
   extractNamedCaseTitles,
   filterAuthoritiesToCheckPack,
@@ -35,6 +36,16 @@ function caseAuth(partial: Partial<RetrievedAuthority> & { id: string; title: st
 }
 
 describe('named-authority-check-pack', () => {
+  it('keeps a named decision separate from another case and a later same-party decision', () => {
+    const target = caseAuth({ id: 'target', title: 'Kenfreight (E.A.) Limited v Benson K. Nguti', decisionDate: new Date('2019-07-23') });
+    const later = caseAuth({ id: 'later', title: target.title, decisionDate: new Date('2025-01-01') });
+    const other = caseAuth({ id: 'other', title: 'Other Company v Another Employee', decisionDate: new Date('2019-01-01') });
+    const act = statute({ id: 'act', title: 'Employment Act' });
+    const query = 'Explain Kenfreight (EA) Limited v Nguti [2019] KESC 79 (KLR), including actual outcome.';
+    expect(focusNamedCaseEvidence([act, target, other, later], query).map(a => a.id)).toEqual(['act', 'target']);
+    expect(focusNamedCaseEvidence([act, other, later], query).map(a => a.id)).toEqual(['act']);
+    expect(focusNamedCaseEvidence([act, target, other], query + ' Find similar precedents.')).toHaveLength(3);
+  });
   it('detects named statutes and party case titles', () => {
     expect(hasNamedStatuteCheck('Whether regular bail under BNSS 480 should be granted')).toBe(true);
     expect(hasNamedStatuteCheck('What is the limitation period generally')).toBe(false);

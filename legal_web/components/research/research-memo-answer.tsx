@@ -1,6 +1,7 @@
 "use client"
 
 import React from "react"
+import { useTranslations } from "next-intl"
 import ReactMarkdown from "react-markdown"
 import remarkGfm from "remark-gfm"
 import rehypeSanitize from "rehype-sanitize"
@@ -1209,6 +1210,11 @@ function StructuredMemo({
   )
 }
 
+function SourceCheckLimitation() {
+  const t = useTranslations("common")
+  return <p>{t("sourceCheckLimitation")}</p>
+}
+
 export function ResearchMemoAnswer({
   result,
   title = "Research memorandum",
@@ -1272,6 +1278,7 @@ export function ResearchMemoAnswer({
                   <span className="font-semibold text-foreground">
                     [{index + 1}] {citation.caseName ?? citationField(citation.parties) ?? citation.title}
                   </span>
+                  {citation.sourceVerified && citation.currentLawVerified === false && <SourceCheckLimitation />}
                   {" — "}
                   {[citation.judgmentDate, citation.neutralCitation, citation.citation ?? citation.source]
                     .filter(Boolean)

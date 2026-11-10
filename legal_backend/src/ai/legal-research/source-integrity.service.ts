@@ -37,7 +37,10 @@ export class SourceIntegrityService {
     }
     if (provenance.paragraphNumberingIntegrity === 'CORRUPT') {
       failures.push('Paragraph numbering is corrupt.');
-    } else if (provenance.paragraphNumberingIntegrity === 'UNKNOWN') {
+    } else if (provenance.paragraphNumberingIntegrity === 'UNKNOWN' && !(
+      provenance.extractionMethod === 'NATIVE_TEXT' && provenance.completeness === 'COMPLETE' &&
+      Number(provenance.pageCount) > 0 && Array.isArray(provenance.missingPages) && provenance.missingPages.length === 0
+    )) {
       unknowns.push('Paragraph-number integrity is unknown.');
     }
     if (provenance.dispositionComplete === false) {

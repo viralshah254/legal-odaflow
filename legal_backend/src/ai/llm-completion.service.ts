@@ -171,7 +171,7 @@ export class LlmCompletionService {
 
   private configuredModel(modelName: string, minTier?: ModelTier): string {
     if (this.configService.get<string>('AI_PROVIDER') !== 'google') return normalizeModelId(modelName);
-    if (modelName.startsWith('gemini-')) return modelName;
+
     const tier = minTier ?? getModelTier(modelName);
     const reasoning = tier === 'premium' || tier === 'reasoning';
     return this.configService.get<string>(reasoning ? 'GEMINI_REASONING_MODEL' : 'GEMINI_MODEL')
@@ -336,8 +336,9 @@ export class LlmCompletionService {
       normalizedParams.modelName,
       ...buildLlmFallbackChain(normalizedParams.modelName),
     ];
-    const modelsToTry = params.minTier
-      ? candidates.filter((model) => meetsModelFloor(model, params.minTier!))
+    const minimumTier = params.minTier ?? (meetsModelFloor(normalizedParams.modelName, 'premium') ? 'premium' : undefined);
+    const modelsToTry = minimumTier
+      ? candidates.filter((model) => meetsModelFloor(model, minimumTier))
       : candidates;
     if (params.minTier && modelsToTry.length < candidates.length) {
       this.logger.warn(
@@ -556,6 +557,12 @@ export class LlmCompletionService {
     const inputMessages = params.messages
       .filter((m) => m.role !== 'system')
       .map((m) => ({ role: m.role, content: m.content }));
+
+    // Responses validates JSON-object requests against input messages, while
+    // system messages are sent separately as instructions.
+    if (params.responseFormat?.type === 'json_object' && !inputMessages.some(message => /json/i.test(message.content))) {
+      inputMessages.push({ role: 'user', content: 'Return only JSON matching the requested output structure.' });
+    }
 
     const requestBody: Record<string, unknown> = {
       model: resolveOpenAiRequestModel(this.configService, params.modelName),

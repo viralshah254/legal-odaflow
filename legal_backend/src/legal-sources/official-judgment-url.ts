@@ -1,15 +1,10 @@
 /** Recognize official Indian judgment URLs for case-law promotion. */
 export function isOfficialIndianJudgmentUrl(url: string): boolean {
-  const u = url.toLowerCase();
-  return (
-    u.includes('indiankanoon.org/doc/') ||
-    u.includes('scr.sci.gov.in') ||
-    u.includes('main.sci.gov.in') ||
-    u.includes('api.sci.gov.in') ||
-    u.includes('judgments.ecourts.gov.in') ||
-    u.includes('caselaw.shcilex.com') ||
-    /\/doc\/\d+\/?$/i.test(u)
-  );
+  try {
+    const parsed = new URL(url);
+    return parsed.protocol === 'https:' && !parsed.username && !parsed.password &&
+      ['scr.sci.gov.in', 'main.sci.gov.in', 'api.sci.gov.in', 'judgments.ecourts.gov.in'].includes(parsed.hostname);
+  } catch { return false; }
 }
 
 export function inferJudgmentProvider(url: string): string | null {

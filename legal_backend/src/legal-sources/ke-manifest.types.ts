@@ -12,6 +12,8 @@ export interface KeManifestActEntry {
   expressionFrbrUri: string;
   expressionDate?: string;
   publicUrl: string;
+  alternatePublicUrls?: string[];
+  alternateSourceNote?: string;
   nature?: KeLegislationNature;
   year?: string;
   number?: string;

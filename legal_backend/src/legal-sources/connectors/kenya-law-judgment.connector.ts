@@ -1,3 +1,8 @@
+import { parseKenyaLawAknHtmlSections } from './kenya-law.connector';
+import { parseDocument, DomUtils } from 'htmlparser2';
+import { createHash } from 'node:crypto';
+import type { SourceProvenance, RetrievedSourcePassage } from '@/legal-search/legal-retrieval.types';
+import { researchRequestSignal, assertResearchBudgetActive } from '@/common/utils/research-execution-budget';
 import { Injectable, Logger } from '@nestjs/common';
 import { publicUrlFromFrbrUri } from '../ke-frbr.util';
 import {
@@ -29,6 +34,8 @@ export interface KenyaLawJudgmentBody {
   sourceUrl: string;
   fullText: string;
   judges: string[];
+  sourceProvenance?: SourceProvenance;
+  sourcePassages?: RetrievedSourcePassage[];
 }
 
 const SEARCH_API = 'https://new.kenyalaw.org/search/api/documents/';
@@ -61,6 +68,16 @@ export class KenyaLawJudgmentConnector {
   private readonly logger = new Logger(KenyaLawJudgmentConnector.name);
   private static readonly TIMEOUT_MS = 45_000;
   private static readonly MAX_SEARCH_ATTEMPTS = 3;
+  private blockedUntil = 0;
+
+  isCircuitOpen(): boolean { return Date.now() < this.blockedUntil; }
+
+  private recordChallenge(response: Response): boolean {
+    if (response.status !== 202) return false;
+    this.blockedUntil = Date.now() + 60_000;
+    this.logger.warn('Kenya Law returned an access challenge; pausing source requests for 60 seconds');
+    return true;
+  }
 
   /** Search Kenya Law (acts + judgments) via the public documents API, then HTML/embedded fallback. */
   async search(params: {
@@ -69,6 +86,7 @@ export class KenyaLawJudgmentConnector {
     limit?: number;
     page?: number;
   }): Promise<KenyaLawSearchHit[]> {
+    if (this.isCircuitOpen()) return [];
     const limit = params.limit ?? 10;
     const page = params.page ?? 1;
     const fromApi = await this.searchViaJsonApi({
@@ -78,9 +96,10 @@ export class KenyaLawJudgmentConnector {
       page,
     });
     if (fromApi.length > 0) return fromApi;
+    if (this.isCircuitOpen()) return [];
 
     this.logger.warn(
-      `Kenya Law JSON search empty/failed for "${params.query.slice(0, 80)}" — trying HTML/embedded fallback`,
+      `Kenya Law JSON search empty/failed queryChars=${params.query.length} — trying HTML/embedded fallback`,
     );
     return this.searchViaHtmlPage({
       query: params.query,
@@ -100,13 +119,14 @@ export class KenyaLawJudgmentConnector {
   /** Latest judgments from the public Atom feed (updated daily). */
   async fetchRecentFromFeed(limit = 100): Promise<KenyaLawSearchHit[]> {
     for (const feedUrl of KENYA_JUDGMENTS_FEEDS) {
+      assertResearchBudgetActive();
       try {
         await kenyaLawRateLimit();
         const res = await fetch(feedUrl, {
-          signal: AbortSignal.timeout(KenyaLawJudgmentConnector.TIMEOUT_MS),
+          signal: researchRequestSignal(KenyaLawJudgmentConnector.TIMEOUT_MS),
           headers: kenyaLawFetchHeaders('application/atom+xml,application/xml,text/xml'),
         });
-        if (!res.ok) {
+        if (this.recordChallenge(res) || !res.ok) {
           this.logger.warn(`Kenya Law judgments feed returned ${res.status} for ${feedUrl}`);
           continue;
         }
@@ -128,39 +148,28 @@ export class KenyaLawJudgmentConnector {
         html.match(/<title>\s*([\s\S]*?)\s*-\s*Kenya Law/i)?.[1]?.trim() ?? '',
       ) || 'Kenya judgment';
 
-    const inner =
-      html.match(/id="document-content"[^>]*class="content-and-enrichments"[^>]*>([\s\S]*?)<\/div>\s*<\/div>\s*<\/div>/i)
-        ?.[1] ??
-      html.match(/class="document-content__inner"[^>]*>([\s\S]*?)<\/div>\s*<\/div>\s*<\/div>/i)
-        ?.[1] ??
-      html.match(/class="document-content"[^>]*>([\s\S]*?)<aside/i)?.[1] ??
-      html.match(/class="document-content"[^>]*>([\s\S]*?)<\/div>/i)?.[1];
-
-    if (!inner) {
-      this.logger.warn(`No document body found for ${sourceUrl}`);
-      return null;
-    }
-
-    const fullText = htmlToPlainText(inner);
-    // Thin SPA shells: still return title/citation so callers can admit snippet-backed hits.
-    if (fullText.length < 80) {
-      this.logger.warn(
-        `Judgment body thin for ${sourceUrl} — returning title/citation shell for snippet admit`,
-      );
-      return {
-        title: decodeHtmlEntities(title),
-        citation: extractCitationFromTitle(title),
-        court: extractCourtFromTitle(title),
-        sourceUrl,
-        fullText: fullText || title,
-        judges: [],
-      };
-    }
-
-    const citation =
-      html.match(/class="[^"]*document-metadata[^"]*"[\s\S]*?\[(\d{4})\]\s*([A-Z]+)\s*(\d+)/i)?.[0] ??
-      title.match(/\[(\d{4})\]\s*([A-Z]+)\s*(\d+)/i)?.[0] ??
-      null;
+    const document = parseDocument(html);
+    const body = DomUtils.findOne((node) => node.attribs?.id === 'document-content' ||
+      /(?:^|\s)document-content(?:__inner)?(?:\s|$)/.test(node.attribs?.class ?? ''), document.children, true);
+    if (!body) return null;
+    const fullText = DomUtils.textContent(body).replace(/\s+/g, ' ').trim();
+    // A page shell or search excerpt is never a complete judgment.
+    if (fullText.length < 80) return null;
+    const sourcePassages = DomUtils.findAll((node) =>
+      /^(?:p|section|div)$/.test(node.name) && /(?:para|paragraph)[_-]?\d+/i.test(node.attribs?.id ?? ''), [body])
+      .map((node) => ({ text: DomUtils.textContent(node).replace(/\s+/g, ' ').trim(),
+        paragraph: node.attribs.id.match(/(?:para|paragraph)[_-]?(\d+)/i)?.[1], sourcePinpoint: true }))
+      .filter((passage) => passage.text.length > 20);
+    const citation = extractCitationFromTitle(title);
+    const numbered = sourcePassages.map((passage) => passage.paragraph);
+    const dispositionComplete = /(?:appeal|petition|application|claim|suit).{0,100}(?:dismissed|allowed|struck out)|(?:orders accordingly|it is so ordered)/i.test(fullText.slice(-12000));
+    const sourceProvenance: SourceProvenance = {
+      provider: 'Kenya Law', retrievedAt: new Date().toISOString(), canonicalIdentity: sourceUrl,
+      canonicalUrl: sourceUrl, documentHash: createHash('sha256').update(fullText).digest('hex'),
+      completeness: 'COMPLETE', extractionMethod: 'WEB_SCRAPE', authoritativeStatus: 'OFFICIAL',
+      paragraphNumberingIntegrity: numbered.length ? (new Set(numbered).size === numbered.length ? 'INTACT' : 'CORRUPT') : 'UNKNOWN',
+      dispositionComplete,
+    };
 
     const court =
       decodeHtmlEntities(
@@ -178,6 +187,27 @@ export class KenyaLawJudgmentConnector {
       sourceUrl,
       fullText,
       judges,
+      sourcePassages,
+      sourceProvenance,
+    };
+  }
+
+  /** Numbered provisions from the actual official expression, never search highlights. */
+  async fetchLegislationBody(sourceUrl: string): Promise<KenyaLawJudgmentBody | null> {
+    if (!/\/akn\/ke\/act\//i.test(sourceUrl)) return null;
+    const html = await this.fetchHtml(sourceUrl);
+    if (!html) return null;
+    const sections = parseKenyaLawAknHtmlSections(html, sourceUrl);
+    if (!sections.length) return null;
+    const fullText = sections.map(section => `${section.title}\n${section.fullText}`).join('\n\n');
+    const title = DomUtils.textContent(DomUtils.findOne(node => node.name === 'title', parseDocument(html).children, true) ?? parseDocument('')).replace(/\s*-\s*Kenya Law.*$/i, '').trim();
+    return {
+      title: title || 'Kenya legislation', citation: null, court: null, sourceUrl, fullText, judges: [],
+      sourcePassages: sections.map(section => ({ text: section.fullText, paragraph: `Section ${section.section}`, sourcePinpoint: true })),
+      sourceProvenance: { provider: 'Kenya Law', retrievedAt: new Date().toISOString(), canonicalIdentity: sourceUrl,
+        canonicalUrl: sourceUrl, documentHash: createHash('sha256').update(html).digest('hex'),
+        completeness: 'EXCERPT', extractionMethod: 'WEB_SCRAPE', authoritativeStatus: 'OFFICIAL',
+        paragraphNumberingIntegrity: 'UNKNOWN' },
     };
   }
 
@@ -224,6 +254,7 @@ export class KenyaLawJudgmentConnector {
     docType?: 'judgment' | 'legislation';
     limit: number;
   }): Promise<KenyaLawSearchHit[]> {
+    if (this.isCircuitOpen()) return [];
     const url = new URL(SEARCH_HTML);
     url.searchParams.set('q', params.query);
     if (params.docType) url.searchParams.set('doc_type', params.docType);
@@ -231,10 +262,10 @@ export class KenyaLawJudgmentConnector {
     try {
       await kenyaLawRateLimit();
       const res = await fetch(url.toString(), {
-        signal: AbortSignal.timeout(KenyaLawJudgmentConnector.TIMEOUT_MS),
+        signal: researchRequestSignal(KenyaLawJudgmentConnector.TIMEOUT_MS),
         headers: kenyaLawFetchHeaders('text/html,application/xhtml+xml'),
       });
-      if (!res.ok) {
+      if (this.recordChallenge(res) || !res.ok) {
         this.logger.warn(`Kenya Law HTML search returned ${res.status}`);
         return [];
       }
@@ -350,13 +381,14 @@ export class KenyaLawJudgmentConnector {
     }
 
     for (let attempt = 1; attempt <= KenyaLawJudgmentConnector.MAX_SEARCH_ATTEMPTS; attempt++) {
+      assertResearchBudgetActive();
       try {
         await kenyaLawRateLimit();
         const res = await fetch(url.toString(), {
-          signal: AbortSignal.timeout(KenyaLawJudgmentConnector.TIMEOUT_MS),
+          signal: researchRequestSignal(KenyaLawJudgmentConnector.TIMEOUT_MS),
           headers: kenyaLawFetchHeaders('application/json'),
         });
-        if (!res.ok) {
+        if (this.recordChallenge(res) || !res.ok) {
           this.logger.warn(
             `Kenya Law search returned ${res.status} queryChars=${params.query.length} (attempt ${attempt})`,
           );
@@ -428,13 +460,17 @@ export class KenyaLawJudgmentConnector {
   }
 
   private async fetchHtml(sourceUrl: string): Promise<string | null> {
+    if (this.isCircuitOpen()) return null;
     try {
+      const url = new URL(sourceUrl);
+      if (url.protocol !== 'https:' || !['new.kenyalaw.org', 'kenyalaw.org'].includes(url.hostname) || url.username || url.password) return null;
       await kenyaLawRateLimit();
       const res = await fetch(sourceUrl, {
-        signal: AbortSignal.timeout(KenyaLawJudgmentConnector.TIMEOUT_MS),
+        redirect: 'error',
+        signal: researchRequestSignal(KenyaLawJudgmentConnector.TIMEOUT_MS),
         headers: kenyaLawFetchHeaders(),
       });
-      if (!res.ok) {
+      if (this.recordChallenge(res) || !res.ok) {
         this.logger.warn(`Kenya Law judgment fetch returned ${res.status} for ${sourceUrl}`);
         return null;
       }

@@ -1,3 +1,5 @@
+import { memoizeResearchRequest } from '@/common/utils/research-execution-budget';
+import { relevantPassages } from '@/ai/legal-research/relevant-passages';
 import { Injectable, Logger } from '@nestjs/common';
 import { createHash } from 'crypto';
 import { Prisma } from '@prisma/client';
@@ -114,6 +116,7 @@ export interface VerificationPipelineInput {
 
 export interface VerificationPipelineResult {
   outputMarkdown: string;
+  structuredDraft?: LegalResearchDraft;
   citations: Prisma.InputJsonValue;
   provenance: ProvenanceMetadata;
   sentenceAudit: SentenceAuditResult;
@@ -326,15 +329,10 @@ export class LegalResearchVerificationService {
     const finalChecks = await this.runChecks({ ...input, outputMarkdown });
     const finalSentenceAudit = finalChecks.sentenceAudit;
     const outputHash = createHash('sha256').update(outputMarkdown).digest('hex');
+    // Final checks supersede provisional checks of the same claim/dimension.
+    const finalClaimCheckIds = new Set(claimVerification.findings.map(finding => finding.checkId));
     const retainedStructuredFindings = (input.structuredFindings ?? []).filter(
-      (finding) =>
-        !(
-          finding.propositionId &&
-          ((finding.dimension === 'passage' &&
-            semanticOverrides?.passageByClaimId?.[finding.propositionId]) ||
-            (finding.dimension === 'identity' &&
-              semanticOverrides?.identityByClaimId?.[finding.propositionId]))
-        ),
+      finding => !finalClaimCheckIds.has(finding.checkId),
     );
 
     const checklistGaps = checkDomainCompleteness({
@@ -488,8 +486,24 @@ export class LegalResearchVerificationService {
 
     return {
       outputMarkdown,
+      structuredDraft: input.structuredDraft ? { ...extractedDraft,
+        ...(claimVerification.claimAudits.some(audit => audit.action === 'REMOVE') ? {
+          shortAnswer: { text: 'Summary withheld because a supporting proposition failed source verification. Review the source-linked analysis and verification findings.', confidence: 0 },
+          directAnswer: { text: 'Summary withheld because a supporting proposition failed source verification. Review the source-linked analysis and verification findings.', confidence: 0 },
+        } : {}),
+        issues: extractedDraft.issues.map(issue => {
+        const propositions = issue.propositions.flatMap(claim => {
+          const audit = claimVerification.claimAudits.find(item => item.claimId === claim.claimId);
+          if (!audit) return [claim];
+          const repair = this.claimRepair.repairClaim(claim, audit);
+          return repair.removed ? [] : [repair.claim];
+        });
+        const removed = issue.propositions.some(claim => claimVerification.claimAudits.some(audit => audit.claimId === claim.claimId && audit.action === 'REMOVE'));
+        return { ...issue, ...(removed ? { conclusion: 'Conclusion withheld pending verification of its supporting propositions.' } : {}), propositions, rule: propositions.filter(claim => claim.type !== 'APPLICATION'), application: propositions.filter(claim => claim.type === 'APPLICATION') };
+      }) } : undefined,
       citations: finalChecks.citation.citations.map((c) => {
         const authority = input.authorities.find((a) => a.id === c.authorityId);
+        const passage = relevantPassages(authority?.sourcePassages ?? [], input.query, 1)[0];
         return {
           ...c,
           sourceUrl: authority?.sourceUrl ?? null,
@@ -498,16 +512,16 @@ export class LegalResearchVerificationService {
           title: authority?.title,
           citation: c.citation ?? authority?.citation,
           summary: authority?.summary ?? undefined,
-          quotedText: authority?.sourcePassages?.[0]?.text,
-          exactPassage: authority?.sourcePassages?.[0]?.text,
+          quotedText: passage?.text,
+          exactPassage: passage?.text,
           paragraphRef:
-            authority?.sourcePassages?.find((passage) => passage.sourcePinpoint)?.paragraph ??
+            passage?.paragraph ??
             authority?.paragraph ??
             undefined,
           pinpoint:
-            authority?.sourcePassages?.find((passage) => passage.sourcePinpoint)?.paragraph ??
+            passage?.paragraph ??
             authority?.paragraph ??
-            (typeof authority?.page === 'number' ? `page ${authority.page}` : undefined),
+            (typeof passage?.page === 'number' ? `page ${passage.page}` : typeof authority?.page === 'number' ? `page ${authority.page}` : undefined),
           court: authority?.court ?? undefined,
           decisionDate:
             authority?.decisionDate instanceof Date
@@ -618,6 +632,7 @@ export class LegalResearchVerificationService {
     initial: ClaimVerificationResult;
   }): Promise<ClaimVerificationOverrides | undefined> {
     if (!input.modelName) return undefined;
+    const modelName = input.modelName;
 
     const claims = new Map(
       input.draft.issues.flatMap((issue) =>
@@ -626,6 +641,7 @@ export class LegalResearchVerificationService {
     );
     const evidenceText = this.buildLockedEvidenceTextIndex(input.evidencePack);
     const passageTasks: SemanticPassageTask[] = [];
+    const includedPassages = new Set<string>();
     let passageBudget = 24_000;
 
     for (const audit of input.initial.claimAudits) {
@@ -633,22 +649,27 @@ export class LegalResearchVerificationService {
       const claim = claims.get(audit.claimId);
       if (
         !claim ||
-        (claim.type !== 'RULE' && claim.type !== 'HOLDING') ||
-        claim.materiality === 'SUPPORTING' ||
+        (claim.type !== 'RULE' && claim.type !== 'HOLDING' && claim.type !== 'PROCEDURE') ||
         (audit.passageSupport !== 'PARTIAL' && audit.passageSupport !== 'UNSUPPORTED')
       ) {
         continue;
       }
       const passages = claim.evidenceIds
-        .map((evidenceId) => ({
-          evidenceId,
-          text: (evidenceText.get(evidenceId) ?? '').trim().slice(0, 1_200),
-        }))
+        .map((evidenceId) => {
+          const owner = input.evidencePack.authorities.find(authority => authority.evidenceId === evidenceId || authority.passages.some(passage => passage.evidenceId === evidenceId));
+          const statute = input.evidencePack.statutes.find(statute => statute.evidenceId === evidenceId);
+          const sourcePassage = owner?.passages.find(passage => passage.evidenceId === evidenceId);
+          return { evidenceId, text: (evidenceText.get(evidenceId) ?? '').trim().slice(0, 6_000),
+            sourceIdentity: owner ? { title: owner.title, citation: owner.citation, court: owner.court, decidedDate: owner.decidedDate } : statute ? { title: statute.actName, section: statute.section } : undefined,
+            passageRole: sourcePassage?.classification, attribution: sourcePassage?.attribution,
+          };
+        })
         .filter((passage) => passage.text.length > 0)
-        .slice(0, 2);
-      const taskSize = claim.text.length + passages.reduce((sum, passage) => sum + passage.text.length, 0);
+        .slice(0, 4);
+      const taskSize = claim.text.length + passages.reduce((sum, passage) => sum + (includedPassages.has(passage.evidenceId) ? 0 : passage.text.length), 0);
       if (passages.length === 0 || taskSize > passageBudget) continue;
       passageBudget -= taskSize;
+      passages.forEach(passage => includedPassages.add(passage.evidenceId));
       passageTasks.push({
         claimId: claim.claimId,
         claimText: claim.text.slice(0, 700),
@@ -676,19 +697,39 @@ export class LegalResearchVerificationService {
 
     if (passageTasks.length === 0 && identityTasks.length === 0) return undefined;
 
-    const payload = JSON.stringify({ passageTasks, identityTasks });
+    const lockedPassages = [...new Map(passageTasks.flatMap(task => task.passages).map(passage => [passage.evidenceId, passage])).values()];
+    const payload = JSON.stringify({
+      lockedPassages,
+      passageTasks: passageTasks.map(({ passages, ...task }) => ({ ...task, evidenceIds: passages.map(passage => passage.evidenceId) })),
+      identityTasks,
+    });
     try {
-      const completion = await this.llmCompletion.complete({
-        modelName: input.modelName,
+      const semanticKey = 'semantic-proof:' + createHash('sha256').update(modelName + '\n' + payload).digest('hex');
+      const completion = await memoizeResearchRequest(semanticKey, () => this.llmCompletion.complete({
+        modelName,
         temperature: 0,
         maxTokens: 2_500,
+        responseFormat: { type: 'json_schema', json_schema: { name: 'legal_evidence_semantic_v1', strict: true, schema: {
+          type: 'object', additionalProperties: false, required: ['claims','identities'], properties: {
+            claims: { type: 'array', items: { type: 'object', additionalProperties: false, required: ['claimId','supportState','evidenceIds','confidence'], properties: {
+              claimId: { type: 'string' }, supportState: { type: 'string', enum: ['SUPPORTED','PARTIAL','UNSUPPORTED','CONTRADICTED'] }, evidenceIds: { type: 'array', items: { type: 'string' } }, confidence: { type: 'number' },
+            } } },
+            identities: { type: 'array', items: { type: 'object', additionalProperties: false, required: ['claimId','authorityId','state','confidence'], properties: {
+              claimId: { type: 'string' }, authorityId: { type: 'string' }, state: { type: 'string', enum: ['PASS','INDETERMINATE','FAIL'] }, confidence: { type: 'number' },
+            } } },
+          },
+        } } },
         reasoningEffort: 'low',
         messages: [
           {
             role: 'system',
             content: [
               'You are a conservative legal evidence verifier.',
-              'Use only the supplied locked passages and authority candidates.',
+              'Use only the supplied locked passages, their sourceIdentity metadata and authority candidates. Assess combined passages together. Caption/court identity is checked separately; it need not repeat on every judgment page.',
+              'Resolve each task evidenceId against lockedPassages. Shared source text is supplied once; every task still requires its own support decision.',
+              'OTHER_AUTHORITY passages quote or report a different authority. They cannot establish the deciding court’s own holding or the facts, awards or outcome of the current case. Preserve that attribution.',
+              'Assess the affirmative proposition. An express limitation on reliance or disclosure that wider/current law is unknown is not an extra affirmative legal rule; it must never excuse an unsupported positive rule.',
+              'Use confidence between 0 and 1. Return PARTIAL when a material subset is supported, even if another assertion is unestablished.',
               'Return JSON only with exactly: {"claims":[],"identities":[]}.',
               'claims items: {"claimId":string,"supportState":"SUPPORTED"|"PARTIAL"|"UNSUPPORTED"|"CONTRADICTED","evidenceIds":string[],"confidence":number}.',
               'identities items: {"claimId":string,"authorityId":string,"state":"PASS"|"INDETERMINATE"|"FAIL","confidence":number}.',
@@ -702,7 +743,7 @@ export class LegalResearchVerificationService {
             content: payload,
           },
         ],
-      });
+      }));
       return this.parseSemanticOverrides(completion.content, passageTasks, identityTasks);
     } catch (error) {
       this.logger.warn(
@@ -884,7 +925,7 @@ export class LegalResearchVerificationService {
     const authorityBlock = ranked
       .slice(0, 12)
       .map((a) => {
-        const body = (a.fullText ?? a.summary ?? '').slice(0, 800);
+        const body = a.sourcePassages?.length ? relevantPassages(a.sourcePassages, input.query, 4).map(p => p.text.slice(0, 2000)).join('\n') : (a.fullText ?? a.summary ?? '').slice(0, 4000);
         return `${a.title}${a.citation ? ` (${a.citation})` : ''}: ${body}`;
       })
       .join('\n\n');
@@ -957,16 +998,16 @@ export class LegalResearchVerificationService {
     for (const citation of verification.citation.citations) {
       findings.push({
         checkId: `citation:${citation.citation ?? citation.authorityId ?? citation.sourceName ?? 'unknown'}`,
-        state: citation.verified === true ? 'PASS' : 'FAIL',
-        severity: citation.verified === true ? 'LOW' : 'BLOCKER',
+        state: (citation.verified === true || citation.sourceVerified === true) ? 'PASS' : 'FAIL',
+        severity: (citation.verified === true || citation.sourceVerified === true) ? 'LOW' : 'BLOCKER',
         dimension: 'identity',
         authorityId: citation.authorityId,
         evidenceIds: citation.authorityId ? [citation.authorityId] : [],
         explanation:
-          citation.verified === true
-            ? 'Authority identity confirmed by citation verifier.'
+          (citation.verified === true || citation.sourceVerified === true)
+            ? 'Authority identity and cited source confirmed; current-law status is assessed separately.'
             : 'Authority identity could not be confirmed by citation verifier.',
-        repairAction: citation.verified === true ? undefined : 'RETRIEVE',
+        repairAction: (citation.verified === true || citation.sourceVerified === true) ? undefined : 'RETRIEVE',
         verifierVersion: 'research-verification-v2',
       });
     }

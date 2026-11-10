@@ -78,7 +78,7 @@ export interface SectionFinderEntry {
   sectionText?: string;
   transitionWarning?: string;
   sourceRef: string;
-  transitionDate: '2024-07-01';
+  transitionDate: string;
   matchSource?: 'curated' | 'remap' | 'corpus' | 'network' | 'ai';
   /** Present on AI-only rows — never treat as corpus-verified. */
   verificationState?: 'verified' | 'ai_suggested';

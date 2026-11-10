@@ -152,3 +152,25 @@ describe('LegalEvidencePackService current-law metadata', () => {
     expect(pack.statutes[0]?.actName).not.toContain('statute-in-');
   });
 });
+
+describe('Page-based authority admission', () => {
+  it('admits a later holding while keeping counsel submissions inadmissible for legal rules', () => {
+    const pack = new LegalEvidencePackService().buildFromAuthorities({ jurisdiction: 'IN', authorities: [{
+      id: 'official-page-case', title: 'Employer v Employee', citation: '1990 AIR 1808', sourceTier: 'case_law',
+      sourceUrl: 'https://api.sci.gov.in/judgment.pdf', fullText: 'Public complete judgment',
+      sourceProvenance: { provider: 'Supreme Court', retrievedAt: '2026-11-09T00:00:00Z', documentHash: 'abc', pageCount: 2, missingPages: [], completeness: 'COMPLETE', extractionMethod: 'NATIVE_TEXT', authoritativeStatus: 'OFFICIAL', paragraphNumberingIntegrity: 'UNKNOWN', dispositionComplete: true },
+      sourcePassages: [{ text: 'Counsel submitted that termination was valid.', page: 1 }, { text: 'We therefore hold that the statutory notice rule governs. The appeal is dismissed.', page: 2 }],
+    }] });
+    expect(pack.authorities[0].admission?.admitted).toBe(true);
+    expect(pack.authorities[0].passages[0].admission?.admitted).toBe(false);
+    expect(pack.authorities[0].passages[1].admission?.admitted).toBe(true);
+  });
+});
+
+
+describe('Evidence ID uniqueness', () => {
+  it('keeps provisions with a shared long ID prefix distinct', () => {
+    const pack = new LegalEvidencePackService().buildFromAuthorities({ jurisdiction: 'KE', authorities: [35,36].map(section => ({ id: `official-curated-0-s${section}`, title: `Employment Act, 2007 Section ${section}`, section: String(section), sourceTier: 'primary' as const, fullText: `Operative source provision ${section}.` })) });
+    expect(new Set(pack.statutes.map(statute => statute.evidenceId)).size).toBe(2);
+  });
+});

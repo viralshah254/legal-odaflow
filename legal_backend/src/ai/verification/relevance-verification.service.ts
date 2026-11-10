@@ -23,6 +23,7 @@ const STOP_WORDS = new Set([
 ]);
 
 const DOMAIN_MARKERS: Array<{ terms: RegExp; domains: string[] }> = [
+  { terms: /\b(?:employ(?:ee|er|ment)|resign(?:ation)?|retrenchment|workman|workmen|standing orders)\b/i, domains: ['employment', 'labour'] },
   { terms: /\b(?:pmla|money laundering|proceeds of crime)\b/i, domains: ['criminal', 'compliance', 'aml'] },
   { terms: /\b(?:cpc|civil procedure|costs of litigation)\b/i, domains: ['civil', 'procedure', 'litigation'] },
   { terms: /\b(?:rera|real estate regulation|allottee|promoter)\b/i, domains: ['property', 'real estate'] },

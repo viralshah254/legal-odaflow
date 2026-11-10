@@ -287,9 +287,6 @@ export default function ResearchSessionPage() {
                     Fast Answer
                   </Badge>
                 )}
-                {result.modelName && (
-                  <span className="text-xs text-muted-foreground">{result.modelName}</span>
-                )}
                 <div className="flex-1" />
                 <ResearchActionsToolbar
                   result={result}

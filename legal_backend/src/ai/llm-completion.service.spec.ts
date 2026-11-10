@@ -196,11 +196,12 @@ describe('Responses output integrity', () => {
       return new Response(JSON.stringify({ status: 'completed', output: [{ type: 'message', content: [{ type: 'output_text', text: '{}' }] }] }), { status: 200 });
     }) as typeof fetch;
     const service = new LlmCompletionService(new ConfigService({ OPENAI_API_KEY: 'test-key', ALLOWED_AI_PROVIDERS: 'openai' }));
-    const result = await service.complete({ modelName: 'gpt-5.6-sol', messages: [{ role: 'user', content: 'Return JSON' }], responseFormat });
+    const result = await service.complete({ modelName: 'gpt-5.6-sol', messages: [{ role: 'system', content: 'Return JSON matching the schema.' }, { role: 'user', content: 'Answer the legal question.' }], responseFormat });
     expect(result.content).toBe('{}');
     expect(body.text.format).toEqual(responseFormat.type === 'json_schema'
       ? { type: 'json_schema', ...responseFormat.json_schema } : { type: 'json_object' });
     expect(body).not.toHaveProperty('response_format');
+    if (responseFormat.type === 'json_object') expect(body.input.some((message: any) => /json/i.test(message.content))).toBe(true);
   });
 
   it('never converts reasoning-only output into successful draft text', async () => {

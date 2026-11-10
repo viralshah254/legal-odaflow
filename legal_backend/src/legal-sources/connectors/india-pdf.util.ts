@@ -1,3 +1,4 @@
+import { researchRequestSignal } from '@/common/utils/research-execution-budget';
 import { createHash } from 'crypto';
 
 export interface PdfFetchResult {
@@ -34,7 +35,7 @@ export async function fetchFollowingRedirects(
 
     const res = await fetch(currentUrl, {
       redirect: 'manual',
-      signal: AbortSignal.timeout(timeoutMs),
+      signal: researchRequestSignal(timeoutMs),
       headers: {
         'User-Agent':
           'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',

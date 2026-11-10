@@ -75,7 +75,6 @@ import {
   Library,
 } from "lucide-react"
 import { useToast } from "@/hooks/use-toast"
-import { AiModelPicker } from "@/components/credits/AiModelPicker"
 import { CreditErrorBanner } from "@/components/credits/CreditErrorBanner"
 import { useInsufficientCreditsGate } from "@/lib/credits/use-insufficient-credits-gate"
 import { isInsufficientCreditsError } from "@/lib/utils/credit-errors"
@@ -315,7 +314,7 @@ export default function LegalResearchPage() {
   const [workContext, setWorkContext] = useState<WorkContextSelection | null>(null)
   const countryManuallySet = useRef(Boolean(urlCountry))
   const [query, setQuery] = useState(() => searchParams.get("q") ?? "")
-  const { mode: aiModelMode, modelId: premiumModelId, setAiModel } = useAiModel()
+  const { mode: aiModelMode, modelId: premiumModelId } = useAiModel()
   const [loading, setLoading] = useState(false)
   const [jobPhase, setJobPhase] = useState<ResearchJobPhase | undefined>()
   const [jobPhaseMessage, setJobPhaseMessage] = useState<string | undefined>()
@@ -798,14 +797,8 @@ export default function LegalResearchPage() {
               : err.message
             : tErr("connection")
       const msg = toUserFacingErrorMessage(rawMsg, tErr("connection"))
-      const isPremiumCreditError = msg.toLowerCase().includes("not enough premium allowance") ||
-        msg.toLowerCase().includes("premium allowance")
       if (isInsufficientCreditsError(err)) {
         setIsCreditError(true)
-        if (isPremiumCreditError) {
-          setAiModel("AUTO", premiumModelId)
-          setResearchMode("FAST")
-        }
         setError(handleApiError(err, msg))
       } else {
         // The backend may have completed the job even though the connection dropped.
@@ -1451,13 +1444,7 @@ export default function LegalResearchPage() {
                     )}
                   </p>
                 </div>
-                <div className="rounded-lg border bg-card px-3 py-2">
-                  <p className="text-[10px] font-semibold uppercase tracking-wide text-muted-foreground">Model</p>
-                  <p className="mt-1 text-sm font-medium">
-                    {aiModelMode === "PREMIUM" ? "Premium" : "Auto"}
-                  </p>
 
-                </div>
                 <div className="rounded-lg border bg-card px-3 py-2">
                   <p className="text-[10px] font-semibold uppercase tracking-wide text-muted-foreground">Confidence</p>
                   <div className="mt-1"><ConfidenceBadge confidence={result.confidence} /></div>
@@ -1948,12 +1935,7 @@ export default function LegalResearchPage() {
                     </div>
                   </div>
 
-                  <div className="flex items-center gap-2">
-                    <span className="text-xs font-medium text-muted-foreground shrink-0">Model</span>
-                    <div className="flex-1">
-                      <AiModelPicker stageRouting />
-                    </div>
-                  </div>
+
 
                   <Button
                     className="w-full gap-2 bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary/70 h-11 text-sm font-semibold shadow-sm"

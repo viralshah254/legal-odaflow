@@ -12,27 +12,27 @@ describe('LegalResearchModelRouter GPT-5.6 hierarchy', () => {
     mockConfig({}) as never,
   );
 
-  it('maps QUICK → Luna synthesis and Terra light verifier', () => {
+  it('uses premium synthesis, repair and verification for QUICK requests', () => {
     const route = router.resolve({
       complexity: 'QUICK',
       highRisk: false,
       unresolvedConflict: false,
       negativeTreatmentFound: false,
     });
-    expect(route.synthesisModel).toBe('gpt-5.6-luna');
-    expect(route.verifierModel).toBe('gpt-5.6-terra');
-    expect(route.repairModel).toBe('gpt-5.6-terra');
+    expect(route.synthesisModel).toBe('gpt-5.6-sol');
+    expect(route.verifierModel).toBe('gpt-5.6-sol');
+    expect(route.repairModel).toBe('gpt-5.6-sol');
   });
 
-  it('maps STANDARD → Terra synthesis', () => {
+  it('uses premium synthesis for STANDARD requests', () => {
     const route = router.resolve({
       complexity: 'STANDARD',
       highRisk: false,
       unresolvedConflict: false,
       negativeTreatmentFound: false,
     });
-    expect(route.synthesisModel).toBe('gpt-5.6-terra');
-    expect(route.verifierModel).toBe('gpt-5.6-terra');
+    expect(route.synthesisModel).toBe('gpt-5.6-sol');
+    expect(route.verifierModel).toBe('gpt-5.6-sol');
     expect(route.maxOutputTokens).toBe(4_500);
   });
 
@@ -55,7 +55,7 @@ describe('LegalResearchModelRouter GPT-5.6 hierarchy', () => {
       unresolvedConflict: true,
       negativeTreatmentFound: true,
     });
-    expect(route.synthesisModel).toBe('gpt-5.6-terra');
+    expect(route.synthesisModel).toBe('gpt-5.6-sol');
     expect(route.verifierModel).toBe('gpt-5.6-sol');
     expect(route.requireCrossProviderVerification).toBe(true);
   });

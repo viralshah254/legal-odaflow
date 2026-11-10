@@ -45,6 +45,8 @@ interface BackendLegalResearchResponse {
     | string
     | {
         title?: string
+        sourceVerified?: boolean
+        currentLawVerified?: boolean
         caseName?: string
         parties?: string | string[]
         source?: string
@@ -248,6 +250,8 @@ function normalizeCitations(
     return [{
       title,
       source,
+      sourceVerified: c.sourceVerified,
+      currentLawVerified: c.currentLawVerified,
       url: c.deepLinkUrl ?? c.url ?? c.sourceUrl,
       canonicalUrl: c.canonicalUrl ?? c.sourceUrl ?? c.url,
       deepLinkUrl: c.deepLinkUrl,

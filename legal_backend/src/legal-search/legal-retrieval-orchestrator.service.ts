@@ -1,3 +1,7 @@
+import { findKeManifestAct } from '@/legal-sources/ke-manifest.loader';
+import { relevantPassages } from '@/ai/legal-research/relevant-passages';
+import { extractNamedCaseTitles } from '@/ai/legal-research/named-authority-check-pack';
+import { hydrateOfficialDocument, isOfficialDocumentUrl } from '@/legal-sources/connectors/official-document';
 import { withinResearchBudget } from '@/common/utils/research-execution-budget';
 import { Injectable, Logger, Optional } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
@@ -68,9 +72,21 @@ function normaliseCitation(value: string | null | undefined): string {
   return (value ?? '').toLowerCase().replace(/[^a-z0-9]/g, '');
 }
 
+function evidenceQuality(authority: RetrievedAuthority): number {
+  const provenance = authority.sourceProvenance;
+  return (provenance?.completeness === 'COMPLETE' && provenance.extractionMethod === 'NATIVE_TEXT' && provenance.pageCount ? 100 : provenance?.documentHash ? 20 : 0) +
+    ((authority.sourcePassages?.length ?? 0) > 0 ? 10 : 0);
+}
+
 function preferVerifiedCorpusAuthorities(authorities: RetrievedAuthority[]): RetrievedAuthority[] {
   const byCitation = new Map<string, RetrievedAuthority>();
+  const bySource = new Map<string, RetrievedAuthority>();
   for (const authority of authorities) {
+    const key = authority.sourceUrl ? `${authority.sourceUrl}|${authority.section ?? ''}` : `id:${authority.id}`;
+    const existing = bySource.get(key);
+    if (!existing || evidenceQuality(authority) > evidenceQuality(existing)) bySource.set(key, authority);
+  }
+  for (const authority of bySource.values()) {
     const key = normaliseCitation(authority.neutralCitation ?? authority.citation);
     if (!key) {
       byCitation.set(`id:${authority.id}`, authority);
@@ -79,7 +95,7 @@ function preferVerifiedCorpusAuthorities(authorities: RetrievedAuthority[]): Ret
     const existing = byCitation.get(key);
     const corpusAuthority = authority.id.startsWith('india-corpus-');
     const existingIsCorpus = existing?.id.startsWith('india-corpus-') ?? false;
-    if (!existing || (corpusAuthority && !existingIsCorpus)) {
+    if (!existing || evidenceQuality(authority) > evidenceQuality(existing) || (evidenceQuality(authority) === evidenceQuality(existing) && corpusAuthority && !existingIsCorpus)) {
       byCitation.set(key, corpusAuthority ? { ...authority, score: Math.max(authority.score ?? 0, 0.98) } : authority);
     }
   }
@@ -165,7 +181,7 @@ export class LegalRetrievalOrchestrator {
       ].join('|'),
     );
     const cacheKey = this.cacheService.buildKey('legal:retrieval', [
-      'v5-relevant-source-provenance',
+      'v13-preserve-primary-prefetch',
       input.countryCode,
       input.jurisdiction ?? 'all',
       queryHash,
@@ -200,8 +216,40 @@ export class LegalRetrievalOrchestrator {
     const internalLimit = pLimit(Math.max(1, internalConcurrency));
 
 
+    // Public discovery must not queue behind database/embedding variants.
+    // The gateway has already redacted confidential names from this query.
+    const parallelLive = input.researchMode === 'DEEP' && input.supplementLive !== false &&
+      (!input.knowledgeSources || input.knowledgeSources.some(source => ['case_law', 'web', 'regulations'].includes(source)))
+      ? this.supplementWithLiveConnectors([], {
+        countryCode: input.countryCode,
+        query: input.query,
+        searchQueries: searchPlan.expandedQueries,
+        jurisdiction: input.jurisdiction,
+        isBareActQuery: searchPlan.isBareActQuery,
+        skipTavilyInFast: input.skipTavilyInFast,
+        skipIndiaKanoon: input.skipIndiaKanoon,
+        skipTavily: input.skipTavily,
+        skipLiveRegulations: input.skipLiveRegulations,
+        isFastMode,
+        forceCaseLaw: !input.knowledgeSources || input.knowledgeSources.includes('case_law'),
+        legalDomain: input.legalDomain,
+        practiceArea: input.practiceArea,
+        legalIssues: input.legalIssues,
+        statuteSections: input.statuteSections,
+        doctrines: input.doctrines,
+        proceduralPosture: input.proceduralPosture,
+        propositionPhrases: input.propositionPhrases,
+        entities: input.entities,
+        remedies: input.remedies,
+        requestedAuthorityTypes: input.requestedAuthorityTypes,
+        issueDecomposition: input.issueDecomposition,
+        knowledgeSources: input.knowledgeSources,
+        diagnostics: connectorDiagnostics,
+      }).catch(() => [] as RetrievedAuthority[]) : null;
+
     const localStartedAt = Date.now();
-    const variantResults = await Promise.allSettled(
+    const localPartialResults: Awaited<ReturnType<KnowledgeStackService['search']>>[] = [];
+    const localSearch = () => Promise.allSettled(
       searchPlan.expandedQueries.map((queryVariant) =>
         internalLimit(() =>
           this.knowledgeStack.search({
@@ -221,10 +269,13 @@ export class LegalRetrievalOrchestrator {
             intakeFacts: input.intakeFacts,
             limit: searchPlan.limit,
             knowledgeSources: input.knowledgeSources,
-          }),
+          }).then(result => { localPartialResults.push(result); return result; }),
         ),
       ),
     );
+    const variantResults = parallelLive
+      ? await withinResearchBudget(3500, localSearch).catch(() => localPartialResults.map(value => ({ status: 'fulfilled' as const, value })))
+      : await localSearch();
     const localMs = Date.now() - localStartedAt;
 
     for (const settled of variantResults) {
@@ -326,7 +377,9 @@ export class LegalRetrievalOrchestrator {
         forceLiveCaseLaw ||
         forceLiveRegulations)
     ) {
-      authorities = await this.supplementWithLiveConnectors(authorities, {
+      authorities = parallelLive
+        ? [...authorities, ...await parallelLive]
+        : await this.supplementWithLiveConnectors(authorities, {
         countryCode: input.countryCode,
         query: input.query,
         searchQueries: searchPlan.expandedQueries,
@@ -337,7 +390,7 @@ export class LegalRetrievalOrchestrator {
         skipTavily: input.skipTavily,
         skipLiveRegulations: input.skipLiveRegulations,
         isFastMode,
-        forceCaseLaw: forceLiveCaseLaw,
+        forceCaseLaw: !input.knowledgeSources || input.knowledgeSources.includes('case_law'),
         legalDomain: input.legalDomain,
         practiceArea: input.practiceArea,
         legalIssues: input.legalIssues,
@@ -607,20 +660,10 @@ export class LegalRetrievalOrchestrator {
           canonicalIdentity: authority.citation ?? authority.neutralCitation ?? authority.title,
           canonicalUrl: authority.sourceUrl ?? undefined,
           documentHash: text ? hashPrompt(text) : undefined,
-          completeness:
-            authority.fullText && authority.fullText.trim().length >= 1000
-              ? ('COMPLETE' as const)
-              : authority.fullText
-                ? ('PARTIAL' as const)
-                : authority.summary
-                  ? ('EXCERPT' as const)
-                  : ('UNKNOWN' as const),
-          extractionMethod:
-            authority.sourceTier === 'web'
-              ? ('WEB_SCRAPE' as const)
-              : authority.sourceTier === 'seed'
-                ? ('UNKNOWN' as const)
-                : ('STRUCTURED_API' as const),
+          // Search length and a court-looking label do not prove full retrieval.
+          completeness: text ? ('EXCERPT' as const) : ('UNKNOWN' as const),
+          extractionMethod: 'UNKNOWN' as const,
+          paragraphNumberingIntegrity: 'UNKNOWN' as const,
           authoritativeStatus: official
             ? ('OFFICIAL' as const)
             : reported
@@ -792,8 +835,12 @@ export class LegalRetrievalOrchestrator {
 
     const mergeHits = (hits: RetrievedAuthority[]) => {
       for (const hit of hits) {
-        if (hit.citation && seenCitations.has(hit.citation)) continue;
-        if (hit.sourceUrl && seenUrls.has(hit.sourceUrl)) continue;
+        const existingIndex = supplemented.findIndex(existing =>
+          (hit.sourceUrl && existing.sourceUrl === hit.sourceUrl && existing.section === hit.section) || (hit.citation && existing.citation === hit.citation));
+        if (existingIndex >= 0) {
+          if (evidenceQuality(hit) > evidenceQuality(supplemented[existingIndex])) supplemented[existingIndex] = hit;
+          continue;
+        }
         supplemented.push(hit);
         if (hit.citation) seenCitations.add(hit.citation);
         if (hit.sourceUrl) seenUrls.add(hit.sourceUrl);
@@ -1111,7 +1158,7 @@ export class LegalRetrievalOrchestrator {
           requestedAuthorityTypes: input.requestedAuthorityTypes,
           issueDecomposition: input.issueDecomposition,
         });
-        const keQueries = kePlan.allQueries.slice(0, input.isFastMode ? 3 : 8);
+        const keQueries = kePlan.allQueries.slice(0, input.isFastMode ? 1 : 2);
         const statuteQueries = [
           ...new Set(
             [
@@ -1124,8 +1171,8 @@ export class LegalRetrievalOrchestrator {
           ),
         ].slice(0, input.isFastMode ? 2 : 4);
 
-        const keSettled = allowCaseLaw
-          ? await Promise.allSettled(
+        const keSearch = allowCaseLaw
+          ? Promise.allSettled(
               keQueries.map((q) =>
                 externalLimit(() =>
                   withTimeout(
@@ -1136,9 +1183,9 @@ export class LegalRetrievalOrchestrator {
               ),
             )
           : [];
-        const legisSettled =
+        const legisSearch =
           allowStatutes || allowPrimary
-            ? await Promise.allSettled(
+            ? Promise.allSettled(
                 statuteQueries.map((q) =>
                   externalLimit(() =>
                     withTimeout(
@@ -1150,17 +1197,13 @@ export class LegalRetrievalOrchestrator {
               )
             : [];
 
+        const [keSettled, legisSettled] = await Promise.all([keSearch, legisSearch]);
+
         const withBodyBudget = async <T>(
           promise: Promise<T> | undefined,
         ): Promise<T | null> => {
           if (!promise) return null;
-          return Promise.race([
-            promise.then((value) => value ?? null).catch(() => null),
-            new Promise<null>((resolve) => {
-              const timer = setTimeout(() => resolve(null), keBodyBudgetMs);
-              timer.unref?.();
-            }),
-          ]);
+          return withinResearchBudget(keBodyBudgetMs, () => promise).catch(() => null);
         };
 
         const keHits: KenyaLawSearchHit[] = [];
@@ -1187,6 +1230,8 @@ export class LegalRetrievalOrchestrator {
               title: body?.title || hit.title,
               citation: body?.citation ?? hit.citation,
               sourceName: 'Kenya Law',
+              sourceProvenance: body?.sourceProvenance,
+              sourcePassages: body?.sourcePassages,
               summary: hit.summary ?? thinText.slice(0, 600),
               fullText: thinText || null,
               sourceUrl: hit.sourceUrl,
@@ -1209,12 +1254,13 @@ export class LegalRetrievalOrchestrator {
             if (seenKeIds.has(hit.id)) continue;
             seenKeIds.add(hit.id);
             keHits.push(hit);
-            const thinText =
-              hit.summary ||
-              [hit.title, hit.citation ?? ''].filter(Boolean).join('\n');
+            const body = await withBodyBudget(this.kenyaLawJudgments.fetchLegislationBody?.(hit.sourceUrl));
+            const thinText = body?.fullText || hit.summary || [hit.title, hit.citation ?? ''].filter(Boolean).join('\n');
             hits.push({
               id: hit.id,
-              title: hit.title,
+              sourceProvenance: body?.sourceProvenance,
+              sourcePassages: body?.sourcePassages,
+              title: body?.title || hit.title,
               citation: hit.citation,
               sourceName: 'Kenya Law',
               summary: hit.summary ?? thinText.slice(0, 600),
@@ -1262,8 +1308,9 @@ export class LegalRetrievalOrchestrator {
     };
 
     const isKenyaLawUrl = (url?: string | null): boolean =>
-      !!url && /(?:https?:\/\/)?(?:www\.)?(?:new\.)?kenyalaw\.org\//i.test(url);
+      (() => { try { const parsed = new URL(url ?? ''); return parsed.protocol === 'https:' && ['kenyalaw.org', 'new.kenyalaw.org', 'www.kenyalaw.org'].includes(parsed.hostname); } catch { return false; } })();
 
+    const webPartialHits: RetrievedAuthority[] = [];
     const runTavilyConnector = async (): Promise<RetrievedAuthority[]> => {
       const startedAt = Date.now();
       const caseLawHits = supplemented.filter((authority) => authority.sourceTier === 'case_law' && isRelevant(authority));
@@ -1308,9 +1355,28 @@ export class LegalRetrievalOrchestrator {
         return [];
       }
 
-      const hits: RetrievedAuthority[] = [];
-      const tavilyQueries = connectorQueries.slice(0, input.isFastMode ? 1 : 2);
-      await Promise.all(tavilyQueries.map(async (q) => {
+      const hits = webPartialHits;
+      const namedCase = extractNamedCaseTitles(input.query.replace(/[()[\]]/g, ' '))[0];
+      const officialQuery = namedCase ? `${namedCase} ${country} court judgment PDF` : connectorQueries[1] ?? connectorQueries[0];
+      const namedStatute = parseStatuteQuery(input.query, country).statute;
+      const primaryQuery = namedStatute ? `${namedStatute.fullName} ${country} ${input.query.split(/\b(?:including|explain)\b/i)[0].slice(0, 160)} official text PDF` : connectorQueries[0];
+      const tavilyQueries = input.isFastMode ? [primaryQuery] : [primaryQuery, officialQuery];
+      const curatedUrls = country === 'IN' && /\b(?:employment|employee|resign|retrenchment|standing orders)\b/i.test(input.query)
+        ? ['https://www.indiacode.nic.in/bitstream/123456789/22040/1/A2020-35.pdf', ...(/\b(?:resign|discontinuing|notice|standing orders)\b/i.test(input.query) ? ['https://api.sci.gov.in/jonew/judis/7483.pdf'] : [])]
+        : country === 'KE' && namedStatute
+        ? (findKeManifestAct(namedStatute.id)?.alternatePublicUrls ?? [])
+        : country === 'US'
+          ? [...input.query.matchAll(/\b(\d{1,3})\s+U\.?\s*S\.?\s+(\d{1,4})\b/g)].flatMap(match => [`https://www.govinfo.gov/content/pkg/USREPORTS-${match[1]}/pdf/USREPORTS-${match[1]}-${match[2]}.pdf`, `https://tile.loc.gov/storage-services/service/ll/usrep/usrep${match[1]}/usrep${match[1]}${match[2]}/usrep${match[1]}${match[2]}.pdf`])
+          : [];
+      const curatedPromise = Promise.all(curatedUrls.slice(0, country === 'KE' ? 1 : 2).map(async (url, index) => {
+        const row = await hydrateOfficialDocument({ url, country, title: namedStatute?.fullName ?? (country === 'IN' ? (url.includes('/judis/') ? 'J.K. Cotton Spinning and Weaving Mills v State of U.P.' : 'The Industrial Relations Code, 2020') : input.query.split(',')[0]) });
+        // Preserve each completed primary document immediately. A slower sibling
+        // download or search must not discard it when the parent stage expires.
+        if (row?.sourceUrl) hits.push({ id: `official-prefetched-${index}`, ...row } as RetrievedAuthority);
+        return row;
+      })).then(rows => rows.filter((row): row is RetrievedAuthority => !!row).map(row => { const note = country === 'KE' && namedStatute ? findKeManifestAct(namedStatute.id)?.alternateSourceNote : undefined; return note && row.sourceProvenance ? { ...row, sourceProvenance: { ...row.sourceProvenance, edition: note } } : row; }));
+
+      await Promise.all(tavilyQueries.map(async (q, queryIndex) => {
         if (this.tavilySearch.isCircuitOpen()) {
           input.diagnostics?.push({
             provider: needsOfficialCaseLawFallback ? 'tavily-case-law-fallback' : 'tavily',
@@ -1321,14 +1387,21 @@ export class LegalRetrievalOrchestrator {
           return;
         }
         try {
-          const rows = await withTimeout(
-            this.tavilySearch.search({ query: q, countryCode: country, limit: 6 }),
+          const [discovered, curated] = await Promise.all([withTimeout(
+            this.tavilySearch.search({ query: q, countryCode: country, limit: 6, ...((queryIndex === 1 || country === 'KE' || country === 'US') ? { sourceProfile: 'official_publications' as const } : {}) }),
             Math.max(externalTimeoutMs, country === 'KE' ? 35_000 : externalTimeoutMs),
-          );
-          for (const tv of rows) {
-            const officialIndia = isOfficialIndianJudgmentUrl(tv.sourceUrl);
+          ), queryIndex === 0 ? curatedPromise : Promise.resolve([])]);
+          const rows = [...curated.map((row, index) => ({ id: `official-curated-${index}`, title: row.title ?? 'Official publication', sourceUrl: row.sourceUrl!, citation: row.citation ?? null, court: row.court ?? null, summary: null, judges: [], decisionDate: null })), ...discovered];
+          let hydrationAttempts = 0;
+          const publicationPriority = (url: string) => {
+            if (!isOfficialDocumentUrl(url, country)) return 0;
+            if (/\.pdf(?:$|[?#])|\/download\//i.test(url) && /sci\.gov\.in|judiciary\.go\.ke|supremecourt\.gov|USREPORTS-/i.test(url)) return 10;
+            return /\.pdf(?:$|[?#])|\/datalake\//i.test(url) ? 5 : 0;
+          };
+          for (const tv of [...rows].sort((a, b) => publicationPriority(b.sourceUrl) - publicationPriority(a.sourceUrl))) {
+            const officialIndia = country === 'IN' && isOfficialIndianJudgmentUrl(tv.sourceUrl);
             const kenyaLaw = country === 'KE' && isKenyaLawUrl(tv.sourceUrl);
-            const officialCaseLaw = officialIndia || kenyaLaw;
+            const officialCaseLaw = officialIndia || (kenyaLaw && /\/(?:akn\/ke\/judgment\/|caselaw\/cases\/view\/)/i.test(tv.sourceUrl));
             const isLegislation =
               kenyaLaw && /\/akn\/ke\/act\//i.test(tv.sourceUrl ?? '');
             const candidate: RetrievedAuthority = {
@@ -1362,6 +1435,36 @@ export class LegalRetrievalOrchestrator {
               candidate.relevanceScore = relevance.score;
               candidate.relevanceReason = relevance.reason;
               candidate.relevanceGate = 'admitted';
+            }
+            if (kenyaLaw && /\/akn\/ke\/(?:judgment|act)\//i.test(tv.sourceUrl) && hits.length < 3) {
+              const body = await withinResearchBudget(4000, () => isLegislation ? this.kenyaLawJudgments.fetchLegislationBody(tv.sourceUrl) : this.kenyaLawJudgments.fetchJudgmentBody(tv.sourceUrl)).catch(() => null);
+              if (body) {
+                candidate.title = body.title;
+                candidate.citation = body.citation ?? candidate.citation;
+                candidate.fullText = body.fullText;
+                candidate.sourceProvenance = body.sourceProvenance;
+                candidate.sourcePassages = body.sourcePassages;
+              }
+            }
+            const prefetchedOfficial = curated.find(row => row.sourceUrl === tv.sourceUrl);
+            if (prefetchedOfficial || (isOfficialDocumentUrl(tv.sourceUrl, country) && /\.pdf(?:$|[?#])|\/download\/|\/datalake\/|\/data-catalogue\//i.test(tv.sourceUrl) && hydrationAttempts < 2)) {
+              if (!prefetchedOfficial) hydrationAttempts += 1;
+              const hydrated = prefetchedOfficial ?? await hydrateOfficialDocument({ url: tv.sourceUrl, country, title: tv.title });
+              if (hydrated) {
+                Object.assign(candidate, hydrated);
+                if (candidate.authorityType === 'STATUTE') {
+                  for (const passage of relevantPassages(candidate.sourcePassages ?? [], input.query.split(/\b(?:identify|explain|including)\b/i)[0], 8)) {
+                    const section = passage.paragraph?.match(/^Section (\d+[A-Z]?)$/)?.[1];
+                    if (!section) continue;
+                    hits.push({ ...candidate, id: `${candidate.id}-s${section}`, title: `${candidate.title} Section ${section}`,
+                      citation: `${candidate.title} s.${section}`, actName: candidate.title,
+                      actYear: Number(candidate.title.match(/\b(?:19|20)\d{2}\b/)?.[0]) || undefined,
+                      section, heading: `Section ${section}`, fullText: passage.text, sourcePassages: [passage],
+                      page: passage.page,
+                    });
+                  }
+                }
+              }
             }
             hits.push(candidate);
           }
@@ -1406,17 +1509,18 @@ export class LegalRetrievalOrchestrator {
       input.diagnostics?.push({ provider: country === 'IN' ? 'india-live' : country === 'KE' ? 'kenyalaw' : 'country-connector', status: 'timeout', hitCount: countryPartialHits.filter(isRelevant).length });
       return countryPartialHits.filter(isRelevant);
     });
+    const boundedWebSearch = () => withinResearchBudget(14_000, runTavilyConnector).catch(() => webPartialHits.filter(isRelevant));
     if (countryEligible && tavilyEligible) {
       const [countryHits, tavilyHits] = await Promise.all([
         boundedCountrySearch(),
-        runTavilyConnector(),
+        boundedWebSearch(),
       ]);
       mergeHits(countryHits);
       mergeHits(tavilyHits);
     } else if (countryEligible) {
       mergeHits(await boundedCountrySearch());
     } else if (tavilyEligible) {
-      mergeHits(await runTavilyConnector());
+      mergeHits(await boundedWebSearch());
     }
 
     return supplemented;

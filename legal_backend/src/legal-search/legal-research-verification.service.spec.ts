@@ -10,6 +10,19 @@ import { PropositionEntailmentService } from '@/ai/verification/proposition-enta
 import type { UnifiedVerificationResult } from '@/ai/verification/unified-verification.service';
 
 describe('LegalResearchVerificationService', () => {
+  it('does not spend the semantic evidence budget repeatedly on the same source', async () => {
+    const { service, llmCompletion } = buildService();
+    const propositions = Array.from({ length: 8 }, (_, i) => ({ claimId: `c${i}`, type: 'RULE', text: `Claim ${i}`, evidenceIds: ['E1'], confidence: 0.5 }));
+    await (service as any).runSemanticVerificationBatch({
+      modelName: 'verifier', draft: { issues: [{ propositions }] },
+      evidencePack: { statutes: [{ evidenceId: 'E1', text: 'Source text '.repeat(700) }], authorities: [], officialMaterials: [], matterFacts: [] },
+      initial: { claimAudits: propositions.map(p => ({ claimId: p.claimId, passageSupport: 'UNSUPPORTED' })), findings: [] },
+    });
+    const payload = JSON.parse(llmCompletion.complete.mock.calls[0][0].messages[1].content);
+    expect(payload.lockedPassages).toHaveLength(1);
+    expect(payload.passageTasks).toHaveLength(8);
+    expect(payload.passageTasks.every((task: any) => task.evidenceIds[0] === 'E1')).toBe(true);
+  });
   function failClosedUnifiedResult(
     overrides: Partial<UnifiedVerificationResult> = {},
   ): UnifiedVerificationResult {

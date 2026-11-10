@@ -158,7 +158,7 @@ describe("detectCountry", () => {
     expect(fetch).not.toHaveBeenCalled()
   })
 
-  it("prefers account country when IP geo disagrees", async () => {
+  it("uses physical location when account country disagrees", async () => {
     vi.mocked(fetch).mockResolvedValue({
       ok: true,
       json: async () => ({ countryCode: "SG", regionCode: null }),
@@ -166,8 +166,8 @@ describe("detectCountry", () => {
 
     const result = await detectCountry({ accountCountryCode: "IN" })
 
-    expect(result.countryCode).toBe("IN")
-    expect(result.source).toBe("stored")
+    expect(result.countryCode).toBe("SG")
+    expect(result.source).toBe("ip")
     expect(result.region).toBeUndefined()
   })
 
@@ -181,14 +181,14 @@ describe("detectCountry", () => {
 
     expect(result.countryCode).toBe("IN")
     expect(result.region).toBe("Maharashtra")
-    expect(result.source).toBe("stored")
+    expect(result.source).toBe("ip")
   })
 
-  it("defaults to IN when geo fails, not French device locale", async () => {
+  it("leaves jurisdiction unresolved when geo fails, without inferring law from device locale", async () => {
     vi.mocked(fetch).mockResolvedValue({ ok: false } as Response)
 
     const result = await detectCountry()
-    expect(result.countryCode).toBe("IN")
+    expect(result.countryCode).toBe("")
     expect(result.source).toBe("default")
   })
 
@@ -209,7 +209,7 @@ describe("detectCountry", () => {
     vi.mocked(fetch).mockResolvedValue({ ok: false } as Response)
 
     const result = await detectCountry()
-    expect(result.countryCode).toBe("IN")
+    expect(result.countryCode).toBe("")
     expect(result.source).toBe("default")
   })
 })

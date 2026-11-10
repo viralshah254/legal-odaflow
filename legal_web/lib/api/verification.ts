@@ -103,6 +103,8 @@ export interface CitationVerificationCheck {
 }
 
 export interface CitationAuditEntry {
+  sourceVerified?: boolean
+  currentLawVerified?: boolean
   citation: string
   authorityId?: string
   found: boolean

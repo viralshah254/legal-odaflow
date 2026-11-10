@@ -8,7 +8,6 @@ import { UsSectionFinderService } from '@/legal-search/us-section-finder/us-sect
 import { KeSectionFinderService } from '@/legal-search/ke-section-finder/ke-section-finder.service';
 import { SectionFinderResolveService } from './section-finder-resolve.service';
 import { SectionFinderAiFallbackService } from '@/legal-search/section-finder-ai-fallback.service';
-import type { MatterGraph, MatterProfile } from '@/ai/matter-intelligence/matter-intelligence.types';
 import { RbiRegulationIngestService } from './connectors/rbi-regulation-ingest.service';
 import { KenyaIngestOpsService } from './kenya-ingest-ops.service';
 import { LEGAL_INGEST_JOB_TYPES } from '@/jobs/jobs.constants';
@@ -178,7 +177,6 @@ export class LegalSourceController {
         `Section Finder is not available for countryCode=${code}. Supported: IN, US, KE.`,
       );
     } else {
-      const snapshot = matterId ? await this.loadMatterMiSnapshot(matterId) : null;
       result = await this.sectionFinderService.find({
         q,
         countryCode: 'IN',
@@ -186,9 +184,6 @@ export class LegalSourceController {
         authorityId,
         actId,
         section,
-        matterId,
-        matterProfile: snapshot?.matterProfile,
-        matterGraph: snapshot?.matterGraph,
       });
     }
 
@@ -209,26 +204,12 @@ export class LegalSourceController {
           'AI-suggested — not verified. Confirm via corpus/connector before treating as Verified.',
       };
     }
+    // India-specific offence classifications must not be fabricated for other legal systems.
+    if (code !== 'IN') return { ...result, matches: result.matches.map(entry => {
+      const { isBailable, isCognizable, isCompoundable, bailPosture, ...reference } = entry;
+      return reference;
+    }) };
     return result;
-  }
-
-  private async loadMatterMiSnapshot(
-    matterId: string,
-  ): Promise<{ matterProfile?: MatterProfile; matterGraph?: MatterGraph } | null> {
-    const rows = await this.prisma.$queryRaw<
-      Array<{ matterProfile: unknown; matterGraph: unknown }>
-    >`
-      SELECT "matterProfile", "matterGraph"
-      FROM "Matter"
-      WHERE id = ${matterId}
-      LIMIT 1
-    `;
-    const row = rows[0];
-    if (!row) return null;
-    return {
-      matterProfile: row.matterProfile as MatterProfile | undefined,
-      matterGraph: row.matterGraph as MatterGraph | undefined,
-    };
   }
 
   /**

@@ -108,6 +108,7 @@ export interface PrecedentMetadata {
 }
 
 export interface RetrievedSourcePassage {
+  attribution?: 'OTHER_AUTHORITY';
   text: string;
   paragraph?: string;
   page?: number;

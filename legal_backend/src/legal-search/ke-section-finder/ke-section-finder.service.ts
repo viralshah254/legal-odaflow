@@ -557,11 +557,11 @@ export class KeSectionFinderService {
       trialCourt: 'special_court',
       trialCourtLabel: 'Court with jurisdiction under the statute and Constitution',
       bailPosture: 'Consult the statute, Criminal Procedure Code, and applicable practice directions.',
+      practiceNote: resolved.sourceName,
       sectionText: resolved.fullText,
       sourceRef: resolved.sourceUrl ?? resolved.sourceName,
-      transitionDate: '2024-07-01',
+      transitionDate: '',
       matchSource,
-      isInForce: true,
       legalAuthorityId: id,
     };
   }
@@ -609,9 +609,8 @@ export class KeSectionFinderService {
       bailPosture: 'Consult the statute, Criminal Procedure Code, and applicable practice directions.',
       sectionText: authority.fullText ?? undefined,
       sourceRef: authority.sourceUrl ?? citation,
-      transitionDate: '2024-07-01',
+      transitionDate: '',
       matchSource,
-      isInForce: true,
       legalAuthorityId: authority.id,
     };
   }

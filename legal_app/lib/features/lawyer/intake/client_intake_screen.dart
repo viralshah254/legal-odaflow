@@ -12,7 +12,6 @@ import '../../../core/network/api_client.dart';
 import '../../../core/providers/app_providers.dart';
 import '../../../core/theme/app_colors.dart';
 import '../../../l10n/app_localizations.dart';
-import '../../../widgets/ai_model_picker.dart';
 import '../../../widgets/form_dropdown.dart';
 
 // Client types for the intake form
@@ -667,29 +666,6 @@ class _Step0IssueDetailsState extends State<_Step0IssueDetails> {
             ],
 
             const SizedBox(height: 20),
-            Container(
-              padding: const EdgeInsets.all(12),
-              decoration: BoxDecoration(
-                border: Border.all(
-                    color: colorScheme.outline.withValues(alpha: 0.3)),
-                borderRadius: BorderRadius.circular(AppColors.radius),
-              ),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    'AI Model',
-                    style: Theme.of(context).textTheme.labelSmall?.copyWith(
-                          color: colorScheme.onSurfaceVariant,
-                          fontWeight: FontWeight.w600,
-                          letterSpacing: 0.4,
-                        ),
-                  ),
-                  const SizedBox(height: 8),
-                  const AiModelPicker(compact: true),
-                ],
-              ),
-            ),
 
             if (widget.classifyError != null) ...[
               const SizedBox(height: 16),

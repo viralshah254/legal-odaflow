@@ -642,7 +642,8 @@
     "knowledge_empty": "No knowledge items are visible in this workspace.",
     "knowledge_read_only": "Your role can view approved knowledge but cannot submit new material.",
     "knowledge_review_history": "Review history",
-    "knowledge_status_unknown": "Review status unavailable"
+    "knowledge_status_unknown": "Review status unavailable",
+    "sourceCheckLimitation": "ஆதாரமும் துல்லியமான குறிப்பும் சரிபார்க்கப்பட்டன; தற்போதைய சட்ட நிலை இன்னும் உறுதிப்படுத்தப்படவில்லை."
   },
   "auth": {
     "signIn": "உள்நுழைக",

@@ -1,3 +1,4 @@
+import { EvidenceAdmissionService } from './evidence-admission.service';
 import { Injectable, Logger, Optional } from '@nestjs/common';
 import type { ClaimAudit, ClaimBlock, LegalResearchDraft, PassageSupport } from './legal-research-draft.types';
 import type { EvidenceCase, EvidencePassage, EvidenceStatute, LegalEvidencePack, OfficialMaterialEvidence } from './legal-evidence-pack.service';
@@ -353,7 +354,9 @@ export class ClaimLevelVerificationService {
 
     const evidenceEntries = evidence.filter(Boolean) as EvidenceIndexEntry[];
     const rejectedByAdmission = evidenceEntries.filter(
-      (entry) => entry.admission?.admitted === false,
+      (entry) => claim.type === 'PROCEDURE' && entry.passage
+        ? !new EvidenceAdmissionService().admit({ authority: { authorityType: 'CASE', fullText: entry.text, sourceProvenance: entry.passage.provenance }, intendedUse: 'PROCEDURAL_HISTORY', passageClassification: entry.passage.classification }).admitted
+        : entry.admission?.admitted === false,
     );
     if (rejectedByAdmission.length > 0) {
       findings.push({
@@ -460,7 +463,7 @@ export class ClaimLevelVerificationService {
           treatmentSignals: evidenceEntries.map((e) => ({
             authorityId: e.authority.id,
             treatment: e.treatmentStatus,
-            textHint: e.text.slice(0, 400),
+            textHint: e.text.slice(0, 6000),
             verified: e.case?.treatmentVerified,
             sourceName: e.case?.treatmentSourceName,
             sourceUrl: e.case?.treatmentSourceUrl,
@@ -526,7 +529,7 @@ export class ClaimLevelVerificationService {
           },
           case: c,
           passage: p,
-          admission: c.admission,
+          admission: p.admission ?? c.admission,
           treatmentStatus: c.subsequentTreatment,
           controllingJurisdiction: c.controllingJurisdiction,
         });
@@ -649,11 +652,19 @@ export class ClaimLevelVerificationService {
     evidence: EvidenceIndexEntry[],
     jurisdiction: string,
   ): VerificationFinding {
-    const hasMetadata = evidence.some((entry) => entry.controllingJurisdiction || entry.authority.sourceName);
-    const mismatched = evidence.some((entry) => {
-      const value = `${entry.controllingJurisdiction ?? ''} ${entry.authority.sourceName ?? ''}`.toLowerCase();
-      return value && jurisdiction && !value.includes(jurisdiction.toLowerCase()) && !/supreme court|official|unknown/.test(value);
-    });
+    const countryFor = (entry: EvidenceIndexEntry): string | undefined => {
+      const value = `${entry.controllingJurisdiction ?? ''} ${entry.authority.sourceName ?? ''} ${entry.authority.sourceUrl ?? ''} ${entry.statute?.provenance?.canonicalUrl ?? ''}`.toLowerCase();
+      if (/\bkenya\b|\.go\.ke(?:[/:]|$)|\.or\.ke(?:[/:]|$)/.test(value)) return 'KE';
+      if (/\bindia\b|\.gov\.in(?:[/:]|$)|\.nic\.in(?:[/:]|$)/.test(value)) return 'IN';
+      if (/\bunited states\b|\bus (?:supreme|district|federal)\b|\.gov(?:[/:]|$)/.test(value)) return 'US';
+      if (/\bunited kingdom\b|\bengland\b|\.gov\.uk(?:[/:]|$)/.test(value)) return 'GB';
+      if (/^(?:IN|KE|US|GB|UK)$/i.test(entry.controllingJurisdiction ?? '')) return entry.controllingJurisdiction!.toUpperCase().replace('UK', 'GB');
+      return undefined;
+    };
+    const countries = evidence.map(countryFor).filter((value): value is string => !!value);
+    const hasMetadata = countries.length > 0;
+    const mismatched = countries.some(country => country !== jurisdiction.toUpperCase().replace('UK', 'GB'));
+
     return {
       checkId: `jurisdiction:${claim.claimId}`,
       state: mismatched ? 'FAIL' : hasMetadata ? 'PASS' : 'INDETERMINATE',
@@ -731,7 +742,7 @@ export class ClaimLevelVerificationService {
         authority: {
           title: entry.authority.title,
           citation: entry.authority.citation,
-          fullText: entry.text,
+          fullText: entry.case?.passages.map(p => p.text).join('\n\n') ?? entry.text,
           practiceAreas: entry.authority.practiceAreas,
           topics: entry.authority.topics,
         },

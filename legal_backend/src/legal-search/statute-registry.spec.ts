@@ -254,3 +254,21 @@ describe('statute-registry', () => {
     });
   });
 });
+
+ it('does not mistake an enactment year for a section number', () => {
+   const parsed = parseStatuteQuery('Under the Kenya Employment Act 2007 what notice applies?', 'KE');
+   expect(parsed.actId).toBe('employment-act-2007');
+   expect(parsed.section).toBeUndefined();
+   expect(parseStatuteQuery('Companies Act section 2007', 'GB').section).toBe('2007');
+ });
+
+
+it('distinguishes US Code title numbers from section numbers and enactment years', () => {
+  expect(parseStatuteQuery('42 USC 1983', 'US')).toMatchObject({ section: '1983', actId: 'section-1983' });
+  expect(parseStatuteQuery('18 U.S.C. § 1343', 'US').section).toBe('1343');
+});
+
+
+it('does not treat dates in a US case question as statute sections', () => {
+  expect(parseStatuteQuery('Historical research as of 17 May 1954: explain Brown v. Board of Education, 347 U.S. 483 (1954).', 'US').section).toBeUndefined();
+});

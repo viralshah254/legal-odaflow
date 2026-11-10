@@ -1,3 +1,5 @@
+import { SourceIntegrityService } from '@/ai/legal-research/source-integrity.service';
+import { citationProposition } from './citation-proposition';
 import { Injectable, Optional } from '@nestjs/common';
 import { PrismaService } from '@/prisma/prisma.service';
 import { CourtListenerConnector } from '@/legal-sources/connectors/courtlistener.connector';
@@ -7,6 +9,7 @@ import { validateCitationContract } from './citation-contract';
 import { RelevanceVerificationService } from '@/ai/verification/relevance-verification.service';
 
 export interface CitationAuthority {
+  sourceProvenance?: import('@/legal-search/legal-retrieval.types').SourceProvenance;
   id: string;
   title: string;
   citation: string | null;
@@ -41,6 +44,8 @@ export interface CitationAuthority {
 export type TreatmentStatus = 'good_law' | 'overruled' | 'distinguished' | 'superseded' | 'repealed';
 
 export interface VerifiedCitation {
+  sourceVerified?: boolean;
+  currentLawVerified?: boolean;
   authorityId?: string;
   sourceName: string;
   citation: string;
@@ -96,6 +101,7 @@ const CITATION_PATTERNS: RegExp[] = [
   // UK
   /\[\d{4}\]\s+(?:UKSC|UKHL|EWCA\s+Civ|EWCA\s+Crim|EWHC\s+\d+\s+\([\w]+\)|\d+\s+QB|\d+\s+AC|\d+\s+WLR)\b/g,
   // Kenya
+  /\b(?:Petition|Civil Appeal|Criminal Appeal|Civil Application)\s+(?:No\.?\s*)?[A-Z]?\d+\s+of\s+\d{4}/gi,
   /\[\d{4}\]\s+e?KLR/gi,
   /\[\d{4}\]\s+KE(?:SC|CA|HC)\s+\d+/g,
 ];
@@ -190,7 +196,10 @@ export class CitationVerificationService {
         countryCode,
       );
       foundCount += audited.found ? 1 : 0;
-      if (audited.verified) citations.push(audited);
+      if (audited.verified || audited.sourceVerified) {
+        citations.push(audited);
+        if (!audited.currentLawVerified) warnings.push(`Source and pinpoint checked for ${label}; subsequent treatment/current law remains unverified.`);
+      }
       else {
         rejectedCitations.push(audited);
         warnings.push(`Citation blocked: ${label} — ${audited.missingReasons?.join('; ')}`);
@@ -347,6 +356,7 @@ export class CitationVerificationService {
       })),
       safeForReliance:
         citations.length > 0 &&
+        citations.every(citation => citation.verified) &&
         rejectedCitations.length === 0 &&
         unverifiableCitations.length === 0,
     };
@@ -365,10 +375,7 @@ export class CitationVerificationService {
       : /regulation|rule/i.test(authority.authorityType ?? '')
         ? 'regulation'
         : 'case';
-    const escaped = label.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-    const proposition =
-      output.match(new RegExp(`[^.!?\\n]{0,500}${escaped}[^.!?\\n]{0,500}[.!?]?`, 'i'))?.[0]?.trim() ??
-      label;
+    const proposition = citationProposition(output, label);
     const quote = proposition.match(/["“]([^"”]{12,})["”]/)?.[1];
     const text = authority.fullText ?? authority.summary ?? '';
     const quoteVerified = Boolean(quote && text.toLowerCase().includes(quote.toLowerCase()));
@@ -452,15 +459,20 @@ export class CitationVerificationService {
       : Boolean(authority.official);
     checks.push({ dimension: 'hierarchy', state: hierarchyPass ? 'PASS' : 'INDETERMINATE', reason: hierarchyPass ? 'Hierarchy metadata passed.' : 'Hierarchy metadata unavailable.' });
     checks.push({ dimension: 'contract', state: contract.passed ? 'PASS' : 'FAIL', reason: contract.passed ? 'Citation contract passed.' : contract.missingReasons.join(' ') });
+    const integrity = new SourceIntegrityService().assess(authority.sourceProvenance);
+    const sourceVerified = integrity.state === 'PASS' && checks.filter(check => check.dimension !== 'currentLaw').every(check => check.state === 'PASS') && !adverse;
     const missingReasons = checks.filter((check) => check.state !== 'PASS').map((check) => `${check.dimension}: ${check.reason}`);
+    if (integrity.state !== 'PASS') missingReasons.push(`sourceIntegrity: ${integrity.reasons.join('; ')}`);
     return {
+      sourceVerified,
+      currentLawVerified: currentPass,
       authorityId: authority.id,
       sourceName: authority.sourceName ?? 'Legal authority',
       citation: label,
       neutralCitation: authority.neutralCitation ?? undefined,
       confidence: missingReasons.length === 0 ? 0.95 : 0.35,
       found: Boolean(authority.id),
-      verified: missingReasons.length === 0,
+      verified: sourceVerified && missingReasons.length === 0,
       treatmentStatus: authority.treatmentStatus,
       sourceUrl: authority.sourceUrl ?? undefined,
       checks,

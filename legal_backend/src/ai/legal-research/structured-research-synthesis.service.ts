@@ -1,3 +1,4 @@
+import { relevantPassages } from './relevant-passages';
 import { Injectable, Logger } from '@nestjs/common';
 import {
   renderDraftToMarkdown,
@@ -26,6 +27,7 @@ import type { ModelTier } from '@/ai/model-costs.config';
 import { normalizeResearchQuestionPresented } from './research-mode';
 
 export interface StructuredSynthesisInput {
+  conciseAnswer?: boolean;
   query: string;
   prompt: string;
   systemPrompt: string;
@@ -129,7 +131,8 @@ export class StructuredResearchSynthesisService {
     }
     const evidenceCatalog = this.buildEvidenceCatalog(
       input.evidencePack,
-      mode === 'FAST' || (input.maxTokens ?? 4500) <= 4500,
+      mode === 'FAST',
+      input.query,
     );
     const providerNote = this.providerFailureNote(input.caseLawSearchStatus);
     const maxTokens =
@@ -140,6 +143,7 @@ export class StructuredResearchSynthesisService {
     const structuredSystem =
       mode === 'FAST'
         ? this.buildFastStructuredSystem(input, evidenceCatalog, providerNote)
+        : input.conciseAnswer ? this.buildConciseStructuredSystem(input, evidenceCatalog, providerNote)
         : this.buildDeepStructuredSystem(input, evidenceCatalog, providerNote);
 
     const llmStartedAt = Date.now();
@@ -283,6 +287,19 @@ export class StructuredResearchSynthesisService {
       this.applyTaskShape(parsed.draft, input.taskKind),
       input.evidencePack,
     );
+    if (input.conciseAnswer) {
+      // A standalone answer already has audited rule/holding blocks. Free-form
+      // issue conclusions can introduce new, unlinked legal propositions.
+      draft.issues = draft.issues.map(issue => ({ ...issue, conclusion: '' }));
+      draft.verificationNotes = [...(draft.verificationNotes ?? []),
+        'Adverse authority and subsequent treatment require independent confirmation before reliance.'];
+      if (input.evidencePack.statutes.some(statute => !statute.registryStatus || statute.registryStatus !== 'active' || statute.superseded)) {
+        const answer = draft.shortAnswer ?? draft.directAnswer;
+        const scoped = { ...answer, text: 'This analysis describes the retrieved source editions; the current operative law has not been verified. ' + answer.text };
+        draft.shortAnswer = scoped;
+        draft.directAnswer = scoped;
+      }
+    }
     const claimVerification = this.claimVerifier.verify({
       draft,
       evidencePack: input.evidencePack,
@@ -292,8 +309,8 @@ export class StructuredResearchSynthesisService {
       legalDomain: input.legalDomain,
     });
 
-    // Drop REMOVE claims before render
-    const cleaned = this.applyClaimActions(draft, claimVerification.claimAudits);
+    // Keep candidates intact for the final semantic audit; only that stage repairs published claims.
+    const cleaned = draft;
     const qualityFindings = evaluateLegalQuality(cleaned, input.evidencePack);
     const citationMap = this.buildCitationMap(input.evidencePack);
     const rendered = renderDraftToMarkdown(cleaned, citationMap);
@@ -392,6 +409,28 @@ export class StructuredResearchSynthesisService {
     return '';
   }
 
+  private buildConciseStructuredSystem(input: StructuredSynthesisInput, evidenceCatalog: string, providerNote: string): string {
+    return [input.systemPrompt,
+      '=== CONCISE SOURCE-BOUND ANSWER: REQUIRED JSON ===',
+      'Answer every express subquestion in 450–650 words when needed for material qualifications. Keep shortAnswer to at most two sentences; use the issue propositions for the detailed answer instead of repeating them in the summary. Use at most three issues and at most two atomic propositions per issue. No client facts are supplied unless explicitly included in authorized context.',
+      'Return exactly this small JSON shape; leave issue conclusion empty because the short answer and audited propositions supply the answer. Do not add strategy, application, strengths, factual dependencies or duplicated framework sections:',
+      '{"questionPresented":string,"shortAnswer":{"text":string},"issues":[{"issueId":string,"heading":string,"rule":[{"claimId":string,"type":"RULE"|"HOLDING"|"PROCEDURE","text":string,"evidenceIds":string[]}],"application":[],"conclusion":string}],"authoritiesReliedOn":[{"evidenceId":string,"claimIds":string[]}],"limitations":string[],"verificationNotes":string[],"followUpQuestions":string[]}',
+      'Every affirmative legal proposition in shortAnswer must also appear in a supported rule/holding below. Each proposition must express one supported point and include every required source passage ID.',
+      'Do not repeat an unverified user-supplied reporter or neutral case citation in questionPresented, shortAnswer, limitations or verificationNotes. Say that the requested citation is unverified without reproducing it. Canonical case citations are supplied by the renderer from catalog evidenceIds.',
+      'Claim text must contain the legal proposition only, without reporter citations, neutral citations or page/paragraph labels. Cite through evidenceIds only: the renderer inserts canonical case citations and native source pinpoints. Do not generate alternative reporter page citations or inline citation placeholders.',
+      'Preserve every material threshold, exception and scope restriction in statutory text. If applicability depends on missing contract facts, state the rule conditionally. An unresolved statutory cross-reference must be explained alongside the rule, not hidden in an appendix; do not silently repair it or assert an unrestricted operative rule.',
+      'For a statutory rule, state its threshold/chapeau BEFORE the operative rule, including exclusions introduced by "not being", "except" and "subject to". Do not drop those exclusions to save words. A bare monthly/daily payment category is insufficient if the chapeau limits the kinds of contracts covered.',
+      'A dismissal-fairness or hearing rule must include any retrieved probationary exclusion or minimum-service eligibility in the SAME proposition. Do not state it categorically and put the exception only in limitations. Inspect all cited sections and their supplied cross-references before combining them.',
+      'Where a provision applies to either party, preserve the direction of payment and distinguish payer from recipient. Do not collapse asymmetric wording such as remuneration earned OR paid, as the case may be, into a one-sided rule.',
+      'When only a historical edition is available, describe what that edition says and make current applicability unresolved in shortAnswer as well as limitations. Do not present the historical text as confirmed current law.',
+      'RULE uses retrieved statutory text; HOLDING uses only the deciding court’s actual holding/ratio. PROCEDURE describes recorded case-specific terms, history or disposition; it cannot turn a submission or lower-court finding into the deciding court’s rule.',
+      'Keep each holding and disposition separate. Do not attach a cover/signature/date passage to a HOLDING claim; source identity metadata supplies the case date. Omit unrequested dates. Explain adverse-authority/treatment gaps in verificationNotes; never claim none exists from silence. A supported paragraph does not establish that the case did not concern other issues: do not make categorical negative claims about issues outside the retrieved passages.',
+      'Source editions and unknown amendments/treatment must be disclosed. Describe a historical contract term as case-specific. Do not fill gaps from model memory or infer a nationwide rule from one company’s standing orders.',
+      'Put evidence gaps in limitations, not RULE claims. Keep qualifiers precise and never guarantee an outcome. Cite only catalog IDs; do not invent citations, sections, quotes or facts.',
+      providerNote, '=== EVIDENCE CATALOG ===', evidenceCatalog, '=== END CATALOG ===',
+    ].filter(Boolean).join('\n');
+  }
+
   private buildFastStructuredSystem(
     input: StructuredSynthesisInput,
     evidenceCatalog: string,
@@ -405,7 +444,7 @@ export class StructuredResearchSynthesisService {
       this.taskContract(input.taskKind),
       this.tenancyRemedyContract(input.query),
       'Return JSON with: questionPresented, shortAnswer.text, analysisMarkdown (full lawyer memo body in markdown), verificationNotes[], followUpQuestions[].',
-      'Write a complete readable memo from your legal knowledge for the stated jurisdiction. No live source APIs ran.',
+      'Write a readable memo using the retrieved evidence catalog. Unsupported background must be labelled unverified; never claim that retrieval did not run when source evidence is provided.',
       'Do not invent reporter citations (SCC, AIR, SCR, All ER) or exact section numbers unless you are sure. If unsure, state the principle and say the pinpoint needs confirmation.',
       'After the memo, include a short Self-check: weakest assumptions, what would change the answer, and any cites you are not sure of.',
       'analysisMarkdown MUST include distinct sections — do not copy shortAnswer into other fields:',
@@ -461,14 +500,15 @@ export class StructuredResearchSynthesisService {
       'Do not generate confidence scores or percentages. Confidence is computed after verification. Give controlling reasons, concrete factual dependencies, adverse considerations, and an evidence-bounded strength label.',
       'Use stable semantic ids (for example question_service_date and step_preserve_messages), not array indexes. Every unanswered question must explain why it matters, name the affected issue/conclusion, specify the expected answer type, and suggest a likely source where possible.',
       'Every practical step must state timing, purpose, evidence needed, dependencies, and a safe action type. Consequential filing, reporting, contact, payment, or publication steps must be framed conditionally and subject to applicable legal advice, permission, or factual predicates.',
-      'Keep qualifications precise and proportionate. Put retrieval and verification caveats only in verificationNotes, not repeatedly in the short answer, rule, application, or conclusion.',
+      'Keep qualifications precise. Where operative law is not retrieved, the short answer MUST say the supplied sources cannot determine that rule. Never fill an evidence gap with a fallback rule from model memory. Historical case-specific terms are illustrations, not current nationwide rules.',
       'Order legalFramework with statutes and regulations before cases. Every legalFramework and authoritiesReliedOn entry must use an evidenceId from the catalog and point to supporting claimIds.',
+      'Keep each RULE, HOLDING and PROCEDURE proposition atomic: one affirmative proposition per sentence, with every supporting passage ID. Put scope/coverage caveats in limitations instead of bundling them into a source claim. Do not emit statements about missing catalog evidence as RULE propositions; put retrieval gaps in limitations and explain them in shortAnswer. A quoted contract term in a historical case is a source description, not a nationwide rule. Use PROCEDURE for the court’s procedural actions, recorded case-specific terms or issue framing; never label background questions, submissions or lower-court history as a governing RULE.',
       'RULE and HOLDING propositions MUST include evidenceIds from the catalog below when the catalog has a matching statute or a proposition-relevant case.',
       'Only emit a CASE HOLDING when the case is proposition-relevant to the query (same issue, not mere name existence). Irrelevant catalog cases must not become controlling holdings.',
       'APPLICATION must include factIds (from FACT lines) and basedOnClaimIds (claimIds of RULE/HOLDING propositions).',
       'Example APPLICATION: { "claimId": "app_1", "type": "APPLICATION", "text": "...", "evidenceIds": [], "factIds": ["research_fact_1"], "basedOnClaimIds": ["rule_1"] }',
-      'Do not invent evidenceIds. If a useful framework statement lacks retrieved support, emit it as GENERAL_PRINCIPLE with no evidenceIds and add one compact verificationNote for the retrieval gap.',
-      'Write from model knowledge for the stated jurisdiction. No live source APIs ran. Do not invent reporter citations or exact section numbers unless you are sure; if unsure, state the principle.',
+      'Do not invent evidenceIds. If a legal rule lacks retrieved support, put it in limitations as unresolved; do not assert it as a GENERAL_PRINCIPLE or in shortAnswer.',
+      'Use retrieved sources for RULE and HOLDING claims. Only HOLDING or RATIO case passages support governing rules; party submissions, lower-court findings, headnotes and UNKNOWN passages are background only. GENERAL_PRINCIPLE statements must remain unverified and must not acquire invented citations.',
       'SELF-CRITIQUE (same call, required): attack your own holdings, name the weakest assumptions, what facts would change the answer, and correct the memo before you finish. Put that critique in verificationNotes and a Self-check section — do not copy shortAnswer into rule or conclusion.',
       'shortAnswer must NOT echo the user prompt. Distinct Short Answer (options now), Legal rule (mechanics), Conclusion (sequence and unknowns).',
       'Cover strongest arguments both sides, evidence to obtain, strategy, forums/regulators, and a Weak→Very Strong case-strength label in conclusions or verificationNotes.',
@@ -496,7 +536,7 @@ export class StructuredResearchSynthesisService {
       case 'CITATION_LOOKUP':
         return 'CITATION LOOKUP CONTRACT: verify identity, reporter/neutral citation, court, date, and supported holding; abstain if the identity or passage is not retrieved.';
       default:
-        return 'GENERAL RESEARCH CONTRACT: answer each identified issue with rule, application, conclusion, and explicit gaps. Use model knowledge; mark uncertainty instead of inventing cites.';
+        return 'GENERAL RESEARCH CONTRACT: answer each identified issue with rule, application, conclusion, and explicit gaps. Use retrieved evidence and distinguish unsupported background from verified source claims.';
     }
   }
 
@@ -657,6 +697,7 @@ export class StructuredResearchSynthesisService {
 
   private sanitizeDraft(draft: LegalResearchDraft, pack: LegalEvidencePack): LegalResearchDraft {
     const registered = new Set<string>();
+    const ineligibleRulePassages = new Set<string>();
     const authorityTypes = new Map<string, LegalFrameworkAuthority['authorityType']>();
     for (const s of pack.statutes) {
       registered.add(s.evidenceId);
@@ -668,6 +709,9 @@ export class StructuredResearchSynthesisService {
       for (const p of c.passages) {
         registered.add(p.evidenceId);
         authorityTypes.set(p.evidenceId, 'CASE');
+        if (p.admission?.admitted === false || !['HOLDING', 'RATIO'].includes(p.classification ?? '')) {
+          ineligibleRulePassages.add(p.evidenceId);
+        }
       }
     }
     for (const o of pack.officialMaterials) {
@@ -678,9 +722,15 @@ export class StructuredResearchSynthesisService {
 
     const sanitizedIssues = draft.issues.map((issue) => ({
       ...issue,
-      propositions: (issue.propositions ?? []).map((p) =>
-        this.sanitizeClaim(p, registered, factIds),
-      ),
+      propositions: (issue.propositions ?? []).map((p) => {
+        const claim = this.sanitizeClaim(p, registered, factIds);
+        if (claim.type !== 'RULE' && claim.type !== 'HOLDING') return claim;
+        // Background/date passages cannot prove a legal holding. A redundant
+        // identity citation must not contaminate an otherwise admissible claim;
+        // its text still has to be entailed by the remaining admitted passages.
+        const ruleEvidence = claim.evidenceIds.filter(id => !ineligibleRulePassages.has(id));
+        return ruleEvidence.length ? { ...claim, evidenceIds: ruleEvidence } : claim;
+      }),
     }));
     const linkedIssues = linkApplicationClaimsInDraft(sanitizedIssues, pack.matterFacts).map(
       (issue) => ({
@@ -818,7 +868,7 @@ export class StructuredResearchSynthesisService {
     for (const c of pack.authorities) {
       const cite = c.citation || c.title;
       map.set(c.evidenceId, cite);
-      for (const p of c.passages) map.set(p.evidenceId, cite);
+      for (const p of c.passages) map.set(p.evidenceId, `${cite}${p.paragraph ? `, para. ${p.paragraph}` : p.page ? `, PDF p. ${p.page}` : ''}`);
     }
     for (const o of pack.officialMaterials) {
       map.set(o.evidenceId, o.title);
@@ -826,23 +876,31 @@ export class StructuredResearchSynthesisService {
     return map;
   }
 
-  private buildEvidenceCatalog(pack: LegalEvidencePack, compact: boolean): string {
+  private buildEvidenceCatalog(pack: LegalEvidencePack, compact: boolean, query: string): string {
     const lines: string[] = [];
+    let remaining = 48000;
+    const add = (line: string) => { if (line.length <= remaining) { lines.push(line); remaining -= line.length; } };
     for (const s of pack.statutes.slice(0, compact ? 24 : 40)) {
+      if (!s.section && pack.statutes.some(provision => provision.section && provision.actName === s.actName)) continue;
       const statuteLabel = s.actName ?? s.heading ?? s.actId;
-      lines.push(
-        `- ${s.evidenceId}: STATUTE ${statuteLabel}${s.section ? ` s.${s.section}` : ''} — ${(s.text ?? '').slice(0, 240)}`,
+      add(
+        `- ${s.evidenceId}: STATUTE ${statuteLabel}${s.section ? ` s.${s.section}` : ''}${s.provenance?.edition ? ` [Source edition: ${s.provenance.edition}]` : ''} — ${relevantPassages(s.sourcePassages?.length ? s.sourcePassages : [{ text: s.text ?? '' }], query, compact ? 2 : 3).map(p => `${p.page ? `p.${p.page}: ` : ''}${p.text.replace(/\s+/g, ' ').slice(0, 2000)}`).join(' | ')}`,
       );
     }
     for (const c of pack.authorities.slice(0, compact ? 24 : 40)) {
-      for (const p of c.passages.slice(0, compact ? 2 : 3)) {
-        lines.push(
-          `- ${p.evidenceId}: CASE ${c.title}${c.citation ? ` (${c.citation})` : ''} — ${p.text.slice(0, 280)}`,
+      for (const p of relevantPassages(c.passages.filter(p => p.classification === 'HOLDING' || p.classification === 'RATIO'), query, compact ? 3 : 5)) {
+        add(
+          `- ${p.evidenceId}: CASE ${c.title}${c.citation ? ` (${c.citation})` : ''} ${c.court} ${c.decidedDate ?? ''} — ${p.classification ?? 'UNKNOWN'}${p.paragraph ? ` para.${p.paragraph}` : ''}${p.page ? ` p.${p.page}` : ''} — ${p.text.slice(0, compact ? 3000 : 6000)}`,
         );
       }
     }
+    for (const c of pack.authorities.slice(0, compact ? 4 : 8)) {
+      for (const p of relevantPassages(c.passages.filter(p => p.classification !== 'HOLDING' && p.classification !== 'RATIO' && !['PARTY_SUBMISSION', 'DISSENT', 'HEADNOTE', 'COMMENTARY'].includes(p.classification ?? '')), query, compact ? 3 : 6)) {
+        add(`- ${p.evidenceId}: BACKGROUND/PROCEDURE ONLY ${c.title} ${p.paragraph ? `para.${p.paragraph}` : ''} ${p.page ? `PDF p.${p.page}` : ''} — ${p.text.slice(0, 5000)}`);
+      }
+    }
     for (const f of pack.matterFacts.slice(0, 20)) {
-      lines.push(`- FACT ${f.factId}: ${f.description}`);
+      add(`- FACT ${f.factId}: ${f.description}`);
     }
     return lines.join('\n') || '(empty evidence pack)';
   }

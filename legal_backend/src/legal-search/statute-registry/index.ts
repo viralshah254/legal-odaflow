@@ -155,7 +155,8 @@ export function parseStatuteQuery(query: string, countryCode = 'IN'): ParsedStat
   let statute: StatuteEntry | undefined;
   let isBareActQuery = false;
 
-  for (const match of trimmed.matchAll(SECTION_QUERY)) {
+  const sectionScan = trimmed.replace(/\b\d+\s+U\.\s*S\.\s+\d+\b/gi, ' ');
+  for (const match of sectionScan.matchAll(SECTION_QUERY)) {
     const candidateSection = match[1] ?? match[4] ?? match[6];
     const candidateAct = match[2] ?? match[3] ?? match[5];
     // Reverse pattern "101 bnss": groups 7 (section) and 8 (act).
@@ -165,6 +166,10 @@ export function parseStatuteQuery(query: string, countryCode = 'IN'): ParsedStat
     const reverseAct = match[8];
 
     if (candidateSection ?? candidateAct) {
+      const explicitMarker = candidateSection && new RegExp(`(?:section|sec\\.?|s\\.|§|article|art\\.?|rule)\\s*${candidateSection}\\b`, 'i').test(trimmed);
+      const knownAct = candidateAct && resolveAcronym(candidateAct, countryCode);
+      const standaloneNumber = candidateSection && trimmed === candidateSection;
+      if (!explicitMarker && !knownAct && !standaloneNumber) continue;
       isBareActQuery = true;
       section = candidateSection;
       actToken = candidateAct;
@@ -178,6 +183,25 @@ export function parseStatuteQuery(query: string, countryCode = 'IN'): ParsedStat
       break;
     }
   }
+
+  if (!section) {
+    for (const match of sectionScan.matchAll(/\b(\d+[A-Za-z]?)\s+([a-z][\w-]{1,30})\b/gi)) {
+      if (!resolveAcronym(match[2], countryCode)) continue;
+      section = match[1]; actToken = match[2]; isBareActQuery = true; break;
+    }
+  }
+
+  // An enactment year in "Employment Act 2007" is not section 2007.
+  if (section && /^(?:18|19|20)\d{2}$/.test(section) &&
+      !new RegExp(`(?:section|sec\\.?|s\\.|§|article|art\\.?)\\s*${section}\\b`, 'i').test(trimmed)) {
+    section = undefined;
+  }
+
+  // U.S. Code citations contain both a title and section; the title is not the section.
+  const usc = countryCode.toUpperCase() === 'US'
+    ? trimmed.match(/\b(\d{1,2})\s+U\.?\s*S\.?\s*C\.?\s*(?:§+\s*)?(\d+[a-z]?(?:-[a-z0-9]+)?)/i)
+    : null;
+  if (usc) { section = usc[2]; actToken = 'USC'; isBareActQuery = true; }
 
   const lower = trimmed.toLowerCase();
   if (!statute) {

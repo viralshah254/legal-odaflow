@@ -58,14 +58,14 @@ export class LegalResearchModelRouter {
   resolve(input: ModelRouterInput): LegalModelRoute {
     const complexity = this.resolveEffectiveComplexity(input);
     const seriousSynthesisTier =
-      input.forceTopTier === true || complexity === 'COMPLEX' || complexity === 'ULTRA';
+      true;
 
     const synthesisModel = seriousSynthesisTier
       ? resolveSeriousSynthesisModel(
           this.configService.get<string>('AI_LEGAL_COMPLEX_MODEL', SERIOUS_LEGAL_MODEL),
         )
       : this.resolveSynthesisModel(complexity);
-    const verifierModel = this.resolveVerifierModel(complexity, input);
+    const verifierModel = resolveSeriousSynthesisModel(this.configService.get<string>('AI_LEGAL_HARD_VERIFIER_MODEL', SERIOUS_LEGAL_MODEL));
     const repairModel = seriousSynthesisTier
       ? resolveSeriousSynthesisModel(
           this.configService.get<string>('AI_LEGAL_COMPLEX_MODEL', SERIOUS_LEGAL_MODEL),
@@ -168,7 +168,7 @@ export class LegalResearchModelRouter {
           this.configService.get<string>('LEGAL_RESEARCH_FAST_PIPELINE_ENABLED', 'true') !==
           'false';
         return {
-          reasoningEffort: 'medium',
+          reasoningEffort: fastPipelineEnabled ? 'low' : 'medium',
           maxInputTokens: readPositiveIntConfig(
             this.configService,
             'LEGAL_STANDARD_MAX_INPUT_TOKENS',

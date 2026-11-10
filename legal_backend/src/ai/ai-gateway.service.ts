@@ -1,8 +1,12 @@
+import { relevantPassages, expandRelevantStatuteProvisions } from './legal-research/relevant-passages';
+import { hasGroundedCasePassage, focusNamedCaseEvidence } from './legal-research/named-authority-check-pack';
 import { assessCandidateRelevance } from '@/legal-search/retrieval-relevance';
 import { assertResearchBudgetActive, withinResearchBudget } from '@/common/utils/research-execution-budget';
 import { canAnalyzeSuppliedDocuments } from './legal-research/supplied-document-analysis.policy';
 import { filterAuthoritiesByResearchDate } from './legal-research/research-temporal-scope';
 import { researchCacheIdentity } from './legal-research/research-cache-identity';
+import { resolveSeriousSynthesisModel } from './legal-research/serious-model-lock';
+import { kenyaSourcePublication } from './legal-research/kenya-source-publication';
 import {
   ForbiddenException,
   HttpException,
@@ -1803,7 +1807,7 @@ export class AiGatewayService {
    * This busts the cache for all existing research entries so users get fresh
    * results with the new improvements rather than stale pre-upgrade cached output.
    */
-  private static readonly RESEARCH_SYSTEM_VERSION = 'v17-20261109-verified-source-pipeline';
+  private static readonly RESEARCH_SYSTEM_VERSION = 'v23-20261110-bounded-concise-answer';
 
   /** Minimum authorities before we reach out to live connectors for grounding. */
   private static readonly MIN_AUTHORITIES_FOR_GROUNDING = 3;
@@ -2278,6 +2282,7 @@ export class AiGatewayService {
     result = {
       ...result,
       outputMarkdown: verified.outputMarkdown,
+      ...(verified.structuredDraft ? { structuredDraft: verified.structuredDraft } : {}),
       disclaimer: sanitized.disclaimer,
       requiresLawyerReview:
         result.requiresLawyerReview ||
@@ -2557,18 +2562,16 @@ export class AiGatewayService {
     const finalizeResearchResult = (
       researchResult: LawyerResearchResult,
       admittedAuthorities: RetrievedAuthority[],
-    ): LawyerResearchResult => ({
-      ...researchResult,
-      ...this.buildHighConfidenceEnvelope({
-        input,
-        result: researchResult,
-        normalizedRequest,
-        taskProfile,
-        capabilitySnapshot,
-        plan: executableResearchPlan,
-        authorities: admittedAuthorities,
-      }),
-    });
+    ): LawyerResearchResult => {
+      const emptyCitations = !Array.isArray(researchResult.citations) || researchResult.citations.length === 0;
+      const normalizedResult: LawyerResearchResult = emptyCitations && ['VERIFIED_WITH_LIMITATIONS', 'RESEARCH_BACKED', 'READY_FOR_LAWYER_REVIEW'].includes(researchResult.publicationState ?? '')
+        ? { ...researchResult, publicationState: 'VERIFICATION_UNAVAILABLE', verificationStatus: 'insufficient', requiresLawyerReview: true }
+        : researchResult;
+      return {
+        ...normalizedResult,
+        ...this.buildHighConfidenceEnvelope({ input, result: normalizedResult, normalizedRequest, taskProfile, capabilitySnapshot, plan: executableResearchPlan, authorities: admittedAuthorities }),
+      };
+    };
     const wantsCaseLawEarly =
       taskProfile.requiredCapabilities.includes('CASE_LAW') &&
       (!input.knowledgeSources || input.knowledgeSources.includes('case_law'));
@@ -3021,10 +3024,10 @@ export class AiGatewayService {
             userId: input.userId,
             matterId: input.matterId,
             modelName: route.modelName,
-            reactModelName: this.configService.get<string>(
+            reactModelName: resolveSeriousSynthesisModel(this.configService.get<string>(
               'AI_LEGAL_ORCHESTRATOR_MODEL',
               this.configService.get<string>('AI_LEGAL_FAST_MODEL', DEFAULT_ORCHESTRATOR_MODEL),
-            ),
+            )),
             priorAuthorities,
             locale: input.locale,
           });
@@ -3364,10 +3367,10 @@ export class AiGatewayService {
         matrix: { ...issueCoverageMatrix, redCells: retryableGaps },
         authorities,
         attemptedQueries: attemptedResearchQueries,
-        plannerModel: this.configService.get<string>(
+        plannerModel: resolveSeriousSynthesisModel(this.configService.get<string>(
           'AI_LEGAL_ORCHESTRATOR_MODEL',
           this.configService.get<string>('AI_LEGAL_FAST_MODEL', 'gpt-5.6-luna'),
-        ),
+        )),
         maxHops: hopsPerLoop,
         consultPlanner: researchMode === 'DEEP',
       });
@@ -3548,10 +3551,10 @@ export class AiGatewayService {
           userId: input.userId,
           matterId: input.matterId,
           modelName: route.modelName,
-          reactModelName: this.configService.get<string>(
+          reactModelName: resolveSeriousSynthesisModel(this.configService.get<string>(
             'AI_LEGAL_ORCHESTRATOR_MODEL',
             this.configService.get<string>('AI_LEGAL_FAST_MODEL', 'gpt-5.6-luna'),
-          ),
+          )),
           priorAuthorities: authorities,
           skipBaseRetrieval: true,
           maxSteps: maxAgentRounds,
@@ -3990,6 +3993,7 @@ export class AiGatewayService {
         ...structuredRetrievalContext, query: input.query,
         countryCode: country.code, jurisdiction: input.jurisdiction,
       }).admitted);
+    authorities = focusNamedCaseEvidence(authorities, input.query);
     similarCases = this.similarCasesService.extractAndRank(authorities, input.query, country.code,
       taskProfile.evidenceBundle?.targetCases ?? 3, { ...structuredRetrievalContext, jurisdiction: input.jurisdiction });
     unverifiedResearchLeads = unverifiedResearchLeads?.filter(lead => filterAuthoritiesByResearchDate([{
@@ -4131,13 +4135,15 @@ export class AiGatewayService {
         .map((c) => c.resolvedAuthorityId)
         .filter((id): id is string => Boolean(id)),
     );
+    authorities = expandRelevantStatuteProvisions(authorities, input.query);
     const byPassageLen = (a: RetrievedAuthority, b: RetrievedAuthority) =>
       (b.fullText?.length ?? 0) - (a.fullText?.length ?? 0);
+    const rankedStatutes = relevantPassages(authorities.filter(isStatuteAuthority).map(authority => ({
+      text: authority.fullText ?? authority.summary ?? '', paragraph: authority.section ? `Section ${authority.section}` : undefined,
+      classification: 'STATUTORY_TEXT' as const, authority,
+    })), input.query.split(/\b(?:identify|explain|including)\b/i)[0], 8).map(row => row.authority);
     const presentationAuthorities = [
-      ...authorities
-        .filter((authority) => isStatuteAuthority(authority))
-        .sort(byPassageLen)
-        .slice(0, Math.max(taskProfile.evidenceBundle?.targetSections ?? 3, 5)),
+      ...rankedStatutes,
       ...authorities.filter((authority) => presentedCaseIds.has(authority.id)),
       ...authorities
         .filter((authority) => resolvedCandidateIds.has(authority.id))
@@ -4156,7 +4162,7 @@ export class AiGatewayService {
       (authority, index, list) =>
         list.findIndex((candidate) => candidate.id === authority.id) === index,
     );
-    const checkPack = filterAuthoritiesToCheckPack(presentationAuthorities, input.query);
+    const checkPack = filterAuthoritiesToCheckPack(presentationAuthorities.filter(hasGroundedCasePassage), input.query);
     const writePack = checkPack;
 
     // Current-law / treatment gate for material authorities before synthesis.
@@ -4985,6 +4991,7 @@ export class AiGatewayService {
     result = {
       ...result,
       outputMarkdown: verified.outputMarkdown,
+      ...(verified.structuredDraft ? { structuredDraft: verified.structuredDraft } : {}),
       citations: verified.citations,
       jurisdictionNotice,
       verificationStatus: researchMode === 'FAST' || structuredPlanFailed
@@ -5079,7 +5086,7 @@ export class AiGatewayService {
         a.sourceUrl && a.paragraph
           ? `${a.sourceUrl.replace(/#.*$/, '')}#para-${String(a.paragraph).replace(/\D+/g, '')}`
           : a.sourceUrl ?? undefined,
-      official: isOfficialSource(a.sourceName),
+      official: a.sourceProvenance?.authoritativeStatus === 'OFFICIAL' || isOfficialSource(a.sourceName),
       title: a.title,
       citation: a.citation ?? undefined,
       neutralCitation: a.neutralCitation ?? undefined,
@@ -5088,12 +5095,14 @@ export class AiGatewayService {
         a.decisionDate instanceof Date
           ? a.decisionDate.toISOString()
           : a.decisionDate ?? undefined,
+      sourceProvenance: a.sourceProvenance,
+      sourcePassages: a.sourcePassages,
       extractedText: a.fullText ?? a.summary ?? '',
       summary: a.summary ?? undefined,
       practiceAreas: a.practiceAreas,
       topics: a.topics,
       pinpoint:
-        a.paragraph ?? (typeof a.page === 'number' ? `page ${a.page}` : undefined),
+        a.paragraph ?? (typeof a.page === 'number' ? `page ${a.page}` : undefined) ?? (() => { const passage = relevantPassages(a.sourcePassages ?? [], input.query, 1)[0]; return passage?.paragraph ? `paragraph ${passage.paragraph}` : passage?.page ? `page ${passage.page}` : undefined; })(),
       actName: a.actName ?? undefined,
       actYear: a.actYear ?? undefined,
       section: a.section ?? undefined,
@@ -5120,7 +5129,7 @@ export class AiGatewayService {
               ? 'SUPERSEDED'
               : undefined,
       isRepealed: a.isRepealed,
-      reliabilityRank: (isOfficialSource(a.sourceName) ? 2 : 3) as 1 | 2 | 3 | 4 | 5,
+      reliabilityRank: (a.sourceProvenance?.authoritativeStatus === 'OFFICIAL' || isOfficialSource(a.sourceName) ? 2 : 3) as 1 | 2 | 3 | 4 | 5,
     }));
 
     const applyCitationAudit = async (audit: CitationAuditResult) => {
@@ -5351,6 +5360,7 @@ export class AiGatewayService {
         result = {
           ...result,
           outputMarkdown: verified.outputMarkdown,
+      ...(verified.structuredDraft ? { structuredDraft: verified.structuredDraft } : {}),
           citations: verified.citations,
           verificationStatus:
             researchMode === 'FAST' || structuredPlanFailed
@@ -5387,7 +5397,13 @@ export class AiGatewayService {
     ) {
       result = {
         ...result,
-        publicationState: 'DRAFT_NOT_VERIFIED',
+        publicationState: kenyaSourcePublication({
+          state: result.publicationState ?? 'DRAFT_NOT_VERIFIED',
+          citations: verified.citations,
+          findings: result.findings ?? [],
+          rejectedCount: citationAuditResult?.rejectedCitations?.length ?? 0,
+          unsupportedCount: citationAuditResult?.unsupportedClaims?.length ?? 0,
+        }),
         verificationStatus: 'warning',
         requiresLawyerReview: true,
       };
@@ -7514,6 +7530,7 @@ Only include legally meaningful deadlines specific to this practice area and jur
       sourceName: string;
       summary: string | null;
       fullText?: string | null;
+      sourcePassages?: import('@/legal-search/legal-retrieval.types').RetrievedSourcePassage[];
       sourceUrl?: string | null;
       isRepealed?: boolean;
       repealNotes?: string | null;
@@ -7581,7 +7598,10 @@ Only include legally meaningful deadlines specific to this practice area and jur
         // AI-first synthesis: provide sufficiently complete passages (not snippet-only)
         // so the model can understand holdings, exceptions, and procedural posture.
         const passageBudget = isBareActQuery ? 2500 : 1800;
-        const provision = authority.fullText?.trim()
+        const selectedPassages = authority.sourcePassages?.length ? relevantPassages(authority.sourcePassages, input.query, 4) : [];
+        const provision = selectedPassages.length
+          ? selectedPassages.map(passage => `\n  Passage${passage.paragraph ? ` para.${passage.paragraph}` : ''}${passage.page ? ` p.${passage.page}` : ''}: ${passage.text.slice(0, passageBudget)}`).join('')
+          : authority.fullText?.trim()
           ? `\n  Passage: ${authority.fullText.slice(0, passageBudget)}`
           : authority.summary
             ? `\n  Summary: ${authority.summary.slice(0, 800)}`
@@ -7802,10 +7822,9 @@ Only include legally meaningful deadlines specific to this practice area and jur
       '  • Do NOT repeat the original question.',
     ].join('\n');
 
-    // Global generate→verify: DEEP still prefers retrieved authorities, but does not
-    // muzzle model knowledge. A post-pass triple-check marks Verified / Corrected / Unverified.
+    // Verified research cites only the retrieved evidence pack.
     const verifiedResearchHardRule =
-      citeOnlyFromCheckPack
+      (citeOnlyFromCheckPack || input.researchMode === 'DEEP')
         ? [
             '',
             '=== CHECK PACK ONLY ===',
@@ -7814,18 +7833,7 @@ Only include legally meaningful deadlines specific to this practice area and jur
             'If a needed authority is missing, write [AUTHORITY GAP] — do not invent it.',
             '=== END CHECK PACK ONLY ===',
           ].join('\n')
-        : input.researchMode === 'DEEP'
-          ? [
-              '',
-              '=== VERIFIED RESEARCH — GENERATE THEN VERIFY ===',
-              'Prefer retrieved authorities and quote their text when available.',
-              'You may use model knowledge for doctrine and well-known authorities so the memo stays useful.',
-              'Do NOT invent URLs or fabricated reporter pinpoints.',
-              'A post-processor will triple-check cases/acts/sections against corpus, connectors, and the web.',
-              'Only authorities confirmed by ≥2 passes will be shown as Verified to the user.',
-              '=== END VERIFIED RESEARCH — GENERATE THEN VERIFY ===',
-            ].join('\n')
-          : '';
+        : '';
 
     const isBailQuery = /bail|bnss.?480|bnss.?482|bnss.?483|crpc.?437|crpc.?439|non.?bailable/i.test(
       `${input.query} ${input.practiceArea ?? ''}`,
@@ -7866,11 +7874,7 @@ Only include legally meaningful deadlines specific to this practice area and jur
       .filter(Boolean)
       .join('\n\n');
 
-    // Always use our fully-built user prompt (which contains retrieved authorities,
-    // jurisdiction grounding and SUPPLEMENTAL MODE instructions).  The DB template
-    // userPrompt is intentionally ignored here because it would lack the injected
-    // authority context and corpus-miss grounding we assembled in buildResearchPrompt.
-    const userPrompt = prompt;
+    // The writer receives authorized context and the evidence catalog; discovery leads stay outside it.
 
     // Structured synthesis for both modes: FAST uses slim memo schema; DEEP uses
     // full proposition JSON. Parse failure still returns a salvageable memo.
@@ -7897,9 +7901,16 @@ Only include legally meaningful deadlines specific to this practice area and jur
     });
 
     const synthesisMode = input.researchMode === 'DEEP' ? 'DEEP' : 'FAST';
+    const conciseAnswer = input.desiredOutput === 'ANSWER' && !input.matterId && !input.authorizedMatterContext && input.requestedTaskKind !== 'MATTER_OPINION';
     const structured = await this.structuredResearch.synthesize({
       query: input.query,
-      prompt: userPrompt,
+      prompt: [
+        `Jurisdiction: ${input.countryCode} ${input.jurisdiction ?? ''}. Research date (UTC): ${new Date().toISOString().slice(0, 10)}. Law as of: ${input.asOfDate ?? new Date().toISOString().slice(0, 10)}. Use these dates rather than inferring today's date from model knowledge.`,
+        `Question: ${input.query}`,
+        input.priorContext ? `Prior exchange (context, not verified legal authority): ${input.priorContext}` : '',
+        input.authorizedMatterContext ? `Authorized matter documents and instructions (facts, not independent legal authorities): ${input.authorizedMatterContext}` : '',
+        `Output: ${input.desiredOutput ?? 'MEMO'}. Use only the source catalog for legal propositions. Search leads and remembered doctrine are not evidence.`,
+      ].filter(Boolean).join('\n\n'),
       systemPrompt: resolvedSystemPrompt,
       modelName,
       evidencePack,
@@ -7909,11 +7920,12 @@ Only include legally meaningful deadlines specific to this practice area and jur
       taskKind: input.requestedTaskKind,
       legalIssues: classification?.legalIssues,
       synthesisMode,
+      conciseAnswer,
       caseLawSearchStatus,
       // A verified memo answered by an economy model is worse than no memo:
       // the badge says verified while the reasoning quietly got cheaper.
-      minTier: synthesisMode === 'DEEP' ? 'mid' : undefined,
-      reasoningEffort: synthesisMode === 'FAST' || (input.desiredOutput === 'ANSWER' && !input.matterId) ? 'low' : 'medium',
+      minTier: 'premium',
+      reasoningEffort: synthesisMode === 'FAST' ? 'low' : 'medium',
       maxTokens:
         synthesisMode === 'FAST'
           ? Math.max(4000, Math.min(5000, legalModelRoute?.maxOutputTokens ?? route.maxOutputTokens))

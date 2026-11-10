@@ -293,7 +293,7 @@ export function renderDraftToMarkdown(
 
     const conclusion =
       typeof issue.conclusion === 'string' ? issue.conclusion : issue.conclusion.text;
-    lines.push(`\n### Conclusion\n\n${conclusion}`);
+    if (conclusion?.trim()) lines.push(`\n### Conclusion\n\n${conclusion}`);
     if (typeof issue.conclusion !== 'string') {
       lines.push(
         `\n**Evidence-bounded assessment:** ${issue.conclusion.strength.toLowerCase()}.`,

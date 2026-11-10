@@ -64,6 +64,15 @@ export class ClaimRepairService {
       }
       repaired = next;
     }
+    // Summaries can paraphrase a removed claim, so exact replacement alone cannot
+    // establish that the answer/conclusions are clean. Do not retain those
+    // unaudited paraphrases when any material proposition has been withheld.
+    if (audits.some((audit) => audit.action === 'REMOVE')) {
+      repaired = repaired.replace(
+        /(^#{1,6}\s+(?:Short Answer|Direct Answer|Conclusion)\s*\n)[\s\S]*?(?=^#{1,6}\s|$(?![\s\S]))/gim,
+        '$1\nSummary withheld because a supporting proposition failed source verification. Review the remaining source-linked analysis and verification findings.\n\n',
+      );
+    }
     return repaired;
   }
 

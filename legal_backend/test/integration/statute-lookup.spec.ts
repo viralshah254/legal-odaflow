@@ -426,6 +426,11 @@ describe('Bare-Act Section Accuracy Fix — unit checks', () => {
   describe('Substance verification — section existence denial rule', () => {
     const service = new SubstanceVerificationService();
 
+    it('does not confuse an unverified-source limitation with denial that a section exists', () => {
+      const result = service.checkBareActSubstance({ query: 'Employment Act section 35', outputMarkdown: 'No client facts are supplied. Section 35 is reproduced below; no verified current-law source was retrieved.', authorities: [{ id: 'ke-employment-s35', title: 'Employment Act section 35', fullText: 'Section 35. Written notice of termination is required for a monthly paid employee.', summary: null }], isBareActQuery: true });
+      expect(result.warnings.some(warning => /deny a section exists/i.test(warning))).toBe(false);
+    });
+
     it('fails when output denies existence while authority text was retrieved', () => {
       const result = service.checkBareActSubstance({
         query: '101 bnss explain',

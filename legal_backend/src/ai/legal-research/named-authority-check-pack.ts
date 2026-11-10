@@ -1,3 +1,5 @@
+import { SourceIntegrityService } from './source-integrity.service';
+import { PassageClassificationService } from './passage-classification.service';
 /**
  * Small named-authority check pack: only what the query named (or a connector
  * hydrated with URL + quoteable text). Used as the cite-allowlist after the
@@ -29,8 +31,9 @@ export function extractNamedCaseTitles(text: string): string[] {
   if (!text.trim()) return [];
   const titles = new Set<string>();
   NAMED_CASE_RE.lastIndex = 0;
-  for (const match of text.matchAll(NAMED_CASE_RE)) {
-    const title = (match[1] ?? '').replace(/\s+/g, ' ').trim();
+  for (const match of text.replace(/\([^)]{1,24}\)/g, ' ').matchAll(NAMED_CASE_RE)) {
+    const title = (match[1] ?? '').replace(/\s+/g, ' ').trim()
+      .replace(/^(?:(?:Please|Explain|Summari[sz]e|Compare|Analy[sz]e|Discuss|Identify|Describe|Consider|Review|See)\s+)+/i, '');
     if (title.length >= 8) titles.add(title);
   }
   return [...titles];
@@ -106,13 +109,30 @@ function authorityMatchesNamedStatute(authority: RetrievedAuthority, namedKeys: 
   });
 }
 
+function caseNameTokens(name: string): string[] {
+  return normalizeKey(name).split(/[^a-z]+/).filter(token => token.length > 2 && !['limited','ltd','the','and','others','corporation','company','inc','corp','versus'].includes(token));
+}
 function authorityMatchesNamedCase(authority: RetrievedAuthority, namedCases: string[]): boolean {
   if (namedCases.length === 0) return false;
   const title = normalizeKey(authority.title ?? '');
   return namedCases.some((name) => {
-    const key = normalizeKey(name);
-    return title.includes(key.slice(0, 24)) || key.includes(title.slice(0, 24));
+    const tokens = caseNameTokens(name);
+    return tokens.length >= 2 && tokens.every(token => title.includes(token));
   });
+}
+
+/** An explanation of a named decision must not borrow another case's facts. */
+export function focusNamedCaseEvidence(authorities: RetrievedAuthority[], query: string): RetrievedAuthority[] {
+  if (!/\b(?:explain|summari[sz]e|holding|outcome|disposition)\b/i.test(query) || /\b(?:similar|comparable|compare|survey|precedents?|adverse|overrul\w*|subsequent|treatment|other cases)\b/i.test(query)) return authorities;
+  const names = extractNamedCaseTitles(query).filter(name => caseNameTokens(name).length >= 2);
+  if (!names.length) return authorities;
+  const year = query.match(/\[(\d{4})\]\s+(?:KE[A-Z]+|eKLR|UK[A-Z]+)/i)?.[1] ?? query.match(/\b\d+\s+U\.?\s*S\.?\s+\d+\s*\((\d{4})\)/)?.[1];
+  const matching = new Set(authorities.filter(authority => {
+    if (!authorityMatchesNamedCase(authority, names)) return false;
+    const dateYear = authority.decisionDate ? new Date(authority.decisionDate).getUTCFullYear() : authority.decisionYear;
+    return !year || String(dateYear) === year;
+  }).map(authority => authority.id));
+  return authorities.filter(authority => isStatuteAuthority(authority) || (authority.authorityType !== 'CASE' && authority.sourceTier !== 'case_law') || matching.has(authority.id));
 }
 
 /**
@@ -240,4 +260,14 @@ export function stripOutputToCheckPack(
     strippedCount: strippedCites.stripped.length + marked.markedCount,
     strippedCitations: strippedCites.stripped.map((s) => s.original),
   };
+}
+
+/** Discovery excerpts remain leads; only actual court passages support drafted legal rules. */
+export function hasGroundedCasePassage(authority: RetrievedAuthority): boolean {
+  if (authority.sourceTier !== 'case_law') return true;
+  if (new SourceIntegrityService().assess(authority.sourceProvenance).state !== 'PASS') return false;
+  return (authority.sourcePassages ?? []).some(passage => {
+    const role = passage.classification ?? new PassageClassificationService().classify(passage.text, authority.authorityType).classification;
+    return passage.sourcePinpoint && (role === 'HOLDING' || role === 'RATIO');
+  });
 }

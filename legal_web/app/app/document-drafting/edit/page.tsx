@@ -60,12 +60,6 @@ const ACCEPTED_FORMATS = [
   { ext: "MD", mime: ".md" },
 ]
 
-function resolveEditModelLabel(selectedText: string, instruction: string): string {
-  if (selectedText && instruction.length < 120) return "Quick edit"
-  if (!selectedText) return "Document edit"
-  return "Document edit"
-}
-
 function EditPageInner() {
   const t = useTranslations("drafting")
   const router = useRouter()
@@ -432,14 +426,6 @@ function EditPageInner() {
                   className="resize-none text-sm"
                 />
 
-                {/* Model badge */}
-                <div className="flex items-center justify-between text-[10px] text-muted-foreground">
-                  <span>Model</span>
-                  <Badge variant="outline" className="text-[10px] font-normal gap-1">
-                    <Zap className="h-2.5 w-2.5" />
-                    {resolveEditModelLabel(selectedText, editInstruction)}
-                  </Badge>
-                </div>
 
                 <Button
                   className="w-full gap-2"

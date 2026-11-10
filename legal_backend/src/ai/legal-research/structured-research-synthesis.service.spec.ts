@@ -26,6 +26,52 @@ describe('StructuredResearchSynthesisService', () => {
     new QuotationVerificationService(),
   );
 
+  it('does not publish a new unlinked conclusion in a standalone answer', async () => {
+    const pack = packService.buildFromAuthorities({ jurisdiction: 'KE', authorities: [{
+      id: 'notice-act', title: 'Employment Act Section 35', sourceName: 'Official publication', sourceTier: 'primary', summary: 'Written notice is required.',
+    }] });
+    const llm = { complete: jest.fn().mockResolvedValue({ content: JSON.stringify({
+      shortAnswer: { text: 'The retrieved text requires written notice.' },
+      issues: [{ issueId: 'notice', heading: 'Notice', rule: [{ claimId: 'notice-rule', type: 'RULE', text: 'Written notice is required.', evidenceIds: [pack.statutes[0].evidenceId] }], conclusion: 'The employer can never lose this case.' }],
+    }), inputTokens: 1, outputTokens: 1, provider: 'openai', modelName: 'test' }) };
+    const service = new StructuredResearchSynthesisService(llm as never, claimVerifier);
+    const result = await service.synthesize({ query: 'What notice?', prompt: 'What notice?', systemPrompt: 'Source-bound answer', modelName: 'test', evidencePack: pack, jurisdiction: 'KE', synthesisMode: 'DEEP', conciseAnswer: true });
+    expect(llm.complete).toHaveBeenCalledWith(expect.objectContaining({ reasoningEffort: 'medium', minTier: undefined }));
+    expect(result.outputMarkdown).not.toContain('The employer can never lose');
+    expect(result.outputMarkdown).toContain('Written notice is required.');
+  });
+
+  it('supplies relevant earlier case history instead of only nearby signature lines', () => {
+    const service = new StructuredResearchSynthesisService({} as never, claimVerifier);
+    const pack = { statutes: [], officialMaterials: [], matterFacts: [], authorities: [{ title: 'Public case', court: 'Supreme Court', passages: [
+      { evidenceId: 'history', classification: 'LOWER_COURT_FINDING', paragraph: '12', page: 3, text: 'One month salary was paid in lieu of notice; the Court of Appeal found the dismissal unfair.' },
+      { evidenceId: 'holding', classification: 'HOLDING', paragraph: '43', page: 20, text: 'The appeal is dismissed.' },
+      { evidenceId: 'signature', classification: 'UNKNOWN', page: 20, text: 'DATED and DELIVERED. Signed by the judges.' },
+    ] }] };
+    const catalog = (service as any).buildEvidenceCatalog(pack, false, 'Notice payment in lieu and unfair dismissal');
+    expect(catalog).toContain('history: BACKGROUND/PROCEDURE ONLY');
+    expect(catalog).toContain('Court of Appeal found');
+    expect(catalog).not.toContain('history: CASE');
+  });
+
+  it('checks holdings against admitted reasoning, never signature dates or party submissions', () => {
+    const service = new StructuredResearchSynthesisService({} as never, claimVerifier);
+    const pack = { statutes: [], officialMaterials: [], matterFacts: [], authorities: [{ evidenceId: 'case', passages: [
+      { evidenceId: 'holding', classification: 'HOLDING', admission: { admitted: true } },
+      { evidenceId: 'date', classification: 'PROCEDURAL_HISTORY', admission: { admitted: false } },
+      { evidenceId: 'submission', classification: 'PARTY_SUBMISSION', admission: { admitted: false } },
+    ] }] } as unknown as Parameters<LegalEvidencePackService['build']>[0];
+    const draft = { issues: [{ issueId: 'i', propositions: [
+      { claimId: 'valid', type: 'HOLDING', text: 'The appeal was dismissed.', evidenceIds: ['holding', 'date', 'submission'] },
+      { claimId: 'invalid', type: 'HOLDING', text: 'An unsupported rule.', evidenceIds: ['submission'] },
+    ] }] };
+    const clean = (service as any).sanitizeDraft(draft, pack);
+    expect(clean.issues[0].propositions[0].evidenceIds).toEqual(['holding']);
+    // With no admitted reasoning, leave the inadmissible reference for the
+    // verifier to reject; do not turn it into an evidence-free assertion.
+    expect(clean.issues[0].propositions[1].evidenceIds).toEqual(['submission']);
+  });
+
   it('forces VERIFICATION_UNAVAILABLE when JSON plan parse fails', async () => {
     const llm = {
       complete: jest.fn().mockResolvedValue({
@@ -554,6 +600,16 @@ describe('StructuredResearchSynthesisService', () => {
       'General principle not verified against retrieved sources',
     );
     expect(result.outputMarkdown).toContain('Practical Steps');
+  });
+
+  it('preserves provisional claims for the final semantic audit instead of deleting them early', async () => {
+    const claim = { claimId: 'resignation', text: 'Voluntary resignation is distinct from employer retrenchment.', type: 'RULE', evidenceIds: [], confidence: 0.8 };
+    const provisional = { verify: jest.fn().mockReturnValue({ claimAudits: [{ claimId: claim.claimId, action: 'REMOVE' }], findings: [], publicationState: 'DRAFT_NOT_VERIFIED' }) };
+    const llm = { complete: jest.fn().mockResolvedValue({ content: JSON.stringify({ questionPresented: 'Employee resignation', shortAnswer: { text: 'The governing employment instrument must be checked.' }, issues: [{ issueId: 'notice', heading: 'Resignation', conclusion: 'Confirm the applicable notice clause.', propositions: [claim] }], limitations: [], verificationNotes: [] }), inputTokens: 10, outputTokens: 20, provider: 'openai', modelName: 'test', finishReason: 'stop' }) };
+    const service = new StructuredResearchSynthesisService(llm as never, provisional as never);
+    const result = await service.synthesize({ query: 'What notice applies to employee resignation?', prompt: 'Resignation notice', systemPrompt: 'system', modelName: 'test', jurisdiction: 'IN', evidencePack: packService.buildFromAuthorities({ jurisdiction: 'IN', authorities: [] }) });
+    expect(result.draft?.issues.flatMap(issue => issue.propositions).some(item => item.claimId === claim.claimId)).toBe(true);
+    expect(result.claimVerification?.claimAudits[0].action).toBe('REMOVE');
   });
 
   it('renders statutes before cases and confines caveats to the appendix', () => {

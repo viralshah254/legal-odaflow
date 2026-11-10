@@ -44,4 +44,12 @@ describe('ClaimRepairService markdown enforcement', () => {
     expect(result).not.toContain(claimText);
     expect(result).toContain('proposition withheld');
   });
+
+  it('also withholds paraphrased summaries and conclusions after a removal', () => {
+    const result = service.repairMarkdown(`## Short Answer\n\nRecovery needs no notice.\n\n## Rule\n\n${claimText}\n\n### Conclusion\n\nProceed immediately.\n\n## Limitations\n\nCheck the source.`, [audit], draft);
+    expect(result).not.toContain('Recovery needs no notice');
+    expect(result).not.toContain('Proceed immediately');
+    expect(result).toContain('Summary withheld');
+    expect(result).toContain('Check the source.');
+  });
 });

@@ -6,6 +6,7 @@ export interface TavilySearchParams {
   query: string;
   countryCode?: string;
   limit?: number;
+  sourceProfile?: 'official_publications';
 }
 
 export interface TavilyResult {
@@ -43,7 +44,7 @@ const AFRICA_COMMON_LAW_DOMAINS = [
 ];
 
 const LEGAL_DOMAINS: Record<string, string[]> = {
-  KE: ['kenyalaw.org', 'centralbank.go.ke', 'africanlii.org', 'eaclii.org', 'icourts.go.ke', 'bailii.org', 'ulii.org'],
+  KE: ['kenyalaw.org', 'centralbank.go.ke', 'cma.or.ke', 'treasury.go.ke', 'kra.go.ke', 'odpc.go.ke', 'parliament.go.ke', 'judiciary.go.ke', 'labour.go.ke', 'labourmarket.go.ke', 'eaclii.org'],
   UG: [
     'ulii.org',
     'africanlii.org',
@@ -63,7 +64,6 @@ const LEGAL_DOMAINS: Record<string, string[]> = {
     'sci.gov.in',
     'api.sci.gov.in',
     'main.sci.gov.in',
-    'indiankanoon.org',
     'indiacode.nic.in',
     'labour.gov.in',
     'legislative.gov.in',
@@ -72,12 +72,11 @@ const LEGAL_DOMAINS: Record<string, string[]> = {
     'rbi.org.in',
     'judgments.ecourts.gov.in',
   ],
-  US: ['courtlistener.com', 'justia.com', 'law.cornell.edu', 'supremecourt.gov', 'congress.gov'],
+  US: ['supremecourt.gov', 'govinfo.gov', 'uscourts.gov', 'uscode.house.gov', 'congress.gov', 'eeoc.gov', 'dol.gov', 'courtlistener.com', 'law.cornell.edu'],
   GB: ['bailii.org', 'supremecourt.uk', 'legislation.gov.uk', 'judiciary.gov.uk', 'scl.org.uk'],
   DEFAULT: [
     ...AFRICA_COMMON_LAW_DOMAINS,
     'courtlistener.com',
-    'indiankanoon.org',
     'justia.com',
     'legislation.gov.uk',
   ],
@@ -115,7 +114,13 @@ export class TavilySearchConnector {
 
     const requestedCountry = params.countryCode?.trim().toUpperCase().split('-')[0];
     const country = requestedCountry === 'UK' ? 'GB' : requestedCountry;
-    const domains = country ? LEGAL_DOMAINS[country] : LEGAL_DOMAINS.DEFAULT;
+    const officialPublications: Record<string, string[]> = {
+      KE: ['judiciary.go.ke', 'labourmarket.go.ke', 'labour.go.ke', 'parliament.go.ke', 'cma.or.ke', 'centralbank.go.ke', 'treasury.go.ke'],
+      IN: ['sci.gov.in', 'indiacode.nic.in', 'labour.gov.in', 'legislative.gov.in'],
+      US: ['supremecourt.gov', 'govinfo.gov', 'uscourts.gov', 'uscode.house.gov', 'eeoc.gov', 'dol.gov', 'congress.gov'],
+    };
+    const domains = params.sourceProfile === 'official_publications' && country && officialPublications[country]
+      ? officialPublications[country] : country ? LEGAL_DOMAINS[country] : LEGAL_DOMAINS.DEFAULT;
     let countryName = country;
     if (country && !domains) {
       try { countryName = new Intl.DisplayNames(['en'], { type: 'region' }).of(country) ?? country; } catch { /* retain requested country */ }

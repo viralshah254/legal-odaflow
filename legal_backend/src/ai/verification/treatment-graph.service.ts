@@ -42,7 +42,7 @@ export class TreatmentGraphService {
     }
 
     const joined = treatmentSignals
-      .map((s) => `${s.treatment ?? ''} ${s.textHint ?? ''}`)
+      .map((s) => s.treatment ?? '')
       .join(' ');
 
     if (ADVERSE.test(joined)) {

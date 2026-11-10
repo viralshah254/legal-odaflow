@@ -149,12 +149,8 @@ class _DocuDraftWorkspaceScreenState extends ConsumerState<DocuDraftWorkspaceScr
 
     WidgetsBinding.instance.addPostFrameCallback((_) async {
       _draftSet = await getDraftSet();
-      try {
-        final wallet = await ref.read(creditWalletProvider.future);
-        final mode = wallet.aiModelMode?.toUpperCase();
-        if (mode == 'AUTO' || mode == 'PREMIUM') _aiModelMode = mode!;
-        _premiumModelId = wallet.premiumModelId;
-      } catch (_) {}
+      _aiModelMode = 'PREMIUM';
+      _premiumModelId = null;
       if (widget.autoGenerate && _caseDetailsController.text.trim().length >= 10) {
         await _generate();
       }

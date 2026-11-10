@@ -1,3 +1,5 @@
+import { SourceIntegrityService } from './source-integrity.service';
+import { citationProposition as propositionContaining } from '@/ai/citations/citation-proposition';
 import { Injectable, Logger, Optional } from '@nestjs/common';
 import { PrismaService } from '@/prisma/prisma.service';
 import { BareActLookupService } from '@/legal-search/bare-act-lookup.service';
@@ -17,6 +19,7 @@ import { RelevanceVerificationService } from '@/ai/verification/relevance-verifi
  * Covers India (SCC/AIR), US, UK, and Kenya formats.
  */
 const CASE_CITATION_PATTERNS: RegExp[] = [
+  /\b(?:Petition|Civil Appeal|Criminal Appeal|Civil Application)\s+(?:No\.?\s*)?[A-Z]?\d+\s+of\s+\d{4}/gi,
   /\(\d{4}\)\s+\d+\s+SCC\s+\d+/g,           // India: (2010) 11 SCC 441
   /AIR\s+\d{4}\s+[A-Za-z]+\s+\d+/g,          // India: AIR 1980 SC 1789
   /\b\d+\s+U\.S\.\s+\d+/g,                    // US: 410 U.S. 113
@@ -58,7 +61,9 @@ export function extractCaseCitations(markdown: string): string[] {
 }
 
 export function extractStatuteCitations(markdown: string): string[] {
-  const matches = markdown.match(STATUTE_CITATION_PATTERN);
+  // "S." inside the U.S. reporter is not a shorthand statutory section.
+  const statuteText = markdown.replace(/\b\d+\s+U\.?\s*S\.?\s+\d+/gi, match => ' '.repeat(match.length));
+  const matches = statuteText.match(STATUTE_CITATION_PATTERN);
   return matches ? [...new Set(matches.map((m) => m.trim()))] : [];
 }
 
@@ -124,6 +129,30 @@ function citationPinpoint(citation: string): string | undefined {
   return match ? `paragraph ${match[1] ?? match[2]}` : undefined;
 }
 
+/** Resolve a shorthand only within one explicitly named, retrieved enactment. */
+export function contextualStatuteAuthority(citation: string, query: string, authorities: LegalAuthority[]): LegalAuthority | undefined {
+  const parsed = parseStatuteCitation(citation);
+  if (!parsed.section || parsed.actId || parsed.actName) return undefined;
+  const root = parsed.section.split('(')[0];
+  const sectionAuthorities = authorities.flatMap(a => {
+    if (a.authorityType !== 'STATUTE' || a.section || a.sourceProvenance?.completeness !== 'COMPLETE') return [a];
+    const passage = a.sourcePassages?.find(p => p.sourcePinpoint && p.paragraph === `Section ${root}`);
+    if (!passage) return [a];
+    const identity = parseStatuteCitation(a.citation ?? a.title);
+    return [{ ...a, id: `${a.id}-source-s${root}`, actName: a.actName ?? identity.actName,
+      actYear: a.actYear ?? identity.actYear, section: root, extractedText: passage.text,
+      pinpoint: passage.paragraph, sourcePassages: [passage] }];
+  });
+  const candidates = sectionAuthorities.filter(a => {
+    if (a.authorityType !== 'STATUTE' || (a.section ?? parseStatuteCitation(a.citation ?? a.title).section).split('(')[0] !== root) return false;
+    const act = a.actName ?? parseStatuteCitation(a.citation ?? a.title).actName;
+    if (!act || !normaliseCitation(query).includes(normaliseCitation(act))) return false;
+    return [...parsed.section.matchAll(/\((\d+[A-Za-z]?)\)/g)].every(m => new RegExp('\\(\\s*' + m[1] + '\\s*\\)').test(a.extractedText));
+  });
+  const identities = new Set(candidates.map(a => a.sourceProvenance?.documentHash ?? `${normaliseCitation(parseStatuteCitation(a.actName ?? a.citation ?? a.title).actName ?? a.actName ?? '')}:${a.actYear ?? ''}`));
+  return identities.size === 1 ? candidates[0] : undefined;
+}
+
 /**
  * Computes overall source quality from the retrieved authorities used to ground
  * the answer. Official/primary = reliabilityRank <= 2 or official flag.
@@ -145,12 +174,6 @@ export type LegalCitationVerifyParams = {
   query?: string;
   legalDomain?: string;
 };
-
-function propositionContaining(markdown: string, citation: string): string {
-  const escaped = citation.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-  const match = markdown.match(new RegExp(`[^.!?\\n]{0,500}${escaped}[^.!?\\n]{0,500}[.!?]?`, 'i'));
-  return match?.[0]?.trim() ?? citation;
-}
 
 function quotedPassage(text: string): string | undefined {
   return text.match(/["“]([^"”]{12,})["”]/)?.[1]?.trim();
@@ -287,22 +310,22 @@ export class LegalCitationVerifierService {
         expectedJurisdiction: jurisdiction,
       });
       if (audit.found) foundCount++;
-      if (audit.verified) renderableCitations.push(audit);
+      if (audit.verified || audit.sourceVerified) { renderableCitations.push(audit); if (!audit.currentLawVerified) warnings.push(`Source checked for ${citation}; current-law treatment remains unverified.`); }
       else rejectedCitations.push(audit);
 
       const claim: LegalClaim = {
         claim: propositionContaining(markdown, citation),
         requiredAuthorityType: 'CASE',
         citations: [citation],
-        supported: audit.verified,
+        supported: audit.verified || audit.sourceVerified === true,
         confidence: inAuthorities ? 'high' : inRegistry ? 'medium' : 'low',
-        issue: audit.verified ? undefined : audit.missingReasons.join(' '),
+        issue: audit.verified || audit.sourceVerified ? undefined : audit.missingReasons.join(' '),
       };
 
       claims.push(claim);
       if (audit.verified) {
         verifiedCount++;
-      } else {
+      } else if (!audit.sourceVerified) {
         unsupportedClaims.push(claim);
         warnings.push(
           `Case citation blocked: "${citation}" — ${audit.missingReasons.join('; ')}`,
@@ -327,7 +350,7 @@ export class LegalCitationVerifierService {
         warnings.push(reason);
       };
 
-      const retrievedAuthority = findAuthority(citation);
+      const retrievedAuthority = findAuthority(citation) ?? contextualStatuteAuthority(citation, params.query ?? '', authorities);
       if ((!parsed.actId && !retrievedAuthority) || !parsed.section) {
         unsupported(`Statute citation lacks an act name and cannot be corpus-verified: "${citation}"`);
         continue;
@@ -404,21 +427,21 @@ export class LegalCitationVerifierService {
         expectedJurisdiction: jurisdiction,
       });
       if (audit.found) foundCount++;
-      if (audit.verified) renderableCitations.push(audit);
+      if (audit.verified || audit.sourceVerified) { renderableCitations.push(audit); if (!audit.currentLawVerified) warnings.push(`Source checked for ${citation}; current-law treatment remains unverified.`); }
       else rejectedCitations.push(audit);
       const claim: LegalClaim = {
         claim: propositionContaining(markdown, citation),
         requiredAuthorityType: 'STATUTE',
         citations: [citation],
-        supported: audit.verified,
+        supported: audit.verified || audit.sourceVerified === true,
         supportExcerpt,
         confidence: inRetrieved ? 'high' : foundInCorpus ? 'medium' : 'low',
-        issue: audit.verified ? undefined : audit.missingReasons.join(' '),
+        issue: audit.verified || audit.sourceVerified ? undefined : audit.missingReasons.join(' '),
       };
       claims.push(claim);
       if (audit.verified) {
         statuteVerifiedCount++;
-      } else {
+      } else if (!audit.sourceVerified) {
         unsupportedClaims.push(claim);
         warnings.push(`Statute citation blocked: "${citation}" — ${audit.missingReasons.join('; ')}`);
       }
@@ -462,12 +485,12 @@ export class LegalCitationVerifierService {
         reasons: citation.missingReasons,
       })),
       safeForReliance:
-        renderableCitations.length > 0 && rejectedCitations.length === 0,
+        renderableCitations.length > 0 && rejectedCitations.length === 0 && renderableCitations.every(entry => entry.verified),
       kenyaVerified:
         jurisdiction.toUpperCase() === 'KE'
           ? renderableCitations.length > 0 &&
             rejectedCitations.length === 0 &&
-            renderableCitations.every((entry) => Boolean(entry.deepLinkUrl ?? entry.url))
+            renderableCitations.every((entry) => entry.verified && Boolean(entry.deepLinkUrl ?? entry.url))
           : undefined,
       verificationDowngradeReasons:
         jurisdiction.toUpperCase() === 'KE'
@@ -648,14 +671,19 @@ export class LegalCitationVerifierService {
         ? 'Authority satisfies the citation contract.'
         : contract.missingReasons.join(' '),
     });
+    const integrity = new SourceIntegrityService().assess(authority?.sourceProvenance);
+    const sourceVerified = integrity.state === 'PASS' && input.found && checks.filter(check => check.dimension !== 'currentLaw').every(check => check.state === 'PASS') && !prospectiveAuthority && (currentLawPass || !authority?.currentLawStatus || authority.currentLawStatus === 'UNKNOWN');
     const missingReasons = checks
       .filter((check) => check.state !== 'PASS')
       .map((check) => `${check.dimension}: ${check.reason}`);
+    if (integrity.state !== 'PASS') missingReasons.push(`sourceIntegrity: ${integrity.reasons.join('; ')}`);
     return {
+      sourceVerified,
+      currentLawVerified: currentLawPass,
       citation: input.citation,
       authorityId: authority?.id,
       found: input.found,
-      verified: input.found && checks.every((check) => check.state === 'PASS'),
+      verified: sourceVerified && checks.every((check) => check.state === 'PASS'),
       url: authority?.canonicalUrl ?? authority?.sourceUrl,
       deepLinkUrl: authority?.deepLinkUrl,
       pinpoint,

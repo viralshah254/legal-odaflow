@@ -1,4 +1,4 @@
-import { CAUSE_TITLE_INSTRUCTION } from './section-generator.service';
+import { CAUSE_TITLE_INSTRUCTION, modelForTierWithComplexity } from './section-generator.service';
 import { INDIA_COURT_PLEADING_PROTOCOL } from '@/ai/drafting/legal-accuracy-protocol';
 
 describe('filing-grade cause title instructions', () => {
@@ -36,5 +36,12 @@ describe('section generation integrity', () => {
     const { SectionGeneratorService } = await import('./section-generator.service');
     const generator = new SectionGeneratorService({ complete: jest.fn().mockResolvedValue(result) } as never, null, null);
     await expect(generator.generateSection(section, outline, new Map())).rejects.toThrow();
+  });
+});
+
+
+describe('premium section routing', () => {
+  it.each(['simple', 'standard', 'complex'] as const)('keeps every %s drafting section on premium models even for legacy Auto requests', complexity => {
+    for (const tier of ['cheap','mid','premium'] as const) expect(modelForTierWithComplexity(tier, complexity, 'AUTO')).toMatch(/gpt-5\.6-(?:terra|sol)/);
   });
 });

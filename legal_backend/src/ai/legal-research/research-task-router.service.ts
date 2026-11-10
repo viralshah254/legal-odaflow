@@ -52,7 +52,7 @@ const SIGNALS: Array<{
   {
     kind: 'ADVERSE_AUTHORITY',
     weight: 5,
-    patterns: [/\b(?:adverse|contrary|negative|unfavourable|unfavorable)\s+(?:authority|case|precedent)/i, /\b(?:overruled|distinguished|doubted|limited)\b/i],
+    patterns: [/\b(?:adverse|contrary|negative|unfavourable|unfavorable)\s+(?:authority|case|precedent)/i, /\b(?:overruled|distinguished|doubted)\b|\blimited\s+(?:by|on appeal|in scope)\b|\b(?:subsequently|later|was|been)\s+limited\b/i],
   },
   {
     kind: 'CASE_SURVEY',
@@ -187,6 +187,9 @@ export function routeResearchTaskDeterministically(
       scores[signal.kind] += signal.weight + matches - 1;
       reasons.push(`${signal.kind}: ${matches} deterministic signal${matches === 1 ? '' : 's'}`);
     }
+  }
+  if (scores.CASE_COMPARISON > 0 && !/\bcompare|comparison\b/i.test(haystack) && (haystack.match(/\b(?:v\.?|vs\.?|versus)\s/gi)?.length ?? 0) < 2) {
+    scores.CASE_COMPARISON = 0;
   }
   if (request.statuteReferences.length > 0) scores.STATUTORY_INTERPRETATION += 2;
   if (request.citedAuthorities.length > 0) {
@@ -354,64 +357,8 @@ export class ResearchTaskRouterService {
   constructor(@Optional() private readonly llm?: LlmCompletionService) {}
 
   async route(request: NormalizedResearchRequest): Promise<ResearchTaskProfile> {
-    const deterministic = routeResearchTaskDeterministically(request);
-    if (
-      deterministic.confidence !== 'LOW' ||
-      !this.llm ||
-      !this.llm.isModelConfigured('gpt-5.4-mini')
-    ) {
-      return deterministic;
-    }
-
-    try {
-      const result = await this.llm.complete({
-        modelName: 'gpt-5.4-mini',
-        messages: [
-          {
-            role: 'system',
-            content:
-              'Classify the legal research request into exactly one allowed task kind. Do not answer the request.',
-          },
-          { role: 'user', content: request.objective.slice(0, 2000) },
-        ],
-        temperature: 0,
-        maxTokens: 200,
-        responseFormat: {
-          type: 'json_schema',
-          json_schema: {
-            name: 'research_task_route',
-            strict: true,
-            schema: {
-              type: 'object',
-              additionalProperties: false,
-              properties: {
-                kind: { type: 'string', enum: TASK_KINDS },
-                reason: { type: 'string', maxLength: 240 },
-              },
-              required: ['kind', 'reason'],
-            },
-          },
-        },
-      });
-      const parsed = JSON.parse(result.content) as { kind?: unknown; reason?: unknown };
-      if (!TASK_KINDS.includes(parsed.kind as ResearchTaskKind)) return deterministic;
-      const kind = parsed.kind as ResearchTaskKind;
-      // A low-confidence reclassification must never turn an answerable request
-      // into a clarification prompt. It may refine the task kind, not refuse.
-      const clarification = deterministic.clarification
-        ? legalClarification(kind, request)
-        : undefined;
-      return enrichAdaptiveProfile({
-        ...deterministic,
-        kind,
-        confidence: 'MEDIUM',
-        reasons: [...deterministic.reasons, `Structured fallback: ${String(parsed.reason).slice(0, 240)}`],
-        fallbackUsed: true,
-        requiredCapabilities: [...REQUIRED_CAPABILITIES[kind]],
-        clarification,
-      }, request);
-    } catch {
-      return deterministic;
-    }
+    // Task classification is routing metadata, not a legal answer. Do not hold
+    // discovery behind an extra generative call or a chain of model retries.
+    return routeResearchTaskDeterministically(request);
   }
 }

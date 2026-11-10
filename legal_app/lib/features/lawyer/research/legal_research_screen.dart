@@ -14,7 +14,6 @@ import '../../../core/network/api_client.dart';
 import '../../../core/providers/app_providers.dart';
 import '../../../core/providers/research_job_provider.dart';
 import '../../../core/theme/app_colors.dart';
-import '../../../widgets/ai_model_picker.dart';
 import '../../../widgets/legal_disclaimer.dart';
 import '../../../widgets/staged_analysis_progress.dart';
 import '../../../widgets/verification/verification_ui.dart';
@@ -194,17 +193,8 @@ class _LegalResearchScreenState extends ConsumerState<LegalResearchScreen> {
     final session = ref.read(authControllerProvider).session;
     final tenantId = session?.user.tenantId;
 
-    // Hydrate model prefs from wallet when available.
-    try {
-      final wallet = await ref.read(creditWalletProvider.future);
-      final mode = wallet.aiModelMode?.toUpperCase();
-      if (mode == 'AUTO' || mode == 'PREMIUM') {
-        _aiModelMode = mode!;
-      }
-      if (wallet.premiumModelId != null && wallet.premiumModelId!.isNotEmpty) {
-        _premiumModelId = wallet.premiumModelId;
-      }
-    } catch (_) {}
+    _aiModelMode = 'PREMIUM';
+    _premiumModelId = null;
 
     setState(() {
       _loading = true;
@@ -492,24 +482,6 @@ class _LegalResearchScreenState extends ConsumerState<LegalResearchScreen> {
                       ),
                     ),
                   ],
-                ),
-
-                const SizedBox(height: 20),
-
-                // AI Model picker
-                Text(
-                  'AI Model',
-                  style: Theme.of(context).textTheme.labelMedium?.copyWith(
-                        color: colorScheme.onSurfaceVariant,
-                        fontWeight: FontWeight.w600,
-                      ),
-                ),
-                const SizedBox(height: 10),
-                AiModelPicker(
-                  onChanged: (mode, premiumModelId) => setState(() {
-                    _aiModelMode = mode;
-                    _premiumModelId = premiumModelId;
-                  }),
                 ),
 
                 const SizedBox(height: 20),
@@ -890,7 +862,6 @@ class _ResultViewState extends State<_ResultView> {
                       Expanded(
                         child: Text(
                           [
-                            result.modelName,
                             if (result.sourceTierSummary != null)
                               result.sourceTierSummary!,
                             if (result.corpusEdition != null)

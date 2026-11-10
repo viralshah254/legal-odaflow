@@ -264,7 +264,7 @@ describe('C20 – Legal research model router performance/quality gates', () => 
     expect(['QUICK', 'STANDARD']).toContain(result.complexity);
   });
 
-  it('ULTRA complexity routes to top-tier model (AI_LEGAL_COMPLEX_MODEL)', () => {
+  it('ULTRA rejects an unpriced configured model and retains the premium floor', () => {
     const result = route({
       complexity: 'ULTRA',
       highRisk: true,
@@ -273,8 +273,8 @@ describe('C20 – Legal research model router performance/quality gates', () => 
       planAllowsUltra: true,
     });
     expect(result.complexity).toBe('ULTRA');
-    // ULTRA uses AI_LEGAL_COMPLEX_MODEL via resolveSeriousSynthesisModel
-    expect(result.synthesisModel).toBe('o3');
+    // An unpriced legacy override must not bypass premium routing.
+    expect(result.synthesisModel).toBe('gpt-5.6-sol');
   });
 
   it('COMPLEX with highRisk uses high reasoning effort', () => {
@@ -304,8 +304,8 @@ describe('C20 – Legal research model router performance/quality gates', () => 
     });
     // forceTopTier must prevent downgrade to cheap models
     expect(result.synthesisModel).not.toBeUndefined();
-    // synthesisModel uses AI_LEGAL_COMPLEX_MODEL (serious path)
-    expect(result.synthesisModel).toBe('o3');
+    // An unpriced legacy override cannot bypass the serious path.
+    expect(result.synthesisModel).toBe('gpt-5.6-sol');
     // Must not use light fast/standard model
     expect(result.synthesisModel).not.toBe('gpt-5.6-luna');
     expect(result.synthesisModel).not.toBe('gpt-5.6-terra');

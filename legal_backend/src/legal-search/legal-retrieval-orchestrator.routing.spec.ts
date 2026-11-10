@@ -333,3 +333,56 @@ describe('LegalRetrievalOrchestrator live source routing', () => {
     );
   });
 });
+
+describe('Official-source duplicate preference', () => {
+  it('preserves a completed primary document when a sibling download exhausts the stage', async () => {
+    jest.useFakeTimers();
+    const documents = await import('@/legal-sources/connectors/official-document');
+    const hydrate = jest.spyOn(documents, 'hydrateOfficialDocument').mockImplementation(async ({ url }) => {
+      if (!url.includes('/judis/')) return new Promise(() => {});
+      return { sourceUrl: url, title: 'Employer v Employee', sourceTier: 'case_law', authorityType: 'CASE',
+        fullText: 'Employee resignation notice is governed by employment terms. The appeal is dismissed.' };
+    });
+    try {
+      const orchestrator = buildOrchestrator({ tavily: { isConfigured: () => true, isCircuitOpen: () => false, search: jest.fn().mockResolvedValue([]) } });
+      const pending = (orchestrator as any).supplementWithLiveConnectors([], { countryCode: 'IN', query: 'employee resignation notice', knowledgeSources: ['case_law', 'web'] });
+      await jest.advanceTimersByTimeAsync(14001);
+      expect((await pending).some((row: { sourceUrl?: string }) => row.sourceUrl?.includes('/judis/'))).toBe(true);
+    } finally { hydrate.mockRestore(); jest.clearAllTimers(); jest.useRealTimers(); }
+  });
+
+  it('retains a later hydrated document instead of an earlier snippet for the same URL', async () => {
+    const documents = await import('@/legal-sources/connectors/official-document');
+    const hydrate = jest.spyOn(documents, 'hydrateOfficialDocument').mockImplementation(async ({ url }) => url === 'https://api.sci.gov.in/duplicate.pdf' ? ({
+      sourceUrl: url, authorityType: 'CASE', sourceTier: 'case_law',
+      title: 'Employer v Employee', citation: '1990 AIR 1808',
+      fullText: 'We hold that employee resignation notice is governed by employment terms. The appeal is dismissed.',
+      sourceProvenance: { provider: 'Supreme Court of India', retrievedAt: new Date().toISOString(), documentHash: 'actual-document-hash', pageCount: 2, missingPages: [], completeness: 'COMPLETE', extractionMethod: 'NATIVE_TEXT', authoritativeStatus: 'OFFICIAL', paragraphNumberingIntegrity: 'UNKNOWN', dispositionComplete: true },
+      sourcePassages: [{ text: 'We hold that employee resignation notice is governed by employment terms.', page: 2, sourcePinpoint: true }],
+    }) : null);
+    try {
+      const orchestrator = buildOrchestrator({ tavily: { isConfigured: () => true, isCircuitOpen: () => false,
+        search: jest.fn().mockResolvedValue([{ id: 'discovery', title: 'Supreme Court search index', citation: null,
+          sourceUrl: 'https://api.sci.gov.in/duplicate.pdf', summary: 'Employee resignation notice is governed by employment terms.', judges: [], decisionDate: null }]) } });
+      const results = await (orchestrator as any).supplementWithLiveConnectors([], { countryCode: 'IN', query: 'employee resignation notice', knowledgeSources: ['case_law', 'web'] });
+      expect(results).toHaveLength(1);
+      expect(results[0].title).toBe('Employer v Employee');
+      expect(results[0].sourceProvenance.extractionMethod).toBe('NATIVE_TEXT');
+    } finally { hydrate.mockRestore(); }
+  });
+});
+
+it('retains prefetched statute provisions even when two discovered court PDFs use the hydration slots', async () => {
+  const documents = await import('@/legal-sources/connectors/official-document');
+  const hydrate = jest.spyOn(documents, 'hydrateOfficialDocument').mockImplementation(async input => input.country === 'KE' && /Employment_Act/.test(input.url) ? {
+    title: 'Employment Act, 2007', sourceUrl: input.url, sourceTier: 'primary', authorityType: 'STATUTE',
+    fullText: 'Employment Act, 2007. Monthly salary termination notice and payment in lieu of notice under the employment contract.',
+    sourcePassages: [35,36].map(section => ({ paragraph: `Section ${section}`, page: section + 7, text: `Notice ${section}. Monthly salary employee resignation notice and payment in lieu under the Employment Act, 2007.` })),
+  } : { title: 'Employer v Employee', citation: 'Petition 1 of 2019', sourceUrl: input.url, sourceTier: 'case_law', authorityType: 'CASE', fullText: 'We hold that employment termination notice and payment in lieu must comply with the applicable employment contract. The appeal is dismissed.' });
+  try {
+    const orchestrator = buildOrchestrator({ tavily: { isConfigured: () => true, isCircuitOpen: () => false, search: jest.fn().mockResolvedValue([1,2].map(index => ({ id: `case-${index}`, title: 'Employer v Employee', citation: null, sourceUrl: `https://judiciary.go.ke/court-${index}.pdf`, summary: 'Employment termination notice and payment in lieu.', judges: [], decisionDate: null }))) } });
+    const results = await (orchestrator as any).supplementWithLiveConnectors([], { countryCode: 'KE', query: 'Employment Act 2007 monthly employee resignation notice and payment in lieu', knowledgeSources: ['statutes','case_law','web'] });
+    expect(results.some((authority: any) => authority.section === '35')).toBe(true);
+    expect(results.some((authority: any) => authority.section === '36')).toBe(true);
+  } finally { hydrate.mockRestore(); }
+});

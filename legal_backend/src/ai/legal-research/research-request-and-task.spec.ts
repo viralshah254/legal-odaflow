@@ -49,7 +49,7 @@ describe('research request normalization and task routing', () => {
     expect(profile.fallbackUsed).toBe(false);
   });
 
-  it('uses at most one bounded structured fallback for a low-confidence request', async () => {
+  it('routes low-confidence requests without waiting for another model completion', async () => {
     const llm = {
       isModelConfigured: jest.fn().mockReturnValue(true),
       complete: jest.fn().mockResolvedValue({
@@ -62,16 +62,9 @@ describe('research request normalization and task routing', () => {
       normalizer.normalize({ query: 'Research remedies available to the client' }),
     );
 
-    expect(profile.kind).toBe('CASE_LOOKUP');
-    expect(profile.fallbackUsed).toBe(true);
-    expect(llm.complete).toHaveBeenCalledTimes(1);
-    expect(llm.complete).toHaveBeenCalledWith(
-      expect.objectContaining({
-        maxTokens: 200,
-        temperature: 0,
-        responseFormat: expect.objectContaining({ type: 'json_schema' }),
-      }),
-    );
+    expect(profile.kind).toBe('GENERAL_RESEARCH');
+    expect(profile.fallbackUsed).toBe(false);
+    expect(llm.complete).not.toHaveBeenCalled();
   });
 
   it('does not call an unconfigured model', async () => {

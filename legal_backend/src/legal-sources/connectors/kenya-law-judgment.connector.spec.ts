@@ -82,3 +82,58 @@ describe('KenyaLawJudgmentConnector parsers', () => {
     }
   });
 });
+
+describe('Kenya Law full-document evidence', () => {
+  const originalFetch = global.fetch;
+  afterEach(() => { global.fetch = originalFetch; });
+
+  it('preserves nested numbered paragraphs and authentic source metadata', async () => {
+    global.fetch = jest.fn().mockResolvedValue(new Response(`<title>Employer v Employee [2025] KEELRC 12 (KLR) - Kenya Law</title>
+      <div id="document-content"><div><p id="para_17">We hold that the employment notice requirement applies to the contract before this court.</p></div>
+      <div><p id="para_18">For those reasons the appeal is dismissed and each party shall bear its own costs.</p></div></div>`));
+    const result = await new KenyaLawJudgmentConnector().fetchJudgmentBody('https://new.kenyalaw.org/akn/ke/judgment/keelrc/2025/12/');
+    expect(result?.citation).toBe('[2025] KEELRC 12 (KLR)');
+    expect(result?.sourcePassages?.map(p => p.paragraph)).toEqual(['17', '18']);
+    expect(result?.sourceProvenance).toMatchObject({ authoritativeStatus: 'OFFICIAL', paragraphNumberingIntegrity: 'INTACT', dispositionComplete: true });
+    expect(result?.sourceProvenance?.documentHash).toMatch(/^[a-f0-9]{64}$/);
+  });
+
+  it('rejects shells and untrusted hosts instead of treating them as judgments', async () => {
+    global.fetch = jest.fn().mockResolvedValue(new Response('<div id="document-content">Loading...</div>'));
+    const connector = new KenyaLawJudgmentConnector();
+    expect(await connector.fetchJudgmentBody('https://new.kenyalaw.org/akn/ke/judgment/kesc/2025/1/')).toBeNull();
+    expect(await connector.fetchJudgmentBody('https://kenyalaw.org.attacker.example/')).toBeNull();
+    expect(global.fetch).toHaveBeenCalledTimes(1);
+  });
+});
+
+describe('Kenya legislation evidence', () => {
+  const originalFetch = global.fetch;
+  afterEach(() => { global.fetch = originalFetch; });
+  it('retains nested provision text and real section identifiers as excerpts', async () => {
+    global.fetch = jest.fn().mockResolvedValue(new Response(`<title>Employment Act - Kenya Law</title><section id="sec_35" class="akn-section"><h3>35. Notice</h3><p class="akn-p">A contract <b>shall</b> be terminable by notice subject to the applicable terms.</p></section>`));
+    const result = await new KenyaLawJudgmentConnector().fetchLegislationBody('https://new.kenyalaw.org/akn/ke/act/2007/11/eng@2022-12-31');
+    expect(result?.fullText).toContain('A contract shall be terminable');
+    expect(result?.sourcePassages?.[0]).toMatchObject({ paragraph: 'Section 35', sourcePinpoint: true });
+    expect(result?.sourceProvenance?.completeness).toBe('EXCERPT');
+  });
+  it('does not admit a WAF challenge as a successful document', async () => {
+    global.fetch = jest.fn().mockResolvedValue(new Response('', { status: 202 }));
+    expect(await new KenyaLawJudgmentConnector().fetchJudgmentBody('https://new.kenyalaw.org/akn/ke/judgment/kesc/2019/79/')).toBeNull();
+  });
+});
+
+describe('Kenya Law challenge circuit', () => {
+  it('stops repeated search and body requests after an empty access challenge', async () => {
+    const originalFetch = global.fetch;
+    global.fetch = jest.fn().mockResolvedValue(new Response('', { status: 202 }));
+    try {
+      const connector = new KenyaLawJudgmentConnector();
+      expect(await connector.searchJudgments('public case')).toEqual([]);
+      expect(connector.isCircuitOpen()).toBe(true);
+      expect(await connector.searchJudgments('another public case')).toEqual([]);
+      expect(await connector.fetchJudgmentBody('https://new.kenyalaw.org/akn/ke/judgment/kesc/2019/79/')).toBeNull();
+      expect(global.fetch).toHaveBeenCalledTimes(1);
+    } finally { global.fetch = originalFetch; }
+  });
+});

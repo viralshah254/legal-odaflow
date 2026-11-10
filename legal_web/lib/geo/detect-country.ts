@@ -2,12 +2,12 @@
  * Client-side country detection for the web app.
  *
  * Priority chain:
- *   1. User-confirmed country from localStorage (manual profile / jurisdiction pick)
- *   2. Account country (user profile or tenant primary) when it disagrees with IP geo
- *   3. Fresh first-party /api/geo — CDN edge headers, then IP providers
+ *   1. Explicitly requested, user-confirmed manual selection
+ *   2. Fresh first-party /api/geo — CDN edge headers, then IP providers
+ *   3. Account/stored country only when current location is unavailable
  *   4. Backend GET /geo/client — IP fallback when Next geo route misses
  *   5. Browser Geolocation API — only with explicit user permission
- *   6. India (IN), or NEXT_PUBLIC_DEFAULT_COUNTRY when set
+ *   6. Explicit NEXT_PUBLIC_DEFAULT_COUNTRY, otherwise unresolved until selected
  *
  * Device language is intentionally not used — UI locale ≠ physical location.
  */
@@ -91,7 +91,7 @@ const COUNTRY_STORAGE_KEY = "odaflow_detected_country"
 export const USER_COUNTRY_CONFIRMED_KEY = "odaflow_country_user_confirmed"
 
 /** When IP geo and confirmed storage are unavailable. */
-const FALLBACK_COUNTRY_CODE = "IN"
+const FALLBACK_COUNTRY_CODE = ""
 
 /** Tier percentages (must match backend pricing.config.ts). */
 export const AI_CREDIT_TIER_PCT: Record<"developing" | "developed", number> = {
@@ -198,8 +198,8 @@ export function resolveAccountCountryCode(
 
 /**
  * Workspace country for signed-in chrome (nav flags, Section Finder, drafting).
- * Tenant beats a stale profile US. Confirmed settings pick beats both.
- * Does not use IP — callers should fall back to IN, not US.
+ * Current location supplies new-work defaults; account settings are fallbacks.
+ * Explicit current-session and matter choices are handled by the caller.
  */
 export function resolveWorkspaceCountryCode(input: {
   tenantPrimary?: string | null
@@ -239,7 +239,7 @@ function resolveFallbackCountryCode(): string {
 export async function detectCountry(opts?: {
   preferStored?: boolean
   skipUserProfile?: boolean
-  /** Signed-in user's profile / tenant country — wins over mismatched IP geo. */
+  /** Signed-in account fallback when physical location cannot be determined. */
   accountCountryCode?: string | null
 }): Promise<DetectedCountry> {
   void opts?.preferStored
@@ -247,25 +247,16 @@ export async function detectCountry(opts?: {
 
   const accountCountry = normalizeToSupportedCountry(opts?.accountCountryCode)
 
-  if (accountCountry) {
-    const internalResult = await fetchInternalGeo()
-    if (internalResult?.countryCode) {
-      const ipCountry = normalizeToSupportedCountry(internalResult.countryCode)
-      const region =
-        ipCountry === accountCountry ? internalResult.region : undefined
-      return resultFor(accountCountry, "stored", region)
-    }
-    return resultFor(accountCountry, "stored")
-  }
-
   const confirmed = getStoredCountryIfConfirmed()
-  if (confirmed) return resultFor(confirmed, "stored")
+  if (opts?.preferStored && confirmed) return resultFor(confirmed, "stored")
 
   const internalResult = await fetchInternalGeo()
   if (internalResult?.countryCode) {
     const ipCountry = normalizeToSupportedCountry(internalResult.countryCode)
     return resultFor(ipCountry || internalResult.countryCode, "ip", internalResult.region)
   }
+  if (confirmed) return resultFor(confirmed, "stored")
+  if (accountCountry) return resultFor(accountCountry, "stored")
 
   const geoCode = await detectFromBrowserGeolocation()
   if (geoCode) {

@@ -534,7 +534,7 @@ export class CaseLawRecoveryService {
     const issueQuery = this.issueSearchQuery(input.query);
     // e-SCR only publishes Indian Supreme Court judgments.
     const escr = input.countryCode.toUpperCase() === 'IN' ? this.escr : undefined;
-    if (escr?.isConfigured()) {
+    if (escr?.isConfigured() && (!this.tavily?.isConfigured() || this.tavily.isCircuitOpen())) {
       try {
         const hits = await escr.searchJudgmentsBroad(issueQuery, 4);
         let admitted = 0;

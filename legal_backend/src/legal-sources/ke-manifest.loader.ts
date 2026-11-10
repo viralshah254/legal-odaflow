@@ -30,7 +30,15 @@ export function loadKeSourcesManifest(): KeSourcesManifest {
 
 export function findKeManifestAct(actId: string): KeManifestActEntry | undefined {
   const manifest = loadKeSourcesManifest();
-  return manifest.acts.find((entry) => entry.actId === actId);
+  const exact = manifest.acts.find((entry) => entry.actId === actId);
+  if (exact) return exact;
+  // Curated workflow slugs and bulk-catalog IDs identify the same enactment.
+  // Match its FRBR work, never a title shared by a repealed predecessor.
+  const registry = findStatuteById(actId);
+  if (registry?.countryCode !== 'KE' || !registry.frbrUri) return undefined;
+  const work = registry.frbrUri.replace(/^\/+/, '').replace(/\/[a-z]{3}@[^/]+.*$/, '').replace(/\/+$/, '');
+  const entry = manifest.acts.find(candidate => candidate.workFrbrUri.replace(/^\/+|\/+$/g, '') === work);
+  return entry ? { ...entry, actId } : undefined;
 }
 
 /** Resolve a Kenya act from the curated registry or the bulk manifest catalog. */

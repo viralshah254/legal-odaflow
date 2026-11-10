@@ -672,6 +672,8 @@ export interface UserAuthorityCheck {
 export interface LegalResearchResponse {
   answer: string
   citations: Array<{
+    sourceVerified?: boolean
+    currentLawVerified?: boolean
     title: string
     source: string
     url?: string

@@ -1,4 +1,5 @@
 import { Injectable } from '@nestjs/common';
+import { extractStatuteReferences } from './statute-reference';
 
 export interface SubstanceAuthority {
   id: string;
@@ -275,7 +276,7 @@ export class SubstanceVerificationService {
     // the authority corpus actually contains text for it.
     if (params.isBareActQuery && authorityText.trim()) {
       const deniesSectionExists =
-        /(?:does not exist|no such section|doesn['']?t exist|not (?:a )?(?:section|provision) (?:in|of)|there is no\b.*\bsection|no\b.*\bsection\b.*\d)/i.test(
+        /(?:\b(?:section|provision)\s+\d+[A-Z]?(?:\([^)]*\))*\s+(?:does not exist|doesn['’]?t exist|is non-existent)|\bno such (?:section|provision)\b|\bthere is no (?:(?!(?:retrieved|verified|supplied|available|operative|source|evidence)\b)[A-Za-z]{2,20}\s+){0,5}section\s+\d+)/i.test(
           params.outputMarkdown,
         );
       if (deniesSectionExists) {
@@ -289,7 +290,9 @@ export class SubstanceVerificationService {
     // SECTION_SUBSTITUTION — generic: a different section number is cited than what
     // was requested, without suggestion framing.
     if (params.isBareActQuery) {
-      const querySection = params.query.match(/\b(\d+[A-Za-z]?)\b/)?.[1];
+      // Years, case numbers and reporter pages are not requested statute sections.
+      const querySection = extractStatuteReferences(params.query)[0]?.section ??
+        params.query.match(/(?:\bsections?\s+|\bs\.\s*|§\s*)(\d+[A-Za-z]?)/i)?.[1];
       if (querySection) {
         const altSectionPattern = new RegExp(
           `\\b(?:section|s\\.)\\s*(\\d+[A-Za-z]?)\\b`,

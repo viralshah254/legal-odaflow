@@ -11,6 +11,20 @@ describe('AuthorityTripleCheckService', () => {
     expect(refs.some((r) => /Kesavananda|AIR 1973/i.test(r.raw))).toBe(true);
   });
 
+  it('does not treat the word contract as an Act title', () => {
+    const refs = service.extract('Section 36 permits either party, for a contract paid monthly, to pay in lieu.');
+    expect(refs.filter((ref) => ref.kind === 'statute_section')).toEqual([]);
+  });
+
+  it('preserves a case caption instead of replacing it with its docket', async () => {
+    const markdown = 'Kenfreight Limited v Nguti concerns termination remedies.';
+    const result = await service.check({
+      markdown, countryCode: 'KE', query: 'Kenfreight termination remedies',
+      corpusAuthorities: [{ title: 'Kenfreight Limited v Nguti', citation: 'Petition 37 of 2018', summary: 'Termination remedies', sourceTier: 'case_law' }],
+    });
+    expect(result.repairedMarkdown).toBe(markdown);
+  });
+
   it('marks verified only with ≥2 agreeing passes', async () => {
     const markdown = 'Bail under BNSS section 483 before the Sessions Court.';
     const result = await service.check({

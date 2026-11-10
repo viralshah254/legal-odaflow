@@ -47,3 +47,10 @@ it('an explicit current workspace selection remains in control', async () => {
   expect(country!.profileCountryCode).toBe('IN')
   expect(country!.detectedRegion).toBeNull()
 })
+
+it('uses US location and state without inheriting an Indian profile jurisdiction', async () => {
+  fixtures.ip.mockResolvedValue({ countryCode: 'US', region: 'California' }); await mount()
+  expect(country!.countryCode).toBe('US')
+  expect(country!.detectedRegion).toBe('California')
+  expect(country!.profileCountryCode).toBe('IN')
+})

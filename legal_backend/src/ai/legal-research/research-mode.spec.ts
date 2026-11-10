@@ -32,10 +32,10 @@ describe('research-mode', () => {
     expect(researchDeadlineMs('FAST')).toBe(25_000);
     expect(researchDeadlineMs('DEEP')).toBe(60_000);
     expect(researchSynthesisTimeoutMs('FAST')).toBe(12_000);
-    expect(researchSynthesisTimeoutMs('DEEP')).toBe(28_000);
+    expect(researchSynthesisTimeoutMs('DEEP')).toBe(36_000);
     expect(researchSynthesisTimeoutMs('GUIDANCE', 8_000)).toBe(15_000);
     expect(researchSynthesisTimeoutMs('FAST', 8_000)).toBe(25_000);
-    expect(researchSynthesisTimeoutMs('DEEP', 8_000)).toBe(28_000);
+    expect(researchSynthesisTimeoutMs('DEEP', 8_000)).toBe(36_000);
   });
 
   it('extracts a short question from a pasted contract dump', () => {
@@ -74,10 +74,10 @@ describe('research-mode', () => {
     expect(fallback).not.toContain('SOFTWARE IMPLEMENTATION');
   });
 
-  it('caps Verified off Sol / Ultra and treats stall as a calm fallback', () => {
+  it('preserves premium Verified models, rejects economy routing and handles a stall honestly', () => {
     expect(capVerifiedResearchModel('gpt-5.6-sol')).toBe(VERIFIED_RESEARCH_MODEL);
     expect(capVerifiedResearchModel('gpt-5.6-terra')).toBe('gpt-5.6-terra');
-    expect(capVerifiedResearchModel('gpt-5.6-luna')).toBe('gpt-5.6-luna');
+    expect(capVerifiedResearchModel('gpt-5.6-luna')).toBe(VERIFIED_RESEARCH_MODEL);
     expect(isResearchStallOrTimeoutError('job stalled more than allowable limit')).toBe(true);
     expect(shouldIgnorePremiumOverride('FAST')).toBe(true);
     expect(shouldIgnorePremiumOverride('GUIDANCE')).toBe(true);

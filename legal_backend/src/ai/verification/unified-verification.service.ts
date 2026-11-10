@@ -1,3 +1,4 @@
+import { relevantPassages } from '@/ai/legal-research/relevant-passages';
 import { Injectable } from '@nestjs/common';
 import { CitationVerificationService } from '@/ai/citations/citation-verification.service';
 import { SubstanceVerificationService } from '@/ai/citations/substance-verification.service';
@@ -78,8 +79,9 @@ export class UnifiedVerificationService {
       official: a.sourceTier === 'primary' || a.sourceTier === 'seed',
       practiceAreas: a.practiceAreas,
       topics: a.topics,
-      paragraph: a.paragraph,
-      page: a.page,
+      sourceProvenance: a.sourceProvenance,
+      paragraph: a.paragraph ?? relevantPassages(a.sourcePassages ?? [], input.query, 1)[0]?.paragraph,
+      page: a.page ?? relevantPassages(a.sourcePassages ?? [], input.query, 1)[0]?.page,
       actName: a.actName,
       actYear: a.actYear,
       section: a.section,

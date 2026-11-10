@@ -10,9 +10,9 @@ describe('llm-fallback.config', () => {
     ]);
   });
 
-  it('prefers mid-tier OpenAI immediately when gpt-5.6-sol is unavailable', () => {
-    expect(getLegacyFallbacksForModel('gpt-5.6-sol')[0]).toBe('gpt-5.4-mini');
-    expect(buildLlmFallbackChain('gpt-5.6-sol')[0]).toBe('gpt-5.4-mini');
+  it('prefers another premium OpenAI model when gpt-5.6-sol is unavailable', () => {
+    expect(getLegacyFallbacksForModel('gpt-5.6-sol')[0]).toBe('gpt-5.6-terra');
+    expect(buildLlmFallbackChain('gpt-5.6-sol')[0]).toBe('gpt-5.6-terra');
   });
 
   it('adds gpt-4o-mini for any gpt-5.6-* model without explicit mapping', () => {

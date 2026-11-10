@@ -5,6 +5,28 @@
   "placeCode": "ke",
   "acts": [
     {
+      "actId": "ke-act-2025-20",
+      "title": "Virtual Asset Service Providers Act, 2025",
+      "workFrbrUri": "akn/ke/act/2025/20",
+      "expressionFrbrUri": "akn/ke/act/2025/20/eng@2025-11-04",
+      "expressionDate": "2025-11-04",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/2025/20/eng@2025-11-04",
+      "nature": "act",
+      "year": "2025",
+      "number": "20"
+    },
+    {
+      "actId": "ke-ln-2026-134",
+      "title": "Virtual Asset Service Providers Regulations, 2026",
+      "workFrbrUri": "akn/ke/act/ln/2026/134",
+      "expressionFrbrUri": "akn/ke/act/ln/2026/134/eng@2026-07-22",
+      "expressionDate": "2026-07-22",
+      "publicUrl": "https://new.kenyalaw.org/akn/ke/act/ln/2026/134/eng@2026-07-22",
+      "nature": "legal_notice",
+      "year": "2026",
+      "number": "134"
+    },
+    {
       "actId": "ke-ln-attorney-general-2023",
       "title": "24th Annual Supplement",
       "workFrbrUri": "akn/ke/act/ln/attorney-general/2023/221",
@@ -3497,6 +3519,11 @@
     {
       "actId": "ke-act-2007-11",
       "title": "Employment Act",
+      "alternatePublicUrls": [
+        "https://www.labourmarket.go.ke/media/resources/The_Employment_Act_2007.pdf",
+        "https://www.labourmarket.go.ke/datalake/download/37/"
+      ],
+      "alternateSourceNote": "Official ministry copy of the 2007 Act; subsequent amendments must be checked.",
       "workFrbrUri": "akn/ke/act/2007/11",
       "expressionFrbrUri": "akn/ke/act/2007/11/eng@2024-04-26",
       "publicUrl": "https://new.kenyalaw.org/akn/ke/act/2007/11/eng@2024-04-26",

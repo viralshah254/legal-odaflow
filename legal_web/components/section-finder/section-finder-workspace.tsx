@@ -37,7 +37,7 @@ import {
   type SectionFinderCountry,
 } from "@/lib/section-finder-config"
 
-function sourceLabelsForCountry(country: SectionFinderCountry): Record<
+function sourceLabelsForCountry(country: SectionFinderCountry, sourceRef?: string): Record<
   NonNullable<SectionFinderEntry["matchSource"]>,
   string
 > {
@@ -48,11 +48,15 @@ function sourceLabelsForCountry(country: SectionFinderCountry): Record<
         ? "Fetched from official US code source — cached for future lookups"
         : "Fetched from India Code — cached for future lookups"
 
+  let resolvedSourceLabel = sourceRef || networkLabel
+  if (sourceRef?.startsWith("https://")) {
+    try { resolvedSourceLabel = new URL(sourceRef).hostname } catch { /* retain supplied source reference */ }
+  }
   return {
-    curated: "Verified crosswalk",
+    curated: country === "IN" ? "Verified crosswalk" : resolvedSourceLabel,
     remap: "Official 2023 remap",
     corpus: country === "KE" ? "Kenya Law corpus" : "Bare-act corpus",
-    network: networkLabel,
+    network: resolvedSourceLabel,
     ai: "AI-assisted (not verified)",
   }
 }
@@ -157,6 +161,7 @@ function SectionCard({
     (countryCode === "US" || countryCode === "GB" || countryCode === "KE"
       ? countryCode
       : "IN") as SectionFinderCountry,
+    entry.sourceRef,
   )
   const isNew = entry.newActId !== "unchanged" && !!entry.newSection
   const isOmitted = entry.changeType === "omitted" || entry.isInForce === false
@@ -269,12 +274,12 @@ function SectionCard({
 
           {!isOmitted && (
             <div className="flex flex-wrap gap-2">
-              <Badge color={entry.isCognizable ? "blue" : "gray"}>
+              {typeof entry.isCognizable === "boolean" && <Badge color={entry.isCognizable ? "blue" : "gray"}>
                 {entry.isCognizable ? "Cognizable" : "Non-cognizable"}
-              </Badge>
-              <Badge color={entry.isBailable ? "green" : "red"}>
+              </Badge>}
+              {typeof entry.isBailable === "boolean" && <Badge color={entry.isBailable ? "green" : "red"}>
                 {entry.isBailable ? "Bailable" : "Non-bailable"}
-              </Badge>
+              </Badge>}
               {entry.isCompoundable && <Badge color="yellow">Compoundable</Badge>}
               <Badge color="gray">{entry.trialCourtLabel}</Badge>
             </div>
@@ -289,12 +294,12 @@ function SectionCard({
             </div>
           )}
 
-          <div className="rounded-lg bg-gray-50 dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700 px-4 py-3">
+          {(isOmitted || entry.bailPosture) && <div className="rounded-lg bg-gray-50 dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700 px-4 py-3">
             <p className="text-xs font-semibold text-gray-600 dark:text-gray-400 mb-1 flex items-center gap-1">
               <Scale className="h-3.5 w-3.5" /> {isOmitted ? "Legal status" : "Bail Posture"}
             </p>
             <p className="text-sm text-gray-800 dark:text-gray-200">{isOmitted ? entry.changeSummary : entry.bailPosture}</p>
-          </div>
+          </div>}
 
           {(entry.successorSection || entry.officialRemovalNote) && (
             <div className="rounded-lg bg-amber-50 dark:bg-amber-950/40 border border-amber-200 dark:border-amber-800 px-4 py-3">
@@ -373,8 +378,8 @@ function SectionCard({
                   `**${entry.legacyActShort} §${entry.legacySection}** — ${entry.legacyTitle}`,
                   isNew ? `**New equivalent:** ${entry.newActShort} §${entry.newSection} — ${entry.newTitle}` : "",
                   entry.sectionText ? `**Section Text:**\n${entry.sectionText}` : "",
-                  `**Punishment:** ${entry.punishment}`,
-                  `**Bail:** ${entry.bailPosture}`,
+                  entry.punishment ? `**Punishment:** ${entry.punishment}` : "",
+                  entry.bailPosture ? `**Bail:** ${entry.bailPosture}` : "",
                   entry.changeSummary ? `**What Changed:** ${entry.changeSummary}` : "",
                   shouldShowPracticeNote(entry) && entry.practiceNote ? `**Practice Note:** ${entry.practiceNote}` : "",
                   `**Source:** ${entry.sourceRef}`,
@@ -679,9 +684,7 @@ export function SectionFinderWorkspace({ context = "lawyer" }: SectionFinderWork
               <span className="inline-flex items-center gap-1 rounded-full bg-indigo-100/80 dark:bg-indigo-950 px-2.5 py-1 text-[11px] font-semibold text-indigo-700 dark:text-indigo-300 ring-1 ring-indigo-200/80 dark:ring-indigo-800">
                 {meta.badge}
               </span>
-              <span className="inline-flex items-center gap-1 rounded-full bg-green-100/80 dark:bg-green-950 px-2.5 py-1 text-[11px] font-semibold text-green-700 dark:text-green-300 ring-1 ring-green-200/80 dark:ring-green-800">
-                <CheckCircle2 className="h-3 w-3" /> Verified
-              </span>
+
             </div>
           </div>
 
@@ -876,7 +879,7 @@ export function SectionFinderWorkspace({ context = "lawyer" }: SectionFinderWork
                 <div className="rounded-xl border border-amber-200 dark:border-amber-900/50 bg-amber-50/80 dark:bg-amber-950/20 px-4 py-4">
                   <p className="text-xs font-semibold uppercase tracking-wide text-amber-800 dark:text-amber-200">
                     AI-suggested — not verified
-                    {result.aiSuggestionModel ? ` · ${result.aiSuggestionModel}` : ""}
+
                   </p>
                   <ul className="mt-3 space-y-2">
                     {result.aiSuggestions!.map((s) => (

@@ -1,3 +1,5 @@
+import { setTimeout as delay } from 'node:timers/promises';
+import { assertResearchBudgetActive, researchRequestSignal } from '@/common/utils/research-execution-budget';
 /** Shared polite pacing for Kenya Law HTTP requests (catalog, acts, search). */
 const DEFAULT_DELAY_MS = 200;
 const DEFAULT_MAX_CONCURRENT = 2;
@@ -23,6 +25,7 @@ export function kenyaLawRequestDelayMs(): number {
  */
 export async function kenyaLawRateLimit(maxConcurrent = DEFAULT_MAX_CONCURRENT): Promise<void> {
   while (true) {
+    assertResearchBudgetActive();
     const now = Date.now();
     const windowStart = now - configuredDelayMs;
     // Remove timestamps that have aged out of the window.
@@ -60,5 +63,5 @@ export function kenyaLawFetchHeaders(
 }
 
 function sleep(ms: number): Promise<void> {
-  return new Promise((resolve) => setTimeout(resolve, ms));
+  return delay(ms, undefined, { signal: researchRequestSignal() });
 }

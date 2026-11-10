@@ -94,6 +94,8 @@ export class IndiaKanoonConnector {
   constructor(private readonly configService: ConfigService) {}
 
   private getApiKey(): string {
+    // Opt-in only: official web research must not depend on a prepaid aggregator.
+    if (String(this.configService.get('INDIA_KANOON_ENABLED') ?? 'false') !== 'true') return '';
     return (this.configService.get<string>('INDIA_KANOON_API_KEY', '') ?? '').trim();
   }
 
@@ -104,7 +106,7 @@ export class IndiaKanoonConnector {
       if (configured) {
         this.logger.log('India Kanoon API key configured — live case-law search enabled');
       } else {
-        this.logger.warn('INDIA_KANOON_API_KEY missing — live Indian Kanoon search disabled');
+        this.logger.warn('Indian Kanoon disabled or API key missing — using other research sources');
       }
     }
     return configured;
@@ -125,7 +127,7 @@ export class IndiaKanoonConnector {
   ): Promise<ConnectorSearchOutcome<IndiaKanoonResult>> {
     const apiKey = this.getApiKey();
     if (!apiKey) {
-      return emptyConnectorOutcome('not_configured', 'INDIA_KANOON_API_KEY missing');
+      return emptyConnectorOutcome('not_configured', 'Indian Kanoon is opt-in and requires an enabled, funded API key');
     }
     if (this.isCircuitOpen()) {
       this.logger.warn('India Kanoon circuit open — skipping live search');

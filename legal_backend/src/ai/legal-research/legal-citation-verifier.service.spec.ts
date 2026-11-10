@@ -3,11 +3,27 @@ import {
   extractStatuteCitations,
   LegalCitationVerifierService,
   parseStatuteCitation,
+  contextualStatuteAuthority,
 } from './legal-citation-verifier.service';
 import { RelevanceVerificationService } from '@/ai/verification/relevance-verification.service';
 import type { LegalAuthority } from './legal-authority.types';
 
 describe('LegalCitationVerifierService integrity scoring', () => {
+  it('resolves shorthand only to an explicit unambiguous Act and an existing subsection', () => {
+    const act = { authorityType: 'STATUTE', actName: 'Employment Act', actYear: 2007, section: '35', extractedText: '(1) Notice. (5) Service pay.' } as LegalAuthority;
+    expect(contextualStatuteAuthority('section 35(5)', 'Employment Act 2007', [act])).toBe(act);
+    expect(contextualStatuteAuthority('section 35(9)', 'Employment Act 2007', [act])).toBeUndefined();
+    expect(contextualStatuteAuthority('section 35(5)', 'Companies Act', [act])).toBeUndefined();
+    expect(contextualStatuteAuthority('section 35(5)', 'Employment Act', [act, { ...act, actYear: 2024 }])).toBeUndefined();
+  });
+  it('resolves a referenced section from retained native full-Act passages, never from an excerpt', () => {
+    const act = { id: 'whole-act', authorityType: 'STATUTE', title: 'Employment Act, 2007', extractedText: 'Complete Act',
+      sourceProvenance: { completeness: 'COMPLETE', documentHash: 'same-native-document' }, sourcePassages: [{ paragraph: 'Section 49', page: 25, sourcePinpoint: true, text: '(1) Remedies. (4) Relevant factors.' }] } as LegalAuthority;
+    expect(contextualStatuteAuthority('section 49(4)', 'Employment Act 2007', [act])).toMatchObject({ section: '49', pinpoint: 'Section 49', extractedText: '(1) Remedies. (4) Relevant factors.' });
+    expect(contextualStatuteAuthority('section 49(4)', 'Employment Act 2007', [act, { ...act, actName: 'Employment Act, 2007', actYear: 2007, section: '49', extractedText: '(4) Relevant factors.' }])).toBeDefined();
+    expect(contextualStatuteAuthority('section 49(9)', 'Employment Act 2007', [act])).toBeUndefined();
+    expect(contextualStatuteAuthority('section 49(4)', 'Employment Act 2007', [{ ...act, sourceProvenance: { ...act.sourceProvenance!, completeness: 'EXCERPT' } }])).toBeUndefined();
+  });
   const service = new LegalCitationVerifierService(
     {
       legalAuthorityRecord: { findMany: jest.fn().mockResolvedValue([]) },
@@ -36,7 +52,23 @@ describe('LegalCitationVerifierService integrity scoring', () => {
     currentLawStatus: 'GOOD_LAW',
     practiceAreas: ['consumer', 'banking'],
     topics: ['UPI', 'unauthorised transaction'],
+    sourceProvenance: { provider: 'official-test-fixture', retrievedAt: '2026-11-10T00:00:00.000Z', canonicalIdentity: 'case-1', documentHash: 'a'.repeat(64), pageCount: 1, missingPages: [], completeness: 'COMPLETE', extractionMethod: 'NATIVE_TEXT', authoritativeStatus: 'OFFICIAL', paragraphNumberingIntegrity: 'INTACT', dispositionComplete: true },
   };
+
+  it('keeps a citation attached to a completed sentence, including U.S. punctuation', async () => {
+    expect(extractStatuteCitations('347 U.S. 483')).toEqual([]);
+    const text = 'Educational opportunity must be made available to all on equal terms.';
+    const result = await service.verifyLegalResearchOutput({ markdown: text + ' *(347 U.S. 483, PDF p. 11)*', authorities: [{ ...completeCase, jurisdiction: 'US', title: 'Brown v Board of Education', citation: '347 U.S. 483', court: 'Supreme Court of the United States', extractedText: text, currentLawStatus: 'UNKNOWN', practiceAreas: [], topics: [] }], jurisdiction: 'US', taskType: 'legal_research', query: 'Educational opportunity on equal terms' });
+    expect(result.citations).toEqual([expect.objectContaining({ citation: '347 U.S. 483', sourceVerified: true })]);
+    expect(result.verifiedMarkdown).not.toContain('Proposition withheld');
+  });
+
+  it('does not fully verify metadata without complete source provenance', async () => {
+    const result = await service.verifyLegalResearchOutput({ markdown: completeCase.extractedText + ' (2024) 1 SCC 10.', authorities: [{ ...completeCase, sourceProvenance: undefined }], jurisdiction: 'IN', taskType: 'legal_research', query: 'UPI bank transaction reversal' });
+    expect(result.citations).toEqual([]);
+    expect(result.safeForReliance).toBe(false);
+    expect(result.rejectedCitations?.[0]?.missingReasons.join(' ')).toContain('Source provenance is missing');
+  });
 
   it('separates found identity from fully verified citations', async () => {
     const result = await service.verifyLegalResearchOutput({

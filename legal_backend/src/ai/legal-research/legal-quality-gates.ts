@@ -9,7 +9,7 @@ import type { VerificationFinding } from '@/ai/verification/verification-finding
 
 const VERSION = 'legal-quality-v1';
 const ABSOLUTE_OUTCOME =
-  /\b(?:guaranteed|certain(?:ly)?|definitely|always|automatically|cannot lose|will win|will succeed|court will (?:grant|allow|dismiss))\b/i;
+  /\b(?:guaranteed|certainly|definitely|always|automatically|cannot lose|will win|will succeed|court will (?:grant|allow|dismiss))\b/i;
 const PLACEHOLDER_CASE =
   /\b(?:case\s+[a-z](?:\s+v\.?\s+case\s+[a-z])?|xyz\s+v\.?\s+abc|foo\s+v\.?\s+bar|some case|leading case|\[(?:case|authority|citation)[^\]]*\])\b/i;
 const GENERIC_QUESTION =
@@ -63,7 +63,7 @@ export function evaluateLegalQuality(
   ]
     .filter(Boolean)
     .join('\n');
-  if (ABSOLUTE_OUTCOME.test(outcomeText)) {
+  if (ABSOLUTE_OUTCOME.test(outcomeText.replace(/\b(?:not|never)\s+(?:necessarily\s+)?(?:automatically|always|guaranteed|certainly|definitely)\b/gi, 'qualified outcome'))) {
     findings.push(
       finding(
         'absolute_outcome',
@@ -121,6 +121,7 @@ export function evaluateLegalQuality(
         conclusionText(issue.conclusion),
         ...issue.propositions.map((claim) => claim.text),
         ...(draft.risksAndDefences ?? []).flatMap((item) => [item.risk, item.defence ?? '']),
+        ...(draft.verificationNotes ?? []),
       ].join(' ');
       const structuredAdverse =
         typeof conclusion !== 'string' && conclusion.adverseConsiderations.length > 0;

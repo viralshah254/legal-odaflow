@@ -1,3 +1,4 @@
+import { resolveSeriousSynthesisModel, SERIOUS_LEGAL_MODEL } from './serious-model-lock';
 import { AI_USAGE_COST_MULTIPLIER, computeCreditsFromProviderCost } from '@/ai-credits/credit-pricing.util';
 export type LegalResearchMode = 'FAST' | 'DEEP' | 'GUIDANCE';
 
@@ -44,7 +45,7 @@ export function researchSynthesisTimeoutMs(mode?: string, queryChars = 0, contex
   if (contextChars > LONG_RESEARCH_QUERY_CHARS) {
     return mode === 'GUIDANCE' ? 20_000 : mode === 'FAST' ? 45_000 : 60_000;
   }
-  const base = mode === 'GUIDANCE' ? 10_000 : mode === 'FAST' ? 12_000 : 28_000;
+  const base = mode === 'GUIDANCE' ? 10_000 : mode === 'FAST' ? 12_000 : 36_000;
   if (queryChars > LONG_RESEARCH_QUERY_CHARS && (mode === 'GUIDANCE' || mode === 'FAST')) {
     return researchDeadlineMs(mode);
   }
@@ -123,7 +124,7 @@ export function researchFallbackReason(err?: unknown): string {
 }
 
 /** Mid-tier Terra — Verified must not sit on Sol / Ultra / xhigh reasoning. */
-export const VERIFIED_RESEARCH_MODEL = 'gpt-5.6-terra';
+export const VERIFIED_RESEARCH_MODEL = SERIOUS_LEGAL_MODEL;
 
 export function isUltraOrSolResearchModel(modelId?: string): boolean {
   const id = (modelId ?? '').toLowerCase();
@@ -137,11 +138,9 @@ export function isUltraOrSolResearchModel(modelId?: string): boolean {
   );
 }
 
+/** Compatibility name: enforce a premium floor without capping the selected premium model. */
 export function capVerifiedResearchModel(modelId: string | undefined): string {
-  if (!modelId?.trim() || isUltraOrSolResearchModel(modelId)) {
-    return VERIFIED_RESEARCH_MODEL;
-  }
-  return modelId;
+  return resolveSeriousSynthesisModel(modelId);
 }
 
 export function researchMustStartSynthesisByMs(mode?: string): number {

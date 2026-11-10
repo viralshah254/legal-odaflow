@@ -142,6 +142,10 @@ export class ResearchCapabilityService {
       );
     }
 
+    if (normalizedJurisdiction === 'IN') {
+      this.addConnector(sources, 'india-official-web', 'IN', ['CASE_LAW', 'STATUTES', 'CURRENT_LAW'], this.tavily);
+    }
+
     this.addConnector(sources, 'tavily', normalizedJurisdiction, ['LIVE_WEB', 'CURRENT_LAW'], this.tavily);
 
     const availableCapabilities = ALL_CAPABILITIES.filter((capability) =>

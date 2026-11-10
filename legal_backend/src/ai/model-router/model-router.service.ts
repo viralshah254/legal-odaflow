@@ -64,8 +64,8 @@ export class ModelRouterService {
     const route = MODEL_ROUTES[taskType] ?? DEFAULT_MODEL_ROUTE;
     const routingEnabled = this.isRoutingEnabled();
     const baseCredits = getCreditCost(taskType);
-    const requestedMode = options?.modelMode ?? 'AUTO';
-    const premiumFallback = options?.premiumFallback ?? false;
+    const requestedMode: AiModelMode = 'PREMIUM';
+    const premiumFallback = false;
     const effectiveMode: AiModelMode =
       requestedMode === 'PREMIUM' && premiumFallback ? 'AUTO' : requestedMode;
 
@@ -75,7 +75,7 @@ export class ModelRouterService {
     if (effectiveMode === 'PREMIUM') {
       const envModels = this.configService.get<string>('AI_PREMIUM_MODELS');
       const premiumModel = getPremiumModel(
-        options?.premiumModelId ?? DEFAULT_PREMIUM_MODEL_ID,
+        DEFAULT_PREMIUM_MODEL_ID,
         envModels,
         {
           creditUsdValue: this.creditPricing.getCreditUsdValue(),

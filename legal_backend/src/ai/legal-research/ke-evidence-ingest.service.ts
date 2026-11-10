@@ -127,6 +127,8 @@ export class KeEvidenceIngestService {
             title: body?.title || hit.title,
             citation: body?.citation ?? hit.citation,
             sourceName: 'Kenya Law',
+              sourceProvenance: body?.sourceProvenance,
+              sourcePassages: body?.sourcePassages,
             summary: hit.summary ?? fullText.slice(0, 600),
             fullText: fullText || null,
             sourceUrl: hit.sourceUrl,

@@ -44,7 +44,7 @@ describe('IndiaKanoonConnector failure controls', () => {
       title: 'Employer v Employee', headline: 'The appeal is dismissed. Employment notice applies.' }], found: 1 }), {
       status: 200, headers: { 'Content-Type': 'application/json' },
     })) as typeof fetch;
-    const connector = new IndiaKanoonConnector(new ConfigService({ INDIA_KANOON_API_KEY: 'test-key' }));
+    const connector = new IndiaKanoonConnector(new ConfigService({ INDIA_KANOON_ENABLED: 'true', INDIA_KANOON_API_KEY: 'test-key' }));
     const [result] = await connector.search({ query: 'employee notice', skipEnrich: true });
     expect(result.sourceProvenance).toBeUndefined();
     expect(result.fullText).toBeUndefined();
@@ -57,7 +57,7 @@ describe('IndiaKanoonConnector failure controls', () => {
       : { doc: '<p id="para_12">We therefore hold that resignation is governed by the employment terms.</p><p id="para_13">The appeal is dismissed.</p>' }), {
       status: 200, headers: { 'Content-Type': 'application/json' },
     })) as typeof fetch;
-    const connector = new IndiaKanoonConnector(new ConfigService({ INDIA_KANOON_API_KEY: 'test-key' }));
+    const connector = new IndiaKanoonConnector(new ConfigService({ INDIA_KANOON_ENABLED: 'true', INDIA_KANOON_API_KEY: 'test-key' }));
     const [result] = await connector.search({ query: 'employee resignation', fetchFullText: true });
     expect(result.sourceProvenance).toMatchObject({ provider: 'Indian Kanoon API', completeness: 'COMPLETE', authoritativeStatus: 'AGGREGATOR', paragraphNumberingIntegrity: 'INTACT', dispositionComplete: true });
     expect(result.sourceProvenance?.documentHash).toMatch(/^[a-f0-9]{64}$/);
@@ -76,7 +76,7 @@ describe('IndiaKanoonConnector failure controls', () => {
     global.fetch = jest.fn(async () => new Response('', { status: 403 })) as typeof fetch;
     const connector = new IndiaKanoonConnector(
       new ConfigService({
-        INDIA_KANOON_API_KEY: 'test-key',
+        INDIA_KANOON_ENABLED: 'true', INDIA_KANOON_API_KEY: 'test-key',
         INDIA_KANOON_FAILURE_COOLDOWN_MS: '60000',
         INDIA_KANOON_AUTH_FAILURE_COOLDOWN_MS: '60000',
       }),
@@ -110,12 +110,26 @@ describe('IndiaKanoonConnector failure controls', () => {
       }),
     ) as typeof fetch;
     const connector = new IndiaKanoonConnector(
-      new ConfigService({ INDIA_KANOON_API_KEY: 'test-key' }),
+      new ConfigService({ INDIA_KANOON_ENABLED: 'true', INDIA_KANOON_API_KEY: 'test-key' }),
     );
 
     await connector.search({ query: 'same query' });
     await connector.search({ query: 'same query' });
 
     expect(global.fetch).toHaveBeenCalledTimes(1);
+  });
+});
+
+describe('Indian Kanoon opt-in', () => {
+  it('does not call the prepaid API merely because a legacy key exists', async () => {
+    const originalFetch = global.fetch;
+    global.fetch = jest.fn();
+    try {
+      const connector = new IndiaKanoonConnector(new ConfigService({ INDIA_KANOON_API_KEY: 'unused-key' }));
+      expect(connector.isConfigured()).toBe(false);
+      expect((await connector.searchWithOutcome({ query: 'employment notice' })).status).toBe('not_configured');
+      expect(await connector.fetchDocFragment(123, 'employment')).toBeNull();
+      expect(global.fetch).not.toHaveBeenCalled();
+    } finally { global.fetch = originalFetch; }
   });
 });

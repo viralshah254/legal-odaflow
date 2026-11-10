@@ -14,7 +14,7 @@ export interface AiUsageAccessCheck {
   premiumAllowanceRemaining: number;
   topUpBalance: number;
   reason?: string;
-  /** When true, the caller must swap to the Auto model for this request. */
+  /** Server-selected mode; retained for older clients. */
   effectiveModelMode?: 'AUTO' | 'PREMIUM';
   /** Metadata flag for ledger analytics — premium was requested but allowance was exhausted. */
   downgradedFromPremium?: boolean;
@@ -93,23 +93,8 @@ export class AiCreditEnforcementService {
       };
     }
 
-    if (params.modelMode === 'PREMIUM') {
-      const premiumPoolAvailable = Math.max(premiumAllowanceRemaining, topUpBalance);
-      if (premiumPoolAvailable < estimate.credits) {
-        // Silent downgrade to Auto instead of blocking the request.
-        // The caller (AI gateway) must respect effectiveModelMode and swap the model.
-        // downgradedFromPremium is recorded in ledger metadata for cost analytics.
-        return {
-          allowed: true,
-          estimatedCredits: estimate.credits,
-          balance,
-          premiumAllowanceRemaining,
-          topUpBalance,
-          effectiveModelMode: 'AUTO',
-          downgradedFromPremium: true,
-        };
-      }
-    }
+    // All legal work uses premium routing. The priced credit balance remains
+    // the spending gate; a legacy allowance must never trigger a model downgrade.
 
     return {
       allowed: true,
@@ -117,7 +102,7 @@ export class AiCreditEnforcementService {
       balance,
       premiumAllowanceRemaining,
       topUpBalance,
-      effectiveModelMode: params.modelMode === 'PREMIUM' ? 'PREMIUM' : 'AUTO',
+      effectiveModelMode: 'PREMIUM',
       downgradedFromPremium: false,
     };
   }

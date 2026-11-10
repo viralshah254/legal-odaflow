@@ -19,7 +19,7 @@ describe('serious-model-lock', () => {
     expect(
       isSeriousDraftPath({ expressMode: false, complexity: 'standard' }),
     ).toBe(true);
-    expect(isSeriousDraftPath({ expressMode: true, complexity: 'complex' })).toBe(false);
+    expect(isSeriousDraftPath({ expressMode: true, complexity: 'complex' })).toBe(true);
   });
 
   it('resolves Sol for serious drafts', () => {
@@ -65,13 +65,13 @@ describe('LegalResearchModelRouter forceTopTier', () => {
     expect(route.verifierModel).toContain('sol');
   });
 
-  it('keeps QUICK on luna when not forced', () => {
+  it('keeps QUICK on premium without requiring a user model selection', () => {
     const route = router.resolve({
       complexity: 'QUICK',
       highRisk: false,
       unresolvedConflict: false,
       negativeTreatmentFound: false,
     });
-    expect(route.synthesisModel).toContain('luna');
+    expect(route.synthesisModel).toContain('sol');
   });
 });

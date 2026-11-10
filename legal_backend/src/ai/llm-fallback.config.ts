@@ -8,7 +8,7 @@ export const UNAVAILABLE_MODEL_LEGACY_FALLBACKS: Record<string, string[]> = {
   'gpt-5.6-luna': ['gpt-4o-mini'],
   'gpt-5.6-terra': ['gpt-4o-mini'],
   // Prefer mid-tier OpenAI immediately on Sol 404 — avoid long deepseek-first retries.
-  'gpt-5.6-sol': [DEFAULT_AUTO_MODEL, 'gpt-4o-mini', 'gpt-4o'],
+  'gpt-5.6-sol': ['gpt-5.6-terra', DEFAULT_AUTO_MODEL, 'gpt-4o-mini', 'gpt-4o'],
   'gpt-5.5-pro': ['gpt-4o'],
   'gpt-5.5': ['gpt-4o-mini'],
 };

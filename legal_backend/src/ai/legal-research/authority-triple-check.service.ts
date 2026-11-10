@@ -58,7 +58,7 @@ const CASE_PATTERNS: RegExp[] = [
 
 const SECTION_PATTERNS: RegExp[] = [
   /\b((?:BNSS|BNS|BSA|IPC|CrPC|CPC|IBC|NI Act|Evidence Act|Contracts? Act|FIDIC)[^\n,]{0,40}?)\s*(?:s(?:ection)?\.?\s*|§\s*)(\d+[A-Za-z]?)/gi,
-  /\b(Section|s\.|§)\s*(\d+[A-Za-z]?)\s+(?:of\s+)?([A-Z][A-Za-z0-9\s,'()-]{3,60}Act)/gi,
+  /\b(Section|s\.|§)\s*(\d+[A-Za-z]?)\s+(?:of\s+)?([A-Z][A-Za-z0-9\s,'()-]{3,60}\s+Act\b)/gi,
 ];
 
 @Injectable()
@@ -273,6 +273,7 @@ export class AuthorityTripleCheckService {
         actFamiliesCompatible(ref.actHint, auth.title ?? auth.citation ?? '');
       if (nameOk && sectionOk && actFamilyOk) {
         const preferred =
+          ref.kind === 'case' && /\bv\.?\s/i.test(ref.raw) ? ref.raw :
           auth.citation?.trim() ||
           auth.title?.trim() ||
           ref.raw;
@@ -323,7 +324,7 @@ export class AuthorityTripleCheckService {
           pass: 'connector',
           hit: true,
           evidence: auth.sourceUrl ?? auth.citation ?? 'connector hit',
-          preferredText: auth.citation ?? auth.title ?? ref.raw,
+          preferredText: ref.kind === 'case' && /\bv\.?\s/i.test(ref.raw) ? ref.raw : (auth.citation ?? auth.title ?? ref.raw),
         };
       }
     }

@@ -129,24 +129,62 @@ export class PropositionEntailmentService {
   }
 
   private hasMaterialContradiction(claim: string, passage: string, relatedness: number): boolean {
+    const clauses = claim.split(/(?<=[.!?;])\s+/).filter(text => this.legalTokens(text).length > 0);
+    if (clauses.length > 1) {
+      const sourceTokens = new Set(this.legalTokens(passage));
+      return clauses.some(clause => {
+        const tokens = this.legalTokens(clause);
+        return this.hasMaterialContradiction(clause, passage, tokens.filter(token => sourceTokens.has(token)).length / Math.max(1, tokens.length));
+      });
+    }
     if (relatedness < 0.35) return false;
     const claimNorm = this.normalize(claim);
-    const passageNorm = this.normalize(passage);
-    const isCharacterization =
-      /\b(?:default rule|modifiable|non-waivable|party choice|characteriz|contract out|waivable|void agreement|notice to quit|notice period|determination of lease|premature (?:notice|vacate|termination))\b/i.test(
-        claimNorm,
-      );
-    const claimNegated = /\b(?:not|never|no|cannot|prohibit|barred|unless)\b/.test(claimNorm);
-    const passageNegated = /\b(?:not|never|no|cannot|prohibit|barred|unless)\b/.test(passageNorm);
-    if (isCharacterization) {
-      return claimNegated !== passageNegated;
-    }
+    // Compare negation/modality only within the best matching source sentence.
+    // A page can contain unrelated negatives, quotations and remedy questions.
+    const targetTokens = [...new Set(this.legalTokens(claim))];
+    const candidates = passage.split(/(?<=[.!?;])\s+/).map(text => {
+      const sourceTokens = new Set(this.legalTokens(text));
+      return { text, overlap: targetTokens.filter(token => sourceTokens.has(token)).length / Math.max(1, targetTokens.length) };
+    }).sort((a, b) => b.overlap - a.overlap);
+    if (!candidates[0] || candidates[0].overlap < 0.5) return false;
+    const passageNorm = this.normalize(candidates[0].text);
+    // A scope exception ("not being a fixed-work contract ... shall") is not
+    // a prohibition on the operative action. Compare like clauses, not a
+    // negative exception in one sentence with a positive rule in another.
+    const operative = (text: string) => text.replace(/\bnot being\b.{0,220}?(?=\b(?:shall|may|must)\b)/g, '');
+    const negativePredicate = /\b(?:not|never|cannot|prohibit|barred)\b|\bno\s+(?:right|power|authority|discretion|obligation|duty|entitlement|liability)\b|\bno\s+(?:\w+\s+){0,3}(?:(?:is|are)\s+(?:required|permitted|allowed)|may|shall|can|must)\b/;
+    const claimNegated = negativePredicate.test(operative(claimNorm));
+    const passageNegated = negativePredicate.test(operative(passageNorm));
+    const opposedPredicate = claimNegated !== passageNegated && this.hasOpposedPredicate(
+      operative(claimNegated ? claimNorm : passageNorm),
+      operative(claimNegated ? passageNorm : claimNorm),
+    );
     const modalityConflict =
       (/\b(?:mandatory|must|always|shall require|no discretion)\b/.test(claimNorm) &&
         /\b(?:discretion|case by case|not mandatory|may)\b/.test(passageNorm)) ||
       (/\b(?:mandatory|must|always|shall require|no discretion)\b/.test(passageNorm) &&
         /\b(?:discretion|case by case|not mandatory|may)\b/.test(claimNorm));
-    return claimNegated !== passageNegated || modalityConflict;
+    return opposedPredicate || modalityConflict;
+  }
+
+  private hasOpposedPredicate(negative: string, positive: string): boolean {
+    const words = negative.split(' ');
+    const noPredicate = /^no\s+(?:(?:right|power|authority|discretion|obligation|duty|entitlement|liability)\b|(?:\w+\s+){0,3}(?:(?:is|are)\s+(?:required|permitted|allowed)|may|shall|can|must)\b)/;
+    const items = words.flatMap((word, position) => {
+      const negated = /^(?:not|never|cannot)$/.test(word) || (word === 'no' && noPredicate.test(words.slice(position).join(' ')));
+      return negated ? [{ word, position, negated }] : this.legalTokens(word).map(token => ({ word: token, position, negated: false }));
+    });
+    const content = items.filter(item => !item.negated);
+    const target = this.legalTokens(positive);
+    if (content.length < 2 || target.length < 2) return false;
+    const contains = (haystack: string[], needle: string[]) => haystack.some((_, start) => needle.every((word, offset) => haystack[start + offset] === word));
+    if (content.length <= target.length && contains(target, content.map(item => item.word))) return items.some(item => item.negated);
+    for (let start = 0; start <= content.length - target.length; start++) {
+      if (!target.every((word, offset) => content[start + offset].word === word)) continue;
+      const first = content[start].position, last = content[start + target.length - 1].position;
+      if (items.some(item => item.negated && item.position >= first - 1 && item.position <= last + 1)) return true;
+    }
+    return false;
   }
 
   private stem(token: string): string {

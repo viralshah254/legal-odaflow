@@ -1,3 +1,4 @@
+import { hydrateOfficialDocument } from './connectors/official-document';
 import { Injectable, Logger, Optional } from '@nestjs/common';
 import { LegalAwareChunkerService } from './legal-aware-chunker.service';
 import { createHash } from 'crypto';
@@ -721,6 +722,21 @@ export class StatuteIngestService {
     };
   }
 
+  private async resolveKeOfficialAlternative(statute: StatuteEntry, section: string, entry: import('./ke-manifest.types').KeManifestActEntry): Promise<ResolvedStatuteSection | null> {
+    for (const url of entry.alternatePublicUrls ?? []) {
+      const document = await hydrateOfficialDocument({ url, country: 'KE', title: statute.fullName });
+      const passage = document?.sourcePassages?.find(passage => passage.paragraph === `Section ${section}`);
+      if (!passage) continue;
+      return { actId: statute.id, countryCode: 'KE', section, title: `${statute.fullName} s.${section}`,
+        summary: passage.text.slice(0, 600), fullText: passage.text,
+        sourceName: entry.alternateSourceNote ?? 'Kenya official ministry publication',
+        sourceUrl: `${document?.sourceUrl ?? url}${passage.page ? `#page=${passage.page}` : ''}`,
+        fromCache: false, fromNetwork: true,
+      };
+    }
+    return null;
+  }
+
   private async resolveKeSectionOnDemand(
     statute: StatuteEntry,
     section: string,
@@ -740,12 +756,14 @@ export class StatuteIngestService {
         `Kenya on-demand act ingest failed for ${actId}`,
         err instanceof Error ? err.message : String(err),
       );
-      return null;
+      return this.resolveKeOfficialAlternative(statute, section, manifestEntry);
     }
 
     const id = this.buildSectionId(code, actId, section);
     const existing = await this.prisma.legalAuthority.findUnique({ where: { id } });
     if (!existing?.fullText) {
+      const alternative = await this.resolveKeOfficialAlternative(statute, section, manifestEntry);
+      if (alternative) return alternative;
       const match = await this.prisma.legalAuthority.findFirst({
         where: {
           countryCode: code,

@@ -23,6 +23,8 @@ export type SourceQuality =
   | 'INSUFFICIENT';
 
 export type LegalAuthority = {
+  sourcePassages?: import('@/legal-search/legal-retrieval.types').RetrievedSourcePassage[];
+  sourceProvenance?: import('@/legal-search/legal-retrieval.types').SourceProvenance;
   id: string;
   jurisdiction: string;
   subJurisdiction?: string;
@@ -108,6 +110,8 @@ export type CitationAuditResult = {
 export type CitationCheckState = 'PASS' | 'FAIL' | 'INDETERMINATE';
 
 export interface CitationAuditEntry {
+  sourceVerified?: boolean;
+  currentLawVerified?: boolean;
   citation: string;
   authorityId?: string;
   found: boolean;

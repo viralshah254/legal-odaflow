@@ -1,6 +1,7 @@
 "use client"
 
 import { useSearchParams } from "next/navigation"
+import { useDetectedCountry } from "@/lib/contexts/country-context"
 import { useState } from "react"
 import { SectionFinderWorkspace } from "@/components/section-finder/section-finder-workspace"
 import { Button } from "@/components/ui/button"
@@ -9,6 +10,7 @@ import { PromptLibraryModal } from "@/components/task-patterns/prompt-library-mo
 
 export default function SectionFinderPage() {
   const searchParams = useSearchParams()
+  const { countryCode } = useDetectedCountry()
   const [libraryOpen, setLibraryOpen] = useState(false)
 
   return (
@@ -17,7 +19,7 @@ export default function SectionFinderPage() {
         <div>
           <h1 className="text-xl md:text-2xl font-semibold">Section Finder</h1>
           <p className="text-sm text-muted-foreground mt-1">
-            Look up statute sections with crosswalks (IPC→BNS, CrPC→BNSS) and popular queries.
+            Look up legislation, source references, and related provisions for your selected jurisdiction.
           </p>
         </div>
         <Button
@@ -40,7 +42,7 @@ export default function SectionFinderPage() {
         open={libraryOpen}
         onOpenChange={setLibraryOpen}
         defaultFeature="section_finder"
-        defaultJurisdiction={searchParams.get("country")?.toUpperCase() ?? "IN"}
+        defaultJurisdiction={searchParams.get("country")?.toUpperCase() || countryCode || undefined}
       />
     </div>
   )
