@@ -36,6 +36,8 @@ interface CountryContextType {
   hasJurisdictionMismatch: boolean
   setCountryCode: (code: CountryCode, opts?: { persistProfile?: boolean }) => void
   refreshDetection: () => Promise<void>
+  workspaceCountryOverride: CountryCode | null
+  selectWorkspaceCountry: (code: CountryCode | null) => void
 }
 
 const CountryContext = createContext<CountryContextType | undefined>(undefined)
@@ -70,11 +72,22 @@ export function CountryProvider({ children }: { children: React.ReactNode }) {
   const [ipRegion, setIpRegion] = useState<string | null>(null)
   const [isLoading, setIsLoading] = useState(true)
   const sessionOverrideRef = useRef(false)
+  const detectionRun = useRef(0)
+  const lastAccountKey = useRef<string | null>(null)
+  const storageKey = user?.id ? `umbrella-workspace-country:${user.id}` : null
+  const [workspaceCountryOverride, setWorkspaceCountryOverride] = useState<CountryCode | null>(null)
 
   const applyDetection = useCallback(async () => {
     if (sessionOverrideRef.current) return
+    const run = ++detectionRun.current
+    const isCurrent = () => run === detectionRun.current && !sessionOverrideRef.current
     setIsLoading(true)
     try {
+      let manualCountry = ""
+      try {
+        manualCountry = normalizeToSupportedCountry(storageKey ? localStorage.getItem(storageKey) : null)
+      } catch { /* Browser storage is optional. */ }
+      setWorkspaceCountryOverride(manualCountry || null)
       if (isAuthenticated && user) {
         let nextProfileCountry = ""
         let nextProfileRegion: string | null = null
@@ -82,7 +95,7 @@ export function CountryProvider({ children }: { children: React.ReactNode }) {
 
         try {
           const profile = await getMyProfile()
-          if (sessionOverrideRef.current) return
+          if (!isCurrent()) return
 
           nextProfileCountry = effectiveWorkspaceCountry(
             profile,
@@ -99,9 +112,9 @@ export function CountryProvider({ children }: { children: React.ReactNode }) {
         }
 
         const ipLocation = await detectIpLocation()
-        if (sessionOverrideRef.current) return
+        if (!isCurrent()) return
 
-        const activeCountry = resolveWorkspaceCountryCode({
+        const activeCountry = manualCountry || resolveWorkspaceCountryCode({
           confirmedOverride: getStoredCountryIfConfirmed(),
           currentLocation: ipLocation?.countryCode,
           profile: nextProfileCountry,
@@ -127,7 +140,7 @@ export function CountryProvider({ children }: { children: React.ReactNode }) {
           setCountryName(getCountryName(activeCountry))
           setDetectedRegion(sameCountryIpRegion || (activeCountry === nextProfileCountry ? nextProfileRegion : null))
           setDetectionSource(
-            nextIpCountry === activeCountry ? "ip"
+            manualCountry ? "stored" : nextIpCountry === activeCountry ? "ip"
               : getStoredCountryIfConfirmed() ? "stored"
               : nextProfileCountry ? profileSource : "default",
           )
@@ -139,7 +152,7 @@ export function CountryProvider({ children }: { children: React.ReactNode }) {
       setProfileRegion(null)
 
       const detected = await detectCountry({ preferStored: false })
-      if (sessionOverrideRef.current) return
+      if (!isCurrent()) return
 
       const detectedCountry = normalizeToSupportedCountry(detected.countryCode)
       const detectedIpRegion = detected.jurisdiction ?? detected.region ?? null
@@ -154,13 +167,19 @@ export function CountryProvider({ children }: { children: React.ReactNode }) {
         setDetectionSource(detected.source)
       }
     } finally {
-      setIsLoading(false)
+      if (isCurrent()) setIsLoading(false)
     }
-  }, [isAuthenticated, user, activeTenant?.tenant.primaryCountry])
+  }, [isAuthenticated, user, activeTenant?.tenant.primaryCountry, storageKey])
 
   useEffect(() => {
+    if (lastAccountKey.current !== storageKey) {
+      lastAccountKey.current = storageKey
+      sessionOverrideRef.current = false
+    }
     void applyDetection()
-  }, [applyDetection])
+    const activeDetection = detectionRun
+    return () => { activeDetection.current++ }
+  }, [applyDetection, storageKey])
 
   const setCountryCode = useCallback((code: CountryCode, opts?: { persistProfile?: boolean }) => {
     sessionOverrideRef.current = true
@@ -179,6 +198,19 @@ export function CountryProvider({ children }: { children: React.ReactNode }) {
     sessionOverrideRef.current = false
     await applyDetection()
   }, [applyDetection])
+
+  const selectWorkspaceCountry = useCallback((code: CountryCode | null) => {
+    const selection = normalizeToSupportedCountry(code) || null
+    try {
+      if (storageKey) {
+        if (selection) localStorage.setItem(storageKey, selection)
+        else localStorage.removeItem(storageKey)
+      }
+    } catch { /* The choice still applies in the current tab. */ }
+    setWorkspaceCountryOverride(selection)
+    if (selection) setCountryCode(selection)
+    else void refreshDetection()
+  }, [storageKey, setCountryCode, refreshDetection])
 
   const profileLocation: JurisdictionLocation | null = profileCountryCode
     ? { countryCode: profileCountryCode, region: profileRegion }
@@ -202,6 +234,8 @@ export function CountryProvider({ children }: { children: React.ReactNode }) {
         hasJurisdictionMismatch: hasJurisdictionMismatch(profileLocation, ipLocation),
         setCountryCode,
         refreshDetection,
+        workspaceCountryOverride,
+        selectWorkspaceCountry,
       }}
     >
       {children}

@@ -607,9 +607,11 @@ export function SectionFinderWorkspace({ context = "lawyer" }: SectionFinderWork
               ? "Matter context is unavailable. Reopen the matter and retry."
               : countryScope
                 ? `Section lookup is not yet supported for ${countryScope}. Another country's law will not be substituted.`
-                : "Choose the legal country before looking up a provision."}
+                : context === "lawyer"
+                  ? "Choose the country in the workspace header before looking up a provision."
+                  : "Choose the legal country before looking up a provision."}
         </p>
-        {!matterIdFromUrl && (
+        {context === "consumer" && !matterIdFromUrl && (
           <div className="flex flex-wrap gap-2">
             {(["IN", "US", "GB", "KE"] as const).map((code) => (
               <button key={code} type="button" className="rounded-md border px-3 py-2 text-sm" onClick={() => setManualCountry(code)}>{code}</button>
@@ -631,7 +633,7 @@ export function SectionFinderWorkspace({ context = "lawyer" }: SectionFinderWork
               {meta.title}
             </h1>
             <div className="flex flex-wrap items-center gap-2">
-              <div className="flex rounded-lg border border-gray-200/80 dark:border-gray-700 overflow-hidden shadow-sm">
+              {context === "consumer" && <div className="flex rounded-lg border border-gray-200/80 dark:border-gray-700 overflow-hidden shadow-sm">
                 <button
                   type="button"
                   disabled={Boolean(matterIdFromUrl)} onClick={() => { setManualCountry("IN"); setSelectedCountry("IN") }}
@@ -680,7 +682,7 @@ export function SectionFinderWorkspace({ context = "lawyer" }: SectionFinderWork
                 >
                   🇰🇪 Kenya
                 </button>
-              </div>
+              </div>}
               <span className="inline-flex items-center gap-1 rounded-full bg-indigo-100/80 dark:bg-indigo-950 px-2.5 py-1 text-[11px] font-semibold text-indigo-700 dark:text-indigo-300 ring-1 ring-indigo-200/80 dark:ring-indigo-800">
                 {meta.badge}
               </span>

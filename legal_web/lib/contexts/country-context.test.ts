@@ -54,3 +54,18 @@ it('uses US location and state without inheriting an Indian profile jurisdiction
   expect(country!.detectedRegion).toBe('California')
   expect(country!.profileCountryCode).toBe('IN')
 })
+
+it('persists a workspace pin across visits and returns to current location when cleared', async () => {
+  await mount()
+  await act(async () => country!.selectWorkspaceCountry('GB'))
+  expect(country!.countryCode).toBe('GB')
+  expect(country!.workspaceCountryOverride).toBe('GB')
+  await act(async () => root!.unmount())
+  container.remove()
+  await mount()
+  expect(country!.countryCode).toBe('GB')
+  expect(country!.profileCountryCode).toBe('IN')
+  await act(async () => country!.selectWorkspaceCountry(null))
+  expect(country!.countryCode).toBe('KE')
+  expect(country!.workspaceCountryOverride).toBeNull()
+})

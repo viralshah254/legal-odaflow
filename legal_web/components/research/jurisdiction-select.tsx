@@ -46,6 +46,7 @@ interface JurisdictionSelectProps {
   onChange: (next: { countryCode: CountryCode; jurisdiction: string }) => void
   isDetecting?: boolean
   showProfileHint?: boolean
+  restrictToCountry?: boolean
   className?: string
 }
 
@@ -55,6 +56,7 @@ export function JurisdictionSelect({
   onChange,
   isDetecting = false,
   showProfileHint = false,
+  restrictToCountry = false,
   className,
 }: JurisdictionSelectProps) {
   const t = useTranslations("matters")
@@ -71,8 +73,9 @@ export function JurisdictionSelect({
   )
 
   const optionGroups = useMemo(() => {
-    if (countries.length > 0) {
-      return countries.map((country) => {
+    const availableCountries = restrictToCountry ? countries.filter(country => country.code === normalizedCode) : countries
+    if (availableCountries.length > 0) {
+      return availableCountries.map((country) => {
         const regions = [ALL_REGIONS_VALUE, ...(country.supportedJurisdictions ?? [])]
         return {
           countryCode: country.code,
@@ -99,7 +102,7 @@ export function JurisdictionSelect({
         ],
       },
     ]
-  }, [countries, displayLabel, normalizedCode, selectedValue])
+  }, [countries, displayLabel, normalizedCode, selectedValue, restrictToCountry])
 
   const selectDisabled = countriesLoading && countries.length === 0
 

@@ -561,6 +561,10 @@ export default function LegalResearchPage() {
     }
     if (countryManuallySet.current) return
     const nextCountry = profileCountryCode
+    if (!countryLoading && nextCountry && countryCode && nextCountry !== countryCode) {
+      applyResearchLocation(nextCountry, detectedRegion)
+      return
+    }
     if (!countryLoading && nextCountry) {
       setCountryCode(nextCountry as CountryCode)
       if (detectedRegion && isAllRegionsSelection(jurisdiction) && nextCountry === profileCountryCode) {
@@ -573,7 +577,7 @@ export default function LegalResearchPage() {
       }
     }
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [urlCountry, countryLoading, profileCountryCode, detectedRegion, researchCountries, matterId])
+  }, [urlCountry, countryLoading, profileCountryCode, detectedRegion, researchCountries, matterId, applyResearchLocation])
 
   useEffect(() => {
     if (!matterId) { setMatterScopeReady(true); return }
@@ -1711,7 +1715,6 @@ export default function LegalResearchPage() {
                   countryCode={countryCode}
                   jurisdiction={jurisdiction}
                   onJurisdictionChange={({ countryCode: code, jurisdiction: nextJurisdiction }) => {
-                    countryManuallySet.current = true
                     setCountryCode(code)
                     setJurisdiction(nextJurisdiction)
                   }}

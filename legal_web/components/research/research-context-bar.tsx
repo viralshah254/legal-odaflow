@@ -47,7 +47,7 @@ export function ResearchContextBar({
           jurisdiction={jurisdiction}
           onChange={onJurisdictionChange}
           isDetecting={countryLoading}
-          showProfileHint
+          restrictToCountry
           className="flex-1 min-w-0"
         />}
         <OutputLanguageSelect

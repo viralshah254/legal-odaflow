@@ -9,7 +9,6 @@ import { useDetectedCountry } from "@/lib/contexts/country-context"
 import { normalizeToSupportedCountry } from "@/lib/geo/detect-country"
 import {
   persistLegalFormsCountryFilter,
-  readLegalFormsCountryFilter,
 } from "@/lib/drafting/draft-navigation"
 import {
   fetchLegalFormsPaginated,
@@ -150,17 +149,13 @@ export function LegalFormsWorkspace({
   }
 
   useEffect(() => {
-    if (countryLoading || countryReady) return
-    const stored = readLegalFormsCountryFilter()
-    const supported = normalizeToSupportedCountry(detectedCountry) as CountryFilter
-    const initial =
-      stored &&
-      LEGAL_FORMS_COUNTRY_OPTIONS.some((option) => option.code === stored)
-        ? (stored as CountryFilter)
-        : supported
-    setCountry(initial)
+    if (countryLoading || intentStep !== "input") return
+    const code = normalizeToSupportedCountry(detectedCountry) as CountryFilter
+    setCountry(code || "ALL")
+    setStateFilter("")
+    setPage(1)
     setCountryReady(true)
-  }, [countryLoading, countryReady, detectedCountry])
+  }, [countryLoading, detectedCountry, intentStep])
 
   useEffect(() => {
     const t = setTimeout(() => {

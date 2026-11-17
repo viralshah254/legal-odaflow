@@ -3,6 +3,7 @@
 import { usePathname } from "next/navigation"
 import { useTranslations } from "next-intl"
 import { Menu, LogOut, Settings, UserCircle, Sparkles, PanelLeftClose, PanelLeftOpen, Search } from "lucide-react"
+import { WorkspaceCountryMenu } from "@/components/workspace-country-menu"
 import { GlobalSearch } from "@/components/global-search"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
@@ -154,6 +155,8 @@ export function AppTopbar() {
             ))}
           </div>
         )}
+
+        <WorkspaceCountryMenu />
 
         {/* Copilot button */}
         {canOpenCopilot && (

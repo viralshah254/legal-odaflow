@@ -4,6 +4,7 @@ import { useEffect, useMemo, useState } from "react"
 import Link from "next/link"
 import { useRouter, useSearchParams } from "next/navigation"
 import { useTranslations } from "next-intl"
+import { useDetectedCountry } from "@/lib/contexts/country-context"
 import {
   ArrowLeft,
   ArrowRight,
@@ -69,6 +70,7 @@ export function MatterIntakeWizard() {
   const router = useRouter()
   const searchParams = useSearchParams()
   const { activeTenantId, activeTenant } = useTenant()
+  const { countryCode: workspaceCountry, isLoading: countryLoading } = useDetectedCountry()
   const isResearchPrefill = searchParams.get("aiProposed") === "1"
   const sourceResearchId = searchParams.get("sourceResearchId") ?? ""
   const proposedPracticeArea = searchParams.get("practiceArea") ?? PRACTICE_AREA_CONFIGS[0].slug
@@ -86,7 +88,7 @@ export function MatterIntakeWizard() {
     clientId: searchParams.get("clientId") ?? "",
     countryCode: (
       (isResearchPrefill ? searchParams.get("country") : null)
-      ?? activeTenant?.tenant.primaryCountry
+      ?? (workspaceCountry || activeTenant?.tenant.primaryCountry)
       ?? "KE"
     ) as CountryCode,
     practiceArea: proposedPracticeConfig.slug,
@@ -101,14 +103,13 @@ export function MatterIntakeWizard() {
   })
 
   useEffect(() => {
-    if (activeTenant?.tenant.primaryCountry && !isResearchPrefill) {
-      setForm((current) => ({
-        ...current,
-        countryCode: activeTenant.tenant.primaryCountry as CountryCode,
-        jurisdiction: "",
-      }))
-    }
-  }, [activeTenant, isResearchPrefill])
+    if (isResearchPrefill || countryLoading || !workspaceCountry) return
+    setForm(current => current.countryCode === workspaceCountry ? current : {
+      ...current,
+      countryCode: workspaceCountry,
+      jurisdiction: "",
+    })
+  }, [workspaceCountry, countryLoading, isResearchPrefill])
 
   const { data: loadedClients = [] } = useApiData(
     ["clients", activeTenantId],
@@ -174,7 +175,7 @@ export function MatterIntakeWizard() {
           )
 
   async function submit() {
-    if (!activeTenantId || !canContinue) return
+    if (!activeTenantId || !canContinue || countryLoading) return
     setSubmitting(true)
     setError(null)
     try {
@@ -330,7 +331,7 @@ export function MatterIntakeWizard() {
               </div>
               <div className="space-y-2">
                 <Label>Jurisdiction</Label>
-                <p className="text-xs text-muted-foreground">{getCountryName(form.countryCode)} · from firm settings</p>
+                <p className="text-xs text-muted-foreground">{getCountryName(form.countryCode)}</p>
                 <Select value={form.jurisdiction} onValueChange={(value) => setForm({ ...form, jurisdiction: value })}>
                   <SelectTrigger><SelectValue placeholder="Select state / region" /></SelectTrigger>
                   <SelectContent className="max-h-72">
@@ -416,7 +417,7 @@ export function MatterIntakeWizard() {
                 Continue <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
             ) : (
-              <Button type="button" size="lg" data-tour="matter-submit" disabled={submitting || !canContinue} onClick={submit}>
+              <Button type="button" size="lg" data-tour="matter-submit" disabled={submitting || countryLoading || !canContinue} onClick={submit}>
                 {submitting && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
                 {t("createMatter")}
               </Button>

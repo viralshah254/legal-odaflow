@@ -359,10 +359,7 @@ function SectionFinderLink({
   if (countryLoading || !isSectionFinderCountry(countryCode)) return null
   const flag = countryFlag(countryCode)
   const flagLabel = countryFlagLabel(countryCode)
-  const href =
-    countryCode === "US" || countryCode === "GB" || countryCode === "KE"
-      ? `/app/section-finder?country=${countryCode}`
-      : "/app/section-finder"
+  const href = "/app/section-finder"
   const isActive = pathname === "/app/section-finder" || pathname.startsWith("/app/section-finder/")
   const inner = (
     <Link
