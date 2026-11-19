@@ -11,6 +11,7 @@ import {
   Dialog,
   DialogContent,
   DialogHeader,
+  DialogDescription,
   DialogTitle,
 } from "@/components/ui/dialog"
 import { useAuth } from "@/lib/contexts/auth-context"
@@ -126,25 +127,25 @@ export function IntroOfferDialog({
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="max-w-3xl max-h-[90vh] overflow-y-auto p-0 gap-0">
-        <div className="rounded-t-lg bg-gradient-to-br from-primary/15 via-primary/5 to-background px-6 pt-6 pb-4 border-b">
+      <DialogContent className="flex max-h-[calc(100dvh-2rem)] flex-col gap-0 overflow-hidden rounded-2xl p-0 sm:max-h-[min(calc(100dvh-2rem),900px)] sm:max-w-4xl">
+        <div className="shrink-0 border-b bg-gradient-to-br from-primary/10 via-primary/5 to-background px-5 pb-5 pt-6 sm:px-7 sm:pt-7">
           <DialogHeader className="space-y-3 text-left">
-            <div className="flex items-center gap-2">
-              <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-primary/15">
+            <div className="flex items-center gap-3 pr-8">
+              <span className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-primary/10">
                 <Sparkles className="h-5 w-5 text-primary" />
               </span>
-              <Badge variant="secondary" className="text-xs font-semibold">
+              <Badge variant="secondary" className="whitespace-normal text-left text-xs font-semibold leading-relaxed">
                 {t("intro_offer_badge", { percent: discountPercent })}
               </Badge>
             </div>
-            <DialogTitle className="text-2xl font-bold tracking-tight">
+            <DialogTitle className="pr-6 text-2xl font-semibold leading-tight tracking-tight sm:text-3xl">
               {t("intro_offer_title", { percent: discountPercent })}
             </DialogTitle>
-            <p className="text-sm text-muted-foreground">
+            <DialogDescription className="max-w-2xl text-sm leading-relaxed text-muted-foreground">
               {t("intro_offer_subtitle", { percent: discountPercent })}
-            </p>
+            </DialogDescription>
             {introOffer?.expiresAt && (
-              <p className="inline-flex items-center gap-2 text-sm font-medium text-primary">
+              <p className="inline-flex w-fit items-center gap-2 rounded-full bg-primary/10 px-3 py-1.5 text-xs font-medium text-primary">
                 <Clock className="h-4 w-4 shrink-0" />
                 {t("intro_offer_countdown", {
                   days: countdown.days,
@@ -156,7 +157,7 @@ export function IntroOfferDialog({
           </DialogHeader>
         </div>
 
-        <div className="px-6 py-5 space-y-4">
+        <div className="min-h-0 overflow-y-auto overscroll-contain px-5 py-5 sm:px-7 sm:py-6">
           {loading ? (
             <div className="flex justify-center py-12">
               <Loader2 className="h-6 w-6 animate-spin text-muted-foreground" />
@@ -164,10 +165,12 @@ export function IntroOfferDialog({
           ) : (
             <div
               className={cn(
-                "grid gap-3",
-                plans.length <= 2
-                  ? "sm:grid-cols-2"
-                  : "sm:grid-cols-2 lg:grid-cols-3",
+                "grid items-stretch gap-4",
+                plans.length === 1
+                  ? "grid-cols-1"
+                  : plans.length === 2
+                    ? "md:grid-cols-2"
+                    : "md:grid-cols-3",
               )}
             >
               {plans.map((plan) => {
@@ -177,44 +180,44 @@ export function IntroOfferDialog({
                   <div
                     key={plan.planId}
                     className={cn(
-                      "rounded-xl border bg-card p-4 space-y-3 transition-shadow",
+                      "flex min-w-0 flex-col rounded-xl border bg-card p-5 transition-shadow",
                       featured
-                        ? "border-primary/40 shadow-md shadow-primary/10 ring-1 ring-primary/20"
+                        ? "border-primary bg-primary/[0.03] shadow-sm ring-1 ring-primary/15"
                         : "border-border/60",
                     )}
                   >
                     <div>
-                      <div className="flex items-center justify-between gap-2">
-                        <p className="font-semibold">{getPlanDisplayLabel(plan)}</p>
+                      <div className="flex min-h-12 flex-wrap content-start items-center gap-x-2 gap-y-1">
+                        <p className="min-w-0 break-words text-base font-semibold leading-snug">{getPlanDisplayLabel(plan)}</p>
                         {featured && (
-                          <Badge className="text-[10px] px-1.5 py-0">
-                            Popular
+                          <Badge className="shrink-0 px-2 py-0.5 text-[10px]">
+                            {t("popular")}
                           </Badge>
                         )}
                       </div>
-                      <div className="mt-1 flex items-baseline gap-2 flex-wrap">
-                        <span className="text-sm text-muted-foreground line-through">
+                      <div className="mt-2 space-y-1">
+                        <span className="block text-sm tabular-nums text-muted-foreground line-through">
                           {formatPlanPrice(plan)}
                         </span>
-                        <span className="text-xl font-bold text-primary">
+                        <span className="block break-words text-2xl font-semibold leading-tight tracking-tight tabular-nums text-primary">
                           {formatPlanPrice({ ...plan, amount: discounted })}
                         </span>
-                        <span className="text-xs text-muted-foreground">
+                        <span className="block text-xs text-muted-foreground">
                           /month
                         </span>
                       </div>
-                      <p className="text-xs text-muted-foreground mt-1">
+                      <p className="mb-5 mt-4 text-xs leading-relaxed text-muted-foreground">
                         {plan.aiCredits.toLocaleString()} AI credits/month
                         {Boolean(plan.features.perSeat) && " · per seat"}
                       </p>
                     </div>
 
                     <Button
-                      className="w-full"
+                      className="mt-auto h-auto min-h-10 w-full whitespace-normal px-3 py-2.5 text-center leading-snug"
                       size="sm"
                       variant={featured ? "default" : "outline"}
                       onClick={() => void handleCheckout(plan)}
-                      disabled={checkingOut === plan.planId}
+                      disabled={checkingOut !== null}
                     >
                       {checkingOut === plan.planId ? (
                         <>
@@ -224,9 +227,7 @@ export function IntroOfferDialog({
                       ) : (
                         <>
                           <Check className="mr-2 h-4 w-4" />
-                          {t("intro_offer_cta", {
-                            price: formatPlanPrice({ ...plan, amount: discounted }),
-                          })}
+                          {t("subscribe_now")}
                         </>
                       )}
                     </Button>
@@ -236,16 +237,17 @@ export function IntroOfferDialog({
             </div>
           )}
 
-          <div className="flex flex-col-reverse sm:flex-row sm:items-center sm:justify-between gap-3 pt-2">
-            <Button variant="ghost" onClick={() => onOpenChange(false)}>
-              {t("intro_offer_remind_tomorrow")}
-            </Button>
-            <Button variant="outline" asChild>
-              <Link href={plansHref} onClick={() => onOpenChange(false)}>
-                {t("intro_offer_view_all_plans")}
-              </Link>
-            </Button>
-          </div>
+        </div>
+
+        <div className="flex shrink-0 flex-col gap-2 border-t bg-muted/20 px-5 py-4 sm:flex-row sm:items-center sm:justify-between sm:px-7">
+          <Button variant="ghost" onClick={() => onOpenChange(false)}>
+            {t("intro_offer_remind_tomorrow")}
+          </Button>
+          <Button variant="outline" asChild>
+            <Link href={plansHref} onClick={() => onOpenChange(false)}>
+              {t("intro_offer_view_all_plans")}
+            </Link>
+          </Button>
         </div>
       </DialogContent>
     </Dialog>
