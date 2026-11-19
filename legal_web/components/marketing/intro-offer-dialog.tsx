@@ -127,18 +127,18 @@ export function IntroOfferDialog({
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="flex max-h-[calc(100dvh-2rem)] flex-col gap-0 overflow-hidden rounded-2xl p-0 sm:max-h-[min(calc(100dvh-2rem),900px)] sm:max-w-4xl">
-        <div className="shrink-0 border-b bg-gradient-to-br from-primary/10 via-primary/5 to-background px-5 pb-5 pt-6 sm:px-7 sm:pt-7">
-          <DialogHeader className="space-y-3 text-left">
+      <DialogContent className="flex max-h-[calc(100dvh-2rem)] flex-col gap-0 overflow-hidden rounded-2xl p-0 sm:max-h-[min(calc(100dvh-2rem),900px)] sm:w-[calc(100%-2rem)] sm:max-w-4xl">
+        <div className="shrink-0 border-b bg-gradient-to-br from-primary/10 via-primary/5 to-background px-5 pb-4 pt-5 sm:px-7 sm:pb-5 sm:pt-7">
+          <DialogHeader className="space-y-2 text-left sm:space-y-3">
             <div className="flex items-center gap-3 pr-8">
               <span className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-primary/10">
                 <Sparkles className="h-5 w-5 text-primary" />
               </span>
-              <Badge variant="secondary" className="whitespace-normal text-left text-xs font-semibold leading-relaxed">
+              <Badge variant="secondary" className="whitespace-normal text-left text-[10px] font-semibold leading-relaxed sm:text-xs">
                 {t("intro_offer_badge", { percent: discountPercent })}
               </Badge>
             </div>
-            <DialogTitle className="pr-6 text-2xl font-semibold leading-tight tracking-tight sm:text-3xl">
+            <DialogTitle className="pr-6 text-xl font-semibold leading-tight tracking-tight sm:text-3xl">
               {t("intro_offer_title", { percent: discountPercent })}
             </DialogTitle>
             <DialogDescription className="max-w-2xl text-sm leading-relaxed text-muted-foreground">
